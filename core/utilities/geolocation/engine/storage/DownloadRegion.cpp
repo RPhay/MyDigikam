@@ -105,6 +105,7 @@ int DownloadRegionPrivate::rad2PixelY(qreal const lat, const TileLayer* tileLaye
     }
 
     // Dummy value to avoid a warning.
+
     return 0;
 }
 
@@ -137,7 +138,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
 {
     Q_ASSERT(tileLayer);
 
-    int tileLevelRangeFirst = d->m_tileLevelRange.first;
+    int tileLevelRangeFirst  = d->m_tileLevelRange.first;
     int tileLevelRangeSecond = d->m_tileLevelRange.second;
 
     TileType tileType = dynamic_cast<const TextureLayer*>(tileLayer) ? TextureTileType : VectorTileType;
@@ -146,11 +147,12 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
     validLevels = validTileLevels(tileType);
 
     // Align the tileLevelRangeSecond with the validTileLevels
+
     if (!validLevels.isEmpty())
     {
         int lastIndex = validLevels.count() - 1;
 
-        for (int i = 0; i < validLevels.count(); ++i)
+        for (int i = 0 ; i < validLevels.count() ; ++i)
         {
             if (validLevels.at(lastIndex - i) <= tileLevelRangeSecond
                 && validLevels.at(lastIndex - i) >= tileLevelRangeFirst)
@@ -167,6 +169,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
     int const southY = d->rad2PixelY(downloadRegion.south(), tileLayer);
 
     // FIXME: remove this stuff
+
     qCDebug(DIGIKAM_MARBLE_LOG) << "DownloadRegionDialog downloadRegion:"
                                 << "north:" << downloadRegion.north()
                                 << "south:" << downloadRegion.south()
@@ -191,6 +194,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
 
     // the pixel coords calculated above are referring to the visible tile level,
     // if the bottom level is a different level, we have to take it into account
+
     if (d->m_visibleTileLevel > tileLevelRangeSecond)
     {
         int const deltaLevel = d->m_visibleTileLevel - tileLevelRangeSecond;
@@ -228,7 +232,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
     bottomLevelTileCoords.setCoords
     (bottomLevelX1 / tileWidth,
      bottomLevelY1 / tileHeight,
-     bottomLevelX2 / tileWidth + (bottomLevelX2 % tileWidth > 0 ? 1 : 0) - 1,      // -1 needed for proper counting
+     bottomLevelX2 / tileWidth  + (bottomLevelX2 % tileWidth  > 0 ? 1 : 0) - 1,    // -1 needed for proper counting
      bottomLevelY2 / tileHeight + (bottomLevelY2 % tileHeight > 0 ? 1 : 0) - 1);   // -1 needed for proper counting
     qCDebug(DIGIKAM_MARBLE_LOG) << "bottom level tile coords: (x1/y1/size):" << bottomLevelTileCoords;
     coordsPyramid.setBottomLevelCoords(bottomLevelTileCoords);
@@ -236,6 +240,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
     qCDebug(DIGIKAM_MARBLE_LOG) << "tiles count:" << coordsPyramid.tilesCount();
     QVector<TileCoordsPyramid> pyramid;
     pyramid << coordsPyramid;
+
     return pyramid;
 }
 
@@ -246,28 +251,31 @@ void DownloadRegion::setVisibleTileLevel(const int tileLevel)
 
 QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer, qreal offset, const GeoDataLineString& waypoints) const
 {
-    if (!d->m_marbleModel)
+    if (!d->m_marbleModel || !tileLayer)
     {
         return QVector<TileCoordsPyramid>();
     }
 
-    int tileLevelRangeFirst = d->m_tileLevelRange.first;
+    int tileLevelRangeFirst  = d->m_tileLevelRange.first;
     int tileLevelRangeSecond = d->m_tileLevelRange.second;
 
-    TileType tileType = dynamic_cast<const TextureLayer*>(tileLayer) ? TextureTileType : VectorTileType;
+    TileType tileType        = dynamic_cast<const TextureLayer*>(tileLayer) ? TextureTileType : VectorTileType;
 
     QVector<int> validLevels;
-    validLevels = validTileLevels(tileType);
+    validLevels              = validTileLevels(tileType);
 
     // Align the tileLevelRangeSecond with the validTileLevels
+
     if (!validLevels.isEmpty())
     {
         int lastIndex = validLevels.count() - 1;
 
-        for (int i = 0; i < validLevels.count(); ++i)
+        for (int i = 0 ; i < validLevels.count() ; ++i)
         {
-            if (validLevels.at(lastIndex - i) <= tileLevelRangeSecond
-                && validLevels.at(lastIndex - i) >= tileLevelRangeFirst)
+            if (
+                (validLevels.at(lastIndex - i) <= tileLevelRangeSecond) &&
+                (validLevels.at(lastIndex - i) >= tileLevelRangeFirst)
+               )
             {
                 tileLevelRangeSecond = validLevels.at(lastIndex - i);
                 break;
@@ -278,31 +286,32 @@ QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer, 
     TileCoordsPyramid coordsPyramid(tileLevelRangeFirst, tileLevelRangeSecond);
     coordsPyramid.setValidTileLevels(validLevels);
 
-    int const tileWidth = tileLayer->tileSize().width();
+    int const tileWidth  = tileLayer->tileSize().width();
     int const tileHeight = tileLayer->tileSize().height();
 
-    qreal radius = d->m_marbleModel->planetRadius();
+    qreal radius         = d->m_marbleModel->planetRadius();
     QVector<TileCoordsPyramid> pyramid;
-    qreal radianOffset = offset / radius;
+    qreal radianOffset   = offset / radius;
 
-    for (int i = 1; i < waypoints.size(); ++i)
+    for (int i = 1 ; i < waypoints.size() ; ++i)
     {
         GeoDataCoordinates position = waypoints[i];
         qreal lonCenter = position.longitude();
         qreal latCenter = position.latitude();
 
         // coordinates of the of the vertices of the square(topleft and bottomright) at an offset distance from the waypoint
+
         qreal latNorth = asin(sin(latCenter) *  cos(radianOffset) +  cos(latCenter) * sin(radianOffset)  * cos(7 * M_PI / 4));
         qreal dlonWest = atan2(sin(7 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latNorth));
         qreal lonWest  = fmod(lonCenter - dlonWest + M_PI, 2 * M_PI) - M_PI;
         qreal latSouth = asin(sin(latCenter) * cos(radianOffset) + cos(latCenter) * sin(radianOffset) * cos(3 * M_PI / 4));
-        qreal dlonEast =  atan2(sin(3 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latSouth));
+        qreal dlonEast = atan2(sin(3 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latSouth));
         qreal lonEast  = fmod(lonCenter - dlonEast + M_PI, 2 * M_PI) - M_PI;
 
         int const northY = d->rad2PixelY(latNorth, tileLayer);
         int const southY = d->rad2PixelY(latSouth, tileLayer);
-        int const eastX =  d->rad2PixelX(lonEast, tileLayer);
-        int const westX =  d->rad2PixelX(lonWest, tileLayer);
+        int const eastX  = d->rad2PixelX(lonEast, tileLayer);
+        int const westX  = d->rad2PixelX(lonWest, tileLayer);
 
         int const west  = qMin(westX, eastX);
         int const north = qMin(northY, southY);
@@ -322,7 +331,6 @@ QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer, 
             bottomLevelTileX2 = east  >> deltaLevel;
             bottomLevelTileY2 = south >> deltaLevel;
         }
-
         else if (d->m_visibleTileLevel < tileLevelRangeSecond)
         {
             int const deltaLevel = tileLevelRangeSecond - d->m_visibleTileLevel;
@@ -331,7 +339,6 @@ QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer, 
             bottomLevelTileX2 = east  << deltaLevel;
             bottomLevelTileY2 = south << deltaLevel;
         }
-
         else
         {
             bottomLevelTileX1 = west;
@@ -341,7 +348,9 @@ QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer, 
         }
 
         QRect waypointRegion;
-        //square region around the waypoint
+
+        // square region around the waypoint
+
         waypointRegion.setCoords(bottomLevelTileX1 / tileWidth, bottomLevelTileY1 / tileHeight,
                                  bottomLevelTileX2 / tileWidth, bottomLevelTileY2 / tileHeight);
         coordsPyramid.setBottomLevelCoords(waypointRegion);
@@ -355,16 +364,19 @@ QVector<int> DownloadRegion::validTileLevels(const TileType tileType) const
 {
     QVector<int> validTileLevels;
 
-    GeoSceneMap* map = d->m_marbleModel->mapTheme()->map();
+    GeoSceneMap* const map         = d->m_marbleModel->mapTheme()->map();
     QVector<GeoSceneLayer*> layers = map->layers();
 
-    for (auto layer : layers)
+    for (auto layer : std::as_const(layers))
     {
-        if ((layer->backend() == QString::fromUtf8("vectortile") && tileType == VectorTileType)
-            || (layer->backend() == QString::fromUtf8("texture") && tileType == TextureTileType))
+        if (
+            (layer->backend() == QString::fromUtf8("vectortile") && tileType == VectorTileType) ||
+            (layer->backend() == QString::fromUtf8("texture")    && tileType == TextureTileType)
+           )
         {
-            GeoSceneTileDataset* dataset = dynamic_cast<GeoSceneTileDataset*>(layer->datasets().first());
-            validTileLevels = dataset->tileLevels();
+            GeoSceneTileDataset* const dataset = dynamic_cast<GeoSceneTileDataset*>(layer->datasets().first());
+            validTileLevels                    = dataset->tileLevels();
+
             break;
         }
     }
