@@ -6,7 +6,8 @@
  * Date        : 2012-12-24
  * Description : DNG Converter thread
  *
- * SPDX-FileCopyrightText: 2012 by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -132,7 +133,7 @@ void DNGConverterTask::run()
 
             QFileInfo fi(d->url.toLocalFile());
             destPath     = fi.absolutePath() + QLatin1String("/.digikam-dngconverter-tmp-") +
-                           QString::number(QDateTime::currentDateTimeUtc().toSecsSinceEpoch()) + QString(d->url.fileName());
+                           QString::number(QDateTime::currentSecsSinceEpoch()) + QString(d->url.fileName());
 
             d->dngProcessor.reset();
             d->dngProcessor.setInputFile(d->url.toLocalFile());

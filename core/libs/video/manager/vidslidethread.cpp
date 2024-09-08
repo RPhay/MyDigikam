@@ -52,8 +52,8 @@ void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
 {
     m_settings          = settings;
 
-    m_settings->tempDir = m_settings->outputDir + QLatin1String("/.")                      +
-                          QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) +
+    m_settings->tempDir = m_settings->outputDir + QLatin1String("/.")         +
+                          QString::number(QDateTime::currentSecsSinceEpoch()) +
                           QLatin1Char('/');
 
     if (!QDir().mkpath(m_settings->tempDir))

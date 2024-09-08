@@ -117,7 +117,7 @@ quint32 RandomNumberGenerator::nonDeterministicSeed()
 quint32 RandomNumberGenerator::timeSeed()
 {
     uint seed;
-    seed = quintptr(&seed) + QDateTime::currentDateTime().toSecsSinceEpoch();
+    seed = quintptr(&seed) + QDateTime::currentSecsSinceEpoch();
 
     return seed;
 }
