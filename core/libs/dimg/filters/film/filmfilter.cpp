@@ -474,7 +474,10 @@ void FilmFilter::filterImage()
     DImg tmpInv;
 
     LevelsContainer l = d->film.toLevels();
+
     CBContainer cb    = d->film.toCB();
+    Q_UNUSED(cb);
+
     CBContainer gamma;
 
     // level the image first, this removes the orange mask and corrects
