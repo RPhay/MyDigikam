@@ -265,7 +265,7 @@ public:
 
     QRect desktopRectForPoint(const QPoint& point)
     {
-        QList<QScreen*> screens = QGuiApplication::screens();
+        const auto screens = QGuiApplication::screens();
 
         for (const QScreen* screen : screens)
         {

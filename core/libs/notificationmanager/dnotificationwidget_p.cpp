@@ -99,8 +99,9 @@ void DNotificationWidget::Private::createLayout()
 
     qDeleteAll(buttons);
     buttons.clear();
+    const auto acs = q->actions();
 
-    for (QAction* const action : q->actions())
+    for (QAction* const action : acs)
     {
         QToolButton* const button = new QToolButton(content);
         button->setDefaultAction(action);
@@ -126,7 +127,7 @@ void DNotificationWidget::Private::createLayout()
         QHBoxLayout* const buttonLayout = new QHBoxLayout;
         buttonLayout->addStretch();
 
-        for (QToolButton* const button : buttons)
+        for (QToolButton* const button : std::as_const(buttons))
         {
             // For some reason, calling show() is necessary if wordwrap is true,
             // otherwise the buttons do not show up. It is not needed if
@@ -145,7 +146,7 @@ void DNotificationWidget::Private::createLayout()
         layout->addWidget(iconLabel);
         layout->addWidget(textLabel);
 
-        for (QToolButton* const button : buttons)
+        for (QToolButton* const button : std::as_const(buttons))
         {
             layout->addWidget(button);
         }
