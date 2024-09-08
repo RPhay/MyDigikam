@@ -48,7 +48,6 @@ unexpected-flag-enumerator-value,\
 signal-with-return-value,\
 raw-environment-function,\
 qt-keywords,\
-missing-qobject-macro\
+missing-qobject-macro,\
+range-loop-detach\
 "
-
-#qt6-qlatin1stringchar-to-u         What is that exactly ???
