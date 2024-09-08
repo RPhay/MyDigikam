@@ -67,7 +67,15 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
 
     readSettings();
 
+#ifdef Q_OS_WIN
+
+    setAutoSaveSettings(configGroupName(), false);
+
+#else
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
 
     // -------------------------------------------------------------------
 /*
