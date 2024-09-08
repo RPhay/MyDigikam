@@ -50,7 +50,7 @@ ImageQualityThreadPool::~ImageQualityThreadPool()
 {
     end();
 /*
-    for (auto& thread : m_threads)
+    for (auto& thread : std::as_const(m_threads))
     {
         delete thread;
     }
@@ -76,7 +76,7 @@ void ImageQualityThreadPool::addDetector(const cv::Mat& image,
 
 void ImageQualityThreadPool::start()
 {
-    for (const auto& thread : m_threads)
+    for (const auto& thread : std::as_const(m_threads))
     {
         thread->start();
     }
@@ -84,7 +84,7 @@ void ImageQualityThreadPool::start()
 
 void ImageQualityThreadPool::end()
 {
-    for (auto& thread : m_threads)
+    for (auto& thread : std::as_const(m_threads))
     {
         thread->quit();
         thread->wait();

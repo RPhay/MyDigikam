@@ -246,7 +246,7 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
         {
             std::vector<float> list_theta;
 
-            for (const auto& line : lines)
+            for (const auto& line : std::as_const(lines))
             {
                 float theta = (line[2] == line[0])    ? 0.0F          : qAtan((line[3] - line[1]) / (line[2] - line[0]));
                 theta       = (theta < 0.0F)          ? theta + CV_PI : theta;
@@ -297,7 +297,7 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
 
         if (d->have_focus_region)
         {
-            for (const auto& point : d->af_points)
+            for (const auto& point : std::as_const(d->af_points))
             {
                 QPointF pos           = point.getCenterPosition();
                 QSizeF size           = point.getSize();

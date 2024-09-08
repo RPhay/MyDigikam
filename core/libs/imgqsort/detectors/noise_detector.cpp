@@ -142,7 +142,7 @@ NoiseDetector::Mat3D NoiseDetector::decompose_by_filter(const cv::Mat& image, co
 
         channels.reserve(filtersUsed.size());
 
-        for (const auto& filter : filtersUsed)
+        for (const auto& filter : std::as_const(filtersUsed))
         {
             cv::Mat tmp = cv::Mat(image.size().width, image.size().height, CV_32FC1);
 
@@ -234,7 +234,7 @@ cv::Mat NoiseDetector::raw_moment(const NoiseDetector::Mat3D& mat, int order) co
         std::vector<float> vec;
         vec.reserve(mat.size());
 
-        for (const auto& mat2d : mat)
+        for (const auto& mat2d : std::as_const(mat))
         {
             vec.push_back(cv::sum(pow_mat(mat2d, order))[0] / taille_image);
         }
