@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-07 01:44+0000\n"
+"POT-Creation-Date: 2024-09-08 01:47+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -10189,7 +10189,7 @@ msgstr "Zabalera berria:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
 msgstr " px"
@@ -11443,7 +11443,7 @@ msgstr "Gorde irudiak"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:430
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:617
@@ -11454,7 +11454,7 @@ msgstr "Gorde irudiak"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1280
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:575
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:576
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:236
@@ -11467,7 +11467,7 @@ msgstr "Gorde irudiak"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:474
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:511
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
@@ -17793,7 +17793,7 @@ msgstr "Sortu HTML galeria..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
 msgstr "Barneko errorea"
@@ -19414,21 +19414,21 @@ msgid ""
 "of the panorama, or modify the control points to get better results."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:217
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Abisua"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:209
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "Fitxategia badago lehendik ere"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:218
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -19436,27 +19436,27 @@ msgid ""
 "the copying process)"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, fuzzy, kde-format
 #| msgid "<b>Latitude</b>:"
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "<b>Latitudea</b>:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "Zure bilduma berria izen honekin sortu da:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
@@ -19464,7 +19464,7 @@ msgstr ""
 "Botoi hau sakatzen baduzu, denbora-lerroko uneko dataren hautapena garbitu "
 "egingo da."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19473,7 +19473,7 @@ msgid ""
 "at the same time (those are TIFF files that can be big)."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:297
 #, fuzzy, kde-format
 #| msgid "Error"
 msgctxt "@label"
@@ -20317,7 +20317,7 @@ msgstr "Vue panoramique"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 msgid "Image Format:"
 msgstr "Erakutsi irudien puntuazioak"
@@ -20750,7 +20750,7 @@ msgid "Preparing file to export by mail..."
 msgstr "%1 fitxategia kamerara igotzen..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input items to process"
@@ -20813,7 +20813,7 @@ msgstr "Mezuaren gehienezko tamaina:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgid "Adjust image properties"
@@ -20821,7 +20821,7 @@ msgstr "Doitu irudiaren propietateak"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, fuzzy, kde-format
 msgid ""
 "If you enable this option, all images to be sent can be resized and "
@@ -20832,14 +20832,14 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "Irudiaren propietateak"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -20848,27 +20848,27 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, fuzzy, kde-format
 msgid "Image Length:"
 msgstr "Irudi-editorea"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
 msgid "Select your preferred format to convert image."
 msgstr "Ezarri kolore-espazioaren profila horra bihurtzeko."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, fuzzy, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>Bidaliko diren JPEG irudien konpresio-balio berria:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
 #, fuzzy, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -20881,21 +20881,21 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "Irudiaren kalitatea:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 msgid "Remove all metadata"
 msgstr "Erabili metadatuak"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, fuzzy, kde-format
 msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
@@ -22730,10 +22730,10 @@ msgstr "Esportatu"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:752
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:775
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:818
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:854
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
 #, kde-format
 msgid "Failed to upload photo"
 msgstr "Huts egin du argazkia zama-igotzea"
@@ -22742,7 +22742,7 @@ msgstr "Huts egin du argazkia zama-igotzea"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:938
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
 #, fuzzy, kde-format
 msgid "Failed to list folders"
 msgstr "Huts egin du karpetak zerrendatzea"
@@ -22788,7 +22788,7 @@ msgid "No image selected. Please select which images should be uploaded."
 msgstr "Ez da irudirik hautatu. Mesedez, hautatu zama-igo beharreko irudiak."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:818
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
 #: core/dplugins/generic/webservices/google/gswindow.cpp:516
 #: core/dplugins/generic/webservices/google/gswindow.cpp:546
 #: core/dplugins/generic/webservices/google/gswindow.cpp:984
@@ -22817,7 +22817,7 @@ msgstr ""
 "Autentifikatzea huts egin du. Egin klik \"Jarraitu\"n autentifikatzeko."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:249
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:823
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
 #: core/dplugins/generic/webservices/google/gswindow.cpp:520
 #: core/dplugins/generic/webservices/google/gswindow.cpp:550
 #: core/dplugins/generic/webservices/google/gswindow.cpp:989
@@ -22835,7 +22835,7 @@ msgid "Continue"
 msgstr "Jarraitu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:250
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:825
 #: core/dplugins/generic/webservices/google/gswindow.cpp:521
 #: core/dplugins/generic/webservices/google/gswindow.cpp:551
 #: core/dplugins/generic/webservices/google/gswindow.cpp:990
@@ -23704,7 +23704,7 @@ msgstr "POST metodoa derrigorrezkoa da orain ezartzaile guztientzako"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, fuzzy, kde-format
 msgid "Unknown error"
 msgstr "Errore ezezaguna"
@@ -23964,24 +23964,24 @@ msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Hasi zama-igotzen"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:583
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:584
 #, fuzzy, kde-format
 msgid "Photostream Only"
 msgstr "Photostream soilik"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:776
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:777
 #, fuzzy, kde-format
 msgid "Flickr Export"
 msgstr "Flickr Esportatu"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:811
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:812
 #, fuzzy, kde-format
 #| msgid "Failed to retrieve EXIF information for %1"
 msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr ""
 "Huts egin du argazki multzoaren informazioa %1 gunetik eskuratzea. %2\n"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:820
 #, kde-format
 msgid ""
 "Failed to upload photo into %1. %2\n"
@@ -25110,59 +25110,59 @@ msgstr "Puntuazioak inportatuta"
 msgid "Fewer options"
 msgstr "Aukera gutxiago"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:562
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, fuzzy, kde-format
 msgid "<i>login <b>failed</b></i>"
 msgstr "Saio-hastea huts egin du"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:625
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:626
 #, fuzzy, kde-format
 msgid "<i>login <b>canceled</b></i>"
 msgstr "Deskargatu"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:682
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:683
 #, kde-format
 msgid "<i>no valid identification</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:729
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:730
 #, fuzzy, kde-format
 #| msgid "Start Color: "
 msgid "iNaturalist Export"
 msgstr "Hasierako kolorea: "
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:985
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:986
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "observation"
 msgstr "&Behaketa"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:991
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:992
 #, kde-format
 msgctxt "location"
 msgid "obscured"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:995
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:996
 #, kde-format
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1042
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Creation time"
 msgid "observation time"
 msgstr "Heure de création"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1051
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1052
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1079
 #, fuzzy, kde-format
 #| msgid "Chromatic Aberration"
 msgid "from observation"
 msgstr "Aberrazio kromatikoa"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
@@ -25170,7 +25170,7 @@ msgstr "Aberrazio kromatikoa"
 msgid "not available"
 msgstr "Eskuraezina"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1090
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1091
 #, fuzzy, kde-format
 msgid "observation location"
 msgstr "Doitu &hautapenera"
@@ -26277,96 +26277,96 @@ msgstr "Esportatu"
 msgid "Not logged in"
 msgstr "Saioa hasteke"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
 #, fuzzy, kde-format
 msgid "Invalid command"
 msgstr "Komando baliogabea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
 #, fuzzy, kde-format
 msgid "Invalid login name or password"
 msgstr "Saio-hasteko izena edo pasahitza baliogabea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:231
 #, fuzzy, kde-format
 msgid "Session expired"
 msgstr "Saioa iraungi da"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:232
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:233
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgid "Unknown album"
 msgstr "Album ezezaguna"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to open album"
 msgstr "Albuma irekitzea huts egin du"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
 #, fuzzy, kde-format
 #| msgid "Album name cannot be empty."
 msgid "The album name cannot be empty"
 msgstr "Albumaren izena ezin da hutsik utzi"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to create album"
 msgstr "Huts egin du albuma sortzea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:238
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgid "Album does not exist"
 msgstr "Albuma ez da existitzen"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:240
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:242
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:241
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
 #, kde-format
 msgid "File upload failed"
 msgstr "Fitxategi zama-igotzea huts egin du"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:244
 #, fuzzy, kde-format
 msgid "Unsupported file extension"
 msgstr "Onartu gabeko fitxategi-luzapena"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:299
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, fuzzy, kde-format
 msgid "Logging in %v%"
 msgstr "%v%-(e)n saio-hasten"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
 #, fuzzy, kde-format
 msgid "Logging out %v%"
 msgstr "%v%-(e)n saio-ixten"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
 #, fuzzy, kde-format
 #| msgid "Loading: %1"
 msgid "Loading albums %v%"
 msgstr "%v% albumak zamatzea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Creating album %v%"
 msgstr "%v% albuma sortzea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
 #, fuzzy, kde-format
 msgid "Opening album %v%"
 msgstr "%v% albuma irekitzea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
 #, fuzzy, kde-format
 msgid "Closing album %v%"
 msgstr "%v% albuma ixtea"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:306
 #, fuzzy, kde-format
 msgid "Adding photos %v%"
 msgstr "%v% argazkiak gehitzea"
@@ -26789,20 +26789,20 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Esportatu"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:459
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:471
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:484
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
 #, kde-format
 msgid "File too big to upload"
 msgstr "Zama-igotzeko irudi handiegia"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:495
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
 #, fuzzy, kde-format
 #| msgid "Database type is not supported."
 msgid "Media format is not supported yet"
 msgstr "Datu-base mota ez da onartzen."
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:872
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
 #, kde-format
 msgid ""
 "Failed to upload photo\n"
@@ -26811,7 +26811,7 @@ msgstr ""
 "Irudia zama-igotzea huts egin du\n"
 "Kodea: %1, izena: %2, mezua: %3"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:919
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
 #, kde-format
 msgid "Failed to create tweet for photo uploaded"
 msgstr "Zama-igotako argazkiarentzako txioa sortzea huts egin du"
@@ -26924,13 +26924,13 @@ msgid ""
 "</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:132
 #, fuzzy, kde-format
 #| msgid "Preparing slideshow"
 msgid "Preparing files..."
 msgstr "diapositiba emanaldia prestatzen"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Start transferring process..."
@@ -57186,7 +57186,7 @@ msgid "Please add a type tag for this relation."
 msgstr ""
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:97
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "New Zealand"

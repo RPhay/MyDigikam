@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-07 01:44+0000\n"
+"POT-Creation-Date: 2024-09-08 01:47+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -10712,7 +10712,7 @@ msgstr "Ny bredde:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
 msgstr " px"
@@ -11994,7 +11994,7 @@ msgstr "Gemmer ændringer - %p%"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:430
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:617
@@ -12005,7 +12005,7 @@ msgstr "Gemmer ændringer - %p%"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1280
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:575
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:576
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:236
@@ -12018,7 +12018,7 @@ msgstr "Gemmer ændringer - %p%"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:474
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:511
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
@@ -18487,7 +18487,7 @@ msgstr "Opret skema..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
 msgstr "Intern fejl"
@@ -20192,15 +20192,15 @@ msgstr ""
 "vil have en anden projektion, ændrer horisonten eller panoramaets centrum, "
 "eller redigere kontrolpunkterne for at opnå bedre resultater."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:217
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Advarsel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -20208,7 +20208,7 @@ msgctxt "@label"
 msgid "This file already exists"
 msgstr "Filen findes allerede"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><font color=\"red\"><b>Warning:</b> This file already exists.</"
@@ -20221,34 +20221,34 @@ msgstr ""
 "<qt><p><font color=\"red\"><b>Advarsel:</b> Denne fil findes allerede.</"
 "font></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, fuzzy, kde-format
 #| msgid "<b>Latitude</b>:"
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "<b>Breddegrad</b>:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "Din nye samling vil blive oprettet med dette navn:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, fuzzy, kde-format
 #| msgid "If you press this button, the white point is reset to pure white."
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
 msgstr "Hvis du trykker på denne knap, nulstilles hvidpunktet til ren hvid."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1><b>Panorama Stitching is Done</b></h1></p><p>Congratulations. "
@@ -20272,7 +20272,7 @@ msgstr ""
 "billeder der blev brugt under sammensyningsprocessen blive kopieret samtidig "
 "(disse er TIFF-filer som kan være store).</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:297
 #, fuzzy, kde-format
 #| msgid "Error"
 msgctxt "@label"
@@ -21146,7 +21146,7 @@ msgstr "Panoramisk"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 #| msgid "Show image Format"
 msgid "Image Format:"
@@ -21574,7 +21574,7 @@ msgid "Preparing file to export by mail..."
 msgstr "Uploader filen %1 til kamera..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input items to process"
@@ -21637,14 +21637,14 @@ msgstr "Maksimal e-mail-størrelse:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Juster billedegenskaber"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
 "If you enable this option, all images to be sent can be resized and "
@@ -21655,7 +21655,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgid "Image Properties"
@@ -21663,7 +21663,7 @@ msgstr "Billedegenskaber"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -21672,7 +21672,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -21681,20 +21681,20 @@ msgstr "Billedhistorik"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
 msgid "Select your preferred format to convert image."
 msgstr "Sæt profilen for farverummet der skal konverteres til her."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>Komprimeringsværdi for JPEG billeder der skal sendes:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
 #, fuzzy, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -21707,14 +21707,14 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
 msgstr "Billedkvalitet:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 #| msgid "Remove Metadata"
 msgid "Remove all metadata"
@@ -21722,7 +21722,7 @@ msgstr "Fjern metadata"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
@@ -23499,10 +23499,10 @@ msgstr "Eksportværktøjer"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:752
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:775
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:818
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:854
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
 #, kde-format
 msgid "Failed to upload photo"
 msgstr "Kunne ikke uploade foto"
@@ -23511,7 +23511,7 @@ msgstr "Kunne ikke uploade foto"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:938
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
 #, kde-format
 msgid "Failed to list folders"
 msgstr "Kunne ikke opliste mapper"
@@ -23559,7 +23559,7 @@ msgid "No image selected. Please select which images should be uploaded."
 msgstr "Intet billede valgt. Vælg hvilke billeder der skal uploades."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:818
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
 #: core/dplugins/generic/webservices/google/gswindow.cpp:516
 #: core/dplugins/generic/webservices/google/gswindow.cpp:546
 #: core/dplugins/generic/webservices/google/gswindow.cpp:984
@@ -23588,7 +23588,7 @@ msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "Godkendelse mislykkedes. Klik \"Fortsæt\" for at autentificere."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:249
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:823
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
 #: core/dplugins/generic/webservices/google/gswindow.cpp:520
 #: core/dplugins/generic/webservices/google/gswindow.cpp:550
 #: core/dplugins/generic/webservices/google/gswindow.cpp:989
@@ -23606,7 +23606,7 @@ msgid "Continue"
 msgstr "Fortsæt"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:250
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:825
 #: core/dplugins/generic/webservices/google/gswindow.cpp:521
 #: core/dplugins/generic/webservices/google/gswindow.cpp:551
 #: core/dplugins/generic/webservices/google/gswindow.cpp:990
@@ -24490,7 +24490,7 @@ msgstr "POST metoden kræves nu for alle sættere"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, kde-format
 msgid "Unknown error"
 msgstr "Ukendt fejl"
@@ -24739,22 +24739,22 @@ msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Start upload"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:583
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:584
 #, kde-format
 msgid "Photostream Only"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:776
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:777
 #, kde-format
 msgid "Flickr Export"
 msgstr "Flickr-eksport"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:811
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:812
 #, kde-format
 msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Kunne ikke hente fotosæt-information fra %1. %2\n"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:820
 #, kde-format
 msgid ""
 "Failed to upload photo into %1. %2\n"
@@ -25934,60 +25934,60 @@ msgstr "Eksportér til webtjenesten %1"
 msgid "Fewer options"
 msgstr "Færre mærkeindstillinger"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:562
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:625
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:626
 #, fuzzy, kde-format
 #| msgid "<b>Canceled</b>"
 msgid "<i>login <b>canceled</b></i>"
 msgstr "<b>Annullerede</b>"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:682
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:683
 #, kde-format
 msgid "<i>no valid identification</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:729
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:730
 #, fuzzy, kde-format
 #| msgid "Start Index:"
 msgid "iNaturalist Export"
 msgstr "Startindeks:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:985
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:986
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "observation"
 msgstr "Gentagelse:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:991
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:992
 #, kde-format
 msgctxt "location"
 msgid "obscured"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:995
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:996
 #, kde-format
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1042
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Creation time"
 msgid "observation time"
 msgstr "Oprettelsestidspunkt"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1051
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1052
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1079
 #, fuzzy, kde-format
 #| msgid "Chromatic Aberration"
 msgid "from observation"
 msgstr "Kromatisk afvigelse"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
@@ -25995,7 +25995,7 @@ msgstr "Kromatisk afvigelse"
 msgid "not available"
 msgstr "Ikke tilgængelig"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1090
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1091
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Crop to Selection"
@@ -27151,89 +27151,89 @@ msgstr "Eksportværktøjer"
 msgid "Not logged in"
 msgstr "Ikke logget på"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
 #, kde-format
 msgid "Invalid command"
 msgstr "Ugyldig kommando"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
 #, kde-format
 msgid "Invalid login name or password"
 msgstr "Ugyldigt login-navn eller adgangskode"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:231
 #, kde-format
 msgid "Session expired"
 msgstr "Session udløbet"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:232
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:233
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
 #, kde-format
 msgid "Unknown album"
 msgstr "Ukendt album"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
 #, kde-format
 msgid "Failed to open album"
 msgstr "Kunne ikke åbne album"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
 #, kde-format
 msgid "The album name cannot be empty"
 msgstr "Albummets navnet må ikke være tomt"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
 #, kde-format
 msgid "Failed to create album"
 msgstr "Kunne ikke oprette album"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:238
 #, kde-format
 msgid "Album does not exist"
 msgstr "Albummet findes ikke"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:240
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:242
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:241
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
 #, kde-format
 msgid "File upload failed"
 msgstr "Fil-upload mislykkedes"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:244
 #, kde-format
 msgid "Unsupported file extension"
 msgstr "Ikke understøttet filendelse"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:299
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, kde-format
 msgid "Logging in %v%"
 msgstr "Logger ind %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
 #, kde-format
 msgid "Logging out %v%"
 msgstr "Logger ud %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
 #, kde-format
 msgid "Loading albums %v%"
 msgstr "Indlæser albummer %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
 #, kde-format
 msgid "Creating album %v%"
 msgstr "Opretter album %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
 #, kde-format
 msgid "Opening album %v%"
 msgstr "Åbner album %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
 #, kde-format
 msgid "Closing album %v%"
 msgstr "Lukker album %v%"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:306
 #, kde-format
 msgid "Adding photos %v%"
 msgstr "Tilføjer fotos %v%"
@@ -27650,21 +27650,21 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Eksportværktøjer"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:459
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:471
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:484
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "File too big to upload"
 msgstr "Kunne ikke indlæse billede"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:495
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
 #, fuzzy, kde-format
 #| msgid "Built-in transformation not supported"
 msgid "Media format is not supported yet"
 msgstr "Indbygget transformation er ikke understøttet"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:872
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to load image\n"
@@ -27676,7 +27676,7 @@ msgstr ""
 "Kunne ikke indlæse billedet\n"
 "\"%1\""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:919
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create tweet for photo uploaded"
@@ -27797,13 +27797,13 @@ msgid ""
 "</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:132
 #, fuzzy, kde-format
 #| msgid "Preparing slideshow"
 msgid "Preparing files..."
 msgstr "Forbereder diasshow"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Start transferring process..."
@@ -58646,7 +58646,7 @@ msgid "Please add a type tag for this relation."
 msgstr ""
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:97
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
 #, fuzzy, kde-format
 #| msgid "New Zealand"
 msgid "New Relation"

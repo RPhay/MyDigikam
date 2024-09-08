@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-07 01:44+0000\n"
+"POT-Creation-Date: 2024-09-08 01:47+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -10638,7 +10638,7 @@ msgstr "Νέο πλάτος:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
 msgstr " εικ"
@@ -11932,7 +11932,7 @@ msgstr "Αποθήκευση αλλαγών - %p%"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:430
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:617
@@ -11943,7 +11943,7 @@ msgstr "Αποθήκευση αλλαγών - %p%"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1032
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1280
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:575
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:576
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:236
@@ -11956,7 +11956,7 @@ msgstr "Αποθήκευση αλλαγών - %p%"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:474
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:511
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
@@ -18468,7 +18468,7 @@ msgstr "Κατασκευή σχήματος..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, fuzzy, kde-format
 #| msgid "Internal Server"
 msgid "Internal Error"
@@ -20174,21 +20174,21 @@ msgstr ""
 "το κέντρο του πανοράματος, ή να τροποποιήσετε τα σημεία ελέγχου ώστε να "
 "έχετε καλύτερα αποτελέσματα."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:217
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:209
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "Το αρχείο υπάρχει ήδη"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><font color=\"red\"><b>Warning:</b> This file already exists.</"
@@ -20201,27 +20201,27 @@ msgstr ""
 "<qt><p><font color=\"red\"><b>Προειδοποίηση:</b> Αυτό το αρχείο ήδη υπάρχει."
 "</font></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, fuzzy, kde-format
 #| msgid "<b>Latitude</b>:"
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "<b>Γεωγρ.Πλάτος</b>:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "Η νέα συλλογή σας θα δημιουργηθεί με αυτό το όνομα:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, fuzzy, kde-format
 #| msgid "If you press this button, the white point is reset to pure white."
 msgctxt "@info"
@@ -20229,7 +20229,7 @@ msgid "once you press the \"Finish\" button, with the name set below."
 msgstr ""
 "Αν πατήσετε αυτό το κουμπί, το λευκό σημείο επανέρχεται στο αμιγές λευκό."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1><b>Panorama Stitching is Done</b></h1></p><p>Congratulations. "
@@ -20254,7 +20254,7 @@ msgstr ""
 "την διεργασία συρραφής θα αντιγραφούν την ίδια στιγμή (Αυτά είναι αρχεία σε "
 "μορφή TIFF που μπορεί να είναι μεγάλα).</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:297
 #, fuzzy, kde-format
 #| msgid "Error"
 msgctxt "@label"
@@ -21135,7 +21135,7 @@ msgstr "Πανοραμική προβολή"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 #| msgid "Show image Format"
 msgid "Image Format:"
@@ -21572,7 +21572,7 @@ msgid "Preparing file to export by mail..."
 msgstr "Αποστολή αρχείου %1 στη φωτογραφική..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input items to process"
@@ -21636,7 +21636,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgid "Adjust image properties"
@@ -21644,7 +21644,7 @@ msgstr "Προσθήκη ιδιοτήτων αρχείου"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, fuzzy, kde-format
 #| msgid "If you enable this option, you will see the target image."
 msgid ""
@@ -21654,14 +21654,14 @@ msgstr "Αν ενεργοποιήσετε αυτή την επιλογή, θα �
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "Ιδιότητες"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -21670,7 +21670,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -21679,7 +21679,7 @@ msgstr "Ιστορικό εικόνων"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
 msgid "Select your preferred format to convert image."
@@ -21687,13 +21687,13 @@ msgstr ""
 "Καθορίστε εδώ το προφίλ του χρωματικού χώρου στον οποίο θα γίνει η μετατροπή."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
 #, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -21703,14 +21703,14 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "Επεξεργαστής εικόνας"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 #| msgid "Remove Metadata"
 msgid "Remove all metadata"
@@ -21718,7 +21718,7 @@ msgstr "Αφαίρεση μεταδεδομένων"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, fuzzy, kde-format
 #| msgid "If you enable this option, you will see the target image."
 msgid ""
@@ -23517,10 +23517,10 @@ msgstr "Εργαλεία εξαγωγής"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:752
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:775
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:818
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:854
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to upload photo"
@@ -23530,7 +23530,7 @@ msgstr "Αποτυχία φόρτωσης της εικόνας"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:938
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
 #, fuzzy, kde-format
 msgid "Failed to list folders"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
@@ -23574,7 +23574,7 @@ msgid "No image selected. Please select which images should be uploaded."
 msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:818
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
 #: core/dplugins/generic/webservices/google/gswindow.cpp:516
 #: core/dplugins/generic/webservices/google/gswindow.cpp:546
 #: core/dplugins/generic/webservices/google/gswindow.cpp:984
@@ -23602,7 +23602,7 @@ msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:249
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:823
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
 #: core/dplugins/generic/webservices/google/gswindow.cpp:520
 #: core/dplugins/generic/webservices/google/gswindow.cpp:550
 #: core/dplugins/generic/webservices/google/gswindow.cpp:989
@@ -23620,7 +23620,7 @@ msgid "Continue"
 msgstr "Συνέχεια"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:250
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:825
 #: core/dplugins/generic/webservices/google/gswindow.cpp:521
 #: core/dplugins/generic/webservices/google/gswindow.cpp:551
 #: core/dplugins/generic/webservices/google/gswindow.cpp:990
@@ -24491,7 +24491,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Unknown filter"
 msgid "Unknown error"
@@ -24755,24 +24755,24 @@ msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Επιλογή εικόνας για αποστολή"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:583
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:584
 #, kde-format
 msgid "Photostream Only"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:776
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:777
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgid "Flickr Export"
 msgstr "Συγχρονισμένη &εξαγωγή"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:811
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:812
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Αποτυχία αποθήκευσης κάποιων πληροφοριών:"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:820
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo into %1. %2\n"
@@ -25929,60 +25929,60 @@ msgstr "Ταξινόμηση με αξιολόγηση"
 msgid "Fewer options"
 msgstr "Ελεύθερη περιστροφή"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:562
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:625
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:626
 #, fuzzy, kde-format
 #| msgid "<b>Downloaded</b>:"
 msgid "<i>login <b>canceled</b></i>"
 msgstr "<b>Έχει ληφθεί</b>:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:682
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:683
 #, kde-format
 msgid "<i>no valid identification</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:729
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:730
 #, fuzzy, kde-format
 #| msgid "Start Index:"
 msgid "iNaturalist Export"
 msgstr "Δείκτης αρχής:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:985
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:986
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "observation"
 msgstr "Επανάληψη:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:991
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:992
 #, kde-format
 msgctxt "location"
 msgid "obscured"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:995
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:996
 #, kde-format
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1042
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Creation time"
 msgid "observation time"
 msgstr "Ώρα δημιουργίας"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1051
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1052
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1079
 #, fuzzy, kde-format
 #| msgid "Chromatic Aberration"
 msgid "from observation"
 msgstr "Χρωματική παρέκκλιση"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
@@ -25990,7 +25990,7 @@ msgstr "Χρωματική παρέκκλιση"
 msgid "not available"
 msgstr "Μη διαθέσιμο"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1090
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1091
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Crop to Selection"
@@ -27118,99 +27118,99 @@ msgstr "Εργαλεία εξαγωγής"
 msgid "Not logged in"
 msgstr "Χωρίς ετικέτα"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgid "Invalid command"
 msgstr "Μη έγκυρο προφίλ"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
 #, kde-format
 msgid "Invalid login name or password"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:231
 #, kde-format
 msgid "Session expired"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:232
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:233
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgid "Unknown album"
 msgstr "Άγνωστο"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to open album"
 msgstr "Αποτυχία μετονομασίας του λευκώματος"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
 #, fuzzy, kde-format
 #| msgid "Album name cannot be empty."
 msgid "The album name cannot be empty"
 msgstr "Το όνομα του λευκώματος δεν μπορεί να είναι κενό."
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to create album"
 msgstr "Αποτυχία μετονομασίας του λευκώματος"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:238
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgid "Album does not exist"
 msgstr "Το αρχείο δεν υπάρχει"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:240
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:242
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:241
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Last modified"
 msgid "File upload failed"
 msgstr "Τελευταία τροποποίηση"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:243
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "Ignored file extensions:"
 msgid "Unsupported file extension"
 msgstr "Αγνοηθείσες επεκτάσεις αρχείων:"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:299
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, kde-format
 msgid "Logging in %v%"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
 #, kde-format
 msgid "Logging out %v%"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums %v%"
 msgstr "Ανάλυση όλων των λευκωμάτων"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Creating album %v%"
 msgstr "Δημιουργία νέου λευκώματος"
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
 #, kde-format
 msgid "Opening album %v%"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
 #, kde-format
 msgid "Closing album %v%"
 msgstr ""
 
-#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
+#: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:306
 #, kde-format
 msgid "Adding photos %v%"
 msgstr ""
@@ -27636,21 +27636,21 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Εργαλεία εξαγωγής"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:459
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:471
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:484
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "File too big to upload"
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:495
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
 #, fuzzy, kde-format
 #| msgid "Built-in transformation not supported"
 msgid "Media format is not supported yet"
 msgstr "Ενσωματωμένος μετασχηματισμός δεν υποστηρίζεται"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:872
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to load image\n"
@@ -27662,7 +27662,7 @@ msgstr ""
 "Αποτυχία φόρτωσης της εικόνας\n"
 " \"%1\""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:919
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create tweet for photo uploaded"
@@ -27780,13 +27780,13 @@ msgid ""
 "</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:132
 #, fuzzy, kde-format
 #| msgid "Preparing slideshow"
 msgid "Preparing files..."
 msgstr "Προετοιμασία παρουσίασης διαφανειών"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Start transferring process..."
@@ -58732,7 +58732,7 @@ msgid "Please add a type tag for this relation."
 msgstr ""
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:97
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
 #, fuzzy, kde-format
 #| msgid "New Zealand"
 msgid "New Relation"
