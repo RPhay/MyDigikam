@@ -87,7 +87,7 @@ void LocalContrastFilter::filterImage()
         {
             // sixteen bit image
 
-            QScopedArrayPointer<unsigned short> data(new unsigned short[size]);
+            QScopedArrayPointer<unsigned short> data(new unsigned short[size] {});
             unsigned short* dataImg = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
             for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
@@ -119,7 +119,7 @@ void LocalContrastFilter::filterImage()
         {
             // eight bit image
 
-            QScopedArrayPointer<uchar> data(new uchar[size]);
+            QScopedArrayPointer<uchar> data(new uchar[size] {});
 
             for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
             {
@@ -151,7 +151,7 @@ void LocalContrastFilter::filterImage()
 void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int sizex, int sizey)
 {
     int size = sizex * sizey;
-    QScopedArrayPointer<float> tmpimage(new float[size * 3]{});
+    QScopedArrayPointer<float> tmpimage(new float[size * 3] {});
 
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {
