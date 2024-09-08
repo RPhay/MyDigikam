@@ -72,7 +72,9 @@ bool PlacemarkLayer::render(GeoPainter* geoPainter, ViewportParams* viewport,
     Q_UNUSED(layer)
 
     QVector<VisiblePlacemark*> visiblePlacemarks = m_layout.generateLayout(viewport, m_tileLevel);
+
     // draw placemarks less important first
+
     QVector<VisiblePlacemark*>::const_iterator visit = visiblePlacemarks.constEnd();
     QVector<VisiblePlacemark*>::const_iterator itEnd = visiblePlacemarks.constBegin();
 
@@ -82,7 +84,9 @@ bool PlacemarkLayer::render(GeoPainter* geoPainter, ViewportParams* viewport,
     int const radius4 = 4 * viewport->radius();
 
 #ifdef BATCH_RENDERING
+
     QHash <QString, Fragment> hash;
+
 #endif
 
     while (visit != itEnd)

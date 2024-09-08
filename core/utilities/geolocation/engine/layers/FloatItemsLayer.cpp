@@ -26,7 +26,7 @@ namespace Marble
 {
 
 FloatItemsLayer::FloatItemsLayer(QObject* parent) :
-    QObject(parent),
+    QObject     (parent),
     m_floatItems()
 {
 }
@@ -72,10 +72,12 @@ void FloatItemsLayer::addFloatItem(AbstractFloatItem* floatItem)
 
     connect(floatItem, SIGNAL(settingsChanged(QString)),
             this,      SIGNAL(pluginSettingsChanged()));
+
     connect(floatItem, SIGNAL(repaintNeeded(QRegion)),
             this,      SIGNAL(repaintNeeded(QRegion)));
-    connect(floatItem, SIGNAL(visibilityChanged(bool, QString)),
-            this,      SLOT(updateVisibility(bool, QString)));
+
+    connect(floatItem, SIGNAL(visibilityChanged(bool,QString)),
+            this,      SLOT(updateVisibility(bool,QString)));
 
     m_floatItems.append(floatItem);
 }
