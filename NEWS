@@ -73,7 +73,7 @@ BUGFIXES:
 059 ==> 490657 - AppImage: No system integration possible with AppImageLauncher.
 060 ==> 492686 - digiKam crash when adding a new image and refresh or auto scan.
 061 ==> 492715 - digiKam displays the metadata of JXL files incomplete and/or altered.
-062 ==> 
+062 ==> 492828 - Rating of jpg file not displayed correctly in the user interface.
 063 ==> 
 064 ==> 
 065 ==> 
