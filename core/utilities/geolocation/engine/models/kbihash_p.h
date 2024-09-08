@@ -145,48 +145,48 @@ public:
         return *this;
     }
 
-    inline bool removeLeft(left_type t)
+    inline bool removeLeft(const left_type& t)
     {
         const right_type u = _leftToRight.take(t);
         return _rightToLeft.remove(u) != 0;
     }
 
-    inline bool removeRight(right_type u)
+    inline bool removeRight(const right_type& u)
     {
         const left_type t = _rightToLeft.take(u);
         return _leftToRight.remove(t) != 0;
     }
 
-    inline right_type takeLeft(left_type t)
+    inline right_type takeLeft(const left_type& t)
     {
         const right_type u = _leftToRight.take(t);
         _rightToLeft.remove(u);
         return u;
     }
 
-    inline left_type takeRight(right_type u)
+    inline left_type takeRight(const right_type& u)
     {
         const left_type t = _rightToLeft.take(u);
         _leftToRight.remove(t);
         return t;
     }
 
-    inline left_type rightToLeft(right_type u) const
+    inline left_type rightToLeft(const right_type& u) const
     {
         return _rightToLeft.value(u);
     }
 
-    inline right_type leftToRight(left_type t) const
+    inline right_type leftToRight(const left_type& t) const
     {
         return _leftToRight.value(t);
     }
 
-    inline bool leftContains(left_type t) const
+    inline bool leftContains(const left_type& t) const
     {
         return _leftToRight.contains(t);
     }
 
-    inline bool rightContains(right_type u) const
+    inline bool rightContains(const right_type& u) const
     {
         return _rightToLeft.contains(u);
     }
