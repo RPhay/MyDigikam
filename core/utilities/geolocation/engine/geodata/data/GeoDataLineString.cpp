@@ -305,9 +305,8 @@ qreal GeoDataLineStringPrivate::resolutionForLevel(int level)
 
 void GeoDataLineStringPrivate::optimize(GeoDataLineString& lineString) const
 {
-
     QVector<GeoDataCoordinates>::iterator itCoords = lineString.begin();
-    QVector<GeoDataCoordinates>::const_iterator itEnd = lineString.constEnd();
+    QVector<GeoDataCoordinates>::iterator itEnd    = lineString.end();
 
     if (lineString.size() < 2)
     {
@@ -315,10 +314,10 @@ void GeoDataLineStringPrivate::optimize(GeoDataLineString& lineString) const
     }
 
     // Calculate the least non-zero detail-level by checking the bounding box
-    quint8 startLevel = levelForResolution((lineString.latLonAltBox().width() + lineString.latLonAltBox().height()) / 2);
 
+    quint8 startLevel   = levelForResolution((lineString.latLonAltBox().width() + lineString.latLonAltBox().height()) / 2);
     quint8 currentLevel = startLevel;
-    quint8 maxLevel = startLevel;
+    quint8 maxLevel     = startLevel;
     GeoDataCoordinates currentCoords;
     lineString.first().setDetail(startLevel);
 
@@ -335,26 +334,28 @@ void GeoDataLineStringPrivate::optimize(GeoDataLineString& lineString) const
     // We do as many iterations through the lineString as needed and bump up the
     // current level until all nodes have a non-zero detail level assigned.
 
-    while (currentLevel  < 16 && currentLevel <= maxLevel + 1)
+    while ((currentLevel  < 16) && (currentLevel <= maxLevel + 1))
     {
-        itCoords = lineString.begin();
-
+        itCoords      = lineString.begin();
         currentCoords = *itCoords;
         ++itCoords;
 
-        for (; itCoords != itEnd; ++itCoords)
+        for ( ; itCoords != itEnd ; ++itCoords)
         {
-            if (itCoords->detail() != 0 && itCoords->detail() < currentLevel)
+            if ((itCoords->detail() != 0) && (itCoords->detail() < currentLevel))
             {
                 continue;
             }
 
-            if (currentLevel == startLevel && (itCoords->longitude() == -M_PI || itCoords->longitude() == M_PI
-                                               || itCoords->latitude() < -89 * DEG2RAD || itCoords->latitude() > 89 * DEG2RAD))
+            if (currentLevel == startLevel && ((itCoords->longitude() == -M_PI)       ||
+                                               (itCoords->longitude() ==  M_PI)       ||
+                                               (itCoords->latitude() < -89 * DEG2RAD) ||
+                                               (itCoords->latitude() >  89 * DEG2RAD)))
             {
                 itCoords->setDetail(startLevel);
                 currentCoords = *itCoords;
-                maxLevel = currentLevel;
+                maxLevel      = currentLevel;
+
                 continue;
             }
 
@@ -362,12 +363,11 @@ void GeoDataLineStringPrivate::optimize(GeoDataLineString& lineString) const
             {
                 itCoords->setDetail(currentLevel + 1);
             }
-
             else
             {
                 itCoords->setDetail(currentLevel);
                 currentCoords = *itCoords;
-                maxLevel = currentLevel;
+                maxLevel      = currentLevel;
             }
         }
 
