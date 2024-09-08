@@ -152,7 +152,15 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     this->readSettings();
     applySettings();
 
+#ifdef Q_OS_WIN
+
+    setAutoSaveSettings(configGroupName(), false);
+
+#else
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
 
     d->leftSideBar->loadState();
     d->folderView->loadState();
