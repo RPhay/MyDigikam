@@ -58,17 +58,17 @@ void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
     checkFullScreenBeforeClosing();
 
-    if (!testAttribute(Qt::WA_DeleteOnClose))
-    {
-
 #ifdef Q_OS_WIN
 
-        m_maximized = (windowState() &
-                       Qt::WindowMaximized);
+    m_maximized = (windowState() &
+                   Qt::WindowMaximized);
 
 #endif
 
+    if (!testAttribute(Qt::WA_DeleteOnClose))
+    {
         e->ignore();
+
         return;
     }
 
