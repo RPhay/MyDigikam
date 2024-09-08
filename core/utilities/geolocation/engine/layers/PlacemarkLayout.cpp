@@ -143,9 +143,8 @@ PlacemarkLayout::PlacemarkLayout(QAbstractItemModel* placemarkModel,
 {
     Q_ASSERT(m_placemarkModel);
 
-    connect(m_selectionModel,  SIGNAL(selectionChanged(QItemSelection,
-                                                       QItemSelection)),
-            this,               SLOT(requestStyleReset()));
+    connect(m_selectionModel,  SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            this, SLOT(requestStyleReset()));
 
     connect(m_placemarkModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(resetCacheData()));
