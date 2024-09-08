@@ -46,8 +46,7 @@ class ImgQSortTest : public QObject
 public:
 
     explicit ImgQSortTest(QObject* const parent = nullptr)
-        : QObject      (parent),
-          m_hasExifTool(false)
+        : QObject(parent)
     {
     }
 
@@ -68,7 +67,7 @@ protected:
 
         QList<PairImageQuality> dataTest = getDataTestCases().values(testcase_name);
 
-        for (const auto& image_refQuality : dataTest)
+        for (const auto& image_refQuality : std::as_const(dataTest))
         {
             imageNames << image_refQuality.first;
         }
@@ -77,7 +76,7 @@ protected:
         QHash<QString, int> results_detection = ParseTestFunc(parameter, list);
         QHash<QString, bool> results_test;
 
-        for (const auto& image_refQuality : dataTest)
+        for (const auto& image_refQuality : std::as_const(dataTest))
         {
             results_test.insert(image_refQuality.first, results_detection.value(image_refQuality.first) == image_refQuality.second);
         }
@@ -110,5 +109,5 @@ protected Q_SLOTS:
 protected:
 
     DataTestCases m_dataTestCases;
-    bool          m_hasExifTool;
+    bool          m_hasExifTool     = false;
 };

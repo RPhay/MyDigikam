@@ -98,8 +98,9 @@ void DOnlineTranslator::slotParseGoogleTranslate()
     addSpaceBetweenParts(d->translation);
     addSpaceBetweenParts(d->translationTranslit);
     addSpaceBetweenParts(d->sourceTranslit);
+    const auto tdata = jsonData.at(0).toArray();
 
-    for (const QJsonValueRef translationData : jsonData.at(0).toArray())
+    for (const QJsonValue& translationData : tdata)
     {
         const QJsonArray translationArray = translationData.toArray();
         d->translation.append(translationArray.at(0).toString());
@@ -124,12 +125,15 @@ void DOnlineTranslator::slotParseGoogleTranslate()
 
     if (d->translationOptionsEnabled)
     {
-        for (const QJsonValueRef typeOfSpeechData : jsonData.at(1).toArray())
+        const auto sdata = jsonData.at(1).toArray();
+
+        for (const QJsonValue& typeOfSpeechData : sdata)
         {
             const QJsonArray typeOfSpeechDataArray = typeOfSpeechData.toArray();
             const QString typeOfSpeech             = typeOfSpeechDataArray.at(0).toString();
+            const auto wdata                       = typeOfSpeechDataArray.at(2).toArray();
 
-            for (const QJsonValueRef wordData : typeOfSpeechDataArray.at(2).toArray())
+            for (const QJsonValue& wordData : wdata)
             {
                 const QJsonArray wordDataArray     = wordData.toArray();
                 const QString word                 = wordDataArray.at(0).toString();
@@ -138,7 +142,7 @@ void DOnlineTranslator::slotParseGoogleTranslate()
                 QStringList translations;
                 translations.reserve(translationsArray.size());
 
-                for (const QJsonValue &wordTranslation : translationsArray)
+                for (const QJsonValue& wordTranslation : translationsArray)
                 {
                     translations.append(wordTranslation.toString());
                 }

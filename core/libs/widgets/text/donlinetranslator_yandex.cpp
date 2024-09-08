@@ -255,12 +255,15 @@ void DOnlineTranslator::slotParseYandexDictionary()
         d->sourceTranscription = jsonData.toArray().at(0).toObject().value(QStringLiteral("ts")).toString();
     }
 
-    for (const QJsonValueRef typeOfSpeechData : jsonData.toArray())
+    const auto sdata = jsonData.toArray();
+
+    for (const QJsonValue& typeOfSpeechData : sdata)
     {
         QJsonObject typeOfSpeechObject = typeOfSpeechData.toObject();
         const QString typeOfSpeech     = typeOfSpeechObject.value(QStringLiteral("pos")).toObject().value(QStringLiteral("text")).toString();
+        const auto wdata               = typeOfSpeechObject.value(QStringLiteral("tr")).toArray();
 
-        for (const QJsonValueRef wordData : typeOfSpeechObject.value(QStringLiteral("tr")).toArray())
+        for (const QJsonValue& wordData : wdata)
         {
             // Parse translation options
 
@@ -271,7 +274,7 @@ void DOnlineTranslator::slotParseYandexDictionary()
             QStringList translations;
             translations.reserve(translationsArray.size());
 
-            for (const QJsonValue &wordTranslation : translationsArray)
+            for (const QJsonValue& wordTranslation : std::as_const(translationsArray))
             {
                 translations.append(wordTranslation.toObject().value(QStringLiteral("text")).toString());
             }

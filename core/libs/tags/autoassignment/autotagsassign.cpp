@@ -385,7 +385,7 @@ QList<QString> AutoTagsAssign::getPredefinedTagsPath() const
     QList<QString> objects = m_inferenceEngine->getPredefinedClasses();
     const QString rootTag  = QLatin1String("auto/");
 
-    for (const auto& obj : objects)
+    for (const auto& obj : std::as_const(objects))
     {
         tagsPaths.append(rootTag + obj);
     }

@@ -53,7 +53,9 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url,
             }
         );
 
-        for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
+        const auto items = d->dlg->findChildren<QAbstractItemView*>();
+
+        for (auto* item : items)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << item;
             item->installEventFilter(this);

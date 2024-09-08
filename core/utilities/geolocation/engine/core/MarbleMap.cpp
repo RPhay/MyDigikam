@@ -313,7 +313,7 @@ void MarbleMapPrivate::updateProperty(const QString& name, bool show)
         m_textureLayer.setShowRelief(show);
     }
 
-    for (RenderPlugin* renderPlugin : m_renderPlugins)
+    for (RenderPlugin* const renderPlugin : std::as_const(m_renderPlugins))
     {
         if (name == renderPlugin->nameId())
         {
@@ -335,7 +335,7 @@ void MarbleMapPrivate::addPlugins()
     {
         bool alreadyCreated = false;
 
-        for (const RenderPlugin* existing : m_renderPlugins)
+        for (const RenderPlugin* existing : std::as_const(m_renderPlugins))
         {
             if (existing->nameId() == factory->nameId())
             {
@@ -523,9 +523,10 @@ int MarbleMap::tileZoomLevel() const
 qreal MarbleMap::centerLatitude() const
 {
     // Calculate translation of center point
+
     const qreal centerLat = d->m_viewport.centerLatitude();
 
-    return centerLat * RAD2DEG;
+    return (centerLat * RAD2DEG);
 }
 
 bool MarbleMap::hasFeatureAt(const QPoint& position) const
@@ -539,7 +540,7 @@ qreal MarbleMap::centerLongitude() const
 
     const qreal centerLon = d->m_viewport.centerLongitude();
 
-    return centerLon * RAD2DEG;
+    return (centerLon * RAD2DEG);
 }
 
 int  MarbleMap::minimumZoom() const
@@ -596,7 +597,6 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
     // higher resolution tiles. In order to achieve this, we start requesting downloads of
     // high resolution tiles and request the low resolution tiles at the end because
     // DownloadQueueSet (silly name) is implemented as stack.
-
 
     int const first = 0;
     int tilesCount  = 0;
@@ -880,15 +880,19 @@ void MarbleMapPrivate::setDocument(const QString& key)
 
     for (const GeoSceneLayer* layer : m_model->mapTheme()->map()->layers())
     {
-        if (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
-            && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector))
+        if (
+            (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)) &&
+            (layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector))
+           )
         {
             continue;
         }
 
         // look for documents
 
-        for (const GeoSceneAbstractDataset* dataset : layer->datasets())
+        const auto dts = layer->datasets();
+
+        for (const GeoSceneAbstractDataset* dataset : dts)
         {
             const GeoSceneGeodata* data = static_cast<const GeoSceneGeodata*>(dataset);
             QString containername       = data->sourceFile();
@@ -1036,12 +1040,15 @@ void MarbleMapPrivate::updateMapTheme()
 
         QVector<const GeoSceneTextureTileDataset*> textures;
         QVector<const GeoSceneVectorTileDataset*> vectorTiles;
+        const auto lys = m_model->mapTheme()->map()->layers();
 
-        for (GeoSceneLayer* layer : m_model->mapTheme()->map()->layers())
+        for (GeoSceneLayer* const layer : lys)
         {
             if      (layer->backend() == QString::fromUtf8(dgml::dgmlValue_texture))
             {
-                for (const GeoSceneAbstractDataset* pos : layer->datasets())
+                const auto poss = layer->datasets();
+
+                for (const GeoSceneAbstractDataset* pos : poss)
                 {
                     const GeoSceneTextureTileDataset* const texture = dynamic_cast<GeoSceneTextureTileDataset const*>(pos);
 
@@ -1057,8 +1064,10 @@ void MarbleMapPrivate::updateMapTheme()
                     // If the tiles aren't already there, put up a progress dialog
                     // while creating them.
 
-                    if (!TileLoader::baseTilesAvailable(*texture)
-                        && !installMap.isEmpty())
+                    if (
+                        !TileLoader::baseTilesAvailable(*texture) &&
+                        !installMap.isEmpty()
+                       )
                     {
                         qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                                                     << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
@@ -1100,7 +1109,9 @@ void MarbleMapPrivate::updateMapTheme()
             }
             else if (layer->backend() == QString::fromUtf8(dgml::dgmlValue_vectortile))
             {
-                for (const GeoSceneAbstractDataset* pos : layer->datasets())
+                const auto gpos = layer->datasets();
+
+                for (const GeoSceneAbstractDataset* pos : gpos)
                 {
                     const GeoSceneVectorTileDataset* const vectorTile = dynamic_cast<GeoSceneVectorTileDataset const*>(pos);
 
@@ -1116,8 +1127,10 @@ void MarbleMapPrivate::updateMapTheme()
                     // If the tiles aren't already there, put up a progress dialog
                     // while creating them.
 
-                    if (!TileLoader::baseTilesAvailable(*vectorTile)
-                        && !installMap.isEmpty())
+                    if (
+                        !TileLoader::baseTilesAvailable(*vectorTile) &&
+                        !installMap.isEmpty()
+                       )
                     {
                         qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                                                     << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
@@ -1170,14 +1183,12 @@ void MarbleMapPrivate::updateMapTheme()
 
                 QList<const GeoScenePalette*> palette = filter->palette();
 
-                for (const GeoScenePalette* curPalette : palette)
+                for (const GeoScenePalette* curPalette : std::as_const(palette))
                 {
-
                     if (curPalette->type() == QLatin1String("sea"))
                     {
                         seafile = MarbleDirs::path(curPalette->file());
                     }
-
                     else if (curPalette->type() == QLatin1String("land"))
                     {
                         landfile = MarbleDirs::path(curPalette->file());
@@ -1240,7 +1251,7 @@ void MarbleMapPrivate::updateMapTheme()
     m_styleBuilder.setDefaultLabelColor(m_model->mapTheme()->map()->labelColor());
     m_placemarkLayer.requestStyleReset();
 
-    for (RenderPlugin* renderPlugin : m_renderPlugins)
+    for (RenderPlugin* const renderPlugin : std::as_const(m_renderPlugins))
     {
         bool propertyAvailable = false;
         m_model->mapTheme()->settings()->propertyAvailable(renderPlugin->nameId(), propertyAvailable);
@@ -1353,14 +1364,13 @@ void MarbleMap::setLockToSubSolarPoint(bool visible)
         d->m_isLockedToSubSolarPoint = visible;
     }
 
-    if (isLockedToSubSolarPoint())
+    if      (isLockedToSubSolarPoint())
     {
         connect(d->m_model->sunLocator(), SIGNAL(positionChanged(qreal,qreal)),
                 this, SLOT(centerOn(qreal,qreal)));
 
         centerOn(d->m_model->sunLocator()->getLon(), d->m_model->sunLocator()->getLat());
     }
-
     else if (visible)
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring centering on sun, since the sun plugin is not loaded.";
@@ -1570,11 +1580,10 @@ void MarbleMap::setVolatileTileCacheLimit(quint64 kilobytes)
 
 AngleUnit MarbleMap::defaultAngleUnit() const
 {
-    if (GeoDataCoordinates::defaultNotation() == GeoDataCoordinates::Decimal)
+    if      (GeoDataCoordinates::defaultNotation() == GeoDataCoordinates::Decimal)
     {
         return DecimalDegree;
     }
-
     else if (GeoDataCoordinates::defaultNotation() == GeoDataCoordinates::UTM)
     {
         return UTM;
@@ -1622,7 +1631,9 @@ QList<AbstractFloatItem*> MarbleMap::floatItems() const
 
 AbstractFloatItem* MarbleMap::floatItem(const QString& nameId) const
 {
-    for (AbstractFloatItem* floatItem : floatItems())
+    const auto fitems = floatItems();
+
+    for (AbstractFloatItem* floatItem : fitems)
     {
         if (floatItem && floatItem->nameId() == nameId)
         {
