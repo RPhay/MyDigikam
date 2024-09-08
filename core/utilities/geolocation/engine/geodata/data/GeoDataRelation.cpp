@@ -45,7 +45,7 @@ QHash<QString, GeoDataRelation::RelationType> GeoDataRelationPrivate::s_relation
 
 GeoDataRelation::GeoDataRelation()
     : GeoDataFeature(),
-      d_ptr(new GeoDataRelationPrivate)
+      d_ptr         (new GeoDataRelationPrivate)
 {
     // nothing to do
 }
@@ -57,17 +57,18 @@ GeoDataRelation::~GeoDataRelation()
 
 GeoDataRelation::GeoDataRelation(const GeoDataRelation& other) :
     GeoDataFeature(other),
-    d_ptr(new GeoDataRelationPrivate)
+    d_ptr         (new GeoDataRelationPrivate)
 {
     Q_D(GeoDataRelation);
-    d->m_features = other.d_func()->m_features;
-    d->m_osmData = other.d_func()->m_osmData;
-    d->m_memberIds = other.d_func()->m_memberIds;
-    d->m_relationType = other.d_func()->m_relationType;
-    d->m_relationTypeDirty = other.d_func()->m_relationTypeDirty;
+    d->m_features           = other.d_func()->m_features;
+    d->m_osmData            = other.d_func()->m_osmData;
+    d->m_memberIds          = other.d_func()->m_memberIds;
+    d->m_relationType       = other.d_func()->m_relationType;
+    d->m_relationTypeDirty  = other.d_func()->m_relationTypeDirty;
 }
 
-GeoDataRelation& GeoDataRelation::operator=(GeoDataRelation other) // passed by value
+// passed by value 
+GeoDataRelation& GeoDataRelation::operator=(GeoDataRelation other)  // clazy:exclude=function-args-by-ref
 {
     GeoDataFeature::operator=(other);
     std::swap(*this->d_ptr, *other.d_ptr);
