@@ -331,7 +331,9 @@ void MarbleMapPrivate::updateProperty(const QString& name, bool show)
 
 void MarbleMapPrivate::addPlugins()
 {
-    for (const RenderPlugin* factory : m_model->pluginManager()->renderPlugins())
+    const auto plugs = m_model->pluginManager()->renderPlugins();
+
+    for (const RenderPlugin* factory : plugs)
     {
         bool alreadyCreated = false;
 
@@ -878,7 +880,9 @@ void MarbleMapPrivate::setDocument(const QString& key)
 
     GeoDataDocument* doc = m_model->fileManager()->at(key);
 
-    for (const GeoSceneLayer* layer : m_model->mapTheme()->map()->layers())
+    const auto layers = m_model->mapTheme()->map()->layers();
+
+    for (const GeoSceneLayer* layer : layers)
     {
         if (
             (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)) &&
@@ -1310,7 +1314,9 @@ void MarbleMap::setShowCompass(bool visible)
 
 void MarbleMap::setShowAtmosphere(bool visible)
 {
-    for (RenderPlugin* plugin : renderPlugins())
+    const auto plugs = renderPlugins();
+
+    for (RenderPlugin* const plugin : plugs)
     {
         if (plugin->nameId() == QLatin1String("atmosphere"))
         {

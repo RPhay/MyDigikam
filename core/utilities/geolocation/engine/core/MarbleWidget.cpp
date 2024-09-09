@@ -1185,15 +1185,17 @@ QList<const ParseRunnerPlugin*> MarbleWidget::runnerPlugins() const
 void MarbleWidget::readPluginSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const auto plugs          = renderPlugins();
 
-    for (RenderPlugin* const plugin : renderPlugins())
+    for (RenderPlugin* const plugin : plugs)
     {
         KConfigGroup group = config->group(d->configGroup           +
                                            QLatin1String("plugin_") +
                                            plugin->nameId());
         QHash<QString, QVariant> hash;
+        const auto keys = group.keyList();
 
-        for (const QString& key : group.keyList())
+        for (const QString& key : keys)
         {
             hash.insert(key, group.readEntry(key));
         }
@@ -1205,8 +1207,9 @@ void MarbleWidget::readPluginSettings()
 void MarbleWidget::writePluginSettings() const
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const auto plugs          = renderPlugins();
 
-    for (RenderPlugin* const plugin : renderPlugins())
+    for (RenderPlugin* const plugin : plugs)
     {
         KConfigGroup group                    = config->group(d->configGroup           +
                                                               QLatin1String("plugin_") +
