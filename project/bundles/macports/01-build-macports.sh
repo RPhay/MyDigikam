@@ -280,6 +280,8 @@ if [ ! -f $INSTALL_PREFIX/bin/m4 ] ; then
 
 fi
 
+
+port install git -perl5_34      # See bug https://trac.macports.org/ticket/70547
 port install cctools +xcode
 port install cmake
 port install ccache
@@ -305,6 +307,10 @@ port install lame
 port install speex
 port install libtheora
 port install xvid
+port install libass
+port install opus-tools
+port install libvpx
+port install x264
 port install aom
 port install libusb
 port install libgphoto2
@@ -323,46 +329,29 @@ cmake $ORIG_WD/../3rdparty \
        -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_heif                   -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_ffmpeg +glp3 +nonfree  -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
+
+port install ffmpeg +glp3 +nonfree
+
+port install qt$DK_QTVERSION-qtbase
+port install qt$DK_QTVERSION-qtdeclarative
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
-    port install qt$DK_QTVERSION-qtbase
-    port install qt$DK_QTVERSION-qtdeclarative
     port install qt$DK_QTVERSION-qtmacextras
     port install qt$DK_QTVERSION-qtquickcontrols
     port install qt$DK_QTVERSION-qtxmlpatterns
-    port install qt$DK_QTVERSION-qtsvg
-    port install qt$DK_QTVERSION-qttools
-    port install qt$DK_QTVERSION-qttranslations
-    port install qt$DK_QTVERSION-qtimageformats
-    port install qt$DK_QTVERSION-qtmultimedia
-    port install qt$DK_QTVERSION-qtnetworkauth
-    port install qt$DK_QTVERSION-sqlite-plugin
-    port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
-    port install qt$DK_QTVERSION-qtwebengine
-
-else
-
-    # Qt6
-
-    port install mysql57
-
-    cmake $ORIG_WD/../3rdparty \
-           -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-           -DINSTALL_ROOT=$INSTALL_PREFIX \
-           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-           -DKA_VERSION=$DK_KA_VERSION \
-           -DKP_VERSION=$DK_KP_VERSION \
-           -DKDE_VERSION=$DK_KDE_VERSION \
-           -DENABLE_QTVERSION=$DK_QTVERSION \
-           -DARCH_TARGET=$ARCH_TARGET \
-           -Wno-dev
-
-    cmake --build . --config RelWithDebInfo --target ext_qt6     -- -j$CPU_CORES
-
 fi
+
+port install qt$DK_QTVERSION-qtsvg
+port install qt$DK_QTVERSION-qttools
+port install qt$DK_QTVERSION-qttranslations
+port install qt$DK_QTVERSION-qtimageformats
+port install qt$DK_QTVERSION-qtmultimedia
+port install qt$DK_QTVERSION-qtnetworkauth
+port install qt$DK_QTVERSION-sqlite-plugin
+port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
+port install qt$DK_QTVERSION-qtwebengine
 
 cmake --build . --config RelWithDebInfo --target ext_boost       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
