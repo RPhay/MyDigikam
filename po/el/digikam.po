@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-08 01:47+0000\n"
+"POT-Creation-Date: 2024-09-09 01:47+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1024,9 +1024,9 @@ msgstr ""
 "μετακίνηση των επιλεγμένων εικόνων σε αυτό.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1120
-#: core/utilities/imageeditor/main/imagewindow.cpp:1145
-#: core/utilities/imageeditor/main/imagewindow.cpp:1177
+#: core/utilities/imageeditor/main/imagewindow.cpp:1128
+#: core/utilities/imageeditor/main/imagewindow.cpp:1153
+#: core/utilities/imageeditor/main/imagewindow.cpp:1185
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Λεύκωμα \"%1\""
@@ -1391,7 +1391,7 @@ msgstr "Καθαρισμός βάσης δεδομένων..."
 msgid "Loading albums..."
 msgstr "Φόρτωση άλμπουμ..."
 
-#: core/app/main/digikamapp.cpp:362
+#: core/app/main/digikamapp.cpp:370
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1403,7 +1403,7 @@ msgstr ""
 "\"Όχι\" και το χαρακτηριστικό \"Διαχείριση χρωμάτων\" θα απενεργοποιηθεί "
 "μέχρι να διορθώσετε το πρόβλημα.</p>"
 
-#: core/app/main/digikamapp.cpp:418
+#: core/app/main/digikamapp.cpp:426
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1412,21 +1412,21 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:712 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:718
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 [%2] αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 [%2] αντικείμενα)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:723
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1437,21 +1437,21 @@ msgstr[1] ""
 "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα. Με ομαδοποιημένα αντικείμενα: "
 "¨%2)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:734
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 επιλεγμένο αντικείμενο (%3/%4)"
 msgstr[1] "%1/%2 επιλεγμένα αντικείμενα (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1%2 [%3] επιλεγμένο αντικείμενο (%4/%5)"
 msgstr[1] "%1%2 [%3] επιλεγμένα αντικείμενα (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:755
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1460,50 +1460,50 @@ msgstr[0] ""
 msgstr[1] ""
 "%1/%2 επιλεγμένα αντικείμενα. Σύνολο με ομαδοποιημένα αντικείμενα: %3"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:763
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] Επιλεγμένο αντικείμενο (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] επιλεγμένα αντικείμενα (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:772
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 επιλεγμένο αντικείμενο. Με ομαδοποιημένα αντικείμενα: %3/%4"
 msgstr[1] "%1/%2 επιλεγμένα αντικείμενα. Με ομαδοποιημένα αντικείμενα: %3/%4"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:803
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 από %2)"
 
-#: core/app/main/digikamapp.cpp:809
+#: core/app/main/digikamapp.cpp:817
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 από %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:813
+#: core/app/main/digikamapp.cpp:821
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " %1 από %2. Σύνολο με ομαδοποιημένα αντικείμενα: %3)"
 
-#: core/app/main/digikamapp.cpp:824
+#: core/app/main/digikamapp.cpp:832
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 κρυφό αντικείμενο"
 msgstr[1] "%1 κρυφά αντικείμενα"
 
-#: core/app/main/digikamapp.cpp:876
+#: core/app/main/digikamapp.cpp:884
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Εγγραφή μεταδεδομένων στο αρχείο"
 msgstr[1] "Εγγραφή μεταδεδομένων σε επιλεγμένα Αρχεία"
 
-#: core/app/main/digikamapp.cpp:878
+#: core/app/main/digikamapp.cpp:886
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1630,100 +1630,100 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "Αρχικοποίηση της Κύριας προβολής..."
 
-#: core/app/main/digikamapp_setup.cpp:135
+#: core/app/main/digikamapp_setup.cpp:136
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&Πίσω"
 
-#: core/app/main/digikamapp_setup.cpp:160
+#: core/app/main/digikamapp_setup.cpp:161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Μπροστά"
 
-#: core/app/main/digikamapp_setup.cpp:185
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Ανανέωση"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:188
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Ανανέωση του τρέχοντος περιεχομένου."
 
-#: core/app/main/digikamapp_setup.cpp:215
+#: core/app/main/digikamapp_setup.cpp:217
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Νέο..."
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:218
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Δημιουργεί ένα νέο, κενό, άλμπουμ μέσα στη συλλογή."
 
-#: core/app/main/digikamapp_setup.cpp:224
+#: core/app/main/digikamapp_setup.cpp:226
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Μετακίνηση στο άλμπουμ..."
 
-#: core/app/main/digikamapp_setup.cpp:225
+#: core/app/main/digikamapp_setup.cpp:227
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Μετακίνηση επιλεγμένων εικόνων σ' ένα άλμπουμ."
 
-#: core/app/main/digikamapp_setup.cpp:232
+#: core/app/main/digikamapp_setup.cpp:234
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "&Αντιγραφή σε..."
 
-#: core/app/main/digikamapp_setup.cpp:233
+#: core/app/main/digikamapp_setup.cpp:235
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Αντιγραφή επιλεγμένων εικόνων σε ένα συγκεκριμένο φάκελο."
 
-#: core/app/main/digikamapp_setup.cpp:240
+#: core/app/main/digikamapp_setup.cpp:242
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Διαγραφή άλμπουμ"
 
-#: core/app/main/digikamapp_setup.cpp:247
-#: core/app/main/digikamapp_setup.cpp:487
+#: core/app/main/digikamapp_setup.cpp:249
+#: core/app/main/digikamapp_setup.cpp:492
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Μετονομασία..."
 
-#: core/app/main/digikamapp_setup.cpp:255
-#: core/app/main/digikamapp_setup.cpp:307
+#: core/app/main/digikamapp_setup.cpp:258
+#: core/app/main/digikamapp_setup.cpp:310
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:259
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Επεξεργασία ιδιοτήτων άλμπουμ και πληροφοριών συλλογής."
 
-#: core/app/main/digikamapp_setup.cpp:264
+#: core/app/main/digikamapp_setup.cpp:267
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Εγγραφή μεταδεδομένων σε αρχεία"
 
-#: core/app/main/digikamapp_setup.cpp:265
-#: core/app/main/digikamapp_setup.cpp:441
+#: core/app/main/digikamapp_setup.cpp:268
+#: core/app/main/digikamapp_setup.cpp:446
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1734,14 +1734,14 @@ msgstr ""
 "βάσης του digiKam (τα μεταδεδομένα του αρχείου θα αντικατασταθούν με αυτά "
 "από τη βάση δεδομένων)."
 
-#: core/app/main/digikamapp_setup.cpp:275
+#: core/app/main/digikamapp_setup.cpp:278
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Επανανάγνωση μεταδεδομένων από Αρχεία"
 
-#: core/app/main/digikamapp_setup.cpp:276
-#: core/app/main/digikamapp_setup.cpp:452
+#: core/app/main/digikamapp_setup.cpp:279
+#: core/app/main/digikamapp_setup.cpp:457
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1753,116 +1753,116 @@ msgstr ""
 "τρέχον άλμπουμ (οι πληροφορίες της βάσης θα αντικατασταθούν με τα "
 "μεταδεδομένα των αρχείων)."
 
-#: core/app/main/digikamapp_setup.cpp:286
+#: core/app/main/digikamapp_setup.cpp:289
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Άνοιγμα στο διαχειριστή αρχείων"
 
-#: core/app/main/digikamapp_setup.cpp:293
+#: core/app/main/digikamapp_setup.cpp:296
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Διαχειριστής ετικετών"
 
-#: core/app/main/digikamapp_setup.cpp:300
+#: core/app/main/digikamapp_setup.cpp:303
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "Νέ&ο..."
 
-#: core/app/main/digikamapp_setup.cpp:314
+#: core/app/main/digikamapp_setup.cpp:317
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: core/app/main/digikamapp_setup.cpp:321
+#: core/app/main/digikamapp_setup.cpp:324
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Ορισμός ετικέτας"
 
-#: core/app/main/digikamapp_setup.cpp:329
+#: core/app/main/digikamapp_setup.cpp:332
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Προβολές"
 
-#: core/app/main/digikamapp_setup.cpp:333
+#: core/app/main/digikamapp_setup.cpp:336
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Μικρογραφίες"
 
-#: core/app/main/digikamapp_setup.cpp:340
+#: core/app/main/digikamapp_setup.cpp:343
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: core/app/main/digikamapp_setup.cpp:350
+#: core/app/main/digikamapp_setup.cpp:354
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Χάρτης"
 
-#: core/app/main/digikamapp_setup.cpp:359
+#: core/app/main/digikamapp_setup.cpp:363
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Πίνακας"
 
-#: core/app/main/digikamapp_setup.cpp:368
+#: core/app/main/digikamapp_setup.cpp:372
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Άνοιγμα..."
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:374
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Άνοιγμα του επιλεγμένου αντικειμένου."
 
-#: core/app/main/digikamapp_setup.cpp:375
+#: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Άνοιγμα με την προκαθορισμένη εφαρμογή"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:381
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Άνοιγμα του επιλεγμένου αντικειμένου με την προκαθορισμένη εφαρμογή."
 
-#: core/app/main/digikamapp_setup.cpp:382
+#: core/app/main/digikamapp_setup.cpp:387
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Άνοιγμα του επεξεργαστή εικόνας."
 
-#: core/app/main/digikamapp_setup.cpp:390
+#: core/app/main/digikamapp_setup.cpp:395
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Πίνακας φωτός"
 
-#: core/app/main/digikamapp_setup.cpp:396
+#: core/app/main/digikamapp_setup.cpp:401
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Τοποθετήστε σε Πίνακας φωτός"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:402
 #, fuzzy, kde-format
 #| msgid "Place the selected items on the light table thumbbar."
 msgctxt "@info: setup"
@@ -1871,13 +1871,13 @@ msgstr ""
 "Τοποθέτηση επιλεγμένων αντικειμένων στη γραμμή επισκόπησης του φωτεινού "
 "πίνακα."
 
-#: core/app/main/digikamapp_setup.cpp:403
+#: core/app/main/digikamapp_setup.cpp:408
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Προσθήκη στον Πίνακα Φωτός"
 
-#: core/app/main/digikamapp_setup.cpp:404
+#: core/app/main/digikamapp_setup.cpp:409
 #, fuzzy, kde-format
 #| msgid "Add selected items to the light table thumbbar."
 msgctxt "@info: setup"
@@ -1886,19 +1886,19 @@ msgstr ""
 "Προσθήκη των επιλεγμένων αντικειμένων στη γραμμή επισκόπησης του φωτεινού "
 "πίνακα."
 
-#: core/app/main/digikamapp_setup.cpp:412
+#: core/app/main/digikamapp_setup.cpp:417
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Διαχειριστής ουράς Παρτίδας"
 
-#: core/app/main/digikamapp_setup.cpp:418
+#: core/app/main/digikamapp_setup.cpp:423
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Προσθήκη στην τρέχουσα ουρά"
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:424
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
@@ -1906,13 +1906,13 @@ msgstr ""
 "Προσθήκη των επιλεγμένων αντικειμένων στην τρέχουσα ουρά από τον διαχειριστή "
 "παρτίδας."
 
-#: core/app/main/digikamapp_setup.cpp:425
+#: core/app/main/digikamapp_setup.cpp:430
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Προσθήκη σε νέα ουρά"
 
-#: core/app/main/digikamapp_setup.cpp:426
+#: core/app/main/digikamapp_setup.cpp:431
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
@@ -1920,49 +1920,49 @@ msgstr ""
 "Προσθήκη των επιλεγμένων αντικειμένων σε μια νέα ουρά από τον διαχειριστή "
 "παρτίδας."
 
-#: core/app/main/digikamapp_setup.cpp:433
+#: core/app/main/digikamapp_setup.cpp:438
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Εισαγωγή"
 
-#: core/app/main/digikamapp_setup.cpp:440
+#: core/app/main/digikamapp_setup.cpp:445
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Εγγραφή μεταδεδομένων στα επιλεγμένα Αρχεία"
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:456
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Επανανάγνωση μεταδεδομένων από τα Επιλεγμένα Αρχεία"
 
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:467
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Σάρωση για Πρόσωπα"
 
-#: core/app/main/digikamapp_setup.cpp:467
+#: core/app/main/digikamapp_setup.cpp:472
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Αναγνώριση Προσώπων"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:477
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Αφαίρεση όλων των προσώπων"
 
-#: core/app/main/digikamapp_setup.cpp:479
+#: core/app/main/digikamapp_setup.cpp:484
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Εύρεση παρόμοιων..."
 
-#: core/app/main/digikamapp_setup.cpp:480
+#: core/app/main/digikamapp_setup.cpp:485
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
@@ -1970,74 +1970,74 @@ msgstr ""
 "Εύρεση παρόμοιων εικόνων με την χρήση του επιλεγμένου αντικειμένου ως "
 "αναφορά."
 
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:493
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Αλλαγή του ονόματος αρχείου του τρέχοντος επιλεγμένου αντικειμένου."
 
-#: core/app/main/digikamapp_setup.cpp:498
+#: core/app/main/digikamapp_setup.cpp:503
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Μετακίνηση στα απορρίμματα"
 
-#: core/app/main/digikamapp_setup.cpp:512
+#: core/app/main/digikamapp_setup.cpp:517
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Οριστική διαγραφή"
 
-#: core/app/main/digikamapp_setup.cpp:523
+#: core/app/main/digikamapp_setup.cpp:528
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Οριστική διαγραφή χωρίς επιβεβαίωση"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:536
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Μετακίνηση στα απορρίμματα χωρίς επιβεβαίωση"
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:543
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Ταξινόμηση άλμπουμ"
 
-#: core/app/main/digikamapp_setup.cpp:539
+#: core/app/main/digikamapp_setup.cpp:544
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Ταξινόμηση άλμπουμ σε προβολή δένδρου."
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Κατά φάκελο"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:564
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Κατά Κατηγορία"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Κατά Ημερομηνία"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Συμπερίληψη υποδέντρου του άλμπουμ"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -2045,13 +2045,13 @@ msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση όλων των υπό-άλμπουμ του "
 "τρέχοντος άλμπουμ."
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Συμπερίληψη υποδέντρου ετικέτας"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2061,13 +2061,13 @@ msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση όλων των εικόνων που είναι "
 "σημειωμένες με τη δοσμένη ετικέτα και όλες τις υπό-ετικέτες της."
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:584
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Εμφάνιση Όλων των Ομαδοποιημένων Αντικειμένων ως Ανοιχτά"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:586
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
@@ -2075,13 +2075,13 @@ msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση όλων των ομαδοποιημένων "
 "αντικειμένων ως ανοιχτά."
 
-#: core/app/main/digikamapp_setup.cpp:587
+#: core/app/main/digikamapp_setup.cpp:592
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "Ταξινόμη&ση αντικειμένων"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2090,418 +2090,418 @@ msgstr ""
 "Η τιμή με την οποία οι εικόνες σε ένα άλμπουμ ταξινομούνται στην προβολή "
 "μικρογραφίας"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Κατά όνομα"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Κατά Διαδρομή"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Κατά Ημερομηνία δημιουργίας"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Κατά Ημερομηνία Τροποποίηση"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Κατά Μέγεθος αρχείου"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Κατά Αξιολόγηση"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Κατά Μέγεθος εικόνας"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Κατά Αναλογία διαστάσεων"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:606
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Κατά Τύπο Προσώπου"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Κατά Ομοιότητα"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:608
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Κατά Χειροκίνητα και Όνομα"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:609
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Κατά Χειροκίνητα και Ημερομηνία"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:654
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Σειρά ταξινόμησης "
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:655
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Καθορίζει αν οι εικόνες ταξινομούνται με αύξοντα ή φθίνοντα τρόπο."
 
-#: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:659
+#: core/app/main/digikamapp_setup.cpp:714
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Αύξουσα"
 
-#: core/app/main/digikamapp_setup.cpp:656
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:661
+#: core/app/main/digikamapp_setup.cpp:716
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Φθίνουσα"
 
-#: core/app/main/digikamapp_setup.cpp:666
+#: core/app/main/digikamapp_setup.cpp:671
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Διαχωρισμός αντικειμένων"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:672
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr ""
 "Οι κατηγορίες στις οποίες εμφανίζονται οι εικόνες στην προβολή μικρογραφιών"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:677
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Επίπεδη λίστα"
 
-#: core/app/main/digikamapp_setup.cpp:673
+#: core/app/main/digikamapp_setup.cpp:678
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Κατά Άλμπουμ "
 
-#: core/app/main/digikamapp_setup.cpp:674
+#: core/app/main/digikamapp_setup.cpp:679
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Κατά Μορφή"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:680
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Κατά Μήνα"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:681
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Κατά Πρόσωπα"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Σειρά διαχωρισμού αντικειμένου"
 
-#: core/app/main/digikamapp_setup.cpp:705
+#: core/app/main/digikamapp_setup.cpp:710
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Η σειρά ταξινόμησης των ομάδων διαχωρισμένων στοιχείων"
 
-#: core/app/main/digikamapp_setup.cpp:726
+#: core/app/main/digikamapp_setup.cpp:731
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/app/main/digikamapp_setup.cpp:733
+#: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Χωρίς επιλογή"
 
-#: core/app/main/digikamapp_setup.cpp:740
+#: core/app/main/digikamapp_setup.cpp:745
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
-#: core/app/main/digikamapp_setup.cpp:748
+#: core/app/main/digikamapp_setup.cpp:753
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Εμφάνιση γραμμής επισκόπησης"
 
-#: core/app/main/digikamapp_setup.cpp:779
+#: core/app/main/digikamapp_setup.cpp:784
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Μεγέθυνση στο 100%"
 
-#: core/app/main/digikamapp_setup.cpp:787
+#: core/app/main/digikamapp_setup.cpp:792
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Προσαρμογή στο &παράθυρο"
 
-#: core/app/main/digikamapp_setup.cpp:800
+#: core/app/main/digikamapp_setup.cpp:805
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Προβολή διαχείρισης χρωμάτων"
 
-#: core/app/main/digikamapp_setup.cpp:818
+#: core/app/main/digikamapp_setup.cpp:824
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Αναζήτηση..."
 
-#: core/app/main/digikamapp_setup.cpp:826
+#: core/app/main/digikamapp_setup.cpp:832
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Προχωρημένη αναζήτηση..."
 
-#: core/app/main/digikamapp_setup.cpp:834
+#: core/app/main/digikamapp_setup.cpp:840
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Εύρεση Διπλότυπων..."
 
-#: core/app/main/digikamapp_setup.cpp:844
+#: core/app/main/digikamapp_setup.cpp:850
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Μεταφορά βάσης δεδομένων..."
 
-#: core/app/main/digikamapp_setup.cpp:853
+#: core/app/main/digikamapp_setup.cpp:859
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Συντήρηση..."
 
-#: core/app/main/digikamapp_setup.cpp:860
+#: core/app/main/digikamapp_setup.cpp:866
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Σάρωση για νέα αντικείμενα"
 
-#: core/app/main/digikamapp_setup.cpp:866
+#: core/app/main/digikamapp_setup.cpp:872
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Χειροκίνητη προσθήκη φωτογραφικής μηχανής..."
 
-#: core/app/main/digikamapp_setup.cpp:877
+#: core/app/main/digikamapp_setup.cpp:883
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Φόρτωση φωτογραφικών μηχανών..."
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:917
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Έξοδος από λειτουργία προεπισκόπησης"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:922
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Επόμενη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Προηγούμενη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:934
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Πρώτη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:933
+#: core/app/main/digikamapp_setup.cpp:939
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Τελευταία εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:944
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Αποκο&πή"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:946
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Αποκοπή επιλογής στο πρόχειρο"
 
-#: core/app/main/digikamapp_setup.cpp:959
+#: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Επεξεργασία τίτλων"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Επεξεργασία σχολίων"
 
-#: core/app/main/digikamapp_setup.cpp:969
+#: core/app/main/digikamapp_setup.cpp:975
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Εμφάνιση αντιστοιχισμένων ετικετών"
 
-#: core/app/main/digikamapp_setup.cpp:978
+#: core/app/main/digikamapp_setup.cpp:984
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Προσαρμογή ετικέτας προσανατολισμού Exif"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Κανονικό"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Αναστροφή οριζόντια"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Περιστραμμένο ανάποδα"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Ανεστραμμένο Κάθετα"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Περιεστρεμμένο δεξιά / οριζ. αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Περιεστρεμμένο δεξιά"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Περιεστρεμμένο δεξιά / κατακ. αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Περιεστρεμμένο αριστερά"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1062
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Περιστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1066
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Αριστερά"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Δεξιά"
 
-#: core/app/main/digikamapp_setup.cpp:1077
+#: core/app/main/digikamapp_setup.cpp:1083
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1081
+#: core/app/main/digikamapp_setup.cpp:1087
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Οριζόντια"
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Κατακόρυφα"
 
-#: core/app/main/digikamapp_setup.cpp:1098
+#: core/app/main/digikamapp_setup.cpp:1104
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Αυτόματη περιστροφή/αναστροφή με χρήση πληροφοριών Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1109
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Φόρτωση θεμάτων..."
 
-#: core/app/main/digikamapp_setup.cpp:1112
+#: core/app/main/digikamapp_setup.cpp:1118
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Θέματα"
 
-#: core/app/main/digikamapp_setup.cpp:1124
+#: core/app/main/digikamapp_setup.cpp:1130
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -3149,8 +3149,8 @@ msgid "no item"
 msgstr "κανένα αντικείμενο"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:448
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:482
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:456
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:490
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -17391,7 +17391,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Μετατροπή χρωματικού χώρου"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot decode RAW image\n"
@@ -22497,7 +22497,7 @@ msgstr "Αναπαραγωγή"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:293
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:301
 #, kde-format
 msgid "Stop"
 msgstr "Διακοπή"
@@ -31462,12 +31462,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Πληροφορίες προφίλ χρώματος - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:221
+#: core/libs/dialogs/imagedialog.cpp:223
 #, kde-format
 msgid "Select an Item"
 msgstr "Επιλογή αντικειμένου"
 
-#: core/libs/dialogs/imagedialog.cpp:235
+#: core/libs/dialogs/imagedialog.cpp:237
 #, kde-format
 msgid "Select Items"
 msgstr "Επιλογή αντικειμένων"
@@ -33857,7 +33857,7 @@ msgid "Remove Black Frame"
 msgstr "Μαύρο πλαίσιο..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:355
 #, kde-format
 msgid "Clear List"
 msgstr "Καθαρισμός λίστας"
@@ -39335,7 +39335,7 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1976
+#: core/utilities/import/main/importui.cpp:1984
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -41335,7 +41335,7 @@ msgstr "Φωτεινός πίνακας"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:59
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:204
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Διαχειριστής ουράς για δέσμες εργασιών"
@@ -44982,7 +44982,7 @@ msgid "Mod.: %1"
 msgstr "Παρ.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:267
+#: core/showfoto/main/showfoto.cpp:275
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -52811,7 +52811,7 @@ msgstr "Αρχεία ή κατάλογοι για άνοιγμα"
 msgid "Loading themes..."
 msgstr "Φόρτωση θεμάτων..."
 
-#: core/showfoto/main/showfoto.cpp:226
+#: core/showfoto/main/showfoto.cpp:234
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -52823,14 +52823,14 @@ msgstr ""
 "χαρακτηριστικό \"Διαχείριση χρωμάτων\" θα απενεργοποιηθεί μέχρι να "
 "διορθώσετε το πρόβλημα</p>"
 
-#: core/showfoto/main/showfoto.cpp:266
+#: core/showfoto/main/showfoto.cpp:274
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/showfoto/main/showfoto.cpp:291
-#: core/utilities/imageeditor/main/imagewindow.cpp:505
+#: core/showfoto/main/showfoto.cpp:299
+#: core/utilities/imageeditor/main/imagewindow.cpp:513
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -52861,8 +52861,8 @@ msgid "Remote file handling is not supported"
 msgstr "Αναγνωριστικό ή έκδοση φίλτρου δεν υποστηρίζονται."
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:588
-#: core/utilities/imageeditor/main/imagewindow.cpp:703
+#: core/utilities/imageeditor/main/imagewindow.cpp:596
+#: core/utilities/imageeditor/main/imagewindow.cpp:711
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Επιτυχής αποθήκευση εικόνας"
@@ -54399,7 +54399,7 @@ msgid "&Abort"
 msgstr "Ε&γκατάλειψη"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:938
 #, kde-format
 msgid "Processing..."
 msgstr "Επεξεργασία..."
@@ -62295,7 +62295,7 @@ msgstr ""
 "υπερέκθεση της εικόνας."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:467
-#: core/utilities/import/main/importui.cpp:506
+#: core/utilities/import/main/importui.cpp:514
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -62366,8 +62366,8 @@ msgid "Rotate Right"
 msgstr "Περιστροφή δεξιά"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:556
-#: core/utilities/import/main/importui.cpp:551
-#: core/utilities/import/main/importui.cpp:794
+#: core/utilities/import/main/importui.cpp:559
+#: core/utilities/import/main/importui.cpp:802
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -62685,36 +62685,36 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Άνοιγμα με..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:200
+#: core/utilities/imageeditor/main/imagewindow.cpp:208
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Επεξεργαστής εικόνας - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:204
+#: core/utilities/imageeditor/main/imagewindow.cpp:212
 #, kde-format
 msgid "Image Editor"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:374
+#: core/utilities/imageeditor/main/imagewindow.cpp:382
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:375
+#: core/utilities/imageeditor/main/imagewindow.cpp:383
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:948
+#: core/utilities/imageeditor/main/imagewindow.cpp:956
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Χωρίς εικόνα στο τρέχον λεύκωμα"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:949
+#: core/utilities/imageeditor/main/imagewindow.cpp:957
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -62723,7 +62723,7 @@ msgstr ""
 "Δεν υπάρχει καμία εικόνα για εμφάνιση στο τρέχον λεύκωμα.\n"
 "Ο επεξεργαστής εικόνας θα κλείσει."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1222
+#: core/utilities/imageeditor/main/imagewindow.cpp:1230
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -62731,7 +62731,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Το αρχείο δεν είναι διαθέσιμο"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1223
+#: core/utilities/imageeditor/main/imagewindow.cpp:1231
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -62999,7 +62999,7 @@ msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2501
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
@@ -63349,7 +63349,7 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "Αυτό το αντικείμενο κατάστασης λήψης έχει ληφθεί"
 
-#: core/utilities/import/main/importui.cpp:156
+#: core/utilities/import/main/importui.cpp:164
 #, fuzzy, kde-format
 #| msgid "Set how digiKam will rename files as they are downloaded."
 msgctxt "@info"
@@ -63358,211 +63358,211 @@ msgstr ""
 "Καθορίστε εδώ όλες τις επιλογές μετονομασίας αρχείων εικόνων του digiKam "
 "κατά τη λήψη τους."
 
-#: core/utilities/import/main/importui.cpp:157
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Επιλογές μετονομασίας αρχείων"
 
-#: core/utilities/import/main/importui.cpp:163
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Αυτόματη δημιουργία λευκωμάτων"
 
-#: core/utilities/import/main/importui.cpp:169
+#: core/utilities/import/main/importui.cpp:177
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Άμεσες λειτουργίες (μόνο JPEG)"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:185
 #, fuzzy, kde-format
 #| msgid "More options"
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Περισσότερες επιλογές"
 
-#: core/utilities/import/main/importui.cpp:185
+#: core/utilities/import/main/importui.cpp:193
 #, fuzzy, kde-format
 #| msgid "Scripting"
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Γραφή σεναρίου"
 
-#: core/utilities/import/main/importui.cpp:189
+#: core/utilities/import/main/importui.cpp:197
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: core/utilities/import/main/importui.cpp:204
+#: core/utilities/import/main/importui.cpp:212
 #, fuzzy, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: core/utilities/import/main/importui.cpp:211
+#: core/utilities/import/main/importui.cpp:219
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:226
 #, fuzzy, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Σύλληψη"
 
-#: core/utilities/import/main/importui.cpp:230
+#: core/utilities/import/main/importui.cpp:238
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/utilities/import/main/importui.cpp:238
+#: core/utilities/import/main/importui.cpp:246
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Χωρίς επιλογή"
 
-#: core/utilities/import/main/importui.cpp:246
+#: core/utilities/import/main/importui.cpp:254
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
-#: core/utilities/import/main/importui.cpp:254
+#: core/utilities/import/main/importui.cpp:262
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Επιλογή νέων αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:261
+#: core/utilities/import/main/importui.cpp:269
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Επιλογή κλειδωμένων αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:269
+#: core/utilities/import/main/importui.cpp:277
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Λήψη"
 
-#: core/utilities/import/main/importui.cpp:274
+#: core/utilities/import/main/importui.cpp:282
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Λήψη νέου"
 
-#: core/utilities/import/main/importui.cpp:284
+#: core/utilities/import/main/importui.cpp:292
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Λήψη επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:291
+#: core/utilities/import/main/importui.cpp:299
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Λήψη όλων"
 
-#: core/utilities/import/main/importui.cpp:299
+#: core/utilities/import/main/importui.cpp:307
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Λήψη/διαγραφή νέου"
 
-#: core/utilities/import/main/importui.cpp:307
+#: core/utilities/import/main/importui.cpp:315
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Λήψη/διαγραφή επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:315
+#: core/utilities/import/main/importui.cpp:323
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Λήψη/διαγραφή όλων"
 
-#: core/utilities/import/main/importui.cpp:322
+#: core/utilities/import/main/importui.cpp:330
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Αποστολή..."
 
-#: core/utilities/import/main/importui.cpp:330
+#: core/utilities/import/main/importui.cpp:338
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Εναλλαγή κλειδώματος"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:346
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Σημειωμένο ως ληφθέν"
 
-#: core/utilities/import/main/importui.cpp:345
+#: core/utilities/import/main/importui.cpp:353
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: core/utilities/import/main/importui.cpp:350
+#: core/utilities/import/main/importui.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Διαγραφή επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:366
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Διαγραφή όλων"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:372
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Διαγραφή νέου"
 
-#: core/utilities/import/main/importui.cpp:372
+#: core/utilities/import/main/importui.cpp:380
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Προβολές"
 
-#: core/utilities/import/main/importui.cpp:376
+#: core/utilities/import/main/importui.cpp:384
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Εικόνες επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:383
+#: core/utilities/import/main/importui.cpp:391
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Προεπισκόπηση αντικειμένου"
 
-#: core/utilities/import/main/importui.cpp:393
+#: core/utilities/import/main/importui.cpp:401
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Χάρτης"
 
-#: core/utilities/import/main/importui.cpp:405
+#: core/utilities/import/main/importui.cpp:413
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Ταξινόμηση αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:406
+#: core/utilities/import/main/importui.cpp:414
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
@@ -63570,53 +63570,53 @@ msgstr ""
 "Η τιμή με την οποία τα αντικείμενα ταξινομούνται στην προβολή εικόνων "
 "επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:411
+#: core/utilities/import/main/importui.cpp:419
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Με όνομα"
 
-#: core/utilities/import/main/importui.cpp:412
+#: core/utilities/import/main/importui.cpp:420
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Με διαδρομή"
 
-#: core/utilities/import/main/importui.cpp:413
+#: core/utilities/import/main/importui.cpp:421
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Κατά ημερομηνία"
 
-#: core/utilities/import/main/importui.cpp:414
+#: core/utilities/import/main/importui.cpp:422
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Κατά μέγεθος"
 
-#: core/utilities/import/main/importui.cpp:415
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Με αξιολόγηση"
 
-#: core/utilities/import/main/importui.cpp:416
+#: core/utilities/import/main/importui.cpp:424
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Κατά κατάσταση λήψης"
 
-#: core/utilities/import/main/importui.cpp:440
+#: core/utilities/import/main/importui.cpp:448
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Τάξη μεγέθους &ταξινόμησης αντικειμένου"
 
-#: core/utilities/import/main/importui.cpp:441
+#: core/utilities/import/main/importui.cpp:449
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
@@ -63624,25 +63624,25 @@ msgstr ""
 "Καθορίζει αν η τάξη μεγέθους ταξινόμησης των αντικειμένων θα είναι αύξουσα ή "
 "φθίνουσα."
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:453
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Αύξουσα"
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:455
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Φθίνουσα"
 
-#: core/utilities/import/main/importui.cpp:459
+#: core/utilities/import/main/importui.cpp:467
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "Ομα&δοποίηση αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:460
+#: core/utilities/import/main/importui.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
@@ -63650,111 +63650,111 @@ msgstr ""
 "Οι κατηγορίες κάτω από τις οποίες εμφανίζονται τα αντικείμενα στην προβολή "
 "εικόνων επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:465
+#: core/utilities/import/main/importui.cpp:473
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Επίπεδη λίστα"
 
-#: core/utilities/import/main/importui.cpp:466
+#: core/utilities/import/main/importui.cpp:474
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Κατά φάκελο"
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:475
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Ανά τύπο αρχειοθέτησης"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:476
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Κατά ημερομηνία"
 
-#: core/utilities/import/main/importui.cpp:494
+#: core/utilities/import/main/importui.cpp:502
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Προσαρμογή στο &παράθυρο"
 
-#: core/utilities/import/main/importui.cpp:499
+#: core/utilities/import/main/importui.cpp:507
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Εστίαση στο 100%"
 
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:525
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Εμφάνιση ιστορικού"
 
-#: core/utilities/import/main/importui.cpp:523
+#: core/utilities/import/main/importui.cpp:531
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Εμφάνιση γραμμής επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:558
+#: core/utilities/import/main/importui.cpp:566
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Ξαναπροσπάθησε"
 
-#: core/utilities/import/main/importui.cpp:783
+#: core/utilities/import/main/importui.cpp:791
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Έξοδος από λειτουργία προεπισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:788
+#: core/utilities/import/main/importui.cpp:796
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Επόμενη εικόνα"
 
-#: core/utilities/import/main/importui.cpp:800
+#: core/utilities/import/main/importui.cpp:808
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Πρώτη εικόνα"
 
-#: core/utilities/import/main/importui.cpp:805
+#: core/utilities/import/main/importui.cpp:813
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Τελευταία εικόνα"
 
-#: core/utilities/import/main/importui.cpp:906
+#: core/utilities/import/main/importui.cpp:914
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Ακύρωση της τρέχουσας λειτουργίας, παρακαλώ περιμένετε..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:970
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 "Θέλετε να κλείσετε το διάλογο και να ακυρώσετε την τρέχουσα λειτουργία;"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:980
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Αποσύνδεση από τη φωτογραφική, παρακαλώ περιμένετε..."
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1057
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1114
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63764,13 +63764,13 @@ msgstr ""
 "Αποτυχία σύνδεσης με τη φωτογραφική μηχανή. Παρακαλώ σιγουρευτείτε ότι είναι "
 "συνδεδεμένη κανονικά και ανοικτή. Θέλετε να ξαναπροσπαθήσετε;"
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1208
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Επιλογή εικόνας για αποστολή"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1243
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63785,7 +63785,7 @@ msgstr ""
 "Απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1298
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63795,13 +63795,13 @@ msgstr ""
 "Ο φάκελος φωτογραφικής <b>%1</b> περιέχει ήδη το αντικείμενο <b>%2</b><br/> "
 "Παρακαλώ, εισάγετε ένα νέο όνομα (χωρίς επέκταση):"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1302
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Το αρχείο υπάρχει ήδη"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1371
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63811,7 +63811,7 @@ msgstr ""
 "Η μορφή ημερομηνίας του προσαρμοσμένου λευκώματος δεν είναι έγκυρη. Ελέγξτε "
 "τις ρυθμίσεις σας..."
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1411
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63823,7 +63823,7 @@ msgstr ""
 "από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
 "διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1420
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63834,7 +63834,7 @@ msgstr ""
 "μηχανή δεν είναι διαθέσιμο. Επιλέξτε ένα άλλο από το διάλογο διαμόρφωσης της "
 "φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1445
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63844,7 +63844,7 @@ msgstr ""
 "<p>Παρακαλώ, επιλέξτε το λεύκωμα προορισμού από τη βιβλιοθήκη digiKam για "
 "την εισαγωγή σε αυτό φωτογραφιών από τη φωτογραφική μηχανή.</p>"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1476
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63855,19 +63855,19 @@ msgstr ""
 "από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
 "διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1522
+#: core/utilities/import/main/importui.cpp:1530
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1529
+#: core/utilities/import/main/importui.cpp:1537
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1973
+#: core/utilities/import/main/importui.cpp:1981
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63880,7 +63880,7 @@ msgstr ""
 "επιθυμείτε πραγματικά τη διαγραφή τους, παρακαλώ ξεκλειδώστε τα πρώτα και "
 "ξαναπροσπαθήστε."
 
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1992
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63898,20 +63898,20 @@ msgstr[1] ""
 "Αυτές οι %1 εικόνες πρόκειται να διαγραφούν. Η διαγραφή αρχείων είναι "
 "οριστική. Είστε σίγουροι;"
 
-#: core/utilities/import/main/importui.cpp:1994
+#: core/utilities/import/main/importui.cpp:2002
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/import/main/importui.cpp:2038
+#: core/utilities/import/main/importui.cpp:2046
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Μη επαρκής χώρος στο δίσκο"
 
-#: core/utilities/import/main/importui.cpp:2039
+#: core/utilities/import/main/importui.cpp:2047
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63929,8 +63929,8 @@ msgstr ""
 "Εκτιμώμενος απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:2307
-#: core/utilities/import/main/importui.cpp:2333
+#: core/utilities/import/main/importui.cpp:2315
+#: core/utilities/import/main/importui.cpp:2341
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -63938,7 +63938,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/utilities/import/main/importui.cpp:2326
+#: core/utilities/import/main/importui.cpp:2334
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -63946,7 +63946,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 από %3)"
 
-#: core/utilities/import/main/importui.cpp:2343
+#: core/utilities/import/main/importui.cpp:2351
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -63954,25 +63954,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/1 αντικείμενο επιλεγμένο"
 msgstr[1] "%2/%1 αντικείμενα επιλεγμένα"
 
-#: core/utilities/import/main/importui.cpp:2428
+#: core/utilities/import/main/importui.cpp:2436
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2450
+#: core/utilities/import/main/importui.cpp:2458
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2473
+#: core/utilities/import/main/importui.cpp:2481
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2550
+#: core/utilities/import/main/importui.cpp:2558
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -63982,19 +63982,19 @@ msgstr ""
 "Η λήψη εικόνων ολοκληρώθηκε, τώρα μπορείτε να αποσυνδέσετε την κάμερα καθώς "
 "θα πραγματοποιείται η αυτόματη περιστροφή των εικόνων"
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2566
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Η λήψη εικόνων ολοκληρώθηκε"
 
-#: core/utilities/import/main/importui.cpp:2584
+#: core/utilities/import/main/importui.cpp:2592
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ένα αρχείο με το ίδιο όνομα (%1) υπάρχει ήδη στο φάκελο %2."
 
-#: core/utilities/import/main/importui.cpp:2597
+#: core/utilities/import/main/importui.cpp:2605
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -64624,7 +64624,7 @@ msgstr "Καθάρισμα όλων"
 msgid "Drag and drop images here"
 msgstr "Σύρετε και αφήστε εικόνες εδώ"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:201
+#: core/utilities/lighttable/lighttablewindow.cpp:210
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -65275,150 +65275,150 @@ msgstr "Ενημέρωση βάσης δεδομένων από μεταδεδο
 msgid "Thumbs"
 msgstr "Εικονίδια επισκόπησης"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
 #, kde-format
 msgid "Queues"
 msgstr "Σειρές αναμονής"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:136
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
 #, kde-format
 msgid "Queue Settings"
 msgstr "Ρυθμίσεις ουράς αναμονής"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
 #, kde-format
 msgid "Control Panel"
 msgstr "Πίνακας ελέγχου"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:154
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Καθορισμένα εργαλεία"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:163
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:171
 #, kde-format
 msgid "Tool Settings"
 msgstr "Ρυθμίσεις εργαλείου"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
 #, kde-format
 msgid "Run"
 msgstr "Εκτέλεση"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:295
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:307
 #, kde-format
 msgid "New Queue"
 msgstr "Νέα ουρά αναμονής"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:303
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:311
 #, kde-format
 msgid "Remove Queue"
 msgstr "Αφαίρεση ουράς αναμονής"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Save Workflow"
 msgstr "Αποθήκευση ροής εργασιών"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:321
 #, kde-format
 msgid "Remove items"
 msgstr "Αφαίρεση αντικειμένων"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:327
 #, kde-format
 msgid "Remove processed items"
 msgstr "Αφαίρεση επεξεργασμένων αντικειμένων"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:324
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
 msgid "Clear Queue"
 msgstr "Καθαρισμός αναμονής"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:335
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
 #, kde-format
 msgid "Move up"
 msgstr "Μετακίνηση πάνω"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:339
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
 #, kde-format
 msgid "Move down"
 msgstr "Μετακίνηση κάτω"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:351
 #, kde-format
 msgid "Remove tool"
 msgstr "Αφαίρεση εργαλείου"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:444
 #, kde-format
 msgid "Current Queue: "
 msgstr "Τρέχουσα ουρά αναμονής: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:442
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:476
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:450
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:484
 #, kde-format
 msgid "No items"
 msgstr "Κανένα αντικείμενο"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:459
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:493
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:467
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
 #, kde-format
 msgid "No tasks"
 msgstr "Καμία εργασία"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:465
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:499
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:507
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 εργασία"
 msgstr[1] "%1 εργασίες"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:478
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "Σύνολο: %1 (%)"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:516
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:554
 #, fuzzy, kde-format
 #| msgid "Processing under progress"
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Επεξεργασία σε εξέλιξη"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:547
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:555
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 "Ο διαχειριστής ουράς για δέσμες εργασιών εκτελείται. Θέλετε να ακυρώσετε την "
 "τρέχουσα επεξεργασία;"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "Δεν υπάρχουν αντικείμενα προς επεξεργασία στις ουρές."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:650
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:658
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Δεν υπάρχουν αντικείμενα προς επεξεργασία στις ουρές."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:656
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:664
 #, fuzzy, kde-format
 #| msgid ""
 #| "Custom renaming rules are invalid for Queues listed below. Please fix "
@@ -65428,7 +65428,7 @@ msgstr ""
 "Μη έγκυροι κανόνες μετονομασίας για τις παρακάτω ουρές αναμονής. Παρακαλώ "
 "διορθώστε τους."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:661
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:669
 #, fuzzy, kde-format
 #| msgid ""
 #| "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -65440,20 +65440,20 @@ msgstr ""
 "Κενή λίστα καθορισμένων εργαλείων δέσμης για τις παρακάτω ουρές αναμονής. "
 "Παρακαλώ καθορίστε εργαλεία."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:693
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:701
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Δεν υπάρχουν αντικείμενα προς επεξεργασία στις ουρές."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:873
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:883
 #, fuzzy, kde-format
 #| msgid "Processed items album settings"
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Ρυθμίσεις λευκωμάτων επεξεργασμένων αντικειμένων"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:866
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -65463,7 +65463,7 @@ msgstr ""
 "αναμονής \"%1\" δεν έχει οριστεί. Παρακαλώ επιλέξτε ένα από τον πίνακα "
 "ρυθμίσεων ουράς αναμονής."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:876
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:884
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -65473,27 +65473,27 @@ msgstr ""
 "αναμονής \"%1\" δεν είναι διαθέσιμο ή δεν είναι εγγράψιμο. Παρακαλώ "
 "καθορίστε κάποιο άλλο από τον πίνακα ρυθμίσεων ουράς αναμονής."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:955
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Αποτυχία επεξεργασίας αντικειμένου..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:968
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:976
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Η επεξεργασία ακυρώθηκε..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:988
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Αντικείμενο \"%1\" από ουρά αναμονής \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1017
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1025
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Η δέσμη εργασιών ολοκληρώθηκε"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Batch queue finished"
 msgid "All batch queues finished"
