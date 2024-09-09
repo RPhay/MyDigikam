@@ -46,7 +46,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt5/bin:$ORIG_PATH:/$INSTALL_PREFIX/libexec/gnubin
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt$DK_QTVERSION/bin:$ORIG_PATH:/$INSTALL_PREFIX/libexec/gnubin
 
 #################################################################################################
 # Check if /opt exists and standard Macports install path
@@ -347,11 +347,11 @@ port install qt$DK_QTVERSION-qtsvg
 port install qt$DK_QTVERSION-qttools
 port install qt$DK_QTVERSION-qttranslations
 port install qt$DK_QTVERSION-qtimageformats
-port install qt$DK_QTVERSION-qtmultimedia
+port install qt$DK_QTVERSION-qtmultimedia -examples -tests
 port install qt$DK_QTVERSION-qtnetworkauth
 port install qt$DK_QTVERSION-sqlite-plugin
 port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
-port install qt$DK_QTVERSION-qtwebengine
+port install qt$DK_QTVERSION-qtwebengine -examples -tests
 
 cmake --build . --config RelWithDebInfo --target ext_boost       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
