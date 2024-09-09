@@ -52,10 +52,10 @@ QString MetaEngine::sidecarFilePathForFile(const QString& path)
         QString pathBaseXmp = path;
         pathBaseXmp.chop(info.suffix().size());
 
-        return pathBaseXmp + QLatin1String("xmp");
+        return (pathBaseXmp + QLatin1String("xmp"));
     }
 
-    return path + QLatin1String(".xmp");
+    return (path + QLatin1String(".xmp"));
 }
 
 QUrl MetaEngine::sidecarUrl(const QUrl& url)
