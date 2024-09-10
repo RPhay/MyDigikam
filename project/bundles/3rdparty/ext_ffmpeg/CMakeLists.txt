@@ -79,25 +79,6 @@ else()
 
 endif()
 
-if(MINGW)
-
-    set(YASM_EXE ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-yasm)
-    message(STATUS "Yasm binary: ${YASM_EXE}")
-
-    set(FFmpeg_Conf ${FFmpeg_Conf}
-                    --cross-prefix=${MXE_BUILD_TARGETS}-
-                    --enable-cross-compile
-                    --arch=x86_64
-                    --target-os=mingw32
-                    --disable-static
-                    --enable-shared
-                    --yasmexe=${YASM_EXE}
-                    --disable-pthreads
-                    --enable-w32threads
-    )
-
-endif()
-
 ExternalProject_Add(ext_ffmpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
     URL https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
