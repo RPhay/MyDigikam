@@ -47,6 +47,9 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt$DK_QTVERSION/bin:$ORIG_PATH:/$INSTALL_PREFIX/libexec/gnubin
+echo "PATH=$PATH"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH/$INSTALL_PREFIX
+echo "DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH"
 
 #################################################################################################
 # Check if /opt exists and standard Macports install path
@@ -353,11 +356,24 @@ port install qt$DK_QTVERSION-sqlite-plugin
 port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
 port install qt$DK_QTVERSION-qtwebengine -examples -tests
 
-cmake --build . --config RelWithDebInfo --target ext_boost       -- -j$CPU_CORES
+port install boost
+
+cmake $ORIG_WD/../3rdparty \
+       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+       -DINSTALL_ROOT=$INSTALL_PREFIX \
+       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKP_VERSION=$DK_KP_VERSION \
+       -DKDE_VERSION=$DK_KDE_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DARCH_TARGET=$ARCH_TARGET \
+       -Wno-dev
+
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_libavif     -- -j$CPU_CORES
+
+port install libjxl
+port install libavif -docs -tests
 
 #################################################################################################
 
