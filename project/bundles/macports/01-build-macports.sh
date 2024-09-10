@@ -346,6 +346,8 @@ if [[ $DK_QTVERSION = 5 ]] ; then
     port install qt$DK_QTVERSION-qtxmlpatterns
 fi
 
+port install qt$DK_QTVERSION-qtscxml
+port install qt$DK_QTVERSION-qtspeech
 port install qt$DK_QTVERSION-qtsvg
 port install qt$DK_QTVERSION-qttools
 port install qt$DK_QTVERSION-qttranslations
