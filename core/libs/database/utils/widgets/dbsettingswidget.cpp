@@ -170,7 +170,7 @@ void DatabaseSettingsWidget::setupMainArea()
 #ifdef Q_OS_WIN
 
     d->dbBinariesWidget->addDirectory(QLatin1String("C:/Program Files/MariaDB 10.5/bin"));
-    d->dbBinariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/MariaDB 10.5/bin"));
+    d->dbBinariesWidget->addDirectory(QLatin1String("C:/Program Files/MariaDB 11.4/bin"));
 
 #endif
 
@@ -726,10 +726,10 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.internalServerPath());
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlInternal]);
-        d->mysqlUpgradeBin.setup(QFileInfo(d->orgPrms.internalServerMysqlUpgradeCmd).absoluteFilePath());
-        d->mysqlServerBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServerCmd).absoluteFilePath());
-        d->mysqlAdminBin.setup(QFileInfo(d->orgPrms.internalServerMysqlAdminCmd).absoluteFilePath());
-        d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absoluteFilePath());
+        d->mysqlUpgradeBin.setup(QFileInfo(d->orgPrms.internalServerMysqlUpgradeCmd).absolutePath());
+        d->mysqlServerBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServerCmd).absolutePath());
+        d->mysqlAdminBin.setup(QFileInfo(d->orgPrms.internalServerMysqlAdminCmd).absolutePath());
+        d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absolutePath());
         d->dbBinariesWidget->allBinariesFound();
         d->walModeCheck->setChecked(false);
         slotResetMysqlServerDBNames();
