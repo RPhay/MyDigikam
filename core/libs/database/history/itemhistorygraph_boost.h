@@ -43,6 +43,7 @@
 #include <algorithm>
 #include <vector>
 #include <stdbool.h>
+#include <functional>
 
 // Boost includes
 
