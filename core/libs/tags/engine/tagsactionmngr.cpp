@@ -297,10 +297,11 @@ bool TagsActionMngr::createTagActionShortcut(int tagId)
 
     for (KActionCollection* const ac : std::as_const(d->actionCollectionList))
     {
-        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->tagShortcutPrefix).arg(tagId));
-        action->setText(i18n("Assign Tag \"%1\"", talbum->title()));
-        action->setParent(this);
-        ac->setDefaultShortcut(action, ks);
+        QString actionName    = QString::fromUtf8("%1-%2").arg(d->tagShortcutPrefix).arg(tagId);
+        QAction* const action = new QAction(i18n("Assign Tag \"%1\"", talbum->title()), this);
+        action->setShortcut(ks);
+        ac->addAction(actionName, action);
+        ac->writeSettings(nullptr, true, action);
         action->setIcon(icon);
         action->setData(tagId);
 

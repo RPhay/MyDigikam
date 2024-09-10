@@ -75,7 +75,7 @@ BUGFIXES:
 061 ==> 492715 - digiKam displays the metadata of JXL files incomplete and/or altered.
 062 ==> 492828 - Rating of jpg file not displayed correctly in the user interface.
 063 ==> 492789 - Do not open digiKam in full window.
-064 ==> 
+064 ==> 492784 - Changing keyboard shortcut scheme deletes 'Assign Tag' keyboard shortcuts.
 065 ==> 
 066 ==> 
 067 ==> 
