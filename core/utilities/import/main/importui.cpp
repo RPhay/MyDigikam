@@ -1512,6 +1512,10 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
                 creationDate = tempInfo.lastModified();
             }
         }
+        else
+        {
+            creationDate.setTime(creationDate.time().addMSecs(metadata->getMSecsInfo()));
+        }
 
         if (!createSubAlbums(downloadUrl, tempInfo.suffix(), creationDate))
         {
