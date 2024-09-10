@@ -359,6 +359,18 @@ void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks, bool d
 
     if (ks.isEmpty())
     {
+        for (KActionCollection* const ac : std::as_const(d->actionCollectionList))
+        {
+            QString actionName    = QString::fromUtf8("%1-%2").arg(d->tagShortcutPrefix).arg(tagId);
+            QAction* const action = ac->action(actionName);
+
+            if (action)
+            {
+                action->setShortcut(QKeySequence());
+                ac->writeSettings(nullptr, true, action);
+            }
+        }
+
         removeTagActionShortcut(tagId, delAction);
         tprop.removeProperties(TagPropertyName::tagKeyboardShortcut());
     }
