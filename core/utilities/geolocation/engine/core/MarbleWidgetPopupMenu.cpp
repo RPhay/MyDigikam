@@ -689,7 +689,9 @@ void MarbleWidgetPopupMenu::showLmbMenu(int xpos, int ypos)
 
     for ( ; itW != itWEnd ; ++itW)
     {
-        for (QAction* action : (*itW)->actions())
+        const auto acs = (*itW)->actions();
+
+        for (QAction* const action : acs)
         {
             d->m_lmbMenu.addAction(action);
         }
@@ -765,7 +767,7 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
         recognizedTags << QString::fromUtf8("smoking") << QString::fromUtf8("website") << QString::fromUtf8("contact:website") << QString::fromUtf8("facebook");
         recognizedTags << QString::fromUtf8("contact:facebook") << QString::fromUtf8("url");
 
-        for (const QString& tag : recognizedTags)
+        for (const QString& tag : std::as_const(recognizedTags))
         {
             if (data.containsTagKey(tag))
             {

@@ -1749,7 +1749,10 @@ void StyleBuilder::Private::initializeOsmVisualCategories()
 
 
     // Default for all other shops
-    for (const QString& value : shopValues())
+
+    const auto vals = shopValues();
+
+    for (const QString& value : vals)
     {
         s_visualCategories[OsmTag(QString::fromUtf8("shop"), value)]               = GeoDataPlacemark::Shop;
     }

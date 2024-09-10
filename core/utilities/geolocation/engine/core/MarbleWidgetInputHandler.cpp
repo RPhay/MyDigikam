@@ -54,6 +54,7 @@ class Q_DECL_HIDDEN MarbleWidgetInputHandlerPrivate
     class Q_DECL_HIDDEN MarbleWidgetSelectionRubber : public AbstractSelectionRubber
     {
     public:
+
         explicit MarbleWidgetSelectionRubber(MarbleWidget* widget)
             : m_rubberBand(QRubberBand::Rectangle, widget)
         {
@@ -82,6 +83,7 @@ class Q_DECL_HIDDEN MarbleWidgetInputHandlerPrivate
         }
 
     private:
+
         QRubberBand m_rubberBand;
     };
 
@@ -94,7 +96,9 @@ public:
         , m_selectionRubber(widget)
         , m_debugModeEnabled(false)
     {
-        for (RenderPlugin* renderPlugin : widget->renderPlugins())
+        const auto plugs = widget->renderPlugins();
+
+        for (RenderPlugin* const renderPlugin : plugs)
         {
             if (renderPlugin->isInitialized())
             {
@@ -113,6 +117,7 @@ public:
     bool layersEventFilter(QObject* o, QEvent* e)
     {
         //FIXME - this should go up in hierarchy to MarbleInputHandler
+
         if (m_marbleWidget->popupLayer()->eventFilter(o, e))
         {
             return true;
@@ -198,7 +203,6 @@ bool MarbleWidgetInputHandler::handleKeyPress(QKeyEvent* event)
                     break;
             }
         }
-
         else
         {
             switch (event->key())
@@ -286,10 +290,10 @@ bool MarbleWidgetInputHandler::handleTouch(QTouchEvent* event)
                 handleMouseEvent(&move);
             }
         }
-
         else if (event->type() == QEvent::TouchEnd)
         {
             // avoid triggering mouse clicked signal when we just changed the viewport
+
             if (d->m_pinchDetected || d->m_panDetected)
             {
                 blockSignals(true);
@@ -331,6 +335,7 @@ bool MarbleWidgetInputHandler::handleGesture(QGestureEvent* e)
     {
         d->m_pinchDetected = true;
         handlePinchGesture(pinch);
+
         return true;
     }
 

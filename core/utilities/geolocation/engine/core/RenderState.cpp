@@ -160,7 +160,7 @@ QString RenderState::Private::toString(const RenderState& state, int level) cons
     QString const name = (state.name().isEmpty() ? QString::fromUtf8("Anonymous renderer") : state.name());
     QString result = QString::fromUtf8("%1%2%3: %4").arg(prefix, indent, name, status);
 
-    for (const RenderState& child : state.d->m_children)
+    for (const RenderState& child : std::as_const(state.d->m_children))
     {
         result += toString(child, level + 1);
     }
