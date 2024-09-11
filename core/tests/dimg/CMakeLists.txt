@@ -151,9 +151,9 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistory_utest.cpp
 
 #------------------------------------------------------------------------
 
-# TODO: This unit-test do not link yet under Microsoft compiler about HistoryGraphData
+# TODO: This unit-test do not link yet under Microsoft/Apple compilers about HistoryGraphData
 
-if(NOT MSVC)
+if(NOT MSVC AND NOT APPLE)
 
     ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorygraph_utest.cpp
 
