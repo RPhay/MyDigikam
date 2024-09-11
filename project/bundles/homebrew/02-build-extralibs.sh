@@ -64,6 +64,10 @@ for FILE in $FILES ; do
 done
 
 #################################################################################################
+# activate the python3 venv
+source ${INSTALL_PREFIX}/bin/activate
+
+#################################################################################################
 
 # Create the build dir for the 3rdparty deps
 if [ ! -d $BUILDING_DIR ] ; then
@@ -85,6 +89,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKP_VERSION=$DK_KP_VERSION \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
        -Wno-dev
 
 # NOTE: The order to compile each component here is very important.
@@ -137,6 +142,8 @@ cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_breeze              -- -j$CPU_CORES
 
 #################################################################################################
+
+CopyDebugSymbols
 
 export PATH=$ORIG_PATH
 

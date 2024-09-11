@@ -49,6 +49,20 @@ ORIG_WD="`pwd`"
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/opt/qt6/bin:$ORIG_PATH
 
 #################################################################################################
+# Homebrew settings
+
+#export HOMEBREW_NO_INSTALL_FROM_API=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+export HOMEBREW_CELLAR="$INSTALL_PREFIX/Cellar"
+export HOMEBREW_PREFIX="$INSTALL_PREFIX"
+export HOMEBREW_REPOSITORY="$INSTALL_PREFIX"
+export HOMEBREW_CACHE="$INSTALL_PREFIX/cache"
+export QT_AVOID_CMAKE_ARCHIVING_API=ON
+
+sudo dseditgroup -o edit -a ${USER} -t user admin
+
+#################################################################################################
 # Check if a previous bundle already exist
 
 CONTINUE_INSTALL=0
@@ -82,35 +96,67 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
     #################################################################################################
     # Install HomeBrew
 
+    # Use this section if you want to install Homebrew to a custom location
+
+    # sudo mkdir $INSTALL_PREFIX
+    # sudo chown -R ${USER} $INSTALL_PREFIX
+    # git clone https://github.com/Homebrew/brew $INSTALL_PREFIX
+    # eval "$($INSTALL_PREFIX/bin/brew shellenv)"
+
+    # #export HOMEBREW_NO_INSTALL_FROM_API=1
+    # export HOMEBREW_NO_AUTO_UPDATE=1
+
+    # export HOMEBREW_CELLAR="$INSTALL_PREFIX/Cellar"
+    # export HOMEBREW_PREFIX="$INSTALL_PREFIX"
+    # export HOMEBREW_REPOSITORY="$INSTALL_PREFIX"
+    # export HOMEBREW_CACHE="$INSTALL_PREFIX/cache"
+
+    # #brew update --force --quiet
+    # brew update --force
+    # chmod -R go-w "$(brew --prefix)/share/zsh"
+
+    
+    # Use this section to do a default Homebrew installation
+    
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/gilles/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/${USER}/.zprofile
+    #eval "$(/opt/homebrew/bin/brew shellenv)"
 
 fi
 
 #################################################################################################
-# Macports update
+# Homebrew update
 
-echo -e "\n"
-echo "---------- Updating HomeBrew"
-#brew -v selfupdate
+# removed to keep build dependencies stable
 
-if [[ $CONTINUE_INSTALL == 0 ]]; then
+# echo -e "\n"
+# echo "---------- Updating HomeBrew"
+# brew -v selfupdate
 
-#    brew -v upgrade outdated
-    echo -e "\n"
+# if [[ $CONTINUE_INSTALL == 0 ]]; then
 
-fi
+# #    brew -v upgrade outdated
+#     echo -e "\n"
+
+# fi
 
 #################################################################################################
 # Dependencies build and installation
 
 echo -e "\n"
-echo "---------- Building digiKam dependencies with Macports"
+echo "---------- Building digiKam dependencies with Homebrew"
 
 echo -e "\n"
 
-brew install \
+# Homebrew supports Qt6 only
+if [[ $DK_QTVERSION = 5 ]] ; then
+    # brew install qt@5
+    export PATH=$ORIG_PATH
+    TerminateScript
+    exit
+fi
+
+${INSTALL_PREFIX}/bin/brew install \
              cmake \
              ccache \
              libpng \
@@ -130,13 +176,15 @@ brew install \
              libxslt \
              libical \
              bison \
-             python-lxml \
+             x264 \
              x265 \
              libde265 \
              libheif \
              aom \
              ffmpeg \
              wget \
+             dbus \
+             dbus-glib \
              qt \
              qt-mariadb \
              opencv \
@@ -146,8 +194,19 @@ brew install \
              fftw \
              exiv2 \
              lensfun
+#             sane-backends
 
 echo -e "\n"
+
+# these packages have to be built by us so we can update the library paths and code signature
+# ${INSTALL_PREFIX}/bin/brew install --build-from-source \
+
+# echo -e "\n"
+
+# use pip instead of Homebrew to install lxml
+${INSTALL_PREFIX}/bin/python3 -m venv ${INSTALL_PREFIX}
+source ${INSTALL_PREFIX}/bin/activate
+python3 -m pip install --upgrade lxml
 
 #################################################################################################
 
@@ -182,6 +241,8 @@ rm -rf $BUILDING_DIR/* || true
 #cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
 
 #################################################################################################
+
+CopyDebugSymbols
 
 export PATH=$ORIG_PATH
 
