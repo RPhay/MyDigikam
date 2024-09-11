@@ -377,6 +377,10 @@ cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
 port install libjxl
 port install libavif -docs -tests
 
+# for rll.py script.
+port install python27
+port select --set python2 python27
+
 #################################################################################################
 
 export PATH=$ORIG_PATH
