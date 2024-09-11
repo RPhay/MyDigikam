@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 01:47+0000\n"
+"POT-Creation-Date: 2024-09-11 01:44+0000\n"
 "PO-Revision-Date: 2024-08-29 18:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -37392,7 +37392,7 @@ msgid "Description"
 msgstr "Descrición"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1988
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -53106,7 +53106,7 @@ msgstr "Vila"
 msgid "&Info Boxes"
 msgstr "Caixas &informativas"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, kde-format
 msgid "Address Details"
 msgstr "Detalles do enderezo"
@@ -58923,7 +58923,7 @@ msgstr "Non foi posíbel obter os metadatos de <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2501
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Non foi posíbel descargar <filename>%1</filename>."
@@ -59744,18 +59744,18 @@ msgstr ""
 "A colección seleccionada como álbum de destino para descargar do dispositivo "
 "de cámara non está dispoñíbel. Seleccione outro álbum de destino."
 
-#: core/utilities/import/main/importui.cpp:1530
+#: core/utilities/import/main/importui.cpp:1534
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 "Non foi posíbel mover o ficheiro acompañante de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1537
+#: core/utilities/import/main/importui.cpp:1541
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Non foi posíbel mover o ficheiro de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1985
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59767,7 +59767,7 @@ msgstr ""
 "lectura). Estes elementos non se eliminarán. Se quere eliminar estes "
 "elementos, desbloquéeos e inténteo de novo."
 
-#: core/utilities/import/main/importui.cpp:1992
+#: core/utilities/import/main/importui.cpp:1996
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59787,19 +59787,19 @@ msgstr[1] ""
 "A eliminación dos ficheiros é irreversíbel.\n"
 "Seguro que quere proceder?"
 
-#: core/utilities/import/main/importui.cpp:2002
+#: core/utilities/import/main/importui.cpp:2006
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Aviso"
 
-#: core/utilities/import/main/importui.cpp:2046
+#: core/utilities/import/main/importui.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Espazo insuficiente"
 
-#: core/utilities/import/main/importui.cpp:2047
+#: core/utilities/import/main/importui.cpp:2051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59819,8 +59819,8 @@ msgstr ""
 "\n"
 "Quere intentalo de todos xeitos?"
 
-#: core/utilities/import/main/importui.cpp:2315
-#: core/utilities/import/main/importui.cpp:2341
+#: core/utilities/import/main/importui.cpp:2319
+#: core/utilities/import/main/importui.cpp:2345
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -59828,13 +59828,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Non se escolleu ningún elemento (%1 elemento)"
 msgstr[1] "Non se escolleu ningún elemento (%1 elementos)"
 
-#: core/utilities/import/main/importui.cpp:2334
+#: core/utilities/import/main/importui.cpp:2338
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "«%1» (%2 de %3)"
 
-#: core/utilities/import/main/importui.cpp:2351
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -59842,23 +59842,23 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "Escolleuse %2/%1 elemento"
 msgstr[1] "Escolléronse %2/%1 elementos"
 
-#: core/utilities/import/main/importui.cpp:2436
+#: core/utilities/import/main/importui.cpp:2440
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Saltouse o ficheiro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2462
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Renomear o ficheiro a <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/main/importui.cpp:2485
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 "Non foi posíbel gardar o ficheiro acompañante de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2562
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -59868,19 +59868,19 @@ msgstr ""
 "Rematou a descarga das imaxes, xa pode desconectar a cámara mentres se rotan "
 "automaticamente as imaxes."
 
-#: core/utilities/import/main/importui.cpp:2566
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Rematou a descarga das imaxes"
 
-#: core/utilities/import/main/importui.cpp:2592
+#: core/utilities/import/main/importui.cpp:2596
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Xa existe un ficheiro co mesmo nome («%1») no cartafol «%2»."
 
-#: core/utilities/import/main/importui.cpp:2605
+#: core/utilities/import/main/importui.cpp:2609
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

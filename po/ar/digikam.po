@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 01:47+0000\n"
+"POT-Creation-Date: 2024-09-11 01:44+0000\n"
 "PO-Revision-Date: 2024-06-26 23:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -36817,7 +36817,7 @@ msgid "Description"
 msgstr "الوصف"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1988
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -52902,7 +52902,7 @@ msgstr "{القرية}"
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"
@@ -58961,7 +58961,7 @@ msgstr "فشل جلب بيانات <filename>%1</filename> الوصفيّة"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2501
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "فشل تنزيل <filename>%1</filename>"
@@ -59752,19 +59752,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1530
+#: core/utilities/import/main/importui.cpp:1534
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "فشل جلب مصغّرة <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1537
+#: core/utilities/import/main/importui.cpp:1541
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "فشل جلب مصغّرة <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1985
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59775,7 +59775,7 @@ msgstr ""
 "العناصر أدناه قفلتها الكمرة (للقراءة فقط). لن تُحذف هذه العناصر. إن أردت حقًّا "
 "حذفها فعليك فكّ قفلها والتّجريب مجدّدًا."
 
-#: core/utilities/import/main/importui.cpp:1992
+#: core/utilities/import/main/importui.cpp:1996
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59804,19 +59804,19 @@ msgstr[4] ""
 msgstr[5] ""
 "على وشك حذف ال‍ %1 صورة هذه. <b>الملفّات المحذوفة لا تُستعاد.</b>أمتأكّد؟"
 
-#: core/utilities/import/main/importui.cpp:2002
+#: core/utilities/import/main/importui.cpp:2006
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "تحذير"
 
-#: core/utilities/import/main/importui.cpp:2046
+#: core/utilities/import/main/importui.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "مساحة القرص غير كافية"
 
-#: core/utilities/import/main/importui.cpp:2047
+#: core/utilities/import/main/importui.cpp:2051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59836,8 +59836,8 @@ msgstr ""
 "\n"
 "أأجربّ بأيّ حال؟"
 
-#: core/utilities/import/main/importui.cpp:2315
-#: core/utilities/import/main/importui.cpp:2341
+#: core/utilities/import/main/importui.cpp:2319
+#: core/utilities/import/main/importui.cpp:2345
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -59849,13 +59849,13 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/utilities/import/main/importui.cpp:2334
+#: core/utilities/import/main/importui.cpp:2338
 #, fuzzy, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 من %2"
 
-#: core/utilities/import/main/importui.cpp:2351
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -59867,22 +59867,22 @@ msgstr[3] "%2/%1 عناصر محدّدة"
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "%2/%1 عنصر محدّد"
 
-#: core/utilities/import/main/importui.cpp:2436
+#: core/utilities/import/main/importui.cpp:2440
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2462
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/main/importui.cpp:2485
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2562
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -59894,13 +59894,13 @@ msgid ""
 "are auto-rotated"
 msgstr "انتهى تنزيل الصّور، يمكنك الآن فصل الكمرة أثناء تدوير الصّور آليًّا"
 
-#: core/utilities/import/main/importui.cpp:2566
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "انتهى تنزيل الصّور"
 
-#: core/utilities/import/main/importui.cpp:2592
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59911,7 +59911,7 @@ msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr ""
 "هناك ملفّ بنفس الاسم (<b>%1</b>) في المجلّد <resource>%2</resource> بالفعل."
 
-#: core/utilities/import/main/importui.cpp:2605
+#: core/utilities/import/main/importui.cpp:2609
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to find Album for path <b>%1</b>."

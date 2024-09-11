@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 01:47+0000\n"
-"PO-Revision-Date: 2024-07-23 11:05+0000\n"
+"POT-Creation-Date: 2024-09-11 01:44+0000\n"
+"PO-Revision-Date: 2024-09-10 12:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -288,7 +288,7 @@ msgstr "Hópa hér og færa í albúm"
 #: core/app/dragdrop/itemdragdrop.cpp:192
 #, kde-format
 msgid "Assign Tag to Dropped Items"
-msgstr "Úthluta merki til slepptu hlutanna"
+msgstr "Úthluta merki á sleppt atriði"
 
 #: core/app/dragdrop/itemdragdrop.cpp:653
 #, kde-format
@@ -310,18 +310,18 @@ msgstr "Hæ&tta við"
 #: core/app/dragdrop/itemdragdrop.cpp:699
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr "Úthluta merkjum til &völdu hlutanna"
+msgstr "Úthluta merkjum á &völdu atriðin"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
 #: core/app/views/preview/itempreviewview.cpp:706
 #, kde-format
 msgid "Assign Tags to &This Item"
-msgstr "Úthluta merkjum &til þessara hluta"
+msgstr "Úthlu&ta merkjum á þetta atriði"
 
 #: core/app/dragdrop/itemdragdrop.cpp:711
 #, kde-format
 msgid "Assign Tags to &All Items"
-msgstr "Úthluta merkjum til &allra hlutanna"
+msgstr "Úthlut&a merkjum á öll atriði"
 
 #: core/app/dragdrop/itemdragdrop.cpp:769
 #, kde-format
@@ -348,7 +348,7 @@ msgstr[1] "Breyta nafni andlita úr '%2' í '%3'"
 #: core/app/dragdrop/tagdragdrop.cpp:388
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr "Úthluta merki '%1' til hlutanna"
+msgstr "Úthluta merki '%1' á atriði"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -539,13 +539,13 @@ msgstr "Snúa til hægri"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect Item"
-msgstr "Afvelja hlut"
+msgstr "Afvelja atriði"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Item"
-msgstr "Velja hlut"
+msgstr "Velja atriði"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:143
 #, kde-format
@@ -913,23 +913,21 @@ msgstr "Bæta við biðröð"
 #, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
-msgstr[0] "1 hlutur"
-msgstr[1] "%1 hlutir"
+msgstr[0] "1 atriði"
+msgstr[1] "%1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "Ógildur gagnamiðill"
+msgstr "Ógild dagsetning"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
-msgstr[0] "Dagsetning albúms: %2 %3 %4 - 1 hlutur"
-msgstr[1] "Dagsetning albúms: %2 %3 %4 - %1 hlutir"
+msgstr[0] "Dagsetning albúms: %2 %3 %4 - 1 atriði"
+msgstr[1] "Dagsetning albúms: %2 %3 %4 - %1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
@@ -946,29 +944,29 @@ msgctxt ""
 "items in tag"
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] "%2 - 1 hlutur"
-msgstr[1] "%2 - %1 hlutir"
+msgstr[0] "%2 - 1 atriði"
+msgstr[1] "%2 - %1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] "%2 - 1 hlutur"
-msgstr[1] "%2 - %1 hlutir"
+msgstr[0] "%2 - 1 atriði"
+msgstr[1] "%2 - %1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
-msgstr[0] "Stikkorðaleit - 1 hlutur"
-msgstr[1] "Stikkorðaleit - %1 hlutir"
+msgstr[0] "Stikkorðaleit - 1 atriði"
+msgstr[1] "Stikkorðaleit - %1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
-msgstr[0] "Ítarleg leit - 1 hlutur"
-msgstr[1] "Ítarleg leit - %1 hlutir"
+msgstr[0] "Ítarleg leit - 1 atriði"
+msgstr[1] "Ítarleg leit - %1 atriði"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
@@ -1262,7 +1260,7 @@ msgstr "Heiti:"
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
 #, kde-format
 msgid "Items:"
-msgstr "Hlutir:"
+msgstr "Atriði:"
 
 #: core/app/items/utils/tooltipfiller.cpp:599
 #, kde-format
@@ -1509,7 +1507,7 @@ msgstr "Bæta við myndum..."
 #: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "Adds new items to an Album."
-msgstr "Bætir nýjum hlutum í albúm."
+msgstr "Bætir nýjum atriðum í albúm."
 
 #: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
@@ -1784,7 +1782,7 @@ msgstr "Opna..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
-msgstr "Opna valinn hlut."
+msgstr "Opna valið atriði."
 
 #: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
@@ -1796,7 +1794,7 @@ msgstr "Opna með sjálfgefnu forriti"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
-msgstr "Opna valinn hlut með sjálfgefnu forriti."
+msgstr "Opna valið atriði með sjálfgefnu forriti."
 
 #: core/app/main/digikamapp_setup.cpp:387
 #, kde-format
@@ -1826,7 +1824,7 @@ msgstr "Setja á ljósaborð"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
-msgstr "Setja valda hluti á ljósaborðsstikuna."
+msgstr "Setja valin atriði á ljósaborðsstikuna."
 
 #: core/app/main/digikamapp_setup.cpp:408
 #, kde-format
@@ -1838,7 +1836,7 @@ msgstr "Bæta á ljósaborð"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
-msgstr "Bæta völdum hlutum á ljósaborðsstikuna."
+msgstr "Bæta völdum atriðum á ljósaborðsstikuna."
 
 #: core/app/main/digikamapp_setup.cpp:417
 #, kde-format
@@ -1856,7 +1854,7 @@ msgstr "Bæta við biðröð"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
-msgstr "Bæta völdum hlutum við núverandi biðröð í magnvinnslustjóranum."
+msgstr "Bæta völdum atriðum við núverandi biðröð í magnvinnslustjóranum."
 
 #: core/app/main/digikamapp_setup.cpp:430
 #, kde-format
@@ -1868,7 +1866,7 @@ msgstr "Bæta við nýja biðröð"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
-msgstr "Bæta völdum hlutum við nýja biðröð í magnvinnslustjóranum."
+msgstr "Bæta völdum atriðum við nýja biðröð í magnvinnslustjóranum."
 
 #: core/app/main/digikamapp_setup.cpp:438
 #, kde-format
@@ -1916,13 +1914,13 @@ msgstr "Finna svipað..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
-msgstr "Filla svipaðar myndir með því að nota valinn hlut sem viðmið."
+msgstr "Filla svipaðar myndir með því að nota valið atriði sem viðmið."
 
 #: core/app/main/digikamapp_setup.cpp:493
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
-msgstr "Breyta skráarnafni valins hlutar."
+msgstr "Breyta skráarnafni valins atriðis."
 
 #: core/app/main/digikamapp_setup.cpp:503
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
@@ -3533,6 +3531,11 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Bætt við nýjum verkfærum í viðhald- og biðraðastýringu þar sem hægt er að "
+"úthluta merkjum sjálfvirkt á myndir með aðstoð vélnáms-tauganetakerfis.<a "
+"href=\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Skoða þessa GoSC-2023 skýrslu fyrir nánari upplýsingar.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -3565,6 +3568,12 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Nýir RAW-eiginleikar: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS "
+"Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
+"Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Margskonar DJI og Skydio drónar. Margskonar snjallsímar með DNG-snið."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
@@ -17897,7 +17906,7 @@ msgstr "Það er ekkert myndasafn til að deila með núverandi vali..."
 #, kde-format
 msgctxt "@info"
 msgid "There is no item to share with the current selection..."
-msgstr "Það eru engir hlutir til að deila með núverandi vali..."
+msgstr "Það eru engin atriði til að deila með núverandi vali..."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
@@ -29026,7 +29035,7 @@ msgid ""
 "albums, items, and searches metadata."
 msgstr ""
 "Aðalgagnagrunnurinn er helsta geymsla digiKam fyrir\n"
-"albúm, hluti og lýsigögn fyrir leitir."
+"albúm, atriði og lýsigögn fyrir leitir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
@@ -29377,7 +29386,7 @@ msgstr "Hljóðskrár"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
-msgstr "Hlutir alls"
+msgstr "Atriði alls"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
@@ -29504,7 +29513,7 @@ msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr ""
-"Ef merkt er í þennan reit, verður hlutum endanlega eytt í stað þess að fara "
+"Ef merkt er í þennan reit, verður atriðum endanlega eytt í stað þess að fara "
 "fyrst í ruslið."
 
 #: core/libs/dialogs/deletedialog.cpp:291
@@ -29521,7 +29530,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
-msgstr "Eyða hlutum en&danlega í stað þess að færa fyrst í ruslið"
+msgstr "Eyða atriðum en&danlega í stað þess að færa fyrst í ruslið"
 
 #: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
@@ -29567,12 +29576,12 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
-msgstr "Þessum hlutum verður <b>eytt óendurkvæmt</b> af harða disknum."
+msgstr "Þessum atriðum verður <b>eytt óendurkvæmt</b> af harða disknum."
 
 #: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
-msgstr "Þessir hlutir verða fluttir í ruslið."
+msgstr "Þessi atriði verða flutt í ruslið."
 
 #: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
@@ -29584,12 +29593,12 @@ msgstr[1] "<b>%1</b> atriði valin."
 #: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
-msgstr "Þessum hlutum verður <b>eytt óendurkvæmt</b> af harða disknum."
+msgstr "Þessum albúmum verður <b>eytt óendurkvæmt</b> af harða disknum."
 
 #: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
-msgstr "Þessir hlutir verða fluttir í ruslið."
+msgstr "Þessi albúm verða flutt í ruslið."
 
 #: core/libs/dialogs/deletedialog.cpp:415
 #: core/libs/dialogs/deletedialog.cpp:442
@@ -37076,7 +37085,7 @@ msgid "Description"
 msgstr "Lýsing"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1988
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -37849,7 +37858,7 @@ msgstr "GPS: "
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
-msgstr "Eiginleikar hlutar"
+msgstr "Eiginleikar atriðis"
 
 #: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
@@ -41399,55 +41408,55 @@ msgstr "Rammi áfram"
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
-msgstr ""
+msgstr "Breyta afspilunarhraða myndskeiða"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "0.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "2.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "3.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "4.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "5.0x"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -51809,7 +51818,7 @@ msgid ""
 msgstr ""
 "Þú virðist ekki vera með skrifaðgang í möppuna sem þú valdir til að vera "
 "grunnmappa.\n"
-"Aðvörun: án skrifaðgangs er ekki hægt að breyta neinum hlutum."
+"Aðvörun: án skrifaðgangs er ekki hægt að breyta neinum atriðum."
 
 #: core/utilities/firstrun/databasepage.cpp:49
 #, kde-format
@@ -52139,7 +52148,7 @@ msgstr "Viðmiðunaralbúm"
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, kde-format
 msgid "Items"
-msgstr "Hlutir"
+msgstr "Atriði"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
@@ -52149,7 +52158,7 @@ msgstr "Meðal-líkindi"
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
 #, kde-format
 msgid "This shows all found duplicate items."
-msgstr "Hér geturðu séð alla þá hluti sem fundust í margtaki."
+msgstr "Hér geturðu séð öll þau atriði sem fundust í margtaki."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:107
 #, kde-format
@@ -52380,7 +52389,7 @@ msgid ""
 "images.</p>"
 msgstr ""
 "<p>Dragðu & slepptu mynd hér<br/>til að framkvæma leit<br/>að svipuðum "
-"hlutum.</p><p>Þú getur líka notað samhengisvalmyndina<br/> (hægrismella) "
+"atriðum.</p><p>Þú getur líka notað samhengisvalmyndina<br/> (hægrismella) "
 "þegar þú flettir í gegnum myndirnar þínar.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:39
@@ -52471,7 +52480,7 @@ msgstr "Veldu hér breidd pensils í mynddílum fyrir skissuna."
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
 #, kde-format
 msgid "Set here the number of items to find using sketch."
-msgstr "Veldu hér fjölda hluta sem á að finna með skissu."
+msgstr "Veldu hér fjölda atriða sem á að finna með skissu."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
 #, kde-format
@@ -52746,7 +52755,7 @@ msgstr "Þorp"
 msgid "&Info Boxes"
 msgstr "Upplýs&ingareitir"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, kde-format
 msgid "Address Details"
 msgstr "Nánar um heimilisfang"
@@ -56125,7 +56134,7 @@ msgstr "Google Kort"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Float items"
-msgstr "Fleyta hlutum"
+msgstr "Fleyta atriðum"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
 #, kde-format
@@ -58544,7 +58553,7 @@ msgstr "Gat ekki náð í lýsigögn fyrir <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2501
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Gat ekki náð í skrána <filename>%1</filename>"
@@ -58964,13 +58973,13 @@ msgstr "Umhverfa vali"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
-msgstr "Velja nýja hluti"
+msgstr "Velja ný atriði"
 
 #: core/utilities/import/main/importui.cpp:269
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
-msgstr "Velja læsta hluti"
+msgstr "Velja læst atriði"
 
 #: core/utilities/import/main/importui.cpp:277
 #, kde-format
@@ -59364,17 +59373,17 @@ msgstr ""
 "við niðurhali frá myndavél er ekki tiltækt. Veldu eitthvað annað albúm til "
 "að taka við myndunum."
 
-#: core/utilities/import/main/importui.cpp:1530
+#: core/utilities/import/main/importui.cpp:1534
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Mistókst að færa fylgiskrá fyrir <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1537
+#: core/utilities/import/main/importui.cpp:1541
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Mistókst að færa skrá fyrir <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1985
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59385,7 +59394,7 @@ msgstr ""
 "Atriðin hér að neðan eru læst af myndavélinni (ritvarið). Þeim verður ekki "
 "eytt. Viljir þú í alvörunni eyða þeim skaltu aflæsa þeim fyrst."
 
-#: core/utilities/import/main/importui.cpp:1992
+#: core/utilities/import/main/importui.cpp:1996
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59405,19 +59414,19 @@ msgstr[1] ""
 "Eyddar skrár fást ekki til baka.\n"
 "Ertu viss?"
 
-#: core/utilities/import/main/importui.cpp:2002
+#: core/utilities/import/main/importui.cpp:2006
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: core/utilities/import/main/importui.cpp:2046
+#: core/utilities/import/main/importui.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Ekki nóg diskpláss"
 
-#: core/utilities/import/main/importui.cpp:2047
+#: core/utilities/import/main/importui.cpp:2051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59437,8 +59446,8 @@ msgstr ""
 "\n"
 "Reyna samt?"
 
-#: core/utilities/import/main/importui.cpp:2315
-#: core/utilities/import/main/importui.cpp:2341
+#: core/utilities/import/main/importui.cpp:2319
+#: core/utilities/import/main/importui.cpp:2345
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -59446,13 +59455,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ekkert atriði er valið (af %1 atriði)"
 msgstr[1] "Ekkert atriði er valið (af %1 atriðum)"
 
-#: core/utilities/import/main/importui.cpp:2334
+#: core/utilities/import/main/importui.cpp:2338
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 af %3)"
 
-#: core/utilities/import/main/importui.cpp:2351
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -59460,22 +59469,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 atriði valið"
 msgstr[1] "%2/%1 atriði valin"
 
-#: core/utilities/import/main/importui.cpp:2436
+#: core/utilities/import/main/importui.cpp:2440
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Sleppti skránni <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2462
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Endurnefna skrá sem <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/main/importui.cpp:2485
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Gat ekki vistað fylgiskrá fyrir <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2562
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -59485,19 +59494,19 @@ msgstr ""
 "Innhleðslu mynda er lokið, þú getur núna aftengt myndavélina á meðan "
 "myndunum er snúið sjálfvirkt"
 
-#: core/utilities/import/main/importui.cpp:2566
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Niðurhali mynda lokið"
 
-#: core/utilities/import/main/importui.cpp:2592
+#: core/utilities/import/main/importui.cpp:2596
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Skrá með sama heiti (\"%1\") er þegar til í möppunni \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2605
+#: core/utilities/import/main/importui.cpp:2609
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -60055,7 +60064,7 @@ msgstr "Sýna á hægri skjá"
 #: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
-msgstr "Fjarlægja hlut"
+msgstr "Fjarlægja atriði"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
@@ -60071,8 +60080,8 @@ msgstr "Draga og sleppa myndum hér"
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
-msgstr[0] "%1 hlutur á ljósaborði"
-msgstr[1] "%1 hlutir á ljósaborði"
+msgstr[0] "%1 atriði á ljósaborði"
+msgstr[1] "%1 atriði á ljósaborði"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
 #, kde-format
@@ -60094,7 +60103,7 @@ msgstr "Til vinstri"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:49
 #, kde-format
 msgid "Show item on left panel"
-msgstr "Sýna hlut á vinstri skjá"
+msgstr "Sýna atriði á vinstri skjá"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:54
 #, kde-format
@@ -60104,7 +60113,7 @@ msgstr "Til hægri"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:56
 #, kde-format
 msgid "Show item on right panel"
-msgstr "Sýna hlut á hægri skjá"
+msgstr "Sýna atriði á hægri skjá"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
 #: core/utilities/setup/camera/setupcamera.cpp:458
@@ -60156,7 +60165,7 @@ msgstr "Parað"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:113
 #, kde-format
 msgid "Navigate by pairs with all items"
-msgstr "Færast parað milli hluta"
+msgstr "Færast parað milli atriða"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
 #, kde-format
@@ -60171,7 +60180,7 @@ msgstr "Hreinsa ljósaborð þegar því er lokað"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
-msgstr "Fjarlægja alla hluti af ljósaborði þegar því er lokað"
+msgstr "Fjarlægja öll atriði af ljósaborði þegar því er lokað"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
@@ -60772,12 +60781,12 @@ msgstr "Vista vinnuferli"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:321
 #, kde-format
 msgid "Remove items"
-msgstr "Fjarlægja hluti"
+msgstr "Fjarlægja atriði"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:327
 #, kde-format
 msgid "Remove processed items"
-msgstr "Fjarlægja unna hluti"
+msgstr "Fjarlægja unnin atriði"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
@@ -60808,7 +60817,7 @@ msgstr "Núverandi biðröð: "
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:484
 #, kde-format
 msgid "No items"
-msgstr "Engir hlutir"
+msgstr "Engin atriði"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:467
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
@@ -60855,7 +60864,7 @@ msgstr "Það er engin biðröð sem hægt er að keyra."
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:658
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
-msgstr "Það eru engir hlutir til að vinna með í núverandi biðröð (%1)."
+msgstr "Það eru engin atriði til að vinna með í núverandi biðröð (%1)."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:664
 #, kde-format
@@ -60875,14 +60884,14 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:701
 #, kde-format
 msgid "There are no items to process in the queues."
-msgstr "Það eru engir hlutir í biðröðum til að vinna með."
+msgstr "Það eru engin atriði í biðröðum til að vinna með."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:873
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:883
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr "Stillingar á albúmi fyrir unna hluti"
+msgstr "Stillingar á albúmi fyrir unnin atriði"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
 #, kde-format
@@ -60890,8 +60899,8 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
-"Albúmið/mappan sem geyma á unna hluti úr \"%1\" biðröðinni hefur ekki verið "
-"stillt. Veldu einhverja möppu í stillingaglugga biðraðarinnar."
+"Albúmið/mappan sem geyma á unnin atriði úr \"%1\" biðröðinni hefur ekki "
+"verið stillt. Veldu einhverja möppu í stillingaglugga biðraðarinnar."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:884
 #, kde-format
@@ -60899,14 +60908,14 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
-"Albúmið/mappan sem geyma átti unna hluti úr \"%1\" biðröðinni er ekki tiltæk "
-"eða er ekki skrifanleg. Veldu einhverja aðra möppu í stillingaglugga "
+"Albúmið/mappan sem geyma átti unnin atriði úr \"%1\" biðröðinni er ekki "
+"tiltæk eða er ekki skrifanleg. Veldu einhverja aðra möppu í stillingaglugga "
 "biðraðarinnar."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Failed to process item..."
-msgstr "Tókst ekki að meðhöndla hlut..."
+msgstr "Tókst ekki að meðhöndla atriði..."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:976
 #, kde-format
@@ -60916,7 +60925,7 @@ msgstr "Hætt við vinnslu..."
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
-msgstr "Hlutur \"%1\" úr biðröð \"%2\" : %3"
+msgstr "Atriði \"%1\" úr biðröð \"%2\" : %3"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1025
 #, kde-format
@@ -60962,7 +60971,7 @@ msgstr "Ekki tókst að búa til fylgiskrá..."
 #: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Item processed successfully %1"
-msgstr "Meðhöndlaði hlutinn %1"
+msgstr "Meðhöndlaði atriðið %1"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:304
 #: core/utilities/queuemanager/manager/actiontask.cpp:309
@@ -61074,10 +61083,10 @@ msgid_plural ""
 "There are still %1 unprocessed items in \"%2\".\n"
 "Do you want to close this queue?"
 msgstr[0] ""
-"Það er ennþá 1 ómeðhöndlaður hlutur í \"%2\".\n"
+"Það er ennþá 1 ómeðhöndlað atriði í \"%2\".\n"
 "Viltu loka þessari biðröð?"
 msgstr[1] ""
-"Það er ennþá %1 ómeðhöndlaðir hlutir í \"%2\".\n"
+"Það er ennþá %1 ómeðhöndluð atriði í \"%2\".\n"
 "Viltu loka þessari biðröð?"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:498
@@ -62226,12 +62235,10 @@ msgid "New..."
 msgstr "Nýtt..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Afrita í..."
+msgstr "Afrita..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -62723,7 +62730,7 @@ msgstr "Veldu hér letur fyrir texta sem birtist í greinasýnum."
 #: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
 msgid "Show a count of items in Tree Views"
-msgstr "Sýna talningu hluta í greinasýn"
+msgstr "Sýna talningu atriða í greinasýn"
 
 #: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
@@ -66060,15 +66067,7 @@ msgstr ""
 "Sérsníddu hegðun annarra hluta digiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -66078,11 +66077,12 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"Ferlið við að uppfæra tætigildi skráa tekur nokkrar mínútur.\n"
+"Ferlið við að uppfæra tætigildi skráa getur tekið nokkrar mínútur eða "
+"klukkustundir.\n"
 "Gakktu úr skugga um að öll mikilvæg myndasöfn á útskiptanlegum miðlum séu "
 "tengd.\n"
 "Eftir uppfærsluna geturðu ekki notað gagnagrunninn með digiKam útgáfum eldri "
-"en útgáfu 2.0.\n"
+"en útgáfu 8.5.0.\n"
 "Viltu hefja uppfærsluna?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
@@ -66098,15 +66098,7 @@ msgid "Update File Hashes"
 msgstr "Uppfæra tætigildi skráa"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66121,7 +66113,7 @@ msgstr ""
 "Gamla reikniritið virkar samt ágætlega, þannig að það er einungis mælt með "
 "að framkvæma þessa uppfærslu, en er ekki krafa.\n"
 "Eftir uppfærsluna muntu ekki geta notað gagnagrunninn með útgáfum digiKam "
-"eldri en 2.0."
+"eldri en 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
@@ -66583,7 +66575,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:84
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
-msgstr "Að velja hlut á smámyndastiku hleður myndinni í hægri skjáinn"
+msgstr "Að velja atriði á smámyndastiku hleður myndinni í hægri skjáinn"
 
 #: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
@@ -66592,7 +66584,7 @@ msgid ""
 "corresponding item is selected on the thumbbar."
 msgstr ""
 "Veldu þetta til að hlaða mynd sjálfvirkt inn í hægri skjáinn þegar "
-"samsvarandi hlutur er valinn á smámyndastiku."
+"samsvarandi atriði er valið á smámyndastiku."
 
 #: core/utilities/setup/setuplighttable.cpp:89
 #, kde-format
@@ -66704,7 +66696,7 @@ msgid ""
 "icon-view or thumb-bar item."
 msgstr ""
 "Veldu þetta til að sýna upplýsingar um myndir þegar bendillinn stöðvast yfir "
-"táknmyndasýn eða hlutum ásmáhlutastiku."
+"táknmyndasýn eða atriðum á smáhlutastiku."
 
 #: core/utilities/setup/setuptooltip.cpp:144
 #, kde-format
@@ -66897,7 +66889,7 @@ msgstr "Veldu þetta til að birta tegund myndmerkiskóðunar (codec)"
 #: core/utilities/setup/setuptooltip.cpp:293
 #, kde-format
 msgid "Show album items' tool-tips"
-msgstr "Sýna ábendingar við hluti í albúmum"
+msgstr "Sýna ábendingar við atriði í albúmum"
 
 #: core/utilities/setup/setuptooltip.cpp:294
 #, kde-format
@@ -66912,7 +66904,7 @@ msgid ""
 "folder-view item."
 msgstr ""
 "Veldu þetta til að sýna upplýsingar um albúm þegar bendillinn stöðvast yfir "
-"hlutum í möppusýn."
+"atriðum í möppusýn."
 
 #: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
@@ -67036,17 +67028,17 @@ msgstr ""
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
 msgid "Icon Items"
-msgstr "Táknmyndahlutir"
+msgstr "Táknmyndaatriði"
 
 #: core/utilities/setup/setuptooltip.cpp:407
 #, kde-format
 msgid "Album Items"
-msgstr "Albúmahlutir"
+msgstr "Atriði í albúmi"
 
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
 msgid "Import Items"
-msgstr "Flytja inn hluti"
+msgstr "Flytja inn atriði"
 
 #~ msgid ""
 #~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"

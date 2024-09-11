@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 01:47+0000\n"
+"POT-Creation-Date: 2024-09-11 01:44+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -39607,7 +39607,7 @@ msgid "Description"
 msgstr "Descrição"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1988
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -57413,7 +57413,7 @@ msgstr "{Cidade pequena}"
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"
@@ -63656,7 +63656,7 @@ msgstr "Ocorreu um erro ao obter os metadados de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2501
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Ocorreu um erro ao transferir o arquivo <filename>%1</filename>."
@@ -64534,19 +64534,19 @@ msgstr ""
 "transferência câmera não está disponível. Use outra na janela de "
 "configuração da câmera."
 
-#: core/utilities/import/main/importui.cpp:1530
+#: core/utilities/import/main/importui.cpp:1534
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1537
+#: core/utilities/import/main/importui.cpp:1541
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1985
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64558,7 +64558,7 @@ msgstr ""
 "Estes itens não serão excluídos. Se deseja realmente excluir estes itens, "
 "desbloqueie-os e tente novamente."
 
-#: core/utilities/import/main/importui.cpp:1992
+#: core/utilities/import/main/importui.cpp:1996
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64583,20 +64583,20 @@ msgstr[1] ""
 "Você está prestes a excluir estas %1 imagens. <b>Os arquivos excluídos não "
 "poderão ser recuperados.</b> Tem certeza?"
 
-#: core/utilities/import/main/importui.cpp:2002
+#: core/utilities/import/main/importui.cpp:2006
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Aviso"
 
-#: core/utilities/import/main/importui.cpp:2046
+#: core/utilities/import/main/importui.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Espaço em disco insuficiente"
 
-#: core/utilities/import/main/importui.cpp:2047
+#: core/utilities/import/main/importui.cpp:2051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64616,8 +64616,8 @@ msgstr ""
 "\n"
 "Tentar mesmo assim?"
 
-#: core/utilities/import/main/importui.cpp:2315
-#: core/utilities/import/main/importui.cpp:2341
+#: core/utilities/import/main/importui.cpp:2319
+#: core/utilities/import/main/importui.cpp:2345
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -64625,7 +64625,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Nenhum item selecionado (%1 item)"
 msgstr[1] "Nenhum item selecionado (%1 itens)"
 
-#: core/utilities/import/main/importui.cpp:2334
+#: core/utilities/import/main/importui.cpp:2338
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -64633,7 +64633,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 de %3)"
 
-#: core/utilities/import/main/importui.cpp:2351
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -64641,22 +64641,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 item selecionado"
 msgstr[1] "%2/%1 itens selecionados"
 
-#: core/utilities/import/main/importui.cpp:2436
+#: core/utilities/import/main/importui.cpp:2440
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Ignorar o arquivo <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2462
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Renomear o arquivo para <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/main/importui.cpp:2485
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2562
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -64670,13 +64670,13 @@ msgstr ""
 "A transferência das imagens foi concluída e você pode agora desligar a sua "
 "câmera enquanto ocorre a rotação automática"
 
-#: core/utilities/import/main/importui.cpp:2566
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "A transferência das imagens foi concluída"
 
-#: core/utilities/import/main/importui.cpp:2592
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64688,7 +64688,7 @@ msgstr ""
 "Já existe um arquivo com o mesmo nome (<b>%1</b>) na pasta <resource>%2</"
 "resource>."
 
-#: core/utilities/import/main/importui.cpp:2605
+#: core/utilities/import/main/importui.cpp:2609
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to find Album for path <b>%1</b>."

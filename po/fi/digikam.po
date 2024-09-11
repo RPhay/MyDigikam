@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-09 01:47+0000\n"
+"POT-Creation-Date: 2024-09-11 01:44+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -37519,7 +37519,7 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1984
+#: core/utilities/import/main/importui.cpp:1988
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -53077,7 +53077,7 @@ msgstr "{Kylä}"
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"
@@ -59145,7 +59145,7 @@ msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2501
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> lataaminen epäonnistui"
@@ -59964,18 +59964,18 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1530
+#: core/utilities/import/main/importui.cpp:1534
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 "Tiedoston <filename>%1</filename> oheistiedoston siirtäminen epäonnistui"
 
-#: core/utilities/import/main/importui.cpp:1537
+#: core/utilities/import/main/importui.cpp:1541
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> siirtäminen epäonnistui"
 
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1985
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59987,7 +59987,7 @@ msgstr ""
 "poisteta. Jos haluat poistaa nämä kohteet, poista ensin lukitus ja yritä "
 "sitten uudelleen."
 
-#: core/utilities/import/main/importui.cpp:1992
+#: core/utilities/import/main/importui.cpp:1996
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60007,19 +60007,19 @@ msgstr[1] ""
 "Poistettuja tiedostoja ei enää voi palauttaa.\n"
 "Oletko varma?"
 
-#: core/utilities/import/main/importui.cpp:2002
+#: core/utilities/import/main/importui.cpp:2006
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Varoitus"
 
-#: core/utilities/import/main/importui.cpp:2046
+#: core/utilities/import/main/importui.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Levytila ei riitä"
 
-#: core/utilities/import/main/importui.cpp:2047
+#: core/utilities/import/main/importui.cpp:2051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60039,8 +60039,8 @@ msgstr ""
 "\n"
 "Yritetäänkö silti?"
 
-#: core/utilities/import/main/importui.cpp:2315
-#: core/utilities/import/main/importui.cpp:2341
+#: core/utilities/import/main/importui.cpp:2319
+#: core/utilities/import/main/importui.cpp:2345
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60048,13 +60048,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ei valittuja kohteita (%1 kohde)"
 msgstr[1] "Ei valittuja kohteita (%1 kohdetta)"
 
-#: core/utilities/import/main/importui.cpp:2334
+#: core/utilities/import/main/importui.cpp:2338
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "”%1” (%2 / %3)"
 
-#: core/utilities/import/main/importui.cpp:2351
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60062,24 +60062,24 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 kohde valittu"
 msgstr[1] "%2/%1 kohdetta valittu"
 
-#: core/utilities/import/main/importui.cpp:2436
+#: core/utilities/import/main/importui.cpp:2440
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Ohitettiin tiedosto <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2462
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Tiedoston nimeksi muutettiin <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/main/importui.cpp:2485
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 "Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
 "Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
 
-#: core/utilities/import/main/importui.cpp:2558
+#: core/utilities/import/main/importui.cpp:2562
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60089,19 +60089,19 @@ msgstr ""
 "Kuvien lataus valmistui; voit irrottaa kameran odotellessasi kuvien "
 "automaattista kääntöä"
 
-#: core/utilities/import/main/importui.cpp:2566
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Kuvien lataus valmistui"
 
-#: core/utilities/import/main/importui.cpp:2592
+#: core/utilities/import/main/importui.cpp:2596
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Kansiossa ”%2” on jo saman niminen tiedosto (”%1”)."
 
-#: core/utilities/import/main/importui.cpp:2605
+#: core/utilities/import/main/importui.cpp:2609
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
