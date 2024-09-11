@@ -75,8 +75,18 @@ Applications/digiKam.org \
 "
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
+
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+    QT_PLUGIN_EXT="so"
+else
+    QT_PLUGIN_EXT="dylib"
+fi
+
+# Note: lib/plugins/styles/ files are so in both architecture. Why ?
+
+
 OTHER_APPS="\
-lib/plugins/imageformats/*.so \
+lib/plugins/imageformats/*.$QT_PLUGIN_EXT \
 lib/plugins/styles/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
