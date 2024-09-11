@@ -42,8 +42,8 @@ elseif(APPLE)
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libde265-lib-only.patch
 
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_libde265} RelWithDebInfo x86_64
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${PREFIX_libde265} RelWithDebInfo ${ARCH_TARGET}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

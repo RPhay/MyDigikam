@@ -105,9 +105,9 @@ function(InstallKDEComponent
                                           cp ${CMAKE_CURRENT_SOURCE_DIR}/../../macports/fixbundledatapath.sh <SOURCE_DIR>/. &&
                                           <SOURCE_DIR>/fixbundledatapath.sh
 
-                            CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                                              sed -i '' -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g" <SOURCE_DIR>/bootstrap.macports &&
-                                              <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_frameworks} debug x86_64 "${argoptions}"
+                            CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                                              sed -i '' -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g" <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} &&
+                                              <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${EXTPREFIX_frameworks} debug ${ARCH_TARGET} "${argoptions}"
 
                             BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

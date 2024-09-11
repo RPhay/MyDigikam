@@ -135,8 +135,8 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/opencv/opencv.git
         GIT_TAG 4.10.0
 
-        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo ${ARCH_TARGET} "${BASH_OPTIONS}"
+        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${EXTPREFIX_opencv} RelWithDebInfo ${ARCH_TARGET} "${BASH_OPTIONS}"
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

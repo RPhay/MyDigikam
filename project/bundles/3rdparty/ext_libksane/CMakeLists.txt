@@ -80,8 +80,8 @@ elseif(APPLE)
                         URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/ksanecore-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
-                        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_libksane} debug x86_64 "-DBUILD_TESTING=OFF -Wno-dev"
+                        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${EXTPREFIX_libksane} debug ${ARCH_TARGET} "-DBUILD_TESTING=OFF -Wno-dev"
 
                         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 
@@ -104,8 +104,8 @@ elseif(APPLE)
 
                         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
 
-                        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_libksane} debug x86_64 "-DWITH_DESIGNER_PLUGIN=OFF -DBUILD_TESTING=OFF -Wno-dev"
+                        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${EXTPREFIX_libksane} debug ${ARCH_TARGET} "-DWITH_DESIGNER_PLUGIN=OFF -DBUILD_TESTING=OFF -Wno-dev"
 
                         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

@@ -1,0 +1,14 @@
+diff --git a/src/solid/devices/backends/iokit/iokitdevice.cpp b/src/solid/devices/backends/iokit/iokitdevice.cpp
+--- a/src/solid/devices/backends/iokit/iokitdevice.cpp
++++ b/src/solid/devices/backends/iokit/iokitdevice.cpp
+@@ -113,7 +113,9 @@
+
+     CFStringRef path = IORegistryEntryCopyPath(parent, kIOServicePlane);
+     QString result = QString::fromCFString(path);
+-    CFRelease(path);
++    if (path) {
++        CFRelease(path);
++    }
+
+     // now we can release the parent
+     IOObjectRelease(parent);

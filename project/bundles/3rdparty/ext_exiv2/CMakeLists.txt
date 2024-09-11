@@ -48,8 +48,8 @@ if(APPLE)
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
                           <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2 &&
-                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_exiv2} RelWithDebInfo ${CMAKE_HOST_SYSTEM_PROCESSOR} ${BASH_OPTIONS}
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${PREFIX_ext_exiv2} RelWithDebInfo ${CMAKE_HOST_SYSTEM_PROCESSOR} ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

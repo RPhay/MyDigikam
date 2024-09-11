@@ -207,6 +207,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKA_VERSION=$DK_KA_VERSION \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

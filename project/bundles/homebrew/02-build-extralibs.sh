@@ -90,6 +90,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
+       -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
 # NOTE: The order to compile each component here is very important.

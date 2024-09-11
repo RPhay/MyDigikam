@@ -87,8 +87,8 @@ elseif(APPLE)
         GIT_TAG v0.10.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
-                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_libjxl} RelWithDebInfo ${ARCH_TARGET} ${BASH_OPTIONS}
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${PREFIX_ext_libjxl} RelWithDebInfo ${ARCH_TARGET} ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

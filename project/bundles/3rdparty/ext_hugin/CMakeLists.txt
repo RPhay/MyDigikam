@@ -57,8 +57,8 @@ elseif(APPLE)
 
         SVN_REPOSITORY svn://dev.exiv2.org/svn/trunk
 
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_exiv2} RelWithDebInfo x86_64 ${BASH_OPTIONS}
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${PREFIX_ext_exiv2} RelWithDebInfo ${ARCH_TARGET} ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 
