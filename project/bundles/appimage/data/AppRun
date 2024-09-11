@@ -48,6 +48,18 @@ OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"
 OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
 
+if [ -z "${OS_NAME}" ] ; then
+
+    OS_NAME=$(awk -F'=' '/PRETTY_NAME/ {print $2}' /etc/os-release | tr -d '"')
+
+fi
+
+if [ -z "${OS_VERSION}" ] ; then
+
+    OS_VERSION=$(awk -F'=' '/VERSION_ID/ {print $2}' /etc/os-release | tr -d '"')
+
+fi
+
 echo "-- Detected host Linux $OS_NAME-$OS_ARCH-$OS_VERSION"
 
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted
@@ -173,7 +185,9 @@ preload_shared_library libgmodule-2.0.so.0
 
 # See bug #216915 and #492040
 
-if [[ $OS_NAME != "manjarolinux" && $OS_VERSION != "24.7" ]] ; then
+if [[ ! (($OS_NAME = "manjarolinux"        && $OS_VERSION = "24.7")      ||
+         ($OS_NAME = "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
+
     preload_shared_library libgnutls.so.30
 fi
 
