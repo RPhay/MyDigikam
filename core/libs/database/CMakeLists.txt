@@ -204,10 +204,10 @@ target_compile_definitions(digikamdatabase_obj
                            digikamdatabase_EXPORTS
 )
 
-# Only for MSVC: specific settings with C++20 required by Qt 6.7 and later for history classes based on Boost.
+# Specific settings with C++20 required by Qt 6.7 and later for history classes based on Boost.
 # TODO: check if new MSVC do not report a compilation error with Boost code.
 
-if (MSVC)
+if(MSVC OR APPLE)
 
     set_target_properties(digikamdatabase_obj
                           PROPERTIES
