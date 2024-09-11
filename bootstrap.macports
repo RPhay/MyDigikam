@@ -6,7 +6,7 @@
 #
 # Arguments : $1 : install path '/opt/digikam.org.x86_64' (default).
 #             $2 : build type   'Debug' to hack (default), 'Release' for production.
-#             $3 : target type  'x86_64' for macOS Lion Intel and later (default), 'universal' for macOS BigSur Silicon and latter.
+#             $3 : target type  'x86_64' for macOS Lion Intel and later (default), 'arm64' for macOS BigSur Silicon and latter.
 #             $4 : Cmake extra configure options.
 
 # Halt and catch errors
