@@ -157,13 +157,26 @@ etc/mariadb$MARIADB_SUFFIX \
 
 # Additional Data Directories - to be copied recursively
 OTHER_DATA="\
-share/applications \
 share/opencv4 \
 share/k* \
-share/lensfun \
 share/mime \
 Library/Application/ \
+share/applications \
 "
+
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+
+    OTHER_DATA=$OTHER_DATA"\
+    share/lensfun \
+    "
+
+else
+
+    OTHER_DATA=$OTHER_DATA"\
+    lensfun \
+    "
+
+fi
 
 # Packaging tool paths
 PACKAGESBUILD="/usr/local/bin/packagesbuild"

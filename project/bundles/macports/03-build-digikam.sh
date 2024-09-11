@@ -192,6 +192,16 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    # Qt6 install of .../Applications/... binaries is done at the wrong place.
+
+    mkdir -p $INSTALL_PREFIX/$RELOCATE_PREFIX/
+    mv $INSTALL_PREFIX/bin/digikam.*  $INSTALL_PREFIX/$RELOCATE_PREFIX/
+    mv $INSTALL_PREFIX/bin/showfoto.* $INSTALL_PREFIX/$RELOCATE_PREFIX/
+
+fi
+
 #################################################################################################
 # Install Extra Plugins
 
