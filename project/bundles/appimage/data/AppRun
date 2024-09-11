@@ -185,8 +185,8 @@ preload_shared_library libgmodule-2.0.so.0
 
 # See bug #216915 and #492040
 
-if [[ ! (($OS_NAME = "manjarolinux"        && $OS_VERSION = "24.7")      ||
-         ($OS_NAME = "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
+if [[ ! (($OS_NAME == "manjarolinux"        && $OS_VERSION == "24.7")     ||
+         ($OS_NAME == "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
 
     preload_shared_library libgnutls.so.30
 fi
