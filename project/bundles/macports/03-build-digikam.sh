@@ -152,7 +152,7 @@ cp -f $ORIG_WD/fixbundledatapath.sh $DK_BUILDTEMP/digikam-$DK_VERSION
 
 ./fixbundledatapath.sh
 
-./bootstrap.macports "$INSTALL_PREFIX" "Debug" "x86_64" "-Wno-dev"
+./bootstrap.macports "$INSTALL_PREFIX" "Debug" "$ARCH_TARGET" "-Wno-dev"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
