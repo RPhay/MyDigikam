@@ -24,44 +24,8 @@
 
 // Local includes
 
-#include "digikam_debug.h"
-#include "digikam_config.h"
-#include "digikam_globals.h"
-#include "dimgjpeg2000loader.h"
+#include "dimgjpeg2000loader_p.h"
 #include "dimgjpeg2000exportsettings.h"
-
-// Jasper includes
-
-#ifndef Q_CC_MSVC
-extern "C"
-{
-#endif
-
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wcpp"
-#endif
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wshift-negative-value"
-#endif
-
-#include <jasper/jasper.h>
-#include <jasper/jas_version.h>
-
-// Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
-#ifndef Q_CC_MSVC
-}
-#endif
 
 namespace DigikamJPEG2000DImgPlugin
 {
