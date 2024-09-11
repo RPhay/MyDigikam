@@ -82,8 +82,7 @@ else
     QT_PLUGIN_EXT="dylib"
 fi
 
-# Note: lib/plugins/styles/ files are so in both architecture. Why ?
-
+# Note: lib/plugins/styles/ files are *.so in both architectures. Why this mess?
 
 OTHER_APPS="\
 lib/plugins/imageformats/*.$QT_PLUGIN_EXT \
@@ -100,20 +99,38 @@ lib/mariadb$MARIADB_SUFFIX/bin/mysqladmin \
 lib/mariadb$MARIADB_SUFFIX/bin/mysqltest \
 lib/mariadb$MARIADB_SUFFIX/mysql/*.dylib \
 lib/mariadb$MARIADB_SUFFIX/plugin/*.so \
-bin/kbuildsycoca5 \
-bin/solid-hardware5 \
+bin/kbuildsycoca$DK_QTVERSION \
+bin/solid-hardware$DK_QTVERSION \
 bin/ffmpeg \
 libexec/qt$DK_QTVERSION/plugins/imageformats/*.dylib \
 libexec/qt$DK_QTVERSION/plugins/sqldrivers/*.dylib \
-libexec/qt$DK_QTVERSION/plugins/printsupport/*.dylib \
 libexec/qt$DK_QTVERSION/plugins/platforms/*.dylib \
-libexec/qt$DK_QTVERSION/plugins/platformthemes/*.dylib \
 libexec/qt$DK_QTVERSION/plugins/iconengines/*.dylib \
 libexec/qt$DK_QTVERSION/plugins/generic/*.dylib \
 libexec/qt$DK_QTVERSION/plugins/styles/*.dylib \
-libexec/qt$DK_QTVERSION/plugins/bearer/*.dylib \
-libexec/qt$DK_QTVERSION/plugins/audio/*.dylib \
 "
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    # Qt5 specific plugins
+
+    OTHER_APPS=$OTHER_APPS"\
+    libexec/qt$DK_QTVERSION/plugins/audio/*.dylib \
+    libexec/qt$DK_QTVERSION/plugins/bearer/*.dylib \
+    libexec/qt$DK_QTVERSION/plugins/printsupport/*.dylib \
+    libexec/qt$DK_QTVERSION/plugins/platformthemes/*.dylib \
+    "
+
+else
+
+    # Qt6 specific plugins
+
+    OTHER_APPS=$OTHER_APPS"\
+    libexec/qt$DK_QTVERSION/plugins/multimedia/*.dylib \
+    libexec/qt$DK_QTVERSION/plugins/tls/*.dylib \
+    "
+
+fi
 
 #lib/sane/*.so \
 
