@@ -96,7 +96,7 @@ export QT_PLUGIN_PATH=$DIR/usr/plugins/
 
 # See bug #427906
 
-if [ -d "/usr/share/X11/xkb/" ]; then
+if [ -d "/usr/share/X11/xkb/" ] ; then
 
     export XKB_CONFIG_ROOT=/usr/share/X11/xkb/
 
@@ -148,7 +148,7 @@ export APPIMAGE_STARTUP_PATH=$PATH
 # See bug #401377: tested on Fedora 29 and Mageia 7 for transitional
 # migration from openssl 1.0 to openssl 1.1
 
-if [ -f /etc/pki/openssl10.cnf ]; then
+if [ -f /etc/pki/openssl10.cnf ] ; then
 
     export OPENSSL_CONF=/etc/pki/openssl10.cnf
 
@@ -156,7 +156,7 @@ fi
 
 # See Bug #109060
 
-if [ -f $DIR/usr/lib/libavif.so.13 ]; then
+if [ -f $DIR/usr/lib/libavif.so.13 ] ; then
 
     export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib/libavif.so.13
 
@@ -185,10 +185,11 @@ preload_shared_library libgmodule-2.0.so.0
 
 # See bug #216915 and #492040
 
-if [[ ! (($OS_NAME = "manjarolinux"        && $OS_VERSION = "24.7")      ||
-         ($OS_NAME = "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
+if [[ ! (($OS_NAME == "manjarolinux"        && $OS_VERSION == "24.7")     ||
+         ($OS_NAME == "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
 
     preload_shared_library libgnutls.so.30
+
 fi
 
 # See bug #261634
