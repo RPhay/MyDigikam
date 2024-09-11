@@ -37,29 +37,65 @@ function(InstallKF6Component
         message(STATUS "Configure options: ${argoptions}")
         message(STATUS "Patch to apply   : ${patch}")
 
-        if(NOT "${patch}" STREQUAL "")
-            set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch}")
+        if(APPLE)
+            if(NOT "${patch}" STREQUAL "")
+                set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch};&&")
+            endif()
+
+            ExternalProject_Add(ext_${name}
+                                DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+                                GIT_REPOSITORY ${giturl}
+                                GIT_TAG ${version}
+
+                                PATCH_COMMAND ${patch}
+                                            cp ${CMAKE_CURRENT_SOURCE_DIR}/../../${DK_APPLE_PACKAGE_MANAGER}/fixbundledatapath.sh <SOURCE_DIR>/. &&
+                                            <SOURCE_DIR>/fixbundledatapath.sh
+
+                                INSTALL_DIR ${EXTPREFIX_frameworks}
+                                CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_frameworks}
+                                        -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                                        ${GLOBAL_PROFILE}
+                                        -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX}
+                                        -DBUILD_TESTING=OFF
+                                        "${argoptions}"
+                                        -Wno-dev
+                                UPDATE_COMMAND ""
+                                ALWAYS 0
+            )
+
+            if("${DK_APPLE_PACKAGE_MANAGER}" STREQUAL "homebrew")
+                set_target_properties(ext_${name} 
+                                    PROPERTIES
+                                    MACOSX_BUNDLE TRUE
+                                    MACOSX_BUNDLE_BUNDLE_NAME "digiKam.org"
+                                    MACOSX_BUNDLE_GUI_IDENTIFIER "org.digiKam.digikam")
+            endif()
+
+        else()
+            if(NOT "${patch}" STREQUAL "")
+                set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch}")
+            endif()
+            
+            ExternalProject_Add(ext_${name}
+                                DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+                                GIT_REPOSITORY ${giturl}
+                                GIT_TAG ${version}
+
+                                PATCH_COMMAND ${patch}
+
+                                INSTALL_DIR ${EXTPREFIX_frameworks}
+                                CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_frameworks}
+                                        -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                                        ${GLOBAL_PROFILE}
+                                        -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX}
+                                        -DBUILD_TESTING=OFF
+                                        "${argoptions}"
+                                        -Wno-dev
+                                UPDATE_COMMAND ""
+                                ALWAYS 0
+            )
         endif()
-
-        ExternalProject_Add(ext_${name}
-                            DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                            GIT_REPOSITORY ${giturl}
-                            GIT_TAG ${version}
-
-                            PATCH_COMMAND ${patch}
-
-                            INSTALL_DIR ${EXTPREFIX_frameworks}
-                            CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_frameworks}
-                                       -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                                       ${GLOBAL_PROFILE}
-                                       -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX}
-                                       -DBUILD_TESTING=OFF
-                                       "${argoptions}"
-                                       -Wno-dev
-                            UPDATE_COMMAND ""
-                            ALWAYS 0
-        )
-
+        
 endfunction()
 
 if(MSVC)

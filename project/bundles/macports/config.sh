@@ -115,6 +115,9 @@ DK_VERSION=master
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
 
+# needed to separate Macports from Homebrew
+DK_APPLE_PACKAGE_MANAGER="macports"
+
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
