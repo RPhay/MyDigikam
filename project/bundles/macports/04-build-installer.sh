@@ -362,7 +362,7 @@ rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 cd "$ORIG_WD"
 
 #################################################################################################
-# Move digiKam and KF5 run-time plugins to the right place
+# Move digiKam and KF run-time plugins to the right place
 
 cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt$DK_QTVERSION/
 rm -rf $TEMPROOT/lib/plugins
