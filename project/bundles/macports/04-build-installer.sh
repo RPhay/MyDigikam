@@ -169,11 +169,13 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     OTHER_DATA=$OTHER_DATA"\
     share/lensfun \
     "
+    # NOTE: QtCurve is located in Library/Application
 
 else
 
     OTHER_DATA=$OTHER_DATA"\
     lensfun \
+    share/QtCurve
     "
 
 fi
