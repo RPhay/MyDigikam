@@ -77,7 +77,7 @@ BUGFIXES:
 063 ==> 492789 - Do not open digiKam in full window.
 064 ==> 492784 - Changing keyboard shortcut scheme deletes 'Assign Tag' keyboard shortcuts.
 065 ==> 492941 - Fractional seconds formatter value (zzz) not being read and applied to filename.
-066 ==> 
+066 ==> 492937 - digiKam 8.5.0 isn't working with MariaDB.
 067 ==> 
 068 ==> 
 069 ==> 
