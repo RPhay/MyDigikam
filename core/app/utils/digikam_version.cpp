@@ -19,6 +19,7 @@
 #include <QDate>
 #include <QTime>
 #include <QLocale>
+#include <QSysInfo>
 
 // KDE includes
 
@@ -78,13 +79,15 @@ const QString additionalInformation()
                    "Feedback: %2\n"
                    "Documentation: %3\n\n"
                    "Build date: %4 (target: %5)\n"
-                   "Revision: %6\n"
-                   "Branch: %7",
+                   "Build architecture: %6"
+                   "Revision: %7\n"
+                   "Branch: %8",
                    QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                    QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
                    QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"),
                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
+                   QSysInfo::buildCpuArchitecture(),
                    QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer),
                    gitBra
                   );
