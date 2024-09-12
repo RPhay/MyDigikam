@@ -1,7 +1,7 @@
 diff --git a/src/gui/platform/unix/qgenericunixservices.cpp b/src/gui/platform/unix/qgenericunixservices.cpp
 index bfd2556b1e..0b9268a27b 100644
---- a/src/gui/platform/unix/qgenericunixservices.cpp
-+++ b/src/gui/platform/unix/qgenericunixservices.cpp
+--- a/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
++++ b/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
 @@ -148,7 +148,77 @@ static inline bool launch(const QString &launcher, const QUrl &url,
      bool ok = false;
      if (!args.isEmpty()) {
