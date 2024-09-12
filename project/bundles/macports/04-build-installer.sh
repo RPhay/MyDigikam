@@ -137,9 +137,14 @@ fi
 binaries="$OTHER_APPS"
 
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
-# Note: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+# NOTE: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+#       QtWebEngine runtime process and binary archives (.pak) are located in libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework/
+#
 OTHER_DIRS="\
 libexec/qt$DK_QTVERSION/translations \
+libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
 lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
@@ -317,13 +322,6 @@ done
 
 mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/icons/"
 cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/icons/"
-
-echo "---------- Copying Qt Web Backend files..."
-
-# Qt Web framework bin data files.
-# NOTE: Since Qt 5.15.0, QtWebEngine runtime process is now located in
-#       libexec/qt5/lib/QtWebEngineCore.framework/Versions/5/Helpers/QtWebEngineProcess.app/Contents/MacOS
-#       instead of libexec/qt5/libexec/. No needs to make extra rules for this runtime process.
 
 echo "---------- Copying i18n..."
 
