@@ -116,7 +116,7 @@ set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON)
 InstallKF6Component(extra-cmake-modules      ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(plasma-wayland-protocols ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "wayland-proto-ecm-version.patch")
 InstallKF6Component(kconfig                  ${KDE_VERSION}     "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"                 "")
-InstallKF6Component(breeze-icons             ${KDE_VERSION}     "${Qt6CommonOptions};${BreezeIconsOptions}"                 "breeze-icons-dropsvg-rccprefix.patch")
+InstallKF6Component(breeze-icons             ${KDE_VERSION}     "${Qt6CommonOptions};${BreezeIconsOptions}"                 "breeze-icons-dropsvg.patch")
 
 if("${DK_APPLE_PACKAGE_MANAGER}" STREQUAL "homebrew")
     InstallKF6Component(solid                    ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "solid-iokit-cfrelease.patch")
