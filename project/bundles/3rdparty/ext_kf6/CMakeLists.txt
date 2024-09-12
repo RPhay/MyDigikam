@@ -38,6 +38,7 @@ function(InstallKF6Component
         message(STATUS "Patch to apply   : ${patch}")
 
         if(APPLE)
+
             if(NOT "${patch}" STREQUAL "")
                 set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch};&&")
             endif()
@@ -72,10 +73,11 @@ function(InstallKF6Component
             endif()
 
         else()
+
             if(NOT "${patch}" STREQUAL "")
                 set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch}")
             endif()
-            
+
             ExternalProject_Add(ext_${name}
                                 DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
                                 GIT_REPOSITORY ${giturl}
@@ -94,8 +96,9 @@ function(InstallKF6Component
                                 UPDATE_COMMAND ""
                                 ALWAYS 0
             )
+
         endif()
-        
+
 endfunction()
 
 if(MSVC)
@@ -114,11 +117,13 @@ InstallKF6Component(extra-cmake-modules      ${KDE_VERSION}     "${Qt6CommonOpti
 InstallKF6Component(plasma-wayland-protocols ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "wayland-proto-ecm-version.patch")
 InstallKF6Component(kconfig                  ${KDE_VERSION}     "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"                 "")
 InstallKF6Component(breeze-icons             ${KDE_VERSION}     "${Qt6CommonOptions};${BreezeIconsOptions}"                 "breeze-icons-dropsvg-rccprefix.patch")
+
 if("${DK_APPLE_PACKAGE_MANAGER}" STREQUAL "homebrew")
     InstallKF6Component(solid                    ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "solid-iokit-cfrelease.patch")
 else()
     InstallKF6Component(solid                    ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 endif()
+
 InstallKF6Component(kcoreaddons              ${KDE_VERSION}     "${Qt6CommonOptions};-DKCOREADDONS_USE_QML=OFF"             "")
 InstallKF6Component(threadweaver             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kwindowsystem            ${KDE_VERSION}     "${Qt6CommonOptions};-DKWINDOWSYSTEM_WAYLAND=OFF"           "")
