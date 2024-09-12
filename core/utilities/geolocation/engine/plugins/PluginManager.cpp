@@ -40,39 +40,38 @@ class Q_DECL_HIDDEN PluginManagerPrivate
 public:
 
     PluginManagerPrivate(PluginManager* parent)
-        : m_pluginsLoaded(false),
-          m_parent(parent)
+        : m_parent(parent)
     {
     }
 
-    ~PluginManagerPrivate();
+    ~PluginManagerPrivate() = default;
+
+public:
 
     void loadPlugins();
     bool addPlugin(QObject* obj, const QPluginLoader* loader);
 
 public:
 
-    bool                                        m_pluginsLoaded;
-    QList<const RenderPlugin*>                 m_renderPluginTemplates;
-    QList<const SearchRunnerPlugin*>           m_searchRunnerPlugins;
-    QList<const ReverseGeocodingRunnerPlugin*> m_reverseGeocodingRunnerPlugins;
-    QList<const ParseRunnerPlugin*>            m_parsingRunnerPlugins;
-    PluginManager*                              m_parent = nullptr;
+    bool                                        m_pluginsLoaded = false;
+    QList<const RenderPlugin*>                  m_renderPluginTemplates;
+    QList<const SearchRunnerPlugin*>            m_searchRunnerPlugins;
+    QList<const ReverseGeocodingRunnerPlugin*>  m_reverseGeocodingRunnerPlugins;
+    QList<const ParseRunnerPlugin*>             m_parsingRunnerPlugins;
+    PluginManager*                              m_parent        = nullptr;
     static QStringList                          m_blacklist;
     static QStringList                          m_whitelist;
 
 #ifdef Q_OS_ANDROID
+
     QStringList                                 m_pluginPaths;
+
 #endif
+
 };
 
 QStringList PluginManagerPrivate::m_blacklist;
 QStringList PluginManagerPrivate::m_whitelist;
-
-PluginManagerPrivate::~PluginManagerPrivate()
-{
-    // nothing to do
-}
 
 PluginManager::PluginManager(QObject* parent) : QObject(parent),
     d(new PluginManagerPrivate(this))
@@ -80,8 +79,11 @@ PluginManager::PluginManager(QObject* parent) : QObject(parent),
     // Checking assets:/plugins for uninstalled plugins
 
 #ifdef Q_OS_ANDROID
+
     installPluginsFromAssets();
+
 #endif
+
 }
 
 PluginManager::~PluginManager()
@@ -92,6 +94,7 @@ PluginManager::~PluginManager()
 QList<const RenderPlugin*> PluginManager::renderPlugins() const
 {
     d->loadPlugins();
+
     return d->m_renderPluginTemplates;
 }
 
@@ -99,12 +102,14 @@ void PluginManager::addRenderPlugin(const RenderPlugin* plugin)
 {
     d->loadPlugins();
     d->m_renderPluginTemplates << plugin;
+
     Q_EMIT renderPluginsChanged();
 }
 
 QList<const SearchRunnerPlugin*> PluginManager::searchRunnerPlugins() const
 {
     d->loadPlugins();
+
     return d->m_searchRunnerPlugins;
 }
 
@@ -112,12 +117,14 @@ void PluginManager::addSearchRunnerPlugin(const SearchRunnerPlugin* plugin)
 {
     d->loadPlugins();
     d->m_searchRunnerPlugins << plugin;
+
     Q_EMIT searchRunnerPluginsChanged();
 }
 
 QList<const ReverseGeocodingRunnerPlugin*> PluginManager::reverseGeocodingRunnerPlugins() const
 {
     d->loadPlugins();
+
     return d->m_reverseGeocodingRunnerPlugins;
 }
 
@@ -125,12 +132,14 @@ void PluginManager::addReverseGeocodingRunnerPlugin(const ReverseGeocodingRunner
 {
     d->loadPlugins();
     d->m_reverseGeocodingRunnerPlugins << plugin;
+
     Q_EMIT reverseGeocodingRunnerPluginsChanged();
 }
 
 QList<const ParseRunnerPlugin*> PluginManager::parsingRunnerPlugins() const
 {
     d->loadPlugins();
+
     return d->m_parsingRunnerPlugins;
 }
 
@@ -138,6 +147,7 @@ void PluginManager::addParseRunnerPlugin(const ParseRunnerPlugin* plugin)
 {
     d->loadPlugins();
     d->m_parsingRunnerPlugins << plugin;
+
     Q_EMIT parseRunnerPluginsChanged();
 }
 
@@ -146,11 +156,13 @@ void PluginManager::blacklistPlugin(const QString& filename)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+                                         QString::fromUtf8("/marble/") + filename;
 
 #else
 
-    PluginManagerPrivate::m_blacklist << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+    PluginManagerPrivate::m_blacklist << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+                                         QString::fromUtf8("/marble/") + filename;
 
 #endif
 
@@ -161,28 +173,38 @@ void PluginManager::whitelistPlugin(const QString& filename)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    PluginManagerPrivate::m_whitelist << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+    PluginManagerPrivate::m_whitelist << QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+                                         QString::fromUtf8("/marble/") + filename;
 
 #else
 
-    PluginManagerPrivate::m_whitelist << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + filename;
+    PluginManagerPrivate::m_whitelist << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+                                         QString::fromUtf8("/marble/") + filename;
 
 #endif
 
 }
 
-/** Append obj to the given plugins list if it inherits both T and U */
+/**
+ * Append obj to the given plugins list if it inherits both T and U
+ */
 template<class Iface, class Plugin>
 bool appendPlugin(QObject* obj, const QPluginLoader* loader, QList<Plugin>& plugins)
 {
     if (qobject_cast<Iface*>(obj) && qobject_cast<Plugin>(obj))
     {
         Q_ASSERT(obj->metaObject()->superClass());   // all our plugins have a super class
+
         qCDebug(DIGIKAM_MARBLE_LOG) <<  obj->metaObject()->superClass()->className()
-                                    << "plugin loaded from" << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
+                                    << "plugin loaded from"
+                                    << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
+
         auto plugin = qobject_cast<Plugin>(obj);
+
         Q_ASSERT(plugin);   // checked above
+
         plugins << plugin;
+
         return true;
     }
 
@@ -193,17 +215,21 @@ bool PluginManagerPrivate::addPlugin(QObject* obj, const QPluginLoader* loader)
 {
     bool isPlugin = appendPlugin<RenderPluginInterface>
                     (obj, loader, m_renderPluginTemplates);
-    isPlugin = isPlugin || appendPlugin<SearchRunnerPlugin>
-               (obj, loader, m_searchRunnerPlugins);
-    isPlugin = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>
-               (obj, loader, m_reverseGeocodingRunnerPlugins);
-    isPlugin = isPlugin || appendPlugin<ParseRunnerPlugin>
-               (obj, loader, m_parsingRunnerPlugins);
+    isPlugin      = isPlugin || appendPlugin<SearchRunnerPlugin>
+                    (obj, loader, m_searchRunnerPlugins);
+    isPlugin      = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>
+                    (obj, loader, m_reverseGeocodingRunnerPlugins);
+    isPlugin      = isPlugin || appendPlugin<ParseRunnerPlugin>
+                    (obj, loader, m_parsingRunnerPlugins);
 
     if (!isPlugin)
     {
-        qCWarning(DIGIKAM_MARBLE_LOG) << "Ignoring the following plugin since it couldn't be loaded:" << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin failure:" << (loader ? loader->fileName() : QString::fromUtf8("<static>")) << "is a plugin, but it does not implement the "
+        qCWarning(DIGIKAM_MARBLE_LOG) << "Ignoring the following plugin since it couldn't be loaded:"
+                                      << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
+
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin failure:"
+                                    << (loader ? loader->fileName() : QString::fromUtf8("<static>"))
+                                    << "is a plugin, but it does not implement the "
                                     << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
     }
 
@@ -238,11 +264,15 @@ void PluginManagerPrivate::loadPlugins()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
+        QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+                                    QString::fromUtf8("/marble/")                 +
+                                    QFileInfo(fileName).baseName();
 
 #else
 
-        QString const libBaseName = QLibraryInfo::location(QLibraryInfo::PluginsPath) + QString::fromUtf8("/marble/") + QFileInfo(fileName).baseName();
+        QString const libBaseName = QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+                                    QString::fromUtf8("/marble/") +
+                                    QFileInfo(fileName).baseName();
 
 #endif
 
@@ -259,21 +289,26 @@ void PluginManagerPrivate::loadPlugins()
         }
 
         // qCDebug(DIGIKAM_MARBLE_LOG) << fileName << " - " << MarbleDirs::pluginPath( fileName );
+
         QString const path = MarbleDirs::pluginPath(fileName);
+
 #ifdef Q_OS_ANDROID
+
         QFileInfo targetFile(path);
 
         if (!m_pluginPaths.contains(targetFile.canonicalFilePath()))
         {
             // @todo Delete the file here?
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring file " << path << " which is not among the currently installed plugins";
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring file " << path
+                                        << " which is not among the currently installed plugins";
+
             continue;
         }
 
 #endif
-        QPluginLoader* loader = new QPluginLoader(path, m_parent);
 
-        QObject* obj = loader->instance();
+        QPluginLoader* loader = new QPluginLoader(path, m_parent);
+        QObject* obj          = loader->instance();
 
         if (obj)
         {
@@ -320,6 +355,7 @@ void PluginManagerPrivate::loadPlugins()
 }
 
 #ifdef Q_OS_ANDROID
+
 void PluginManager::installPluginsFromAssets() const
 {
     d->m_pluginPaths.clear();
@@ -336,7 +372,7 @@ void PluginManager::installPluginsFromAssets() const
         QFile::remove(existingPlugin);
     }
 
-    for (const QString& file : copyList)
+    for (const QString& file : std::as_const(copyList))
     {
         QString const target = MarbleDirs::pluginLocalPath() + QLatin1Char('/') + file;
 
@@ -344,7 +380,6 @@ void PluginManager::installPluginsFromAssets() const
         {
             pluginHome.mkpath(target);
         }
-
         else
         {
             QFile temporaryFile(MarbleDirs::pluginSystemPath() + QLatin1Char('/') + file);
@@ -354,6 +389,7 @@ void PluginManager::installPluginsFromAssets() const
         }
     }
 }
+
 #endif
 
 } // namespace Marble
