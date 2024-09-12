@@ -5,6 +5,8 @@ NEW FEATURES:
 
 Bundles:   update to last Exiv2 version 0.28.3.
 Bundles:   update to last ExifTool version 12.89.
+Bundles:   AppImage are now based on KDE framework 6.5.0.
+Bundles:   Windows installer are now based on KDE framework 6.5.0.
 Database:  update to new unique file hash V3 added.
 RawEngine: Update internal libraw to last 20240820 upstream.
 Video:     Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
