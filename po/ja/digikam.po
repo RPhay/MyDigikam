@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 01:44+0000\n"
+"POT-Creation-Date: 2024-09-12 01:44+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -6947,11 +6947,11 @@ msgstr "High Efficiency Image Coding (*.heic *.heif)"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -6971,11 +6971,11 @@ msgstr "あり"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -7137,21 +7137,21 @@ msgstr ""
 "ファイルサイズ大)</li></ul><p>【注意】 この設定を使用した場合、JPEG 2000 は可"
 "逆圧縮フォーマットではありません。</p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 loader"
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "JPEG 2000 ローダ"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
 #, fuzzy, kde-format
 #| msgid "An image loader based on Libjasper codec"
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Libjasper コーデックをベースにした画像ローダ"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7165,23 +7165,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "JPEG 2000 画像"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 stream"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG 2000 ストリーム"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@title"
