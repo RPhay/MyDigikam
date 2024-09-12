@@ -562,6 +562,27 @@ ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/l
 ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/showfoto.app/Contents/share"
 ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/Resources"
 
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    # Specific plugin paths need to linked in the bundle for Qt6
+
+    ln -sv "../../digikam.app/Contents/MacOS/designer"      "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/designer"
+    ln -sv "../../digikam.app/Contents/MacOS/generic"       "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/generic"
+    ln -sv "../../digikam.app/Contents/MacOS/imageformats"  "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/imageformats"
+    ln -sv "../../digikam.app/Contents/MacOS/platforms"     "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/platforms"
+    ln -sv "../../digikam.app/Contents/MacOS/styles"        "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/styles"
+    ln -sv "../../digikam.app/Contents/MacOS/iconengines"   "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/iconengines"
+    ln -sv "../../digikam.app/Contents/MacOS/multimedia"    "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/multimedia"
+    ln -sv "../../digikam.app/Contents/MacOS/sqldrivers"    "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/sqldrivers"
+    ln -sv "../../digikam.app/Contents/MacOS/tls"           "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/tls"
+
+    ln -sv "../../digikam.app/Contents/MacOS/kiconthemes6"  "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/kiconthemes6"
+    ln -sv "../../digikam.app/Contents/MacOS/kf6"           "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/kf6"
+
+    ln -sv "../../digikam.app/libexec/qt6/plugins/digikam"  "$TEMPROOT/digikam.app/Contents/libexec/qt6/plugins/digikam"
+
+fi
+
 echo -e "\n---------- Cleanup files in bundle"
 
 # Last cleanup
