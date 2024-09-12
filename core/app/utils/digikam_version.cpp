@@ -79,7 +79,7 @@ const QString additionalInformation()
                    "Feedback: %2\n"
                    "Documentation: %3\n\n"
                    "Build date: %4 (target: %5)\n"
-                   "Build architecture: %6"
+                   "Build architecture: %6\n"
                    "Revision: %7\n"
                    "Branch: %8",
                    QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
