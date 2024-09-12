@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 01:44+0000\n"
+"POT-Creation-Date: 2024-09-12 01:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -6989,11 +6989,11 @@ msgstr "แสดงระดับความชื่นชอบของภ
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -7013,11 +7013,11 @@ msgstr "ใช่"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -7180,20 +7180,20 @@ msgstr ""
 "p><p><b>ข้อควรจำ: หากคุณใช้การตั้งค่านี้ แฟ้มแบบ JPEG 2000 "
 "จะไม่ใช่แฟ้มภาพที่ไม่มีการสูญเสียข้อมูลเมื่อบีบข้อมูลอีกต่อไป</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "ภาพรูปแบบ JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7207,23 +7207,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "ภาพรูปแบบ JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "ภาพรูปแบบ JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"

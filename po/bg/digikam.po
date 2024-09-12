@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 01:44+0000\n"
-"PO-Revision-Date: 2024-08-07 08:31+0200\n"
+"POT-Creation-Date: 2024-09-12 01:44+0000\n"
+"PO-Revision-Date: 2024-09-11 11:46+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -922,10 +922,9 @@ msgstr[0] "1 обект"
 msgstr[1] "%1 обекта"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "Невалиден подпис"
+msgstr "Невалидна дата"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -7013,11 +7012,11 @@ msgstr "Високоефективно кодиране на изображен�
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -7036,11 +7035,11 @@ msgstr "да"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -7222,19 +7221,19 @@ msgstr ""
 "p><p><b> Забележка: JPEG 2000 не е формат на компресия на изображение без "
 "загуба, когато използвате тази настройка. </b></p> "
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Зареждане на JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Програма за зареждане на изображения, базирана на кодека Libjasper"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7257,21 +7256,21 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/JPEG_2000'>Joint Photographic Experts "
 "Group</a> за подробности. </para> "
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Изображение JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Поток JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -41926,55 +41925,55 @@ msgstr "Кадър напред"
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
-msgstr ""
+msgstr "Промяна на скоростта на възпроизвеждане на видео"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "0.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "2.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "3.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "4.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "5.0x"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -62909,12 +62908,10 @@ msgid "New..."
 msgstr "Ново..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Копиране в..."
+msgstr "Копиране..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
