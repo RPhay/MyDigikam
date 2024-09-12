@@ -16,7 +16,7 @@ index 04dc4d6a..61c93845 100644
  
      if(UNIX AND NOT APPLE AND NOT ANDROID)
 -        find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
-+        find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets DBus OpenGL Network)
++        find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets DBus Network)
          set(HAVE_QTDBUS ${Qt6DBus_FOUND})
  
          option(WITH_DECORATIONS "Build Breeze window decorations for KWin" ON)
