@@ -54,43 +54,41 @@ const QDateTime digiKamBuildDate()
 
 const QString additionalInformation()
 {
-    QString gitVer       = QLatin1String(GITVERSION);
+    QString gitRev       = QLatin1String(GITVERSION);
     QString gitBra       = QLatin1String(GITBRANCH);
-    QString ret          = i18n("IRC: %1 - #digikam\n"
+    QString ret          = i18n(
+                                "IRC: %1 - #digikam\n"
                                 "Feedback: %2\n"
                                 "Documentation: %3\n\n"
-                                "Build date: %4 (target: %5)",
+                                "Build date: %4\n"
+                                "Build target: %5\n"
+                                "Build architecture: %6",
                                 QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                                 QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
                                 QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"),
                                 QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
-                                QLatin1String(digikam_build_type));
+                                QLatin1String(digikam_build_type),
+                                QSysInfo::buildCpuArchitecture()
+                               );
 
     if (
-        !gitVer.isEmpty()                           &&
+        !gitRev.isEmpty()                           &&
         !gitBra.isEmpty()                           &&
-        !gitVer.startsWith(QLatin1String("unknow")) &&
-        !gitVer.startsWith(QLatin1String("export")) &&
+        !gitRev.startsWith(QLatin1String("unknow")) &&
+        !gitRev.startsWith(QLatin1String("export")) &&
         !gitBra.startsWith(QLatin1String("unknow"))
        )
     {
-        ret = i18n(
-                   "IRC: %1 - #digikam\n"
-                   "Feedback: %2\n"
-                   "Documentation: %3\n\n"
-                   "Build date: %4 (target: %5)\n"
-                   "Build architecture: %6\n"
-                   "Revision: %7\n"
-                   "Branch: %8",
-                   QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
-                   QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
-                   QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"),
-                   QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
-                   QLatin1String(digikam_build_type),
-                   QSysInfo::buildCpuArchitecture(),
-                   QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer),
-                   gitBra
-                  );
+        const int maxStringLength = 10;
+        QString gitVer = gitRev.left(maxStringLength / 2 - 2) + QLatin1String("...") + gitRev.right(maxStringLength / 2 - 1);
+
+        ret += i18n(
+                    "\n"
+                    "Revision: %1\n"
+                    "Branch: %2",
+                    QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitRev).arg(gitVer),
+                    gitBra
+                   );
     }
 
     return ret;
