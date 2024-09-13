@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-12 01:44+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2024-08-30 23:19+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2794,7 +2794,7 @@ msgstr "Immagini Raw (%1)"
 msgid "All supported files (%1)"
 msgstr "Tutti i file supportati (%1)"
 
-#: core/app/utils/digikam_version.cpp:58
+#: core/app/utils/digikam_version.cpp:59
 #, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -2809,16 +2809,25 @@ msgstr ""
 "\n"
 "Data compilazione: %4 (target: %5)"
 
-#: core/app/utils/digikam_version.cpp:77
-#, kde-format
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "Documentation: %3\n"
+#| "\n"
+#| "Build date: %4 (target: %5)\n"
+#| "Revision: %6\n"
+#| "Branch: %7"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "Documentation: %3\n"
 "\n"
 "Build date: %4 (target: %5)\n"
-"Revision: %6\n"
-"Branch: %7"
+"Build architecture: %6\n"
+"Revision: %7\n"
+"Branch: %8"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"

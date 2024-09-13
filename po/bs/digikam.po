@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-12 01:44+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3114,7 +3114,7 @@ msgstr "Sirove slike:"
 msgid "All supported files (%1)"
 msgstr "RAW  fajl slike (%1)"
 
-#: core/app/utils/digikam_version.cpp:58
+#: core/app/utils/digikam_version.cpp:59
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -3131,7 +3131,7 @@ msgstr ""
 "\n"
 "Datum gradnje: %1 (target: %2)"
 
-#: core/app/utils/digikam_version.cpp:77
+#: core/app/utils/digikam_version.cpp:78
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -3139,8 +3139,9 @@ msgid ""
 "Documentation: %3\n"
 "\n"
 "Build date: %4 (target: %5)\n"
-"Revision: %6\n"
-"Branch: %7"
+"Build architecture: %6\n"
+"Revision: %7\n"
+"Branch: %8"
 msgstr ""
 "IRC:\n"
 "irc.freenode.net - #digikam\n"

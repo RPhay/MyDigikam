@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-12 01:44+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -2981,7 +2981,7 @@ msgstr "ਚਿੱਤਰ ਘੁੰਮਾਉ।"
 msgid "All supported files (%1)"
 msgstr "ਫਾਇਲ %1 ਛੱਡੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: core/app/utils/digikam_version.cpp:58
+#: core/app/utils/digikam_version.cpp:59
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -2998,7 +2998,7 @@ msgstr ""
 "\n"
 "ਬਣਾਉਣ ਮਿਤੀ: %1 (ਟਾਰਗੇਟ: %2)"
 
-#: core/app/utils/digikam_version.cpp:77
+#: core/app/utils/digikam_version.cpp:78
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -3006,8 +3006,9 @@ msgid ""
 "Documentation: %3\n"
 "\n"
 "Build date: %4 (target: %5)\n"
-"Revision: %6\n"
-"Branch: %7"
+"Build architecture: %6\n"
+"Revision: %7\n"
+"Branch: %8"
 msgstr ""
 "IRC:\n"
 "irc.freenode.net - #digikam\n"

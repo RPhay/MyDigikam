@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-12 01:44+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2976,7 +2976,7 @@ msgstr "Vergliekbiller"
 msgid "All supported files (%1)"
 msgstr "Datei \"%1\" wöör övergahn"
 
-#: core/app/utils/digikam_version.cpp:58
+#: core/app/utils/digikam_version.cpp:59
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -2993,7 +2993,7 @@ msgstr ""
 "\n"
 "Buudatum: %1 (Teel: %2)"
 
-#: core/app/utils/digikam_version.cpp:77
+#: core/app/utils/digikam_version.cpp:78
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
@@ -3001,8 +3001,9 @@ msgid ""
 "Documentation: %3\n"
 "\n"
 "Build date: %4 (target: %5)\n"
-"Revision: %6\n"
-"Branch: %7"
+"Build architecture: %6\n"
+"Revision: %7\n"
+"Branch: %8"
 msgstr ""
 "IRC:\n"
 "irc.freenode.net - #digikam\n"
