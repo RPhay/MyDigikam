@@ -336,24 +336,24 @@ cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
 
 port install ffmpeg +glp3 +nonfree
 
-port install qt$DK_QTVERSION-qtbase
-port install qt$DK_QTVERSION-qtdeclarative
+port install qt$DK_QTVERSION-qtbase -examples -tests
+port install qt$DK_QTVERSION-qtdeclarative -examples -tests
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
-    port install qt$DK_QTVERSION-qtmacextras
-    port install qt$DK_QTVERSION-qtquickcontrols
-    port install qt$DK_QTVERSION-qtxmlpatterns
+    port install qt$DK_QTVERSION-qtmacextras -examples -tests
+    port install qt$DK_QTVERSION-qtquickcontrols -examples -tests
+    port install qt$DK_QTVERSION-qtxmlpatterns -examples -tests
 fi
 
-port install qt$DK_QTVERSION-qtscxml
-port install qt$DK_QTVERSION-qtspeech
-port install qt$DK_QTVERSION-qtsvg
-port install qt$DK_QTVERSION-qttools
+port install qt$DK_QTVERSION-qtscxml -examples -tests
+port install qt$DK_QTVERSION-qtspeech -examples -tests
+port install qt$DK_QTVERSION-qtsvg -examples -tests
+port install qt$DK_QTVERSION-qttools -examples -tests
 port install qt$DK_QTVERSION-qttranslations
-port install qt$DK_QTVERSION-qtimageformats
+port install qt$DK_QTVERSION-qtimageformats -examples -tests
 port install qt$DK_QTVERSION-qtmultimedia -examples -tests
-port install qt$DK_QTVERSION-qtnetworkauth
+port install qt$DK_QTVERSION-qtnetworkauth -examples -tests
 port install qt$DK_QTVERSION-sqlite-plugin
 port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
 port install qt$DK_QTVERSION-qtwebengine -examples -tests
