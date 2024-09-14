@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-14 01:55+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3038,26 +3038,7 @@ msgstr "Toorpildid (%1)"
 msgid "All supported files (%1)"
 msgstr "Kõik toetatud failid (%1)"
 
-#: core/app/utils/digikam_version.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: irc.freenode.net - #digikam\n"
-#| "Feedback: digikam-user@kde.org\n"
-#| "\n"
-#| "Build date: %1 (target: %2)"
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4 (target: %5)"
-msgstr ""
-"IRC: irc.freenode.net - #digikam\n"
-"Tagasiside: digikam-user@kde.org\n"
-"\n"
-"Ehitamisaeg: %1 (sihtmärk: %2)"
-
-#: core/app/utils/digikam_version.cpp:78
+#: core/app/utils/digikam_version.cpp:60
 #, fuzzy, kde-format
 #| msgid ""
 #| "IRC: irc.freenode.net - #digikam\n"
@@ -3070,16 +3051,23 @@ msgid ""
 "Feedback: %2\n"
 "Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)\n"
-"Build architecture: %6\n"
-"Revision: %7\n"
-"Branch: %8"
+"Build date: %4\n"
+"Build target: %5\n"
+"Build architecture: %6"
 msgstr ""
 "IRC: irc.freenode.net - #digikam\n"
 "Tagasiside: digikam-user@kde.org\n"
 "\n"
 "Ehitamisaeg: %1 (sihtmärk: %2)\n"
 "Versioon.: %3"
+
+#: core/app/utils/digikam_version.cpp:86
+#, kde-format
+msgid ""
+"\n"
+"Revision: %1\n"
+"Branch: %2"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -72014,6 +72002,24 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid ""
+#~| "IRC: irc.freenode.net - #digikam\n"
+#~| "Feedback: digikam-user@kde.org\n"
+#~| "\n"
+#~| "Build date: %1 (target: %2)"
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4 (target: %5)"
+#~ msgstr ""
+#~ "IRC: irc.freenode.net - #digikam\n"
+#~ "Tagasiside: digikam-user@kde.org\n"
+#~ "\n"
+#~ "Ehitamisaeg: %1 (sihtmärk: %2)"
 
 #, fuzzy
 #~| msgid "Open With"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-14 01:55+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2714,27 +2714,24 @@ msgstr "დაუმუშავებელი გამოსახულე�
 msgid "All supported files (%1)"
 msgstr "ყველა მხარდაჭერილი ფაილი (%1)"
 
-#: core/app/utils/digikam_version.cpp:59
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)"
+"Build date: %4\n"
+"Build target: %5\n"
+"Build architecture: %6"
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:78
+#: core/app/utils/digikam_version.cpp:86
 #, kde-format
 msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)\n"
-"Build architecture: %6\n"
-"Revision: %7\n"
-"Branch: %8"
+"Revision: %1\n"
+"Branch: %2"
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
