@@ -105,8 +105,20 @@ echo -e "------------- Copy runtime data files\n"
 
 cp -r /usr/share/digikam                                  ./usr/share
 cp -r /usr/share/showfoto                                 ./usr/share
-cp    /usr/share/icons/breeze/breeze-icons.rcc            ./usr/share/digikam/breeze.rcc
-cp    /usr/share/icons/breeze-dark/breeze-icons-dark.rcc  ./usr/share/digikam/breeze-dark.rcc
+
+# See https://bugs.kde.org/show_bug.cgi?id=487799#c54
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp /usr/share/icons/breeze/breeze-icons.rcc           ./usr/share/digikam/breeze.rcc
+    cp /usr/share/icons/breeze-dark/breeze-icons-dark.rcc ./usr/share/digikam/breeze-dark.rcc
+
+else
+
+    cp $BUILDDIR/../common/breeze.rcc                     ./usr/share/digikam/breeze.rcc
+    cp $BUILDDIR/../common/breeze-dark.rcc                ./usr/share/digikam/breeze-dark.rcc
+
+fi
 
 cd $APP_IMG_DIR/usr/share/showfoto
 ln -s ../digikam/breeze.rcc                               breeze.rcc

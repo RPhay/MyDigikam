@@ -167,13 +167,13 @@ echo -e "\n---------- icons-set"
 
 if [[ $DK_QTVERSION = 6 ]] ; then
 
-    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
-    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
+    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc         2>/dev/null
+    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc    2>/dev/null
 
 else
 
-    cp $BUILDDIR/../common/breeze.rcc                                             $BUNDLEDIR/breeze.rcc                 2>/dev/null
-    cp $BUILDDIR/../common/breeze-dark.rcc                                        $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
+    cp $BUILDDIR/../common/breeze.rcc                                             $BUNDLEDIR/breeze.rcc         2>/dev/null
+    cp $BUILDDIR/../common/breeze-dark.rcc                                        $BUNDLEDIR/breeze-dark.rcc    2>/dev/null
 
 fi
 
