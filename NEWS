@@ -84,7 +84,7 @@ BUGFIXES:
 065 ==> 492941 - Fractional seconds formatter value (zzz) not being read and applied to filename.
 066 ==> 492937 - digiKam 8.5.0 isn't working with MariaDB.
 067 ==> 350446 - Port MacOS PKG to Arm64 Apple Silicon.
-068 ==> 
+068 ==> 491857 - Unable to build on MacOS arm64 with Macports.
 069 ==> 
 070 ==> 
 071 ==> 
