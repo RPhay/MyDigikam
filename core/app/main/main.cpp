@@ -38,7 +38,10 @@
 #include <kconfiggroup.h>
 #include <kmemoryinfo.h>
 #include <kaboutdata.h>
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 #include <KIconTheme>
+#endif
 
 // ImageMagick includes
 
@@ -170,7 +173,11 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     KIconTheme::initTheme();
+
+#endif
 
     QApplication app(argc, argv);
 
