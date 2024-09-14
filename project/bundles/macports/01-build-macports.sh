@@ -321,19 +321,7 @@ port install libgphoto2
 # port broken since a while. check later
 # port install sane-backends
 
-cmake $ORIG_WD/../3rdparty \
-       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-       -DINSTALL_ROOT=$INSTALL_PREFIX \
-       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DKA_VERSION=$DK_KA_VERSION \
-       -DKP_VERSION=$DK_KP_VERSION \
-       -DKDE_VERSION=$DK_KDE_VERSION \
-       -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DARCH_TARGET=$ARCH_TARGET \
-       -Wno-dev
-
-cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
-
+port install libheif +x265 -tests -rav1e -kvazaar
 port install ffmpeg +glp3 +nonfree
 
 port install qt$DK_QTVERSION-qtbase -examples -tests
