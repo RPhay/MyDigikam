@@ -83,7 +83,7 @@ BUGFIXES:
 064 ==> 492784 - Changing keyboard shortcut scheme deletes 'Assign Tag' keyboard shortcuts.
 065 ==> 492941 - Fractional seconds formatter value (zzz) not being read and applied to filename.
 066 ==> 492937 - digiKam 8.5.0 isn't working with MariaDB.
-067 ==> 
+067 ==> 350446 - Port MacOS PKG to Arm64 Apple Silicon.
 068 ==> 
 069 ==> 
 070 ==> 
