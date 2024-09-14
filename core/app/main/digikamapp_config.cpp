@@ -91,11 +91,11 @@ void DigikamApp::slotThemeChanged()
     QString theme                       = ThemeManager::instance()->currentThemeName();
 
     if (
-        qApp->activeWindow()                                      &&
-        (settings->getCurrentTheme() != theme)                    &&
+        qApp->activeWindow()                                     &&
+        (settings->getCurrentTheme() != theme)                   &&
         (
-         (settings->getIconTheme() == QLatin1String(""))          ||
-         (settings->getIconTheme() == QLatin1String("breeze"))    ||
+         (settings->getIconTheme() == QLatin1String(""))         ||
+         (settings->getIconTheme() == QLatin1String("breeze"))   ||
          (settings->getIconTheme() == QLatin1String("breeze-dark"))
         )
        )

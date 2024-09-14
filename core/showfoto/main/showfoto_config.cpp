@@ -169,10 +169,23 @@ void Showfoto::slotThemeChanged()
 {
     QString theme = ThemeManager::instance()->currentThemeName();
 
-    if (qApp->activeWindow()                 &&
-        (d->settings->getCurrentTheme() != theme))
+    if (
+        qApp->activeWindow()                                        &&
+        (d->settings->getCurrentTheme() != theme)                   &&
+        (
+         (d->settings->getIconTheme() == QLatin1String(""))         ||
+         (d->settings->getIconTheme() == QLatin1String("breeze"))   ||
+         (d->settings->getIconTheme() == QLatin1String("breeze-dark"))
+        )
+       )
     {
         qApp->processEvents();
+
+#if defined HAVE_KICONTHEMES && (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+
+        d->settings->setIconTheme(QString());
+
+#else
 
         QColor color = qApp->palette().color(qApp->activeWindow()->backgroundRole());
         QString iconTheme;
@@ -202,7 +215,12 @@ void Showfoto::slotThemeChanged()
 
             d->settings->setIconTheme(iconTheme);
         }
+
+#endif
+
     }
+
+    d->settings->setCurrentTheme(theme);
 }
 
 void Showfoto::slotSetupMetadataFilters(int tab)
