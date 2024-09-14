@@ -46,7 +46,7 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt$DK_QTVERSION/bin:$ORIG_PATH
-
+if [ ] ; then
 #################################################################################################
 # Install out-dated dependencies
 
@@ -203,7 +203,7 @@ if [[ $DK_QTVERSION == 6 ]] ; then
     mv $INSTALL_PREFIX/bin/showfoto.* $INSTALL_PREFIX/$RELOCATE_PREFIX/
 
 fi
-
+fi
 #################################################################################################
 # Install Extra Plugins
 
