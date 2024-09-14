@@ -442,12 +442,19 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-# As under Windows, temporary solution until breeze-icons generator works under MacOS.
-cp    $ORIG_WD/../vcpkg/data/breeze.rcc                           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
-cp    $ORIG_WD/../vcpkg/data/breeze-dark.rcc                      $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+# See https://bugs.kde.org/show_bug.cgi?id=487799#c54
 
-#cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
-#cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+    cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+
+else
+
+    cp $ORIG_WD/../common/breeze.rcc                                 $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+    cp $ORIG_WD/../common/breeze-dark.rcc                            $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+
+fi
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
