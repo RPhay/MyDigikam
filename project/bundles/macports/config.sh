@@ -145,7 +145,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # See official release here: https://download.kde.org/stable/frameworks/
     DK_KA_VERSION="24.05.1"
 
-    DK_UPLOADDIR="/srv/archives/files/digikam/"
+    DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
 
