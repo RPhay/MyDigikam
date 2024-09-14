@@ -52,6 +52,27 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 DKRELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
+# Build icons-set ressource
+
+echo "---------- Build icons-set ressource"
+
+cd $ORIG_WD/icon-rcc
+
+rm -f CMakeCache.txt > /dev/null
+rm -f *.rcc > /dev/null
+
+cmake -DCMAKE_INSTALL_PREFIX="$MXE_INSTALL_PREFIX" \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_COLOR_MAKEFILE=ON \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -Wno-dev \
+      .
+
+make -j$CPU_CORES
+
+cd $ORIG_WD
+
+#################################################################################################
 # Configurations
 
 # Directory where this script is located (default - current directory)
