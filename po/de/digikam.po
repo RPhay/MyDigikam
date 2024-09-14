@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-14 01:55+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2786,21 +2786,7 @@ msgstr "RAW-Bilder (%1)"
 msgid "All supported files (%1)"
 msgstr "Alle unterstützten Dateien (%1)"
 
-#: core/app/utils/digikam_version.cpp:59
-#, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4 (target: %5)"
-msgstr ""
-"IRC: %1 - #digikam\n"
-"Rückmeldung: %2\n"
-"Dokumentation: %3\n"
-"Erstellungsdatum: %4 (Ziel: %5)"
-
-#: core/app/utils/digikam_version.cpp:78
+#: core/app/utils/digikam_version.cpp:60
 #, fuzzy, kde-format
 #| msgid ""
 #| "IRC: %1 - #digikam\n"
@@ -2815,10 +2801,9 @@ msgid ""
 "Feedback: %2\n"
 "Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)\n"
-"Build architecture: %6\n"
-"Revision: %7\n"
-"Branch: %8"
+"Build date: %4\n"
+"Build target: %5\n"
+"Build architecture: %6"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Rückmeldung: %2\n"
@@ -2826,6 +2811,14 @@ msgstr ""
 "Erstellungsdatum: %4 (Ziel: %5)\n"
 "Revision: %6\n"
 "Branch: %7"
+
+#: core/app/utils/digikam_version.cpp:86
+#, kde-format
+msgid ""
+"\n"
+"Revision: %1\n"
+"Branch: %2"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -69094,6 +69087,18 @@ msgstr "Albumeinträge"
 #, kde-format
 msgid "Import Items"
 msgstr "Einträge importieren "
+
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4 (target: %5)"
+#~ msgstr ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Rückmeldung: %2\n"
+#~ "Dokumentation: %3\n"
+#~ "Erstellungsdatum: %4 (Ziel: %5)"
 
 #~ msgid ""
 #~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"

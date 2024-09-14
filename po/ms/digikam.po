@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-14 01:55+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -2710,27 +2710,24 @@ msgstr "Saiz Semula Imej"
 msgid "All supported files (%1)"
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:59
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)"
+"Build date: %4\n"
+"Build target: %5\n"
+"Build architecture: %6"
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:78
+#: core/app/utils/digikam_version.cpp:86
 #, kde-format
 msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
 "\n"
-"Build date: %4 (target: %5)\n"
-"Build architecture: %6\n"
-"Revision: %7\n"
-"Branch: %8"
+"Revision: %1\n"
+"Branch: %2"
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
