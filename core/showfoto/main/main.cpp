@@ -36,8 +36,8 @@
 #include <kaboutdata.h>
 
 #ifdef HAVE_KICONTHEMES
-#include <kiconthemes_version.h>
-#include <KIconTheme>
+#   include <kiconthemes_version.h>
+#   include <KIconTheme>
 #endif
 
 // ImageMagick includes

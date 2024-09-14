@@ -62,7 +62,7 @@
 #include <kxmlgui_version.h>
 
 #ifdef HAVE_KICONTHEMES
-#include <kiconthemes_version.h>
+#   include <kiconthemes_version.h>
 #endif
 
 // Restore warnings
