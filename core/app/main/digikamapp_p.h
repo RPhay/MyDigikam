@@ -61,6 +61,10 @@
 #include <ksharedconfig.h>
 #include <kxmlgui_version.h>
 
+#ifdef HAVE_KICONTHEMES
+#include <kiconthemes_version.h>
+#endif
+
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop

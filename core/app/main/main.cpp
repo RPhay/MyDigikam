@@ -33,14 +33,14 @@
 
 // KDE includes
 
-#include <kiconthemes_version.h>
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <kmemoryinfo.h>
 #include <kaboutdata.h>
 
-#if (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+#ifdef HAVE_KICONTHEMES
+#include <kiconthemes_version.h>
 #include <KIconTheme>
 #endif
 
@@ -174,7 +174,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
-#if (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+#if defined HAVE_KICONTHEMES && (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
 
     KIconTheme::initTheme();
 
