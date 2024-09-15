@@ -214,6 +214,11 @@ bool appendPlugin(QObject* const obj, const QPluginLoader* const loader, QList<P
 
 bool PluginManagerPrivate::addPlugin(QObject* const obj, const QPluginLoader* const loader)
 {
+    if (!obj || !loader)
+    {
+        return false;
+    }
+
     bool isPlugin =             appendPlugin<RenderPluginInterface>       (obj, loader, m_renderPluginTemplates);
     isPlugin      = isPlugin || appendPlugin<SearchRunnerPlugin>          (obj, loader, m_searchRunnerPlugins);
     isPlugin      = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>(obj, loader, m_reverseGeocodingRunnerPlugins);
