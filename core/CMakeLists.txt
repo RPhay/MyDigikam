@@ -430,6 +430,19 @@ if(DIGIKAM_CAN_BE_COMPILED)
                     -DQT_NO_FOREACH
     )
 
+    # -----------------------------------------------------------------------------------
+    # Add defines for Apple package manager
+
+    if(APPLE)
+        
+        if("${DK_APPLE_PACKAGE_MANAGER}" STREQUAL "homebrew")
+            add_compile_definitions(DK_APPLE_PACKAGE_HOMEBREW)
+        else()
+            add_compile_definitions(DK_APPLE_PACKAGE_MACPORTS)
+        endif()
+        
+    endif()
+
     # ==========================================================================
     # Includes rules
 

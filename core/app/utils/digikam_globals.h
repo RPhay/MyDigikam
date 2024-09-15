@@ -256,6 +256,16 @@ DIGIKAM_EXPORT void loadEcmQtTranslationFiles(QApplication& app);
 DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
 
 /**
+ * For MacOS bundles only, set necessary MacOS environment variables
+ */
+DIGIKAM_EXPORT void setMacOSEnvironment();
+
+/**
+ * For Windows only, set necessary Windows environment variables
+ */
+DIGIKAM_EXPORT void setWindowsEnvironment(QApplication& app);
+
+/**
  * This method returns QDateTime from with date set to parameter date and time set to start of the day.
  */
 DIGIKAM_EXPORT QDateTime startOfDay(const QDate& date);

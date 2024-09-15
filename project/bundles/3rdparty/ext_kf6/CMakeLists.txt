@@ -64,14 +64,6 @@ function(InstallKF6Component
                                 ALWAYS 0
             )
 
-            if("${DK_APPLE_PACKAGE_MANAGER}" STREQUAL "homebrew")
-                set_target_properties(ext_${name} 
-                                    PROPERTIES
-                                    MACOSX_BUNDLE TRUE
-                                    MACOSX_BUNDLE_BUNDLE_NAME "digiKam.org"
-                                    MACOSX_BUNDLE_GUI_IDENTIFIER "org.digiKam.digikam")
-            endif()
-
         else()
 
             if(NOT "${patch}" STREQUAL "")

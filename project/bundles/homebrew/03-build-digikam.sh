@@ -151,7 +151,7 @@ cp -f $ORIG_WD/fixbundledatapath.sh $DK_BUILDTEMP/digikam-$DK_VERSION
 
 ./fixbundledatapath.sh
 
-./bootstrap.homebrew "$INSTALL_PREFIX" "Debug" "arm64" "-Wno-dev"
+./bootstrap.homebrew "$INSTALL_PREFIX" "Debug" $ARCH_TARGET "-Wno-dev"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
@@ -159,6 +159,7 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
+echo "-DDK_APPLE_PACKAGE_MANAGER is: $DK_APPLE_PACKAGE_MANAGER"
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
@@ -199,17 +200,17 @@ cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
 cmake $ORIG_WD/../3rdparty \
-        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-        -DINSTALL_ROOT=$INSTALL_PREFIX \
-        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-        -DKP_VERSION=$DK_KP_VERSION \
-        -DKA_VERSION=$DK_KA_VERSION \
-        -DKDE_VERSION=$DK_KDE_VERSION \
-        -DENABLE_QTVERSION=$DK_QTVERSION \
-        -DCMAKE_OSX_DEPLOYMENT_TARGET=11.3 \
-        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
-        -DARCH_TARGET=$ARCH_TARGET \
-        -Wno-dev
+       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+       -DINSTALL_ROOT=$INSTALL_PREFIX \
+       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKP_VERSION=$DK_KP_VERSION \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKDE_VERSION=$DK_KDE_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
+       -DARCH_TARGET=$ARCH_TARGET \
+       -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
+       -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES

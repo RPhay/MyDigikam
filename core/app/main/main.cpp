@@ -191,10 +191,13 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #ifdef HAVE_IMAGE_MAGICK
 
-#ifdef Q_CC_MSVC
+#if defined(Q_CC_MSVC)
 
-    qputenv("MAGICK_CODER_MODULE_PATH", qApp->applicationDirPath().toUtf8());
-    qputenv("MAGICK_CODER_FILTER_PATH", qApp->applicationDirPath().toUtf8());
+    setWindowsEnvironment(app);
+
+#elif defined(Q_OS_MACOS)
+
+    setMacOSEnvironment();
 
 #endif
 

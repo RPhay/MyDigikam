@@ -16,7 +16,7 @@ BUILDING_DIR="`pwd`/temp.build"
 ########################################################################
 
 # Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
-ARCH_TARGET="arm64"
+ARCH_TARGET="`uname -m`"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
@@ -47,10 +47,18 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # Older values cannot be set as it do not support x86_64.
     OSX_MIN_TARGET="10.15"
 
+    # Directory to build and install HomeBrew packages.
+    INSTALL_PREFIX="/usr/local/homebrew"
+    # INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
+
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
     # Apple Silicon is supported since macOS BigSur
     OSX_MIN_TARGET="11.3"
+
+    # Directory to build and install HomeBrew packages.
+    INSTALL_PREFIX="/opt/homebrew"
+    # INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
 
 else
 
@@ -58,11 +66,6 @@ else
     exit -1
 
 fi
-
-# Directory to build and install HomeBrew packages.
-INSTALL_PREFIX="/opt/homebrew"
-# INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
-
 
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
@@ -84,11 +87,11 @@ DK_BUILDTEMP=~/dktemp
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="v6.0.4"
+DK_KP_VERSION="v6.1.5"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="v24.02.2"
+DK_KA_VERSION="v24.08.0"
 
 # Qt version to use in bundle and provided by Homebrew.
 DK_QTVERSION="6"
@@ -98,7 +101,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.2.0-beta1
 DK_VERSION=master
-#DK_VERSION=fix_bundle_01
+#DK_VERSION="work/michmill/cleanup-for-merge"
 #DK_VERSION=development/dplugins
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
@@ -130,7 +133,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
 else
 
-    DK_KDE_VERSION="v6.2.0"                                 # Qt6 version use master code for the moment.
+    DK_KDE_VERSION="v6.5.0"                                 # Qt6 version use master code for the moment.
     DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
 
 fi
