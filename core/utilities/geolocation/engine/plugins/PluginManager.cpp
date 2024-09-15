@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN PluginManagerPrivate
 {
 public:
 
-    PluginManagerPrivate(PluginManager* parent)
+    PluginManagerPrivate(PluginManager* const parent)
         : m_parent(parent)
     {
     }
@@ -49,7 +49,7 @@ public:
 public:
 
     void loadPlugins();
-    bool addPlugin(QObject* obj, const QPluginLoader* loader);
+    bool addPlugin(QObject* const obj, const QPluginLoader* const loader);
 
 public:
 
@@ -190,7 +190,7 @@ void PluginManager::whitelistPlugin(const QString& filename)
  * Append obj to the given plugins list if it inherits both T and U
  */
 template<class Iface, class Plugin>
-bool appendPlugin(QObject* obj, const QPluginLoader* loader, QList<Plugin>& plugins)
+bool appendPlugin(QObject* const obj, const QPluginLoader* const loader, QList<Plugin>& plugins)
 {
     if (qobject_cast<Iface*>(obj) && qobject_cast<Plugin>(obj))
     {
@@ -212,16 +212,12 @@ bool appendPlugin(QObject* obj, const QPluginLoader* loader, QList<Plugin>& plug
     return false;
 }
 
-bool PluginManagerPrivate::addPlugin(QObject* obj, const QPluginLoader* loader)
+bool PluginManagerPrivate::addPlugin(QObject* const obj, const QPluginLoader* const loader)
 {
-    bool isPlugin = appendPlugin<RenderPluginInterface>
-                    (obj, loader, m_renderPluginTemplates);
-    isPlugin      = isPlugin || appendPlugin<SearchRunnerPlugin>
-                    (obj, loader, m_searchRunnerPlugins);
-    isPlugin      = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>
-                    (obj, loader, m_reverseGeocodingRunnerPlugins);
-    isPlugin      = isPlugin || appendPlugin<ParseRunnerPlugin>
-                    (obj, loader, m_parsingRunnerPlugins);
+    bool isPlugin =             appendPlugin<RenderPluginInterface>       (obj, loader, m_renderPluginTemplates);
+    isPlugin      = isPlugin || appendPlugin<SearchRunnerPlugin>          (obj, loader, m_searchRunnerPlugins);
+    isPlugin      = isPlugin || appendPlugin<ReverseGeocodingRunnerPlugin>(obj, loader, m_reverseGeocodingRunnerPlugins);
+    isPlugin      = isPlugin || appendPlugin<ParseRunnerPlugin>           (obj, loader, m_parsingRunnerPlugins);
 
     if (!isPlugin)
     {
