@@ -355,7 +355,7 @@ void FaceGroup::load()
 
 void FaceGroup::clear()
 {
-    cancelAddItem();
+    slotCancelAddItem();
     d->visibilityController->clear();
 
     for (FaceItem* const item : std::as_const(d->items))
@@ -488,10 +488,10 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
     item->setFace(face);
     item->switchMode(AssignNameWidget::ConfirmedMode);
 
-    focusRandomFace();
+    QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
 }
 
-void FaceGroup::focusRandomFace()
+void FaceGroup::slotFocusRandomFace()
 {
     for (FaceItem* const item : std::as_const(d->items))
     {
@@ -520,7 +520,7 @@ void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
         item->setFace(FaceTagsIface());
         d->visibilityController->hideAndRemoveItem(item);
 
-        focusRandomFace();
+        QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
     }
 }
 
@@ -562,7 +562,7 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
         item->setFace(face);
         item->switchMode(AssignNameWidget::IgnoredMode);
 
-        focusRandomFace();
+        QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
     }
 }
 
@@ -617,7 +617,7 @@ void FaceGroup::addFace()
             this, SLOT(slotAddItemFinished(QRectF)));
 
     connect(d->manuallyAddWrapItem, SIGNAL(cancelled()),
-            this, SLOT(cancelAddItem()));
+            this, SLOT(slotCancelAddItem()));
 }
 
 void FaceGroup::slotAddItemStarted(const QPointF& pos)
@@ -663,10 +663,10 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
         d->manuallyAddWrapItem->stackBefore(item);
     }
 
-    cancelAddItem();
+    slotCancelAddItem();
 }
 
-void FaceGroup::cancelAddItem()
+void FaceGroup::slotCancelAddItem()
 {
     delete d->manuallyAddedItem;
     d->manuallyAddedItem = nullptr;

@@ -435,7 +435,7 @@ void Canvas::slotSelected()
 
     if (d->wrapItem)
     {
-        cancelAddItem();
+        slotCancelAddItem();
         return;
     }
 
@@ -608,7 +608,7 @@ void Canvas::addRubber()
             this, SLOT(slotAddItemFinished(QRectF)));
 
     connect(d->wrapItem, SIGNAL(cancelled()),
-            this, SLOT(cancelAddItem()));
+            this, SLOT(slotCancelAddItem()));
 }
 
 void Canvas::slotAddItemStarted(const QPointF& pos)
@@ -638,10 +638,10 @@ void Canvas::slotAddItemFinished(const QRectF& rect)
 */
     }
 
-    cancelAddItem();
+    slotCancelAddItem();
 }
 
-void Canvas::cancelAddItem()
+void Canvas::slotCancelAddItem()
 {
     if (d->wrapItem)
     {

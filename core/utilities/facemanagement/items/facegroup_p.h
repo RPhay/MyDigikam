@@ -20,6 +20,7 @@
 // Qt includes
 
 #include <QGraphicsSceneHoverEvent>
+#include <QTimer>
 
 // Local includes
 
