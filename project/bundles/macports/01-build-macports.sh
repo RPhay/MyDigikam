@@ -322,7 +322,7 @@ port install libgphoto2
 # port install sane-backends
 
 port install libheif +x265 -tests -rav1e -kvazaar
-port install ffmpeg +glp3 +nonfree
+port install ffmpeg +gpl2 +glp3 +nonfree
 
 port install qt$DK_QTVERSION-qtbase -examples -tests
 port install qt$DK_QTVERSION-qtdeclarative -examples -tests
