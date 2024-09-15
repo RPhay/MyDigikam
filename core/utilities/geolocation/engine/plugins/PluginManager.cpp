@@ -84,6 +84,7 @@ PluginManager::PluginManager(QObject* parent) : QObject(parent),
 
 #endif
 
+    d->loadPlugins();
 }
 
 PluginManager::~PluginManager()
@@ -258,7 +259,7 @@ void PluginManagerPrivate::loadPlugins()
 
     bool foundPlugin = false;
 
-    for (const QString& fileName : pluginFileNameList)
+    for (const QString& fileName : std::as_const(pluginFileNameList))
     {
         QString const baseName = QFileInfo(fileName).baseName();
 
@@ -279,12 +280,14 @@ void PluginManagerPrivate::loadPlugins()
         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName))
         {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
+
             continue;
         }
 
         if (m_blacklist.contains(baseName) || m_blacklist.contains(libBaseName))
         {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring blacklisted plugin " << fileName;
+
             continue;
         }
 
@@ -364,10 +367,10 @@ void PluginManager::installPluginsFromAssets() const
     pluginHome.mkpath(MarbleDirs::pluginLocalPath());
     pluginHome.setCurrent(MarbleDirs::pluginLocalPath());
 
-    QStringList pluginNameFilter = QStringList() << "lib*.so";
+    QStringList pluginNameFilter      = QStringList() << "lib*.so";
     QStringList const existingPlugins = QDir(MarbleDirs::pluginLocalPath()).entryList(pluginNameFilter, QDir::Files);
 
-    for (const QString& existingPlugin : existingPlugins)
+    for (const QString& existingPlugin : std::as_const(existingPlugins))
     {
         QFile::remove(existingPlugin);
     }
