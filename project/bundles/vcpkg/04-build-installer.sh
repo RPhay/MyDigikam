@@ -167,7 +167,12 @@ echo -e "\n---------- icons-set"
 
 if [[ $DK_QTVERSION = 6 ]] ; then
 
-    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc       $BUNDLEDIR/breeze.rcc                 2>/dev/null
+# Icons generation with vcpkg::python3 from KF6::breeze-icons do not work yet (lxml module is missing).
+# Use the pre-compiled rcc file instead for the moment.
+#
+#    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc       $BUNDLEDIR/breeze.rcc                 2>/dev/null
+
+    cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
 
 else
 
