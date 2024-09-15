@@ -262,6 +262,7 @@ MarbleConfigView::MarbleConfigView(MarbleWidget* const marbleWidget,
     gridMap->addWidget(d->showRelief,                           3, 1, 1, 1);
     gridMap->addWidget(fntLbl,                                  4, 0, 1, 1);
     gridMap->addWidget(d->mapFont,                              4, 1, 1, 1);
+    gridMap->setRowStretch(5, 10);
 
     // ---
 
