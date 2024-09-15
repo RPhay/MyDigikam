@@ -1,8 +1,8 @@
 diff --git a/icons/apps/48/digikam.svg b/icons/apps/48/digikam.svg
-index 63796ad9..82662386 100644
+index 63796ad9..3e770fd9 100644
 --- a/icons/apps/48/digikam.svg
 +++ b/icons/apps/48/digikam.svg
-@@ -1,42 +1,721 @@
+@@ -1,42 +1,744 @@
 -<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
 - <defs>
 -  <linearGradient spreadMethod="reflect" id="a" x1="428.57" x2="408.57" gradientUnits="userSpaceOnUse">
@@ -43,12 +43,35 @@ index 63796ad9..82662386 100644
 +   width="128"
 +   height="128"
 +   id="svg2"
++   sodipodi:docname="digikam.svg"
++   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
++   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
++   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 +   xmlns:xlink="http://www.w3.org/1999/xlink"
 +   xmlns="http://www.w3.org/2000/svg"
 +   xmlns:svg="http://www.w3.org/2000/svg"
 +   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 +   xmlns:cc="http://creativecommons.org/ns#"
 +   xmlns:dc="http://purl.org/dc/elements/1.1/">
++  <sodipodi:namedview
++     id="namedview145"
++     pagecolor="#ffffff"
++     bordercolor="#000000"
++     borderopacity="0.25"
++     inkscape:showpageshadow="2"
++     inkscape:pageopacity="0.0"
++     inkscape:pagecheckerboard="0"
++     inkscape:deskcolor="#d1d1d1"
++     showgrid="false"
++     inkscape:zoom="1.84375"
++     inkscape:cx="64"
++     inkscape:cy="64"
++     inkscape:window-width="1444"
++     inkscape:window-height="898"
++     inkscape:window-x="0"
++     inkscape:window-y="0"
++     inkscape:window-maximized="1"
++     inkscape:current-layer="svg2" />
 +  <defs
 +     id="defs4">
 +    <linearGradient
@@ -764,10 +787,10 @@ index 63796ad9..82662386 100644
 - </g>
  </svg>
 diff --git a/icons/apps/48/showfoto.svg b/icons/apps/48/showfoto.svg
-index 81645795..88f09eb4 100644
+index 81645795..41d38e82 100644
 --- a/icons/apps/48/showfoto.svg
 +++ b/icons/apps/48/showfoto.svg
-@@ -1,42 +1,717 @@
+@@ -1,42 +1,740 @@
 -<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
 - <defs>
 -  <linearGradient spreadMethod="reflect" id="a" x1="428.57" x2="408.57" gradientUnits="userSpaceOnUse">
@@ -808,12 +831,35 @@ index 81645795..88f09eb4 100644
 +   width="128"
 +   height="128"
 +   id="svg2"
++   sodipodi:docname="showfoto.svg"
++   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
++   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
++   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 +   xmlns:xlink="http://www.w3.org/1999/xlink"
 +   xmlns="http://www.w3.org/2000/svg"
 +   xmlns:svg="http://www.w3.org/2000/svg"
 +   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 +   xmlns:cc="http://creativecommons.org/ns#"
 +   xmlns:dc="http://purl.org/dc/elements/1.1/">
++  <sodipodi:namedview
++     id="namedview482"
++     pagecolor="#ffffff"
++     bordercolor="#000000"
++     borderopacity="0.25"
++     inkscape:showpageshadow="2"
++     inkscape:pageopacity="0.0"
++     inkscape:pagecheckerboard="0"
++     inkscape:deskcolor="#d1d1d1"
++     showgrid="false"
++     inkscape:zoom="1.84375"
++     inkscape:cx="64"
++     inkscape:cy="64"
++     inkscape:window-width="1444"
++     inkscape:window-height="898"
++     inkscape:window-x="0"
++     inkscape:window-y="0"
++     inkscape:window-maximized="1"
++     inkscape:current-layer="svg2" />
 +  <defs
 +     id="defs4">
 +    <linearGradient
