@@ -184,7 +184,7 @@ void DigikamApp::setupActions()
 
     d->refreshAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
                                    i18nc("@action: setup", "Refresh"), this);
-    d->refreshAction->setShortcutContext(Qt::WindowShortcut);
+    d->refreshAction->setShortcutContext(Qt::WidgetShortcut);
     d->refreshAction->setWhatsThis(i18nc("@info: setup", "Refresh the current contents."));
     connect(d->refreshAction, SIGNAL(triggered()), d->view, SLOT(slotRefresh()));
     ac->addAction(QLatin1String("view_refresh"), d->refreshAction);
@@ -247,7 +247,7 @@ void DigikamApp::setupActions()
 
     d->renameAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
                                   i18nc("@action: setup", "Rename..."), this);
-    d->renameAction->setShortcutContext(Qt::WindowShortcut);
+    d->renameAction->setShortcutContext(Qt::WidgetShortcut);
     connect(d->renameAction, SIGNAL(triggered()), d->view, SLOT(slotRenameAlbum()));
     ac->addAction(QLatin1String("album_rename"), d->renameAction);
     ac->setDefaultShortcut(d->renameAction, Qt::SHIFT | Qt::Key_F2);
@@ -341,7 +341,7 @@ void DigikamApp::setupActions()
 
     d->imagePreviewAction = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                         i18nc("@action: View the selected image", "Preview"), this);
-    d->imagePreviewAction->setShortcutContext(Qt::WindowShortcut);
+    d->imagePreviewAction->setShortcutContext(Qt::WidgetShortcut);
     d->imagePreviewAction->setCheckable(true);
     ac->addAction(QLatin1String("image_view"), d->imagePreviewAction);
     ac->setDefaultShortcut(d->imagePreviewAction, Qt::Key_F3);
@@ -370,7 +370,7 @@ void DigikamApp::setupActions()
 
     d->imageViewAction = new QAction(QIcon::fromTheme(QLatin1String("quickopen-file")),
                                      i18nc("@action: setup", "Open..."), this);
-    d->imageViewAction->setShortcutContext(Qt::WindowShortcut);
+    d->imageViewAction->setShortcutContext(Qt::WidgetShortcut);
     d->imageViewAction->setWhatsThis(i18nc("@info: setup", "Open the selected item."));
     connect(d->imageViewAction, SIGNAL(triggered()), d->view, SLOT(slotImageEdit()));
     ac->addAction(QLatin1String("image_edit"), d->imageViewAction);
@@ -803,7 +803,7 @@ void DigikamApp::setupActions()
 
     d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")),
                                       i18nc("@action: setup", "Color-Managed View"), this);
-    d->viewCMViewAction->setShortcutContext(Qt::WindowShortcut);
+    d->viewCMViewAction->setShortcutContext(Qt::WidgetShortcut);
     d->viewCMViewAction->setCheckable(true);
     connect(d->viewCMViewAction, SIGNAL(triggered()), this, SLOT(slotToggleColorManagedView()));
     ac->addAction(QLatin1String("color_managed_view"), d->viewCMViewAction);
