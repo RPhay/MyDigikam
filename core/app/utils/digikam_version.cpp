@@ -69,7 +69,7 @@ const QString additionalInformation()
                   .arg(i18n("Documentation: "))
                   .arg(QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"));
     ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
-                  .arg(i18n("Build Date :"))
+                  .arg(i18n("Build Date: "))
                   .arg(QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat));
     ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
                   .arg(i18n("Build Target: "))
