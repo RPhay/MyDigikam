@@ -48,8 +48,8 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     OSX_MIN_TARGET="10.15"
 
     # Directory to build and install HomeBrew packages.
-    INSTALL_PREFIX="/usr/local/homebrew"
-    # INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
+    # INSTALL_PREFIX="/usr/local/homebrew"
+    INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
 
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
@@ -57,8 +57,8 @@ elif [[ $ARCH_TARGET = "arm64" ]] ; then
     OSX_MIN_TARGET="11.3"
 
     # Directory to build and install HomeBrew packages.
-    INSTALL_PREFIX="/opt/homebrew"
-    # INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
+    # INSTALL_PREFIX="/opt/homebrew"
+    INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
 
 else
 

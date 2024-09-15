@@ -98,29 +98,27 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 
     # Use this section if you want to install Homebrew to a custom location
 
-    # sudo mkdir $INSTALL_PREFIX
-    # sudo chown -R ${USER} $INSTALL_PREFIX
-    # git clone https://github.com/Homebrew/brew $INSTALL_PREFIX
-    # eval "$($INSTALL_PREFIX/bin/brew shellenv)"
+    sudo mkdir $INSTALL_PREFIX
+    sudo chown -R ${USER} $INSTALL_PREFIX
+    git clone https://github.com/Homebrew/brew $INSTALL_PREFIX
+    eval "$($INSTALL_PREFIX/bin/brew shellenv)"
 
-    # #export HOMEBREW_NO_INSTALL_FROM_API=1
-    # export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_AUTO_UPDATE=1
 
-    # export HOMEBREW_CELLAR="$INSTALL_PREFIX/Cellar"
-    # export HOMEBREW_PREFIX="$INSTALL_PREFIX"
-    # export HOMEBREW_REPOSITORY="$INSTALL_PREFIX"
-    # export HOMEBREW_CACHE="$INSTALL_PREFIX/cache"
+    export HOMEBREW_CELLAR="$INSTALL_PREFIX/Cellar"
+    export HOMEBREW_PREFIX="$INSTALL_PREFIX"
+    export HOMEBREW_REPOSITORY="$INSTALL_PREFIX"
+    export HOMEBREW_CACHE="$INSTALL_PREFIX/cache"
 
-    # #brew update --force --quiet
-    # brew update --force
-    # chmod -R go-w "$(brew --prefix)/share/zsh"
+    brew update --force
+    chmod -R go-w "$(brew --prefix)/share/zsh"
 
     
-    # Use this section to do a default Homebrew installation
+    # Use this section to do a default Homebrew installation - not recommended
     
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/${USER}/.zprofile
-    #eval "$(/opt/homebrew/bin/brew shellenv)"
+    # NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/${USER}/.zprofile
+    # #eval "$(/opt/homebrew/bin/brew shellenv)"
 
 fi
 
@@ -131,7 +129,7 @@ fi
 
 # echo -e "\n"
 # echo "---------- Updating HomeBrew"
-# brew -v selfupdate
+# brew -v update
 
 # if [[ $CONTINUE_INSTALL == 0 ]]; then
 
@@ -185,8 +183,6 @@ ${INSTALL_PREFIX}/bin/brew install \
              wget \
              dbus \
              dbus-glib \
-             qt \
-             qt-mariadb \
              opencv \
              imagemagick \
              jpeg-xl \
@@ -199,9 +195,11 @@ ${INSTALL_PREFIX}/bin/brew install \
 echo -e "\n"
 
 # these packages have to be built by us so we can update the library paths and code signature
-# ${INSTALL_PREFIX}/bin/brew install --build-from-source \
+${INSTALL_PREFIX}/bin/brew install --build-from-source \
+             qt \
+             qt-mariadb
 
-# echo -e "\n"
+echo -e "\n"
 
 # use pip instead of Homebrew to install lxml
 ${INSTALL_PREFIX}/bin/python3 -m venv ${INSTALL_PREFIX}
@@ -227,18 +225,6 @@ fi
 cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
-
-#cmake $ORIG_WD/../3rdparty \
-#       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-#       -DINSTALL_ROOT=$INSTALL_PREFIX \
-#       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-#       -DKA_VERSION=$DK_KA_VERSION \
-#       -DKP_VERSION=$DK_KP_VERSION \
-#       -DKDE_VERSION=$DK_KDE_VERSION \
-#       -DENABLE_QTVERSION=$DK_QTVERSION \
-#       -Wno-dev
-#
-#cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
 
 #################################################################################################
 

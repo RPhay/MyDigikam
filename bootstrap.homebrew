@@ -34,7 +34,7 @@ fi
 TARGET_TYPE=$3
 
 if [ "$TARGET_TYPE" = "" ]; then
-    TARGET_TYPE=arm64
+    TARGET_TYPE="`uname -m`"
 fi
 
 OPTIONS=$4
