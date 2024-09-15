@@ -54,7 +54,7 @@ QString DKCamera::model() const
 
 QString DKCamera::port() const
 {
-    if (m_port.startsWith(QLatin1String("ptpip:")))
+    if ((m_port.length() == 21) && m_port.startsWith(QLatin1String("ptpip:")))
     {
         QString port = QString::fromLatin1("ptpip:%1.%2.%3.%4")
                                 .arg(m_port.mid( 6, 3).toInt())
