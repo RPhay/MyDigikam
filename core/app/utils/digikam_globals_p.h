@@ -60,9 +60,3 @@
 #include "drawdecoder.h"
 #include "rawcameradlg.h"
 #include "webbrowserdlg.h"
-
-// Windows includes
-
-#ifdef HAVE_DRMINGW
-#   include <windows.h>
-#endif
