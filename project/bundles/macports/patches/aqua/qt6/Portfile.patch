@@ -1,0 +1,11 @@
+--- Portfile.old    2024-09-10 03:59:43
++++ Portfile    2024-09-10 04:02:56
+@@ -223,7 +223,7 @@
+             658112
+         }
+         ""
+-        "port:gconf"
++        ""
+         "qtbase qtdeclarative qtserialport"
+         {"Qt Positioning"}
+         ""
