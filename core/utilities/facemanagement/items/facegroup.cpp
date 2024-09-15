@@ -355,7 +355,7 @@ void FaceGroup::load()
 
 void FaceGroup::clear()
 {
-    cancelAddItem();
+    slotCancelAddItem();
     d->visibilityController->clear();
 
     for (FaceItem* const item : std::as_const(d->items))
@@ -617,7 +617,7 @@ void FaceGroup::addFace()
             this, SLOT(slotAddItemFinished(QRectF)));
 
     connect(d->manuallyAddWrapItem, SIGNAL(cancelled()),
-            this, SLOT(cancelAddItem()));
+            this, SLOT(slotCancelAddItem()));
 }
 
 void FaceGroup::slotAddItemStarted(const QPointF& pos)
@@ -663,10 +663,10 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
         d->manuallyAddWrapItem->stackBefore(item);
     }
 
-    cancelAddItem();
+    slotCancelAddItem();
 }
 
-void FaceGroup::cancelAddItem()
+void FaceGroup::slotCancelAddItem()
 {
     delete d->manuallyAddedItem;
     d->manuallyAddedItem = nullptr;

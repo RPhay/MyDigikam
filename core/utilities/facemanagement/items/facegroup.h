@@ -143,7 +143,7 @@ protected Q_SLOTS:
     void slotAddItemStarted(const QPointF& pos);
     void slotAddItemMoving(const QRectF& rect);
     void slotAddItemFinished(const QRectF& rect);
-    void cancelAddItem();
+    void slotCancelAddItem();
     void slotFocusRandomFace();
 
 private:

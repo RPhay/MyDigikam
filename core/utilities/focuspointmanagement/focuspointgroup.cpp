@@ -202,7 +202,7 @@ void FocusPointGroup::load()
 
 void FocusPointGroup::clear()
 {
-    cancelAddItem();
+    slotCancelAddItem();
     d->visibilityController->clear();
 
     for (RegionFrameItem* const item : std::as_const(d->items))
@@ -273,7 +273,7 @@ void FocusPointGroup::addPoint()
             this, SLOT(slotAddItemFinished(QRectF)));
 
     connect(d->manuallyAddWrapItem, SIGNAL(cancelled()),
-            this, SLOT(cancelAddItem()));
+            this, SLOT(slotCancelAddItem()));
 }
 
 void FocusPointGroup::slotAddItemStarted(const QPointF& pos)
@@ -324,10 +324,10 @@ void FocusPointGroup::slotAddItemFinished(const QRectF& rect)
         d->manuallyAddWrapItem->stackBefore(item);
     }
 
-    cancelAddItem();
+    slotCancelAddItem();
 }
 
-void FocusPointGroup::cancelAddItem()
+void FocusPointGroup::slotCancelAddItem()
 {
     delete d->manuallyAddedItem;
     d->manuallyAddedItem = nullptr;
