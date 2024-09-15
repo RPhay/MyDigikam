@@ -146,6 +146,7 @@ void MarblePluginSettingsWidget::setModel(RenderPluginModel* const pluginModel)
 void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerPlugin*>& list)
 {
     d->runnerPluginList = list;
+    qDebug() << "runner plugins:" << list;
 
     for (const ParseRunnerPlugin* plug : std::as_const(d->runnerPluginList))
     {

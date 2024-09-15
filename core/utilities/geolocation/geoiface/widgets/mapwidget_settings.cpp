@@ -121,7 +121,7 @@ void MapWidget::slotItemDisplaySettingsChanged()
 
 void MapWidget::slotApplySettings()
 {
-    GeolocationSettings::instance()->registerWidget(this);
+    GeolocationSettings::instance()->applySettingsToWidget(this);
 }
 
 } // namespace Digikam

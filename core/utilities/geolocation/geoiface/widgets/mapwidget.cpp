@@ -39,7 +39,9 @@ MapWidget::MapWidget(QWidget* const parent)
 
 #ifdef HAVE_GEOLOCATION
 
-    d->loadedBackends.append(new BackendMarble(s, this));
+    BackendMarble* const bm = new BackendMarble(s, this);
+    d->loadedBackends.append(bm);
+    bm->mapWidget();        // preload plugins.
 
 #endif
 

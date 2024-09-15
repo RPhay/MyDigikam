@@ -68,6 +68,11 @@ public:
     void unregisterWidget(MapWidget* const widget);
 
     /**
+     * Apply the current settings to a previously registered MapWidget.
+     */
+    void applySettingsToWidget(MapWidget* const widget);
+
+    /**
      * Return the first registered MarbleWidget instance stored in the collection.
      * If no valid instance is found, nullptr is returned.
      */

@@ -135,6 +135,7 @@ bool MapWidget::setBackend(const QString& backendName)
             }
 
             d->currentBackend->setActive(s->activeState);
+            GeolocationSettings::instance()->registerWidget(this);
 
             return true;
         }
