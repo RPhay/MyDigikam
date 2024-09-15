@@ -1,0 +1,22 @@
+--- Portfile.old        2024-09-15 08:16:02.168926900 +0000
++++ Portfile    2024-09-15 07:58:08.536431907 +0000
+@@ -18,11 +18,11 @@
+                     sha256  b9c375719f2c61c5f97aa5ee6cf4c901a972347c415969379b0b51f67c48bbcb \
+                     size    44091
+ 
+-if {${perl5.major} != ""} {
+-    depends_build-append \
+-                    port:p${perl5.major}-cpan-meta-check
+-
+-    notes-append    "$subport can optionally use p${perl5.major}-test-simple,\
+-                     but does not depend on it because that would cause a\
+-                     circular dependency."
+-}
++#if {${perl5.major} != ""} {
++#    depends_build-append \
++#                    port:p${perl5.major}-cpan-meta-check
++#
++#    notes-append    "$subport can optionally use p${perl5.major}-test-simple,\
++#                     but does not depend on it because that would cause a\
++#                     circular dependency."
++#}

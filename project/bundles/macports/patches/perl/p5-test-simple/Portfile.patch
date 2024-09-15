@@ -1,0 +1,46 @@
+--- Portfile.old        2024-09-15 08:14:43.320130226 +0000
++++ Portfile    2024-09-15 07:58:08.536431907 +0000
+@@ -18,23 +18,23 @@
+                     sha256  8734f511ca11d0d4491f75fbd0558b17c17326bec4ee23a114217e7e5cd8a950 \
+                     size    571205
+ 
+-if {${perl5.major} != ""} {
+-    depends_build-append \
+-                    port:p${perl5.major}-json-maybexs
+-
+-    depends_lib-append \
+-                    port:p${perl5.major}-data-dumper \
+-                    port:p${perl5.major}-module-pluggable \
+-                    port:p${perl5.major}-term-table \
+-                    port:p${perl5.major}-time-hires
+-
+-    # As of version 1.302200, Test2::Suite is merged into Test::Simple.
+-    # Deactivate obsolete port p${perl5.major}-test2-suite, if active,
+-    # to avoid activation conflicts.
+-    pre-activate {
+-        set pname p${perl5.major}-test2-suite
+-        if {![catch {set installed [lindex [registry_active $pname] 0]}]} {
+-            registry_deactivate_composite $pname "" [list ports_nodepcheck 1]
+-        }
+-    }
+-}
++#if {${perl5.major} != ""} {
++#    depends_build-append \
++#                    port:p${perl5.major}-json-maybexs
++#
++#    depends_lib-append \
++#                    port:p${perl5.major}-data-dumper \
++#                    port:p${perl5.major}-module-pluggable \
++#                    port:p${perl5.major}-term-table \
++#                    port:p${perl5.major}-time-hires
++#
++#    # As of version 1.302200, Test2::Suite is merged into Test::Simple.
++#    # Deactivate obsolete port p${perl5.major}-test2-suite, if active,
++#    # to avoid activation conflicts.
++#    pre-activate {
++#        set pname p${perl5.major}-test2-suite
++#        if {![catch {set installed [lindex [registry_active $pname] 0]}]} {
++#            registry_deactivate_composite $pname "" [list ports_nodepcheck 1]
++#        }
++#    }
++#}

@@ -1,0 +1,24 @@
+--- Portfile.old        2024-09-15 08:13:30.247689441 +0000
++++ Portfile    2024-09-15 07:58:08.536431907 +0000
+@@ -18,12 +18,12 @@
+                     sha256  499bb1b482db24fda277a51525596ad092c2bd51dd508fa8fec2e9f849097402 \
+                     size    194986
+ 
+-if {${perl5.major} != ""} {
+-    depends_build-append \
+-                    port:p${perl5.major}-config-autoconf \
+-                    port:p${perl5.major}-test-leaktrace \
+-                    port:p${perl5.major}-test-simple
+-
+-    depends_lib-append \
+-                    port:p${perl5.major}-xsloader
+-}
++#if {${perl5.major} != ""} {
++#    depends_build-append \
++#                    port:p${perl5.major}-config-autoconf \
++#                    port:p${perl5.major}-test-leaktrace \
++#                    port:p${perl5.major}-test-simple
++#
++#    depends_lib-append \
++#                    port:p${perl5.major}-xsloader
++#}

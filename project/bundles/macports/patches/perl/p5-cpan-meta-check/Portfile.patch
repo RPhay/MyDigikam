@@ -1,0 +1,26 @@
+--- Portfile.old        2024-09-15 08:10:52.088690251 +0000
++++ Portfile    2024-09-15 07:58:08.535432181 +0000
+@@ -18,13 +18,13 @@
+                     sha256  f619d2df5ea0fd91c8cf83eb54acccb5e43d9e6ec1a3f727b3d0ac15d0cf378a \
+                     size    14398
+ 
+-if {${perl5.major} != ""} {
+-    depends_build-append \
+-                    port:p${perl5.major}-scalar-list-utils \
+-                    port:p${perl5.major}-test-simple
+-    
+-    depends_lib-append \
+-                    port:p${perl5.major}-cpan-meta \
+-                    port:p${perl5.major}-cpan-meta-requirements \
+-                    port:p${perl5.major}-module-metadata
+-}
++#if {${perl5.major} != ""} {
++#    depends_build-append \
++#                    port:p${perl5.major}-scalar-list-utils \
++#                    port:p${perl5.major}-test-simple
++#    
++#    depends_lib-append \
++#                    port:p${perl5.major}-cpan-meta \
++#                    port:p${perl5.major}-cpan-meta-requirements \
++#                    port:p${perl5.major}-module-metadata
++#}
