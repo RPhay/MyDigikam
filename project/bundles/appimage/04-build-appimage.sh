@@ -114,8 +114,8 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 
 else
 
-    cp $BUILDDIR/../common/breeze.rcc                     ./usr/share/digikam/breeze.rcc
-    cp $BUILDDIR/../common/breeze-dark.rcc                ./usr/share/digikam/breeze-dark.rcc
+    cp $ORIG_WD/../common/breeze.rcc                      ./usr/share/digikam/breeze.rcc
+    cp $ORIG_WD/../common/breeze-dark.rcc                 ./usr/share/digikam/breeze-dark.rcc
 
 fi
 
