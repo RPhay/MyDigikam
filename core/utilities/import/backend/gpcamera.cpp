@@ -277,8 +277,8 @@ bool GPCamera::doConnect()
     gp_port_info_list_new(&infoList);
     gp_port_info_list_load(infoList);
 
-    int modelNum = gp_abilities_list_lookup_model(abilList, m_model.toLatin1().constData());
-    int portNum  = gp_port_info_list_lookup_path(infoList, m_port.toLatin1().constData());
+    int modelNum = gp_abilities_list_lookup_model(abilList, model().toLatin1().constData());
+    int portNum  = gp_port_info_list_lookup_path(infoList, port().toLatin1().constData());
 
     gp_abilities_list_get_abilities(abilList, modelNum, &d->cameraAbilities);
 
