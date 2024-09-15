@@ -136,6 +136,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
     }
 
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+
     // OpenCV crash with face engine with OpenCL support
     // https://bugs.kde.org/show_bug.cgi?id=423632
     // https://bugs.kde.org/show_bug.cgi?id=426175
@@ -146,18 +148,20 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    qputenv("QT_MEDIA_BACKEND", system.videoBackend.toLatin1());
+
+#endif
+
+#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     if (system.disableHWConv)
     {
         qputenv("QT_DISABLE_HW_TEXTURES_CONVERSION", "1");
     }
 
-    qputenv("QT_MEDIA_BACKEND", system.videoBackend.toLatin1());
-
 #endif
-
-    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
 #if defined HAVE_KICONTHEMES && (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
 

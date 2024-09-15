@@ -65,9 +65,14 @@ public:
 
     // Video Settings Windows
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
+#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     bool    disableHWConv  = false;
+
+#endif
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     QString videoBackend   = QLatin1String("ffmpeg");
 
 #endif
