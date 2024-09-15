@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1527,24 +1527,16 @@ msgstr "एलबम लाइब्रेरी में नए फ़ोल�
 msgid "Images found in %1"
 msgstr "%1 में चित्र मिले"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2683,7 +2675,7 @@ msgstr "मदद (&H)"
 msgid "Main Toolbar"
 msgstr "मुख्य औज़ार पट्टी"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2693,46 +2685,46 @@ msgstr "मुख्य औज़ार पट्टी"
 msgid "digiKam"
 msgstr "डिज़ीकैम"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "कैमरा संवाद यहां दिखाएं <पथ>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, fuzzy, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "कैमरा का पता स्वचालित लगाकर उसे खोलें"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2740,7 +2732,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2748,7 +2740,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2801,24 +2793,45 @@ msgstr "छवियाँ सहेजें"
 msgid "All supported files (%1)"
 msgstr "फ़ाइल छोड़ा %1"
 
-#: core/app/utils/digikam_version.cpp:60
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
+msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+msgid "Documentation: "
+msgstr "दस्तावेज़"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+msgid "Build Date :"
+msgstr "नया छवि फ़ाइल नाम"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "लक्ष्य"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+msgid "Build Architecture: "
+msgstr "अज्ञात"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+msgid "Git Revision: "
+msgstr "मानक विचलन:"
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -48486,13 +48499,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "फ़ोल्डर से"
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"

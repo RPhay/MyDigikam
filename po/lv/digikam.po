@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1558,24 +1558,16 @@ msgstr "Pievienot albuma bibliotēkai jaunas mapes."
 msgid "Images found in %1"
 msgstr "Atrasti attēli iekš %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2726,7 +2718,7 @@ msgstr "&Palīdzība"
 msgid "Main Toolbar"
 msgstr "Galvenā rīkjosla"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2736,47 +2728,47 @@ msgstr "Galvenā rīkjosla"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Viesturs Zariņš, Einārs Sprūģis"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "viesturs.zarins@mi.lu.lv, einars8@gmail.com"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Atvērt fotoaparāta logu iekš <path>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Atvērt fotoaparāta logu ierīcei ar Solid UDI <udi>"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automātiski atrast un atvērt pieslēgtu gphoto2 fotoaparātu"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Palaist digikam ar datubāzes failu mapē <dir>"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Palaist digikam ar datubāzes failu mapē <dir>"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2786,7 +2778,7 @@ msgstr ""
 "Nav pieejams Qt4 SQLite datubāzes spraudnis - lūdzu instalējiet to.\n"
 "Jūsu datorā nav instalēts neviens datubāzes spraudnis."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2796,7 +2788,7 @@ msgstr ""
 "Nav pieejams Qt4 SQLite datubāzes spraudnis - lūdzu, instalējiet to.\n"
 "Ir instalēti šādi datubāzes spraudņi:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2849,24 +2841,49 @@ msgstr "Par. attēli"
 msgid "All supported files (%1)"
 msgstr "Izlaists fails %1"
 
-#: core/app/utils/digikam_version.cpp:60
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
+msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgid "Documentation: "
+msgstr "Dokumentācija"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgid "Build Date :"
+msgstr "Faila nosaukums"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "Rezultāts"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+msgid "Build Architecture: "
+msgstr "Nezināms"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@label: color properties"
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "Standarta novirze: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -49643,13 +49660,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mape: "
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1619,21 +1619,8 @@ msgstr "Uute kataloogide lisamine albumiteeki."
 msgid "Images found in %1"
 msgstr "Leiti pildid asukohas %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-"Oled valinud heleda värviskeemi. Me lülitume tumedale ikooniteemale. "
-"Ikooniteema on saadaval pärast digiKami taaskäivitamist."
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
@@ -1642,8 +1629,8 @@ msgstr ""
 "Oled valinud heleda värviskeemi. Me lülitume tumedale ikooniteemale. "
 "Ikooniteema on saadaval pärast digiKami taaskäivitamist."
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2907,7 +2894,7 @@ msgstr "&Abi"
 msgid "Main Toolbar"
 msgstr "Peamine tööriistariba"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2917,36 +2904,36 @@ msgstr "Peamine tööriistariba"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Marek Laane"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "qiilaq69@gmail.com"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Kaamera avamine asukohas <asukoht>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Kaamera dialoogi avamine Solidi UDI-ga <udi> seadme puhul"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Ühendatud gphoto2 laamera automaatne tuvastamine ja avamine"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2954,13 +2941,13 @@ msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Digikami käivitamine SQLite'i andmebaasifailiga kataloogist <dir>"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 #| msgid "Start digikam with the configuration file <config>"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Digikami käivitamine seadistusfailiga <config>"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2971,7 +2958,7 @@ msgstr ""
 "paigalda see.\n"
 "Sinu arvutisse pole andmebaasipluginaid paigaldatud."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2982,7 +2969,7 @@ msgstr ""
 "paigalda see.\n"
 "Sinu arvutisse paigaldatud andmebaasipluginad on järgmised:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3038,35 +3025,49 @@ msgstr "Toorpildid (%1)"
 msgid "All supported files (%1)"
 msgstr "Kõik toetatud failid (%1)"
 
-#: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: irc.freenode.net - #digikam\n"
-#| "Feedback: digikam-user@kde.org\n"
-#| "\n"
-#| "Build date: %1 (target: %2)\n"
-#| "Rev.: %3"
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
-msgstr ""
-"IRC: irc.freenode.net - #digikam\n"
-"Tagasiside: digikam-user@kde.org\n"
-"\n"
-"Ehitamisaeg: %1 (sihtmärk: %2)\n"
-"Versioon.: %3"
-
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "IRC: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:66
+#, kde-format
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgid "Documentation: "
+msgstr "Dokumentatsioon"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Date"
+msgid "Build Date :"
+msgstr "Faili kuupäev"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "Tulemus"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+#| msgid "Unsupported Format"
+msgid "Build Architecture: "
+msgstr "Toetamata vorming"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "Standardhälve: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -53093,14 +53094,14 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Kataloog: "
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -72002,6 +72003,40 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have chosen a bright color scheme. We switch to a dark icon theme. "
+#~| "The icon theme is available after a restart of digiKam."
+#~ msgid ""
+#~ "We now switch to the system icon theme. The icon colors are automatically "
+#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
+#~ "restart of digiKam."
+#~ msgstr ""
+#~ "Oled valinud heleda värviskeemi. Me lülitume tumedale ikooniteemale. "
+#~ "Ikooniteema on saadaval pärast digiKami taaskäivitamist."
+
+#, fuzzy
+#~| msgid ""
+#~| "IRC: irc.freenode.net - #digikam\n"
+#~| "Feedback: digikam-user@kde.org\n"
+#~| "\n"
+#~| "Build date: %1 (target: %2)\n"
+#~| "Rev.: %3"
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4\n"
+#~ "Build target: %5\n"
+#~ "Build architecture: %6"
+#~ msgstr ""
+#~ "IRC: irc.freenode.net - #digikam\n"
+#~ "Tagasiside: digikam-user@kde.org\n"
+#~ "\n"
+#~ "Ehitamisaeg: %1 (sihtmärk: %2)\n"
+#~ "Versioon.: %3"
 
 #, fuzzy
 #~| msgid ""

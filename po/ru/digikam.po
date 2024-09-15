@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1601,21 +1601,8 @@ msgstr "Добавить новые папки в библиотеку альб�
 msgid "Images found in %1"
 msgstr "Изображения найдены в %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-"Выбрана светлая цветовая схема, поэтому будет выполнено переключение на "
-"тёмный набор значков, который будет использоваться после перезапуска digiKam."
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
@@ -1624,8 +1611,8 @@ msgstr ""
 "Выбрана светлая цветовая схема, поэтому будет выполнено переключение на "
 "тёмный набор значков, который будет использоваться после перезапуска digiKam."
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2741,7 +2728,7 @@ msgstr "&Справка"
 msgid "Main Toolbar"
 msgstr "Основная панель инструментов"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2751,7 +2738,7 @@ msgstr "Основная панель инструментов"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2760,7 +2747,7 @@ msgstr ""
 "Гиздатов,Дмитрий Ашкадов,Александр Яворский,Ольга Миронова,Олеся Герасименко,"
 "Мария Шикунова"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2769,34 +2756,34 @@ msgstr ""
 "rustahm@gmail.com,dmitry.ashkadov@gmail.com,kekcuha@gmail.com,omiro@basealt."
 "ru,gammaray@basealt.ru,trasnslation-team@basealt.ru"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Открыть диалог камеры с папкой «path»"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Открыть диалог камеры для устройства с Solid UDI «udi»"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Автоматически определять и открывать камеру gphoto2"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Запустить digiKam с файлом базы данных SQLite, находящимся в каталоге «dir»"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустить digiKam с конфигурационным файлом «config»"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2807,7 +2794,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере не установлено ни одного модуля для работы с базами данных."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2818,7 +2805,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере установлены следующие модули баз данных:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2875,39 +2862,52 @@ msgstr "Цифровые негативы (%1)"
 msgid "All supported files (%1)"
 msgstr "Все поддерживаемые файлы (%1)"
 
-#: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "Documentation: %3\n"
-#| "\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
-msgstr ""
-"IRC: %1 - #digikam\n"
-"Отзывы: %2\n"
-"Документация: %3\n"
-"\n"
-"Дата сборки: %4 (тип сборки: %5)\n"
-"Ревизия: %6\n"
-"Ветвь: %7"
-
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "IRC: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:66
+#, kde-format
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgid "Documentation: "
+msgstr "Документация"
+
+# BUGME: date modified or created? --aspotashev
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "@item"
+#| msgid "File Date"
+msgid "Build Date :"
+msgstr "Дата файла"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "Результат"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+#| msgid "Unsupported Architecture: %1"
+msgid "Build Architecture: "
+msgstr "Неподдерживаемая архитектура: %1"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@label: color properties"
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "Стандартное отклонение: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -49657,13 +49657,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Папки"
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -68250,6 +68250,45 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Импорт"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have chosen a bright color scheme. We switch to a dark icon theme. "
+#~| "The icon theme is available after a restart of digiKam."
+#~ msgid ""
+#~ "We now switch to the system icon theme. The icon colors are automatically "
+#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
+#~ "restart of digiKam."
+#~ msgstr ""
+#~ "Выбрана светлая цветовая схема, поэтому будет выполнено переключение на "
+#~ "тёмный набор значков, который будет использоваться после перезапуска "
+#~ "digiKam."
+
+#, fuzzy
+#~| msgid ""
+#~| "IRC: %1 - #digikam\n"
+#~| "Feedback: %2\n"
+#~| "Documentation: %3\n"
+#~| "\n"
+#~| "Build date: %4 (target: %5)\n"
+#~| "Revision: %6\n"
+#~| "Branch: %7"
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4\n"
+#~ "Build target: %5\n"
+#~ "Build architecture: %6"
+#~ msgstr ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Отзывы: %2\n"
+#~ "Документация: %3\n"
+#~ "\n"
+#~ "Дата сборки: %4 (тип сборки: %5)\n"
+#~ "Ревизия: %6\n"
+#~ "Ветвь: %7"
 
 #~ msgid ""
 #~ "IRC: %1 - #digikam\n"

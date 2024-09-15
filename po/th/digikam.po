@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1561,24 +1561,16 @@ msgstr "เพิ่มโฟลเดอร์ใหม่ ๆ ไปยัง�
 msgid "Images found in %1"
 msgstr "พบภาพใน %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2800,7 +2792,7 @@ msgstr "&ช่วยเหลือ"
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2810,47 +2802,47 @@ msgstr "แถบเครื่องมือหลัก"
 msgid "digiKam"
 msgstr "ดิจิแคม"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "เปิดกล่องกล้องที่ <path>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "เปิดกล่องกล้องสำหรับอุปกรณ์พร้อมด้วยค่า Solid UDI <udi>"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "ตรวจจับอุปกรณ์กล้องที่เชื่อมต่อผ่าน gphoto2 และเปิดอัตโนมัติ"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2860,7 +2852,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "ทั้งนี้ยังไม่พบว่ามีการติดตั้งมอดูลสำหรับใช้งานฐานข้อมูลใด ๆ บนเครื่องของคุณ"
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2870,7 +2862,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "มอดูลสำหรับใช้งานฐานข้อมูลต่าง ๆ ที่ถูกติดตั้งไว้แล้วคือ:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2923,31 +2915,49 @@ msgstr "ภาพอ้างอิง"
 msgid "All supported files (%1)"
 msgstr "ข้ามแฟ้ม %1"
 
-#: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
-msgstr ""
-"ติดต่อผ่านบริการ IRC:\n"
-"แม่ข่าย irc.freenode.net - ห้อง #digikam\n"
-"\n"
-"แจ้งผลการใช้งานได้ที่:\n"
-"digikam-devel@kde.org\n"
-"\n"
-"วันที่สร้างโปรแกรม: %1"
-
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "IRC: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:66
+#, kde-format
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgctxt "type is a document"
+#| msgid "Document"
+msgid "Documentation: "
+msgstr "เอกสาร"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgid "Build Date :"
+msgstr "ชื่อของแฟ้ม"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "ภาพเป้าหมาย"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+msgid "Build Architecture: "
+msgstr "ไม่ทราบ"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "ค่าเบี่ยงเบนมาตรฐาน: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -50392,13 +50402,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "โฟลเดอร์: "
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -68577,6 +68587,24 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4\n"
+#~ "Build target: %5\n"
+#~ "Build architecture: %6"
+#~ msgstr ""
+#~ "ติดต่อผ่านบริการ IRC:\n"
+#~ "แม่ข่าย irc.freenode.net - ห้อง #digikam\n"
+#~ "\n"
+#~ "แจ้งผลการใช้งานได้ที่:\n"
+#~ "digikam-devel@kde.org\n"
+#~ "\n"
+#~ "วันที่สร้างโปรแกรม: %1"
 
 #, fuzzy
 #~ msgid ""

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
-"PO-Revision-Date: 2024-09-13 19:45+0300\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
+"PO-Revision-Date: 2024-09-14 15:53+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1550,19 +1550,8 @@ msgstr "Додає нові теки до бібліотеки альбомів.
 msgid "Images found in %1"
 msgstr "Зображення, які знайдено в %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-"Перемикаємо програму на використання загальносистемної теми піктограм. У "
-"стільниці Плазми 6 кольори піктограм буде скориговано автоматично. Нові "
-"піктограми стануть доступними після перезапуску digiKam."
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
@@ -1572,8 +1561,8 @@ msgstr ""
 "темної теми піктограм. Нові піктограми стануть доступними після перезапуску "
 "digiKam."
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2685,7 +2674,7 @@ msgstr "&Довідка"
 msgid "Main Toolbar"
 msgstr "Головний пенал"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2695,35 +2684,35 @@ msgstr "Головний пенал"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Іван Петрущак,Юрій Чорноіван"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ivanpetrouchtchak@yahoo.com,yurchor@ukr.net"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Відкрити вікно фотоапарата у «path»"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Відкрити діалогове вікно фотоапарата для пристрою з UDI Solid «udi»"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Автоматично виявляти і відкривати фотоапарат, з'єднаний за допомогою gphoto2"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2731,12 +2720,12 @@ msgstr ""
 "Запустити digiKam з використанням файла бази даних SQLite, виявленого у "
 "каталозі «dir»"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустити digikam із вказаним файлом налаштувань «config»"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2747,7 +2736,7 @@ msgstr ""
 "встановіть його.\n"
 "У вашій системі не встановлено жодного додатка баз даних."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2758,7 +2747,7 @@ msgstr ""
 "встановіть його.\n"
 "Список встановлених у вашій системі додатків баз даних:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2814,41 +2803,51 @@ msgstr "цифрові негативи (%1)"
 msgid "All supported files (%1)"
 msgstr "усі файли, що підтримуються (%1)"
 
-#: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "Documentation: %3\n"
-#| "\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Build architecture: %6\n"
-#| "Revision: %7\n"
-#| "Branch: %8"
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
-msgstr ""
-"IRC: %1 — #digikam\n"
-"Відгуки: %2\n"
-"Документація: %3\n"
-"\n"
-"Дата збирання: %4 (ціль: %5)\n"
-"Архітектура збирання: %6\n"
-"Модифікація: %7\n"
-"Гілка: %8"
-
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "IRC: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:66
+#, kde-format
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgid "Documentation: "
+msgstr "Документація"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "@item"
+#| msgid "File Date"
+msgid "Build Date :"
+msgstr "Дата файла"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "Змінене зображення"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+#| msgid "Unsupported Architecture: %1"
+msgid "Build Architecture: "
+msgstr "Непідтримувана архітектура: %1"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@label: color properties"
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "Стд. відхилення: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -49786,13 +49785,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Теки"
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -68073,6 +68072,50 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid ""
+#~ "We now switch to the system icon theme. The icon colors are automatically "
+#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
+#~ "restart of digiKam."
+#~ msgstr ""
+#~ "Перемикаємо програму на використання загальносистемної теми піктограм. У "
+#~ "стільниці Плазми 6 кольори піктограм буде скориговано автоматично. Нові "
+#~ "піктограми стануть доступними після перезапуску digiKam."
+
+#~| msgid ""
+#~| "IRC: %1 - #digikam\n"
+#~| "Feedback: %2\n"
+#~| "Documentation: %3\n"
+#~| "\n"
+#~| "Build date: %4 (target: %5)\n"
+#~| "Build architecture: %6\n"
+#~| "Revision: %7\n"
+#~| "Branch: %8"
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4\n"
+#~ "Build target: %5\n"
+#~ "Build architecture: %6"
+#~ msgstr ""
+#~ "IRC: %1 — #digikam\n"
+#~ "Відгуки: %2\n"
+#~ "Документація: %3\n"
+#~ "\n"
+#~ "Дата збирання: %4\n"
+#~ "Ціль збирання: %5\n"
+#~ "Архітектура збирання: %6"
+
+#~ msgid ""
+#~ "\n"
+#~ "Revision: %1\n"
+#~ "Branch: %2"
+#~ msgstr ""
+#~ "\n"
+#~ "Модифікація: %1\n"
+#~ "Гілка: %2"
 
 #~ msgid ""
 #~ "IRC: %1 - #digikam\n"

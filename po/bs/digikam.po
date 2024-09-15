@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-14 01:55+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1684,24 +1684,16 @@ msgstr "Dodaje nove direktorije u biblioteku albuma."
 msgid "Images found in %1"
 msgstr "Slike nađene u %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2975,7 +2967,7 @@ msgstr "&Pomoć"
 msgid "Main Toolbar"
 msgstr "Glavna alatna traka"
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2985,7 +2977,7 @@ msgstr "Glavna alatna traka"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2994,7 +2986,7 @@ msgstr ""
 "Amila Dzano,Amir Šabanović,Arnela Besic,Nermina Ahmić,Vedran Ljubovic,Boja "
 "Nermin"
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -3003,24 +2995,24 @@ msgstr ""
 "asalkanovi2@etf.unsa.ba,adzano1@etf.unsa.ba,asabanovic3@etf.unsa.ba,archy-"
 "b@hotmail.com,na@etf.unsa.ba,vljubovic@smartnet.ba,nboja1@etf.unsa.ba"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Otvori dijalog za fotoaparat na <putanji>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otvori dijalog za kameru za uređaj sa Solid UDI<udi>"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatski otkrij i otvori povezanu gphoto2 kameru"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -3030,7 +3022,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -3039,7 +3031,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -3050,7 +3042,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Ne postoji instaliran dodatak za baze podataka na vašem računaru."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3061,7 +3053,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Dodaci za baze podataka instalirani na vašem računaru su izlistani ispod:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3114,32 +3106,49 @@ msgstr "Sirove slike:"
 msgid "All supported files (%1)"
 msgstr "RAW  fajl slike (%1)"
 
-#: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4\n"
-"Build target: %5\n"
-"Build architecture: %6"
-msgstr ""
-"IRC:\n"
-"irc.freenode.net - #digikam\n"
-"\n"
-"Kontakt:\n"
-"digikam-devel@kde.org\n"
-"\n"
-"Datum gradnje: %1 (target: %2)\n"
-"Rev.: %3"
-
-#: core/app/utils/digikam_version.cpp:86
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"\n"
-"Revision: %1\n"
-"Branch: %2"
+msgid "IRC: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:66
+#, kde-format
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgctxt "type is a document"
+#| msgid "Document"
+msgid "Documentation: "
+msgstr "Dokument"
+
+#: core/app/utils/digikam_version.cpp:72
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgid "Build Date :"
+msgstr "Ime datoteke"
+
+#: core/app/utils/digikam_version.cpp:75
+#, fuzzy, kde-format
+#| msgid "Target"
+msgid "Build Target: "
+msgstr "Cilj"
+
+#: core/app/utils/digikam_version.cpp:78
+#, fuzzy, kde-format
+msgid "Build Architecture: "
+msgstr "Nepoznat format"
+
+#: core/app/utils/digikam_version.cpp:95
+#, fuzzy, kde-format
+#| msgid "Std. deviation: "
+msgid "Git Revision: "
+msgstr "Std. devijacija: "
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -52988,13 +52997,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Direktorij: "
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -72271,6 +72280,25 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~ msgid ""
+#~ "IRC: %1 - #digikam\n"
+#~ "Feedback: %2\n"
+#~ "Documentation: %3\n"
+#~ "\n"
+#~ "Build date: %4\n"
+#~ "Build target: %5\n"
+#~ "Build architecture: %6"
+#~ msgstr ""
+#~ "IRC:\n"
+#~ "irc.freenode.net - #digikam\n"
+#~ "\n"
+#~ "Kontakt:\n"
+#~ "digikam-devel@kde.org\n"
+#~ "\n"
+#~ "Datum gradnje: %1 (target: %2)\n"
+#~ "Rev.: %3"
 
 #, fuzzy
 #~ msgid ""
