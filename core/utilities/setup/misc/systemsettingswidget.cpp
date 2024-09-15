@@ -57,13 +57,13 @@ public:
     QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
 
-#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   ifdef Q_OS_WIN
 
     QCheckBox*              disableHWConvCheck     = nullptr;
 
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#   endif
 
     QComboBox*              videoBackendCBox       = nullptr;
 
@@ -97,18 +97,18 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
 
-#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   ifdef Q_OS_WIN
 
     d->disableHWConvCheck     = new QCheckBox(i18n("Fix AMD-GPU video decoding issue"), this);
 
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#   endif
 
     QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for video:"), this);
 
     d->videoBackendCBox       = new QComboBox(this);
-    d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"), QLatin1String("ffmpeg"));
+    d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),   QLatin1String("ffmpeg"));
 
 #   if defined(Q_OS_LINUX)
 
@@ -116,11 +116,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #   elif defined(Q_OS_WIN)
 
-    d->videoBackendCBox->addItem(i18n("Windows (System)"), QLatin1String("windows"));
+    d->videoBackendCBox->addItem(i18n("Windows (System)"),   QLatin1String("windows"));
 
 #   elif defined(Q_OS_MACOS)
 
-    d->videoBackendCBox->addItem(i18n("Darwin (System)"), QLatin1String("darwin"));
+    d->videoBackendCBox->addItem(i18n("Darwin (System)"),    QLatin1String("darwin"));
 
 #   endif
 
@@ -160,13 +160,13 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
     layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 2);
 
-#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   ifdef Q_OS_WIN
 
     layout->addWidget(d->disableHWConvCheck,     row++, 0, 1, 2);
 
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#   endif
 
     layout->addWidget(videoLabel,                row,   0, 1, 1);
     layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1); 
@@ -204,13 +204,13 @@ void SystemSettingsWidget::readSettings()
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
 
-#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   ifdef Q_OS_WIN
 
     d->disableHWConvCheck->setChecked(system.disableHWConv);
 
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#   endif
 
     d->videoBackendCBox->setCurrentIndex(d->videoBackendCBox->findData(system.videoBackend));
 
@@ -241,13 +241,13 @@ void SystemSettingsWidget::saveSettings()
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
 
-#if defined(Q_OS_WIN) && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#   ifdef Q_OS_WIN
 
     system.disableHWConv     = d->disableHWConvCheck->isChecked();
 
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#   endif
 
     system.videoBackend      = d->videoBackendCBox->currentData().toString();
 
