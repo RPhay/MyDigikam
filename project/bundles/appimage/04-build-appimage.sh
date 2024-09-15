@@ -111,7 +111,6 @@ cp -r /usr/share/showfoto                                 ./usr/share
 if [[ $DK_QTVERSION = 6 ]] ; then
 
     cp /usr/share/icons/breeze/breeze-icons.rcc           ./usr/share/digikam/breeze.rcc
-    cp /usr/share/icons/breeze-dark/breeze-icons-dark.rcc ./usr/share/digikam/breeze-dark.rcc
 
 else
 
@@ -122,7 +121,12 @@ fi
 
 cd $APP_IMG_DIR/usr/share/showfoto
 ln -s ../digikam/breeze.rcc                               breeze.rcc
-ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
+
+if [[ $DK_QTVERSION = 5 ]] ; then
+
+    ln -s ../digikam/breeze-dark.rcc                      breeze-dark.rcc
+
+fi
 
 cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
