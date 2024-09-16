@@ -67,6 +67,8 @@ rm -rf $BUILDING_DIR/* || true
 #       -DKDE_VERSION=$DK_KDE_VERSION \
 #       -DENABLE_QTVERSION=$DK_QTVERSION \
 #       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
+#       -DARCH_TARGET=$ARCH_TARGET \
+#       -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
 #       -Wno-dev
 
 #cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
@@ -144,6 +146,11 @@ sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.home
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.homebrew > ./tmp.homebrew ; mv -f ./tmp.homebrew ./bootstrap.homebrew
 sed -e "s/DENABLE_APPSTYLES=OFF/DENABLE_APPSTYLES=ON/g"         ./bootstrap.homebrew > ./tmp.homebrew ; mv -f ./tmp.homebrew ./bootstrap.homebrew
 
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    sed -e "s/DBUILD_WITH_QT6=OFF/DBUILD_WITH_QT6=ON/g"         ./bootstrap.homebrew > ./tmp.homebrew ; mv -f ./tmp.homebrew ./bootstrap.homebrew
+
+fi
 
 chmod +x ./bootstrap.homebrew
 
@@ -191,7 +198,17 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-#################################################################################################
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    # Qt6 install of .../Applications/... binaries is done at the wrong place.
+
+    mkdir -p $INSTALL_PREFIX/$RELOCATE_PREFIX/
+    mv $INSTALL_PREFIX/bin/digikam.*  $INSTALL_PREFIX/$RELOCATE_PREFIX/
+    mv $INSTALL_PREFIX/bin/showfoto.* $INSTALL_PREFIX/$RELOCATE_PREFIX/
+
+fi
+
+################################################################################################
 # Install Extra Plugins
 
 cd $BUILDING_DIR

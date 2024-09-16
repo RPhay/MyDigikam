@@ -100,8 +100,8 @@ DK_QTVERSION="6"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.2.0-beta1
-#DK_VERSION=master
-DK_VERSION="work/michmill/homebrew-mariadb-portable"
+DK_VERSION=master
+#DK_VERSION="work/michmill/showfoto-bundling"
 #DK_VERSION=development/dplugins
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
