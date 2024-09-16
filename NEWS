@@ -89,7 +89,7 @@ BUGFIXES:
 070 ==> 487031 - Unable to play h264 videos on apple silicon mac.
 071 ==> 490553 - Audio delay when playing movie.
 072 ==> 493193 - Deletion of image from album in thumbnail view re-indexes active position to top row.
-073 ==> 
+073 ==> 425304 - digiKam doesn't quit in full-screen mode.
 074 ==> 
 075 ==> 
 076 ==> 
