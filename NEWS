@@ -11,7 +11,7 @@ Bundles:   Windows installer are now based on KDE framework 6.5.0.
 Bundles:   MacOS Silicon package is now based on Qt6 framework 6.7.2 and KDE framework 6.5.0.
 
 Database:  update to new unique file hash V3 added.
-RawEngine: Update internal libraw to last 20240820 upstream.
+RawEngine: Update internal libraw to last 20240916 upstream.
 Video:     Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
 
 *****************************************************************************************************
