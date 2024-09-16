@@ -1,0 +1,3 @@
+All these patches must be applied to the Macports portfiles located at
+
+_macports_install_prefix_/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports
