@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-15 01:50+0000\n"
+"POT-Creation-Date: 2024-09-16 02:08+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1556,100 +1556,100 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "メインビューを初期化中..."
 
-#: core/app/main/digikamapp_setup.cpp:136
+#: core/app/main/digikamapp_setup.cpp:135
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "戻る(&B)"
 
-#: core/app/main/digikamapp_setup.cpp:161
+#: core/app/main/digikamapp_setup.cpp:160
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "進む"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:185
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "更新"
 
-#: core/app/main/digikamapp_setup.cpp:188
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "現在のコンテンツをリフレッシュ"
 
-#: core/app/main/digikamapp_setup.cpp:217
+#: core/app/main/digikamapp_setup.cpp:215
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "新規(&N)..."
 
-#: core/app/main/digikamapp_setup.cpp:218
+#: core/app/main/digikamapp_setup.cpp:216
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "コレクションに新しい空のアルバムを作成します。"
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:224
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "アルバムへ移動(&M)..."
 
-#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:225
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "選択した画像をアルバムへ移動します。"
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:232
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "コピー先(&C)..."
 
-#: core/app/main/digikamapp_setup.cpp:235
+#: core/app/main/digikamapp_setup.cpp:233
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "選択した画像をフォルダーへコピーします。"
 
-#: core/app/main/digikamapp_setup.cpp:242
+#: core/app/main/digikamapp_setup.cpp:240
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "アルバムを削除"
 
-#: core/app/main/digikamapp_setup.cpp:249
-#: core/app/main/digikamapp_setup.cpp:492
+#: core/app/main/digikamapp_setup.cpp:247
+#: core/app/main/digikamapp_setup.cpp:487
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "名前変更..."
 
-#: core/app/main/digikamapp_setup.cpp:258
-#: core/app/main/digikamapp_setup.cpp:310
+#: core/app/main/digikamapp_setup.cpp:255
+#: core/app/main/digikamapp_setup.cpp:307
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "プロパティ"
 
-#: core/app/main/digikamapp_setup.cpp:259
+#: core/app/main/digikamapp_setup.cpp:256
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "アルバムのプロパティとコレクションの情報を編集します。"
 
-#: core/app/main/digikamapp_setup.cpp:267
+#: core/app/main/digikamapp_setup.cpp:264
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "画像にメタデータを書き込み"
 
-#: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:265
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1659,14 +1659,14 @@ msgstr ""
 "現在のアルバムの画像のメタデータを digiKam のデータベースの内容で更新します "
 "(画像のメタデータはデータベースのデータによって上書きされます)。"
 
-#: core/app/main/digikamapp_setup.cpp:278
+#: core/app/main/digikamapp_setup.cpp:275
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "画像からメタデータを再読み取り"
 
-#: core/app/main/digikamapp_setup.cpp:279
-#: core/app/main/digikamapp_setup.cpp:457
+#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:452
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1678,279 +1678,279 @@ msgstr ""
 "(データベースの情報はファイルのメタデータによって上書きされます)。"
 
 # ACCELERATOR added by translator
-#: core/app/main/digikamapp_setup.cpp:289
+#: core/app/main/digikamapp_setup.cpp:286
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "ファイルマネージャで開く(&M)"
 
-#: core/app/main/digikamapp_setup.cpp:296
+#: core/app/main/digikamapp_setup.cpp:293
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "タグマネージャー"
 
-#: core/app/main/digikamapp_setup.cpp:303
+#: core/app/main/digikamapp_setup.cpp:300
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "新規(&E)..."
 
-#: core/app/main/digikamapp_setup.cpp:317
+#: core/app/main/digikamapp_setup.cpp:314
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "削除"
 
-#: core/app/main/digikamapp_setup.cpp:324
+#: core/app/main/digikamapp_setup.cpp:321
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "タグを付ける"
 
-#: core/app/main/digikamapp_setup.cpp:332
+#: core/app/main/digikamapp_setup.cpp:329
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "表示"
 
-#: core/app/main/digikamapp_setup.cpp:336
+#: core/app/main/digikamapp_setup.cpp:333
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "サムネイル"
 
-#: core/app/main/digikamapp_setup.cpp:343
+#: core/app/main/digikamapp_setup.cpp:340
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "プレビュー"
 
-#: core/app/main/digikamapp_setup.cpp:354
+#: core/app/main/digikamapp_setup.cpp:350
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "地図"
 
-#: core/app/main/digikamapp_setup.cpp:363
+#: core/app/main/digikamapp_setup.cpp:359
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "テーブル"
 
-#: core/app/main/digikamapp_setup.cpp:372
+#: core/app/main/digikamapp_setup.cpp:368
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "開く..."
 
-#: core/app/main/digikamapp_setup.cpp:374
+#: core/app/main/digikamapp_setup.cpp:369
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "選択したアイテムを開きます。"
 
-#: core/app/main/digikamapp_setup.cpp:380
+#: core/app/main/digikamapp_setup.cpp:375
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "既定のアプリケーションで開く"
 
-#: core/app/main/digikamapp_setup.cpp:381
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "選択したアイテムを既定のアプリケーションで開きます。"
 
-#: core/app/main/digikamapp_setup.cpp:387
+#: core/app/main/digikamapp_setup.cpp:382
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "画像エディタ"
 
-#: core/app/main/digikamapp_setup.cpp:388
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "画像エディタを開きます。"
 
-#: core/app/main/digikamapp_setup.cpp:395
+#: core/app/main/digikamapp_setup.cpp:390
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "ライトテーブル"
 
-#: core/app/main/digikamapp_setup.cpp:401
+#: core/app/main/digikamapp_setup.cpp:396
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "ライトテーブルに置く"
 
-#: core/app/main/digikamapp_setup.cpp:402
+#: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "選択したアイテムをライトテーブルのサムネイルバーに置きます。"
 
-#: core/app/main/digikamapp_setup.cpp:408
+#: core/app/main/digikamapp_setup.cpp:403
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "ライトテーブルに追加"
 
-#: core/app/main/digikamapp_setup.cpp:409
+#: core/app/main/digikamapp_setup.cpp:404
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "選択したアイテムをライトテーブルのサムネイルバーに追加します。"
 
-#: core/app/main/digikamapp_setup.cpp:417
+#: core/app/main/digikamapp_setup.cpp:412
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "一括処理マネージャ"
 
-#: core/app/main/digikamapp_setup.cpp:423
+#: core/app/main/digikamapp_setup.cpp:418
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "現在のキューに追加"
 
-#: core/app/main/digikamapp_setup.cpp:424
+#: core/app/main/digikamapp_setup.cpp:419
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "選択したアイテムを一括処理マネージャの現在のキューに追加します。"
 
-#: core/app/main/digikamapp_setup.cpp:430
+#: core/app/main/digikamapp_setup.cpp:425
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "新しいキューに追加"
 
-#: core/app/main/digikamapp_setup.cpp:431
+#: core/app/main/digikamapp_setup.cpp:426
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "選択したアイテムを一括処理マネージャの新しいキューに追加します。"
 
-#: core/app/main/digikamapp_setup.cpp:438
+#: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "インポート"
 
-#: core/app/main/digikamapp_setup.cpp:445
+#: core/app/main/digikamapp_setup.cpp:440
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "選択した画像にメタデータを書き込み"
 
-#: core/app/main/digikamapp_setup.cpp:456
+#: core/app/main/digikamapp_setup.cpp:451
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "選択した画像からメタデータを再読み込み"
 
-#: core/app/main/digikamapp_setup.cpp:467
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "顔をスキャン"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:467
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "顔を認識"
 
-#: core/app/main/digikamapp_setup.cpp:477
+#: core/app/main/digikamapp_setup.cpp:472
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "すべての顔を削除"
 
-#: core/app/main/digikamapp_setup.cpp:484
+#: core/app/main/digikamapp_setup.cpp:479
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "類似画像を検索..."
 
-#: core/app/main/digikamapp_setup.cpp:485
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "選択した画像によく似た画像を見つけます。"
 
-#: core/app/main/digikamapp_setup.cpp:493
+#: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "現在選択されているアイテムのファイル名を変更します。"
 
-#: core/app/main/digikamapp_setup.cpp:503
+#: core/app/main/digikamapp_setup.cpp:498
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "ごみ箱に移動"
 
-#: core/app/main/digikamapp_setup.cpp:517
+#: core/app/main/digikamapp_setup.cpp:512
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "完全に削除"
 
-#: core/app/main/digikamapp_setup.cpp:528
+#: core/app/main/digikamapp_setup.cpp:523
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "確認せずに完全に削除"
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:531
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "確認せずにごみ箱に移動"
 
-#: core/app/main/digikamapp_setup.cpp:543
+#: core/app/main/digikamapp_setup.cpp:538
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "アルバムをソート(&S)"
 
-#: core/app/main/digikamapp_setup.cpp:544
+#: core/app/main/digikamapp_setup.cpp:539
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "アルバムをツリー表示でソートします。"
 
-#: core/app/main/digikamapp_setup.cpp:563
+#: core/app/main/digikamapp_setup.cpp:558
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "フォルダで"
 
-#: core/app/main/digikamapp_setup.cpp:564
+#: core/app/main/digikamapp_setup.cpp:559
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "カテゴリで"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:560
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "日付で"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "サブアルバムを含める"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:567
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -1958,13 +1958,13 @@ msgstr ""
 "現在のアルバムのすべてのサブアルバムを表示するには、このオプションを有効にし"
 "ます。"
 
-#: core/app/main/digikamapp_setup.cpp:577
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "サブタグを含める"
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1974,13 +1974,13 @@ msgstr ""
 "指定したタグまたはそのサブタグの付いたすべての画像を表示するには、このオプ"
 "ションを有効にします。"
 
-#: core/app/main/digikamapp_setup.cpp:584
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "開くためにグループ化した全画像を表示"
 
-#: core/app/main/digikamapp_setup.cpp:586
+#: core/app/main/digikamapp_setup.cpp:581
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
@@ -1988,432 +1988,432 @@ msgstr ""
 "現在のアルバムのすべてのサブアルバムを表示するには、このオプションを有効にし"
 "ます。"
 
-#: core/app/main/digikamapp_setup.cpp:592
+#: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "アイテムをソート(&S)"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "サムネイルビューでアルバム内の画像をソートするための値を指定します。"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "名前で"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "パスで"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "作成日で"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "更新日で"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "ファイルサイズで"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "評価で"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "画像サイズで"
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "アスペクト比で"
 
-#: core/app/main/digikamapp_setup.cpp:606
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "顔タイプで"
 
-#: core/app/main/digikamapp_setup.cpp:607
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "類似度で"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "マニュアルと名前で"
 
-#: core/app/main/digikamapp_setup.cpp:609
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "マニュアルと日付で"
 
-#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:649
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "アイテムのソート順(&O)"
 
-#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "画像を昇順にソートするか降順にソートするかを指定します。"
 
-#: core/app/main/digikamapp_setup.cpp:659
-#: core/app/main/digikamapp_setup.cpp:714
+#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "昇順"
 
-#: core/app/main/digikamapp_setup.cpp:661
-#: core/app/main/digikamapp_setup.cpp:716
+#: core/app/main/digikamapp_setup.cpp:656
+#: core/app/main/digikamapp_setup.cpp:711
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "降順"
 
-#: core/app/main/digikamapp_setup.cpp:671
+#: core/app/main/digikamapp_setup.cpp:666
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "アイテムを分割"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:667
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "サムネイルビューで画像を表示するカテゴリを指定します。"
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:672
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "分割しない"
 
-#: core/app/main/digikamapp_setup.cpp:678
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "アルバムで"
 
-#: core/app/main/digikamapp_setup.cpp:679
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "フォーマットで"
 
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "月で"
 
-#: core/app/main/digikamapp_setup.cpp:681
+#: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "顔で"
 
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:704
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "アイテムの分割順"
 
-#: core/app/main/digikamapp_setup.cpp:710
+#: core/app/main/digikamapp_setup.cpp:705
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "グループ内の分割したアイテムのソート順を指定します。"
 
-#: core/app/main/digikamapp_setup.cpp:731
+#: core/app/main/digikamapp_setup.cpp:726
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "すべて選択"
 
-#: core/app/main/digikamapp_setup.cpp:738
+#: core/app/main/digikamapp_setup.cpp:733
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "すべて選択解除"
 
-#: core/app/main/digikamapp_setup.cpp:745
+#: core/app/main/digikamapp_setup.cpp:740
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "選択反転"
 
 # ACCELERATOR added by translator
-#: core/app/main/digikamapp_setup.cpp:753
+#: core/app/main/digikamapp_setup.cpp:748
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "サムネイルバーを表示"
 
 # ACCELERATOR added by translator
-#: core/app/main/digikamapp_setup.cpp:784
+#: core/app/main/digikamapp_setup.cpp:779
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "原寸で表示"
 
-#: core/app/main/digikamapp_setup.cpp:792
+#: core/app/main/digikamapp_setup.cpp:787
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "ウィンドウに合わせる(&W)"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:800
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "カラーマネージメントによる表示"
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:818
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "検索..."
 
-#: core/app/main/digikamapp_setup.cpp:832
+#: core/app/main/digikamapp_setup.cpp:826
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "高度な検索..."
 
-#: core/app/main/digikamapp_setup.cpp:840
+#: core/app/main/digikamapp_setup.cpp:834
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "重複アイテムを検索..."
 
-#: core/app/main/digikamapp_setup.cpp:850
+#: core/app/main/digikamapp_setup.cpp:844
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "データベース移行..."
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:853
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "メンテナンス..."
 
-#: core/app/main/digikamapp_setup.cpp:866
+#: core/app/main/digikamapp_setup.cpp:860
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "新しいアイテムをスキャン"
 
-#: core/app/main/digikamapp_setup.cpp:872
+#: core/app/main/digikamapp_setup.cpp:866
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "手動でカメラを追加..."
 
-#: core/app/main/digikamapp_setup.cpp:883
+#: core/app/main/digikamapp_setup.cpp:877
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "カメラを読み込み中..."
 
-#: core/app/main/digikamapp_setup.cpp:917
+#: core/app/main/digikamapp_setup.cpp:911
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "プレビューモードを終了"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:916
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "次の画像"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:922
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "前の画像"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "最初の画像"
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:933
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "最後の画像"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "切り取り(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:946
+#: core/app/main/digikamapp_setup.cpp:940
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "選択をクリップボードに移動"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:959
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "タイトルを編集"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:964
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "コメントを編集"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:969
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "割り当てられたタグを表示"
 
-#: core/app/main/digikamapp_setup.cpp:984
+#: core/app/main/digikamapp_setup.cpp:978
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Exif 方向タグを調整"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "ノーマル"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "左右反転"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "上下回転"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "上下反転"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "右に回転 / 左右反転"
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "右に回転"
 
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "右に回転 / 上下反転"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "左に回転"
 
-#: core/app/main/digikamapp_setup.cpp:1062
+#: core/app/main/digikamapp_setup.cpp:1056
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "回転"
 
-#: core/app/main/digikamapp_setup.cpp:1066
+#: core/app/main/digikamapp_setup.cpp:1060
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "左"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1067
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "右"
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "反転"
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1081
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "水平"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1088
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "垂直"
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1098
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Exif 情報を参照して、自動的に回転/反転する"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1109
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "テーマを読み込み中..."
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1112
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "テーマ(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1124
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2625,7 +2625,7 @@ msgstr "ヘルプ(&H)"
 msgid "Main Toolbar"
 msgstr "メインツールバー"
 
-#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2635,46 +2635,46 @@ msgstr "メインツールバー"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
+#: core/app/main/main.cpp:231 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Yukiko Bando"
 
-#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:232 core/showfoto/main/main.cpp:217
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ybando@k6.dion.ne.jp"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "カメラダイアログを \"path\" で開く"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI \"udi\" のデバイスのためにカメラダイアログを開く"
 
-#: core/app/main/main.cpp:238
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "接続されている gphoto2 カメラを自動的に検出して開く"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:248
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "ディレクトリ \"dir\" にある SQLite データベースファイルで digiKam を起動"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "設定ファイル \"config\" で digiKam を起動"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:280
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2685,7 +2685,7 @@ msgstr ""
 "ンストールしてください。\n"
 "コンピュータにインストールされているデータベースプラグインはありません。"
 
-#: core/app/main/main.cpp:281
+#: core/app/main/main.cpp:289
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2697,7 +2697,7 @@ msgstr ""
 "コンピュータにインストールされているデータベースプラグインは以下のとおりで"
 "す。"
 
-#: core/app/main/main.cpp:325
+#: core/app/main/main.cpp:333
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2771,7 +2771,7 @@ msgstr "向き"
 #: core/app/utils/digikam_version.cpp:72
 #, fuzzy, kde-format
 #| msgid "File Name"
-msgid "Build Date :"
+msgid "Build Date: "
 msgstr "ファイル名"
 
 #: core/app/utils/digikam_version.cpp:75
@@ -51081,13 +51081,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "フォルダ: "
 
-#: core/showfoto/main/main.cpp:200
+#: core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:218
+#: core/showfoto/main/main.cpp:225
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -58059,13 +58059,13 @@ msgid ""
 "not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:275
+#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:276
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Map View"
 msgstr "大理石 2"
 
-#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:299
+#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:300
 #, fuzzy, kde-format
 msgid "Map Plugins"
 msgstr "Kipi プラグイン"
@@ -68123,60 +68123,70 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "切り取る"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:87
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr ""
 
 # Theme based on users' default color scheme
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "Default"
 msgid "FFmpeg (Default)"
 msgstr "デフォルト"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, kde-format
+msgid "GStreamer (System)"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "Windows (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#, fuzzy, kde-format
+msgid "Darwin (System)"
+msgstr "Dublin Core"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgid "Download required binary data..."
 msgstr "ダウンロード: "
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

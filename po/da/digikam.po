@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-15 01:50+0000\n"
+"POT-Creation-Date: 2024-09-16 02:08+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1695,115 +1695,115 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "Initialiserer hovedvisningen..."
 
-#: core/app/main/digikamapp_setup.cpp:136
+#: core/app/main/digikamapp_setup.cpp:135
 #, fuzzy, kde-format
 #| msgid "&Back"
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&Tilbage"
 
-#: core/app/main/digikamapp_setup.cpp:161
+#: core/app/main/digikamapp_setup.cpp:160
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Fremad"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:185
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Genopfrisk"
 
-#: core/app/main/digikamapp_setup.cpp:188
+#: core/app/main/digikamapp_setup.cpp:186
 #, fuzzy, kde-format
 #| msgid "Refresh the current contents."
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Genopfrisk det aktuelle indhold."
 
-#: core/app/main/digikamapp_setup.cpp:217
+#: core/app/main/digikamapp_setup.cpp:215
 #, fuzzy, kde-format
 #| msgid "&New..."
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Nyt..."
 
-#: core/app/main/digikamapp_setup.cpp:218
+#: core/app/main/digikamapp_setup.cpp:216
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Opretter et nyt tomt album i samlingen."
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:224
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Flyt til album..."
 
-#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:225
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Flyt markerede billeder til et album."
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:232
 #, fuzzy, kde-format
 #| msgid "Copy Tags..."
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "Kopiér mærker..."
 
-#: core/app/main/digikamapp_setup.cpp:235
+#: core/app/main/digikamapp_setup.cpp:233
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Flyt markerede billeder til et album."
 
-#: core/app/main/digikamapp_setup.cpp:242
+#: core/app/main/digikamapp_setup.cpp:240
 #, fuzzy, kde-format
 #| msgid "Delete Album"
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Slet album"
 
-#: core/app/main/digikamapp_setup.cpp:249
-#: core/app/main/digikamapp_setup.cpp:492
+#: core/app/main/digikamapp_setup.cpp:247
+#: core/app/main/digikamapp_setup.cpp:487
 #, fuzzy, kde-format
 #| msgid "Rename..."
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Omdøb..."
 
-#: core/app/main/digikamapp_setup.cpp:258
-#: core/app/main/digikamapp_setup.cpp:310
+#: core/app/main/digikamapp_setup.cpp:255
+#: core/app/main/digikamapp_setup.cpp:307
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Egenskaber"
 
-#: core/app/main/digikamapp_setup.cpp:259
+#: core/app/main/digikamapp_setup.cpp:256
 #, fuzzy, kde-format
 #| msgid "Edit album properties and collection information."
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Redigér albummets egenskaber og information om samlingen."
 
-#: core/app/main/digikamapp_setup.cpp:267
+#: core/app/main/digikamapp_setup.cpp:264
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Images"
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Skriv metadata til billeder"
 
-#: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:265
+#: core/app/main/digikamapp_setup.cpp:441
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates metadata of images in the current album with the contents of "
@@ -1817,15 +1817,15 @@ msgstr ""
 "Opdaterer metadata for alle billeder i dette album med indholdet af digiKam-"
 "databasen (billeders metadata overskrives med data fra databasen)."
 
-#: core/app/main/digikamapp_setup.cpp:278
+#: core/app/main/digikamapp_setup.cpp:275
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Images"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Genlæs metadata fra billeder"
 
-#: core/app/main/digikamapp_setup.cpp:279
-#: core/app/main/digikamapp_setup.cpp:457
+#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:452
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates the digiKam database from the metadata of the files in the "
@@ -1840,21 +1840,21 @@ msgstr ""
 "Opdaterer digiKams database fra filerne i det aktuelle albums metadata "
 "(information i databasen overskrives med data fra filernes metadata)."
 
-#: core/app/main/digikamapp_setup.cpp:289
+#: core/app/main/digikamapp_setup.cpp:286
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Åbn med filhåndtering"
 
-#: core/app/main/digikamapp_setup.cpp:296
+#: core/app/main/digikamapp_setup.cpp:293
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Mærkehåndtering"
 
-#: core/app/main/digikamapp_setup.cpp:303
+#: core/app/main/digikamapp_setup.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "new tag"
 #| msgid "N&ew..."
@@ -1862,35 +1862,35 @@ msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "N&yt..."
 
-#: core/app/main/digikamapp_setup.cpp:317
+#: core/app/main/digikamapp_setup.cpp:314
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Slet"
 
-#: core/app/main/digikamapp_setup.cpp:324
+#: core/app/main/digikamapp_setup.cpp:321
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Tildel mærke"
 
-#: core/app/main/digikamapp_setup.cpp:332
+#: core/app/main/digikamapp_setup.cpp:329
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Visninger"
 
-#: core/app/main/digikamapp_setup.cpp:336
+#: core/app/main/digikamapp_setup.cpp:333
 #, fuzzy, kde-format
 #| msgid "Thumbnails"
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Miniaturer"
 
-#: core/app/main/digikamapp_setup.cpp:343
+#: core/app/main/digikamapp_setup.cpp:340
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, fuzzy, kde-format
 #| msgid "Preview"
@@ -1898,7 +1898,7 @@ msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: core/app/main/digikamapp_setup.cpp:354
+#: core/app/main/digikamapp_setup.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to map view"
 #| msgid "Map"
@@ -1906,7 +1906,7 @@ msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Kort"
 
-#: core/app/main/digikamapp_setup.cpp:363
+#: core/app/main/digikamapp_setup.cpp:359
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to table view"
 #| msgid "Table"
@@ -1914,182 +1914,182 @@ msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Tabel"
 
-#: core/app/main/digikamapp_setup.cpp:372
+#: core/app/main/digikamapp_setup.cpp:368
 #, fuzzy, kde-format
 #| msgid "Open..."
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Åbn..."
 
-#: core/app/main/digikamapp_setup.cpp:374
+#: core/app/main/digikamapp_setup.cpp:369
 #, fuzzy, kde-format
 #| msgid "Open the selected item."
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Åbn det valgte element."
 
-#: core/app/main/digikamapp_setup.cpp:380
+#: core/app/main/digikamapp_setup.cpp:375
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Åbn med standardprogrammet"
 
-#: core/app/main/digikamapp_setup.cpp:381
+#: core/app/main/digikamapp_setup.cpp:376
 #, fuzzy, kde-format
 #| msgid "Open the selected item with default assigned application."
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Åbn det valgte element med det standardtildelte program."
 
-#: core/app/main/digikamapp_setup.cpp:387
+#: core/app/main/digikamapp_setup.cpp:382
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Billededitor"
 
-#: core/app/main/digikamapp_setup.cpp:388
+#: core/app/main/digikamapp_setup.cpp:383
 #, fuzzy, kde-format
 #| msgid "Open the image editor."
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Åbn billededitor."
 
-#: core/app/main/digikamapp_setup.cpp:395
+#: core/app/main/digikamapp_setup.cpp:390
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Lysbord"
 
-#: core/app/main/digikamapp_setup.cpp:401
+#: core/app/main/digikamapp_setup.cpp:396
 #, fuzzy, kde-format
 #| msgid "Place onto Light Table"
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Placér på lysbord"
 
-#: core/app/main/digikamapp_setup.cpp:402
+#: core/app/main/digikamapp_setup.cpp:397
 #, fuzzy, kde-format
 #| msgid "Place the selected items on the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "Placér de valgte elementer på lysbordets miniaturelinje."
 
-#: core/app/main/digikamapp_setup.cpp:408
+#: core/app/main/digikamapp_setup.cpp:403
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Føj til lysbord"
 
-#: core/app/main/digikamapp_setup.cpp:409
+#: core/app/main/digikamapp_setup.cpp:404
 #, fuzzy, kde-format
 #| msgid "Add selected items to the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "Føj de valgte elementer til lysbordets miniaturelinje."
 
-#: core/app/main/digikamapp_setup.cpp:417
+#: core/app/main/digikamapp_setup.cpp:412
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Håndtering af batch-kø"
 
-#: core/app/main/digikamapp_setup.cpp:423
+#: core/app/main/digikamapp_setup.cpp:418
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Føj til aktuel kø"
 
-#: core/app/main/digikamapp_setup.cpp:424
+#: core/app/main/digikamapp_setup.cpp:419
 #, fuzzy, kde-format
 #| msgid "Add selected items to current queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Føj de markerede elementer til den aktuelle kø til batch-håndtering."
 
-#: core/app/main/digikamapp_setup.cpp:430
+#: core/app/main/digikamapp_setup.cpp:425
 #, fuzzy, kde-format
 #| msgid "Add to New Queue"
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Føj til ny kø"
 
-#: core/app/main/digikamapp_setup.cpp:431
+#: core/app/main/digikamapp_setup.cpp:426
 #, fuzzy, kde-format
 #| msgid "Add selected items to a new queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Føj de markerede elementer til en ny kø til batch-håndtering."
 
-#: core/app/main/digikamapp_setup.cpp:438
+#: core/app/main/digikamapp_setup.cpp:433
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importér"
 
-#: core/app/main/digikamapp_setup.cpp:445
+#: core/app/main/digikamapp_setup.cpp:440
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Selected Images"
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Skriv metadata til markerede billeder"
 
-#: core/app/main/digikamapp_setup.cpp:456
+#: core/app/main/digikamapp_setup.cpp:451
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Selected Images"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Genlæs metadata fra markerede billeder"
 
-#: core/app/main/digikamapp_setup.cpp:467
+#: core/app/main/digikamapp_setup.cpp:462
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Scan efter nye billeder"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:467
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Synkronisér"
 
-#: core/app/main/digikamapp_setup.cpp:477
+#: core/app/main/digikamapp_setup.cpp:472
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Fjern mærke"
 
-#: core/app/main/digikamapp_setup.cpp:484
+#: core/app/main/digikamapp_setup.cpp:479
 #, fuzzy, kde-format
 #| msgid "Find Similar..."
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Find lignende..."
 
-#: core/app/main/digikamapp_setup.cpp:485
+#: core/app/main/digikamapp_setup.cpp:480
 #, fuzzy, kde-format
 #| msgid "Find similar images using selected item as reference."
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Find lignende billeder med valgte elementer som referænce."
 
-#: core/app/main/digikamapp_setup.cpp:493
+#: core/app/main/digikamapp_setup.cpp:488
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Ændr filnavnet på det valgte element."
 
-#: core/app/main/digikamapp_setup.cpp:503
+#: core/app/main/digikamapp_setup.cpp:498
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
@@ -2099,70 +2099,70 @@ msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Flyt til papirkurv"
 
-#: core/app/main/digikamapp_setup.cpp:517
+#: core/app/main/digikamapp_setup.cpp:512
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Slet permanent"
 
-#: core/app/main/digikamapp_setup.cpp:528
+#: core/app/main/digikamapp_setup.cpp:523
 #, fuzzy, kde-format
 #| msgid "Delete permanently without confirmation"
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Slet permanent uden bekræftelse"
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:531
 #, fuzzy, kde-format
 #| msgid "Move to trash without confirmation"
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Flyt til papirkurv uden bekræftelse"
 
-#: core/app/main/digikamapp_setup.cpp:543
+#: core/app/main/digikamapp_setup.cpp:538
 #, fuzzy, kde-format
 #| msgid "&Sort Albums"
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Sortér albummer"
 
-#: core/app/main/digikamapp_setup.cpp:544
+#: core/app/main/digikamapp_setup.cpp:539
 #, fuzzy, kde-format
 #| msgid "Sort Albums in tree-view."
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Sortér albummer i træ-visning."
 
-#: core/app/main/digikamapp_setup.cpp:563
+#: core/app/main/digikamapp_setup.cpp:558
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Efter mappenavn"
 
-#: core/app/main/digikamapp_setup.cpp:564
+#: core/app/main/digikamapp_setup.cpp:559
 #, fuzzy, kde-format
 #| msgid "By Category"
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Efter kategori"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:560
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Efter dato"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:565
 #, fuzzy, kde-format
 #| msgid "Include Album Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Inkludér album-undertræ"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:567
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
@@ -2171,14 +2171,14 @@ msgstr ""
 "Aktivér denne indstilling for at vise alle underalbummer under det nuværende "
 "album."
 
-#: core/app/main/digikamapp_setup.cpp:577
+#: core/app/main/digikamapp_setup.cpp:572
 #, fuzzy, kde-format
 #| msgid "Include Tag Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Inkludér mærke-undertræ"
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:574
 #, fuzzy, kde-format
 #| msgid ""
 #| "Activate this option to show all images marked by the given tag and all "
@@ -2191,7 +2191,7 @@ msgstr ""
 "Aktivér denne indstilling for at vise alle billeder markeret af det givne "
 "mærke og alle dets undermærker."
 
-#: core/app/main/digikamapp_setup.cpp:584
+#: core/app/main/digikamapp_setup.cpp:579
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Show Grouped Images"
@@ -2199,7 +2199,7 @@ msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Vis grupperede billeder"
 
-#: core/app/main/digikamapp_setup.cpp:586
+#: core/app/main/digikamapp_setup.cpp:581
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
@@ -2208,14 +2208,14 @@ msgstr ""
 "Aktivér denne indstilling for at vise alle underalbummer under det nuværende "
 "album."
 
-#: core/app/main/digikamapp_setup.cpp:592
+#: core/app/main/digikamapp_setup.cpp:587
 #, fuzzy, kde-format
 #| msgid "&Sort Items"
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Sortér elementer"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:588
 #, fuzzy, kde-format
 #| msgid ""
 #| "The value by which the images in one album are sorted in the thumbnail "
@@ -2225,91 +2225,91 @@ msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Værdien som billederne i et album sorteres efter i miniaturevisningen"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:593
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Efter navn"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:594
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Efter sti"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:595
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Oprettelsesdato"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:596
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Ændring"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:597
 #, fuzzy, kde-format
 #| msgid "By File Size"
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Efter filstørrelse"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:598
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Efter karakterer"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:599
 #, fuzzy, kde-format
 #| msgid "By Image Size"
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Efter billedstørrelse"
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:600
 #, fuzzy, kde-format
 #| msgid "By Aspect Ratio"
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Efter aspektforhold"
 
-#: core/app/main/digikamapp_setup.cpp:606
+#: core/app/main/digikamapp_setup.cpp:601
 #, fuzzy, kde-format
 #| msgid "Show image type"
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Image-filtype"
 
-#: core/app/main/digikamapp_setup.cpp:607
+#: core/app/main/digikamapp_setup.cpp:602
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Lighed:"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:603
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Manuelt"
 
-#: core/app/main/digikamapp_setup.cpp:609
+#: core/app/main/digikamapp_setup.cpp:604
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Manuelt"
 
-#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:649
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -2317,30 +2317,30 @@ msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sorterings&rækkefølge for elementer"
 
-#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:650
 #, fuzzy, kde-format
 #| msgid "Defines whether images are sorted in ascending or descending manner."
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Angiver hvorvidt billeder sorteres stigende eller faldende."
 
-#: core/app/main/digikamapp_setup.cpp:659
-#: core/app/main/digikamapp_setup.cpp:714
+#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:709
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Stigende"
 
-#: core/app/main/digikamapp_setup.cpp:661
-#: core/app/main/digikamapp_setup.cpp:716
+#: core/app/main/digikamapp_setup.cpp:656
+#: core/app/main/digikamapp_setup.cpp:711
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Faldende"
 
-#: core/app/main/digikamapp_setup.cpp:671
+#: core/app/main/digikamapp_setup.cpp:666
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
@@ -2348,7 +2348,7 @@ msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "&Sortér elementer"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:667
 #, fuzzy, kde-format
 #| msgid ""
 #| "The categories in which the images in the thumbnail view are displayed"
@@ -2356,35 +2356,35 @@ msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategorierne som billederne i miniaturevisningen vises i"
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:672
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Flad liste"
 
-#: core/app/main/digikamapp_setup.cpp:678
+#: core/app/main/digikamapp_setup.cpp:673
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Efter album"
 
-#: core/app/main/digikamapp_setup.cpp:679
+#: core/app/main/digikamapp_setup.cpp:674
 #, fuzzy, kde-format
 #| msgid "By Format"
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Efter format"
 
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:675
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Måned"
 
-#: core/app/main/digikamapp_setup.cpp:681
+#: core/app/main/digikamapp_setup.cpp:676
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
@@ -2392,7 +2392,7 @@ msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Detektér ansigter"
 
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:704
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -2400,259 +2400,259 @@ msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Sorterings&rækkefølge for elementer"
 
-#: core/app/main/digikamapp_setup.cpp:710
+#: core/app/main/digikamapp_setup.cpp:705
 #, fuzzy, kde-format
 #| msgid "The sort order of images groups"
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Sorteringsrækkefølge for billedegrupper"
 
-#: core/app/main/digikamapp_setup.cpp:731
+#: core/app/main/digikamapp_setup.cpp:726
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Vælg alle"
 
-#: core/app/main/digikamapp_setup.cpp:738
+#: core/app/main/digikamapp_setup.cpp:733
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Vælg ingen"
 
-#: core/app/main/digikamapp_setup.cpp:745
+#: core/app/main/digikamapp_setup.cpp:740
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Invertér markering"
 
-#: core/app/main/digikamapp_setup.cpp:753
+#: core/app/main/digikamapp_setup.cpp:748
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Vis miniaturelinje"
 
-#: core/app/main/digikamapp_setup.cpp:784
+#: core/app/main/digikamapp_setup.cpp:779
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zoom til 100%"
 
-#: core/app/main/digikamapp_setup.cpp:792
+#: core/app/main/digikamapp_setup.cpp:787
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Tilpas til &vindue"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:800
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Farvehåndteret visning"
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:818
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Søg..."
 
-#: core/app/main/digikamapp_setup.cpp:832
+#: core/app/main/digikamapp_setup.cpp:826
 #, fuzzy, kde-format
 #| msgid "Advanced Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Avanceret søgning..."
 
-#: core/app/main/digikamapp_setup.cpp:840
+#: core/app/main/digikamapp_setup.cpp:834
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Find duplikater..."
 
-#: core/app/main/digikamapp_setup.cpp:850
+#: core/app/main/digikamapp_setup.cpp:844
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Databasemigrering..."
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:853
 #, fuzzy, kde-format
 #| msgid "Maintenance..."
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Vedligeholdelse..."
 
-#: core/app/main/digikamapp_setup.cpp:866
+#: core/app/main/digikamapp_setup.cpp:860
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Scan efter nye elementer"
 
-#: core/app/main/digikamapp_setup.cpp:872
+#: core/app/main/digikamapp_setup.cpp:866
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Tilføj kamera manuelt..."
 
-#: core/app/main/digikamapp_setup.cpp:883
+#: core/app/main/digikamapp_setup.cpp:877
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Indlæser kameraer..."
 
-#: core/app/main/digikamapp_setup.cpp:917
+#: core/app/main/digikamapp_setup.cpp:911
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Afslut forhåndsvisningstilstand"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:916
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Næste billede"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:922
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Forrige billede"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:928
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Første billede"
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:933
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Sidste billede"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:938
 #, fuzzy, kde-format
 #| msgid "Cu&t"
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Kli&p"
 
-#: core/app/main/digikamapp_setup.cpp:946
+#: core/app/main/digikamapp_setup.cpp:940
 #, fuzzy, kde-format
 #| msgid "Cut selection to clipboard"
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Klip det markerede til udklipsholderen"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:959
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Redigér titler"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:964
 #, fuzzy, kde-format
 #| msgid "Edit Comments"
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Redigér kommentarer"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:969
 #, fuzzy, kde-format
 #| msgid "Show Assigned Tags"
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Vis tildelte mærker"
 
-#: core/app/main/digikamapp_setup.cpp:984
+#: core/app/main/digikamapp_setup.cpp:978
 #, fuzzy, kde-format
 #| msgid "Adjust Exif Orientation Tag"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Justér Exif-orienteringsmærke"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:981
 #, fuzzy, kde-format
 #| msgid "Normal"
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:983
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Vendt vandret"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:985
 #, fuzzy, kde-format
 #| msgid "Rotated Upside Down"
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Roteret op og ned"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:987
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Vendt lodret "
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:989
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Horiz. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Roteret til højre / vendt vandret"
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:991
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Højreroteret"
 
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:993
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Vert. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Roteret til højre / vendt lodret"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:995
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Venstreroteret"
 
-#: core/app/main/digikamapp_setup.cpp:1062
+#: core/app/main/digikamapp_setup.cpp:1056
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rotér"
 
-#: core/app/main/digikamapp_setup.cpp:1066
+#: core/app/main/digikamapp_setup.cpp:1060
 #, fuzzy, kde-format
 #| msgctxt "rotate image left"
 #| msgid "Left"
@@ -2660,7 +2660,7 @@ msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Venstre"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1067
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -2668,49 +2668,49 @@ msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Højre"
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1077
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Vend"
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1081
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Vandret"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1088
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Lodret"
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1098
 #, fuzzy, kde-format
 #| msgid "Auto Rotate/Flip Using Exif Information"
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automatisk rotering/vending med EXIF-information"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1109
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Indlæser temaer..."
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1112
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temaer"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1124
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@info: setup"
@@ -2923,7 +2923,7 @@ msgstr "&Hjælp"
 msgid "Main Toolbar"
 msgstr "Hovedværktøjslinje"
 
-#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2933,36 +2933,36 @@ msgstr "Hovedværktøjslinje"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
+#: core/app/main/main.cpp:231 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Jan Madsen,Martin Schlander"
 
-#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:232 core/showfoto/main/main.cpp:217
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jan-portugal@opensuse.org,mschlander@opensuse.org"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Åbn kameradialog med <sti>"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Åben kamera-dialogen for enheden med Solid UDI <udi>"
 
-#: core/app/main/main.cpp:238
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detektér og åbn et tilsluttet gphoto2 kamera automatisk"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:248
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2971,7 +2971,7 @@ msgid ""
 msgstr ""
 "Start digikam med den SQLite-databasefil der blev fundet i mappen <dir>"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2979,7 +2979,7 @@ msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 "Start digikam med den SQLite-databasefil der blev fundet i mappen <dir>"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:280
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2990,7 +2990,7 @@ msgstr ""
 "installere det.\n"
 "Der er intet database-plugin installeret på din computer."
 
-#: core/app/main/main.cpp:281
+#: core/app/main/main.cpp:289
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3001,7 +3001,7 @@ msgstr ""
 "skal installere det.\n"
 "Installerede database-plugins er oplistet nedenfor:"
 
-#: core/app/main/main.cpp:325
+#: core/app/main/main.cpp:333
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3073,7 +3073,7 @@ msgstr "Dokumentation"
 #: core/app/utils/digikam_version.cpp:72
 #, fuzzy, kde-format
 #| msgid "File Name"
-msgid "Build Date :"
+msgid "Build Date: "
 msgstr "Filnavn"
 
 #: core/app/utils/digikam_version.cpp:75
@@ -52725,14 +52725,14 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mappe: "
 
-#: core/showfoto/main/main.cpp:200
+#: core/showfoto/main/main.cpp:207
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "showFoto"
 
-#: core/showfoto/main/main.cpp:218
+#: core/showfoto/main/main.cpp:225
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -59992,13 +59992,13 @@ msgid ""
 "not the Open-Street Map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:275
+#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:276
 #, fuzzy, kde-format
 #| msgid "Marble Widget"
 msgid "Map View"
 msgstr "Marble-kontrol"
 
-#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:299
+#: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "imageplugins shortcuts"
 #| msgid "Image Plugins"
@@ -70637,59 +70637,71 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruppering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:87
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "KDE default"
 msgid "FFmpeg (Default)"
 msgstr "Standard"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Same as system"
+msgid "GStreamer (System)"
+msgstr "Samme som systemet"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "Windows (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#, fuzzy, kde-format
+#| msgid "Darwin Core"
+msgid "Darwin (System)"
+msgstr "Darwin Core"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Download required binary data..."
 msgstr "Downloader filen %1..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -78980,9 +78992,6 @@ msgstr "Importér elementer"
 #~ msgctxt "@label:listbox"
 #~ msgid "Restrict to album of reference image"
 #~ msgstr "Gem med et andet navn"
-
-#~ msgid "Same as system"
-#~ msgstr "Samme som systemet"
 
 #~ msgid ""
 #~ "Use this option if the timezone of the camera is the same as the timezone "

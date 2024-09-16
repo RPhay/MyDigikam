@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 01:44+0000\n"
+"POT-Creation-Date: 2024-09-15 01:50+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1494,24 +1494,16 @@ msgstr "Legger nye mapper til albumbiblioteket."
 msgid "Images found in %1"
 msgstr "Bilder funnet i %1"
 
-#: core/app/main/digikamapp_config.cpp:113
-#, kde-format
-msgid ""
-"We now switch to the system icon theme. The icon colors are automatically "
-"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
-"of digiKam."
-msgstr ""
-
-#: core/app/main/digikamapp_config.cpp:129
-#: core/showfoto/main/showfoto_config.cpp:183
+#: core/app/main/digikamapp_config.cpp:117
+#: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:137
-#: core/showfoto/main/showfoto_config.cpp:191
+#: core/app/main/digikamapp_config.cpp:125
+#: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
@@ -2605,7 +2597,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:214 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2615,45 +2607,45 @@ msgstr ""
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
+#: core/app/main/main.cpp:223 core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
+#: core/app/main/main.cpp:224 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr ""
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Gphoto2-kamera oppdages automatisk og åpnes"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:261
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2664,7 +2656,7 @@ msgstr ""
 "Vennligst installer det.\n"
 "Det er ikke installert noe programtillegg for databaser på maskinen din."
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:281
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2672,7 +2664,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:325
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2725,26 +2717,44 @@ msgstr "Bilder i %1"
 msgid "All supported files (%1)"
 msgstr "RAW-bildefil (%1)"
 
-#: core/app/utils/digikam_version.cpp:58
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4 (target: %5)"
+msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:77
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
-msgid ""
-"IRC: %1 - #digikam\n"
-"Feedback: %2\n"
-"Documentation: %3\n"
-"\n"
-"Build date: %4 (target: %5)\n"
-"Revision: %6\n"
-"Branch: %7"
+msgid "Feedback: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:69
+#, kde-format
+msgid "Documentation: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:72
+#, kde-format
+msgid "Build Date :"
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:75
+#, kde-format
+msgid "Build Target: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:78
+#, kde-format
+msgid "Build Architecture: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:95
+#, kde-format
+msgid "Git Revision: "
+msgstr ""
+
+#: core/app/utils/digikam_version.cpp:98
+#, kde-format
+msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -6571,11 +6581,11 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -6594,11 +6604,11 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -6757,19 +6767,19 @@ msgstr ""
 "2000 er ikke et tapsfritt komprimeringsformat når du bruker dette oppsettet."
 "</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6783,21 +6793,21 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -47123,13 +47133,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:189
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:218
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
