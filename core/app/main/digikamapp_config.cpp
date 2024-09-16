@@ -102,7 +102,7 @@ void DigikamApp::slotThemeChanged()
     {
         qApp->processEvents();
 
-#if defined HAVE_KICONTHEMES && (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+#if !defined(Q_OS_WIN) && defined HAVE_KICONTHEMES && (KICONTHEMES_VERSION >= QT_VERSION_CHECK(6, 3, 0))
 
         settings->setIconTheme(QString());
 
