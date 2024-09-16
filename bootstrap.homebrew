@@ -17,7 +17,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 INSTALL_PREFIX=$1
 
 if [ "$INSTALL_PREFIX" = "" ]; then
-    INSTALL_PREFIX="/opt/homebrew"
+    INSTALL_PREFIX="/opt/hb-digikam.org.arm64"
     BUNDLE_INSTALL_DIR="/Applications/digiKam.org"
     BUNDLE_DATA_INSTALL_DIR="/Library/Application Support"
 else

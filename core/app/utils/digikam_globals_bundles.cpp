@@ -166,6 +166,18 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
             env.remove(QLatin1String("XDG_SESSION_DESKTOP"));
         }
     }
+    else
+    {
+        if (isRunningOnMacOS())
+        {
+            #ifdef DK_APPLE_PACKAGE_HOMEBREW
+                env.insert(QLatin1String("DK_MARIADB_DIR"),
+                    macOSBundlePrefix() + QString::fromUtf8("lib/mariadb", -1));
+                env.insert(QLatin1String("PATH"),
+                    macOSBundlePrefix() + QString::fromUtf8("lib/mariadb/bin:", -1) + QString::fromLocal8Bit(qgetenv("PATH")));
+            #endif
+        }
+    }
 
     return env;
 }
