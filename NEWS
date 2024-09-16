@@ -88,7 +88,7 @@ BUGFIXES:
 069 ==> 493151 - IP address setting for PTP/IP camera is mishandled.
 070 ==> 487031 - Unable to play h264 videos on apple silicon mac.
 071 ==> 490553 - Audio delay when playing movie.
-072 ==> 
+072 ==> 493193 - Deletion of image from album in thumbnail view re-indexes active position to top row.
 073 ==> 
 074 ==> 
 075 ==> 

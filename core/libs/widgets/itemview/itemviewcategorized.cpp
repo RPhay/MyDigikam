@@ -492,13 +492,12 @@ void ItemViewCategorized::rowsRemoved(const QModelIndex& parent, int start, int 
 {
     DCategorizedView::rowsRemoved(parent, start, end);
 
-    if (d->scrollCurrentToCenter)
+    if (
+        d->scrollCurrentToCenter                                ||
+        !viewport()->rect().intersects(visualRect(currentIndex()))
+       )
     {
         scrollTo(currentIndex(), QAbstractItemView::PositionAtCenter);
-    }
-    else
-    {
-        scrollTo(currentIndex(), QAbstractItemView::PositionAtTop);
     }
 }
 
