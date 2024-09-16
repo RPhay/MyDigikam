@@ -351,6 +351,7 @@
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\resources"
+        RMDir /r "$INSTDIR\kiconthemes6"
         RMDir /r "$INSTDIR\translations"
         RMDir /r "$INSTDIR\exiftool_files"
 
