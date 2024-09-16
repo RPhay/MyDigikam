@@ -86,7 +86,7 @@ BUGFIXES:
 067 ==> 350446 - Port MacOS PKG to Arm64 Apple Silicon.
 068 ==> 491857 - Unable to build on MacOS arm64 with Macports.
 069 ==> 493151 - IP address setting for PTP/IP camera is mishandled.
-070 ==> 
+070 ==> 487031 - Unable to play h264 videos on apple silicon mac.
 071 ==> 
 072 ==> 
 073 ==> 
