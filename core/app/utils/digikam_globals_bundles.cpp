@@ -170,12 +170,16 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
     {
         if (isRunningOnMacOS())
         {
-            #ifdef DK_APPLE_PACKAGE_HOMEBREW
+
+#ifdef DK_APPLE_PACKAGE_HOMEBREW
+
                 env.insert(QLatin1String("DK_MARIADB_DIR"),
                     macOSBundlePrefix() + QString::fromUtf8("lib/mariadb", -1));
                 env.insert(QLatin1String("PATH"),
                     macOSBundlePrefix() + QString::fromUtf8("lib/mariadb/bin:", -1) + QString::fromLocal8Bit(qgetenv("PATH")));
-            #endif
+
+#endif
+
         }
     }
 
@@ -184,11 +188,17 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
 
 QString macOSBundlePrefix()
 {
+
 #ifdef DK_APPLE_PACKAGE_HOMEBREW
+
     return QCoreApplication::applicationDirPath() + QString::fromUtf8("/../");
+
 #else
+
     return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
+
 #endif
+
 }
 
 void unloadQtTranslationFiles(QApplication& app)
@@ -297,15 +307,12 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     const QStringList ecmCatalogs =
     {
-//        QLatin1String("kauth6_qt"),               Do not exists.
         QLatin1String("kbookmarks6_qt"),
         QLatin1String("kcodecs6_qt"),
         QLatin1String("kcompletion6_qt"),
         QLatin1String("kconfig6_qt"),
         QLatin1String("kcoreaddons6_qt"),
         QLatin1String("kdbusaddons6_qt"),
-//        QLatin1String("kde6_xml_mimetypes"),      Do not exists.
-//        QLatin1String("kglobalaccel6_qt"),        Do not exists.
         QLatin1String("kitemviews6_qt"),
         QLatin1String("kwidgetsaddons6_qt"),
         QLatin1String("kwindowsystem6_qt"),
@@ -458,15 +465,17 @@ void installQtTranslationFiles(QApplication& app)
 void setMacOSEnvironment()
 {
     // Safety check
+
     if (isRunningOnMacOS())
     {
-        #ifdef DK_APPLE_PACKAGE_HOMEBREW
+#ifdef DK_APPLE_PACKAGE_HOMEBREW
 
             qputenv("MAGICK_CODER_MODULE_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/coders", -1)).toUtf8());
             qputenv("MAGICK_CODER_FILTER_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/filters", -1)).toUtf8());
             qputenv("PATH", (macOSBundlePrefix() + QString::fromUtf8("bin:", -1) + QString::fromLocal8Bit(qgetenv("PATH"))).toUtf8());
-        
-        #endif
+
+#endif
+
     }
 }
 
@@ -476,9 +485,9 @@ void setWindowsEnvironment(QApplication& app)
     // michmill - should probably remove QApplication app from function signature and use 
     // QCoreApplication::applicationDirPath() below but I don't have a Windows
     // machine to test with
+
     qputenv("MAGICK_CODER_MODULE_PATH", app.applicationDirPath().toUtf8());
     qputenv("MAGICK_CODER_FILTER_PATH", app.applicationDirPath().toUtf8());
-
 }
 
 } // namespace Digikam
