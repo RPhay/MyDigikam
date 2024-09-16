@@ -664,7 +664,7 @@ for DIR in ${MARIADBDIRS[@]} ; do
 done
 
 #################################################################################################
-# See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
+# See bug #436624: move mariadb shared files at basedir (this must be done after patch operations)
 
 rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/"
 rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX"
