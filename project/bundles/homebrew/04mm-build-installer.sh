@@ -76,15 +76,24 @@ KDE_APP_PATHS="\
 bin \
 "
 
-# Other apps - non-MacOS binaries & libraries to be included with required dylibs
+# Other apps - non-MacOS binaries & libraries to be included with required dylibsQT_PLUGIN_EXT
+
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+    QT_PLUGIN_EXT="so"
+else
+    QT_PLUGIN_EXT="dylib"
+fi
+
+# Note: lib/plugins/styles/ files are *.so in both architectures. Why this mess?
+
 OTHER_APPS="\
-share/qt/plugins/imageformats/*.dylib \
-share/qt/plugins/styles/* \
-share/qt/plugins/digikam/bqm/*.so \
-share/qt/plugins/digikam/generic/*.so \
-share/qt/plugins/digikam/editor/*.so \
-share/qt/plugins/digikam/dimg/*.so \
-share/qt/plugins/digikam/rawimport/*.so \
+lib/plugins/imageformats/*.$QT_PLUGIN_EXT \
+lib/plugins/styles/*.so \
+lib/plugins/digikam/bqm/*.so \
+lib/plugins/digikam/generic/*.so \
+lib/plugins/digikam/editor/*.so \
+lib/plugins/digikam/dimg/*.so \
+lib/plugins/digikam/rawimport/*.so \
 opt/mariadb/bin/mysql \
 opt/mariadb/bin/mysqld \
 opt/mariadb/bin/my_print_defaults \
@@ -92,62 +101,68 @@ opt/mariadb/bin/mysqladmin \
 opt/mariadb/bin/mysqltest \
 opt/mariadb/lib/*.dylib \
 opt/mariadb/lib/plugin/*.so \
-bin/kbuildsycoca6 \
-bin/solid-hardware6 \
+bin/kbuildsycoca$DK_QTVERSION \
+bin/solid-hardware$DK_QTVERSION \
 bin/ffmpeg \
 bin/hunspell \
+opt/qt$DK_QTVERSION/share/qt/plugins/imageformats/*.dylib \
 opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
-opt/qt6/share/qt/plugins/sqldrivers/*.dylib \
-opt/qt6/share/qt/plugins/imageformats/*.dylib \
-opt/qt6/share/qt/plugins/platforms/*.dylib \
-opt/qt6/share/qt/plugins/iconengines/*.dylib \
-opt/qt6/share/qt/plugins/generic/*.dylib \
-opt/qt6/share/qt/plugins/styles/*.dylib \
-lib/libhunspell*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/platforms/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/iconengines/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/generic/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/styles/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/sqldrivers/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/multimedia/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/tls/*.dylib \
+lib/libhunspell*.dylib 
 "
-#FIXME: recompile HomeBrew Qt6 with missing plugins
-#opt/qt6/share/qt/plugins/bearer/*.dylib \
-#opt/qt6/share/qt/plugins/printsupport/*.dylib \
-#opt/qt6/share/qt/plugins/platformthemes/*.dylib \
 
 #lib/sane/*.so \
 
 binaries="$OTHER_APPS"
 
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
-# Note: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+# NOTE: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+#       QtWebEngine runtime process and binary archives (.pak) are located in libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework/
+#
 OTHER_DIRS="\
+opt/qt$DK_QTVERSION/share/qt/translations \
 Cellar/qt/6.7.0_2/lib/QtWebEngineCore.framework/Versions/A/Helpers/QtWebEngineProcess.app \
 Cellar/qt/6.7.0_2/lib/QtWebEngineCore.framework/Versions/A/Resources \
-opt/qt6/share/qt/translations \
+share/qt/plugins \
 lib/libdigikam*.dSYM \
+lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
 opt/mariadb \
-share/QtCurve/Breeze.qtcurve \
 lib/ImageMagick* \
 share/ImageMagick* \
 etc/ImageMagick* \
-etc/my.cnf
-etc/my.cnf.default
-etc/my.cnf.d
 "
 
-#etc/xdg \
-#etc/mariadb$MARIADB_SUFFIX \
+# etc/my.cnf
+# etc/my.cnf.default
+# etc/my.cnf.d
+# etc/xdg \
+# etc/mariadb$MARIADB_SUFFIX \
 
 #etc/sane.d \
 
 # Additional Data Directories - to be copied recursively
 OTHER_DATA="\
-share/applications \
 share/opencv4 \
 share/k* \
-share/lensfun \
 share/mime \
-share/locale \
 Library/Application/ \
+share/applications \
+
+share/lensfun \
+
+share/QtCurve/Breeze.qtcurve \
 "
+#share/locale \
 
 # Packaging tool paths
 PACKAGESBUILD="/usr/local/bin/packagesbuild"
@@ -249,14 +264,13 @@ for bin in $binary_paths ; do
         dir="${lib%/*}"
 
         if [ ! -d "$TEMPROOT/$dir" ] ; then
+            echo "  Creating $TEMPROOT/$dir"
             mkdir -p "$TEMPROOT/$dir"
         fi
 
+        echo "  Copying $INSTALL_PREFIX/$lib to $TEMPROOT/$dir/"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
-
-    # CopyReccursiveDependencies "$bin" "$TEMPROOT"
-
 done
 
 #################################################################################################
@@ -291,7 +305,7 @@ for path in $OTHER_DIRS ; do
 done
 
 # See bug #476290
-rm -fr $TEMPROOT/libexec/qt6/plugins/imageformats/libqjp2.dylib
+rm -fr $TEMPROOT/libexec/qt$DK_QTVERSION/plugins/imageformats/libqjp2.dylib
 
 echo "---------- Copying data files..."
 
@@ -300,13 +314,13 @@ echo "---------- Copying data files..."
 
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
-    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
 
 mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/icons/"
-cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/icons/"
+cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/$DK_APP_CONTENTS/Resources/icons/"
 
 echo "---------- Copying Qt Web Backend files..."
 
@@ -323,32 +337,32 @@ cd $i18nprefix
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv -v $TEMPROOT/opt/qt6/share/qt/translations $TEMPROOT/digikam.app/Contents/Resources/
+mv -v $TEMPROOT/opt/qt$DK_QTVERSION/share/qt/translations $TEMPROOT/$DK_APP_CONTENTS/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
-FILES=$(find "$TEMPROOT/digikam.app/Contents/Resources/locale" -type d -depth 1)
+FILES=$(find "$TEMPROOT/$DK_APP_CONTENTS/Resources/locale" -type d -depth 1)
 
 for FILE in $FILES ; do
     BASE=$(basename $FILE)
     echo "Create localized system menu entry for $BASE"
-    mkdir "$TEMPROOT/digikam.app/Contents/Resources/$BASE.lproj"
+    mkdir "$TEMPROOT/$DK_APP_CONTENTS/Resources/$BASE.lproj"
 done
 
 # Showfoto resources dir must be merged with digiKam.
 
-cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Contents/Resources/"
+cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
@@ -356,14 +370,17 @@ cd "$ORIG_WD"
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
 
+echo "---------- Move digiKam and KF6 run-time plugins\n"
+
 rm -fr $TEMPROOT/bin/digikam.app
 rm -fr $TEMPROOT/bin/showfoto.app
 
-mkdir -p $TEMPROOT/libexec/qt6/
-cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/share/qt/plugins
-cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/opt/qt6/
+# FIX ME LATER
+# mkdir -p $TEMPROOT/libexec/qt$DK_QTVERSION/
+cp -a  $TEMPROOT/lib/plugins/         $TEMPROOT/share/qt/plugins
+rm -rf $TEMPROOT/lib/plugins/
+# cp -a  $TEMPROOT/opt/qt$DK_QTVERSION/share/qt/plugins $TEMPROOT/libexec/qt$DK_QTVERSION/
+# rm -rf $TEMPROOT/opt/qt$DK_QTVERSION/
 
 #################################################################################################
 # Merge Manifest files
@@ -437,9 +454,8 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/$DK_APP_CONTENTS/Resources/breeze.rcc
 #cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
-cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
@@ -489,7 +505,7 @@ mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
+#mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
 mv -v $TEMPROOT/opt                           $TEMPROOT/digikam.app/Contents/
 if [ ! -d $TEMPROOT/Cellar ] ; then
     mkdir $TEMPROOT/Cellar
@@ -506,6 +522,7 @@ ln -sv "../../digikam.app/Contents/opt"       "$TEMPROOT/showfoto.app/Contents/o
 ln -sv "../../digikam.app/Contents/Cellar"    "$TEMPROOT/showfoto.app/Contents/Cellar"
 
 ln -sv "../lib" $TEMPROOT/digikam.app/Contents/opt/lib
+
 
 echo -e "\n---------- Relocatable binary files"
 
@@ -529,7 +546,8 @@ RelocatableBinaries SOFILES[@]
 
 echo -e "\n--- Relocatable executable files"
 
-EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
+EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
+#EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
 
 RelocatableBinaries EXECFILES[@]
 
@@ -618,7 +636,9 @@ QT_FULL_VERSION=`ls "$TEMPROOT/$DK_APP_CONTENTS/Cellar/qt"`
 # symlink Qt dirs
 ln -s "./Resources/QtCurve" "$TEMPROOT/$DK_APP_CONTENTS/share/QtCurve"
 ln -s "../Cellar/qt/$QT_FULL_VERSION/lib/QtWebEngineCore.framework/Versions/A/Helpers/QtWebEngineProcess.app/Contents/MacOS/QtWebEngineProcess" "$TEMPROOT/$DK_APP_CONTENTS/MacOS/QtWebEngineProcess"
-ln -s "./libexec/qt6/plugins" "$TEMPROOT/$DK_APP_CONTENTS/PlugIns"
+#ln -s "./libexec/qt$DK_QTVERSION/plugins" "$TEMPROOT/$DK_APP_CONTENTS/PlugIns"
+ln -s "./share/qt/plugins"  "$TEMPROOT/$DK_APP_CONTENTS/plugins"
+#ln -s "./opt/qt$DK_QTVERSION/share/qt/plugins"  "$TEMPROOT/$DK_APP_CONTENTS/PlugIns"
 ln -s "../../Cellar/qt/$QT_FULL_VERSION/lib/QtWebEngineCore.framework/Versions/A/Resources/qtwebengine_locales" "$TEMPROOT/$DK_APP_CONTENTS/Resources/translations/qtwebengine_locales"
 
 # move the QtWebEngine resources
@@ -649,6 +669,10 @@ rm -rfv $TEMPROOT/digikam.app/Contents/opt/mariadb/bin/mysql-test
 mv $TEMPROOT/$DK_APP_CONTENTS/opt/mariadb $TEMPROOT/$DK_APP_CONTENTS/lib/
 cp $INSTALL_PREFIX/Library/Application/digikam/database/mysql-global.conf "$TEMPROOT/$DK_APP_CONTENTS/Resources/digikam/database/mysql-global.conf"
 
+# repatch libqsqlmysql.dylib and the other MariaDB binaries since we moved MariaDB
+copy_lib="$INSTALL_PREFIX/bin/python3 $ORIG_WD/package_lib.py --file=$TEMPROOT/$DK_APP_CONTENTS/share/qt/plugins/sqldrivers/libqsqlmysql.dylib --bundle-root=$TEMPROOT/$DK_APP_CONTENTS --homebrew=$INSTALL_PREFIX --processed-cache=none  --found-cache=none --signed-cache=none --update-binary=1 --copy=0 --preserve_rpath=0"
+eval "$copy_lib"
+
 # find the binaries
 MARIADB_BINARIES=`find $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb -type f -perm +111`
 for FILE in $MARIADB_BINARIES ; do
@@ -658,8 +682,7 @@ for FILE in $MARIADB_BINARIES ; do
         # install_name_tool -add_rpath @executable_path/../../../.. $FILE || true
         # codesign --force -s - $APP
 
-        copy_lib="$INSTALL_PREFIX/bin/python3 $ORIG_WD/package_lib.py --file=$FILE --bundle-root=$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb --homebrew=$INSTALL_PREFIX --processed-cache=update  --found-cache=update --signed-cache=update --update-binary=1 --copy=1 --preserve_rpath=0"
-        #copy_lib="$INSTALL_PREFIX/bin/python3 $ORIG_WD/package_lib.py --file=$FILE --bundle-root=$TEMPROOT/$DK_APP_CONTENTS --processed-cache=update  --found-cache=update --signed-cache=update --update-binary=true --copy=false"
+        copy_lib="$INSTALL_PREFIX/bin/python3 $ORIG_WD/package_lib.py --file=$FILE --bundle-root=$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb --homebrew=$INSTALL_PREFIX --processed-cache=update  --found-cache=update --signed-cache=update --update-binary=1 --copy=0 --preserve_rpath=0"
         eval "$copy_lib"
 done
 
@@ -673,11 +696,39 @@ MARIADBFILES=`find $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb -type f ! -name "*.dyl
 
 for FILE in $MARIADBFILES ; do
 
-    echo "MariaDB processing: $FILE"
     # to handle only text files
-    ISTEXT=`file "$FILE" | grep -e "ASCII text" -e "Perl script text" || true`
+    ISTEXT=`file "$FILE" | grep -e "ASCII text" || true`
 
     if [[ $ISTEXT ]] ; then
+
+        NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
+
+        if [[ $NEEDPATCH ]] ; then
+
+            echo -e "--- Patching $FILE..."
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|\$DK_MARIADB_DIR/bin|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|\$DK_MARIADB_DIR/var|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|\$DK_MARIADB_DIR/lib|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|\$DK_MARIADB_DIR/libexec|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|\$DK_MARIADB_DIR/share|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|\$DK_MARIADB_DIR/etc|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX|\$DK_MARIADB_DIR|g" $FILE
+
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/bin|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/var|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/lib|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/libexec|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/share|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/etc|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb|g" $FILE
+        fi
+
+    fi
+
+   # to handle only text files
+    ISPERLTEXT=`file "$FILE" | grep -e "Perl script text" || true`
+
+    if [[ $ISPERLTEXT ]] ; then
 
         echo "MariaDB text file: $FILE"
         NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
@@ -685,14 +736,21 @@ for FILE in $MARIADBFILES ; do
         if [[ $NEEDPATCH ]] ; then
 
             echo -e "--- Patching $FILE..."
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/bin|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/var|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/lib|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/libexec|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/share|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/etc|g" $FILE
-            sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|\$ENV{DK_MARIADB_DIR}/bin|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|\$ENV{DK_MARIADB_DIR}/var|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|\$ENV{DK_MARIADB_DIR}/lib|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|\$ENV{DK_MARIADB_DIR}/libexec|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|\$ENV{DK_MARIADB_DIR}/share|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|\$ENV{DK_MARIADB_DIR}/etc|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX|\$ENV{DK_MARIADB_DIR}|g" $FILE
 
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/bin|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/var|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/lib|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/libexec|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/share|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb/etc|g" $FILE
+            # sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/lib/mariadb|g" $FILE
         fi
 
     fi
@@ -701,13 +759,6 @@ done
 
 # #################################################################################################
 # # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
-
-
-
-#################################################################################################
-# Not sure why this library isn't being moved into the right place
-# quick-fix, but should be looked at more
-#sudo mv $TEMPROOT/digikam.app/Contents/lib/gcc/current/libgcc_s.1.1.dylib $TEMPROOT/digikam.app/Contents/Frameworks/
 
 #################################################################################################
 # Install ExifTool binary.

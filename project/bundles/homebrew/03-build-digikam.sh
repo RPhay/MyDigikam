@@ -151,7 +151,7 @@ cp -f $ORIG_WD/fixbundledatapath.sh $DK_BUILDTEMP/digikam-$DK_VERSION
 
 ./fixbundledatapath.sh
 
-./bootstrap.homebrew "$INSTALL_PREFIX" "Debug" $ARCH_TARGET "-Wno-dev"
+./bootstrap.homebrew "$INSTALL_PREFIX" "Debug" "$ARCH_TARGET" "-Wno-dev"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
@@ -159,7 +159,6 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-echo "-DDK_APPLE_PACKAGE_MANAGER is: $DK_APPLE_PACKAGE_MANAGER"
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
