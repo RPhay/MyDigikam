@@ -165,21 +165,23 @@ echo -e "\n---------- icons-set"
 
 # See https://bugs.kde.org/show_bug.cgi?id=487799#c54
 
-#if [[ $DK_QTVERSION = 6 ]] ; then
+if [[ $DK_QTVERSION = 6 ]] ; then
 
 # Icons generation with vcpkg::python3 from KF6::breeze-icons do not work yet (lxml module is missing).
 # Use the pre-compiled rcc file instead for the moment.
 #
 #    cp $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc       $BUNDLEDIR/breeze.rcc                 2>/dev/null
 
-#    cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
+    cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
 
-#else
+    cp -r $VCPKG_INSTALL_PREFIX/plugins/kiconthemes6                      $BUNDLEDIR/                           2>/dev/null
+
+else
 
     cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
     cp $BUILDDIR/../common/breeze-dark.rcc                                $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
 
-#fi
+fi
 
 if [[ $DK_QTVERSION = 6 ]] ; then
 
