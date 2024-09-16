@@ -87,7 +87,7 @@ BUGFIXES:
 068 ==> 491857 - Unable to build on MacOS arm64 with Macports.
 069 ==> 493151 - IP address setting for PTP/IP camera is mishandled.
 070 ==> 487031 - Unable to play h264 videos on apple silicon mac.
-071 ==> 
+071 ==> 490553 - Audio delay when playing movie.
 072 ==> 
 073 ==> 
 074 ==> 
