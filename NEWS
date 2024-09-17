@@ -93,10 +93,10 @@ BUGFIXES:
 074 ==> 479033 - digiKam crashes on "Find New Items".
 075 ==> 485393 - digiKam crash on library import.
 076 ==> 486296 - Open for 2 sec and then crash.
-077 ==> 
-078 ==> 
-079 ==> 
-080 ==> 
+077 ==> 470530 - Camera list is missing when adding camera.
+078 ==> 451719 - Camera list is empty.
+079 ==> 451727 - Empty Camera List.
+080 ==> 460252 - No cameras listed in import cameras module.
 081 ==> 
 082 ==> 
 083 ==> 
