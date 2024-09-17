@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-09-15 20:29+0300\n"
+"PO-Revision-Date: 2024-09-16 12:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2806,8 +2806,7 @@ msgid "Documentation: "
 msgstr "Belgelendirme: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "Build Date :"
+#, kde-format
 msgid "Build Date: "
 msgstr "Yapı tarihi: "
 
@@ -66010,7 +66009,7 @@ msgstr "FFmpeg (Öntanımlı)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66018,10 +66017,9 @@ msgid "Windows (System)"
 msgstr "Windows (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (Sistem)"
+msgstr "Darwin (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

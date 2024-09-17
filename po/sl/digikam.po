@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-09-15 07:44+0200\n"
+"PO-Revision-Date: 2024-09-16 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2836,10 +2836,9 @@ msgid "Documentation: "
 msgstr "Dokumentacija: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "Build Date :"
+#, kde-format
 msgid "Build Date: "
-msgstr "Datum izgradnje :"
+msgstr "Datum izgradnje : "
 
 #: core/app/utils/digikam_version.cpp:75
 #, kde-format
@@ -66055,18 +66054,17 @@ msgstr "FFmpeg (privzeto)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "Windows (System)"
-msgstr "Windows (System)"
+msgstr "Windows (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (System)"
+msgstr "Darwin (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

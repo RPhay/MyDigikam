@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-09-15 08:56+0300\n"
+"PO-Revision-Date: 2024-09-16 18:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2819,10 +2819,9 @@ msgid "Documentation: "
 msgstr "Документація: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "Build Date :"
+#, kde-format
 msgid "Build Date: "
-msgstr "Дата збирання:"
+msgstr "Дата збирання: "
 
 #: core/app/utils/digikam_version.cpp:75
 #, kde-format
@@ -66833,7 +66832,7 @@ msgstr "FFmpeg (типовий)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66841,10 +66840,9 @@ msgid "Windows (System)"
 msgstr "Windows (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (системний)"
+msgstr "Darwin (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

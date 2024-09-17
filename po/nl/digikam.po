@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-09-15 22:28+0200\n"
+"PO-Revision-Date: 2024-09-16 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2830,10 +2830,9 @@ msgid "Documentation: "
 msgstr "Documentatie: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "Build Date :"
+#, kde-format
 msgid "Build Date: "
-msgstr "Bouwdatum :"
+msgstr "Bouwdatum:"
 
 #: core/app/utils/digikam_version.cpp:75
 #, kde-format
@@ -66520,10 +66519,9 @@ msgid "FFmpeg (Default)"
 msgstr "FFmpeg (standaard)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Same as system"
+#, kde-format
 msgid "GStreamer (System)"
-msgstr "Zelfde als systeem"
+msgstr "GStreamer (systeem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66531,10 +66529,9 @@ msgid "Windows (System)"
 msgstr "Windows (systeem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (systeem)"
+msgstr "Darwin (systeem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
