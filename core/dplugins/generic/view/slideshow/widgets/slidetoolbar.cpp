@@ -284,83 +284,71 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)
 {
-    switch (e->key())
+    if      (e->key() == Qt::Key_F1)
     {
-        case (Qt::Key_F1):
+        d->currentlyPause = isPaused();
+
+        if (!d->currentlyPause && d->playBtn->isEnabled())
         {
-            d->currentlyPause = isPaused();
-
-            if (!d->currentlyPause && d->playBtn->isEnabled())
-            {
-                d->playBtn->animateClick();
-            }
-
-            QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->settings->plugin);
-            help->exec();
-            delete help;
-
-            if (!d->currentlyPause && d->playBtn->isEnabled())
-            {
-                d->playBtn->animateClick();
-            }
-
-            break;
+            d->playBtn->animateClick();
         }
 
-        case (Qt::Key_F2):
+        QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->settings->plugin);
+        help->exec();
+        delete help;
+
+        if (!d->currentlyPause && d->playBtn->isEnabled())
         {
-            slotMenuSlideShowConfiguration();
-            break;
+            d->playBtn->animateClick();
         }
-
-        case (Qt::Key_Space):
+    }
+    else if (
+             (e->key()       == Qt::Key_P) &&
+             (e->modifiers() == Qt::AltModifier)
+            )
+    {
+        slotMenuSlideShowConfiguration();
+    }
+    else if (e->key() == Qt::Key_Space)
+    {
+        if (d->playBtn->isEnabled())
         {
-            if (d->playBtn->isEnabled())
-            {
-                d->playBtn->animateClick();
-            }
-
-            break;
+            d->playBtn->animateClick();
         }
-
-        case (Qt::Key_Left):
-        case (Qt::Key_Up):
-        case (Qt::Key_PageUp):
+    }
+    else if (
+             (e->key() == Qt::Key_Left)     ||
+             (e->key() == Qt::Key_Up)       ||
+             (e->key() == Qt::Key_PageUp)
+            )
+    {
+        if (d->prevBtn->isEnabled())
         {
-            if (d->prevBtn->isEnabled())
-            {
-                d->prevBtn->animateClick();
-            }
-
-            break;
+            d->prevBtn->animateClick();
         }
-
-        case (Qt::Key_Right):
-        case (Qt::Key_Down):
-        case (Qt::Key_PageDown):
+    }
+    else if (
+             (e->key() == Qt::Key_Right)     ||
+             (e->key() == Qt::Key_Down)      ||
+             (e->key() == Qt::Key_PageDown)
+            )
+    {
+        if (d->nextBtn->isEnabled())
         {
-            if (d->nextBtn->isEnabled())
-            {
-                d->nextBtn->animateClick();
-            }
-
-            break;
+            d->nextBtn->animateClick();
         }
-
-        case (Qt::Key_Escape):
+    }
+    else if (e->key() == Qt::Key_Escape)
+    {
+        if (d->stopBtn->isEnabled())
         {
-            if (d->stopBtn->isEnabled())
-            {
-                d->stopBtn->animateClick();
-            }
-
-            break;
+            d->stopBtn->animateClick();
         }
-
-        default:
-        {
-            break;
-        }
+    }
+    else
+    {
+        qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Key not captured by Slideshow toolbar:"
+                                               << e->key() << e->modifiers();
     }
 
     e->accept();

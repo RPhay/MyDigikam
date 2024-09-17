@@ -322,7 +322,7 @@ void SlideShowLoader::slotLoadNextItem()
 
     d->fileIndex++;
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "fileIndex: " << d->fileIndex;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fileIndex: " << d->fileIndex;
 
     if (!d->settings->loop)
     {
@@ -369,7 +369,7 @@ void SlideShowLoader::slotLoadPrevItem()
 
     d->fileIndex--;
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "fileIndex: " << d->fileIndex;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fileIndex: " << d->fileIndex;
 
     if (!d->settings->loop)
     {
@@ -599,7 +599,10 @@ void SlideShowLoader::keyPressEvent(QKeyEvent* e)
         return;
     }
 
-    if (e->key() == Qt::Key_F4)
+    if (
+        (e->key()       == Qt::Key_Y) &&
+        (e->modifiers() == Qt::AltModifier)
+       )
     {
         d->osd->setVisible(!d->osd->isVisible());
 
@@ -741,7 +744,7 @@ void SlideShowLoader::slotToggleTag(int tag)
 void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
 {
 /*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "SlideShowLoader::slotHandleShortcut";
 */
     if (d->shortcutPrefixes.contains(QLatin1String("rating")) &&
         shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
@@ -775,8 +778,8 @@ void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
         return;
     }
 
-    qCWarning(DIGIKAM_GENERAL_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():"
-                                   << shortcut;
+    qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():"
+                                           << shortcut;
 }
 
 void SlideShowLoader::dispatchCurrentInfoChange(const QUrl& url)
@@ -846,7 +849,7 @@ void SlideShowLoader::slotScreenSelected(int screen)
         d->osd->setCurrentUrl(currentItem());
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Slideshow: move to screen: " << screen
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Slideshow: move to screen: " << screen
                                  << " :: " << deskRect;
 }
 
