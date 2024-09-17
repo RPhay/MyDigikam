@@ -99,7 +99,7 @@ BUGFIXES:
 080 ==> 460252 - No cameras listed in import cameras module.
 081 ==> 491870 - Slideshow: open settings with F2 and switch overlay with F4 is no longer possible.
 082 ==> 491885 - Selected tags in the settings window of the filter are not marked with a checkmark.
-083 ==> 
+083 ==> 491042 - MariaDB (MySQL) embedded files missing in fresh install.
 084 ==> 
 085 ==> 
 086 ==> 
