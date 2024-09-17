@@ -468,11 +468,18 @@ void setMacOSEnvironment()
 
     if (isRunningOnMacOS())
     {
+
 #ifdef DK_APPLE_PACKAGE_HOMEBREW
 
-            qputenv("MAGICK_CODER_MODULE_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/coders", -1)).toUtf8());
-            qputenv("MAGICK_CODER_FILTER_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/filters", -1)).toUtf8());
-            qputenv("PATH", (macOSBundlePrefix() + QString::fromUtf8("bin:", -1) + QString::fromLocal8Bit(qgetenv("PATH"))).toUtf8());
+        qputenv("MAGICK_CODER_MODULE_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/coders", -1)).toUtf8());
+        qputenv("MAGICK_CODER_FILTER_PATH", (macOSBundlePrefix() + QString::fromUtf8("lib/ImageMagick/modules-Q16HDRI/filters", -1)).toUtf8());
+        qputenv("PATH", (macOSBundlePrefix() + QString::fromUtf8("bin:", -1) + QString::fromLocal8Bit(qgetenv("PATH"))).toUtf8());
+
+#else // Macports
+
+        // Libgphoto2 drivers
+        qputenv("CAMLIBS", (macOSBundlePrefix() + QString::fromUtf8(("/lib/libgphoto2"),      -1)).toUtf8());
+        qputenv("IOLIBS",  (macOSBundlePrefix() + QString::fromUtf8(("/lib/libgphoto2_port"), -1)).toUtf8());
 
 #endif
 
