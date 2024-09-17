@@ -90,9 +90,9 @@ BUGFIXES:
 071 ==> 490553 - Audio delay when playing movie.
 072 ==> 493193 - Deletion of image from album in thumbnail view re-indexes active position to top row.
 073 ==> 425304 - digiKam doesn't quit in full-screen mode.
-074 ==> 
-075 ==> 
-076 ==> 
+074 ==> 479033 - digiKam crashes on "Find New Items".
+075 ==> 485393 - digiKam crash on library import.
+076 ==> 486296 - Open for 2 sec and then crash.
 077 ==> 
 078 ==> 
 079 ==> 
