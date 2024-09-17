@@ -307,6 +307,10 @@ for path in $OTHER_DIRS ; do
     cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
+echo -e "------------- Move libgphoto2 drivers\n"
+
+find "$TEMPROOT/lib/libgphoto2"      -name "*.so" -type f -exec mv {} "$TEMPROOT/lib/libgphoto2" \;
+find "$TEMPROOT/lib/libgphoto2_port" -name "*.so" -type f -exec mv {} "$TEMPROOT/lib/libgphoto2_port" \;
 
 echo "---------- Copying data files..."
 
@@ -322,6 +326,10 @@ done
 
 mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/icons/"
 cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/icons/"
+
+# Copy the Qt configuration ini file
+
+cp $ORIG_WD/data/qt.conf "$TEMPROOT/digikam.app/Contents/Resources/"
 
 echo "---------- Copying i18n..."
 
@@ -591,9 +599,6 @@ if [[ $DK_QTVERSION == 6 ]] ; then
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/kiconthemes6"   "$TEMPROOT/digikam.app/Contents/MacOS/kiconthemes6"
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/kf6"            "$TEMPROOT/digikam.app/Contents/MacOS/kf6"
 
-    mkdir -p "$TEMPROOT/digikam.app/libexec/qt6/plugins/"
-    ln -sv "../../../../digikam.app/Contents/libexec/qt6/plugins/digikam"     "$TEMPROOT/digikam.app/libexec/qt6/plugins/digikam"
-
     # Showfoto
 
     ln -sv "../../../showfoto.app/Contents/libexec/qt6/plugins/designer"      "$TEMPROOT/showfoto.app/Contents/MacOS/designer"
@@ -608,9 +613,6 @@ if [[ $DK_QTVERSION == 6 ]] ; then
 
     ln -sv "../../../showfoto.app/Contents/libexec/qt6/plugins/kiconthemes6"  "$TEMPROOT/showfoto.app/Contents/MacOS/kiconthemes6"
     ln -sv "../../../showfoto.app/Contents/libexec/qt6/plugins/kf6"           "$TEMPROOT/showfoto.app/Contents/MacOS/kf6"
-
-    mkdir -p "$TEMPROOT/showfoto.app/libexec/qt6/plugins/"
-    ln -sv "../../../../showfoto.app/Contents/libexec/qt6/plugins/digikam"    "$TEMPROOT/showfoto.app/libexec/qt6/plugins/digikam"
 
 fi
 
