@@ -97,7 +97,7 @@ BUGFIXES:
 078 ==> 451719 - Camera list is empty.
 079 ==> 451727 - Empty Camera List.
 080 ==> 460252 - No cameras listed in import cameras module.
-081 ==> 
+081 ==> 491870 - Slideshow: open settings with F2 and switch overlay with F4 is no longer possible.
 082 ==> 
 083 ==> 
 084 ==> 
