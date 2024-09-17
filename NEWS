@@ -102,7 +102,7 @@ BUGFIXES:
 083 ==> 491042 - MariaDB (MySQL) embedded files missing in fresh install.
 084 ==> 486632 - Camera is never detected using bundled gphoto2 libraries.
 085 ==> 465652 - Rescan activated for all collection when adding new collection.
-086 ==> 
+086 ==> 491040 - Unable to use Darktable for demosaicing on MacOS ARM.
 087 ==> 
 088 ==> 
 089 ==> 
