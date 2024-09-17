@@ -259,6 +259,9 @@
         SetOutPath "$INSTDIR\resources"
         File /r "${BUNDLEPATH}\resources\*.*"
 
+        SetOutPath "$INSTDIR\kiconthemes6"
+        File /r "${BUNDLEPATH}\kiconthemes6\*.*"
+
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
