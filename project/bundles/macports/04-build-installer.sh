@@ -582,9 +582,9 @@ ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/R
 
 if [[ $DK_QTVERSION == 6 ]] ; then
 
-    # Specific plugin paths need to linked in the bundle for Qt6
+    # Specific plugin paths need to be linked in the bundle for Qt6
 
-    # digiKam
+    # For digiKam
 
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/designer"       "$TEMPROOT/digikam.app/Contents/MacOS/designer"
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/generic"        "$TEMPROOT/digikam.app/Contents/MacOS/generic"
@@ -599,7 +599,7 @@ if [[ $DK_QTVERSION == 6 ]] ; then
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/kiconthemes6"   "$TEMPROOT/digikam.app/Contents/MacOS/kiconthemes6"
     ln -sv "../../../digikam.app/Contents/libexec/qt6/plugins/kf6"            "$TEMPROOT/digikam.app/Contents/MacOS/kf6"
 
-    # Showfoto
+    # For Showfoto
 
     ln -sv "../../../showfoto.app/Contents/libexec/qt6/plugins/designer"      "$TEMPROOT/showfoto.app/Contents/MacOS/designer"
     ln -sv "../../../showfoto.app/Contents/libexec/qt6/plugins/generic"       "$TEMPROOT/showfoto.app/Contents/MacOS/generic"
@@ -676,6 +676,9 @@ rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX"
 ln -sv "../../../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb"
 ln -sv "../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
 ln -sv "../../../digikam.app/Contents/etc/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+
+# See bug 491042
+ln -sv "../../../digikam.app/Contents/lib/mariadb/lib"                                               "$TEMPROOT/digikam.app/Contents/lib"
 
 #################################################################################################
 # Install ExifTool binary.
