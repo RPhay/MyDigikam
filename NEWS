@@ -109,7 +109,7 @@ BUGFIXES:
 086 ==> 491040 - Unable to use Darktable for demosaicing on MacOS ARM.
 087 ==> 448045 - Reduce intensity of Colour Labels Displayed in Album/Thumbnail View or Replace with Discreet Colour Label.
 088 ==> 487799 - Geolocalization icon always black in thumbnail view.
-089 ==> 
+089 ==> 486341 - Edit Bookmarks menu item does nothing.
 090 ==> 
 091 ==> 
 092 ==> 
