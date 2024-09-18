@@ -321,10 +321,14 @@ port install libgphoto2
 port install libheif +x265 -tests -rav1e -kvazaar
 port install ffmpeg6 +gpl2 +nonfree
 
-# Need to push ffmpeg6 from $INSTALL_PREFIX/libexec/ffmpeg6 to $INSTALL_PREFIX
-cp -r $INSTALL_PREFIX/libexec/ffmpeg6/include $INSTALL_PREFIX
-cp -r $INSTALL_PREFIX/libexec/ffmpeg6/lib     $INSTALL_PREFIX
-mv $INSTALL_PREFIX/bin/ffmpeg6 $INSTALL_PREFIX/bin/ffmpeg
+if [ ! -f $INSTALL_PREFIX/bin/ffmpeg ] ; then
+
+    # Need to push ffmpeg6 from $INSTALL_PREFIX/libexec/ffmpeg6 to $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg6/include $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg6/lib     $INSTALL_PREFIX
+    mv $INSTALL_PREFIX/bin/ffmpeg6 $INSTALL_PREFIX/bin/ffmpeg
+
+fi
 
 port install qt$DK_QTVERSION-qtbase -examples -tests
 port install qt$DK_QTVERSION-qtdeclarative -examples -tests
