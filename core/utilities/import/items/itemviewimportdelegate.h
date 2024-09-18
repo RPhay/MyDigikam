@@ -113,7 +113,7 @@ protected:
     void drawTags(QPainter* p, const QRect& r, const QString& tagsString, bool isSelected)                        const;
     void drawGroupIndicator(QPainter* p, const QRect& r, int numberOfGroupedImages, bool open)                    const;
     void drawPickLabelIcon(QPainter* p, const QRect& r, int pickLabel)                                            const;
-    void drawColorLabelRect(QPainter* p, const QStyleOptionViewItem& option,bool isSelected, int colorId)         const;
+    void drawColorLabelLine(QPainter* p, const QRect& pixRect, int colorId)                                       const;
     void drawGeolocationIndicator(QPainter* p, const QRect& r)                                                    const;
     void drawDownloadIndicator(QPainter* p, const QRect& r, int itemType)                                         const;
     void drawLockIndicator(QPainter* p, const QRect& r, int lockStatus)                                           const;

@@ -103,7 +103,7 @@ BUGFIXES:
 084 ==> 486632 - Camera is never detected using bundled gphoto2 libraries.
 085 ==> 465652 - Rescan activated for all collection when adding new collection.
 086 ==> 491040 - Unable to use Darktable for demosaicing on MacOS ARM.
-087 ==> 
+087 ==> 448045 - Reduce intensity of Colour Labels Displayed in Album/Thumbnail View or Replace with Discreet Colour Label.
 088 ==> 
 089 ==> 
 090 ==> 

@@ -414,7 +414,7 @@ void ItemViewDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, const Q
     {
         p->setFont(d->fontXtra);
         QString mpixels, resolution;
-        mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
+        mpixels = QLocale().toString(dims.width() * dims.height() / 1000000.0, 'f', 1);
 
         if (dims.isValid())
         {
@@ -479,7 +479,7 @@ void ItemViewDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewItem& op
         p->setPen(QPen(isSelected ? qApp->palette().color(QPalette::HighlightedText)
                                   : qApp->palette().color(QPalette::Text),
                        1, Qt::DotLine));
-        p->drawRect(1, 1, d->rect.width()-3, d->rect.height()-3);
+        p->drawRect(1, 1, d->rect.width() - 3, d->rect.height() - 3);
     }
 }
 
@@ -555,7 +555,7 @@ void ItemViewDelegate::drawPanelSideIcon(QPainter* p, bool left, bool right) con
 
     if (left)
     {
-        QRect r(3, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
+        QRect r(3, d->rect.height() / 2 - iconSize / 2, iconSize, iconSize);
         p->setPen(QPen(Qt::gray));
         p->setOpacity(0.50);
         p->fillRect(r, Qt::SolidPattern);
@@ -566,7 +566,7 @@ void ItemViewDelegate::drawPanelSideIcon(QPainter* p, bool left, bool right) con
 
     if (right)
     {
-        QRect r(d->rect.width() - 3 - iconSize, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
+        QRect r(d->rect.width() - 3 - iconSize, d->rect.height() / 2 - iconSize / 2, iconSize, iconSize);
         p->setPen(QPen(Qt::gray));
         p->setOpacity(0.50);
         p->fillRect(r, Qt::SolidPattern);
@@ -615,19 +615,29 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
     }
 }
 
-void ItemViewDelegate::drawColorLabelRect(QPainter* p, const QStyleOptionViewItem& option,
-                                          bool isSelected, int colorId) const
+void ItemViewDelegate::drawColorLabelLine(QPainter* p, const QRect& pixRect, int colorId) const
 {
-    Q_D(const ItemViewDelegate);
-    Q_UNUSED(option);
-    Q_UNUSED(isSelected);
-
     if (colorId > NoColorLabel)
     {
-        // This draw a simple rectangle around item.
+        // This draw a line under the thumbnail.
 
-        p->setPen(QPen(ColorLabelWidget::labelColor((ColorLabel)colorId), 5, Qt::SolidLine));
-        p->drawRect(3, 3, d->rect.width()-7, d->rect.height()-7);
+        QLinearGradient gradient(pixRect.x(), 0, pixRect.x() + pixRect.width(), 1);
+        QColor color(ColorLabelWidget::labelColor((ColorLabel)colorId));
+
+        color.setAlphaF(0.2);
+        gradient.setColorAt(0.0, color);
+        gradient.setColorAt(1.0, color);
+
+        color.setAlphaF(1.0);
+        gradient.setColorAt(0.3, color);
+        gradient.setColorAt(0.7, color);
+
+        p->setPen(QPen(QBrush(gradient), 5));
+
+        p->drawLine(pixRect.x(),
+                    pixRect.y() + pixRect.height() - 3,
+                    pixRect.x() + pixRect.width(),
+                    pixRect.y() + pixRect.height() - 3);
     }
 }
 
@@ -638,7 +648,7 @@ void ItemViewDelegate::drawMouseOverRect(QPainter* p, const QStyleOptionViewItem
     if (option.state & QStyle::State_MouseOver)
     {
         p->setPen(QPen(option.palette.color(QPalette::Highlight), 3, Qt::SolidLine));
-        p->drawRect(1, 1, d->rect.width()-3, d->rect.height()-3);
+        p->drawRect(1, 1, d->rect.width() - 3, d->rect.height() - 3);
     }
 }
 
@@ -699,13 +709,13 @@ void ItemViewDelegate::prepareBackground()
         d->regPixmap.fill(qApp->palette().color(QPalette::Base));
         QPainter p1(&d->regPixmap);
         p1.setPen(qApp->palette().color(QPalette::Midlight));
-        p1.drawRect(0, 0, d->rect.width()-1, d->rect.height()-1);
+        p1.drawRect(0, 0, d->rect.width() - 1, d->rect.height() - 1);
 
         d->selPixmap = QPixmap(d->rect.width(), d->rect.height());
         d->selPixmap.fill(qApp->palette().color(QPalette::Highlight));
         QPainter p2(&d->selPixmap);
         p2.setPen(qApp->palette().color(QPalette::Midlight));
-        p2.drawRect(0, 0, d->rect.width()-1, d->rect.height()-1);
+        p2.drawRect(0, 0, d->rect.width() - 1, d->rect.height() - 1);
     }
 }
 
@@ -779,7 +789,8 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
 
             // move painter while drawing polygons
 
-            painter.translate(lround((d->ratingRect.width() - d->margin - rating*(d->starPolygonSize.width()+1))/2.0) + 2, 0);
+            painter.translate(lround((d->ratingRect.width() - d->margin - rating *
+                                     (d->starPolygonSize.width() + 1)) / 2.0) + 2, 0);
 
             for (int s = 0 ; s < rating ; ++s)
             {

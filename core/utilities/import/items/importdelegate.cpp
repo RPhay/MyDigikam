@@ -280,9 +280,9 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
         drawRating(p, index, d->ratingRect, info.rating, isSelected);
     }
 
-    // Draw Color Label rectangle
+    // Draw Color Label line
 
-    drawColorLabelRect(p, option, isSelected, info.colorLabel);
+    drawColorLabelLine(p, d->pixmapRect, info.colorLabel);
 
     p->setPen(isSelected ? qApp->palette().color(QPalette::HighlightedText)
                          : qApp->palette().color(QPalette::Text));
