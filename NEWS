@@ -14,6 +14,9 @@ Database:  update to new unique file hash V3 added.
 RawEngine: Update internal libraw to last 20240916 upstream.
 Video:     Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
 
+IconView:  More compact thumbnails by using a simple horizontal line instead a frame
+           to render Color Labels.
+
 *****************************************************************************************************
 BUGFIXES:
 
