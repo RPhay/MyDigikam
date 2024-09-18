@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-06-26 23:00+0400\n"
+"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"PO-Revision-Date: 2024-09-17 13:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -927,10 +927,9 @@ msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "invalid name"
+#, kde-format
 msgid "Invalid date"
-msgstr "الاسم غير صالح"
+msgstr "تاريخ غير صالح"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -2870,10 +2869,9 @@ msgid "Feedback: "
 msgstr ""
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "التّوثيق"
+msgstr "التّوثيق: "
 
 #: core/app/utils/digikam_version.cpp:72
 #, fuzzy, kde-format
@@ -4471,8 +4469,7 @@ msgid "FFmpeg Configuration"
 msgstr "ضبط الكمرات"
 
 #: core/app/views/utils/componentsinfodlg.cpp:217
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "مرماز الفيديو"
@@ -4484,10 +4481,9 @@ msgstr "مرماز الفيديو"
 #: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
 #: core/libs/dialogs/libsinfodlg.cpp:615
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "no entry"
-msgstr "الدّولة:"
+msgstr "ممنوع الدخول"
 
 #: core/app/views/utils/componentsinfodlg.cpp:234
 #, fuzzy, kde-format
@@ -5437,10 +5433,9 @@ msgid "Opacity of watermark"
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "الشّفافيّة (٪):"
+msgstr "الشّفافيّة (٪): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
@@ -5453,10 +5448,9 @@ msgid "Enter your watermark string here."
 msgstr "أدخل هنا نصّ العلامة المائيّة."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "نصّ العلامة المائيّة:"
+msgstr "نصّ العلامة المائيّة: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
@@ -5470,16 +5464,14 @@ msgid "Set the font color to use here."
 msgstr "اختر هنا لون الخطّ الذي سيُستخدم."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "لون الخطّ:"
+msgstr "لون الخطّ: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "شفافيّة النّصّ:"
+msgstr "شفافيّة النّصّ: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, fuzzy, kde-format
@@ -6093,11 +6085,9 @@ msgid ""
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "title of the file"
-#| msgid "Title:"
+#, kde-format
 msgid "Titles:"
-msgstr "العنوان:"
+msgstr "العناوين:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
@@ -8920,11 +8910,10 @@ msgid "Sharpen..."
 msgstr "اشحذ..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:176
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "لا لاحات متوفّرة"
+msgstr "لا توجد طابعة متوفرة"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
 #, kde-format
@@ -8933,11 +8922,10 @@ msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
-msgstr "اطبع الصّورة"
+msgstr "اطبع الصورة"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
@@ -10984,8 +10972,7 @@ msgstr "نسق ملفّ الصّورة الهدف ”%1“ غير مدعوم."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "تعذّر حفظ الملفّ"
@@ -11021,11 +11008,10 @@ msgid "Saving file %1 -"
 msgstr "يحفظ الملفّ %1 -"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "File Not Saved"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
-msgstr "لم يُحفظ الملفّ"
+msgstr "الملف لم يحفظ"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
@@ -19731,8 +19717,7 @@ msgstr "اختر تشكيلة فضاء الألوان للتّحويل إليه�
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:264
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
 msgstr "المجلّد المقصد:"
 
@@ -20519,17 +20504,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Audio track"
+#, kde-format
 msgid "Audio Track"
-msgstr "مسار صوت"
+msgstr "مقطوعة صوتية"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
+#, kde-format
 msgid "On Screen Display"
-msgstr "مكان الشّاشة:"
+msgstr "على شاشة العرض"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
 #, kde-format
@@ -20932,11 +20914,10 @@ msgid "Playlist (*.m3u)"
 msgstr "قائمة تشغيل (*.m3u*)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
-#, fuzzy, kde-format
-#| msgid "Save playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr "احفظ قائمة التّشغيل"
+msgstr "حفظ قائمة التّشغيل"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
 #, kde-format
@@ -21570,7 +21551,7 @@ msgid "Delay:"
 msgstr "التأخير:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:387
 #, fuzzy, kde-format
 #| msgid "Delete image"
 msgctxt "@title:window"
@@ -21578,7 +21559,7 @@ msgid "Delete Image"
 msgstr "احذف الصورة"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:388
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
 #| msgid_plural ""
@@ -21665,7 +21646,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "عرض الشّرائح"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21938,10 +21919,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
-"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
+"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
+"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22135,8 +22116,7 @@ msgstr "لا صور محدّدة. فضلًا اختر أيّ الصّور الت
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:655
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "تحذير"
@@ -22162,8 +22142,7 @@ msgstr "فشل الاستيثاق. انقر \"تابع\" للاستيثاق."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:252
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:660
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:252
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
 msgstr "تابع"
@@ -22180,8 +22159,7 @@ msgstr "تابع"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ألغِ"
@@ -22295,8 +22273,7 @@ msgid "Export to &Dropbox..."
 msgstr "صدّر إلى &دروب‌بوكس..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "صدّر إلى دروب‌بوكس"
@@ -22411,8 +22388,7 @@ msgid "Export to &Facebook..."
 msgstr "صدّر إلى «&فيسبوك»..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "فيسبوك"
@@ -23663,8 +23639,7 @@ msgid ""
 msgstr "فشل رفع الملفّ <b>%1</b>. أتريد المتابعة؟"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1110
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "حسنًا"
@@ -23793,8 +23768,7 @@ msgstr "أدوات التّصدير"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "ارفع"
@@ -27698,12 +27672,10 @@ msgid "Tags (0)"
 msgstr "الوسوم (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "All Albums"
+#, kde-format
 msgctxt "@option"
 msgid "All albums"
-msgstr "كلّ الألبومات"
+msgstr "جميع الألبومات"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
 #: core/libs/album/widgets/albumselectors.cpp:221
@@ -31090,7 +31062,7 @@ msgid "Set here the texture type to apply to image."
 msgstr "اختر هنا أيّ قالب بيانات وصفيّة تريد تطبيقه على الصّور."
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Relief:"
 msgstr "الأخدود:"
@@ -34043,11 +34015,9 @@ msgstr "ملحقات كتيب"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:72
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
-msgstr "عن..."
+msgstr "حول..."
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, kde-format
@@ -35236,7 +35206,7 @@ msgstr "الألمانية"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "الدزونخية"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
@@ -35299,7 +35269,7 @@ msgstr "الفنلنديّة"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "فيجان"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
@@ -35665,7 +35635,7 @@ msgstr "الأوكسيتانية"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "اﻻورومية"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:417
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:565
@@ -42910,11 +42880,9 @@ msgid "Digital Video"
 msgstr "فيديو رقمي"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "DjVu image"
-msgstr "لا صور"
+msgstr "صورة DjVu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
 #, kde-format
@@ -42924,7 +42892,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
 #, kde-format
 msgid "DOS/Windows executable"
-msgstr ""
+msgstr "تنفيذي DOS/Windows"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
@@ -52688,55 +52656,52 @@ msgid "Mercury"
 msgstr "الزئبق"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "taxonomic rank"
-#| msgid "genus"
+#, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr "جنس"
+msgstr "الزهرة"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:294
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "الأرض"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:299
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "المريخ"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:304
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "المشتري"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:309
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "the planet"
 msgid "Saturn"
-msgstr "التّشبّع"
+msgstr "زحل"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:314
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "أورانوس"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:319
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "نبتون"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:324
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "بلوتو"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:329
 #, fuzzy, kde-format
@@ -52757,7 +52722,7 @@ msgstr "ضوء القمر"
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "سماء"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:345
 #, fuzzy, kde-format
@@ -52808,12 +52773,10 @@ msgid "cm"
 msgstr "سم"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
+#, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr "اليسار"
+msgstr "قدم"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:175
 #, kde-format
@@ -52831,7 +52794,7 @@ msgstr ""
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "ماور"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:184
 #, kde-format
@@ -52857,10 +52820,9 @@ msgid "&Address Details"
 msgstr "العنوان:"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
-#, fuzzy, kde-format
-#| msgid "No description available"
+#, kde-format
 msgid "No description available."
-msgstr "لا وصف متوفّر"
+msgstr "لا وصف متاح."
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
@@ -52907,10 +52869,9 @@ msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
-#, fuzzy, kde-format
-#| msgid "{Village}"
+#, kde-format
 msgid "Village"
-msgstr "{القرية}"
+msgstr "قرية"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
@@ -52948,11 +52909,9 @@ msgid "S"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:377
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Stalled"
+#, kde-format
 msgid "Valley"
-msgstr "متوقّف"
+msgstr "واد"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:380
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
@@ -52966,11 +52925,9 @@ msgid "Crater"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:386
-#, fuzzy, kde-format
-#| msgctxt "Advanced search images, access stored searches"
-#| msgid "Search"
+#, kde-format
 msgid "Sea"
-msgstr "ابحث"
+msgstr "بحر"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
@@ -53007,29 +52964,25 @@ msgid "Nation Capital"
 msgstr "نسبيّ"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Nation"
-msgstr "الوصف"
+msgstr "أمة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:458
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:807
 #, kde-format
 msgid "Volcano"
-msgstr ""
+msgstr "بركان"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:461
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Content"
+#, kde-format
 msgid "Continent"
-msgstr "المحتوى"
+msgstr "قارة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Ocean"
-msgstr ""
+msgstr "محيط"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:467
 #, fuzzy, kde-format
@@ -53055,10 +53008,9 @@ msgid "Air Port"
 msgstr "المنفذ"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:479
-#, fuzzy, kde-format
-#| msgid "Observation"
+#, kde-format
 msgid "Observatory"
-msgstr "الرصد"
+msgstr "مرصد"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:482
 #, kde-format
@@ -53088,16 +53040,14 @@ msgid "City Capital"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:504
-#, fuzzy, kde-format
-#| msgid "{Suburb}"
+#, kde-format
 msgid "Suburb"
-msgstr "{ضاحية}"
+msgstr "ضاحية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:507
-#, fuzzy, kde-format
-#| msgid "{Hamlet}"
+#, kde-format
 msgid "Hamlet"
-msgstr "{قرية}"
+msgstr "هاملت"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
@@ -53105,10 +53055,9 @@ msgid "Locality"
 msgstr "المحلّة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:513
-#, fuzzy, kde-format
-#| msgid "{Town}"
+#, kde-format
 msgid "Town"
-msgstr "{البلدة}"
+msgstr "بلدة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
@@ -53134,7 +53083,7 @@ msgstr "شعاب مرجانية"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Wood"
-msgstr ""
+msgstr "خشب"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:540
 #, fuzzy, kde-format
@@ -53144,11 +53093,9 @@ msgid "Beach"
 msgstr "التبييض"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Iceland"
+#, kde-format
 msgid "Wetland"
-msgstr "آيسلندا"
+msgstr "منطقة رطبة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
@@ -53168,13 +53115,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "جرف"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:558
-#, fuzzy, kde-format
-#| msgid "Feather:"
+#, kde-format
 msgid "Heath"
-msgstr "الريش:"
+msgstr "براح"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
@@ -53182,11 +53128,9 @@ msgid "Traffic Signals"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:564
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Elevator"
-msgstr "المُنشئ"
+msgstr "مصعد"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:567
 #, fuzzy, kde-format
@@ -53230,7 +53174,7 @@ msgstr "معرّف الخدمة:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Road"
-msgstr ""
+msgstr "طريق"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
@@ -53311,31 +53255,29 @@ msgid "Corridor"
 msgstr "الارتباط:"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
-#, fuzzy, kde-format
-#| msgid "Profile Version"
+#, kde-format
 msgid "Building"
-msgstr "إصدارة اللاحة"
+msgstr "مبنى"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:642
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camping"
-msgstr "التثبيط:"
+msgstr "تخييم"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:645
-#, fuzzy, kde-format
-#| msgid "Host Name"
+#, kde-format
 msgid "Hostel"
-msgstr "اسم المضيف"
+msgstr "نزل مشتركة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "فندق"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Motel"
-msgstr ""
+msgstr "موتيل"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
@@ -53353,15 +53295,14 @@ msgid "Library"
 msgstr "المكتبة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:663
-#, fuzzy, kde-format
-#| msgid "Under-water"
+#, kde-format
 msgid "Kindergarten"
-msgstr "تحت الماء"
+msgstr "روضة أطفال"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "College"
-msgstr ""
+msgstr "كلية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:669
 #, kde-format
@@ -53369,10 +53310,9 @@ msgid "School"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:672
-#, fuzzy, kde-format
-#| msgid "Intensity:"
+#, kde-format
 msgid "University"
-msgstr "الشّدّة:"
+msgstr "جامعة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:675
 #, fuzzy, kde-format
@@ -53397,22 +53337,19 @@ msgid "Fast Food"
 msgstr "الأ&خير"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:687
-#, fuzzy, kde-format
-#| msgctxt "photo permissions"
-#| msgid "Public"
+#, kde-format
 msgid "Pub"
-msgstr "عام"
+msgstr "حانة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:690
-#, fuzzy, kde-format
-#| msgid "Restoration"
+#, kde-format
 msgid "Restaurant"
-msgstr "الاستصلاح"
+msgstr "مطعم"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:693
 #, kde-format
 msgid "Dentist"
-msgstr ""
+msgstr "طبيب الأسنان"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:696
 #, fuzzy, kde-format
@@ -53424,12 +53361,12 @@ msgstr "الدّليل"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:699
 #, kde-format
 msgid "Hospital"
-msgstr ""
+msgstr "مستشفى"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:702
 #, kde-format
 msgid "Pharmacy"
-msgstr ""
+msgstr "صيدلة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:705
 #, fuzzy, kde-format
@@ -53446,7 +53383,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:711
 #, kde-format
 msgid "Bank"
-msgstr ""
+msgstr "مصرف"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:714
 #, kde-format
@@ -53456,7 +53393,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:717
 #, kde-format
 msgid "Embassy"
-msgstr ""
+msgstr "سفارة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:720
 #, kde-format
@@ -53482,10 +53419,9 @@ msgid "Community Centre"
 msgstr "تغيير التعليق"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:732
-#, fuzzy, kde-format
-#| msgid "Count"
+#, kde-format
 msgid "Fountain"
-msgstr "العدد"
+msgstr "نافورة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:735
 #, kde-format
@@ -53516,11 +53452,9 @@ msgid "Hunting Stand"
 msgstr "أُلغيت الطّباعة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Polish"
+#, kde-format
 msgid "Police"
-msgstr "البولنديّة"
+msgstr "شرطة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:753
 #, fuzzy, kde-format
@@ -53537,13 +53471,12 @@ msgstr "الرّمز البريديّ:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:759
 #, kde-format
 msgid "Prison"
-msgstr ""
+msgstr "سجن"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:762
-#, fuzzy, kde-format
-#| msgid "Scaling"
+#, kde-format
 msgid "Recycling"
-msgstr "التّحجيم"
+msgstr "تدوير النفايات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:765
 #, fuzzy, kde-format
@@ -53554,7 +53487,7 @@ msgstr "مرشّح"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:768
 #, kde-format
 msgid "Telephone"
-msgstr ""
+msgstr "هاتف"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:771
 #, kde-format
@@ -53607,7 +53540,7 @@ msgstr "المدينة:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:798
 #, kde-format
 msgid "Gate"
-msgstr ""
+msgstr "بوابة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:801
 #, kde-format
@@ -53623,12 +53556,12 @@ msgstr "حائط"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:810
 #, kde-format
 msgid "Peak"
-msgstr ""
+msgstr "ذروة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:813
 #, kde-format
 msgid "Tree"
-msgstr ""
+msgstr "شجرة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:816
 #, kde-format
@@ -53648,9 +53581,9 @@ msgid "Hifi"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:825
-#, fuzzy, kde-format
+#, kde-format
 msgid "Supermarket"
-msgstr "Super إفرض"
+msgstr "سوبرماركت"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:828
 #, kde-format
@@ -53660,19 +53593,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:831
 #, kde-format
 msgid "Bakery"
-msgstr ""
+msgstr "مخبز"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:834
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Dutch"
+#, kde-format
 msgid "Butcher"
-msgstr "الهولندية"
+msgstr "جزارة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:837
-#, fuzzy, kde-format
+#, kde-format
 msgid "Confectionery"
-msgstr "فشل الاتصال"
+msgstr "حلويات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:840
 #, kde-format
@@ -53680,11 +53611,9 @@ msgid "Convenience Shop"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:843
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Greece"
+#, kde-format
 msgid "Greengrocer"
-msgstr "اليونان"
+msgstr "خضري"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:846
 #, kde-format
@@ -53699,7 +53628,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:852
 #, kde-format
 msgid "Kiosk"
-msgstr ""
+msgstr "كشك"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:855
 #, kde-format
@@ -53741,24 +53670,22 @@ msgstr "أبحاثي"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:876
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "كيميائي"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:879
 #, kde-format
 msgid "Cosmetics"
-msgstr ""
+msgstr "مستحضر تجميل"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:882
 #, kde-format
 msgid "Hairdresser"
-msgstr ""
+msgstr "مصفف الشعر"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:885
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Optimization"
+#, kde-format
 msgid "Optician"
-msgstr "تحسين"
+msgstr "أخصائي بصريات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:888
 #, kde-format
@@ -53862,15 +53789,14 @@ msgid "Gift Shop"
 msgstr "معلومات مصدر الضّوء"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:948
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Stationery"
-msgstr "التّشبّع"
+msgstr "قرطاسية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:951
 #, kde-format
 msgid "Laundry"
-msgstr ""
+msgstr "غسل الملابس"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:954
 #, fuzzy, kde-format
@@ -53923,23 +53849,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:981
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "جسر"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:984
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgid "Lighthouse"
-msgstr "مصدر الضّوء:"
+msgstr "منارة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:987
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "رصيف بحري"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:990
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "برج مياه"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:993
 #, kde-format
@@ -53981,16 +53906,14 @@ msgid "Information"
 msgstr "المعلومات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1014
-#, fuzzy, kde-format
-#| msgctxt "@item: type is a document"
-#| msgid "Document"
+#, kde-format
 msgid "Monument"
-msgstr "مستند"
+msgstr "معلم تذكاري"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1017
 #, kde-format
 msgid "Museum"
-msgstr ""
+msgstr "متحف"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1020
 #, kde-format
@@ -54000,7 +53923,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1023
 #, kde-format
 msgid "Theatre"
-msgstr ""
+msgstr "مسرح"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1026
 #, fuzzy, kde-format
@@ -54017,9 +53940,9 @@ msgid "View Point"
 msgstr "نقطة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1032
-#, fuzzy, kde-format
+#, kde-format
 msgid "Zoo"
-msgstr "تكبير"
+msgstr "حديقة حيوان"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1035
 #, kde-format
@@ -54032,21 +53955,19 @@ msgid "Wilderness Hut"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1041
-#, fuzzy, kde-format
-#| msgctxt "@item: serail port based camera"
-#| msgid "Serial"
+#, kde-format
 msgid "Memorial"
-msgstr "تسلسلي"
+msgstr "نصب تذكاري"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1044
 #, kde-format
 msgid "Aerodrome"
-msgstr ""
+msgstr "مهبط"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1047
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "مهبط مروحية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1050
 #, kde-format
@@ -54061,7 +53982,7 @@ msgstr "الأول:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1056
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "موقف الطائرات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1059
 #, kde-format
@@ -54099,7 +54020,7 @@ msgstr "التّشبّع"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1077
 #, kde-format
 msgid "Parking"
-msgstr ""
+msgstr "ركن السيارات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1080
 #, fuzzy, kde-format
@@ -54120,7 +54041,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1089
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "وكالة تأجير السيارات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1092
 #, kde-format
@@ -54168,7 +54089,7 @@ msgstr "كمرات RAW المدعومة"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1116
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "دار عبادة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1119
 #, fuzzy, kde-format
@@ -54190,7 +54111,7 @@ msgstr "مسيحية"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1128
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "مسلم"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1131
 #, fuzzy, kde-format
@@ -54202,7 +54123,7 @@ msgstr "الهنديّة"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1134
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "جاين"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1137
 #, kde-format
@@ -54212,7 +54133,7 @@ msgstr "يهودية"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1140
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "شنتو"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1143
 #, kde-format
@@ -54227,26 +54148,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1149
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "ملعب غولف"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1152
-#, fuzzy, kde-format
-#| msgctxt "@info: language name"
-#| msgid "Mari"
+#, kde-format
 msgid "Marina"
-msgstr "المارية"
+msgstr "مارينا"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1155
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "متنزه"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1158
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Background"
+#, kde-format
 msgid "Playground"
-msgstr "الخلفيّة"
+msgstr "ملعب أطفال"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1161
 #, kde-format
@@ -54259,14 +54176,14 @@ msgid "Sports Centre"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1167
-#, fuzzy, kde-format
+#, kde-format
 msgid "Stadium"
-msgstr "متوسط"
+msgstr "ملعب"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1173
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "حمام سباحة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1176
 #, kde-format
@@ -54283,14 +54200,12 @@ msgstr "التعديلات"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1182
 #, kde-format
 msgid "Basin"
-msgstr ""
+msgstr "حوض"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1185
-#, fuzzy, kde-format
-#| msgctxt "distance"
-#| msgid "meter"
+#, kde-format
 msgid "Cemetery"
-msgstr "متر"
+msgstr "مقبرة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1188
 #, kde-format
@@ -54298,10 +54213,9 @@ msgid "Commercial"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1191
-#, fuzzy, kde-format
-#| msgid "Instructions:"
+#, kde-format
 msgid "Construction"
-msgstr "الإرشادات:"
+msgstr "تشييد"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1194
 #, fuzzy, kde-format
@@ -54324,7 +54238,7 @@ msgstr "الصّور"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1203
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "عشب"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1206
 #, fuzzy, kde-format
@@ -54336,22 +54250,22 @@ msgstr "النمسا"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1209
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "دفن النفايات"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1212
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "مرج"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1215
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "عسكرية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1218
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "مقلع"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1221
 #, kde-format
@@ -54361,7 +54275,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1224
 #, kde-format
 msgid "Reservoir"
-msgstr ""
+msgstr "خزان مائي"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1227
 #, kde-format
@@ -54369,21 +54283,19 @@ msgid "Residential"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1230
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "Retail"
-msgstr "التفاصيل"
+msgstr "تجارة التجزئة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1233
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "بستان"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1236
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "كرم"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1239
 #, kde-format
@@ -54399,7 +54311,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:312
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "ترام"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1248
 #, fuzzy, kde-format
@@ -54410,13 +54322,13 @@ msgstr "الطّاولة الضّوئيّة"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1251
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "سكة حديد مهجورة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1254
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:308
 #, kde-format
 msgid "Subway"
-msgstr ""
+msgstr "مترو"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1257
 #, fuzzy, kde-format
@@ -54436,11 +54348,9 @@ msgid "Railway Construction"
 msgstr "تعليمات خاصة:"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1266
-#, fuzzy, kde-format
-#| msgctxt "@label: audio channel type"
-#| msgid "Mono"
+#, kde-format
 msgid "Monorail"
-msgstr "مونو"
+msgstr "قطار أحادي الخط"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1269
 #, kde-format
@@ -54463,7 +54373,7 @@ msgstr ""
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
-msgstr ""
+msgstr "صرح"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1281
 #, fuzzy, kde-format
@@ -54474,7 +54384,7 @@ msgstr "غيّر حالة الأحرف"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1284
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "غندول"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1287
 #, fuzzy, kde-format
@@ -54527,7 +54437,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1314
 #, kde-format
 msgid "Goods"
-msgstr ""
+msgstr "سلعة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1317
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:348
@@ -54564,7 +54474,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1335
 #, kde-format
 msgid "Ice Skate"
-msgstr ""
+msgstr "حذاء تزلج"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1338
 #, kde-format
@@ -54649,24 +54559,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1386
 #, kde-format
 msgid "Urban Area"
-msgstr ""
+msgstr "منطقة حضرية"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1389
 #, kde-format
 msgid "International Date Line"
-msgstr ""
+msgstr "خط التاريخ الدولي"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1392
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "قياس الأعماق"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1395
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Canada"
+#, kde-format
 msgid "Canal"
-msgstr "كندا"
+msgstr "قناة"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1398
 #, fuzzy, kde-format
@@ -54677,7 +54585,7 @@ msgstr "تضاريس"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1401
 #, kde-format
 msgid "Ditch"
-msgstr ""
+msgstr "خندق"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1404
 #, kde-format
@@ -54687,12 +54595,12 @@ msgstr "الدفق"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1407
 #, kde-format
 msgid "River"
-msgstr ""
+msgstr "نهر"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1410
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "هدار"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1413
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1416
@@ -54709,7 +54617,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1425
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "باب"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1431
 #, kde-format
@@ -54720,48 +54628,48 @@ msgstr "الغرفة"
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:63
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:66
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:69
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:102
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:105
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:108
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:296
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "تحويلة مرورية"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:300
 #, kde-format
@@ -54769,15 +54677,14 @@ msgid "Ferry Route"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:304
-#, fuzzy, kde-format
-#| msgid "Terrain"
+#, kde-format
 msgid "Train"
-msgstr "تضاريس"
+msgstr "قطار"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:316
 #, kde-format
 msgid "Bus"
-msgstr ""
+msgstr "حافلة"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:320
 #, kde-format
@@ -54862,10 +54769,9 @@ msgid "Name"
 msgstr "الاسم"
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
-#, fuzzy, kde-format
-#| msgid "Priority:"
+#, kde-format
 msgid "Popularity"
-msgstr "الأولويّة:"
+msgstr "شعبية"
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
 #, fuzzy, kde-format
@@ -54941,9 +54847,7 @@ msgstr "أضف تجميعة"
 
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:115
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Value"
+#, kde-format
 msgid "value"
 msgstr "القيمة"
 
@@ -54999,12 +54903,12 @@ msgstr "اضبط"
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:73
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "غلاف جوي"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:78
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&غلاف جوي"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:93
 #, kde-format
@@ -55050,13 +54954,12 @@ msgstr "ذرّة"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "مغناطيس"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "Compass"
-msgstr "أظهر البوصلة"
+msgstr "بوصلة"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:79
 #, fuzzy, kde-format
@@ -55236,11 +55139,9 @@ msgid "Please choose the color for the equator."
 msgstr "اضبط هنا لون الخطّ الثّاني."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Equator"
-msgstr "المُنشئ"
+msgstr "خط الاستواء"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
 #, fuzzy, kde-format
@@ -55257,24 +55158,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "مدار السرطان"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "مدار الجدي"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
 msgid "Arctic Circle"
-msgstr ""
+msgstr "الدائرة القطبية الشمالية"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "أنتاركتيكا"
+msgstr "الدائرة القطبية الجنوبية"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -55326,7 +55225,7 @@ msgstr "الألوان الأصليّة:"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "كم"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
 #, fuzzy, kde-format
@@ -55337,7 +55236,7 @@ msgstr "سم"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "ماور"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
 #, kde-format
@@ -55368,7 +55267,7 @@ msgstr "اسم المجموعة"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "مضلّع"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
@@ -55387,10 +55286,9 @@ msgstr "لصاقات الصّور"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "المسافة:"
+msgstr "مسافة"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:70
@@ -55431,10 +55329,9 @@ msgstr "نصف القطر"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Circumference"
-msgstr "المرجع:"
+msgstr "محيط منحنى مغلق"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:98
 #, fuzzy, kde-format
@@ -55886,11 +55783,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@option: global settings"
-#| msgid "Global"
+#, kde-format
 msgid "Globe"
-msgstr "عام"
+msgstr "الكرة الأرضية"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:82
 #, kde-format
@@ -56016,10 +55911,9 @@ msgstr "عادي"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:141
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:151
-#, fuzzy, kde-format
-#| msgid "Quality"
+#, kde-format
 msgid "High Quality"
-msgstr "الجودة"
+msgstr "جودة عالية"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:142
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:152
@@ -62339,10 +62233,9 @@ msgid "Country shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "المحافظة"
+msgstr "إقليم"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
@@ -64216,8 +64109,7 @@ msgid "Your collection will be updated to this name:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1719
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "حدد صنفًا"
@@ -65758,13 +65650,13 @@ msgstr "منفذ المضيف:"
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, kde-format
 msgid "Proxy type:"
-msgstr ""
+msgstr "نوع الوكيل:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
-msgstr ""
+msgstr "Http"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:129
@@ -66075,7 +65967,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "ويندوز (نظام تشغيلي)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, fuzzy, kde-format
@@ -66358,9 +66250,9 @@ msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
 #: core/utilities/setup/setupgeolocation.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgid "API Key:"
-msgstr "غير صحيح الملف الشخصي"
+msgstr "مفتاح و‌ب‌ت API:"
 
 #: core/utilities/setup/setupgeolocation.cpp:115
 #, kde-format

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 02:08+0000\n"
+"POT-Creation-Date: 2024-09-18 01:53+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -22489,7 +22489,7 @@ msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:387
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -22497,7 +22497,7 @@ msgid "Delete Image"
 msgstr "Slötelwoort wegdoon"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:388
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Wullt Du de Sammeln \"%1\" vun Dien Sammelnlist wegmaken?"
@@ -22586,7 +22586,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaschau"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22866,10 +22866,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
-"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
+"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
+"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 02:08+0000\n"
-"PO-Revision-Date: 2024-08-29 09:54+0200\n"
+"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"PO-Revision-Date: 2024-09-16 09:42+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2852,18 +2852,17 @@ msgstr "Tous les fichiers pris en charge (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC :"
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Retour d'expérience : "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Documentation"
+msgstr "Documentation :"
 
 #: core/app/utils/digikam_version.cpp:72
 #, fuzzy, kde-format
@@ -2873,28 +2872,24 @@ msgid "Build Date: "
 msgstr "Date du fichier"
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Cible"
+msgstr "Cible de compilation :"
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Architecture non prise en charge : %1"
+msgstr "Architecture de compilation :"
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Écart-type : "
+msgstr "Révision sous Git : "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Branche sous Git : "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -22248,14 +22243,14 @@ msgid "Delay:"
 msgstr "Retard :"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:387
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Supprimer une image"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:388
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Voulez-vous vraiment déplacer cette image  ?"
@@ -22338,7 +22333,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22606,7 +22601,31 @@ msgid "A tool to render slideshow"
 msgstr "Un outil de rendu de diaporama"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
+#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22620,10 +22639,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
-"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
+"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
+"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
