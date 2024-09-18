@@ -91,8 +91,8 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # Qt version to use in bundle and provided by Macports.
-#DK_QTVERSION="5"
-DK_QTVERSION="6"
+DK_QTVERSION="5"
+#DK_QTVERSION="6"
 
 # Mariadb version to install for Qt SQL plugin.
 
