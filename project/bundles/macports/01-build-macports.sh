@@ -213,7 +213,7 @@ fi
 
 echo -e "\n"
 echo "---------- Updating MacPorts"
-port -v selfupdate
+#port -v selfupdate
 
 if [[ $CONTINUE_INSTALL == 0 ]]; then
 
