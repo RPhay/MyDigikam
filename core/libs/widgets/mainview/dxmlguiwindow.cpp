@@ -26,10 +26,15 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     installEventFilter(this);
 
     QScreen* const screen = qApp->primaryScreen();
-    int width             = screen->availableSize().width()  / 1.10;
-    int height            = screen->availableSize().height() / 1.10;
+    m_goodHeight          = screen->availableSize().height() / 1.10;
+    m_goodWidth           = screen->availableSize().width()  / 1.10;
 
-    resize(width, height);
+#ifndef Q_OS_WIN
+
+    resize(m_goodWidth, m_goodHeight);
+
+#endif
+
 }
 
 DXmlGuiWindow::~DXmlGuiWindow()
@@ -60,8 +65,8 @@ void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 
 #ifdef Q_OS_WIN
 
-    m_maximized = (windowState() &
-                   Qt::WindowMaximized);
+        m_maximized = (windowState() &
+                       Qt::WindowMaximized);
 
 #endif
 
@@ -293,12 +298,11 @@ bool DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
 
 #ifdef Q_OS_WIN
 
-    int  w   = group.readEntry(QLatin1String("DK Width"),     win->width());
-    int  h   = group.readEntry(QLatin1String("DK Height"),    win->height());
+    int  w   = group.readEntry(QLatin1String("DK Width"),     m_goodWidth);
+    int  h   = group.readEntry(QLatin1String("DK Height"),    m_goodHeight);
     int  x   = group.readEntry(QLatin1String("DK PositionX"), win->geometry().x());
     int  y   = group.readEntry(QLatin1String("DK PositionY"), win->geometry().y());
-    bool max = group.readEntry(QLatin1String("DK Maximized"), (bool)(win->windowState() &
-                                                                     Qt::WindowMaximized));
+    bool max = group.readEntry(QLatin1String("DK Maximized"), m_maximized);
 
     if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
     {
@@ -372,11 +376,6 @@ void DXmlGuiWindow::saveWindowSize()
 {
 
 #ifdef Q_OS_WIN
-
-    if (m_maximized)
-    {
-        windowHandle()->setWindowState(Qt::WindowMaximized);
-    }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());

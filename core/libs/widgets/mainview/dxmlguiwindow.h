@@ -293,8 +293,11 @@ private:
 
 private:
 
-    bool m_winLoaded = false;
-    bool m_maximized = false;
+    bool m_winLoaded  = false;
+    bool m_maximized  = false;
+
+    int  m_goodHeight = 0;
+    int  m_goodWidth  = 0;
 
 private:
 
