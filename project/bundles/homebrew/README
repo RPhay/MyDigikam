@@ -5,8 +5,20 @@ Scripts to build binary digiKam package for MacOS
 These scripts build a binary digiKam package for MacOS using HomeBrew
 environment and Packages application.
 
+** NOTE ** The official digiKam MacOS packages are built with Macports.  The Homebrew bundle is experimental,
+and may have additional issues not found with the Macports bundle. The benefit of the Homebrew bundle is it is
+significantly faster to build from scratch than Macports.
+
 These scripts follow instructions from Qt bundle deployment for MacOS as shared libraries
 available at this url: https://doc.qt.io/qt-6/macos-deployment.html
+
+Current known issues with Homebrew bundle:
+* Functionality:
+    * General - Unable to play multimedia files
+    * DB - MariaDB works as initial DB, but unable to use migration tool to MariaDB
+* UI:
+    * Unable to use Breeze icon set
+    * digiKam icon changes to plain icon after loading
 
 
 AUTHORS
@@ -14,6 +26,7 @@ AUTHORS
 
 (c)      2015 by Shanti <listaccount at revenant dot org>
 (c) 2015-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2024 by Michael Miller <michael underscore miller at msn dot com>
 
 
 DESCRIPTION
