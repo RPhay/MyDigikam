@@ -115,6 +115,16 @@ void GPSBookmarkOwner::slotOpenBookmark(const QUrl& url)
 
 void GPSBookmarkOwner::slotShowBookmarksDialog()
 {
+
+#ifdef Q_OS_DARWIN
+
+    // See bug #486341
+
+    QPointer<BookmarksDialog> dlg = new BookmarksDialog(d->parent, d->bookmarkManager);
+    dlg->exec();
+
+#else
+
     if (
         d->bookmarksDialog &&
         (d->bookmarksDialog->isMinimized() || !d->bookmarksDialog->isHidden())
@@ -130,12 +140,15 @@ void GPSBookmarkOwner::slotShowBookmarksDialog()
         d->bookmarksDialog->show();
         d->bookmarksDialog->raise();
     }
+
+#endif
+
 }
 
 void GPSBookmarkOwner::slotAddBookmark()
 {
-    AddBookmarkDialog* const dlg = new AddBookmarkDialog(currentUrl(), currentTitle(),
-                                                         d->parent, d->bookmarkManager);
+    QPointer<AddBookmarkDialog> dlg = new AddBookmarkDialog(currentUrl(), currentTitle(),
+                                                            d->parent, d->bookmarkManager);
     dlg->exec();
 }
 
