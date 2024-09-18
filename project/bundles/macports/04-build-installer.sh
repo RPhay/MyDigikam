@@ -642,7 +642,7 @@ for DIR in ${MARIADBDIRS[@]} ; do
     for FILE in ${MARIADBFILES[@]} ; do
 
         # to handle only text files
-        ISTEXT=`file "$FILE" | grep "ASCII text" || true`
+        ISTEXT=`file "$FILE" | grep "text" || true`
 
         if [[ $ISTEXT ]] ; then
 
