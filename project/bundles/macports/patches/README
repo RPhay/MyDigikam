@@ -6,8 +6,8 @@ To create a patch:
 
 - copy the original Portfile to Portfile.old.
 - modify the Portfile contents.
-- run "diff -u Portfile.old Porfile" > Portfile.patch
+- run "diff -u Portfile.old Porfile > Portfile.patch"
 
 To apply a patch to a Portfile:
 
-patch -u Portfile -i Portfile.patch
+patch -u ./Portfile -i ./Portfile.patch
