@@ -110,7 +110,7 @@ BUGFIXES:
 087 ==> 448045 - Reduce intensity of Colour Labels Displayed in Album/Thumbnail View or Replace with Discreet Colour Label.
 088 ==> 487799 - Geolocalization icon always black in thumbnail view.
 089 ==> 486341 - Edit Bookmarks menu item does nothing.
-090 ==> 
+090 ==> 426968 - Album title bar in icon view should be a selection switch.
 091 ==> 
 092 ==> 
 093 ==> 

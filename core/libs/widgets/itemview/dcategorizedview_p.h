@@ -236,6 +236,7 @@ public:
     QStringList                       categories;
     QModelIndexList                   intersectedIndexes;
     QRect                             lastDraggedItemsRect;
+    QItemSelection                    lastCategorySelection;
     QItemSelection                    lastSelection;
 
     /// Attributes for speed reasons

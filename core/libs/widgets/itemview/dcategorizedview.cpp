@@ -39,7 +39,6 @@ void DCategorizedView::setGridSize(const QSize& size)
 
 void DCategorizedView::setModel(QAbstractItemModel* model)
 {
-    d->lastSelection           = QItemSelection();
     d->forcedSelectionPosition = 0;
     d->hovered                 = QModelIndex();
     d->mouseButtonPressed      = false;
@@ -50,6 +49,8 @@ void DCategorizedView::setModel(QAbstractItemModel* model)
     d->categoriesPosition.clear();
     d->categories.clear();
     d->intersectedIndexes.clear();
+    d->lastSelection.clear();
+    d->lastCategorySelection.clear();
 
     if (d->proxyModel)
     {
@@ -174,7 +175,6 @@ DCategoryDrawer* DCategorizedView::categoryDrawer() const
 
 void DCategorizedView::setCategoryDrawer(DCategoryDrawer* categoryDrawer)
 {
-    d->lastSelection           = QItemSelection();
     d->forcedSelectionPosition = 0;
     d->hovered                 = QModelIndex();
     d->mouseButtonPressed      = false;
@@ -185,6 +185,8 @@ void DCategorizedView::setCategoryDrawer(DCategoryDrawer* categoryDrawer)
     d->categoriesPosition.clear();
     d->categories.clear();
     d->intersectedIndexes.clear();
+    d->lastSelection.clear();
+    d->lastCategorySelection.clear();
     d->categoryDrawer          = categoryDrawer;
 
     if (categoryDrawer)
@@ -241,7 +243,6 @@ void DCategorizedView::reset()
 {
     QListView::reset();
 
-    d->lastSelection           = QItemSelection();
     d->forcedSelectionPosition = 0;
     d->hovered                 = QModelIndex();
     d->biggestItemSize         = QSize(0, 0);
@@ -253,6 +254,8 @@ void DCategorizedView::reset()
     d->categoriesPosition.clear();
     d->categories.clear();
     d->intersectedIndexes.clear();
+    d->lastSelection.clear();
+    d->lastCategorySelection.clear();
 }
 
 void DCategorizedView::paintEvent(QPaintEvent* event)
@@ -731,6 +734,8 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
     }
 
     selectionModel()->select(selection, command);
+    d->lastCategorySelection.clear();
+
 }
 
 void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
@@ -887,7 +892,16 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
                     selection << QItemSelectionRange(selectIndex);
                 }
 
-                selectionModel()->select(selection, QItemSelectionModel::SelectCurrent);
+                if (d->lastCategorySelection == selection)
+                {
+                    selectionModel()->select(selection, QItemSelectionModel::Deselect);
+                    d->lastCategorySelection.clear();
+                }
+                else
+                {
+                    selectionModel()->select(selection, QItemSelectionModel::SelectCurrent);
+                    d->lastCategorySelection = selection;
+                }
 
                 break;
             }
