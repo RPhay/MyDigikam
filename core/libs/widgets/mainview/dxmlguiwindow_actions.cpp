@@ -53,37 +53,45 @@ void DXmlGuiWindow::createHelpActions(const QString& handbookSection, bool coreO
 {
     d->handbookSection                  = handbookSection;
 
-    d->libsInfoAction                   = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
+    d->libsInfoAction                   = new QAction(QIcon::fromTheme(QLatin1String("help-about")),
+                                                                       i18n("Components Information"), this);
     connect(d->libsInfoAction, SIGNAL(triggered()), this, SLOT(slotComponentsInfo()));
     actionCollection()->addAction(QLatin1String("help_librariesinfo"), d->libsInfoAction);
 
     d->about                            = new DAboutData(this);
 
-    QAction* const rawCameraListAction  = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
+    QAction* const rawCameraListAction  = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")),
+                                                                       i18n("Supported RAW Cameras"), this);
     connect(rawCameraListAction, SIGNAL(triggered()), this, SLOT(slotRawCameraList()));
     actionCollection()->addAction(QLatin1String("help_rawcameralist"), rawCameraListAction);
 
-    QAction* const solidHardwareAction  = new QAction(QIcon::fromTheme(QLatin1String("preferences-devices-tree")), i18n("List of Detected Hardware"), this);
+    QAction* const solidHardwareAction  = new QAction(QIcon::fromTheme(QLatin1String("preferences-devices-tree")),
+                                                                       i18n("List of Detected Hardware"), this);
     connect(solidHardwareAction, SIGNAL(triggered()), this, SLOT(slotSolidHardwareList()));
     actionCollection()->addAction(QLatin1String("help_solidhardwarelist"), solidHardwareAction);
 
-    QAction* const donateMoneyAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
+    QAction* const donateMoneyAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")),
+                                                                       i18n("Donate..."), this);
     connect(donateMoneyAction, SIGNAL(triggered()), this, SLOT(slotDonateMoney()));
     actionCollection()->addAction(QLatin1String("help_donatemoney"), donateMoneyAction);
 
-    QAction* const recipesBookAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Recipes Book..."), this);
+    QAction* const recipesBookAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")),
+                                                                       i18n("Recipes Book..."), this);
     connect(recipesBookAction, SIGNAL(triggered()), this, SLOT(slotRecipesBook()));
     actionCollection()->addAction(QLatin1String("help_recipesbook"), recipesBookAction);
 
-    QAction* const contributeAction     = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Contribute..."), this);
+    QAction* const contributeAction     = new QAction(QIcon::fromTheme(QLatin1String("globe")),
+                                                                       i18n("Contribute..."), this);
     connect(contributeAction, SIGNAL(triggered()), this, SLOT(slotContribute()));
     actionCollection()->addAction(QLatin1String("help_contribute"), contributeAction);
 
-    QAction* const onlineVerCheckAction = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Check for New Version..."), this);
+    QAction* const onlineVerCheckAction = new QAction(QIcon::fromTheme(QLatin1String("globe")),
+                                                                       i18n("Check for New Version..."), this);
     connect(onlineVerCheckAction, SIGNAL(triggered()), this, SLOT(slotOnlineVersionCheck()));
     actionCollection()->addAction(QLatin1String("help_onlineversioncheck"), onlineVerCheckAction);
 
-    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Online Handbook..."), this);
+    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("globe")),
+                                                                       i18n("Online Handbook..."), this);
     connect(helpAction, SIGNAL(triggered()), this, SLOT(slotHelpContents()));
     actionCollection()->addAction(QLatin1String("help_handbook"), helpAction);
 
@@ -94,7 +102,8 @@ void DXmlGuiWindow::createHelpActions(const QString& handbookSection, bool coreO
 
     if (coreOptions)
     {
-        d->dbStatAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")), i18n("Database Statistics"), this);
+        d->dbStatAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")),
+                                                       i18n("Database Statistics"), this);
         connect(d->dbStatAction, SIGNAL(triggered()), this, SLOT(slotDBStat()));
         actionCollection()->addAction(QLatin1String("help_dbstat"), d->dbStatAction);
     }
@@ -202,6 +211,7 @@ void DXmlGuiWindow::createSettingsActions()
                 // Immediately disconnect. We only need to run this once, but on demand.
                 // NOTE: The nullptr at the end disconnects all connections between
                 // this and d->hamburgerMenu's aboutToShowMenu signal.
+
                 disconnect(d->hamburgerMenu, &KHamburgerMenu::aboutToShowMenu,
                            this, nullptr);
             }
@@ -263,10 +273,15 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
 
         case StdOpenAction:
         {
+
 #ifndef __clang_analyzer__
-            // NOTE: disable false positive report from scan build about open()
+
+            // NOTE: disable false positive report from scan build about std::open()
+
             return KStandardAction::open(recvr, slot, parent);
+
 #endif
+
         }
 
         case StdSaveAction:

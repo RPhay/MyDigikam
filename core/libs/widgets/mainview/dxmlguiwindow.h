@@ -78,7 +78,7 @@ enum StdActionType
 
 
 /**
- * Generi class to use with all main window.
+ * Generic class to use with all main window.
  */
 class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 {
@@ -86,7 +86,8 @@ class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 
 public:
 
-    explicit DXmlGuiWindow(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+    explicit DXmlGuiWindow(QWidget* const parent = nullptr,
+                           Qt::WindowFlags f = Qt::WindowFlags());
     ~DXmlGuiWindow() override;
 
     /**
@@ -189,7 +190,7 @@ public:
 
 protected:
 
-    DLogoAction* m_animLogo;
+    DLogoAction* m_animLogo = nullptr;
 
 protected:
 

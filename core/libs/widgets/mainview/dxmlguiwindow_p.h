@@ -48,8 +48,6 @@
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 
-#include "webbrowserdlg.h"
-
 // KDE includes
 
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
@@ -101,6 +99,7 @@
 #include "daboutdata.h"
 #include "dpluginloader.h"
 #include "solidhardwaredlg.h"
+#include "webbrowserdlg.h"
 
 namespace Digikam
 {
