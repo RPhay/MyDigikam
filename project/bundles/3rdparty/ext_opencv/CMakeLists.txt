@@ -109,25 +109,7 @@ endif()
 
 JoinListAsString("${Opencv_Conf}" " " BASH_OPTIONS)
 
-if(MINGW)
-
-    ExternalProject_Add(ext_opencv
-
-        GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.10.0
-
-        CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
-                   -DCMAKE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX}
-                   -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-                   ${GLOBAL_PROFILE}
-                   ${Opencv_Conf}
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
-elseif(APPLE)
+if(APPLE)
 
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
