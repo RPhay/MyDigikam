@@ -144,7 +144,6 @@ binaries="$OTHER_APPS"
 #
 OTHER_DIRS="\
 libexec/qt$DK_QTVERSION/translations \
-libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
 lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
@@ -181,6 +180,7 @@ else
     OTHER_DATA=$OTHER_DATA"\
     lensfun \
     share/QtCurve
+    libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
     "
 
 fi
