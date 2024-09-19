@@ -735,7 +735,6 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
 
     selectionModel()->select(selection, command);
     d->lastCategorySelection.clear();
-
 }
 
 void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
