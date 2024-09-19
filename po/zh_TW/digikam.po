@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -42402,12 +42402,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "開發者 (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "設定通知"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -55986,12 +55986,12 @@ msgstr "匯出書籤"
 msgid "Error saving bookmarks"
 msgstr "儲存書籤時發生錯誤"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "編輯書籤"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "新增書籤…"

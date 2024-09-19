@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -41394,13 +41394,13 @@ msgstr ""
 msgid "Developer (2004)"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Configure Notifications"
 msgstr "imatges"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -54844,13 +54844,13 @@ msgstr "Colors"
 msgid "Error saving bookmarks"
 msgstr "Colors"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Edit Bookmarks"
 msgstr "Colors"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr ""

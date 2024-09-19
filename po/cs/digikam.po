@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
-"PO-Revision-Date: 2024-09-03 08:49+0200\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"PO-Revision-Date: 2024-09-17 15:18+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -2758,17 +2758,17 @@ msgstr "Všechny podporované soubory (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Zpětná vazba: "
 
 #: core/app/utils/digikam_version.cpp:69
 #, kde-format
 msgid "Documentation: "
-msgstr ""
+msgstr "Dokumentace: "
 
 #: core/app/utils/digikam_version.cpp:72
 #, kde-format
@@ -41653,12 +41653,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Vývojář (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Nastavit upozornění"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -54931,12 +54931,12 @@ msgstr ""
 msgid "Error saving bookmarks"
 msgstr "chyba při ukládání záložek"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Upravit záložky"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Přidat záložku..."

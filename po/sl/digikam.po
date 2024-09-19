@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
-"PO-Revision-Date: 2024-09-16 07:15+0200\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"PO-Revision-Date: 2024-09-18 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -22202,31 +22202,7 @@ msgid "A tool to render slideshow"
 msgstr "Orodje za upodabljanje projekcije slik"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22252,15 +22228,16 @@ msgid ""
 "td></tr></table>"
 msgstr ""
 "<p>To orodje upodobi serijo postavk kot enostavno slikovno predstavitev.</"
-"p><p>Veliko lastnosti postavk lahko dodatno prikažemo nad slikami.</p><p>To "
-"orodje lahko predvaja vsebino albumov v rekurzivnem načinu skupaj s "
-"podrejenimi albumi, če obstajajo.</p><p><u>Uporaba:</u></p><table><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Dostop do predmeta</h1></b></center></"
-"nobr></td></tr><tr><td>Prejšnji predmet:</td><td>Tipka <i>Navzgor</i></td></"
-"tr><tr><td></td><td>Tipka <i>Prejšnja stran (PgUp)</i></td></tr><tr><td></"
-"td><td>Tipka <i>Levo</i></td></tr><tr><td></td><td>Kolešček miške navzgor</"
-"td></tr><tr><td></td><td>Levi gumb miške</td></tr><tr><td>Naslednji predmet:"
-"</td><td>Tipka <i>Navzdol</i></td></tr><tr><td></td><td>Tipka <i>Naslednja "
+"p><p>Mnogo lastnosti elementov je med delovanjem mogoče prikazati kot "
+"prekrivno plast.</p><p>To orodje lahko predvaja vsebino albumov v "
+"rekurzivnem načinu skupaj s podrejenimi albumi, če obstajajo.</"
+"p><p><u>Uporaba:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Dostop do predmeta</h1></b></center></nobr></td></"
+"tr><tr><td>Prejšnji predmet:</td><td>Tipka <i>Navzgor</i></td></tr><tr><td></"
+"td><td>Tipka <i>Prejšnja stran (PgUp)</i></td></tr><tr><td></td><td>Tipka "
+"<i>Levo</i></td></tr><tr><td></td><td>Kolešček miške navzgor</td></"
+"tr><tr><td></td><td>Levi gumb miške</td></tr><tr><td>Naslednji predmet:</"
+"td><td>Tipka <i>Navzdol</i></td></tr><tr><td></td><td>Tipka <i>Naslednja "
 "stran (PgDown)</i></td></tr><tr><td></td><td>Tipka <i>Desno</i></td></"
 "tr><tr><td></td><td>Kolešček miške navzdol</td></tr><tr><td></td><td>Desni "
 "gumb miške</td></tr><tr><td>Premor/Začni:</td><td><i>Preslednica</i></td></"
@@ -43111,12 +43088,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Razvijalec (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Konfiguriraj obvestila"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -56584,12 +56561,12 @@ msgstr "Izvozi zaznamek"
 msgid "Error saving bookmarks"
 msgstr "Napaka pri shranjevanju zaznamkov"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Uredi zaznamke"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Dodaj zaznamek..."

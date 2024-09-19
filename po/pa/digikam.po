@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -42763,12 +42763,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "ਡਿਵੈਲਪਰ (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, fuzzy, kde-format
 msgid "Configure Notifications"
 msgstr "...ਸੰਰਚਨਾ"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -57269,13 +57269,13 @@ msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 msgid "Error saving bookmarks"
 msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, fuzzy, kde-format
 #| msgid "Add Watermark"
 msgid "Edit Bookmarks"
 msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgid "Add Bookmark..."

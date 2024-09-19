@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
-"PO-Revision-Date: 2024-08-30 23:19+0200\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"PO-Revision-Date: 2024-09-18 11:45+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2786,49 +2786,42 @@ msgstr "Tutti i file supportati (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Commenti: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Documentazione"
+msgstr "Documentazione: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "Data del file"
+msgstr "Data di compilazione: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Risultante"
+msgstr "Target di compilazione: "
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Architettura non supportata: %1"
+msgstr "Architettura di compilazione: "
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Deviazione standard: "
+msgstr "Revisione Git: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Ramo Git: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -22473,31 +22466,7 @@ msgid "A tool to render slideshow"
 msgstr "Strumento per eseguire la resa di una presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22536,18 +22505,19 @@ msgstr ""
 "<i>PagGiù</i></td></tr><tr><td></td><td>tasto <i>freccia destra</i></td></"
 "tr><tr><td></td><td>Rotella del mouse giù</td></tr><tr><td></td><td>Pulsante "
 "destro del mouse</td></tr><tr><td>Pausa/Avvio:</td><td>barra <i>spaziatrice</"
-"i></td></tr><tr><td>Impostazioni presentazione:</td><td>tasto <i>F2</i></"
-"td></tr><tr><td>Mostra/nascondi sovraimpressioni:</td><td>tasto <i>F4</i></"
-"td></tr><tr><td>Esci:</td><td>tasto <i>Esc</i></td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Proprietà elemento</h1></b></center></nobr></td></"
-"tr><tr><td>Cambia tag:</td><td>usa le scorciatoie da tastiera per i tag</"
-"td></tr><tr><td>Cambia valutazione:</td><td>usa le scorciatoie da tastiera "
-"per le valutazioni</td></tr><tr><td>Cambia etichetta colorata:</td><td>usa "
-"le scorciatoie da tastiera per l'etichetta colorata</td></tr><tr><td>Cambia "
-"l'etichetta di scelta:</td><td>usa le scorciatoie da tastiera per "
-"l'etichetta di scelta</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Altro</h1></b></center></nobr></td></"
-"tr><tr><td>Mostra questa guida:</td><td>tasto <i>F1</i></td></tr></table>"
+"i></td></tr><tr><td>Impostazioni presentazione:</td><td>combinazione <i>Alt"
+"+P</i></td></tr><tr><td>Mostra/nascondi sovraimpressioni:</"
+"td><td>combinazione <i>Alt+Y</i></td></tr><tr><td>Esci:</td><td>tasto "
+"<i>Esc</i></td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Proprietà "
+"elemento</h1></b></center></nobr></td></tr><tr><td>Cambia tag:</td><td>usa "
+"le scorciatoie da tastiera per i tag</td></tr><tr><td>Cambia valutazione:</"
+"td><td>usa le scorciatoie da tastiera per le valutazioni</td></"
+"tr><tr><td>Cambia etichetta colorata:</td><td>usa le scorciatoie da tastiera "
+"per l'etichetta colorata</td></tr><tr><td>Cambia l'etichetta di scelta:</"
+"td><td>usa le scorciatoie da tastiera per l'etichetta di scelta</td></"
+"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Altro</h1></b></center></"
+"nobr></td></tr><tr><td>Mostra questa guida:</td><td>tasto <i>F1</i></td></"
+"tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
@@ -43519,12 +43489,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Sviluppatore (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Configura le notifiche"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -57072,12 +57042,12 @@ msgstr "Esporta segnalibro"
 msgid "Error saving bookmarks"
 msgstr "Errore durante il salvataggio dei segnalibri"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Modifica segnalibri"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Aggiungi segnalibro..."
@@ -66673,10 +66643,9 @@ msgid "FFmpeg (Default)"
 msgstr "FFmpeg (predefinito)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Same as system"
+#, kde-format
 msgid "GStreamer (System)"
-msgstr "Stesso del sistema"
+msgstr "GStreamer (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66684,10 +66653,9 @@ msgid "Windows (System)"
 msgstr "Windows (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (sistema)"
+msgstr "Darwin (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

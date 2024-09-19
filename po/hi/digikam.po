@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -41448,12 +41448,12 @@ msgstr "राल्फ होल्जर"
 msgid "Developer (2004)"
 msgstr "डेवलपर (२००४)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, fuzzy, kde-format
 msgid "Configure Notifications"
 msgstr "कैमरा कॉन्फ़िगरेशन"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, fuzzy, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -55663,12 +55663,12 @@ msgstr "कैमरा जोड़ें..."
 msgid "Error saving bookmarks"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, fuzzy, kde-format
 msgid "Edit Bookmarks"
 msgstr "कैमरा जोड़ें..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgid "Add Bookmark..."

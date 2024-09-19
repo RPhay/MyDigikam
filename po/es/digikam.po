@@ -32,35 +32,23 @@
 # This file is distributed under the same license as the Digikam package.
 # Copyright (C) Renchi Raju <renchi@pooh.tam.uiuc.edu>
 #
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2003, 2004, 2005, 2007.
-# Pablo Pita Leira <pablo.pita@gmail.com>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Pablo de Vicente <pablo.devicente@gmail.com>, 2006.
-# Pablo de Vicente <p.devicente@oan.es>, 2007.
-# Alberto Garcia <info@trebol-a.com>, 2007.
-# Jaime Robles <jaime@kde.org>, 2007, 2008.
-# SPDX-FileCopyrightText: 2009, 2013, 2014, 2015, 2016, 2017, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>, 2009.
-# Aitor Morant <fromhell091@gmail.com>, 2013.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008, 2010.
-# Pablo Pita Leira <pablo.pita@gmail.com>, 2010.
-# Hector Wilvert Ivan Valdez Reza <ranmaru.hibikiya@gmail.com>, 2013.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2010.
-# Pablo Pita Leira <pablo.pita@gmail.com>, 2010, 2011.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2013, 2014, 2015.
-# Santi <santi@kde-es.org>, 2008, 2010.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010, 2011.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2011, 2014.
-# Pablo Pita Leira <pablo.pita@gmail.com>, 2005.
-# Pablo Pita Leira <pablo.pita@gmail.com>, 2009.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2010, 2011, 2012, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2005, 2006, 2007, 2008, 2009, 2010, 2011 Pablo Pita Leira <pablo.pita@gmail.com>
+# SPDX-FileCopyrightText: 2006, 2007 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2007 Alberto Garcia <info@trebol-a.com>
+# SPDX-FileCopyrightText: 2007, 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2013 Aitor Morant <fromhell091@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2008, 2010 Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008, 2010.
+# SPDX-FileCopyrightText: 2013 Hector Wilvert Ivan Valdez Reza <ranmaru.hibikiya@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2011 Kira J. Fernandez <kirajfdez@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
-"PO-Revision-Date: 2024-09-16 11:47+0200\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"PO-Revision-Date: 2024-09-18 11:19+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22471,31 +22459,7 @@ msgid "A tool to render slideshow"
 msgstr "Herramienta para visualizar una presentación"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22534,8 +22498,8 @@ msgstr ""
 "tr><tr><td></td><td>Tecla <i>Derecha</i></td></tr><tr><td></td><td>Rueda del "
 "ratón hacia abajo</td></tr><tr><td></td><td>Botón derecho del ratón</td></"
 "tr><tr><td>Pausa/inicio:</td><td>Tecla <i>Espacio</i></td></"
-"tr><tr><td>Preferencias de la presentación:</td><td>Tecla <i>F2</i></td></"
-"tr><tr><td>Ocultar/mostrar superposiciones:</td><td>Tecla <i>F4</i></td></"
+"tr><tr><td>Preferencias de la presentación:</td><td>Tecla <i>Alt+P</i></td></"
+"tr><tr><td>Ocultar/mostrar superposiciones:</td><td>Tecla <i>Alt+Y</i></td></"
 "tr><tr><td>Salir:</td><td>Tecla <i>Esc</i></td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Propiedades del elemento</h1></b></center></"
 "nobr></td></tr><tr><td>Modificar etiquetas:</td><td>Use los accesos rápidos "
@@ -43532,12 +43496,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Desarrollador (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Configurar notificaciones"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -57091,12 +57055,12 @@ msgstr "Exportar marcador"
 msgid "Error saving bookmarks"
 msgstr "Ha ocurrido un error al guardar los marcadores"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Editar marcadores"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Añadir marcador..."

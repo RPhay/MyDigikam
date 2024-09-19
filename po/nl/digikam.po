@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 01:53+0000\n"
-"PO-Revision-Date: 2024-09-16 14:05+0200\n"
+"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"PO-Revision-Date: 2024-09-18 10:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -22435,31 +22435,7 @@ msgid "A tool to render slideshow"
 msgstr "Een hulpmiddel om diashow te renderen"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22498,16 +22474,17 @@ msgstr ""
 "<i>Rechts</i></td></tr><tr><td></td><td>Muiswiel omlaag</td></tr><tr><td></"
 "td><td>Rechter muisknop</td></tr><tr><td>Pauzeren/Starten:</"
 "td><td><i>Spatie</i>toets</td></tr><tr><td>Instellingen diashow:</"
-"td><td><i>F2</i> toets</td></tr><tr><td>Overlays verbergen/tonen:</"
-"td><td><i>F4</i> toets</td></tr><tr><td>Afsluiten:</td><td><i>Esc</i> toets</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Itemeigenschappen</h1></"
-"b></center></nobr></td></tr><tr><td>Tags wijzigen:</td><td>Sneltoetsen voor "
-"tags gebruiken</td></tr><tr><td>Waardering wijzigen:</td><td>Sneltoetsen "
-"voor waardering gebruiken</td></tr><tr><td>Kleurlabel wijzigen:</"
-"td><td>Sneltoetsen voor kleurlabel gebruiken</td></tr><tr><td>Keuzelabel "
-"wijzigen:</td><td>Sneltoetsen voor keuzelabels gebruiken</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Overige</h1></b></center></nobr></td></"
-"tr><tr><td>Deze hulp tonen:</td><td><i>F1</i> toets</td></tr></table>"
+"td><td><i>Alt+P</i> toetsen</td></tr><tr><td>Overlays verbergen/tonen:</"
+"td><td><i>Alt+Y</i> toetsen</td></tr><tr><td>Afsluiten:</td><td><i>Esc</i> "
+"toets</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Itemeigenschappen</"
+"h1></b></center></nobr></td></tr><tr><td>Tags wijzigen:</td><td>Sneltoetsen "
+"voor tags gebruiken</td></tr><tr><td>Waardering wijzigen:</"
+"td><td>Sneltoetsen voor waardering gebruiken</td></tr><tr><td>Kleurlabel "
+"wijzigen:</td><td>Sneltoetsen voor kleurlabel gebruiken</td></"
+"tr><tr><td>Keuzelabel wijzigen:</td><td>Sneltoetsen voor keuzelabels "
+"gebruiken</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Overige</h1></"
+"b></center></nobr></td></tr><tr><td>Deze hulp tonen:</td><td><i>F1</i> "
+"toets</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
@@ -43425,12 +43402,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Ontwikkelaar (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Meldingen configureren"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -56957,12 +56934,12 @@ msgstr "Bladwijzer exporteren"
 msgid "Error saving bookmarks"
 msgstr "Fout bij opslaan van bladwijzers"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Bladwijzers bewerken"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Bladwijzer toevoegen..."
