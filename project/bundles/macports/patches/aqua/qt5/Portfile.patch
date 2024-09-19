@@ -9,6 +9,15 @@
          "qtdeclarative qtquickcontrols qtquickcontrols2 qtlocation qtwebchannel qttools"
          {"Qt WebEngine"}
          "very large and relatively new"
+@@ -1778,6 +1778,8 @@
+                 # do not opportunistically find MacPorts libraries (e.g. X11 libraries)
+                 patchfiles-append patch-qtwebengine_tests.diff
+ 
++                patchfiles-append patch-qtwebengine_spellcheck.diff
++
+                 # run syncqt.pl to generate headers needed to build from git snapshot (rather than release tarball)
+                 # system Perl is sufficient, since syncqt.pl only uses standard core modules
+                 # (although future macOS may not include Perl)
 @@ -1796,16 +1796,15 @@
                  # see config_help.txt
                  configure.post_args-append         \
