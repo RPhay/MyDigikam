@@ -21,11 +21,3 @@
 -                    -system-webengine-ffmpeg
 +                    -system-webengine-icu
  
-                 # missing file spell_check_host_chrome_impl_mac.cc
-                 # TODO: investigate further
-                 configure.post_args-delete \
--                    -webengine-native-spellchecker
-+                    -no-webengine-spellchecker
- 
-                 # GN bundled with qtwebengine-chromium has Qt-specific additions
-                 # To avoid building the bundled GN from scratch when building qtwebengine,
