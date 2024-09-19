@@ -166,19 +166,18 @@ share/k* \
 share/mime \
 Library/Application/ \
 share/applications \
+lensfun \
 "
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
     OTHER_DATA=$OTHER_DATA"\
-    share/lensfun \
     "
     # NOTE: QtCurve is located in Library/Application
 
-else
+else    # Arm64
 
     OTHER_DATA=$OTHER_DATA"\
-    lensfun \
     share/QtCurve
     libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
     "
