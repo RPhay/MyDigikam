@@ -26,15 +26,10 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     installEventFilter(this);
 
     QScreen* const screen = qApp->primaryScreen();
-    m_goodHeight          = screen->availableSize().height() / 1.10;
-    m_goodWidth           = screen->availableSize().width()  / 1.10;
+    int width             = screen->availableSize().width()  / 1.10;
+    int height            = screen->availableSize().height() / 1.10;
 
-#ifndef Q_OS_WIN
-
-    resize(m_goodWidth, m_goodHeight);
-
-#endif
-
+    resize(width, height);
 }
 
 DXmlGuiWindow::~DXmlGuiWindow()
@@ -52,23 +47,9 @@ QString DXmlGuiWindow::configGroupName() const
     return d->configGroupName;
 }
 
-void DXmlGuiWindow::showEvent(QShowEvent* e)
-{
-    KXmlGuiWindow::showEvent(e);
-
-    restoreWindowSize();
-}
-
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
     checkFullScreenBeforeClosing();
-
-#ifdef Q_OS_WIN
-
-        m_maximized = (windowState() &
-                       Qt::WindowMaximized);
-
-#endif
 
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
@@ -76,8 +57,6 @@ void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 
         return;
     }
-
-    saveWindowSize();
 
     KXmlGuiWindow::closeEvent(e);
 }
@@ -280,110 +259,18 @@ void DXmlGuiWindow::unminimizeAndActivateWindow()
         setWindowState(windowState() & ~Qt::WindowMinimized);
     }
 
-#ifdef Q_OS_WIN
-
-    if (m_maximized)
-    {
-        setWindowState(windowState() | Qt::WindowMaximized);
-    }
-
-#endif
-
     setWindowState(windowState() | Qt::WindowActive);
     raise();
 }
 
-bool DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
+void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
 {
-
-#ifdef Q_OS_WIN
-
-    int  w   = group.readEntry(QLatin1String("DK Width"),     m_goodWidth);
-    int  h   = group.readEntry(QLatin1String("DK Height"),    m_goodHeight);
-    int  x   = group.readEntry(QLatin1String("DK PositionX"), win->geometry().x());
-    int  y   = group.readEntry(QLatin1String("DK PositionY"), win->geometry().y());
-    bool max = group.readEntry(QLatin1String("DK Maximized"), m_maximized);
-
-    if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
-    {
-        win->setPosition(x, y);
-    }
-
-    if (max)
-    {
-        // we don't use showMaximized() because it also calls
-        // setVisible() it would create an infinite loop.
-
-        win->setWindowState(Qt::WindowMaximized);
-    }
-    else
-    {
-        win->resize(w, h);
-    }
-
-    return max;
-
-#else
-
     KWindowConfig::restoreWindowSize(win, group);
-
-    return false;
-
-#endif
-
 }
 
 void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 {
-
-#ifdef Q_OS_WIN
-
-    group.writeEntry(QLatin1String("DK Width"),     win->width());
-    group.writeEntry(QLatin1String("DK Height"),    win->height());
-    group.writeEntry(QLatin1String("DK PositionX"), win->geometry().x());
-    group.writeEntry(QLatin1String("DK PositionY"), win->geometry().y());
-    group.writeEntry(QLatin1String("DK Maximized"), (bool)(win->windowState() &
-                                                           Qt::WindowMaximized));
-
-#else
-
     KWindowConfig::saveWindowSize(win, group);
-
-#endif
-
-}
-
-void DXmlGuiWindow::restoreWindowSize()
-{
-
-#ifdef Q_OS_WIN
-
-    if (!m_winLoaded)
-    {
-        winId();
-
-        m_winLoaded               = true;
-        KSharedConfig::Ptr config = KSharedConfig::openConfig();
-        KConfigGroup group        = config->group(configGroupName());
-        m_maximized               = restoreWindowSize(windowHandle(), group);
-    }
-
-#endif
-
-}
-
-void DXmlGuiWindow::saveWindowSize()
-{
-
-#ifdef Q_OS_WIN
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(configGroupName());
-
-    saveWindowSize(windowHandle(), group);
-
-#endif
-
 }
 
 void DXmlGuiWindow::setGoodDefaultWindowSize(QWindow* const win)

@@ -93,15 +93,7 @@ ImageWindow::ImageWindow()
     thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
     d->viewContainer->restoreState(QByteArray::fromBase64(thumbbarState));
 
-#ifdef Q_OS_WIN
-
-    setAutoSaveSettings(configGroupName(), false);
-
-#else
-
     setAutoSaveSettings(configGroupName(), true);
-
-#endif
 
     //-------------------------------------------------------------
 

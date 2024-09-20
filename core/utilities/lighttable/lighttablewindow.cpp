@@ -76,16 +76,7 @@ LightTableWindow::LightTableWindow()
 
     applySettings();
 
-#ifdef Q_OS_WIN
-
-    setAutoSaveSettings(configGroupName(), false);
-
-#else
-
     setAutoSaveSettings(configGroupName(), true);
-
-#endif
-
 }
 
 LightTableWindow::~LightTableWindow()

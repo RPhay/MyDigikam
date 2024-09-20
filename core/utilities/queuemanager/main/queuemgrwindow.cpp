@@ -78,15 +78,7 @@ QueueMgrWindow::QueueMgrWindow()
     readSettings();
     applySettings();
 
-#ifdef Q_OS_WIN
-
-    setAutoSaveSettings(configGroupName(), false);
-
-#else
-
     setAutoSaveSettings(configGroupName(), true);
-
-#endif
 
     populateToolsList();
     slotQueueContentsChanged();
