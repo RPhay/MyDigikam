@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"POT-Creation-Date: 2024-09-20 01:55+0000\n"
 "PO-Revision-Date: 2024-09-18 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -34891,7 +34891,7 @@ msgstr "Довідка"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Підручник у інтернеті…"
@@ -43643,77 +43643,77 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "Загальні"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:57
 #, kde-format
 msgid "Components Information"
 msgstr "Інформація про компоненти"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Підтримувані фотоапарати з цифровими негативами"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr "Список виявленого програмного забезпечення"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Donate..."
 msgstr "Пожертвувати гроші…"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
 msgid "Recipes Book..."
 msgstr "Книга настанов…"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
 #, kde-format
 msgid "Contribute..."
 msgstr "Взяти участь у розробці…"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:89
 #, kde-format
 msgid "Check for New Version..."
 msgstr "Виконати пошук нової версії…"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:106
 #, kde-format
 msgid "Database Statistics"
 msgstr "Статистика бази даних"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Увімкнути/Вимкнути ліву бічну панель"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Увімкнути/Вимкнути праву бічну панель"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Попередня вкладка лівої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Наступна вкладка лівої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Попередня вкладка правої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Наступна вкладка правої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Показати смужку стану"

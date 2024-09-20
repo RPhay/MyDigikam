@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 01:47+0000\n"
-"PO-Revision-Date: 2024-09-16 12:12+0300\n"
+"POT-Creation-Date: 2024-09-20 01:55+0000\n"
+"PO-Revision-Date: 2024-09-19 19:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22215,31 +22215,7 @@ msgid "A tool to render slideshow"
 msgstr "Slayt gösterisi oluşturmak için bir araç"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22277,18 +22253,18 @@ msgstr ""
 "td><td><i>Sayfa Aşağı</i> düğmesi</td></tr><tr><td></td><td><i>Sağ ok</i> "
 "düğmesi</td></tr><tr><td></td><td>Fare tekerleği aşağıya</td></tr><tr><td></"
 "td><td>Sağ fare düğmesi</td></tr><tr><td>Başlat/Duraklat:</td><td><i>Boşluk</"
-"i> düğmesi</td></tr><tr><td>Slayt Gösterisi ayarları:</td><td><i>F2</i> "
-"düğmesi</td></tr><tr><td>Kaplamaları göster/gizle:</td><td><i>F4</i> "
-"düğmesi</td></tr><tr><td>Çık:</td><td><i>Vazgeç</i> düğmesi</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Öge Özellikleri</h1></b></center></nobr></"
-"td></tr><tr><td>Künyeleri değiştir:</td><td>Künyeler klavye kısayollarını "
-"kullanın</td></tr><tr><td>Derecelendirmeyi değiştir:</td><td>Derecelendirme "
-"klavye kısayollarını kullanın</td></tr><tr><td>Renk etiketini değiştir:</"
-"td><td>Renk etiketi klavye kısayollarını kullanın</td></tr><tr><td>Seçim "
-"etiketini değiştir:</td><td>Seçim etiketi klavye kısayollarını kullanın</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Diğerleri</h1></b></"
-"center></nobr></td></tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> "
-"düğmesi</td></tr></table>"
+"i> düğmesi</td></tr><tr><td>Slayt Gösterisi ayarları:</td><td><i>Seçenek+P</"
+"i> düğmesi</td></tr><tr><td>Kaplamaları göster/gizle:</td><td><i>Seçenek+Y</"
+"i> düğmesi</td></tr><tr><td>Çık:</td><td><i>Vazgeç</i> düğmesi</td></"
+"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Öge Özellikleri</h1></b></"
+"center></nobr></td></tr><tr><td>Künyeleri değiştir:</td><td>Künyeler klavye "
+"kısayollarını kullanın</td></tr><tr><td>Derecelendirmeyi değiştir:</"
+"td><td>Derecelendirme klavye kısayollarını kullanın</td></tr><tr><td>Renk "
+"etiketini değiştir:</td><td>Renk etiketi klavye kısayollarını kullanın</td></"
+"tr><tr><td>Seçim etiketini değiştir:</td><td>Seçim etiketi klavye "
+"kısayollarını kullanın</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Diğerleri</h1></b></center></nobr></td></"
+"tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> düğmesi</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
@@ -34430,7 +34406,7 @@ msgstr "Yardım"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Çevrimiçi El Kitabı..."
@@ -43051,77 +43027,77 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "Genel"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:57
 #, kde-format
 msgid "Components Information"
 msgstr "Bileşen Bilgisi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Desteklenen RAW Kameralar"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr "Algılanan Donanım Listesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Donate..."
 msgstr "Bağış Yap..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
 msgid "Recipes Book..."
 msgstr "Tarifler Kitabı..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
 #, kde-format
 msgid "Contribute..."
 msgstr "Katkıda Bulun..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:89
 #, kde-format
 msgid "Check for New Version..."
 msgstr "Yeni Sürümü Denetle..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:106
 #, kde-format
 msgid "Database Statistics"
 msgstr "Veritabanı İstatistikleri"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Sol Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Sağ Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Önceki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Sonraki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Önceki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"

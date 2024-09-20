@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"POT-Creation-Date: 2024-09-20 01:55+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -33478,7 +33478,7 @@ msgstr "Trợ g&iúp"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Online Handbook..."
@@ -41834,77 +41834,77 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "Chung"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:57
 #, fuzzy, kde-format
 msgid "Components Information"
 msgstr "Ghi chú :"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
 #, fuzzy, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Máy ảnh được lắp"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, fuzzy, kde-format
 msgid "Donate..."
 msgstr "Tăng tiền..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
 msgid "Recipes Book..."
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
 #, kde-format
 msgid "Contribute..."
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:89
 #, fuzzy, kde-format
 msgid "Check for New Version..."
 msgstr "&Lưu dạng..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:106
 #, fuzzy, kde-format
 msgid "Database Statistics"
 msgstr "Thống kê"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
 #, fuzzy, kde-format
 msgid "Show Statusbar"
 msgstr "Hiện các ảnh mẫu"

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-19 01:47+0000\n"
+"POT-Creation-Date: 2024-09-20 01:55+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -36582,7 +36582,7 @@ msgstr "&Abi"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Võrgukäsiraamat ..."
@@ -45746,37 +45746,37 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "Üldine"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:57
 #, kde-format
 msgid "Components Information"
 msgstr "Komponentide teave"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Toetatud kaamerad"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Donate..."
 msgstr "Raha annetamine..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
 msgid "Recipes Book..."
 msgstr "Retseptiraamat ..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
 #, kde-format
 msgid "Contribute..."
 msgstr "Annetamine..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:89
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@action Save changes to a newly created version, specifying the filename "
@@ -45785,42 +45785,42 @@ msgstr "Annetamine..."
 msgid "Check for New Version..."
 msgstr "Salvesta uus versioon kui..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:106
 #, kde-format
 msgid "Database Statistics"
 msgstr "Andmenbaasi statistika"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Vasaku külgriba lülitamine"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Parema külgriba lülitamine"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Eelmine vasaku külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Järgmine vasaku külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Eelmine parema külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Järgmine parema külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Näita olekuriba"
