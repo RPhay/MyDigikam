@@ -95,21 +95,11 @@ DK_BUILDTEMP=~/dktemp
 DK_QTVERSION="6"
 
 # Mariadb version to install for Qt SQL plugin.
+DK_MARIADB_VERSION="10.11"
 
-# Mariadb version to install for Qt QSL plugin.
-
-if [[ $DK_QTVERSION == 5 ]] ; then
-    # It's empty to use current 5.x from Macports
-    DK_MARIADB_VERSION=""
-else
-    DK_MARIADB_VERSION="10.11"
-fi
-
-if [[ ! -z "$DK_MARIADB_VERSION" ]] ; then
-    MP_MARIADB_VARIANT="+mariadb$DK_MARIADB_VERSION"
-    MP_MARIADB_VARIANT=${MP_MARIADB_VARIANT//./_}
-    MARIADB_SUFFIX="-$DK_MARIADB_VERSION"
-fi
+MP_MARIADB_VARIANT="+mariadb$DK_MARIADB_VERSION"
+MP_MARIADB_VARIANT=${MP_MARIADB_VARIANT//./_}
+MARIADB_SUFFIX="-$DK_MARIADB_VERSION"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
