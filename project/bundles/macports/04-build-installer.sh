@@ -432,7 +432,8 @@ if [ -d "/opt/digikam" ] ; then
     rm -rf "/opt/digikam"
 fi
 
-# This is the offcial main directory containing both applications since many years now
+# NOTE: Use absolute path passed from the installer to store the relocatable application
+#       is stored in the env. var $DSTROOT
 
 if [ -d /Applications/digiKam.org ] ; then
     echo "Removing digiKam.org from Applications folder"
