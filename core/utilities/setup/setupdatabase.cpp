@@ -194,7 +194,7 @@ void SetupDatabase::createUpdateBox()
 
     QPushButton* const infoHash     = new QPushButton;
     infoHash->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
-    infoHash->setToolTip(i18nc("@info:tooltip", "Get information about <interface>Update File Hashes</interface>"));
+    infoHash->setToolTip(i18nc("@info:tooltip", "Get information about <b>Update File Hashes</b>"));
 
     updateLayout->addWidget(d->hashesButton, 0, 0);
     updateLayout->addWidget(infoHash,        0, 1);
