@@ -1,0 +1,2 @@
++EXIV2 Snapshoot 2024-09-19
+exiv2:a6a79ef064f131ffd03c110acce2d3edb84ffa2e
