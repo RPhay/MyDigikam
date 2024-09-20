@@ -330,11 +330,11 @@ cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Reso
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
-    cp $ORIG_WD/data/qt.conf.qt5 "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp $ORIG_WD/data/qt.conf.qt5 "$TEMPROOT/digikam.app/Contents/Resources/qt.conf"
 
 else
 
-    cp $ORIG_WD/data/qt.conf.qt6 "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp $ORIG_WD/data/qt.conf.qt6 "$TEMPROOT/digikam.app/Contents/Resources/qt.conf"
 
 fi
 
@@ -409,6 +409,9 @@ echo "---------- Create package pre-install script"
 cat << EOF > "$PROJECTDIR/preinstall"
 #!/bin/bash
 
+# This is the legacy install paths
+# TODO: remove this legacy rules in the future
+
 if [ -d /Applications/digiKam ] ; then
     echo "Removing digiKam directory from Applications folder"
     rm -r /Applications/digiKam
@@ -428,6 +431,14 @@ if [ -d "/opt/digikam" ] ; then
     echo "Removing legacy /opt/digikam"
     rm -rf "/opt/digikam"
 fi
+
+# This is the offcial main directory containing both applications since many years now
+
+if [ -d /Applications/digiKam.org ] ; then
+    echo "Removing digiKam.org from Applications folder"
+    rm -r /Applications/digiKam.org
+fi
+
 EOF
 
 # Pre-install script need to be executable
