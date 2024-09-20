@@ -241,17 +241,9 @@ DigikamApp::DigikamApp()
 
 #endif // HAVE_KFILEMETADATA
 
-#ifdef Q_OS_WIN
-
-    setAutoSaveSettings(configGroupName(), false);
-
-#else
+    LoadSaveThread::setInfoProvider(new DatabaseLoadSaveFileInfoProvider);
 
     setAutoSaveSettings(configGroupName(), true);
-
-#endif
-
-    LoadSaveThread::setInfoProvider(new DatabaseLoadSaveFileInfoProvider);
 
     setupSelectToolsAction();
 }

@@ -96,9 +96,6 @@ public:
     void setConfigGroupName(const QString& name);
     QString configGroupName() const;
 
-    void restoreWindowSize();
-    void saveWindowSize();
-
     /**
      * Create common actions to setup all digiKam main windows.
      */
@@ -166,7 +163,7 @@ public:
 
 public:
 
-    static bool restoreWindowSize(QWindow* const win, const KConfigGroup& group);
+    static void restoreWindowSize(QWindow* const win, const KConfigGroup& group);
     static void saveWindowSize(QWindow* const win, KConfigGroup& group);
     static void setGoodDefaultWindowSize(QWindow* const win);
 
@@ -204,7 +201,6 @@ protected:
      */
     void editKeyboardShortcuts(KActionCollection* const extraac = nullptr, const QString& actitle = QString());
 
-    void showEvent(QShowEvent* e)              override;
     void closeEvent(QCloseEvent* e)            override;
     void keyPressEvent(QKeyEvent* e)           override;
     bool eventFilter(QObject* obj, QEvent* ev) override;
@@ -291,14 +287,6 @@ private:
      * Common code to run before closing window.
      */
     void checkFullScreenBeforeClosing();
-
-private:
-
-    bool m_winLoaded  = false;
-    bool m_maximized  = false;
-
-    int  m_goodHeight = 0;
-    int  m_goodWidth  = 0;
 
 private:
 
