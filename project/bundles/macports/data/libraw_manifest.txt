@@ -1,2 +1,0 @@
-+LIBRAW Snapshoot 2024-08-20
-libraw:70f511871e002942d3e6b60c99fe04ce5c0c605b
