@@ -1003,6 +1003,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
             observer->imageProcessed();
         }
     }
+
 #if ENABLE_DEBUG_DUPLICATES
 
     DEBUG_DUPLICATES("Results:");
