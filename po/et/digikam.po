@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:55+0000\n"
+"POT-Creation-Date: 2024-09-21 01:50+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1078,9 +1078,9 @@ msgstr ""
 "p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1128
-#: core/utilities/imageeditor/main/imagewindow.cpp:1153
-#: core/utilities/imageeditor/main/imagewindow.cpp:1185
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
@@ -1449,7 +1449,7 @@ msgstr "Andmebaasi lugemine..."
 msgid "Loading albums..."
 msgstr "Albumite laadimine %v%"
 
-#: core/app/main/digikamapp.cpp:370
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1460,7 +1460,7 @@ msgstr ""
 "määrata, vali \"Jah\", vastasel juhul \"Ei\". Viimasel juhul on "
 "\"värvihalduse\" võimalused välja lülitatud, kuni sa probleemi lahendad.</p>"
 
-#: core/app/main/digikamapp.cpp:426
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1469,21 +1469,21 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:712 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ühtegi elementi pole valitud (%1 element)"
 msgstr[1] "Ühtegi elementi pole valitud (%1 elementi)"
 
-#: core/app/main/digikamapp.cpp:718
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ühtegi elementi pole valitud (%1 [%2] element)"
 msgstr[1] "Ühtegi elementi pole valitud (%1 [%2] elementi)"
 
-#: core/app/main/digikamapp.cpp:723
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1492,7 +1492,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Ühtegi elementi pole valitud (%1 elementi. Koos rühmitatud elementidega: %2)"
 
-#: core/app/main/digikamapp.cpp:734
+#: core/app/main/digikamapp.cpp:726
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected (%3/%4)"
 msgid "1/%2 item selected (%3/%4)"
@@ -1500,7 +1500,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 elementi valitud (%3/%4)"
 msgstr[1] "%1/%2 elementi valitud (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:739
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3] items selected (%4/%5)"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1508,7 +1508,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] elementi valitud (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementi valitud (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:747
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1516,7 +1516,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 elementi valitud. Kokku koos rühmitatud elementidega: %3"
 msgstr[1] "%1/%2 elementi valitud. Kokku koos rühmitatud elementidega: %3"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:755
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3/%4] items selected (%5/%6)"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1524,7 +1524,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] elementi valitud (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementi valitud (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:772
+#: core/app/main/digikamapp.cpp:764
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1532,36 +1532,36 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 elementi valitud. Koos rühmitatud elementidega: %3/%4"
 msgstr[1] "%1/%2 elementi valitud. Koos rühmitatud elementidega: %3/%4"
 
-#: core/app/main/digikamapp.cpp:803
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 %2-st)"
 
-#: core/app/main/digikamapp.cpp:817
+#: core/app/main/digikamapp.cpp:809
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 / %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:821
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 %2-st. Kokku koos rühmitatud elementidega: %3)"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element peidetud"
 msgstr[1] "%1 elementi peidetud"
 
-#: core/app/main/digikamapp.cpp:884
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Kirjuta metaandmed faili"
 msgstr[1] "Kirjuta metaandmed valitud failidesse"
 
-#: core/app/main/digikamapp.cpp:886
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3342,8 +3342,8 @@ msgid "no item"
 msgstr "elemente pole"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:456
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:490
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:448
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:482
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -22831,7 +22831,7 @@ msgstr "Esita"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:301
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:293
 #, kde-format
 msgid "Stop"
 msgstr "Peata"
@@ -34035,7 +34035,7 @@ msgid "Remove Black Frame"
 msgstr "Must kaader......"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:355
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
 #, kde-format
 msgid "Clear List"
 msgstr "Puhasta nimekiri"
@@ -39597,7 +39597,7 @@ msgid "Description"
 msgstr "Kirjeldus"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1980
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -41467,7 +41467,7 @@ msgstr "Valguslaud"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:59
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:204
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Hulgi-järjekorrahaldur"
@@ -45115,7 +45115,7 @@ msgid "Mod.: %1"
 msgstr "Muudetud: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:275
+#: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -45734,13 +45734,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Arendaja (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Notifications"
 msgstr "Seadista seda veergu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:133
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -53113,7 +53113,7 @@ msgstr "Avatavad failid või kataloogid"
 msgid "Loading themes..."
 msgstr "Teemade laadimine..."
 
-#: core/showfoto/main/showfoto.cpp:234
+#: core/showfoto/main/showfoto.cpp:226
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -53124,14 +53124,14 @@ msgstr ""
 "määrata, vali \"Jah\", vastasel juhul \"Ei\". Viimasel juhul on "
 "\"värvihalduse\" võimalused välja lülitatud, kuni sa probleemi lahendad.</p>"
 
-#: core/showfoto/main/showfoto.cpp:274
+#: core/showfoto/main/showfoto.cpp:266
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/showfoto/main/showfoto.cpp:299
-#: core/utilities/imageeditor/main/imagewindow.cpp:513
+#: core/showfoto/main/showfoto.cpp:291
+#: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -53161,8 +53161,8 @@ msgid "Remote file handling is not supported"
 msgstr "Kaugfailide käitlemine ei ole toetatud"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:596
-#: core/utilities/imageeditor/main/imagewindow.cpp:711
+#: core/utilities/imageeditor/main/imagewindow.cpp:588
+#: core/utilities/imageeditor/main/imagewindow.cpp:703
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Pilt salvestati edukalt"
@@ -54651,7 +54651,7 @@ msgid "&Abort"
 msgstr "K&atkesta"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:938
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Processing..."
 msgstr "Töötlemine..."
@@ -62481,7 +62481,7 @@ msgstr ""
 "Selle valimisel tähistatakse sihtpildi eelvaatlusel ülesäritusega pikslid."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:467
-#: core/utilities/import/main/importui.cpp:514
+#: core/utilities/import/main/importui.cpp:506
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -62550,8 +62550,8 @@ msgid "Rotate Right"
 msgstr "Pööramine paremale"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:556
-#: core/utilities/import/main/importui.cpp:559
-#: core/utilities/import/main/importui.cpp:802
+#: core/utilities/import/main/importui.cpp:551
+#: core/utilities/import/main/importui.cpp:794
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -62861,36 +62861,36 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Ava rakendusega ..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:208
+#: core/utilities/imageeditor/main/imagewindow.cpp:200
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Pildiredaktor - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:212
+#: core/utilities/imageeditor/main/imagewindow.cpp:204
 #, kde-format
 msgid "Image Editor"
 msgstr "Pildiredaktor"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:382
+#: core/utilities/imageeditor/main/imagewindow.cpp:374
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:383
+#: core/utilities/imageeditor/main/imagewindow.cpp:375
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Aktiivses albumis pole pilte"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:957
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -62899,7 +62899,7 @@ msgstr ""
 "Aktiivses albumis pole ühtki pilti näidata.\n"
 "Pildiredaktor pannakse kinni."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -62907,7 +62907,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Fail pole kättesaadav"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1231
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -63160,7 +63160,7 @@ msgstr "<filename>%1</filename> metaandmete hankimine nurjus"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2497
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename> allalaadimine nurjus"
@@ -63506,170 +63506,170 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "See element on juba alla laaditud"
 
-#: core/utilities/import/main/importui.cpp:164
+#: core/utilities/import/main/importui.cpp:156
 #, fuzzy, kde-format
 #| msgid "Set how digiKam will rename files as they are downloaded."
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "Siin saab määrata, kuidas digiKam nimetab faile allalaadimisel ümber."
 
-#: core/utilities/import/main/importui.cpp:165
+#: core/utilities/import/main/importui.cpp:157
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Failide ümbernimetamise valikud"
 
-#: core/utilities/import/main/importui.cpp:171
+#: core/utilities/import/main/importui.cpp:163
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Albumite automaatne loomine"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:169
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Lennult operatsioonid (ainult JPEG)"
 
-#: core/utilities/import/main/importui.cpp:185
+#: core/utilities/import/main/importui.cpp:177
 #, fuzzy, kde-format
 #| msgid "DNG Convert Options"
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "DNG teisendamise valikud"
 
-#: core/utilities/import/main/importui.cpp:193
+#: core/utilities/import/main/importui.cpp:185
 #, fuzzy, kde-format
 #| msgid "Scripting"
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Skriptide kasutamine"
 
-#: core/utilities/import/main/importui.cpp:197
+#: core/utilities/import/main/importui.cpp:189
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "Seadistused"
 
-#: core/utilities/import/main/importui.cpp:212
+#: core/utilities/import/main/importui.cpp:204
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Loobu"
 
-#: core/utilities/import/main/importui.cpp:219
+#: core/utilities/import/main/importui.cpp:211
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Teave"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:218
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:238
+#: core/utilities/import/main/importui.cpp:230
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: core/utilities/import/main/importui.cpp:246
+#: core/utilities/import/main/importui.cpp:238
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Ära vali midagi"
 
-#: core/utilities/import/main/importui.cpp:254
+#: core/utilities/import/main/importui.cpp:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Vaheta valik"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:254
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Vali uued elemendid"
 
-#: core/utilities/import/main/importui.cpp:269
+#: core/utilities/import/main/importui.cpp:261
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Vali lukustatud elemendid"
 
-#: core/utilities/import/main/importui.cpp:277
+#: core/utilities/import/main/importui.cpp:269
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Allalaadimine"
 
-#: core/utilities/import/main/importui.cpp:282
+#: core/utilities/import/main/importui.cpp:274
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Laadi alla uued"
 
-#: core/utilities/import/main/importui.cpp:292
+#: core/utilities/import/main/importui.cpp:284
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Laadi valitud alla"
 
-#: core/utilities/import/main/importui.cpp:299
+#: core/utilities/import/main/importui.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Laadi kõik alla"
 
-#: core/utilities/import/main/importui.cpp:307
+#: core/utilities/import/main/importui.cpp:299
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Laadi alla ja kustuta uued"
 
-#: core/utilities/import/main/importui.cpp:315
+#: core/utilities/import/main/importui.cpp:307
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Laadi valitud alla ja kustuta"
 
-#: core/utilities/import/main/importui.cpp:323
+#: core/utilities/import/main/importui.cpp:315
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Laadi kõik alla ja kustuta"
 
-#: core/utilities/import/main/importui.cpp:330
+#: core/utilities/import/main/importui.cpp:322
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Laadi üles ..."
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:330
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Lülita lukustust"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:338
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Märgi allalaadituks"
 
-#: core/utilities/import/main/importui.cpp:353
+#: core/utilities/import/main/importui.cpp:345
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Kustuta"
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete Selected"
@@ -63677,7 +63677,7 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Kustuta valitud"
 
-#: core/utilities/import/main/importui.cpp:366
+#: core/utilities/import/main/importui.cpp:358
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete All"
@@ -63685,7 +63685,7 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Kustuta kõik"
 
-#: core/utilities/import/main/importui.cpp:372
+#: core/utilities/import/main/importui.cpp:364
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete New"
@@ -63693,64 +63693,64 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Kustuta uued"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:372
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Vaated"
 
-#: core/utilities/import/main/importui.cpp:384
+#: core/utilities/import/main/importui.cpp:376
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Pisipildid"
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:383
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Elemendi eelvaatlus"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:393
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Kaart"
 
-#: core/utilities/import/main/importui.cpp:413
+#: core/utilities/import/main/importui.cpp:405
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "Elementide &sortimine"
 
-#: core/utilities/import/main/importui.cpp:414
+#: core/utilities/import/main/importui.cpp:406
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "Väärtus, mille järgi elemente sorditakse pisipildivaates"
 
-#: core/utilities/import/main/importui.cpp:419
+#: core/utilities/import/main/importui.cpp:411
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Nime järgi"
 
-#: core/utilities/import/main/importui.cpp:420
+#: core/utilities/import/main/importui.cpp:412
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Asukoha järgi"
 
-#: core/utilities/import/main/importui.cpp:421
+#: core/utilities/import/main/importui.cpp:413
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Kuupäeva järgi"
 
-#: core/utilities/import/main/importui.cpp:422
+#: core/utilities/import/main/importui.cpp:414
 #, fuzzy, kde-format
 #| msgctxt "item:inmenu Sort by"
 #| msgid "By Size"
@@ -63758,14 +63758,14 @@ msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Suuruse järgi"
 
-#: core/utilities/import/main/importui.cpp:423
+#: core/utilities/import/main/importui.cpp:415
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Hinnangu järgi"
 
-#: core/utilities/import/main/importui.cpp:424
+#: core/utilities/import/main/importui.cpp:416
 #, fuzzy, kde-format
 #| msgctxt "item:inmenu Sort by"
 #| msgid "By Download State"
@@ -63773,7 +63773,7 @@ msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Allalaadimisoleku järgi"
 
-#: core/utilities/import/main/importui.cpp:448
+#: core/utilities/import/main/importui.cpp:440
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -63781,133 +63781,133 @@ msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Elementide s&ortimise järjekord"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:441
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "Määrab, kas elemendid sorditakse kasvavas või kahanevas järjekorras."
 
-#: core/utilities/import/main/importui.cpp:453
+#: core/utilities/import/main/importui.cpp:445
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Kasvav"
 
-#: core/utilities/import/main/importui.cpp:455
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Kahanev"
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:459
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "Elementide &rühmitamine"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:460
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Kategooriad, mille järgi kuvatakse pisipildivaates elemente"
 
-#: core/utilities/import/main/importui.cpp:473
+#: core/utilities/import/main/importui.cpp:465
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Ühtlane nimekiri"
 
-#: core/utilities/import/main/importui.cpp:474
+#: core/utilities/import/main/importui.cpp:466
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Kataloogi järgi"
 
-#: core/utilities/import/main/importui.cpp:475
+#: core/utilities/import/main/importui.cpp:467
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Vormingu järgi"
 
-#: core/utilities/import/main/importui.cpp:476
+#: core/utilities/import/main/importui.cpp:468
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Kuupäeva järgi"
 
-#: core/utilities/import/main/importui.cpp:502
+#: core/utilities/import/main/importui.cpp:494
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "So&bita aknasse"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:499
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Suurendus 100%"
 
-#: core/utilities/import/main/importui.cpp:525
+#: core/utilities/import/main/importui.cpp:517
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Ajaloo näitamine"
 
-#: core/utilities/import/main/importui.cpp:531
+#: core/utilities/import/main/importui.cpp:523
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Pisipildiriba näitamine"
 
-#: core/utilities/import/main/importui.cpp:566
+#: core/utilities/import/main/importui.cpp:558
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Proovi uuesti"
 
-#: core/utilities/import/main/importui.cpp:791
+#: core/utilities/import/main/importui.cpp:783
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Välju eelvaatlusrežiimist"
 
-#: core/utilities/import/main/importui.cpp:796
+#: core/utilities/import/main/importui.cpp:788
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Järgmine pilt"
 
-#: core/utilities/import/main/importui.cpp:808
+#: core/utilities/import/main/importui.cpp:800
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Esimene pilt"
 
-#: core/utilities/import/main/importui.cpp:813
+#: core/utilities/import/main/importui.cpp:805
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Viimane pilt"
 
-#: core/utilities/import/main/importui.cpp:914
+#: core/utilities/import/main/importui.cpp:906
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Aktiivne toiming katkestatakse, palun oota ..."
 
-#: core/utilities/import/main/importui.cpp:970
+#: core/utilities/import/main/importui.cpp:962
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Kas sulgeda dialoog ja katkestada aktiivne toiming?"
 
-#: core/utilities/import/main/importui.cpp:980
+#: core/utilities/import/main/importui.cpp:972
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Kaamera lahutamine, palun oota ..."
 
-#: core/utilities/import/main/importui.cpp:1057
+#: core/utilities/import/main/importui.cpp:1049
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -63915,7 +63915,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Valmis"
 
-#: core/utilities/import/main/importui.cpp:1114
+#: core/utilities/import/main/importui.cpp:1106
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63925,13 +63925,13 @@ msgstr ""
 "Ühenduse loomine kaameraga nurjus. Palun kontrolli, kas kaamera on "
 "korralikult ühendatud ja sisse lülitatud."
 
-#: core/utilities/import/main/importui.cpp:1208
+#: core/utilities/import/main/importui.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Üleslaaditava pildi valik"
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1235
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63946,7 +63946,7 @@ msgstr ""
 "Nõutav ruum: %1\n"
 "Saadaolev vaba ruum: %2"
 
-#: core/utilities/import/main/importui.cpp:1298
+#: core/utilities/import/main/importui.cpp:1290
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -63961,7 +63961,7 @@ msgstr ""
 "<qt>Kaamera kataloog <resource>%1</resource> sisaldab juba elementi "
 "<resource>%2</resource>.<br/>Palun sisesta uus nimi (ilma laiendita):</qt>"
 
-#: core/utilities/import/main/importui.cpp:1302
+#: core/utilities/import/main/importui.cpp:1294
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -63969,7 +63969,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Fail on juba olemas"
 
-#: core/utilities/import/main/importui.cpp:1371
+#: core/utilities/import/main/importui.cpp:1363
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63979,7 +63979,7 @@ msgstr ""
 "Sinu kohandatud sihtalbumi kuupäevavorming ei ole korrektne. Palun kontrolli "
 "oma seadistusi ..."
 
-#: core/utilities/import/main/importui.cpp:1411
+#: core/utilities/import/main/importui.cpp:1403
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63991,7 +63991,7 @@ msgstr ""
 "kaamera pilte, ei ole kättesaadav. Palun vali kaamera seadistustedialoogis "
 "mõni muu."
 
-#: core/utilities/import/main/importui.cpp:1420
+#: core/utilities/import/main/importui.cpp:1412
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64001,7 +64001,7 @@ msgstr ""
 "Sinu vaikimisi sihtalbum, kuhu peaks kaamerast fotosid alla laadima, ei ole "
 "kättesaadav. Palun vali kaamera seadistustedialoogis mõni muu."
 
-#: core/utilities/import/main/importui.cpp:1445
+#: core/utilities/import/main/importui.cpp:1437
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64015,7 +64015,7 @@ msgstr ""
 "<p>Palun vali digiKami teegist õige sihtkataloog, kuhu kaamera pildid "
 "importida.</p>"
 
-#: core/utilities/import/main/importui.cpp:1476
+#: core/utilities/import/main/importui.cpp:1468
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64031,19 +64031,19 @@ msgstr ""
 "kaamera pilte, ei ole kättesaadav. Palun vali kaamera seadistustedialoogis "
 "mõni muu."
 
-#: core/utilities/import/main/importui.cpp:1534
+#: core/utilities/import/main/importui.cpp:1526
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> kõrvalfaili salvestamine nurjus"
 
-#: core/utilities/import/main/importui.cpp:1541
+#: core/utilities/import/main/importui.cpp:1533
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> kõrvalfaili salvestamine nurjus"
 
-#: core/utilities/import/main/importui.cpp:1985
+#: core/utilities/import/main/importui.cpp:1977
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64054,7 +64054,7 @@ msgstr ""
 "Allpool loetletud elemendid on kaameras lukustatud (kirjutuskaitstud). Neid "
 "ei kustutata. Kui soovid neid tõesti kustutada, eemalda kõigepealt lukustus."
 
-#: core/utilities/import/main/importui.cpp:1996
+#: core/utilities/import/main/importui.cpp:1988
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64079,20 +64079,20 @@ msgstr[1] ""
 "Kavatsed need %1 pilti kustutada. <b>Kustutatud faile ei ole võimalik "
 "taastada.</b> Kas oled kindel?"
 
-#: core/utilities/import/main/importui.cpp:2006
+#: core/utilities/import/main/importui.cpp:1998
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: core/utilities/import/main/importui.cpp:2050
+#: core/utilities/import/main/importui.cpp:2042
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Kettal napib ruumi"
 
-#: core/utilities/import/main/importui.cpp:2051
+#: core/utilities/import/main/importui.cpp:2043
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64112,8 +64112,8 @@ msgstr ""
 "\n"
 "Kas ikkagi proovida?"
 
-#: core/utilities/import/main/importui.cpp:2319
-#: core/utilities/import/main/importui.cpp:2345
+#: core/utilities/import/main/importui.cpp:2311
+#: core/utilities/import/main/importui.cpp:2337
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -64121,7 +64121,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ühtegi elementi pole valitud (%1 element)"
 msgstr[1] "Ühtegi elementi pole valitud (%1 elementi)"
 
-#: core/utilities/import/main/importui.cpp:2338
+#: core/utilities/import/main/importui.cpp:2330
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -64129,7 +64129,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 / %3)"
 
-#: core/utilities/import/main/importui.cpp:2355
+#: core/utilities/import/main/importui.cpp:2347
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -64137,22 +64137,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 element valitud"
 msgstr[1] "%2/%1 elementi valitud"
 
-#: core/utilities/import/main/importui.cpp:2440
+#: core/utilities/import/main/importui.cpp:2432
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Fail <filename>%1</filename> jäeti vahele"
 
-#: core/utilities/import/main/importui.cpp:2462
+#: core/utilities/import/main/importui.cpp:2454
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Failile nime <filename>%1</filename> andmine nurjus"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2477
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> kõrvalfaili salvestamine nurjus"
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2554
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -64166,13 +64166,13 @@ msgstr ""
 "Piltide allalaadimine on lõpetatud, nüüd võib kaamera lahti ühendada, kuni "
 "toimub piltide automaatne pööramine"
 
-#: core/utilities/import/main/importui.cpp:2570
+#: core/utilities/import/main/importui.cpp:2562
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Piltide allalaadimine on lõpetatud"
 
-#: core/utilities/import/main/importui.cpp:2596
+#: core/utilities/import/main/importui.cpp:2588
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64184,7 +64184,7 @@ msgstr ""
 "Samanimeline fail (<b>%1</b>) on olemas juba olemas kataloogis <resource>%2</"
 "resource>."
 
-#: core/utilities/import/main/importui.cpp:2609
+#: core/utilities/import/main/importui.cpp:2601
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to find Album for path <b>%1</b>."
@@ -64834,7 +64834,7 @@ msgstr "Puhasta kõik"
 msgid "Drag and drop images here"
 msgstr "Lohista pildid siia"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:210
+#: core/utilities/lighttable/lighttablewindow.cpp:201
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -65487,154 +65487,154 @@ msgstr "Andmebaasi uuendamine piltide metaandmete põhjal"
 msgid "Thumbs"
 msgstr "Pisipildid"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
 #, kde-format
 msgid "Queues"
 msgstr "Järjekorrad"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:136
 #, kde-format
 msgid "Queue Settings"
 msgstr "Järjekorra seadistused"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
 #, kde-format
 msgid "Control Panel"
 msgstr "Juhtimispaneel"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:154
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Omistatud tööriistad"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:171
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:163
 #, kde-format
 msgid "Tool Settings"
 msgstr "Tööriista seadistused"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run"
 msgstr "Käivita"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:295
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
 #, kde-format
 msgid "Run all"
 msgstr "Käivita kõik"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:307
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
 #, kde-format
 msgid "New Queue"
 msgstr "Uus järjekord"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:311
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:303
 #, kde-format
 msgid "Remove Queue"
 msgstr "Eemalda järjekord"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
 #, kde-format
 msgid "Save Workflow"
 msgstr "Salvesta töövoog"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:321
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
 #, kde-format
 msgid "Remove items"
 msgstr "Eemalda elemendid"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:327
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
 #, kde-format
 msgid "Remove processed items"
 msgstr "Eemalda töödeldud elemendid"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:324
 #, kde-format
 msgid "Clear Queue"
 msgstr "Puhasta järjekord"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:335
 #, kde-format
 msgid "Move up"
 msgstr "Liiguta üles"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:339
 #, kde-format
 msgid "Move down"
 msgstr "Liiguta alla"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:351
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
 #, kde-format
 msgid "Remove tool"
 msgstr "Eemalda tööriist"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:444
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
 #, kde-format
 msgid "Current Queue: "
 msgstr "Aktiivne järjekord: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:450
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:484
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:442
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:476
 #, kde-format
 msgid "No items"
 msgstr "Elemendid puuduvad"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:467
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:459
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:493
 #, kde-format
 msgid "No tasks"
 msgstr "Ülesandeid pole"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:507
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:465
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:499
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 ülesanne"
 msgstr[1] "%1 ülesannet"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:478
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
 #, fuzzy, kde-format
 #| msgid "Total: "
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "Kokku: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:516
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Valmis"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:554
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, fuzzy, kde-format
 #| msgid "Processing under progress"
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Käib töötlemine"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:555
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:547
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "Hulgi-järjekorrahaldur töötab. Kas soovid lõpetada käimasoleva töö?"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "Pole ühtegi järjekorda käivitada."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:658
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:650
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Aktiivses järjekorras (%1) pole ühtegi elementi, mida töödelda."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:664
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:656
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 "Kohandatud ümbernimetamise reeglid ei sobi aktiivsele järjekorrale (%1). "
 "Palun paranda see."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:669
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:661
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
@@ -65643,20 +65643,20 @@ msgstr ""
 "Omistatud hulgitööriistade nimekiri on aktiivse järjekorra (%1) puhul tühi. "
 "Palun omista tööriistad."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:701
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:693
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Järjekordades pole elemente, mida töödelda."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:873
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:883
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, fuzzy, kde-format
 #| msgid "Processed items album settings"
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Töödeldud elementide albumi seadistused"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:866
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -65665,7 +65665,7 @@ msgstr ""
 "Albumit, mis peaks hakkama sisaldama järjekorra \"%1\" töödeldud pilte, ei "
 "ole määratud. Palun vali see järjekorra seadistuste paneelilt."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:884
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:876
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -65675,27 +65675,27 @@ msgstr ""
 "kättesaadav või on kirjutuskaitstud. Palun vali mõni muu järjekorra "
 "seadistuste paneelilt."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:955
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Elemendi töötlemine nurjus..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:976
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:968
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Töötlemine on katkestatud..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:988
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Element \"%1\" järjekorrast \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1025
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1017
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Hulgijärjekord on valmis"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1029
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Kõik hulgijärjekorrad on valmis"
@@ -71079,9 +71079,11 @@ msgstr ""
 "oma andmebaasi digiKami versiooniga vähem kui 2.0.</qt>"
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <interface>Update File Hashes</interface>"
 msgctxt "@info:tooltip"
-msgid "Get information about <interface>Update File Hashes</interface>"
+msgid "Get information about <b>Update File Hashes</b>"
 msgstr "Teave <interface>failiräsi uuendamise</interface> kohta"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
