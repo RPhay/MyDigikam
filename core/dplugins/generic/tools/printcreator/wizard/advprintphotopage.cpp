@@ -1140,9 +1140,9 @@ void AdvPrintPhotoPage::slotPageSetup()
 
     if (ret == QDialog::Accepted)
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new size "
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new size: "
                                      << d->printer->pageLayout().pageSize().size(QPageSize::Millimeter)
-                                     << " previous size "
+                                     << " previous size: "
                                      << pageLayout.pageSize().size(QPageSize::Millimeter);
 
         qreal left, top, right, bottom;
@@ -1152,13 +1152,13 @@ void AdvPrintPhotoPage::slotPageSetup()
         right        = margins.right();
         bottom       = margins.bottom();
 
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new margins: left "
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new margins: left: "
                                      << left
-                                     << " right "
+                                     << " right: "
                                      << right
-                                     << " top "
+                                     << " top: "
                                      << top
-                                     << " bottom "
+                                     << " bottom: "
                                      << bottom;
 
         // next should be useless invoke once changing wizard page
