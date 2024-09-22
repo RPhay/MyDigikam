@@ -174,8 +174,6 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 
     cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
 
-    mv -f $VCPKG_INSTALL_PREFIX/Qt6/plugins/kiconthemes6                  $BUNDLEDIR/                           2>/dev/null
-
 else
 
     cp $BUILDDIR/../common/breeze.rcc                                     $BUNDLEDIR/breeze.rcc                 2>/dev/null
@@ -453,6 +451,14 @@ for vscompdll in $VS_DLL_COMP ; do
     cp -r "$vscompdll" $BUNDLEDIR/ 2>/dev/null
 
 done
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    # Group icon-engine plugins at the same place
+    mv -f $BUNDLEDIR/plugins/kiconthemes6/iconengines/*.dll $BUNDLEDIR/plugins/iconengines/
+    rm -fr $BUNDLEDIR/plugins/kiconthemes6
+
+fi
 
 #################################################################################################
 # Install ExifTool binary.

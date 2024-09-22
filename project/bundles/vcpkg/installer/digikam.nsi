@@ -259,9 +259,6 @@
         SetOutPath "$INSTDIR\resources"
         File /r "${BUNDLEPATH}\resources\*.*"
 
-        SetOutPath "$INSTDIR\kiconthemes6"
-        File /r "${BUNDLEPATH}\kiconthemes6\*.*"
-
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
@@ -354,7 +351,6 @@
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\resources"
-        RMDir /r "$INSTDIR\kiconthemes6"
         RMDir /r "$INSTDIR\translations"
         RMDir /r "$INSTDIR\exiftool_files"
 
