@@ -418,20 +418,26 @@ QPixmap ItemDelegate::pixmapForDrag(const QStyleOptionViewItem& option, const QL
     return makeDragPixmap(option, indexes, displayRatio(), icon);
 }
 
-bool ItemDelegate::acceptsToolTip(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                   QRect* toolTipRect) const
+bool ItemDelegate::acceptsToolTip(const QPoint& pos,
+                                  const QRect& visualRect,
+                                  const QModelIndex& index,
+                                  QRect* toolTipRect) const
 {
     return onActualPixmapRect(pos, visualRect, index, toolTipRect);
 }
 
-bool ItemDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                      QRect* activationRect) const
+bool ItemDelegate::acceptsActivation(const QPoint& pos,
+                                     const QRect& visualRect,
+                                     const QModelIndex& index,
+                                     QRect* activationRect) const
 {
     return onActualPixmapRect(pos, visualRect, index, activationRect);
 }
 
-bool ItemDelegate::onActualPixmapRect(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                       QRect* returnRect) const
+bool ItemDelegate::onActualPixmapRect(const QPoint& pos,
+                                      const QRect& visualRect,
+                                      const QModelIndex& index,
+                                      QRect* returnRect) const
 {
     QRect actualRect = actualPixmapRect(index);
 
@@ -478,7 +484,7 @@ void ItemDelegate::updateContentWidth()
 {
     Q_D(ItemDelegate);
 
-    d->contentWidth = d->thumbSize.size() + 2*d->radius;
+    d->contentWidth = d->thumbSize.size() + 2 * d->radius;
 }
 
 void ItemDelegate::updateSizeRectsAndPixmaps()
@@ -580,7 +586,7 @@ int ItemDelegate::calculatethumbSizeToFit(int ws)
     int ts     = thumbnailSize().size();
     int gs     = gridSize().width();
     int sp     = spacing();
-    ws         = ws - 2*sp;
+    ws         = ws - 2 * sp;
 
     // Thumbnails size loop to check (upper/lower)
 
@@ -594,7 +600,7 @@ int ItemDelegate::calculatethumbSizeToFit(int ws)
 
     for (ts1 = ts ; ts1 < ThumbnailSize::maxThumbsSize() ; ++ts1)
     {
-        ngs        = ts1 + 2*(d->margin + d->radius) + sp;
+        ngs        = ts1 + 2 * (d->margin + d->radius) + sp;
         double nrs = fmod((double)ws, (double)ngs);
 
         if (nrs <= rs1)
@@ -611,7 +617,7 @@ int ItemDelegate::calculatethumbSizeToFit(int ws)
 
     for (ts2 = ts ; ts2 > ThumbnailSize::Small ; --ts2)
     {
-        ngs        = ts2 + 2*(d->margin + d->radius) + sp;
+        ngs        = ts2 + 2 * (d->margin + d->radius) + sp;
         double nrs = fmod((double)ws, (double)ngs);
 
         if (nrs >= rs2)

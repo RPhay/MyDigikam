@@ -81,7 +81,7 @@ void DigikamItemDelegate::updateRects()
         d->pickLabelRect                     = QRect(d->margin, y - d->margin, pickIconSize, pickIconSize);
     }
 
-    d->coordinatesRect                       = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
+    d->coordinatesRect                       = QRect(d->contentWidth - iconSize + 2, d->pixmapRect.top(), iconSize, iconSize);
     d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - d->margin, iconSize, iconSize);
     const bool showInfos                     = ((d->contentWidth - 2 * d->radius) > ThumbnailSize::Small);
 
@@ -147,7 +147,7 @@ void DigikamItemDelegate::updateRects()
 
     d->imageInformationRect.setBottom(y);
 
-    d->rect     = QRect(0, 0, d->contentWidth + 2*d->margin, y+d->margin+d->radius);
+    d->rect     = QRect(0, 0, d->contentWidth + 2 * d->margin, y + d->margin + d->radius);
     d->gridSize = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
 }
 

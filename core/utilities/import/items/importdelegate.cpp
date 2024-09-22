@@ -552,7 +552,7 @@ int ImportDelegate::calculatethumbSizeToFit(int ws)
     int ts     = thumbnailSize().size();
     int gs     = gridSize().width();
     int sp     = spacing();
-    ws         = ws - 2*sp;
+    ws         = ws - 2 * sp;
 
     // Thumbnails size loop to check (upper/lower)
 
@@ -566,7 +566,7 @@ int ImportDelegate::calculatethumbSizeToFit(int ws)
 
     for (ts1 = ts ; ts1 < ThumbnailSize::maxThumbsSize() ; ++ts1)
     {
-        ngs        = ts1 + 2*(d->margin + d->radius) + sp;
+        ngs        = ts1 + 2 * (d->margin + d->radius) + sp;
         double nrs = fmod((double)ws, (double)ngs);
 
         if (nrs <= rs1)
@@ -583,7 +583,7 @@ int ImportDelegate::calculatethumbSizeToFit(int ws)
 
     for (ts2 = ts ; ts2 > ThumbnailSize::Small ; --ts2)
     {
-        ngs        = ts2 + 2*(d->margin + d->radius) + sp;
+        ngs        = ts2 + 2 * (d->margin + d->radius) + sp;
         double nrs = fmod((double)ws, (double)ngs);
 
         if (nrs >= rs2)
@@ -648,14 +648,14 @@ int ImportThumbnailDelegate::maximumSize() const
 {
     Q_D(const ImportThumbnailDelegate);
 
-    return ThumbnailSize::maxThumbsSize() + (2*d->radius + 2*d->margin);
+    return ThumbnailSize::maxThumbsSize() + (2 * d->radius + 2 * d->margin);
 }
 
 int ImportThumbnailDelegate::minimumSize() const
 {
     Q_D(const ImportThumbnailDelegate);
 
-    return ThumbnailSize::Small + 2*d->radius + 2*d->margin;
+    return ThumbnailSize::Small + (2 * d->radius + 2 * d->margin);
 }
 
 bool ImportThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect,
@@ -840,7 +840,7 @@ void ImportNormalDelegate::updateRects()
 
     d->imageInformationRect.setBottom(y);
 
-    d->rect     = QRect(0, 0, d->contentWidth + 2 * d->margin, y+d->margin+d->radius);
+    d->rect     = QRect(0, 0, d->contentWidth + 2 * d->margin, y + d->margin + d->radius);
     d->gridSize = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
 }
 
