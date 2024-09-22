@@ -113,7 +113,7 @@ BUGFIXES:
 090 ==> 426968 - Album title bar in icon view should be a selection switch.
 091 ==> 493388 - Inconsistent timeline display due to timezone handling in videos vs. photos.
 092 ==> 493426 - digiKam 8.4.0 crashes with STR+ALT+Fx.
-093 ==> 
+093 ==> 493453 - Pick labels partially block the filename in the main view when thumbnails are certain sizes.
 094 ==> 
 095 ==> 
 096 ==> 
