@@ -73,16 +73,17 @@ void DigikamItemDelegate::updateRects()
     ApplicationSettings* const albumSettings = ApplicationSettings::instance();
     d->drawImageFormat                       = albumSettings->getIconShowImageFormat();
     d->drawCoordinates                       = albumSettings->getIconShowCoordinates();
-    const int iconSize                       = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
+    const int iconSize                       = qBound(16, (d->contentWidth + 2 * d->margin) / 8 - 2, 48);
 
     if (albumSettings->getIconShowPickLabel())
     {
-        d->pickLabelRect                     = QRect(d->margin, y - d->margin, iconSize, iconSize);
+        const int pickIconSize               = qBound(16, iconSize, 28);
+        d->pickLabelRect                     = QRect(d->margin, y - d->margin, pickIconSize, pickIconSize);
     }
 
     d->coordinatesRect                       = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
     d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - d->margin, iconSize, iconSize);
-    const bool showInfos                     = ((d->contentWidth - 2*d->radius) > ThumbnailSize::Small);
+    const bool showInfos                     = ((d->contentWidth - 2 * d->radius) > ThumbnailSize::Small);
 
     if (albumSettings->getIconShowRating())
     {

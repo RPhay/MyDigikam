@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-18 08:47+0300\n"
+"PO-Revision-Date: 2024-09-21 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67124,12 +67124,10 @@ msgstr ""
 "які передували версії 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr "Дізнатися більше про <interface>оновлення хешів файлів</interface>"
+msgstr "Дізнатися більше про <b>оновлення хешів файлів</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

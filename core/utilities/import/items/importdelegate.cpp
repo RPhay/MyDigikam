@@ -701,16 +701,19 @@ void ImportThumbnailDelegate::updateRects()
     Q_D(ImportThumbnailDelegate);
 
     d->pixmapRect      = QRect(d->margin, d->margin, d->contentWidth, d->contentWidth);
-    d->rect            = QRect(0, 0, d->contentWidth + 2*d->margin, d->contentWidth + 2*d->margin);
+    d->rect            = QRect(0, 0, d->contentWidth + 2 * d->margin, d->contentWidth + 2 * d->margin);
     d->drawImageFormat = ImportSettings::instance()->getIconShowImageFormat();
     d->drawCoordinates = ImportSettings::instance()->getIconShowCoordinates();
 
-    const int iconSize = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
+    const int iconSize = qBound(16, (d->contentWidth + 2 * d->margin) / 8 - 2, 48);
     int pos            = iconSize + 2;
+
     d->downloadRect    = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
-    pos += iconSize;
+    pos               += iconSize;
+
     d->lockRect        = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
-    pos += iconSize;
+    pos               += iconSize;
+
     d->coordinatesRect = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
 
     if (ImportSettings::instance()->getIconShowRating())
@@ -778,17 +781,21 @@ void ImportNormalDelegate::updateRects()
     const ImportSettings* const importSettings = ImportSettings::instance();
     d->drawImageFormat                         = importSettings->getIconShowImageFormat();
     d->drawCoordinates                         = ImportSettings::instance()->getIconShowCoordinates();
-    const int iconSize                         = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
+    const int iconSize                         = qBound(16, (d->contentWidth + 2 * d->margin) / 8 - 2, 48);
+    const int pickIconSize                     = qBound(16, iconSize, 28);
 
-    d->pickLabelRect   = QRect(d->margin, y, iconSize, iconSize);
+    d->pickLabelRect   = QRect(d->margin, y, pickIconSize, pickIconSize);
 /*
     d->groupRect       = QRect(d->contentWidth - iconSize, y, iconSize, iconSize); // TODO
 */
     int pos            = iconSize + 2;
+
     d->downloadRect    = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
-    pos += iconSize;
+    pos               += iconSize;
+
     d->lockRect        = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
-    pos += iconSize;
+    pos               += iconSize;
+
     d->coordinatesRect = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
 
     if (importSettings->getIconShowRating())
@@ -833,7 +840,7 @@ void ImportNormalDelegate::updateRects()
 
     d->imageInformationRect.setBottom(y);
 
-    d->rect     = QRect(0, 0, d->contentWidth + 2*d->margin, y+d->margin+d->radius);
+    d->rect     = QRect(0, 0, d->contentWidth + 2 * d->margin, y+d->margin+d->radius);
     d->gridSize = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
 }
 

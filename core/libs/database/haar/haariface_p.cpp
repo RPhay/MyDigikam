@@ -180,7 +180,7 @@ bool HaarIface::Private::retrieveSignatureFromCache(qlonglong imageId, Haar::Sig
 
     if (m_signatureCache->contains(imageId))
     {
-        data = m_signatureCache.data()->value(imageId);
+        data = m_signatureCache->value(imageId);
 
         return true;
     }

@@ -205,7 +205,7 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 
         // Split job on multiple threads
 
-        for (int i = 0; i < threadsCount; ++i)
+        for (int i = 0 ; i < threadsCount ; ++i)
         {
             // The last thread should read until the end of the list.
 
@@ -217,7 +217,7 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
             {
                 // TODO: port to std::advance https://en.cppreference.com/w/cpp/iterator/advance
 
-                for (int j = 0; ((end != info.imageIds().constEnd()) && (j < images2ScanPerThread)) ; ++j, ++end);
+                for (int j = 0 ; ((end != info.imageIds().constEnd()) && (j < images2ScanPerThread)) ; ++j, ++end);
             }
 
             SearchesJob* const job = new SearchesJob(info, begin, end, m_haarIface.data());

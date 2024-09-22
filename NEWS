@@ -111,9 +111,9 @@ BUGFIXES:
 088 ==> 487799 - Geolocalization icon always black in thumbnail view.
 089 ==> 486341 - Edit Bookmarks menu item does nothing.
 090 ==> 426968 - Album title bar in icon view should be a selection switch.
-091 ==> 
-092 ==> 
-093 ==> 
+091 ==> 493388 - Inconsistent timeline display due to timezone handling in videos vs. photos.
+092 ==> 493426 - digiKam 8.4.0 crashes with STR+ALT+Fx.
+093 ==> 493453 - Pick labels partially block the filename in the main view when thumbnails are certain sizes.
 094 ==> 
 095 ==> 
 096 ==> 
