@@ -144,7 +144,6 @@ binaries="$OTHER_APPS"
 #
 OTHER_DIRS="\
 libexec/qt$DK_QTVERSION/translations \
-libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
 lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
@@ -158,6 +157,14 @@ etc/ImageMagick* \
 etc/mariadb$MARIADB_SUFFIX \
 "
 
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    OTHER_DIRS=$OTHER_DIRS"\
+    libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework \
+    "
+
+fi
+
 # Additional Data Directories - to be copied recursively
 OTHER_DATA="\
 share/opencv4 \
@@ -168,13 +175,9 @@ share/applications \
 lensfun \
 "
 
-if [[ $ARCH_TARGET = "x86_64" ]] ; then
+if [[ $DK_QTVERSION == 6 ]] ; then
 
-    OTHER_DATA=$OTHER_DATA"\
-    "
-    # NOTE: QtCurve is located in Library/Application
-
-else    # Arm64
+    # NOTE: Qt5Curve is located in Library/Application
 
     OTHER_DATA=$OTHER_DATA"\
     share/QtCurve
