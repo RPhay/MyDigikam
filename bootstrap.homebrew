@@ -16,15 +16,6 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 INSTALL_PREFIX=$1
 
-if [ "$INSTALL_PREFIX" = "" ]; then
-    INSTALL_PREFIX="/opt/hb-digikam.org.arm64"
-    BUNDLE_INSTALL_DIR="/Applications/digiKam.org"
-    BUNDLE_DATA_INSTALL_DIR="/Library/Application Support"
-else
-    BUNDLE_INSTALL_DIR="${INSTALL_PREFIX}/Applications/digiKam.org"
-    BUNDLE_DATA_INSTALL_DIR="${INSTALL_PREFIX}/Library/Application Support"
-fi
-
 BUILD_TYPE=$2
 
 if [ "$BUILD_TYPE" = "" ]; then
@@ -38,6 +29,26 @@ if [ "$TARGET_TYPE" = "" ]; then
 fi
 
 OPTIONS=$4
+
+if [ "$INSTALL_PREFIX" = "" ]; then
+    # copied from .../homebrew/config.sh
+    if [[ $ARCH_TARGET = "x86_64" ]] ; then
+        OSX_MIN_TARGET="10.15"
+        INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
+    elif [[ $ARCH_TARGET = "arm64" ]] ; then
+        OSX_MIN_TARGET="11.3"
+        INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
+    else
+        echo "Unsupported or invalid target architecture..."
+        exit -1
+    fi
+
+    BUNDLE_INSTALL_DIR="/Applications/digiKam.org"
+    BUNDLE_DATA_INSTALL_DIR="/Library/Application Support"
+else
+    BUNDLE_INSTALL_DIR="${INSTALL_PREFIX}/Applications/digiKam.org"
+    BUNDLE_DATA_INSTALL_DIR="${INSTALL_PREFIX}/Library/Application Support"
+fi
 
 echo "Installing to $INSTALL_PREFIX for target $TARGET_TYPE with build mode $BUILD_TYPE and compilation options $OPTIONS"
 

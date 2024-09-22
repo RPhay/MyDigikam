@@ -7,6 +7,7 @@
  *
  * SPDX-FileCopyrightText:      2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -49,7 +50,9 @@ public:
             }
             else
             {
-                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                // TODO: remove SSD model permanently
+                // m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YUNET);
             }
         }
 
@@ -69,7 +72,10 @@ public:
         }
 
         // TODO Handle settings
-
+        if (m_parameters.contains(QLatin1String("accuracy")))
+        {
+                backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("accuracy")).toDouble()));
+        }
 /*
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
              it != m_parameters.constEnd() ; ++it)
@@ -185,6 +191,7 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
         result                = toRelativeRects(absRects,
                                                 QSize(cvImage.cols - 2 * paddedSize.width,
                                                       cvImage.rows - 2 * paddedSize.height));
+
         return result;
     }
     catch (cv::Exception& e)
@@ -211,6 +218,7 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
         result                = toRelativeRects(absRects,
                                                 QSize(cvImage.cols - 2 * paddedSize.width,
                                                       cvImage.rows - 2 * paddedSize.height));
+
     }
     catch (cv::Exception& e)
     {

@@ -456,6 +456,12 @@ void FilesDownloader::createDownloadInfo()
                                 246305388
                                );
 
+        d->files << DownloadInfo(QLatin1String("facesengine/yunet/"),
+                                QLatin1String("face_detection_yunet_2023mar.onnx"),
+                                QLatin1String("8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"),
+                                232589
+                               );
+
         if (qApp->applicationName() == QLatin1String("digikam"))
         {
             d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
