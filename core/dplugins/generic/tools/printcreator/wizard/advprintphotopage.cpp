@@ -275,7 +275,7 @@ void AdvPrintPhotoPage::initializePage()
 
     // create our photo sizes list
 
-    int gid = d->photoUi->m_printer_choice->findText(d->settings->outputName(AdvPrintSettings::GIMP));
+    int gid = d->photoUi->m_printer_choice->findOriginalText(d->settings->outputName(AdvPrintSettings::GIMP));
 
     if (d->settings->gimpPath.isEmpty())
     {
@@ -284,7 +284,7 @@ void AdvPrintPhotoPage::initializePage()
         d->photoUi->m_printer_choice->setItemData(gid, false, Qt::UserRole-1);
     }
 
-    int index = d->photoUi->m_printer_choice->findText(d->settings->printerName);
+    int index = d->photoUi->m_printer_choice->findOriginalText(d->settings->printerName);
 
     if (index != -1)
     {
@@ -756,7 +756,7 @@ void AdvPrintPhotoPage::slotXMLCustomElement(QXmlStreamReader& xmlReader)
             if (!attr.isEmpty())
             {
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " found " << attr.toString();
-                int index = d->photoUi->m_printer_choice->findText(attr.toString());
+                int index = d->photoUi->m_printer_choice->findOriginalText(attr.toString());
 
                 if (index != -1)
                 {
