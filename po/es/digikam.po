@@ -48,7 +48,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-18 11:19+0200\n"
+"PO-Revision-Date: 2024-09-21 13:31+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -66933,14 +66933,12 @@ msgstr ""
 "digiKam anterior a la 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
 msgstr ""
-"Obtener informaciones sobre la <interface>Actualización de los códigos de "
-"los archivos</interface>"
+"Obtener informaciones sobre la <b>Actualización de los códigos de los "
+"archivos</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

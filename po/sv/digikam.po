@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-18 16:53+0200\n"
+"PO-Revision-Date: 2024-09-21 07:49+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -66208,14 +66208,10 @@ msgstr ""
 "äldre än 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Hämta information om <interface>Uppdatera filernas kontrollsummor</"
-"interface>."
+msgstr "Hämta information om <b>Uppdatera filernas kontrollsummor</b>."
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

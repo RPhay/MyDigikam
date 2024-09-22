@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-07-16 22:29+0200\n"
+"PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -910,10 +910,9 @@ msgstr[0] "1 Ero"
 msgstr[1] "%1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "Nevalida subskribo"
+msgstr "Nevalida dato"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -2778,41 +2777,34 @@ msgid "Feedback: "
 msgstr ""
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Dokumentado"
+msgstr "Dokumentado: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "Dosiera Dato"
+msgstr "Konstrudato: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Celo"
+msgstr "Konstrucelo: "
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Nesubtenata Arkitekturo: %1"
+msgstr "Konstrua Arkitekturo:"
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Std. devio:"
+msgstr "Git-Revizio: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git-Branĉo: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -62187,12 +62179,10 @@ msgid "New..."
 msgstr "Nova..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Kopii al..."
+msgstr "Kopii..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -65802,10 +65792,9 @@ msgid "Windows (System)"
 msgstr "Vindozo (Sistemo)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Vindozo (Sistemo)"
+msgstr "Darwin (Sistemo)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -66035,15 +66024,7 @@ msgstr ""
 "Agordu konduton de la aliaj partoj de digiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -66053,12 +66034,13 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"La procezo de ĝisdatigo de la dosieraj haketkodoj daŭras kelkajn minutojn.\n"
+"La procezo ĝisdatigi la dosierajn haketkodojn daŭras kelkajn minutojn aŭ "
+"horojn.\n"
 "Bonvolu certigi, ke iuj gravaj kolektoj sur forpreneblaj medioj estas "
 "konektitaj.\n"
 "Post la ĝisdatigo vi ne povas uzi vian datumbazon kun digiKam-versio antaŭ "
-"2.0.\n"
-"Ĉu vi volas komenci la ĝisdatigon. ?"
+"8.5.0.\n"
+"Ĉu vi volas komenci la ĝisdatigon?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
@@ -66073,15 +66055,7 @@ msgid "Update File Hashes"
 msgstr "Ĝisdatigi Dosierajn Haketojn"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66096,16 +66070,13 @@ msgstr ""
 "uzata. La malnova algoritmo tamen ankoraŭ sufiĉe bone funkcias, do "
 "rekomendas efektivigi ĉi tiun ĝisdatigon, sed ne bezonata.\n"
 "Post la ĝisdatigo vi ne povas uzi vian datumbazon kun digiKam-versio antaŭ "
-"2.0."
+"8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Akiri informojn pri <interface>Ĝisdatigi Dosierajn Haketojn</interface>"
+msgstr "Akiri informojn pri <b>Ĝisdatigi Dosierajn Haketojn</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format
@@ -67028,70 +66999,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgid ""
-#~ "We now switch to the system icon theme. The icon colors are automatically "
-#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
-#~ "restart of digiKam."
-#~ msgstr ""
-#~ "Ni nun ŝanĝas al la sistempiktograma etoso. La piktogramkoloroj aŭtomate "
-#~ "estas ĝustigitaj en labortablo de Plasma-6. La piktogrametoso disponeblas "
-#~ "post rekomenco de digiKam."
-
-#, fuzzy
-#~| msgid ""
-#~| "IRC: %1 - #digikam\n"
-#~| "Feedback: %2\n"
-#~| "Documentation: %3\n"
-#~| "\n"
-#~| "Build date: %4 (target: %5)\n"
-#~| "Revision: %6\n"
-#~| "Branch: %7"
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4\n"
-#~ "Build target: %5\n"
-#~ "Build architecture: %6"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Reago: %2\n"
-#~ "Dokumentado: %3\n"
-#~ "\n"
-#~ "Konstrua dato: %4 (celo: %5)\n"
-#~ "Revizio: %6\n"
-#~ "Branĉo: %7"
-
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Reago: %2\n"
-#~ "Dokumentado: %3\n"
-#~ "\n"
-#~ "Konstrua dato: %4 (celo: %5)"
-
-#~ msgid ""
-#~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of digiKam to get a better "
-#~ "experience with digiKam.</p>"
-#~ msgstr ""
-#~ "<p>Vi rulas digiKam kiel 32-bita versio en 64-bita Vindozo.</p><p>Bonvolu "
-#~ "instali la 64-bitan version de digiKam por akiri pli bonan sperton kun "
-#~ "digiKam.</p>"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of Showfoto to get a better "
-#~ "experience with Showfoto.</p>"
-#~ msgstr ""
-#~ "<p>Vi funkcias Showfoto kiel 32-bita versio sur 64-bita Vindozo.</"
-#~ "p><p>Bonvolu instali la 64-bita versio de Showfoto por akiri pli bonan "
-#~ "sperton kun Showfoto.</p>"

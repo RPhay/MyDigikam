@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-18 07:11+0200\n"
+"PO-Revision-Date: 2024-09-21 08:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -66343,13 +66343,10 @@ msgstr ""
 "starejšim od različice 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Pridobite podrobnosti o <interface>Posodobi razpršila datotek</interface>"
+msgstr "Pridobi informacije o <b>Posodobi razpršila datotek</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

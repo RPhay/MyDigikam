@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-18 10:31+0200\n"
+"PO-Revision-Date: 2024-09-21 10:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -66812,13 +66812,10 @@ msgstr ""
 "8.5.0 niet meer gebruiken."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Informatie ophalen over <interface>Bestandshashes bijwerken</interface>"
+msgstr "Informatie ophalen over <b>Bestandshashes bijwerken</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

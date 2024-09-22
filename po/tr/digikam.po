@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:50+0000\n"
-"PO-Revision-Date: 2024-09-19 19:29+0300\n"
+"PO-Revision-Date: 2024-09-21 22:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -66300,12 +66300,10 @@ msgstr ""
 "kullanamazsınız."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr "<interface>Dosya Sağlamalarını Güncelle</interface> hakkında bilgi al"
+msgstr "<b>Dosya Sağlamalarını Güncelle</b> hakkında bilgi al"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format
