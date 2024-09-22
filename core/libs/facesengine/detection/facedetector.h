@@ -104,7 +104,6 @@ private:
 
     class Private;
     QExplicitlySharedDataPointer<Private> d;
-    
 };
 
 } // namespace Digikam

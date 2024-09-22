@@ -50,9 +50,7 @@ public:
             }
             else
             {
-                // TODO: remove SSD model permanently
                 m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-                //m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YUNET);
             }
         }
 
@@ -71,11 +69,6 @@ public:
             return;
         }
 
-        // TODO Handle settings
-        if (m_parameters.contains(QLatin1String("accuracy")))
-        {
-                backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("accuracy")).toDouble()));
-        }
 /*
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
              it != m_parameters.constEnd() ; ++it)
