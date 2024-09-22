@@ -147,8 +147,7 @@ void SqueezedComboBox::addSqueezedItem(const QString& newItem,
 
 void SqueezedComboBox::setCurrent(const QString& itemText)
 {
-    QString squeezedText = squeezeText(itemText);
-    qint32 itemIndex     = findText(squeezedText);
+    int itemIndex = findOriginalText(itemText);
 
     if (itemIndex >= 0)
     {

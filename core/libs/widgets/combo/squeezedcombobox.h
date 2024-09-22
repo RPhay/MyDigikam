@@ -159,6 +159,9 @@ private:
                     const QVariant& userData = QVariant());
     void    addItems(const QStringList& texts);
     QString itemText(int index)                                      const;
+    int	    findText(const QString& text,
+                     Qt::MatchFlags flags = Qt::MatchExactly |
+                                            Qt::MatchCaseSensitive)  const;
 
 private:
 
