@@ -1126,18 +1126,24 @@ void AdvPrintPhotoPage::slotListPhotoSizesSelected()
 void AdvPrintPhotoPage::slotPageSetup()
 {
     delete d->pageSetupDlg;
-    QString lastSize = d->photoUi->ListPhotoSizes->currentItem()->text();
-    d->pageSetupDlg  = new QPageSetupDialog(d->printer, this);
-    int ret          = d->pageSetupDlg->exec();
+
+#ifdef DEBUG
+
+    int copyCount          = d->printer->copyCount();
+
+#endif
+
+    QPageLayout pageLayout = d->printer->pageLayout();
+    QString lastSize       = d->photoUi->ListPhotoSizes->currentItem()->text();
+    d->pageSetupDlg        = new QPageSetupDialog(d->printer, this);
+    int ret                = d->pageSetupDlg->exec();
 
     if (ret == QDialog::Accepted)
     {
-        QPrinter* const printer = d->pageSetupDlg->printer();
-
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new size "
-                                     << printer->pageLayout().pageSize().size(QPageSize::Millimeter)
-                                     << " internal size "
-                                     << d->printer->pageLayout().pageSize().size(QPageSize::Millimeter);
+                                     << d->printer->pageLayout().pageSize().size(QPageSize::Millimeter)
+                                     << " previous size "
+                                     << pageLayout.pageSize().size(QPageSize::Millimeter);
 
         qreal left, top, right, bottom;
         auto margins = d->printer->pageLayout().margins(QPageLayout::Millimeter);
@@ -1164,14 +1170,14 @@ void AdvPrintPhotoPage::slotPageSetup()
 
 #ifdef DEBUG
 
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " dialog exited num of copies: "
-                                     << printer->numCopies()
-                                     << " inside:   "
-                                     << d->printer->numCopies();
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, num of copies: "
+                                     << d->printer->copyCount()
+                                     << " previous: "
+                                     << copyCount;
 
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " dialog exited from : "
-                                     << printer->fromPage()
-                                     << " to:   "
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, page from: "
+                                     << d->printer->fromPage()
+                                     << " to: "
                                      << d->printer->toPage();
 #endif
 
