@@ -51,8 +51,8 @@ public:
             else
             {
                 // TODO: remove SSD model permanently
-                // m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YUNET);
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                //m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YUNET);
             }
         }
 
