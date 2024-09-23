@@ -14,20 +14,10 @@ BundleUploadLogFiles()
 
 if [[ $DK_UPLOAD = 1 ]] ; then
 
-    if [[ $DK_QTVERSION == 5 ]] ; then
-
-        QT_SUF="-Qt5"
-
-    else
-
-        QT_SUF="-Qt6"
-
-    fi
-
     echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-host.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-extralibs.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64-Qt$DK_QTVERSION <<< "rm build-host.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64-Qt$DK_QTVERSION <<< "rm build-extralibs.full.log.gz"
 
     echo -e "---------- Compress host log files \n"
 
@@ -36,8 +26,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-host.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF      || true
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-host.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64-Qt$DK_QTVERSION      || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64-Qt$DK_QTVERSION || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
