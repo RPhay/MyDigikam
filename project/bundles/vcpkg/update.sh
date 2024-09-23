@@ -16,8 +16,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt6 <<< "rm build-digikam.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt6 <<< "rm build-installer.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt$DK_QTVERSION <<< "rm build-digikam.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt$DK_QTVERSION <<< "rm build-installer.full.log.gz"
 
     echo -e "---------- Compress bundle log files \n"
 
@@ -26,8 +26,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new bundle logs to files.kde.org repository \n"
 
-    UploadWithRetry $ORIG_WD/logs/build-digikam.full.log.gz   $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt6 10
-    UploadWithRetry $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt6 10
+    UploadWithRetry $ORIG_WD/logs/build-digikam.full.log.gz   $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt$DK_QTVERSION 10
+    UploadWithRetry $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt$DK_QTVERSION 10
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
