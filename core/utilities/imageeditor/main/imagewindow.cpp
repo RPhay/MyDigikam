@@ -80,12 +80,6 @@ ImageWindow::ImageWindow()
 
     // -- Read settings --------------------------------
 
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    applyMainWindowSettings(stateConfigGroup());
-
-#endif
-
     readSettings();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());

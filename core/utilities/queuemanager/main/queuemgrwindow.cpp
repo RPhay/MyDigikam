@@ -41,22 +41,21 @@ QueueMgrWindow::QueueMgrWindow()
     setConfigGroupName(QLatin1String("Batch Queue Manager Settings"));
     setXMLFile(QLatin1String("queuemgrwindowui5.rc"));
 
-    qRegisterMetaType<BatchToolSettings>("BatchToolSettings");
-    qRegisterMetaType<BatchToolSet>("BatchToolSet");
-
 #if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
 
     setStateConfigGroup(configGroupName());
 
 #endif
 
+    setCaption(i18n("Batch Queue Manager"));
+
+    qRegisterMetaType<BatchToolSettings>("BatchToolSettings");
+    qRegisterMetaType<BatchToolSet>("BatchToolSet");
+
     m_instance = this;
     BatchToolsFactory::instance();           // Create first instance here
     WorkflowManager::instance();             // Create first instance here
     d->thread  = new ActionThread(this);
-
-//    setWindowFlags(Qt::Window);
-    setCaption(i18n("Batch Queue Manager"));
 
     // We don't want to be deleted on close
 
@@ -74,12 +73,6 @@ QueueMgrWindow::QueueMgrWindow()
     setupConnections();
 
     //-------------------------------------------------------------
-
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    applyMainWindowSettings(stateConfigGroup());
-
-#endif
 
     readSettings();
     applySettings();

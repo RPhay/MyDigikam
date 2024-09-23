@@ -25,7 +25,6 @@ EditorWindow::EditorWindow(const QString& name, QWidget* const parent)
 {
     setConfigGroupName(QLatin1String("ImageViewer Settings"));
     setObjectName(name);
-//    setWindowFlags(Qt::Window);
     setFullScreenOptions(FS_EDITOR);
 
     // Settings containers instance.

@@ -48,10 +48,9 @@ LightTableWindow::LightTableWindow()
 
 #endif
 
-    m_instance = this;
-
-//    setWindowFlags(Qt::Window);
     setCaption(i18n("Light Table"));
+
+    m_instance = this;
 
     // We don't want to be deleted on close
 
@@ -68,12 +67,6 @@ LightTableWindow::LightTableWindow()
 
     setupConnections();
     slotColorManagementOptionsChanged();
-
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    applyMainWindowSettings(stateConfigGroup());
-
-#endif
 
     readSettings();
 

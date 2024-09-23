@@ -259,8 +259,8 @@ void DXmlGuiWindow::unminimizeAndActivateWindow()
         setWindowState(windowState() & ~Qt::WindowMinimized);
     }
 
-    setWindowState(windowState() | Qt::WindowActive);
     raise();
+    windowHandle()->requestActivate();
 }
 
 void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
