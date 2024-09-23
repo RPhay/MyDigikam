@@ -114,7 +114,7 @@ BUGFIXES:
 091 ==> 493388 - Inconsistent timeline display due to timezone handling in videos vs. photos.
 092 ==> 493426 - digiKam 8.4.0 crashes with STR+ALT+Fx.
 093 ==> 493453 - Pick labels partially block the filename in the main view when thumbnails are certain sizes.
-094 ==> 
+094 ==> 493106 - After ignoring one face in a photo, all other face rectangles vanish.
 095 ==> 
 096 ==> 
 097 ==> 
