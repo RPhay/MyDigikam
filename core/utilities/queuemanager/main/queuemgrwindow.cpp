@@ -75,6 +75,12 @@ QueueMgrWindow::QueueMgrWindow()
 
     //-------------------------------------------------------------
 
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
+
+    applyMainWindowSettings(stateConfigGroup());
+
+#endif
+
     readSettings();
     applySettings();
 

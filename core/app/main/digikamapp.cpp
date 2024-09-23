@@ -169,8 +169,17 @@ DigikamApp::DigikamApp()
     initGui();
 
     setupViewConnections();
-    applyMainWindowSettings(group);
     slotColorManagementOptionsChanged();
+
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
+
+    applyMainWindowSettings(stateConfigGroup());
+
+#else
+
+    applyMainWindowSettings(group);
+
+#endif
 
     // Check ICC profiles repository availability
 

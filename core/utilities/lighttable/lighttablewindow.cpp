@@ -69,6 +69,12 @@ LightTableWindow::LightTableWindow()
     setupConnections();
     slotColorManagementOptionsChanged();
 
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
+
+    applyMainWindowSettings(stateConfigGroup());
+
+#endif
+
     readSettings();
 
     d->leftSideBar->populateTags();
