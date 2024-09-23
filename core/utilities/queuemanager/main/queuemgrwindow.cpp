@@ -55,7 +55,7 @@ QueueMgrWindow::QueueMgrWindow()
     WorkflowManager::instance();             // Create first instance here
     d->thread  = new ActionThread(this);
 
-    setWindowFlags(Qt::Window);
+//    setWindowFlags(Qt::Window);
     setCaption(i18n("Batch Queue Manager"));
 
     // We don't want to be deleted on close

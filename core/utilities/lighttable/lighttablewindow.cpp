@@ -50,7 +50,7 @@ LightTableWindow::LightTableWindow()
 
     m_instance = this;
 
-    setWindowFlags(Qt::Window);
+//    setWindowFlags(Qt::Window);
     setCaption(i18n("Light Table"));
 
     // We don't want to be deleted on close
