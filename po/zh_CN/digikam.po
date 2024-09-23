@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:50+0000\n"
+"POT-Creation-Date: 2024-09-23 01:45+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -19342,7 +19342,7 @@ msgstr "自定义布局"
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "所选自定义照片尺寸无法应用于该纸张尺寸。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1347
 #, kde-format
 msgid ""
 "Custom\n"

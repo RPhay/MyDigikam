@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:50+0000\n"
+"POT-Creation-Date: 2024-09-23 01:45+0000\n"
 "PO-Revision-Date: 2024-09-21 10:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -20302,7 +20302,7 @@ msgstr ""
 "De geselecteerde aangepaste grootte van de foto kan niet toegepast worden op "
 "de grootte van het papier"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1347
 #, kde-format
 msgid ""
 "Custom\n"

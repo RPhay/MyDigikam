@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:50+0000\n"
+"POT-Creation-Date: 2024-09-23 01:45+0000\n"
 "PO-Revision-Date: 2024-09-21 07:49+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17590,7 +17590,7 @@ msgstr "Galleriets titel:"
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
-msgstr "Målkorg:"
+msgstr "Målkatalog:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
@@ -20060,7 +20060,7 @@ msgstr "Egen layout"
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "Den valda egna fotostorleken kan inte användas som pappersstorlek."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1347
 #, kde-format
 msgid ""
 "Custom\n"
@@ -20683,7 +20683,7 @@ msgstr "FFmpeg binärfil"
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
 #, kde-format
 msgid "Media Container Format:"
-msgstr "Mediabehållarens format:"
+msgstr "Mediebehållarens format:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
 #, kde-format
@@ -20825,7 +20825,7 @@ msgstr "Videotyp:"
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:139
 #, kde-format
 msgid "Video Bit Rate:"
-msgstr "Videons bildfrekvens:"
+msgstr "Videobithastighet:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
 #, kde-format
@@ -21666,7 +21666,7 @@ msgstr "Rubrik"
 #, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
-msgstr "Soundtrack"
+msgstr "Ljudspår"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
 #, kde-format
@@ -57188,7 +57188,7 @@ msgstr "Minskar miniatyrbildernas storlek på kartan."
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:523
 #, kde-format
 msgid "Remove the current region selection"
-msgstr "Tar bort nuvarande områdesmarkering"
+msgstr "Ta bort nuvarande områdesmarkering"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:531
 #, kde-format
@@ -57213,7 +57213,7 @@ msgstr "Skapa en områdesmarkering från en miniatyrbild"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:555
 #, kde-format
 msgid "Filter images"
-msgstr "Filtrera bilden"
+msgstr "Filtrera bilder"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:560
 #, kde-format
@@ -57223,7 +57223,7 @@ msgstr "Ta bort nuvarande filter"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:565
 #, kde-format
 msgid "Select images"
-msgstr "Välj bilder"
+msgstr "Markera bilder"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:571
 #, kde-format
@@ -59422,8 +59422,7 @@ msgid ""
 "Please select the destination album from the digiKam library to import the "
 "camera pictures into."
 msgstr ""
-"Välj destinationsalbum från Digikams bibliotek att importera kamerabilderna "
-"i."
+"Välj målalbum från Digikams bibliotek att importera kamerabilderna till."
 
 #: core/utilities/import/main/importui.cpp:1468
 #, kde-format
