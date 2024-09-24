@@ -13,7 +13,7 @@ ExternalProject_Add(ext_tiff
 
     GIT_REPOSITORY https://gitlab.com/libtiff/libtiff.git
 
-    GIT_TAG v4.6.0
+    GIT_TAG v4.7.0
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix ${EXTPREFIX_tiff}
     UPDATE_COMMAND ""
