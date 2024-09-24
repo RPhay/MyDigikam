@@ -40,19 +40,6 @@ set(Magick_Conf --prefix=${PREFIX_ext_imagemagick}
                 --without-utilities                    # Disable CLI tools.
 )
 
-if(MINGW)
-
-    set(Magick_Conf ${Magick_Conf}
-                    --host=${MXE_BUILD_TARGETS}
-                    --build=x86_64-pc-linux-gnu
-    )
-
-    set(Magick_Patch ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/magick-plusplus-mxe.patch)
-
-    set(Magick_Depends ext_jbig)
-
-endif()
-
 set(Jbig_Conf -DBUILD_PROGRAMS=OFF
               -DEXIV2_TOOLS=OFF
 )

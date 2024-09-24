@@ -42,41 +42,9 @@ set(JpegXL_Conf -DBUILD_SHARED_LIBS=ON
                 -DJPEGXL_FORCE_SYSTEM_HWY=OFF
 )
 
-if(MINGW)
-
-    # See bug comment https://bugs.kde.org/show_bug.cgi?id=436533#c26
-
-    set(JpegXL_Conf ${JpegXL_Conf}
-        -DCMAKE_CXX_FLAGS="-DHWY_COMPILE_ONLY_SCALAR"
-    )
-
-endif()
-
 JoinListAsString("${JpegXL_Conf}" " " BASH_OPTIONS)
 
-if(MINGW)
-
-    ExternalProject_Add(ext_libjxl
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-
-        GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.10.2
-
-        CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
-                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
-
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
-        BUILD_IN_SOURCE 1
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
-elseif(APPLE)
+if(APPLE)
 
     ExternalProject_Add(ext_libjxl
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -100,7 +68,7 @@ elseif(APPLE)
         ALWAYS 0
     )
 
-else() # Linux
+else() # Linux and Windows
 
     ExternalProject_Add(ext_libjxl
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}

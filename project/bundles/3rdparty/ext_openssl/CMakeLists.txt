@@ -6,7 +6,7 @@
 #
 #
 
-if (NOT MINGW AND NOT APPLE)
+if (NOT APPLE)
 
     SET(EXTPREFIX_openssl "${EXTPREFIX}/local/")
 

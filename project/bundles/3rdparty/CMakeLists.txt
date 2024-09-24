@@ -55,7 +55,7 @@ function(GetKF5ApplicationMd5Sums
          name
          version)
 
-    if(MINGW)
+    if(APPLE)
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
@@ -71,23 +71,7 @@ function(GetKF5ApplicationMd5Sums
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-    elseif(APPLE)
-
-        # Extract MD5 sums of KF5 application directly from server.
-        execute_process(COMMAND
-                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
-                        COMMAND
-                            grep "tar.xz"
-                        COMMAND
-                            cut -d " " -f1
-                        RESULT_VARIABLE
-                            wgetresult
-                        OUTPUT_VARIABLE
-                            md5sm
-                        OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-
-    else() # Linux
+    else() # Linux and Windows
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
@@ -120,23 +104,7 @@ function(GetKF5PlasmaMd5Sums
          name
          version)
 
-    if(MINGW)
-
-        # Extract MD5 sums of KF5 Plasma component directly from server.
-        execute_process(COMMAND
-                            wget -q -O - -o /dev/null https://download.kde.org/stable/plasma/${version}/${name}-${version}.tar.xz.md5
-                        COMMAND
-                            grep "tar.xz"
-                        COMMAND
-                            cut -d " " -f1
-                        RESULT_VARIABLE
-                            wgetresult
-                        OUTPUT_VARIABLE
-                            md5sm
-                        OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-
-    elseif(APPLE)
+    if(APPLE)
 
         # Extract MD5 sums of KF5 Plasma component directly from server.
         execute_process(COMMAND

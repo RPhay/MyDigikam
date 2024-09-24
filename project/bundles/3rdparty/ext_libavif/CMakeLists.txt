@@ -34,29 +34,7 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
 
 JoinListAsString("${AVIF_Conf}" " " BASH_OPTIONS_AVIF)
 
-if(MINGW)
-
-    ExternalProject_Add(ext_libavif
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-
-        GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
-        GIT_TAG v1.0.4
-
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS_AVIF}
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
-
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
-        BUILD_IN_SOURCE 1
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
-elseif(APPLE)
+if(APPLE)
 
     ExternalProject_Add(ext_libavif
 
@@ -78,7 +56,7 @@ elseif(APPLE)
         ALWAYS 0
     )
 
-else() # Linux
+else() # Linux and Windows
 
     ExternalProject_Add(ext_libavif
 
