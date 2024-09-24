@@ -8,70 +8,7 @@
 
 set(EXTPREFIX_libksane "${EXTPREFIX}" )
 
-if(MINGW)
-
-    GetKF5ApplicationMd5Sums(ksanecore ${KA_VERSION})
-
-    ExternalProject_Add(ext_ksanecore
-                        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/ksanecore-${KA_VERSION}.tar.xz
-                        URL_MD5 ${KF5_APPLICATION_MD5SUM}
-
-                        INSTALL_DIR ${EXTPREFIX_libksane}
-
-                        CMAKE_ARGS -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN}
-                                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                                   -DCMAKE_COLOR_MAKEFILE=ON
-                                   -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_libksane}
-                                   -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-                                   -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
-                                   -DCMAKE_FIND_PREFIX_PATH=${CMAKE_PREFIX_PATH}
-                                   -DCMAKE_SYSTEM_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include
-                                   -DCMAKE_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include
-                                   -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib
-                                   -DZLIB_ROOT=${CMAKE_PREFIX_PATH}
-                                   ${GLOBAL_PROFILE}
-                                   -DBUILD_TESTING=OFF
-                                   -Wno-dev
-
-                        UPDATE_COMMAND ""
-                        ALWAYS 0
-    )
-
-    GetKF5ApplicationMd5Sums(libksane ${KA_VERSION})
-
-    ExternalProject_Add(ext_libksane
-                        DEPENDS ext_ksanecore
-
-                        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
-                        URL_MD5 ${KF5_APPLICATION_MD5SUM}
-
-                        INSTALL_DIR ${EXTPREFIX_libksane}
-                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
-
-                        CMAKE_ARGS -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN}
-                                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                                   -DCMAKE_COLOR_MAKEFILE=ON
-                                   -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_libksane}
-                                   -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-                                   -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
-                                   -DCMAKE_FIND_PREFIX_PATH=${CMAKE_PREFIX_PATH}
-                                   -DCMAKE_SYSTEM_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include
-                                   -DCMAKE_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include
-                                   -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib
-                                   -DZLIB_ROOT=${CMAKE_PREFIX_PATH}
-                                   ${GLOBAL_PROFILE}
-                                   "${argoptions}"
-                                   -DWITH_DESIGNER_PLUGIN=OFF
-                                   -DBUILD_TESTING=OFF
-                                   -Wno-dev
-
-                        UPDATE_COMMAND ""
-                        ALWAYS 0
-    )
-
-elseif(APPLE)
+if(APPLE)
 
     GetKF5ApplicationMd5Sums(ksanecore ${KA_VERSION})
 
@@ -117,7 +54,7 @@ elseif(APPLE)
                         ALWAYS 0
     )
 
-else() # Linux
+else() # Linux and Windows
 
     GetKF5ApplicationMd5Sums(ksanecore ${KA_VERSION})
 
