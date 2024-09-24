@@ -115,7 +115,7 @@ BUGFIXES:
 092 ==> 493426 - digiKam 8.4.0 crashes with STR+ALT+Fx.
 093 ==> 493453 - Pick labels partially block the filename in the main view when thumbnails are certain sizes.
 094 ==> 493106 - After ignoring one face in a photo, all other face rectangles vanish.
-095 ==> 
+095 ==> 493498 - Persisting rescaled/positioned window across sessions.
 096 ==> 
 097 ==> 
 098 ==> 
