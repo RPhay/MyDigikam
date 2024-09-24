@@ -195,8 +195,8 @@ echo -e "------------- Copy AppImage stream data files\n"
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
 
-cp -r /usr/share/applications/org.kde.digikam.desktop     ./usr/share/applications
-cp -r /usr/share/applications/org.kde.showfoto.desktop    ./usr/share/applications
+#cp -r /usr/share/applications/org.kde.digikam.desktop     ./usr/share/applications
+#cp -r /usr/share/applications/org.kde.showfoto.desktop    ./usr/share/applications
 
 echo -e "------------- Copy QWebEngine bin data files\n"
 
