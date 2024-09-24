@@ -100,6 +100,7 @@ extern "C"
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
 #       pragma GCC diagnostic ignored "-Wcpp"
+#       pragma GCC diagnostic ignored "-Wundef"
 #   endif
 
 #   if defined(Q_CC_CLANG)
