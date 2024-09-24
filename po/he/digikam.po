@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 01:45+0000\n"
+"POT-Creation-Date: 2024-09-24 02:00+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1346,22 +1346,22 @@ msgstr "אתחול..."
 msgid "Load Plugins..."
 msgstr "טוען תוספי KIPI"
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
 #, fuzzy, kde-format
 msgid "Checking ICC repository..."
 msgstr "בדיקת מאגר ICC"
 
-#: core/app/main/digikamapp.cpp:193
+#: core/app/main/digikamapp.cpp:192
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "קריאת מסד נתונים"
 
-#: core/app/main/digikamapp.cpp:215
+#: core/app/main/digikamapp.cpp:214
 #, fuzzy, kde-format
 msgid "Loading albums..."
 msgstr "טוען נתוני מצלמות"
 
-#: core/app/main/digikamapp.cpp:362
+#: core/app/main/digikamapp.cpp:361
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1369,7 +1369,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:418
+#: core/app/main/digikamapp.cpp:417
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1378,93 +1378,93 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "לא נבחרו תמונות"
 msgstr[1] "לא נבחרו תמונות"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:709
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:714
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:725
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 תמונות נבחרו"
 msgstr[1] "%1/%2 תמונות נבחרו"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:738
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 תמונות נבחרו"
 msgstr[1] "%1/%2 תמונות נבחרו"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:746
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 תמונות נבחרו"
 msgstr[1] "%1/%2 תמונות נבחרו"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:754
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 תמונות נבחרו"
 msgstr[1] "%1/%2 תמונות נבחרו"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:763
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 תמונות נבחרו"
 msgstr[1] "%1/%2 תמונות נבחרו"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:794
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:809
+#: core/app/main/digikamapp.cpp:808
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:813
+#: core/app/main/digikamapp.cpp:812
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:824
+#: core/app/main/digikamapp.cpp:823
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "16 סיביות"
 msgstr[1] "16 סיביות"
 
-#: core/app/main/digikamapp.cpp:876
+#: core/app/main/digikamapp.cpp:875
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 msgstr[1] "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
-#: core/app/main/digikamapp.cpp:878
+#: core/app/main/digikamapp.cpp:877
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1926,7 +1926,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "שינוי שם הקובץ המסומן"
 
 #: core/app/main/digikamapp_setup.cpp:498
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, fuzzy, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2573,21 +2573,21 @@ msgid "Main Tools"
 msgstr "סרגל כלים ראשי"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2639
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
 #, fuzzy, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "עיבוד תמונה נוסף"
 
 #: core/app/main/digikamapp_tools.cpp:58
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, fuzzy, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "ייצא"
 
 #: core/app/main/digikamapp_tools.cpp:69
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2679
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2678
 #, fuzzy, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -3111,8 +3111,8 @@ msgid "no item"
 msgstr "ללא תאריך"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:448
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:482
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, fuzzy, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -10700,7 +10700,7 @@ msgstr "בחירת תמונה"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1827
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1826
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -10741,8 +10741,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2300
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2319
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -15128,7 +15128,7 @@ msgstr "כיוונון:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
-#: core/utilities/imageeditor/editor/editorwindow.cpp:570
+#: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -20265,7 +20265,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:293
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, fuzzy, kde-format
 msgid "Stop"
 msgstr "אבן"
@@ -30371,7 +30371,7 @@ msgid "Remove Black Frame"
 msgstr "מסגרת שחורה..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, fuzzy, kde-format
 msgid "Clear List"
 msgstr "רשימת מצלמות"
@@ -37238,15 +37238,15 @@ msgid "Remember choice for this operation"
 msgstr "מידע אודות המצלמה"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:448
-#: core/utilities/lighttable/lighttablewindow.cpp:54
+#: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "שולחן השוואת תמונות"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:59
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr ""
@@ -47505,7 +47505,7 @@ msgid "Delete File"
 msgstr "מחיקת קובץ"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2346
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -48870,7 +48870,7 @@ msgid "&Abort"
 msgstr "&ביטול"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr ""
@@ -49832,7 +49832,7 @@ msgstr "ביצוע שינויים?"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:564
+#: core/utilities/imageeditor/editor/editorwindow.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -55831,51 +55831,51 @@ msgstr "נסו"
 msgid "Try all settings."
 msgstr "נסו את כל ההגדרות."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:186
+#: core/utilities/imageeditor/editor/editorwindow.cpp:185
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&ראשון"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:193
+#: core/utilities/imageeditor/editor/editorwindow.cpp:192
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&האחרון"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:200
+#: core/utilities/imageeditor/editor/editorwindow.cpp:199
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "מקור"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:212
+#: core/utilities/imageeditor/editor/editorwindow.cpp:211
 #, fuzzy, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "שמירת תמונות"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:213
+#: core/utilities/imageeditor/editor/editorwindow.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "שמירת התמונות המסומנות לתיקייה וירטואלית חדשה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, fuzzy, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -55883,7 +55883,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "שמירה &בשם..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55891,166 +55891,166 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:231
+#: core/utilities/imageeditor/editor/editorwindow.cpp:230
 #, fuzzy, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "תצורת קובץ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "LibJPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:233
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "LibTIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "LibPNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:236
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "LibPNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:240
+#: core/utilities/imageeditor/editor/editorwindow.cpp:239
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "איכות JPEG-2000:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:245
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:252
+#: core/utilities/imageeditor/editor/editorwindow.cpp:251
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:261
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:280
+#: core/utilities/imageeditor/editor/editorwindow.cpp:279
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "ייצא"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:281
+#: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:291
+#: core/utilities/imageeditor/editor/editorwindow.cpp:290
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:303
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "פתיחת התמונה הבחורה בעורך-תמונה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "פתיחת התמונה הבחורה בעורך-תמונה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:328
+#: core/utilities/imageeditor/editor/editorwindow.cpp:327
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "מצב קודם"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:357
+#: core/utilities/imageeditor/editor/editorwindow.cpp:356
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "ביצוע חוזר"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:385
+#: core/utilities/imageeditor/editor/editorwindow.cpp:384
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:389
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action"
 msgid "Select None"
 msgstr "בחירה בכלום"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:404
+#: core/utilities/imageeditor/editor/editorwindow.cpp:403
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "מרחק 1:1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:410
+#: core/utilities/imageeditor/editor/editorwindow.cpp:409
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "התאמת תצוגה לגודל החלון"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:417
+#: core/utilities/imageeditor/editor/editorwindow.cpp:416
 #, fuzzy, kde-format
 #| msgid "Fit to &Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "התאמה לבחירה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:422
+#: core/utilities/imageeditor/editor/editorwindow.cpp:421
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:446
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "מחוון תת-חשיפה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56058,14 +56058,14 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:456
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "מחוון חשיפת-על"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:459
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56074,32 +56074,32 @@ msgid ""
 msgstr ""
 "בחרו באפשרות זו כדי להציג  את זמן-החשיפה ורגישות המצלמה בעת צילום התמונה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:467
+#: core/utilities/imageeditor/editor/editorwindow.cpp:466
 #: core/utilities/import/main/importui.cpp:506
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "תצוגת ניהול צבע"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:473
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "תצוגה וירטואלית"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "תצוגה וירטואלית"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "התאמה לבחירה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:490
+#: core/utilities/imageeditor/editor/editorwindow.cpp:489
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56107,21 +56107,21 @@ msgid ""
 "enable this action."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:498
+#: core/utilities/imageeditor/editor/editorwindow.cpp:497
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "היפוך אופקי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:506
+#: core/utilities/imageeditor/editor/editorwindow.cpp:505
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "היפוך אנכי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:515
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -56129,7 +56129,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "סובב שמאלה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:524
+#: core/utilities/imageeditor/editor/editorwindow.cpp:523
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -56137,7 +56137,7 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "סובב ימינה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:556
+#: core/utilities/imageeditor/editor/editorwindow.cpp:555
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, fuzzy, kde-format
@@ -56145,39 +56145,39 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "תמונה קודמת"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:586
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "אין בחירה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:588
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "מידע אודות אזור הבחירה הנוכחי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:594
+#: core/utilities/imageeditor/editor/editorwindow.cpp:593
 #, fuzzy, kde-format
 #| msgid "Information about image size"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "מידע אודות גודל התמונה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "תמונה נטענת..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1110
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "אנא המתינו בזמן שהתמונה נשמרת..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to overwrite file \"%1\"\n"
@@ -56190,14 +56190,14 @@ msgstr ""
 "אתם עומדים לשכתב קובץ קיים בשם \"%1\"\n"
 "האם אתם בטוחים?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1136
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1135
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "אזהרה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1245
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56207,7 +56207,7 @@ msgstr ""
 "התמונה '%1' שונתה.\n"
 "האם לשמור אותה?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1397
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1396
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56217,26 +56217,26 @@ msgstr ""
 "התמונה '%1' שונתה.\n"
 "האם לשמור אותה?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1474
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "אין בחירה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1494
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "טעינה:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1522
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "אין אפשרות למחוק את התוויות הראשית"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1565
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1564
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56245,13 +56245,13 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
 #, fuzzy, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "שמירה:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -56270,31 +56270,31 @@ msgstr ""
 "ב \n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1777
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1776
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1973
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1980
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1979
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2227
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2226
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -56306,7 +56306,7 @@ msgid ""
 msgstr ""
 "אין ברשותכם הרשאות כתיבה לקובץ \"%1\". האם אתם בטוחים שאתם רוצים לשכתב אותו?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2321
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -56317,26 +56317,26 @@ msgid ""
 msgstr ""
 "אין ברשותכם הרשאות כתיבה לקובץ \"%1\". האם אתם בטוחים שאתם רוצים לשכתב אותו?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "אין אפשרות לשכתב את הקובץ המקורי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2426
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "תצוגת מנהל-צבע פעילה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2431
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2430
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "תצוגת מנהל-צבע כבויה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2436
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2435
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56344,79 +56344,79 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2471
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "מחוון תת-חשיפה פעיל"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2473
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "מחוון תת-חשיפה כבוי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2486
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "מחוון חשיפת-על פועל"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "מחוון חשיפת-על כבוי"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2578
 #, fuzzy, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "המרה"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2594
 #, fuzzy, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "עיצוב"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2605
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "אפקט טשטוש"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2616
 #, fuzzy, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "צבעים"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "שיפור"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2818
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2817
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "פתיחה באמצעות"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2830
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "חיתוך... "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2839
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2838
 #, fuzzy, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -58154,7 +58154,7 @@ msgstr "נקה הכל"
 msgid "Drag and drop images here"
 msgstr "גרירה ושחרור תמונות כאן"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:201
+#: core/utilities/lighttable/lighttablewindow.cpp:200
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -58768,204 +58768,204 @@ msgstr ""
 msgid "Thumbs"
 msgstr "הצגת תמונות-ממוזערות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, fuzzy, kde-format
 msgid "Queues"
 msgstr "Quique"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:136
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
 #, fuzzy, kde-format
 msgid "Queue Settings"
 msgstr "הגדרות כלליות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:154
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
 #, fuzzy, kde-format
 msgid "Assigned Tools"
 msgstr "תוויות ששויכו"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:163
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
 #, fuzzy, kde-format
 msgid "Tool Settings"
 msgstr "הגדרות מקומיות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:279
 #, fuzzy, kde-format
 msgid "Run"
 msgstr "שמש"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
 #, kde-format
 msgid "New Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:303
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, fuzzy, kde-format
 msgid "Remove Queue"
 msgstr "הסרת פריט"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, fuzzy, kde-format
 msgid "Remove items"
 msgstr "הסרת פריט"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:318
 #, fuzzy, kde-format
 msgid "Remove processed items"
 msgstr "הסרת פריט"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:324
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:323
 #, fuzzy, kde-format
 msgid "Clear Queue"
 msgstr "נקה הכל"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:335
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
 #, fuzzy, kde-format
 msgid "Move up"
 msgstr "הזז"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:339
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
 #, fuzzy, kde-format
 msgid "Move down"
 msgstr "הזז"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
 #, fuzzy, kde-format
 msgid "Remove tool"
 msgstr "הסרת פריט"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
 #, fuzzy, kde-format
 msgid "Current Queue: "
 msgstr "חיפוש נוכחי"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:442
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:476
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, fuzzy, kde-format
 msgid "No items"
 msgstr "ללא תאריך"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:459
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:493
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, fuzzy, kde-format
 msgid "No tasks"
 msgstr "16 סיביות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:465
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:499
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:498
 #, fuzzy, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "16 סיביות"
 msgstr[1] "16 סיביות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "%1 (%2)"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:507
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "מוכן"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:545
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "עיבוד קבוצת תמונות"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:547
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "לא קיימות תמונות בתיקייה זו."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:650
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, fuzzy, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "לא קיימות תמונות בתיקייה זו."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:656
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:655
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:661
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:660
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:693
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
 #, fuzzy, kde-format
 msgid "There are no items to process in the queues."
 msgstr "לא קיימות תמונות בתיקייה זו."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:864
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "הסרת פריט"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:866
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:876
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:955
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, fuzzy, kde-format
 msgid "Failed to process item..."
 msgstr "כישלון בעת ביטול נעילת הקובץ \"%1\"."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:968
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:967
 #, kde-format
 msgid "Process Cancelled..."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:988
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:987
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1017
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1016
 #, fuzzy, kde-format
 msgid "Batch queue finished"
 msgstr "תצוגת תיקיות הושלמה..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1020
 #, fuzzy, kde-format
 msgid "All batch queues finished"
 msgstr "תצוגת תיקיות הושלמה..."
