@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 01:45+0000\n"
+"POT-Creation-Date: 2024-09-24 02:00+0000\n"
 "PO-Revision-Date: 2024-09-21 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1345,22 +1345,22 @@ msgstr "Ініціалізація…"
 msgid "Load Plugins..."
 msgstr "Завантажити додатки…"
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Перевірка сховища профілів ICC…"
 
-#: core/app/main/digikamapp.cpp:193
+#: core/app/main/digikamapp.cpp:192
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Спорожнити базу даних…"
 
-#: core/app/main/digikamapp.cpp:215
+#: core/app/main/digikamapp.cpp:214
 #, kde-format
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:362
+#: core/app/main/digikamapp.cpp:361
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1372,7 +1372,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:418
+#: core/app/main/digikamapp.cpp:417
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1385,7 +1385,7 @@ msgstr ""
 "доступність виконуваного файла ExifTool у розділі метаданих.\n"
 "Повідомлення про помилку: %1"
 
-#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1394,7 +1394,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:709
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1403,7 +1403,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:714
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1412,7 +1412,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1421,7 +1421,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:738
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1430,7 +1430,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1439,7 +1439,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:754
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1448,7 +1448,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:763
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1457,22 +1457,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:794
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:809
+#: core/app/main/digikamapp.cpp:808
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:813
+#: core/app/main/digikamapp.cpp:812
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:824
+#: core/app/main/digikamapp.cpp:823
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1481,7 +1481,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:876
+#: core/app/main/digikamapp.cpp:875
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1490,7 +1490,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:878
+#: core/app/main/digikamapp.cpp:877
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1941,7 +1941,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Змінити назву файла вибраного запису."
 
 #: core/app/main/digikamapp_setup.cpp:498
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:311
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2557,21 +2557,21 @@ msgid "Main Tools"
 msgstr "Основні інструменти"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2639
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Остаточна обробка"
 
 #: core/app/main/digikamapp_tools.cpp:58
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Експорт"
 
 #: core/app/main/digikamapp_tools.cpp:69
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2679
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2678
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -3115,8 +3115,8 @@ msgid "no item"
 msgstr "немає записів"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:448
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:482
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -11477,7 +11477,7 @@ msgstr "Сканувати зображення"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1827
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1826
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11517,8 +11517,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2300
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2319
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -16118,7 +16118,7 @@ msgstr "Скоригувати час і дату"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
-#: core/utilities/imageeditor/editor/editorwindow.cpp:570
+#: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -21681,7 +21681,7 @@ msgstr "Пуск"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:293
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "Stop"
 msgstr "Зупинити"
@@ -32457,7 +32457,7 @@ msgid "Remove Black Frame"
 msgstr "Вилучити чорний кадр"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, kde-format
 msgid "Clear List"
 msgstr "Спорожнити список"
@@ -39613,15 +39613,15 @@ msgid "Remember choice for this operation"
 msgstr "Запам'ятати вибір для цієї дії"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:448
-#: core/utilities/lighttable/lighttablewindow.cpp:54
+#: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:59
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Керування чергою обробки"
@@ -49826,7 +49826,7 @@ msgid "Delete File"
 msgstr "Вилучити файл"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2346
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -51260,7 +51260,7 @@ msgid "&Abort"
 msgstr "П&ерервати"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Виконання…"
@@ -52268,7 +52268,7 @@ msgstr "Застосування змін у зображенні обличчя
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:564
+#: core/utilities/imageeditor/editor/editorwindow.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -58535,49 +58535,49 @@ msgstr "Спробувати"
 msgid "Try all settings."
 msgstr "Спробувати всі параметри."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:186
+#: core/utilities/imageeditor/editor/editorwindow.cpp:185
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&Перший"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:193
+#: core/utilities/imageeditor/editor/editorwindow.cpp:192
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&Останній"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:200
+#: core/utilities/imageeditor/editor/editorwindow.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Відкрити початкове"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:212
+#: core/utilities/imageeditor/editor/editorwindow.cpp:211
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:213
+#: core/utilities/imageeditor/editor/editorwindow.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr "Зберегти зміни до поточної версії файла"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:217
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr "Зберегти у новій версії"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "Зберегти поточні зміни до нової версії файла"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:224
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -58585,7 +58585,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Зберегти нову версію як…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58595,97 +58595,97 @@ msgstr ""
 "Зберегти поточні зміни до файла нової версії з визначенням назви цього файла "
 "та його формату"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:231
+#: core/utilities/imageeditor/editor/editorwindow.cpp:230
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Зберегти у форматі"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:233
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:236
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:240
+#: core/utilities/imageeditor/editor/editorwindow.cpp:239
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:245
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:252
+#: core/utilities/imageeditor/editor/editorwindow.cpp:251
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr "JXL"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:261
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:280
+#: core/utilities/imageeditor/editor/editorwindow.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Експортувати"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:281
+#: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr "Зберегти файл у теці поза межами вашої збірки"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "Відкинути зміни"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:291
+#: core/utilities/imageeditor/editor/editorwindow.cpp:290
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr "Відкинути всі поточні зміни цього файла"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:303
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Відкрити за допомогою типової програми"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
@@ -58693,49 +58693,49 @@ msgstr ""
 "Відкрити позначений запис за допомогою типової програми, пов'язаної з "
 "записами цього типу."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:328
+#: core/utilities/imageeditor/editor/editorwindow.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr "Вернути"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:357
+#: core/utilities/imageeditor/editor/editorwindow.cpp:356
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "Повторити"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:385
+#: core/utilities/imageeditor/editor/editorwindow.cpp:384
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:390
+#: core/utilities/imageeditor/editor/editorwindow.cpp:389
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "Скасувати вибір"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:404
+#: core/utilities/imageeditor/editor/editorwindow.cpp:403
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Масштаб у 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:410
+#: core/utilities/imageeditor/editor/editorwindow.cpp:409
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Вмістити у &вікно"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:417
+#: core/utilities/imageeditor/editor/editorwindow.cpp:416
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "Вмістити &вибране"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:422
+#: core/utilities/imageeditor/editor/editorwindow.cpp:421
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58744,13 +58744,13 @@ msgstr ""
 "Цей параметр можна використовувати для зміни розмірів зображення до поточної "
 "вибраної області."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:446
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Індикатор недостатньої експозиції"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58760,13 +58760,13 @@ msgstr ""
 "Позначте цей пункт, щоб програма показувала чорну накладку на зображення. Це "
 "допоможе вам уникнути ефекту недоекспонованого зображення."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:456
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Індикатор надмірної експозиції"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:459
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58776,32 +58776,32 @@ msgstr ""
 "Позначте цей пункт, щоб програма показувала білу накладку на зображення. Це "
 "допоможе вам уникнути ефекту переекспонованого зображення."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:467
+#: core/utilities/imageeditor/editor/editorwindow.cpp:466
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Перегляд з керуванням кольорами"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:473
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Параметри проби…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:479
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Перегляд проби кольорів"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Обрізати за позначеним"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:490
+#: core/utilities/imageeditor/editor/editorwindow.cpp:489
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58811,33 +58811,33 @@ msgstr ""
 "Цей параметр можна використовувати для обрізання зображення. Виберіть "
 "область зображення, щоб дозволити цю дію."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:498
+#: core/utilities/imageeditor/editor/editorwindow.cpp:497
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Віддзеркалити горизонтально"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:506
+#: core/utilities/imageeditor/editor/editorwindow.cpp:505
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Віддзеркалити вертикально"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:515
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Повернути ліворуч"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:524
+#: core/utilities/imageeditor/editor/editorwindow.cpp:523
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Повернути праворуч"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:556
+#: core/utilities/imageeditor/editor/editorwindow.cpp:555
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -58845,37 +58845,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Попереднє зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:586
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Нічого не вибрано"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:588
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Інформація щодо поточної ділянки зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:594
+#: core/utilities/imageeditor/editor/editorwindow.cpp:593
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Інформація щодо розміру зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Збереження зображення…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1110
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Будь ласка, зачекайте на завершення збереження зображення…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58885,13 +58885,13 @@ msgstr ""
 "Ви перезаписуєте файл «%1»\n"
 "Ви справді хочете виконати цю дію?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1136
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1135
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Попередження"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1245
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58901,7 +58901,7 @@ msgstr ""
 "Зображення «%1» було змінено.\n"
 "Хочете його зберегти?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1397
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1396
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58911,25 +58911,25 @@ msgstr ""
 "Зображення «%1» було змінено.\n"
 "Усі зміни буде втрачено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1474
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Нічого не вибрано"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1494
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Завантаження:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1522
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Не вдалося завантажити «%1»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1565
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1564
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58941,13 +58941,13 @@ msgstr ""
 "кольорів виконано не буде. Будь ласка, перевірте налаштування керування "
 "кольорами у налаштуваннях digiKam."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Збереження:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58961,32 +58961,32 @@ msgstr ""
 "до\n"
 "«%2»."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1777
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1776
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Не вдалося відкрити тимчасовий файл у теці «%1»: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1973
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Не вдалося визначити формат для збереження даних зміненого зображення."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1980
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1979
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Не вдалося зберегти: адреса «%1» є некоректною."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2227
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2226
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Не вдалося зберегти файл «%1» з запропонованою назвою файла версії «%2»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58996,32 +58996,32 @@ msgstr ""
 "Ви не маєте прав на запис до файла «%1». Ви впевнені, що хочете його "
 "перезаписати?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2321
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл з назвою «%1» вже існує. Ви справді хочете його перезаписати?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Не вдалося перезаписати початковий файл"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2426
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Перегляд з керуванням кольорами увімкнено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2431
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2430
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Перегляд з керуванням кольорами вимкнено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2436
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2435
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59031,74 +59031,74 @@ msgstr ""
 "Керування кольорами не налаштовано, отже, Перегляд з керуванням кольорами не "
 "буде доступним."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2471
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Індикатор недоекспонування увімкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2473
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Індикатор недоекспонування вимкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2486
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Індикатор переекспонування увімкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Індикатор переекспонування вимкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2578
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Перетворення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2594
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Декорування"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2605
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Ефекти"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2616
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Кольори"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Покращення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2818
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2817
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Відкрити за допомогою"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2830
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Інше…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2839
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2838
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -60961,7 +60961,7 @@ msgstr "Очистити все"
 msgid "Drag and drop images here"
 msgstr "Перетягніть і скиньте зображення тут"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:201
+#: core/utilities/lighttable/lighttablewindow.cpp:200
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -61622,105 +61622,105 @@ msgstr "Оновлення бази даних на основі метадан�
 msgid "Thumbs"
 msgstr "Мініатюри"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
 msgid "Queues"
 msgstr "Черги"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:136
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
 #, kde-format
 msgid "Queue Settings"
 msgstr "Параметри черги"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
 #, kde-format
 msgid "Control Panel"
 msgstr "Панель керування"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:154
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Призначені інструменти"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:163
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
 #, kde-format
 msgid "Tool Settings"
 msgstr "Параметри інструментів"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:279
 #, kde-format
 msgid "Run"
 msgstr "Виконати"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Run all"
 msgstr "Виконати усі"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
 #, kde-format
 msgid "New Queue"
 msgstr "Створити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:303
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Remove Queue"
 msgstr "Вилучити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
 #, kde-format
 msgid "Save Workflow"
 msgstr "Зберегти процес"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, kde-format
 msgid "Remove items"
 msgstr "Вилучити записи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:318
 #, kde-format
 msgid "Remove processed items"
 msgstr "Вилучити оброблені записи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:324
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:323
 #, kde-format
 msgid "Clear Queue"
 msgstr "Спорожнити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:335
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
 #, kde-format
 msgid "Move up"
 msgstr "Пересунути вгору"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:339
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
 #, kde-format
 msgid "Move down"
 msgstr "Пересунути вниз"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
 #, kde-format
 msgid "Remove tool"
 msgstr "Вилучити інструмент"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
 #, kde-format
 msgid "Current Queue: "
 msgstr "Поточна черга:"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:442
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:476
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, kde-format
 msgid "No items"
 msgstr "Немає об'єктів"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:459
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:493
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, kde-format
 msgid "No tasks"
 msgstr "Немає завдань"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:465
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:499
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:498
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
@@ -61729,47 +61729,47 @@ msgstr[1] "%1 завдання"
 msgstr[2] "%1 завдань"
 msgstr[3] "1 завдання"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "Загалом: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:507
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Готово"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:545
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Виконуємо обробку"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:547
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "Запущено керування чергою обробки. Бажаєте скасувати поточне завдання?"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "Немає черги для виконання."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:650
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "У поточній черзі немає записів дій для обробки (%1)."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:656
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:655
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 "Нетипові правила перейменування поточної черги обробки (%1) є некоректними. "
 "Будь ласка, виправте ці правила."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:661
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:660
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
@@ -61778,19 +61778,19 @@ msgstr ""
 "Список призначених інструментів для поточної черги (%1). Будь ласка, "
 "призначте відповідні інструменти."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:693
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "У чергах немає записів завдань для обробки."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:864
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Параметри альбому оброблених записів"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:866
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61799,7 +61799,7 @@ msgstr ""
 "Альбом записів з черги «%1», яка обробляється на вашому комп'ютері, не "
 "вказано. Будь ласка, оберіть альбом за допомогою панелі параметрів черги."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:876
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61809,27 +61809,27 @@ msgstr ""
 "доступний або непридатний для запису. Будь ласка, оберіть інший альбом за "
 "допомогою панелі параметрів черги."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:955
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Не вдалося обробити запис…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:968
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:967
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Обробку скасовано…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:988
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:987
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Запис «%1» з черги «%2»: %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1017
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1016
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Всі завдання з черги виконано"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1020
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Виконання усіх черг пакетної обробки завершено"
