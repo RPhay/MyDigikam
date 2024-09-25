@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 02:00+0000\n"
+"POT-Creation-Date: 2024-09-25 01:49+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -4800,8 +4800,8 @@ msgstr "پرونده‌های صوتی"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
-#: core/libs/dialogs/libsinfodlg.cpp:615
+#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
+#: core/libs/dialogs/libsinfodlg.cpp:616
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -29438,7 +29438,7 @@ msgstr "ایجادشده:"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>مدل:</b>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29461,33 +29461,33 @@ msgstr "نسخه %1"
 msgid "Items List"
 msgstr "ویرایشگر تصویر"
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "بله"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "خیر"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:193
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "طبیعت"
 
-#: core/libs/dialogs/libsinfodlg.cpp:221
+#: core/libs/dialogs/libsinfodlg.cpp:222
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "مسیر کتابخانه آلبوم"
 
-#: core/libs/dialogs/libsinfodlg.cpp:324
+#: core/libs/dialogs/libsinfodlg.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29495,7 +29495,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: core/libs/dialogs/libsinfodlg.cpp:425
+#: core/libs/dialogs/libsinfodlg.cpp:426
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29503,34 +29503,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: core/libs/dialogs/libsinfodlg.cpp:453
+#: core/libs/dialogs/libsinfodlg.cpp:454
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:488
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "پیکربندی دوربین"
 
-#: core/libs/dialogs/libsinfodlg.cpp:682
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "بله"
 
-#: core/libs/dialogs/libsinfodlg.cpp:687
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "خیر"
 
-#: core/libs/dialogs/libsinfodlg.cpp:692
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
