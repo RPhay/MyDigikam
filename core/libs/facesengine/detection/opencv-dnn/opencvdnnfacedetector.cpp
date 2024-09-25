@@ -30,6 +30,7 @@
 #include "digikam_debug.h"
 #include "dnnfacedetectorssd.h"
 #include "dnnfacedetectoryolo.h"
+#include "dnnfacedetectoryunet.h"
 
 namespace Digikam
 {
@@ -48,6 +49,12 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
         case DetectorNNModel::YOLO:
         {
             m_inferenceEngine = new DNNFaceDetectorYOLO;
+            break;
+        }
+
+        case DetectorNNModel::YUNET:
+        {
+            m_inferenceEngine = new DNNFaceDetectorYuNet;
             break;
         }
 
@@ -94,7 +101,15 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
     }
 
-    return prepareForDetection(cvImage, paddedSize);
+    if (DetectorNNModel::YUNET == m_modelType)
+    {
+        return prepareForDetectionYuNet(cvImage, paddedSize);
+    }
+    else
+    {
+        return prepareForDetection(cvImage, paddedSize);
+    }
+
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv::Size& paddedSize) const
@@ -182,6 +197,32 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
     paddedSize              = cv::Size(padX, padY);
 
     return imagePadded;
+}
+
+cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Size& paddedSize) const
+{
+    cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
+    float resizeFactor = 1.0f;
+
+    if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+    {
+        // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
+        // so we just need to make sure no one bound exceeds the max. No padding needed
+        resizeFactor = std::min(static_cast<float>(inputImageSize.width) / static_cast<float>(cvImage.cols), static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+
+        int newWidth            = (int)(resizeFactor * cvImage.cols);
+        int newHeight           = (int)(resizeFactor * cvImage.rows);
+        cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
+
+    }
+
+    paddedSize = cv::Size(0, 0); // special case for YuNet
+    return cvImage;
+}
+
+void OpenCVDNNFaceDetector::setAccuracy(const float accuracy)
+{
+    m_inferenceEngine->confidenceThreshold = accuracy;
 }
 
 /**

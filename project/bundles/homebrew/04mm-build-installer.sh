@@ -154,7 +154,7 @@ fi
 MARIADB_SOURCE_DIR="opt/mariadb"
 
 OTHER_APPS="\
-lib/plugins/imageformats/*.$QT_PLUGIN_EXT \
+lib/plugins/imageformats/*.dylib \
 lib/plugins/styles/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
@@ -176,6 +176,12 @@ opt/qt$DK_QTVERSION/share/qt/plugins/tls/*.dylib \
 lib/libhunspell*.dylib \
 opt/openssl@3/lib/*.dylib \
 "
+
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+    OTHER_APPS="$OTHER_APPS \
+    opt/zstd/lib/*.dylib \
+    "
+fi
 #opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
 #lib/sane/*.so \
 # opt/mariadb/bin/mysql \
@@ -743,6 +749,9 @@ mkdir $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt
 # link missing libs instead of copying them
 ln -s "../../../opt/openssl@3" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/openssl@3"
 ln -s "../../../opt/pcre2" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/pcre2"
+ln -s "../../../opt/lz4" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/lz4"
+ln -s "../../../opt/snappy" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/snappy"
+ln -s "../../../opt/zstd" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/zstd"
 
 # rebase the MariaDB binaries to the MariaDB dir
 # find the binaries
