@@ -118,7 +118,7 @@ BUGFIXES:
 093 ==> 493453 - Pick labels partially block the filename in the main view when thumbnails are certain sizes.
 094 ==> 493106 - After ignoring one face in a photo, all other face rectangles vanish.
 095 ==> 493498 - Persisting rescaled/positioned window across sessions.
-096 ==> 
+096 ==> 493653 - Caption metadata not embedded in slideshow video.
 097 ==> 
 098 ==> 
 099 ==> 

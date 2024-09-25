@@ -125,7 +125,7 @@ void FrameOsd::populateOSD(const QUrl& url,
     {
         str.clear();
 
-        if (title.isEmpty())
+        if (!comment.isEmpty())
         {
             str     += comment;
             printComments(str);
