@@ -3,20 +3,22 @@ digiKam 8.5.0 - Release date: 2024-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundles:   Update Exiftool to last 12.96.
-Bundles:   Update to last Exiv2 version 0.28.3.
-Bundles:   Update to last ExifTool version 12.89.
-Bundles:   AppImage are now based on KDE framework 6.5.0.
-Bundles:   Windows installer are now based on KDE framework 6.5.0.
-Bundles:   New MacOS Silicon (arm64) package based on Qt6 framework 6.7.2,
-           KDE framework 6.5.0, and ffmpeg 6.1.
+Bundles:         Update Exiftool to last 12.96.
+Bundles:         Update to last Exiv2 version 0.28.3.
+Bundles:         Update to last ExifTool version 12.89.
+Bundles:         AppImage are now based on KDE framework 6.5.0.
+Bundles:         Windows installer are now based on KDE framework 6.5.0.
+Bundles:         New MacOS Silicon (arm64) package based on Qt6 framework 6.7.2,
+                 KDE framework 6.5.0, and ffmpeg 6.1.
 
-Database:  Update to new unique file hash V3 added.
-RawEngine: Update internal libraw to last 20240916 upstream.
-Video:     Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
+Database:        Update to new unique file hash V3 added.
+RawEngine:       Update internal libraw to last 20240916 upstream.
+Video:           Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
 
-IconView:  More compact thumbnails by using a simple horizontal line instead a frame
-           to render Color Labels.
+IconView:        More compact thumbnails by using a simple horizontal line instead a frame
+                 to render Color Labels.
+FacesManagement: Adding YuNet DNN model to process faces detection and replace older SSD model.
+                 It's faster and requires less memory at run-time with better results.
 
 *****************************************************************************************************
 BUGFIXES:
