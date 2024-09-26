@@ -154,21 +154,6 @@ bool DNNFaceDetectorYuNet::loadModels()
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet model:" << model;
 
-#ifdef Q_OS_WIN
-
-            cv_model = cv::FaceDetectorYN::create(
-                                                  nnmodel.toStdString(),
-                                                  "",
-                                                  inputImageSize,
-                                                  conf_threshold,
-                                                  nms_threshold,
-                                                  top_k,
-                                                  backend_id,
-                                                  target_id
-                                                 );
-
-#else
-
 /*
             cv_model = cv::FaceDetectorYN::create("/Users/michmill/Downloads/face_detection_yunet_2023mar.onnx", "", inputImageSize, conf_threshold, nms_threshold, top_k, backend_id, target_id);
 */
@@ -183,7 +168,6 @@ bool DNNFaceDetectorYuNet::loadModels()
                                                   target_id
                                                  );
 
-#endif
 
 #if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
 
