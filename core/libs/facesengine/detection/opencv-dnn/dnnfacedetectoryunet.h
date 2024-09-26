@@ -58,6 +58,8 @@ private:
 
     cv::Mat callModel(const cv::Mat& inputImage);
 
+    bool                    m_modelLoaded = false;
+
 private:
 
     // Disable
