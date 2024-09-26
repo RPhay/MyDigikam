@@ -463,7 +463,7 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
                                      31510785
                                     );
-
+/*
             d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("deploy.prototxt"),
                                      QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795"),
@@ -475,7 +475,7 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76"),
                                      5351047
                                     );
-
+*/
             d->files << DownloadInfo(QLatin1String("facesengine/yunet/"),
                                      QLatin1String("face_detection_yunet_2023mar.onnx"),
                                      QLatin1String("8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"),
