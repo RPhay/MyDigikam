@@ -157,7 +157,7 @@ bool DNNFaceDetectorYuNet::loadModels()
 #ifdef Q_OS_WIN
 
             cv_model = cv::FaceDetectorYN::create(
-                                                  nnmodel.toLocal8Bit(),
+                                                  nnmodel.toStdString(),
                                                   "",
                                                   inputImageSize,
                                                   conf_threshold,
