@@ -457,6 +457,7 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
                                      31510785
                                     );
+
             d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("yolov3-face.cfg"),
                                      QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
