@@ -168,13 +168,6 @@ bool DNNFaceDetectorYuNet::loadModels()
                                                   target_id
                                                  );
 
-
-#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
-
-            net.enableWinograd(false);
-
-#endif
-
             m_modelLoaded = true;
         }
         catch (cv::Exception& e)
