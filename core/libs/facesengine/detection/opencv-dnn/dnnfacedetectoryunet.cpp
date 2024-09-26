@@ -51,14 +51,14 @@ const std::map<std::string, int> str2backend
 
 const std::map<std::string, int> str2target
 {
-    { "cpu",         cv::dnn::DNN_TARGET_CPU         },
-    { "opencl",      cv::dnn::DNN_TARGET_OPENCL      },
-    { "myriad",      cv::dnn::DNN_TARGET_MYRIAD      },
-    { "vulkan",      cv::dnn::DNN_TARGET_VULKAN      },
-    { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16 }
+    { "cpu",         cv::dnn::DNN_TARGET_CPU           },
+    { "opencl",      cv::dnn::DNN_TARGET_OPENCL        },
+    { "myriad",      cv::dnn::DNN_TARGET_MYRIAD        },
+    { "vulkan",      cv::dnn::DNN_TARGET_VULKAN        },
+    { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16   }
 };
 
-const int DNNFaceDetectorYuNet::imageSizeMaxDimensions[5] = 
+const int DNNFaceDetectorYuNet::imageSizeMaxDimensions[5] =
 {
     420,
     620,
@@ -226,7 +226,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     QMutexLocker lock(&lockModel);
 
-    try 
+    try
     {
         // start the timer so we know how long we're locking for
 
@@ -248,7 +248,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     catch (const std::exception& ex)
     {
         // ...
-    } 
+    }
     catch (const std::string& ex)
     {
         // ...
