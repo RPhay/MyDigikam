@@ -98,9 +98,9 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
     m_service->setReplyHandler(replyHandler);
 
     // OAuth configuration saved to between dk sessions
-
+/*
     m_service->setRefreshToken(WSToolUtils::readToken(m_serviceName));
-
+*/
     connect(m_service, &QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,
             this, &GSTalkerBase::slotOpenBrowser);
 
@@ -183,8 +183,9 @@ void GSTalkerBase::slotTokenChanged(const QString& token)
 {
     m_accessToken       = token;
     m_bearerAccessToken = QLatin1String("Bearer ") + m_accessToken;
-
+/*
     WSToolUtils::saveToken(m_serviceName, m_service->refreshToken());
+*/
 }
 
 void GSTalkerBase::doOAuth()
