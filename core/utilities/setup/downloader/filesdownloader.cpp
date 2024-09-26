@@ -444,17 +444,11 @@ void FilesDownloader::createDownloadInfo()
                                  67740572
                                 );
 
-        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                 QLatin1String("yolov3-face.cfg"),
-                                 QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
-                                 8334
+        d->files << DownloadInfo(QLatin1String("facesengine/yunet/"),
+                                 QLatin1String("face_detection_yunet_2023mar.onnx"),
+                                 QLatin1String("8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"),
+                                 232589
                                 );
-
-        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                QLatin1String("yolov3-wider_16000.weights"),
-                                QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
-                                246305388
-                               );
 
         if (qApp->applicationName() == QLatin1String("digikam"))
         {
@@ -462,6 +456,17 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("openface_nn4.small2.v1.t7"),
                                      QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
                                      31510785
+                                    );
+            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                     QLatin1String("yolov3-face.cfg"),
+                                     QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
+                                     8334
+                                    );
+
+            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                     QLatin1String("yolov3-wider_16000.weights"),
+                                     QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
+                                     246305388
                                     );
 /*
             d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
@@ -476,11 +481,6 @@ void FilesDownloader::createDownloadInfo()
                                      5351047
                                     );
 */
-            d->files << DownloadInfo(QLatin1String("facesengine/yunet/"),
-                                     QLatin1String("face_detection_yunet_2023mar.onnx"),
-                                     QLatin1String("8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"),
-                                     232589
-                                    );
         }
     }
 
