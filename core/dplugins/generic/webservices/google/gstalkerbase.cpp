@@ -47,7 +47,7 @@ public:
     QString                tokenUrl     = QLatin1String("https://accounts.google.com/o/oauth2/token");
     QString                identity     = QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
                                                         "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn");
-    QString                sharedKey    = QLatin1String("Bg0AFxUean8WJi8UOAN9MWMwFAJnBxwvEHcVGBE+DggwPQs=");
+    QString                sharedKey    = QLatin1String("Bg0AFxUeai05JyYVAwU9NzkhJSUdbhUpbzhUTzsqNl80PVA=");
 
     QNetworkAccessManager* netMngr      = nullptr;
 };
