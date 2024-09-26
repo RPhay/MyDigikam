@@ -58,8 +58,6 @@ private:
 
     cv::Mat callModel(const cv::Mat& inputImage);
 
-    bool                    m_yunetCreated = false;
-
 private:
 
     // Disable

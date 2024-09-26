@@ -167,8 +167,6 @@ bool DNNFaceDetectorYuNet::loadModels()
                                                   backend_id,
                                                   target_id
                                                  );
-
-            m_yunetCreated = true;
         }
         catch (cv::Exception& e)
         {
@@ -187,8 +185,6 @@ bool DNNFaceDetectorYuNet::loadModels()
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Cannot find faces engine DNN model" << model;
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Faces detection feature cannot be used!";
-
-        m_yunetCreated = false;
 
         return false;
     }
@@ -209,7 +205,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     try
     {
-        if (m_yunetCreated)
+        if (!cv_model.empty())
         {
             // start the timer so we know how long we're locking for
 
