@@ -72,8 +72,8 @@ AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance(QImage)));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo, QImage)),
+            this, SLOT(slotAdvance(ItemInfo, QImage)));
 }
 
 AutotagsAssignment::~AutotagsAssignment()
@@ -180,9 +180,16 @@ void AutotagsAssignment::slotStart()
     d->thread->start();
 }
 
-void AutotagsAssignment::slotAdvance(const QImage& img)
+void AutotagsAssignment::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
-    setThumbnail(QPixmap::fromImage(img));
+    if (!inf.isNull() && !img.isNull())
+    {
+        QString lbl = i18n("Auto-tags for: %1\n", inf.name());
+        lbl.append(i18n("Path: %1", inf.relativePath()));
+        setLabel(lbl);
+        setThumbnail(QPixmap::fromImage(img));
+    }
+
     advance(1);
 }
 

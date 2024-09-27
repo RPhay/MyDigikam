@@ -26,6 +26,7 @@ namespace Digikam
 {
 
 class MaintenanceData;
+class ItemInfo;
 
 class AutotagsAssignmentTask : public ActionJob
 {
@@ -43,7 +44,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&);
 
 protected:
 
