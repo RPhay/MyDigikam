@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-09-27 01:52+0000\n"
 "PO-Revision-Date: 2024-09-21 17:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -64689,7 +64689,7 @@ msgstr "Errore nell'apertura del file."
 msgid "File on the server is too large."
 msgstr "Il file sul server è troppo grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64714,13 +64714,13 @@ msgstr ""
 "scaricati in %1.</p><p><b>Dopo averli scaricati correttamente dovrai "
 "riavviare il programma.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Lo scaricamento richiede %1 file per una dimensione di %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Sono stati trovati tutti i file delle funzionalità selezionate."

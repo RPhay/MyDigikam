@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-09-27 01:52+0000\n"
 "PO-Revision-Date: 2024-09-21 10:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -64573,7 +64573,7 @@ msgstr "Fout bij openen van bestand."
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64598,13 +64598,13 @@ msgstr ""
 "werken.</p><p>De bestanden zullen gedownload worden naar %1.</p><p><b>Na het "
 "met succes downloaden moet u digiKam herstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Het downloaden vereist %1 bestanden met een grootte van %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Alle bestanden van de geselecteerde functies zijn gevonden."

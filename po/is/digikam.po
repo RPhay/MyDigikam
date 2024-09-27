@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-09-27 01:52+0000\n"
 "PO-Revision-Date: 2024-09-10 12:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -63951,7 +63951,7 @@ msgstr "Villa  við að opna skrá."
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -63974,13 +63974,13 @@ msgstr ""
 "p><p>Skránum verður hlaðið yfir í í %1.</p><p><b>Eftir að búið er að sækja "
 "skrárnar þarftu að endurræsa digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Niðurhalið krefst %1 skráa af stærðinni %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Allar skrár valinna eiginleika fundust."

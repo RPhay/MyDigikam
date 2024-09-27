@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-09-27 01:52+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -62202,7 +62202,7 @@ msgstr "文件打开错误。"
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -62222,13 +62222,13 @@ msgstr ""
 "框，digiKam 会在下一次启动时再次提示您下载。</p><p>这些软件包将被下载到 %1。"
 "</p><p><b>下载完成后，请重新启动 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "选中功能所需的所有文件均已找到。"
