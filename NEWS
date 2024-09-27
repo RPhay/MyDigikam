@@ -119,7 +119,7 @@ BUGFIXES:
 094 ==> 493106 - After ignoring one face in a photo, all other face rectangles vanish.
 095 ==> 493498 - Persisting rescaled/positioned window across sessions.
 096 ==> 493653 - Caption metadata not embedded in slideshow video.
-097 ==> 
+097 ==> 493743 - MacOS Sequoia 15.0: digikam inoperable, crashes when launching.
 098 ==> 
 099 ==> 
 100 ==> 
