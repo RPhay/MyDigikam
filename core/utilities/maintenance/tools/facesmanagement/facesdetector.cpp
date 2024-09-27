@@ -483,8 +483,21 @@ void FacesDetector::slotImagesSkipped(const QList<ItemInfo>& infos)
     advance(infos.size());
 }
 
-void FacesDetector::slotShowOneDetected(const FacePipelinePackage& /*package*/)
+void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
 {
+    QString lbl = i18n("Scanned: %1\n", package.info.name());
+    lbl.append(i18n("Path: %1\n", package.info.relativePath()));
+
+    if (!package.detectedFaces.count())
+    {
+        lbl.append(i18n("No face"));
+    }
+    else
+    {
+        lbl.append(i18np("1 face", "%1 faces", package.detectedFaces.count()));
+    }
+
+    setLabel(lbl);
     advance(1);
 }
 

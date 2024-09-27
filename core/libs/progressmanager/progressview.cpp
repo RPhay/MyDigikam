@@ -189,6 +189,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
 
     d->itemLabel = new QLabel(fontMetrics().elidedText(item->label(), Qt::ElideRight, d->maxLabelWidth), h);
     h->layout()->addWidget(d->itemLabel);
+    h->setStretchFactor(d->itemLabel, 100);
     h->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
 
     d->progress = new QProgressBar(h);
