@@ -47,7 +47,7 @@ public:
     QString                tokenUrl     = QLatin1String("https://accounts.google.com/o/oauth2/token");
     QString                identity     = QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
                                                         "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn");
-    QString                sharedKey    = QLatin1String("Bg0AFxUean8WJi8UOAN9MWMwFAJnBxwvEHcVGBE+DggwPQs=");
+    QString                sharedKey    = QLatin1String("Bg0AFxUeai05JyYVAwU9NzkhJSUdbhUpbzhUTzsqNl80PVA=");
 
     QNetworkAccessManager* netMngr      = nullptr;
 };
@@ -98,9 +98,9 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
     m_service->setReplyHandler(replyHandler);
 
     // OAuth configuration saved to between dk sessions
-
+/*
     m_service->setRefreshToken(WSToolUtils::readToken(m_serviceName));
-
+*/
     connect(m_service, &QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,
             this, &GSTalkerBase::slotOpenBrowser);
 
@@ -183,8 +183,9 @@ void GSTalkerBase::slotTokenChanged(const QString& token)
 {
     m_accessToken       = token;
     m_bearerAccessToken = QLatin1String("Bearer ") + m_accessToken;
-
+/*
     WSToolUtils::saveToken(m_serviceName, m_service->refreshToken());
+*/
 }
 
 void GSTalkerBase::doOAuth()

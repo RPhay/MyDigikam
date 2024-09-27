@@ -167,14 +167,6 @@ bool DNNFaceDetectorYuNet::loadModels()
                                                   backend_id,
                                                   target_id
                                                  );
-
-
-#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
-
-            net.enableWinograd(false);
-
-#endif
-
         }
         catch (cv::Exception& e)
         {
@@ -199,6 +191,7 @@ bool DNNFaceDetectorYuNet::loadModels()
 
     return true;
 }
+
 cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 {
     QElapsedTimer timer;
@@ -212,21 +205,24 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     try
     {
-        // start the timer so we know how long we're locking for
+        if (!cv_model.empty())
+        {
+            // start the timer so we know how long we're locking for
 
-        timer.start();
+            timer.start();
 
-        // set up the detector with new params
+            // set up the detector with new params
 
-        cv_model->setInputSize(inputImage.size());
-        cv_model->setScoreThreshold(confidenceThreshold);
-        cv_model->setNMSThreshold(nmsThreshold);
+            cv_model->setInputSize(inputImage.size());
+            cv_model->setScoreThreshold(confidenceThreshold);
+            cv_model->setNMSThreshold(nmsThreshold);
 
-        // detect faces
+            // detect faces
 
-        cv_model->detect(inputImage, faces);
+            cv_model->detect(inputImage, faces);
 
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
+        }
     }
 
     catch (const std::exception& ex)

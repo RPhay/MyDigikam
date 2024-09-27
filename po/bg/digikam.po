@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
-"PO-Revision-Date: 2024-09-11 11:46+0200\n"
+"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"PO-Revision-Date: 2024-09-26 10:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2787,49 +2787,42 @@ msgstr "Всички поддържани файлове (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Обратна връзка: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Документация"
+msgstr "Документация: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "Дата на файла"
+msgstr "Дата на изграждане: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Крайна снимка"
+msgstr "Цел на изграждане: "
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Неподдържана архитектура: %1"
+msgstr "Архитектура на изграждане: "
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Стандартно отклонение: "
+msgstr "Ревизия на Git: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Клон на Git: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -22441,31 +22434,7 @@ msgid "A tool to render slideshow"
 msgstr "Инструмент за създаване на слайдшоу"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -64677,7 +64646,7 @@ msgstr "Грешка при отваряне на файл."
 msgid "File on the server is too large."
 msgstr "Файлът на сървъра е твърде голям."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64702,13 +64671,13 @@ msgstr ""
 "p><p>Файловете ще бъдат изтеглени в %1.</p><p><b>След успешното изтегляне "
 "трябва да рестартирате digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Изтеглянето изисква %1 файлове с размер %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Всички файлове на избраните функции бяха намерени."
@@ -66643,7 +66612,7 @@ msgstr "FFmpeg (по подразбиране)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66651,10 +66620,9 @@ msgid "Windows (System)"
 msgstr "Windows (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (System)"
+msgstr "Darwin (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -66934,14 +66902,10 @@ msgstr ""
 "преди 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Получаване на информация за <interface> Актуализиране на файлови хешове </"
-"interface>"
+msgstr "Получаване на информация за <b>Актуализиране на файлови хешове </b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format
@@ -67884,124 +67848,3 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
-
-#~ msgid ""
-#~ "We now switch to the system icon theme. The icon colors are automatically "
-#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
-#~ "restart of digiKam."
-#~ msgstr ""
-#~ "Сега преминаваме към темата със системните икони. Цветовете на иконите са "
-#~ "автоматично нагласени за работния плот на Plasma 6. Темата на иконите е "
-#~ "достъпна след рестартиране на digiKam."
-
-#, fuzzy
-#~| msgid ""
-#~| "IRC: %1 - #digikam\n"
-#~| "Feedback: %2\n"
-#~| "Documentation: %3\n"
-#~| "\n"
-#~| "Build date: %4 (target: %5)\n"
-#~| "Revision: %6\n"
-#~| "Branch: %7"
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4\n"
-#~ "Build target: %5\n"
-#~ "Build architecture: %6"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)\n"
-#~ "Revision: %6\n"
-#~ "Branch: %7"
-
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)"
-
-#~ msgid ""
-#~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of digiKam to get a better "
-#~ "experience with digiKam.</p>"
-#~ msgstr ""
-#~ "<p>Използвате 32-битова версия на digiKam на 64-битов Windows.</"
-#~ "p><p>Моля, инсталирайте 64-битовата версия на digiKam, за да получите по-"
-#~ "добри резултати.</p>"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of Showfoto to get a better "
-#~ "experience with Showfoto.</p>"
-#~ msgstr ""
-#~ "<p>Изпълнявате 32-битова версия  на Showfoto на 64-битов прозорци.</"
-#~ "p><p>Моля, инсталирайте 64-битовата версия на Showfoto, за да получите по-"
-#~ "добро изживяване.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Enter Flickr Login URL"
-#~ msgstr "Въведете адрес за влизане в Flickr"
-
-#~ msgid ""
-#~ "Copy the full URL from the external browser that contains the "
-#~ "\"oauth_token\" entry:"
-#~ msgstr ""
-#~ "Копиране на пълния URL адрес от външния браузър, който съдържа записа "
-#~ "\"oauth_token\":"
-
-#~ msgid ""
-#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
-#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
-#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
-#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
-#~ msgstr ""
-#~ "Нови функции на RAW: Поддръжка на Phase One/Leaf IIQ-S v2 Canon CR3 "
-#~ "filmrolls/RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit "
-#~ "unpacked) DNGs (non-standard) Deflate-compressed integer DNG files are "
-#~ "allowed Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 "
-#~ "Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
-
-#~ msgctxt "@title:menu open with desktop application"
-#~ msgid "Open With"
-#~ msgstr "Отваряне с"
-
-#~ msgctxt "@item:inmenu open with other application"
-#~ msgid "Other..."
-#~ msgstr "Друго..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "Open With..."
-#~ msgstr "Отваряне с..."
-
-#~ msgctxt "@action:button"
-#~ msgid "Try Alternate"
-#~ msgstr "Алтернативно огледало"
-
-#~ msgctxt "@item: xmp namespace"
-#~ msgid "DigiKam"
-#~ msgstr "DigiKam"
-
-#~ msgid "Time Adjust"
-#~ msgstr "Настройка на времето"
-
-#~ msgid "Adjust Date Time Stamp of Image"
-#~ msgstr "Настройване на датата и часа на изображението"
-
-#~ msgctxt "@info"
-#~ msgid "Select here the font used to display text in the MJPEG."
-#~ msgstr "Изберете тук шрифта, използван за показване на текста в MJPEG."
