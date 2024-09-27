@@ -81,8 +81,8 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
         t->setDirection(dir);
         t->setMaintenanceData(data);
 
-        connect(t, SIGNAL(signalFinished(QImage)),
-                this, SIGNAL(signalAdvance(QImage)));
+        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
+                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
 
         connect(t, SIGNAL(signalRemovePending(ItemInfo)),
                 this, SIGNAL(signalRemovePending(ItemInfo)));

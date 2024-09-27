@@ -97,8 +97,8 @@ void MetadataSynchronizer::init(SyncDirection direction)
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance()));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+            this, SLOT(slotAdvance(ItemInfo)));
 
     connect(d->thread, SIGNAL(signalRemovePending(ItemInfo)),
             this, SIGNAL(signalRemovePending(ItemInfo)));
@@ -207,8 +207,11 @@ void MetadataSynchronizer::parseList()
     d->thread->start();
 }
 
-void MetadataSynchronizer::slotAdvance()
+void MetadataSynchronizer::slotAdvance(const ItemInfo& inf)
 {
+    QString lbl = i18n("Metadata Sync for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1", inf.relativePath()));
+    setLabel(lbl);
     advance(1);
 }
 

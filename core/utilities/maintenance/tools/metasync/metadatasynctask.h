@@ -44,7 +44,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&);
     void signalRemovePending(const ItemInfo& info);
 
 protected:

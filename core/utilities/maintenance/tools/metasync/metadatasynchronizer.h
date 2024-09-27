@@ -71,7 +71,7 @@ private Q_SLOTS:
     void slotStart()                override;
     void slotParseAlbums();
     void slotAlbumParsed(const ItemInfoList&);
-    void slotAdvance();
+    void slotAdvance(const ItemInfo&);
     void slotOneAlbumIsComplete();
     void slotCancel()               override;
 

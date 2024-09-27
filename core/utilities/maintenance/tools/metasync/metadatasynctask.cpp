@@ -117,7 +117,7 @@ void MetadataSyncTask::run()
             scanner.scanFile(item, CollectionScanner::CleanScan);
         }
 
-        Q_EMIT signalFinished(QImage());
+        Q_EMIT signalFinished(item, QImage());
     }
 
     Q_EMIT signalDone();
