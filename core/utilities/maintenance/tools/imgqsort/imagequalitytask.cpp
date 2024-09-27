@@ -95,6 +95,8 @@ void ImageQualityTask::run()
             break;
         }
 
+        ItemInfo info = ItemInfo::fromLocalFile(path);
+
         // Get item preview to perform quality analysis. No need to load whole image, this will be slower.
         // 1024 pixels size image must be enough to get suitable Quality results.
 
@@ -115,7 +117,6 @@ void ImageQualityTask::run()
             d->imgqsort = new ImageQualityParser(dimg, d->quality, &pick);
             d->imgqsort->startAnalyse();
 
-            ItemInfo info = ItemInfo::fromLocalFile(path);
             info.setPickLabel(pick);
 
             MetadataHub hub;
@@ -134,7 +135,7 @@ void ImageQualityTask::run()
 
         QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
 
-        Q_EMIT signalFinished(qimg);
+        Q_EMIT signalFinished(info, qimg);
     }
 
     Q_EMIT signalDone();

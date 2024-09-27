@@ -149,7 +149,7 @@ void FingerPrintsGenerator::slotStart()
 void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
     QString lbl = i18n("Rebuild Fingerprint for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1\n", inf.relativePath()));
+    lbl.append(i18n("Path: %1", inf.relativePath()));
     setLabel(lbl);
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);

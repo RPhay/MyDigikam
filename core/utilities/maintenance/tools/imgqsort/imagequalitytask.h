@@ -29,6 +29,7 @@ namespace Digikam
 
 class ImageQualityContainer;
 class MaintenanceData;
+class ItemInfo;
 
 class ImageQualityTask : public ActionJob
 {
@@ -44,7 +45,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&);
 
 public Q_SLOTS:
 

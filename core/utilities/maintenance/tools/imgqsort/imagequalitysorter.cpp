@@ -70,8 +70,8 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance(QImage)));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+            this, SLOT(slotAdvance(ItemInfo,QImage)));
 }
 
 ImageQualitySorter::~ImageQualitySorter()
@@ -168,8 +168,11 @@ void ImageQualitySorter::slotStart()
     d->thread->start();
 }
 
-void ImageQualitySorter::slotAdvance(const QImage& img)
+void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
+    QString lbl = i18n("Rebuild Fingerprint for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1", inf.relativePath()));
+    setLabel(lbl);
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);
 }
