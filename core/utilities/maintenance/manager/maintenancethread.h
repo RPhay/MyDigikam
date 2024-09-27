@@ -35,6 +35,7 @@ namespace Digikam
 class ImageQualityContainer;
 class MaintenanceData;
 
+
 class MaintenanceThread : public ActionThreadBase
 {
     Q_OBJECT
@@ -72,7 +73,8 @@ Q_SIGNALS:
 
     /** Emit when an item have been processed. QImage can be used to pass item thumbnail processed.
      */
-    void signalAdvance(const QImage&);
+    void signalAdvance(const ItemInfo&, const QImage&);
+    void signalAdvance(const QImage&);      // TODO: remove this one later
 
     /** Emit when an itam was processed and on additional information is necessary.
      */

@@ -485,7 +485,7 @@ void FacesDetector::slotImagesSkipped(const QList<ItemInfo>& infos)
 
 void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
 {
-    QString lbl = i18n("Scanned: %1\n", package.info.name());
+    QString lbl = i18n("Scanned for faces: %1\n", package.info.name());
     lbl.append(i18n("Path: %1\n", package.info.relativePath()));
 
     if (!package.detectedFaces.count())

@@ -63,8 +63,8 @@ FingerPrintsGenerator::FingerPrintsGenerator(const bool rebuildAll, const AlbumL
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance(QImage)));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+            this, SLOT(slotAdvance(ItemInfo,QImage)));
 }
 
 FingerPrintsGenerator::~FingerPrintsGenerator()
@@ -146,8 +146,11 @@ void FingerPrintsGenerator::slotStart()
     d->thread->start();
 }
 
-void FingerPrintsGenerator::slotAdvance(const QImage& img)
+void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
+    QString lbl = i18n("Rebuild Fingerprint for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1\n", inf.relativePath()));
+    setLabel(lbl);
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);
 }

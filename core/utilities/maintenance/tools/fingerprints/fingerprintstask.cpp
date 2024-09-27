@@ -118,11 +118,11 @@ void FingerprintsTask::run()
 
             QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
 
-            Q_EMIT signalFinished(qimg);
+            Q_EMIT signalFinished(info, qimg);
         }
         else
         {
-            Q_EMIT signalFinished(d->okImage);
+            Q_EMIT signalFinished(info, d->okImage);
         }
     }
 

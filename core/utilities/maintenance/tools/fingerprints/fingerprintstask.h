@@ -29,6 +29,7 @@ namespace Digikam
 class LoadingDescription;
 class MaintenanceData;
 class DImg;
+class ItemInfo;
 
 class FingerprintsTask : public ActionJob
 {
@@ -44,7 +45,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&);
 
 protected:
 

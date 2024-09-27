@@ -28,6 +28,8 @@ class QImage;
 namespace Digikam
 {
 
+class ItemInfo;
+
 class FingerPrintsGenerator : public MaintenanceTool
 {
     Q_OBJECT
@@ -50,7 +52,7 @@ private Q_SLOTS:
     void slotStart()                override;
     void slotDone()                 override;
     void slotCancel()               override;
-    void slotAdvance(const QImage&);
+    void slotAdvance(const ItemInfo&, const QImage&);
 
 private:
 
