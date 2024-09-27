@@ -113,7 +113,7 @@ void ThumbsTask::run()
                 d->condVar.wait(&d->mutex);
             }
 
-            Q_EMIT signalFinished(d->image);
+            Q_EMIT signalFinished(info, d->image);
 
             d->image = QImage();
         }

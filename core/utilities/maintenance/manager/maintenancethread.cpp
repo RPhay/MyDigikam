@@ -130,8 +130,8 @@ void MaintenanceThread::generateThumbs(const QStringList& paths)
 
         t->setMaintenanceData(data);
 
-        connect(t, SIGNAL(signalFinished(QImage)),
-                this, SIGNAL(signalAdvance(QImage)));
+        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
+                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
 
         collection.insert(t, 0);
 

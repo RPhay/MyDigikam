@@ -94,8 +94,8 @@ void ThumbsGenerator::init(const bool rebuildAll)
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance(QImage)));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+            this, SLOT(slotAdvance(ItemInfo,QImage)));
 }
 
 void ThumbsGenerator::setUseMultiCoreCPU(bool b)
@@ -211,8 +211,11 @@ void ThumbsGenerator::slotStart()
     d->thread->start();
 }
 
-void ThumbsGenerator::slotAdvance(const QImage& img)
+void ThumbsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
+    QString lbl = i18n("Thumbnail for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1", inf.relativePath()));
+    setLabel(lbl);
     setThumbnail(QPixmap::fromImage(img));
     advance(1);
 }

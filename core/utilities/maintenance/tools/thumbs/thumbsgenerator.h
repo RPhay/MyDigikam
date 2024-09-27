@@ -27,6 +27,8 @@
 namespace Digikam
 {
 
+class ItemInfo;
+
 class ThumbsGenerator : public MaintenanceTool
 {
     Q_OBJECT
@@ -54,7 +56,7 @@ private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
-    void slotAdvance(const QImage&);
+    void slotAdvance(const ItemInfo&, const QImage&);
 
 private:
 
