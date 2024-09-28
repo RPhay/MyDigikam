@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -35889,7 +35889,7 @@ msgstr "Thăm nơi Mạng của dự án digiKam"
 msgid "Aborting..."
 msgstr "&Tải..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, fuzzy, kde-format
 msgid "Cancel this operation."
 msgstr "Thông tin máy ảnh"
@@ -59458,6 +59458,20 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Điều chỉnh:"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+msgid "Auto-tags for: %1\n"
+msgstr "Chế độ cong bằng tay"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+msgid "Path: %1"
+msgstr "Thẻ: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -59567,10 +59581,37 @@ msgstr "Quét tìm ảnh mới"
 msgid "Updating faces database"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "Tìm kiếm:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+msgid "Path: %1\n"
+msgstr "Thẻ: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+msgid "No face"
+msgstr "Nháp ảnh chụp"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Nháp ảnh chụp"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "<b>Tiến trình cập nhật cơ sở dữ liệu ảnh mẫu đã chạy xong</b>"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Xây dựng lạ mọi ảnh mẫu..."
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -59610,10 +59651,20 @@ msgstr "Đang đồng bộ hoá siêu dữ liệu của ảnh với cơ sở d�
 msgid "Updating database from image metadata"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+msgid "Metadata Sync for: %1\n"
+msgstr "Lọc nhiễu :"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, fuzzy, kde-format
 msgid "Thumbs"
 msgstr "Hiện các ảnh mẫu"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+msgid "Thumbnail for: %1\n"
+msgstr "Thuộc tính"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, fuzzy, kde-format

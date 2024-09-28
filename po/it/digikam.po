@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-09-21 17:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -37349,7 +37349,7 @@ msgstr "Visita il sito web del progetto digiKam"
 msgid "Aborting..."
 msgstr "Annullamento..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Annulla questa operazione."
@@ -61271,6 +61271,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Assegnazione di tag automatici"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tags for: %1\n"
+msgstr "Modalità tag automatici: "
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "№ sat: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -61382,10 +61398,45 @@ msgstr "Analisi dei volti in %1 immagini"
 msgid "Updating faces database"
 msgstr "Aggiornamento della banca dati dei volti"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Scanned for faces: %1\n"
+msgstr "Analisi dei volti nell'album: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "№ sat: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "Nessun volto"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Nessun volto"
+msgstr[1] "Nessun volto"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Codici di controllo"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Ricalcola i codici di controllo"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61425,10 +61476,22 @@ msgstr "Sincronizzazione dei metadati delle immagini con la banca dati."
 msgid "Updating database from image metadata"
 msgstr "Aggiornamento della banca dati dai metadati delle immagini"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Getting Metadata for %1..."
+msgid "Metadata Sync for: %1\n"
+msgstr "Recupero dei dati aggiuntivi per %1..."
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Miniature"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "Proprietà miniatura:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -77421,9 +77484,6 @@ msgstr "Importa elementi"
 
 #~ msgid "The files in %1 have been listed."
 #~ msgstr "I file in %1 sono stati elencati."
-
-#~ msgid "Getting Metadata for %1..."
-#~ msgstr "Recupero dei dati aggiuntivi per %1..."
 
 #~ msgid "Fix Internal date to file %1..."
 #~ msgstr "Correggi la data interna al file %1..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -35626,7 +35626,7 @@ msgstr ""
 msgid "Aborting..."
 msgstr ""
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr ""
@@ -59021,6 +59021,20 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr ""
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, kde-format
+msgid "Auto-tags for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, kde-format
+msgid "Path: %1"
+msgstr ""
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -59132,9 +59146,39 @@ msgstr "रँग"
 msgid "Updating faces database"
 msgstr ""
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Scanned for faces: %1\n"
+msgstr "रँग"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, kde-format
+msgid "Path: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgid "Video"
+msgid "No face"
+msgstr "वीडियो"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, kde-format
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] ""
+msgstr[1] ""
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
+msgstr ""
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
@@ -59173,10 +59217,21 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr ""
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, kde-format
+msgid "Metadata Sync for: %1\n"
+msgstr ""
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr ""
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Thumbnail for: %1\n"
+msgstr "जमावट"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -67232,12 +67287,6 @@ msgstr ""
 #~| msgid "Colors"
 #~ msgid "Color Effects"
 #~ msgstr "रँग"
-
-#, fuzzy
-#~| msgid "Settings"
-#~ msgctxt "@title:menu"
-#~ msgid "Thumbnail Size"
-#~ msgstr "जमावट"
 
 #, fuzzy
 #~| msgid "File Name"

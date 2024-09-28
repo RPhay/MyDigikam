@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-09-17 13:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -36451,7 +36451,7 @@ msgstr "زُر موقع وب مشروع «دِجي‌كام»"
 msgid "Aborting..."
 msgstr "يجهض..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "ألغِ العمليّة."
@@ -60852,6 +60852,21 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr ""
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tags for: %1\n"
+msgstr "نمط القياس:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+msgid "Path: %1"
+msgstr "سبت"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -60970,10 +60985,46 @@ msgstr "امسح للوجوه"
 msgid "Updating faces database"
 msgstr "إنشاء جديد الألبوم"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scanned for faces: %1\n"
+msgstr "ابحث في:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+msgid "Path: %1\n"
+msgstr "سبت"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgid "No filter"
+msgid "No face"
+msgstr "لا مرشّح"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgid "No filter"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "لا مرشّح"
+msgstr[1] "لا مرشّح"
+msgstr[2] "لا مرشّح"
+msgstr[3] "لا مرشّح"
+msgstr[4] "لا مرشّح"
+msgstr[5] "لا مرشّح"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "إعادة البناء الكل مُسْتعْرضة."
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -61013,10 +61064,21 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr ""
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+msgid "Metadata Sync for: %1\n"
+msgstr "يصبح صورة مصغّرة بوصة progress."
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr ""
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Tag Properties"
+msgid "Thumbnail for: %1\n"
+msgstr "خصائص الوسم"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -73852,10 +73914,6 @@ msgstr "استورد عناصر"
 #~ msgstr "سرْد ملفات بوصة."
 
 #, fuzzy
-#~ msgid "Getting Metadata for %1..."
-#~ msgstr "يصبح صورة مصغّرة بوصة progress."
-
-#, fuzzy
 #~ msgid "Fix Internal date to file %1..."
 #~ msgstr "أصْلح داخلي التاريخ وقت"
 
@@ -74135,10 +74193,6 @@ msgstr "استورد عناصر"
 
 #, fuzzy
 #~ msgid "Rebuild All Thumbnails..."
-#~ msgstr "إعادة البناء الكل مُسْتعْرضة."
-
-#, fuzzy
-#~ msgid "Rebuild Fingerprints..."
 #~ msgstr "إعادة البناء الكل مُسْتعْرضة."
 
 #, fuzzy

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-07-13 09:50+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -37123,7 +37123,7 @@ msgstr "Navštíviť web projektu digiKam"
 msgid "Aborting..."
 msgstr "Prerušujem..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Zruší túto operáciu."
@@ -62330,6 +62330,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Automatická oprava"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tags for: %1\n"
+msgstr "Režim merania:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "#Sat: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -62449,10 +62465,43 @@ msgstr "Hľadať tváre"
 msgid "Updating faces database"
 msgstr "Aktualizuje sa databáza tvárí."
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Scanned for faces: %1\n"
+msgstr "Hľadať v albumoch:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Sat: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+msgid "No face"
+msgstr "Pamäť Flash"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Pamäť Flash"
+msgstr[1] "Pamäť Flash"
+msgstr[2] "Pamäť Flash"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Odtlačky"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Znovu vytvoriť odtlačky"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -62490,10 +62539,21 @@ msgstr "Synchronizujú sa metadáta obrázkov s databázou"
 msgid "Updating database from image metadata"
 msgstr "Čítať metadáta zo súboru do databázy"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+msgid "Metadata Sync for: %1\n"
+msgstr "Informácie o module"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Miniatúry"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "Vlastnosti miniatúr:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

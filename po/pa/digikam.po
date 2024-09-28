@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -36678,7 +36678,7 @@ msgstr "ਡਿਜਿਕੈਮ ਪਰੋਜੈੱਕਟ ਵੈੱਬਸਾਇਟ 
 msgid "Aborting..."
 msgstr "...ਅਧੂਰਾ ਛੱਡਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "ਇਹ ਕਾਰਵਾਈ ਰੱਦ ਕਰੋ।"
@@ -61389,6 +61389,21 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "ਆਟੋਮੈਟਿਕ ਅਡਜੱਸਟਮੈਂਟ"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, kde-format
+msgid "Auto-tags for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "Path"
+msgid "Path: %1"
+msgstr "ਮਾਰਗ"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -61504,10 +61519,41 @@ msgstr "ਨਵੇਂ ਚਿੱਤਰਾਂ ਲਈ ਸਕੈਨ"
 msgid "Updating faces database"
 msgstr "ਚਿਹਰਾ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "ਇਸ 'ਚ ਖੋਜ:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgid "Path: %1\n"
+msgstr "ਰੇਟਿੰਗ:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "No face"
+msgstr "ਫਲੈਸ਼ ਨਹੀਂ"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "ਫਲੈਸ਼ ਨਹੀਂ"
+msgstr[1] "ਫਲੈਸ਼ ਨਹੀਂ"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "ਫਿੰਗਰਪਰਿੰਟ"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "ਫਿੰਗਰਪਰਿੰਟ ਮੁੜ-ਬਣਾਓ..."
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -61547,10 +61593,21 @@ msgstr "ਤਸਵੀਰ ਮੇਟਾਡਾਟਾ ਡਾਟਾਬੇਸ ਨਾਲ
 msgid "Updating database from image metadata"
 msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਸਥਿਤੀ ਅੱਪਡੇਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Getting thumbnails for %1..."
+msgid "Metadata Sync for: %1\n"
+msgstr "%1 ਲਈ ਥੰਮਨੇਲ ਲਏ ਜਾ ਰਹੇ ਹਨ..."
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "ਥੰਮ"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+msgid "Thumbnail for: %1\n"
+msgstr "ਵਿਸ਼ੇਸ਼ਤਾ"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -73397,11 +73454,6 @@ msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
 
 #~ msgid "The files in %1 have been listed."
 #~ msgstr "%1 ਵਿੱਚੋਂ ਫਾਇਲਾਂ ਵੇਖਾਈਆਂ।"
-
-#, fuzzy
-#~| msgid "Getting thumbnails for %1..."
-#~ msgid "Getting Metadata for %1..."
-#~ msgstr "%1 ਲਈ ਥੰਮਨੇਲ ਲਏ ਜਾ ਰਹੇ ਹਨ..."
 
 #, fuzzy
 #~| msgid "Fix internal date && time"

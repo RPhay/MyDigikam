@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -39226,7 +39226,7 @@ msgstr "Posjetite veb stranu digiKam projekta"
 msgid "Aborting..."
 msgstr "Prekidam..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Prekini ovu operaciju."
@@ -65326,6 +65326,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Automatsko prilagođavanje"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tags for: %1\n"
+msgstr "Način mjerenja:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "#Sat: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -65450,10 +65466,45 @@ msgstr "Skeniranje lica"
 msgid "Updating faces database"
 msgstr "Ažuriranje lica baze podataka."
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scanned for faces: %1\n"
+msgstr "Traži u:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Sat: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "No face"
+msgstr "Bez blica"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Bez blica"
+msgstr[1] "Bez blica"
+msgstr[2] "Bez blica"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Otisci prstiju"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Ponovo napravi otiske prstiju"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -65495,10 +65546,22 @@ msgstr "Sinhronizacija slike metapodataka s bazom podataka"
 msgid "Updating database from image metadata"
 msgstr "Ažuriranje baze podataka iz slike metapodataka"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Metadata Information"
+msgid "Metadata Sync for: %1\n"
+msgstr "Informacije meta-podataka"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Ikone"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Tag Properties"
+msgid "Thumbnail for: %1\n"
+msgstr "Svojstva oznake"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

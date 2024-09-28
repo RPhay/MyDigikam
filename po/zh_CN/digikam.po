@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -35730,7 +35730,7 @@ msgstr "访问 digiKam 项目网站"
 msgid "Aborting..."
 msgstr "正在中止..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "取消此操作。"
@@ -58971,6 +58971,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "自动标签分配"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tags for: %1\n"
+msgstr "自动标签模式："
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "卫星数量：%1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -59079,10 +59095,44 @@ msgstr "扫描 %1 张图像中的人脸"
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Scanned for faces: %1\n"
+msgstr "扫描相册中的人脸：%1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "卫星数量：%1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "无人脸信息"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "无人脸信息"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "图像指纹"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "重建文件指纹"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -59122,10 +59172,22 @@ msgstr "正在同步图像和数据库的元数据"
 msgid "Updating database from image metadata"
 msgstr "正在从图像更新数据库元数据"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Metadata Information"
+msgid "Metadata Sync for: %1\n"
+msgstr "元数据信息"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "缩略图"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "缩略图属性："
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

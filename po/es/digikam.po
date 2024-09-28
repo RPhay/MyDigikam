@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-09-21 13:31+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -37326,7 +37326,7 @@ msgstr "Visitar el sitio web del proyecto digiKam"
 msgid "Aborting..."
 msgstr "Interrumpiendo..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Cancelar esta operación"
@@ -61284,6 +61284,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Asignación automática de etiquetas"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tags for: %1\n"
+msgstr "Modo de etiquetas automáticas: "
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "#Sat: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -61394,10 +61410,45 @@ msgstr "Escanear caras en %1 imágenes"
 msgid "Updating faces database"
 msgstr "Actualizando la base de datos de caras"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Scanned for faces: %1\n"
+msgstr "Escanear caras del álbum %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Sat: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "Ninguna cara"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Ninguna cara"
+msgstr[1] "Ninguna cara"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Impresiones digitales"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Reconstruir las impresiones digitales"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61437,10 +61488,22 @@ msgstr "Sincronizando metadatos de las imágenes con la base de datos"
 msgid "Updating database from image metadata"
 msgstr "Actualizando la base de datos con metadatos de las imágenes"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Metadata Information"
+msgid "Metadata Sync for: %1\n"
+msgstr "Información de metadatos"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Miniaturas"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "Propiedades de las miniaturas:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

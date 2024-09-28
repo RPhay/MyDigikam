@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -37624,7 +37624,7 @@ msgstr "digiKam プロジェクトのウェブサイトを訪問"
 msgid "Aborting..."
 msgstr "中断しています..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr ""
@@ -62855,6 +62855,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "自動調整"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tags for: %1\n"
+msgstr "測光方式:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "Path"
+msgid "Path: %1"
+msgstr "パス"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -62975,10 +62991,40 @@ msgstr "顔をスキャン中"
 msgid "Updating faces database"
 msgstr "顔データベースの更新中です。"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgid "Path: %1\n"
+msgstr "評価: "
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "No face"
+msgstr "フラッシュなし"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgid "No flash"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "フラッシュなし"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "フィンガープリントがありません"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "フィンガープリントを再構築..."
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -63026,10 +63072,22 @@ msgid "Updating database from image metadata"
 msgstr ""
 "フィンガープリントのデータベースを更新しています。しばらくお待ちください。"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Metadata Information"
+msgid "Metadata Sync for: %1\n"
+msgstr "メタデータ情報"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "サムネイル"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Tag Properties"
+msgid "Thumbnail for: %1\n"
+msgstr "タグのプロパティ"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

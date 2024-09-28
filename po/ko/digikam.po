@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -37293,7 +37293,7 @@ msgstr "digiKam 프로젝트 웹사이트 방문"
 msgid "Aborting..."
 msgstr "중단 중..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "이 작업을 취소합니다."
@@ -62059,6 +62059,22 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "자동 조정"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tags for: %1\n"
+msgstr "측광 모드:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "위성 개수: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -62166,9 +62182,41 @@ msgstr "얼굴 스캔"
 msgid "Updating faces database"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "찾기:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "위성 개수: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "얼굴 없음"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "얼굴 없음"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
+msgstr ""
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
@@ -62217,10 +62265,22 @@ msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오
 msgid "Updating database from image metadata"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Set as Tag Thumbnail"
+msgid "Metadata Sync for: %1\n"
+msgstr "태그 미리 보기 그림으로 지정하기"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "섬네일"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "섬네일 속성:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -74289,11 +74349,6 @@ msgstr "최근 태그"
 #~ msgctxt "@action:button Not enough disk-space warning"
 #~ msgid "Cancel Download"
 #~ msgstr "다운로드"
-
-#, fuzzy
-#~| msgid "Set as Tag Thumbnail"
-#~ msgid "Getting Metadata for %1..."
-#~ msgstr "태그 미리 보기 그림으로 지정하기"
 
 #, fuzzy
 #~| msgid "<qt><p>You have edited the image caption. "

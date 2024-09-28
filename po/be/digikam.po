@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -34967,7 +34967,7 @@ msgstr ""
 msgid "Aborting..."
 msgstr "Перарваць..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Скасаваць гэтую аперацыю."
@@ -57738,6 +57738,21 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr ""
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, kde-format
+msgid "Auto-tags for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "Колькасць спадарожнікаў: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -57843,10 +57858,46 @@ msgstr ""
 msgid "Updating faces database"
 msgstr ""
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgid "Scanned for faces: %1\n"
+msgstr "Пошук твараў"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "Колькасць спадарожнікаў: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "Няма твараў"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Няма твараў"
+msgstr[1] "Няма твараў"
+msgstr[2] "Няма твараў"
+msgstr[3] "Няма твараў"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Кантрольныя радкі"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -57882,10 +57933,22 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr ""
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Cannot create thumbnail for %1"
+msgid "Metadata Sync for: %1\n"
+msgstr "Немагчыма стварыць мініяцюру для %1"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Мініяцюры"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail"
+msgid "Thumbnail for: %1\n"
+msgstr "Мініяцюра"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -67327,11 +67390,6 @@ msgstr "Імпарт"
 #~ msgctxt "@title"
 #~ msgid "General"
 #~ msgstr "Агульныя"
-
-#, fuzzy
-#~| msgid "Cannot create thumbnail for %1"
-#~ msgid "Getting Metadata for %1..."
-#~ msgstr "Немагчыма стварыць мініяцюру для %1"
 
 #, fuzzy
 #~| msgid "%1 (%2)"

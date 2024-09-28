@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:52+0000\n"
+"POT-Creation-Date: 2024-09-28 01:48+0000\n"
 "PO-Revision-Date: 2024-09-21 12:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -37307,7 +37307,7 @@ msgstr "Visiteu el lloc web del projecte digiKam"
 msgid "Aborting..."
 msgstr "S'està interrompent..."
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:203
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Cancel·la aquesta operació."
@@ -61279,6 +61279,24 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tags for: %1\n"
+msgstr "Mode d'etiquetatge automàtic: "
+
+# Nre.= Abreviatura de nombre (sinònim de quantitat)
+# skip-rule: t-pu_sp
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "Nre.sat.: %1"
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
@@ -61389,10 +61407,47 @@ msgstr "Exploració de cares en %1 imatges"
 msgid "Updating faces database"
 msgstr "S'està actualitzant la base de dades de cares"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Scanned for faces: %1\n"
+msgstr "Exploració de cares en l'àlbum: %1"
+
+# Nre.= Abreviatura de nombre (sinònim de quantitat)
+# skip-rule: t-pu_sp
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "Nre.sat.: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "No face"
+msgstr "Cap cara"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@item: filter model"
+#| msgid "No face"
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] "Cap cara"
+msgstr[1] "Cap cara"
+
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Empremtes digitals"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#, fuzzy, kde-format
+#| msgid "Rebuild Finger-prints"
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr "Reconstrueix les empremtes digitals"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61433,10 +61488,22 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr "S'està actualitzant la base de dades amb les metadades de les imatges"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, fuzzy, kde-format
+#| msgid "Metadata Information"
+msgid "Metadata Sync for: %1\n"
+msgstr "Informació de les metadades"
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Miniatures"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, fuzzy, kde-format
+#| msgid "Thumbnail Properties:"
+msgid "Thumbnail for: %1\n"
+msgstr "Propietats de la miniatura:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
