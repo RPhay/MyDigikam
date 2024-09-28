@@ -126,7 +126,9 @@ void DbCleaner::slotStart()
 
     setTotalItems(d->databasesToAnalyseCount);
 /*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: "
+                                 << completedItems() << "/"
+                                 << totalItems();
 */
     // Set the wiring from the data signal to the data slot.
 

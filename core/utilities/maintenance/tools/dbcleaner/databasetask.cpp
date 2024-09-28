@@ -230,6 +230,7 @@ void DatabaseTask::run()
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of similarity DB. Integrity check after vacuuming was positive.";
+
                     Q_EMIT signalFinished(true, true);
                 }
             }
@@ -511,6 +512,7 @@ void DatabaseTask::run()
                 }
 
                 lastQueryState = ThumbsDbAccess().db()->remove(thumbId);
+
                 Q_EMIT signalFinished();
             }
 
