@@ -120,8 +120,8 @@ BUGFIXES:
 095 ==> 493498 - Persisting rescaled/positioned window across sessions.
 096 ==> 493653 - Caption metadata not embedded in slideshow video.
 097 ==> 493743 - MacOS Sequoia 15.0: digikam inoperable, crashes when launching.
-098 ==> 
-099 ==> 
+098 ==> 375519 - Progress bars waste useful space: add more details about tasks.
+099 ==> 375521 - Progress bars waste useful space.
 100 ==> 
 101 ==> 
 102 ==> 
