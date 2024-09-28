@@ -278,6 +278,7 @@ public:
 Q_SIGNALS:
 
     void totalFilesToScan(int);
+    void startScanningAlbum(const QString& albumRoot, const QString& album);
     void filesScanned(int);
     void scanningProgress(float progress);
     void triggerShowProgressDialog();

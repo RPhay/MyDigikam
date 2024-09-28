@@ -151,6 +151,9 @@ void NewItemsFinder::connectToScanController()
     connect(ScanController::instance(), SIGNAL(totalFilesToScan(int)),
             this, SLOT(slotTotalFilesToScan(int)));
 
+    connect(ScanController::instance(), SIGNAL(startScanningAlbum(QString,QString)),
+            this, SLOT(slotStartScanningAlbum(QString,QString)));
+
     connect(ScanController::instance(), SIGNAL(filesScanned(int)),
             this, SLOT(slotFilesScanned(int)));
 
@@ -168,6 +171,13 @@ void NewItemsFinder::slotTotalFilesToScan(int t)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "total scan value : " << t;
     setTotalItems(t);
+}
+
+void NewItemsFinder::slotStartScanningAlbum(const QString& albumRoot, const QString& album)
+{
+    QString lbl = i18n("Scanning from: %1\n", albumRoot);
+    lbl.append(i18n("Album: %1", album));
+    setLabel(lbl);
 }
 
 void NewItemsFinder::slotFilesScanned(int s)
@@ -192,6 +202,9 @@ void NewItemsFinder::slotPartialScanDone(const QString& path)
     {
         d->foldersScanned.append(path);
         d->foldersScanned.sort();
+
+        QString lbl = i18n("Scanned:\n%1", path);
+        setLabel(lbl);
 
         advance(1);
 

@@ -58,6 +58,7 @@ private Q_SLOTS:
     void slotScanStarted(const QString&);
     void slotPartialScanDone(const QString&);
     void slotTotalFilesToScan(int);
+    void slotStartScanningAlbum(const QString& albumRoot, const QString& album);
     void slotFilesScanned(int);
     void slotCancel()                           override;
 

@@ -224,7 +224,7 @@ void ScanController::slotStartCompleteScan()
 
 void ScanController::slotStartScanningAlbum(const QString& albumRoot, const QString& album)
 {
-    Q_UNUSED(albumRoot);
+    Q_EMIT startScanningAlbum(albumRoot, album);
 
     if (d->progressDialog)
     {
