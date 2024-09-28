@@ -195,7 +195,7 @@ void AutotagsAssignmentTask::run()
         {
             for (int j = 0 ; j < inputImages.size() ; ++j)
             {
-                QImage qimg   = inputImages.at(j).smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+                QImage qimg   = inputImages.at(j).smoothScale(48, 48, Qt::KeepAspectRatio).copyQImage();
                 assignTags(inputImages.at(j).originalFilePath(), tagsLists.at(j));
                 ItemInfo info = ItemInfo::fromLocalFile(inputImages.at(j).originalFilePath());
 

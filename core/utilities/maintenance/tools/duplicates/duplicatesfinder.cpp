@@ -129,7 +129,14 @@ void DuplicatesFinder::slotStart()
         }
     }
 
-    SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate, d->refSelMethod, std::move(referenceImageIds)); // Finding the duplicates
+    // Finding the duplicates
+
+    SearchesDBJobInfo jobInfo(
+                              std::move(imageIds),
+                              d->isAlbumUpdate,
+                              d->refSelMethod,
+                              std::move(referenceImageIds)
+                             );
 
     jobInfo.setMinThreshold(minThresh);
     jobInfo.setMaxThreshold(maxThresh);

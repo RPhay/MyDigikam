@@ -182,7 +182,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
     if (item->hasThumbnail())
     {
         d->itemThumb = new QLabel(h);
-        d->itemThumb->setFixedSize(QSize(22, 22));
+        d->itemThumb->setFixedSize(QSize(48, 48));
         h->layout()->addWidget(d->itemThumb);
         h->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     }

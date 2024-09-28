@@ -116,7 +116,7 @@ void FingerprintsTask::run()
                 haarIface.indexImage(info.id(), dimg);
             }
 
-            QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+            QImage qimg = dimg.smoothScale(48, 48, Qt::KeepAspectRatio).copyQImage();
 
             Q_EMIT signalFinished(info, qimg);
         }
