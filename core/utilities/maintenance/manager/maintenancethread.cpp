@@ -107,8 +107,8 @@ void MaintenanceThread::removeMetadata(const ItemInfoList& items, MetadataRemove
         t->setRemoveAction(action);
         t->setMaintenanceData(data);
 
-        connect(t, SIGNAL(signalFinished(QImage)),
-                this, SIGNAL(signalAdvance(QImage)));
+        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
+                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
 
         collection.insert(t, 0);
 

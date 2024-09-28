@@ -137,7 +137,7 @@ void MetadataRemoveTask::run()
             }
         }
 
-        Q_EMIT signalFinished(QImage());
+        Q_EMIT signalFinished(item, QImage());
     }
 
     Q_EMIT signalDone();

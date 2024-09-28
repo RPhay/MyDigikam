@@ -89,8 +89,8 @@ void MetadataRemover::init(RemoveAction action)
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(QImage)),
-            this, SLOT(slotAdvance()));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+            this, SLOT(slotAdvance(ItemInfo)));
 }
 
 void MetadataRemover::setUseMultiCoreCPU(bool b)
@@ -226,8 +226,11 @@ void MetadataRemover::parseList()
     d->thread->start();
 }
 
-void MetadataRemover::slotAdvance()
+void MetadataRemover::slotAdvance(const ItemInfo& inf)
 {
+    QString lbl = i18n("Clear Metadata for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1", inf.relativePath()));
+    setLabel(lbl);
     advance(1);
 }
 
