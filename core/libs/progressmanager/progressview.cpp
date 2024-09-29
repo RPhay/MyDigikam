@@ -147,7 +147,7 @@ public:
 
     Private() = default;
 
-    const int     maxLabelWidth = 650;
+    const int     maxLabelWidth = 500;
 
     QProgressBar* progress      = nullptr;
     QPushButton*  cancelButton  = nullptr;
@@ -189,6 +189,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
     }
 
     d->itemLabel = new QLabel(fontMetrics().elidedText(item->label(), Qt::ElideRight, d->maxLabelWidth), h);
+    d->itemLabel->setFixedWidth(d->maxLabelWidth);
     h->layout()->addWidget(d->itemLabel);
     h->setStretchFactor(d->itemLabel, 100);
     h->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
@@ -216,6 +217,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
 
     d->itemStatus = new QLabel(h);
     d->itemStatus->setTextFormat(Qt::RichText);
+    d->itemStatus->setFixedWidth(d->maxLabelWidth);
     d->itemStatus->setText(fontMetrics().elidedText(item->status(), Qt::ElideRight, d->maxLabelWidth));
     h->layout()->addWidget(d->itemStatus);
 
@@ -252,7 +254,28 @@ void TransactionItem::setItemComplete()
 
 void TransactionItem::setLabel(const QString& label)
 {
-    d->itemLabel->setText(fontMetrics().elidedText(label, Qt::ElideRight, d->maxLabelWidth));
+    QStringList textList = label.split(QLatin1Char('\n'),
+                                       Qt::KeepEmptyParts);
+    QString text;
+
+    if (textList.size() == 2)
+    {
+        text  = fontMetrics().elidedText(textList.at(0),
+                                         Qt::ElideRight,
+                                         d->maxLabelWidth);
+        text += QLatin1Char('\n');
+        text += fontMetrics().elidedText(textList.at(1),
+                                         Qt::ElideRight,
+                                         d->maxLabelWidth);
+    }
+    else
+    {
+        text  = fontMetrics().elidedText(label,
+                                         Qt::ElideRight,
+                                         d->maxLabelWidth);
+    }
+
+    d->itemLabel->setText(text);
 }
 
 void TransactionItem::setThumbnail(const QPixmap& thumb)
@@ -262,7 +285,9 @@ void TransactionItem::setThumbnail(const QPixmap& thumb)
 
 void TransactionItem::setStatus(const QString& status)
 {
-    d->itemStatus->setText(fontMetrics().elidedText(status, Qt::ElideRight, d->maxLabelWidth));
+    d->itemStatus->setText(fontMetrics().elidedText(status,
+                                                    Qt::ElideRight,
+                                                    d->maxLabelWidth));
 }
 
 void TransactionItem::setTotalSteps(int totalSteps)
