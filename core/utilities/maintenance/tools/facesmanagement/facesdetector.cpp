@@ -486,6 +486,8 @@ void FacesDetector::slotImagesSkipped(const QList<ItemInfo>& infos)
 
 void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
 {
+    setThumbnail(QIcon(package.image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
+
     QString lbl = i18n("Scanned for faces: %1\n", package.info.name());
     lbl.append(i18n("Path: %1\n", package.info.relativePath()));
 
