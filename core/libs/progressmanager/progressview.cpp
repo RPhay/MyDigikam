@@ -147,7 +147,7 @@ public:
 
     Private() = default;
 
-    const int     maxLabelWidth = 500;
+    const int     maxLabelWidth = 650;
 
     QProgressBar* progress      = nullptr;
     QPushButton*  cancelButton  = nullptr;
@@ -189,7 +189,6 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
     }
 
     d->itemLabel = new QLabel(fontMetrics().elidedText(item->label(), Qt::ElideRight, d->maxLabelWidth), h);
-    d->itemLabel->setFixedWidth(d->maxLabelWidth);
     h->layout()->addWidget(d->itemLabel);
     h->setStretchFactor(d->itemLabel, 100);
     h->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
@@ -217,7 +216,6 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
 
     d->itemStatus = new QLabel(h);
     d->itemStatus->setTextFormat(Qt::RichText);
-    d->itemStatus->setFixedWidth(d->maxLabelWidth);
     d->itemStatus->setText(fontMetrics().elidedText(item->status(), Qt::ElideRight, d->maxLabelWidth));
     h->layout()->addWidget(d->itemStatus);
 
