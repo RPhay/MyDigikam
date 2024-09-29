@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 01:48+0000\n"
+"POT-Creation-Date: 2024-09-29 01:46+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -63136,6 +63136,7 @@ msgstr "Meetmetood:"
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
 #, fuzzy, kde-format
@@ -63144,11 +63145,11 @@ msgid "Path: %1"
 msgstr "Padd:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -63158,34 +63159,34 @@ msgstr ""
 msgid "analysing databases"
 msgstr "Datenbank warrt torechtmaakt"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning thumbnails db"
 msgstr "Fehlen Vöransichten warrt nieg opstellt"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "Reeg ümdreihen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning similarity db"
 msgstr "Fehlen Vöransichten warrt nieg opstellt"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "Datenbank warrt torechtmaakt"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -63195,24 +63196,24 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, fuzzy, kde-format
 msgid "Core DB"
 msgstr "Bildnaam"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, fuzzy, kde-format
 #| msgctxt "@action Go to thumbnails (icon) view"
 #| msgid "Thumbnails"
 msgid "Thumbnails DB"
 msgstr "Vöransichten"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "Reeg ümdreihen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, fuzzy, kde-format
 msgid "Similarity DB"
 msgstr "Evenheit:"
@@ -63222,53 +63223,71 @@ msgstr "Evenheit:"
 msgid "Find new items"
 msgstr "Nieg Indrag tofögen"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, fuzzy, kde-format
+msgid "Scanning from: %1\n"
+msgstr "Söken in:"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Album \"%1\""
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, fuzzy, kde-format
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr "Söken in:"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, fuzzy, kde-format
 msgid "Find duplicates items"
 msgstr "Dubbels söken"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, fuzzy, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Na niege Biller dörkieken"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Na niege Biller dörkieken"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>De Fingerafdruck-Datenbank warrt opfrischt, tööv bitte...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "Beweerten:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Keen Blix"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -63312,6 +63331,12 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "Dat Slötelwoort \"%2\" is een Indrag towiest. Wullt Du redig wiedermaken?"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, fuzzy, kde-format
+#| msgid "Getting thumbnails for %1..."
+msgid "Clear Metadata for: %1\n"
+msgstr "Vöransichten för \"%1\" warrt haalt..."
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format

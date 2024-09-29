@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 01:48+0000\n"
-"PO-Revision-Date: 2024-09-21 12:07+0200\n"
+"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"PO-Revision-Date: 2024-09-28 14:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -61280,29 +61280,28 @@ msgid "Autotags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Mode d'etiquetatge automàtic: "
+msgstr "Etiquetatge automàtic per a: %1\n"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "Nre.sat.: %1"
+msgstr "Camí: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Neteja les bases de dades: "
@@ -61312,32 +61311,32 @@ msgstr "Neteja les bases de dades: "
 msgid "analysing databases"
 msgstr "S'estan analitzant les bases de dades"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr "S'està netejant la base de dades nucli"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "S'està netejant la base de dades de miniatures"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "S'està netejant la base de dades de reconeixement"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "S'està netejant la base de dades de similitud"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "shrinking databases"
 msgstr "S'estan encongint les bases de dades"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61352,22 +61351,22 @@ msgstr ""
 "la corrupció de la base de dades. Aquest rètol informatiu s'esvairà quan "
 "finalitzi el procés d'encongiment.</p>Estat actual:"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, kde-format
 msgid "Core DB"
 msgstr "BD del nucli"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "BD de miniatures"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "BD de reconeixement de cares"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, kde-format
 msgid "Similarity DB"
 msgstr "BD de similitud"
@@ -61377,65 +61376,79 @@ msgstr "BD de similitud"
 msgid "Find new items"
 msgstr "Cerca els elements nous"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Scanning from: %1\n"
+msgstr "Cares explorades: %1\n"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Àlbum «%1»"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr "Cares explorades: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Cerca els elements duplicats"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Exploració de cares en l'àlbum: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Exploració de cares en %1 àlbums"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Exploració de cares en la imatge: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Exploració de cares en %1 imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
 msgstr "S'està actualitzant la base de dades de cares"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#, kde-format
 msgid "Scanned for faces: %1\n"
-msgstr "Exploració de cares en l'àlbum: %1"
+msgstr "Cares explorades: %1\n"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#, kde-format
 msgid "Path: %1\n"
-msgstr "Nre.sat.: %1"
+msgstr "Camí: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#, kde-format
 msgid "No face"
 msgstr "Cap cara"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Cap cara"
-msgstr[1] "Cap cara"
+msgstr[0] "1 cara"
+msgstr[1] "%1 cares"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
@@ -61444,10 +61457,9 @@ msgstr "Empremtes digitals"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Reconstrueix les empremtes digitals"
+msgstr "S'ha reconstruït l'empremta digital per a: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61477,6 +61489,12 @@ msgstr ""
 "S'eliminaran totes les etiquetes de les %1 imatges seleccionades.\n"
 "Voleu continuar?"
 
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, fuzzy, kde-format
+#| msgid "Metadata Sync for: %1\n"
+msgid "Clear Metadata for: %1\n"
+msgstr "Sincronització de metadades per a: %1\n"
+
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
@@ -61489,10 +61507,9 @@ msgid "Updating database from image metadata"
 msgstr "S'està actualitzant la base de dades amb les metadades de les imatges"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Informació de les metadades"
+msgstr "Sincronització de metadades per a: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
@@ -61500,10 +61517,9 @@ msgid "Thumbs"
 msgstr "Miniatures"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Propietats de la miniatura:"
+msgstr "Miniatura per a: %1\n"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

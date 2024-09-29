@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 01:48+0000\n"
+"POT-Creation-Date: 2024-09-29 01:46+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -57746,6 +57746,7 @@ msgstr ""
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
 #, fuzzy, kde-format
@@ -57754,11 +57755,11 @@ msgid "Path: %1"
 msgstr "Колькасць спадарожнікаў: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -57768,32 +57769,32 @@ msgstr ""
 msgid "analysing databases"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr "ачышчэнне асноўнай базы даных"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, kde-format
 msgid "cleaning recognition db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, kde-format
 msgid "cleaning similarity db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "shrinking databases"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -57803,22 +57804,22 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, kde-format
 msgid "Core DB"
 msgstr "Асноўная база даных"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "База даных мініяцюр"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, kde-format
 msgid "Face Recognition DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, kde-format
 msgid "Similarity DB"
 msgstr "База даных падабенства"
@@ -57828,56 +57829,76 @@ msgstr "База даных падабенства"
 msgid "Find new items"
 msgstr "Пошук новых элементаў"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgid "Scanning from: %1\n"
+msgstr "Пошук твараў"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Альбом \"%1\""
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr "Пошук твараў"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scanned for faces: %1\n"
 msgstr "Пошук твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "Колькасць спадарожнікаў: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Няма твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -57922,6 +57943,12 @@ msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, fuzzy, kde-format
+#| msgid "Cannot create thumbnail for %1"
+msgid "Clear Metadata for: %1\n"
+msgstr "Немагчыма стварыць мініяцюру для %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format

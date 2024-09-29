@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 01:48+0000\n"
-"PO-Revision-Date: 2024-09-21 13:31+0200\n"
+"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"PO-Revision-Date: 2024-09-28 12:43+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61285,27 +61285,26 @@ msgid "Autotags Assignment"
 msgstr "Asignación automática de etiquetas"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Modo de etiquetas automáticas: "
+msgstr "Etiquetas automáticas para: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "#Sat: %1"
+msgstr "Ruta: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Limpiar las bases de datos: "
@@ -61315,32 +61314,32 @@ msgstr "Limpiar las bases de datos: "
 msgid "analysing databases"
 msgstr "analizando bases de datos"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr "borrando base de datos principal"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "borrando base de datos de miniaturas"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "borrando base de datos de reconocimiento"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "borrando base de datos de similitud"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "shrinking databases"
 msgstr "reduciendo bases de datos"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61355,22 +61354,22 @@ msgstr ""
 "que se dañen las bases de datos. Este cuadro informativo desaparecerá cuando "
 "haya terminado el proceso de reducción.</p>Estado actual:"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, kde-format
 msgid "Core DB"
 msgstr "Base de datos principal"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Base de datos de miniaturas"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Base de datos de reconocimiento de caras"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, kde-format
 msgid "Similarity DB"
 msgstr "Base de datos de similitud"
@@ -61380,75 +61379,88 @@ msgstr "Base de datos de similitud"
 msgid "Find new items"
 msgstr "Buscar elementos nuevos"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Scanning from: %1\n"
+msgstr "Caras escaneadas: %1\n"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Álbum «%1»"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr "Caras escaneadas: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Buscar elementos duplicados"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Escanear caras del álbum %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Escanear caras en %1 álbumes"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Escanear caras de la imagen %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Escanear caras en %1 imágenes"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
 msgstr "Actualizando la base de datos de caras"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Scanned for faces: %1\n"
-msgstr "Escanear caras del álbum %1"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Sat: %1"
+#, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "Caras escaneadas: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#, kde-format
+msgid "Path: %1\n"
+msgstr "Ruta: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#, kde-format
 msgid "No face"
 msgstr "Ninguna cara"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Ninguna cara"
-msgstr[1] "Ninguna cara"
+msgstr[0] "%1 cara"
+msgstr[1] "%1 caras"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
-msgstr "Impresiones digitales"
+msgstr "Huellas digitales"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Reconstruir las impresiones digitales"
+msgstr "Reconstruir huella digital para: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61478,6 +61490,12 @@ msgstr ""
 "Se eliminan todas las etiquetas de %1 imágenes seleccionadas.\n"
 "¿Desea continuar?"
 
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, fuzzy, kde-format
+#| msgid "Metadata Sync for: %1\n"
+msgid "Clear Metadata for: %1\n"
+msgstr "Sincronización de metadatos para: %1\n"
+
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
@@ -61489,10 +61507,9 @@ msgid "Updating database from image metadata"
 msgstr "Actualizando la base de datos con metadatos de las imágenes"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Información de metadatos"
+msgstr "Sincronización de metadatos para: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
@@ -61500,10 +61517,9 @@ msgid "Thumbs"
 msgstr "Miniaturas"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Propiedades de las miniaturas:"
+msgstr "Miniatura para: %1\n"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format

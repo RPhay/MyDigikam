@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 01:48+0000\n"
-"PO-Revision-Date: 2024-09-21 07:49+0200\n"
+"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"PO-Revision-Date: 2024-09-28 07:27+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -60637,27 +60637,26 @@ msgid "Autotags Assignment"
 msgstr "Automatisk tilldelning av etiketter"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Automatiskt etiketteringsläge: "
+msgstr "Automatiskt etiketteringsläge för: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "Sat. nr.: %1"
+msgstr "Sökväg: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Rensa databaserna: "
@@ -60667,32 +60666,32 @@ msgstr "Rensa databaserna: "
 msgid "analysing databases"
 msgstr "Analyserar databaser"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr "Rensar huvuddatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "Rensar miniatyrbildsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "Rensar igenkänningsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "Rensar likhetsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "shrinking databases"
 msgstr "reducerar databasstorlekar"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -60706,22 +60705,22 @@ msgstr ""
 "förhindra att databaser skadas har Digikam frysts. Informationsrutan "
 "försvinner när reduceringsprocessen är klar.</p>Aktuell status:"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, kde-format
 msgid "Core DB"
 msgstr "Huvuddatabas"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Miniatyrbildsdatabas"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Ansiktsigenkänningsdatabas"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, kde-format
 msgid "Similarity DB"
 msgstr "Likhetsdatabas"
@@ -60731,63 +60730,77 @@ msgstr "Likhetsdatabas"
 msgid "Find new items"
 msgstr "Sök efter nya objekt"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Scanning from: %1\n"
+msgstr "Sökte efter ansikten: %1\n"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Album \"%1\""
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr "Sökte efter ansikten: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Sök duplicerade objekt"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Sök efter ansikten i album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Sök efter ansikten i %1 album"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Sök efter ansikten i bild: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Sök efter ansikten i %1 bilder"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppdaterar ansiktsdatabasen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Scanned for faces: %1\n"
-msgstr "Sök efter ansikten i album: %1"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr "Sökte efter ansikten: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#, kde-format
 msgid "Path: %1\n"
-msgstr "Sat. nr.: %1"
+msgstr "Sökväg: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#, kde-format
 msgid "No face"
-msgstr "Inget ansikte"
+msgstr "Inga ansikten"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Inget ansikte"
-msgstr[1] "Inget ansikte"
+msgstr[0] "1 ansikte"
+msgstr[1] "%1 ansikten"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
@@ -60796,10 +60809,9 @@ msgstr "Fingeravtryck"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Skapa om fingeravtryck"
+msgstr "Skapa om fingeravtryck för: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -60829,6 +60841,12 @@ msgstr ""
 "Alla etiketter har tagits bort från %1 markerade bilder.\n"
 "Vill du fortsätta?"
 
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, fuzzy, kde-format
+#| msgid "Metadata Sync for: %1\n"
+msgid "Clear Metadata for: %1\n"
+msgstr "Synkronisering av metadata för: %1\n"
+
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
@@ -60840,10 +60858,9 @@ msgid "Updating database from image metadata"
 msgstr "Uppdaterar databasen från bildernas metadata"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
-#, fuzzy, kde-format
-#| msgid "Getting Metadata for %1..."
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Hämtar metadata för %1..."
+msgstr "Synkronisering av metadata för: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
@@ -60851,10 +60868,9 @@ msgid "Thumbs"
 msgstr "Miniatyrbilder"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Miniatyrbildsegenskaper:"
+msgstr "Miniatyrbilder för: %1\n"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
