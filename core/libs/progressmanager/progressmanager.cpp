@@ -189,7 +189,7 @@ void ProgressItem::setThumbnail(const QIcon& icon)
         return;
     }
 
-    int iconSize = qApp->style()->pixelMetric(QStyle::PM_SmallIconSize);
+    int iconSize = 48;
 
     if (icon.isNull())
     {

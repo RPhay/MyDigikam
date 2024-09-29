@@ -183,6 +183,7 @@ TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item
     {
         d->itemThumb = new QLabel(h);
         d->itemThumb->setFixedSize(QSize(48, 48));
+        d->itemThumb->setAlignment(Qt::AlignCenter);
         h->layout()->addWidget(d->itemThumb);
         h->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     }
