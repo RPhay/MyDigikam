@@ -147,15 +147,21 @@ void DuplicatesFinder::slotStart()
     connect(d->job, SIGNAL(finished()),
             this, SLOT(slotDone()));
 
-    connect(d->job, SIGNAL(signalProgress(int)),
-            this, SLOT(slotDuplicatesProgress(int)));
+    connect(d->job, SIGNAL(signalProgress(int,ItemInfo,QImage)),
+            this, SLOT(slotDuplicatesProgress(int,ItemInfo,QImage)));
 
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SIGNAL(signalComplete()));
 }
 
-void DuplicatesFinder::slotDuplicatesProgress(int percentage)
+void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& inf, const QImage& img)
 {
+    setThumbnail(QIcon(QPixmap::fromImage(img)));
+
+    QString lbl = i18n("Duplicates for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1", inf.relativePath()));
+    setLabel(lbl);
+
     setProgress(percentage);
 }
 

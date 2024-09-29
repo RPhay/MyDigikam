@@ -24,10 +24,12 @@
 #include <QString>
 #include <QMap>
 #include <QList>
+#include <QImage>
 
 // Local includes
 
 #include "haar.h"
+#include "iteminfo.h"
 #include "digikam_export.h"
 
 class QImage;
@@ -45,7 +47,8 @@ public:
     HaarProgressObserver()                                       = default;
     virtual ~HaarProgressObserver()                              = default;
 
-    virtual void imageProcessed()                                = 0;
+    virtual void imageProcessed(const ItemInfo&, const QImage&)  = 0;
+
     virtual bool isCanceled()
     {
         return false;

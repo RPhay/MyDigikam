@@ -247,9 +247,9 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
     appendJobs(collection);
 }
 
-void SearchesDBJobsThread::slotImageProcessed()
+void SearchesDBJobsThread::slotImageProcessed(const ItemInfo& inf, const QImage& img)
 {
-    Q_EMIT signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
+    Q_EMIT signalProgress((++m_processedImages * 100) / m_totalImages2Scan, inf, img);
 }
 
 void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)

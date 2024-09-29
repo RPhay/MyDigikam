@@ -14,6 +14,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QImage>
+
 // Local includes
 
 #include "dbengineparameters.h"
@@ -163,12 +167,12 @@ public:
 
 public Q_SLOTS:
 
-    void slotImageProcessed();
+    void slotImageProcessed(const ItemInfo&, const QImage&);
     void slotDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
 
 Q_SIGNALS:
 
-    void signalProgress(int percentage);
+    void signalProgress(int percentage, const ItemInfo& inf, const QImage& img);
 
 private:
     HaarIface::DuplicatesResultsMap m_results;

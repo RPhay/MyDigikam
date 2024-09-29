@@ -184,7 +184,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalImageProcessed();
+    void signalImageProcessed(const ItemInfo&, const QImage&);
     void signalDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
 
 protected:

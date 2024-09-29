@@ -19,6 +19,7 @@
 
 #include <QString>
 #include <QObject>
+#include <QImage>
 
 // Local includes
 
@@ -26,6 +27,7 @@
 #include "album.h"
 #include "maintenancetool.h"
 #include "haariface.h"
+#include "iteminfo.h"
 
 namespace Digikam
 {
@@ -55,7 +57,7 @@ private Q_SLOTS:
     void slotStart()        override;
     void slotDone()         override;
     void slotCancel()       override;
-    void slotDuplicatesProgress(int percentage);
+    void slotDuplicatesProgress(int percentage, const ItemInfo& inf, const QImage& img);
 
 private:
 

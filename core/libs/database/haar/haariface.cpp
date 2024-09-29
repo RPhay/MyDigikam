@@ -1000,7 +1000,13 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
         if (observer)
         {
-            observer->imageProcessed();
+            ItemInfo info(*images2ScanIterator);
+            DImg dimg = PreviewLoadThread::loadFastSynchronously(info.filePath(),
+                                                                 HaarIface::preferredSize());
+
+            QImage qimg = dimg.smoothScale(48, 48, Qt::KeepAspectRatio).copyQImage();
+
+            observer->imageProcessed(info, qimg);
         }
     }
 
