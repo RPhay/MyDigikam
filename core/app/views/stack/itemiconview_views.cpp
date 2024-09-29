@@ -99,33 +99,41 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
          (viewMode() == StackedView::IconViewMode)   ||
          (viewMode() == StackedView::TableViewMode)  ||
          (viewMode() == StackedView::MapWidgetMode)
-        ) &&
-        !info.isNull()
+        )
        )
     {
-        if (info.isLocationAvailable())
-        {
-            d->lastViewMode = viewMode();
+        d->lastViewMode = viewMode();
 
-            if (viewMode() == StackedView::IconViewMode)
+        if (!info.isNull())
+        {
+            if (info.isLocationAvailable())
             {
-                d->stackedView->setPreviewItem(info, d->iconView->previousInfo(info), d->iconView->nextInfo(info));
+                if (viewMode() == StackedView::IconViewMode)
+                {
+                    d->stackedView->setPreviewItem(info,
+                                                   d->iconView->previousInfo(info),
+                                                   d->iconView->nextInfo(info));
+                }
+                else
+                {
+                    d->stackedView->setPreviewItem(info,
+                                                   ItemInfo(),
+                                                   ItemInfo());
+                }
             }
             else
             {
-                d->stackedView->setPreviewItem(info, ItemInfo(), ItemInfo());
+                QModelIndex index = d->iconView->indexForInfo(info);
+                d->iconView->showIndexNotification(index,
+                                                   i18nc("@info: item icon view",
+                                                         "The storage location of this image\n"
+                                                         "is currently not available"));
             }
-        }
-        else
-        {
-            QModelIndex index = d->iconView->indexForInfo(info);
-            d->iconView->showIndexNotification(index,
-                                               i18nc("@info: item icon view", "The storage location of this image\nis currently not available"));
         }
     }
     else
     {
-        // go back to either AlbumViewMode or MapWidgetMode
+        // go back to the last AlbumViewMode
 
         d->stackedView->setViewMode(d->lastViewMode);
     }

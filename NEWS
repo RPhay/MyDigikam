@@ -122,7 +122,7 @@ BUGFIXES:
 097 ==> 493743 - MacOS Sequoia 15.0: digikam inoperable, crashes when launching.
 098 ==> 375519 - Progress bars waste useful space: add more details about tasks.
 099 ==> 375521 - Progress bars waste useful space.
-100 ==> 
+100 ==> 493786 - After visiting trash, the display mode switches to Map.
 101 ==> 
 102 ==> 
 103 ==> 
