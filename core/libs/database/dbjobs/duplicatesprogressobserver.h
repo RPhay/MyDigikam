@@ -36,10 +36,10 @@ class DIGIKAM_DATABASE_EXPORT DuplicatesProgressObserver : public HaarProgressOb
 public:
 
     explicit DuplicatesProgressObserver(SearchesJob* const thread);
-    ~DuplicatesProgressObserver()                                  override;
+    ~DuplicatesProgressObserver()                                           override;
 
-    void imageProcessed(const ItemInfo& inf, const QImage& img)    override;
-    bool isCanceled()                                              override;
+    void imageProcessed(const ItemInfo& inf, const QImage& img, int dup)    override;
+    bool isCanceled()                                                       override;
 
 private:
 

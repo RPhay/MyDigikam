@@ -31,9 +31,9 @@ DuplicatesProgressObserver::~DuplicatesProgressObserver()
     m_job = nullptr;
 }
 
-void DuplicatesProgressObserver::imageProcessed(const ItemInfo& inf, const QImage& img)
+void DuplicatesProgressObserver::imageProcessed(const ItemInfo& inf, const QImage& img, int dup)
 {
-    Q_EMIT m_job->signalImageProcessed(inf, img);
+    Q_EMIT m_job->signalImageProcessed(inf, img, dup);
 }
 
 bool DuplicatesProgressObserver::isCanceled()

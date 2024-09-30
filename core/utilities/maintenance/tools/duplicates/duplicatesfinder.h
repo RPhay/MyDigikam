@@ -57,7 +57,8 @@ private Q_SLOTS:
     void slotStart()        override;
     void slotDone()         override;
     void slotCancel()       override;
-    void slotDuplicatesProgress(int percentage, const ItemInfo& inf, const QImage& img);
+    void slotDuplicatesProgress(int percentage, const ItemInfo& inf,
+                                const QImage& img, int duplicates);
 
 private:
 

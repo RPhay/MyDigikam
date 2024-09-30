@@ -167,12 +167,12 @@ public:
 
 public Q_SLOTS:
 
-    void slotImageProcessed(const ItemInfo&, const QImage&);
+    void slotImageProcessed(const ItemInfo&, const QImage&, int dup);
     void slotDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
 
 Q_SIGNALS:
 
-    void signalProgress(int percentage, const ItemInfo& inf, const QImage& img);
+    void signalProgress(int percentage, const ItemInfo& inf, const QImage& img, int dup);
 
 private:
     HaarIface::DuplicatesResultsMap m_results;

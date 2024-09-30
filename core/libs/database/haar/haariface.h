@@ -44,10 +44,10 @@ class HaarProgressObserver
 {
 public:
 
-    HaarProgressObserver()                                       = default;
-    virtual ~HaarProgressObserver()                              = default;
+    HaarProgressObserver()                                           = default;
+    virtual ~HaarProgressObserver()                                  = default;
 
-    virtual void imageProcessed(const ItemInfo&, const QImage&)  = 0;
+    virtual void imageProcessed(const ItemInfo&, const QImage&, int) = 0;
 
     virtual bool isCanceled()
     {
