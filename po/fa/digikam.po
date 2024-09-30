@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -2135,7 +2135,7 @@ msgid "Thumbnails"
 msgstr "ریزنقش"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3560,7 +3560,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3568,7 +3568,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, fuzzy, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -36430,7 +36430,7 @@ msgstr "مشاهده وب‌گاه پروژه digiKam"
 msgid "Aborting..."
 msgstr "بارگذاری..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, fuzzy, kde-format
 msgid "Cancel this operation."
 msgstr "اطلاعات دوربین"
@@ -60167,6 +60167,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "حالت اندازه‌گیری:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -60282,6 +60283,11 @@ msgstr "جستجو در:"
 msgid "Find duplicates items"
 msgstr "عکس اصلی:"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+msgid "Duplicates for: %1\n"
+msgstr "تاریخها"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -60313,24 +60319,24 @@ msgstr "پویش برای تصاویر جدید"
 msgid "Updating faces database"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scanned for faces: %1\n"
 msgstr "جستجو در:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "برچسب: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 msgid "No face"
 msgstr "تابش عکس"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -70878,10 +70884,6 @@ msgstr "&مرتب‌سازی تصاویر‌"
 
 #~ msgid "Tag: %1"
 #~ msgstr "برچسب: %1"
-
-#, fuzzy
-#~ msgid "Duplicates of %1"
-#~ msgstr "تاریخها"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "نشانی وب هدف %1 معتبر نیست."

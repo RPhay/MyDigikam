@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1824,7 +1824,7 @@ msgid "Thumbnails"
 msgstr "Миниатюры"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3248,7 +3248,7 @@ msgstr ""
 "Операция распознавания лиц может выполняться только в одном экземпляре и уже "
 "запущена. Для повторного запуска дождитесь окончания выполнения."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3258,7 +3258,7 @@ msgstr ""
 "Место хранения этого изображения\n"
 "сейчас недоступно"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37315,7 +37315,7 @@ msgstr "Посетить веб-сайт проекта digiKam"
 msgid "Aborting..."
 msgstr "Прерывание..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Отменить эту операцию"
@@ -61663,6 +61663,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Режим замера:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -61778,6 +61779,11 @@ msgstr "Поиск лиц в альбоме: «%1»"
 msgid "Find duplicates items"
 msgstr "Поиск повторяющихся объектов"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+msgid "Duplicates for: %1\n"
+msgstr "Дубликаты"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
@@ -61805,26 +61811,26 @@ msgstr "Поиск лиц в %1 изображениях"
 msgid "Updating faces database"
 msgstr "Выполняется обновление базы данных лиц"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Поиск лиц в альбоме: «%1»"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "Кол-во спутников: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Без меток лиц"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -77566,10 +77572,6 @@ msgstr "Импорт"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Метка: %1"
-
-#, fuzzy
-#~ msgid "Duplicates of %1"
-#~ msgstr "Дубликаты"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "URL цели %1 некорректен."

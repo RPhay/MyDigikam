@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1809,7 +1809,7 @@ msgid "Thumbnails"
 msgstr "Pienoiskuvat"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3235,7 +3235,7 @@ msgstr ""
 "Kasvontunnistustehtävä on jo käynnissä, ja vain yksi voidaan suorittaa "
 "kerrallaan. Odota, kunnes se on valmis."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3246,7 +3246,7 @@ msgid ""
 "is currently not available"
 msgstr "<i>Tämän kuvan talletuspaikka<br/> ei juuri nyt ole käytettävissä</i>"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37210,7 +37210,7 @@ msgstr "Vieraile digiKamin kotisivulla"
 msgid "Aborting..."
 msgstr "Keskeytetään…"
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Peru tämä operaatio"
@@ -61132,6 +61132,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Mittaustapa:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -61245,6 +61246,12 @@ msgstr "Etsi albumeista:"
 msgid "Find duplicates items"
 msgstr "Etsi kaksoiskappaleet"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Kaksoiskappaleet"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -61276,27 +61283,27 @@ msgstr "Etsi uusia kuvia"
 msgid "Updating faces database"
 msgstr "Päivitetään kasvotietokantaa"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanned for faces: %1\n"
 msgstr "Etsi albumeista:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "Rating: %1\n"
 msgid "Path: %1\n"
 msgstr "Arvio: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Ei kasvoja"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -74008,11 +74015,6 @@ msgstr "Tuo kohteet"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Tunniste: %1"
-
-#, fuzzy
-#~| msgid "Duplicates"
-#~ msgid "Duplicates of %1"
-#~ msgstr "Kaksoiskappaleet"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "Kohdeosoite %1 ei ole kelvollinen."

@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
-"PO-Revision-Date: 2024-09-28 11:37+0200\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"PO-Revision-Date: 2024-09-29 14:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1781,7 +1781,7 @@ msgid "Thumbnails"
 msgstr "Miniaturen"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3193,7 +3193,7 @@ msgstr ""
 "Een taak voor gezichtsherkenning is al actief. Slechts een taak kan tegelijk "
 "actief zijn. Wacht totdat deze is beëindigd."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3203,7 +3203,7 @@ msgstr ""
 "De opslaglocatie van deze afbeelding\n"
 "is nu niet beschikbaar."
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37274,7 +37274,7 @@ msgstr "Bezoek de website van het digiKam-project"
 msgid "Aborting..."
 msgstr "Bezig met afbreken..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Deze bewerking annuleren."
@@ -61176,6 +61176,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Automatische tags voor: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -61266,29 +61267,34 @@ msgid "Find new items"
 msgstr "Nieuwe items zoeken"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Gescand op gezichten: %1\n"
+msgstr "Scannen vanaf: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Album \"%1\""
+msgstr "Album: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Gescand op gezichten: %1\n"
+msgstr ""
+"Gescand:\n"
+" %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Dubbele items zoeken"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates of %1"
+msgid "Duplicates for: %1\n"
+msgstr "Duplicaten van %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -61315,22 +61321,22 @@ msgstr "Zoek naar gezichten in %1 afbeeldingen"
 msgid "Updating faces database"
 msgstr "Gezichten in de database worden bijgewerkt"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Gescand op gezichten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, kde-format
 msgid "Path: %1\n"
 msgstr "Pad: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
 msgstr "Geen gezicht"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61377,10 +61383,9 @@ msgstr ""
 "Wilt u doorgaan?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Metagegevens synchroniseren voor: %1\n"
+msgstr "Metagegevens wissen  voor: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
@@ -75219,9 +75224,6 @@ msgstr "Items importeren"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Tag: %1"
-
-#~ msgid "Duplicates of %1"
-#~ msgstr "Duplicaten van %1"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "De doel-URL %1 is ongeldig."

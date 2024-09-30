@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1743,7 +1743,7 @@ msgid "Thumbnails"
 msgstr "लघुछवियाँ दिखाएँ"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3150,7 +3150,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3158,7 +3158,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, fuzzy, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -35571,7 +35571,7 @@ msgstr "डिज़ीकैम परियोजना वेबसाइट 
 msgid "Aborting..."
 msgstr "लोड करें... (&L)"
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, fuzzy, kde-format
 msgid "Cancel this operation."
 msgstr "कैमरा जानकारी"
@@ -59686,6 +59686,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "मीटरिंग मोड"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -59796,6 +59797,11 @@ msgstr "ढूंढें:"
 msgid "Find duplicates items"
 msgstr "/छवियाँ"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+msgid "Duplicates for: %1\n"
+msgstr "यह टैग मिटाएँ"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
@@ -59823,23 +59829,23 @@ msgstr "नई छवियों के लिए ढूंढें"
 msgid "Updating faces database"
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "रेटिंग:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "कोई फ्लैश नहीं"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"

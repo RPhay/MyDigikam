@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1803,7 +1803,7 @@ msgid "Thumbnails"
 msgstr "ภาพตัวอย่าง"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3288,7 +3288,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, fuzzy, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3296,7 +3296,7 @@ msgid ""
 "is currently not available"
 msgstr "ตำแหน่งคลังภาพที่ให้มาใช้งานไม่ได้ หรืออาจจะยังไม่มีให้ใช้งานในตอนนี้"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, fuzzy, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37151,7 +37151,7 @@ msgstr "เยี่ยมชมเว็บไซต์โครงการ di
 msgid "Aborting..."
 msgstr "โหลด..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, fuzzy, kde-format
 msgid "Cancel this operation."
 msgstr "ข้อมูลกล้อง"
@@ -62188,6 +62188,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "โหมดการวัดแสง:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -62299,6 +62300,12 @@ msgstr "ค้นหาใน:"
 msgid "Find duplicates items"
 msgstr "ค้นหาภาพซ้ำ"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "ภาพซ้ำ"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
@@ -62326,23 +62333,23 @@ msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 msgid "Updating faces database"
 msgstr "<b>กำลังทำการปรับปรุงฐานข้อมูลอัตลักษณ์ของภาพ โปรดรอสักครู่...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "ระดับความชื่นชอบ:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "ไม่ใช้แฟลช"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -74361,11 +74368,6 @@ msgstr "จัดเ&รียงรูปภาพ"
 
 #~ msgid "Tag: %1"
 #~ msgstr "ป้ายกำกับ: %1"
-
-#, fuzzy
-#~| msgid "Duplicates"
-#~ msgid "Duplicates of %1"
-#~ msgstr "ภาพซ้ำ"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "ที่อยู่ URL ปลายทาง %1 ไม่ถูกต้อง"

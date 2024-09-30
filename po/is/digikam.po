@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-09-10 12:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1743,7 +1743,7 @@ msgid "Thumbnails"
 msgstr "Smámyndir"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3153,7 +3153,7 @@ msgstr ""
 "Andlitagreiningarverk er þegar í gangi. Aðeins eitt verk er hægt að keyra í "
 "einu. Dokaðu við þar til núverandi aðgerð er lokið."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3163,7 +3163,7 @@ msgstr ""
 "Geymslustaðsetning þessarar myndar\n"
 "er ekki tiltæk núna"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -36830,7 +36830,7 @@ msgstr "Heimsækja vef digiKam verkefnisins"
 msgid "Aborting..."
 msgstr "Hætti við..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Hætta við þessa aðgerð."
@@ -60603,6 +60603,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -60718,6 +60719,12 @@ msgstr "Leita að andlitum í albúmi: %1"
 msgid "Find duplicates items"
 msgstr "Finna tvítekin atriði"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates of %1"
+msgid "Duplicates for: %1\n"
+msgstr "Tvítekningar á %1"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
@@ -60743,26 +60750,26 @@ msgstr "Leita að andlitum í %1 myndum"
 msgid "Updating faces database"
 msgstr "Uppfæri andlitagagnagrunn"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Leita að andlitum í albúmi: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "#tungla: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Ekkert andlit"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -74649,9 +74656,6 @@ msgstr "Flytja inn atriði"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Merki: %1"
-
-#~ msgid "Duplicates of %1"
-#~ msgstr "Tvítekningar á %1"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "Slóðin %1 er ekki gild."

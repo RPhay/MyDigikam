@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1756,7 +1756,7 @@ msgid "Thumbnails"
 msgstr "Koadro txikiak"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3169,7 +3169,7 @@ msgstr ""
 "Aurpegi-ezagutza ataza bat dagoeneko martxan da. Aldiko ataza bat ibil "
 "daiteke. Mesedez, itxoin amaitu arte."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3179,7 +3179,7 @@ msgstr ""
 "Irudi honen biltegiratze-kokalekua\n"
 "une honetan ez dago erabilgarri"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -38045,7 +38045,7 @@ msgstr "Bisitatu digiKam proiektuaren webgunea"
 msgid "Aborting..."
 msgstr "Abortzen..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, fuzzy, kde-format
 msgid "Cancel this operation."
 msgstr "Bertan behera utzi eragiketa hau."
@@ -63349,6 +63349,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Mode de mesure :"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -63462,6 +63463,12 @@ msgstr "Miatu albumetan aurpegi bila: %1"
 msgid "Find duplicates items"
 msgstr "Bilatu bikoiztutakoak"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Bikoiztutakoak"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
@@ -63487,24 +63494,24 @@ msgstr "Miatu %1 irudiak aurpegi bila"
 msgid "Updating faces database"
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "Lr"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Pas de flash"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -76246,11 +76253,6 @@ msgstr "Inportatu elementuak"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Etiketa: %1"
-
-#, fuzzy
-#~| msgid "Duplicates"
-#~ msgid "Duplicates of %1"
-#~ msgstr "Bikoiztutakoak"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "%1 URLa ez da baliozkoa."

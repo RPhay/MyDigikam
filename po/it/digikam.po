@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-09-21 17:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1742,7 +1742,7 @@ msgid "Thumbnails"
 msgstr "Miniature"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3161,7 +3161,7 @@ msgstr ""
 "È già in corso un'operazione di rilevamento facciale. Può essere eseguita "
 "solo un'operazione alla volta. Attendi che sia terminata."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3171,7 +3171,7 @@ msgstr ""
 "a posizione di memorizzazione di questa immagine\n"
 "non è al momento disponibile"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37349,7 +37349,7 @@ msgstr "Visita il sito web del progetto digiKam"
 msgid "Aborting..."
 msgstr "Annullamento..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Annulla questa operazione."
@@ -61278,6 +61278,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Modalità tag automatici: "
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -61394,6 +61395,12 @@ msgstr "Analisi dei volti nell'album: %1"
 msgid "Find duplicates items"
 msgstr "Trova elementi duplicati"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates of %1"
+msgid "Duplicates for: %1\n"
+msgstr "Duplicati di %1"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
@@ -61419,26 +61426,26 @@ msgstr "Analisi dei volti in %1 immagini"
 msgid "Updating faces database"
 msgstr "Aggiornamento della banca dati dei volti"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Analisi dei volti nell'album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "№ sat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Nessun volto"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -75416,9 +75423,6 @@ msgstr "Importa elementi"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Tag: %1"
-
-#~ msgid "Duplicates of %1"
-#~ msgstr "Duplicati di %1"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "L'URL di destinazione %1 non è valido."

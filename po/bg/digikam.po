@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2024-09-26 10:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1749,7 +1749,7 @@ msgid "Thumbnails"
 msgstr "Миниатюри"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3163,7 +3163,7 @@ msgstr ""
 "Задачата за разпознаване на лица вече е стартирана. Само една задача може да "
 "бъде изпълнена в даден момент. Моля, изчакайте, докато тя приключи."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3173,7 +3173,7 @@ msgstr ""
 "Мястото за съхранение на това изображение\n"
 " в момента не е налично"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37288,7 +37288,7 @@ msgstr "Посещаване сайта на проекта digiKam"
 msgid "Aborting..."
 msgstr "Прекъсване..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Прекъсване на операцията."
@@ -61242,6 +61242,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Режим на автоматично поставяне на етикети: "
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -61357,6 +61358,13 @@ msgstr "Сканиране на лица в албума: %1"
 msgid "Find duplicates items"
 msgstr "Намиране на дублиращи се елементи"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "Find Duplicates Tab"
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Дубликати"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
@@ -61382,26 +61390,26 @@ msgstr "Сканиране за лица в %1 изображения"
 msgid "Updating faces database"
 msgstr "Актуализиране на базата данни за лица"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Сканиране на лица в албума: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "#Sat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Без лице"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"

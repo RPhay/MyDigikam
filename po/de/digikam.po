@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1733,7 +1733,7 @@ msgid "Thumbnails"
 msgstr "Vorschaubilder"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3159,7 +3159,7 @@ msgstr ""
 "Es ist bereits ein anderer Gesichtserkennungsprozess aktiv. Es kann nur "
 "einer zur gleichen Zeit laufen. Bitte warten Sie bis er fertig ist."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3169,7 +3169,7 @@ msgstr ""
 "Der Speicherort dieses Bildes\n"
 "ist zurzeit nicht verfügbar"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -37427,7 +37427,7 @@ msgstr "Webseite des digiKam-Projektes besuchen"
 msgid "Aborting..."
 msgstr "Abbruch ..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Diese Operation abbrechen."
@@ -62326,6 +62326,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Messmethode:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -62443,6 +62444,13 @@ msgstr "Suchen in Alben:"
 msgid "Find duplicates items"
 msgstr "Doppelte Einträge suchen"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "Find Duplicates Tab"
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Duplikate"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -62475,27 +62483,27 @@ msgstr "Nach Gesichtern suchen"
 msgid "Updating faces database"
 msgstr "Die Aktualisierung der Gesichtsdatenbank läuft."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanned for faces: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1\n"
 msgstr "Anzahl Sat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "Kein Gesicht"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"

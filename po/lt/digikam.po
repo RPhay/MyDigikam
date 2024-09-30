@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1901,7 +1901,7 @@ msgid "Thumbnails"
 msgstr "Miniatiūros"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3398,7 +3398,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3406,7 +3406,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: item icon view"
@@ -37240,7 +37240,7 @@ msgstr "Aplankykite digiKam projekto tinklalapį"
 msgid "Aborting..."
 msgstr "Nutraukiama..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Atšaukti šią operaciją."
@@ -62420,6 +62420,7 @@ msgid "Auto-tags for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -62538,6 +62539,12 @@ msgstr "Ieškoti:"
 msgid "Find duplicates items"
 msgstr "Rasti dublikatus"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Dublikatai"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -62571,26 +62578,26 @@ msgstr "Veidų skenavimas"
 msgid "Updating faces database"
 msgstr "<b>Atnaujinama veidų duomenų bazė. Prašome palaukti...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scanned for faces: %1\n"
 msgstr "Ieškoti:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Path: %1\n"
 msgstr "Įvertinimas: "
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No filter"
 msgid "No face"
 msgstr "Be filtro"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, fuzzy, kde-format
 #| msgid "No filter"
 msgid "1 face"
@@ -74563,11 +74570,6 @@ msgstr "&Rikiuoti paveikslėlius"
 
 #~ msgid "Tag: %1"
 #~ msgstr "Žyma: %1"
-
-#, fuzzy
-#~| msgid "Duplicates"
-#~ msgid "Duplicates of %1"
-#~ msgstr "Dublikatai"
 
 #~ msgid "Target URL %1 is not valid."
 #~ msgstr "URL %1 netinkama."

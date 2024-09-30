@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
-"PO-Revision-Date: 2024-09-28 19:11+0300\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"PO-Revision-Date: 2024-09-29 21:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1765,7 +1765,7 @@ msgid "Thumbnails"
 msgstr "Küçük Görseller"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3162,7 +3162,7 @@ msgstr ""
 "Bir yüz tanıma görevi halihazırda çalışıyor. Aynı anda yalnızca bir görev "
 "çalıştırılabilir. Lütfen bitene kadar bekleyin."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3172,7 +3172,7 @@ msgstr ""
 "Bu görselin depolama konumu\n"
 "şu anda kullanılamıyor"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -36926,7 +36926,7 @@ msgstr "digiKam projesi web sitesini ziyaret et"
 msgid "Aborting..."
 msgstr "Sonlandırılıyor..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Bu işlemi iptal edin."
@@ -60709,6 +60709,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Şunun için kendiliğinden künye: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -60799,29 +60800,35 @@ msgid "Find new items"
 msgstr "Yeni ögeler bul"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Şu yüzler tarandı: %1\n"
+msgstr "Şuradan taranıyor: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "\"%1\" Albümü"
+msgstr "Albüm: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Şu yüzler tarandı: %1\n"
+msgstr ""
+"Tarandı:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Yinelenen ögeleri bul"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "Find Duplicates Tab"
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Yinelenenler"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -60848,22 +60855,22 @@ msgstr "%1 görseldeki yüzleri tara"
 msgid "Updating faces database"
 msgstr "Yüz veritabanı güncelleniyor"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Şu yüzler tarandı: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, kde-format
 msgid "Path: %1\n"
 msgstr "Yol: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
 msgstr "Yüz yok"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -60910,10 +60917,9 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Şunun için üst veriyi eşzamanla: %1\n"
+msgstr "Şunun için üst veriyi temizle: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format

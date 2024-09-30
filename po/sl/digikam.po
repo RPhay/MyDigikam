@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-29 01:46+0000\n"
-"PO-Revision-Date: 2024-09-28 09:08+0200\n"
+"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"PO-Revision-Date: 2024-09-29 08:05+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1794,7 +1794,7 @@ msgid "Thumbnails"
 msgstr "Sličice"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3196,7 +3196,7 @@ msgstr ""
 "Opravilo razpoznavanja obrazov je že v teku. Samo eno opravilo sme teči "
 "naenkrat. Počakajte, dokler ni končano."
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3206,7 +3206,7 @@ msgstr ""
 "Mesto za shrambo te slike\n"
 "trenutno ni na voljo"
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -36936,7 +36936,7 @@ msgstr "Obiščite spletišče projekta digiKam"
 msgid "Aborting..."
 msgstr "Prekinjanje ..."
 
-#: core/libs/progressmanager/progressview.cpp:203
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Prekliči to opravilo."
@@ -60786,6 +60786,7 @@ msgid "Auto-tags for: %1\n"
 msgstr "Samodejne oznake za: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
@@ -60876,29 +60877,35 @@ msgid "Find new items"
 msgstr "Najdi nove predmete"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Preiskano za obraze: %1\n"
+msgstr "Preiskovanje iz: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Album \"%1\""
+msgstr "Album: \"%1\""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Preiskano za obraze: %1\n"
+msgstr ""
+"Preiskano:\n"
+" %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Najdi podvojene predmete"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "Find Duplicates Tab"
+#| msgid "Duplicates"
+msgid "Duplicates for: %1\n"
+msgstr "Dvojniki"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -60925,22 +60932,22 @@ msgstr "Preišči obraze v %1 slikah"
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Preiskano za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, kde-format
 msgid "Path: %1\n"
 msgstr "Pot: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
 msgstr "Ni obraza"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -60989,10 +60996,9 @@ msgstr ""
 "Ali želite nadaljevati?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Sinhronizacija metapodatkov za: %1\n"
+msgstr "Počisti metapodatke za: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
