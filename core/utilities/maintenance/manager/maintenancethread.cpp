@@ -181,8 +181,8 @@ void MaintenanceThread::generateTags(const QStringList& paths,
         t->setModelType(modelType);
         t->setLanguages(langs);
 
-        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
+        connect(t, SIGNAL(signalFinished(ItemInfo,QImage,QStringList)),
+                this, SIGNAL(signalAdvance(ItemInfo,QImage,QStringList)));
 
         collection.insert(t, 0);
 

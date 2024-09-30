@@ -44,7 +44,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const ItemInfo&, const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&, const QStringList&);
 
 protected:
 

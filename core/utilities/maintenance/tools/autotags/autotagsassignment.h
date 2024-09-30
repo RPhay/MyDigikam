@@ -65,7 +65,7 @@ private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
-    void slotAdvance(const ItemInfo&, const QImage&);
+    void slotAdvance(const ItemInfo&, const QImage&, const QStringList&);
 
 private:
 

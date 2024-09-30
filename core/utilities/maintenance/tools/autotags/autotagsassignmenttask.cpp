@@ -199,12 +199,12 @@ void AutotagsAssignmentTask::run()
                 assignTags(inputImages.at(j).originalFilePath(), tagsLists.at(j));
                 ItemInfo info = ItemInfo::fromLocalFile(inputImages.at(j).originalFilePath());
 
-                Q_EMIT signalFinished(info, qimg);
+                Q_EMIT signalFinished(info, qimg, tagsLists.at(j));
             }
         }
         else
         {
-            Q_EMIT signalFinished(ItemInfo(), QImage());
+            Q_EMIT signalFinished(ItemInfo(), QImage(), QStringList());
         }
 
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Assgin Tags process takes:"
