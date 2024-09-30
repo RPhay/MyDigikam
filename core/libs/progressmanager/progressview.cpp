@@ -256,21 +256,16 @@ void TransactionItem::setLabel(const QString& label)
                                        Qt::KeepEmptyParts);
     QString text;
 
-    if (textList.size() == 2)
+    for (int i = 0 ; i < textList.size() ; ++i)
     {
-        text  = fontMetrics().elidedText(textList.at(0),
+        text += fontMetrics().elidedText(textList.at(i),
                                          Qt::ElideRight,
                                          d->maxLabelWidth);
-        text += QLatin1Char('\n');
-        text += fontMetrics().elidedText(textList.at(1),
-                                         Qt::ElideRight,
-                                         d->maxLabelWidth);
-    }
-    else
-    {
-        text  = fontMetrics().elidedText(label,
-                                         Qt::ElideRight,
-                                         d->maxLabelWidth);
+
+        if ((i + 1) < textList.size())
+        {
+            text += QLatin1Char('\n');
+        }
     }
 
     d->itemLabel->setText(text);
