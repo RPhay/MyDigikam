@@ -95,7 +95,8 @@ void ImageQualityTask::run()
             break;
         }
 
-        ItemInfo info = ItemInfo::fromLocalFile(path);
+        PickLabel pick = NoPickLabel;
+        ItemInfo info  = ItemInfo::fromLocalFile(path);
 
         // Get item preview to perform quality analysis. No need to load whole image, this will be slower.
         // 1024 pixels size image must be enough to get suitable Quality results.
@@ -113,7 +114,6 @@ void ImageQualityTask::run()
             // Warning       : All code here will run in a separated thread and must be re-entrant/thread-safe. Only pure computation
             //                 must be processed. GUI calls are prohibited. ItemInfo and DImg can be used safety in thread.
 
-            PickLabel pick;
             d->imgqsort = new ImageQualityParser(dimg, d->quality, &pick);
             d->imgqsort->startAnalyse();
 
@@ -135,7 +135,7 @@ void ImageQualityTask::run()
 
         QImage qimg = dimg.smoothScale(48, 48, Qt::KeepAspectRatio).copyQImage();
 
-        Q_EMIT signalFinished(info, qimg);
+        Q_EMIT signalFinished(info, qimg, pick);
     }
 
     Q_EMIT signalDone();

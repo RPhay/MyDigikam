@@ -33,6 +33,7 @@
 #include "albummanager.h"
 #include "coredbaccess.h"
 #include "tagscache.h"
+#include "picklabelwidget.h"
 #include "maintenancethread.h"
 
 namespace Digikam
@@ -70,8 +71,8 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
-            this, SLOT(slotAdvance(ItemInfo,QImage)));
+    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage,int)),
+            this, SLOT(slotAdvance(ItemInfo,QImage,int)));
 }
 
 ImageQualitySorter::~ImageQualitySorter()
@@ -168,11 +169,13 @@ void ImageQualitySorter::slotStart()
     d->thread->start();
 }
 
-void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img)
+void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int pick)
 {
-    QString lbl = i18n("Rebuild Fingerprint for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1", inf.relativePath()));
+    QString lbl = i18n("Image Quality for: %1\n", inf.name());
+    lbl.append(i18n("Path: %1\n", inf.relativePath()));
+    lbl.append(i18n("Pick Label: %1", PickLabelWidget::labelPickName((PickLabel)pick)));
     setLabel(lbl);
+
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);
 }

@@ -204,8 +204,8 @@ void MaintenanceThread::sortByImageQuality(const QStringList& paths, const Image
         t->setQuality(quality);
         t->setMaintenanceData(data);
 
-        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
+        connect(t, SIGNAL(signalFinished(ItemInfo,QImage,int)),
+                this, SIGNAL(signalAdvance(ItemInfo,QImage,int)));
 
         connect(this, SIGNAL(signalCanceled()),
                 t, SLOT(slotCancel()), Qt::QueuedConnection);

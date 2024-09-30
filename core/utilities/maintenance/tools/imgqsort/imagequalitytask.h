@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "actionthreadbase.h"
 
 namespace Digikam
@@ -45,7 +46,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalFinished(const ItemInfo&, const QImage&);
+    void signalFinished(const ItemInfo&, const QImage&, int);
 
 public Q_SLOTS:
 

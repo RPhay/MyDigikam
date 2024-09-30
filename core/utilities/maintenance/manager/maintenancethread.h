@@ -73,10 +73,11 @@ Q_SIGNALS:
 
     /** Emit when an item have been processed. QImage can be used to pass item thumbnail processed.
      */
+    void signalAdvance(const ItemInfo&, const QImage&, int);
     void signalAdvance(const ItemInfo&, const QImage&);
     void signalAdvance(const QImage&);      // TODO: remove this one later
 
-    /** Emit when an itam was processed and on additional information is necessary.
+    /** Emit when an item was processed and on additional information is necessary.
      */
     void signalAdvance();
 
