@@ -391,11 +391,18 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
 
 bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const int label, const QString& context)
 {
+    if (nodePos.rows != 1)
+    {
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Error face embedding not valid";
+
+        return false;
+    }
+
     int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
 
     if (nodeId <= 0)
     {
-        qCWarning(DIGIKAM_FACEDB_LOG) << "error inserting face embedding to database";
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Error inserting face embedding to database";
     }
 
     if      (method == DB)
