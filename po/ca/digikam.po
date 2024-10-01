@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
-"PO-Revision-Date: 2024-09-28 14:07+0200\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
+"PO-Revision-Date: 2024-09-30 10:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2245,7 +2245,7 @@ msgstr "Manteniment..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
-msgstr "Explora per a elements nous"
+msgstr "Explora cercant elements nous"
 
 #: core/app/main/digikamapp_setup.cpp:866
 #, kde-format
@@ -43117,7 +43117,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -61287,15 +61287,19 @@ msgstr "Etiquetatge automàtic per a: %1\n"
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
-msgid "Path: %1"
-msgstr "Camí: %1"
+msgid "Path: %1\n"
+msgstr "Camí: %1\n"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Keywords: "
+msgid "Keywords: %1"
+msgstr "Paraules clau: "
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61378,36 +61382,49 @@ msgid "Find new items"
 msgstr "Cerca els elements nous"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Cares explorades: %1\n"
+msgstr "S'està explorant des de: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Àlbum «%1»"
+msgstr "Àlbum: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Cares explorades: %1\n"
+msgstr ""
+"Explorat:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Cerca els elements duplicats"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Duplicats"
+msgstr "Duplicats de: %1\n"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "No duplicate"
+msgstr "Cerca els duplicats"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "Cerca els duplicats"
+msgstr[1] "Cerca els duplicats"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -61439,13 +61456,6 @@ msgstr "S'està actualitzant la base de dades de cares"
 msgid "Scanned for faces: %1\n"
 msgstr "Cares explorades: %1\n"
 
-# Nre.= Abreviatura de nombre (sinònim de quantitat)
-# skip-rule: t-pu_sp
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Camí: %1\n"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
@@ -61464,10 +61474,34 @@ msgid "Finger-prints"
 msgstr "Empremtes digitals"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "S'ha reconstruït l'empremta digital per a: %1\n"
+
+# Nre.= Abreviatura de nombre (sinònim de quantitat)
+# skip-rule: t-pu_sp
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, kde-format
+msgid "Path: %1"
+msgstr "Camí: %1"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality for: %1\n"
+msgstr "Ordena segons la qualitat de la imatge"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "Rètol de selecció: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -61498,10 +61532,9 @@ msgstr ""
 "Voleu continuar?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Sincronització de metadades per a: %1\n"
+msgstr "Neteja les metadades per a: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format

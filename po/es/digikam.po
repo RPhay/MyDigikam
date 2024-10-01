@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
 "PO-Revision-Date: 2024-09-30 02:38+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -43141,7 +43141,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordenar por calidad de imagen"
@@ -61290,15 +61290,19 @@ msgid "Auto-tags for: %1\n"
 msgstr "Etiquetas automáticas para: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
-msgid "Path: %1"
-msgstr "Ruta: %1"
+msgid "Path: %1\n"
+msgstr "Ruta: %1\n"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Keywords: "
+msgid "Keywords: %1"
+msgstr "Palabras clave: "
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61404,12 +61408,28 @@ msgstr ""
 msgid "Find duplicates items"
 msgstr "Buscar elementos duplicados"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
 msgid "Duplicates for: %1\n"
 msgstr "Duplicados"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "No duplicate"
+msgstr "Buscar duplicados"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "Buscar duplicados"
+msgstr[1] "Buscar duplicados"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -61441,11 +61461,6 @@ msgstr "Actualizando la base de datos de caras"
 msgid "Scanned for faces: %1\n"
 msgstr "Caras escaneadas: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Ruta: %1\n"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
@@ -61464,10 +61479,32 @@ msgid "Finger-prints"
 msgstr "Huellas digitales"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Reconstruir huella digital para: %1\n"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, kde-format
+msgid "Path: %1"
+msgstr "Ruta: %1"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality for: %1\n"
+msgstr "Ordenar por calidad de imagen"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "Emblema de elección: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format

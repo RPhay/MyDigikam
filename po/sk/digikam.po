@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
 "PO-Revision-Date: 2024-07-13 09:50+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -43021,7 +43021,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Triedenie kvality obrázkov"
@@ -62337,16 +62337,20 @@ msgid "Auto-tags for: %1\n"
 msgstr "Režim merania:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
-msgid "Path: %1"
+msgid "Path: %1\n"
 msgstr "#Sat: %1"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Keywords"
+msgid "Keywords: %1"
+msgstr "Kľúčové slová"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -62457,10 +62461,27 @@ msgstr "Hľadať v albumoch:"
 msgid "Find duplicates items"
 msgstr "Nájsť duplicitné položky"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #, fuzzy, kde-format
 msgid "Duplicates for: %1\n"
 msgstr "Duplikáty"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "No duplicate"
+msgstr "Nájsť duplicity"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "Nájsť duplicity"
+msgstr[1] "Nájsť duplicity"
+msgstr[2] "Nájsť duplicity"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
@@ -62501,12 +62522,6 @@ msgstr "Aktualizuje sa databáza tvárí."
 msgid "Scanned for faces: %1\n"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Sat: %1"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 msgid "No face"
@@ -62526,11 +62541,34 @@ msgid "Finger-prints"
 msgstr "Odtlačky"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, fuzzy, kde-format
 #| msgid "Rebuild Finger-prints"
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Znovu vytvoriť odtlačky"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1"
+msgstr "#Sat: %1"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality for: %1\n"
+msgstr "Triedenie kvality obrázkov"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "Menovka výberu: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format

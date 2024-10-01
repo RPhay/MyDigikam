@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
 "PO-Revision-Date: 2024-09-17 13:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -42114,7 +42114,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr ""
@@ -60859,15 +60859,19 @@ msgid "Auto-tags for: %1\n"
 msgstr "نمط القياس:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
-msgid "Path: %1"
+msgid "Path: %1\n"
 msgstr "سبت"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Keywords"
+msgid "Keywords: %1"
+msgstr "الكلمات المفتاحيّة"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -60978,11 +60982,31 @@ msgstr "ابحث في:"
 msgid "Find duplicates items"
 msgstr "ابحث عن العناصر المتكرّرة (مصدر؟ جارٍ؟)"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates for: %1\n"
 msgstr "المتكرّر"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "No duplicate"
+msgstr "ابحث عن المتكرّر"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "ابحث عن المتكرّر"
+msgstr[1] "ابحث عن المتكرّر"
+msgstr[2] "ابحث عن المتكرّر"
+msgstr[3] "ابحث عن المتكرّر"
+msgstr[4] "ابحث عن المتكرّر"
+msgstr[5] "ابحث عن المتكرّر"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
@@ -61022,11 +61046,6 @@ msgstr "إنشاء جديد الألبوم"
 msgid "Scanned for faces: %1\n"
 msgstr "ابحث في:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, fuzzy, kde-format
-msgid "Path: %1\n"
-msgstr "سبت"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No filter"
@@ -61051,10 +61070,30 @@ msgid "Finger-prints"
 msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, fuzzy, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "إعادة البناء الكل مُسْتعْرضة."
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+msgid "Path: %1"
+msgstr "سبت"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+#| msgid "PGF quality:"
+msgid "Image Quality for: %1\n"
+msgstr "جودة PGF:"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "اختر لصيقة: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format

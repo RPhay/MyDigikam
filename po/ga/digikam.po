@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -43069,7 +43069,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "Eagarthóir Íomhá"
@@ -62772,16 +62772,19 @@ msgid "Auto-tags for: %1\n"
 msgstr "Mód méadraithe:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
-#| msgid "Path:"
-msgid "Path: %1"
-msgstr "Conair:"
+#| msgid "Rating: "
+msgid "Path: %1\n"
+msgstr "Rátáil: "
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgid "Keywords"
+msgid "Keywords: %1"
+msgstr "Lorgfhocail"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -62892,11 +62895,28 @@ msgstr "Cuardaigh i:"
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates for: %1\n"
 msgstr "Amhráin Dúbailte"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "No duplicate"
+msgstr "Amhráin Dúbailte"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "Amhráin Dúbailte"
+msgstr[1] "Amhráin Dúbailte"
+msgstr[2] "Amhráin Dúbailte"
+msgstr[3] "Amhráin Dúbailte"
+msgstr[4] "Amhráin Dúbailte"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, fuzzy, kde-format
@@ -62937,12 +62957,6 @@ msgstr "Bunachar sonraí aghaidheanna á nuashonrú."
 msgid "Scanned for faces: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, fuzzy, kde-format
-#| msgid "Rating: "
-msgid "Path: %1\n"
-msgstr "Rátáil: "
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
 #| msgid "No flash"
@@ -62966,11 +62980,30 @@ msgid "Finger-prints"
 msgstr "Méarloirg"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, fuzzy, kde-format
 #| msgid "Rebuild Finger-prints"
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Atóg na Méarloirg"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, fuzzy, kde-format
+#| msgid "Path:"
+msgid "Path: %1"
+msgstr "Conair:"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+msgid "Image Quality for: %1\n"
+msgstr "Eagarthóir Íomhá"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "Lipéad Roghnaithe: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format

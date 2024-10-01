@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 01:49+0000\n"
-"PO-Revision-Date: 2024-09-29 21:57+0300\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
+"PO-Revision-Date: 2024-09-30 21:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -42662,7 +42662,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Görsel Kalitesi Sıralayıcısı"
@@ -60709,15 +60709,19 @@ msgid "Auto-tags for: %1\n"
 msgstr "Şunun için kendiliğinden künye: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
-msgid "Path: %1"
-msgstr "Yol: %1"
+msgid "Path: %1\n"
+msgstr "Yol: %1\n"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Keywords: "
+msgid "Keywords: %1"
+msgstr "Anahtar sözcükler: "
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -60823,12 +60827,26 @@ msgstr ""
 msgid "Find duplicates items"
 msgstr "Yinelenen ögeleri bul"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Yinelenenler"
+msgstr "Şunun için olan yinelenenler: %1\n"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "No duplicate"
+msgstr "Yinelenmişleri Bul"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] "Yinelenmişleri Bul"
+msgstr[1] "Yinelenmişleri Bul"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -60860,11 +60878,6 @@ msgstr "Yüz veritabanı güncelleniyor"
 msgid "Scanned for faces: %1\n"
 msgstr "Şu yüzler tarandı: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Yol: %1\n"
-
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, kde-format
 msgid "No face"
@@ -60883,10 +60896,32 @@ msgid "Finger-prints"
 msgstr "Parmak İzleri"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Şunun için parmak izlerini yeniden yap: %1\n"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, kde-format
+msgid "Path: %1"
+msgstr "Yol: %1"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality for: %1\n"
+msgstr "Görsel Kalitesi Sıralama"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgid "Pick Label: %1"
+msgstr "Seçim etiketi: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
