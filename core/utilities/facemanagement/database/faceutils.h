@@ -75,6 +75,7 @@ public:
      */
     bool                hasBeenScanned(const ItemInfo& info)                            const;
     bool                hasBeenScanned(qlonglong imageid)                               const;
+    bool                normalTagChanged()                                              const;
 
     /**
      * Marks the image as scanned for faces.
@@ -129,6 +130,10 @@ protected:
     void addNormalTag(qlonglong imageId, int tagId)                                           override;
     void removeNormalTag(qlonglong imageId, int tagId)                                        override;
     void removeNormalTags(qlonglong imageId, const QList<int>& tagIds)                        override;
+
+private:
+
+    bool m_normalTagChanged = false;
 
 private:
 

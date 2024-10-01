@@ -35,8 +35,6 @@
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
 #include "albummanager.h"
-#include "scancontroller.h"
-#include "metadatahub.h"
 
 namespace Digikam
 {
@@ -62,6 +60,11 @@ bool FaceUtils::hasBeenScanned(qlonglong imageid) const
 bool FaceUtils::hasBeenScanned(const ItemInfo& info) const
 {
     return info.tagIds().contains(FaceTags::scannedForFacesTagId());
+}
+
+bool FaceUtils::normalTagChanged() const
+{
+    return m_normalTagChanged;
 }
 
 void FaceUtils::markAsScanned(qlonglong imageid, bool hasBeenScanned) const
@@ -307,24 +310,14 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::addNormalTag(imageId, tagId);
 
-    ItemInfo info(imageId);
-    MetadataHub hub;
-    hub.load(info);
-
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    m_normalTagChanged = true;
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::removeNormalTag(imageId, tagId);
 
-    ItemInfo info(imageId);
-    MetadataHub hub;
-    hub.load(info);
-
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    m_normalTagChanged = true;
 
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
@@ -360,12 +353,7 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
     FaceTagsEditor::removeNormalTags(imageId, tagIds);
 
-    ItemInfo info(imageId);
-    MetadataHub hub;
-    hub.load(info);
-
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    m_normalTagChanged = true;
 }
 
 // --- Utilities ---
