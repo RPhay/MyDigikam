@@ -41,12 +41,12 @@ public:
     enum Style
     {
         STYLE_NOQUIRK,
-        STYLE_MACINTOSH,
         STYLE_PLASTIQUE,
         STYLE_WINDOWS,
         STYLE_BREEZE,
         STYLE_FUSION,
         STYLE_OXYGEN,
+        STYLE_MACOS,
         STYLE_GTK2
     };
 
@@ -224,9 +224,9 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
 
     if (
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)    ||
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACOS)   ||
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN)  ||
-        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS) ||
-        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH)
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS)
        )
     {
         progressOpts.state |= QStyle::State_Horizontal;
@@ -720,10 +720,10 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             break;
         }
 
-        case DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH:
         case DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS:
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
         case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
+        case DAbstractSliderSpinBoxPrivate::STYLE_MACOS:
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
         {
             hint += QSize(8, 8);
@@ -1019,11 +1019,7 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
 
     if (e->type() == QEvent::StyleChange)
     {
-        if      (style()->objectName() == QLatin1String("macintosh"))
-        {
-            d->style = DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH;
-        }
-        else if (style()->objectName() == QLatin1String("plastique"))
+        if      (style()->objectName() == QLatin1String("plastique"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE;
         }
@@ -1042,6 +1038,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("oxygen"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN;
+        }
+        else if (style()->objectName() == QLatin1String("macos"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_MACOS;
         }
         else if (style()->objectName() == QLatin1String("gtk2"))
         {
