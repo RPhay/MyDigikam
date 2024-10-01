@@ -181,12 +181,12 @@ void MetadataRemover::parseList()
     else if (d->removeAction == Faces)
     {
         setLabel(i18n("Remove all faces from image"));
-        setThumbnail(QIcon::fromTheme(QLatin1String("list-remove-user")).pixmap(22));
+        setThumbnail(QIcon::fromTheme(QLatin1String("list-remove-user")).pixmap(48));
     }
     else if (d->removeAction == Tags)
     {
         setLabel(i18n("Remove all tags from image"));
-        setThumbnail(QIcon::fromTheme(QLatin1String("tag-delete")).pixmap(22));
+        setThumbnail(QIcon::fromTheme(QLatin1String("tag-delete")).pixmap(48));
     }
 
     if (d->imageInfoList.isEmpty())

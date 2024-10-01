@@ -101,7 +101,7 @@ void DuplicatesFinder::slotStart()
     MaintenanceTool::slotStart();
 
     setLabel(i18n("Find duplicates items"));
-    setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(22));
+    setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
 

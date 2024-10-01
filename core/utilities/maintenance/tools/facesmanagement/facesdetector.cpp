@@ -269,7 +269,7 @@ void FacesDetector::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
+    setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
     // set label depending on settings
 

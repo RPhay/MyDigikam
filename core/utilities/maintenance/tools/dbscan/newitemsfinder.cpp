@@ -69,7 +69,7 @@ void NewItemsFinder::slotStart()
 
     setShowAtStart(true);
     setLabel(i18n("Find new items"));
-    setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(22));
+    setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
 

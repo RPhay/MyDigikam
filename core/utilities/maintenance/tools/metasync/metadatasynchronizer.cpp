@@ -187,12 +187,12 @@ void MetadataSynchronizer::parseList()
     if (d->direction == WriteFromDatabaseToFile)
     {
         setLabel(i18n("Synchronizing image metadata with database"));
-        setThumbnail(QIcon::fromTheme(QLatin1String("document-edit")).pixmap(22));
+        setThumbnail(QIcon::fromTheme(QLatin1String("document-edit")).pixmap(48));
     }
     else
     {
         setLabel(i18n("Updating database from image metadata"));
-        setThumbnail(QIcon::fromTheme(QLatin1String("edit-redo")).pixmap(22));
+        setThumbnail(QIcon::fromTheme(QLatin1String("edit-redo")).pixmap(48));
     }
 
     if (d->imageInfoList.isEmpty())
