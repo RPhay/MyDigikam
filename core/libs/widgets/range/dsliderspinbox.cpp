@@ -723,10 +723,15 @@ QSize DAbstractSliderSpinBox::sizeHint() const
         case DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS:
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
         case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
-        case DAbstractSliderSpinBoxPrivate::STYLE_MACOS:
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
         {
             hint += QSize(8, 8);
+            break;
+        }
+
+        case DAbstractSliderSpinBoxPrivate::STYLE_MACOS:
+        {
+            hint += QSize(8, 16);
             break;
         }
 
