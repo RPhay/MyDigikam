@@ -231,8 +231,8 @@ void FaceScanWidget::setupUi()
     detectModelLabel->setAlignment(Qt::AlignLeft);
 
     d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
-    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);        // TODO: make this i18n
-    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);       // TODO: make this i18n
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                        "AI model used to detect faces.  YuNet is the new defaut model.  It is faster and more configurable than YOLOv3."));
@@ -241,11 +241,11 @@ void FaceScanWidget::setupUi()
     detectSizeLabel->setAlignment(Qt::AlignLeft);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::extra_small);  // TODO: make this i18n
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::small);        // TODO: make this i18n
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::medium);       // TODO: make this i18n
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::large);        // TODO: make this i18n
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::extra_large);  // TODO: make this i18n
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::extra_small);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::small);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::medium);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::large);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::extra_large);
     d->detectSizeBox->setEditable(false);
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
                                        "Detecting smaller faces takes more time and has a higher probability of incorrect facial detection.\n"
@@ -260,20 +260,20 @@ void FaceScanWidget::setupUi()
     d->recognizeAccuracyInput->setDefaultValue(70);
     d->recognizeAccuracyInput->setRange(0, 100, 10);
     d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
-                                       "be recognized, but less faces will be recognized\n"
-                                       "(only faces that are very similar to pre-tagged faces are recognized)."));
+                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
+                                                "be recognized, but less faces will be recognized\n"
+                                                "(only faces that are very similar to pre-tagged faces are recognized)."));
 
     QLabel* const recognizeModelLabel   = new QLabel(i18nc("@label AI model used for recognition", "Recognition model:"), d->settingsTab);
     recognizeModelLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeModelBox                = new SqueezedComboBox(d->settingsTab);
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);     // TODO: make this i18n
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);  // TODO: make this i18n
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);
     d->recognizeModelBox->setEditable(false);
     d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
-                                       "SFace is the new default AI model.  It is faster ad more accurate .\n"
-                                       "OpenFace can be used for older libraries."));
+                                           "SFace is the new default AI model.  It is faster ad more accurate .\n"
+                                           "OpenFace can be used for older libraries."));
 
     // ----- build the boxes
 
@@ -330,7 +330,7 @@ void FaceScanWidget::setupConnections()
     connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
             this, [this](int value)
         {
-            ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100);
+            ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100.0);
         }
     );
 
@@ -410,12 +410,12 @@ FaceScanSettings FaceScanWidget::settings() const
         d->settingsConflicted       = (numberOfIdentities == 0);
     }
 
-    settings.detectAccuracy         = double(d->detectAccuracyInput->value()) / 100;
+    settings.detectAccuracy         = d->detectAccuracyInput->value() / 100.0;
     settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
     settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
-    settings.recognizeAccuracy      = double(d->recognizeAccuracyInput->value()) / 100;
+    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value() / 100.0;
     settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
-    
+
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
     return settings;
