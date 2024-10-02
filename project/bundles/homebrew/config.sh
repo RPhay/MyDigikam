@@ -77,7 +77,7 @@ RELOCATE_PREFIX="/Applications/digiKam.org"
 # URL to git repository to checkout digiKam source code
 # git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
-#DK_GITURL="git@invent.kde.org:michmill/digi-kam-mac-os-arm-64-michmill.git"
+#DK_GITURL="git@invent.kde.org:michmill/digiKam.git"
 # https protocol version which give annonyous access.
 #DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
@@ -103,7 +103,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.2.0-beta1
 DK_VERSION=master
-#DK_VERSION="work/michmill/yunet-debug-cv-errors"
+#DK_VERSION="work/michmill/yunet-ui"
 #DK_VERSION=development/dplugins
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
@@ -113,7 +113,7 @@ DK_VERSION=master
 DK_APPLE_PACKAGE_MANAGER="homebrew"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=1
+DK_DEBUG=0
 
 # copy debug symbols into ./data/symbols for debugging
 DK_COPY_DEBUG_SYMBOLS=1

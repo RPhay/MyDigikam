@@ -27,6 +27,7 @@
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -45,6 +46,8 @@ public:
                              std::vector<cv::Rect>& detectedBboxes) = 0;
 
     cv::Size nnInputSizeRequired() const;
+
+    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)    { return; };
 
 protected:
 

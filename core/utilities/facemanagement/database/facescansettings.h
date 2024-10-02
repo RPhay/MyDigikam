@@ -46,6 +46,34 @@ public:
         ClearAll
     };
 
+    /// face detection AI models
+    enum FaceDetectionModel
+    {
+        YOLOv3,
+        YuNet
+    };
+    // Q_ENUM(FaceScanSettings::FaceDetectionModel)
+
+    /// Face detection size
+    enum FaceDetectionSize
+    {
+        extra_small,
+        small,
+        medium,
+        large,
+        extra_large
+    };
+    // Q_ENUM(FaceScanSettings::FaceDetectionSize)
+
+    /// face recognition AI models
+    enum FaceRecognitionModel
+    {
+        OpenFace,
+        SFace
+    };
+    // Q_ENUM(FaceScanSettings::FaceRecognitionModel)
+
+
 public:
 
     FaceScanSettings()  = default;
@@ -59,11 +87,20 @@ public:
     /// Processing power
     bool                                    useFullCpu                  = false;
 
-    /// Use Yolo V3 model
-    bool                                    useYoloV3                   = false;
+    /// detection Model
+    FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
+
+    /// detection Model
+    FaceDetectionSize                       detectSize                  = FaceDetectionSize::medium;
 
     /// Detection accuracy
-    double                                  accuracy                    = 0.7;
+    double                                  detectAccuracy              = 0.6;
+
+    /// detection Model
+    FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::OpenFace;
+
+    /// Detection accuracy
+    double                                  recognizeAccuracy           = 0.7;
 
     /// Albums to scan
     AlbumList                               albums;

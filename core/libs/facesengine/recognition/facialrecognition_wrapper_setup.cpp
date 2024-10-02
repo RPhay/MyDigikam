@@ -33,9 +33,9 @@ void FacialRecognitionWrapper::Private::applyParameters()
     {
         threshold = parameters.value(QLatin1String("threshold")).toFloat();
     }
-    else if (parameters.contains(QLatin1String("accuracy")))
+    else if (parameters.contains(QLatin1String("recognizeAccuracy")))
     {
-        threshold = parameters.value(QLatin1String("accuracy")).toFloat();
+        threshold = parameters.value(QLatin1String("recognizeAccuracy")).toFloat();
     }
 
     threshold = 1 - threshold;

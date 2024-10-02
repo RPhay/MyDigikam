@@ -217,14 +217,44 @@ void ApplicationSettings::setFaceDetectionAccuracy(double value)
     d->faceDetectionAccuracy = value;
 }
 
-bool ApplicationSettings::getFaceDetectionYoloV3() const
+FaceScanSettings::FaceDetectionModel ApplicationSettings::getFaceDetectionModel() const
 {
-    return d->faceDetectionYoloV3;
+    return d->faceDetectionModel;
 }
 
-void ApplicationSettings::setFaceDetectionYoloV3(bool yolo)
+void ApplicationSettings::setFaceDetectionModel(FaceScanSettings::FaceDetectionModel model)
 {
-    d->faceDetectionYoloV3 = yolo;
+    d->faceDetectionModel = model;
+}
+
+FaceScanSettings::FaceDetectionSize ApplicationSettings::getFaceDetectionSize() const
+{
+    return d->faceDetectionSize;
+}
+
+void ApplicationSettings::setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size)
+{
+    d->faceDetectionSize = size;
+}
+
+double ApplicationSettings::getFaceRecognitionAccuracy() const
+{
+    return d->faceRecognitionAccuracy;
+}
+
+void ApplicationSettings::setFaceRecognitionAccuracy(double value)
+{
+    d->faceRecognitionAccuracy = value;
+}
+
+FaceScanSettings::FaceRecognitionModel ApplicationSettings::getFaceRecognitionModel() const
+{
+    return d->faceRecognitionModel;
+}
+
+void ApplicationSettings::setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel model)
+{
+    d->faceRecognitionModel = model;
 }
 
 void ApplicationSettings::setApplicationStyle(const QString& style)

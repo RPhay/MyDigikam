@@ -46,13 +46,13 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
             break;
         }
 
-        case DetectorNNModel::YOLO:
+        case DetectorNNModel::YOLOv3:
         {
             m_inferenceEngine = new DNNFaceDetectorYOLO;
             break;
         }
 
-        case DetectorNNModel::YUNET:
+        case DetectorNNModel::YuNet:
         {
             m_inferenceEngine = new DNNFaceDetectorYuNet;
             break;
@@ -101,7 +101,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
     }
 
-    if (DetectorNNModel::YUNET == m_modelType)
+    if (DetectorNNModel::YuNet == m_modelType)
     {
         return prepareForDetectionYuNet(cvImage, paddedSize);
     }
@@ -223,6 +223,11 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
 void OpenCVDNNFaceDetector::setAccuracy(const float accuracy)
 {
     m_inferenceEngine->confidenceThreshold = accuracy;
+}
+
+void OpenCVDNNFaceDetector::setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size)
+{
+    m_inferenceEngine->setFaceDetectionSize(size);
 }
 
 /**

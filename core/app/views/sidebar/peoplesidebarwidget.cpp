@@ -104,6 +104,8 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
     d->rescanButton   = new QPushButton;
     d->rescanButton->setText(i18n("Scan collection for faces"));
+    d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for faces"));
 
     vlay->addWidget(d->tagFolderView, 10);
     vlay->addWidget(d->tagSearchBar);

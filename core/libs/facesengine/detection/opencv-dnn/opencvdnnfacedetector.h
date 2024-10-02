@@ -33,8 +33,8 @@ namespace Digikam
 enum DetectorNNModel
 {
     SSDMOBILENET = 0,   ///< SSD MobileNet neural network inference.
-    YOLO,               ///< YOLO neural network inference.
-    YUNET               ///< YuNet neural network inference.
+    YOLOv3,             ///< YOLO neural network inference.
+    YuNet               ///< YuNet neural network inference.
 };
 
 class DIGIKAM_EXPORT OpenCVDNNFaceDetector
@@ -51,6 +51,7 @@ public:
     cv::Mat prepareForDetectionYuNet(cv::Mat& cvImage, cv::Size& paddedSize)            const;
 
     void setAccuracy(const float accuracy);
+    void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size);
 
     QList<QRect> detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
     std::vector<cv::Rect> cvDetectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);

@@ -62,7 +62,7 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 
 void RecognitionWorker::setThreshold(double threshold, bool)
 {
-    recognizer.setParameter(QLatin1String("threshold"), threshold);
+    recognizer.setParameter(QLatin1String("recognizeAccuracy"), threshold);
 }
 
 void RecognitionWorker::aboutToDeactivate()

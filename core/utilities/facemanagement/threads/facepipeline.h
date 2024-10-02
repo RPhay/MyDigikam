@@ -18,6 +18,7 @@
 // Local includes
 
 #include "facepipelinepackage.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -202,7 +203,7 @@ public Q_SLOTS:
      */
     void process(const QList<ItemInfo>& infos);
 
-    void setAccuracyAndModel(double accuracy, bool yolo);
+    void setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
 
 Q_SIGNALS:
 

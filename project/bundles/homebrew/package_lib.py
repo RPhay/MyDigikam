@@ -49,6 +49,9 @@ sign_binaries = False
 copy_binaries = False
 follow_symlinks = False
 preserve_rpath = False
+force = False
+force_depth = 1
+current_depth = 0
 
 def echo(message):
     print(message)
@@ -312,8 +315,14 @@ def copy_dylib(src):
     
 def copy_dependencies(file, dep_file):
     global processed_dylibs
+    global force
+    global force_depth
+    global current_depth
 
-    if not file in processed_dylibs:
+    if not file in processed_dylibs and current_depth < force_depth:
+        if (force):
+            current_depth += 1
+            echo("Current depth: " + str(current_depth))
         # process the file once if it's a symlinked file
         if file.startswith("@"):
             processed_dylibs.add(file)
@@ -388,10 +397,13 @@ def main(args):
     global found_dylibs
     global follow_symlinks
     global preserve_rpath
+    global force
+    global force_depth
 
     processed_dylib_cache_mode = "none"
     found_dylib_cache_mode = "none"
     signed_dylib_cache_mode = "none"
+
 
     # process command line parameters
     for arg in args:
@@ -424,6 +436,8 @@ def main(args):
                 copy_binaries = (arg_value.lower() == "true" or arg_value == "1")
             case "--preserve_rpath":
                 preserve_rpath = (arg_value.lower() == "true" or arg_value == "1")
+            case "--force":
+                force = (arg_value.lower() == "true" or arg_value == "1")
             case _:
                 echo("Invalid parameter: " + arg_name)
                 quit()
@@ -451,6 +465,23 @@ def main(args):
     if (signed_dylib_cache_mode == "update" or signed_dylib_cache_mode == "use") and os.path.exists(signed_dylibs_file):
         with open(signed_dylibs_file, 'rb') as f:
              install_names_cache = pickle.load(f)
+    
+
+    # force remove the file from the caches to reprocess it but preserving the rest of the cache
+    if (force):
+        for file in glob.glob(root_full_path):
+            try:
+                processed_dylibs.remove(file)
+            except:
+                print(file + " not in processed cache")
+            try:
+                found_dylibs.remove(file)
+            except:
+                print(file + " not in found cache")
+            try:
+                install_names_cache.remove(file)
+            except:
+                print(file + " not in signed cache")
     
     # main loop to process files
     for file in glob.glob(root_full_path):

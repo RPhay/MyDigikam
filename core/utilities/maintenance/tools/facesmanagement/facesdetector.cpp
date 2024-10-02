@@ -193,8 +193,11 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         }
 
         d->pipeline.plugDatabaseWriter(writeMode);
-        d->pipeline.setAccuracyAndModel(settings.accuracy,
-                                        settings.useYoloV3);
+        d->pipeline.setAccuracyAndModel(settings.detectAccuracy,
+                                        settings.detectModel,
+                                        settings.detectSize,
+                                        settings.recognizeAccuracy,
+                                        settings.recognizeModel);
         d->pipeline.construct();
     }
     else // FaceScanSettings::RecognizeMarkedFaces
@@ -202,8 +205,11 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         d->pipeline.plugRerecognizingDatabaseFilter();
         d->pipeline.plugFaceRecognizer();
         d->pipeline.plugDatabaseWriter(FacePipeline::NormalWrite);
-        d->pipeline.setAccuracyAndModel(settings.accuracy,
-                                        settings.useYoloV3);
+        d->pipeline.setAccuracyAndModel(settings.detectAccuracy,
+                                        settings.detectModel,
+                                        settings.detectSize,
+                                        settings.recognizeAccuracy,
+                                        settings.recognizeModel);
         d->pipeline.construct();
     }
 

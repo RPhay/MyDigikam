@@ -7,9 +7,7 @@
  *               for face detection. Credit: Ayoosh Kathuria (for YuNet blog post),
  *               sthanhng (for example of face detection with YuNet).
  *               More information with YuNetv3:
- *               https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
- *               sthanhng github on face detection with Yolov3:
- *               https://github.com/sthanhng/yoloface
+ *               https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -58,13 +56,13 @@ const std::map<std::string, int> str2target
     { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16   }
 };
 
-const int DNNFaceDetectorYuNet::imageSizeMaxDimensions[5] =
+const std::map<FaceScanSettings::FaceDetectionSize, int> faceenum2size
 {
-    420,
-    620,
-    800,
-    1200,
-    2000
+    { FaceScanSettings::FaceDetectionSize::extra_large, 420   },
+    { FaceScanSettings::FaceDetectionSize::large,       620   },
+    { FaceScanSettings::FaceDetectionSize::medium,      800   },
+    { FaceScanSettings::FaceDetectionSize::small,       1200  },
+    { FaceScanSettings::FaceDetectionSize::extra_small, 2000  }
 };
 
 QMutex DNNFaceDetectorYuNet::lockModel;
@@ -75,29 +73,6 @@ DNNFaceDetectorYuNet::DNNFaceDetectorYuNet()
                           cv::Size(800, 800))
 {
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Creating new instance of DNNFaceDetectorYuNet";
-
-    // this is temporary until we have a slider in the UI
-
-    QString maxImageDimensionEnv = QString::fromLocal8Bit(qgetenv("DIGIKAM_YUNET_IMAGE_DIMENSION_MAX"));
-
-    if (maxImageDimensionEnv.length() > 0)
-    {
-        try
-        {
-            int maxImageDimension = maxImageDimensionEnv.toInt();
-
-            if (maxImageDimension > 250)
-            {
-                // inputImageSize should be set from the UI
-
-                inputImageSize = cv::Size(maxImageDimension, maxImageDimension);
-            }
-        }
-        catch (const std::exception& e)
-        {
-            std::cerr << "Invalid image dimension size." << e.what() << std::endl;
-        }
-    }
 
     loadModels();
 }
@@ -154,9 +129,6 @@ bool DNNFaceDetectorYuNet::loadModels()
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet model:" << model;
 
-/*
-            cv_model = cv::FaceDetectorYN::create("/Users/michmill/Downloads/face_detection_yunet_2023mar.onnx", "", inputImageSize, conf_threshold, nms_threshold, top_k, backend_id, target_id);
-*/
             cv_model = cv::FaceDetectorYN::create(
                                                   nnmodel.toStdString(),
                                                   "",
@@ -235,7 +207,6 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     }
     catch (...)
     {
-        // ...
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Face detection encountered a critical error. Reloading model...";
         loadModels();
     }
@@ -288,6 +259,21 @@ void DNNFaceDetectorYuNet::detectFaces(const cv::Mat& inputImage,
 
             detectedBboxes.push_back(cv::Rect(X, Y, width, height));
         }
+    }
+}
+
+void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)
+{
+    try
+    {
+        inputImageSize = cv::Size(
+                                faceenum2size.at(faceSize),
+                                faceenum2size.at(faceSize)
+                                );
+    }
+    catch(const std::exception& e)
+    {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet face size error:" << e.what() << '\n';
     }
 }
 

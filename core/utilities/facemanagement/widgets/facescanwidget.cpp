@@ -72,11 +72,14 @@ void FaceScanWidget::doLoadState()
 
     d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
 
-    d->accuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
 
     d->albumSelectors->loadState();
 
-    d->useYoloV3Button->setChecked(ApplicationSettings::instance()->getFaceDetectionYoloV3());
+    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
+    d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
+    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
+    d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy() * 100);
+    d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(ApplicationSettings::instance()->getFaceRecognitionModel()));
 
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 }
@@ -110,10 +113,13 @@ void FaceScanWidget::doSaveState()
     group.writeEntry(entryName(d->configAlreadyScannedHandling),
                                d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
 
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->accuracyInput->value()) / 100);
     d->albumSelectors->saveState();
 
-    ApplicationSettings::instance()->setFaceDetectionYoloV3(d->useYoloV3Button->isChecked());
+    ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->detectAccuracyInput->value()) / 100);
+    ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
+    ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
+    ApplicationSettings::instance()->setFaceRecognitionAccuracy(double(d->recognizeAccuracyInput->value()) / 100);
+    ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
 
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
@@ -129,7 +135,6 @@ void FaceScanWidget::setupUi()
                                         "it can also recognize the people shown on your photos."));
 
     QVBoxLayout* const optionLayout     = new QVBoxLayout;
-
     QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
 
     d->alreadyScannedBox                = new SqueezedComboBox;
@@ -139,7 +144,7 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
 
     QString buttonText;
-    d->helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
+    d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
     d->helpButton->setToolTip(i18nc("@info", "Help"));
 
     connect(d->helpButton, &QPushButton::clicked,
@@ -156,17 +161,17 @@ void FaceScanWidget::setupUi()
 
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
-    d->detectButton                   = new QRadioButton(i18nc("@option:radio", "Detect faces"));
+    d->detectButton                     = new QRadioButton(i18nc("@option:radio", "Detect faces"));
     d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-    d->detectAndRecognizeButton       = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
+    d->detectAndRecognizeButton         = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and\n"
                                                            "try to recognize which person is depicted"));
 #endif
 
-    d->reRecognizeButton              = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
+    d->reRecognizeButton                = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted\n"
                                                     "on marked but yet unconfirmed faces."));
 
@@ -194,56 +199,112 @@ void FaceScanWidget::setupUi()
 
     // ---- Album tab ---------
 
-    d->albumSelectors                 = new AlbumSelectors(QString(), d->configName,
-                                                           this, AlbumSelectors::AlbumType::All, true);
+    d->albumSelectors                   = new AlbumSelectors(QString(), d->configName,
+                                                             this, AlbumSelectors::AlbumType::All, true);
     addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
     // ---- Settings tab ------
 
-    QWidget* const settingsTab        = new QWidget(this);
-    QVBoxLayout* const settingsLayout = new QVBoxLayout(settingsTab);
+    d->settingsTab                      = new QWidget(this);
+    QVBoxLayout* const settingsLayout   = new QVBoxLayout(d->settingsTab);
 
-    QGroupBox* const accuracyBox      = new QGroupBox(i18nc("@label", "Face Accuracy"), settingsTab);
-    QGridLayout* const accuracyGrid   = new QGridLayout(accuracyBox);
+    DExpanderBox* expBox                = new DExpanderBox(d->settingsTab);
+    QWidget* const detectWidget         = new QWidget(expBox);
+    QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
 
-    QLabel* const sensitivityLabel    = new QLabel(i18nc("@label left extremities of a scale", "Sensitivity"), settingsTab);
-    sensitivityLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    QWidget* const recognizeWidget      = new QWidget(expBox);
+    QGridLayout* const recognizeGrid    = new QGridLayout(recognizeWidget);
 
-    QLabel* const specificityLabel    = new QLabel(i18nc("@label right extremities of a scale", "Specificity"), settingsTab);
-    specificityLabel->setAlignment(Qt::AlignTop | Qt::AlignRight);
+    // ----- detection settings
 
-    d->accuracyInput                  = new DIntNumInput(settingsTab);
-    d->accuracyInput->setDefaultValue(70);
-    d->accuracyInput->setRange(0, 100, 10);
-    d->accuracyInput->setToolTip(i18nc("@info:tooltip",
+    QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy", "Detection Accuracy:"), d->settingsTab);
+    detectAccuracyLabel->setAlignment(Qt::AlignLeft);
+
+    d->detectAccuracyInput              = new DIntNumInput(d->settingsTab);
+    d->detectAccuracyInput->setDefaultValue(70);
+    d->detectAccuracyInput->setRange(0, 100, 10);
+    d->detectAccuracyInput->setToolTip(i18nc("@info:tooltip",
+                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
+                                       "be detected, but less faces will be detected."));
+
+    QLabel* const detectModelLabel      = new QLabel(i18nc("@label AI model used for detection", "AI Model:"), d->settingsTab);
+    detectModelLabel->setAlignment(Qt::AlignLeft);
+
+    d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);        // TODO: make this i18n
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);       // TODO: make this i18n
+    d->detectModelBox->setEditable(false);
+    d->detectModelBox->setToolTip(i18nc("@info:tooltip",
+                                       "AI model used to detect faces.  YuNet is the new defaut model.  It is faster and more configurable than YOLOv3."));
+
+    QLabel* const detectSizeLabel       = new QLabel(i18nc("@label AI model used for detection", "Face size:"), d->settingsTab);
+    detectSizeLabel->setAlignment(Qt::AlignLeft);
+
+    d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::extra_small);  // TODO: make this i18n
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::small);        // TODO: make this i18n
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::medium);       // TODO: make this i18n
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::large);        // TODO: make this i18n
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::extra_large);  // TODO: make this i18n
+    d->detectSizeBox->setEditable(false);
+    d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
+                                       "Detecting smaller faces takes more time and has a higher probability of incorrect facial detection.\n"
+                                       "Detecting larger faces is faster, but may miss smaller faces in group pictures."));
+
+    // ----- recognition settings
+
+    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy", "Recognition Accuracy:"), d->settingsTab);
+    recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
+
+    d->recognizeAccuracyInput           = new DIntNumInput(d->settingsTab);
+    d->recognizeAccuracyInput->setDefaultValue(70);
+    d->recognizeAccuracyInput->setRange(0, 100, 10);
+    d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                        "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
                                        "be recognized, but less faces will be recognized\n"
                                        "(only faces that are very similar to pre-tagged faces are recognized)."));
 
-    accuracyGrid->addWidget(d->accuracyInput, 0, 0, 1, 3);
-    accuracyGrid->addWidget(sensitivityLabel, 1, 0, 1, 1);
-    accuracyGrid->addWidget(specificityLabel, 1, 2, 1, 1);
-    accuracyGrid->setColumnStretch(1, 10);
+    QLabel* const recognizeModelLabel   = new QLabel(i18nc("@label AI model used for recognition", "Recognition model:"), d->settingsTab);
+    recognizeModelLabel->setAlignment(Qt::AlignLeft);
 
-    d->useYoloV3Button                = new QCheckBox(settingsTab);
-    d->useYoloV3Button->setText(i18nc("@option:check", "Use YOLO v3 detection model"));
-    d->useYoloV3Button->setToolTip(i18nc("@info:tooltip",
-                                         "Face detection with YOLO v3 data model. Better results but slower."));
+    d->recognizeModelBox                = new SqueezedComboBox(d->settingsTab);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);     // TODO: make this i18n
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);  // TODO: make this i18n
+    d->recognizeModelBox->setEditable(false);
+    d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
+                                       "SFace is the new default AI model.  It is faster ad more accurate .\n"
+                                       "OpenFace can be used for older libraries."));
 
-    d->useFullCpuButton               = new QCheckBox(settingsTab);
+    // ----- build the boxes
+
+    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
+    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
+    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
+    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
+    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
+    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
+
+    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
+    recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+
+    d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Face detection and recognition are time-consuming tasks.\n"
                                           "You can choose if you wish to employ all processor cores\n"
                                           "on your system, or work in the background only on one core."));
 
-    settingsLayout->addWidget(accuracyBox);
-    settingsLayout->addWidget(d->useYoloV3Button);
+    expBox->addItem(detectWidget,    i18n("Face Detection Settings"),   QString::fromUtf8("Face Detection Settings"),   false);
+    expBox->addItem(recognizeWidget, i18n("Face Recognition Settings"), QString::fromUtf8("Face Recognition Settings"), false);
+    expBox->setItemExpanded(0, true);
+    expBox->setItemExpanded(1, false);
+
+    settingsLayout->addWidget(expBox);
     settingsLayout->addWidget(d->useFullCpuButton);
 
-    settingsLayout->addStretch(10);
-
-    addTab(settingsTab, i18nc("@title:tab", "Settings"));
+    addTab(d->settingsTab, i18nc("@title:tab", "Settings"));
 }
 
 void FaceScanWidget::setupConnections()
@@ -266,19 +327,18 @@ void FaceScanWidget::setupConnections()
     connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPrepareForRecognize(bool)));
 
-    connect(d->accuracyInput, &DIntNumInput::valueChanged,
+    connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
             this, [this](int value)
         {
             ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100);
         }
     );
 
-    connect(d->useYoloV3Button, &QCheckBox::toggled,
-            this, [this](bool yolo)
-        {
-            ApplicationSettings::instance()->setFaceDetectionYoloV3(yolo);
-        }
-    );
+    connect(d->detectModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &FaceScanWidget::slotDetectModelChanged);
+
+    connect(d->detectSizeBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &FaceScanWidget::slotDetectSizeChanged);
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -289,6 +349,16 @@ void FaceScanWidget::slotPrepareForDetect(bool status)
 void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
     d->alreadyScannedBox->setEnabled(false);
+}
+
+void FaceScanWidget::slotDetectModelChanged()
+{
+    ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
+}
+
+void FaceScanWidget::slotDetectSizeChanged()
+{
+    ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
 }
 
 bool FaceScanWidget::settingsConflicted() const
@@ -332,7 +402,6 @@ FaceScanSettings FaceScanWidget::settings() const
                                       d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
 
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-    settings.accuracy               = double(d->accuracyInput->value()) / 100;
     settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
 
     if (d->settingsConflicted)
@@ -341,7 +410,12 @@ FaceScanSettings FaceScanWidget::settings() const
         d->settingsConflicted       = (numberOfIdentities == 0);
     }
 
-    settings.useYoloV3              = d->useYoloV3Button->isChecked();
+    settings.detectAccuracy         = double(d->detectAccuracyInput->value()) / 100;
+    settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
+    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    settings.recognizeAccuracy      = double(d->recognizeAccuracyInput->value()) / 100;
+    settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
+    
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
     return settings;

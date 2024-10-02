@@ -285,9 +285,13 @@ void ApplicationSettings::readSettings()
 
     // ---------------------------------------------------------------------
 
-    group                    = config->group(d->configGroupFaceDetection);
-    d->faceDetectionAccuracy = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.7));
-    d->faceDetectionYoloV3   = group.readEntry(d->configFaceDetectionYoloV3Entry,   false);
+    group                       = config->group(d->configGroupFaceDetection);
+    
+    d->faceDetectionAccuracy    = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.6));
+    d->faceDetectionModel       = static_cast<FaceScanSettings::FaceDetectionModel>(group.readEntry(d->configFaceDetectionModelEntry, (int)FaceScanSettings::FaceDetectionModel::YuNet));
+    d->faceDetectionSize        = static_cast<FaceScanSettings::FaceDetectionSize>(group.readEntry(d->configFaceDetectionSizeEntry, (int)FaceScanSettings::FaceDetectionSize::medium));
+    d->faceRecognitionAccuracy  = group.readEntry(d->configFaceRecognitionAccuracyEntry, double(0.7));
+    d->faceRecognitionModel     = static_cast<FaceScanSettings::FaceRecognitionModel>(group.readEntry(d->configFaceRecognitionModelEntry, (int)FaceScanSettings::FaceRecognitionModel::OpenFace));
 
     // ---------------------------------------------------------------------
 
@@ -473,7 +477,10 @@ void ApplicationSettings::saveSettings()
     group = config->group(d->configGroupFaceDetection);
 
     group.writeEntry(d->configFaceDetectionAccuracyEntry,               d->faceDetectionAccuracy);
-    group.writeEntry(d->configFaceDetectionYoloV3Entry,                 d->faceDetectionYoloV3);
+    group.writeEntry(d->configFaceDetectionModelEntry,                  (int)d->faceDetectionModel);
+    group.writeEntry(d->configFaceDetectionSizeEntry,                   (int)d->faceDetectionSize);
+    group.writeEntry(d->configFaceRecognitionAccuracyEntry,             d->faceRecognitionAccuracy);
+    group.writeEntry(d->configFaceRecognitionModelEntry,                (int)d->faceRecognitionModel);
 
     group = config->group(d->configGroupDuplicatesSearch);
 

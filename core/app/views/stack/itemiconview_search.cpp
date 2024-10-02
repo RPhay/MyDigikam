@@ -79,8 +79,11 @@ void ItemIconView::slotImageScanForFaces()
 
     // TODO Faces engine : set K-nearest config
 
-    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
+    settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+    settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
+    settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+    settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
     settings.task                   = FaceScanSettings::Detect;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
 
@@ -122,9 +125,12 @@ void ItemIconView::slotImageRecognizeFaces()
 
     // TODO Faces engine : set K-nearest config
 
-    settings.accuracy  = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.useYoloV3 = ApplicationSettings::instance()->getFaceDetectionYoloV3();
-    settings.task      = FaceScanSettings::RecognizeMarkedFaces;
+    settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+    settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
+    settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+    settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
+    settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
 
     // Remove possible duplicate ItemInfos.
 

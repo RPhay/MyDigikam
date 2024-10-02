@@ -147,8 +147,8 @@ void RedEyeCorrectionFilter::filterImage()
     }
 
     QVariantMap params;
-    params[QLatin1String("accuracy")]  = 0.8;
-    params[QLatin1String("useyolov3")] = false;
+    params[QLatin1String("detectAccuracy")]  = 0.6;
+    params[QLatin1String("detectModel")] = FaceScanSettings::FaceDetectionModel::YuNet;
     d->facedetector.setParameters(params);
     const RedEye::ShapePredictor& sp   = *(d->sp);
 

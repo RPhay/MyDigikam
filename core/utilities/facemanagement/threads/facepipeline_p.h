@@ -102,8 +102,7 @@ Q_SIGNALS:
     friend class FacePipeline;
     void startProcess(const FacePipelineExtendedPackage::Ptr& package);
 
-    void accuracyAndModel(double accuracy, bool yolo);
-    void thresholdChanged(double threshold);
+    void accuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
 
 private:
 

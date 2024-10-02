@@ -41,16 +41,13 @@ public:
     void detectFaces(const cv::Mat& inputImage,
                      const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes)     override;
+    
+    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)        override;
 
 protected:
 
-    cv::Ptr<cv::FaceDetectorYN>         cv_model;                   ///< the YuNet model
-    static QMutex                       lockModel;                  ///< mutex for single-threading calls to the model
-    static const int                    imageSizeMaxDimensions[5];  ///< stepped array for controlling the size of the image fed to YuNet  
-/*
-    static std::map<std::string, int>   str2backend;
-    static std::map<std::string, int>   str2target;
-*/
+    cv::Ptr<cv::FaceDetectorYN>         cv_model;                   ///< The YuNet DNN model.
+    static QMutex                       lockModel;                  ///< Mutex for single-threading calls to the model.
 
 private:
 

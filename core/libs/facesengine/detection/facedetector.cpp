@@ -43,19 +43,22 @@ public:
     {
         if (!m_dnnDetectorBackend)
         {
-            if (
-                m_parameters.contains(QLatin1String("useyolov3")) &&
-                m_parameters.value(QLatin1String("useyolov3")).toBool()
-               )
+            if (m_parameters.contains(QLatin1String("detectModel")))
             {
-                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
-            }
-            else
-            {
-                // TODO: remove SSD model permanently
-                // m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                FaceScanSettings::FaceDetectionModel model = static_cast<FaceScanSettings::FaceDetectionModel>(m_parameters.value(QLatin1String("detectModel")).toInt());
 
-                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YUNET);
+                switch (model)
+                {
+                    case FaceScanSettings::FaceDetectionModel::YOLOv3:
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLOv3);
+                        break;
+                    case FaceScanSettings::FaceDetectionModel::YuNet:
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YuNet);
+                        break;
+                    default:
+                        qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown facial detection model specified" << Qt::endl;
+                        break;
+                }
             }
         }
 
@@ -76,9 +79,14 @@ public:
 
         // TODO Handle settings
 
-        if (m_parameters.contains(QLatin1String("accuracy")))
+        if (m_parameters.contains(QLatin1String("detectAccuracy")))
         {
-                backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("accuracy")).toDouble()));
+                backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("detectAccuracy")).toDouble()));
+        }
+
+        if (m_parameters.contains(QLatin1String("detectSize")))
+        {
+                backend()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(m_parameters.value(QLatin1String("detectSize")).toInt()));
         }
 /*
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ;

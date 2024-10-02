@@ -35,6 +35,7 @@
 #include "dbengineparameters.h"
 #include "versionmanager.h"
 #include "haariface.h"
+#include "facescansettings.h"
 
 class KConfigGroup;
 
@@ -469,8 +470,17 @@ public:
     double getFaceDetectionAccuracy() const;
     void setFaceDetectionAccuracy(double value);
 
-    bool getFaceDetectionYoloV3() const;
-    void setFaceDetectionYoloV3(bool yolo);
+    FaceScanSettings::FaceDetectionModel getFaceDetectionModel() const;
+    void setFaceDetectionModel(FaceScanSettings::FaceDetectionModel model);
+
+    FaceScanSettings::FaceDetectionSize getFaceDetectionSize() const;
+    void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size);
+
+    double getFaceRecognitionAccuracy() const;
+    void setFaceRecognitionAccuracy(double value);
+
+    FaceScanSettings::FaceRecognitionModel getFaceRecognitionModel() const;
+    void setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel model);
 
     void setShowThumbbar(bool val);
     bool getShowThumbbar() const;

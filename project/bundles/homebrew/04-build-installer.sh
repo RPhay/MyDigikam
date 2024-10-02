@@ -63,6 +63,8 @@ PROJECTDIR="$BUILDDIR/installer"
 # Staging area where files to be packaged will be copied
 TEMPROOT="$BUILDDIR/$RELOCATE_PREFIX"
 
+DK_APP_CONTENTS="digikam.app/Contents"
+
 # Applications to be launched directly by user (create launch scripts)
 KDE_MENU_APPS="\
 digikam \
@@ -71,75 +73,166 @@ showfoto \
 
 # Paths to search for applications above
 KDE_APP_PATHS="\
-bin \
+Applications/digiKam.org \
 "
+#bin \
 
-# Other apps - non-MacOS binaries & libraries to be included with required dylibs
+QT_FRAMEWORKS="\
+QtQuickTimeline \
+Qt3DInput \
+QtQuick3DAssetUtils \
+QtWebEngineCore \
+QtDesigner \
+QtWebEngineQuick \
+QtQuick3DAssetImport \
+QtWebEngineWidgets \
+QtQuickWidgets \
+QtShaderTools \
+Qt3DQuickScene2D \
+QtOpcUa \
+QtPdf \
+Qt3DRender \
+QtQuick3DRuntimeRender \
+QtGui \
+QtDBus \
+QtQuick3DUtils \
+QtPositioningQuick \
+Qt3DCore \
+QtLocation \
+QtXml \
+QtSerialPort \
+QtWebView \
+QtQuick \
+QtScxml \
+QtCore \
+QtQml \
+Qt3DExtras \
+QtWebChannel \
+QtMultimedia \
+QtVirtualKeyboard \
+QtOpenGL \
+QtQmlCompiler \
+QtOpenGLWidgets \
+Qt3DQuick \
+QtWidgets \
+QtPositioning \
+QtQuick3D \
+Qt3DLogic \
+QtQuickShapes \
+QtNetwork \
+QtSvg \
+QtWebChannelQuick \
+QtQmlModels \
+QtSensors \
+Qt3DAnimation \
+QtTextToSpeech \
+QtWebViewQuick \
+QtSerialBus \
+QtConcurrent \
+QtNetworkAuth \
+QtPrintSupport \
+QtStateMachine \
+QtSvgWidgets \
+QtMultimediaWidgets \
+QtSql \
+QtWebEngineCore \
+QtMultimediaWidgets \
+QtNetworkAuth \
+QtPrintSupport \
+QtStateMachine \
+QtSvgWidgets \
+"
+# Other apps - non-MacOS binaries & libraries to be included with required dylibsQT_PLUGIN_EXT
+
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+    QT_PLUGIN_EXT="so"
+else
+    QT_PLUGIN_EXT="dylib"
+fi
+
+# Note: lib/plugins/styles/ files are *.so in both architectures. Why this mess?
+MARIADB_SOURCE_DIR="opt/mariadb"
+
 OTHER_APPS="\
-share/qt/plugins/imageformats/*.dylib \
-share/qt/plugins/styles/* \
-share/qt/plugins/digikam/bqm/*.so \
-share/qt/plugins/digikam/generic/*.so \
-share/qt/plugins/digikam/editor/*.so \
-share/qt/plugins/digikam/dimg/*.so \
-share/qt/plugins/digikam/rawimport/*.so \
-opt/mariadb/bin/mysql \
-opt/mariadb/bin/mysqld \
-opt/mariadb/bin/my_print_defaults \
-opt/mariadb/bin/mysqladmin \
-opt/mariadb/bin/mysqltest \
-opt/mariadb/lib/*.dylib \
-opt/mariadb/lib/plugin/*.so \
-bin/kbuildsycoca6 \
-bin/solid-hardware6 \
+lib/plugins/imageformats/*.dylib \
+lib/plugins/styles/*.so \
+lib/plugins/digikam/bqm/*.so \
+lib/plugins/digikam/generic/*.so \
+lib/plugins/digikam/editor/*.so \
+lib/plugins/digikam/dimg/*.so \
+lib/plugins/digikam/rawimport/*.so \
+bin/kbuildsycoca$DK_QTVERSION \
+bin/solid-hardware$DK_QTVERSION \
 bin/ffmpeg \
-opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
-opt/qt6/share/qt/plugins/sqldrivers/*.dylib \
-opt/qt6/share/qt/plugins/imageformats/*.dylib \
-opt/qt6/share/qt/plugins/platforms/*.dylib \
-opt/qt6/share/qt/plugins/iconengines/*.dylib \
-opt/qt6/share/qt/plugins/generic/*.dylib \
-opt/qt6/share/qt/plugins/styles/*.dylib \
+bin/hunspell \
+opt/qt$DK_QTVERSION/share/qt/plugins/imageformats/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/sqldrivers/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/platforms/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/iconengines/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/generic/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/styles/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/multimedia/*.dylib \
+opt/qt$DK_QTVERSION/share/qt/plugins/tls/*.dylib \
+lib/libhunspell*.dylib \
+opt/openssl@3/lib/*.dylib \
 "
-#FIXME: recompile HomeBrew Qt6 with missing plugins
-#opt/qt6/share/qt/plugins/bearer/*.dylib \
-#opt/qt6/share/qt/plugins/printsupport/*.dylib \
-#opt/qt6/share/qt/plugins/platformthemes/*.dylib \
 
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+    OTHER_APPS="$OTHER_APPS \
+    opt/zstd/lib/*.dylib \
+    "
+fi
+#opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
 #lib/sane/*.so \
+# opt/mariadb/bin/mysql \
+# opt/mariadb/bin/mysqld \
+# opt/mariadb/bin/my_print_defaults \
+# opt/mariadb/bin/mysqladmin \
+# opt/mariadb/bin/mysqltest \
+# opt/mariadb/lib/*.dylib \
+# opt/mariadb/lib/plugin/*.so \
 
 binaries="$OTHER_APPS"
 
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
-# Note: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+# NOTE: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
+#
+#       QtWebEngine runtime process and binary archives (.pak) are located in libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework/
+#
 OTHER_DIRS="\
-opt/qt6/share/qt/translations \
+opt/qt$DK_QTVERSION/share/qt/translations \
+share/qt/plugins \
 lib/libdigikam*.dSYM \
+lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-opt/mariadb \
 lib/ImageMagick* \
 share/ImageMagick* \
 etc/ImageMagick* \
-etc/my.cnf
-etc/my.cnf.default
-etc/my.cnf.d
 "
+# Cellar/qt/6.7.0_2/lib/QtWebEngineCore.framework/Versions/A/Helpers/QtWebEngineProcess.app \
+# Cellar/qt/6.7.0_2/lib/QtWebEngineCore.framework/Versions/A/Resources \
 
-#etc/xdg \
-#etc/mariadb$MARIADB_SUFFIX \
+# etc/my.cnf
+# etc/my.cnf.default
+# etc/my.cnf.d
+# etc/xdg \
+# etc/mariadb$MARIADB_SUFFIX \
 
 #etc/sane.d \
 
 # Additional Data Directories - to be copied recursively
 OTHER_DATA="\
-share/applications \
 share/opencv4 \
 share/k* \
-share/lensfun \
 share/mime \
 Library/Application/ \
+share/applications \
+share/lensfun \
+share/QtCurve/Breeze.qtcurve \
 "
+#share/locale \
 
 # Packaging tool paths
 PACKAGESBUILD="/usr/local/bin/packagesbuild"
@@ -158,6 +251,19 @@ if [[ (! -f "$PACKAGESBUILD") ]] ; then
     exit 1
 else
     echo "Check Packages CLI tool passed..."
+fi
+
+#################################################################################################
+# clean up old cache files
+if [ -f "$ORIG_WD/found_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/found_dylibs_cache.pkl"
+fi
+
+if [ -f "$ORIG_WD/processed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/processed_dylibs_cache.pkl"
+fi
+if [ -f "$ORIG_WD/signed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/signed_dylibs_cache.pkl"
 fi
 
 #################################################################################################
@@ -207,6 +313,25 @@ for app in $KDE_MENU_APPS ; do
 done
 
 #################################################################################################
+# Copy Qt Frameworks to the staging area (creating directories as required)
+
+echo "---------- Copying Qt frameworks..."
+
+rm -rf $INSTALL_PREFIX/Cellar/qt/.DS_Store || true
+mkdir $TEMPROOT/Frameworks
+QT_FULL_VERSION=`ls "$INSTALL_PREFIX/Cellar/qt/"`
+
+for framework in $QT_FRAMEWORKS ; do
+
+    echo "Copying Qt framework: $framework"
+
+    # Copy framework
+    cp -R "$INSTALL_PREFIX/Cellar/qt/$QT_FULL_VERSION/Frameworks/$framework.framework" "$TEMPROOT/Frameworks"
+    cp -R "$INSTALL_PREFIX/Cellar/qt/$QT_FULL_VERSION/lib/$framework.framework" "$TEMPROOT/lib"
+
+done
+
+#################################################################################################
 # Collect dylib dependencies for all binaries,
 # then copy them to the staging area (creating directories as required)
 
@@ -228,14 +353,13 @@ for bin in $binary_paths ; do
         dir="${lib%/*}"
 
         if [ ! -d "$TEMPROOT/$dir" ] ; then
+            echo "  Creating $TEMPROOT/$dir"
             mkdir -p "$TEMPROOT/$dir"
         fi
 
+        echo "  Copying $INSTALL_PREFIX/$lib to $TEMPROOT/$dir/"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
-
-    CopyReccursiveDependencies "$bin" "$TEMPROOT"
-
 done
 
 #################################################################################################
@@ -270,7 +394,7 @@ for path in $OTHER_DIRS ; do
 done
 
 # See bug #476290
-rm -fr $TEMPROOT/libexec/qt6/plugins/imageformats/libqjp2.dylib
+#rm -fr $TEMPROOT/libexec/qt$DK_QTVERSION/plugins/imageformats/libqjp2.dylib
 
 echo "---------- Copying data files..."
 
@@ -279,20 +403,13 @@ echo "---------- Copying data files..."
 
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
-    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
+    cp -aL "$INSTALL_PREFIX/$path" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
 
 mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/icons/"
-cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/icons/"
-
-echo "---------- Copying Qt Web Backend files..."
-
-# Qt Web framework bin data files.
-# NOTE: QtWebEngine runtime process is now located in
-#       opt/qt6/lib/QtWebEngineCore.framework/Versions/current/Helpers/QtWebEngineProcess.app/Contents/MacOS
-#       instead of opt/qt6/libexec/. No needs to make extra rules for this runtime process.
+cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/$DK_APP_CONTENTS/Resources/icons/"
 
 echo "---------- Copying i18n..."
 
@@ -302,32 +419,32 @@ cd $i18nprefix
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv -v $TEMPROOT/opt/qt6/share/qt/translations $TEMPROOT/digikam.app/Contents/Resources/
+mv -v $TEMPROOT/opt/qt$DK_QTVERSION/share/qt/translations $TEMPROOT/$DK_APP_CONTENTS/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
-FILES=$(find "$TEMPROOT/digikam.app/Contents/Resources/locale" -type d -depth 1)
+FILES=$(find "$TEMPROOT/$DK_APP_CONTENTS/Resources/locale" -type d -depth 1)
 
 for FILE in $FILES ; do
     BASE=$(basename $FILE)
     echo "Create localized system menu entry for $BASE"
-    mkdir "$TEMPROOT/digikam.app/Contents/Resources/$BASE.lproj"
+    mkdir "$TEMPROOT/$DK_APP_CONTENTS/Resources/$BASE.lproj"
 done
 
 # Showfoto resources dir must be merged with digiKam.
 
-cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Contents/Resources/"
+cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/$DK_APP_CONTENTS/Resources/"
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
@@ -335,14 +452,28 @@ cd "$ORIG_WD"
 #################################################################################################
 # Move digiKam and KF6 run-time plugins to the right place
 
+echo "---------- Move digiKam and KF6 run-time plugins\n"
+
 rm -fr $TEMPROOT/bin/digikam.app
 rm -fr $TEMPROOT/bin/showfoto.app
 
-mkdir -p $TEMPROOT/libexec/qt6/
-cp -a  $TEMPROOT/share/qt/plugins         $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/share/qt/plugins
-cp -a  $TEMPROOT/opt/qt6/share/qt/plugins $TEMPROOT/libexec/qt6/
-rm -rf $TEMPROOT/opt/qt6/
+cp -a  $TEMPROOT/lib/plugins/         $TEMPROOT/share/qt/plugins
+rm -rf $TEMPROOT/lib/plugins/
+
+#################################################################################################
+# Copy MariaDB 
+
+echo "---------- Copying MariaDB to bundle\n"
+
+rm -rf $INSTALL_PREFIX/Cellar/mariadb/.DS_Store || true
+MARIADB_VERSION=`ls "$INSTALL_PREFIX/Cellar/mariadb"`
+
+echo "MariaDB Version is: - $MARIADB_VERSION -"
+
+mkdir $TEMPROOT/lib/mariadb
+
+rsync -av --exclude="include/*" --exclude="lib/plugin/ha_*" --exclude="support-files/*" --exclude="share/man/*" $INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/ $TEMPROOT/lib/mariadb
+
 
 #################################################################################################
 # Merge Manifest files
@@ -416,8 +547,7 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
-cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/$DK_APP_CONTENTS/Resources/breeze.rcc
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
@@ -455,6 +585,45 @@ if [[ $DK_DEBUG = 1 ]] ; then
 fi
 
 #################################################################################################
+# Move directories and fix misc files
+
+echo -e "\n---------- Move and fix files"
+
+# Clean up OpenSSL duplicates
+rm $TEMPROOT/opt/openssl@3/lib/libcrypto.dylib
+rm $TEMPROOT/opt/openssl@3/lib/libssl.dylib
+# fix ssl links
+ln -s "../opt/openssl@3/lib/libcrypto.3.dylib" "$TEMPROOT/lib/crypto"
+ln -s "../opt/openssl@3/lib/libssl.3.dylib" "$TEMPROOT/lib/ssl"
+
+mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
+#mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/opt                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/Frameworks                    $TEMPROOT/digikam.app/Contents/
+if [ ! -d $TEMPROOT/Cellar ] ; then
+    mkdir $TEMPROOT/Cellar
+fi
+mv -v $TEMPROOT/Cellar                        $TEMPROOT/digikam.app/Contents/
+
+ln -sv "../../digikam.app/Contents/bin"        "$TEMPROOT/showfoto.app/Contents/bin"
+ln -sv "../../digikam.app/Contents/etc"        "$TEMPROOT/showfoto.app/Contents/etc"
+ln -sv "../../digikam.app/Contents/lib"        "$TEMPROOT/showfoto.app/Contents/lib"
+#ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/libexec"
+ln -sv "../../digikam.app/Contents/share"      "$TEMPROOT/showfoto.app/Contents/share"
+ln -sv "../../digikam.app/Contents/Resources"  "$TEMPROOT/showfoto.app/Contents/Resources"
+ln -sv "../../digikam.app/Contents/opt"        "$TEMPROOT/showfoto.app/Contents/opt"
+ln -sv "../../digikam.app/Contents/Frameworks" "$TEMPROOT/showfoto.app/Contents/Frameworks"
+ln -sv "../../digikam.app/Contents/Cellar"     "$TEMPROOT/showfoto.app/Contents/Cellar"
+ln -sv "../../digikam.app/Contents/plugins"    "$TEMPROOT/showfoto.app/Contents/plugins"
+
+ln -sv "../lib" $TEMPROOT/digikam.app/Contents/opt/lib
+
+rm -r "$TEMPROOT/Applications"
+
+#################################################################################################
 # Relocatable binary files. For details, see these urls:
 #
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
@@ -483,120 +652,174 @@ RelocatableBinaries SOFILES[@]
 
 echo -e "\n--- Relocatable executable files"
 
-EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
+EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
+#EXECFILES=(`find $TEMPROOT -type f ! -name "*.dylib" ! -name "*.so" -print0 | xargs -0 -n 10 file | grep "Mach-O" | cut -d ':' -f 1`)
 
 RelocatableBinaries EXECFILES[@]
 
-echo -e "\n--- Patch RPATH in executable files"
+# echo -e "\n--- Patch RPATH in executable files"
 
-for APP in ${EXECFILES[@]} ; do
+# for APP in ${EXECFILES[@]} ; do
 
-    ISBINARY=`file "$APP" | grep "Mach-O" || true`
+#     ISBINARY=`file "$APP" | grep "Mach-O" || true`
 
-    # Do not touch debug extension
-    ISDSYM=`file "$APP" | grep "dSYM" || true`
+#     # Do not touch debug extension
+#     ISDSYM=`file "$APP" | grep "dSYM" || true`
 
-    # Do not patch applet files which are pure Apple API binaries
-    BASENAME=`basename "$APP"`
+#     # Do not patch applet files which are pure Apple API binaries
+#     BASENAME=`basename "$APP"`
 
-    if [[ $ISBINARY ]] && [[ ! $ISDSYM ]] && [[ $BASENAME != "applet" ]] ; then
+#     if [[ $ISBINARY ]] && [[ ! $ISDSYM ]] && [[ $BASENAME != "applet" ]] ; then
 
-        install_name_tool -add_rpath @executable_path/ $APP
-        install_name_tool -add_rpath @executable_path/.. $APP
-        install_name_tool -add_rpath @executable_path/../lib $APP
-        install_name_tool -add_rpath @executable_path/../opt $APP
+#         install_name_tool -add_rpath @executable_path/.. $APP
+#         install_name_tool -add_rpath @executable_path/../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
+# #        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+#         codesign --force -s - $APP
 
-        install_name_tool -add_rpath @loader_path/ $APP
-        install_name_tool -add_rpath @loader_path/.. $APP
-        install_name_tool -add_rpath @loader_path/../lib $APP
-        install_name_tool -add_rpath @loader_path/../opt $APP
-        codesign --force -s - $APP
+#         echo "Patch $APP"
 
-        echo "Patch $APP"
+#     fi
+
+# done
+
+# #################################################################################################
+# # fix ImageMagick config
+# sed -i '' "s|$INSTALL_PREFIX|..|g" $TEMPROOT/$DK_APP_CONTENTS/lib/ImageMagick/config-Q16HDRI/configure.xml
+
+#################################################################################################
+# fix the Qt directories and copy the qt.conf file
+
+echo -e "\n---------- Adjusting Qt"
+
+# Copy qt.conf
+cp "$ORIG_WD/data/qt.conf" "$TEMPROOT/$DK_APP_CONTENTS/Resources/qt.conf"
+#QT_FULL_VERSION=`ls "$TEMPROOT/$DK_APP_CONTENTS/Cellar/qt"`
+
+# symlink Qt dirs
+ln -s "./Resources/QtCurve" "$TEMPROOT/$DK_APP_CONTENTS/share/QtCurve"
+#ln -s "../Cellar/qt/$QT_FULL_VERSION/lib/QtWebEngineCore.framework/Versions/A/Helpers/QtWebEngineProcess.app/Contents/MacOS/QtWebEngineProcess" "$TEMPROOT/$DK_APP_CONTENTS/MacOS/QtWebEngineProcess"
+ln -s "./share/qt/plugins"  "$TEMPROOT/$DK_APP_CONTENTS/plugins"
+#ln -s "../../Cellar/qt/$QT_FULL_VERSION/lib/QtWebEngineCore.framework/Versions/A/Resources/qtwebengine_locales" "$TEMPROOT/$DK_APP_CONTENTS/Resources/translations/qtwebengine_locales"
+
+# add additional rpaths and re-sign QtWebEngineProcess
+WEP=`find $TEMPROOT/$DK_APP_CONTENTS -name "QtWebEngineProcess"`
+install_name_tool -add_rpath @loader_path/../../../../../../../../ $WEP
+codesign --force -s - $WEP
+
+# move the QtWebEngine resources
+echo -e "\n     ----- Moving QtWebEngine Resources"
+
+#WEBENGINE_RESOURCES=`find "$TEMPROOT/$DK_APP_CONTENTS/Cellar/qt/$QT_FULL_VERSION/lib/QtWebEngineCore.framework/Versions/A/Resources" -name "*.*" -maxdepth 1 ! -name '*.plist'`
+# WEBENGINE_RESOURCES=`find "$TEMPROOT/$DK_APP_CONTENTS/Frameworks/QtWebEngineCore.framework/Versions/A/Resources" -name "*.*" -maxdepth 1 ! -name '*.plist'`
+
+# for WER in $WEBENGINE_RESOURCES ; do
+
+#     echo "Moving WER: $WER"
+#     mv "$WER" "$TEMPROOT/$DK_APP_CONTENTS/Resources"
+
+# done
+
+#################################################################################################
+# configure MySQL/MariaDB 
+
+echo -e "\n     ----- Rebasing MariaDB"
+
+# clean up old cache files
+if [ -f "$ORIG_WD/found_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/found_dylibs_cache.pkl"
+fi
+
+if [ -f "$ORIG_WD/processed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/processed_dylibs_cache.pkl"
+fi
+if [ -f "$ORIG_WD/signed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/signed_dylibs_cache.pkl"
+fi
+
+# move MariaDB and patch up links to libs
+cp $INSTALL_PREFIX/Library/Application/digikam/database/mysql-global.conf "$TEMPROOT/$DK_APP_CONTENTS/Resources/digikam/database/mysql-global.conf"
+mkdir $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt
+# link missing libs instead of copying them
+ln -s "../../../opt/openssl@3" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/openssl@3"
+ln -s "../../../opt/pcre2" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/pcre2"
+ln -s "../../../opt/lz4" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/lz4"
+ln -s "../../../opt/snappy" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/snappy"
+ln -s "../../../opt/zstd" "$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/opt/zstd"
+
+# rebase the MariaDB binaries to the MariaDB dir
+# find the binaries
+MARIADB_BINARIES=`find $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb/bin -type f -perm +111`
+
+for FILE in $MARIADB_BINARIES ; do
+
+        copy_lib="$INSTALL_PREFIX/bin/python3 $ORIG_WD/package_lib.py --file=$FILE --bundle-root=$TEMPROOT/$DK_APP_CONTENTS/lib/mariadb --homebrew=$INSTALL_PREFIX --processed-cache=update  --found-cache=update --signed-cache=update --update-binary=1 --copy=0 --preserve_rpath=0"
+        eval "$copy_lib"
+
+done
+
+echo -e "\n---------- Patch config and script files in MariaDB"
+
+MARIADBFILES=`find $TEMPROOT/$DK_APP_CONTENTS/lib/mariadb -type f ! -name "*.dylib" ! -name "*.so"`
+
+for FILE in $MARIADBFILES ; do
+
+    # to handle only text files
+    ISTEXT=`file "$FILE" | grep -e "ASCII text" || true`
+
+    if [[ $ISTEXT ]] ; then
+
+        NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
+
+        if [[ $NEEDPATCH ]] ; then
+
+            echo -e "--- Patching MariaDB text file: $FILE"
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|\$DK_MARIADB_DIR/bin|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|\$DK_MARIADB_DIR/var|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|\$DK_MARIADB_DIR/lib|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|\$DK_MARIADB_DIR/libexec|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|\$DK_MARIADB_DIR/share|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|\$DK_MARIADB_DIR/etc|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX|\$DK_MARIADB_DIR|g" $FILE
+
+        fi
+
+    fi
+
+   # to handle only Perl files
+    ISPERLTEXT=`file "$FILE" | grep -e "Perl script text" || true`
+
+    if [[ $ISPERLTEXT ]] ; then
+
+        NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
+
+        if [[ $NEEDPATCH ]] ; then
+
+            echo -e "--- Patching mariaDB Perl file: $FILE"
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/bin|\$ENV{DK_MARIADB_DIR}/bin|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/var|\$ENV{DK_MARIADB_DIR}/var|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/lib|\$ENV{DK_MARIADB_DIR}/lib|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/libexec|\$ENV{DK_MARIADB_DIR}/libexec|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/share|\$ENV{DK_MARIADB_DIR}/share|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX/Cellar/mariadb/$MARIADB_VERSION/etc|\$ENV{DK_MARIADB_DIR}/etc|g" $FILE
+            sed -i '' "s|$INSTALL_PREFIX|\$ENV{DK_MARIADB_DIR}|g" $FILE
+
+        fi
 
     fi
 
 done
 
 #################################################################################################
-# Final stage to manage file places in bundle
-
-echo -e "\n---------- Finalize files in bundle"
-
-mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/opt                           $TEMPROOT/digikam.app/Contents/
-mv -v $TEMPROOT/Cellar                        $TEMPROOT/digikam.app/Contents/
-
-ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/showfoto.app/Contents/bin"
-ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/showfoto.app/Contents/etc"
-ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/showfoto.app/Contents/lib"
-ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/libexec"
-ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/showfoto.app/Contents/share"
-ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/Resources"
-ln -sv "../../digikam.app/Contents/opt"       "$TEMPROOT/showfoto.app/Contents/opt"
-ln -sv "../../digikam.app/Contents/Cellar"    "$TEMPROOT/showfoto.app/Contents/Cellar"
-
-echo -e "\n---------- Cleanup files in bundle"
-
-# Last cleanup
-
-HEADERFILES=(`find $TEMPROOT -name "*.h" -o -name "*.hpp"`)
-
-for HPP in ${HEADERFILES[@]} ; do
-
-    rm -fv $HPP
-
-done
-
-rm -rfv $TEMPROOT/digikam.app/Contents/opt/mariadb/bin/mysql-test
-
-echo -e "\n---------- Patch config and script files in bundle"
-
-MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
-
-for DIR in ${MARIADBDIRS[@]} ; do
-
-    MARIADBFILES=(`find $DIR -type f ! -name "*.dylib" ! -name "*.so"`)
-
-    for FILE in ${MARIADBFILES[@]} ; do
-
-        # to handle only text files
-        ISTEXT=`file "$FILE" | grep "ASCII text" || true`
-
-        if [[ $ISTEXT ]] ; then
-
-            NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
-
-            if [[ $NEEDPATCH ]] ; then
-
-                echo -e "--- Patching $FILE..."
-                sed -i '' "s|$INSTALL_PREFIX/var|$RELOCATE_PREFIX/digikam.app/Contents/var|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/lib|$RELOCATE_PREFIX/digikam.app/Contents/lib|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/share|$RELOCATE_PREFIX/digikam.app/Contents/share|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/etc|$RELOCATE_PREFIX/digikam.app/Contents/etc|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/|g" $FILE
-
-            fi
-
-        fi
-
-    done
-
-done
-
-#################################################################################################
-# See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
-
-mkdir -p "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-rsync -a "$TEMPROOT/digikam.app/Contents/opt/mariadb/share" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-rm -fr "$TEMPROOT/digikam.app/Contents/opt/mariadb/share"
-
-#################################################################################################
 # Install ExifTool binary.
+
+echo -e "\n---------- Install ExifTool"
 
 cd $DOWNLOAD_DIR
 
@@ -611,12 +834,27 @@ ln -sv "./$EXIFTOOL_DIR" "./Image-ExifTool"
 ln -sv "./Image-ExifTool/exiftool" "exiftool"
 
 #################################################################################################
+# Cleanup files in bundle
+
+echo -e "\n---------- Cleanup files in bundle"
+
+# Last cleanup
+
+HEADERFILES=(`find $TEMPROOT -name "*.h" -o -name "*.hpp"`)
+
+for HPP in ${HEADERFILES[@]} ; do
+
+    rm -fv $HPP
+
+done
+
+#################################################################################################
 # Build PKG file
 
 echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/*arm64$DEBUG_SUF* || true
+rm -f $ORIG_WD/bundle/*$DEBUG_SUF* || true
 
 if [[ $DK_VERSION != v* ]] ; then
 
@@ -686,7 +924,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle Package files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS-arm64$DEBUG_SUF.pkg*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS*$DEBUG_SUF.pkg*"
 
     echo -e "---------- Upload new bundle Package files to files.kde.org repository \n"
 
@@ -710,6 +948,19 @@ else
     echo -e "\n------------------------------------------------------------------"
     curl https://download.kde.org/README_UPLOAD
     echo -e "------------------------------------------------------------------\n"
+fi
+
+#################################################################################################
+# clean up old cache files
+if [ -f "$ORIG_WD/found_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/found_dylibs_cache.pkl"
+fi
+
+if [ -f "$ORIG_WD/processed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/processed_dylibs_cache.pkl"
+fi
+if [ -f "$ORIG_WD/signed_dylibs_cache.pkl" ] ; then
+    rm "$ORIG_WD/signed_dylibs_cache.pkl"
 fi
 
 #################################################################################################

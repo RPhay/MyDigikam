@@ -7,4 +7,4 @@
 ORIG_WD="`pwd`"
 . ./03-build-digikam.sh
 cd $ORIG_WD
-. ./04mm-build-installer.sh
+. ./04-build-installer.sh

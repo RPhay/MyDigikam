@@ -26,6 +26,7 @@
 
 #include "digikam_export.h"
 #include "dimg.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {

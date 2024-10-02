@@ -178,8 +178,11 @@ public:
     const QString configSyncBalootoDigikamEntry                     = QLatin1String("Sync Baloo to Digikam");
     const QString configSyncDigikamtoBalooEntry                     = QLatin1String("Sync Digikam to Baloo");
     const QString configStringComparisonTypeEntry                   = QLatin1String("String Comparison Type");
-    const QString configFaceDetectionAccuracyEntry                  = QLatin1String("Detection Accuracy");
-    const QString configFaceDetectionYoloV3Entry                    = QLatin1String("Use Yolo V3");
+    const QString configFaceDetectionAccuracyEntry                  = QLatin1String("Face Detection Accuracy");
+    const QString configFaceDetectionModelEntry                     = QLatin1String("Face Detection Model");
+    const QString configFaceDetectionSizeEntry                      = QLatin1String("Face Detection Size");
+    const QString configFaceRecognitionAccuracyEntry                = QLatin1String("Face Recognition Accuracy");
+    const QString configFaceRecognitionModelEntry                   = QLatin1String("Face Recognition Model");
     const QString configApplicationStyleEntry                       = QLatin1String("Application Style");
     const QString configIconThemeEntry                              = QLatin1String("Icon Theme");
     const QString configApplicationFontEntry                        = QLatin1String("Application Font");
@@ -335,8 +338,13 @@ public:
     VersionManagerSettings                       versionSettings;
 
     /// face detection settings
-    double                                       faceDetectionAccuracy                              = 0.7;
-    bool                                         faceDetectionYoloV3                                = false;
+    double                                       faceDetectionAccuracy                              = 0.6;
+    FaceScanSettings::FaceDetectionModel         faceDetectionModel                                 = FaceScanSettings::FaceDetectionModel::YuNet;
+    FaceScanSettings::FaceDetectionSize          faceDetectionSize                                  = FaceScanSettings::FaceDetectionSize::medium;
+
+    /// face recognition settings
+    double                                       faceRecognitionAccuracy                            = 0.7;
+    FaceScanSettings::FaceRecognitionModel       faceRecognitionModel                               = FaceScanSettings::FaceRecognitionModel::OpenFace;
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
