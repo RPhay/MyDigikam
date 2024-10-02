@@ -48,7 +48,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-01 01:48+0000\n"
-"PO-Revision-Date: 2024-09-30 02:38+0200\n"
+"PO-Revision-Date: 2024-10-01 12:36+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61298,11 +61298,9 @@ msgid "Path: %1\n"
 msgstr "Ruta: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Palabras clave: "
+msgstr "Palabras clave: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61409,27 +61407,21 @@ msgid "Find duplicates items"
 msgstr "Buscar elementos duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Duplicados"
+msgstr "Duplicados de: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Buscar duplicados"
+msgstr "No hay duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Buscar duplicados"
-msgstr[1] "Buscar duplicados"
+msgstr[0] "%1 duplicado"
+msgstr[1] "%1 duplicados"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
@@ -61492,17 +61484,12 @@ msgid "Path: %1"
 msgstr "Ruta: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Ordenar por calidad de imagen"
+msgstr "Calidad de imagen de: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "Emblema de elección: %1"
 

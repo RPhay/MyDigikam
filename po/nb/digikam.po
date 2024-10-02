@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-10-01 01:48+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1703,7 +1703,7 @@ msgid "Thumbnails"
 msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:297
+#: core/app/views/stack/itemiconview_views.cpp:305
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3082,7 +3082,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:123
+#: core/app/views/stack/itemiconview_views.cpp:129
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3090,7 +3090,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:237
+#: core/app/views/stack/itemiconview_views.cpp:245
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -35133,7 +35133,7 @@ msgstr "Besøk nettstedet til digiKam-prosjektet"
 msgid "Aborting..."
 msgstr "Avbryter …"
 
-#: core/libs/progressmanager/progressview.cpp:202
+#: core/libs/progressmanager/progressview.cpp:204
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Avbryt denne operasjonen."
@@ -40678,7 +40678,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:97
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Bildesortering etter kvalitet"
@@ -58190,12 +58190,30 @@ msgstr ""
 msgid "Autotags Assignment"
 msgstr ""
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#, kde-format
+msgid "Auto-tags for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
+#, kde-format
+msgid "Path: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#, kde-format
+msgid "Keywords: %1"
+msgstr ""
+
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -58205,32 +58223,32 @@ msgstr ""
 msgid "analysing databases"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:283
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
 #, kde-format
 msgid "cleaning recognition db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:322
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
 #, kde-format
 msgid "cleaning similarity db"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
 #, kde-format
 msgid "shrinking databases"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -58240,22 +58258,22 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
 #, kde-format
 msgid "Core DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
 #, kde-format
 msgid "Thumbnails DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
 #, kde-format
 msgid "Face Recognition DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
 #, kde-format
 msgid "Similarity DB"
 msgstr ""
@@ -58265,40 +58283,114 @@ msgstr ""
 msgid "Find new items"
 msgstr "Finn nye elementer"
 
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#, kde-format
+msgid "Scanning from: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#, kde-format
+msgid "Album: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#, kde-format
+msgid ""
+"Scanned:\n"
+"%1"
+msgstr ""
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Finn dupliserte elementer"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
+#, kde-format
+msgid "Duplicates for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#, kde-format
+msgid "No duplicate"
+msgstr ""
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#, kde-format
+msgid "1 duplicate"
+msgid_plural "%1 duplicates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#, kde-format
+msgid "Scanned for faces: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, kde-format
+msgid "No face"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
+#, kde-format
+msgid "1 face"
+msgid_plural "%1 faces"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Fingeravtrykk"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#, kde-format
+msgid "Rebuild Fingerprint for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#, kde-format
+msgid "Path: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#, kde-format
+msgid "Image Quality for: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#, kde-format
+msgid "Pick Label: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, kde-format
@@ -58324,6 +58416,11 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#, kde-format
+msgid "Clear Metadata for: %1\n"
+msgstr ""
+
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
@@ -58334,10 +58431,20 @@ msgstr "Samordner bildenes metadata med databasen"
 msgid "Updating database from image metadata"
 msgstr "Oppdaterer databasen fra bildenes metadata"
 
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#, kde-format
+msgid "Metadata Sync for: %1\n"
+msgstr ""
+
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Minibilder"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#, kde-format
+msgid "Thumbnail for: %1\n"
+msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -61413,7 +61520,7 @@ msgstr ""
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:552
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -61428,13 +61535,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:565
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
