@@ -124,7 +124,7 @@ BUGFIXES:
 099 ==> 375521 - Progress bars waste useful space.
 100 ==> 493786 - After visiting trash, the display mode switches to Map.
 101 ==> 493914 - OpenCV assertion failure when tagging face without models installed.
-102 ==> 
+102 ==> 489034 - Install failure.
 103 ==> 
 104 ==> 
 105 ==> 
