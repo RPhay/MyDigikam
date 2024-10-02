@@ -47,7 +47,12 @@ public:
 
     cv::Size nnInputSizeRequired() const;
 
-    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)    { return; };
+    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)
+    {
+        Q_UNUSED(faceSize);
+
+        return;
+    };
 
 protected:
 
