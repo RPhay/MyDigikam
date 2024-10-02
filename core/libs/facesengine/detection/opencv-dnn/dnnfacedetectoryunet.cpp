@@ -88,7 +88,7 @@ bool DNNFaceDetectorYuNet::loadModels()
     int backend_id       = cv::dnn::DNN_BACKEND_DEFAULT;
     int target_id        = cv::dnn::DNN_TARGET_CPU;
 
-    // TODO: detect backends and targets.  Pick the best one.
+    // TODO: detect backends and targets. Pick the best one.
 
     QString cvBackend    = QString::fromLocal8Bit(qgetenv("DIGIKAM_YUNET_BACKEND"));
     QString cvTarget     = QString::fromLocal8Bit(qgetenv("DIGIKAM_YUNET_TARGET"));
@@ -267,11 +267,11 @@ void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionS
     try
     {
         inputImageSize = cv::Size(
-                                faceenum2size.at(faceSize),
-                                faceenum2size.at(faceSize)
-                                );
+                                  faceenum2size.at(faceSize),
+                                  faceenum2size.at(faceSize)
+                                 );
     }
-    catch(const std::exception& e)
+    catch (const std::exception& e)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet face size error:" << e.what() << '\n';
     }

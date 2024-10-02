@@ -34,24 +34,24 @@ class DIGIKAM_EXPORT DNNFaceDetectorYuNet: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorYuNet();
-    ~DNNFaceDetectorYuNet()                                     override = default;
+    ~DNNFaceDetectorYuNet()                                                         override = default;
 
     bool loadModels();
 
     void detectFaces(const cv::Mat& inputImage,
                      const cv::Size& paddedSize,
-                     std::vector<cv::Rect>& detectedBboxes)     override;
-    
-    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize)        override;
+                     std::vector<cv::Rect>& detectedBboxes)                         override;
+
+    virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize) override;
 
 protected:
 
-    cv::Ptr<cv::FaceDetectorYN>         cv_model;                   ///< The YuNet DNN model.
-    static QMutex                       lockModel;                  ///< Mutex for single-threading calls to the model.
+    cv::Ptr<cv::FaceDetectorYN> cv_model;                   ///< The YuNet DNN model.
+    static QMutex               lockModel;                  ///< Mutex for single-threading calls to the model.
 
 private:
 
-    std::vector<cv::String> getOutputsNames()                   const;
+    std::vector<cv::String> getOutputsNames() const;
 
     cv::Mat callModel(const cv::Mat& inputImage);
 

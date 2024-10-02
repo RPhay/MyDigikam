@@ -36,9 +36,9 @@ float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
 DNNFaceDetectorBase::DNNFaceDetectorBase(float scale,
                                          const cv::Scalar& val,
                                          const cv::Size& inputImgSize)
-  : scaleFactor         (scale),
-    meanValToSubtract   (val),
-    inputImageSize      (inputImgSize)
+    : scaleFactor      (scale),
+      meanValToSubtract(val),
+      inputImageSize   (inputImgSize)
 {
 }
 
@@ -107,7 +107,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
         doubtConfidences.push_back(confidence);
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Doubt rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height)
-                                         << ", conf = " << confidence;
+                                         << ", conf = "     << confidence;
     }
 }
 
