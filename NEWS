@@ -125,7 +125,7 @@ BUGFIXES:
 100 ==> 493786 - After visiting trash, the display mode switches to Map.
 101 ==> 493914 - OpenCV assertion failure when tagging face without models installed.
 102 ==> 489034 - Install failure.
-103 ==> 
+103 ==> 493948 - digiKam 8.4.0 never shows.
 104 ==> 
 105 ==> 
 106 ==> 
