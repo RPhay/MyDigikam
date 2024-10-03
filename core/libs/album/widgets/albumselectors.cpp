@@ -192,6 +192,7 @@ void AlbumSelectors::initAlbumWidget()
     pAlbumsGrid->addWidget(d->albumSelectCB,    1, 0, 1, 1);
     pAlbumsGrid->addWidget(d->albumClearButton, 1, 1, 1, 1);
     pAlbumsGrid->setSpacing(0);
+    pAlbumsGrid->setRowStretch(2, 10);
 
     connect(d->wholeAlbums, SIGNAL(toggled(bool)),
             this, SLOT(slotWholeAlbums(bool)));
@@ -248,6 +249,7 @@ void AlbumSelectors::initTagWidget()
     tAlbumsGrid->addWidget(d->tagSelectCB,    1, 0, 1, 1);
     tAlbumsGrid->addWidget(d->tagClearButton, 1, 1, 1, 1);
     tAlbumsGrid->setSpacing(0);
+    tAlbumsGrid->setRowStretch(2, 10);
 
     connect(d->wholeTags, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSelectionChanged()));
