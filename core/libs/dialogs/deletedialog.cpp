@@ -473,7 +473,6 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
                                                   QDialogButtonBox::Cancel |
                                                   QDialogButtonBox::Help,
                                                   this);
-    d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
     d->page                = new DeleteWidget(this);
     d->page->setMinimumSize(400, 300);
@@ -596,6 +595,9 @@ void DeleteDialog::slotShouldDelete(bool shouldDelete)
                                                                       : i18n("&Move to Trash"));
     d->buttons->button(QDialogButtonBox::Apply)->setIcon(shouldDelete ? QIcon::fromTheme(QLatin1String("edit-delete"))
                                                                       : QIcon::fromTheme(QLatin1String("user-trash")));
+
+    d->buttons->button(QDialogButtonBox::Apply)->setDefault(!shouldDelete);
+    d->buttons->button(QDialogButtonBox::Cancel)->setDefault(shouldDelete);
 }
 
 void DeleteDialog::presetDeleteMode(DeleteDialogMode::DeleteMode mode)
