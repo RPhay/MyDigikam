@@ -37,6 +37,18 @@ echo "CPU Cores to use : $CPU_CORES"
 }
 
 ########################################################################
+# Check RAM available in Gb (Linux or MacOS)
+ChecksPhyMemory()
+{
+
+PHY_MEM=$(LANG=C free|awk '/^Mem:/{print $2}' || sysctl -n hw.memsize)
+PHY_MEM=$((PHY_MEM / 1024 / 1024))
+
+echo "Physical Memory (Gb): $PHY_MEM"
+
+}
+
+########################################################################
 # Check OS name and version.
 CheckSystemReleaseID()
 {

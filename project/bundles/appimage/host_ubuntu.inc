@@ -46,7 +46,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "liblcms2-dev"            # Little CMS 2 color management library
                    "libexpat1-dev"           # XML parsing C library
                    "libssl-dev"              # For MXE build
-                    )
+                  )
 
 
 for pkg in ${required_packages[@]}; do
@@ -203,6 +203,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxshmfence-dev"
                    "libcanberra-dev"
                    "libasound2-dev"
+                   "libgbm-dev"                         # For QtWebEngine: https://bugreports.qt.io/browse/QTBUG-129346
                   )
 
 

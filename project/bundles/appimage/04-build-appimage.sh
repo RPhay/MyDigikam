@@ -32,6 +32,7 @@ echo "-----------------------------------------------------"
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores
+ChecksPhyMemory
 HostAdjustments
 RegisterRemoteServers
 CheckSystemReleaseID

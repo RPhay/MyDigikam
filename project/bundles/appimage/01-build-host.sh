@@ -32,6 +32,7 @@ echo "--------------------------------------------------------------------------
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores
+ChecksPhyMemory
 HostAdjustments
 RegisterRemoteServers
 ORIG_WD="`pwd`"
@@ -116,7 +117,12 @@ cmake $ORIG_WD/../3rdparty \
 
 cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
-cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
+# NOTE: QtWebEngine require 4Gb of RAM by CPU cores to compile in parallel.
+
+QT_CORES=$((PHY_MEM / 4))
+echo "Qt will be compiled with $QT_CORES CPU cores."
+
+cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$QT_CORES    # depend of tiff, png, jpeg
 
 # Clean up previous openssl install
 
