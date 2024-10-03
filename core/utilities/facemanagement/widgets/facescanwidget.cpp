@@ -115,10 +115,10 @@ void FaceScanWidget::doSaveState()
 
     d->albumSelectors->saveState();
 
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->detectAccuracyInput->value()) / 100);
+    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value() / 100.0);
     ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
     ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
-    ApplicationSettings::instance()->setFaceRecognitionAccuracy(double(d->recognizeAccuracyInput->value()) / 100);
+    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value() / 100.0);
     ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
 
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
@@ -310,6 +310,8 @@ void FaceScanWidget::setupUi()
 
     expBox->addItem(recognizeWidget, i18n("Face Recognition Settings"),
                     QLatin1String("FaceRecognitionSettings"), false);
+
+    expBox->addStretch();
 
     settingsLayout->addWidget(expBox);
     settingsLayout->addWidget(d->useFullCpuButton);
