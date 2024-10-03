@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 01:48+0000\n"
+"POT-Creation-Date: 2024-10-03 01:47+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3254,21 +3254,29 @@ msgstr "Labele"
 msgid "Scan collection for faces"
 msgstr "Pregledaj lica u  kolekciji"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:143
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Use this button to scan the selected albums for duplicate items."
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for faces"
+msgstr ""
+"Koristite ovu tipku za skeniranje odabranih albuma za dupliciranje predmeta."
+
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:145
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:197
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:217
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3474,14 +3482,14 @@ msgid "Last Search"
 msgstr "Posljednja pretraga"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:112
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "FacesDetector"
 msgstr "Detekcija lica"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:114
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -23644,7 +23652,7 @@ msgid "Slideshow"
 msgstr "Slajd-šou"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "Slajd-šou"
@@ -39748,7 +39756,7 @@ msgid "Properties"
 msgstr "Svojstva"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -41411,83 +41419,83 @@ msgstr "Označeni Format Datoteke (verzija 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Označeni Format Datoteke (verzija 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:412
+#: core/libs/settings/applicationsettings_miscs.cpp:442
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:414
+#: core/libs/settings/applicationsettings_miscs.cpp:444
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "Remember choice for this operation"
 msgstr "Prekini ovu operaciju."
 
-#: core/libs/settings/applicationsettings_miscs.cpp:448
+#: core/libs/settings/applicationsettings_miscs.cpp:478
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Svjetlosni Pregled"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:483
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Upravljač redom procesa"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:493
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "Preimenovanje datoteke"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:468
+#: core/libs/settings/applicationsettings_miscs.cpp:498
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "Borovina"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:503
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:525
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "Dodaj na Svjetlosni Pregled"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:530
 #, fuzzy, kde-format
 #| msgid "Add Crop tool to Batch Queue Manager;"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Dodaj alatku za rezanje u Batch Queue Manager;"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:535
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:540
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "Preimenovanje slika"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:515
+#: core/libs/settings/applicationsettings_miscs.cpp:545
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:550
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -55662,7 +55670,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:133
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55674,28 +55682,28 @@ msgstr ""
 "Vaše prijatelje na većem broju slika,<nl/> on može također i da prepozna "
 "ljude prikazane na slikama."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:141
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Preskoči već skenirane slike"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Ponovo skeniraj te spoji rezultate"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Očistite nepotvrđene rezultate i ponovo skenirajte"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
@@ -55704,26 +55712,26 @@ msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Očistite nepotvrđene rezultate i ponovo skenirajte"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Pomoć"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Otkrij lica"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Pronađi sva lica u vašim slikama"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
@@ -55731,7 +55739,7 @@ msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Otkrij i prepoznaj lica (eksperimentalno)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55741,14 +55749,14 @@ msgstr ""
 "Pronađi sva lica na svojoj slici<nl/> i probaj prepoznati koja osoba je "
 "prikazana"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Uskladi"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55758,14 +55766,14 @@ msgstr ""
 "Pokušaj ponovo da prepoznaš prikazane ljude<nl/> na označenim ali ne "
 "potvrđenim licima."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Radni tok"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -55773,28 +55781,118 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Traži u:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Accuracy"
-msgctxt "@label"
-msgid "Face Accuracy"
+msgctxt "@label Face Detection Accuracy"
+msgid "Detection Accuracy:"
 msgstr "Preciznost"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, fuzzy, kde-format
-#| msgid "Sensitivity"
-msgctxt "@label left extremities of a scale"
-msgid "Sensitivity"
-msgstr "Osjetljivost"
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
+#| "results will be, but it will take more time."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Prilagodite brzinu u odnosu na tačnost: Što je viša vrijednost, to će biti "
+"tačniji rezultati, ali će biti potrebno više vremena."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, fuzzy, kde-format
-#| msgid "Location"
-msgctxt "@label right extremities of a scale"
-msgid "Specificity"
-msgstr "Lokacija"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for detection"
+msgid "AI Model:"
+msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YuNet"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YOLOv3"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
+"and more configurable than YOLOv3."
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#, fuzzy, kde-format
+#| msgid "File Size"
+msgctxt "@label AI model used for detection"
+msgid "Face size:"
+msgstr "Veličina datoteke"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@label:listbox"
+msgid "Extra Small"
+msgstr "Oznake slike"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Small"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@label:listbox"
+msgid "Medium"
+msgstr "Srednji"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@label:listbox"
+msgid "Large"
+msgstr "Cilj"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@label:listbox"
+msgid "Extra Large"
+msgstr "Oznake slike"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Detecting smaller faces takes more time and has a higher probability of "
+"incorrect facial detection.\n"
+"Detecting larger faces is faster, but may miss smaller faces in group "
+"pictures."
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Recognition Accuracy:"
+msgstr "Prepoznavanje lica"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55804,26 +55902,43 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
-#, kde-format
-msgctxt "@option:check"
-msgid "Use YOLO v3 detection model"
-msgstr ""
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgctxt "@label AI model used for recognition"
+msgid "Recognition model:"
+msgstr "Odredište:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect faces"
+msgctxt "@label:listbox"
+msgid "SFace"
+msgstr "Otkrij lica"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#, fuzzy, kde-format
+msgctxt "@label:listbox"
+msgid "OpenFace"
+msgstr "Otvori direktorij"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Face detection with YOLO v3 data model. Better results but slower."
+msgid ""
+"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"OpenFace can be used for older libraries."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Radi na svim jezgrima procesora"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -55840,7 +55955,19 @@ msgstr ""
 "da zaposlite sva jezgra procesora  sistema, ili da radi u pozadini na samo "
 "jednom jezgru."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Face Detection Settings"
+msgstr "Detekcija lica"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgid "Face Recognition Settings"
+msgstr "Prepoznavanje lica"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -65297,7 +65424,7 @@ msgid "Sync Metadata and Database"
 msgstr "Sinhroniziraj metapodatke i bazu podataka"
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:403
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65306,7 +65433,7 @@ msgstr ""
 "Sve operacije su urađene.\n"
 "Trajanje:%1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:404
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam Održavanje"
@@ -65334,7 +65461,7 @@ msgstr "Način mjerenja:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -65480,54 +65607,54 @@ msgstr[0] "Pronađi duplikate"
 msgstr[1] "Pronađi duplikate"
 msgstr[2] "Pronađi duplikate"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:280
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in album: %1"
 msgstr "Traži u:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:284
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in %1 albums"
 msgstr "Traži u:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:291
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in image: %1"
 msgstr "Skeniranje lica"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:295
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in %1 images"
 msgstr "Skeniranje lica"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Ažuriranje lica baze podataka."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scanned for faces: %1\n"
 msgstr "Traži u:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Bez blica"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -72427,6 +72554,18 @@ msgid "Import Items"
 msgstr "Uvozni predmeti"
 
 #, fuzzy
+#~| msgid "Sensitivity"
+#~ msgctxt "@label left extremities of a scale"
+#~ msgid "Sensitivity"
+#~ msgstr "Osjetljivost"
+
+#, fuzzy
+#~| msgid "Location"
+#~ msgctxt "@label right extremities of a scale"
+#~ msgid "Specificity"
+#~ msgstr "Lokacija"
+
+#, fuzzy
 #~ msgid ""
 #~ "IRC: %1 - #digikam\n"
 #~ "Feedback: %2\n"
@@ -73752,10 +73891,6 @@ msgstr "Uvozni predmeti"
 #~| msgid "Filename"
 #~ msgid "&Folder name:"
 #~ msgstr "Ime datoteke"
-
-#, fuzzy
-#~ msgid "Open File"
-#~ msgstr "Otvori direktorij"
 
 #, fuzzy
 #~ msgid "All Supported Files (*.png)"
@@ -75196,12 +75331,6 @@ msgstr "Uvozni predmeti"
 #~ msgctxt "@option: audio"
 #~ msgid "Channel layout"
 #~ msgstr "Promjena u velika/mala slova"
-
-#, fuzzy
-#~| msgid "File Size"
-#~ msgctxt "@option: audio"
-#~ msgid "Frame size"
-#~ msgstr "Veličina datoteke"
 
 #, fuzzy
 #~| msgid "Median:"
@@ -78477,14 +78606,6 @@ msgstr "Uvozni predmeti"
 #~ msgctxt "@label Two extremities of a scale"
 #~ msgid "Fast     -     Accurate"
 #~ msgstr "Brzo - Tačno"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Adjust speed versus accuracy: The higher the value, the more accurate the "
-#~ "results will be, but it will take more time."
-#~ msgstr ""
-#~ "Prilagodite brzinu u odnosu na tačnost: Što je viša vrijednost, to će "
-#~ "biti tačniji rezultati, ali će biti potrebno više vremena."
 
 #, fuzzy
 #~| msgctxt "@option:radio"
