@@ -109,7 +109,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
     vlay->addWidget(d->tagFolderView, 10);
     vlay->addWidget(d->tagSearchBar);
-    vlay->addWidget(d->settingsWdg);
+    vlay->addWidget(d->settingsWdg,   5);
     vlay->addWidget(d->rescanButton);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
 

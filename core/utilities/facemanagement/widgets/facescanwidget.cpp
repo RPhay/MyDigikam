@@ -208,14 +208,12 @@ void FaceScanWidget::setupUi()
     d->settingsTab                      = new QWidget(this);
     QVBoxLayout* const settingsLayout   = new QVBoxLayout(d->settingsTab);
 
-    DExpanderBox* expBox                = new DExpanderBox(d->settingsTab);
+    DExpanderBox* const expBox          = new DExpanderBox(d->settingsTab);
+
+    // --- detection settings
+
     QWidget* const detectWidget         = new QWidget(expBox);
     QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
-
-    QWidget* const recognizeWidget      = new QWidget(expBox);
-    QGridLayout* const recognizeGrid    = new QGridLayout(recognizeWidget);
-
-    // ----- detection settings
 
     QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy",
                                                            "Accuracy:"), d->settingsTab);
@@ -256,34 +254,6 @@ void FaceScanWidget::setupUi()
                                        "Detecting smaller faces takes more time and has a higher probability of incorrect facial detection.\n"
                                        "Detecting larger faces is faster, but may miss smaller faces in group pictures."));
 
-    // ----- recognition settings
-
-    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy",
-                                                            "Accuracy:"), d->settingsTab);
-    recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
-
-    d->recognizeAccuracyInput           = new DIntNumInput(d->settingsTab);
-    d->recognizeAccuracyInput->setDefaultValue(70);
-    d->recognizeAccuracyInput->setRange(0, 100, 10);
-    d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
-                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
-                                                "be recognized, but less faces will be recognized\n"
-                                                "Note: only faces that are very similar to pre-tagged faces are recognized."));
-
-    QLabel* const recognizeModelLabel   = new QLabel(i18nc("@label AI model used for face recognition",
-                                                           "Model:"), d->settingsTab);
-    recognizeModelLabel->setAlignment(Qt::AlignLeft);
-
-    d->recognizeModelBox                = new SqueezedComboBox(d->settingsTab);
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);
-    d->recognizeModelBox->setEditable(false);
-    d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
-                                           "SFace is the default detection model. It is faster and more accurate.\n"
-                                           "OpenFace can be used for older libraries."));
-
-    // ----- build the boxes
-
     detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
     detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
     detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
@@ -291,10 +261,44 @@ void FaceScanWidget::setupUi()
     detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
     detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
 
+    expBox->addItem(detectWidget, i18n("Face Detection Settings"),
+                    QLatin1String("FaceDetectionSettings"), true);
+
+    // --- recognition settings
+
+    QWidget* const recognizeWidget       = new QWidget(expBox);
+    QGridLayout* const recognizeGrid     = new QGridLayout(recognizeWidget);
+
+    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy",
+                                                            "Accuracy:"), d->settingsTab);
+    recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
+
+    d->recognizeAccuracyInput            = new DIntNumInput(d->settingsTab);
+    d->recognizeAccuracyInput->setDefaultValue(70);
+    d->recognizeAccuracyInput->setRange(0, 100, 10);
+    d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
+                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
+                                                "be recognized, but less faces will be recognized\n"
+                                                "Note: only faces that are very similar to pre-tagged faces are recognized."));
+
+    QLabel* const recognizeModelLabel    = new QLabel(i18nc("@label AI model used for face recognition",
+                                                           "Model:"), d->settingsTab);
+    recognizeModelLabel->setAlignment(Qt::AlignLeft);
+
+    d->recognizeModelBox                 = new SqueezedComboBox(d->settingsTab);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);
+    d->recognizeModelBox->setEditable(false);
+    d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
+                                           "SFace is the default detection model. It is faster and more accurate.\n"
+                                           "OpenFace can be used for older libraries."));
+
     recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
     recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+
+    // ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
@@ -303,10 +307,8 @@ void FaceScanWidget::setupUi()
                                           "You can choose if you wish to employ all processor cores\n"
                                           "on your system, or work in the background only on one core."));
 
-    expBox->addItem(detectWidget,    i18n("Face Detection Settings"),   QString::fromUtf8("Face Detection Settings"),   false);
-    expBox->addItem(recognizeWidget, i18n("Face Recognition Settings"), QString::fromUtf8("Face Recognition Settings"), false);
-    expBox->setItemExpanded(0, true);
-    expBox->setItemExpanded(1, false);
+    expBox->addItem(recognizeWidget, i18n("Face Recognition Settings"),
+                    QLatin1String("FaceRecognitionSettings"), false);
 
     settingsLayout->addWidget(expBox);
     settingsLayout->addWidget(d->useFullCpuButton);
