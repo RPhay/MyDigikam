@@ -217,17 +217,20 @@ void FaceScanWidget::setupUi()
 
     // ----- detection settings
 
-    QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy", "Detection Accuracy:"), d->settingsTab);
+    QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy",
+                                                           "Accuracy:"), d->settingsTab);
     detectAccuracyLabel->setAlignment(Qt::AlignLeft);
 
     d->detectAccuracyInput              = new DIntNumInput(d->settingsTab);
     d->detectAccuracyInput->setDefaultValue(70);
     d->detectAccuracyInput->setRange(0, 100, 10);
     d->detectAccuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
-                                       "be detected, but less faces will be detected."));
+                                             "Adjust sensitivity versus specificity: the higher the value, "
+                                             "the more accurately faces will\n"
+                                             "be detected, but less faces will be detected."));
 
-    QLabel* const detectModelLabel      = new QLabel(i18nc("@label AI model used for detection", "AI Model:"), d->settingsTab);
+    QLabel* const detectModelLabel      = new QLabel(i18nc("@label AI model used for face detection",
+                                                           "Model:"), d->settingsTab);
     detectModelLabel->setAlignment(Qt::AlignLeft);
 
     d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
@@ -235,9 +238,11 @@ void FaceScanWidget::setupUi()
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
-                                       "AI model used to detect faces.  YuNet is the new defaut model.  It is faster and more configurable than YOLOv3."));
+                                        "Detection model used to find faces. YuNet is the defaut model.\n"
+                                        "It is faster and more configurable than YOLOv3."));
 
-    QLabel* const detectSizeLabel       = new QLabel(i18nc("@label AI model used for detection", "Face size:"), d->settingsTab);
+    QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
+                                                           "Face size:"), d->settingsTab);
     detectSizeLabel->setAlignment(Qt::AlignLeft);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
@@ -253,7 +258,8 @@ void FaceScanWidget::setupUi()
 
     // ----- recognition settings
 
-    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy", "Recognition Accuracy:"), d->settingsTab);
+    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy",
+                                                            "Accuracy:"), d->settingsTab);
     recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeAccuracyInput           = new DIntNumInput(d->settingsTab);
@@ -262,9 +268,10 @@ void FaceScanWidget::setupUi()
     d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                                 "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
                                                 "be recognized, but less faces will be recognized\n"
-                                                "(only faces that are very similar to pre-tagged faces are recognized)."));
+                                                "Note: only faces that are very similar to pre-tagged faces are recognized."));
 
-    QLabel* const recognizeModelLabel   = new QLabel(i18nc("@label AI model used for recognition", "Recognition model:"), d->settingsTab);
+    QLabel* const recognizeModelLabel   = new QLabel(i18nc("@label AI model used for face recognition",
+                                                           "Model:"), d->settingsTab);
     recognizeModelLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeModelBox                = new SqueezedComboBox(d->settingsTab);
@@ -272,7 +279,7 @@ void FaceScanWidget::setupUi()
     d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);
     d->recognizeModelBox->setEditable(false);
     d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
-                                           "SFace is the new default AI model.  It is faster ad more accurate .\n"
+                                           "SFace is the default detection model. It is faster and more accurate.\n"
                                            "OpenFace can be used for older libraries."));
 
     // ----- build the boxes
