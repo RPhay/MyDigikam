@@ -107,11 +107,11 @@ else
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="24.08.0"
+    DK_KA_VERSION="24.08.1"
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.5.0"
+    DK_KDE_VERSION="v6.6.0"
 
     DK_UPLOADDIR="/srv/archives/files/digikam"
 
