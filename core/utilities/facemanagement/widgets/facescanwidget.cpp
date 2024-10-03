@@ -184,6 +184,7 @@ void FaceScanWidget::setupUi()
 #endif
 
     optionLayout->addWidget(d->reRecognizeButton);
+    optionLayout->addStretch();
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
