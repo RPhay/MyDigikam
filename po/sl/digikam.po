@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
-"PO-Revision-Date: 2024-10-01 06:29+0200\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
+"PO-Revision-Date: 2024-10-03 06:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2961,13 +2961,10 @@ msgid "Scan collection for faces"
 msgstr "Preišči zbirko za obrazi"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr ""
-"Uporabite ta gumb, da preiščete izbrane albume za podvojenimi predmeti."
+msgstr "Uporabite ta gumb, da preiščete obraze v izbranih albumih"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:145
 #, kde-format
@@ -13810,7 +13807,7 @@ msgstr "Dodaj"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "Izbriši"
@@ -27805,7 +27802,7 @@ msgid "Select Album"
 msgstr "Izberite album"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -27824,14 +27821,14 @@ msgid "All albums"
 msgstr "Vsi albumi"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Rekurzivno"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
@@ -27855,43 +27852,43 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Ponastavi izbrane albume"
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Vse značke"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Izberite vse značke, ki naj bodo obdelane."
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Ni izbrane značke"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Ponastavi izbrane značke"
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumi (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Značke (Vse)"
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29737,18 +29734,18 @@ msgstr ""
 "<p>Ti albumi bodo premaknjeni v Smeti.</p><p>Prav tako bodo premaknjeni v "
 "Smeti <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Pre&makni v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Izbrani predmeti bodo pravkar izbrisani"
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -51850,13 +51847,13 @@ msgstr ""
 "Znova poskusi prepoznati upodobljene ljudi\n"
 "na označenih, ampak še ne potrjenih obrazih."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Potek dela"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -51864,13 +51861,122 @@ msgstr "Išči v"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
-msgstr "Natančnost obraza"
+msgid "Accuracy:"
+msgstr "Natančnost"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Prilagodite občutljivost v primerjavi s specifičnostjo: višja kot je "
+"vrednost,\n"
+"natančnejše bodo zaznani obrazi, vendar bo zaznanih manj obrazov."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#, fuzzy, kde-format
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
+msgstr "Model:"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YuNet"
+msgstr "YuNet"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YOLOv3"
+msgstr "YOLOv3"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "AI model used to detect faces.  YuNet is the new defaut model.  It is "
+#| "faster and more configurable than YOLOv3."
+msgctxt "@info:tooltip"
+msgid ""
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
+msgstr ""
+"Model umetne inteligence, ki se uporablja za zaznavanje obrazov. YuNet je "
+"nov privzeti model. Je hitrejši in bolj nastavljiv kot YOLOv3."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#, fuzzy, kde-format
+#| msgctxt "@label AI model used for detection"
+#| msgid "Face size:"
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr "Velikost obraza:"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Extra Small"
+msgstr "Zelo majhen"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Small"
+msgstr "Majhen"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Medium"
+msgstr "Srednji"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Large"
+msgstr "Velik"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Extra Large"
+msgstr "Zelo velik"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Detecting smaller faces takes more time and has a higher probability of "
+"incorrect facial detection.\n"
+"Detecting larger faces is faster, but may miss smaller faces in group "
+"pictures."
+msgstr ""
+"Zaznavanje manjših obrazov traja več časa in ima večjo verjetnost "
+"nepravilnega zaznavanja obraza.\n"
+"Zaznavanje večjih obrazov je hitrejše, vendar lahko na skupinskih slikah "
+"zgreši manjše obraze."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#, kde-format
+msgid "Face Detection Settings"
+msgstr "Nastavitve zaznava obrazov"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Natančnost"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51882,150 +51988,55 @@ msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
-"be detected, but less faces will be detected."
+"be recognized, but less faces will be recognized\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 "Prilagodite občutljivost glede na specifičnost: večja vrednost pomeni večjo\n"
 "natančnost prepoznave obrazov, vendar bo prepoznanih obrazov manj\n"
 "(prepoznani bodo samo obrazi, ki so zelo podobni vnaprej označenim obrazom)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
-msgctxt "@label AI model used for detection"
-msgid "Face size:"
-msgstr "Velikost sličice"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
-#, fuzzy, kde-format
-#| msgid "Extra tags"
-msgctxt "@label:listbox"
-msgid "Extra Small"
-msgstr "Posebne značke"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
-msgctxt "@label:listbox"
-msgid "Medium"
-msgstr "Srednja"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
-#, fuzzy, kde-format
-#| msgid "Target"
-msgctxt "@label:listbox"
-msgid "Large"
-msgstr "Cilj"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
-#, fuzzy, kde-format
-#| msgid "Extra tags"
-msgctxt "@label:listbox"
-msgid "Extra Large"
-msgstr "Posebne značke"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detecting smaller faces takes more time and has a higher probability of "
-"incorrect facial detection.\n"
-"Detecting larger faces is faster, but may miss smaller faces in group "
-"pictures."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
-#, fuzzy, kde-format
-#| msgid "Face Recognition DB"
-msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
-msgstr "Podatkovna zbirka prepoznavanje obrazov"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
-msgstr ""
-"Prilagodite občutljivost glede na specifičnost: večja vrednost pomeni večjo\n"
-"natančnost prepoznave obrazov, vendar bo prepoznanih obrazov manj\n"
-"(prepoznani bodo samo obrazi, ki so zelo podobni vnaprej označenim obrazom)."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Selection model: "
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "Model izbiranja: "
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Obrazi"
+msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
-#, fuzzy, kde-format
-#| msgid "Open File"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Odpri datoteko"
+msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "SFace is the new default AI model.  It is faster ad more accurate .\n"
+#| "OpenFace can be used for older libraries."
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
+"SFace je nov privzeti model umetne inteligence. Je hitrejši in natančnejši.\n"
+"OpenFace se lahko uporablja za starejše knjižnice."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Delaj na vseh procesorskih jedrih"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52037,19 +52048,12 @@ msgstr ""
 "na vseh procesorskih jedrih na vašem sistemu ali pa, da se opravilo\n"
 "izvaja v ozadju na le enem jedru."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Face Detection Settings"
-msgstr "Zaznava obrazov"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Prepoznavanje obrazov"
+msgstr "Nastavitve prepoznavanja obrazov"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -67515,6 +67519,22 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgctxt "@label Face Detection Accuracy"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Natančnost zaznavanja:"
+
+#~ msgctxt "@label AI model used for detection"
+#~ msgid "AI Model:"
+#~ msgstr "Model umetne inteligence:"
+
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Recognition Accuracy:"
+#~ msgstr "Natančnost prepoznavanja:"
+
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "Model prepoznavanja:"
 
 #~ msgctxt "@label left extremities of a scale"
 #~ msgid "Sensitivity"

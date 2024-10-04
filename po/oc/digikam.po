@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -13281,7 +13281,7 @@ msgstr "&Apondre..."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "&Suprimir"
@@ -26961,7 +26961,7 @@ msgid "Select Album"
 msgstr "&Suprimir"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
@@ -26982,7 +26982,7 @@ msgid "All albums"
 msgstr "imatges"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@option"
@@ -26990,7 +26990,7 @@ msgid "Recursive"
 msgstr "Diaporamà"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@info:tooltip"
@@ -27016,46 +27016,46 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@option"
 msgid "All tags"
 msgstr "&Suprimir"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "imatges"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "imatges"
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
@@ -28646,19 +28646,19 @@ msgid ""
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "&Suprimir"
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@title:window"
@@ -50200,13 +50200,13 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -50215,7 +50215,7 @@ msgstr ""
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
@@ -50227,73 +50227,73 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #, kde-format
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
 msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
-#, fuzzy, kde-format
-#| msgid "images"
-msgctxt "@label AI model used for detection"
-msgid "Face size:"
-msgstr "imatges"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "images"
-msgctxt "@label:listbox"
-msgid "Extra Small"
-msgstr "imatges"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Medium"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
-#, fuzzy, kde-format
-#| msgid "images"
-msgctxt "@label:listbox"
-msgid "Large"
+msgctxt "@label face size for detection"
+msgid "Face size:"
 msgstr "imatges"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@label:listbox"
+msgid "Extra Small"
+msgstr "imatges"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Small"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Medium"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#, fuzzy, kde-format
+#| msgid "images"
+msgctxt "@label:listbox"
+msgid "Large"
+msgstr "imatges"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#, fuzzy, kde-format
+#| msgid "images"
+msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "imatges"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50303,59 +50303,64 @@ msgid ""
 "pictures."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgid "Face Detection Settings"
+msgstr "Diaporamà"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
+msgid "Accuracy:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Slideshow"
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "Diaporamà"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#, kde-format
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
+msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "imatges"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "&Suprimir"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50364,19 +50369,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-#| msgid "Slideshow"
-msgid "Face Detection Settings"
-msgstr "Diaporamà"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgid "Face Recognition Settings"
 msgstr "Diaporamà"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:tab"
@@ -65022,6 +65021,12 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Slideshow"
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "Diaporamà"
 
 #, fuzzy
 #~| msgid "&Delete"
