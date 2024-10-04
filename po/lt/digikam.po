@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -13780,7 +13780,7 @@ msgstr "&Pridėti"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "Paša&linti"
@@ -28264,7 +28264,7 @@ msgid "Select Album"
 msgstr "Pažymėti albumą"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -28286,7 +28286,7 @@ msgid "All albums"
 msgstr "Visi albumai"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
@@ -28294,7 +28294,7 @@ msgid "Recursive"
 msgstr "Pažymėjimas"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
@@ -28320,47 +28320,47 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Atstatyti pasirinktus albumus"
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "Visos žymos"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Pasirinkti visas žymes, kurios turėtų būti įtrauktos į paiešką."
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nepažymėta jokia žyma"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Pašalinti žymės ženkliuką"
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumai"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Žymos: "
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -30044,18 +30044,18 @@ msgid ""
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Perkelti į šiukšlinę"
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Rengiamasi ištrinti pažymėtus failus"
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -53340,14 +53340,14 @@ msgstr ""
 "Pabandyti dar kartą atpažinti atvaizduotus žmones<nl/> pažymėtuose, bet dar "
 "nepatvirtintuose veiduose."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Darbų eiga"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
@@ -53358,7 +53358,7 @@ msgstr "Ieškoti:"
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Tikslumas"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
@@ -53370,54 +53370,54 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
 msgstr "Modelis:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "File Size"
-msgctxt "@label AI model used for detection"
+msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Failo dydis"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Paveikslėlio nuostatos"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -53425,20 +53425,20 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Vidutinis"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Tikslas"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Paveikslėlio nuostatos"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53448,57 +53448,64 @@ msgid ""
 "pictures."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
 #, fuzzy, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
+msgid "Face Detection Settings"
 msgstr "Veidų atpažinimo palaikymas;"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Tikslumas"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
-#| msgid "Digitization date"
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "Skaitmeninimo data"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
+msgstr "Modelis:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Pasirinkti nieko"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Atverti aplanką"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Dirbti visose procesorių šerdyse"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -53515,17 +53522,12 @@ msgstr ""
 "išnaudoti visas procesoriaus šerdis sistemoje, ar dirbti fone tik su viena "
 "šerdimi."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-msgid "Face Detection Settings"
-msgstr "Veidų atpažinimo palaikymas;"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Veidų atpažinimo palaikymas;"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -69009,6 +69011,30 @@ msgstr "Albumo objektai"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
+
+#, fuzzy
+#~| msgid "Accuracy"
+#~ msgctxt "@label Face Detection Accuracy"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Tikslumas"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for detection"
+#~ msgid "AI Model:"
+#~ msgstr "Modelis:"
+
+#, fuzzy
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Recognition Accuracy:"
+#~ msgstr "Veidų atpažinimo palaikymas;"
+
+#, fuzzy
+#~| msgid "Digitization date"
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "Skaitmeninimo data"
 
 #, fuzzy
 #~| msgid "Sensitivity"

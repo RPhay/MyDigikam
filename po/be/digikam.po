@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -13123,7 +13123,7 @@ msgstr "&Дадаць"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "В&ыдаліць"
@@ -26355,7 +26355,7 @@ msgid "Select Album"
 msgstr "Абраць альбом"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -26374,14 +26374,14 @@ msgid "All albums"
 msgstr "Усе альбомы"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Рэкурсіўна"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
@@ -26405,43 +26405,43 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Адкінуць выбар альбомаў"
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Усе тэгі"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Абраць усе тэгі, якія неабходна апрацаваць."
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Тэгі не абраныя"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Скінуць выбар тэгаў"
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Альбомы (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Тэгі (усе)"
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -28137,18 +28137,18 @@ msgstr ""
 "<b>Усе ўкладзеныя альбомы</b> ўнясуцца ў гэты спіс і таксама перамесцяцца ў "
 "сметніцу.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Перамясціць у сметніцу"
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -49321,13 +49321,13 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Працоўны працэс"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -49335,11 +49335,10 @@ msgstr "Шукаць у"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
-msgstr "Дакладнасць твару"
+msgid "Accuracy:"
+msgstr "Дакладнасць"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -49350,55 +49349,55 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
 msgstr "Мадэль:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "Max size:"
-msgctxt "@label AI model used for detection"
+msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Максімальны памер:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Дадатковыя тэгі"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -49406,21 +49405,21 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Сярэдняя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Мэта"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Дадатковыя тэгі"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49430,59 +49429,67 @@ msgid ""
 "pictures."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
-#, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
-msgstr ""
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Face Detection Settings"
+msgstr "Выяўленне твараў"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Дакладнасць"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
-#| msgid "Face Recognition"
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "Распазнаванне твараў"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
+msgstr "Мадэль:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Твары"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Адкрыць файл"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Працаваць на ўсіх ядрах працэсара"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49491,19 +49498,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Face Detection Settings"
-msgstr "Выяўленне твараў"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "Распазнаванне твараў"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -63876,6 +63877,26 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label Face Detection Accuracy"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Дакладнасць твару"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for detection"
+#~ msgid "AI Model:"
+#~ msgstr "Мадэль:"
+
+#, fuzzy
+#~| msgid "Face Recognition"
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "Распазнаванне твараў"
 
 #~ msgctxt "@label left extremities of a scale"
 #~ msgid "Sensitivity"

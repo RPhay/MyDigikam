@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -13764,7 +13764,7 @@ msgstr "เ&พิ่ม"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "&ลบ"
@@ -28040,7 +28040,7 @@ msgid "Select Album"
 msgstr "เลือกอัลบั้ม"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -28060,7 +28060,7 @@ msgid "All albums"
 msgstr "อัลบั้ม"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
@@ -28068,7 +28068,7 @@ msgid "Recursive"
 msgstr "ส่วนที่เลือก"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
@@ -28094,46 +28094,46 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "ป้ายกำกับทั้งหมด"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "เลือกป้ายกำกับทั้งหมดที่จะถูกรวมไว้เพื่อใช้ในการค้นหา"
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "ยังไม่มีการเลือกป้ายกำกับใด ๆ"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "ตั้งค่าเนื้อหาใหม่"
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "อัลบั้ม"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ป้ายกำกับ:"
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -29885,18 +29885,18 @@ msgstr ""
 "<p>อัลบั้มเหล่านี้จะถูกทิ้งลงในถังขยะ</p><p>ควรทราบไว้ว่า <b>อัลบั้มย่อยทั้งหมด</"
 "b>ที่อยู่ภายในรายการเหล่านี้ จะถูกทิ้งลงถังขยะเช่นเดียวกัน</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr "ทิ้งลง&ถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "ทำการลบแฟ้มต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -53042,13 +53042,13 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
@@ -53058,7 +53058,7 @@ msgstr "ค้นหาใน:"
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
@@ -53070,54 +53070,54 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
 msgstr "รุ่น:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "File size"
-msgctxt "@label AI model used for detection"
+msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "ขนาดของแฟ้ม"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -53125,20 +53125,20 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "ปานกลาง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "ภาพเป้าหมาย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53148,57 +53148,63 @@ msgid ""
 "pictures."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
 #, fuzzy, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
+msgid "Face Detection Settings"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#, fuzzy, kde-format
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
-#| msgid "Destination:"
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "ปลายทาง:"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
+msgstr "รุ่น:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "ไม่เลือกเลย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "เปิดโฟลเดอร์"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53207,17 +53213,12 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-msgid "Face Detection Settings"
-msgstr "กลับค่าการเรียงลำดับ"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -68825,6 +68826,29 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~ msgctxt "@label Face Detection Accuracy"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for detection"
+#~ msgid "AI Model:"
+#~ msgstr "รุ่น:"
+
+#, fuzzy
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Recognition Accuracy:"
+#~ msgstr "กลับค่าการเรียงลำดับ"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "ปลายทาง:"
 
 #, fuzzy
 #~| msgid "Sensitivity"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:47+0000\n"
-"PO-Revision-Date: 2024-10-01 22:01+0300\n"
+"POT-Creation-Date: 2024-10-04 01:48+0000\n"
+"PO-Revision-Date: 2024-10-04 01:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2931,12 +2931,10 @@ msgid "Scan collection for faces"
 msgstr "Yüzler için Koleksiyonu Tara"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr "Seçili albümü yinelenen ögeler için taramak üzere bu düğmeyi kullanın."
+msgstr "Seçili albümlerdeki yüzleri taramak için bu düğmeyi kullanın"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:145
 #, kde-format
@@ -13810,7 +13808,7 @@ msgstr "&Ekle"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:594
 #, kde-format
 msgid "&Delete"
 msgstr "&Sil"
@@ -27845,7 +27843,7 @@ msgid "Select Album"
 msgstr "Albüm Seç"
 
 #: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:532
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -27864,14 +27862,14 @@ msgid "All albums"
 msgstr "Tüm albümler"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Özyineli"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
@@ -27895,43 +27893,43 @@ msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Seçili albümleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:220
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Tüm künyeler"
 
-#: core/libs/album/widgets/albumselectors.cpp:232
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "İşlenmesi gereken tüm künyeleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:235
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Seçili künye yok"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Seçili künyeleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:533
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albümler (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:536
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Künyeler (Tümü)"
 
-#: core/libs/album/widgets/albumselectors.cpp:537
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29755,18 +29753,18 @@ msgstr ""
 "<p>Bu albümler Çöp Kutusu'na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
 "de bu listede olduğunu ve onların da Çöp Kutusu'na taşınacağını not edin.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:596
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Çöp Kutusu'na Taşı"
 
-#: core/libs/dialogs/deletedialog.cpp:656
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Seçili Ögeler Silinmek Üzere"
 
-#: core/libs/dialogs/deletedialog.cpp:663
+#: core/libs/dialogs/deletedialog.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -51780,13 +51778,13 @@ msgstr ""
 "İmlenmiş; ancak henüz doğrulanmamış yüzlerde\n"
 "tasvir edilen kişileri yeniden tanımaya çalışın."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "İş Akışı"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -51794,13 +51792,121 @@ msgstr "Arama Konumu"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
-msgid "Detection Accuracy:"
-msgstr "Yüz doğruluğu"
+msgid "Accuracy:"
+msgstr "Doğruluk"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Belirliliğe karşı duyarlılığı ayarlayın: Değer ne kadar yüksek olursa yüzler "
+"o kadar doğru bir biçimde algılanır; ancak daha az yüz tespit edilir."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#, fuzzy, kde-format
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label AI model used for face detection"
+msgid "Model:"
+msgstr "Model:"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YuNet"
+msgstr "YuNet"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YOLOv3"
+msgstr "YOLOv3"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "AI model used to detect faces.  YuNet is the new defaut model.  It is "
+#| "faster and more configurable than YOLOv3."
+msgctxt "@info:tooltip"
+msgid ""
+"Detection model used to find faces. YuNet is the defaut model.\n"
+"It is faster and more configurable than YOLOv3."
+msgstr ""
+"Yüzleri algılamak için kullanılan yapay zeka modeli. YuNet yeni öntanımlı "
+"modeldir. YOLOv3 modeline kıyasla daha hızlıdır ve yapılandırılabilirdir."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#, fuzzy, kde-format
+#| msgctxt "@label AI model used for detection"
+#| msgid "Face size:"
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr "Yüz boyutu:"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Extra Small"
+msgstr "Ekstra küçük"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Small"
+msgstr "Küçük"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:250
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Medium"
+msgstr "Orta"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Large"
+msgstr "Büyük"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Extra Large"
+msgstr "Ekstra büyük"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Detecting smaller faces takes more time and has a higher probability of "
+"incorrect facial detection.\n"
+"Detecting larger faces is faster, but may miss smaller faces in group "
+"pictures."
+msgstr ""
+"Daha küçük yüzleri algılamak daha fazla zaman alır ve yanlış yüz algılama "
+"olasılığı daha yüksektir.\n"
+"Daha büyük yüzleri algılamak daha hızlıdır; ancak grup resimlerinde daha "
+"küçük yüzleri kaçırabilir."
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#, kde-format
+msgid "Face Detection Settings"
+msgstr "Yüz Algılama Ayarları"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Doğruluk"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51812,150 +51918,55 @@ msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
-"be detected, but less faces will be detected."
+"be recognized, but less faces will be recognized\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 "Duyarlılığa karşı özgüllüğü ayarlayın: Değer ne kadar yüksek olursa yüzler\n"
 "o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
 "(yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
-msgctxt "@label AI model used for detection"
-msgid "AI Model:"
+msgctxt "@label AI model used for face recognition"
+msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"AI model used to detect faces.  YuNet is the new defaut model.  It is faster "
-"and more configurable than YOLOv3."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
-#, fuzzy, kde-format
-#| msgid "Max size:"
-msgctxt "@label AI model used for detection"
-msgid "Face size:"
-msgstr "En büyük boyut:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
-#, fuzzy, kde-format
-#| msgid "Extra tags"
-msgctxt "@label:listbox"
-msgid "Extra Small"
-msgstr "Ek künyeler"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
-msgctxt "@label:listbox"
-msgid "Medium"
-msgstr "Orta"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
-#, fuzzy, kde-format
-#| msgid "Target"
-msgctxt "@label:listbox"
-msgid "Large"
-msgstr "Hedef"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
-#, fuzzy, kde-format
-#| msgid "Extra tags"
-msgctxt "@label:listbox"
-msgid "Extra Large"
-msgstr "Ek künyeler"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:251
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detecting smaller faces takes more time and has a higher probability of "
-"incorrect facial detection.\n"
-"Detecting larger faces is faster, but may miss smaller faces in group "
-"pictures."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
-#, fuzzy, kde-format
-#| msgid "Face Recognition DB"
-msgctxt "@label Face Recognition Accuracy"
-msgid "Recognition Accuracy:"
-msgstr "Yüz Tanıma Veritabanı"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized\n"
-"(only faces that are very similar to pre-tagged faces are recognized)."
-msgstr ""
-"Duyarlılığa karşı özgüllüğü ayarlayın: Değer ne kadar yüksek olursa yüzler\n"
-"o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
-"(yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır)."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Selection model: "
-msgctxt "@label AI model used for recognition"
-msgid "Recognition model:"
-msgstr "Seçim modeli: "
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Yüzler"
+msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Dosya Aç"
+msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "SFace is the new default AI model.  It is faster ad more accurate .\n"
+#| "OpenFace can be used for older libraries."
 msgctxt "@info:tooltip"
 msgid ""
-"SFace is the new default AI model.  It is faster ad more accurate .\n"
+"SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
+"SFace yeni öntanımlı AI modelidir. Daha hızlı ve daha doğrudur.\n"
+"OpenFace eski kitaplıklar için kullanılabilir."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:305
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Tüm işlemci çekirdeklerinde çalış"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51967,19 +51978,12 @@ msgstr ""
 "işlemci çekirdeklerini kullanmayı veya arka planda yalnızca tek\n"
 "bir çekirdek üzerinde çalışmayı seçebilirsiniz."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:299
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Face Detection Settings"
-msgstr "Yüz Algılama"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Yüz Tanıma"
+msgstr "Yüz Tanıma Ayarları"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -55861,7 +55865,7 @@ msgid ""
 "As an alternative you can choose decimal degrees (e.g. 54.5°)."
 msgstr ""
 "Açıların koordinat türünden gösterimini belirtir.\n"
-"Öntanımlı olarak Derece-Dakika-Saniye gösterimi (örn. 54°30'00\" ) "
+"Öntanımlı olarak Derece–Dakika–Saniye gösterimi (örn. 54° 30’ 00” ) "
 "kullanılır.\n"
 "Alternatif olarak ondalık dereceleri de seçebilirsiniz (örn. 54,5°)."
 
@@ -67469,6 +67473,28 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label Face Detection Accuracy"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Algılama doğruluğu:"
+
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for detection"
+#~ msgid "AI Model:"
+#~ msgstr "Yapay zeka modeli:"
+
+#~| msgid "Face Recognition DB"
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Recognition Accuracy:"
+#~ msgstr "Tanıma doğruluğu:"
+
+#~| msgid "Selection model: "
+#~ msgctxt "@label AI model used for recognition"
+#~ msgid "Recognition model:"
+#~ msgstr "Tanıma modeli:"
 
 #~ msgctxt "@label left extremities of a scale"
 #~ msgid "Sensitivity"
