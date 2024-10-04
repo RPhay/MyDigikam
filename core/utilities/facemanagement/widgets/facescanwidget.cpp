@@ -237,7 +237,7 @@ void FaceScanWidget::setupUi()
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
-                                        "Detection model used to find faces. YuNet is the defaut model.\n"
+                                        "Detection model used to find faces. YuNet is the default model.\n"
                                         "It is faster and more configurable than YOLOv3."));
 
     QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
