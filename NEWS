@@ -126,7 +126,7 @@ BUGFIXES:
 101 ==> 493914 - OpenCV assertion failure when tagging face without models installed.
 102 ==> 489034 - Install failure.
 103 ==> 493948 - digiKam 8.4.0 never shows.
-104 ==> 
+104 ==> 494080 - Support for OpenEXR.
 105 ==> 
 106 ==> 
 107 ==> 
