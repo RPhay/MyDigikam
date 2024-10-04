@@ -52,7 +52,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 17;
+    return 18;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -73,6 +73,8 @@ class Q_DECL_HIDDEN CoreDbSchemaUpdater::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                    setError                = false;
 
@@ -207,7 +209,7 @@ bool CoreDbSchemaUpdater::startUpdates()
             d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
         }
 
-         return false;
+        return false;
     }
 
     // First step: do we have an empty database?
@@ -486,6 +488,7 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                       << QLatin1String("jpc")  << QLatin1String("pgx")
                       << QLatin1String("tif")  << QLatin1String("tiff")                           // Tagged Image Format
                       << QLatin1String("png")                                                     // Portable Network Graphic
+                      << QLatin1String("exr")                                                     // Industrial Light & Magic format
                       << QLatin1String("eps")                                                     // Encapsulated Postscript
                       << QLatin1String("fit")  << QLatin1String("fts")  << QLatin1String("fits")  // Flexible Image Transport System (https://fr.wikipedia.org/wiki/Flexible_Image_Transport_System)
                       << QLatin1String("gif")                                                     // Graphics Interchange Format
@@ -709,7 +712,8 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
 {
     if (d->currentVersion != targetVersion-1)
     {
-        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: updateToVersion performs only incremental updates. Called to update from"
+        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: updateToVersion performs only incremental updates. "
+                                       "Called to update from"
                                     << d->currentVersion << "to" << targetVersion << ", aborting.";
         return false;
     }
@@ -1372,20 +1376,27 @@ void CoreDbSchemaUpdater::preAlpha010Update1()
     }
 
     if (!d->backend->execSql(
-             QString::fromUtf8( "CREATE TABLE IF NOT EXISTS Searches  \n"
-                                " (id INTEGER PRIMARY KEY, \n"
-                                "  type INTEGER, \n"
-                                "  name TEXT NOT NULL, \n"
-                                "  query TEXT NOT NULL);" ) ))
+             QString::fromUtf8(
+                               "CREATE TABLE IF NOT EXISTS Searches  \n"
+                               " (id INTEGER PRIMARY KEY, \n"
+                               "  type INTEGER, \n"
+                               "  name TEXT NOT NULL, \n"
+                               "  query TEXT NOT NULL);"
+                              )
+                            )
+       )
     {
         return;
     }
 
-    if (!d->backend->execSql(QString::fromUtf8( "REPLACE INTO Searches "
-                                                " (id, type, name, query) "
-                                                "SELECT id, ?, name, url"
-                                                " FROM SearchesV3;"),
-                             DatabaseSearch::LegacyUrlSearch)
+    if (!d->backend->execSql(QString::fromUtf8(
+                                               "REPLACE INTO Searches "
+                                               " (id, type, name, query) "
+                                               "SELECT id, ?, name, url"
+                                               " FROM SearchesV3;"
+                                              ),
+                             DatabaseSearch::LegacyUrlSearch
+                            )
        )
     {
         return;
@@ -1479,14 +1490,14 @@ void CoreDbSchemaUpdater::preAlpha010Update2()
                           "  subjectDistance REAL,\n"
                           "  subjectDistanceCategory INTEGER);") );
 
-    d->backend->execSql( QString::fromUtf8("INSERT INTO ImageMetadata "
-                                           " (imageid, make, model, lens, aperture, focalLength, focalLength35, "
-                                           "  exposureTime, exposureProgram, exposureMode, sensitivity, flash, whiteBalance, "
-                                           "  whiteBalanceColorTemperature, meteringMode, subjectDistance, subjectDistanceCategory) "
-                                           "SELECT imageid, make, model, NULL, aperture, focalLength, focalLength35, "
-                                           "  exposureTime, exposureProgram, exposureMode, sensitivity, flash, whiteBalance, "
-                                           "  whiteBalanceColorTemperature, meteringMode, subjectDistance, subjectDistanceCategory "
-                                           "FROM ImageMetadataTemp;"));
+    d->backend->execSql(QString::fromUtf8("INSERT INTO ImageMetadata "
+                                          " (imageid, make, model, lens, aperture, focalLength, focalLength35, "
+                                          "  exposureTime, exposureProgram, exposureMode, sensitivity, flash, whiteBalance, "
+                                          "  whiteBalanceColorTemperature, meteringMode, subjectDistance, subjectDistanceCategory) "
+                                          "SELECT imageid, make, model, NULL, aperture, focalLength, focalLength35, "
+                                          "  exposureTime, exposureProgram, exposureMode, sensitivity, flash, whiteBalance, "
+                                          "  whiteBalanceColorTemperature, meteringMode, subjectDistance, subjectDistanceCategory "
+                                          "FROM ImageMetadataTemp;"));
 
     d->backend->execSql(QString::fromUtf8("DROP TABLE ItemPositionsTemp;"));
     d->backend->execSql(QString::fromUtf8("DROP TABLE ImageMetadataTemp;"));
@@ -1572,76 +1583,76 @@ void CoreDbSchemaUpdater::beta010Update2()
 
 bool CoreDbSchemaUpdater::createTablesV3()
 {
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE Albums\n"
-                                                " (id INTEGER PRIMARY KEY,\n"
-                                                "  url TEXT NOT NULL UNIQUE,\n"
-                                                "  date DATE NOT NULL,\n"
-                                                "  caption TEXT,\n"
-                                                "  collection TEXT,\n"
-                                                "  icon INTEGER);") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE Albums\n"
+                                               " (id INTEGER PRIMARY KEY,\n"
+                                               "  url TEXT NOT NULL UNIQUE,\n"
+                                               "  date DATE NOT NULL,\n"
+                                               "  caption TEXT,\n"
+                                               "  collection TEXT,\n"
+                                               "  icon INTEGER);") ))
     {
         return false;
     }
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE Tags\n"
-                                                " (id INTEGER PRIMARY KEY,\n"
-                                                "  pid INTEGER,\n"
-                                                "  name TEXT NOT NULL,\n"
-                                                "  icon INTEGER,\n"
-                                                "  iconkde TEXT,\n"
-                                                "  UNIQUE (name, pid));") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE Tags\n"
+                                               " (id INTEGER PRIMARY KEY,\n"
+                                               "  pid INTEGER,\n"
+                                               "  name TEXT NOT NULL,\n"
+                                               "  icon INTEGER,\n"
+                                               "  iconkde TEXT,\n"
+                                               "  UNIQUE (name, pid));") ))
     {
         return false;
     }
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE TagsTree\n"
-                                                " (id INTEGER NOT NULL,\n"
-                                                "  pid INTEGER NOT NULL,\n"
-                                                "  UNIQUE (id, pid));") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE TagsTree\n"
+                                               " (id INTEGER NOT NULL,\n"
+                                               "  pid INTEGER NOT NULL,\n"
+                                               "  UNIQUE (id, pid));") ))
     {
         return false;
     }
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE Images\n"
-                                                " (id INTEGER PRIMARY KEY,\n"
-                                                "  name TEXT NOT NULL,\n"
-                                                "  dirid INTEGER NOT NULL,\n"
-                                                "  caption TEXT,\n"
-                                                "  datetime DATETIME,\n"
-                                                "  UNIQUE (name, dirid));") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE Images\n"
+                                               " (id INTEGER PRIMARY KEY,\n"
+                                               "  name TEXT NOT NULL,\n"
+                                               "  dirid INTEGER NOT NULL,\n"
+                                               "  caption TEXT,\n"
+                                               "  datetime DATETIME,\n"
+                                               "  UNIQUE (name, dirid));") ))
     {
         return false;
     }
 
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE ImageTags\n"
-                                                " (imageid INTEGER NOT NULL,\n"
-                                                "  tagid INTEGER NOT NULL,\n"
-                                                "  UNIQUE (imageid, tagid));") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE ImageTags\n"
+                                               " (imageid INTEGER NOT NULL,\n"
+                                               "  tagid INTEGER NOT NULL,\n"
+                                               "  UNIQUE (imageid, tagid));") ))
     {
         return false;
     }
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE ImageProperties\n"
-                                                " (imageid  INTEGER NOT NULL,\n"
-                                                "  property TEXT    NOT NULL,\n"
-                                                "  value    TEXT    NOT NULL,\n"
-                                                "  UNIQUE (imageid, property));") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE ImageProperties\n"
+                                               " (imageid  INTEGER NOT NULL,\n"
+                                               "  property TEXT    NOT NULL,\n"
+                                               "  value    TEXT    NOT NULL,\n"
+                                               "  UNIQUE (imageid, property));") ))
     {
         return false;
     }
 
-    if ( !d->backend->execSql( QString::fromUtf8("CREATE TABLE Searches  \n"
-                                                  " (id INTEGER PRIMARY KEY, \n"
-                                                  "  name TEXT NOT NULL UNIQUE, \n"
-                                                  "  url  TEXT NOT NULL);") ) )
+    if ( !d->backend->execSql(QString::fromUtf8("CREATE TABLE Searches  \n"
+                                                " (id INTEGER PRIMARY KEY, \n"
+                                                "  name TEXT NOT NULL UNIQUE, \n"
+                                                "  url  TEXT NOT NULL);") ) )
     {
         return false;
     }
 
-    if (!d->backend->execSql( QString::fromUtf8("CREATE TABLE Settings         \n"
-                                                "(keyword TEXT NOT NULL UNIQUE,\n"
-                                                " value TEXT);") ))
+    if (!d->backend->execSql(QString::fromUtf8("CREATE TABLE Settings         \n"
+                                               "(keyword TEXT NOT NULL UNIQUE,\n"
+                                               " value TEXT);") ))
     {
         return false;
     }
