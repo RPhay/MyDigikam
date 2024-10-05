@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 01:48+0000\n"
+"POT-Creation-Date: 2024-10-05 01:47+0000\n"
 "PO-Revision-Date: 2024-10-03 06:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3181,7 +3181,7 @@ msgid "Map Search"
 msgstr "Iskanje po zemljevidu"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
 msgstr "Zadnje iskanje"
@@ -28100,7 +28100,7 @@ msgstr ""
 "Napaka med pretvarjanjem podatkovne zbirke.\n"
 " Podrobnosti: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:198
+#: core/libs/database/coredb/coredbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28113,7 +28113,7 @@ msgstr ""
 " %1\n"
 "Preverite vaša dovoljenja v podatkovni zbirki in znova zaženite digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:232
+#: core/libs/database/coredb/coredbschemaupdater.cpp:234
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28124,7 +28124,7 @@ msgstr ""
 "Trenutne različice sheme podatkovne zbirke ni mogoče preveriti. Poskusite "
 "začeti s prazno podatkovno zbirko. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:262
+#: core/libs/database/coredb/coredbschemaupdater.cpp:264
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28138,7 +28138,7 @@ msgstr ""
 "je oblika podatkovne zbirke novejša). Uporabite novejšo različico digiKama "
 "kot ste jo uporabljali prej. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:327
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28149,7 +28149,7 @@ msgstr ""
 "Ustvarjanje razpredelnic v podatkovni zbirki je spodletelo.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:348
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28164,7 +28164,7 @@ msgstr ""
 "odpravljena, lahko dobite pomoč na dopisnem seznamu digikam-devel@kde.org. "
 "Poleg tega si oglejte izpis digiKama na konzoli. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:409
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28181,7 +28181,7 @@ msgstr ""
 "boste želeli napako objaviti na dopisni seznam digikam-devel@kde.org. Poleg "
 "tega si oglejte izpis digiKama na konzoli. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:447
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28195,7 +28195,7 @@ msgstr ""
 "strežnika. Ponovno zaženite digiKam, da bi izvedli potrebno nadgradnjo "
 "podatkovne zbirke."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:456
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28207,7 +28207,7 @@ msgstr ""
 "Preberite sporočila o napakah v konzoli in poročajte to napako kot hrošča na "
 "bugs.kde.org."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:677
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28218,12 +28218,12 @@ msgstr ""
 "da je datoteka dbconfig.xml trenutne različice digiKam nameščena na pravem "
 "mestu.  "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:698
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Shema posodobljena na različico %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:846
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28234,12 +28234,12 @@ msgstr ""
 "mesto (\"%2\"). Sporočilo napake: \"%3\". Prepričajte se, da je datoteko "
 "mogoče kopirati ali pa jo izbrišite."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:868
 #, kde-format
 msgid "Copied database file"
 msgstr "Datoteka s podatkovno zbirko je bila kopirana"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:873
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28250,22 +28250,22 @@ msgstr ""
 "(\"%2\"), ampak je ni mogoče odpreti. Izbrišite obe datoteki in poskusite "
 "znova s prazno podatkovno zbirko. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid "Opened new database file"
 msgstr "Odprta nova datoteka s podatkovno zbirko"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:993
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Ustvarjanje razpredelnic je pripravljeno"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
 #, kde-format
 msgid "Created tables"
 msgstr "Razpredelnice so bile ustvarjene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28276,7 +28276,7 @@ msgstr ""
 "posodabljanja sheme bo prekinjeno. Poskusite s prazno podatkovno zbirko ali "
 "pa popravite vaše nastavitve."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28295,52 +28295,52 @@ msgstr ""
 "saj ne želimo ustvariti podatkovne zbirke iz napačnih predpostavk, dobljenih "
 "iz pokvarjene namestitve."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
 #, kde-format
 msgid "Configured one album root"
 msgstr "Koren enega albuma je bil nastavljen"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
 #, kde-format
 msgid "Imported albums"
 msgstr "Albumi so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
 #, kde-format
 msgid "Imported images information"
 msgstr "Podatki o slikah so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Zadnje iskanje (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Filter pripon datotek je bil začet in uvožen"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Začetno preiskovanje je bilo opravljeno"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Datumi ustvarjenja so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
 #, kde-format
 msgid "Imported comments"
 msgstr "Opombe so bile uvožene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
 #, kde-format
 msgid "Imported ratings"
 msgstr "Ocene so bile uvožene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Razpredelnice r3 so bile opuščene"
@@ -51906,7 +51906,7 @@ msgstr "YOLOv3"
 #| "faster and more configurable than YOLOv3."
 msgctxt "@info:tooltip"
 msgid ""
-"Detection model used to find faces. YuNet is the defaut model.\n"
+"Detection model used to find faces. YuNet is the default model.\n"
 "It is faster and more configurable than YOLOv3."
 msgstr ""
 "Model umetne inteligence, ki se uporablja za zaznavanje obrazov. YuNet je "

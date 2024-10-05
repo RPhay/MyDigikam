@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 01:48+0000\n"
+"POT-Creation-Date: 2024-10-05 01:47+0000\n"
 "PO-Revision-Date: 2024-10-03 22:47+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3151,7 +3151,7 @@ msgid "Map Search"
 msgstr "Vyhľadávanie máp"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
 msgstr "Posledné hľadanie"
@@ -27983,7 +27983,7 @@ msgid ""
 " Details: %1"
 msgstr "<qt>Chyba pri prevode textu %1.</qt>"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:198
+#: core/libs/database/coredb/coredbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -27996,7 +27996,7 @@ msgstr ""
 " %1\n"
 "Prekontrolujte si vaše prístupové práva a reštartujte digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:232
+#: core/libs/database/coredb/coredbschemaupdater.cpp:234
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28006,7 +28006,7 @@ msgstr ""
 "Databáza nie je platná: voľba „DBVersion“ neexistuje. Nie je možné overiť "
 "aktuálnu verziu schémy databázy. Skúste začať znova s prázdnou databázou. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:262
+#: core/libs/database/coredb/coredbschemaupdater.cpp:264
 #, fuzzy, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28020,7 +28020,7 @@ msgstr ""
 "Prosím, použite novšiu verziu aplikácie digikam, ktorú ste už predtým "
 "použili. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:327
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28031,7 +28031,7 @@ msgstr ""
 "Nepodarilo sa vytvoriť tabuľky v databáze.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:348
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to open a database transaction on your database file \"%1\". This "
@@ -28052,7 +28052,7 @@ msgstr ""
 "vývojársku konferenciu digikam-devel@kde.org. Tiež sa prosím pozrite čo "
 "digiKam vypisuje na konzolu. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:409
 #, fuzzy, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28069,7 +28069,7 @@ msgstr ""
 "vývojárskej konferencii digikam-devel@kde.org. Tiež sa prosím pozrite čo "
 "digiKam vypisuje na konzolu. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:447
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28085,7 +28085,7 @@ msgstr ""
 "Prosím, prečítajte si chybové hlásenie na termináli a nahláste túto chybu na "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:456
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28100,7 +28100,7 @@ msgstr ""
 "Prosím, prečítajte si chybové hlásenie na termináli a nahláste túto chybu na "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:677
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28111,12 +28111,12 @@ msgstr ""
 "súbor dbconfig.xml pre aktuálnu verziu digiKamu je nainštalovaný na správnom "
 "mieste. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:698
 #, fuzzy, kde-format
 msgid "Updated schema to version %1."
 msgstr "Aktualizovaná externá revízia %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:846
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28127,12 +28127,12 @@ msgstr ""
 "(„%2“). Chybové hlásenie: „%3“. Uistite sa prosím, že je súbor možné "
 "skopírovať alebo ho zmažte."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:868
 #, kde-format
 msgid "Copied database file"
 msgstr "Skopírovaný databázový súbor"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:873
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28143,22 +28143,22 @@ msgstr ""
 "nebolo možné otvoriť ho. Prosím, zmažte oba súbory a skúste to znova, "
 "začnete tak s prázdnou databázou. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid "Opened new database file"
 msgstr "Otvorený nový databázový súbor"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:993
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Vytvorenie pripravenej tabuľky"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
 #, kde-format
 msgid "Created tables"
 msgstr "Vytvorené tabuľky"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28169,7 +28169,7 @@ msgstr ""
 "možné vykonať aktualizáciu schémy. Skúste to prosím znova s prázdnou "
 "databázou alebo opravte svoju konfiguráciu."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -28195,52 +28195,52 @@ msgstr ""
 "org. Proces aktualizácie databázy sa teraz preruší, pretože nechceme "
 "vytvárať novú databázu na základe chybných predpokladov chybnej inštalácie."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
 #, kde-format
 msgid "Configured one album root"
 msgstr "Nastavený koreň jedného albumu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
 #, kde-format
 msgid "Imported albums"
 msgstr "Importované albumy"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
 #, kde-format
 msgid "Imported images information"
 msgstr "Importované informácie o obrázku"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Posledné hľadanie (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Filter prípon inicializovaných a importovaných súborov"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Vykonané úplné počiatočné prehľadanie"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Importované dátumy vytvorenia"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
 #, kde-format
 msgid "Imported comments"
 msgstr "Importované komentáre"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
 #, kde-format
 msgid "Imported ratings"
 msgstr "Importované hodnotenia"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Zahodené tabuľky verzie 3"
@@ -53089,7 +53089,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detection model used to find faces. YuNet is the defaut model.\n"
+"Detection model used to find faces. YuNet is the default model.\n"
 "It is faster and more configurable than YOLOv3."
 msgstr ""
 

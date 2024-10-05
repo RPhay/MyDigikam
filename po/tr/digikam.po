@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 01:48+0000\n"
-"PO-Revision-Date: 2024-10-04 01:08+0300\n"
+"POT-Creation-Date: 2024-10-05 01:47+0000\n"
+"PO-Revision-Date: 2024-10-05 01:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3147,7 +3147,7 @@ msgid "Map Search"
 msgstr "Aramayı Eşlemle"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
 msgstr "Son Arama"
@@ -28143,7 +28143,7 @@ msgstr ""
 "Veritabanını dönüştürürken hata.\n"
 "Ayrıntılar: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:198
+#: core/libs/database/coredb/coredbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28156,7 +28156,7 @@ msgstr ""
 " %1\n"
 "Veritabanındaki ayrıcalıklarınızı denetleyin ve digiKam'i yeniden başlatın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:232
+#: core/libs/database/coredb/coredbschemaupdater.cpp:234
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28166,7 +28166,7 @@ msgstr ""
 "Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şeması "
 "sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı deneyin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:262
+#: core/libs/database/coredb/coredbschemaupdater.cpp:264
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28180,7 +28180,7 @@ msgstr ""
 "gelir.) Lütfen daha önce kullandığınız digiKam'ın daha yeni sürümünü "
 "kullanın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:327
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28191,7 +28191,7 @@ msgstr ""
 "Veritabanında tablolar oluşturulamadı.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:348
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28206,7 +28206,7 @@ msgstr ""
 "e-posta listesinden yardım alabilirsiniz (bkz. www.digikam.org/support). "
 "Lütfen digiKam'ın konsolda ne yazdırdığına da bir göz atın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:409
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28224,7 +28224,7 @@ msgstr ""
 "digikam.org/support). Lütfen digiKam'ın konsolda ne yazdırdığına da bir göz "
 "atın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:447
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28237,7 +28237,7 @@ msgstr ""
 "olabilir. Şimdi veritabanının gerekli yükseltmesini gerçekleştirmek için "
 "digiKam'ı yeniden başlatın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:456
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28248,7 +28248,7 @@ msgstr ""
 "Lütfen konsolda yazılı olan hata iletilerini okuyun ve bu hatayı bugs.kde."
 "org adresinde bir hata olarak bildirin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:677
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28258,12 +28258,12 @@ msgstr ""
 "Veritabanı güncelleme eylemi bulunamıyor. Lütfen digiKam'ın güncel sürümünün "
 "dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:698
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Şema %1 sürümüne güncellendi."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:846
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28273,12 +28273,12 @@ msgstr ""
 "Eski veritabanı dosyası (\"%1\") yeni konumuna (\"%2\") kopyalanamadı. Hata "
 "iletisi: \"%3\". Lütfen dosyanın kopyalanabildiğinden emin olun veya silin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:868
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopyalanan veritabanı dosyası"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:873
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28289,22 +28289,22 @@ msgstr ""
 "açılamıyor. Lütfen her iki dosyayı da silin ve boş bir veritabanıyla "
 "başlayarak yeniden deneyin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid "Opened new database file"
 msgstr "Yeni veritabanı dosyası açıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:993
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tablo oluşumu hazırlandı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
 #, kde-format
 msgid "Created tables"
 msgstr "Tablolar oluşturuldu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28315,7 +28315,7 @@ msgstr ""
 "işleminden vazgeçiliyor. Lütfen boş bir veritabanıyla deneyin veya "
 "yapılandırmanızı onarın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28335,52 +28335,52 @@ msgstr ""
 "veritabanı oluşturmak istemediğimiz için veritabanı güncelleme işlemi artık "
 "iptal edilecek."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
 #, kde-format
 msgid "Configured one album root"
 msgstr "Bir albüm kökü yapılandırıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
 #, kde-format
 msgid "Imported albums"
 msgstr "Albümler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
 #, kde-format
 msgid "Imported images information"
 msgstr "Görsel bilgisi içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Son Arama (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Dosya sonek süzgeci ilklendirildi ve içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "İlk tam tarama gerçekleştirildi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Oluşturulma tarihleri içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
 #, kde-format
 msgid "Imported comments"
 msgstr "Yorumlar içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
 #, kde-format
 msgid "Imported ratings"
 msgstr "Derecelendirmeler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3 tabloları bırakıldı"
@@ -51791,11 +51791,10 @@ msgid "Search in"
 msgstr "Arama Konumu"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Doğruluk"
+msgstr "Doğruluk:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -51809,9 +51808,7 @@ msgstr ""
 "o kadar doğru bir biçimde algılanır; ancak daha az yüz tespit edilir."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
@@ -51832,20 +51829,18 @@ msgstr "YOLOv3"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
-#| "AI model used to detect faces.  YuNet is the new defaut model.  It is "
-#| "faster and more configurable than YOLOv3."
+#| "Detection model used to find faces. YuNet is the defaut model.\n"
+#| "It is faster and more configurable than YOLOv3."
 msgctxt "@info:tooltip"
 msgid ""
-"Detection model used to find faces. YuNet is the defaut model.\n"
+"Detection model used to find faces. YuNet is the default model.\n"
 "It is faster and more configurable than YOLOv3."
 msgstr ""
-"Yüzleri algılamak için kullanılan yapay zeka modeli. YuNet yeni öntanımlı "
-"modeldir. YOLOv3 modeline kıyasla daha hızlıdır ve yapılandırılabilirdir."
+"Yüzleri bulmak için kullanılan yapay zeka modeli. YuNet öntanımlı modeldir. "
+"YOLOv3 modeline kıyasla daha hızlıdır ve yapılandırılabilirdir."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@label AI model used for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Yüz boyutu:"
@@ -51900,20 +51895,13 @@ msgid "Face Detection Settings"
 msgstr "Yüz Algılama Ayarları"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Doğruluk"
+msgstr "Doğruluk:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -51923,12 +51911,10 @@ msgid ""
 msgstr ""
 "Duyarlılığa karşı özgüllüğü ayarlayın: Değer ne kadar yüksek olursa yüzler\n"
 "o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
-"(yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır)."
+"Not: yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
@@ -51946,17 +51932,13 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the new default AI model.  It is faster ad more accurate .\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
-"SFace yeni öntanımlı AI modelidir. Daha hızlı ve daha doğrudur.\n"
+"SFace öntanımlı algılama modelidir. Daha hızlıdır ve daha doğrudur.\n"
 "OpenFace eski kitaplıklar için kullanılabilir."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:305

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 01:48+0000\n"
-"PO-Revision-Date: 2024-10-03 12:31+0200\n"
+"POT-Creation-Date: 2024-10-05 01:47+0000\n"
+"PO-Revision-Date: 2024-10-04 11:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3132,7 +3132,7 @@ msgid "Map Search"
 msgstr "Cerca per mapa"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
 msgstr "Última cerca"
@@ -28381,7 +28381,7 @@ msgstr ""
 "Error en convertir la base de dades.\n"
 " Detalls: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:198
+#: core/libs/database/coredb/coredbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28395,7 +28395,7 @@ msgstr ""
 "Verifiqueu els vostres privilegis sobre la base de dades i reinicieu el "
 "digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:232
+#: core/libs/database/coredb/coredbschemaupdater.cpp:234
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28406,7 +28406,7 @@ msgstr ""
 "pot verificar la versió de l'esquema de la base de dades actual. Proveu "
 "d'iniciar amb una base de dades buida. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:262
+#: core/libs/database/coredb/coredbschemaupdater.cpp:264
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28420,7 +28420,7 @@ msgstr ""
 "format de la base de dades és massa recent. Si us plau, useu la versió més "
 "recent del digiKam que hàgiu usat abans. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:327
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28431,7 +28431,7 @@ msgstr ""
 "Ha fallat en crear les taules en la base de dades.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:348
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28447,7 +28447,7 @@ msgstr ""
 "desenvolupadors del digiKam (vegeu www.digikam.org/support). També, doneu "
 "una ullada als missatges del digiKam en la consola. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:409
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28465,7 +28465,7 @@ msgstr ""
 "www.digikam.org/support). També, doneu una ullada als missatges del digiKam "
 "en la consola. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:447
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28479,7 +28479,7 @@ msgstr ""
 "versió actual del servidor. Inicieu ara de nou el digiKam per a fer una "
 "actualització requerida de la base de dades."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:456
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28491,7 +28491,7 @@ msgstr ""
 "Llegiu els missatges d'error que es mostren en la consola i informeu "
 "d'aquest error a bugs.kde.org."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:677
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28502,12 +28502,12 @@ msgstr ""
 "que el fitxer dbconfig.xml de la versió actual del digiKam estigui "
 "instal·lat en el lloc correcte."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:698
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "L'esquema s'ha actualitzat a la versió %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:846
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28518,12 +28518,12 @@ msgstr ""
 "nova ubicació («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
 "pugui copiar o suprimir."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:868
 #, kde-format
 msgid "Copied database file"
 msgstr "S'ha copiat el fitxer de la base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:873
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28534,22 +28534,22 @@ msgstr ""
 "(«%2») però no es pot obrir. Suprimiu els dos fitxers i torneu-ho a provar, "
 "iniciant amb una base de dades buida. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid "Opened new database file"
 msgstr "S'ha obert un fitxer nou de base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:993
 #, kde-format
 msgid "Prepared table creation"
 msgstr "S'ha preparat la creació de la taula"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
 #, kde-format
 msgid "Created tables"
 msgstr "S'han creat les taules"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28560,7 +28560,7 @@ msgstr ""
 "configuració. S'ha renunciat al procés d'actualització de l'esquema. Si us "
 "plau, intenteu-ho amb una base de dades buida o repareu la configuració."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28580,52 +28580,52 @@ msgstr ""
 "dades ara s'interromprà perquè no es vol crear una base de dades nova basada "
 "en premisses falses a partir d'una instal·lació defectuosa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
 #, kde-format
 msgid "Configured one album root"
 msgstr "S'ha configurat un àlbum arrel"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
 #, kde-format
 msgid "Imported albums"
 msgstr "Els àlbums s'han importat"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
 #, kde-format
 msgid "Imported images information"
 msgstr "S'ha importat la informació de les imatges"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Última cerca (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "S'ha inicialitzat i importat el fitxer de filtres de sufixos"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "S'ha efectuat l'exploració inicial completa"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
 #, kde-format
 msgid "Imported creation dates"
 msgstr "S'han importat les dates de creació"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
 #, kde-format
 msgid "Imported comments"
 msgstr "S'han importat els comentaris"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
 #, kde-format
 msgid "Imported ratings"
 msgstr "S'han importat les valoracions"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "S'han suprimit les taules v3"
@@ -52296,11 +52296,10 @@ msgid "Search in"
 msgstr "Cerca a"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Precisió"
+msgstr "Precisió:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -52315,9 +52314,7 @@ msgstr ""
 "es detectaran les cares, però es reconeixeran menys cares."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
@@ -52338,23 +52335,22 @@ msgstr "YOLOv3"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
-#| "AI model used to detect faces.  YuNet is the new defaut model.  It is "
-#| "faster and more configurable than YOLOv3."
+#| "Detection model used to find faces. YuNet is the defaut model.\n"
+#| "It is faster and more configurable than YOLOv3."
 msgctxt "@info:tooltip"
 msgid ""
-"Detection model used to find faces. YuNet is the defaut model.\n"
+"Detection model used to find faces. YuNet is the default model.\n"
 "It is faster and more configurable than YOLOv3."
 msgstr ""
-"Model d'IA emprat per a detectar cares. YuNet es el model predeterminat nou. "
+"Model de detecció emprat per a trobar cares. YuNet es el model "
+"predeterminat.\n"
 "És més ràpid i més configurable que el YOLOv3."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@label AI model used for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Mida de la cara:"
+msgstr "Mida de les cares:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, kde-format
@@ -52406,20 +52402,13 @@ msgid "Face Detection Settings"
 msgstr "Configuració de la detecció de cares"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Precisió"
+msgstr "Precisió:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52430,13 +52419,11 @@ msgstr ""
 "Ajusteu la sensibilitat davant de l'especificitat: com més gran sigui el "
 "valor, s'haurà de reconèixer\n"
 "amb més precisió les cares, però es reconeixeran menys cares\n"
-"(només es reconeixeran les cares que siguin molt similars a les cares "
-"etiquetades amb anterioritat)."
+"Nota: només es reconeixeran les cares que siguin molt similars a les cares "
+"etiquetades amb anterioritat."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
@@ -52454,17 +52441,13 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the new default AI model.  It is faster ad more accurate .\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
-"SFace és el model d'IA predeterminat nou. És més ràpid i més precís.\n"
+"SFace és el model de detecció predeterminat. És més ràpid i més precís.\n"
 "L'OpenFace es pot fer servir per a les biblioteques més antigues."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:305

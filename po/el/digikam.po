@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 01:48+0000\n"
+"POT-Creation-Date: 2024-10-05 01:47+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3199,7 +3199,7 @@ msgid "Map Search"
 msgstr "Αναζήτηση χάρτη"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
 msgstr "Τελευταία αναζήτηση"
@@ -29666,7 +29666,7 @@ msgstr ""
 "Σφάλμα κατά τη μετατροπή της βάσης δεδομένων.\n"
 " Λεπτομέρειες: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:198
+#: core/libs/database/coredb/coredbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -29679,7 +29679,7 @@ msgstr ""
 " %1\n"
 "Ελέγξτε τα δικαιώματά σας στη βάση δεδομένων και επανεκκινήστε το digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:232
+#: core/libs/database/coredb/coredbschemaupdater.cpp:234
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -29690,7 +29690,7 @@ msgstr ""
 "σχήμα της τρέχουσας βάσης δεδομένων δεν μπορεί να αναλυθεί. Δοκιμάστε να "
 "ξεκινήσετε με μια κενή βάση δεδομένων. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:262
+#: core/libs/database/coredb/coredbschemaupdater.cpp:264
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -29704,7 +29704,7 @@ msgstr ""
 "digiKam είναι πολύ παλιά, ή η έκδοση της βάσης δεδομένων είναι πολύ "
 "πρόσφατη.) Παρακαλώ χρησιμοποιήστε μια πιο πρόσφατη έκδοση του digikam. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:327
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -29715,7 +29715,7 @@ msgstr ""
 "Αποτυχία δημιουργίας πινάκων της βάσης δεδομένων.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:348
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to open a database transaction on your database file \"%1\". This "
@@ -29737,7 +29737,7 @@ msgstr ""
 "devel@kde.org. Επίσης δείτε και τι ακριβώς εμφανίζεται από το digiKam στην "
 "κονσόλα. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:409
 #, fuzzy, kde-format
 #| msgid ""
 #| "The schema updating process from version 4 to 6 failed, caused by an "
@@ -29760,7 +29760,7 @@ msgstr ""
 "μετακινήστε τα αρχεία  \"%1\" και \"%2\" από τον κατάλογο \"%3\"). Μάλλον θα θέλατε να  αναφέρετε το σφάλμα αυτό στη λίστα digikam-devel@kde.org. Τέλος ανατρέξτε "
 "και στην  έξοδο στην κονσόλα για την ανάλυση του σφάλματος."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:447
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -29776,7 +29776,7 @@ msgstr ""
 "έκδοση %2. Διαβάστε τα μηνύματα σφάλματος στην κονσόλα και κάνετε μια "
 "αναφορά σφάλματος στο bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:456
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -29791,7 +29791,7 @@ msgstr ""
 "έκδοση %2. Διαβάστε τα μηνύματα σφάλματος στην κονσόλα και κάνετε μια "
 "αναφορά σφάλματος στο bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:677
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -29802,12 +29802,12 @@ msgstr ""
 "αρχείο dbconfig.xml της τρέχουσας έκδοσης του digiKam έχει εγκατασταθεί στη "
 "σωστή θέση. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:698
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Το σχήμα ενημερώθηκε στην έκδοση %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:846
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -29818,12 +29818,12 @@ msgstr ""
 "τοποθεσία του (\"%2\"). Μήνυμα σφάλματος: \"%3\". Παρακαλώ σιγουρευτείτε ότι "
 "το αρχείο μπορεί να αντιγραφεί."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:868
 #, kde-format
 msgid "Copied database file"
 msgstr "Το αρχείο της βάσης δεδομένων αντιγράφτηκε"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:873
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -29834,22 +29834,22 @@ msgstr ""
 "(\"%2\") αλλά δεν μπορεί να ανοιχτεί. Παρακαλώ αφαιρέστε και τα δύο αρχεία "
 "και δοκιμάστε ξανά, ξεκινώντας με μια κενή βάση δεδομένων. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid "Opened new database file"
 msgstr "Ανοίχτηκε νέο αρχείο της βάσης δεδομένων"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:993
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Έγινε προετοιμασία της δημιουργίας πινάκων"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
 #, kde-format
 msgid "Created tables"
 msgstr "Οι πίνακες δημιουργήθηκαν"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -29860,7 +29860,7 @@ msgstr ""
 "Εγκατάλειψη της διαδικασίας ενημέρωσης του σχήματος. Παρακαλώ δοκιμάστε με "
 "μια κενή βάση δεδομένων, ή διορθώστε τη διαμόρφωση."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -29886,52 +29886,52 @@ msgstr ""
 "βοήθεια στη λίστα  digikam-devel@kde.org. Η διαδικασία ενημέρωσης της βάσης δεδομένων θα "
 "εγκαταλειφθεί  για να μην προκληθεί πρόβλημα κατά τη δημιουργία της νέας βάσης δεδομένων."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
 #, kde-format
 msgid "Configured one album root"
 msgstr "Διαμορφώθηκε ένας κόμβος-ρίζα (root) για το λεύκωμα"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
 #, kde-format
 msgid "Imported albums"
 msgstr "Εισηγμένα λευκώματα"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
 #, kde-format
 msgid "Imported images information"
 msgstr "Οι πληροφορίες εικόνων εισήχθησαν"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Τελευταία αναζήτηση (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Αρχικοποίηση και εισαγωγή αρχείου φίλτρου επιθέματος αρχείου"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Έγινε η αρχική πλήρης σάρωση"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Εισηγμένες ημερομηνίες δημιουργίας"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
 #, kde-format
 msgid "Imported comments"
 msgstr "Εισηγμένα σχόλια"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
 #, kde-format
 msgid "Imported ratings"
 msgstr "Εισηγμένες αξιολογήσεις"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Απόρριψη πινάκων v3"
@@ -55656,7 +55656,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detection model used to find faces. YuNet is the defaut model.\n"
+"Detection model used to find faces. YuNet is the default model.\n"
 "It is faster and more configurable than YOLOv3."
 msgstr ""
 
