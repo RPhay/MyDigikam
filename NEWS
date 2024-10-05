@@ -127,7 +127,7 @@ BUGFIXES:
 102 ==> 489034 - Install failure.
 103 ==> 493948 - digiKam 8.4.0 never shows.
 104 ==> 494080 - Support for OpenEXR.
-105 ==> 
+105 ==> 494115 - digiKam crash during startup (SIGILL).
 106 ==> 
 107 ==> 
 108 ==> 
