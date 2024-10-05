@@ -252,8 +252,17 @@ void FaceScanWidget::setupUi()
     d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::ExtraLarge);
     d->detectSizeBox->setEditable(false);
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
-                                       "Detecting smaller faces takes more time and has a higher probability of incorrect facial detection.\n"
-                                       "Detecting larger faces is faster, but may miss smaller faces in group pictures."));
+                                       "<a>Selecting <b>Extra Small</b> means the model will detect small background faces in addition "
+                                       "to medium and larger faces. Selecting <b>Small Faces</b> increases the sensitivity of the model "
+                                       "by tuning one of the parameters. It will also increase the probability of false-positives, "
+                                       "and it will increase detection time.</a>"
+                                       "<a>Selecting <b>large</b> or <b>extra-large</b> will eliminate small background faces from being detected. "
+                                       "It is much faster and will reduce the number of false-positives, but will not detect small faces "
+                                       "in the the background or faces in large group photos.</a>"
+                                       "<a>If you want to detect all faces in one pass, select <b>Extra-Small</b> faces and set the detection "
+                                       "accuracy to about 45%. Unfortunately, his will give a significant number of false-positives. "
+                                       "It's recommended to set a detection accuracy of about 55% and face size of <b>small</b> or <b>medium</b> "
+                                       "for normal use.</a>"));
 
     detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
     detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
