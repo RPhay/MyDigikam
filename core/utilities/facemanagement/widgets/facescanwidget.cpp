@@ -233,12 +233,31 @@ void FaceScanWidget::setupUi()
     detectModelLabel->setAlignment(Qt::AlignLeft);
 
     d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
+
+
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                         "Detection model used to find faces. YuNet is the default model.\n"
-                                        "It is faster and more configurable than YOLOv3."));
+                                        "It is faster and more configurable than YOLOv3.\n"
+                                        "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or later."));
+
+#if OPENCV_TEST_VERSION(4,10,0)
+
+    auto* const model = qobject_cast<QStandardItemModel*>(d->detectModelBox->model());
+
+    if (model)
+    {
+        auto* const item = model->item(0);
+
+        if (item)
+        {
+            item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
+        }
+    }
+
+#endif
 
     QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
                                                            "Face size:"), d->settingsTab);

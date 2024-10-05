@@ -34,6 +34,7 @@
 #include <QPushButton>
 #include <QStyle>
 #include <QList>
+#include <QStandardItemModel>
 
 // KDE includes
 
@@ -44,6 +45,7 @@
 
 #include "digikam_config.h"
 #include "digikam_globals.h"
+#include "digikam_opencv.h"
 #include "dlayoutbox.h"
 #include "dnuminput.h"
 #include "digikam_debug.h"
