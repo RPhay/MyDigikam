@@ -25,6 +25,7 @@ namespace Digikam
 
 class FaceScanSettings
 {
+
 public:
 
     enum ScanTask
@@ -52,18 +53,16 @@ public:
         YOLOv3,
         YuNet
     };
-    // Q_ENUM(FaceScanSettings::FaceDetectionModel)
 
     /// Face detection size
     enum FaceDetectionSize
     {
-        extra_small,
-        small,
-        medium,
-        large,
-        extra_large
+        ExtraSmall,
+        Small,
+        Medium,
+        Large,
+        ExtraLarge
     };
-    // Q_ENUM(FaceScanSettings::FaceDetectionSize)
 
     /// face recognition AI models
     enum FaceRecognitionModel
@@ -71,8 +70,6 @@ public:
         OpenFace,
         SFace
     };
-    // Q_ENUM(FaceScanSettings::FaceRecognitionModel)
-
 
 public:
 
@@ -91,7 +88,7 @@ public:
     FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
 
     /// detection Model
-    FaceDetectionSize                       detectSize                  = FaceDetectionSize::medium;
+    FaceDetectionSize                       detectSize                  = FaceDetectionSize::Medium;
 
     /// Detection accuracy
     double                                  detectAccuracy              = 0.6;

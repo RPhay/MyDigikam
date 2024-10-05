@@ -245,11 +245,11 @@ void FaceScanWidget::setupUi()
     detectSizeLabel->setAlignment(Qt::AlignLeft);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::extra_small);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::small);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::medium);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::large);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::extra_large);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::ExtraSmall);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::Small);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::Medium);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::Large);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::ExtraLarge);
     d->detectSizeBox->setEditable(false);
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
                                        "Detecting smaller faces takes more time and has a higher probability of incorrect facial detection.\n"

@@ -340,7 +340,7 @@ public:
     /// face detection settings
     double                                       faceDetectionAccuracy                              = 0.6;
     FaceScanSettings::FaceDetectionModel         faceDetectionModel                                 = FaceScanSettings::FaceDetectionModel::YuNet;
-    FaceScanSettings::FaceDetectionSize          faceDetectionSize                                  = FaceScanSettings::FaceDetectionSize::medium;
+    FaceScanSettings::FaceDetectionSize          faceDetectionSize                                  = FaceScanSettings::FaceDetectionSize::Medium;
 
     /// face recognition settings
     double                                       faceRecognitionAccuracy                            = 0.7;

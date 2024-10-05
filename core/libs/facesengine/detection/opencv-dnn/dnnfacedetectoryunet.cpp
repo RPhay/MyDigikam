@@ -58,11 +58,11 @@ const std::map<std::string, int> str2target
 
 const std::map<FaceScanSettings::FaceDetectionSize, int> faceenum2size
 {
-    { FaceScanSettings::FaceDetectionSize::extra_large, 420   },
-    { FaceScanSettings::FaceDetectionSize::large,       620   },
-    { FaceScanSettings::FaceDetectionSize::medium,      800   },
-    { FaceScanSettings::FaceDetectionSize::small,       1200  },
-    { FaceScanSettings::FaceDetectionSize::extra_small, 2000  }
+    { FaceScanSettings::FaceDetectionSize::ExtraLarge, 420   },
+    { FaceScanSettings::FaceDetectionSize::Large,      620   },
+    { FaceScanSettings::FaceDetectionSize::Medium,     800   },
+    { FaceScanSettings::FaceDetectionSize::Small,      1200  },
+    { FaceScanSettings::FaceDetectionSize::ExtraSmall, 2000  }
 };
 
 QMutex DNNFaceDetectorYuNet::lockModel;
