@@ -93,6 +93,7 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facescansettings.cpp
 )
 
 # Used by digikamgui

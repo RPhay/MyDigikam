@@ -4,10 +4,11 @@
  * https://www.digikam.org
  *
  * Date        : 2010-10-09
- * Description : Face scan settings
+ * Description : Face scan settings container.
  *
  * SPDX-FileCopyrightText: 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -19,12 +20,14 @@
 
 #include "album.h"
 #include "iteminfo.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class FaceScanSettings
+class DIGIKAM_GUI_EXPORT FaceScanSettings
 {
+    Q_GADGET
 
 public:
 
@@ -37,6 +40,7 @@ public:
         BenchmarkDetection,
         BenchmarkRecognition
     };
+    Q_ENUM(ScanTask)
 
     /// To detect and recognize
     enum AlreadyScannedHandling
@@ -46,6 +50,7 @@ public:
         Rescan,
         ClearAll
     };
+    Q_ENUM(AlreadyScannedHandling)
 
     /// face detection AI models
     enum FaceDetectionModel
@@ -53,6 +58,7 @@ public:
         YOLOv3,
         YuNet
     };
+    Q_ENUM(FaceDetectionModel)
 
     /// Face detection size
     enum FaceDetectionSize
@@ -63,6 +69,7 @@ public:
         Large,
         ExtraLarge
     };
+    Q_ENUM(FaceDetectionSize)
 
     /// face recognition AI models
     enum FaceRecognitionModel
@@ -70,11 +77,12 @@ public:
         OpenFace,
         SFace
     };
+    Q_ENUM(FaceRecognitionModel)
 
 public:
 
-    FaceScanSettings()  = default;
-    ~FaceScanSettings() = default;
+    FaceScanSettings();
+    ~FaceScanSettings();
 
 public:
 
