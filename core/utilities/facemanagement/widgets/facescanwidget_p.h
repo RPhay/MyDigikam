@@ -67,17 +67,25 @@ public:
 
 public:
 
+    QTabWidget*       tabWidget                         = nullptr;
+
+    // ---
+
     QWidget*          workflowWidget                    = nullptr;
-    QWidget*          settingsTab                       = nullptr;
-    QRadioButton*     detectAndRecognizeButton          = nullptr;
-    QRadioButton*     detectButton                      = nullptr;
+
     SqueezedComboBox* alreadyScannedBox                 = nullptr;
+    QRadioButton*     detectButton                      = nullptr;
+    QRadioButton*     detectAndRecognizeButton          = nullptr;
     QRadioButton*     reRecognizeButton                 = nullptr;
     QPushButton*      helpButton                        = nullptr;
 
-    QTabWidget*       tabWidget                         = nullptr;
+    // ---
 
     AlbumSelectors*   albumSelectors                    = nullptr;
+
+    // ---
+
+    QWidget*          settingsTab                       = nullptr;
 
     DIntNumInput*     detectAccuracyInput               = nullptr;
     DIntNumInput*     recognizeAccuracyInput            = nullptr;
@@ -85,6 +93,9 @@ public:
     SqueezedComboBox* detectModelBox                    = nullptr;
     SqueezedComboBox* detectSizeBox                     = nullptr;
     SqueezedComboBox* recognizeModelBox                 = nullptr;
+
+    // ---
+
     QCheckBox*        useFullCpuButton                  = nullptr;
 
     const QString     configName                        = QLatin1String("Face Management Settings");

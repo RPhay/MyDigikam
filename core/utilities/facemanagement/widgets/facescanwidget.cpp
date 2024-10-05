@@ -126,7 +126,7 @@ void FaceScanWidget::doSaveState()
 
 void FaceScanWidget::setupUi()
 {
-    // ---- Workflow tab --------
+    // --- Workflow tab ------------------------------------------------------------------------------------
 
     d->workflowWidget                   = new QWidget(this);
     d->workflowWidget->setToolTip(i18nc("@info:tooltip",
@@ -198,13 +198,13 @@ void FaceScanWidget::setupUi()
     d->workflowWidget->setLayout(optionLayout);
     addTab(d->workflowWidget, i18nc("@title:tab", "Workflow"));
 
-    // ---- Album tab ---------
+    // --- Album tab --------------------------------------------------------------------------------------
 
     d->albumSelectors                   = new AlbumSelectors(QString(), d->configName,
                                                              this, AlbumSelectors::AlbumType::All, true);
     addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
-    // ---- Settings tab ------
+    // --- Settings tab -----------------------------------------------------------------------------------
 
     d->settingsTab                      = new QWidget(this);
     QVBoxLayout* const settingsLayout   = new QVBoxLayout(d->settingsTab);
@@ -283,7 +283,7 @@ void FaceScanWidget::setupUi()
                                                 "Note: only faces that are very similar to pre-tagged faces are recognized."));
 
     QLabel* const recognizeModelLabel    = new QLabel(i18nc("@label AI model used for face recognition",
-                                                           "Model:"), d->settingsTab);
+                                                            "Model:"), d->settingsTab);
     recognizeModelLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeModelBox                 = new SqueezedComboBox(d->settingsTab);
@@ -323,7 +323,7 @@ void FaceScanWidget::setupConnections()
 {
 /*
      connect(d->detectButton, SIGNAL(toggled(bool)),
-            d->alreadyScannedBox, SLOT(setEnabled(bool)));
+             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 */
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE

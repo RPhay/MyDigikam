@@ -56,6 +56,7 @@ private Q_SLOTS:
     void slotPrepareForRecognize(bool status);
     void slotDetectModelChanged();
     void slotDetectSizeChanged();
+
 private:
 
     class Private;
