@@ -452,7 +452,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     if (system.enableFaceEngine || system.enableAesthetic || system.enableAutoTags)
     {
-        QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
+        QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
 
         if (!floader->checkDownloadFiles())
         {

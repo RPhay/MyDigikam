@@ -129,7 +129,7 @@ BUGFIXES:
 104 ==> 494080 - Support for OpenEXR.
 105 ==> 494115 - digiKam crash during startup (SIGILL).
 106 ==> 435367 - "deep face" a free source code for better face detection.
-107 ==> 
+107 ==> 494214 - digiKam opens window but unresponsive.
 108 ==> 
 109 ==> 
 110 ==> 
