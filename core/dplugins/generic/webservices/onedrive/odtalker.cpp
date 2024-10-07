@@ -69,7 +69,7 @@ public:
 
     QString                         clientId        = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
     QString                         clientSecret    = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
-    QString                         authUrl         = QLatin1String("https://login.live.com/oauth20_authorize.srf");;
+    QString                         authUrl         = QLatin1String("https://login.live.com/oauth20_authorize.srf");
     QString                         tokenUrl        = QLatin1String("https://login.live.com/oauth20_token.srf");
     QString                         scope           = QLatin1String("Files.ReadWrite User.Read");
     QString                         redirectUrl     = QLatin1String("https://login.live.com/oauth20_desktop.srf");
