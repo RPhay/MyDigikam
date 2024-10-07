@@ -281,7 +281,7 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
     {
         float x_factor = float(inputImage.cols) / float(inputImageSize.width);
         float y_factor = float(inputImage.rows) / float(inputImageSize.height);
-        float* data    = (float*)out.data;
+        float* data    = reinterpret_cast<float*>(out.data);
 
         // Calculate the size of the data array and number of outputs
         // NOTE: outsput is a cv::Mat vector of [1 x (250200 * 85)]
