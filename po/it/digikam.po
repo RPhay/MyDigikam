@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-06 01:47+0000\n"
-"PO-Revision-Date: 2024-09-29 19:18+0200\n"
+"POT-Creation-Date: 2024-10-07 01:45+0000\n"
+"PO-Revision-Date: 2024-10-05 17:46+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2924,12 +2924,10 @@ msgid "Scan collection for faces"
 msgstr "Analizza la raccolta alla ricerca di volti"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr "Usa questo pulsante per cercare duplicati negli album selezionati."
+msgstr "Usa questo pulsante per cercare volti negli album selezionati"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:145
 #, kde-format
@@ -52308,20 +52306,13 @@ msgid "Search in"
 msgstr "Ricerca in"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Accuratezza"
+msgstr "Accuratezza:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52330,14 +52321,10 @@ msgid ""
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
-"saranno riconosciuti i volti, ma saranno riconosciuti meno volti\n"
-"(saranno riconosciuti solo i volti molto simili a quelli cui sono già stati "
-"attribuiti dei tag)"
+"saranno individuati i volti, ma ne saranno individuati di meno."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Modello:"
@@ -52346,13 +52333,13 @@ msgstr "Modello:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
-msgstr ""
+msgstr "YuNet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
-msgstr ""
+msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
@@ -52365,87 +52352,72 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Dimensione fotogrammi"
+msgstr "Dimensione volto:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
-msgstr "Tag aggiuntivi"
+msgstr "Molto piccolo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
-msgstr "Media"
+msgstr "Medio"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
-msgstr "Risultante"
+msgstr "Grande"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
-msgstr "Tag aggiuntivi"
+msgstr "Molto grande"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<a>Selecting <b>Extra Small</b> means the model will detect small background "
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
 "faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
 "increases the sensitivity of the model by tuning one of the parameters. It "
 "will also increase the probability of false-positives, and it will increase "
-"detection time.</a><a>Selecting <b>large</b> or <b>extra-large</b> will "
+"detection time.</p><p>Selecting <b>large</b> or <b>extra-large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</a><a>If you want to "
+"in the the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra-Small</b> faces and set the "
-"detection accuracy to about 45%. Unfortunately, his will give a significant "
+"detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>small</b> or <b>medium</b> for normal use.</a>"
+"about 55% and face size of <b>small</b> or <b>medium</b> for normal use.</p>"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Rilevamento facciale"
+msgstr "Impostazioni del rilevamento facciale"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:302
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Accuratezza"
+msgstr "Accuratezza:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52455,31 +52427,27 @@ msgid ""
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
-"saranno riconosciuti i volti, ma saranno riconosciuti meno volti\n"
-"(saranno riconosciuti solo i volti molto simili a quelli cui sono già stati "
-"attribuiti dei tag)"
+"saranno riconosciuti i volti, ma ne saranno riconosciuti di meno\n"
+"Nota: saranno riconosciuti solo i volti molto simili a quelli cui sono già "
+"stati attribuiti dei tag"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modello:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Volti"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Apri file"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
 #, kde-format
@@ -52488,6 +52456,8 @@ msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
+"SFace è il modello di rilevamento predefinito. È più veloce e accurato.\n"
+"OpenFace può essere utilizzato con le librerie più vecchie."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -52510,10 +52480,9 @@ msgstr ""
 "o lavorare sullo sfondo usando un solo core."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Riconoscimento facciale"
+msgstr "Impostazioni del riconoscimento facciale"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:347
 #, kde-format
@@ -61434,11 +61403,9 @@ msgid "Path: %1\n"
 msgstr "Percorso: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Parole chiave: "
+msgstr "Parole chiave: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61522,24 +61489,23 @@ msgid "Find new items"
 msgstr "Trova nuovi elementi"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Analisi dei volti nell'album: %1"
+msgstr "Analisi da: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Album «%1»"
+msgstr "Album: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Analisi dei volti nell'album: %1"
+msgstr ""
+"Analizzato:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
@@ -61547,26 +61513,21 @@ msgid "Find duplicates items"
 msgstr "Trova elementi duplicati"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#, fuzzy, kde-format
-#| msgid "Duplicates of %1"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Duplicati di %1"
+msgstr "Duplicati per: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Trova duplicati"
+msgstr "Nessun duplicato"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Trova duplicati"
-msgstr[1] "Trova duplicati"
+msgstr[0] "Un duplicato"
+msgstr[1] "%1 duplicati"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
 #, kde-format
@@ -61629,17 +61590,12 @@ msgid "Path: %1"
 msgstr "Percorso: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Ordinamento qualità dell'immagine"
+msgstr "Qualità immagine per: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
 
@@ -61672,10 +61628,9 @@ msgstr ""
 "Vuoi continuare?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Getting Metadata for %1..."
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Recupero dei dati aggiuntivi per %1..."
+msgstr "Pulisci metadati per: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
