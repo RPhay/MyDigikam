@@ -45,7 +45,6 @@ void ImageResizeThread::resize(MailSettings* const settings)
 {
     ActionJobCollection collection;
     *m_count = 0;
-    int i    = 1;
 
     for (QMap<QUrl, QUrl>::const_iterator it = settings->itemsList.constBegin() ;
          it != settings->itemsList.constEnd() ; ++it)
@@ -71,7 +70,6 @@ void ImageResizeThread::resize(MailSettings* const settings)
                 this, SIGNAL(failedResize(QUrl,QString,int)));
 
         collection.insert(t, 0);
-        ++i;
     }
 
     appendJobs(collection);
