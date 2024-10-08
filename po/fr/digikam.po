@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-07 01:45+0000\n"
-"PO-Revision-Date: 2024-10-04 14:37+0200\n"
+"PO-Revision-Date: 2024-10-05 08:25+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -52616,11 +52616,10 @@ msgid "Search in"
 msgstr "Chercher dans"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Précision"
+msgstr "Précision :"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -52635,9 +52634,7 @@ msgstr ""
 "de visages sera précise mais moins de visages seront reconnus."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Modèle :"
@@ -52665,12 +52662,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Taille de trames"
+msgstr "Taille de visages :"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
 #, kde-format
@@ -52726,20 +52721,13 @@ msgid "Face Detection Settings"
 msgstr "Configuration pour la détection de visages"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:302
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Précision"
+msgstr "Précision :"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52748,15 +52736,13 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 "Ajuster la sensibilité vis-à-vis de la spécificité : plus la valeur est "
-"élevé, plus la reconnaissance faciale sera précise\n"
-"mais moins de visages seront reconnus\n"
-"(Seuls les visages, très proches des visages préenregistrés, seront "
-"reconnus)."
+"élevé, plus la reconnaissance faciale\n"
+" sera précise mais moins de visages seront reconnus\n"
+"Remarque : seuls les visages, très proches des visages préenregistrés, "
+"seront reconnus."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modèle :"
@@ -52780,6 +52766,8 @@ msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
+"SFace est le modèle de détection par défaut, plus rapide et plus précis.\n"
+"OpenFace peut être utilisé pour les bibliothèques plus anciennes."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
