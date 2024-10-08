@@ -131,7 +131,7 @@ BUGFIXES:
 106 ==> 435367 - "deep face" a free source code for better face detection.
 107 ==> 494214 - digiKam opens window but unresponsive.
 108 ==> 494228 - Application crashes when attempting to first recognized face.
-109 ==> 
+109 ==> 485979 - Expose Yolo Resizing Parameter to Improve Face Detection Accuracy.
 110 ==> 
 111 ==> 
 112 ==> 
