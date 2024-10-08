@@ -134,7 +134,7 @@ BUGFIXES:
 109 ==> 485979 - Expose Yolo Resizing Parameter to Improve Face Detection Accuracy.
 110 ==> 494278 - No HEIC preview.
 111 ==> 469178 - Face recognition for group photos.
-112 ==> 
+112 ==> 494304 - HEIC not showing in album - green icon displayed instead.
 113 ==> 
 114 ==> 
 115 ==> 
