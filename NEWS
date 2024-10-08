@@ -133,7 +133,7 @@ BUGFIXES:
 108 ==> 494228 - Application crashes when attempting to first recognized face.
 109 ==> 485979 - Expose Yolo Resizing Parameter to Improve Face Detection Accuracy.
 110 ==> 494278 - No HEIC preview.
-111 ==> 
+111 ==> 469178 - Face recognition for group photos.
 112 ==> 
 113 ==> 
 114 ==> 
