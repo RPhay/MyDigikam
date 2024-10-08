@@ -132,7 +132,7 @@ BUGFIXES:
 107 ==> 494214 - digiKam opens window but unresponsive.
 108 ==> 494228 - Application crashes when attempting to first recognized face.
 109 ==> 485979 - Expose Yolo Resizing Parameter to Improve Face Detection Accuracy.
-110 ==> 
+110 ==> 494278 - No HEIC preview.
 111 ==> 
 112 ==> 
 113 ==> 
