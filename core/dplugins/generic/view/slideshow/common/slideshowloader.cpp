@@ -456,6 +456,18 @@ void SlideShowLoader::slotRemoveImageFromList()
 
     d->settings->fileList.removeOne(url);
 
+    int num = d->settings->count();
+
+    if (d->fileIndex == 0)
+    {
+        if (d->settings->loop)
+        {
+            d->fileIndex = num;
+        }
+    }
+
+    d->fileIndex--;
+
     slotLoadNextItem();
 }
 
