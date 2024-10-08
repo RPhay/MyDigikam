@@ -657,10 +657,6 @@ void ItemPreviewView::slotDeleteItem()
 
 void Digikam::ItemPreviewView::slotUpdateFaces()
 {
-/*
-    d->faceGroup->aboutToSetInfo(ItemInfo());
-*/
-    d->faceGroup->aboutToSetInfoAfterRotate(ItemInfo());
     d->item->setAcceptHoverEvents(true);
 
     /**

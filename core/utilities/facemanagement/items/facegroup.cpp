@@ -52,7 +52,7 @@ void FaceGroup::itemStateChanged(int itemState)
     switch (itemState)
     {
         case DImgPreviewItem::NoImage:
-        case DImgPreviewItem::Loading:
+        //case DImgPreviewItem::Loading:
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
@@ -138,12 +138,11 @@ void FaceGroup::setVisibleItem(RegionFrameItem* item)
 
 void FaceGroup::setInfo(const ItemInfo& info)
 {
-    if ((d->info == info) && (d->state != NoFaces))
+    if (d->info != info)
     {
-        return;
+        clear();
     }
 
-    clear();
     d->info = info;
 
     if (d->visibilityController->shallBeShown())
@@ -160,19 +159,6 @@ void FaceGroup::aboutToSetInfo(const ItemInfo& info)
     }
 
     applyItemGeometryChanges();
-    clear();
-}
-
-void FaceGroup::aboutToSetInfoAfterRotate(const ItemInfo& info)
-{
-    if (d->info == info)
-    {
-        return;
-    }
-/*
-    applyItemGeometryChanges();
-*/
-    clear();
 }
 
 static QPointF closestPointOfRect(const QPointF& p, const QRectF& r)
@@ -313,27 +299,21 @@ bool FaceGroup::hasUnconfirmed()
 
 void FaceGroup::load()
 {
-    if (d->state != NoFaces)
-    {
-        return;
-    }
-
-    d->state      = LoadingFaces;
     d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate            ||
                      ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
                       !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
 
     if (d->info.isNull())
     {
-        d->state = FacesLoaded;
+        clear();
 
         return;
     }
 
-    QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
-    d->visibilityController->clear();
+    const QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
+    clear();
 
-    for (const FaceTagsIface& face : std::as_const(faces))
+    for (const FaceTagsIface& face : faces)
     {
         d->addItem(face);
     }
@@ -403,7 +383,6 @@ void FaceGroup::slotAlbumsUpdated(int type)
         return;
     }
 
-    clear();
     load();
 }
 
@@ -483,12 +462,12 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
         }
 
         face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
+
+        item->setFace(face);
+        item->switchMode(AssignNameWidget::ConfirmedMode);
+
+        QTimer::singleShot(250, this, SLOT(slotFocusRandomFace()));
     }
-
-    item->setFace(face);
-    item->switchMode(AssignNameWidget::ConfirmedMode);
-
-    QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
 }
 
 void FaceGroup::slotFocusRandomFace()
@@ -500,7 +479,6 @@ void FaceGroup::slotFocusRandomFace()
 
         if ((comboBox) && (!face.isConfirmedName()))
         {
-            comboBox->lineEdit()->selectAll();
             comboBox->lineEdit()->setFocus();
 
             return;
@@ -520,7 +498,7 @@ void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
         item->setFace(FaceTagsIface());
         d->visibilityController->hideAndRemoveItem(item);
 
-        QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
+        QTimer::singleShot(250, this, SLOT(slotFocusRandomFace()));
     }
 }
 
@@ -562,7 +540,7 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
         item->setFace(face);
         item->switchMode(AssignNameWidget::IgnoredMode);
 
-        QTimer::singleShot(100, this, SLOT(slotFocusRandomFace()));
+        QTimer::singleShot(250, this, SLOT(slotFocusRandomFace()));
     }
 }
 

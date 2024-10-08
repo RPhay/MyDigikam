@@ -106,8 +106,6 @@ public Q_SLOTS:
      */
     void aboutToSetInfo(const ItemInfo& info);
 
-    void aboutToSetInfoAfterRotate(const ItemInfo& info);
-
     /**
      * Enters a special state where by click + drag a new face can be created
      */
