@@ -322,37 +322,7 @@ void SlideShowLoader::slotLoadNextItem()
 
     d->fileIndex++;
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fileIndex: " << d->fileIndex;
-
-    if (!d->settings->loop)
-    {
-        d->osd->toolBar()->setEnabledPrev(d->fileIndex > 0);
-        d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
-    }
-
-    if ((d->fileIndex >= 0) && (d->fileIndex < num))
-    {
-
-#ifdef HAVE_MEDIAPLAYER
-
-        QMimeDatabase mimeDB;
-
-        if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
-                                   .name().startsWith(QLatin1String("video/")))
-        {
-            d->videoView->setCurrentUrl(currentItem());
-
-            return;
-        }
-
-#endif
-
-        d->imageView->setLoadUrl(currentItem());
-    }
-    else
-    {
-        endOfSlide();
-    }
+    loadCurrentItem();
 }
 
 void SlideShowLoader::slotLoadPrevItem()
@@ -369,7 +339,14 @@ void SlideShowLoader::slotLoadPrevItem()
 
     d->fileIndex--;
 
+    loadCurrentItem();
+}
+
+void SlideShowLoader::loadCurrentItem()
+{
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fileIndex: " << d->fileIndex;
+
+    int num = d->settings->count();
 
     if (!d->settings->loop)
     {
@@ -456,19 +433,7 @@ void SlideShowLoader::slotRemoveImageFromList()
 
     d->settings->fileList.removeOne(url);
 
-    int num = d->settings->count();
-
-    if (d->fileIndex == 0)
-    {
-        if (d->settings->loop)
-        {
-            d->fileIndex = num;
-        }
-    }
-
-    d->fileIndex--;
-
-    slotLoadNextItem();
+    loadCurrentItem();
 }
 
 void SlideShowLoader::slotVideoLoaded(bool loaded)

@@ -104,6 +104,7 @@ private:
 
     void setCurrentView(SlideShowViewMode);
     bool eventFilter(QObject* obj, QEvent* ev)  override;
+    void loadCurrentItem();
     void preloadNextItem();
     void endOfSlide();
     void inhibitScreenSaver();
