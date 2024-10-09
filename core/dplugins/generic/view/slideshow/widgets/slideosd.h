@@ -54,15 +54,15 @@ public:
     SlideToolBar* toolBar()         const;
     QSize slideShowSize()           const;
 
+protected:
+
+    bool eventFilter(QObject* obj, QEvent* ev)  override;
+
 private Q_SLOTS:
 
     void slotUpdateSettings();
     void slotProgressTimer();
     void slotStart();
-
-private:
-
-    bool eventFilter(QObject* obj, QEvent* ev)  override;
 
 private:
 

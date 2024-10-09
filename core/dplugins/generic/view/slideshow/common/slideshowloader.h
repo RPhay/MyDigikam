@@ -88,6 +88,7 @@ public Q_SLOTS:
 
 protected:
 
+    bool eventFilter(QObject* obj, QEvent* ev)  override;
     void mousePressEvent(QMouseEvent*)          override;
     void keyPressEvent(QKeyEvent*)              override;
     void wheelEvent(QWheelEvent*)               override;
@@ -103,7 +104,7 @@ private Q_SLOTS:
 private:
 
     void setCurrentView(SlideShowViewMode);
-    bool eventFilter(QObject* obj, QEvent* ev)  override;
+    void loadCurrentItem();
     void preloadNextItem();
     void endOfSlide();
     void inhibitScreenSaver();

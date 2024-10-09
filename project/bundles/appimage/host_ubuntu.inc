@@ -198,6 +198,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libmount-dev"
                    "curl"
                    "libicu-dev"
+                   "libyuv-dev"
                    "icu-devtools"
                    "flite1-dev"
                    "libxshmfence-dev"
@@ -247,10 +248,23 @@ sudo apt-get install nodejs
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
-sudo apt remove -y libqt5core5a  || true
-sudo apt remove -y libavfilter6  || true
-sudo apt remove -y libjasper-dev || true
-sudo apt remove -y libexiv2*     || true
+sudo apt remove -y libqt5core5a   || true
+sudo apt remove -y libavfilter6   || true
+sudo apt remove -y libjasper-dev  || true
+sudo apt remove -y libexiv2*      || true
+sudo apt remove -y libheif*       || true
+sudo apt remove -y *opencv*       || true
+sudo apt remove -y libavif*       || true
+sudo apt remove -y libaom*        || true
+sudo apt remove -y libavcodec*    || true
+sudo apt remove -y libavfilter*   || true
+sudo apt remove -y libavformat*   || true
+sudo apt remove -y libavutil*     || true
+sudo apt remove -y libavresample* || true
+sudo apt remove -y libswscale*    || true
+sudo apt remove -y libswresample* || true
+sudo apt remove -y libde265*      || true
+sudo apt remove -y libmagick*     || true
 
 echo -e "---------- Install more recent version of compiler\n"
 
