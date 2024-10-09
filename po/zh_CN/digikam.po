@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 01:45+0000\n"
+"POT-Creation-Date: 2024-10-09 01:48+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -278,7 +278,7 @@ msgstr "更改人脸标签"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
@@ -289,7 +289,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "指定标签到所选项(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "指定标签到此项(&T)"
@@ -21150,7 +21150,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "

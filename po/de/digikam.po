@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 01:45+0000\n"
+"POT-Creation-Date: 2024-10-09 01:48+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -287,7 +287,7 @@ msgstr "Gesichtsmarkierung ändern"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Abbrechen"
@@ -298,7 +298,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Stichwörter den &ausgewählten Einträgen zuordnen"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Stichwörter &diesem Eintrag zuordnen"
@@ -22212,7 +22212,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaschau"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "

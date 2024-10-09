@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 01:45+0000\n"
+"POT-Creation-Date: 2024-10-09 01:48+0000\n"
 "PO-Revision-Date: 2024-09-26 10:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -305,7 +305,7 @@ msgstr "Промяна на тага на лицето"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Отказ"
@@ -316,7 +316,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&Поставяне тагове на избраните записи"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Поставяне тагове на &този запис"
@@ -22171,7 +22171,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 01:45+0000\n"
+"POT-Creation-Date: 2024-10-09 01:48+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -299,7 +299,7 @@ msgstr "Širina"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr ""
@@ -310,7 +310,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
@@ -20603,7 +20603,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Koreliraj"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "

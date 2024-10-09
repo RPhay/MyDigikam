@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-07 01:45+0000\n"
-"PO-Revision-Date: 2024-10-05 08:25+0200\n"
+"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"PO-Revision-Date: 2024-10-07 13:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -343,7 +343,7 @@ msgstr "Modifier une étiquette de visage"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Annuler"
@@ -354,7 +354,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Attribuer des étiquettes aux éléments &sélectionnés"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Attribuer des étiquettes à &cet élément"
@@ -22339,7 +22339,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -52660,6 +52660,11 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
 "later."
 msgstr ""
+"Modèle de détection pour identifier les visages.  YuNet est le nouveau "
+"modèle par défaut.\n"
+"Celui-ci est plus rapide et plus configurable que YOLOv3.\n"
+"Remarque : YuNet est uniquement disponible si Digikam est compilé avec la "
+"version 4.10 ou supérieure de OpenCV."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
 #, kde-format
