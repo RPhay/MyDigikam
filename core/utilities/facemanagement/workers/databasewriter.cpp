@@ -42,15 +42,19 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
         // OverwriteUnconfirmed means that a new scan discarded unconfirmed results of previous scans
         // (assuming at least equal or new, better methodology is in use compared to the previous scan)
 
-        if      ((mode == FacePipeline::OverwriteUnconfirmed) &&
-                 (package->processFlags & FacePipelinePackage::ProcessedByDetector))
+        if      (
+                 (mode == FacePipeline::OverwriteUnconfirmed) &&
+                 (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+                )
         {
             QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
             qCDebug(DIGIKAM_GENERAL_LOG) << "Removing old entries" << oldEntries;
             utils.removeFaces(oldEntries);
         }
-        else if ((mode == FacePipeline::OverwriteAllFaces) &&
-                 (package->processFlags & FacePipelinePackage::ProcessedByDetector))
+        else if (
+                 (mode == FacePipeline::OverwriteAllFaces) &&
+                 (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+                )
         {
             utils.removeAllFaces(package->info.id());
         }
@@ -88,8 +92,10 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 
                 // NOTE: See bug #338485 : check if index is not outside of container size.
 
-                if ((i < package->recognitionResults.size()) &&
-                    !package->recognitionResults[i].isNull())
+                if (
+                    (i < package->recognitionResults.size()) &&
+                    !package->recognitionResults[i].isNull()
+                   )
                 {
                     // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624
 
