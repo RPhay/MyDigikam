@@ -193,12 +193,15 @@ void PeopleSideBarWidget::slotScanForFaces()
 
         connect(tool, SIGNAL(signalCanceled()),
                 this, SLOT(slotScanComplete()));
+
+        connect(tool, SIGNAL(signalScanNotification(QString,int)),
+                this, SIGNAL(signalNotificationError(QString,int)));
     }
     else
     {
         Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
-                                          "there are no identities to recognize. "
-                                          "Please add new identities."),
+                                            "there are no identities to recognize. "
+                                            "Please add new identities."),
                                        DNotificationWidget::Information);
     }
 }
