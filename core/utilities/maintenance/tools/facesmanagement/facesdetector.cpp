@@ -37,6 +37,7 @@
 
 #include "facialrecognition_wrapper.h"
 #include "digikam_debug.h"
+#include "dnotificationwidget.h"
 #include "coredb.h"
 #include "album.h"
 #include "albummanager.h"
@@ -475,10 +476,31 @@ void FacesDetector::slotDone()
 
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
-    QString lbl = i18np("Item scanned for faces: %1\n", "Items scanned for faces: %1\n", totalItems());
-    lbl.append(i18np("Face found: %1", "Faces found: %1", d->totalFacesFound));
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for faces: %1\n", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for faces: %1\n", totalItems()));
+    }
+
+    if (d->totalFacesFound > 1)
+    {
+        lbl.append(i18n("Faces found: %1", d->totalFacesFound));
+    }
+    else
+    {
+        lbl.append(i18n("Face found: %1", d->totalFacesFound));
+    }
 
     setLabel(lbl);
+
+    // Dispatch scan resume to the icon-view info pop-up.
+
+    Q_EMIT signalScanNotification(lbl, DNotificationWidget::Information);
 
     // Switch on scanned for faces flag on digiKam config file.
 
