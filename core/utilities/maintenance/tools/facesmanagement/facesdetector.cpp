@@ -102,6 +102,8 @@ public:
 
     ItemInfoJob                albumListing;
     FacePipeline               pipeline;
+
+    int totalFacesFound                     = 0;
 };
 
 FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent)
@@ -471,6 +473,13 @@ void FacesDetector::slotDone()
         new BenchmarkMessageDisplay(d->pipeline.benchmarkResult());
     }
 
+    setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
+
+    QString lbl = i18np("Item scanned for faces: %1\n", "Items scanned for faces: %1\n", totalItems());
+    lbl.append(i18np("Face found: %1", "Faces found: %1", d->totalFacesFound));
+
+    setLabel(lbl);
+
     // Switch on scanned for faces flag on digiKam config file.
 
     KSharedConfig::openConfig()->group(QLatin1String("General Settings"))
@@ -504,6 +513,7 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
     else
     {
         lbl.append(i18np("1 face", "%1 faces", package.detectedFaces.count()));
+        d->totalFacesFound += package.detectedFaces.count();
     }
 
     setLabel(lbl);
