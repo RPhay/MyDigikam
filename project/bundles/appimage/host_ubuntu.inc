@@ -198,6 +198,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libmount-dev"
                    "curl"
                    "libicu-dev"
+                   "libyuv-dev"
                    "icu-devtools"
                    "flite1-dev"
                    "libxshmfence-dev"
