@@ -136,7 +136,7 @@ BUGFIXES:
 112 ==> 494304 - HEIC not showing in album - green icon displayed instead.
 113 ==> 494308 - After deleting a picture (in full screen mode), wrong picture is displayed.
 114 ==> 472452 - Face Recognition fails (process stuck at 0%).
-115 ==> 
+115 ==> 489197 - Faces problem.
 116 ==> 
 117 ==> 
 118 ==> 
