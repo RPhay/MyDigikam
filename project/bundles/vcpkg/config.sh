@@ -103,7 +103,7 @@ else
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.1.5"
+    DK_KP_VERSION="v6.2.0"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
