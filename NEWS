@@ -137,7 +137,7 @@ BUGFIXES:
 113 ==> 494308 - After deleting a picture (in full screen mode), wrong picture is displayed.
 114 ==> 472452 - Face Recognition fails (process stuck at 0%).
 115 ==> 489197 - Faces problem.
-116 ==> 
+116 ==> 494372 - Welcome page is empty.
 117 ==> 
 118 ==> 
 119 ==> 
