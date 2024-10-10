@@ -450,15 +450,15 @@ void FilesDownloader::createDownloadInfo()
                                  232589
                                 );
 
-        d->files << DownloadInfo(QLatin1String("facesengine/sface/"),
-                                 QLatin1String("face_recognition_sface_2021dec.onnx"),
-                                 QLatin1String("0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"),
-                                 38696353
-                                );
-
         if (qApp->applicationName() == QLatin1String("digikam"))
         {
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+            d->files << DownloadInfo(QLatin1String("facesengine/sface/"),
+                                     QLatin1String("face_recognition_sface_2021dec.onnx"),
+                                     QLatin1String("0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"),
+                                     38696353
+                                    );
+
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("openface_nn4.small2.v1.t7"),
                                      QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
                                      31510785
