@@ -138,7 +138,7 @@ BUGFIXES:
 114 ==> 472452 - Face Recognition fails (process stuck at 0%).
 115 ==> 489197 - Faces problem.
 116 ==> 494372 - Welcome page is empty.
-117 ==> 
+117 ==> 470018 - Search for similar faces by previous example selection.
 118 ==> 
 119 ==> 
 120 ==> 
