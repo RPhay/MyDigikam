@@ -458,7 +458,7 @@ void FilesDownloader::createDownloadInfo()
                                      38696353
                                     );
 
-        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("openface_nn4.small2.v1.t7"),
                                      QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
                                      31510785
