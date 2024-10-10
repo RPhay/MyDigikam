@@ -475,7 +475,7 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
                                      246305388
                                     );
-/*
+
             d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("deploy.prototxt"),
                                      QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795"),
@@ -487,7 +487,6 @@ void FilesDownloader::createDownloadInfo()
                                      QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76"),
                                      5351047
                                     );
-*/
         }
     }
 
