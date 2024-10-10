@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2024-10-07 12:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2945,7 +2945,7 @@ msgstr ""
 "digiKam'ın yüz yönetimine hoş geldiniz. Bu özelliği ilk kez kullanıyorsanız "
 "sol alt paneldeki yardım kutusuna bir bakın."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2954,7 +2954,7 @@ msgstr ""
 "Tanınacak kimlikler olmadığı için yüz tanıma iptal edildi. Lütfen yeni "
 "kimlikler ekleyin."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -11425,7 +11425,7 @@ msgstr "İki harita - alt ve üst"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -21960,7 +21960,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -60845,7 +60845,7 @@ msgstr "Şunun için kendiliğinden künye: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
 msgid "Path: %1\n"
@@ -60977,42 +60977,66 @@ msgid_plural "%1 duplicates"
 msgstr[0] "1 yinelenen"
 msgstr[1] "%1 yinelenen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Albümdeki yüzleri tara: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "%1 albümdeki yüzleri tara"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Görseldeki yüzleri tara: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "%1 görseldeki yüzleri tara"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr "Yüz veritabanı güncelleniyor"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Items scanned for faces: %1\n"
+msgstr "Şu yüzler tarandı: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Item scanned for faces: %1\n"
+msgstr "Şu yüzler tarandı: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "%1 içinde bulunan görseller"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "%1 içinde bulunan görseller"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Şu yüzler tarandı: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, kde-format
 msgid "No face"
 msgstr "Yüz yok"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"

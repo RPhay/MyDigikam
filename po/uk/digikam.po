@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2024-10-07 08:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2961,7 +2961,7 @@ msgstr ""
 "користуєтеся цим засобом, будь ласка, скористайтеся панеллю довідки у нижній "
 "лівій частині бічної панелі."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2970,7 +2970,7 @@ msgstr ""
 "Розпізнавання облич перервано, оскільки немає профілів для розпізнавання. "
 "Будь ласка, додайте профілі."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -11599,7 +11599,7 @@ msgstr "Дві карти — верхня і нижня"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -22266,7 +22266,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Показ слайдів"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -61609,7 +61609,7 @@ msgstr "Автомітки для: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
 msgid "Path: %1\n"
@@ -61743,42 +61743,66 @@ msgstr[1] "%1 дублікати"
 msgstr[2] "%1 дублікатів"
 msgstr[3] "1 дублікат"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Пошук облич в альбомі: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Пошук облич у %1 альбомах"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Пошук облич на зображенні: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Пошук облич на %1 зображеннях"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr "Оновлюється база даних облич"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Items scanned for faces: %1\n"
+msgstr "Пошук облич: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Item scanned for faces: %1\n"
+msgstr "Пошук облич: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "placemarks found: %1"
+msgid "Faces found: %1"
+msgstr "знайдено позначок місць: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "placemarks found: %1"
+msgid "Face found: %1"
+msgstr "знайдено позначок місць: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Пошук облич: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, kde-format
 msgid "No face"
 msgstr "Немає обличчя"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -69958,9 +69982,6 @@ msgstr "Імпортовані пункти"
 
 #~ msgid "Clear Route"
 #~ msgstr "Вилучити маршрут"
-
-#~ msgid "placemarks found: %1"
-#~ msgstr "знайдено позначок місць: %1"
 
 #~ msgid "No placemark found"
 #~ msgstr "Не знайдено позначок місць"

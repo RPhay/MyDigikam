@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2024-10-08 01:29+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2964,7 +2964,7 @@ msgstr ""
 "usa esta función, considere el uso del cuadro de ayuda en la parte inferior "
 "izquierda del panel lateral."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2974,7 +2974,7 @@ msgstr ""
 "reconocer (excepto «Sin confirmar» y «Desconocido»). Añada nuevas "
 "identidades."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -11556,7 +11556,7 @@ msgstr "Dos mapas (arriba y abajo)"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -22186,7 +22186,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Presentación"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -61428,7 +61428,7 @@ msgstr "Etiquetas automáticas para: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
 msgid "Path: %1\n"
@@ -61560,42 +61560,66 @@ msgid_plural "%1 duplicates"
 msgstr[0] "%1 duplicado"
 msgstr[1] "%1 duplicados"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Escanear caras del álbum %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Escanear caras en %1 álbumes"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Escanear caras de la imagen %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Escanear caras en %1 imágenes"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr "Actualizando la base de datos de caras"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Items scanned for faces: %1\n"
+msgstr "Caras escaneadas: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Item scanned for faces: %1\n"
+msgstr "Caras escaneadas: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "Imágenes encontradas en %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "Imágenes encontradas en %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Caras escaneadas: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, kde-format
 msgid "No face"
 msgstr "Ninguna cara"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -69864,11 +69888,6 @@ msgstr "Elementos importados"
 
 #~ msgid "Clear Route"
 #~ msgstr "Borrar ruta"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "Imágenes encontradas en %1"
 
 #, fuzzy
 #~| msgctxt "@info"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2889,14 +2889,14 @@ msgstr ""
 "digiKam 얼굴 관리자에 오신 것을 환영합니다. 이 기능을 처음 사용해 보신다면 왼"
 "쪽 아래 패널의 도움말 상자를 참조하십시오."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr "인식할 ID가 없기 때문에 얼굴 인식이 중단됩니다. 새 ID를 추가하십시오."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -11561,7 +11561,7 @@ msgstr "지도 두 개 - 수평"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -22366,7 +22366,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -62212,7 +62212,7 @@ msgstr "측광 모드:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -62346,46 +62346,68 @@ msgid "1 duplicate"
 msgid_plural "%1 duplicates"
 msgstr[0] "중복 항목 찾기"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "얼굴 스캔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "얼굴 스캔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr "찾기:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr "찾기:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "%1에서 찾은 이미지"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "%1에서 찾은 이미지"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "얼굴 없음"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -69957,11 +69979,6 @@ msgstr "최근 태그"
 #~| msgid "Clear Queue"
 #~ msgid "Clear Route"
 #~ msgstr "대기열 지우기"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "%1에서 찾은 이미지"
 
 #, fuzzy
 #~| msgctxt "@info"

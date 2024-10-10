@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2928,14 +2928,14 @@ msgid ""
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, fuzzy, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -10945,7 +10945,7 @@ msgstr "तेर्सो तरिकाले घुमाउनुहोस�
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -21051,7 +21051,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "स्लाइड प्रर्दशन"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -59081,7 +59081,7 @@ msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
 msgid "Path: %1\n"
@@ -59209,44 +59209,66 @@ msgid_plural "%1 duplicates"
 msgstr[0] "प्रकृति"
 msgstr[1] "प्रकृति"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>थम्बनेल अद्यावधिक हुँदैछ । कृपया प्रतिक्षा गर्नुहोस्...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr "खोजी:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr "खोजी:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "%1 मा छवि फेला पर्यो"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "%1 मा छवि फेला पर्यो"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, fuzzy, kde-format
 msgid "No face"
 msgstr "फ्ल्यास:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, fuzzy, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -66045,11 +66067,6 @@ msgstr "छवि क्रमबद्ध गर्नुहोस्"
 #, fuzzy
 #~ msgid "Clear Route"
 #~ msgstr "मानक"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "%1 मा छवि फेला पर्यो"
 
 #, fuzzy
 #~| msgid "Kipi Plugins Handbook"

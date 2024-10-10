@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -2964,14 +2964,14 @@ msgid ""
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -10967,7 +10967,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -21221,7 +21221,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt ""
@@ -58939,7 +58939,7 @@ msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
 msgid "Path: %1\n"
@@ -59071,48 +59071,70 @@ msgid_plural "%1 duplicates"
 msgstr[0] "imatges"
 msgstr[1] "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Scan for faces in album: %1"
 msgstr "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Scan for faces in %1 albums"
 msgstr "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Scan for faces in image: %1"
 msgstr "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Scan for faces in %1 images"
 msgstr "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+#| msgid "images"
+msgid "Items scanned for faces: %1\n"
+msgstr "imatges"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+#| msgid "images"
+msgid "Item scanned for faces: %1\n"
+msgstr "imatges"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, kde-format
+msgid "Faces found: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, kde-format
+msgid "Face found: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Scanned for faces: %1\n"
 msgstr "imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgid "No face"
 msgstr "Diàpo"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"

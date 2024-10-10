@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-09 01:48+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2899,14 +2899,14 @@ msgstr ""
 "歡迎使用 digiKam 的臉孔管理。如果您是初次使用這個功能，請考慮使用左下方的側邊"
 "面板中的說明盒。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -10935,7 +10935,7 @@ msgstr "兩張地圖 - 上下"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -21533,7 +21533,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "投影片"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:683
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -60261,7 +60261,7 @@ msgstr "自動標籤模式："
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -60396,45 +60396,69 @@ msgid "1 duplicate"
 msgid_plural "%1 duplicates"
 msgstr[0] "尋找重複項目"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "在 %1 本相簿裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "在影像 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "在 %1 張影像裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新臉孔資料庫"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Items scanned for faces: %1\n"
+msgstr "在相簿 %1 裡掃描臉孔"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Item scanned for faces: %1\n"
+msgstr "在相簿 %1 裡掃描臉孔"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "在 %1 中找到影像"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "在 %1 中找到影像"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "No face"
 msgstr "沒有臉孔"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -67815,11 +67839,6 @@ msgstr "匯入項目"
 #~| msgid "Clear Queue"
 #~ msgid "Clear Route"
 #~ msgstr "清除佇列"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "placemarks found: %1"
-#~ msgstr "在 %1 中找到影像"
 
 #, fuzzy
 #~| msgid "No address book entries found"
