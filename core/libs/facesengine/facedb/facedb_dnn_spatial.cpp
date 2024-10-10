@@ -9,12 +9,14 @@
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
 #include "facedb_p.h"
+#include "kd_nodebase.h"
 
 namespace Digikam
 {
@@ -255,11 +257,11 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     // try to add current node to the list
 
-    const float sqrdistanceToCurrentNode = KDNode::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
+    const float sqrdistanceToCurrentNode = KDNodeBase::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
     if (
         (sqrdistanceToCurrentNode < sqRange) &&
-        (KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
+        (KDNodeBase::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
        )
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);

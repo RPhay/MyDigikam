@@ -1,0 +1,56 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-10-08
+ * Description : confirmation of changing the face recognition model
+ *
+ * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Benjamin Girault <benjamin dot girault at gmail dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// Qt includes
+
+#include <QString>
+#include <QDialog>
+#include <QDialogButtonBox>
+
+// Local includes
+
+#include "facescansettings.h"
+
+namespace Digikam
+{
+
+class ChangeFaceRecognitionModelDlg : public QDialog
+{
+    Q_OBJECT
+
+public:
+
+    ChangeFaceRecognitionModelDlg(QWidget* const parent, FaceScanSettings::FaceRecognitionModel newModel);
+    ~ChangeFaceRecognitionModelDlg()              override;
+
+private:
+
+    // hide
+    ChangeFaceRecognitionModelDlg(QWidget* const parent)    = delete;
+
+private Q_SLOTS:
+
+    void slotStart();
+    void slotCancel();
+
+private:
+
+    class Private;
+    Private* const d = nullptr;
+};
+
+} // namespace Digikam

@@ -70,6 +70,27 @@ void RecognitionWorker::aboutToDeactivate()
     imageRetriever.cancel();
 }
 
+void RecognitionWorker::setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel)
+{
+    // michmill added
+    QVariantMap params;
+    params[QLatin1String("detectAccuracy")]       = detectAccuracy;
+    params[QLatin1String("detectModel")]          = detectModel;
+    params[QLatin1String("detectSize")]           = detectSize;
+    params[QLatin1String("recognizeAccuracy")]    = recognizeAccuracy;     
+    params[QLatin1String("recognizeModel")]       = recognizeModel;
+    recognizer.setParameters(params);
+
+    // recognizer.setParameter(QLatin1String("detectAccuracy"), detectAccuracy);
+    // recognizer.setParameter(QLatin1String("detectModel"), detectModel);
+    // recognizer.setParameter(QLatin1String("detectSize"), detectSize);
+    // recognizer.setParameter(QLatin1String("recognizeAccuracy"), recognizeAccuracy);
+    // recognizer.setParameter(QLatin1String("recognizeModel"), recognizeModel);
+
+    // Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
+}
+
+
 } // namespace Digikam
 
 #include "moc_recognitionworker.cpp"

@@ -8,12 +8,13 @@
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
-#include "dnnfaceextractor.h"
+#include "dnnopenfaceextractor.h"
 
 // Qt includes
 
@@ -33,7 +34,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DNNFaceExtractor::Private
+class Q_DECL_HIDDEN DNNOpenFaceExtractor::Private
 {
 public:
 
@@ -60,19 +61,21 @@ public:
     cv::Scalar               meanValToSubtract  = cv::Scalar(0.0, 0.0, 0.0);
 };
 
-DNNFaceExtractor::DNNFaceExtractor()
-    : d(new Private)
+DNNOpenFaceExtractor::DNNOpenFaceExtractor()
+    : DNNFaceExtractorBase(),
+      d                   (new Private)
 {
     loadModels();
 }
 
-DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
-    : d(other.d)
+DNNOpenFaceExtractor::DNNOpenFaceExtractor(const DNNOpenFaceExtractor& other)
+    : DNNFaceExtractorBase(),
+    d(other.d)
 {
     ++(d->ref);
 }
 
-DNNFaceExtractor::~DNNFaceExtractor()
+DNNOpenFaceExtractor::~DNNOpenFaceExtractor()
 {
     --(d->ref);
 
@@ -82,34 +85,11 @@ DNNFaceExtractor::~DNNFaceExtractor()
     }
 }
 
-bool DNNFaceExtractor::loadModels()
+bool DNNOpenFaceExtractor::loadModels()
 {
     QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
-
-/*
-    QString proto   = QLatin1String("ResNet-50-deploy.prototxt");
-    QString model   = QLatin1String("ResNet-50-model.caffemodel");
-
-    QString nnproto = appPath + QLatin1Char('/') + proto;
-    QString nnmodel = appPath + QLatin1Char('/') + model;
-
-    if (!nnproto.isEmpty() && !nnmodel.isEmpty())
-    {
-        qCDebug(DIGIKAM_FACEDB_LOG) << nnproto;
-        qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
-
-        d->net = cv::dnn::readNetFromCaffe(nnproto.toStdString(), nnmodel.toStdString());
-    }
-    else
-    {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << proto << "or" << model;
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
-
-        return false;
-    }
-*/
 
     d->preprocessor = new RecognitionPreprocessor;
     d->preprocessor->init(PreprocessorSelection::OPENFACE);
@@ -164,89 +144,12 @@ bool DNNFaceExtractor::loadModels()
     return true;
 }
 
-double DNNFaceExtractor::cosineDistance(const std::vector<float>& v1,
-                                        const std::vector<float>& v2)
-{
-    Q_ASSERT(v1.size() == v2.size());
-
-    double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
-    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
-
-    return (scalarProduct / (normV1 * normV2));
-}
-
-double DNNFaceExtractor::L2squareDistance(const std::vector<float>& v1,
-                                          const std::vector<float>& v2)
-{
-    Q_ASSERT(v1.size() == v2.size());
-
-    double sqrDistance = 0.0;
-
-    for (size_t i = 0 ; i < v1.size() ; ++i)
-    {
-        sqrDistance += pow((v1[i] - v2[i]), 2);
-    }
-
-    return sqrDistance;
-}
-
-double DNNFaceExtractor::L2squareNormDistance(const std::vector<float>& v1,
-                                              const std::vector<float>& v2)
-{
-    Q_ASSERT(v1.size() == v2.size());
-
-    double normV1      = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2      = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
-    double sqrDistance = 0.0;
-
-    for (size_t i = 0 ; i < v1.size() ; ++i)
-    {
-        sqrDistance += pow((v1[i]/normV1 - v2[i]/normV2), 2);
-    }
-
-    return sqrDistance;
-}
-
-cv::Mat DNNFaceExtractor::vectortomat(const std::vector<float>& vector)
-{
-    cv::Mat mat(1, vector.size(), 5);
-
-    memcpy(mat.data, vector.data(), vector.size()*sizeof(float));
-
-    return mat;
-}
-
-QJsonArray DNNFaceExtractor::encodeVector(const std::vector<float>& vector)
-{
-    QJsonArray array;
-
-    for (size_t i = 0 ; i < vector.size() ; ++i)
-    {
-        array << vector[i];
-    }
-
-    return array;
-}
-
-std::vector<float> DNNFaceExtractor::decodeVector(const QJsonArray& json)
-{
-    std::vector<float> vector;
-
-    for (int i = 0 ; i < json.size() ; ++i)
-    {
-        vector.push_back(static_cast<float>(json[i].toDouble()));
-    }
-
-    return vector;
-}
-
-cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const
+cv::Mat DNNOpenFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
     return d->preprocessor->preprocess(inputImage);
 }
 
-cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
+cv::Mat DNNOpenFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     cv::Mat face_descriptors;
     cv::Mat alignedFace;
@@ -257,9 +160,7 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     QElapsedTimer timer;
 
     timer.start();
-/*
-    alignedFace = faceImage;
-*/
+
     alignedFace = d->preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
@@ -278,13 +179,6 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
-
-/*
-    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
-    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
-    net.setInput(blob);
-    cv::Mat face_descriptors = net.forward();
-*/
 
     return face_descriptors;
 }

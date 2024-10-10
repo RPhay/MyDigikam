@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -20,6 +21,7 @@
 #include "digikam_export.h"
 #include "dbengineparameters.h"
 #include "collectionscannerobserver.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -55,7 +57,7 @@ public:
 public:
 
     static void initDbEngineErrorHandler(DbEngineErrorHandler* const errorhandler);
-    static void setParameters(const DbEngineParameters& parameters);
+    static void setParameters(const DbEngineParameters& parameters, FaceScanSettings::FaceRecognitionModel recognizeModel);
     static bool checkReadyForUse(InitializationObserver* const observer);
     static bool isInitialized();
     static void cleanUpDatabase();
@@ -72,6 +74,8 @@ private:
 
     friend class FaceDbAccessUnlock;
     static FaceDbAccessStaticPriv* d;
+
+    FaceScanSettings::FaceRecognitionModel recognizeModel;
 };
 
 // ------------------------------------------------------------------------------------------

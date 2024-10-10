@@ -29,7 +29,7 @@
 #include "digikam_debug.h"
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
-#include "dnnfaceextractor.h"
+#include "dnnfaceextractorbase.h"
 #include "opencvdnnfacerecognizer.h"
 #include "facialrecognition_wrapper.h"
 #include "dbengineparameters.h"
@@ -570,7 +570,7 @@ void Benchmark::testWriteDb()
     for (int i = 0 ; i < data.size() ; ++i)
     {
         QJsonObject object               = data[i].toObject();
-        std::vector<float> faceEmbedding = DNNFaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+        std::vector<float> faceEmbedding = DNNFaceExtractorBase::decodeVector(object[QLatin1String("faceembedding")].toArray());
 /*
         m_recognizer->insertData(DNNFaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
 */
@@ -605,7 +605,7 @@ void Benchmark::verifyKNearestDb()
     for (int i = 0 ; i < data.size() ; ++i)
     {
         QJsonObject object               = data[i].toObject();
-        std::vector<float> faceEmbedding = DNNFaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+        std::vector<float> faceEmbedding = DNNFaceExtractorBase::decodeVector(object[QLatin1String("faceembedding")].toArray());
         int label                        = object[QLatin1String("id")].toInt();
 
         QMap<double, QVector<int> > closestNeighbors

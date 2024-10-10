@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText:      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,6 +30,7 @@
 #include "digikam_export.h"
 #include "identity.h"
 #include "dataproviders.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -64,9 +66,11 @@ public:
      * Determines recognition threshold, 0->accept very insecure recognitions, 1-> be very sure about a recognition.
      *
      * "k-nearest" : limit the number of nearest neighbors for KNN
+     * "recognizeModel" : sets the recognizer model used to instantiate the correct recognizer
      */
     void        setParameter(const QString& parameter, const QVariant& value);
     void        setParameters(const QVariantMap& parameters);
+    void        setParameters(const FaceScanSettings& parameters);
     QVariantMap parameters()                                                const;
 
     // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
@@ -197,6 +201,8 @@ private:
 
     class Private;
     static Private* d;
+
+    // static FaceScanSettings::FaceRecognitionModel recognizeModel;
 };
 
 } // namespace Digikam

@@ -55,6 +55,7 @@ public:
     /// face detection AI models
     enum FaceDetectionModel
     {
+        SSDMOBILENET,
         YOLOv3,
         YuNet
     };

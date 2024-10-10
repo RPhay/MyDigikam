@@ -8,6 +8,7 @@
  * SPDX-FileCopyrightText: 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,17 +32,18 @@
 #include "digikam_opencv.h"
 #include "identity.h"
 #include "facedbbackend.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
 
-class KDTree;
+class KDTreeBase;
 
 class FaceDb
 {
 public:
 
-    explicit FaceDb(FaceDbBackend* const db);
+    explicit FaceDb(FaceDbBackend* const db, FaceScanSettings::FaceRecognitionModel recModel);
     ~FaceDb();
 
     BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
@@ -90,7 +92,7 @@ public:
      * @brief reconstructTree: reconstruct KD-Tree from data in the database
      * @return
      */
-    KDTree* reconstructTree()                                                   const;
+    KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
 
     /**
      * @brief trainData: extract train data from database
@@ -173,6 +175,8 @@ private:
 
     class Private;
     Private* const d = nullptr;
+
+    FaceScanSettings::FaceRecognitionModel recognizeModel;
 };
 
 } // namespace Digikam

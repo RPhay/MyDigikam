@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DNNFaceDetectorYuNet: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorYuNet();
-    ~DNNFaceDetectorYuNet()                                                         override = default;
+    ~DNNFaceDetectorYuNet()                                                         override;
 
     bool loadModels();
 
@@ -47,7 +47,7 @@ public:
 protected:
 
     cv::Ptr<cv::FaceDetectorYN> cv_model;                   ///< The YuNet DNN model.
-    static QMutex               lockModel;                  ///< Mutex for single-threading calls to the model.
+    QMutex                      lockModel;                  ///< Mutex for single-threading calls to the model.
 
 private:
 

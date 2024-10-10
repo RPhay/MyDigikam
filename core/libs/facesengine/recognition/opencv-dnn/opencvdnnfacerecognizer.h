@@ -8,6 +8,7 @@
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,6 +25,7 @@
 #include "digikam_opencv.h"
 #include "digikam_export.h"
 #include "identity.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -43,7 +45,7 @@ public:
     /**
      *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit OpenCVDNNFaceRecognizer(Classifier method = Tree);
+    explicit OpenCVDNNFaceRecognizer(Classifier method, FaceScanSettings::FaceRecognitionModel recModel);
     ~OpenCVDNNFaceRecognizer();
 
 public:
@@ -86,7 +88,7 @@ public:
     /**
      * set K parameter of K-Nearest neighbors algorithm
      */
-    void setNbNeighBors(int k);
+    void setNbNeighbors(int k);
 
     /**
      * set maximum square distance of 2 vector
@@ -112,7 +114,9 @@ private:
 private:
 
     class Private;
-    Private* const d = nullptr;
+    // Private* const d = nullptr;
+    static Private* d;
+
 };
 
 } // namespace Digikam

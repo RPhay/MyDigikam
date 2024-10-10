@@ -10,6 +10,7 @@
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -39,6 +40,7 @@
 #include "facedboperationgroup.h"
 #include "facedb.h"
 #include "identity.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -80,12 +82,13 @@ public:
 
 public:
 
-    bool                        dbAvailable = false;
-    int                         ref         = 1;
-    mutable QRecursiveMutex     mutex;
-    QVariantMap                 parameters;
-    QHash<int, Identity>        identityCache;
-    OpenCVDNNFaceRecognizer*    recognizer  = nullptr;
+    bool                                    dbAvailable     = false;
+    int                                     ref             = 1;
+    mutable QRecursiveMutex                 mutex;
+    QVariantMap                             parameters;
+    QHash<int, Identity>                    identityCache;
+    OpenCVDNNFaceRecognizer*                recognizer      = nullptr;
+    FaceScanSettings::FaceRecognitionModel  recognizeModel;
 };
 
 } // namespace Digikam

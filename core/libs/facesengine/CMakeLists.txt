@@ -80,10 +80,16 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
 
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_node.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treebase.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treeopenface.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treesface.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodebase.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodeopenface.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodesface.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractorbase.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnopenfaceextractor.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnsfaceextractor.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbaccess.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbbackend.cpp

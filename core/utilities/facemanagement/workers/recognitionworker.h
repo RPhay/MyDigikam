@@ -36,6 +36,7 @@ public Q_SLOTS:
 
     void process(const FacePipelineExtendedPackage::Ptr& package);
     void setThreshold(double threshold, bool);
+    void setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
 
     // TODO: add set K-Nearest method
 

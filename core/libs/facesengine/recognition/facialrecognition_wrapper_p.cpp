@@ -10,12 +10,14 @@
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
 #include "facialrecognition_wrapper_p.h"
+#include "applicationsettings.h"
 
 namespace Digikam
 {
@@ -37,7 +39,11 @@ FacialRecognitionWrapper::Private::Private()
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
-    FaceDbAccess::setParameters(params);
+
+    recognizeModel = ApplicationSettings::instance()->getFaceRecognitionModel();
+
+    FaceDbAccess::setParameters(params, recognizeModel);
+
 
     dbAvailable               = FaceDbAccess::checkReadyForUse(nullptr);
 
@@ -60,7 +66,7 @@ FacialRecognitionWrapper::Private::Private()
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to initialize face database";
     }
 
-    recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
+    recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
 }
 
 FacialRecognitionWrapper::Private::~Private()

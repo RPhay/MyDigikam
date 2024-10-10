@@ -49,6 +49,9 @@ public:
 
                 switch (model)
                 {
+                    case FaceScanSettings::FaceDetectionModel::SSDMOBILENET:
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                        break;
                     case FaceScanSettings::FaceDetectionModel::YOLOv3:
                         m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLOv3);
                         break;
@@ -77,7 +80,7 @@ public:
             return;
         }
 
-        // TODO Handle settings
+        // Handle settings
 
         if (m_parameters.contains(QLatin1String("detectAccuracy")))
         {
@@ -88,28 +91,6 @@ public:
         {
                 backend()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(m_parameters.value(QLatin1String("detectSize")).toInt()));
         }
-/*
-        for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
-             it != m_parameters.constEnd() ; ++it)
-        {
-            if      (it.key() == QLatin1String("accuracy"))
-            {
-                backend()->setAccuracy(it.value().toDouble());
-            }
-            else if (it.key() == QLatin1String("speed"))
-            {
-                backend()->setAccuracy(1.0 - it.value().toDouble());
-            }
-            else if (it.key() == QLatin1String("specificity"))
-            {
-                backend()->setSpecificity(it.value().toDouble());
-            }
-            else if (it.key() == QLatin1String("sensitivity"))
-            {
-                backend()->setSpecificity(1.0 - it.value().toDouble());
-            }
-        }
-*/
     }
 
 public:

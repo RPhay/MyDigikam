@@ -65,8 +65,6 @@ const std::map<FaceScanSettings::FaceDetectionSize, int> faceenum2size
     { FaceScanSettings::FaceDetectionSize::ExtraSmall, 2000  }
 };
 
-QMutex DNNFaceDetectorYuNet::lockModel;
-
 DNNFaceDetectorYuNet::DNNFaceDetectorYuNet()
     : DNNFaceDetectorBase(1.0F / 255.0F,
                           cv::Scalar(0.0, 0.0, 0.0),
@@ -75,6 +73,10 @@ DNNFaceDetectorYuNet::DNNFaceDetectorYuNet()
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Creating new instance of DNNFaceDetectorYuNet";
 
     loadModels();
+}
+
+DNNFaceDetectorYuNet::~DNNFaceDetectorYuNet()
+{
 }
 
 bool DNNFaceDetectorYuNet::loadModels()

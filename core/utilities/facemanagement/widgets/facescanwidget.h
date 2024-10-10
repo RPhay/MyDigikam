@@ -23,6 +23,8 @@
 
 #include "statesavingobject.h"
 #include "facescansettings.h"
+#include "facesdetector.h"
+
 
 namespace Digikam
 {
@@ -50,17 +52,24 @@ private:
     void setupUi();
     void setupConnections();
 
+Q_SIGNALS:
+
+//    void signalRebuildFaceTraining();
+
 private Q_SLOTS:
 
+//    void slotRebuildFaceTraining():
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
     void slotDetectModelChanged();
     void slotDetectSizeChanged();
+    void slotRecognizeModelChanged();
 
 private:
 
     class Private;
     Private* const d = nullptr;
+    
 };
 
 } // namespace Digikam

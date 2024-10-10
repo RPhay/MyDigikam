@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -34,25 +35,23 @@ namespace Digikam
 
 // TODO: remove export macro after testing
 
-class DIGIKAM_GUI_EXPORT DNNFaceExtractor
+class DIGIKAM_GUI_EXPORT DNNFaceExtractorBase
 {
 
 public:
 
-    DNNFaceExtractor();
-    DNNFaceExtractor(const DNNFaceExtractor&);
-    ~DNNFaceExtractor();
+    DNNFaceExtractorBase();
+    DNNFaceExtractorBase(const DNNFaceExtractorBase&);
+    virtual ~DNNFaceExtractorBase();
 
 public:
 
     /**
      * Read pretrained neural network for face recognition.
      */
-    bool loadModels();
-
-
-    cv::Mat alignFace(const cv::Mat& inputImage) const;
-    cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
+    virtual bool loadModels()                                   = 0;
+    virtual cv::Mat alignFace(const cv::Mat& inputImage) const  = 0;
+    virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)  = 0;
 
     /**
      * Calculate different between 2 vectors
@@ -71,12 +70,7 @@ public:
 private:
 
     /// Disable
-    DNNFaceExtractor& operator=(const DNNFaceExtractor&) = delete;
-
-private:
-
-    class Private;
-    Private* const d = nullptr;
+    DNNFaceExtractorBase& operator=(const DNNFaceExtractorBase&) = delete;
 };
 
 } // namespace Digikam

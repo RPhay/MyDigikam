@@ -109,6 +109,7 @@ public:
     const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
+    FacesDetector*    facesDetector                     = nullptr;
 };
 
 } // namespace Digikam

@@ -8,6 +8,7 @@
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -28,10 +29,11 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dnnfaceextractor.h"
+#include "dnnopenfaceextractor.h"
+#include "dnnsfaceextractor.h"
 #include "facedbaccess.h"
 #include "facedb.h"
-#include "kd_tree.h"
+#include "kd_treebase.h"
 
 namespace Digikam
 {
@@ -40,12 +42,26 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
 public:
 
-    Private(Classifier mthd)
-        : method(mthd)
+    Private(Classifier mthd, FaceScanSettings::FaceRecognitionModel recModel)
+        : method(mthd),
+          recognizeModel(recModel)
     {
+        ref = 1;
+
         for (int i = 0 ; i < 1 ; ++i)
         {
-            extractors << new DNNFaceExtractor;
+            switch (recognizeModel)
+            {
+                case FaceScanSettings::FaceRecognitionModel::OpenFace:
+                    extractors << new DNNOpenFaceExtractor;
+                    break;
+                case FaceScanSettings::FaceRecognitionModel::SFace:
+                    extractors << new DNNSFaceExtractor;
+                    break;
+                default:
+                    qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "OpenCVDNNFaceRecognizer::Private() Unknown recognition model specified" << Qt::endl;
+            }
+            
         }
 
         switch (method)
@@ -67,7 +83,12 @@ public:
 
             case Tree:
             {
-                tree = FaceDbAccess().db()->reconstructTree();
+                if (tree)
+                {
+                    delete tree;
+                    tree = nullptr; // safety in case reconstructTree fails
+                }
+                tree = FaceDbAccess().db()->reconstructTree(recognizeModel);
                 break;
             }
 
@@ -85,7 +106,7 @@ public:
 
     ~Private()
     {
-        QVector<DNNFaceExtractor*>::iterator extractor = extractors.begin();
+        QVector<DNNFaceExtractorBase*>::iterator extractor = extractors.begin();
 
         while (extractor != extractors.end())
         {
@@ -106,22 +127,28 @@ public:
 
     int predictKDTree(const cv::Mat& faceEmbedding) const;
     int predictDb(const cv::Mat& faceEmbedding) const;
+    int predictSFace(const cv::Mat& faceEmbedding) const;
 
     bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
 
 public:
 
-    Classifier                 method;
+    int                             ref         = 1;
 
-    QVector<DNNFaceExtractor*> extractors;
-    cv::Ptr<cv::ml::SVM>       svm;
-    cv::Ptr<cv::ml::KNearest>  knn;
+    Classifier                      method;
 
-    KDTree*                    tree         = nullptr;
-    int                        kNeighbors   = 5;
-    float                      threshold    = 0.4F;
+    QVector<DNNFaceExtractorBase*>  extractors;
+    cv::Ptr<cv::ml::SVM>            svm;
+    cv::Ptr<cv::ml::KNearest>       knn;
 
-    bool                       newDataAdded = true;
+    KDTreeBase*                     tree         = nullptr;
+    int                             kNeighbors   = 5;
+    float                           threshold    = 0.4F;
+
+    bool                            newDataAdded = true;
+
+    FaceScanSettings::FaceRecognitionModel recognizeModel;
+
 
 public:
 
@@ -307,7 +334,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
     // Look for K-nearest neighbor which have the cosine distance greater than the threshold.
 
-    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, 0.8, kNeighbors);
+    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -416,7 +443,7 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
     }
     else if (method == Tree)
     {
-        KDNode* const newNode = tree->add(nodePos, label);
+        KDNodeBase* const newNode = tree->add(nodePos, label);
 
         if (newNode)
         {

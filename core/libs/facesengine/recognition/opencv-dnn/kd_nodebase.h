@@ -6,6 +6,7 @@
  * Description : Node of KD-Tree for vector space partitioning
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2024 by Michae Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,15 +30,16 @@
 namespace Digikam
 {
 
-class KDNode
+class KDNodeBase
 {
 public:
 
-    explicit KDNode(const cv::Mat& nodePos,
-                    const int      identity,
-                    int            splitAxis,
-                    int            dimension);
-    ~KDNode();
+   KDNodeBase(const cv::Mat& nodePos,
+              const int identity,
+              int splitAxis,
+              int dimension);
+
+    virtual ~KDNodeBase();
 
 public:
 
@@ -49,7 +51,7 @@ public:
     /**
      * Insert a new node to the sub-tree
      */
-    KDNode* insert(const cv::Mat& nodePos, const int identity);
+    KDNodeBase* insert(const cv::Mat& nodePos, const int identity);
 
     /**
      * Return position vector of a node
@@ -69,27 +71,52 @@ public:
      */
     int getIdentity();
 
+    int getDimension();
+
     /**
      * Set database entry ID of the node
      */
     void setNodeId(int id);
 
+    struct NodeCompareResult
+    {
+        bool    result;
+        double  distance1;
+        double  distance2;
+    };
+
+    virtual NodeCompareResult nodeCompare(
+                                           const cv::Mat& queryPosition,
+                                           const cv::Mat& currentPosition,
+                                           float sqRange,
+                                           float cosThreshold,
+                                           int nbDimension
+                                         ) const                                    = 0;
+
+protected:
+
+    // pure virtual functions to be overridden in child classes
+    virtual KDNodeBase* createNode(const cv::Mat &nodePos,
+                                   const int identity,
+                                   int splitAxis,
+                                   int dimension)                                   = 0;
+
 private:
 
     void updateRange(const cv::Mat&);
 
-    KDNode* findParent(const cv::Mat& nodePos);
+    KDNodeBase* findParent(const cv::Mat& nodePos);
 
 private:
 
     // Disable
-    KDNode(const KDNode&)            = delete;
-    KDNode& operator=(const KDNode&) = delete;
+    KDNodeBase(const KDNodeBase&)                                                   = delete;
+    KDNodeBase& operator=(const KDNodeBase&)                                        = delete;
 
 private:
 
     class Private;
-    Private* const d = nullptr;
+    Private* const d                                                                = nullptr;
 };
 
 } // namespace Digikam

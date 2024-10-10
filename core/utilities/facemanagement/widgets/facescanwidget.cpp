@@ -18,6 +18,7 @@
 //#define ENABLE_DETECT_AND_RECOGNIZE
 
 #include "facescanwidget_p.h"
+#include "recognitionmodelchange.h"
 
 namespace Digikam
 {
@@ -237,6 +238,7 @@ void FaceScanWidget::setupUi()
 
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "SSD"),      FaceScanSettings::FaceDetectionModel::SSDMOBILENET);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                         "Detection model used to find faces. YuNet is the default model.\n"
@@ -273,15 +275,15 @@ void FaceScanWidget::setupUi()
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
                                        "<p>Selecting <b>Extra Small</b> means the model will detect small background faces in addition "
                                        "to medium and larger faces. Selecting <b>Small Faces</b> increases the sensitivity of the model "
-                                       "by tuning one of the parameters. It will also increase the probability of false-positives, "
+                                       "by tuning the model parameters. It will also increase the probability of false-positives, "
                                        "and it will increase detection time.</p>"
-                                       "<p>Selecting <b>large</b> or <b>extra-large</b> will eliminate small background faces from being detected. "
+                                       "<p>Selecting <b>Large</b> or <b>Extra Large</b> will eliminate small background faces from being detected. "
                                        "It is much faster and will reduce the number of false-positives, but will not detect small faces "
                                        "in the the background or faces in large group photos.</p>"
-                                       "<p>If you want to detect all faces in one pass, select <b>Extra-Small</b> faces and set the detection "
+                                       "<p>If you want to detect all faces in one pass, select <b>Extra Small</b> faces and set the detection "
                                        "accuracy to about 45%. Unfortunately, this will give a significant number of false-positives. "
-                                       "It's recommended to set a detection accuracy of about 55% and face size of <b>small</b> or <b>medium</b> "
-                                       "for normal use.</p>"));
+                                       "It's recommended to set a detection accuracy of about 55% and face size of <b>Small</b> or <b>Medium</b> "
+                                       "for normal use.</p><p>This setting applies only to YuNet.</p>"));
 
     detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
     detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
@@ -379,6 +381,10 @@ void FaceScanWidget::setupConnections()
 
     connect(d->detectSizeBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &FaceScanWidget::slotDetectSizeChanged);
+
+    connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &FaceScanWidget::slotRecognizeModelChanged);
+
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -394,11 +400,70 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 void FaceScanWidget::slotDetectModelChanged()
 {
     ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
+
+    if (FaceScanSettings::FaceDetectionModel::YuNet ==
+        static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()))
+    {
+        d->detectSizeBox->setEnabled(true);
+    }
+    else
+    {
+        d->detectSizeBox->setEnabled(false);
+    }
+
+
 }
 
 void FaceScanWidget::slotDetectSizeChanged()
 {
     ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
+}
+
+void FaceScanWidget::slotRecognizeModelChanged()
+{
+    // save the model values if we have to revert
+    FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
+    FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
+    ChangeFaceRecognitionModelDlg* dlg              = new ChangeFaceRecognitionModelDlg(this, newModel);
+
+    // show the upgrade warning dialog box
+    if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
+    {
+        // upgrade was approved.  Save new value
+        ApplicationSettings* const appSettings = ApplicationSettings::instance();
+        appSettings->setFaceRecognitionModel(newModel);
+        appSettings->saveSettings();
+
+        // start retraining and update pipeline here
+        FaceScanSettings settings;
+
+        settings.wholeAlbums            = true;
+        settings.useFullCpu             = d->useFullCpuButton->isChecked();
+        settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+        settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
+        settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+        settings.recognizeModel         = newModel;
+        settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+        settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
+
+        if (!d->facesDetector)
+        {
+            delete d->facesDetector;
+        }
+
+        d->facesDetector                = new FacesDetector(settings);
+
+        d->facesDetector->setNotificationEnabled(false);
+        d->facesDetector->start();
+    }
+    else
+    {
+        // reselect the old model value in the drop-down
+        d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
+    }
+
+    // clean up the dialog
+    delete dlg;
 }
 
 bool FaceScanWidget::settingsConflicted() const

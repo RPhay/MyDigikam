@@ -10,6 +10,7 @@
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,6 +25,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
 {
     int k           = 5;
     float threshold = 0.6F;
+    FaceScanSettings::FaceRecognitionModel oldModel = recognizeModel;
 
     if      (parameters.contains(QLatin1String("k-nearest")))
     {
@@ -37,12 +39,28 @@ void FacialRecognitionWrapper::Private::applyParameters()
     {
         threshold = parameters.value(QLatin1String("recognizeAccuracy")).toFloat();
     }
+   
+    if      (parameters.contains(QLatin1String("recognizeModel")))
+    {
+        recognizeModel = static_cast<FaceScanSettings::FaceRecognitionModel>(parameters.value(QLatin1String("recognizeModel")).toInt());
+    }
 
+    // check if d and if recModel is changing.  Rebuild d if needed
+    if (recognizeModel != oldModel)
+    {
+        if (recognizer)
+        {
+            delete recognizer;
+        }
+
+        recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
+    }
+    
     threshold = 1 - threshold;
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "recognition threshold" << threshold;
 
-    recognizer->setNbNeighBors(k);
+    recognizer->setNbNeighbors(k);
     recognizer->setThreshold(threshold);
 }
 
@@ -76,6 +94,28 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
     }
 
     d->applyParameters();
+}
+
+void FacialRecognitionWrapper::setParameters(const FaceScanSettings& parameters)
+{
+    FaceScanSettings::FaceRecognitionModel oldModel = d->recognizeModel;
+
+    float threshold = parameters.recognizeAccuracy;
+    d->recognizeModel = parameters.recognizeModel;
+
+        // check if d and if recModel is changing.  Rebuild d if needed
+    if (d->recognizeModel != oldModel)
+    {
+        if (d->recognizer)
+        {
+            delete d->recognizer;
+        }
+
+        d->recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, d->recognizeModel);
+    }
+
+    d->recognizer->setThreshold(threshold);
+
 }
 
 QVariantMap FacialRecognitionWrapper::parameters() const

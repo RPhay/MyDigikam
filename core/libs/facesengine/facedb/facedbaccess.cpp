@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,6 +25,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -94,6 +96,7 @@ public:
 
 FaceDbAccess::FaceDbAccess()
 {
+ 
     // You will want to call setParameters before constructing FaceDbAccess.
 
     Q_ASSERT(d);
@@ -163,7 +166,7 @@ void FaceDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorhan
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
-void FaceDbAccess::setParameters(const DbEngineParameters& parameters)
+void FaceDbAccess::setParameters(const DbEngineParameters& parameters, FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     if (!d)
     {
@@ -196,7 +199,7 @@ void FaceDbAccess::setParameters(const DbEngineParameters& parameters)
         delete d->db;
         delete d->backend;
         d->backend = new FaceDbBackend(&d->lock);
-        d->db      = new FaceDb(d->backend);
+        d->db      = new FaceDb(d->backend, recognizeModel);
     }
 }
 

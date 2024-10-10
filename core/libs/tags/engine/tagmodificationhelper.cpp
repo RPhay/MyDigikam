@@ -674,8 +674,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
                 // delete the faces db identity with this uuid.
 
-                FaceDbAccess access;
-                access.db()->deleteIdentity(uuid);
+                FaceDbAccess().db()->deleteIdentity(uuid);
             }
 
             // reset tag icon

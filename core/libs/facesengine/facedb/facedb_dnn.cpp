@@ -9,12 +9,15 @@
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
 #include "facedb_p.h"
+#include "kd_treeopenface.h"
+#include "kd_treesface.h"
 
 namespace Digikam
 {
@@ -50,9 +53,24 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     return query.lastInsertId().toInt();
 }
 
-KDTree* FaceDb::reconstructTree() const
+KDTreeBase* FaceDb::reconstructTree(FaceScanSettings::FaceRecognitionModel recModel)
 {
-    KDTree* const tree     = new KDTree(128);
+    KDTreeBase* tree = nullptr;
+    
+    recognizeModel = recModel;
+
+    switch (recognizeModel)
+    {
+        case FaceScanSettings::FaceRecognitionModel::OpenFace:
+            tree     = new KDTreeOpenFace(128);
+            break;
+        case FaceScanSettings::FaceRecognitionModel::SFace:
+            tree     = new KDTreeSFace(128);
+            break;
+        default:
+             qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "FaceDb::reconstructTree Unknown recognition model specified" << Qt::endl;
+    }
+
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
 
     while (query.next())
@@ -60,7 +78,7 @@ KDTree* FaceDb::reconstructTree() const
         int nodeId                    = query.value(0).toInt();
         int identity                  = query.value(1).toInt();
         cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
-        KDNode* const newNode         = tree->add(recordedFaceEmbedding, identity);
+        KDNodeBase* const newNode     = tree->add(recordedFaceEmbedding, identity);
 
         if (newNode)
         {
