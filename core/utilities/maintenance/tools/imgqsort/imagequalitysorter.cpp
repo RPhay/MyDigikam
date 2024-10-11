@@ -191,11 +191,11 @@ void ImageQualitySorter::slotDone()
 
     if (totalItems() > 1)
     {
-        lbl.append(i18n("Items scanned for quality: %1\n", totalItems()));
+        lbl.append(i18n("Items scanned for quality: %1", totalItems()));
     }
     else
     {
-        lbl.append(i18n("Item scanned for quality: %1\n", totalItems()));
+        lbl.append(i18n("Item scanned for quality: %1", totalItems()));
     }
 
     setLabel(lbl);

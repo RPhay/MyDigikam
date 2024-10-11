@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     AutotagsAssignmentScanMode mode            = AutotagsAssignmentScanMode::NonAssignedItems;
 
     QStringList                allPicturesPath;
@@ -100,6 +102,7 @@ void AutotagsAssignment::slotStart()
     MaintenanceTool::slotStart();
 
     setLabel(i18n("Autotags Assignment"));
+    setThumbnail(QIcon::fromTheme(QLatin1String("tag")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
 
@@ -193,6 +196,26 @@ void AutotagsAssignment::slotAdvance(const ItemInfo& inf, const QImage& img, con
     }
 
     advance(1);
+}
+
+void AutotagsAssignment::slotDone()
+{
+    setThumbnail(QIcon::fromTheme(QLatin1String("tag")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for auto-tags: %1", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for auto-tags: %1", totalItems()));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam
