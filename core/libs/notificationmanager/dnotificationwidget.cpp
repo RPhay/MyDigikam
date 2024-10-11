@@ -126,6 +126,7 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
             break;
         }
 
+        case Notification:
         case Information:
         {
             bg1 = palette().highlight().color();

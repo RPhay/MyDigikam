@@ -52,6 +52,7 @@ public:
     enum MessageType
     {
         Positive,
+        Notification,
         Information,
         Warning,
         Error
