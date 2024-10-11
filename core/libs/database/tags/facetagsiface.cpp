@@ -242,7 +242,7 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 
 QVariant FaceTagsIface::toVariant() const
 {
-    // this is still not perfect, with QList<QVariant> being inefficient
+    // This is still not perfect, with QList<QVariant> being inefficient
     // we must keep to native types, to make operator== work.
 
     QList<QVariant> list;

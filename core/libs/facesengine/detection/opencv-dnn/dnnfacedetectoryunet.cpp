@@ -23,7 +23,6 @@
 
 #include <QList>
 #include <QRect>
-#include <QMutexLocker>
 #include <QString>
 #include <QFileInfo>
 #include <QMutexLocker>

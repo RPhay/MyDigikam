@@ -104,7 +104,7 @@ QList<ItemTagPair> FaceTagsEditor::faceItemTagPairs(qlonglong imageid, FaceTagsI
 {
     QList<ItemTagPair> pairs;
     QStringList        attributes = FaceTagsIface::attributesForFlags(flags);
-    const auto images              = ItemTagPair::availablePairs(imageid);
+    const auto images             = ItemTagPair::availablePairs(imageid);
 
     for (const ItemTagPair& pair : images)
     {

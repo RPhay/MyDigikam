@@ -43,10 +43,7 @@ class KDTreeBase
 
 public:
 
-    KDTreeBase(
-               int dim,
-               int kdtreeThreshold
-              );
+    explicit KDTreeBase(int dim, int kdtreeThreshold);
     virtual ~KDTreeBase();
 
     /**
