@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-06 01:47+0000\n"
+"POT-Creation-Date: 2024-10-10 01:46+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -279,7 +279,7 @@ msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
-#: core/app/views/preview/itempreviewview.cpp:708
+#: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Avbryt"
@@ -290,7 +290,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Tilordne etiketter til &merkede elementer"
 
 #: core/app/dragdrop/itemdragdrop.cpp:707
-#: core/app/views/preview/itempreviewview.cpp:706
+#: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Tilordne etiketter til &dette elementet"
@@ -2870,14 +2870,14 @@ msgid ""
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:199
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:219
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -10791,7 +10791,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -20812,7 +20812,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -49758,18 +49758,18 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<a>Selecting <b>Extra Small</b> means the model will detect small background "
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
 "faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
 "increases the sensitivity of the model by tuning one of the parameters. It "
 "will also increase the probability of false-positives, and it will increase "
-"detection time.</a><a>Selecting <b>large</b> or <b>extra-large</b> will "
+"detection time.</p><p>Selecting <b>large</b> or <b>extra-large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</a><a>If you want to "
+"in the the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra-Small</b> faces and set the "
-"detection accuracy to about 45%. Unfortunately, his will give a significant "
+"detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>small</b> or <b>medium</b> for normal use.</a>"
+"about 55% and face size of <b>small</b> or <b>medium</b> for normal use.</p>"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
@@ -58312,7 +58312,7 @@ msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:498
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
 #, kde-format
 msgid "Path: %1\n"
@@ -58437,42 +58437,62 @@ msgid_plural "%1 duplicates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:306
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#, kde-format
+msgid "Faces found: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#, kde-format
+msgid "Face found: %1"
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:502
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
 #, kde-format
 msgid "No face"
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"

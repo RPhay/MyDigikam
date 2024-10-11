@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-10 01:46+0000\n"
+"POT-Creation-Date: 2024-10-11 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2713,49 +2713,42 @@ msgstr "所有支持的文件 (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC："
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "反馈："
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "技术说明"
+msgstr "文档："
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "文件日期"
+msgstr "构建日期："
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "目标"
+msgstr "构建目标："
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "不支持的系统架构：%1"
+msgstr "构建架构："
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "标准差："
+msgstr "Git 版本："
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git 分支："
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -2858,12 +2851,10 @@ msgid "Scan collection for faces"
 msgstr "扫描相册集合中的人脸"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr "点击此按钮以扫描所选相册中的重复项目。"
+msgstr "点击此按钮以扫描所选相册中的人脸。"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:145
 #, kde-format
@@ -10935,6 +10926,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -21401,31 +21393,7 @@ msgid "A tool to render slideshow"
 msgstr "放映图像幻灯片"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -21450,25 +21418,27 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>用于将一系列项目制作成简易的幻灯片。</p><p>幻灯片在播放时可以在画面上叠加"
-"显示多种项目属性。</p><p>如果相册包含子相册，可以在播放主相册内容时递归播放子"
-"相册的内容。</p><p><u>使用方法：</u></p><table><tr><td colspan="
-"\"2\"><nobr><center><b><h1>项目导航</h1></b></center></nobr></td></"
-"tr><tr><td>上一个项目：</td><td><i>上箭头</i> 键</td></tr><tr><td></"
-"td><td><i>向上翻页</i> 键</td></tr><tr><td></td><td><i>左箭头</i> 键</td></"
-"tr><tr><td></td><td>鼠标滚轮向上滚动</td></tr><tr><td></td><td>鼠标左键</"
-"td></tr><tr><td>下一个项目：</td><td><i>下箭头</i> 键</td></tr><tr><td></"
-"td><td><i>向下翻页</i> 键</td></tr><tr><td></td><td><i>右箭头</i> 键</td></"
-"tr><tr><td></td><td>鼠标滚轮向下滚动</td></tr><tr><td></td><td>鼠标右键</"
-"td></tr><tr><td>播放/暂停：</td><td><i>空格</i> 键</td></tr><tr><td>幻灯片设"
-"置</td><td><i>F2</i> 键</td></tr><tr><td>显示/隐藏叠加信息</td><td><i>F4</i> "
-"键</td></tr><tr><td>退出</td><td><i>Esc</i> 键</td></tr><tr><td colspan="
+"<p>用于将一系列项目渲染为简易幻灯片的工具。</p><p>此工具在运行时可以在图像上"
+"叠加显示各种各样的项目属性。</p><p>此工具可以通过递归模式播放包含子相册的相册"
+"内容。</p><p><u>用法：</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>项目访问</h1></b></center></nobr></td></"
+"tr><tr><td>上一个项目：</td><td><i>Up (上箭头)</i> 键</td></tr><tr><td></"
+"td><td><i>PgUp (向上翻页)</i> 键</td></tr><tr><td></td><td><i>Left (左箭头)</"
+"i> 键</td></tr><tr><td></td><td>鼠标滚轮向上滚动</td></tr><tr><td></td><td>鼠"
+"标左键</td></tr><tr><td>下一个项目：</td><td><i>Down (下箭头)</i> 键</td></"
+"tr><tr><td></td><td><i>PgDown (向下翻页)</i> 键</td></tr><tr><td></"
+"td><td><i>Right (右箭头)</i> 键</td></tr><tr><td></td><td>鼠标滚轮向下滚动</"
+"td></tr><tr><td></td><td>鼠标右键</td></tr><tr><td>暂停/开始：</td><td><i>空"
+"格</i> 键</td></tr><tr><td>幻灯片设置：</td><td><i>Alt+P</i> 键</td></"
+"tr><tr><td>隐藏/显示叠加信息：</td><td><i>Alt+Y</i> 键</td></tr><tr><td>退"
+"出：</td><td><i>Esc</i> 键</td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>项目属性</h1></b></center></nobr></td></"
-"tr><tr><td>更改标签：</td><td>使用标签快捷键</td></tr><tr><td>更改评分：</"
-"td><td>使用评分快捷键</td></tr><tr><td>更改颜色标记：</td><td>使用颜色标记快"
-"捷键</td></tr><tr><td>更改挑选标记：</td><td>使用挑选标记快捷键</td></"
-"tr><tr><td colspan=\"2\"><nobr><center><b><h1>其他</h1></b></center></nobr></"
-"td></tr><tr><td>显示本帮助信息：</td><td><i>F1</i> 键</td></tr></table>"
+"tr><tr><td>更改标签：</td><td>使用标签键盘快捷键</td></tr><tr><td>更改评分："
+"</td><td>使用评分键盘快捷键</td></tr><tr><td>更改颜色标签：</td><td>使用颜色"
+"标签键盘快捷键</td></tr><tr><td>更改挑选标记：</td><td>使用挑选标记键盘快捷键"
+"</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>其他</h1></b></center></"
+"nobr></td></tr><tr><td>显示此帮助信息：</td><td><i>F1</i> 键</td></tr></"
+"table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
@@ -21676,6 +21646,7 @@ msgstr "继续"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -27169,7 +27140,7 @@ msgstr "共享目录挂载于“%1”"
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:230
+#: core/libs/facesengine/facedb/facedbaccess.cpp:233
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -27906,6 +27877,7 @@ msgstr "迁移 ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -50115,6 +50087,65 @@ msgstr "从地址簿创建标签"
 msgid "No address book entries found"
 msgstr "未找到地址簿条目"
 
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:65
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgctxt "@title:window"
+msgid "Facial Recognition Model"
+msgstr "人脸识别"
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
+#, kde-format
+msgid "downgrade"
+msgstr ""
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "OpenFace"
+msgid "OpenFace"
+msgstr "OpenFace"
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:79
+#, kde-format
+msgid "upgrade"
+msgstr ""
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "SFace"
+msgid "SFace"
+msgstr "SFace"
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:86
+#, kde-format
+msgctxt "@info"
+msgid ""
+"You are about to change the face recognition model. This process can take "
+"several minutes or more depending on the size of your library and the speed "
+"of your computer. SFace is the preferred model. Do not use any facial "
+"detection or recognition features during the process.\n"
+"\n"
+"Are you sure you want to continue?"
+msgid_plural ""
+"You are about to %1 the face recognition model to %2. This process can take "
+"several minutes or more depending on the size of your library and the speed "
+"of your computer. SFace is the preferred model. Do not use any facial "
+"detection or recognition features during the %1.\n"
+"\n"
+"Are you sure you want to continue?"
+msgstr[0] ""
+
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Login Information"
+msgctxt "@action"
+msgid "Begin operation"
+msgid_plural "Begin %1."
+msgstr[0] "登录信息"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
@@ -50190,7 +50221,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "否决此次建议"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:133
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50202,59 +50233,59 @@ msgstr ""
 "您只需事先人工识别数张照片，\n"
 "即可在整个相册中自动识别出对应的人物。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:141
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳过已扫描图像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "重新扫描并合并结果"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未确认结果并重新扫描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "清除所有之前的结果并重新扫描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "帮助"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "检测人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:166
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "查找照片中所有的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50264,13 +50295,13 @@ msgstr ""
 "查找照片中所有的人脸，\n"
 "并尝试识别人脸所属的人物"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50280,64 +50311,61 @@ msgstr ""
 "尝试重新识别\n"
 "已标记但未确认人物的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "扫描流程"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "扫描范围"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:221
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "精度"
+msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be detected, but less faces will be detected."
 msgstr ""
-"调整人脸识别的宽泛或精准程度：\n"
-"数值越高，识别精确度越高，匹配的人脸也越少。\n"
-"(只有与同一人物标签的已有人脸高度相似的人脸才会被识别)。"
+"调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
-msgstr "型号："
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr ""
+msgstr "模型："
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, kde-format
 msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr ""
+msgid "YuNet"
+msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#, kde-format
+msgctxt "@label:listbox"
+msgid "YOLOv3"
+msgstr "YOLOv3"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#, fuzzy, kde-format
+#| msgctxt "@title: On Screen Display"
+#| msgid "OSD"
+msgctxt "@label:listbox"
+msgid "SSD"
+msgstr "屏幕显示"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50346,88 +50374,100 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
 "later."
 msgstr ""
+"用于查找人脸的检测模型。YuNet 是默认模型。\n"
+"它比 YOLOv3 速度更快，可配置性也更好。\n"
+"注意：YuNet 仅在 digiKam 使用 OpenCV 4.10 或者更新版本编译时才可用。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "最大尺寸："
+msgstr "人脸大小："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:269
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
-msgstr "额外标签"
+msgstr "超小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
-msgctxt "@label:listbox"
-msgid "Medium"
-msgstr "中等大小"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Target"
-msgctxt "@label:listbox"
-msgid "Large"
-msgstr "目标"
+msgstr "小"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Medium"
+msgstr "中"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Large"
+msgstr "大"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
-msgstr "额外标签"
+msgstr "超大"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
+#| "background faces in addition to medium and larger faces. Selecting "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning one "
+#| "of the parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>large</"
+#| "b> or <b>extra-large</b> will eliminate small background faces from being "
+#| "detected. It is much faster and will reduce the number of false-"
+#| "positives, but will not detect small faces in the the background or faces "
+#| "in large group photos.</p><p>If you want to detect all faces in one pass, "
+#| "select <b>Extra-Small</b> faces and set the detection accuracy to about "
+#| "45%. Unfortunately, this will give a significant number of false-"
+#| "positives. It's recommended to set a detection accuracy of about 55% and "
+#| "face size of <b>small</b> or <b>medium</b> for normal use.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
 "faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
-"increases the sensitivity of the model by tuning one of the parameters. It "
+"increases the sensitivity of the model by tuning the model parameters. It "
 "will also increase the probability of false-positives, and it will increase "
-"detection time.</p><p>Selecting <b>large</b> or <b>extra-large</b> will "
+"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
 "in the the background or faces in large group photos.</p><p>If you want to "
-"detect all faces in one pass, select <b>Extra-Small</b> faces and set the "
+"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>small</b> or <b>medium</b> for normal use.</p>"
+"about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
+"p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>选择 <b>超小</b> 时模型将在中、大人脸的基础上额外检测到背景中的超小人脸。"
+"选择 <b>小</b> 时将通过调整参数中的一种来提高灵敏度，并且增加假阳性的概率和检"
+"测所需时间。</p><p>选择 <b>大</b> 或者 <b>超大</b> 时将不检测背景中的超小人"
+"脸，速度更快，并且能降低假阳性的概率，但也会造成大型群体照片中的人脸无法被检"
+"测到。</p><p>如果您想要一次性把所有人脸全部检测到，请选择 <b>超小</b> 并将检"
+"测精度设置为 45% 左右。但是这也会造成大量的假阳性。在通常使用情况下，建议将检"
+"测精度设置为 55% 并将人脸大小设置为 <b>小</b> 或者 <b>中</b>。</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "人脸检测"
+msgstr "人脸检测设置"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:302
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "精度"
+msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -50435,49 +50475,46 @@ msgid ""
 "be recognized, but less faces will be recognized\n"
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
-"调整人脸识别的宽泛或精准程度：\n"
-"数值越高，识别精确度越高，匹配的人脸也越少。\n"
-"(只有与同一人物标签的已有人脸高度相似的人脸才会被识别)。"
+"调整人脸识别的宽泛-精确程度：\n"
+"数值越高，识别精度越高，识别到的人脸也越少。\n"
+"提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
-msgstr "型号："
+msgstr "模型："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
-#, fuzzy, kde-format
-#| msgid "Faces"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:320
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "人脸"
+msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "打开文件"
+msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
 "OpenFace can be used for older libraries."
 msgstr ""
+"SFace 是默认的检测模型，它速度更快也更准确。\n"
+"OpenFace 可以在程序库比较老旧的环境中使用。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50489,13 +50526,12 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "人脸识别"
+msgstr "人脸检测设置"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:347
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -59121,26 +59157,22 @@ msgid "Autotags Assignment"
 msgstr "自动标签分配"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "自动标签模式："
+msgstr "%1 的自动标签\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1\n"
-msgstr "卫星数量：%1"
+msgstr "路径：%1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "关键词："
+msgstr "关键词：%1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -59221,24 +59253,23 @@ msgid "Find new items"
 msgstr "查找新增项目"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "扫描相册中的人脸：%1"
+msgstr "正在扫描：%1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "相册“%1”"
+msgstr "相册：%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "扫描相册中的人脸：%1"
+msgstr ""
+"已扫描：\n"
+"%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, kde-format
@@ -59246,26 +59277,20 @@ msgid "Find duplicates items"
 msgstr "查找重复项目"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "重复图像"
+msgstr "%1 的重复项\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "查找重复项"
+msgstr "无重复项"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "查找重复项"
+msgstr[0] "%1 个重复项"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
 #, kde-format
@@ -59294,48 +59319,39 @@ msgstr "正在更新人脸数据库"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
 #, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
 msgid "Items scanned for faces: %1\n"
-msgstr "扫描相册中的人脸：%1"
+msgstr "已扫描人脸：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
 #, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
 msgid "Item scanned for faces: %1\n"
-msgstr "扫描相册中的人脸：%1"
+msgstr "已扫描人脸：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
 #, fuzzy, kde-format
-#| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "在 %1 中找到的图像"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #, fuzzy, kde-format
-#| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "在 %1 中找到的图像"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanned for faces: %1\n"
-msgstr "扫描相册中的人脸：%1"
+msgstr "已扫描人脸：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "No face"
-msgstr "无人脸信息"
+msgstr "没有人脸"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "无人脸信息"
+msgstr[0] "%1 张人脸"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
 #, kde-format
@@ -59343,32 +59359,25 @@ msgid "Finger-prints"
 msgstr "图像指纹"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "重建文件指纹"
+msgstr "重建 %1 的指纹\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "卫星数量：%1"
+msgstr "路径：%1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "图像品质分类"
+msgstr "%1 的图像品质\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "挑选标记：%1"
 
@@ -59401,10 +59410,9 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "元数据信息"
+msgstr "清除 %1 的元数据\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
@@ -59417,10 +59425,9 @@ msgid "Updating database from image metadata"
 msgstr "正在从图像更新数据库元数据"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "元数据信息"
+msgstr "%1 的元数据同步\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
 #, kde-format
@@ -59428,10 +59435,9 @@ msgid "Thumbs"
 msgstr "缩略图"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "缩略图属性："
+msgstr "%1 的缩略图\n"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -62508,7 +62514,7 @@ msgstr "文件打开错误。"
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:559
+#: core/utilities/setup/downloader/filesdownloader.cpp:564
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -62528,13 +62534,13 @@ msgstr ""
 "框，digiKam 会在下一次启动时再次提示您下载。</p><p>这些软件包将被下载到 %1。"
 "</p><p><b>下载完成后，请重新启动 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:572
+#: core/utilities/setup/downloader/filesdownloader.cpp:577
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:579
+#: core/utilities/setup/downloader/filesdownloader.cpp:584
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "选中功能所需的所有文件均已找到。"
@@ -64312,7 +64318,7 @@ msgstr "FFmpeg (默认)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (系统)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -64320,10 +64326,9 @@ msgid "Windows (System)"
 msgstr "Windows (系统)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (系统)"
+msgstr "Darwin (系统)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -64571,12 +64576,10 @@ msgstr ""
 "升级完成后，您的数据库将无法在 8.5.0 版之前的 digiKam 中使用。"
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr "点击查看<interface>更新文件哈希值</interface>的有关信息"
+msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format
@@ -65462,92 +65465,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Face Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "人脸识别精度"
-
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgctxt "@label AI model used for detection"
-#~ msgid "AI Model:"
-#~ msgstr "型号："
-
-#, fuzzy
-#~| msgid "Face Recognition DB"
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Recognition Accuracy:"
-#~ msgstr "人脸识别数据库"
-
-#, fuzzy
-#~| msgid "Selection model: "
-#~ msgctxt "@label AI model used for recognition"
-#~ msgid "Recognition model:"
-#~ msgstr "选择模型："
-
-#~ msgctxt "@label left extremities of a scale"
-#~ msgid "Sensitivity"
-#~ msgstr "宽泛"
-
-#~ msgctxt "@label right extremities of a scale"
-#~ msgid "Specificity"
-#~ msgstr "精准"
-
-#~ msgctxt "@option:check"
-#~ msgid "Use YOLO v3 detection model"
-#~ msgstr "使用 YOLO v3 检测模型"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Face detection with YOLO v3 data model. Better results but slower."
-#~ msgstr "人脸检测功能将使用 YOLO v3 数据模型。精确度更高，速度也更慢。"
-
-#~ msgid ""
-#~ "We now switch to the system icon theme. The icon colors are automatically "
-#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
-#~ "restart of digiKam."
-#~ msgstr ""
-#~ "digiKam 将切换为系统的图标主题。图标的颜色会在 Plasma 6 桌面环境中自动调"
-#~ "整。重新启动 digiKam 即可使用新的图标主题。"
-
-#, fuzzy
-#~| msgid ""
-#~| "IRC: %1 - #digikam\n"
-#~| "Feedback: %2\n"
-#~| "Documentation: %3\n"
-#~| "\n"
-#~| "Build date: %4 (target: %5)\n"
-#~| "Revision: %6\n"
-#~| "Branch: %7"
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4\n"
-#~ "Build target: %5\n"
-#~ "Build architecture: %6"
-#~ msgstr ""
-#~ "IRC 频道：%1 - #digikam\n"
-#~ "提交反馈：%2\n"
-#~ "使用文档：%3\n"
-#~ "\n"
-#~ "构建日期：%4 (目标平台：%5)\n"
-#~ "修订版本：%6\n"
-#~ "代码分支：%7"
-
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)"
-#~ msgstr ""
-#~ "IRC 频道：%1 - #digikam\n"
-#~ "提交反馈：%2\n"
-#~ "使用文档：%3\n"
-#~ "\n"
-#~ "构建日期：%4 (目标平台：%5)"
