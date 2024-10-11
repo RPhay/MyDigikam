@@ -205,6 +205,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     {
 
         doFaceScan(faceScanSettings);
+
     }
     else
     {

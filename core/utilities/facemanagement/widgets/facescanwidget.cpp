@@ -244,7 +244,7 @@ void FaceScanWidget::setupUi()
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                         "Detection model used to find faces. YuNet is the default model.\n"
-                                        "It is faster and more configurable than YOLOv3.\n"
+                                        "It is faster and more configurable than SSD and YOLOv3.\n"
                                         "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or later."));
 
 #if OPENCV_TEST_VERSION(4,6,0)
@@ -311,7 +311,7 @@ void FaceScanWidget::setupUi()
     d->recognizeAccuracyInput->setRange(0, 100, 10);
     d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                                 "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
-                                                "be recognized, but less faces will be recognized\n"
+                                                "be recognized, but less faces will be recognized.\n"
                                                 "Note: only faces that are very similar to pre-tagged faces are recognized."));
 
     QLabel* const recognizeModelLabel    = new QLabel(i18nc("@label AI model used for face recognition",
@@ -446,6 +446,7 @@ void FaceScanWidget::slotRecognizeModelChanged()
 
     if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
     {
+
         // upgrade was approved.  Save new value
 
         ApplicationSettings* const appSettings = ApplicationSettings::instance();
@@ -466,12 +467,25 @@ void FaceScanWidget::slotRecognizeModelChanged()
         settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
         PeopleSideBarWidget::doFaceScan(settings);
+
     }
     else
     {
+
+        // disconnect so we don't get multiple dialogs
+
+        disconnect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+                                                            this, &FaceScanWidget::slotRecognizeModelChanged);
+
         // reselect the old model value in the drop-down
 
         d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
+
+        // reconnect for future notifications
+        
+        connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+                                                         this, &FaceScanWidget::slotRecognizeModelChanged);
+
     }
 
     // clean up the dialog

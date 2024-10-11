@@ -72,14 +72,12 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
     {
         case FaceScanSettings::FaceRecognitionModel::OpenFace:
         {
-            changeTypeString = i18n("downgrade");
             newModelString   = i18n("OpenFace");
             break;
         }
 
         case FaceScanSettings::FaceRecognitionModel::SFace:
         {
-            changeTypeString = i18n("upgrade");
             newModelString   = i18n("SFace");
             break;
         }
@@ -91,11 +89,10 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
                                    " minutes or more depending on the size of your library and the speed of your computer."
                                    " SFace is the preferred model. Do not use any facial detection or recognition features"
                                    " during the process.\n\nAre you sure you want to continue?",
-                                   "You are about to %1 the face recognition model to %2. This process can take several"
+                                   "You are about to change the face recognition model to %1. This process can take several"
                                    " minutes or more depending on the size of your library and the speed of your computer."
                                    " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                   " during the %1.\n\nAre you sure you want to continue?",
-                                   changeTypeString,
+                                   " during the process.\n\nAre you sure you want to continue?",
                                    newModelString
                                   );
 
@@ -110,7 +107,7 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
     d->message->setWordWrap(true);
 
     d->startButton      = new QPushButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"), this);
-    d->startButton->setToolTip( i18ncp("@action", "Begin operation", "Begin %1.", changeTypeString));
+    d->startButton->setToolTip(i18nc("@action:button", "Begin"));
     d->startButton->setDefault(true);
 
     d->cancelButton     = new QPushButton(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("Cancel"), this);
