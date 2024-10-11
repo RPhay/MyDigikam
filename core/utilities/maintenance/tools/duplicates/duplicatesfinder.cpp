@@ -31,6 +31,7 @@
 #include "albummanager.h"
 #include "itemlister.h"
 #include "dnotificationwrapper.h"
+#include "dnotificationwidget.h"
 #include "digikamapp.h"
 #include "dbjobsthread.h"
 #include "dbjobsmanager.h"
@@ -45,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                          minSimilarity              = 90;
     int                          maxSimilarity              = 100;
     int                          albumTagRelation           = 0;
@@ -55,6 +58,7 @@ public:
     QList<int>                   tagsIdList;
     QList<int>                   referenceAlbumsList;
     SearchesDBJobsThread*        job                        = nullptr;
+    int                          duplicatesFound            = 0;
 };
 
 DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
@@ -173,6 +177,8 @@ void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& in
 
     setLabel(lbl);
 
+    d->duplicatesFound += duplicates;
+
     setProgress(percentage);
 }
 
@@ -187,6 +193,34 @@ void DuplicatesFinder::slotDone()
         DNotificationWrapper(QString(), d->job->errorsList().first(),
                              DigikamApp::instance(), DigikamApp::instance()->windowTitle());
     }
+
+    setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for duplicates: %1\n", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for duplicates: %1\n", totalItems()));
+    }
+
+    if (d->duplicatesFound > 1)
+    {
+        lbl.append(i18n("Duplicates found: %1", d->duplicatesFound));
+    }
+    else
+    {
+        lbl.append(i18n("Duplicate found: %1", d->duplicatesFound));
+    }
+
+    setLabel(lbl);
+
+    // Dispatch scan resume to the icon-view info pop-up.
+
+    Q_EMIT signalScanNotification(lbl, DNotificationWidget::Information);
 
     // save the min and max similarity in the configuration.
 

@@ -75,7 +75,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 {
     if (!d)
     {
-        d = new Private();
+        d                 = new Private();
         d->parentInstance = this;
     }
     else
@@ -205,7 +205,6 @@ void PeopleSideBarWidget::slotScanForFaces()
     {
 
         doFaceScan(faceScanSettings);
-
     }
     else
     {

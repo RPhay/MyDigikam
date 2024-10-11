@@ -52,6 +52,10 @@ public:
 
     ~DuplicatesFinder()     override;
 
+Q_SIGNALS:
+
+    void signalScanNotification(const QString& msg, int type);
+
 private Q_SLOTS:
 
     void slotStart()        override;

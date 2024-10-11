@@ -50,6 +50,10 @@ public Q_SLOTS:
     void slotSetSelectedAlbums(const QList<TAlbum*>& albums);
     void slotRemoveDuplicates();
 
+Q_SIGNALS:
+
+    void signalScanNotification(const QString& msg, int type);
+
 private Q_SLOTS:
 
     void initAlbumUpdateConnections();

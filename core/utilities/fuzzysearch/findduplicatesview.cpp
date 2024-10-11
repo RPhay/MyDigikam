@@ -549,6 +549,9 @@ void FindDuplicatesView::slotFindDuplicates()
     connect(finder, SIGNAL(signalComplete()),
             this, SLOT(slotComplete()));
 
+    connect(finder, SIGNAL(signalScanNotification(QString,int)),
+            this, SIGNAL(signalScanNotification(QString,int)));
+
     connect(finder, &DuplicatesFinder::signalComplete,
             this, [this]
        {

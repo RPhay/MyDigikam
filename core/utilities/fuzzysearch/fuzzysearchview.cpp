@@ -106,6 +106,9 @@ FuzzySearchView::~FuzzySearchView()
 
 void FuzzySearchView::setupConnections()
 {
+    connect(d->findDuplicatesPanel, SIGNAL(signalScanNotification(QString,int)),
+            this, SIGNAL(signalNotificationError(QString,int)));
+
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
 
