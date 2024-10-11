@@ -167,12 +167,12 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->vbox5               = new DVBox;
     QLabel* const title    = new QLabel(d->vbox5);
     title->setText(i18nc("@label",
-                        "<p><b>This tool allows to assign automatically tags to images by contents analysis using "
-                        "deep-learning neural network.</b></p>"
-                        "<p>The settings below determines the deep-learning model to use while parsing image "
-                        "contents to determine the subjects of the photography. The neural network used in background "
-                        "will generate automatically a serie of tags describing the contents and store the results in "
-                        "the database.</p>"));
+                         "<p><b>This tool allows to assign automatically tags to images by contents analysis using "
+                         "deep-learning neural network.</b></p>"
+                         "<p>The settings below determines the deep-learning model to use while parsing image "
+                         "contents to determine the subjects of the photography. The neural network used in background "
+                         "will generate automatically a serie of tags describing the contents and store the results in "
+                         "the database.</p>"));
     title->setWordWrap(true);
 
     DHBox* const hbox12    = new DHBox(d->vbox5);

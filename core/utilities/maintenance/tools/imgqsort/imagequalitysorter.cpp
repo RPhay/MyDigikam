@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     QualityScanMode       mode      = ImageQualitySorter::NonAssignedItems;
 
     ImageQualityContainer quality;
@@ -96,6 +98,7 @@ void ImageQualitySorter::slotStart()
     MaintenanceTool::slotStart();
 
     setLabel(i18n("Image Quality Sorter"));
+    setThumbnail(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
 
@@ -178,6 +181,26 @@ void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int
 
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);
+}
+
+void ImageQualitySorter::slotDone()
+{
+    setThumbnail(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for quality: %1\n", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for quality: %1\n", totalItems()));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam
