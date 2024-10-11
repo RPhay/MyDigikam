@@ -123,7 +123,7 @@ InstallKF6Component(kguiaddons               ${KDE_VERSION}     "${Qt6CommonOpti
 InstallKF6Component(kwidgetsaddons           ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kitemviews               ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kcompletion              ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
-InstallKF6Component(kcolorscheme             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "kcolorscheme-deprecated.patch")
+InstallKF6Component(kcolorscheme             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kconfigwidgets           ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kiconthemes              ${KDE_VERSION}     "${Qt6CommonOptions};-DKICONTHEMES_USE_QTQUICK=OFF"         "")
 InstallKF6Component(kservice                 ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
