@@ -511,9 +511,9 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 {
     if (widget)
     {
-        widget->setCurrentTag(currentTag);
         widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18nc("@label", "Who is this?")
                                                                  : QString());
+        widget->setCurrentTag(currentTag);
 
         if (confirmButton)
         {
