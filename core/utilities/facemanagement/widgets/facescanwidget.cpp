@@ -19,6 +19,7 @@
 
 #include "facescanwidget_p.h"
 #include "recognitionmodelchange.h"
+#include "peoplesidebarwidget.h"
 
 namespace Digikam
 {
@@ -243,19 +244,19 @@ void FaceScanWidget::setupUi()
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                         "Detection model used to find faces. YuNet is the default model.\n"
                                         "It is faster and more configurable than YOLOv3.\n"
-                                        "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or later."));
+                                        "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or later."));
 
-#if OPENCV_TEST_VERSION(4,10,0)
+#if OPENCV_TEST_VERSION(4,6,0)
 
-    auto* const model = qobject_cast<QStandardItemModel*>(d->detectModelBox->model());
+    auto* const detModel = qobject_cast<QStandardItemModel*>(d->detectModelBox->model());
 
-    if (model)
+    if (detModel)
     {
-        auto* const item = model->item(0);
+        auto* const detItem = detModel->item(0);
 
-        if (item)
+        if (detItem)
         {
-            item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
+            detItem->setFlags(detItem->flags() & ~Qt::ItemIsEnabled);
         }
     }
 
@@ -322,7 +323,23 @@ void FaceScanWidget::setupUi()
     d->recognizeModelBox->setEditable(false);
     d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
                                            "SFace is the default detection model. It is faster and more accurate.\n"
-                                           "OpenFace can be used for older libraries."));
+                                           "OpenFace can be used for older libraries.\n"
+                                           "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or later."));
+#if OPENCV_TEST_VERSION(4,6,0)
+
+    auto* const recModel = qobject_cast<QStandardItemModel*>(d->recognizeModelBox->model());
+
+    if (recModel)
+    {
+        auto* const recItem = recModel->item(0);
+
+        if (recItem)
+        {
+            recItem->setFlags(recItem->flags() & ~Qt::ItemIsEnabled);
+        }
+    }
+
+#endif
 
     recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
@@ -429,6 +446,7 @@ void FaceScanWidget::slotRecognizeModelChanged()
     // show the upgrade warning dialog box
     if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
     {
+
         // upgrade was approved.  Save new value
         ApplicationSettings* const appSettings = ApplicationSettings::instance();
         appSettings->setFaceRecognitionModel(newModel);
@@ -446,20 +464,15 @@ void FaceScanWidget::slotRecognizeModelChanged()
         settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
         settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
-        if (!d->facesDetector)
-        {
-            delete d->facesDetector;
-        }
+        PeopleSideBarWidget::doFaceScan(settings);
 
-        d->facesDetector                = new FacesDetector(settings);
-
-        d->facesDetector->setNotificationEnabled(false);
-        d->facesDetector->start();
     }
     else
     {
+
         // reselect the old model value in the drop-down
         d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
+
     }
 
     // clean up the dialog

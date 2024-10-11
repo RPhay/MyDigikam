@@ -22,6 +22,7 @@
 #include "albummodel.h"
 #include "searchmodificationhelper.h"
 #include "sidebarwidget.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -45,6 +46,8 @@ public:
     const QIcon   getIcon()                                          override;
     const QString getCaption()                                       override;
 
+    static void   doFaceScan(const FaceScanSettings& faceScanSettings);
+
 private Q_SLOTS:
 
     void slotInit();
@@ -59,7 +62,7 @@ Q_SIGNALS:
 private:
 
     class Private;
-    Private* const d = nullptr;
+    static Private* d;
 };
 
 } // namespace Digikam

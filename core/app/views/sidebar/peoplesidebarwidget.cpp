@@ -60,14 +60,28 @@ public:
     FaceScanWidget*           settingsWdg               = nullptr;
     TagFolderView*            tagFolderView             = nullptr;
     SearchTextBarDb*          tagSearchBar              = nullptr;
+    PeopleSideBarWidget*      parentInstance            = nullptr;
+
+    int                       ref                       = 1;
 };
+
+PeopleSideBarWidget::Private* PeopleSideBarWidget::d = nullptr;
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
                                          TagModel* const model,
                                          SearchModificationHelper* const searchModificationHelper)
-    : SidebarWidget(parent),
-      d            (new Private)
+    : SidebarWidget(parent)
 {
+    if (!d)
+    {
+        d = new Private();
+        d->parentInstance = this;
+    }
+    else
+    {
+        ++(d->ref);
+    }
+
     setObjectName(QLatin1String("People Sidebar"));
     setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F9));
     d->searchModificationHelper   = searchModificationHelper;
@@ -124,7 +138,16 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
 PeopleSideBarWidget::~PeopleSideBarWidget()
 {
-    delete d;
+
+
+    --(d->ref);
+
+    if(0 == d->ref)
+    {        
+        delete d;
+        d = nullptr;
+    }
+
 }
 
 void PeopleSideBarWidget::slotInit()
@@ -182,20 +205,9 @@ void PeopleSideBarWidget::slotScanForFaces()
 
     if (!d->settingsWdg->settingsConflicted())
     {
-        FacesDetector* const tool = new FacesDetector(faceScanSettings);
-        tool->start();
 
-        d->settingsWdg->setEnabled(false);
-        d->rescanButton->setEnabled(false);
+        doFaceScan(faceScanSettings);
 
-        connect(tool, SIGNAL(signalComplete()),
-                this, SLOT(slotScanComplete()));
-
-        connect(tool, SIGNAL(signalCanceled()),
-                this, SLOT(slotScanComplete()));
-
-        connect(tool, SIGNAL(signalScanNotification(QString,int)),
-                this, SIGNAL(signalNotificationError(QString,int)));
     }
     else
     {
@@ -220,6 +232,28 @@ const QIcon PeopleSideBarWidget::getIcon()
 const QString PeopleSideBarWidget::getCaption()
 {
     return i18nc("Browse images sorted by depicted people", "People");
+}
+
+// this should probably be a singleton somewhere else, but here works well
+// for controlling the FaceScanWidget
+void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
+{
+
+    FacesDetector* facesDetector = new FacesDetector(faceScanSettings);
+    facesDetector->start();
+
+    connect(facesDetector, SIGNAL(signalComplete()),
+            d->parentInstance, SLOT(slotScanComplete()));
+
+    connect(facesDetector, SIGNAL(signalCanceled()),
+            d->parentInstance, SLOT(slotScanComplete()));
+
+    connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
+            d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
+
+    d->settingsWdg->setEnabled(false);
+    d->rescanButton->setEnabled(false);
+    
 }
 
 } // namespace Digikam
