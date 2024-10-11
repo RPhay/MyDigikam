@@ -43,6 +43,10 @@ public:
 
     void setUseMultiCoreCPU(bool b) override;
 
+Q_SIGNALS:
+
+    void signalScanNotification(const QString& msg, int type);
+
 private:
 
     void processOne();

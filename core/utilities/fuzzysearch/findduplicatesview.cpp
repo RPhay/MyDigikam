@@ -638,6 +638,10 @@ void FindDuplicatesView::slotCheckForValidSettings()
 void FindDuplicatesView::slotUpdateFingerPrints()
 {
     FingerPrintsGenerator* const tool = new FingerPrintsGenerator(false);
+
+    connect(tool, SIGNAL(signalScanNotification(QString,int)),
+            this, SIGNAL(signalScanNotification(QString,int)));
+
     tool->start();
 }
 

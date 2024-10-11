@@ -114,6 +114,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     if      (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
+
         FacialRecognitionWrapper().setParameters(settings);
         FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
         d->pipeline.plugRetrainingDatabaseFilter();
@@ -278,7 +279,7 @@ void FacesDetector::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
+    setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-detect")).pixmap(48));
 
     // set label depending on settings
 

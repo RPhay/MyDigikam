@@ -87,7 +87,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->scanFingerPrints        = new QCheckBox(i18n("Scan for changed or non-cataloged items (faster)"));
-    d->expanderBox->insertItem(Private::FingerPrints, d->scanFingerPrints, QIcon::fromTheme(QLatin1String("run-build")),
+    d->expanderBox->insertItem(Private::FingerPrints, d->scanFingerPrints, QIcon::fromTheme(QLatin1String("fingerprint")),
                                i18n("Rebuild Finger-prints"), QLatin1String("Fingerprints"), false);
     d->expanderBox->setCheckBoxVisible(Private::FingerPrints, true);
 

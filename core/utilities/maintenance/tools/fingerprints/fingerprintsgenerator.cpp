@@ -6,7 +6,7 @@
  * Date        : 2008-05-16
  * Description : fingerprints generator
  *
- * SPDX-FileCopyrightText:      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2018      by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  * SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -35,6 +35,7 @@
 #include "albummanager.h"
 #include "coredbaccess.h"
 #include "maintenancethread.h"
+#include "dnotificationwidget.h"
 
 namespace Digikam
 {
@@ -44,6 +45,8 @@ class Q_DECL_HIDDEN FingerPrintsGenerator::Private
 public:
 
     Private() = default;
+
+public:
 
     bool               rebuildAll   = true;
 
@@ -87,6 +90,7 @@ void FingerPrintsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
 
+    setThumbnail(QIcon::fromTheme(QLatin1String("fingerprint")).pixmap(48));
     setLabel(i18n("Finger-prints"));
 
     ProgressManager::addProgressItem(this);
@@ -157,9 +161,29 @@ void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 
 void FingerPrintsGenerator::slotDone()
 {
+    setThumbnail(QIcon::fromTheme(QLatin1String("fingerprint")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for fingerprint: %1", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for fingerprint: %1", totalItems()));
+    }
+
+    setLabel(lbl);
+
+    // Dispatch scan resume to the icon-view info pop-up.
+
+    Q_EMIT signalScanNotification(lbl, DNotificationWidget::Information);
+
     // Switch on scanned for finger-prints flag on digiKam config file.
 
-    KSharedConfig::openConfig()->group(QLatin1String("General Settings")).writeEntry(QLatin1String("Finger Prints Generator First Run"), true);
+    KSharedConfig::openConfig()->group(QLatin1String("General Settings"))
+                                       .writeEntry(QLatin1String("Finger Prints Generator First Run"), true);
 
     MaintenanceTool::slotDone();
 }
