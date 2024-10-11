@@ -15,7 +15,6 @@
 
 #include "recognitionmodelchange.h"
 
-
 // Qt includes
 
 #include <QGridLayout>
@@ -43,42 +42,47 @@ public:
 
     Private() = default;
 
-    // QString               inputFileName;
-    // QString               output;
+public:
+
     QWidget*                page                = nullptr;
     QVBoxLayout*            verticalLayout      = nullptr;
     QGridLayout*            layoutGrid          = nullptr;
     QLabel*                 message             = nullptr;
-    QLabel*                 icon                =nullptr;
+    QLabel*                 icon                = nullptr;
 
     QPushButton*            startButton         = nullptr;
     QPushButton*            cancelButton        = nullptr;
-
 };
 
 ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const parent, FaceScanSettings::FaceRecognitionModel newModel)
     : QDialog(parent),
       d      (new Private)
 {
-
     setModal(true);
     setWindowTitle(i18nc("@title:window", "Facial Recognition Model"));
 
     // const int spacing   = layoutSpacing();
+
     QString changeTypeString;
     QString newModelString;
 
     // use a switch instead of if/else to allow for other models in the future
+
     switch (newModel)
     {
         case FaceScanSettings::FaceRecognitionModel::OpenFace:
+        {
             changeTypeString = i18n("downgrade");
             newModelString   = i18n("OpenFace");
             break;
+        }
+
         case FaceScanSettings::FaceRecognitionModel::SFace:
+        {
             changeTypeString = i18n("upgrade");
             newModelString   = i18n("SFace");
             break;
+        }
     }
 
     QString messageString = i18ncp(
@@ -94,6 +98,7 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
                                    changeTypeString,
                                    newModelString
                                   );
+
     d->page             = new QWidget(this);
     d->verticalLayout   = new QVBoxLayout(d->page);
     d->layoutGrid       = new QGridLayout(this);

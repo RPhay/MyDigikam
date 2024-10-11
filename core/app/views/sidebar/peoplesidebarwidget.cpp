@@ -11,6 +11,7 @@
  * SPDX-FileCopyrightText: 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * SPDX-FileCopyrightText: 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -138,16 +139,13 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
 PeopleSideBarWidget::~PeopleSideBarWidget()
 {
-
-
     --(d->ref);
 
-    if(0 == d->ref)
-    {        
+    if (0 == d->ref)
+    {
         delete d;
         d = nullptr;
     }
-
 }
 
 void PeopleSideBarWidget::slotInit()
@@ -236,10 +234,10 @@ const QString PeopleSideBarWidget::getCaption()
 
 // this should probably be a singleton somewhere else, but here works well
 // for controlling the FaceScanWidget
+
 void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 {
-
-    FacesDetector* facesDetector = new FacesDetector(faceScanSettings);
+    FacesDetector* const facesDetector = new FacesDetector(faceScanSettings);
     facesDetector->start();
 
     connect(facesDetector, SIGNAL(signalComplete()),
@@ -253,7 +251,6 @@ void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 
     d->settingsWdg->setEnabled(false);
     d->rescanButton->setEnabled(false);
-    
 }
 
 } // namespace Digikam

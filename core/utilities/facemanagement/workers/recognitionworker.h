@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -36,7 +37,11 @@ public Q_SLOTS:
 
     void process(const FacePipelineExtendedPackage::Ptr& package);
     void setThreshold(double threshold, bool);
-    void setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
+    void setAccuracyAndModel(double detectAccuracy,
+                             FaceScanSettings::FaceDetectionModel detectModel,
+                             FaceScanSettings::FaceDetectionSize detectSize,
+                             double recognizeAccuracy,
+                             FaceScanSettings::FaceRecognitionModel recognizeModel);
 
     // TODO: add set K-Nearest method
 

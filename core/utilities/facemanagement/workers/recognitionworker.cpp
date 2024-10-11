@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -70,14 +71,19 @@ void RecognitionWorker::aboutToDeactivate()
     imageRetriever.cancel();
 }
 
-void RecognitionWorker::setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel)
+void RecognitionWorker::setAccuracyAndModel(double detectAccuracy,
+                                            FaceScanSettings::FaceDetectionModel detectModel,
+                                            FaceScanSettings::FaceDetectionSize detectSize,
+                                            double recognizeAccuracy,
+                                            FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     // michmill added
+
     QVariantMap params;
     params[QLatin1String("detectAccuracy")]       = detectAccuracy;
     params[QLatin1String("detectModel")]          = detectModel;
     params[QLatin1String("detectSize")]           = detectSize;
-    params[QLatin1String("recognizeAccuracy")]    = recognizeAccuracy;     
+    params[QLatin1String("recognizeAccuracy")]    = recognizeAccuracy;
     params[QLatin1String("recognizeModel")]       = recognizeModel;
     recognizer.setParameters(params);
 
@@ -89,7 +95,6 @@ void RecognitionWorker::setAccuracyAndModel(double detectAccuracy, FaceScanSetti
 
     // Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
 }
-
 
 } // namespace Digikam
 

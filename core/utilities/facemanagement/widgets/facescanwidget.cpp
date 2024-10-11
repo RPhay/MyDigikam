@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -401,7 +402,6 @@ void FaceScanWidget::setupConnections()
 
     connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &FaceScanWidget::slotRecognizeModelChanged);
-
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -427,8 +427,6 @@ void FaceScanWidget::slotDetectModelChanged()
     {
         d->detectSizeBox->setEnabled(false);
     }
-
-
 }
 
 void FaceScanWidget::slotDetectSizeChanged()
@@ -439,20 +437,23 @@ void FaceScanWidget::slotDetectSizeChanged()
 void FaceScanWidget::slotRecognizeModelChanged()
 {
     // save the model values if we have to revert
+
     FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
     FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
     ChangeFaceRecognitionModelDlg* dlg              = new ChangeFaceRecognitionModelDlg(this, newModel);
 
     // show the upgrade warning dialog box
+
     if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
     {
-
         // upgrade was approved.  Save new value
+
         ApplicationSettings* const appSettings = ApplicationSettings::instance();
         appSettings->setFaceRecognitionModel(newModel);
         appSettings->saveSettings();
 
         // start retraining and update pipeline here
+
         FaceScanSettings settings;
 
         settings.wholeAlbums            = true;
@@ -465,17 +466,16 @@ void FaceScanWidget::slotRecognizeModelChanged()
         settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
         PeopleSideBarWidget::doFaceScan(settings);
-
     }
     else
     {
-
         // reselect the old model value in the drop-down
-        d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
 
+        d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
     }
 
     // clean up the dialog
+
     delete dlg;
 }
 
