@@ -37,7 +37,7 @@ OpenCVDNNFaceRecognizer::~OpenCVDNNFaceRecognizer()
 {
     --(d->ref);
 
-    if(0 == d->ref)
+    if (0 == d->ref)
     {
         delete d;
         d = nullptr;
@@ -144,7 +144,6 @@ QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QImage*>& inputImage
 
     return ids;
 }
-
 
 void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
 {

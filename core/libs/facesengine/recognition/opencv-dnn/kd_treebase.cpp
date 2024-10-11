@@ -6,7 +6,7 @@
  * Description : Implementation of KD-Tree for vector space partitioning
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
- * SPDX-FileCopyrightText: 2024 by Michae Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -27,7 +27,7 @@ class Q_DECL_HIDDEN KDTreeBase::Private
 public:
 
     Private(int dim, int threshold)
-        : nbDimension(dim),
+        : nbDimension (dim),
           mapThreshold(threshold)
     {
     }
@@ -39,9 +39,9 @@ public:
 
 public:
 
-    int         nbDimension     = 0;
-    KDNodeBase* root            = nullptr;
-    QMutex      mutex;
+    int                  nbDimension    = 0;
+    KDNodeBase*          root           = nullptr;
+    QMutex               mutex;
 
     QVector<KDNodeBase*> nodeMap;
     int                  mapThreshold   = KDTREE_MAP_THRESHOLD;    ///< above this size start using the KDTree instead of the vector
@@ -52,12 +52,12 @@ public:
 KDTreeBase::KDTreeBase(
                        int dim,
                        int threshold = KDTREE_MAP_THRESHOLD    // if the vector grows to 500 items, start using the KDTree
-                       )
-                    : d (new Private(dim, threshold))
+                      )
+                    : d(new Private(dim, threshold))
 {
     // using this to compare brute force vs kdtree performance due to sparse data in k-dimensions (128 dimensions for face features)
 
-    QString bruteForce    = QString::fromLocal8Bit(qgetenv("DIGIKAM_KDREE_USEBRUTEFORCE"));
+    QString bruteForce = QString::fromLocal8Bit(qgetenv("DIGIKAM_KDREE_USEBRUTEFORCE"));
 
     if (bruteForce.length() > 0)
     {
@@ -134,7 +134,6 @@ QMap<double, QVector<int> > KDTreeBase::getClosestNeighbors(const cv::Mat& posit
 
         while (node != d->nodeMap.end())
         {
-
             KDNodeBase::NodeCompareResult result = (*node)->nodeCompare(position,
                                                                         (*node)->getPosition(),
                                                                         sqRange,

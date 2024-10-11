@@ -81,17 +81,17 @@ public:
     QVector<int> recognize(const QList<QImage*>& inputImages);
 
     /**
-     * clear specified trained data
+     * Clear specified trained data
      */
     void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
 
     /**
-     * set K parameter of K-Nearest neighbors algorithm
+     * Set K parameter of K-Nearest neighbors algorithm
      */
     void setNbNeighbors(int k);
 
     /**
-     * set maximum square distance of 2 vector
+     * Set maximum square distance of 2 vectors
      */
     void setThreshold(float threshold);
 
@@ -116,7 +116,6 @@ private:
     class Private;
     // Private* const d = nullptr;
     static Private* d;
-
 };
 
 } // namespace Digikam

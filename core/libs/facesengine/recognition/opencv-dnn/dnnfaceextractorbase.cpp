@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -70,7 +70,7 @@ DNNFaceExtractorBase::~DNNFaceExtractorBase()
 }
 
 double DNNFaceExtractorBase::cosineDistance(const std::vector<float>& v1,
-                                        const std::vector<float>& v2)
+                                            const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 
@@ -82,7 +82,7 @@ double DNNFaceExtractorBase::cosineDistance(const std::vector<float>& v1,
 }
 
 double DNNFaceExtractorBase::L2squareDistance(const std::vector<float>& v1,
-                                          const std::vector<float>& v2)
+                                              const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 
@@ -97,7 +97,7 @@ double DNNFaceExtractorBase::L2squareDistance(const std::vector<float>& v1,
 }
 
 double DNNFaceExtractorBase::L2squareNormDistance(const std::vector<float>& v1,
-                                              const std::vector<float>& v2)
+                                                  const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 

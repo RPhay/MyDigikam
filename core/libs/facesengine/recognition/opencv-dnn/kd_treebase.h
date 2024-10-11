@@ -80,7 +80,6 @@ private:
 
     class Private;
     Private* const d                                                                                = nullptr;
-
 };
 
 } // namespace Digikam

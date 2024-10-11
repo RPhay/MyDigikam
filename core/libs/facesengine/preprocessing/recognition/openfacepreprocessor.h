@@ -48,6 +48,12 @@ public:
 
 private:
 
+    // Disable
+    OpenfacePreprocessor(const OpenfacePreprocessor&)            = delete;
+    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&) = delete;
+
+private:
+
     cv::Size               outImageSize;
 
     cv::Mat                faceTemplate;
@@ -56,12 +62,6 @@ private:
     RedEye::ShapePredictor sp;
 
     QMutex                 mutex;
-
-private:
-
-    // Disable
-    OpenfacePreprocessor(const OpenfacePreprocessor&)            = delete;
-    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&) = delete;
 };
 
 } // namespace Digikam

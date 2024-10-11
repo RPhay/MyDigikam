@@ -6,7 +6,7 @@
  * Description : Node of KD-Tree for vector space partitioning
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
- * SPDX-FileCopyrightText: 2024 by Michae Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -58,7 +58,7 @@ KDNodeBase* KDNodeSFace::createNode(const cv::Mat& nodePos,
                            identity,
                            splitAxis,
                            dimension
-                        //    m_net
+                           //m_net
                           );
 }
 
@@ -73,16 +73,16 @@ KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
     KDNodeBase::NodeCompareResult result;
 
     Q_UNUSED(nbDimension);
-
-    // const double cosDistance     = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_COSINE);
-    // const double norm_l1Distance = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_NORM_L2);
-
+/*
+    const double cosDistance     = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_COSINE);
+    const double norm_l1Distance = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_NORM_L2);
+*/
     double cosDistance     = sum(queryPosition.mul(currentPosition))[0];
     double norm_l1Distance = norm(queryPosition, currentPosition);
 
-    // recompute cosThreshold for SFace based on passed in sqRange.
+    // Recompute cosThreshold for SFace based on passed in sqRange.
     // sqRange is controlled via the UI. cosThreshold is hard coded.  Need to fix that later
-    // we use the inverse of the cos result to compare to sqRange
+    // We use the inverse of the cos result to compare to sqRange
     // and norm_l1 distance compared to recomputed cosThreshold
     // norm_l1 is almost always < 1 for a good match. We add .1 of sqRange for extra verification
     // to avoid false negatives

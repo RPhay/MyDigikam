@@ -5,9 +5,9 @@
  * Date        : 2019-07-22
  * Description : Class to perform faces detection using OpenCV DNN module
  *
- * SPDX-FileCopyrightText: 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -76,6 +76,7 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
 }
 
 // TODO: prepareForDetection give different performances
+
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
@@ -109,7 +110,6 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     {
         return prepareForDetection(cvImage, paddedSize);
     }
-
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv::Size& paddedSize) const
@@ -202,21 +202,23 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
 cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float resizeFactor = 1.0f;
+    float resizeFactor      = 1.0F;
 
     if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
     {
         // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
         // so we just need to make sure no one bound exceeds the max. No padding needed
-        resizeFactor = std::min(static_cast<float>(inputImageSize.width) / static_cast<float>(cvImage.cols), static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+
+        resizeFactor            = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
+                                           static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
 
         int newWidth            = (int)(resizeFactor * cvImage.cols);
         int newHeight           = (int)(resizeFactor * cvImage.rows);
         cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
-
     }
 
     paddedSize = cv::Size(0, 0); // special case for YuNet
+
     return cvImage;
 }
 

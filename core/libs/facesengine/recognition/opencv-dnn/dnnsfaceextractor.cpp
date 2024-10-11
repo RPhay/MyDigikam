@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2024      by Michae Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,9 +24,6 @@
 #include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>
-
-// OpenCV includes
-// #include <opencv2/imgproc.hpp>
 
 // Local includes
 
@@ -58,13 +55,11 @@ public:
     cv::Ptr<cv::FaceRecognizerSF>   net         = nullptr;
     cv::Ptr<cv::FaceDetectorYN>     cv_model    = nullptr;
     QMutex                          mutex;
-
 };
-
 
 DNNSFaceExtractor::DNNSFaceExtractor()
     : DNNFaceExtractorBase(),
-    d(new Private)
+      d                   (new Private)
 {
     loadModels();
 }
@@ -133,7 +128,9 @@ bool DNNSFaceExtractor::loadModels()
                                                     );
 
 #else
+
             // we need both YuNet for basic landmark detection and SFace for full feature extraction
+
             d->net = cv::FaceRecognizerSF::create(
                                                   nnmodel.toStdString(),
                                                   "",

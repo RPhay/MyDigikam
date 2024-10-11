@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     Private(Classifier mthd, FaceScanSettings::FaceRecognitionModel recModel)
-        : method(mthd),
+        : method        (mthd),
           recognizeModel(recModel)
     {
         ref = 1;
@@ -53,15 +53,23 @@ public:
             switch (recognizeModel)
             {
                 case FaceScanSettings::FaceRecognitionModel::OpenFace:
+                {
                     extractors << new DNNOpenFaceExtractor;
                     break;
+                }
+
                 case FaceScanSettings::FaceRecognitionModel::SFace:
+                {
                     extractors << new DNNSFaceExtractor;
                     break;
+                }
+
                 default:
+                {
                     qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "OpenCVDNNFaceRecognizer::Private() Unknown recognition model specified" << Qt::endl;
+                    break;
+                }
             }
-            
         }
 
         switch (method)
@@ -88,6 +96,7 @@ public:
                     delete tree;
                     tree = nullptr; // safety in case reconstructTree fails
                 }
+
                 tree = FaceDbAccess().db()->reconstructTree(recognizeModel);
                 break;
             }
@@ -126,14 +135,14 @@ public:
     int predictKNN(const cv::Mat& faceEmbedding);
 
     int predictKDTree(const cv::Mat& faceEmbedding) const;
-    int predictDb(const cv::Mat& faceEmbedding) const;
-    int predictSFace(const cv::Mat& faceEmbedding) const;
+    int predictDb(const cv::Mat& faceEmbedding)     const;
+    int predictSFace(const cv::Mat& faceEmbedding)  const;
 
     bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
 
 public:
 
-    int                             ref         = 1;
+    int                             ref          = 1;
 
     Classifier                      method;
 
@@ -149,7 +158,6 @@ public:
 
     FaceScanSettings::FaceRecognitionModel recognizeModel;
 
-
 public:
 
     class ParallelRecognizer;
@@ -160,7 +168,7 @@ class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::Parallel
 {
 public:
 
-    ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* d,
+    ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* const d,
                        const QList<QImage*>& images,
                        QVector<int>& ids)
         : images    (images),
@@ -207,6 +215,7 @@ public:
                 default:
                 {
                     qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
+                    break;
                 }
             }
 
@@ -230,7 +239,7 @@ class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoop
 {
 public:
 
-    ParallelTrainer(OpenCVDNNFaceRecognizer::Private* d,
+    ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const d,
                     const QList<QImage*>& images,
                     const int& id,
                     const QString& context)

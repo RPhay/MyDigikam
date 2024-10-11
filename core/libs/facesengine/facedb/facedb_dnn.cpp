@@ -7,9 +7,9 @@
  *
  * SPDX-FileCopyrightText: 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText:      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
- * SPDX-FileCopyrightText:      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
- * SPDX-FileCopyrightText:      2024 by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -55,20 +55,27 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
 KDTreeBase* FaceDb::reconstructTree(FaceScanSettings::FaceRecognitionModel recModel)
 {
-    KDTreeBase* tree = nullptr;
-    
-    recognizeModel = recModel;
+    KDTreeBase* tree  = nullptr;
+    d->recognizeModel = recModel;
 
-    switch (recognizeModel)
+    switch (d->recognizeModel)
     {
         case FaceScanSettings::FaceRecognitionModel::OpenFace:
+        {
             tree     = new KDTreeOpenFace(128);
             break;
+        }
+
         case FaceScanSettings::FaceRecognitionModel::SFace:
+        {
             tree     = new KDTreeSFace(128);
             break;
+        }
+
         default:
+        {
              qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "FaceDb::reconstructTree Unknown recognition model specified" << Qt::endl;
+        }
     }
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));

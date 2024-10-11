@@ -15,10 +15,9 @@
 
 #pragma once
 
-#include "facepreprocessor.h"
-
 // Local includes
 
+#include "facepreprocessor.h"
 #include "digikam_export.h"
 
 namespace Digikam

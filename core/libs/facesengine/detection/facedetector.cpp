@@ -50,17 +50,28 @@ public:
                 switch (model)
                 {
                     case FaceScanSettings::FaceDetectionModel::SSDMOBILENET:
+                    {
                         m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
                         break;
+                    }
+
                     case FaceScanSettings::FaceDetectionModel::YOLOv3:
+                    {
                         m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLOv3);
                         break;
+                    }
+
                     case FaceScanSettings::FaceDetectionModel::YuNet:
+                    {
                         m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YuNet);
                         break;
+                    }
+
                     default:
+                    {
                         qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown facial detection model specified" << Qt::endl;
                         break;
+                    }
                 }
             }
         }
@@ -84,12 +95,12 @@ public:
 
         if (m_parameters.contains(QLatin1String("detectAccuracy")))
         {
-                backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("detectAccuracy")).toDouble()));
+            backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("detectAccuracy")).toDouble()));
         }
 
         if (m_parameters.contains(QLatin1String("detectSize")))
         {
-                backend()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(m_parameters.value(QLatin1String("detectSize")).toInt()));
+            backend()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(m_parameters.value(QLatin1String("detectSize")).toInt()));
         }
     }
 
