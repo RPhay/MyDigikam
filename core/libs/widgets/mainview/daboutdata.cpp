@@ -116,6 +116,12 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
                         );
 
+    aboutData.addAuthor ( ki18n("Michael Miller").toString(),
+                          ki18n("SFace and YuNet DNN models integration. Face Management improvements").toString(),
+                          QLatin1String("michael underscore miller at msn dot com"),
+                          QLatin1String("https://www.linkedin.com/in/michaelamiller01/")
+                        );
+
     // -- Contributors -----------------------------------------------------------
 
     aboutData.addAuthor ( ki18n("Matthias Welwarsky").toString(),
