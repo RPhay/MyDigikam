@@ -281,7 +281,7 @@ void FaceScanWidget::setupUi()
                                        "and it will increase detection time.</p>"
                                        "<p>Selecting <b>Large</b> or <b>Extra Large</b> will eliminate small background faces from being detected. "
                                        "It is much faster and will reduce the number of false-positives, but will not detect small faces "
-                                       "in the the background or faces in large group photos.</p>"
+                                       "in the background or faces in large group photos.</p>"
                                        "<p>If you want to detect all faces in one pass, select <b>Extra Small</b> faces and set the detection "
                                        "accuracy to about 45%. Unfortunately, this will give a significant number of false-positives. "
                                        "It's recommended to set a detection accuracy of about 55% and face size of <b>Small</b> or <b>Medium</b> "
