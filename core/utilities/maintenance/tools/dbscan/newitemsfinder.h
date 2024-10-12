@@ -55,12 +55,14 @@ private:
 private Q_SLOTS:
 
     void slotStart()                            override;
+    void slotCancel()                           override;
+    void slotDone()                             override;
+
     void slotScanStarted(const QString&);
     void slotPartialScanDone(const QString&);
     void slotTotalFilesToScan(int);
     void slotStartScanningAlbum(const QString& albumRoot, const QString& album);
     void slotFilesScanned(int);
-    void slotCancel()                           override;
 
 private:
 

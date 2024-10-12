@@ -15,6 +15,7 @@
 #include "thumbstask.h"
 
 // Qt includes
+
 #include <QMutex>
 #include <QWaitCondition>
 
@@ -33,6 +34,8 @@ class Q_DECL_HIDDEN ThumbsTask::Private
 public:
 
     Private() = default;
+
+public:
 
     ThumbnailLoadThread* thread = nullptr;
 

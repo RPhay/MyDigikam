@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumList                     palbumList;
     AlbumList::Iterator           albumsIt;
 
@@ -232,6 +234,42 @@ void MetadataRemover::slotAdvance(const ItemInfo& inf)
     lbl.append(i18n("Path: %1", inf.relativePath()));
     setLabel(lbl);
     advance(1);
+}
+
+void MetadataRemover::slotDone()
+{
+    QString lbl;
+
+    if      (d->removeAction == Faces)
+    {
+        if (totalItems() > 1)
+        {
+            lbl.append(i18n("Items scanned to remove faces: %1", totalItems()));
+        }
+        else
+        {
+            lbl.append(i18n("Item scanned to remove faces: %1", totalItems()));
+        }
+
+        setThumbnail(QIcon::fromTheme(QLatin1String("list-remove-user")).pixmap(48));
+    }
+    else if (d->removeAction == Tags)
+    {
+        if (totalItems() > 1)
+        {
+            lbl.append(i18n("Items scanned to remove tags: %1", totalItems()));
+        }
+        else
+        {
+            lbl.append(i18n("Item scanned to remove tags: %1", totalItems()));
+        }
+
+        setThumbnail(QIcon::fromTheme(QLatin1String("tag-delete")).pixmap(48));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam

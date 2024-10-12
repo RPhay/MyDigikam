@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     FinderMode  mode    = CompleteCollectionScan;
 
     bool        cancel  = false;
@@ -215,6 +217,26 @@ void NewItemsFinder::slotPartialScanDone(const QString& path)
             slotDone();
         }
     }
+}
+
+void NewItemsFinder::slotDone()
+{
+    setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for cataloging: %1", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for cataloging: %1", totalItems()));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam

@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               rebuildAll = true;
 
     AlbumList          albumList;
@@ -113,7 +115,8 @@ void ThumbsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    setLabel(i18n("Thumbs"));
+    setLabel(i18n("Generate Thumbnails"));
+    setThumbnail(QIcon::fromTheme(QLatin1String("photo")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
 
@@ -176,7 +179,7 @@ void ThumbsGenerator::slotStart()
         }
     }
 
-    // remove non-image or video files from the list
+    // Remove non-image or video files from the list.
 
     QStringList::iterator it = d->allPicturesPath.begin();
 
@@ -184,9 +187,11 @@ void ThumbsGenerator::slotStart()
     {
         ItemInfo info = ItemInfo::fromLocalFile(*it);
 
-        if ((info.category() != DatabaseItem::Image) &&
+        if (
+            (info.category() != DatabaseItem::Image) &&
             (info.category() != DatabaseItem::Video) &&
-            (info.category() != DatabaseItem::Audio))
+            (info.category() != DatabaseItem::Audio)
+           )
         {
             it = d->allPicturesPath.erase(it);
         }
@@ -218,6 +223,26 @@ void ThumbsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
     setLabel(lbl);
     setThumbnail(QPixmap::fromImage(img));
     advance(1);
+}
+
+void ThumbsGenerator::slotDone()
+{
+    setThumbnail(QIcon::fromTheme(QLatin1String("photo")).pixmap(48));
+
+    QString lbl;
+
+    if (totalItems() > 1)
+    {
+        lbl.append(i18n("Items scanned for thumbnails: %1", totalItems()));
+    }
+    else
+    {
+        lbl.append(i18n("Item scanned for thumbnails: %1", totalItems()));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam

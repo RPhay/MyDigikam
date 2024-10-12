@@ -31,6 +31,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                                tagsOnly    = false;
 
     MetadataSynchronizer::SyncDirection direction   = MetadataSynchronizer::WriteFromDatabaseToFile;
@@ -70,7 +72,7 @@ void MetadataSyncTask::setMaintenanceData(MaintenanceData* const data)
 
 void MetadataSyncTask::run()
 {
-    // While we have data (using this as check for non-null)
+    // While we have data (using this as check for non-null).
 
     while (d->data)
     {
@@ -92,11 +94,11 @@ void MetadataSyncTask::run()
         {
             MetadataHub hub;
 
-            // read in from database
+            // Read in from database.
 
             hub.load(item);
 
-            // write out to file DMetadata
+            // Write out to file DMetadata.
 
             if (d->tagsOnly)
             {

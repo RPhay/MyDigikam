@@ -80,7 +80,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->scanThumbs              = new QCheckBox(i18n("Scan for changed or non-cataloged items (faster)"));
-    d->expanderBox->insertItem(Private::Thumbnails, d->scanThumbs, QIcon::fromTheme(QLatin1String("view-process-all")),
+    d->expanderBox->insertItem(Private::Thumbnails, d->scanThumbs, QIcon::fromTheme(QLatin1String("photo")),
                                i18n("Rebuild Thumbnails"), QLatin1String("Thumbnails"), false);
     d->expanderBox->setCheckBoxVisible(Private::Thumbnails, true);
 

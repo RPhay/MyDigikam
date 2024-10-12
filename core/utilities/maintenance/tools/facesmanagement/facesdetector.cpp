@@ -240,18 +240,16 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
              (settings.task == FaceScanSettings::RecognizeMarkedFaces)
             )
     {
-        d->idsTodoList = CoreDbAccess().db()->
-            getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
-                                          ImageTagPropertyName::autodetectedFace());
+        d->idsTodoList   = CoreDbAccess().db()->getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
+                                                                              ImageTagPropertyName::autodetectedFace());
 
-        d->source = FacesDetector::Ids;
+        d->source        = FacesDetector::Ids;
     }
     else if (settings.task == FaceScanSettings::RetrainAll)
     {
-        d->idsTodoList = CoreDbAccess().db()->
-            getImagesWithProperty(ImageTagPropertyName::tagRegion());
+        d->idsTodoList   = CoreDbAccess().db()->getImagesWithProperty(ImageTagPropertyName::tagRegion());
 
-        d->source = FacesDetector::Ids;
+        d->source        = FacesDetector::Ids;
     }
     else if (settings.albums.isEmpty() && settings.infos.isEmpty())
     {
@@ -265,8 +263,8 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     }
     else
     {
-        d->infoTodoList = settings.infos;
-        d->source       = FacesDetector::Infos;
+        d->infoTodoList  = settings.infos;
+        d->source        = FacesDetector::Infos;
     }
 }
 
@@ -389,7 +387,7 @@ void FacesDetector::slotStart()
         QApplication::restoreOverrideCursor();
     }
 
-    // first, we use the progressValueMap map to store absolute counts
+    // First, we use the progressValueMap map to store absolute counts.
 
     QHash<Album*, int> progressValueMap;
 
@@ -401,14 +399,14 @@ void FacesDetector::slotStart()
         }
         else
         {
-            // this is possibly broken of course because we do not know if images have multiple tags,
-            // but there's no better solution without expensive operation
+            // This is possibly broken of course because we do not know if images have multiple tags,
+            // but there's no better solution without expensive operation.
 
             progressValueMap[album] = talbumCounts.value(album->id());
         }
     }
 
-    // second, calculate (approximate) overall sum
+    // Second, calculate (approximate) overall sum.
 
     int total = 0;
 
@@ -437,14 +435,14 @@ void FacesDetector::slotContinueAlbumListing()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << d->albumListing.isRunning() << !d->pipeline.hasFinished();
 
-    // we get here by the finished signal from both, and want both to have finished to continue
+    // We get here by the finished signal from both, and want both to have finished to continue.
 
     if (d->albumListing.isRunning() || !d->pipeline.hasFinished())
     {
         return;
     }
 
-    // list can have null pointer if album was deleted recently
+    // List can have null pointer if album was deleted recently.
 
     Album* album = nullptr;
 

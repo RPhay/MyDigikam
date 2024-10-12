@@ -230,6 +230,7 @@ void DuplicatesFinder::slotDone()
     ApplicationSettings::instance()->setDuplicatesSearchRestrictions(d->searchResultRestriction);
 
     d->job = nullptr;
+
     MaintenanceTool::slotDone();
 }
 

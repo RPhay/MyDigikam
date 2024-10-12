@@ -37,6 +37,8 @@ public:
 
     Private() = default;
 
+public:
+
     ImageQualityContainer quality;
     ImageQualityParser*   imgqsort  = nullptr;
 
@@ -79,7 +81,7 @@ void ImageQualityTask::slotCancel()
 
 void ImageQualityTask::run()
 {
-    // While we have data (using this as check for non-null)
+    // While we have data (using this as check for non-null).
 
     while (d->data)
     {
@@ -88,7 +90,7 @@ void ImageQualityTask::run()
             return;
         }
 
-        QString path = d->data->getImagePath();
+        QString path   = d->data->getImagePath();
 
         if (path.isEmpty())
         {
@@ -101,7 +103,7 @@ void ImageQualityTask::run()
         // Get item preview to perform quality analysis. No need to load whole image, this will be slower.
         // 1024 pixels size image must be enough to get suitable Quality results.
 
-        DImg dimg = PreviewLoadThread::loadFastSynchronously(path, 1024);
+        DImg dimg      = PreviewLoadThread::loadFastSynchronously(path, 1024);
 
         if (!dimg.isNull() && !m_cancel)
         {
@@ -125,13 +127,13 @@ void ImageQualityTask::run()
             ScanController::FileMetadataWrite writeScope(info);
             writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL));
 
-            // delete image data after to set label
+            // delete image data after to set label.
 
             delete d->imgqsort;
             d->imgqsort = nullptr;
         }
 
-        // Dispatch progress to Progress Manager
+        // Dispatch progress to Progress Manager.
 
         QImage qimg = dimg.smoothScale(48, 48, Qt::KeepAspectRatio).copyQImage();
 

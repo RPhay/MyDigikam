@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     const int loadCount        = 3;
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
@@ -182,8 +184,8 @@ void AutotagsAssignmentTask::run()
 
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Current batch size:" << inputImages.size();
 
-        // Run Autotags backend here
-        // Assign Tags in database using API from itemInfo
+        // Run Autotags backend here.
+        // Assign Tags in database using API from itemInfo.
 
         QElapsedTimer timer;
         timer.start();

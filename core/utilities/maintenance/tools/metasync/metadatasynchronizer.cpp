@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumList                           palbumList;
     AlbumList::Iterator                 albumsIt;
 
@@ -213,6 +215,42 @@ void MetadataSynchronizer::slotAdvance(const ItemInfo& inf)
     lbl.append(i18n("Path: %1", inf.relativePath()));
     setLabel(lbl);
     advance(1);
+}
+
+void MetadataSynchronizer::slotDone()
+{
+    QString lbl;
+
+    if (d->direction == WriteFromDatabaseToFile)
+    {
+        if (totalItems() > 1)
+        {
+            lbl.append(i18n("Items scanned to synchronize metadata with database: %1", totalItems()));
+        }
+        else
+        {
+            lbl.append(i18n("Item scanned to synchronize metadata with database: %1", totalItems()));
+        }
+
+        setThumbnail(QIcon::fromTheme(QLatin1String("document-edit")).pixmap(48));
+    }
+    else
+    {
+        if (totalItems() > 1)
+        {
+            lbl.append(i18n("Items scanned to update database with metadata: %1", totalItems()));
+        }
+        else
+        {
+            lbl.append(i18n("Item scanned to update database with metadata: %1", totalItems()));
+        }
+
+        setThumbnail(QIcon::fromTheme(QLatin1String("edit-redo")).pixmap(48));
+    }
+
+    setLabel(lbl);
+
+    MaintenanceTool::slotDone();
 }
 
 } // namespace Digikam

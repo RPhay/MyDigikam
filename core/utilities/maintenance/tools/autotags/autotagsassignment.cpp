@@ -95,7 +95,7 @@ void AutotagsAssignment::slotCancel()
 }
 
 /**
- * This function is dedicated to collect all picture data paths to be ready for the started stage
+ * This function is dedicated to collect all picture data paths to be ready for the started stage.
  */
 void AutotagsAssignment::slotStart()
 {

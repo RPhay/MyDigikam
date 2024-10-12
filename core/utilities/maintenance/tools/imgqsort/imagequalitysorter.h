@@ -51,7 +51,7 @@ public:
      * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
     explicit ImageQualitySorter(QualityScanMode mode,
-                                const AlbumList& list=AlbumList(),
+                                const AlbumList& list = AlbumList(),
                                 const ImageQualityContainer& quality = ImageQualityContainer(),
                                 ProgressItem* const parent = nullptr);
     ~ImageQualitySorter() override;

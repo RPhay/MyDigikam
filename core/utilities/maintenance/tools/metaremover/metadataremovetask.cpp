@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     MetadataRemover::RemoveAction removeAction  = MetadataRemover::None;
 
     MaintenanceData*              data          = nullptr;
@@ -67,7 +69,7 @@ void MetadataRemoveTask::setMaintenanceData(MaintenanceData* const data)
 
 void MetadataRemoveTask::run()
 {
-    // While we have data (using this as check for non-null)
+    // While we have data (using this as check for non-null).
 
     while (d->data)
     {
