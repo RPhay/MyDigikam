@@ -452,7 +452,7 @@ void FilesDownloader::createDownloadInfo()
 
         if (qApp->applicationName() == QLatin1String("digikam"))
         {
-            d->files << DownloadInfo(QLatin1String("facesengine/sface/"),
+            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
                                      QLatin1String("face_recognition_sface_2021dec.onnx"),
                                      QLatin1String("0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"),
                                      38696353
@@ -589,10 +589,6 @@ void FilesDownloader::slotUpdateDownloadInfo()
 
 //-----------------------------------------------------------------------------
 
-DownloadInfo::DownloadInfo()
-{
-}
-
 DownloadInfo::DownloadInfo(const QString& _path,
                            const QString& _name,
                            const QString& _hash,
@@ -609,10 +605,6 @@ DownloadInfo::DownloadInfo(const DownloadInfo& other)
       name(other.name),
       hash(other.hash),
       size(other.size)
-{
-}
-
-DownloadInfo::~DownloadInfo()
 {
 }
 

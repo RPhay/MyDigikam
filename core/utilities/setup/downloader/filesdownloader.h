@@ -33,13 +33,13 @@ class DIGIKAM_EXPORT DownloadInfo
 {
 public:
 
-    DownloadInfo();
+    DownloadInfo()  = default;
     DownloadInfo(const QString& _path,
                  const QString& _name,
                  const QString& _hash,
                  const qint64&  _size);
     DownloadInfo(const DownloadInfo& other);
-    ~DownloadInfo();
+    ~DownloadInfo() = default;
 
     DownloadInfo& operator=(const DownloadInfo& other);
 
