@@ -57,6 +57,7 @@ void SetupMetadata::Private::readSettings()
     saveFaceTags->setChecked(set.saveFaceTags);
     savePosition->setChecked(set.savePosition);
 
+    readWithExifToolBox->setChecked(set.readWithExifTool);
     writeWithExifToolBox->setChecked(set.writeWithExifTool);
     writeDngFilesBox->setChecked(set.writeDngFiles);
     writeRawFilesBox->setChecked(set.writeRawFiles);

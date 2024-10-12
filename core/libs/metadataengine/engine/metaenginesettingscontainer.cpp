@@ -42,6 +42,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveColorLabel        = group.readEntry("Save Color Label",                         false);
     saveRating            = group.readEntry("Save Rating",                              false);
 
+    readWithExifTool      = group.readEntry("Read Metadata From Files With ExifTool",   false);
     writeWithExifTool     = group.readEntry("Write Metadata To Files With ExifTool",    false);
     writeRawFiles         = group.readEntry("Write Metadata To RAW Files",              false);
     writeDngFiles         = group.readEntry("Write Metadata To DNG Files",              false);
@@ -101,6 +102,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Color Label",                        saveColorLabel);
     group.writeEntry("Save Rating",                             saveRating);
 
+    group.writeEntry("Read Metadata From Files With ExifTool",  readWithExifTool);
     group.writeEntry("Write Metadata To Files With ExifTool",   writeWithExifTool);
     group.writeEntry("Write Metadata To RAW Files",             writeRawFiles);
     group.writeEntry("Write Metadata To DNG Files",             writeDngFiles);
@@ -185,6 +187,8 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.saveFaceTags << "), ";
     dbg.nospace() << "savePosition("
                   << inf.savePosition << "), ";
+    dbg.nospace() << "readWithExifTool("
+                  << inf.readWithExifTool << "), ";
     dbg.nospace() << "writeWithExifTool("
                   << inf.writeWithExifTool << "), ";
     dbg.nospace() << "writeRawFiles("

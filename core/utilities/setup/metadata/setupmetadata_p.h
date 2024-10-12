@@ -94,6 +94,7 @@ public:
     QCheckBox*           savePosition               = nullptr;
 
     QCheckBox*           useLazySync                = nullptr;
+    QCheckBox*           readWithExifToolBox        = nullptr;
     QCheckBox*           writeWithExifToolBox       = nullptr;
     QCheckBox*           writeDngFilesBox           = nullptr;
     QCheckBox*           writeRawFilesBox           = nullptr;

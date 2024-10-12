@@ -116,6 +116,12 @@ void SetupMetadata::appendBehaviorTab()
     QWidget* const space2              = new QWidget(title2);
     title2->setStretchFactor(space2, 10);
 
+    d->readWithExifToolBox             = new QCheckBox;
+    d->readWithExifToolBox->setText(i18nc("@option:check", "Use ExifTool backend to read metadata from files"));
+    d->readWithExifToolBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to read metadata from files "
+                                               "with ExifTool backend instead Exiv2. This will slowdown a little bit the "
+                                               "synchronization of files metadata with database."));
+
     d->writeWithExifToolBox            = new QCheckBox;
     d->writeWithExifToolBox->setText(i18nc("@option:check", "Delegate to ExifTool backend all operations to write metadata to files"));
     d->writeWithExifToolBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata to files "
@@ -158,15 +164,16 @@ void SetupMetadata::appendBehaviorTab()
                                                     "the last modified timestamp has changed, a rescan of that "
                                                     "file will be performed when digiKam starts."));
 
-    readWriteLayout->addWidget(title2,                                0,  0, 2, 3);
-    readWriteLayout->addWidget(d->writeWithExifToolBox,               2,  0, 1, 3);
-    readWriteLayout->addWidget(d->writeDngFilesBox,                   3,  1, 1, 2);
-    readWriteLayout->addWidget(d->writeRawFilesBox,                   4,  1, 1, 2);
-    readWriteLayout->addWidget(d->writeWithExifToolLabel,             5,  1, 1, 2);
-    readWriteLayout->addWidget(new DLineWidget(Qt::Horizontal, this), 6,  0, 1, 3);
-    readWriteLayout->addWidget(d->useLazySync,                        7,  0, 1, 3);
-    readWriteLayout->addWidget(d->updateFileTimeStampBox,             8,  0, 1, 3);
-    readWriteLayout->addWidget(d->rescanImageIfModifiedBox,           9,  0, 1, 3);
+    readWriteLayout->addWidget(title2,                                 0,  0, 2, 3);
+    readWriteLayout->addWidget(d->readWithExifToolBox,                 2,  0, 1, 3);
+    readWriteLayout->addWidget(d->writeWithExifToolBox,                3,  0, 1, 3);
+    readWriteLayout->addWidget(d->writeDngFilesBox,                    4,  1, 1, 2);
+    readWriteLayout->addWidget(d->writeRawFilesBox,                    5,  1, 1, 2);
+    readWriteLayout->addWidget(d->writeWithExifToolLabel,              6,  1, 1, 2);
+    readWriteLayout->addWidget(new DLineWidget(Qt::Horizontal, this),  7,  0, 1, 3);
+    readWriteLayout->addWidget(d->useLazySync,                         8,  0, 1, 3);
+    readWriteLayout->addWidget(d->updateFileTimeStampBox,              9,  0, 1, 3);
+    readWriteLayout->addWidget(d->rescanImageIfModifiedBox,           10,  0, 1, 3);
     readWriteLayout->setColumnStretch(0, 5);
     readWriteLayout->setColumnStretch(2, 100);
     d->readWriteGroup->setLayout(readWriteLayout);
@@ -222,6 +229,7 @@ void SetupMetadata::slotExifToolSettingsChanged(bool available)
     if (available)
     {
         d->writeWithExifToolBox->setEnabled(true);
+        d->readWithExifToolBox->setEnabled(true);
         d->writeDngFilesBox->setEnabled(true);
         d->writeRawFilesBox->setEnabled(true);
         d->writeWithExifToolLabel->setText(i18nc("@label", "Note: see %1 of ExifTool backend.",
@@ -231,6 +239,7 @@ void SetupMetadata::slotExifToolSettingsChanged(bool available)
     else
     {
         d->writeWithExifToolBox->setEnabled(false);
+        d->readWithExifToolBox->setEnabled(false);
         d->writeDngFilesBox->setEnabled(false);
         d->writeRawFilesBox->setEnabled(false);
         d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of %1 availability. "

@@ -131,12 +131,17 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
         return false;
     }
 
-    d->filePath             = filePath;
-    bool hasLoaded          = false;
+    d->filePath = filePath;
+
+    if (d->readWithExifTool)
+    {
+        return false;
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
     s_metaEngineWarnOrError = false;
+    bool hasLoaded          = false;
 
     try
     {

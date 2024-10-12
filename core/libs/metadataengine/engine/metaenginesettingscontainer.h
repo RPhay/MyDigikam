@@ -98,6 +98,7 @@ public:
     bool                            saveFaceTags            = false;
     bool                            savePosition            = false;
 
+    bool                            readWithExifTool        = false;
     bool                            writeWithExifTool       = false;
     bool                            writeRawFiles           = false;
     bool                            writeDngFiles           = false;

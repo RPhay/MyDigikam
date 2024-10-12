@@ -54,6 +54,7 @@ void DMetadata::setSettings(const MetaEngineSettingsContainer& settings)
 {
     setUseXMPSidecar4Reading(settings.useXMPSidecar4Reading);
     setUseCompatibleFileName(settings.useCompatibleFileName);
+    setReadWithExifTool(settings.readWithExifTool);
     setWriteWithExifTool(settings.writeWithExifTool);
     setWriteRawFiles(settings.writeRawFiles);
     setWriteDngFiles(settings.writeDngFiles);

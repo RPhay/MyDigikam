@@ -163,6 +163,7 @@ void SetupMetadata::applySettings()
     set.savePosition          = d->savePosition->isChecked();
 
     set.useLazySync           = d->useLazySync->isChecked();
+    set.readWithExifTool      = d->readWithExifToolBox->isChecked();
     set.writeWithExifTool     = d->writeWithExifToolBox->isChecked();
     set.writeDngFiles         = d->writeDngFilesBox->isChecked();
     set.writeRawFiles         = d->writeRawFilesBox->isChecked();

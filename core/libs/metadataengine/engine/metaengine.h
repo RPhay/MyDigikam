@@ -252,6 +252,16 @@ public:
     QString getMimeType() const;
 
     /**
+     * Enable or disable reading metadata operations with ExifTool.
+     */
+    void setReadWithExifTool(const bool on);
+
+    /**
+     * Return true if reading metadata operations with ExifTool is enabled.
+     */
+    bool readWithExifTool() const;
+
+    /**
      * Enable or disable writing metadata operations with ExifTool.
      */
     void setWriteWithExifTool(const bool on);

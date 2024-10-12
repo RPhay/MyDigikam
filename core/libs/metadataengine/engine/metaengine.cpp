@@ -395,6 +395,16 @@ QString MetaEngine::getMimeType() const
     return d->mimeType;
 }
 
+void MetaEngine::setReadWithExifTool(const bool on)
+{
+    d->readWithExifTool = on;
+}
+
+bool MetaEngine::readWithExifTool() const
+{
+    return d->readWithExifTool;
+}
+
 void MetaEngine::setWriteWithExifTool(const bool on)
 {
     d->writeWithExifTool = on;

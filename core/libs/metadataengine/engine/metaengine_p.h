@@ -205,6 +205,7 @@ public:
 
 public:
 
+    bool                                                  readWithExifTool          = false;
     bool                                                  writeWithExifTool         = false;
     bool                                                  writeRawFiles             = false;
     bool                                                  writeDngFiles             = false;

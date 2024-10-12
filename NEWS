@@ -140,7 +140,7 @@ BUGFIXES:
 116 ==> 494372 - Welcome page is empty.
 117 ==> 470018 - Search for similar faces by previous example selection.
 118 ==> 494471 - File disappeared from digikam while it exists in directory.
-119 ==> 
+119 ==> 494585 - XMP-dc:Subject tags not imported to the database with HEIF file.
 120 ==> 
 121 ==> 
 122 ==> 

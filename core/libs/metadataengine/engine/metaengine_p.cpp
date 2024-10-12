@@ -136,6 +136,7 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
     pixelSize             = other->pixelSize;
     writeRawFiles         = other->writeRawFiles;
     writeDngFiles         = other->writeDngFiles;
+    readWithExifTool      = other->readWithExifTool;
     writeWithExifTool     = other->writeWithExifTool;
     loadedFromSidecar     = other->loadedFromSidecar;
     updateFileTimeStamp   = other->updateFileTimeStamp;
