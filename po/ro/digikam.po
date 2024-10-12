@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-11 01:55+0000\n"
+"POT-Creation-Date: 2024-10-12 01:47+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3112,12 +3112,12 @@ msgstr "Hartă"
 msgid "Labels"
 msgstr "Etichete"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:106
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:121
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Scanează colecția pentru fețe"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:108
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -3126,21 +3126,21 @@ msgstr ""
 "Utilizați acest buton pentru a examina albumele selectate pentru elementele "
 "duplicate."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:145
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:166
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:212
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:232
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3310,7 +3310,7 @@ msgstr "Filtre"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:742
+#: core/app/views/stack/itemiconview_items.cpp:739
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -11419,7 +11419,7 @@ msgstr "Răstoarnă orizontal"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:109
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -18348,16 +18348,16 @@ msgstr ""
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
-#: core/libs/widgets/mainview/daboutdata.cpp:122
 #: core/libs/widgets/mainview/daboutdata.cpp:128
-#: core/libs/widgets/mainview/daboutdata.cpp:290
-#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:134
+#: core/libs/widgets/mainview/daboutdata.cpp:296
 #: core/libs/widgets/mainview/daboutdata.cpp:313
 #: core/libs/widgets/mainview/daboutdata.cpp:319
-#: core/libs/widgets/mainview/daboutdata.cpp:329
-#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:325
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #: core/libs/widgets/mainview/daboutdata.cpp:363
-#: core/libs/widgets/mainview/daboutdata.cpp:374
+#: core/libs/widgets/mainview/daboutdata.cpp:369
+#: core/libs/widgets/mainview/daboutdata.cpp:380
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -22435,7 +22435,7 @@ msgstr "Contribuiți..."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -28035,7 +28035,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:233
+#: core/libs/facesengine/facedb/facedbaccess.cpp:232
 #, fuzzy, kde-format
 #| msgid "Error while opening the source database."
 msgid ""
@@ -28767,7 +28767,7 @@ msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:113
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -42385,54 +42385,65 @@ msgid ""
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:121
+#: core/libs/widgets/mainview/daboutdata.cpp:119
+#, fuzzy, kde-format
+#| msgid "Channel Mixer"
+msgid "Michael Miller"
+msgstr "Mixer de canale"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:120
+#, kde-format
+msgid "SFace and YuNet DNN models integration. Face Management improvements"
+msgstr ""
+
+#: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
 msgid "Matthias Welwarsky"
 msgstr "Matthias Welwarsky"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:127
+#: core/libs/widgets/mainview/daboutdata.cpp:133
 #, fuzzy, kde-format
 msgid "Julien Narboux"
 msgstr "Julien Nardoux"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:133
+#: core/libs/widgets/mainview/daboutdata.cpp:139
 #, kde-format
 msgid "Mario Frank"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:134
+#: core/libs/widgets/mainview/daboutdata.cpp:140
 #, fuzzy, kde-format
 #| msgid "Advanced Search - 1 Item"
 #| msgid_plural "Advanced Search - %1 Items"
 msgid "Advanced Searches Tool Improvements"
 msgstr "Căutare avansată - 1 element"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:138
+#: core/libs/widgets/mainview/daboutdata.cpp:144
 #, kde-format
 msgid "Nicolas Lécureuil"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:139
+#: core/libs/widgets/mainview/daboutdata.cpp:145
 #, fuzzy, kde-format
 msgid "Releases Manager"
 msgstr "Gestiune de drepturi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:146
+#: core/libs/widgets/mainview/daboutdata.cpp:152
 #, kde-format
 msgid "Anjani Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:147
+#: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid "Port to Qt6,"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:152
+#: core/libs/widgets/mainview/daboutdata.cpp:158
 #, kde-format
 msgid "Phuoc Khanh LE"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:153
+#: core/libs/widgets/mainview/daboutdata.cpp:159
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
@@ -42440,447 +42451,447 @@ msgid ""
 "Slideshow and Presentation tools improvement"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:160
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid "Quốc Hưng Trần"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:161
+#: core/libs/widgets/mainview/daboutdata.cpp:167
 #, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:166
+#: core/libs/widgets/mainview/daboutdata.cpp:172
 #, kde-format
 msgid "Minh Nghĩa Duong"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:167
+#: core/libs/widgets/mainview/daboutdata.cpp:173
 #, fuzzy, kde-format
 msgid ""
 "Clustering support and improvement for Face Engine, Port Slideshow tool to "
 "plugins interface"
 msgstr "Diaporamă"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:173
+#: core/libs/widgets/mainview/daboutdata.cpp:179
 #, kde-format
 msgid "Kartik Ramesh"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:174
+#: core/libs/widgets/mainview/daboutdata.cpp:180
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:179
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Ahmed Fathi"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:180
+#: core/libs/widgets/mainview/daboutdata.cpp:186
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
+#: core/libs/widgets/mainview/daboutdata.cpp:191
 #, kde-format
 msgid "Veaceslav Munteanu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:186
+#: core/libs/widgets/mainview/daboutdata.cpp:192
 #, fuzzy, kde-format
 msgid "Tags Manager"
 msgstr "Gestiune de drepturi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Tarek Talaat"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:192
+#: core/libs/widgets/mainview/daboutdata.cpp:198
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "Yingjie Liu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:198
+#: core/libs/widgets/mainview/daboutdata.cpp:204
 #, kde-format
 msgid "Face-engine improvements and manual icon-view sort"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
+#: core/libs/widgets/mainview/daboutdata.cpp:209
 #, kde-format
 msgid "Yiou Wang"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:204
+#: core/libs/widgets/mainview/daboutdata.cpp:210
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Gowtham Ashok"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:210
+#: core/libs/widgets/mainview/daboutdata.cpp:216
 #: core/utilities/maintenance/main/maintenancedlg.cpp:234
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:98
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "Editor de imagini"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #, kde-format
 msgid "Aditya Bhatt"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:216
+#: core/libs/widgets/mainview/daboutdata.cpp:222
 #, fuzzy, kde-format
 msgid "Face Detection"
 msgstr "Selecție"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Martin Klapetek"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:222
+#: core/libs/widgets/mainview/daboutdata.cpp:228
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Gabriel Voicu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:228
+#: core/libs/widgets/mainview/daboutdata.cpp:234
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Mahesh Hegde"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:234
+#: core/libs/widgets/mainview/daboutdata.cpp:240
 #, fuzzy, kde-format
 msgid "Face Recognition"
 msgstr "Selecție"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, kde-format
 msgid "Pankaj Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:240
+#: core/libs/widgets/mainview/daboutdata.cpp:246
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, fuzzy, kde-format
 msgid "Smit Mehta"
 msgstr "Editare metadate"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:246
+#: core/libs/widgets/mainview/daboutdata.cpp:252
 #, kde-format
 msgid "UPnP / DLNA Export tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
+#: core/libs/widgets/mainview/daboutdata.cpp:257
 #, kde-format
 msgid "Islam Wazery"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:252
+#: core/libs/widgets/mainview/daboutdata.cpp:258
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Abhinav Badola"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:258
+#: core/libs/widgets/mainview/daboutdata.cpp:264
 #, fuzzy, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Suport metadate XMP;"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Benjamin Girault"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:264
+#: core/libs/widgets/mainview/daboutdata.cpp:270
 #, fuzzy, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Dezvoltator principal și coordonator"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Victor Dodon"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:270
+#: core/libs/widgets/mainview/daboutdata.cpp:276
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
+#: core/libs/widgets/mainview/daboutdata.cpp:281
 #, kde-format
 msgid "Sayantan Datta"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:276
+#: core/libs/widgets/mainview/daboutdata.cpp:282
 #, fuzzy, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Reducere de zgomot"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:283
+#: core/libs/widgets/mainview/daboutdata.cpp:289
 #, kde-format
 msgid "Ananta Palani"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:284
+#: core/libs/widgets/mainview/daboutdata.cpp:290
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:289
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, kde-format
 msgid "Andi Clemens"
 msgstr "Andi Clemens"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:294
+#: core/libs/widgets/mainview/daboutdata.cpp:300
 #, kde-format
 msgid "Patrick Spendrin"
 msgstr "Patrick Spendrin"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
+#: core/libs/widgets/mainview/daboutdata.cpp:301
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Dezvoltator și portare pe Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:300
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, kde-format
 msgid "Francesco Riosa"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:307
 #, kde-format
 msgid "LCMS2 library port"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "Johannes Wienke"
 msgstr "Johannes Wienke"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
+#: core/libs/widgets/mainview/daboutdata.cpp:318
 #, kde-format
 msgid "Julien Pontabry"
 msgstr "Julien Pontabry"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:318
+#: core/libs/widgets/mainview/daboutdata.cpp:324
 #, kde-format
 msgid "Arnd Baecker"
 msgstr "Arnd Baecker"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:323
+#: core/libs/widgets/mainview/daboutdata.cpp:329
 #, kde-format
 msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:324
+#: core/libs/widgets/mainview/daboutdata.cpp:330
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Gestiunea culorilor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:328
+#: core/libs/widgets/mainview/daboutdata.cpp:334
 #, kde-format
 msgid "Pieter Edelman"
 msgstr "Pieter Edelman"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:334
+#: core/libs/widgets/mainview/daboutdata.cpp:340
 #, kde-format
 msgid "Holger Foerster"
 msgstr "Holger Foerster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:335
+#: core/libs/widgets/mainview/daboutdata.cpp:341
 #, fuzzy, kde-format
 msgid "MySQL interface"
 msgstr "Unghiul principal:"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:339
+#: core/libs/widgets/mainview/daboutdata.cpp:345
 #, kde-format
 msgid "Risto Saukonpaa"
 msgstr "Risto Saukonpaa"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:340
+#: core/libs/widgets/mainview/daboutdata.cpp:346
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Concepție grafică, pictograme, siglă, banner, prototip, beta tester"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:344
+#: core/libs/widgets/mainview/daboutdata.cpp:350
 #, kde-format
 msgid "Mikolaj Machowski"
 msgstr "Mikolaj Machowski"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:345
 #: core/libs/widgets/mainview/daboutdata.cpp:351
+#: core/libs/widgets/mainview/daboutdata.cpp:357
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Raportare de erori și corectări"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:350
+#: core/libs/widgets/mainview/daboutdata.cpp:356
 #, kde-format
 msgid "Achim Bohnet"
 msgstr "Achim Bohnet"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Luka Renko"
 msgstr "Luka Renko"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:362
+#: core/libs/widgets/mainview/daboutdata.cpp:368
 #, kde-format
 msgid "Angelo Naselli"
 msgstr "Angelo Naselli"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:368
+#: core/libs/widgets/mainview/daboutdata.cpp:374
 #, kde-format
 msgid "Fabien Salvi"
 msgstr "Fabien Salvi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:369
+#: core/libs/widgets/mainview/daboutdata.cpp:375
 #, kde-format
 msgid "Webmaster"
 msgstr "Webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:373
+#: core/libs/widgets/mainview/daboutdata.cpp:379
 #, kde-format
 msgid "Todd Shoemaker"
 msgstr "Todd Shoemaker"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/libs/widgets/mainview/daboutdata.cpp:384
 #, kde-format
 msgid "Gerhard Kulzer"
 msgstr "Gerhard Kulzer"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:379
+#: core/libs/widgets/mainview/daboutdata.cpp:385
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Autor îndrumar, alfa tester, webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:384
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Oliver Doerr"
 msgstr "Oliver Doerr"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:385
-#: core/libs/widgets/mainview/daboutdata.cpp:390
+#: core/libs/widgets/mainview/daboutdata.cpp:391
+#: core/libs/widgets/mainview/daboutdata.cpp:396
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta tester"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:389
+#: core/libs/widgets/mainview/daboutdata.cpp:395
 #, kde-format
 msgid "Charles Bouveyron"
 msgstr "Charles Bouveyron"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:394
+#: core/libs/widgets/mainview/daboutdata.cpp:400
 #, kde-format
 msgid "Richard Taylor"
 msgstr "Richard Taylor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:395
+#: core/libs/widgets/mainview/daboutdata.cpp:401
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Aprecieri utilizator și corectări, autor îndrumar"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:399
+#: core/libs/widgets/mainview/daboutdata.cpp:405
 #, kde-format
 msgid "Hans Karlsson"
 msgstr "Hans Karlsson"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:400
+#: core/libs/widgets/mainview/daboutdata.cpp:406
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "Banner sit web digiKam și pictogramele aplicației"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:404
+#: core/libs/widgets/mainview/daboutdata.cpp:410
 #, kde-format
 msgid "Aaron Seigo"
 msgstr "Aaron Seigo"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:405
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "Various usability fixes and general application polishing"
 msgstr "Diverse îmbunătățiri de ergonomie și ameliorare generală a aplicației"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:410
+#: core/libs/widgets/mainview/daboutdata.cpp:416
 #, kde-format
 msgid "Yves Chaufour"
 msgstr "Yves Chaufour"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:411
+#: core/libs/widgets/mainview/daboutdata.cpp:417
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "Sit web digiKam, aprecieri utilizatori"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:415
+#: core/libs/widgets/mainview/daboutdata.cpp:421
 #, kde-format
 msgid "Tung Nguyen"
 msgstr "Tung Nguyen"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Raportare de erori, aprecieri utilizatori și pictograme"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:428
 #, kde-format
 msgid "Renchi Raju"
 msgstr "Renchi Raju"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:423
+#: core/libs/widgets/mainview/daboutdata.cpp:429
 #, fuzzy, kde-format
 #| msgid "Developer (2002-2005)"
 msgid "Developer (2001-2005)"
 msgstr "Dezvoltator (2002-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:428
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
 msgid "Joern Ahrens"
 msgstr "Joern Ahrens"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:429
 #: core/libs/widgets/mainview/daboutdata.cpp:435
+#: core/libs/widgets/mainview/daboutdata.cpp:441
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Dezvoltator (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
+#: core/libs/widgets/mainview/daboutdata.cpp:440
 #, kde-format
 msgid "Tom Albers"
 msgstr "Tom Albers"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
+#: core/libs/widgets/mainview/daboutdata.cpp:446
 #, kde-format
 msgid "Ralf Holzer"
 msgstr "Ralf Holzer"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:441
+#: core/libs/widgets/mainview/daboutdata.cpp:447
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Dezvoltator (2004)"
@@ -52342,7 +52353,7 @@ msgstr "Creează etichetă din carnețelul de adrese"
 msgid "No address book entries found"
 msgstr "Nicio înregistrare găsită în cartea de adrese"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:65
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@title:window"
@@ -52350,26 +52361,16 @@ msgid "Facial Recognition Model"
 msgstr "Destinație:"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, kde-format
-msgid "downgrade"
-msgstr ""
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
 #, fuzzy, kde-format
 msgid "OpenFace"
 msgstr "Deschide dosarul"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:79
-#, kde-format
-msgid "upgrade"
-msgstr ""
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:80
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
 #, fuzzy, kde-format
 msgid "SFace"
 msgstr "Nu selecta nimic"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:86
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52380,24 +52381,21 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgid_plural ""
-"You are about to %1 the face recognition model to %2. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the %1.\n"
+"You are about to change the face recognition model to %1. This process can "
+"take several minutes or more depending on the size of your library and the "
+"speed of your computer. SFace is the preferred model. Do not use any facial "
+"detection or recognition features during the process.\n"
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Begin operation"
-msgid_plural "Begin %1."
-msgstr[0] "Informații"
-msgstr[1] "Informații"
-msgstr[2] "Informații"
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Begin"
+msgstr ""
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, fuzzy, kde-format
@@ -52445,7 +52443,7 @@ msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:514
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
@@ -52477,7 +52475,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52486,61 +52484,61 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Etichete atribuite deja"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Ajutor"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:167
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Nu selecta nimic"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:166
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:172
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Sincronizează"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52548,14 +52546,14 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:177
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Sincronizează"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52563,27 +52561,27 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Adaptează la fereastră"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Caută în:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:221
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Acuratețe"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52592,7 +52590,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52600,54 +52598,54 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model: "
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
-"It is faster and more configurable than YOLOv3.\n"
-"Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
+"It is faster and more configurable than SSD and YOLOv3.\n"
+"Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:265
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Dimensiune fișier"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:269
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Parametri imagine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -52655,20 +52653,20 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Medie"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Destinație"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Parametri imagine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52687,29 +52685,29 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "Selecție"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Acuratețe"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:311
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
-"be recognized, but less faces will be recognized\n"
+"be recognized, but less faces will be recognized.\n"
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52717,34 +52715,36 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model: "
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:320
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Nu selecta nimic"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Deschide dosarul"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
-"OpenFace can be used for older libraries."
+"OpenFace can be used for older libraries.\n"
+"Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
+"later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:355
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52753,12 +52753,12 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Selecție"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -53334,7 +53334,7 @@ msgctxt "Sketch Search Tab"
 msgid "Sketch"
 msgstr "Schiță"
 
-#: core/utilities/fuzzysearch/fuzzysearchview.cpp:281
+#: core/utilities/fuzzysearch/fuzzysearchview.cpp:284
 #, kde-format
 msgid ""
 "Image fingerprints have not yet been generated for your collection. The "
@@ -61633,30 +61633,44 @@ msgid ""
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:102
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
 msgstr "Ajustare automată"
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:187
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
 #, kde-format
 msgid "Auto-tags for: %1\n"
 msgstr ""
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:188
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:163
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:175
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:530
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"
 msgstr "Evaluare:"
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:189
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "Keywords: %1"
 msgstr "Cuvinte-cheie"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for auto-tags: %1"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for auto-tags: %1"
+msgstr "Caută în:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61759,24 +61773,24 @@ msgid ""
 "%1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, fuzzy, kde-format
 msgid "Find duplicates items"
 msgstr "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:162
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates for: %1\n"
 msgstr "Duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "No duplicate"
 msgstr "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "1 duplicate"
@@ -61785,76 +61799,102 @@ msgstr[0] "Găsește duplicate"
 msgstr[1] "Găsește duplicate"
 msgstr[2] "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:289
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for duplicates: %1\n"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for duplicates: %1\n"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicates found: %1"
+msgstr "Duplicate"
+
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
+#, fuzzy, kde-format
+#| msgid "Duplicates"
+msgid "Duplicate found: %1"
+msgstr "Duplicate"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in album: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:293
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in %1 albums"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "Scanează după imagini noi"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:305
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "Scanează după imagini noi"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:310
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>Se actualizează baza de date cu amprente. Așteptați...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:484
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:492
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Imagini găsite în %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Imagini găsite în %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scanned for faces: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:533
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:534
 #, fuzzy, kde-format
 msgid "No face"
 msgstr "Bliț: "
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:537
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:538
 #, fuzzy, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61862,17 +61902,17 @@ msgstr[0] "Bliț: "
 msgstr[1] "Bliț: "
 msgstr[2] "Bliț: "
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:90
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "Fără amprente"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:151
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
 #, fuzzy, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Reconstruire amprente..."
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:152
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
@@ -61881,15 +61921,43 @@ msgstr "Reconstruire amprente..."
 msgid "Path: %1"
 msgstr "Cale"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for fingerprint: %1"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for fingerprint: %1"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
 #, fuzzy, kde-format
 msgid "Image Quality for: %1\n"
 msgstr "Editor de imagini"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:176
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, fuzzy, kde-format
 msgid "Pick Label: %1"
 msgstr "Pixeli: "
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for quality: %1"
+msgstr "Caută în:"
+
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for quality: %1"
+msgstr "Caută în:"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
 #, fuzzy, kde-format
@@ -68009,6 +68077,14 @@ msgstr "Elementele albumului"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sortează imaginile"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Begin operation"
+#~ msgid_plural "Begin %1."
+#~ msgstr[0] "Informații"
+#~ msgstr[1] "Informații"
+#~ msgstr[2] "Informații"
 
 #, fuzzy
 #~| msgid "Accuracy"
