@@ -392,9 +392,9 @@ void MapWidgetView::slotLoadTracksFromAlbums()
     for (const QUrl& url : std::as_const(fileUrls))
     {
         QDir dir(url.toLocalFile());
-        const auto infs = dir.entryInfoList(filter, QDir::Files);
+        const auto inflst = dir.entryInfoList(filter, QDir::Files);
 
-        for (const QFileInfo& finfo : infs)
+        for (const QFileInfo& finfo : inflst)
         {
             gpxList << QUrl::fromLocalFile(finfo.filePath());
         }

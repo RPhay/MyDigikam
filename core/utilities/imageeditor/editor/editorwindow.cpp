@@ -2577,18 +2577,21 @@ void EditorWindow::setupSelectToolsAction()
 
     QString transformCategory = i18nc("@title Image Transform",       "Transform");
 
-    // See bug #447687
-    actionModel->addAction(d->rotateLeftAction,  transformCategory);
-    actionModel->addAction(d->rotateRightAction, transformCategory);
-    actionModel->addAction(d->flipHorizAction,   transformCategory);
-    actionModel->addAction(d->flipVertAction,    transformCategory);
-    actionModel->addAction(d->cropAction,        transformCategory);
-
-    const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorTransform, this);
-
-    for (DPluginAction* const ac : acs)
     {
-        actionModel->addAction(ac, transformCategory);
+        // See bug #447687
+
+        actionModel->addAction(d->rotateLeftAction,  transformCategory);
+        actionModel->addAction(d->rotateRightAction, transformCategory);
+        actionModel->addAction(d->flipHorizAction,   transformCategory);
+        actionModel->addAction(d->flipVertAction,    transformCategory);
+        actionModel->addAction(d->cropAction,        transformCategory);
+
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorTransform, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, transformCategory);
+        }
     }
 
     QString decorateCategory  = i18nc("@title Image Decorate",        "Decorate");
