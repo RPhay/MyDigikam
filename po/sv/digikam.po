@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 01:47+0000\n"
-"PO-Revision-Date: 2024-10-10 16:55+0200\n"
+"POT-Creation-Date: 2024-10-13 01:46+0000\n"
+"PO-Revision-Date: 2024-10-12 19:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1537,7 +1537,7 @@ msgstr "Lägger till nya kataloger i albumbiblioteket."
 #: core/app/main/digikamapp_camera.cpp:229
 #, kde-format
 msgid "Images found in %1"
-msgstr "Bilder hittade i %1"
+msgstr "Bilder funna i %1"
 
 #: core/app/main/digikamapp_config.cpp:117
 #: core/showfoto/main/showfoto_config.cpp:196
@@ -29930,8 +29930,8 @@ msgstr[1] "Använder LibRaw version %2<br/>%1 modeller i listan"
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
-msgstr[0] "Använder LibRaw version %2<br/>1 modell i listan (hittade: %3)"
-msgstr[1] "Använder LibRaw version %2<br/>%1 modeller i listan (hittade: %3)"
+msgstr[0] "Använder LibRaw version %2<br/>1 modell i listan (funna: %3)"
+msgstr[1] "Använder LibRaw version %2<br/>%1 modeller i listan (funna: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
@@ -32517,17 +32517,17 @@ msgstr "(ingen metadata tillgänglig)"
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
-msgstr "(ingen träff hittades)"
+msgstr "(ingen träff funnen)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
-msgstr "(partiell träff hittades)"
+msgstr "(partiell träff funnen)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
-msgstr "(exakt träff hittades)"
+msgstr "(exakt träff funnen)"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
@@ -42463,15 +42463,16 @@ msgstr ""
 "OpenCV neuralt nätverk"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Kanalblandare"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgstr ""
+"Integrering av neurala nätverksmodellerna SFace och YuNet. Förbättringar av "
+"ansiktshantering"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -49431,7 +49432,7 @@ msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Ställ in orienteringstagg till normal efter rotera och vänd."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:186
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49442,7 +49443,7 @@ msgstr ""
 "teknisk information (som bländare och slutartid) om fotografier."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:190
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49453,7 +49454,7 @@ msgstr ""
 "om fotografen i bilder."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:196
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
@@ -49462,7 +49463,7 @@ msgstr ""
 "ersätta IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:217
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -51560,23 +51561,18 @@ msgid "No address book entries found"
 msgstr "Inga adressboksposter hittades"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Urvalsmodell: "
+msgstr "Ansiktsigenkänningsmodell"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "OpenFace"
+#, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "SFace"
+#, kde-format
 msgid "SFace"
 msgstr "SFace"
 
@@ -51598,13 +51594,25 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
+"Du är på väg att ändra ansiktsigenkänningsmodellen. Process kan ta flera "
+"minuter eller mer beroende på bibliotekets storlek och datorns hastighet. "
+"SFace är den föredragna modellen. Använd inte några ansiktsdetekterings- "
+"eller igenkänningsfunktioner under processen.\n"
+"\n"
+"Är du säker på att du vill fortsätta?"
 msgstr[1] ""
+"Du är på väg att ändra ansiktsigenkänningsmodellen till %1. Process kan ta "
+"flera minuter eller mer beroende på bibliotekets storlek och datorns "
+"hastighet. SFace är den föredragna modellen. Använd inte några "
+"ansiktsdetekterings- eller igenkänningsfunktioner under processen.\n"
+"\n"
+"Är du säker på att du vill fortsätta?"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Börja"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -51819,21 +51827,13 @@ msgid "YOLOv3"
 msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "Skärmvisning"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
@@ -51842,9 +51842,9 @@ msgid ""
 "later."
 msgstr ""
 "Detekteringsmodell som används för att hitta ansikten. YuNet är den\n"
-"normala modell. Den är snabbare och mer inställningsbar än YOLOv3.\n"
+"normala modell. Den är snabbare och mer inställningsbar än SSD och YOLOv3.\n"
 "Observera: YuNet är bara tillgänglig om Digikam är kompilerat med OpenCV "
-"4.10 eller senare."
+"4.6.0 eller senare."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
 #, kde-format
@@ -51888,17 +51888,18 @@ msgstr "Extra stora"
 #| msgid ""
 #| "<p>Selecting <b>Extra Small</b> means the model will detect small "
 #| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning one "
-#| "of the parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>large</"
-#| "b> or <b>extra-large</b> will eliminate small background faces from being "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
+#| "model parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
+#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
 #| "detected. It is much faster and will reduce the number of false-"
 #| "positives, but will not detect small faces in the the background or faces "
 #| "in large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra-Small</b> faces and set the detection accuracy to about "
+#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
 #| "45%. Unfortunately, this will give a significant number of false-"
 #| "positives. It's recommended to set a detection accuracy of about 55% and "
-#| "face size of <b>small</b> or <b>medium</b> for normal use.</p>"
+#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
+#| "setting applies only to YuNet.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -51908,7 +51909,7 @@ msgid ""
 "detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</p><p>If you want to "
+"in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
@@ -51917,7 +51918,7 @@ msgid ""
 msgstr ""
 "<p>Om <b>Extra små</b> väljes betyder det att modellen upptäcker små "
 "bakgrundsansikten utöver medelstora och större ansikten. Om <b>Små ansikten</"
-"b> väljes ökar modellens känslighet genom att justera en av parametrarna. "
+"b> väljes ökar modellens känslighet genom att justera modellparametrarna. "
 "Det ökar också sannolikheten för falska positiva, och det ökar "
 "upptäcktstiden.</p><p>Om <b>Stora</b> eller <b>Extra-stora</b> elimineras "
 "små bakgrundsansikten från att upptäckas. Det är mycket snabbare och minskar "
@@ -51926,7 +51927,8 @@ msgstr ""
 "pass, välj <b>Extra små</b> ansikten och ställ in detekteringsnoggrannheten "
 "till cirka 45 %. Tyvärr ger det ett betydande antal falska positiva. Det "
 "rekommenderas att ställa in en detekteringsnoggrannhet på cirka 55 % och "
-"ansiktsstorlek <b>Små</b> eller <b>Normala</b> för normal användning.</p>"
+"ansiktsstorlek <b>Små</b> eller <b>Normala</b> för normal användning.</"
+"p><p>Inställningen gäller bara YuNet.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
 #, kde-format
@@ -51940,13 +51942,7 @@ msgid "Accuracy:"
 msgstr "Noggrannhet:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -51955,7 +51951,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 "Justera känslighet mot specificitet: Ju högre värde desto noggrannare blir\n"
-"igenkänningen av ansikten, men färre ansikten känns igen\n"
+"igenkänningen av ansikten, men färre ansikten känns igen.\n"
 "Observera: bara ansikten mycket lika tidigare etiketterade ansikten känns "
 "igen."
 
@@ -51978,11 +51974,7 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the default detection model. It is faster and more accurate.\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
@@ -51991,7 +51983,9 @@ msgid ""
 "later."
 msgstr ""
 "SFace är den normala detekteringsmodellen. Den är snabbare och noggrannare.\n"
-"OpenFace kan användas för äldre bibliotek."
+"OpenFace kan användas för äldre bibliotek.\n"
+"Observera: SFace är bara tillgängligt om Digikam är kompilerat med OpenCV "
+"4.6.0 eller senare."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -60881,7 +60875,7 @@ msgstr "Automatiskt etiketteringsläge för: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:530
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -60893,16 +60887,14 @@ msgid "Keywords: %1"
 msgstr "Nyckelord: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Objekt genomsökta efter ansikten: %1\n"
+msgstr "Objekt genomsökta efter automatiska etiketter: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Objekt genomsökt efter ansikten: %1\n"
+msgstr "Objekt genomsökt efter automatiska etiketter: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -60978,22 +60970,22 @@ msgstr "Ansiktsigenkänningsdatabas"
 msgid "Similarity DB"
 msgstr "Likhetsdatabas"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:71
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr "Sök efter nya objekt"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, kde-format
 msgid "Scanning from: %1\n"
 msgstr "Söker från: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61001,6 +60993,18 @@ msgid ""
 msgstr ""
 "Sökte:\n"
 "%1"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#, fuzzy, kde-format
+#| msgid "Items scanned for auto-tags: %1"
+msgid "Items scanned for cataloging: %1"
+msgstr "Objekt genomsökta efter automatiska etiketter: %1"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#, fuzzy, kde-format
+#| msgid "Item scanned for auto-tags: %1"
+msgid "Item scanned for cataloging: %1"
+msgstr "Objekt genomsökt efter automatiska etiketter: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61025,85 +61029,81 @@ msgstr[0] "1 duplikat"
 msgstr[1] "%1 duplikat"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Objekt genomsökta efter ansikten: %1\n"
+msgstr "Objekt genomsökta efter dubbletter: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Objekt genomsökt efter ansikten: %1\n"
+msgstr "Objekt genomsökt efter dubbletter: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Dubbletter av: %1\n"
+msgstr "Funna dubbletter: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Dubbletter av: %1\n"
+msgstr "Funnen dubblett: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Sök efter ansikten i album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Sök efter ansikten i %1 album"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Sök efter ansikten i bild: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:305
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Sök efter ansikten i %1 bilder"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:310
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppdaterar ansiktsdatabasen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Objekt genomsökta efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Objekt genomsökt efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, kde-format
 msgid "Faces found: %1"
-msgstr "Hittade ansikten: %1"
+msgstr "Funna ansikten: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
 #, kde-format
 msgid "Face found: %1"
-msgstr "Hittade ansikte: %1"
+msgstr "Funnet ansikte: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Genomsökta efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:534
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
 #, kde-format
 msgid "No face"
 msgstr "Inga ansikten"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:538
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61121,24 +61121,22 @@ msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Skapa om fingeravtryck för: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
 #, kde-format
 msgid "Path: %1"
 msgstr "Sökväg: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Objekt genomsökta efter ansikten: %1\n"
+msgstr "Objekt genomsökta efter fingeravtryck: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Objekt genomsökt efter ansikten: %1\n"
+msgstr "Objekt genomsökt efter fingeravtryck: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
 #, kde-format
@@ -61151,28 +61149,26 @@ msgid "Pick Label: %1"
 msgstr "Urvalsbeteckning: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Objekt genomsökta efter ansikten: %1\n"
+msgstr "Objekt genomsökta efter kvalitet: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Objekt genomsökt efter ansikten: %1\n"
+msgstr "Objekt genomsökt efter kvalitet: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Ta bort alla ansikten från bild"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:188
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Ta bort alla etiketter från bild"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:204
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -61181,7 +61177,7 @@ msgstr ""
 "Alla ansikten har tagits bort från %1 markerade bilder.\n"
 "Vill du fortsätta?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:209
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -61190,35 +61186,96 @@ msgstr ""
 "Alla etiketter har tagits bort från %1 markerade bilder.\n"
 "Vill du fortsätta?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
 #, kde-format
 msgid "Clear Metadata for: %1\n"
 msgstr "Rensa metadata för: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#, fuzzy, kde-format
+#| msgid "Items scanned for faces: %1\n"
+msgid "Items scanned to remove faces: %1"
+msgstr "Objekt genomsökta efter ansikten: %1\n"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#, fuzzy, kde-format
+#| msgid "Item scanned for faces: %1\n"
+msgid "Item scanned to remove faces: %1"
+msgstr "Objekt genomsökt efter ansikten: %1\n"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#, fuzzy, kde-format
+#| msgid "Items scanned for auto-tags: %1"
+msgid "Items scanned to remove tags: %1"
+msgstr "Objekt genomsökta efter automatiska etiketter: %1"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#, fuzzy, kde-format
+#| msgid "Item scanned for auto-tags: %1"
+msgid "Item scanned to remove tags: %1"
+msgstr "Objekt genomsökt efter automatiska etiketter: %1"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Synkroniserar bildernas metadata med databasen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Uppdaterar databasen från bildernas metadata"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
 #, kde-format
 msgid "Metadata Sync for: %1\n"
 msgstr "Synkronisering av metadata för: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
-#, kde-format
-msgid "Thumbs"
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Items scanned to synchronize metadata with database: %1"
+msgstr "Synkroniserar bildernas metadata med databasen."
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Item scanned to synchronize metadata with database: %1"
+msgstr "Synkroniserar bildernas metadata med databasen."
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#, fuzzy, kde-format
+#| msgid "Items scanned for duplicates: %1\n"
+msgid "Items scanned to update database with metadata: %1"
+msgstr "Objekt genomsökta efter dubbletter: %1\n"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#, fuzzy, kde-format
+#| msgid "Item scanned for duplicates: %1\n"
+msgid "Item scanned to update database with metadata: %1"
+msgstr "Objekt genomsökt efter dubbletter: %1\n"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#, fuzzy, kde-format
+#| msgid "Thumbnails"
+msgid "Generate Thumbnails"
 msgstr "Miniatyrbilder"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
 msgid "Thumbnail for: %1\n"
 msgstr "Miniatyrbilder för: %1\n"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#, fuzzy, kde-format
+#| msgid "Items scanned for quality: %1"
+msgid "Items scanned for thumbnails: %1"
+msgstr "Objekt genomsökta efter kvalitet: %1"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#, fuzzy, kde-format
+#| msgid "Item scanned for quality: %1"
+msgid "Item scanned for thumbnails: %1"
+msgstr "Objekt genomsökt efter kvalitet: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -65236,7 +65293,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:266
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65252,7 +65309,7 @@ msgstr ""
 "tilldelas unikt och används för båda bilderna, vilket kan leda till "
 "metadataproblem."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:284
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65262,7 +65319,7 @@ msgstr ""
 "Att stänga av automatisk rotation med EXIF visar troligtvis bilderna med fel "
 "orientering, så ändra bara alternativet om du verkligen kräver det."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:307
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65280,13 +65337,13 @@ msgstr ""
 "Om du väljer att göra det, gör en säkerhetskopia av dina obehandlade filer. "
 "Vi rekommenderar starkt att inte aktivera alternativet."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:315
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Ja, jag förstår"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:325
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -65517,6 +65574,34 @@ msgid "Reading and Writing Metadata"
 msgstr "Läsa och skriva metadata"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid ""
+#| "Delegate to ExifTool backend all operations to write metadata to files"
+msgctxt "@option:check"
+msgid "Use ExifTool backend to read metadata from files"
+msgstr ""
+"Delegera alla åtgärder för att skriva metadata i filer till gränssnittet "
+"ExifTool"
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata to files with ExifTool backend "
+#| "instead Exiv2. This will slowdown a little bit the synchronization of "
+#| "files metadata with database."
+msgctxt "@info:whatsthis"
+msgid ""
+"Turn on this option to read metadata from files with ExifTool backend "
+"instead Exiv2. This will slowdown a little bit the synchronization of files "
+"metadata with database."
+msgstr ""
+"Sätt på alternativet för att skriva metadata till filer med gränssnittet "
+"ExifTool istället för Exiv2. Det gör synkroniseringen av filernas metadata "
+"med databasen något långsammare."
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
@@ -65524,7 +65609,7 @@ msgstr ""
 "Delegera alla åtgärder för att skriva metadata i filer till gränssnittet "
 "ExifTool"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65536,25 +65621,25 @@ msgstr ""
 "ExifTool istället för Exiv2. Det gör synkroniseringen av filernas metadata "
 "med databasen något långsammare."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Skriv metadata till DNG-filer"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:133
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "Aktivera alternativet för att skriva metadata i DNG-filer."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:130
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Skriv metadata till obehandlade filer om möjligt"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65565,13 +65650,13 @@ msgstr ""
 "Funktionen är delegerad till gränssnittet ExifTool och är normalt "
 "inaktiverad."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:140
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Använd synkronisering i bakgrunden"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:142
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65583,13 +65668,13 @@ msgstr ""
 "synkronisering. Synkronisering kan utföras senare genom att verkställa "
 "väntande, eller när Digikam avslutas."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:152
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "&Uppdatera filens tidstämpel när filer ändras"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65603,13 +65688,13 @@ msgstr ""
 "alternativet kan leda till vissa felaktigheter med program som använder "
 "filernas tidsstämplar för att automatiskt detektera filändringar."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:160
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "O&msök filen när filer ändras"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:156
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:162
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65622,19 +65707,19 @@ msgstr ""
 "utanför Digikam. Om filstorleken eller tidsstämpeln för senaste ändring har "
 "ändrats för en fil, sker en omsökning av den filen när Digikam startas."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:227
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "Observera: se %1 i ExifTool-gränssnittet."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:229
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "skrivbegränsningar"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:236
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:245
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -65644,7 +65729,7 @@ msgstr ""
 "Observera: alternativen beror på tillgängligheten av %1. Titta på detaljerad "
 "information under fliken ExifTool."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:239
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:248
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -67564,6 +67649,9 @@ msgstr "Albumobjekt"
 #, kde-format
 msgid "Import Items"
 msgstr "Importera objekt"
+
+#~ msgid "Thumbs"
+#~ msgstr "Miniatyrbilder"
 
 #, fuzzy
 #~| msgctxt "@option"
@@ -72471,9 +72559,6 @@ msgstr "Importera objekt"
 
 #~ msgid "Images Sort Order"
 #~ msgstr "Sorteringsordning för bilder"
-
-#~ msgid "Thumbnails"
-#~ msgstr "Miniatyrbilder"
 
 #~| msgid "Show album items' tool-tips"
 #~ msgid "Show items' toolti&ps"

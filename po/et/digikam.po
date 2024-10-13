@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 01:47+0000\n"
+"POT-Creation-Date: 2024-10-13 01:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -53443,7 +53443,7 @@ msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Orientatsioonisilt seatakse pärast pööramist/peegeldamist normaalseks."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:186
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><a href='https://en.wikipedia.org/wiki/Exif'>EXIF</a> - a standard "
@@ -53459,7 +53459,7 @@ msgstr ""
 "salvestamiseks.</p>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:190
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><a href='https://en.wikipedia.org/wiki/"
@@ -53475,7 +53475,7 @@ msgstr ""
 "digitaalfotograafias on kasutatud info salvestamiseks fotodesse.</p>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:196
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><a href='https://en.wikipedia.org/wiki/"
@@ -53489,7 +53489,7 @@ msgstr ""
 "p>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:217
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -56031,7 +56031,7 @@ msgid ""
 "detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</p><p>If you want to "
+"in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
@@ -65532,7 +65532,7 @@ msgstr "Mõõterežiim:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:530
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -65634,31 +65634,45 @@ msgstr "Näotuvastusandmebaas"
 msgid "Similarity DB"
 msgstr "Sarnasusandmebaas"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:71
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr "Uute elementide otsimine"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanning from: %1\n"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
 msgstr "Album \"%1\""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid ""
 "Scanned:\n"
 "%1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned for cataloging: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned for cataloging: %1"
 msgstr "Otsing albumites:"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
@@ -65712,78 +65726,78 @@ msgstr "Topeltpildid"
 msgid "Duplicate found: %1"
 msgstr "Topeltpildid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:305
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:310
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Nägude andmebaasi uuendamine."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Leiti pildid asukohas %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Leiti pildid asukohas %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanned for faces: %1\n"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:534
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Välku ei kasutatud"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:538
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -65803,9 +65817,9 @@ msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Sõrmejälgede taasloomine"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
 msgid "Path: %1"
@@ -65851,19 +65865,19 @@ msgstr "Otsing albumites:"
 msgid "Item scanned for quality: %1"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all faces from image"
 msgstr "Eemalda silt piltidest"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:188
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all tags from image"
 msgstr "Eemalda silt piltidest"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:204
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -65875,7 +65889,7 @@ msgstr ""
 "Pildi %1 üleslaadimine nurjus\n"
 "Kas jätkata?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:209
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -65887,38 +65901,107 @@ msgstr ""
 "Pildi %1 üleslaadimine nurjus\n"
 "Kas jätkata?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
 #, fuzzy, kde-format
 #| msgid "Getting Metadata for %1..."
 msgid "Clear Metadata for: %1\n"
 msgstr "%1 metaandmete hankimine..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned to remove faces: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned to remove faces: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned to remove tags: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned to remove tags: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Piltide metaandmete sünkroonimine andmebaasiga"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Andmebaasi uuendamine piltide metaandmete põhjal"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
 #, fuzzy, kde-format
 #| msgid "Getting Metadata for %1..."
 msgid "Metadata Sync for: %1\n"
 msgstr "%1 metaandmete hankimine..."
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
-#, kde-format
-msgid "Thumbs"
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Items scanned to synchronize metadata with database: %1"
+msgstr "Piltide metaandmete sünkroonimine andmebaasiga"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Item scanned to synchronize metadata with database: %1"
+msgstr "Piltide metaandmete sünkroonimine andmebaasiga"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned to update database with metadata: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned to update database with metadata: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#, fuzzy, kde-format
+#| msgid "Thumbnails"
+msgid "Generate Thumbnails"
 msgstr "Pisipildid"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, fuzzy, kde-format
 #| msgid "Thumbnail Properties:"
 msgid "Thumbnail for: %1\n"
 msgstr "Pisipildi omadused:"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned for thumbnails: %1"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned for thumbnails: %1"
+msgstr "Otsing albumites:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -70058,7 +70141,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Muu"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:266
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -70069,7 +70152,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:284
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -70080,7 +70163,7 @@ msgstr ""
 "näitamise väära orientatsiooniga, nii et muuda seda valikut ainult siis, kui "
 "seda on tingimata tarvis."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:307
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -70092,14 +70175,14 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:315
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, fuzzy, kde-format
 #| msgid "Yes I understand"
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Jah, saan aru"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:325
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, fuzzy, kde-format
 #| msgid "You would rather disable writing metadata to RAW files?"
 msgctxt "@info"
@@ -70356,10 +70439,27 @@ msgstr "Metaandmete lugemine ja kirjutamine"
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to write metadata into DNG files."
 msgctxt "@option:check"
-msgid "Delegate to ExifTool backend all operations to write metadata to files"
+msgid "Use ExifTool backend to read metadata from files"
 msgstr "Sisselülitamisel saab DNG-failidesse kirjutada metaandmeid."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Turn on this option to read metadata from files with ExifTool backend "
+"instead Exiv2. This will slowdown a little bit the synchronization of files "
+"metadata with database."
+msgstr ""
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid "Turn on this option to write metadata into DNG files."
+msgctxt "@option:check"
+msgid "Delegate to ExifTool backend all operations to write metadata to files"
+msgstr "Sisselülitamisel saab DNG-failidesse kirjutada metaandmeid."
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -70368,19 +70468,19 @@ msgid ""
 "with database."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Metaandmete kirjutamine DNG-failidesse"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:133
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "Sisselülitamisel saab DNG-failidesse kirjutada metaandmeid."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:130
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:136
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "If possible write metadata to RAW files (experimental)"
@@ -70388,7 +70488,7 @@ msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Võimalusel metaandmete kirjutamine toorfailidesse (eksperimentaalne)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -70404,13 +70504,13 @@ msgstr ""
 "nõuab Exiv2 jagatud teegi versiooni >= 0.18.0. See on ikka veel "
 "eksperimentaalne ja vaikimisi välja lülitatud."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:140
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Laisa sünkroonimise kasutamine"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:142
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -70419,13 +70519,13 @@ msgid ""
 "digikam exit"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:152
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "Faili muutmise ajatempli &uuendamine faili muutmisel"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -70435,13 +70535,13 @@ msgid ""
 "properties to detect file modifications automatically."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:160
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "&Faili kordusuurimine failide muutmisel"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:156
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:162
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -70451,20 +70551,20 @@ msgid ""
 "when digiKam starts."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:227
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:229
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, fuzzy, kde-format
 #| msgid "Write Options"
 msgctxt "@label"
 msgid "write limitations"
 msgstr "Kirjutamisvalikud"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:236
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:245
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -70472,7 +70572,7 @@ msgid ""
 "for details."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:239
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:248
 #, fuzzy, kde-format
 #| msgid "Exif"
 msgctxt "@label"
@@ -72450,6 +72550,9 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#~ msgid "Thumbs"
+#~ msgstr "Pisipildid"
 
 #, fuzzy
 #~| msgid "Login Information"
@@ -77088,9 +77191,6 @@ msgstr "Impordi elemendid"
 
 #~ msgid "Images Sort Order"
 #~ msgstr "Piltide sortimise järjekord"
-
-#~ msgid "Thumbnails"
-#~ msgstr "Pisipildid"
 
 #, fuzzy
 #~| msgid "Show album items' tool-tips"

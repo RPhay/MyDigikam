@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 01:47+0000\n"
+"POT-Creation-Date: 2024-10-13 01:46+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -51412,7 +51412,7 @@ msgid "Set orientation tag to normal after rotate/flip."
 msgstr "回転/反転後は方向タグを「ノーマル」に設定"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:186
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51423,7 +51423,7 @@ msgstr ""
 "ルカメラで使用されている標準です。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:190
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51434,7 +51434,7 @@ msgstr ""
 "す。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:196
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
@@ -51442,7 +51442,7 @@ msgstr ""
 "IPTC を置換するよう設計された、デジタル写真で使用されている新しい標準です。"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:217
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -53915,7 +53915,7 @@ msgid ""
 "detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</p><p>If you want to "
+"in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
@@ -63061,7 +63061,7 @@ msgstr "測光方式:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:530
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "Rating: "
@@ -63164,27 +63164,37 @@ msgstr "顔認識"
 msgid "Similarity DB"
 msgstr "類似度:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:71
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr "新しいアイテムを検索"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, fuzzy, kde-format
 msgid "Scanning from: %1\n"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
 msgstr "アルバム \"%1\""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, fuzzy, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#, fuzzy, kde-format
+msgid "Items scanned for cataloging: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#, fuzzy, kde-format
+msgid "Item scanned for cataloging: %1"
 msgstr "検索:"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
@@ -63233,70 +63243,70 @@ msgstr "重複"
 msgid "Duplicate found: %1"
 msgstr "重複"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in image: %1"
 msgstr "顔をスキャン中"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:305
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in %1 images"
 msgstr "顔をスキャン中"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:310
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "顔データベースの更新中です。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "%1 内で検出された画像"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "%1 内で検出された画像"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:534
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "フラッシュなし"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:538
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -63314,9 +63324,9 @@ msgid "Rebuild Fingerprint for: %1\n"
 msgstr "フィンガープリントを再構築..."
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
 #, fuzzy, kde-format
 #| msgid "Path"
 msgid "Path: %1"
@@ -63356,19 +63366,19 @@ msgstr "検索:"
 msgid "Item scanned for quality: %1"
 msgstr "検索:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all faces from image"
 msgstr "画像からタグを取り除く"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:188
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all tags from image"
 msgstr "画像からタグを取り除く"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:204
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -63379,7 +63389,7 @@ msgstr ""
 "タグ <resource>%2</resource> は %1 個のアイテムに付けられています。続けます"
 "か？"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:209
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -63390,40 +63400,94 @@ msgstr ""
 "タグ <resource>%2</resource> は %1 個のアイテムに付けられています。続けます"
 "か？"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Clear Metadata for: %1\n"
 msgstr "メタデータ情報"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#, fuzzy, kde-format
+msgid "Items scanned to remove faces: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#, fuzzy, kde-format
+msgid "Item scanned to remove faces: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#, fuzzy, kde-format
+msgid "Items scanned to remove tags: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#, fuzzy, kde-format
+msgid "Item scanned to remove tags: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr ""
 "画像のメタデータをデータベースと同期しています。しばらくお待ちください。"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr ""
 "フィンガープリントのデータベースを更新しています。しばらくお待ちください。"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Metadata Sync for: %1\n"
 msgstr "メタデータ情報"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
-#, kde-format
-msgid "Thumbs"
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#, fuzzy, kde-format
+msgid "Items scanned to synchronize metadata with database: %1"
+msgstr ""
+"画像のメタデータをデータベースと同期しています。しばらくお待ちください。"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#, fuzzy, kde-format
+msgid "Item scanned to synchronize metadata with database: %1"
+msgstr ""
+"画像のメタデータをデータベースと同期しています。しばらくお待ちください。"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#, fuzzy, kde-format
+msgid "Items scanned to update database with metadata: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#, fuzzy, kde-format
+msgid "Item scanned to update database with metadata: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#, fuzzy, kde-format
+#| msgctxt "@action: Go to thumbnails (icon) view"
+#| msgid "Thumbnails"
+msgid "Generate Thumbnails"
 msgstr "サムネイル"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgid "Thumbnail for: %1\n"
 msgstr "タグのプロパティ"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#, fuzzy, kde-format
+msgid "Items scanned for thumbnails: %1"
+msgstr "検索:"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#, fuzzy, kde-format
+msgid "Item scanned for thumbnails: %1"
+msgstr "検索:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -67498,7 +67562,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "高度な設定"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:266
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67509,7 +67573,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:284
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67517,7 +67581,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:307
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67529,13 +67593,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:315
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:325
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, fuzzy, kde-format
 #| msgid "Writing metadata to files"
 msgctxt "@info"
@@ -67776,12 +67840,38 @@ msgid "Reading and Writing Metadata"
 msgstr "メタデータを読み書き中"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid ""
+#| "Delegate to ExifTool backend all operations to write metadata to files"
+msgctxt "@option:check"
+msgid "Use ExifTool backend to read metadata from files"
+msgstr "ファイルにメタデータを書き込むために ExifTool バックエンドを使用する"
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata to files with ExifTool backend "
+#| "instead Exiv2. This will slowdown a little bit the synchronization of "
+#| "files metadata with database."
+msgctxt "@info:whatsthis"
+msgid ""
+"Turn on this option to read metadata from files with ExifTool backend "
+"instead Exiv2. This will slowdown a little bit the synchronization of files "
+"metadata with database."
+msgstr ""
+"Exiv2 ではなく ExifTool バックエンドを使用してファイルにメタデータを書き込む"
+"には、このオプションを有効にします。ファイルのメタデータをデータベースと同期"
+"する速度が少し遅くなります。"
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr "ファイルにメタデータを書き込むために ExifTool バックエンドを使用する"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67793,25 +67883,25 @@ msgstr ""
 "には、このオプションを有効にします。ファイルのメタデータをデータベースと同期"
 "する速度が少し遅くなります。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "DNG ファイルにメタデータを書き込む"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:133
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "DNG ファイルにメタデータを書き込むには、このオプションを有効にします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:130
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "可能であれば RAW ファイルにメタデータを書き込む"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67822,13 +67912,13 @@ msgstr ""
 "ExifTool バックエンドが行うことになっており、デフォルトでは無効になっていま"
 "す。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:140
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "遅延同期を使用する"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:142
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67839,13 +67929,13 @@ msgstr ""
 "メタデータを同期する代わりに、同期のスケジュールを行います。同期は、保留中の"
 "適用をトリガーするか、digikam を終了するときに行うことができます。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:152
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "ファイルの変更時にファイルの変更タイムスタンプを更新する(&U)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67859,13 +67949,13 @@ msgstr ""
 "イルのタイムスタンプのプロパティを使用してファイルの変更を自動的に検出するア"
 "プリケーションが機能しない場合があります。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:160
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "ファイルが変更されたときにファイルを再スキャンする(&R)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:156
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:162
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67878,19 +67968,19 @@ msgstr ""
 "スキャンするようになります。ファイルサイズが変更された場合や最終変更タイムス"
 "タンプが変更された場合、digiKam が起動するとそのファイルを再スキャンします。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:227
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "注: ExifTool バックエンドの %1 を参照してください。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:229
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "書き込み制限"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:236
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:245
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -67900,7 +67990,7 @@ msgstr ""
 "注: これらのオプションは %1 の利用可能性に依存します。詳細については "
 "ExifTool タブを確認してください。"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:239
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:248
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -69704,6 +69794,9 @@ msgstr "アルバムアイテム"
 #, kde-format
 msgid "Import Items"
 msgstr "インポートされたアイテム"
+
+#~ msgid "Thumbs"
+#~ msgstr "サムネイル"
 
 #, fuzzy
 #~| msgid "Crop Information"

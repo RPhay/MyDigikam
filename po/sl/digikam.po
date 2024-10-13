@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 01:47+0000\n"
-"PO-Revision-Date: 2024-10-11 19:11+0200\n"
+"POT-Creation-Date: 2024-10-13 01:46+0000\n"
+"PO-Revision-Date: 2024-10-12 09:06+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -53,7 +53,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
-msgstr "Jutri"
+msgstr "jutri"
 
 #: core/app/date/ddateedit.cpp:493
 #, kde-format
@@ -42590,15 +42590,14 @@ msgstr ""
 "OpenCV"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Mešalnik kanalov"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
+msgstr "Integracija modelov SFace in YuNet DNN. Izboljšave upravljanja obrazov"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -49561,7 +49560,7 @@ msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Po vrtenju/zrcaljenju nastavi značko usmerjenosti na običajno."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:186
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49573,7 +49572,7 @@ msgstr ""
 "sliki."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:190
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49584,7 +49583,7 @@ msgstr ""
 "podatkov o fotografu v slikah."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:196
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
@@ -49593,7 +49592,7 @@ msgstr ""
 "IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:217
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -51713,22 +51712,7 @@ msgid "SFace"
 msgstr "SFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "You are about to change the face recognition model. This process can take "
-#| "several minutes or more depending on the size of your library and the "
-#| "speed of your computer. SFace is the preferred model. Do not use any "
-#| "facial detection or recognition features during the process.\n"
-#| "\n"
-#| "Are you sure you want to continue?"
-#| msgid_plural ""
-#| "You are about to %1 the face recognition model to %2. This process can "
-#| "take several minutes or more depending on the size of your library and "
-#| "the speed of your computer. SFace is the preferred model. Do not use any "
-#| "facial detection or recognition features during the %1.\n"
-#| "\n"
-#| "Are you sure you want to continue?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "You are about to change the face recognition model. This process can take "
@@ -51745,31 +51729,31 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
-"Spremenili boste model za prepoznavanje obraza iz %1 na %2. Ta postopek "
-"lahko traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in "
-"hitrosti vašega računalnika. SFace je prednostni model. Ne uporabljajte "
-"nobenih funkcij za zaznavanje ali prepoznavanje obraza med %1.\n"
+"Spremenili boste model za prepoznavanje obraza na %1. Ta postopek lahko "
+"traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in hitrosti "
+"vašega računalnika. SFace je prednostni model. Ne uporabljajte nobenih "
+"funkcij za zaznavanje ali prepoznavanje obraza med postopkom.\n"
 "\n"
 "Ste prepričani, da želite nadaljevati?"
 msgstr[1] ""
-"Spremenili boste model za prepoznavanje obraza iz %1 na %2. Ta postopek "
-"lahko traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in "
-"hitrosti vašega računalnika. SFace je prednostni model. Ne uporabljajte "
-"nobenih funkcij za zaznavanje ali prepoznavanje obraza med %1.\n"
+"Spremenili boste model za prepoznavanje obraza na %1. Ta postopek lahko "
+"traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in hitrosti "
+"vašega računalnika. SFace je prednostni model. Ne uporabljajte nobenih "
+"funkcij za zaznavanje ali prepoznavanje obraza med postopkom.\n"
 "\n"
 "Ste prepričani, da želite nadaljevati?"
 msgstr[2] ""
-"Spremenili boste model za prepoznavanje obraza iz %1 na %2. Ta postopek "
-"lahko traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in "
-"hitrosti vašega računalnika. SFace je prednostni model. Ne uporabljajte "
-"nobenih funkcij za zaznavanje ali prepoznavanje obraza med %1.\n"
+"Spremenili boste model za prepoznavanje obraza na %1. Ta postopek lahko "
+"traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in hitrosti "
+"vašega računalnika. SFace je prednostni model. Ne uporabljajte nobenih "
+"funkcij za zaznavanje ali prepoznavanje obraza med postopkom.\n"
 "\n"
 "Ste prepričani, da želite nadaljevati?"
 msgstr[3] ""
-"Spremenili boste model za prepoznavanje obraza iz %1 na %2. Ta postopek "
-"lahko traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in "
-"hitrosti vašega računalnika. SFace je prednostni model. Ne uporabljajte "
-"nobenih funkcij za zaznavanje ali prepoznavanje obraza med %1.\n"
+"Spremenili boste model za prepoznavanje obraza na %1. Ta postopek lahko "
+"traja nekaj minut ali več, odvisno od velikosti vaše knjižnice in hitrosti "
+"vašega računalnika. SFace je prednostni model. Ne uporabljajte nobenih "
+"funkcij za zaznavanje ali prepoznavanje obraza med postopkom.\n"
 "\n"
 "Ste prepričani, da želite nadaljevati?"
 
@@ -51777,7 +51761,7 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Začni"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -51999,13 +51983,7 @@ msgid "SSD"
 msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
@@ -52014,7 +51992,7 @@ msgid ""
 "later."
 msgstr ""
 "Model, ki se uporablja za iskanje obrazov. YuNet je privzeti model.\n"
-"Je hitrejši in bolj nastavljiv kot YOLOv3.\n"
+"Je hitrejši in bolj nastavljiv kot SSD in YOLOv3.\n"
 "Opomba: YuNet je na voljo samo, če je digiKam preveden z OpenCV 4.10 ali "
 "novejšim."
 
@@ -52055,7 +52033,23 @@ msgid "Extra Large"
 msgstr "Zelo velik"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
+#| "background faces in addition to medium and larger faces. Selecting "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
+#| "model parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
+#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
+#| "detected. It is much faster and will reduce the number of false-"
+#| "positives, but will not detect small faces in the the background or faces "
+#| "in large group photos.</p><p>If you want to detect all faces in one pass, "
+#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
+#| "45%. Unfortunately, this will give a significant number of false-"
+#| "positives. It's recommended to set a detection accuracy of about 55% and "
+#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
+#| "setting applies only to YuNet.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -52065,7 +52059,7 @@ msgid ""
 "detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
 "eliminate small background faces from being detected. It is much faster and "
 "will reduce the number of false-positives, but will not detect small faces "
-"in the the background or faces in large group photos.</p><p>If you want to "
+"in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to about 45%. Unfortunately, this will give a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
@@ -52099,13 +52093,7 @@ msgid "Accuracy:"
 msgstr "Natančnost:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52137,11 +52125,7 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the default detection model. It is faster and more accurate.\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
@@ -52150,7 +52134,9 @@ msgid ""
 "later."
 msgstr ""
 "SFace je privzeti model detekcije. Je hitrejši in natančnejši.\n"
-"OpenFace se lahko uporablja za starejše knjižnice."
+"OpenFace se lahko uporablja za starejše knjižnice.\n"
+"Opomba: SFace je na voljo samo, če je digiKam preveden z OpenCV 4.6.0 ali "
+"novejšim."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -61046,7 +61032,7 @@ msgstr "Samodejne oznake za: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:530
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -61058,16 +61044,14 @@ msgid "Keywords: %1"
 msgstr "Ključne besede: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Postavk preiskanih za obraze: %1\n"
+msgstr "Postavk preiskanih za samodejne oznake: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Postavka preiskana za obraze: %1\n"
+msgstr "Postavka preiskana za samodejne oznake: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61144,22 +61128,22 @@ msgstr "Podatkovna zbirka prepoznavanje obrazov"
 msgid "Similarity DB"
 msgstr "Podatkovna zbirka podobnosti"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:71
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr "Najdi nove predmete"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, kde-format
 msgid "Scanning from: %1\n"
 msgstr "Preiskovanje iz: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: \"%1\""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:206
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61167,6 +61151,18 @@ msgid ""
 msgstr ""
 "Preiskano:\n"
 " %1"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#, fuzzy, kde-format
+#| msgid "Items scanned for auto-tags: %1"
+msgid "Items scanned for cataloging: %1"
+msgstr "Postavk preiskanih za samodejne oznake: %1"
+
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#, fuzzy, kde-format
+#| msgid "Item scanned for auto-tags: %1"
+msgid "Item scanned for cataloging: %1"
+msgstr "Postavka preiskana za samodejne oznake: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61193,85 +61189,81 @@ msgstr[2] "%1 dvojnika"
 msgstr[3] "%1 dvojniki"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Postavk preiskanih za obraze: %1\n"
+msgstr "Postavk preiskanih za dvojnike: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Postavka preiskana za obraze: %1\n"
+msgstr "Postavka preiskana za dvojnike: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Dvojniki za: %1\n"
+msgstr "Najdenih dvojnikov: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Dvojniki za: %1\n"
+msgstr "Najden dvojnik: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Preišči obraze v albumu: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Preišči obraze v %1 albumih"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:301
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Preišči obraze v sliki: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:305
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Preišči obraze v %1 slikah"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:310
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
 #, kde-format
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Postavk preiskanih za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Postavka preiskana za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Najdenih obrazov: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
 #, kde-format
 msgid "Face found: %1"
 msgstr "Najden obraz: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:529
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Preiskano za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:534
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
 #, kde-format
 msgid "No face"
 msgstr "Ni obraza"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:538
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61291,24 +61283,22 @@ msgid "Rebuild Fingerprint for: %1\n"
 msgstr "Ponovno izgradi prstne odtise za: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:232
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:213
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:217
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
 #, kde-format
 msgid "Path: %1"
 msgstr "Pot: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Postavk preiskanih za obraze: %1\n"
+msgstr "Postavk preiskanih za prstni odtis: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Postavka preiskana za obraze: %1\n"
+msgstr "Postavka preiskana za prstni odtis: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
 #, kde-format
@@ -61321,28 +61311,26 @@ msgid "Pick Label: %1"
 msgstr "Poberi oznako: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Postavk preiskanih za obraze: %1\n"
+msgstr "Postavk preiskanih za kakovost: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Postavka preiskana za obraze: %1\n"
+msgstr "Postavka preiskana za kakovost: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:183
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Odstrani vse obraze s slike"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:188
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Odstrani vse značke iz slike"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:204
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -61351,7 +61339,7 @@ msgstr ""
 "Vsi obrazi so bili odstranjeni iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:209
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -61360,35 +61348,97 @@ msgstr ""
 "Vse značke so bile odstranjene iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:231
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
 #, kde-format
 msgid "Clear Metadata for: %1\n"
 msgstr "Počisti metapodatke za: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#, fuzzy, kde-format
+#| msgid "Items scanned for faces: %1\n"
+msgid "Items scanned to remove faces: %1"
+msgstr "Postavk preiskanih za obraze: %1\n"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#, fuzzy, kde-format
+#| msgid "Item scanned for faces: %1\n"
+msgid "Item scanned to remove faces: %1"
+msgstr "Postavka preiskana za obraze: %1\n"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#, fuzzy, kde-format
+#| msgid "Items scanned for auto-tags: %1"
+msgid "Items scanned to remove tags: %1"
+msgstr "Postavk preiskanih za samodejne oznake: %1"
+
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#, fuzzy, kde-format
+#| msgid "Item scanned for auto-tags: %1"
+msgid "Item scanned to remove tags: %1"
+msgstr "Postavka preiskana za samodejne oznake: %1"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Posodabljanje podatkovne zbirke iz metapodatkov slike"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:212
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
 #, kde-format
 msgid "Metadata Sync for: %1\n"
 msgstr "Sinhronizacija metapodatkov za: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
-#, kde-format
-msgid "Thumbs"
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Items scanned to synchronize metadata with database: %1"
+msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#, fuzzy, kde-format
+#| msgid "Synchronizing image metadata with database"
+msgid "Item scanned to synchronize metadata with database: %1"
+msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#, fuzzy, kde-format
+#| msgid "Items scanned for duplicates: %1\n"
+msgid "Items scanned to update database with metadata: %1"
+msgstr "Postavk preiskanih za dvojnike: %1\n"
+
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#, fuzzy, kde-format
+#| msgid "Item scanned for duplicates: %1\n"
+msgid "Item scanned to update database with metadata: %1"
+msgstr "Postavka preiskana za dvojnike: %1\n"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#, fuzzy, kde-format
+#| msgctxt "@action: Go to thumbnails (icon) view"
+#| msgid "Thumbnails"
+msgid "Generate Thumbnails"
 msgstr "Sličice"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:216
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
 msgid "Thumbnail for: %1\n"
 msgstr "Predogledna sličica za: %1\n"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#, fuzzy, kde-format
+#| msgid "Items scanned for quality: %1"
+msgid "Items scanned for thumbnails: %1"
+msgstr "Postavk preiskanih za kakovost: %1"
+
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#, fuzzy, kde-format
+#| msgid "Item scanned for quality: %1"
+msgid "Item scanned for thumbnails: %1"
+msgstr "Postavka preiskana za kakovost: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -65395,7 +65445,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:266
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65411,7 +65461,7 @@ msgstr ""
 "datoteka ni več edinstveno dodeljena in se bo uporabljala za obe sliki, kar "
 "lahko povzroča težave z metapodatki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:284
+#: core/utilities/setup/metadata/setupmetadata.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65422,7 +65472,7 @@ msgstr ""
 "vaše slike prikazane napačno, zato to možnost izklopite le, če to nujno "
 "potrebno."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:307
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65440,13 +65490,13 @@ msgstr ""
 "Če se že za to odločite, naredite vsaj varnostno kopijo surovih datotek "
 "slik. Močno vam priporočamo, da te možnosti ne omogočite."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:315
+#: core/utilities/setup/metadata/setupmetadata.cpp:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Da, razumem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:325
+#: core/utilities/setup/metadata/setupmetadata.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -65673,6 +65723,34 @@ msgid "Reading and Writing Metadata"
 msgstr "Branje in zapisovanje metapodatkov"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid ""
+#| "Delegate to ExifTool backend all operations to write metadata to files"
+msgctxt "@option:check"
+msgid "Use ExifTool backend to read metadata from files"
+msgstr ""
+"Dodelite programu ExifTool v ozadju vse operacije pisanja metapodatkov v "
+"datoteke"
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata to files with ExifTool backend "
+#| "instead Exiv2. This will slowdown a little bit the synchronization of "
+#| "files metadata with database."
+msgctxt "@info:whatsthis"
+msgid ""
+"Turn on this option to read metadata from files with ExifTool backend "
+"instead Exiv2. This will slowdown a little bit the synchronization of files "
+"metadata with database."
+msgstr ""
+"Vklopite to možnost, da pisanje metapodatkov v datoteke opravlja ExifTool v "
+"ozadju namesto Exiv2. To bo malenkostno upočasnilo sinhronizacijo "
+"metapodatkov v datotekah glede na podatkovno bazo."
+
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
@@ -65680,7 +65758,7 @@ msgstr ""
 "Dodelite programu ExifTool v ozadju vse operacije pisanja metapodatkov v "
 "datoteke"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65692,25 +65770,25 @@ msgstr ""
 "ozadju namesto Exiv2. To bo malenkostno upočasnilo sinhronizacijo "
 "metapodatkov v datotekah glede na podatkovno bazo."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
 msgstr "Zapis metapodatkov v datoteke DNG"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:133
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr "Vklopite to možnost, da zapišete metapodatke v datoteke DNG."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:130
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
 msgstr "Če je mogoče, zapiši metapodatke v surove datoteke slik (RAW)"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65720,13 +65798,13 @@ msgstr ""
 "Vklopite možnost zapisovanja metapodatkov v surove datoteke RAW. Ta zmožnost "
 "dodeli nalogo pisanja programu ExifTool v ozadju in je privzeto onemogočena."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:140
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
 msgstr "Uporabi počasno sinhronizacijo"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:142
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65738,13 +65816,13 @@ msgstr ""
 "Sinhronizacijo lahko opravite pozneje, če sprožite uveljavljanje "
 "sinhronizacije ali ob izhodu iz digikama"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:146
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:152
 #, kde-format
 msgctxt "@option:check"
 msgid "&Update file modification timestamp when files are modified"
 msgstr "Posodobi časovni žig spremembe datoteke, ko je slika spremenjena"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:148
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65758,13 +65836,13 @@ msgstr ""
 "to povzročilo težave s programi, ki za samodejno zaznavanje sprememb "
 "uporabljajo časovne žige."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:154
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:160
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
 msgstr "Ob spremembi datotek znova p&reišči datoteko"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:156
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:162
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65778,19 +65856,19 @@ msgstr ""
 "pa se je spremenil časovni žig zadnje spremembe, bo datoteka ob zagonu "
 "digiKama znova preiskana."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:227
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
 msgstr "Opomba: glejte %1 zaledja ExifTool."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:229
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
 msgstr "omejitve pisanja"
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:236
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:245
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -65800,7 +65878,7 @@ msgstr ""
 "Opomba: te možnosti so odvisne od razpoložljivosti %1. Preverite zavihek "
 "ExifTool za podrobnosti."
 
-#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:239
+#: core/utilities/setup/metadata/setupmetadata_behavior.cpp:248
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
@@ -67722,6 +67800,9 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgid "Thumbs"
+#~ msgstr "Sličice"
 
 #~ msgid "downgrade"
 #~ msgstr "podgradi"
