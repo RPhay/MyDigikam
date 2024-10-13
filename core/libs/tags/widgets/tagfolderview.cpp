@@ -334,17 +334,24 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
     handleCustomContextMenuAction(choice, albumPointer);
 }
 
+void TagFolderView::tagPropsEdit()
+{
+    QList<TAlbum*> selected = selectedTagAlbums();
+
+    if (selected.count() == 1)
+    {
+        tagModificationHelper()->slotTagEdit(selected.first());
+    }
+}
+
 void TagFolderView::keyPressEvent(QKeyEvent* event)
 {
-    if ((event->key()       == Qt::Key_Return) &&
-        (event->modifiers() == Qt::AltModifier))
+    if (
+        (event->key()       == Qt::Key_Return) &&
+        (event->modifiers() == Qt::AltModifier)
+       )
     {
-        QList<TAlbum*> selected = selectedTagAlbums();
-
-        if (selected.count() == 1)
-        {
-            tagModificationHelper()->slotTagEdit(selected.first());
-        }
+        tagPropsEdit();
 
         return;
     }

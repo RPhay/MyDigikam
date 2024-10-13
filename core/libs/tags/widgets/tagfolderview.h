@@ -67,6 +67,11 @@ public:
      */
     void setShowDeleteFaceTagsAction(bool show);
 
+    /**
+     * Open tag for editing.
+     */
+    void tagPropsEdit();
+
 Q_SIGNALS:
 
     void signalFindDuplicates(const QList<TAlbum*>& albums);

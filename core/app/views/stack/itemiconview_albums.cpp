@@ -335,7 +335,16 @@ void ItemIconView::slotAlbumRefreshComplete()
 
 void ItemIconView::slotAlbumPropsEdit()
 {
-    d->albumModificationHelper->slotAlbumEdit(d->albumManager->currentPAlbum());
+    TagFolderView* const tagView = dynamic_cast<TagFolderView*>(qApp->focusWidget());
+
+    if (tagView)
+    {
+        tagView->tagPropsEdit();
+    }
+    else
+    {
+        d->albumModificationHelper->slotAlbumEdit(d->albumManager->currentPAlbum());
+    }
 }
 
 void ItemIconView::slotAlbumWriteMetadata()
