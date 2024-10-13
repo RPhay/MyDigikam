@@ -61,7 +61,9 @@ DNNSFaceExtractor::DNNSFaceExtractor()
     : DNNFaceExtractorBase(),
       d                   (new Private)
 {
-    loadModels();
+    // Virtual call in contructor: use dynamic binding.
+
+    this->loadModels();
 }
 
 DNNSFaceExtractor::DNNSFaceExtractor(const DNNSFaceExtractor& other)

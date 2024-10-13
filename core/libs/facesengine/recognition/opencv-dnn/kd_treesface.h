@@ -44,7 +44,7 @@ private:
     virtual KDNodeBase* createNode(const cv::Mat& nodePos,
                                    const int identity,
                                    int splitAxis,
-                                   int dimension);
+                                   int dimension)      override;
 
     virtual float getCosThreshold(float sqRange) const override
     {
