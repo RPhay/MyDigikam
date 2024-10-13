@@ -168,7 +168,7 @@ HotPixelContainer HotPixelSettings::defaultSettings() const
     return HotPixelContainer();
 }
 
-void HotPixelSettings::readSettings(KConfigGroup& group)
+void HotPixelSettings::readSettings(const KConfigGroup& group)
 {
     d->allBlackFrameUrls         = group.readEntry(d->configAllBlackFrameFilesEntry, QList<QUrl>());
 

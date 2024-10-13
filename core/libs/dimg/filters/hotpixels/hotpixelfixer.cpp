@@ -237,7 +237,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
 }
 
 void HotPixelFixer::weightPixels(DImg& img,
-                                 HotPixelProps& px,
+                                 const HotPixelProps& px,
                                  int method,
                                  HotPixelContainer::Direction dir,
                                  int maxComponent)

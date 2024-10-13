@@ -46,7 +46,7 @@ DbEngineConfigSettingsLoader::DbEngineConfigSettingsLoader(const QString& filepa
     }
 }
 
-DbEngineConfigSettings DbEngineConfigSettingsLoader::readDatabase(QDomElement& databaseElement)
+DbEngineConfigSettings DbEngineConfigSettingsLoader::readDatabase(const QDomElement& databaseElement)
 {
     DbEngineConfigSettings configElement;
     configElement.databaseID = QLatin1String("Unidentified");

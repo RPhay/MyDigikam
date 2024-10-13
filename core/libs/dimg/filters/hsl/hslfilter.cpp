@@ -219,7 +219,7 @@ int HSLFilter::vibranceBias(double sat, double hue, double vib, bool sixteenbit)
     }
 }
 
-void HSLFilter::applyHSL(DImg& image)
+void HSLFilter::applyHSL(const DImg& image)
 {
     if (image.isNull())
     {

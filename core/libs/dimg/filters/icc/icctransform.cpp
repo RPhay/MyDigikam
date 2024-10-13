@@ -693,7 +693,7 @@ bool IccTransform::apply(QImage& qimage)
     return true;
 }
 
-void IccTransform::transform(DImg& image, const TransformDescription& description, DImgLoaderObserver* const observer)
+void IccTransform::transform(const DImg& image, const TransformDescription& description, DImgLoaderObserver* const observer)
 {
     const int bytesDepth    = image.bytesDepth();
     const int pixels        = image.width() * image.height();

@@ -83,12 +83,12 @@ private:
                      int method);
 
     void weightPixels(DImg& img,
-                      HotPixelProps& px,
+                      const HotPixelProps& px,
                       int method,
                       HotPixelContainer::Direction dir,
                       int maxComponent);
 
-    inline bool validPoint(DImg& img, const QPoint& p)
+    inline bool validPoint(const DImg& img, const QPoint& p)
     {
         return (
                 (p.x() >= 0)                 &&

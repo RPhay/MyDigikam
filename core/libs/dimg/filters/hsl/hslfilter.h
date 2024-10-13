@@ -88,7 +88,7 @@ private:
     void setHue(double val);
     void setSaturation(double val);
     void setLightness(double val);
-    void applyHSL(DImg& image);
+    void applyHSL(const DImg& image);
     int  vibranceBias(double sat, double hue, double vib, bool sixteenbit);
 
 private:

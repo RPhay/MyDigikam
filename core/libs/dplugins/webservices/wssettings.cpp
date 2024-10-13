@@ -44,7 +44,7 @@ WSSettings::~WSSettings()
     delete oauthSettingsStore;
 }
 
-void WSSettings::readSettings(KConfigGroup& group)
+void WSSettings::readSettings(const KConfigGroup& group)
 {
     selMode           = (Selection)group.readEntry("SelMode",
                         (int)EXPORT);

@@ -173,8 +173,9 @@ void OilPaintFilter::filterImage()
  * Theory           => This function creates a matrix with the analyzed pixel in
  *                     the center of this matrix and find the most frequently color
  */
-DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, int Intensity,
-                                         uchar* intensityCount, uint* averageColorR, uint* averageColorG, uint* averageColorB)
+DColor OilPaintFilter::MostFrequentColor(const DImg& src, int X, int Y, int Radius, int Intensity,
+                                         uchar* intensityCount, uint* averageColorR,
+                                         uint* averageColorG, uint* averageColorB)
 {
     int  i, w, h, I, Width, Height;
     uint red, green, blue;

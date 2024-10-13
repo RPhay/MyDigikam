@@ -230,7 +230,7 @@ void CBFilter::getTables(int* const redMap,
     }
 }
 
-void CBFilter::applyCBFilter(DImg& image, double r, double g, double b, double a)
+void CBFilter::applyCBFilter(const DImg& image, double r, double g, double b, double a)
 {
     if (image.isNull())
     {

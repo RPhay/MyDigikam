@@ -156,7 +156,7 @@ private:
     TransformDescription getDescription(const QImage& image);
     bool open(TransformDescription& description);
     bool openProofing(TransformDescription& description);
-    void transform(DImg& img, const TransformDescription&,
+    void transform(const DImg& img, const TransformDescription&,
                    DImgLoaderObserver* const observer = nullptr);
     void transform(QImage& img, const TransformDescription&);
 

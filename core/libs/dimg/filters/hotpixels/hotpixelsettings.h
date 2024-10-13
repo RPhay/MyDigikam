@@ -47,7 +47,7 @@ public:
     HotPixelContainer settings()         const;
     void setSettings(const HotPixelContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     QString configGroupName()            const;

@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
+void MetaEngineSettingsContainer::readFromConfig(const KConfigGroup& group)
 {
     exifRotate            = group.readEntry("EXIF Rotate",                              true);
     exifSetOrientation    = group.readEntry("EXIF Set Orientation",                     true);

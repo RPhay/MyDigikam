@@ -65,8 +65,9 @@ private:
 
     void filterImage()                                                        override;
     void oilPaintImageMultithreaded(uint start, uint stop);
-    DColor MostFrequentColor(DImg& src, int X, int Y, int Radius, int Intensity,
-                             uchar* intensityCount, uint* averageColorR, uint* averageColorG, uint* averageColorB);
+    DColor MostFrequentColor(const DImg& src, int X, int Y, int Radius, int Intensity,
+                             uchar* intensityCount, uint* averageColorR,
+                             uint* averageColorG, uint* averageColorB);
     inline double GetIntensity(uint Red, uint Green, uint Blue);
 
 private:

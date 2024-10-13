@@ -62,7 +62,7 @@ public:
      * @param group the group to restore the curve from
      * @param prefix the prefix prepended to the point numbers in the config
      */
-    void restoreCurve(KConfigGroup& group, const QString& prefix);
+    void restoreCurve(const KConfigGroup& group, const QString& prefix);
 
     /**
      * Updates the image data the curve should be used for.

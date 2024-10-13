@@ -56,7 +56,7 @@ void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData& data)
     }
 }
 
-QByteArray DatabaseBlob::write(Haar::SignatureData& data)
+QByteArray DatabaseBlob::write(const Haar::SignatureData& data)
 {
     QByteArray array;
     array.reserve(sizeof(qint32) + 3*sizeof(double) + 3*sizeof(qint32)*Haar::NumberOfCoefficients);

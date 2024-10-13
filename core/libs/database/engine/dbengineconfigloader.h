@@ -37,7 +37,7 @@ public:
     explicit DbEngineConfigSettingsLoader(const QString& filepath, int xmlVersion);
 
     bool readConfig(const QString& filepath, int xmlVersion);
-    DbEngineConfigSettings readDatabase(QDomElement& databaseElement);
+    DbEngineConfigSettings readDatabase(const QDomElement& databaseElement);
 
     void readDBActions(const QDomElement& sqlStatementElements, DbEngineConfigSettings& configElement);
 

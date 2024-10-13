@@ -95,7 +95,7 @@ void cvmattostdmat(const cv::Mat& dst, std::vector<std::vector<float> >& src)
     }
 }
 
-void transpose(std::vector<std::vector<float> >& src,
+void transpose(const std::vector<std::vector<float> >& src,
                std::vector<std::vector<float> >& dst)
 {
     for (unsigned int i = 0 ; i < src.size() ; ++i)

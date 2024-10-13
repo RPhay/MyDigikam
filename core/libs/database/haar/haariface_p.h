@@ -87,7 +87,7 @@ public:
      */
     void read(const QByteArray& array, Haar::SignatureData& data);
 
-    QByteArray write(Haar::SignatureData& data);
+    QByteArray write(const Haar::SignatureData& data);
 };
 
 // -----------------------------------------------------------------------------------------------------

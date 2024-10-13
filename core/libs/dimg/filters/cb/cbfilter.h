@@ -98,7 +98,7 @@ private:
     void setTables(int* const redMap, int* const greenMap, int* const blueMap, int* const alphaMap, bool sixteenBit);
     void getTables(int* const redMap, int* const greenMap, int* const blueMap, int* const alphaMap, bool sixteenBit);
     void adjustRGB(double r, double g, double b, double a, bool sixteenBit);
-    void applyCBFilter(DImg& image, double r, double g, double b, double a);
+    void applyCBFilter(const DImg& image, double r, double g, double b, double a);
 
 private:
 

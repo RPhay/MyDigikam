@@ -398,7 +398,7 @@ void CurvesWidget::saveCurve(KConfigGroup& group, const QString& prefix)
     }
 }
 
-void CurvesWidget::restoreCurve(KConfigGroup& group, const QString& prefix)
+void CurvesWidget::restoreCurve(const KConfigGroup& group, const QString& prefix)
 {
     qCDebug(DIGIKAM_DIMG_LOG) << "Restoring curves";
 

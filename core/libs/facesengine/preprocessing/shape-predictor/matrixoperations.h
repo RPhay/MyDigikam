@@ -82,7 +82,7 @@ inline T pythag(const T& a, const T& b)
     }
 }
 
-void transpose(std::vector<std::vector<float> >& src,
+void transpose(const std::vector<std::vector<float> >& src,
                std::vector<std::vector<float> >& dst);
 
 float trace(const std::vector<std::vector<float> >& src);
