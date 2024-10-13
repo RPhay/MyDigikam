@@ -154,7 +154,7 @@ public:
      * implement your own TrainingDataProvider and use one of the above functions.
      */
     void train(const Identity& identityToBeTrained,
-               QImage* image,
+               QImage* const image,
                const QString& trainingContext);
     void train(const Identity& identityToBeTrained,
                const QList<QImage*>& images,

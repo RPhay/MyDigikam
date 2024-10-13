@@ -84,6 +84,7 @@ void ParallelWorkers::setPriority(QThread::Priority priority)
     }
 }
 
+// cppcheck-suppress constParameterPointer
 void ParallelWorkers::add(WorkerObject* const worker)
 {
 /*

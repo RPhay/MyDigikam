@@ -176,6 +176,7 @@ QList<int> Album::childAlbumIds(bool recursive)
     return ids;
 }
 
+// cppcheck-suppress constParameterPointer
 void Album::insertChild(Album* const child)
 {
     if (!child)
@@ -298,6 +299,7 @@ Album::Type Album::type() const
     return m_type;
 }
 
+// cppcheck-suppress constParameterPointer
 void Album::setExtraData(const void* const key, void* const value)
 {
     m_extraMap.insert(key, value);

@@ -280,6 +280,7 @@ void AnimationControl::moveToGroup()
     }
 }
 
+// cppcheck-suppress constParameterPointer
 void AnimationControl::addItem(QAbstractAnimation* const anim, QObject* const item)
 {
     // Either there is no group but now for the first time two items,

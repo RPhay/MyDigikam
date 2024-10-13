@@ -251,8 +251,8 @@ int DMessageBox::showYesNoWidget(QMessageBox::Icon icon,
 
 // --------------------------------------------------------------------------------------------------------
 
-int DMessageBox::createMessageBox(QDialog* const dialog,
-                                  QDialogButtonBox* const buttons,
+// cppcheck-suppress constParameterPointer
+int DMessageBox::createMessageBox(QDialog* const dialog, QDialogButtonBox* const buttons,
                                   const QIcon& icon,
                                   const QString& text,
                                   QWidget* const listWidget,

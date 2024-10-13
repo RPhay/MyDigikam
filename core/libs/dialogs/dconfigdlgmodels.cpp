@@ -207,6 +207,7 @@ PageItem::~PageItem()
     qDeleteAll(mChildItems);
 }
 
+// cppcheck-suppress constParameterPointer
 void PageItem::appendChild(PageItem* const item)
 {
     mChildItems.append(item);

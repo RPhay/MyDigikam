@@ -79,8 +79,8 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
     train((QList<Identity>() << identityToBeTrained), data, trainingContext);
 }
 
-void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                     QImage* image,
+// cppcheck-suppress constParameterPointer
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained, QImage* const image,
                                      const QString& trainingContext)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,

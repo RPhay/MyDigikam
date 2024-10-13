@@ -30,6 +30,7 @@ ItemQueryPostHooks::~ItemQueryPostHooks()
     }
 }
 
+// cppcheck-suppress constParameterPointer
 void ItemQueryPostHooks::addHook(ItemQueryPostHook* const hook)
 {
     m_postHooks << hook;
