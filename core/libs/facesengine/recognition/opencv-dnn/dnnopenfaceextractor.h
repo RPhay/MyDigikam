@@ -40,7 +40,7 @@ public:
     /**
      * Read pretrained neural network for face recognition.
      */
-    bool loadModels();
+    bool loadModels()                                               override;
 
 
     virtual cv::Mat alignFace(const cv::Mat& inputImage) const      override;

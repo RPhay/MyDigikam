@@ -46,7 +46,7 @@ private:
                                    int splitAxis,
                                    int dimension);
 
-    virtual float getCosThreshold(float sqRange) const
+    virtual float getCosThreshold(float sqRange) const override
     {
         return 1.0 + (sqRange / 10.0);
     }

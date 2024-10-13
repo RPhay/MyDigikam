@@ -17,7 +17,6 @@
 // Local includes
 
 #include "kd_treebase.h"
-//#include "kd_node.h"
 
 namespace Digikam
 {
@@ -46,7 +45,7 @@ private:
                                    int splitAxis,
                                    int dimension) override;
 
-    virtual float getCosThreshold(float sqRange) const
+    virtual float getCosThreshold(float sqRange) const override
     {
         Q_UNUSED(sqRange);
 
