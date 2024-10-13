@@ -667,7 +667,7 @@ QPropertyAnimation* ItemVisibilityController::createAnimation(QObject*)
     return anim;
 }
 
-void ItemVisibilityController::addItem(QObject* item)
+void ItemVisibilityController::addItem(QObject* const item)
 {
     if (!item)
     {
@@ -689,7 +689,7 @@ void ItemVisibilityController::addItem(QObject* item)
     d->control->addItem(anim, item);
 }
 
-void ItemVisibilityController::removeItem(QObject* item)
+void ItemVisibilityController::removeItem(QObject* const item)
 {
     if (!item || !d->control)
     {

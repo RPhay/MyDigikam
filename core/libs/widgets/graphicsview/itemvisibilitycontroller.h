@@ -105,8 +105,8 @@ public:
      * No ownership is taken, so the objects should live as long as this object
      * is used.
      */
-    void addItem(QObject* object);
-    void removeItem(QObject* object);
+    void addItem(QObject* const object);
+    void removeItem(QObject* const object);
 
     /**
      * Returns all items under control
