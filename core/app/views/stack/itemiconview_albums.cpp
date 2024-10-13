@@ -335,16 +335,17 @@ void ItemIconView::slotAlbumRefreshComplete()
 
 void ItemIconView::slotAlbumPropsEdit()
 {
-    TagFolderView* const tagView = dynamic_cast<TagFolderView*>(qApp->focusWidget());
+    QAction* const action     = dynamic_cast<QAction*>(sender());
+    TagFolderView* const view = dynamic_cast<TagFolderView*>(qApp->focusWidget());
 
-    if (tagView)
+    if (view && action && (action->shortcut() == QKeySequence(Qt::ALT | Qt::Key_Return)))
     {
-        tagView->tagPropsEdit();
+        view->tagPropsEdit();
+
+        return;
     }
-    else
-    {
-        d->albumModificationHelper->slotAlbumEdit(d->albumManager->currentPAlbum());
-    }
+
+    d->albumModificationHelper->slotAlbumEdit(d->albumManager->currentPAlbum());
 }
 
 void ItemIconView::slotAlbumWriteMetadata()
