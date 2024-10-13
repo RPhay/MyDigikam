@@ -551,8 +551,8 @@ QModelIndex RGTagModel::index(int row, int column, const QModelIndex& parent) co
     {
         return createIndex(row, column, parentBranch->spacerChildren[row]);
     }
-    // cppcheck-suppress knownConditionTrueFalse
     else if (
+             // cppcheck-suppress knownConditionTrueFalse
              (row >= parentBranch->spacerChildren.count()) &&
              (row < (parentBranch->newChildren.count() + parentBranch->spacerChildren.count()))
             )
