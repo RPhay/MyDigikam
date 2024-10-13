@@ -1787,7 +1787,7 @@ QPixmap PresentationGL::generateOutlinedTextPixmap(const QString& text, QFont& f
 }
 
 QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QFont& fn,
-                                                         QColor& fgColor, QColor& bgColor,
+                                                         QColor& fgColor, const QColor& bgColor,
                                                          int opacity, bool drawTextOutline)
 {
     QFontMetrics fm(fn);

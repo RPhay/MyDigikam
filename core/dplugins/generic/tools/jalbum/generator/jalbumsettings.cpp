@@ -43,7 +43,7 @@ JAlbumSettings::JAlbumSettings(DInfoInterface* const iface)
     m_destPath = dfltAlbumPath;
 }
 
-void JAlbumSettings::readSettings(KConfigGroup& group)
+void JAlbumSettings::readSettings(const KConfigGroup& group)
 {
     m_destPath            = group.readEntry("destPath",                 QString());
     m_jalbumPath          = group.readEntry("jalbumPath",               QString());

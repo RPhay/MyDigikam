@@ -23,7 +23,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-void MailSettings::readSettings(KConfigGroup& group)
+void MailSettings::readSettings(const KConfigGroup& group)
 {
     selMode           = (Selection)group.readEntry("SelMode",
                         (int)IMAGES);

@@ -90,7 +90,7 @@ public:
     ~AdvPrintSettings();
 
     /// Read and write settings in config file between sessions.
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     QString format()                                 const;

@@ -40,7 +40,7 @@ AdvPrintSettings::~AdvPrintSettings()
     photos.clear();
 }
 
-void AdvPrintSettings::readSettings(KConfigGroup& group)
+void AdvPrintSettings::readSettings(const KConfigGroup& group)
 {
     selMode           = (Selection)group.readEntry("SelMode",
                         (int)IMAGES);

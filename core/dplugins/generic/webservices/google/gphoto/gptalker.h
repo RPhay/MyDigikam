@@ -52,7 +52,7 @@ public:
     void    createAlbum(const GSFolder& newAlbum);
 
     bool    addPhoto(const QString& photoPath,
-                     GSPhoto& info,
+                     const GSPhoto& info,
                      const QString& albumId,
                      bool original,
                      bool rescale,

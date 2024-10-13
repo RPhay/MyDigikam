@@ -286,7 +286,7 @@ void GPTalker::createAlbum(const GSFolder& album)
  * Upload token then will be sent with url in GPTlaker::uploadPhoto to create real photos on user account
  */
 bool GPTalker::addPhoto(const QString& photoPath,
-                        GSPhoto& info,
+                        const GSPhoto& info,
                         const QString& albumId,
                         bool original,
                         bool rescale,

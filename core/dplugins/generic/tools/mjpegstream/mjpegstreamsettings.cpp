@@ -36,7 +36,7 @@ void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
     }
 }
 
-void MjpegStreamSettings::readSettings(KConfigGroup& group)
+void MjpegStreamSettings::readSettings(const KConfigGroup& group)
 {
     port                 = group.readEntry("MJPEGStreamPort",                                  8080);
     loop                 = group.readEntry("MJPEGStreamLoop",                                  true);

@@ -92,7 +92,7 @@ public:
     QString tmpl;
 
     // cppcheck-suppress constParameterCallback
-    static bool lessThan(SmugAlbum& a, SmugAlbum& b)
+    static bool lessThan(const SmugAlbum& a, const SmugAlbum& b)
     {
         return a.title.toLower() < b.title.toLower();
     }

@@ -74,7 +74,7 @@ private:
     QPixmap       generateOutlinedTextPixmap(const QString& text);
     QPixmap       generateOutlinedTextPixmap(const QString& text, QFont& fn);
     QPixmap       generateCustomOutlinedTextPixmap(const QString& text,
-                                                   QFont& fn, QColor& fgColor, QColor& bgColor,
+                                                   QFont& fn, QColor& fgColor, const QColor& bgColor,
                                                    int opacity, bool transBg = true);
 
     void          paintTexture();
