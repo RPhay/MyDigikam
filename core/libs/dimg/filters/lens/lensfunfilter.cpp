@@ -222,8 +222,11 @@ void LensFunFilter::filterImage()
     lfPixelFormat colorDepth = (m_orgImage.bytesDepth() == 4) ? LF_PF_U8 : LF_PF_U16;
     double focalLength       = d->iface->settings().focalLength;
     double cropFactor        = d->iface->settings().cropFactor;
-    focalLength              = (cropFactor > 1.0) ? (focalLength * cropFactor)
-                                                  : focalLength;
+
+    if (d->iface->settings().cameraModel == QLatin1String("DSC-RX100M6"))
+    {
+        focalLength = focalLength * cropFactor;
+    }
 
 #if LENSFUN_TEST_VERSION(0,3,99)
 
