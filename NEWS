@@ -142,7 +142,7 @@ BUGFIXES:
 118 ==> 494471 - File disappeared from digikam while it exists in directory.
 119 ==> 494585 - XMP-dc:Subject tags not imported to the database with HEIF file.
 120 ==> 494618 - Non-functioning shortcut ALT + Return in the right sidebar.
-121 ==> 
+121 ==> 494623 - Arrow keys navigation leaves the focus from album tree-view to icon-view.
 122 ==> 
 123 ==> 
 124 ==> 

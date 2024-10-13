@@ -109,7 +109,8 @@ public:
                         const ItemInfo& previous = ItemInfo(),
                         const ItemInfo& next = ItemInfo());
     StackedViewMode viewMode()           const;
-    void setViewMode(const StackedViewMode mode);
+    void setViewMode(const StackedViewMode mode,
+                     bool focus = false);
     void previewLoaded();
 
     void   increaseZoom();

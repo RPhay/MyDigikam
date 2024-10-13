@@ -383,7 +383,7 @@ StackedView::StackedViewMode StackedView::viewMode() const
     return StackedViewMode(d->stackMap.value(currentIndex()));
 }
 
-void StackedView::setViewMode(const StackedViewMode mode)
+void StackedView::setViewMode(const StackedViewMode mode, bool focus)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Stacked View Mode : " << mode;
 
@@ -439,23 +439,26 @@ void StackedView::setViewMode(const StackedViewMode mode)
 
     d->tableView->slotSetActive(mode == TableViewMode);
 
-    if      (mode == IconViewMode)
+    if (focus)
     {
-        d->imageIconView->setFocus();
-    }
+        if      (mode == IconViewMode)
+        {
+            d->imageIconView->setFocus();
+        }
 
 #ifdef HAVE_GEOLOCATION
 
-    else if (mode == MapWidgetMode)
-    {
-        d->mapWidgetView->setFocus();
-    }
+        else if (mode == MapWidgetMode)
+        {
+            d->mapWidgetView->setFocus();
+        }
 
 #endif // HAVE_GEOLOCATION
 
-    else if (mode == TableViewMode)
-    {
-        d->tableView->setFocus();
+        else if (mode == TableViewMode)
+        {
+            d->tableView->setFocus();
+        }
     }
 
     Q_EMIT signalViewModeChanged();

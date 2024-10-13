@@ -60,12 +60,12 @@ void ItemIconView::slotEscapePreview()
 
 void ItemIconView::slotMapWidgetView()
 {
-    d->stackedView->setViewMode(StackedView::MapWidgetMode);
+    d->stackedView->setViewMode(StackedView::MapWidgetMode, true);
 }
 
 void ItemIconView::slotTableView()
 {
-    d->stackedView->setViewMode(StackedView::TableViewMode);
+    d->stackedView->setViewMode(StackedView::TableViewMode, true);
 }
 
 void ItemIconView::slotIconView()
@@ -77,7 +77,7 @@ void ItemIconView::slotIconView()
 
     // and switch to icon view
 
-    d->stackedView->setViewMode(StackedView::IconViewMode);
+    d->stackedView->setViewMode(StackedView::IconViewMode, true);
 
     // make sure the next/previous buttons are updated
 
