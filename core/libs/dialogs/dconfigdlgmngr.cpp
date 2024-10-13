@@ -672,10 +672,7 @@ void DConfigDlgMngr::setProperty(QWidget* w, const QVariant& v)
 
             return;
         }
-    }
 
-    if (userproperty.isEmpty())
-    {
         qCWarning(DIGIKAM_GENERAL_LOG) << w->metaObject()->className() << "widget not handled!";
         return;
     }
@@ -722,10 +719,7 @@ QVariant DConfigDlgMngr::property(QWidget* w) const
                 return QVariant(cb->currentIndex());
             }
         }
-    }
 
-    if (userproperty.isEmpty())
-    {
         qCWarning(DIGIKAM_GENERAL_LOG) << w->metaObject()->className() << "widget not handled!";
         return QVariant();
     }

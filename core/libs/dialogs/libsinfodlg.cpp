@@ -630,6 +630,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     {
         QTreeWidgetItem* const ocvhdw = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Hardware features"));
         int count                     = 0;
+        Q_UNUSED(count);
 
         for (int i = 0 ; i < CV_HARDWARE_MAX_FEATURE ; i++)
         {

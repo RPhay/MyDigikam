@@ -319,6 +319,7 @@ void SolidHardwareDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 {
     bool query     = false;
     int  results   = 0;
+    Q_UNUSED(results);
     QString search = settings.text.toLower();
 
     QTreeWidgetItemIterator it(currentTreeView());
