@@ -125,7 +125,7 @@ void HotPixelFixer::filterImage()
 /**
  * Interpolates a pixel block
  */
-void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
+void HotPixelFixer::interpolate(DImg& img, const HotPixelProps& hp, int method)
 {
     const int xPos = hp.x();
     const int yPos = hp.y();

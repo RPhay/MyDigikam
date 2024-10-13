@@ -79,7 +79,7 @@ private:
     void filterImage()                       override;
 
     void interpolate(DImg& img,
-                     HotPixelProps& hp,
+                     const HotPixelProps& hp,
                      int method);
 
     void weightPixels(DImg& img,
