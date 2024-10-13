@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-void LocalizeContainer::readFromConfig(KConfigGroup& group)
+void LocalizeContainer::readFromConfig(const KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);
     defaultLanguage  = group.readEntry("DefaultLanguage",  QString());      // empty for auto-detect

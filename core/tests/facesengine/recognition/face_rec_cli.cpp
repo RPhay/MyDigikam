@@ -110,7 +110,7 @@ void prepareForTrain(const QString& testSetPath,
     }
 }
 
-QImage scaleForDetection(const DImg& image, FaceDetector& detector)
+QImage scaleForDetection(const DImg& image, const FaceDetector& detector)
 {
     int recommendedSize = detector.recommendedImageSize(image.size());
 

@@ -25,7 +25,7 @@
 namespace Digikam
 {
 
-void GeolocationSettingsContainer::readFromConfig(KConfigGroup& group)
+void GeolocationSettingsContainer::readFromConfig(const KConfigGroup& group)
 {
     distanceUnit             = (MarbleLocale::MeasurementSystem)group.readEntry("Distance Unit",     (int)MarbleLocale::MetricSystem);
     angleUnit                = (Marble::AngleUnit)              group.readEntry("Angle Unit",        (int)Marble::DecimalDegree);

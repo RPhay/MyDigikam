@@ -41,7 +41,7 @@ public:
 
 public:
 
-    void readFromConfig(KConfigGroup& group);
+    void readFromConfig(const KConfigGroup& group);
     void writeToConfig(KConfigGroup& group) const;
 
 public:

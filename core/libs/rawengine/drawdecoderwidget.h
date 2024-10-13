@@ -81,7 +81,7 @@ public:
     void readSettings(KConfigGroup& group)      override;
     void writeSettings(KConfigGroup& group)     override;
 
-    static void readSettings(DRawDecoderSettings& setting, KConfigGroup& group);
+    static void readSettings(DRawDecoderSettings& setting, const KConfigGroup& group);
     static void writeSettings(const DRawDecoderSettings& setting, KConfigGroup& group);
 
 Q_SIGNALS:

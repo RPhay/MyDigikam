@@ -329,11 +329,11 @@ void DynamicThread::start(QMutexLocker& locker)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-void DynamicThread::stop(QMutexLocker<QMutex>& locker)
+void DynamicThread::stop(const QMutexLocker<QMutex>& locker)
 
 #else
 
-void DynamicThread::stop(QMutexLocker& locker)
+void DynamicThread::stop(const QMutexLocker& locker)
 
 #endif
 

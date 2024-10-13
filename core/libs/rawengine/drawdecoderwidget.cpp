@@ -1149,7 +1149,7 @@ void DRawDecoderWidget::writeSettings(KConfigGroup& group)
     DExpanderBox::writeSettings(group);
 }
 
-void DRawDecoderWidget::readSettings(DRawDecoderSettings& prm, KConfigGroup& group)
+void DRawDecoderWidget::readSettings(DRawDecoderSettings& prm, const KConfigGroup& group)
 {
     Private d;
     DRawDecoderSettings defaultPrm;

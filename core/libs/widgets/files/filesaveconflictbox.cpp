@@ -130,7 +130,7 @@ void FileSaveConflictBox::setConflictRule(ConflictRule r)
     }
 }
 
-void FileSaveConflictBox::readSettings(KConfigGroup& group)
+void FileSaveConflictBox::readSettings(const KConfigGroup& group)
 {
     setConflictRule((FileSaveConflictBox::ConflictRule)group.readEntry("Conflict",
                     (int)(FileSaveConflictBox::DIFFNAME)));

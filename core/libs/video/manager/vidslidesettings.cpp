@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-void VidSlideSettings::readSettings(KConfigGroup& group)
+void VidSlideSettings::readSettings(const KConfigGroup& group)
 {
     selMode      = (Selection)group.readEntry("SelMode",
                    (int)IMAGES);
