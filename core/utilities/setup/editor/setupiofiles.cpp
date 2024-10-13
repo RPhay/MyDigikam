@@ -40,6 +40,7 @@ public:
 
     Private() = default;
 
+    // cppcheck-suppress constParameterPointer
     QWidget* createGroupBox(QWidget* const w) const
     {
         QGroupBox* const  box     = new QGroupBox;

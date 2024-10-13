@@ -161,11 +161,11 @@ public:
     void clear();
 
     void addItem(QAbstractAnimation* const animation, QObject* const item);
-    QAbstractAnimation* takeItem(QObject* const item);
+    QAbstractAnimation* takeItem(const QObject* const item);
     void moveTo(AnimationControl* const other, QObject* const item);
     void moveAllTo(AnimationControl* const other);
 
-    bool hasItem(QObject* const o) const;
+    bool hasItem(const QObject* const o)                                      const;
     bool hasVisibleItems(ItemVisibilityController::IncludeFadingOutMode mode) const;
 
     void transitionToVisible(bool show, bool immediately = false);
@@ -300,7 +300,7 @@ void AnimationControl::addItem(QAbstractAnimation* const anim, QObject* const it
     m_items << item;
 }
 
-QAbstractAnimation* AnimationControl::takeItem(QObject* const item)
+QAbstractAnimation* AnimationControl::takeItem(const QObject* const item)
 {
     int index = m_items.indexOf(item);
 
@@ -343,7 +343,7 @@ void AnimationControl::moveAllTo(AnimationControl* const other)
     }
 }
 
-bool AnimationControl::hasItem(QObject* const o) const
+bool AnimationControl::hasItem(const QObject* const o) const
 {
     return m_items.contains(o);
 }
