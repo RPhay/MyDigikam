@@ -218,14 +218,16 @@ void RawTherapeeRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
-    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "RawTherapee :: return code:" << code << ":: Exit status:" << status;
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "RawTherapee :: return code:"
+                                           << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
     d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {
-        QString message = i18n("Error to import RAW image with RawTherapee\nClose this dialog to load RAW image with native import tool");
+        QString message = i18n("Error to import RAW image with RawTherapee\n"
+                               "Close this dialog to load RAW image with native import tool");
         QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is null! Load with Native tool...";

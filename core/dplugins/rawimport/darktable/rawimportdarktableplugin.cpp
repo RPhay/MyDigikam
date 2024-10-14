@@ -285,14 +285,16 @@ void DarkTableRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
-    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "DarkTable :: return code:" << code << ":: Exit status:" << status;
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "DarkTable :: return code:"
+                                           << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
     d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {
-        QString message = i18n("Error to import RAW image with DarkTable\nClose this dialog to load RAW image with native import tool");
+        QString message = i18n("Error to import RAW image with DarkTable\n"
+                               "Close this dialog to load RAW image with native import tool");
         QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is null! Load with Native tool...";

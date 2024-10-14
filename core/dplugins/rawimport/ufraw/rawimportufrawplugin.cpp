@@ -16,13 +16,13 @@
 
 // Qt includes
 
+#include <QDir>
+#include <QPointer>
+#include <QFileInfo>
+#include <QSettings>
+#include <QByteArray>
 #include <QMessageBox>
 #include <QApplication>
-#include <QPointer>
-#include <QDebug>
-#include <QByteArray>
-#include <QFileInfo>
-#include <QTemporaryFile>
 
 // KDE includes
 
@@ -35,6 +35,7 @@
 #include "dimg.h"
 #include "filteraction.h"
 #include "dfileoperations.h"
+#include "filereadwritelock.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportUFRawPlugin
@@ -131,9 +132,12 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
     d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
     d->decoded  = DImg();
 
-    QTemporaryFile tempFile;
-    tempFile.open();
-    d->tempName = tempFile.fileName();
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(QDir::tempPath() +
+                                                          QLatin1String("/UFRaw-XXXXXX"));
+    temp->setAutoRemove(false);
+    temp->open();
+    d->tempName = temp->safeFilePath();
+    delete temp;
 
     d->ufraw    = new QProcess(this);
     d->ufraw->setProcessChannelMode(QProcess::MergedChannels);
@@ -212,14 +216,16 @@ void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
-    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: return code:"
+                                           << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
     d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {
-        QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
+        QString message = i18n("Error to import RAW image with UFRaw\n"
+                               "Close this dialog to load RAW image with native import tool");
         QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is null! Load with Native tool...";
