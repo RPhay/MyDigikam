@@ -144,7 +144,7 @@ BUGFIXES:
 120 ==> 494618 - Non-functioning shortcut ALT + Return in the right sidebar.
 121 ==> 494623 - Arrow keys navigation leaves the focus from album tree-view to icon-view.
 122 ==> 489625 - Most recent weekly doesnt start under windows (ucrtbase.dll error).
-123 ==> 
+123 ==> 494528 - Thumbnails disappear with WAL option ON (pCloud lock).
 124 ==> 
 125 ==> 
 126 ==> 
