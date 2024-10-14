@@ -69,8 +69,6 @@ public:
 
     void setRectInSceneCoordinatesAdjusted(const QRectF& rect);
 
-    QRectF boundingRect()                             const override;
-
 public Q_SLOTS:
 
     /**

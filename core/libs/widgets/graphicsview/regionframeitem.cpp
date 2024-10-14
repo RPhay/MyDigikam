@@ -547,11 +547,6 @@ void RegionFrameItem::setViewportRect(const QRectF& rect)
     d->updateHudWidgetPosition();
 }
 
-QRectF RegionFrameItem::boundingRect() const
-{
-    return DImgChildItem::boundingRect();   //.adjusted(-1, -1, 1, 1);
-}
-
 void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
 /*
