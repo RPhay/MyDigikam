@@ -173,11 +173,6 @@ void ShowfotoThumbnailBar::setFlow(QListView::Flow flow)
     setScrollBarPolicy(d->scrollPolicy);
 }
 
-void ShowfotoThumbnailBar::slotSetupChanged()
-{
-    ShowfotoCategorizedView::slotSetupChanged();
-}
-
 bool ShowfotoThumbnailBar::event(QEvent* e)
 {
     // reset widget max/min sizes

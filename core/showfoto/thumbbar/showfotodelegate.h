@@ -49,7 +49,6 @@ public:
 
     int calculatethumbSizeToFit(int ws);
 
-    void setSpacing(int spacing)                                                                       override;
     void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                         const QModelIndex& index, QRect* tooltipRect = nullptr)                  const override;
@@ -105,7 +104,6 @@ protected:
 
     virtual QPixmap thumbnailPixmap(const QModelIndex& index)                                    const;
 
-    void invalidatePaintingCache()                                                                     override;
     void updateSizeRectsAndPixmaps()                                                                   override;
 
 protected Q_SLOTS:

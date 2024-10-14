@@ -62,7 +62,6 @@ public Q_SLOTS:
 
 protected:
 
-    void slotSetupChanged()                                   override;
     bool event(QEvent*)                                       override;
 
 private:

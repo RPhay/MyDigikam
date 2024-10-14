@@ -107,11 +107,6 @@ void ShowfotoDelegate::setModel(QAbstractItemModel* model)
     }
 }
 
-void ShowfotoDelegate::setSpacing(int spacing)
-{
-    ShowfotoItemViewDelegate::setSpacing(spacing);
-}
-
 QRect ShowfotoDelegate::pixmapRect() const
 {
     Q_D(const ShowfotoDelegate);
@@ -297,11 +292,6 @@ void ShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
 
     ShowfotoItemViewDelegate::setDefaultViewOptions(option);
-}
-
-void ShowfotoDelegate::invalidatePaintingCache()
-{
-    ShowfotoItemViewDelegate::invalidatePaintingCache();
 }
 
 void ShowfotoDelegate::updateContentWidth()
