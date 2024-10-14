@@ -50,7 +50,6 @@ public:
 
     Private() = default;
 
-
     QProcess*            darktable     = nullptr;
     DImg                 decoded;
     LoadingDescription   props;
