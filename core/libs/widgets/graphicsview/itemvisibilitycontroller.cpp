@@ -300,6 +300,7 @@ void AnimationControl::addItem(QAbstractAnimation* const anim, QObject* const it
     m_items << item;
 }
 
+// cppcheck-suppress constParameterPointer
 QAbstractAnimation* AnimationControl::takeItem(QObject* const item)
 {
     int index = m_items.indexOf(item);
@@ -343,6 +344,7 @@ void AnimationControl::moveAllTo(AnimationControl* const other)
     }
 }
 
+// cppcheck-suppress constParameterPointer
 bool AnimationControl::hasItem(QObject* const o) const
 {
     return m_items.contains(o);
