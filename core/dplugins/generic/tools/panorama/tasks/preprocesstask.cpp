@@ -94,11 +94,6 @@ PreProcessTask::~PreProcessTask()
     delete d;
 }
 
-void PreProcessTask::requestAbort()
-{
-    PanoTask::requestAbort();
-}
-
 void PreProcessTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     // check if its a RAW file.

@@ -38,8 +38,6 @@ public:
                             const QUrl& sourceUrl);
     ~PreProcessTask()                       override;
 
-    void requestAbort()                     override;
-
 public:
 
     const int id;
