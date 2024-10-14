@@ -194,9 +194,9 @@ QString DarkTableRawImportPlugin::getRawProgram() const
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
-    d->props   = LoadingDescription(fileInfo.filePath(),
+    d->props    = LoadingDescription(fileInfo.filePath(),
                                     LoadingDescription::ConvertForEditor);
-    d->decoded = DImg();
+    d->decoded  = DImg();
 
     SafeTemporaryFile* const temp = new SafeTemporaryFile(QDir::tempPath() +
                                                           QLatin1String("/Darktable-XXXXXX"));

@@ -16,13 +16,13 @@
 
 // Qt includes
 
-#include <QMessageBox>
-#include <QApplication>
+#include <QDir>
 #include <QPointer>
-#include <QByteArray>
 #include <QFileInfo>
 #include <QSettings>
-#include <QTemporaryFile>
+#include <QByteArray>
+#include <QMessageBox>
+#include <QApplication>
 
 // KDE includes
 
@@ -35,6 +35,7 @@
 #include "dimg.h"
 #include "filteraction.h"
 #include "dfileoperations.h"
+#include "filereadwritelock.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportARTPlugin
@@ -136,12 +137,15 @@ QString ARTRawImportPlugin::getRawProgram() const
 bool ARTRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
-    d->props       = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    d->decoded     = DImg();
+    d->props    = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded  = DImg();
 
-    QTemporaryFile tempFile;
-    tempFile.open();
-    d->tempName    = tempFile.fileName();
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(QDir::tempPath() +
+                                                          QLatin1String("/ART-XXXXXX"));
+    temp->setAutoRemove(false);
+    temp->open();
+    d->tempName = temp->safeFilePath();
+    delete temp;
 
     d->art = new QProcess(this);
     d->art->setProcessChannelMode(QProcess::MergedChannels);
