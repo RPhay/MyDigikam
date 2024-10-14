@@ -18,14 +18,14 @@
 
 // Qt includes
 
-#include <QMessageBox>
-#include <QApplication>
+#include <QDir>
 #include <QPointer>
-#include <QByteArray>
-#include <QTextStream>
 #include <QFileInfo>
 #include <QSettings>
-#include <QTemporaryFile>
+#include <QByteArray>
+#include <QMessageBox>
+#include <QTextStream>
+#include <QApplication>
 
 // KDE includes
 
@@ -38,6 +38,7 @@
 #include "dimg.h"
 #include "filteraction.h"
 #include "dfileoperations.h"
+#include "filereadwritelock.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportDarkTablePlugin
@@ -50,13 +51,13 @@ public:
     Private() = default;
 
 
-    QProcess*            darktable  = nullptr;
+    QProcess*            darktable     = nullptr;
     DImg                 decoded;
     LoadingDescription   props;
     QString              tempName;
-    QTemporaryFile       luaFile;
+    SafeTemporaryFile*   luaTempFile   = nullptr;
 
-    const QString luaScriptData     = QLatin1String
+    const QString        luaScriptData = QLatin1String
     (
         "\n"                                                                                                    \
         "local dt = require \"darktable\"\n"                                                                    \
@@ -105,14 +106,19 @@ DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
       d               (new Private)
 {
-    d->luaFile.open();
-    QTextStream stream(&d->luaFile);
+    d->luaTempFile = new SafeTemporaryFile(QDir::tempPath() +
+                                           QLatin1String("/LuaScript-XXXXXX"));
+    d->luaTempFile->setAutoRemove(true);
+    d->luaTempFile->open();
+
+    QTextStream stream(d->luaTempFile);
     stream << d->luaScriptData;
     stream.flush();
 }
 
 DarkTableRawImportPlugin::~DarkTableRawImportPlugin()
 {
+    delete d->luaTempFile;
     delete d;
 }
 
@@ -188,12 +194,16 @@ QString DarkTableRawImportPlugin::getRawProgram() const
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
-    d->props     = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    d->decoded   = DImg();
+    d->props   = LoadingDescription(fileInfo.filePath(),
+                                    LoadingDescription::ConvertForEditor);
+    d->decoded = DImg();
 
-    QTemporaryFile tempFile;
-    tempFile.open();
-    d->tempName  = tempFile.fileName();
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(QDir::tempPath() +
+                                                          QLatin1String("/Darktable-XXXXXX"));
+    temp->setAutoRemove(false);
+    temp->open();
+    d->tempName = temp->safeFilePath();
+    delete temp;
 
     d->darktable = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
@@ -216,7 +226,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
                                              << QLatin1String(":memory:")                                  // Run DarkTable to process only one file
                                              << QLatin1String("--luacmd")
                                              << QString::fromUtf8("dofile('%1')")
-                                                .arg(d->luaFile.fileName())                                // LUA script to run in DarkTable
+                                                .arg(d->luaTempFile->safeFilePath())                       // LUA script to run in DarkTable
                                              << QLatin1String("--conf")
                                              << QLatin1String("plugins/lighttable/export/icctype=3")       // Output color-space
                                              << QLatin1String("--conf")
