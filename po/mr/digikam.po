@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 01:46+0000\n"
+"POT-Creation-Date: 2024-10-14 01:44+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -2603,7 +2603,7 @@ msgid "Main Tools"
 msgstr "मुख्य साधनपट्टी"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title Post Processing Tools"
@@ -2611,14 +2611,14 @@ msgid "Post-Processing"
 msgstr "प्रतिमा छापा"
 
 #: core/app/main/digikamapp_tools.cpp:58
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, fuzzy, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "निर्यात"
 
 #: core/app/main/digikamapp_tools.cpp:69
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2678
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, fuzzy, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2940,7 +2940,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3037,7 +3037,7 @@ msgid "No Tags Album"
 msgstr ""
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3135,7 +3135,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:145
 #, kde-format
 msgid "Timeline"
 msgstr ""
@@ -3173,22 +3173,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:126
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:130
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:134
 #, kde-format
 msgid "Map Search"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:141
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
@@ -25754,38 +25754,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:751
 #, kde-format
 msgid "Current Timeline Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:762
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:770
 #, kde-format
 msgid "Current Map Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:777
 #, kde-format
 msgid "Current Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr ""
@@ -28717,20 +28717,20 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "संयोजना"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, fuzzy, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "हो"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "नाही"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, fuzzy, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -28791,7 +28791,7 @@ msgid "Refresh"
 msgstr "ताजे करा"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:391
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -28807,7 +28807,7 @@ msgid "empty"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
@@ -28830,14 +28830,14 @@ msgid "Vendor"
 msgstr "अंडोरा"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: device description"
@@ -28845,7 +28845,7 @@ msgid "Description"
 msgstr "वर्णन"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: device status"
@@ -28858,15 +28858,15 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:384
+#: core/libs/dialogs/solidhardwaredlg.cpp:385
 #, fuzzy, kde-format
 #| msgid "Device type:"
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "साधन प्रकार :"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, fuzzy, kde-format
 #| msgctxt "none of the paths"
 #| msgid "none"
@@ -28874,29 +28874,29 @@ msgctxt "@info: device property"
 msgid "none"
 msgstr "काही नाही"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, fuzzy, kde-format
 #| msgid "Andorra"
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "अंडोरा"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:416
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, fuzzy, kde-format
 #| msgid "Device type:"
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "साधन प्रकार :"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:419
+#: core/libs/dialogs/solidhardwaredlg.cpp:420
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -31213,13 +31213,13 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "संग्रह"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "कॅमेरा"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
 #, fuzzy, kde-format
 #| msgctxt "level to use for the effect"
 #| msgid "Level:"
@@ -31227,69 +31227,69 @@ msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "पातळी :"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "घनता :"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "एपेर्चर :"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "फोकल लांबी :"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "काँट्रास्ट :"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, fuzzy, kde-format
 #| msgid "enabled"
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "कार्यान्वित"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "संग्रह"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, fuzzy, kde-format
 #| msgid "disabled"
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "अकार्यान्वित"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "संग्रह"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "संग्रह"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -57545,46 +57545,46 @@ msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "स्वरूप बदला"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2594
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2605
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2608
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2616
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2619
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2630
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "गाळणी"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2817
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2871
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "यामध्ये उघडा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "इतर"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2838
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -63374,12 +63374,12 @@ msgid ""
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:182
+#: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:183
+#: core/utilities/setup/editor/setupiofiles.cpp:184
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "

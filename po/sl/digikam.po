@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 01:46+0000\n"
-"PO-Revision-Date: 2024-10-12 09:06+0200\n"
+"POT-Creation-Date: 2024-10-14 01:44+0000\n"
+"PO-Revision-Date: 2024-10-13 07:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2574,21 +2574,21 @@ msgid "Main Tools"
 msgstr "Glavna orodja"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Poobdelava"
 
 #: core/app/main/digikamapp_tools.cpp:58
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Izvoz"
 
 #: core/app/main/digikamapp_tools.cpp:69
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2678
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2917,7 +2917,7 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3017,7 +3017,7 @@ msgid "No Tags Album"
 msgstr "Album brez značk"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3124,7 +3124,7 @@ msgstr ""
 "navidezni album z imenom nastavljenim na levi."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:145
 #, kde-format
 msgid "Timeline"
 msgstr "Časovnica"
@@ -3165,22 +3165,22 @@ msgstr ""
 "Trenutna poizvedba ni iz izbirke pridobila nobenega zadetka. Spremenite "
 "nastavitve poizvedbe ali izberite album z vsebino."
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:126
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Megleno iskanje s skico"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:130
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Megleno iskanje slik"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:134
 #, kde-format
 msgid "Map Search"
 msgstr "Iskanje po zemljevidu"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:141
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1165
 #, kde-format
 msgid "Last Search"
@@ -26701,38 +26701,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:751
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Trenutno iskanje po časovnici"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Trenutno megleno iskanje slik"
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:762
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Trenutno megleno iskanje s skico"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:770
 #, kde-format
 msgid "Current Map Search"
 msgstr "Trenutno iskanje po zemljevidu"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:777
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutno iskanje"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutno iskanje dvojnikov"
@@ -29938,19 +29938,19 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguracija OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30027,7 +30027,7 @@ msgid "Refresh"
 msgstr "Osveži"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:391
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -30043,7 +30043,7 @@ msgid "empty"
 msgstr "prazno"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
@@ -30063,21 +30063,21 @@ msgid "Vendor"
 msgstr "Prodajalec"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "Izdelek"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Opis"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
@@ -30089,40 +30089,40 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr "Ne-prenosne informacije"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:384
+#: core/libs/dialogs/solidhardwaredlg.cpp:385
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "Nova naprava dodana"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "noben"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "Prodajalec"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr "prazno"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:416
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Naprava odstranjena"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:419
+#: core/libs/dialogs/solidhardwaredlg.cpp:420
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -32584,79 +32584,79 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Orodje za samodejno popravljanje objektiva"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Fotoaparat: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Objektiv: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Oddaljenost predmeta: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Zaslonka: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Goriščna razdalja: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Faktor obrezovanja: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "omogočeno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Popravek CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "onemogočeno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Popravek VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Popravek DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -52033,23 +52033,7 @@ msgid "Extra Large"
 msgstr "Zelo velik"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the the background or faces "
-#| "in large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
-#| "45%. Unfortunately, this will give a significant number of false-"
-#| "positives. It's recommended to set a detection accuracy of about 55% and "
-#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
-#| "setting applies only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -52078,8 +52062,8 @@ msgstr ""
 "obraze in nastavite natančnost zaznavanja na približno 45 %. Na žalost bo to "
 "povzročilo precejšnje število lažno pozitivnih rezultatov. Priporočljivo je, "
 "da za običajno uporabo nastavite natančnost zaznavanja na približno 55 % in "
-"velikost obraza <b>Majhen</b> ali <b>Srednji</b>.</p><p>Ta nastavitev velja "
-"samo za YuNet. </p>"
+"velikost obraza na <b>Majhen</b> ali <b>Srednji</b>.</p><p>Ta nastavitev "
+"velja samo za YuNet. </p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
 #, kde-format
@@ -58650,44 +58634,44 @@ msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Preoblikuj"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2594
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Okrasi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2605
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2608
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Učinki"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2616
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2619
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Barve"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2630
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Izboljšaj"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2817
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2871
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Odpri z"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Drugo..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2838
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -61153,16 +61137,14 @@ msgstr ""
 " %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Items scanned for auto-tags: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Postavk preiskanih za samodejne oznake: %1"
+msgstr "Postavk preiskanih za katalog: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Item scanned for auto-tags: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Postavka preiskana za samodejne oznake: %1"
+msgstr "Postavka preiskana za katalog: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61354,28 +61336,24 @@ msgid "Clear Metadata for: %1\n"
 msgstr "Počisti metapodatke za: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Postavk preiskanih za obraze: %1\n"
+msgstr "Postavk preiskanih za odstranitev obrazov: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Postavka preiskana za obraze: %1\n"
+msgstr "Postavka preiskana za odstranitev obraza: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Items scanned for auto-tags: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Postavk preiskanih za samodejne oznake: %1"
+msgstr "Postavk preiskanih za odstranitev oznake: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Item scanned for auto-tags: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Postavka preiskana za samodejne oznake: %1"
+msgstr "Postavka preiskana za odstranitev oznake: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61393,35 +61371,31 @@ msgid "Metadata Sync for: %1\n"
 msgstr "Sinhronizacija metapodatkov za: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
+msgstr ""
+"Postavk prečesanih za sinhronizacijo metapodatkov z zbirko podatkov: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
+msgstr ""
+"Postavka prečesana za sinhronizacijo metapodatkov z zbirko podatkov: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Items scanned for duplicates: %1\n"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Postavk preiskanih za dvojnike: %1\n"
+msgstr "Postavk prečesanih za posodobitev zbirke podatkov z metapodatki: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Item scanned for duplicates: %1\n"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Postavka preiskana za dvojnike: %1\n"
+msgstr "Postavka prečesana za posodobitev zbirke podatkov z metapodatki: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Sličice"
+msgstr "Generiraj predogledne sličice"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
@@ -61429,16 +61403,14 @@ msgid "Thumbnail for: %1\n"
 msgstr "Predogledna sličica za: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Items scanned for quality: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Postavk preiskanih za kakovost: %1"
+msgstr "Postavk preiskanih za predogledne sličice: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Item scanned for quality: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Postavka preiskana za kakovost: %1"
+msgstr "Postavka preiskana za predogledne sličice: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -64822,13 +64794,13 @@ msgstr ""
 "Omogočite to možnost za obnovo nastavitev orodij za urejanje slik od zadnje "
 "seje. V nasprotnem primeru bodo uporabljene privzete nastavitve."
 
-#: core/utilities/setup/editor/setupiofiles.cpp:182
+#: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr ""
 "Pokaži pogovorno okno z nastavitvami med shranjevanjem slikovnih datotek"
 
-#: core/utilities/setup/editor/setupiofiles.cpp:183
+#: core/utilities/setup/editor/setupiofiles.cpp:184
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "
@@ -65723,30 +65695,20 @@ msgid "Reading and Writing Metadata"
 msgstr "Branje in zapisovanje metapodatkov"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"Dodelite programu ExifTool v ozadju vse operacije pisanja metapodatkov v "
-"datoteke"
+msgstr "Uporabi zaledje ExifTool za branje metapodatkov iz datotek"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Vklopite to možnost, da pisanje metapodatkov v datoteke opravlja ExifTool v "
+"Vklopite to možnost za branje metapodatkov iz datotek opravlja ExifTool v "
 "ozadju namesto Exiv2. To bo malenkostno upočasnilo sinhronizacijo "
 "metapodatkov v datotekah glede na podatkovno bazo."
 
