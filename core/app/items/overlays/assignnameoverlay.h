@@ -65,7 +65,6 @@ protected:
     void     setActive(bool)                                          override;
     void     visualChange()                                           override;
     void     showOnIndex(const QModelIndex& index)                    override;
-    void     hide()                                                   override;
     bool     checkIndex(const QModelIndex& index)               const override;
     void     viewportLeaveEvent(QObject* obj, QEvent* event)          override;
     void     widgetEnterEvent()                                       override;

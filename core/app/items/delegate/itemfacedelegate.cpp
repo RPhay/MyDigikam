@@ -104,11 +104,6 @@ void ItemFaceDelegate::updateRects()
     d->groupRect = QRect();
 }
 
-void ItemFaceDelegate::clearModelDataCaches()
-{
-    DigikamItemDelegate::clearModelDataCaches();
-}
-
 } // namespace Digikam
 
 #include "moc_itemfacedelegate.cpp"

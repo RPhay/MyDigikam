@@ -43,7 +43,6 @@ protected:
 
     QPixmap thumbnailPixmap(const QModelIndex& index)   const override;
     void updateRects()                                        override;
-    void clearModelDataCaches()                               override;
 
 private:
 

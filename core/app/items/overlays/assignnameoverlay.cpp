@@ -201,11 +201,6 @@ void AssignNameOverlay::visualChange()
     }
 }
 
-void AssignNameOverlay::hide()
-{
-    PersistentWidgetDelegateOverlay::hide();
-}
-
 void AssignNameOverlay::updatePosition()
 {
     if (!index().isValid())
