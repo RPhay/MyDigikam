@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                   preRelease       = false;    ///< Flag to check pre-releases
     bool                   updateWithDebug  = false;    ///< Flag to use version with debug symbols
     int                    redirects        = 0;        ///< Count of redirected url
@@ -93,6 +95,7 @@ OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent,
 OnlineVersionDwnl::~OnlineVersionDwnl()
 {
     cancelDownload();
+
     delete d;
 }
 
@@ -207,6 +210,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
        )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
+
         Q_EMIT signalDownloadError(reply->errorString());
 
         return;
@@ -234,6 +238,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         if (data.isEmpty())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum file is empty";
+
             Q_EMIT signalDownloadError(i18n("Checksum file is empty."));
 
             return;

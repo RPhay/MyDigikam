@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                   preRelease         = false;                                  ///< Flag to check pre-releases
     int                    redirects          = 0;                                      ///< Count of redirected url
 
@@ -69,6 +71,7 @@ OnlineVersionChecker::OnlineVersionChecker(QObject* const parent, bool checkPreR
 OnlineVersionChecker::~OnlineVersionChecker()
 {
     cancelCheck();
+
     delete d;
 }
 
@@ -322,18 +325,13 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext,
 #   if defined Q_PROCESSOR_X86_64
 
     arch      = QLatin1String("x86-64");
+    qtVersion = QLatin1String("Qt5");
+    dir       = QLatin1String("/legacy");
 
 #   elif defined Q_PROCESSOR_ARM
 
-/*  Native Apple silicon is not yet supported
-    arch      = QLatin1String("arm-64");
-*/
-
-    // NOTE: Intel 64 version work fine with Apple Rosetta 2 emulator.
-    arch      = QLatin1String("x86-64");
-
-    // Still Qt5 version for Mac, Qt6 is not yet done.
-    qtVersion = QLatin1String("qt5");
+    arch      = QLatin1String("arm64");
+    qtVersion = QLatin1String("Qt6");
     dir       = QLatin1String("/");
 
 #   endif
@@ -362,12 +360,12 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext,
 
 #   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    qtVersion = QLatin1String("qt6");
+    qtVersion = QLatin1String("Qt6");
     dir       = QLatin1String("/");
 
 #   else
 
-    qtVersion = QLatin1String("qt5");
+    qtVersion = QLatin1String("Qt5");
     dir       = QLatin1String("/legacy");
 
 #   endif
@@ -396,12 +394,12 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext,
 
 #   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    qtVersion = QLatin1String("qt6");
+    qtVersion = QLatin1String("Qt6");
     dir       = QLatin1String("/");
 
 #   else
 
-    qtVersion = QLatin1String("qt5");
+    qtVersion = QLatin1String("Qt5");
     dir       = QLatin1String("/legacy");
 
 #   endif

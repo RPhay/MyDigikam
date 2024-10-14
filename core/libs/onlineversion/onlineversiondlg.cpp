@@ -65,6 +65,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                   preRelease       = false;
     bool                   updateWithDebug  = false;
 
@@ -611,7 +613,9 @@ void OnlineVersionDlg::slotOpenInFileManager()
 
 void OnlineVersionDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("miscs_settings"), QLatin1String("updates-settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("miscs_settings"),
+                            QLatin1String("updates-settings"));
 }
 
 void OnlineVersionDlg::slotSetupUpdate()
