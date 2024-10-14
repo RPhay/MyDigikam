@@ -36,10 +36,10 @@ public:
 
     enum Classifier
     {
-        SVM = 0,
-        OpenCV_KNN,
-        Tree,
-        DB,
+        SVM = 0,            ///< Support Vector Machines                  (https://docs.opencv.org/4.x/dc/dd6/ml_intro.html#ml_intro_svm)
+        OpenCV_KNN,         ///< K-Nearest Neighbors                      (https://docs.opencv.org/4.x/dc/dd6/ml_intro.html#ml_intro_knn)
+        Tree,               ///< K-Nearest Neighbors Tree                 (https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
+        DB                  ///< Closest Neighbors Tree from the database
     };
 
     /**
