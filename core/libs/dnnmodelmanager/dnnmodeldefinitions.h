@@ -35,7 +35,7 @@ typedef enum _DNNModelUsage
     FaceRecognition,
     RedeyeDetection,
     ObjectDetection,
-    Aesthetic
+    Aesthetics
 } DNNModelUsage;
 
 typedef QList<DNNModelUsage> DNNModelUsageList;

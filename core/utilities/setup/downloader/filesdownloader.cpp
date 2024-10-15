@@ -44,6 +44,7 @@
 #include "dxmlguiwindow.h"
 #include "systemsettings.h"
 #include "itempropertiestab.h"
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -438,98 +439,18 @@ void FilesDownloader::createDownloadInfo()
 
     if (d->system.enableFaceEngine)
     {
-        d->files << DownloadInfo(QLatin1String("facesengine/shape-predictor/"),
-                                 QLatin1String("shapepredictor.dat"),
-                                 QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b"),
-                                 67740572
-                                );
-
-        d->files << DownloadInfo(QLatin1String("facesengine/yunet/"),
-                                 QLatin1String("face_detection_yunet_2023mar.onnx"),
-                                 QLatin1String("8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"),
-                                 232589
-                                );
-
-        if (qApp->applicationName() == QLatin1String("digikam"))
-        {
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("face_recognition_sface_2021dec.onnx"),
-                                     QLatin1String("0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"),
-                                     38696353
-                                    );
-
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("openface_nn4.small2.v1.t7"),
-                                     QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
-                                     31510785
-                                    );
-
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("yolov3-face.cfg"),
-                                     QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
-                                     8334
-                                    );
-
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("yolov3-wider_16000.weights"),
-                                     QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
-                                     246305388
-                                    );
-
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("deploy.prototxt"),
-                                     QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795"),
-                                     28092
-                                    );
-
-            d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                     QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel"),
-                                     QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76"),
-                                     5351047
-                                    );
-        }
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::FaceDetection);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::FaceRecognition);
     }
 
     if (d->system.enableAesthetic)
     {
-        d->files << DownloadInfo(QLatin1String("aestheticdetector/"),
-                                 QLatin1String("weights_inceptionv3_299.pb"),
-                                 QLatin1String("8923e3daff71c07533b9023ef32c69d8c058d1e0931d76d8b81241a201138538"),
-                                 88007527
-                                );
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::Aesthetics);
     }
 
     if (d->system.enableAutoTags)
     {
-        d->files << DownloadInfo(QLatin1String("autotags/"),
-                                 QLatin1String("yolov5n_batch_16_s320.onnx"),
-                                 QLatin1String("43cf201144e6918354892a2fda7ccb07b3df1abc136ddac3b5c968dffc847009"),
-                                 7616008
-                                );
-
-        d->files << DownloadInfo(QLatin1String("autotags/"),
-                                 QLatin1String("yolov5x_batch_16_s320.onnx"),
-                                 QLatin1String("e56b5024e6d29f8a35dbfbdd67bbdb69593fb67bfb275915081f9a463fcd355b"),
-                                 347010839
-                                );
-
-        d->files << DownloadInfo(QLatin1String("autotags/"),
-                                 QLatin1String("resnet50.onnx"),
-                                 QLatin1String("490e2761519cbf8a4433f880c2aa16b457730085cf9a8aab1e43d82bcadba4f1"),
-                                 102146365
-                                );
-
-        d->files << DownloadInfo(QLatin1String("autotags/"),
-                                 QLatin1String("coco.names"),
-                                 QLatin1String("634a1132eb33f8091d60f2c346ababe8b905ae08387037aed883953b7329af84"),
-                                 625
-                                );
-
-        d->files << DownloadInfo(QLatin1String("autotags/"),
-                                 QLatin1String("classification_classes_ILSVRC2012.txt"),
-                                 QLatin1String("4eb3da435cf544e4a6f390f62c84cb9c9bb68cf8b14e97f8a063452382e5efd2"),
-                                 21675
-                                );
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::ObjectDetection);
     }
 
 }

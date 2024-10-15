@@ -149,6 +149,7 @@
 #include "localizesettings.h"
 #include "networkmanager.h"
 #include "dnotificationwidget.h"
+#include "dnnmodelmanager.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"

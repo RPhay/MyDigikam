@@ -150,9 +150,9 @@ void DNNModelManager::loadConfig()
                 usage.append(DNNModelUsage::ObjectDetection);
             }
 
-            if (usageStr.contains(QLatin1String("aesthetic")))
+            if (usageStr.contains(QLatin1String("aesthetics")))
             {
-                usage.append(DNNModelUsage::Aesthetic);
+                usage.append(DNNModelUsage::Aesthetics);
             }
 
             // Create version
