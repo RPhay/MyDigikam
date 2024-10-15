@@ -51,7 +51,7 @@ public:
                 int                            _imageSize
                );
 
-    virtual ~DNNModelNet()  override;
+    virtual ~DNNModelNet() override = default;
 
 public:
 

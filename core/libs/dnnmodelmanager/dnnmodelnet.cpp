@@ -59,10 +59,6 @@ DNNModelNet::DNNModelNet(
 {
 }
 
-DNNModelNet::~DNNModelNet()
-{
-}
-
 cv::dnn::Net& DNNModelNet::getNet()
 {
     if (!modelLoaded)
