@@ -35,7 +35,7 @@ ItemFilterModel::ItemFilterModelPrivate::~ItemFilterModelPrivate()
 {
     // facilitate thread stopping
 
-    ++version;
+    version = version + 1;
     preparer->deactivate();
     filterer->deactivate();
 

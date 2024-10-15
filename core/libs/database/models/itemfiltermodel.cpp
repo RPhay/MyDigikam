@@ -515,7 +515,7 @@ void ItemFilterModel::setItemFilterSettings(const ItemFilterSettings& settings)
 
     {
         QMutexLocker lock(&d->mutex);
-        d->version++;
+        d->version             = d->version + 1;
         d->filter              = settings;
         d->filterCopy          = settings;
         d->versionFilterCopy   = d->versionFilter;
@@ -659,7 +659,7 @@ void ItemFilterModel::slotModelReset()
 
         // discard all packages on the way
 
-        d->version++;
+        d->version            = d->version + 1;
         d->sentOut            = 0;
 
         d->hasOneMatch        = false;
