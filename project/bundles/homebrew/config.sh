@@ -103,7 +103,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.2.0-beta1
 DK_VERSION=master
-#DK_VERSION="work/michmill/rec-model-update-ui"
+#DK_VERSION="work/michmill/dnnmodelmanager"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"

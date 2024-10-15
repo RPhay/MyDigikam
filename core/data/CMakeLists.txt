@@ -15,6 +15,7 @@ add_subdirectory(profiles)
 add_subdirectory(hotplug)
 add_subdirectory(scripts)
 add_subdirectory(filters)
+add_subdirectory(dnnmodels)
 
 if(WIN32)
 

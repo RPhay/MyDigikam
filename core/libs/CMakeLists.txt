@@ -55,6 +55,7 @@ add_subdirectory(tags)
 add_subdirectory(transitionmngr)
 add_subdirectory(timeadjust)
 add_subdirectory(video)
+add_subdirectory(dnnmodelmanager)
 
 if(JXL_FOUND)
 

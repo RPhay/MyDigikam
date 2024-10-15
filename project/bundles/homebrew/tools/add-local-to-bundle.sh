@@ -59,6 +59,10 @@ done
 copy_lib="$INSTALL_PREFIX/bin/python3 $PWD/package_lib.py --file="$TEMPROOT/$DK_APP_CONTENTS/MacOS/digikam" --bundle-root=$TEMPROOT/$DK_APP_CONTENTS --homebrew=$INSTALL_PREFIX --processed-cache=use  --found-cache=use --signed-cache=use --update-binary=1 --copy=0 --preserve_rpath=0 --force=1"
 eval "$copy_lib"
 
+# mkdir $TEMPROOT/$DK_APP_CONTENTS/Resources/facesengine/
+
+cp $PWD/../../../../core/data//dnnmodels/dnnmodels.conf $TEMPROOT/$DK_APP_CONTENTS/Resources/digikam/dnnmodels
+
 TerminateScript
 
 cd "$ORIG_WD"
