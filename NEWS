@@ -146,7 +146,7 @@ BUGFIXES:
 122 ==> 489625 - Most recent weekly doesnt start under windows (ucrtbase.dll error).
 123 ==> 494528 - Thumbnails disappear with WAL option ON (pCloud lock).
 124 ==> 494729 - Cannot Choose Customized Raw Import Tools on Mac.
-125 ==> 
+125 ==> 494816 - Fails build on; coredburl.cpp:251:19: error: 'operator==' is not a member of 'QUrl'.
 126 ==> 
 127 ==> 
 128 ==> 
