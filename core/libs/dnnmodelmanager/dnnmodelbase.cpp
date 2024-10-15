@@ -48,11 +48,11 @@ DNNModelBase::DNNModelBase(
       minVersion        (_minVersion),
       downloadPath      (_downloadPath),
       sha256            (_sha256),
+      configName        (_configName),
       fileSize          (_fileSize),
       minUsableThreshold(_minUsableThreshold),
       maxUsableThreshold(_maxUsableThreshold),
       loaderType        (_loaderType),
-      configName        (_configName),
       meanValToSubtract (_meanValToSubtract),
       imageSize         (_imageSize)
 {

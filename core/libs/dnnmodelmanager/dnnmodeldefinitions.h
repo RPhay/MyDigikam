@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-08-31
- * Description : digiKam global static QNetworkAccessManager
+ * Date        : 2024-10-13
+ * Description : digiKam DNN Model Manager defintion
  *
- * SPDX-FileCopyrightText: 2022 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -15,14 +15,13 @@
 #pragma once
 
 // Qt includes
-#include <QList>
 
-// Local includes
+#include <QList>
 
 namespace Digikam
 {
 
-typedef enum enum_DNNLoaderType 
+typedef enum _DNNLoaderType
 {
     Net,
     Config,
@@ -30,7 +29,7 @@ typedef enum enum_DNNLoaderType
     SFace
 } DNNLoaderType;
 
-typedef enum enum_DNNModelUsage
+typedef enum _DNNModelUsage
 {
     FaceDetection,
     FaceRecognition,

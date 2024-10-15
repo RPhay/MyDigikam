@@ -79,12 +79,12 @@ public:
     QString                     sha256;                         ///< SHA265 hash of the file for download
     QString                     configName;
 
-    qint64                      fileSize;                       ///< used by the downloader to verify size
-    int                         minUsableThreshold;             ///< used to convert UI 1-10 slider to float for processing
-    int                         maxUsableThreshold;             ///< used to convert UI 1-10 slider to float for processing
-    DNNLoaderType               loaderType;                     ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
+    qint64                      fileSize            = 0;        ///< used by the downloader to verify size
+    int                         minUsableThreshold  = 0;        ///< used to convert UI 1-10 slider to float for processing
+    int                         maxUsableThreshold  = 0;        ///< used to convert UI 1-10 slider to float for processing
+    DNNLoaderType               loaderType          = Net;      ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
     cv::Scalar                  meanValToSubtract;
-    int                         imageSize;                      ///< max dimension of a side of an image
+    int                         imageSize           = 0;        ///< max dimension of a side of an image
 
     QMutex                      mutex;                          ///< mutex to sigle-thread model during critical processing functions
 
