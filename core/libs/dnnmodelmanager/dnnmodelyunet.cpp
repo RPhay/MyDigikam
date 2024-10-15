@@ -106,7 +106,7 @@ bool DNNModelYuNet::callLoader()
     net = cv::FaceDetectorYN::create(
                                      modelPath.toLocal8Bit().constData(),
                                      "",
-                                     inputImageSize,
+                                     cv::Size(imageSize, imageSize),
                                      conf_threshold,
                                      nms_threshold,
                                      top_k,
