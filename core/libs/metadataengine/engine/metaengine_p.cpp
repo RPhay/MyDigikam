@@ -589,7 +589,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
                 }
             }
 
-            return QString::fromUtf16((char16_t*)rawComment.data(), rawComment.size() / 2);
+            return QString::fromUtf16(reinterpret_cast<char16_t*>(rawComment.data()), rawComment.size() / 2);
         }
 
         std::string comment;
