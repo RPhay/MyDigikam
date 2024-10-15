@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-10-13
- * Description : digiKam DNN Model Manager defintion
+ * Description : digiKam DNN Model Manager definition
  *
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *

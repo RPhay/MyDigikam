@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-08-31
- * Description : digiKam global static QNetworkAccessManager
+ * Date        : 2024-10-13
+ * Description : digiKam DNN Model Manager
  *
- * SPDX-FileCopyrightText: 2022 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -18,16 +18,13 @@
 
 #include <QObject>
 #include <QSettings>
-// #include <QNetworkAccessManager>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "filesdownloader.h"
+#include "dnnmodelbase.h"
 #include "dnnmodeldefinitions.h"
-
-class DNNModelBase;
-// #include "dnnmodelbase.h"
 
 namespace Digikam
 {
@@ -55,7 +52,7 @@ public:
      * It will also find the best OpenCV Target and Backend for the model
      * based on computer capabilities
      */
-    DNNModelBase* getModel(const QString& modelName, DNNModelUsage usage);
+    DNNModelBase* getModel(const QString& modelName, DNNModelUsage usage) const;
 
 private:
 
@@ -67,12 +64,13 @@ private:
     explicit DNNModelManager(QObject*) = delete;
 
 private:
+
     const std::map<std::string, DNNLoaderType> str2loader
     {
-        { "net",        DNNLoaderType::Net      },
-        { "config",    DNNLoaderType::Config  },
-        { "yunet",      DNNLoaderType::YuNet    },
-        { "sface",      DNNLoaderType::SFace    }
+        { "net",    DNNLoaderType::Net    },
+        { "config", DNNLoaderType::Config },
+        { "yunet",  DNNLoaderType::YuNet  },
+        { "sface",  DNNLoaderType::SFace  }
     };
 
     /**
@@ -80,7 +78,7 @@ private:
      * could be a csv, yaml, or json packed with digiKam or downloaded from the Internet
      */
     void loadConfig();
-    void getSettings();     // called if no dnnmodelsettings.conf exists
+    void getSettings();     ///< called if no dnnmodelsettings.conf exists
 
 private:
 
