@@ -35,6 +35,7 @@
 #   pragma clang diagnostic ignored "-Wunused-parameter"
 #   pragma clang diagnostic ignored "-Wcast-align"
 #   pragma clang diagnostic ignored "-Wunused-local-typedef"
+#   pragma clang diagnostic ignored "-Wambiguous-reversed-operator"
 #endif
 
 // C++ includes
