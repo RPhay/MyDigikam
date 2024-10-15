@@ -25,13 +25,13 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 01:44+0000\n"
-"PO-Revision-Date: 2024-09-10 12:00+0000\n"
+"POT-Creation-Date: 2024-10-15 01:46+0000\n"
+"PO-Revision-Date: 2024-10-14 17:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -2771,49 +2771,42 @@ msgstr "Allar studdar skrár (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Umsagnir: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Handbækur"
+msgstr "Hjálparskjöl:"
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "Dagsetning skráar"
+msgstr "Byggingardagsetning: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Útkoma"
+msgstr "Byggingarmarkmið: "
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Óstutt stýrikerfi: %1"
+msgstr "Stýrikerfi byggingar: "
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Staðalfrávik: "
+msgstr "Git-útgáfa: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git-grein: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -2916,12 +2909,10 @@ msgid "Scan collection for faces"
 msgstr "Skanna andlit í myndasafninu"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr "Veldu þetta til að skanna valin albúm og finna margtekin atriði."
+msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:166
 #, kde-format
@@ -18826,17 +18817,17 @@ msgstr "Þáttun verkefnisskrár mistókst."
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Óþekkt inntaksskrá í verkefnisskránni: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:172
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Ekki er hægt að hlaða inntaksmynd fyrir gerð forskoðunar."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:200
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Það mistókst að búa til TIFF-mynd."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Umbreyting RAW-skrár mistókst."
@@ -22129,31 +22120,7 @@ msgid "A tool to render slideshow"
 msgstr "Verkfæri til að myndgera skyggnusýningu"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22190,17 +22157,17 @@ msgstr ""
 "td></tr><tr><td></td><td><i>PgDown</i>-lykill</td></tr><tr><td></"
 "td><td><i>Hægri</i>-lykill</td></tr><tr><td></td><td>Músarhjól niður</td></"
 "tr><tr><td></td><td>Hægri músarhnappur</td></tr><tr><td>Bið/Spila:</"
-"td><td><i>Bilslár</i>lykill</td></tr><tr><td>Stillingar skyggnusýningar:</"
-"td><td><i>F2</i>-lykill</td></tr><tr><td>Fela/Sýna yfirlög:</td><td><i>F4</"
-"i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Eiginleikar atriða</h1></b></center></"
-"nobr></td></tr><tr><td>Breyta merkjum:</td><td>Nota flýtilykla fyrir merki</"
-"td></tr><tr><td>Breyta einkunn:</td><td>Nota flýtilykla fyrir einkunnir</"
-"td></tr><tr><td>Breyta litmerki:</td><td>Nota flýtilykla fyrir litmerkingar</"
-"td></tr><tr><td>Breyta sérmerkingu:</td><td>Nota flýtilykla fyrir "
-"sérmerkingar</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Annað</h1></"
-"b></center></nobr></td></tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-"
-"lykill</td></tr></table>"
+"td><td><i>Bilslár</i>-lykill</td></tr><tr><td>Stillingar skyggnusýningar:</"
+"td><td><i>Alt+P</i>-lykill</td></tr><tr><td>Fela/Sýna yfirlög:</td><td><i>Alt"
+"+Y</i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</td></"
+"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Eiginleikar atriða</h1></b></"
+"center></nobr></td></tr><tr><td>Breyta merkjum:</td><td>Nota flýtilykla "
+"fyrir merki</td></tr><tr><td>Breyta einkunn:</td><td>Nota flýtilykla fyrir "
+"einkunnir</td></tr><tr><td>Breyta litmerki:</td><td>Nota flýtilykla fyrir "
+"litmerkingar</td></tr><tr><td>Breyta sérmerkingu:</td><td>Nota flýtilykla "
+"fyrir sérmerkingar</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Annað</h1></b></center></nobr></td></"
+"tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-lykill</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
@@ -26407,7 +26374,7 @@ msgstr "Stillingar vefþjónustu"
 msgid "Export by Web Service"
 msgstr "Flytja út með vefþjónustu"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26417,12 +26384,12 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "RAW-umbreyting með ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26432,7 +26399,7 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "RAW-umbreyting DarkTable"
@@ -26623,7 +26590,7 @@ msgstr ""
 "Nota almennar RAW afkóðunarstillingar til að hlaða þessari mynd inn í "
 "myndvinnsluforritið."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26633,12 +26600,12 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RAW-umbreyting RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26648,7 +26615,7 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"
@@ -34190,8 +34157,8 @@ msgid "&Start"
 msgstr "&Byrja"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:307
+#: core/libs/onlineversion/onlineversiondlg.cpp:484
 #, kde-format
 msgid "Close"
 msgstr "Loka"
@@ -36455,101 +36422,101 @@ msgstr "&Loka"
 msgid "Close message"
 msgstr "Loka skilaboðum"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:105
+#: core/libs/onlineversion/onlineversionchecker.cpp:108
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "aldrei"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:189
+#: core/libs/onlineversion/onlineversionchecker.cpp:192
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr "Engin gögn fengust frá fjarlægu tengingunni."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:206
-#: core/libs/onlineversion/onlineversiondwnl.cpp:143
+#: core/libs/onlineversion/onlineversionchecker.cpp:209
+#: core/libs/onlineversion/onlineversiondwnl.cpp:146
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Óstutt stýrikerfi: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:234
+#: core/libs/onlineversion/onlineversionchecker.cpp:237
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "Ógilt skráarheiti fékkst frá fjarlægu tengingunni."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:258
+#: core/libs/onlineversion/onlineversionchecker.cpp:261
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "Ógild dagsetning forútgáfu frá fjartengdum lista."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:291
+#: core/libs/onlineversion/onlineversionchecker.cpp:294
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "Ógilt snið fékkst frá fjarlægu tengingunni."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:157
+#: core/libs/onlineversion/onlineversiondlg.cpp:159
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
 msgstr "Móttekið:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:158
+#: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
 msgstr "Samtals:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:159
+#: core/libs/onlineversion/onlineversiondlg.cpp:161
 #, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
 msgstr "Hlutfall:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:160
+#: core/libs/onlineversion/onlineversiondlg.cpp:162
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
 msgstr "Áætluð lok:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "Athugun útgáfu á netinu - Forútgáfa"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr "Athuga með nýjar for-útgáfur, bíddu aðeins..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:176
+#: core/libs/onlineversion/onlineversiondlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Athugun útgáfu á netinu - Stöðug útgáfa"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:177
+#: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr "Athuga með nýjar útgáfur, bíddu aðeins..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:229
+#: core/libs/onlineversion/onlineversiondlg.cpp:231
 #, kde-format
 msgid "Configure..."
 msgstr "Stilla..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:230
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr "Opna uppsetningarglugga til að stilla uppfærslur."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:258
+#: core/libs/onlineversion/onlineversiondlg.cpp:260
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, kde-format
 msgid "Download"
 msgstr "Sækja"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:273
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -36567,7 +36534,7 @@ msgstr ""
 "nota við almenna vinnslu.</p><p>Ýttu á <b>Stilla</b> ef þú vilt sérsníða "
 "uppfærsluvalkostina í uppsetningarglugga.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:286
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -36589,7 +36556,7 @@ msgstr ""
 "p><p>Ýttu á <b>Stilla</b> ef þú vilt sérsníða uppfærsluvalkostina í "
 "uppsetningarglugga.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:314
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -36598,7 +36565,7 @@ msgstr ""
 "Hugbúnaðurinn þinn er af nýjustu gerð.\n"
 "%1 forútgáfan byggð þann %2 er sú nýjasta sem tiltæk er."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:321
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -36607,7 +36574,7 @@ msgstr ""
 "Hugbúnaðurinn þinn er af nýjustu gerð.\n"
 "%1 stöðuga útgáfan %2 er sú nýjasta sem tiltæk er."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:329
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
@@ -36616,19 +36583,19 @@ msgstr ""
 "Villa við að athuga með nýja útgáfu %1:\n"
 "\"%2\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:339
+#: core/libs/onlineversion/onlineversiondlg.cpp:381
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr "byggt á %1 með aflúsunartáknum"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1"
 msgstr "byggt á %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:342
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -36639,19 +36606,19 @@ msgstr ""
 "%2\n"
 "í vinnslu, bíddu aðeins..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:348
+#: core/libs/onlineversion/onlineversiondlg.cpp:390
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr "útgáfa %1 með aflúsunartáknum"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1"
 msgstr "útgáfa %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:351
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -36662,7 +36629,7 @@ msgstr ""
 "útgáfa %2\n"
 "í vinnslu, bíddu aðeins..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:384
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -36673,7 +36640,7 @@ msgstr ""
 "%2\n"
 "vinnsla í gangi - dokaðu við..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:393
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -36684,13 +36651,13 @@ msgstr ""
 "útgáfa %2\n"
 "vinnsla í gangi - dokaðu við..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:420
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Opna..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:431
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36709,7 +36676,7 @@ msgstr ""
 "\n"
 "Ýttu á \"Opna\" til að birta vöndulinn í skráastjóra..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:440
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36728,12 +36695,12 @@ msgstr ""
 "\n"
 "Ýttu á \"Opna\" til að birta vöndulinn í skráastjóra..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:451
 #, kde-format
 msgid "Install..."
 msgstr "Setja upp..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:456
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -36752,7 +36719,7 @@ msgstr ""
 "\n"
 "Ýttu á \"Setja upp\" til að loka þessari setu og uppfæra..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:465
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36771,7 +36738,7 @@ msgstr ""
 "\n"
 "Ýttu á \"Setja upp\" til að loka þessari setu og uppfæra..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:489
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36784,7 +36751,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:496
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36797,7 +36764,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:588
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -36806,27 +36773,27 @@ msgstr ""
 "Get ekki ræst uppsetningarforrit:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "Gátsummuskrá er tóm."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:254
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "Gátsumma er ógild."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:271
+#: core/libs/onlineversion/onlineversiondwnl.cpp:276
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "Sótt skrá er tóm."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:304
+#: core/libs/onlineversion/onlineversiondwnl.cpp:309
 #, kde-format
 msgid "Checksums error."
 msgstr "Villa í gátsummu."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:332
+#: core/libs/onlineversion/onlineversiondwnl.cpp:337
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Get ekki opnað markskrá."
@@ -42442,15 +42409,14 @@ msgstr ""
 "vefþjónustur, og yfirfærði andlitakennslavél yfir í OpenCV-tauganetkerfi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Rásablandari"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
+msgstr "Samþætting SFace og YuNet DNN líkana. Endurbætur á umsýslu andlita"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -51538,24 +51504,20 @@ msgid "No address book entries found"
 msgstr "Engar færslur fundust í nafnaskrá"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Valhamur:"
+msgstr "Líkan andlitakennsla"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgid "OpenFace"
-msgstr "Opna skrá"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "SFace"
-msgstr "Andlit"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
 #, kde-format
@@ -51581,7 +51543,7 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Byrja"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -51761,20 +51723,13 @@ msgid "Search in"
 msgstr "Leita í"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Nákvæmni"
+msgstr "Nákvæmni:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -51783,36 +51738,31 @@ msgid ""
 msgstr ""
 "Aðlaga næmni á móti sérhæfni: Því hærra sem gildið er, því nákvæmar eru "
 "borin kennsl á\n"
-"andlit, en um leið þekkjast færri andlit (því einungis\n"
-"þekkjast andlit sem eru mjög lík áður merktum andlitum)"
+"andlit, en um leið þekkjast færri andlit."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
-msgstr "Tegund:"
+msgstr "Líkan:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
-msgstr ""
+msgstr "YuNet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
-msgstr ""
+msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD-stjórntexti"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
@@ -51823,49 +51773,46 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
+"Greiningarlíkan til að finna andlit. YuNet er sjálfgefið líkan.\n"
+"Það er hraðvirkara og stillanlegra en SSD og YOLOv3.\n"
+"Athugaðu: YuNet er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
+"eða nýrra."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Stærð ramma"
+msgstr "Stærð andlita:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
-msgstr "Aukamerki"
+msgstr "Mjög lítil"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
-msgstr ""
+msgstr "Lítil"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Miðlungs"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
-msgstr "Útkoma"
+msgstr "Stór"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
-msgstr "Aukamerki"
+msgstr "Mjög stór"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
@@ -51885,28 +51832,33 @@ msgid ""
 "about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>Sé valið <b>Mjög lítil</b> mun líkanið greina smærri andlit í bakgrunni "
+"auk miðlungsstórra og stórra andlita. Það að velja <b>lítil andlit</b> eykur "
+"næmni líkansins með fínstillingum á breytum líkansins. Það mun einnig auka "
+"líkurnar á röngum niðurstöðum, ásamt því að auka tímann sem fer í "
+"greininguna.</p><p>Sé valið <b>Stór</b> eða <b>Mjög stór</b> er komið í veg "
+"fyrir að smærri andlit í bakgrunni greinist. Það er mun hraðvirkara og "
+"minnkar líkur á röngum niðurstöðum, en mun þá ekki greina smærri andlit í "
+"bakgrunni eða á stórum hópmyndum.</p><p>Ef vilt greina öll andlit í einni "
+"umferð greiningar, skaltu velja <b>Mjög lítil</b> andlit og stilla nákvæmni "
+"greiningar nálægt 45%. Því miður mun það gefa verulega margar rangar "
+"niðurstöður. Við venjulega notkun er mælt með því að stilla nákvæmni "
+"greiningar á u.þ.b. 55% og stærð andlita á <b>Lítil</b> eða <b>Miðlungs</b>."
+"</p><p>Þessi stilling á einungis við YuNet-líkanið.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Andlitaskönnun"
+msgstr "Stillingar andlitaskönnunar"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Nákvæmni"
+msgstr "Nákvæmni:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -51916,31 +51868,27 @@ msgid ""
 msgstr ""
 "Aðlaga næmni á móti sérhæfni: Því hærra sem gildið er, því nákvæmar eru "
 "borin kennsl á\n"
-"andlit, en um leið þekkjast færri andlit (því einungis\n"
-"þekkjast andlit sem eru mjög lík áður merktum andlitum)"
+"andlit, en um leið þekkjast færri andlit\n"
+"Athugið: einungis munu þekkjast andlit sem eru mjög lík áður merktum "
+"andlitum."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
-msgstr "Tegund:"
+msgstr "Líkan:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Andlit"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Opna skrá"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, kde-format
@@ -51951,6 +51899,10 @@ msgid ""
 "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
+"SFace er sjálfgefið greiningarlíkan. Það er hraðvirkara og stillanlegra.\n"
+"OpenFace er hægt að nota með eldri aðgerðaöafnum.\n"
+"Athugaðu: SFace er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
+"eða nýrra."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -51972,10 +51924,9 @@ msgstr ""
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Andlitakennsl"
+msgstr "Stillingar fyrir andlitakennsl"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
 #, kde-format
@@ -60818,38 +60769,32 @@ msgid "Autotags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
+msgstr "Sjálfvirk úthlutun merkja fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1\n"
-msgstr "#tungla: %1"
+msgstr "Slóð: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Stikkorð: "
+msgstr "Stikkorð: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð fyrir sjálfvirkum merkjum: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað fyrir sjálfvirkum merkjum: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -60932,36 +60877,33 @@ msgid "Find new items"
 msgstr "Finna ný atriði"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Skannað frá: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Albúm \"%1\""
+msgstr "Albúm: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr ""
+"Skannað:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð fyrir skráningu: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað fyrir skráningu: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -60969,50 +60911,41 @@ msgid "Find duplicates items"
 msgstr "Finna tvítekin atriði"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
-#, fuzzy, kde-format
-#| msgid "Duplicates of %1"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Tvítekningar á %1"
+msgstr "Tvítekningar fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Finna tvítekningar"
+msgstr "Engar tvítekningar"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Finna tvítekningar"
-msgstr[1] "Finna tvítekningar"
+msgstr[0] "1 tvítekning"
+msgstr[1] "%1 tvítekningar"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriðum að tvítökum: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriði að tvítökum: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates of %1"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Tvítekningar á %1"
+msgstr "Tvítekningar fundust: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates of %1"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Tvítekningar á %1"
+msgstr "Tvítekning fannst: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
@@ -61040,50 +60973,41 @@ msgid "Updating faces database"
 msgstr "Uppfæri andlitagagnagrunn"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriðum að andlitum: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriði að andlitum: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Myndir fundust í %1"
+msgstr "Andlit fundust: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Myndir fundust í %1"
+msgstr "Andlit fannst: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanned for faces: %1\n"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað að andlitum: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "No face"
 msgstr "Ekkert andlit"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Ekkert andlit"
-msgstr[1] "Ekkert andlit"
+msgstr[0] "1 andlit"
+msgstr[1] "%1 andlit"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -61091,58 +61015,47 @@ msgid "Finger-prints"
 msgstr "Fingraför"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Endurbyggja fingraför"
+msgstr "Endurbyggja fingrafar fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "#tungla: %1"
+msgstr "Slóð: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriðum að fingraförum: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriði að fingraförum: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Myndgæðaröðun"
+msgstr "Myndgæði fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "Sérmerking: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð vegna gæða: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað vegna gæða: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -61173,34 +61086,29 @@ msgstr ""
 "Viltu halda áfram?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, fuzzy, kde-format
-#| msgid "Getting Metadata for %1..."
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Næ í lýsigögn fyrir %1..."
+msgstr "Hreinsa lýsigögn fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð til að fjarlægja andlit: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað til að fjarlægja andlit: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð til að fjarlægja merki: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað til að fjarlægja merki: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61213,58 +61121,49 @@ msgid "Updating database from image metadata"
 msgstr "Uppfærsla gagnagrunns með lýsigögnum mynda"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
-#, fuzzy, kde-format
-#| msgid "Getting Metadata for %1..."
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Næ í lýsigögn fyrir %1..."
+msgstr "Samstilling lýsigagna fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Samræmi lýsigögn mynda við gagnagrunn"
+msgstr "Atriði skönnuð til að samræma lýsigögn við gagnagrunn: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Samræmi lýsigögn mynda við gagnagrunn"
+msgstr "Atriði skannað til að samræma lýsigögn við gagnagrunn: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skönnuð til að uppfæra gagnagrunn með lýsigögnum: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Atriði skannað til að uppfæra gagnagrunn með lýsigögnum: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Smámyndir"
+msgstr "Útbúa smámyndir"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Eiginleikar smámyndar:"
+msgstr "Smámynd fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriðum að smámyndum: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leitað í atriði að smámyndum: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -65544,29 +65443,21 @@ msgid "Reading and Writing Metadata"
 msgstr "Lestur og skrift lýsigagna"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
 msgstr ""
-"Úthluta til ExifTool-bakendans öllum aðgerðum við að skrifa lýsigögn í skrár"
+"Úthluta til ExifTool-bakendans öllum aðgerðum við að lesa lýsigögn úr skrám"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Virkjaðu þennan valkost til að skrifa lýsigögn í skrár með ExifTool-"
+"Virkjaðu þennan valkost til að lesa lýsigögn úr skrám með ExifTool-"
 "bakendanum í stað Exiv2. Þetta mun hægja örlítið á samstillingu lýsigagna í "
 "skrám við gagnagrunninn."
 
@@ -66399,10 +66290,9 @@ msgid "FFmpeg (Default)"
 msgstr "FFmpeg (sjálfgefið)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Same as system"
+#, kde-format
 msgid "GStreamer (System)"
-msgstr "Sama og stýrikerfið"
+msgstr "GStreamer (kerfis)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
@@ -66410,10 +66300,9 @@ msgid "Windows (System)"
 msgstr "Windows (kerfi)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "Darwin (System)"
-msgstr "Windows (kerfi)"
+msgstr "Darwin (kerfi)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -66693,13 +66582,10 @@ msgstr ""
 "eldri en 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
-"Fá nánari upplýsingar um <interface>Uppfæra tætigildi skráa</interface>"
+msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 01:44+0000\n"
+"POT-Creation-Date: 2024-10-15 01:46+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -19190,17 +19190,17 @@ msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 "O ficheiro de entrada é desconhecido no projecto: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:172
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Não é possível carregar a imagem original para a geração da antevisão."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:200
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Não foi possível criar a imagem TIFF."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Não foi possível converter o ficheiro RAW."
@@ -26828,7 +26828,7 @@ msgstr "Configuração do Serviço Web"
 msgid "Export by Web Service"
 msgstr "Exportar por Serviço Web"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26838,12 +26838,12 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Conversão de RAW do ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26853,7 +26853,7 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Conversão de RAW do DarkTable"
@@ -27044,7 +27044,7 @@ msgstr ""
 "Usar a configuração geral da descodificação RAW para carregar esta imagem no "
 "editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27054,12 +27054,12 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversão de RAW do RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -27069,7 +27069,7 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Conversão de RAW do UFRaw"
@@ -34749,8 +34749,8 @@ msgid "&Start"
 msgstr "&Iniciar"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:307
+#: core/libs/onlineversion/onlineversiondlg.cpp:484
 #, kde-format
 msgid "Close"
 msgstr "Fechar"
@@ -37024,105 +37024,105 @@ msgstr "Fe&char"
 msgid "Close message"
 msgstr "Fechar a mensagem"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:105
+#: core/libs/onlineversion/onlineversionchecker.cpp:108
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "nunca"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:189
+#: core/libs/onlineversion/onlineversionchecker.cpp:192
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr "Não foram devolvidos dados da ligação remota."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:206
-#: core/libs/onlineversion/onlineversiondwnl.cpp:143
+#: core/libs/onlineversion/onlineversionchecker.cpp:209
+#: core/libs/onlineversion/onlineversiondwnl.cpp:146
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Arquitectura Não Suportada: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:234
+#: core/libs/onlineversion/onlineversionchecker.cpp:237
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 "Foi recebido um formato de nomes de ficheiros inválido da ligação remota."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:258
+#: core/libs/onlineversion/onlineversionchecker.cpp:261
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "A data de pré-lançamento da lista remota é inválida."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:291
+#: core/libs/onlineversion/onlineversionchecker.cpp:294
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "Foi recebido um formato inválido da ligação remota."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:157
+#: core/libs/onlineversion/onlineversiondlg.cpp:159
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
 msgstr "Recebido:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:158
+#: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
 msgstr "Total:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:159
+#: core/libs/onlineversion/onlineversiondlg.cpp:161
 #, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
 msgstr "Taxa:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:160
+#: core/libs/onlineversion/onlineversiondlg.cpp:162
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
 msgstr "Estimativa:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "Verificação da Versão 'Online' - Pré-Lançamento"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr ""
 "A procurar por uma nova versão pré-lançamento disponível; espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:176
+#: core/libs/onlineversion/onlineversiondlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Verificação da Versão 'Online' - Versão Estável"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:177
+#: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr "A procurar por uma nova versão estável disponível; espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:229
+#: core/libs/onlineversion/onlineversiondlg.cpp:231
 #, kde-format
 msgid "Configure..."
 msgstr "Configurar..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:230
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 "Abre a página da janela de configuração para definir as opções das "
 "actualizações."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:258
+#: core/libs/onlineversion/onlineversiondlg.cpp:260
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, kde-format
 msgid "Download"
 msgstr "Obter"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:273
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -37140,7 +37140,7 @@ msgstr ""
 "serem usadas em produção.</p><p>Carregue em <b>Configurar</b> se deseja "
 "mostrar as opções de actualização na janela de configuração.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:286
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -37162,7 +37162,7 @@ msgstr ""
 "</p><p>Carregue em <b>Configurar</b> se deseja mostrar as opções de "
 "actualização na janela de configuração.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:314
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -37171,7 +37171,7 @@ msgstr ""
 "A sua aplicação está actualizada.\n"
 "O %1 de pré-lançamento e compilado %2 é a versão mais recente disponível."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:321
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -37180,7 +37180,7 @@ msgstr ""
 "A sua aplicação está actualizada.\n"
 "A versão estável %2 do %1 é a versão mais recente disponível."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:329
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
@@ -37189,19 +37189,19 @@ msgstr ""
 "Ocorreu um erro ao tentar verificar a nova versão %1:\n"
 "\"%2\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:339
+#: core/libs/onlineversion/onlineversiondlg.cpp:381
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr "compilada a %1 com símbolos de depuração"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1"
 msgstr "compilada a %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:342
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -37212,19 +37212,19 @@ msgstr ""
 "do %1 na versão %2;\n"
 "espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:348
+#: core/libs/onlineversion/onlineversiondlg.cpp:390
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr "versão %1 com símbolos de depuração"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1"
 msgstr "versão %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:351
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -37235,7 +37235,7 @@ msgstr ""
 "do %1 na versão %2\n"
 "espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:384
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -37246,7 +37246,7 @@ msgstr ""
 "do %1 na versão %2;\n"
 "espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:393
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -37257,13 +37257,13 @@ msgstr ""
 "do %1 na versão %2\n"
 "espere por favor..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:420
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Abrir..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:431
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37282,7 +37282,7 @@ msgstr ""
 "\n"
 "Carregue em \"Abrir\" para mostrar o pacote no gestor de ficheiros..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:440
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37300,12 +37300,12 @@ msgstr ""
 "\n"
 "Carregue em \"Abrir\" para mostrar o pacote no gestor de ficheiros..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:451
 #, kde-format
 msgid "Install..."
 msgstr "Instalar..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:456
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -37324,7 +37324,7 @@ msgstr ""
 "\n"
 "Carregue em \"Instalar\" para fechar a sessão actual e actualizar..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:465
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37343,7 +37343,7 @@ msgstr ""
 "\n"
 "Carregue em \"Instalar\" para fechar a sessão actual e actualizar..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:489
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -37356,7 +37356,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:496
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -37369,7 +37369,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:588
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -37378,27 +37378,27 @@ msgstr ""
 "Não é possível iniciar o instalador:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "O ficheiro com os códigos de validação está vazio."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:254
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "O código de validação é inválido."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:271
+#: core/libs/onlineversion/onlineversiondwnl.cpp:276
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "O ficheiro transferido está vazio."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:304
+#: core/libs/onlineversion/onlineversiondwnl.cpp:309
 #, kde-format
 msgid "Checksums error."
 msgstr "Ocorreu um erro com os códigos de validação."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:332
+#: core/libs/onlineversion/onlineversiondwnl.cpp:337
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Não é possível aceder ao ficheiro de destino."

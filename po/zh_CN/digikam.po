@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 01:44+0000\n"
+"POT-Creation-Date: 2024-10-15 01:46+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18185,17 +18185,17 @@ msgstr "工程文件解析失败。"
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "工程文件包含未知输入文件：<filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:172
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "输入文件无法加载以生成预览。"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:200
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "TIFF 图像创建失败。"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "RAW 文件转换失败。"
@@ -25593,7 +25593,7 @@ msgstr "在线服务设置"
 msgid "Export by Web Service"
 msgstr "导出到在线服务"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -25602,12 +25602,12 @@ msgstr ""
 "使用 ART 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART RAW 转换"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -25616,7 +25616,7 @@ msgstr ""
 "使用 DarkTable 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable RAW 转换"
@@ -25802,7 +25802,7 @@ msgstr "使用默认值"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr "使用常规 RAW 解码设置将此图像加载到图像编辑器。"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -25811,12 +25811,12 @@ msgstr ""
 "使用 RawTherapee 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee RAW 转换"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -25825,7 +25825,7 @@ msgstr ""
 "使用 UFRaw 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
@@ -33098,8 +33098,8 @@ msgid "&Start"
 msgstr "开始(&S)"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:307
+#: core/libs/onlineversion/onlineversiondlg.cpp:484
 #, kde-format
 msgid "Close"
 msgstr "关闭"
@@ -35329,101 +35329,101 @@ msgstr "关闭(&C)"
 msgid "Close message"
 msgstr "关闭消息"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:105
+#: core/libs/onlineversion/onlineversionchecker.cpp:108
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "从未检测"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:189
+#: core/libs/onlineversion/onlineversionchecker.cpp:192
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr "远程连接并未返回数据。"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:206
-#: core/libs/onlineversion/onlineversiondwnl.cpp:143
+#: core/libs/onlineversion/onlineversionchecker.cpp:209
+#: core/libs/onlineversion/onlineversiondwnl.cpp:146
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "不支持的系统架构：%1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:234
+#: core/libs/onlineversion/onlineversionchecker.cpp:237
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "远程连接返回的文件名格式无效。"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:258
+#: core/libs/onlineversion/onlineversionchecker.cpp:261
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "远程软件包列表返回的测试版日期无效。"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:291
+#: core/libs/onlineversion/onlineversionchecker.cpp:294
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "远程连接返回的格式无效。"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:157
+#: core/libs/onlineversion/onlineversiondlg.cpp:159
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
 msgstr "已接收："
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:158
+#: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
 msgstr "总计："
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:159
+#: core/libs/onlineversion/onlineversiondlg.cpp:161
 #, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
 msgstr "速率："
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:160
+#: core/libs/onlineversion/onlineversiondlg.cpp:162
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
 msgstr "预计完成时间："
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "在线更新检查程序 - 测试版本"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr "正在检查最新测试版本软件，请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:176
+#: core/libs/onlineversion/onlineversiondlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "在线更新检查程序 - 正式版本"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:177
+#: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr "正在检查最新稳定版本软件，请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:229
+#: core/libs/onlineversion/onlineversiondlg.cpp:231
 #, kde-format
 msgid "Configure..."
 msgstr "配置..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:230
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr "打开设置对话框以配置更新功能。"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:258
+#: core/libs/onlineversion/onlineversiondlg.cpp:260
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, kde-format
 msgid "Download"
 msgstr "下载"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:273
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -35439,7 +35439,7 @@ msgstr ""
 "新。<br/>稳定版本可以更为安全地用于生产用途。</p><p>点击<b>配置</b>可在设置对"
 "话框中配置更新选项。</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:286
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -35458,7 +35458,7 @@ msgstr ""
 "复的严重缺陷，不建议用于生产用途。<br/>请在了解具体情况和风险自担的前提下使用"
 "测试版本。</p><p>点击 <b>配置</b>可在设置对话框中配置更新选项。</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:314
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -35467,7 +35467,7 @@ msgstr ""
 "您正在使用最新版本的 digiKam 软件。\n"
 "%1 于 %2 构建的测试版是目前的最新版本。"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:321
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -35476,7 +35476,7 @@ msgstr ""
 "您正在使用最新版本的 digiKam 软件。\n"
 "%1 %2 稳定版是目前的最新版本。"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:329
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
@@ -35485,19 +35485,19 @@ msgstr ""
 "尝试检查新的 %1 版本时出错：\n"
 "“%2”"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:339
+#: core/libs/onlineversion/onlineversiondlg.cpp:381
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr "构建于 %1，包含调试符号"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1"
 msgstr "构建于 %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:342
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35508,19 +35508,19 @@ msgstr ""
 "%2\n"
 "请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:348
+#: core/libs/onlineversion/onlineversiondlg.cpp:390
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr "版本 %1，包含调试符号"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1"
 msgstr "版本 %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:351
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35531,7 +35531,7 @@ msgstr ""
 "版本 %2\n"
 "请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:384
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -35542,7 +35542,7 @@ msgstr ""
 "%2\n"
 "请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:393
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -35553,13 +35553,13 @@ msgstr ""
 "版本 %2\n"
 "请稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:420
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "打开..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:431
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35578,7 +35578,7 @@ msgstr ""
 "\n"
 "点击“打开”可在文件管理器中显示该软件包..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:440
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35597,12 +35597,12 @@ msgstr ""
 "\n"
 "点击“打开”可在文件管理器中显示该软件包..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:451
 #, kde-format
 msgid "Install..."
 msgstr "安装..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:456
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -35621,7 +35621,7 @@ msgstr ""
 "\n"
 "点击“安装”可退出 digiKam 并开始升级安装..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:465
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35640,7 +35640,7 @@ msgstr ""
 "\n"
 "点击“安装”可退出 digiKam 并开始升级安装..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:489
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35653,7 +35653,7 @@ msgstr ""
 "\n"
 "“%3”"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:496
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35666,7 +35666,7 @@ msgstr ""
 "\n"
 "“%3”"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:588
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -35675,27 +35675,27 @@ msgstr ""
 "无法启动安装程序：\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "校验和文件为空。"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:254
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "校验和无效。"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:271
+#: core/libs/onlineversion/onlineversiondwnl.cpp:276
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "已下载文件为空。"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:304
+#: core/libs/onlineversion/onlineversiondwnl.cpp:309
 #, kde-format
 msgid "Checksums error."
 msgstr "校验和错误。"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:332
+#: core/libs/onlineversion/onlineversiondwnl.cpp:337
 #, kde-format
 msgid "Cannot open target file."
 msgstr "无法打开目标文件。"
