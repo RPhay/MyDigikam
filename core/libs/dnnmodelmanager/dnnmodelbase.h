@@ -19,7 +19,6 @@
 #include <QMutex>
 #include <QVersionNumber>
 
-
 // Local includes
 
 #include "digikam_opencv.h"
@@ -34,7 +33,9 @@ class DIGIKAM_EXPORT DNNModelBase
 {
 
 public:
+
     // ---------- public methods ----------
+
     DNNModelBase(
                  const QString&                 _displayName,
                  const QString&                 _fileName,
@@ -50,42 +51,47 @@ public:
                  const cv::Scalar&              _meanValToSubtract,
                  int                            _imageSize
                 );
-    virtual ~DNNModelBase();
+    virtual ~DNNModelBase() = default;
 
-    // input: uiThreshold is the slider value from the UI
-    // return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
+    /**
+     * input:  uiThreshold is the slider value from the UI
+     * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
+     */
     float processingThreshold(int uiThreshold);
 
 public:
+
     // ---------- public members ----------
+
     DownloadInfo                getDownloadInformation()    const;
     bool                        checkFilename()             const;
     const QString               getModelPath()              const;
 
-public: 
-    bool                        modelLoaded         = false;    // check if the model has been loaded
+public:
 
-    QString                     displayName;            // name used for display in UI (QComboBox)
-    QString                     fileName;               // used by the downloader and model loader
-    DNNModelUsageList           usage;                  // how the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
-    QVersionNumber              minVersion;             // minimum version of digiKam needed to use this model
-    QString                     downloadPath;           // used by the downloader for the download path
-    QString                     sha256;                 // SHA265 hash of the file for download
-    qint64                      fileSize;               // used by the downloader to verify size
-    int                         minUsableThreshold;     // used to convert UI 1-10 slider to float for processing
-    int                         maxUsableThreshold;     // used to convert UI 1-10 slider to float for processing
-    DNNLoaderType               loaderType;             // Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
+    bool                        modelLoaded         = false;    ///< check if the model has been loaded
+
+    QString                     displayName;                    ///< name used for display in UI (QComboBox)
+    QString                     fileName;                       ///< used by the downloader and model loader
+    DNNModelUsageList           usage;                          ///< how the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
+    QVersionNumber              minVersion;                     ///< minimum version of digiKam needed to use this model
+    QString                     downloadPath;                   ///< used by the downloader for the download path
+    QString                     sha256;                         ///< SHA265 hash of the file for download
     QString                     configName;
-    cv::Scalar                  meanValToSubtract;
-    int                         imageSize;              // max dimension of a side of an image
 
-    QMutex                      mutex;                  // mutex to sigle-thread model during critical processing functions
+    qint64                      fileSize;                       ///< used by the downloader to verify size
+    int                         minUsableThreshold;             ///< used to convert UI 1-10 slider to float for processing
+    int                         maxUsableThreshold;             ///< used to convert UI 1-10 slider to float for processing
+    DNNLoaderType               loaderType;                     ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
+    cv::Scalar                  meanValToSubtract;
+    int                         imageSize;                      ///< max dimension of a side of an image
+
+    QMutex                      mutex;                          ///< mutex to sigle-thread model during critical processing functions
 
 private:
 
     DNNModelBase()              = delete;
-    virtual bool loadModel()    = 0;                    // must be overridden in child class
-
+    virtual bool loadModel()    = 0;                            ///< must be overridden in child class
 };
 
 } // namespace Digikam
