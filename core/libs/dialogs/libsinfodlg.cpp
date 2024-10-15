@@ -105,7 +105,6 @@ extern "C"
 
 #   if defined(Q_CC_CLANG)
 #       pragma clang diagnostic push
-#       pragma clang diagnostic ignored "-Werror"
 #       pragma clang diagnostic ignored "-Wundef"
 #   endif
 
