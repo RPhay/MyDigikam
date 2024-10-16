@@ -36,19 +36,19 @@ public:
     // ---------- public methods ----------
 
     explicit DNNModelSFace(
-                           const QString&                 _displayName,
-                           const QString&                 _fileName,
-                           const DNNModelUsageList&       _usage,
-                           const QVersionNumber&          _minVersion,
-                           const QString&                 _downloadPath,
-                           const QString&                 _sha256,
-                           const qint64&                  _fileSize,
-                           int                            _minUsableThreshold,
-                           int                            _maxUsableThreshold,
-                           DNNLoaderType                  _loaderType,
-                           const QString&                 _configName,
-                           const cv::Scalar&              _meanValToSubtract,
-                           int                            _imageSize
+                           const QString&           _displayName,
+                           const QString&           _fileName,
+                           const DNNModelUsageList& _usage,
+                           const QVersionNumber&    _minVersion,
+                           const QString&           _downloadPath,
+                           const QString&           _sha256,
+                           const qint64&            _fileSize,
+                           int                      _minUsableThreshold,
+                           int                      _maxUsableThreshold,
+                           DNNLoaderType            _loaderType,
+                           const QString&           _configName,
+                           const cv::Scalar&        _meanValToSubtract,
+                           int                      _imageSize
                           );
     virtual ~DNNModelSFace() override   = default;
 
@@ -66,7 +66,7 @@ private:
 
     DNNModelSFace()                     = delete;
 
-    virtual bool loadModel() override;                  ///< must be overridden in child class
+    virtual bool loadModel() override;                  ///< Must be overridden in child class
     bool callLoader();
 };
 

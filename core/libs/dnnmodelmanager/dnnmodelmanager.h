@@ -42,12 +42,12 @@ public:
     static DNNModelManager* instance();
 
     /**
-     * used by the filesdownload to get a stream containing the files and information to download
+     * Used by the filesdownload to get a stream containing the files and information to download
      */
     const QList<DownloadInfo>& getDownloadInformation(DNNModelUsage usage);
 
     /**
-     * retrieve a DNNModelBase pointer by name
+     * Retrieve a DNNModelBase pointer by name
      * This will load and create the model on first use
      * It will also find the best OpenCV Target and Backend for the model
      * based on computer capabilities
@@ -74,11 +74,11 @@ private:
     };
 
     /**
-     * read the configuration file.  The configuration is a .csv hardcoded in dnnmodelmanager.cpp but
+     * Read the configuration file.  The configuration is a .csv hardcoded in dnnmodelmanager.cpp but
      * could be a csv, yaml, or json packed with digiKam or downloaded from the Internet
      */
     void loadConfig();
-    void getSettings();     ///< called if no dnnmodelsettings.conf exists
+    void getSettings();     ///< Called if no dnnmodelsettings.conf exists
 
 private:
 

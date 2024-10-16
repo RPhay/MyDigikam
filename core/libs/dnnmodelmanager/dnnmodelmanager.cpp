@@ -97,7 +97,7 @@ const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage
 
 DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage usage) const
 {
-    Q_UNUSED(usage);       // for future reference
+    Q_UNUSED(usage);       // For future reference
 
     return d->modelMap[modelName.toLower()];
 }
@@ -106,22 +106,21 @@ DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage 
 
 void DNNModelManager::loadConfig()
 {
-    // get the current application name
+    // Get the current application name
 
     QString appName = qApp->applicationName().toLower();
 
-    // load the group from the config file
+    // Load the group from the config file
 
     const auto groups = d->settings->childGroups();
 
     for (const auto& model : groups)
     {
-
-        // load the keys and values for this group
+        // Load the keys and values for this group
 
         d->settings->beginGroup(model);
 
-        // check if model is used with this application
+        // Check if model is used with this application
 
         if (d->settings->value(QLatin1String("Application")).toString().toLower().contains(appName))
         {
@@ -166,16 +165,16 @@ void DNNModelManager::loadConfig()
                 version = QVersionNumber(versionParts[0].toInt(), versionParts[1].toInt(), versionParts[2].toInt());
             }
 
-            // loader type
+            // Loader type
 
             QString loadertypeStr    = d->settings->value(QLatin1String("LoaderType")).toString();
             DNNLoaderType loaderType = str2loader.at(d->settings->value(QLatin1String("LoaderType")).toString().toLower().toUtf8().data());
 
-            // create version
+            // Create version
 
             cv::Scalar meanValToSubtract;
-            QString mvtsStr       = d->settings->value(QLatin1String("MeanValueToSubtract")).toString().toLower();
-            QStringList mvtsParts = d->settings->value(QLatin1String("MeanValueToSubtract")).toString().toLower().split(QLatin1String(","));
+            QString mvtsStr          = d->settings->value(QLatin1String("MeanValueToSubtract")).toString().toLower();
+            QStringList mvtsParts    = d->settings->value(QLatin1String("MeanValueToSubtract")).toString().toLower().split(QLatin1String(","));
 
             if (3 == mvtsParts.size())
             {
@@ -224,7 +223,7 @@ void DNNModelManager::loadConfig()
                                                   d->settings->value(QString::fromUtf8("ConfigName")).toString(),
                                                   meanValToSubtract,
                                                   d->settings->value(QString::fromUtf8("ImageSize")).toInt()
-                                            );
+                                                 );
                     break;
                 }
 
@@ -269,12 +268,12 @@ void DNNModelManager::loadConfig()
                 }
             }
 
-            // add the model to map
+            // Add the model to map
 
             d->modelMap.insert(model.toLower(), modelPtr);
         }
 
-        // done with this group
+        // Done with this group
 
         d->settings->endGroup();
     }
@@ -284,15 +283,15 @@ void DNNModelManager::getSettings()
 {
     if (!d->settings)
     {
-        // check potential download location
+        // Check potential download location
         // TODO: Maybe download the config file from the web
 
-        // get from bundle
+        // Get from bundle
 
         QString appPath = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation,
                                                  QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
                                                  QStandardPaths::LocateFile);
-        d->settings = new QSettings(appPath, QSettings::IniFormat);
+        d->settings     = new QSettings(appPath, QSettings::IniFormat);
     }
 }
 

@@ -27,19 +27,19 @@ namespace Digikam
 {
 
 DNNModelNet::DNNModelNet(
-                         const QString&                 _displayName,
-                         const QString&                 _fileName,
-                         const DNNModelUsageList&       _usage,
-                         const QVersionNumber&          _minVersion,
-                         const QString&                 _downloadPath,
-                         const QString&                 _sha256,
-                         const qint64&                  _fileSize,
-                         int                            _minUsableThreshold,
-                         int                            _maxUsableThreshold,
-                         DNNLoaderType                  _loaderType,
-                         const QString&                 _configName,
-                         const cv::Scalar&              _meanValToSubtract,
-                         int                            _imageSize
+                         const QString&           _displayName,
+                         const QString&           _fileName,
+                         const DNNModelUsageList& _usage,
+                         const QVersionNumber&    _minVersion,
+                         const QString&           _downloadPath,
+                         const QString&           _sha256,
+                         const qint64&            _fileSize,
+                         int                      _minUsableThreshold,
+                         int                      _maxUsableThreshold,
+                         DNNLoaderType            _loaderType,
+                         const QString&           _configName,
+                         const cv::Scalar&        _meanValToSubtract,
+                         int                      _imageSize
                         )
     : DNNModelBase(
                    _displayName,
@@ -76,15 +76,15 @@ cv::dnn::Net& DNNModelNet::getNet()
 
 bool DNNModelNet::loadModel()
 {
-    // load the model from disk and create cv::dnn:Net instance
+    // Load the model from disk and create cv::dnn:Net instance
 
     QString configPath;
 
-    // verify filename
+    // Verify filename
 
     if (checkFilename())
     {
-        // load config model if needed
+        // Load config model if needed
 
         if (0 < configName.size())
         {
@@ -92,7 +92,7 @@ bool DNNModelNet::loadModel()
             configPath                        = configModel->getModelPath();
         }
 
-        // create the cv::dnn::Net instance with the config
+        // Create the cv::dnn::Net instance with the config
 
         return callLoader(configPath);
     }
@@ -113,13 +113,13 @@ bool DNNModelNet::callLoader(const QString& configPath)
 
 #ifdef Q_OS_WIN
 
-            net = cv::dnn::readNet(modelPath.toLocal8Bit().constData(),
-                                   configPath.toLocal8Bit().constData());
+        net = cv::dnn::readNet(modelPath.toLocal8Bit().constData(),
+                               configPath.toLocal8Bit().constData());
 
 #else
 
-            net = cv::dnn::readNet(modelPath.toStdString(),
-                                   configPath.toStdString());
+        net = cv::dnn::readNet(modelPath.toStdString(),
+                               configPath.toStdString());
 
 #endif
 
@@ -129,11 +129,11 @@ bool DNNModelNet::callLoader(const QString& configPath)
 
 #ifdef Q_OS_WIN
 
-            net = cv::dnn::readNet(modelPath.toLocal8Bit().constData());
+        net = cv::dnn::readNet(modelPath.toLocal8Bit().constData());
 
 #else
 
-            net = cv::dnn::readNet(modelPath.toStdString());
+        net = cv::dnn::readNet(modelPath.toStdString());
 
 #endif
 
