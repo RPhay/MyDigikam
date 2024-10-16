@@ -18,11 +18,12 @@
 
 #include <QDialog>
 #include <QSettings>
-#include <QNetworkReply>
 
 // Local includes
 
 #include "digikam_export.h"
+
+class QNetworkReply;
 
 namespace Digikam
 {

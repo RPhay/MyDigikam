@@ -28,6 +28,7 @@
 #include <QProgressBar>
 #include <QApplication>
 #include <QStandardPaths>
+#include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QDialogButtonBox>
 #include <QCryptographicHash>
