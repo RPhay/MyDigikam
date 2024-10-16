@@ -78,7 +78,6 @@ bool DNNModelBase::checkFilename() const
 const QString DNNModelBase::getModelPath() const
 {
     QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-//                                             QLatin1String("digikam/") + (downloadPath.split(QLatin1String("/"))[0]),
                                              QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 

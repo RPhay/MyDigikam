@@ -28,6 +28,7 @@
 #include "digikam_opencv.h"
 #include "digikam_export.h"
 #include "facescansettings.h"
+#include "dnnmodelbase.h"
 
 namespace Digikam
 {
@@ -75,13 +76,14 @@ public:
 
 protected:
 
-    float        scaleFactor        = 1.0F;
-    cv::Scalar   meanValToSubtract;
-    cv::Size     inputImageSize;
+    float           scaleFactor         = 1.0F;
+    cv::Scalar      meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
+    cv::Size        inputImageSize      = cv::Size(300, 300);
+    DNNModelBase*   model               = nullptr;
 
-    cv::dnn::Net net;
+    // cv::dnn::Net net;
 
-    QMutex       mutex;
+    // QMutex       mutex;
 
 private:
 

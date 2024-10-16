@@ -40,19 +40,19 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
 {
     switch (m_modelType)
     {
-        case DetectorNNModel::SSDMOBILENET:
+        case DetectorNNModel::DNNDetectorSSD:
         {
             m_inferenceEngine = new DNNFaceDetectorSSD;
             break;
         }
 
-        case DetectorNNModel::YOLOv3:
+        case DetectorNNModel::DNNDetectorYOLOv3:
         {
             m_inferenceEngine = new DNNFaceDetectorYOLO;
             break;
         }
 
-        case DetectorNNModel::YuNet:
+        case DetectorNNModel::DNNDetectorYuNet:
         {
             m_inferenceEngine = new DNNFaceDetectorYuNet;
             break;
@@ -102,7 +102,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
     }
 
-    if (DetectorNNModel::YuNet == m_modelType)
+    if (DetectorNNModel::DNNDetectorYuNet == m_modelType)
     {
         return prepareForDetectionYuNet(cvImage, paddedSize);
     }

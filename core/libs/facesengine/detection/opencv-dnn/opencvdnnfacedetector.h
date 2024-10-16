@@ -32,9 +32,9 @@ namespace Digikam
 
 enum DetectorNNModel
 {
-    SSDMOBILENET = 0,   ///< SSD MobileNet neural network inference.
-    YOLOv3,             ///< YOLO neural network inference.
-    YuNet               ///< YuNet neural network inference.
+    DNNDetectorSSD = 0,   ///< SSD MobileNet neural network inference.
+    DNNDetectorYOLOv3,             ///< YOLO neural network inference.
+    DNNDetectorYuNet               ///< YuNet neural network inference.
 };
 
 class DIGIKAM_EXPORT OpenCVDNNFaceDetector
@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT OpenCVDNNFaceDetector
 
 public:
 
-    explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::SSDMOBILENET);
+    explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::DNNDetectorSSD);
     ~OpenCVDNNFaceDetector();
 
     cv::Mat prepareForDetection(const DImg& inputImage, cv::Size& paddedSize)           const;

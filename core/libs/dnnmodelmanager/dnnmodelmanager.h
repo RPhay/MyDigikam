@@ -67,10 +67,10 @@ private:
 
     const std::map<std::string, DNNLoaderType> str2loader
     {
-        { "net",    DNNLoaderType::Net    },
-        { "config", DNNLoaderType::Config },
-        { "yunet",  DNNLoaderType::YuNet  },
-        { "sface",  DNNLoaderType::SFace  }
+        { "net",    DNNLoaderType::DNNLoaderNet    },
+        { "config", DNNLoaderType::DNNLoaderConfig },
+        { "yunet",  DNNLoaderType::DNNLoaderYuNet  },
+        { "sface",  DNNLoaderType::DNNLoaderSFace  }
     };
 
     /**

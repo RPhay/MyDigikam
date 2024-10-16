@@ -51,19 +51,19 @@ public:
                 {
                     case FaceScanSettings::FaceDetectionModel::SSDMOBILENET:
                     {
-                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorSSD);
                         break;
                     }
 
                     case FaceScanSettings::FaceDetectionModel::YOLOv3:
                     {
-                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLOv3);
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorYOLOv3);
                         break;
                     }
 
                     case FaceScanSettings::FaceDetectionModel::YuNet:
                     {
-                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YuNet);
+                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorYuNet);
                         break;
                     }
 

@@ -439,18 +439,18 @@ void FilesDownloader::createDownloadInfo()
 
     if (d->system.enableFaceEngine)
     {
-        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::FaceDetection);
-        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::FaceRecognition);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceDetection);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceRecognition);
     }
 
     if (d->system.enableAesthetic)
     {
-        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::Aesthetics);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAesthetics);
     }
 
     if (d->system.enableAutoTags)
     {
-        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::ObjectDetection);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
     }
 
 }

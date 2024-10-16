@@ -28,6 +28,8 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dnnmodelnet.h"
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -42,40 +44,15 @@ DNNFaceDetectorSSD::DNNFaceDetectorSSD()
 
 bool DNNFaceDetectorSSD::loadModels()
 {
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
 
-    QString model   = QLatin1String("deploy.prototxt");
-    QString data    = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
+    model = DNNModelManager::instance()->getModel(QLatin1String("MobilenetSSD"), DNNModelUsage::DNNUsageFaceDetection);
 
-    QString nnmodel = appPath + QLatin1Char('/') + model;
-    QString nndata  = appPath + QLatin1Char('/') + data;
-
-    if (QFileInfo::exists(nnmodel) && QFileInfo::exists(nndata))
+    if (!(model->modelLoaded))
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model << ", SSD data:" << data;
-
-#ifdef Q_OS_WIN
-
-            net = cv::dnn::readNetFromCaffe(nnmodel.toLocal8Bit().constData(),
-                                            nndata.toLocal8Bit().constData());
-
-#else
-
-            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(),
-                                            nndata.toStdString());
-
-#endif
-
-#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
-
-            net.enableWinograd(false);
-
-#endif
-
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  // this will throw an exception if the model can't be loaded
+            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->displayName << ", SSD data:" << model->configName;
         }
         catch (cv::Exception& e)
         {
@@ -92,7 +69,7 @@ bool DNNFaceDetectorSSD::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "MobilenetSSD Cannot find faces engine DNN model";
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
 
         return false;
@@ -114,11 +91,11 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
     cv::Mat detection;
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
 
-    if (!net.empty())
+    if (!static_cast<DNNModelNet*>(model)->getNet().empty())
     {
-        QMutexLocker lock(&mutex);
-        net.setInput(inputBlob);
-        detection = net.forward();
+        QMutexLocker lock(&(model->mutex));
+        static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
+        detection = static_cast<DNNModelNet*>(model)->getNet().forward();
     }
 
     postprocess(detection, paddedSize, detectedBboxes);

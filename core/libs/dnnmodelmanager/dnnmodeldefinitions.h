@@ -23,19 +23,19 @@ namespace Digikam
 
 typedef enum _DNNLoaderType
 {
-    Net,
-    Config,
-    YuNet,
-    SFace
+    DNNLoaderNet,
+    DNNLoaderConfig,
+    DNNLoaderYuNet,
+    DNNLoaderSFace
 } DNNLoaderType;
 
 typedef enum _DNNModelUsage
 {
-    FaceDetection,
-    FaceRecognition,
-    RedeyeDetection,
-    ObjectDetection,
-    Aesthetics
+    DNNUsageFaceDetection,
+    DNNUsageFaceRecognition,
+    DNNUsageRedeyeDetection,
+    DNNUsageObjectDetection,
+    DNNUsageAesthetics
 } DNNModelUsage;
 
 typedef QList<DNNModelUsage> DNNModelUsageList;

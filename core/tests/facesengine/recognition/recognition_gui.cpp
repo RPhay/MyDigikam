@@ -175,10 +175,8 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
 
     recognitionWrapper     = new FacialRecognitionWrapper();
 
-    // m_detector             = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
-    m_detector             = new OpenCVDNNFaceDetector(DetectorNNModel::YuNet);
+    m_detector             = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorYuNet);
     m_recognizer           = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, FaceScanSettings::FaceRecognitionModel::SFace);
-    // m_extractor            = new DNNOpenFaceExtractor();
     m_extractor            = new DNNSFaceExtractor();
 
     // Image erea

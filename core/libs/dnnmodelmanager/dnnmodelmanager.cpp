@@ -132,27 +132,27 @@ void DNNModelManager::loadConfig()
 
             if (usageStr.contains(QLatin1String("face_detection")))
             {
-                usage.append(DNNModelUsage::FaceDetection); 
+                usage.append(DNNModelUsage::DNNUsageFaceDetection); 
             }
 
             if (usageStr.contains(QLatin1String("face_recognition")))
             {
-                usage.append(DNNModelUsage::FaceRecognition);
+                usage.append(DNNModelUsage::DNNUsageFaceRecognition);
             }
 
             if (usageStr.contains(QLatin1String("redeye_detection")))
             {
-                usage.append(DNNModelUsage::RedeyeDetection);
+                usage.append(DNNModelUsage::DNNUsageRedeyeDetection);
             }
 
             if (usageStr.contains(QLatin1String("object_detection")))
             {
-                usage.append(DNNModelUsage::ObjectDetection);
+                usage.append(DNNModelUsage::DNNUsageObjectDetection);
             }
 
             if (usageStr.contains(QLatin1String("aesthetics")))
             {
-                usage.append(DNNModelUsage::Aesthetics);
+                usage.append(DNNModelUsage::DNNUsageAesthetics);
             }
 
             // Create version
@@ -188,7 +188,7 @@ void DNNModelManager::loadConfig()
 
             switch (loaderType)
             {
-                case DNNLoaderType::Net:
+                case DNNLoaderType::DNNLoaderNet:
                 {
                     modelPtr = new DNNModelNet(
                                                d->settings->value(QString::fromUtf8("DisplayName")).toString(),
@@ -208,7 +208,7 @@ void DNNModelManager::loadConfig()
                     break;
                 }
 
-                case DNNLoaderType::Config:
+                case DNNLoaderType::DNNLoaderConfig:
                 {
                     modelPtr = new DNNModelConfig(
                                                   d->settings->value(QString::fromUtf8("DisplayName")).toString(),
@@ -228,7 +228,7 @@ void DNNModelManager::loadConfig()
                     break;
                 }
 
-                case DNNLoaderType::YuNet:
+                case DNNLoaderType::DNNLoaderYuNet:
                 {
                     modelPtr = new DNNModelYuNet(
                                                  d->settings->value(QString::fromUtf8("DisplayName")).toString(),
@@ -248,7 +248,7 @@ void DNNModelManager::loadConfig()
                     break;
                 }
 
-                case DNNLoaderType::SFace:
+                case DNNLoaderType::DNNLoaderSFace:
                 {
                     modelPtr = new DNNModelSFace(
                                                  d->settings->value(QString::fromUtf8("DisplayName")).toString(),

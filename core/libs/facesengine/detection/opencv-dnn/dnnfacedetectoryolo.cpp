@@ -34,6 +34,8 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dnnmodelnet.h"
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -48,43 +50,14 @@ DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
 
 bool DNNFaceDetectorYOLO::loadModels()
 {
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
+    model = DNNModelManager::instance()->getModel(QLatin1String("YOLOv3"), DNNModelUsage::DNNUsageFaceDetection);
 
-    QString model   = QLatin1String("yolov3-face.cfg");
-    QString data    = QLatin1String("yolov3-wider_16000.weights");
-
-    QString nnmodel = appPath + QLatin1Char('/') + model;
-    QString nndata  = appPath + QLatin1Char('/') + data;
-
-    if (QFileInfo::exists(nnmodel) && QFileInfo::exists(nndata))
+    if (!(model->modelLoaded))
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << model << ", YOLO data:" << data;
-
-#ifdef Q_OS_WIN
-
-            net = cv::dnn::readNetFromDarknet(nnmodel.toLocal8Bit().constData(),
-                                              nndata.toLocal8Bit().constData());
-
-#else
-
-            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(),
-                                              nndata.toStdString());
-
-#endif
-
-            net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
-            net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
-
-#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
-
-            net.enableWinograd(false);
-
-#endif
-
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  // this will throw an exception if the model can't be loaded
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->displayName << ", YOLOv3 data:" << model->configName;
         }
         catch (cv::Exception& e)
         {
@@ -101,7 +74,7 @@ bool DNNFaceDetectorYOLO::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "YOLOv3 Cannot find faces engine DNN model";
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
 
         return false;
@@ -125,12 +98,12 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!net.empty())
+    if (!static_cast<DNNModelNet*>(model)->getNet().empty())
     {
-        QMutexLocker lock(&mutex);
-        net.setInput(inputBlob);
+        QMutexLocker lock(&(model->mutex));
+        static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
         timer.start();
-        net.forward(outs, getOutputsNames());
+        static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
 
@@ -230,15 +203,15 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
-    if (!net.empty() && names.empty())
+    if (!static_cast<DNNModelNet*>(model)->getNet().empty() && names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 
-        std::vector<int> outLayers          = net.getUnconnectedOutLayers();
+        std::vector<int> outLayers          = static_cast<DNNModelNet*>(model)->getNet().getUnconnectedOutLayers();
 
         // Get the names of all the layers in the network
 
-        std::vector<cv::String> layersNames = net.getLayerNames();
+        std::vector<cv::String> layersNames = static_cast<DNNModelNet*>(model)->getNet().getLayerNames();
 
         // Get the names of the output layers in names
 
