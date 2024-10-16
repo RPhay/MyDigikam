@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 01:46+0000\n"
+"POT-Creation-Date: 2024-10-16 01:49+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1446,30 +1446,30 @@ msgstr "<i>Dvejetainiai duomenys</i>"
 msgid "Initializing..."
 msgstr "Paleidžiama..."
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, fuzzy, kde-format
 #| msgid "Loading KIPI Plugins..."
 msgid "Load Plugins..."
 msgstr "Įkeliami Kipi papildiniai..."
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Skaitoma duomenų bazė..."
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgid "Loading albums..."
 msgstr "Įkeliami fotoaparatai..."
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1477,7 +1477,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1486,7 +1486,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1495,7 +1495,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1506,7 +1506,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1517,7 +1517,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1528,7 +1528,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1539,7 +1539,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1550,7 +1550,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1561,7 +1561,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1572,23 +1572,23 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 iš %2)"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 iš %2)"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1599,7 +1599,7 @@ msgstr[1] "%1 objektai"
 msgstr[2] "%1 objektų"
 msgstr[3] "%1 objektas"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1610,7 +1610,7 @@ msgstr[1] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 msgstr[2] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 msgstr[3] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -4682,8 +4682,8 @@ msgstr "Video kodekas"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -30181,7 +30181,7 @@ msgstr "<i>Kadrų dažnis:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodekas:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30207,35 +30207,35 @@ msgstr "Versija"
 msgid "Items List"
 msgstr "Paveikslėlių istorija"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Taip"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@title"
 msgid "Features"
 msgstr "Gamta"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Gibraltaras"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30243,7 +30243,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30251,34 +30251,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Fotoaparato konfigūravimas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Taip"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -37019,7 +37019,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:139
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Download"
@@ -66260,36 +66260,36 @@ msgstr "Pažymėti elementą"
 msgid "Your collection will use this category:"
 msgstr "Jūsų nauja kolekcija bus sukurta tokiu vardu:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:127
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Atsiunčiamas failas %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, fuzzy, kde-format
 msgid "Use Face Detection feature"
 msgstr "Veidų atpažinimo palaikymas;"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Automatinė korekcija"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:221
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "All files were downloaded successfully."
 msgstr "Atsiunčiamas failas %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -66297,7 +66297,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Atsisiųsti naują"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66309,33 +66309,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Pridėti failo savybių"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:366
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:390
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:397
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Eksportuoti"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:485
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -66350,13 +66350,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:498
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:505
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""

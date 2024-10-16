@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 01:46+0000\n"
+"POT-Creation-Date: 2024-10-16 01:49+0000\n"
 "PO-Revision-Date: 2024-10-13 18:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1380,27 +1380,27 @@ msgstr "<i>Données binaires</i>"
 msgid "Initializing..."
 msgstr "Initialisation…"
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Charger les modules externes…"
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Vérification du dépôt ICC…"
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Nettoyage de la base de données…"
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, kde-format
 msgid "Loading albums..."
 msgstr "Chargement des albums…"
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1412,7 +1412,7 @@ msgstr ""
 "« Non ». La fonctionnalité « Gestion de la couleur » sera désactivée jusqu'à "
 "ce que vous résolviez ce problème.</p>"
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1426,21 +1426,21 @@ msgstr ""
 "des métadonnées.\n"
 "Message d'erreur : %1"
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Pas d'élément sélectionné (%1 élément)"
 msgstr[1] "Pas d'élément sélectionné (%1 éléments)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Pas d'élément sélectionné (%1 [%2] élément)"
 msgstr[1] "Pas d'élément sélectionné (%1 [%2] éléments)"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1449,21 +1449,21 @@ msgstr[0] ""
 msgstr[1] ""
 "Pas d'élément sélectionné (%1 éléments, avec les éléments groupés : %2)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1 /%2 élément sélectionné (%3 / %4)"
 msgstr[1] "%1 / %2 éléments sélectionnés (%3 / %4)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1 / %2 [%3] élément sélectionné (%4 / %5)"
 msgstr[1] "%1 / %2 [%3] éléments sélectionnés (%4 / %5)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1471,14 +1471,14 @@ msgstr[0] "1 / %2 élément sélectionné. Total avec les éléments regroupés
 msgstr[1] ""
 "%1 / %2 éléments sélectionnés. Total avec les éléments regroupés : %3"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1 / %2 [%3 / %4] élément sélectionné (%5 / %6)"
 msgstr[1] "%1 / %2 [%3 / %4] éléments sélectionnés (%5 / %6)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1486,36 +1486,36 @@ msgstr[0] "1 / %2 élément sélectionné. Avec les éléments regroupés : %3
 msgstr[1] ""
 "%1 / %2 éléments sélectionnés. Avec les éléments regroupés : %3 / %4"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 sur %2)"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 of %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 sur %2. Total avec les éléments groupés : %3)"
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "1 élément masqué"
 msgstr[1] "%1 éléments masqués"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Écrire les méta-données dans le fichier"
 msgstr[1] "Écrire les méta-données les fichiers sélectionnés"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -4538,8 +4538,8 @@ msgstr "Décodeurs vidéo"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, kde-format
 msgid "no entry"
 msgstr "Aucune entrée"
@@ -30414,7 +30414,7 @@ msgstr "<i>Taux d'images :</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Codec vidéo :</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30438,67 +30438,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Liste des éléments"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Oui"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Non"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Fonctionnalités"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliothèques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifestes"
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuration de « OpenCV »"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Oui"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Non"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -37281,7 +37281,7 @@ msgstr ""
 "Ouvrir la boîte de dialogue de paramétrage pour configurer les mises à jour."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:139
 #, kde-format
 msgid "Download"
 msgstr "Télécharger"
@@ -65513,39 +65513,39 @@ msgstr "Sélectionner une catégorie"
 msgid "Your collection will use this category:"
 msgstr "Votre collection utilisera cette catégorie :"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Télécharger les fichiers demandés"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Face Detection feature"
 msgstr "Utiliser la fonctionnalité de détection de visages"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Utiliser la fonctionnalité de détection d'esthétique"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Utiliser la fonctionnalité d'association automatique d'étiquettes"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:221
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tous les fichiers ont été téléchargés avec succès."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erreur de téléchargement"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65564,33 +65564,33 @@ msgstr ""
 "\n"
 "Vous pouvez ré-essayer ou continuer le téléchargement au prochain démarrage."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Essayer à nouveau"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:366
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La somme de contrôle est incorrecte."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:390
 #, kde-format
 msgid "File write error."
 msgstr "Erreur d'écriture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:397
 #, kde-format
 msgid "File open error."
 msgstr "Erreur d'ouverture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Le fichier sur le serveur est trop volumineux."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:485
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65617,13 +65617,13 @@ msgstr ""
 "p><p><b>Après un téléchargement réussi, vous devrez re-démarrer DigiKam.</"
 "b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:498
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Le téléchargement nécessite %1 fichiers d'une taille de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:505
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Tous les fichiers des fonctionnalités sélectionnées ont été trouvés."

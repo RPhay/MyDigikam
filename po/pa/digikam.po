@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 01:46+0000\n"
+"POT-Creation-Date: 2024-10-16 01:49+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1421,30 +1421,30 @@ msgstr "<i>ਬਾਈਨਰੀ ਡਾਟਾ</i>"
 msgid "Initializing..."
 msgstr "ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, fuzzy, kde-format
 #| msgid "Loading KIPI Plugins..."
 msgid "Load Plugins..."
 msgstr "...ਕਿਪਿ ਪਲੱਗਇਨ ਲੋਡ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "ICC ਰਿਪੋਜ਼ਟਰੀ ਚੈੱਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "...ਡਾਟਾਬੇਸ ਪੜ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums..."
 msgstr "ਸਭ ਐਲਬਮ ਪਾਰਸ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1452,7 +1452,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1461,14 +1461,14 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1477,7 +1477,7 @@ msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1486,7 +1486,7 @@ msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected"
 msgid "1/%2 item selected (%3/%4)"
@@ -1494,7 +1494,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 msgstr[1] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1503,7 +1503,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1512,7 +1512,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1521,7 +1521,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1530,23 +1530,23 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2 ਵਿੱਚੋਂ %1)"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, fuzzy, kde-format
 #| msgid " (%1 of %2 [%3])"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%2 ਵਿੱਚੋਂ %1 [%3])"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1555,7 +1555,7 @@ msgid_plural "%1 items hidden"
 msgstr[0] "੧ ਬਿੱਟ"
 msgstr[1] "%1 ਬਿੱਟ"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1564,7 +1564,7 @@ msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 msgstr[1] "ਚੁਣੇ ਚਿੱਤਰਾਂ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -4589,8 +4589,8 @@ msgstr "ਵੀਡੀਓ Codec"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -29660,7 +29660,7 @@ msgstr "<i>ਫਰੇਮਰੇਟ:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29687,34 +29687,34 @@ msgstr "<font size=\"5\">%1</font><br/><b>ਵਰਜਨ %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "ਚਿੱਤਰ ਅਤੀਤ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "ਹਾਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "ਨਹੀਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "ਫੀਚਰ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "ਐਲਬਮ ਲਾਇਬਰੇਰੀ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29722,7 +29722,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29730,34 +29730,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ਕੈਮਰਾ ਸੰਰਚਨਾ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "ਹਾਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ਨਹੀਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -36454,7 +36454,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:139
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
@@ -65116,42 +65116,42 @@ msgstr "ਸਾਲ ਚੁਣੋ"
 msgid "Your collection will use this category:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:127
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 ਫਾਇਲ ਡਾਊਨਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, fuzzy, kde-format
 msgid "Use Face Detection feature"
 msgstr "ਉਲਟ ਕ੍ਰਮ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "ਆਟੋਮੈਟਿਕ ਅਡਜੱਸਟਮੈਂਟ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:221
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "%1 ਠੀਕ ਤਰ੍ਹਾਂ ਡਾਊਨਲੋਡ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "ਨਵੇਂ ਡਾਊਨਲੋਡ ਕਰੋ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65163,34 +65163,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਲ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:366
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:390
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:397
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:485
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65205,13 +65205,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:498
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:505
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""

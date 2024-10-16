@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 01:46+0000\n"
-"PO-Revision-Date: 2024-09-26 10:02+0200\n"
+"POT-Creation-Date: 2024-10-16 01:49+0000\n"
+"PO-Revision-Date: 2024-10-15 23:04+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -1342,27 +1342,27 @@ msgstr "<i>Двоични данни</i>"
 msgid "Initializing..."
 msgstr "Стартиране..."
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Зареждане на приставки..."
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Проверка на ICC хранилището..."
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Почистване на базата данни..."
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, kde-format
 msgid "Loading albums..."
 msgstr "Зареждане на албуми..."
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1374,7 +1374,7 @@ msgstr ""
 "фунционалността \"Управление на цветовете\" ще бъде изключена докато този "
 "приблем бъде разрешен.</p>"
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1386,92 +1386,92 @@ msgstr ""
 "правилно. Отидете в настройките на digiKam и проверете наличието на ExifTool "
 "в раздела за метаданни. Съобщение за грешка: %1"
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Няма избран елемент (%1 елемент)"
 msgstr[1] "Не е избран елемент (%1 елементи)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Няма избран елемент (%1 [%2] елемент)"
 msgstr[1] "Няма избран елемент (%1 [%2] елементи)"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Няма избран елемент (%1 елемент. С групирани елементи: %2)"
 msgstr[1] "Няма избран елемент (%1 елементи. С групирани елементи: %2)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 избран елемент (%3/%4)"
 msgstr[1] "%1/%2 избрани елемента (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] избран елемент (%4/%5)"
 msgstr[1] "%1/%2 [%3] избрани елемента (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Избран е 1/%2 елемент. Общо с групираните елементи: %3"
 msgstr[1] "%1/%2 избрани елементи. Общо с групираните елементи: %3"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] избран елемент (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] избрани елемента (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 избран елемент. С групирани елементи: %3/%4"
 msgstr[1] "%1/%2 избрани елементи. С групирани елементи: %3/%4"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 от %2)"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 от %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 от %2. Общо с групираните елементи: %3)"
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 скрит елемент"
 msgstr[1] "%1 скрити елемента"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Запис на метаданните във файл"
 msgstr[1] "Запис на метаданните в избраните файлове"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2925,14 +2925,10 @@ msgid "Scan collection for faces"
 msgstr "Сканиране на колекцията за лица"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr ""
-"Използвайте този бутон, за да сканирате избраните албуми за дублиращи се "
-"елементи."
+msgstr "Използвайте този бутон, за да сканирате избраните албуми за лица"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:166
 #, kde-format
@@ -4451,8 +4447,8 @@ msgstr "Видеодекодери"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, kde-format
 msgid "no entry"
 msgstr "няма запис"
@@ -30180,7 +30176,7 @@ msgstr "<i>Скорост на кадрите:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видео кодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30204,67 +30200,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Списък с елементи"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Свойства"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Библиотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Манифести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Конфигурация на OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -37002,7 +36998,7 @@ msgstr ""
 "Отворете диалогова страница за настройка, за да конфигурирате актуализациите."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:139
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
@@ -42942,15 +42938,15 @@ msgstr ""
 "OpenCV"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Смесител на канали"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgstr ""
+"Интеграция на SFace и YuNet DNN модели. Подобрения в управлението на лица"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -52097,24 +52093,20 @@ msgid "No address book entries found"
 msgstr "Не са открити записи в адресника"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Модел за селекция: "
+msgstr "Модел за разпознаване на лица"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgid "OpenFace"
-msgstr "Отворете файла"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "SFace"
-msgstr "Лица"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
 #, kde-format
@@ -52134,13 +52126,27 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
+"На път сте да промените модела за разпознаване на лица. Този процес може да "
+"отнеме няколко минути или повече в зависимост от размера на вашата "
+"библиотека и скоростта на вашия компютър. SFace е предпочитаният модел. Не "
+"използвайте никакви функции за откриване или разпознаване на лица по време "
+"на процеса.\n"
+"\n"
+"Сигурни ли сте, че искате да продължите?"
 msgstr[1] ""
+"На път сте да промените модела за разпознаване на лица на %1. Този процес "
+"може да отнеме няколко минути или повече в зависимост от размера на вашата "
+"библиотека и скоростта на вашия компютър. SFace е предпочитаният модел. Не "
+"използвайте никакви функции за откриване или разпознаване на лица по време "
+"на процеса.\n"
+"\n"
+"Сигурни ли сте, че искате да продължите?"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Начало"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52320,37 +52326,25 @@ msgid "Search in"
 msgstr "Търсене в"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Точност"
+msgstr "Точност:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will\n"
 "be detected, but less faces will be detected."
 msgstr ""
-"Настройте чувствителността спрямо специфичността: колкото по-висока е "
-"стойността, \n"
-"толкова по-точно ще бъдат разпознати лицата, но ще бъдат разпознати по-малко "
-"лица\n"
-" (разпознават се само лица, които са много сходни с предварително маркирани "
-"лица)."
+"Коригирайте чувствителността спрямо специфичността: колкото по-висока е "
+"стойността, толкова по-точно ще\n"
+"бъдат разпознавани лицата, но ще бъдат открити по-малко лица."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Модел:"
@@ -52359,21 +52353,19 @@ msgstr "Модел:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
-msgstr ""
+msgstr "YuNet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
-msgstr ""
+msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
@@ -52384,48 +52376,47 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
+"Модел за откриване, използван за намиране на лица. YuNet е моделът по "
+"подразбиране.\n"
+"Той е по-бърз и по-конфигурируем от SSD и YOLOv3.\n"
+"Забележка: YuNet е наличен, само ако digiKam е компилиран с OpenCV 4.6.0 или "
+"по-нова версия."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Максимален размер:"
+msgstr "Размер на лицето:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
-msgstr "Допълнителни тагове"
+msgstr "Много малък"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
-msgstr ""
+msgstr "Малък"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
-msgstr "Средни"
+msgstr "Среден"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
-msgstr "Крайна снимка"
+msgstr "Голям"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
-msgstr "Допълнителни тагове"
+msgstr "Много голям"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
@@ -52445,28 +52436,34 @@ msgid ""
 "about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>Избирането на <b>Много малък</b> означава, че моделът ще открие малки по "
+"размери фонови лица в допълнение към средни и по-големи лица. Избирането на "
+"<b>Малки лица</b> увеличава чувствителността на модела чрез настройка на "
+"параметрите на модела. Освен това ще увеличи вероятността от фалшиви "
+"положителни резултати и ще увеличи времето за откриване.</p><p>Избирането на "
+"<b>Голям</b> или <b>Много голям</b> размер ще елиминира откриването ма малки "
+"фонови лица. Този метод е много по-бърз и ще намали броя на фалшивите "
+"положителни резултати, но няма да открие малки лица на заден план или лица в "
+"големи групови снимки.</p><p>Ако искате да откривате всички лица с едно "
+"преминаване, изберете < b>Изключително малки</b> лица и задайте точността на "
+"откриване на около 45%. За съжаление, това ще даде значителен брой фалшиви "
+"положителни резултати. Препоръчително е да зададете точност на откриване от "
+"около 55% и размер на лицето <b>Малък</b> или <b>Среден</b> за нормална "
+"употреба.</p><p>Тази настройка се отнася само за YuNet. </p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Откриване на лица"
+msgstr "Настройки на откриване на лица"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Точност"
+msgstr "Точност:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52482,27 +52479,22 @@ msgstr ""
 "лица)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Модел:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Лица"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Отворете файла"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, kde-format
@@ -52513,6 +52505,10 @@ msgid ""
 "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
+"SFace е моделът за откриване по подразбиране. Той е по-бърз и по-точен.\n"
+"OpenFace може да се използва за по-стари библиотеки.\n"
+"Забележка: SFace е наличен само ако digiKam е компилиран с OpenCV 4.6.0 или "
+"по-нова версия."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -52534,10 +52530,9 @@ msgstr ""
 "на вашата система или да се изпълнява във фонов режим само на едно ядро."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Разпознаване на лица"
+msgstr "Настройки на разпознаване на лица"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
 #, kde-format
@@ -61459,38 +61454,32 @@ msgid "Autotags Assignment"
 msgstr "Задаване на автоматични етикети"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Режим на автоматично поставяне на етикети: "
+msgstr "Автоматично маркиране за: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1\n"
-msgstr "#Sat: %1"
+msgstr "Път: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Ключови думи: "
+msgstr "Ключови думи: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за автоматично маркиране: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за автоматично маркиране: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61573,36 +61562,33 @@ msgid "Find new items"
 msgstr "Намиране на нови елементи"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканиране от: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Албум \"%1\""
+msgstr "Албум: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr ""
+"Сканиране:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за каталогизиране: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за каталогизиране: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61610,53 +61596,41 @@ msgid "Find duplicates items"
 msgstr "Намиране на дублиращи се елементи"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Дубликати"
+msgstr "Дубликати за: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Търсене на дубликати"
+msgstr "Няма дубликати"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Търсене на дубликати"
-msgstr[1] "Търсене на дубликати"
+msgstr[0] "1 дубликат"
+msgstr[1] "%1 дубликати"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за дубликати: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за дубликати: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Дубликати"
+msgstr "Намерени дубликати: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Дубликати"
+msgstr "Намерени дубликати: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
@@ -61684,50 +61658,41 @@ msgid "Updating faces database"
 msgstr "Актуализиране на базата данни за лица"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за лица: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за лица: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Открити в %1 снимки"
+msgstr "Открити лица: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Открити в %1 снимки"
+msgstr "Открити лица: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanned for faces: %1\n"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани лица: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "No face"
 msgstr "Без лице"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Без лице"
-msgstr[1] "Без лице"
+msgstr[0] "1 лице"
+msgstr[1] "%1 лица"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -61735,58 +61700,47 @@ msgid "Finger-prints"
 msgstr "Пръстови отпечатъци"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Възстановяване на пръстови отпечатъци"
+msgstr "Възстановяване на пръстов отпечатък за: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "#Sat: %1"
+msgstr "Път: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за пръстов отпечатък: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за пръстов отпечатък: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Сортиране на качеството на изображението"
+msgstr "Качество на изображението за: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
-msgstr "Избран етикет: %1"
+msgstr "Избране на етикет: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за качество: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обектът е сканиран за качество: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -61817,34 +61771,29 @@ msgstr ""
 "Искате ли да продължите?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Метаданни"
+msgstr "Изчистване на метаданни за: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за премахване на лица: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за премахване на лица: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за премахване на маркиране: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Сканирани обекти за премахване на маркиране: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61857,59 +61806,49 @@ msgid "Updating database from image metadata"
 msgstr "Актуализиране на базата данни от метаданни на изображения"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Метаданни"
+msgstr "Синхронизиране на метаданни за: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Синхронизиране на метаданните на изображението с базата данни"
+msgstr "Обекти, сканирани за синхронизиране на метаданни с база данни: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Синхронизиране на метаданните на изображението с базата данни"
+msgstr "Обекти, сканирани за синхронизиране на метаданните с базата данни: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за актуализиране на база данни с метаданни: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за актуализиране на база данни с метаданни: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Миниатюри"
+msgstr "Създаване на миниатюри"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Свойства на миниатюрата:"
+msgstr "Миниатюри за: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за миниатюри: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Сканиране на лица в албума: %1"
+msgstr "Обекти, сканирани за миниатюри: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -65086,39 +65025,39 @@ msgstr "Избиране на категория"
 msgid "Your collection will use this category:"
 msgstr "Вашата колекция ще използва тази категория:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Изтегляне на необходимите файлове"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Face Detection feature"
 msgstr "Използване на функцията за откриване на лица"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Използване на функция за естетическо откриване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Използвайте функцията за автоматично задаване на етикети"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:221
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Всички файлове бяха изтеглени успешно."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Грешка при изтегляне"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65138,33 +65077,33 @@ msgstr ""
 "Можете да опитате отново или да продължите изтеглянето при следващото "
 "стартиране."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Повторно опитване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:366
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Контролната сума е неправилна."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:390
 #, kde-format
 msgid "File write error."
 msgstr "Грешка при запис на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:397
 #, kde-format
 msgid "File open error."
 msgstr "Грешка при отваряне на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файлът на сървъра е твърде голям."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:485
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65189,13 +65128,13 @@ msgstr ""
 "p><p>Файловете ще бъдат изтеглени в %1.</p><p><b>След успешното изтегляне "
 "трябва да рестартирате digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:498
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Изтеглянето изисква %1 файлове с размер %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:505
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Всички файлове на избраните функции бяха намерени."
@@ -66279,32 +66218,22 @@ msgid "Reading and Writing Metadata"
 msgstr "Четене и запис на метаданни"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"Делегирайте на бекенда на ExifTool всички операции за записване на метаданни "
-"във файлове"
+msgstr "Използване на бекенда на ExifTool за четене на метаданни от файлове"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Включете тази опция, за да записвате метаданни към файловете с ExifTool "
-"бекенд вместо с Exiv2. Това ще забави малко синхронизирането на метаданните "
-"на файловете с базата данни."
+"Включете тази опция, за да четете метаданни от файловете с ExifTool вместо с "
+"Exiv2. Това ще забави малко синхронизирането на метаданните на файловете с "
+"базата данни."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format

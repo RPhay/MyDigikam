@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 01:46+0000\n"
+"POT-Creation-Date: 2024-10-16 01:49+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1324,27 +1324,27 @@ msgstr "<i>二進位資料</i>"
 msgid "Initializing..."
 msgstr "初始化中..."
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, kde-format
 msgid "Load Plugins..."
 msgstr "載入外掛程式中..."
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "正在檢查 ICC 儲存庫..."
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, kde-format
 msgid "Clean up Database..."
 msgstr "正在清理資料庫..."
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, kde-format
 msgid "Loading albums..."
 msgstr "正在載入相簿..."
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1354,7 +1354,7 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1366,82 +1366,82 @@ msgstr ""
 "並在中繼資料區塊檢查 ExifTool 執行檔是否可用。\n"
 "錯誤訊息：%1"
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "沒有選擇任何項目（共 %1 [%2] 個項目）"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目，群組化的項目：%2）"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 個項目已選擇 (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] 個項目已選擇 (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 個項目已選擇。包含群組化的項目的總計：%3"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] 個項目已選擇 (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 個項目已選擇。包含群組化的項目：%3/%4"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr "（%1 / %2）"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "（%1 / %2 [%3]）"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr "（%1 / %2；包含群組化項目的總計：%3）"
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 個隱藏項目"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "將中繼資料寫入選取的檔案"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -4314,8 +4314,8 @@ msgstr "視訊解碼器"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, kde-format
 msgid "no entry"
 msgstr "無項目"
@@ -29437,7 +29437,7 @@ msgstr "<i>影格率：</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>影像編解碼器：</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29464,19 +29464,19 @@ msgstr "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "影像歷史紀錄"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -29484,50 +29484,50 @@ msgctxt "@title"
 msgid "Features"
 msgstr "專題"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "相簿櫃"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 設定"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:683
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -36217,7 +36217,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:139
 #, kde-format
 msgid "Download"
 msgstr "下載"
@@ -63876,39 +63876,39 @@ msgstr "選擇分類"
 msgid "Your collection will use this category:"
 msgstr "以這個名稱建立您的新收藏："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "下載需要的檔案"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Face Detection feature"
 msgstr "使用臉孔偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "使用美感偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:221
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "已成功下載所有檔案。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載錯誤"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63920,34 +63920,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:366
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:390
 #, kde-format
 msgid "File write error."
 msgstr "檔案寫入錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:397
 #, kde-format
 msgid "File open error."
 msgstr "檔案開啟錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:485
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -63968,13 +63968,13 @@ msgstr ""
 "法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
 "動 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:498
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:505
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"
