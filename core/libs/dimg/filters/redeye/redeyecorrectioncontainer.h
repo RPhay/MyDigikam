@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT RedEyeCorrectionContainer
 
 public:
 
-    RedEyeCorrectionContainer() = default;;
+    RedEyeCorrectionContainer() = default;
 
     bool isDefault()                                            const;
     bool operator==(const RedEyeCorrectionContainer& other)     const;
