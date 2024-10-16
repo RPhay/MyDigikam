@@ -150,7 +150,7 @@ BUGFIXES:
 125 ==> 494816 - Fails build on; coredburl.cpp:251:19: error: 'operator==' is not a member of 'QUrl'.
 126 ==> 429230 - Face recognition malfunction
 127 ==> 489751 - digiKam freezes and closes if you save a face tag.
-128 ==> 
+128 ==> 494754 - Customized Raw Import Tool Crashes (Randomly) When Using Image Editor.
 129 ==> 
 130 ==> 
 131 ==> 
