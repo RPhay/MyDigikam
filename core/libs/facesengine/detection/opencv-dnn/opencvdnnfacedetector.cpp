@@ -217,7 +217,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
         cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
     }
 
-    paddedSize = cv::Size(0, 0); // special case for YuNet
+    paddedSize = cv::Size(0, 0); // Special case for YuNet
 
     return cvImage;
 }

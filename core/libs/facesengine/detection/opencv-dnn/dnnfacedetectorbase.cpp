@@ -26,6 +26,7 @@
 
 namespace Digikam
 {
+
 // TODO: re-verify these threshold
 
 float DNNFaceDetectorBase::confidenceThreshold  = 0.6F;
@@ -47,7 +48,7 @@ cv::Size DNNFaceDetectorBase::nnInputSizeRequired() const
     return inputImageSize;
 }
 
-// TODO: these confidence boxes usually go together --> a structure to encapsulate them ???
+// TODO: these confidence boxes usually go together --> use a class container to encapsulate them?
 
 void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      float confidence,
@@ -65,7 +66,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
 
     cv::Rect bbox(left, top, width, height);
 
-    // take the net size of image
+    // Take the net size of image
 
     int borderLeft   = paddedSize.width;
     int borderRight  = inputImageSize.width  - paddedSize.width;
@@ -113,7 +114,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
 
 void DNNFaceDetectorBase::correctBbox(cv::Rect& bbox, const cv::Size& paddedSize) const
 {
-    // TODO: Should the box be cropped to square or not???
+    // TODO: Should the box be cropped to square or not?
 
     int left    = cv::max(bbox.x - paddedSize.width,  0);
     int right   = cv::min(left   + bbox.width,        inputImageSize.width  - 2*paddedSize.width);

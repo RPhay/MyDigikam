@@ -33,8 +33,8 @@ namespace Digikam
 enum DetectorNNModel
 {
     DNNDetectorSSD = 0,   ///< SSD MobileNet neural network inference.
-    DNNDetectorYOLOv3,             ///< YOLO neural network inference.
-    DNNDetectorYuNet               ///< YuNet neural network inference.
+    DNNDetectorYOLOv3,    ///< YOLO neural network inference.
+    DNNDetectorYuNet      ///< YuNet neural network inference.
 };
 
 class DIGIKAM_EXPORT OpenCVDNNFaceDetector

@@ -51,7 +51,9 @@ bool DNNFaceDetectorSSD::loadModels()
     {
         try
         {
-            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  // this will throw an exception if the model can't be loaded
+            // NOTE This will throw an exception if the model can't be loaded.
+
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  
             qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->displayName << ", SSD data:" << model->configName;
         }
         catch (cv::Exception& e)

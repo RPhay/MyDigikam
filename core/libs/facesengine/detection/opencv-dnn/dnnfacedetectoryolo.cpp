@@ -56,7 +56,9 @@ bool DNNFaceDetectorYOLO::loadModels()
     {
         try
         {
-            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  // this will throw an exception if the model can't be loaded
+            // NOTE: this will throw an exception if the model can't be loaded.
+
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();
             qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->displayName << ", YOLOv3 data:" << model->configName;
         }
         catch (cv::Exception& e)
@@ -101,9 +103,11 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     if (!static_cast<DNNModelNet*>(model)->getNet().empty())
     {
         QMutexLocker lock(&(model->mutex));
+
         static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
         timer.start();
         static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
+
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
 
@@ -197,7 +201,8 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
     }
 }
 
-/** Get the names of the output layers
+/**
+ * Get the names of the output layers
  */
 std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {

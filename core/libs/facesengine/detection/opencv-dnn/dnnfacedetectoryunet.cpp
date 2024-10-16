@@ -172,7 +172,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "starting YuNet face detection";
 
-    // lock the model for single threading
+    // Lock the model for single threading
 
     QMutexLocker lock(&lockModel);
 
@@ -180,17 +180,17 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     {
         if (!cv_model.empty())
         {
-            // start the timer so we know how long we're locking for
+            // Start the timer so we know how long we're locking for
 
             timer.start();
 
-            // set up the detector with new params
+            // Set up the detector with new params
 
             cv_model->setInputSize(inputImage.size());
             cv_model->setScoreThreshold(confidenceThreshold);
             cv_model->setNMSThreshold(nmsThreshold);
 
-            // detect faces
+            // Detect faces
 
             cv_model->detect(inputImage, faces);
 
@@ -223,7 +223,7 @@ void DNNFaceDetectorYuNet::detectFaces(const cv::Mat& inputImage,
 
     std::vector<float> confidences;
 
-    // safety check
+    // Safety check
 
     if (inputImage.empty())
     {
@@ -231,32 +231,32 @@ void DNNFaceDetectorYuNet::detectFaces(const cv::Mat& inputImage,
         return;
     }
 
-    // all calls to the model need to be in this method
+    // All calls to the model need to be in this method
 
     cv::Mat faces = callModel(inputImage);
 
-    // process faces found
+    // Process faces found
 
     if ( faces.rows > 0)
     {
-        // loop through the faces found
+        // Loop through the faces found
 
         for (int i = 0 ; i < faces.rows ; ++i)
         {
             double confidence = faces.at<float>(i, 14);
 
-            // add the confidence to the result list
+            // Add the confidence to the result list
 
             confidences.push_back(confidence);
 
-            // create the rect of the face
+            // Create the rect of the face
 
             int X       = static_cast<int>(faces.at<float>(i, 0));
             int Y       = static_cast<int>(faces.at<float>(i, 1));
             int width   = static_cast<int>(faces.at<float>(i, 2));
             int height  = static_cast<int>(faces.at<float>(i, 3));
 
-            // add the rect to result list
+            // Add the rect to result list
 
             detectedBboxes.push_back(cv::Rect(X, Y, width, height));
         }
