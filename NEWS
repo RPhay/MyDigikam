@@ -17,7 +17,8 @@ Video:           Update internal QtAVPlayer to last 20240820 upstream (Qt5 only)
 IconView:        More compact thumbnails by using a simple horizontal line instead a frame
                  to render Color Labels.
 FacesManagement: Adding YuNet DNN model to process faces detection and replace older SSD model.
-                 It's faster and requires less memory at run-time with better results.
+                 Adding Sface DNN model to process face recognition and replace older OpenFace model. 
+                 There are faster and requires less memory at run-time with better results.
 
 *****************************************************************************************************
 BUGFIXES:
