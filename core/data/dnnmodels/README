@@ -2,7 +2,7 @@ Download and create information for the DNN models used with OpenCV has been
 moved from code to dnnmodels.conf.  The file uses standard .ini formatting.
 
 Explanation of the file format:
-[ModelName]                         
+[ModelName]
 DisplayName=Display Name of the model to be used in the UI
 Usage=valid options are face_detection, face_recognition, aesthetics, object_detection, and weights.  Can contain multiple values comma or pipe separated
 Application=Application needing this file.  Options are digikam and showfoto.  Can contain multiple values comma or pipe separated
