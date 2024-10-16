@@ -60,6 +60,8 @@
 #   pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   pragma clang diagnostic ignored "-Wdate-time"
 #   pragma clang diagnostic ignored "-Wconstant-conversion"
+#   pragma clang diagnostic ignored "-Wdeprecated-volatile"
+#   pragma clang diagnostic ignored "-Wunused-but-set-variable"
 #endif
 
 // CImg includes
