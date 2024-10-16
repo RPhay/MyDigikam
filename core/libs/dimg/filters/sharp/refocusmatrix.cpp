@@ -40,12 +40,21 @@
 #   pragma GCC diagnostic ignored "-Wlogical-op"
 #endif
 
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
 #include <Eigen/Eigen>
 #include <Eigen/LU>
 
 // Restore warnings
 #if defined(Q_CC_GNU) && !defined(Q_CC_CLANG)
 #   pragma GCC diagnostic pop
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
 #endif
 
 // Local includes
