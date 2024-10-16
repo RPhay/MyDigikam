@@ -133,6 +133,11 @@ QStringList WelcomePageView::featuresTabContent() const
                         "<a href=\"https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See this GoSC-2023 report for details.</a>");
     newFeatures << i18n("Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and improve stability of plugin.");
     newFeatures << i18n("Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.");
+    newFeatures << i18n("More compact icon-view thumbnails by using a simple horizontal line instead a frame "
+                        "to render Color Labels.");
+    newFeatures << i18n("Adding YuNet DNN model to process faces detection and replace older SSD model. "
+                        "Adding Sface DNN model to process face recognition and replace older OpenFace model. "
+                        "Both are faster and requires less memory at run-time with better faces-management results.");
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2024-06-16.");
     newFeatures << i18n("New RAW features: "
                         "Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
