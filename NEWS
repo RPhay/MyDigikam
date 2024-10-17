@@ -151,7 +151,7 @@ BUGFIXES:
 126 ==> 429230 - Face recognition malfunction
 127 ==> 489751 - digiKam freezes and closes if you save a face tag.
 128 ==> 494754 - Customized Raw Import Tool Crashes (Randomly) When Using Image Editor.
-129 ==> 
+129 ==> 494890 - Star rating systematically also sets colors, and vice versa.
 130 ==> 
 131 ==> 
 132 ==> 
