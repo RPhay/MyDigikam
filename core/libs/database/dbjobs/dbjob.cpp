@@ -288,7 +288,7 @@ void SearchesJob::run()
 void SearchesJob::runSearches()
 {
     QList<SearchInfo> infos;
-    const auto ids = m_jobInfo.searchIds();
+    const auto& ids = m_jobInfo.searchIds();
 
     for (int id : ids)
     {
