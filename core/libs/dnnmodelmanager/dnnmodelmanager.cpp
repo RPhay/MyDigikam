@@ -85,7 +85,7 @@ const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage
 
     const auto keys = d->modelMap.keys();
 
-    for (auto model : keys)
+    for (auto& model : keys)
     {
         if (d->modelMap[model]->info.usage.contains(usage))
         {

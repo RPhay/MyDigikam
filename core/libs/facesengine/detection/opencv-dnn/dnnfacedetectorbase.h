@@ -81,10 +81,6 @@ protected:
     cv::Size        inputImageSize      = cv::Size(300, 300);
     DNNModelBase*   model               = nullptr;
 
-    // cv::dnn::Net net;
-
-    // QMutex       mutex;
-
 private:
 
     // Disable

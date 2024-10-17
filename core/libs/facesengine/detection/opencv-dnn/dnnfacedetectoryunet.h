@@ -44,10 +44,6 @@ public:
 
     virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize) override;
 
-protected:
-
-    cv::Ptr<cv::FaceDetectorYN> net;                            ///< The YuNet DNN model.
-
 private:
 
     std::vector<cv::String> getOutputsNames() const;
