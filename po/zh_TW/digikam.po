@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-16 01:49+0000\n"
+"POT-Creation-Date: 2024-10-17 01:48+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1001,7 +1001,7 @@ msgstr "名稱："
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:247
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2607,7 +2607,7 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3467,10 +3467,26 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
+msgid ""
+"More compact icon-view thumbnails by using a simple horizontal line instead "
+"a frame to render Color Labels."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:138
+#, kde-format
+msgid ""
+"Adding YuNet DNN model to process faces detection and replace older SSD "
+"model. Adding Sface DNN model to process face recognition and replace older "
+"OpenFace model. Both are faster and requires less memory at run-time with "
+"better faces-management results."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:141
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
@@ -3481,45 +3497,45 @@ msgid ""
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "...and much more."
 msgstr "...以及更多。"
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "New Features"
 msgstr "新功能"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr "此版本某些新功能包含（相對與 digiKam 7）："
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:177
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:175
+#: core/app/views/stack/welcomepageview.cpp:180
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3529,7 +3545,7 @@ msgstr ""
 "digiKam 是一個開源相片管理應用程式，設計來匯入、管理、增強、搜尋或匯出您的數"
 "位影像。"
 
-#: core/app/views/stack/welcomepageview.cpp:176
+#: core/app/views/stack/welcomepageview.cpp:181
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3539,12 +3555,12 @@ msgstr ""
 "目前您正使用 digiKam 的相簿檢視。相簿是您的檔案儲存的位置，等同於硬碟上的資料"
 "夾。"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:182
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:178
+#: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3553,7 +3569,7 @@ msgstr ""
 "digiKam 有很多強大的功能，在<a href=\"https://docs.digikam.org/en/index.html"
 "\">說明文件</a>當中有解說"
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3562,34 +3578,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam 首頁</a>提供新版本 digiKam 的資"
 "訊。"
 
-#: core/app/views/stack/welcomepageview.cpp:234
+#: core/app/views/stack/welcomepageview.cpp:239
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "歡迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:237
+#: core/app/views/stack/welcomepageview.cpp:242
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景影像致謝"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:245
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "地點："
 
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:248
 #, kde-format
 msgid "Camera:"
 msgstr "相機："
 
-#: core/app/views/stack/welcomepageview.cpp:244
+#: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Lens:"
 msgstr "鏡頭："
@@ -29338,6 +29354,15 @@ msgstr "繼續"
 msgid "Do not ask again"
 msgstr "不要再詢問"
 
+#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -31390,7 +31415,7 @@ msgstr "油畫效果"
 msgid "Rain Drops Effect"
 msgstr "雨滴效果"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration 濾鏡"
@@ -31593,6 +31618,15 @@ msgstr "清除清單"
 #, kde-format
 msgid "Loading Frame"
 msgstr "正在載入雜訊對照圖"
+
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/utilities/import/widgets/freespacewidget.cpp:301
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%2年%1月"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -33863,8 +33897,8 @@ msgid "&Start"
 msgstr "起始值："
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:307
-#: core/libs/onlineversion/onlineversiondlg.cpp:484
+#: core/libs/onlineversion/onlineversiondlg.cpp:308
+#: core/libs/onlineversion/onlineversiondlg.cpp:485
 #, kde-format
 msgid "Close"
 msgstr "關閉"
@@ -36206,23 +36240,23 @@ msgstr "線上版本檢查工具 - 穩定版"
 msgid "Check for new stable version available, please wait..."
 msgstr "正在檢查是否有新的穩定版可用，請稍候…"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:231
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, kde-format
 msgid "Configure..."
 msgstr "設定..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:232
+#: core/libs/onlineversion/onlineversiondlg.cpp:233
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:139
+#: core/libs/onlineversion/onlineversiondlg.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgid "Download"
 msgstr "下載"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:273
+#: core/libs/onlineversion/onlineversiondlg.cpp:274
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -36237,7 +36271,7 @@ msgstr ""
 "案…</p><p>注意：從設定/雜項面板可以切換成只檢查穩定版更新。<br/>穩定版適合生"
 "產環境實際應用。</p><p>點擊<b>設定</b>來在設定對話框中調整更新選項。</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:286
+#: core/libs/onlineversion/onlineversiondlg.cpp:287
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -36250,7 +36284,7 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:314
+#: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -36259,14 +36293,14 @@ msgstr ""
 "您的軟體已是最新。\n"
 "最新可用的版本是建構於 %2 上的 %1 預覽版。"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:321
+#: core/libs/onlineversion/onlineversiondlg.cpp:322
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:329
+#: core/libs/onlineversion/onlineversiondlg.cpp:330
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
@@ -36275,19 +36309,19 @@ msgstr ""
 "嘗試檢查新的 %1 版本時發生錯誤：\n"
 "\"%2\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:339
-#: core/libs/onlineversion/onlineversiondlg.cpp:381
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr "建構於 %1 包含除錯符號"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:341
+#: core/libs/onlineversion/onlineversiondlg.cpp:383
 #, kde-format
 msgid "built on %1"
 msgstr "建構於 %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:342
+#: core/libs/onlineversion/onlineversiondlg.cpp:343
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -36296,19 +36330,19 @@ msgid ""
 "in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:348
-#: core/libs/onlineversion/onlineversiondlg.cpp:390
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:350
+#: core/libs/onlineversion/onlineversiondlg.cpp:392
 #, kde-format
 msgid "version %1"
 msgstr "版本 %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:351
+#: core/libs/onlineversion/onlineversiondlg.cpp:352
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -36317,7 +36351,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:384
+#: core/libs/onlineversion/onlineversiondlg.cpp:385
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -36326,7 +36360,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:393
+#: core/libs/onlineversion/onlineversiondlg.cpp:394
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -36335,13 +36369,13 @@ msgid ""
 "in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:420
+#: core/libs/onlineversion/onlineversiondlg.cpp:421
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "開啟..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:431
+#: core/libs/onlineversion/onlineversiondlg.cpp:432
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36360,7 +36394,7 @@ msgstr ""
 "\n"
 "按下「開啟」來在檔案管理器中顯示 bundle"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:440
+#: core/libs/onlineversion/onlineversiondlg.cpp:441
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36372,12 +36406,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:451
+#: core/libs/onlineversion/onlineversiondlg.cpp:452
 #, kde-format
 msgid "Install..."
 msgstr "安裝…"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:456
+#: core/libs/onlineversion/onlineversiondlg.cpp:457
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -36396,7 +36430,7 @@ msgstr ""
 "\n"
 "按下「安裝」來關閉目前工作階段並更新…"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:465
+#: core/libs/onlineversion/onlineversiondlg.cpp:466
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36408,7 +36442,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:489
+#: core/libs/onlineversion/onlineversiondlg.cpp:490
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36421,7 +36455,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:496
+#: core/libs/onlineversion/onlineversiondlg.cpp:497
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36430,7 +36464,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:588
+#: core/libs/onlineversion/onlineversiondlg.cpp:589
 #, fuzzy, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -36475,27 +36509,27 @@ msgstr "造訪 digiKam 專案網站"
 msgid "Aborting..."
 msgstr "取消中..."
 
-#: core/libs/progressmanager/progressview.cpp:204
+#: core/libs/progressmanager/progressview.cpp:205
 #, kde-format
 msgid "Cancel this operation."
 msgstr "取消這個動作。"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "開啟詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
 #, kde-format
 msgid "No active process"
 msgstr "沒有進行中的行程"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "隱藏詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "顯示詳情進度對視窗"
@@ -42509,6 +42543,14 @@ msgstr "下一個右側邊欄分頁"
 #, kde-format
 msgid "Show Statusbar"
 msgstr "顯示狀態列"
+
+#: core/libs/widgets/mainview/dzoombar.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the zoom percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%2年%1月"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -55861,7 +55903,7 @@ msgid "Creating Map"
 msgstr "建立地圖中"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -55876,11 +55918,17 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
+msgstr ""
+
+#. i18n: ectx: property (format), widget (QProgressBar, progressBar)
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
+#, no-c-format, kde-format
+msgid "%p%"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -63876,39 +63924,39 @@ msgstr "選擇分類"
 msgid "Your collection will use this category:"
 msgstr "以這個名稱建立您的新收藏："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:127
+#: core/utilities/setup/downloader/filesdownloader.cpp:128
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "下載需要的檔案"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Face Detection feature"
 msgstr "使用臉孔偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "使用美感偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:221
+#: core/utilities/setup/downloader/filesdownloader.cpp:222
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "已成功下載所有檔案。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載錯誤"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:229
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63920,34 +63968,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:366
+#: core/utilities/setup/downloader/filesdownloader.cpp:367
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:390
+#: core/utilities/setup/downloader/filesdownloader.cpp:391
 #, kde-format
 msgid "File write error."
 msgstr "檔案寫入錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:397
+#: core/utilities/setup/downloader/filesdownloader.cpp:398
 #, kde-format
 msgid "File open error."
 msgstr "檔案開啟錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:412
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:485
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -63968,13 +64016,13 @@ msgstr ""
 "法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
 "動 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:498
+#: core/utilities/setup/downloader/filesdownloader.cpp:499
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:505
+#: core/utilities/setup/downloader/filesdownloader.cpp:506
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"

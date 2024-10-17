@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-16 01:49+0000\n"
+"POT-Creation-Date: 2024-10-17 01:48+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1048,7 +1048,7 @@ msgstr "Όνομα:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:247
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2698,7 +2698,7 @@ msgstr "&Βοήθεια"
 msgid "Main Toolbar"
 msgstr "Κύρια γραμμή εργαλείων"
 
-#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3597,10 +3597,26 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
+msgid ""
+"More compact icon-view thumbnails by using a simple horizontal line instead "
+"a frame to render Color Labels."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:138
+#, kde-format
+msgid ""
+"Adding YuNet DNN model to process faces detection and replace older SSD "
+"model. Adding Sface DNN model to process face recognition and replace older "
+"OpenFace model. Both are faster and requires less memory at run-time with "
+"better faces-management results."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:141
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
@@ -3611,27 +3627,27 @@ msgid ""
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "...and much more."
 msgstr "...και πολλά άλλα."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "New Features"
 msgstr "Νέα χαρακτηριστικά"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3643,18 +3659,18 @@ msgstr ""
 "Κάποιες από τις νέες λειτουργίες αυτής της έκδοσης του digiKam περιλαμβάνουν "
 "(σε σύγκριση με το digiKam 4.x):"
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:177
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Περίγραμμα"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:175
+#: core/app/views/stack/welcomepageview.cpp:180
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3665,7 +3681,7 @@ msgstr ""
 "σχεδιασμένο να εισάγει, οργανώνει, βελτιώνει, αναζητά και εξάγει τις "
 "ψηφιακές σας εικόνες από και προς τον υπολογιστή σας."
 
-#: core/app/views/stack/welcomepageview.cpp:176
+#: core/app/views/stack/welcomepageview.cpp:181
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3676,12 +3692,12 @@ msgstr ""
 "λευκώματα είναι οι θέσεις αποθήκευσης των αρχείων σας και είναι ταυτόσημα με "
 "τους φακέλους στο σκληρό δίσκο."
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:182
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:178
+#: core/app/views/stack/welcomepageview.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3695,7 +3711,7 @@ msgstr ""
 "<a href=\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index."
 "html\">τεκμηρίωση</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
@@ -3707,37 +3723,37 @@ msgstr ""
 "Η <a href=\"http://www.digikam.org\">αρχική σελίδα του digiKam </a> παρέχει "
 "πληροφορίες για τις νέες εκδόσεις του digiKam."
 
-#: core/app/views/stack/welcomepageview.cpp:234
+#: core/app/views/stack/welcomepageview.cpp:239
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Καλώς ήλθατε στο digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:237
+#: core/app/views/stack/welcomepageview.cpp:242
 #, fuzzy, kde-format
 #| msgid "Background opacity:"
 msgid "Background Image Credits"
 msgstr "Αδιαφάνεια φόντου:"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:245
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Author:"
 msgstr "Συγγραφέας"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Τοποθεσία:"
 
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:248
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgid "Camera:"
 msgstr "Κάμερα"
 
-#: core/app/views/stack/welcomepageview.cpp:244
+#: core/app/views/stack/welcomepageview.cpp:249
 #, fuzzy, kde-format
 #| msgctxt "camera lens"
 #| msgid "Lens:"
@@ -31457,6 +31473,15 @@ msgstr "Συνέχεια"
 msgid "Do not ask again"
 msgstr "Να μη γίνει ερώτηση ξανά"
 
+#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, fuzzy, kde-format
 #| msgid "Settings for Saving Image File"
@@ -33657,7 +33682,7 @@ msgstr "Εφέ ελαιογραφίας"
 msgid "Rain Drops Effect"
 msgstr "Εφέ σταγόνων βροχής"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Φίλτρο επαναφοράς του γκρι"
@@ -33876,6 +33901,15 @@ msgstr "Καθαρισμός λίστας"
 #| msgid "Loading: "
 msgid "Loading Frame"
 msgstr "Φόρτωση: "
+
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/utilities/import/widgets/freespacewidget.cpp:301
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%1 %2"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, fuzzy, kde-format
@@ -36319,8 +36353,8 @@ msgid "&Start"
 msgstr "Αρχικό:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:307
-#: core/libs/onlineversion/onlineversiondlg.cpp:484
+#: core/libs/onlineversion/onlineversiondlg.cpp:308
+#: core/libs/onlineversion/onlineversiondlg.cpp:485
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgid "Close"
@@ -38771,24 +38805,24 @@ msgstr ""
 msgid "Check for new stable version available, please wait..."
 msgstr "Σάρωση νέων αρχείων, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:231
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure..."
 msgstr "Διαμόρφωση"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:232
+#: core/libs/onlineversion/onlineversiondlg.cpp:233
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:139
+#: core/libs/onlineversion/onlineversiondlg.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Λήψη"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:273
+#: core/libs/onlineversion/onlineversiondlg.cpp:274
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -38799,7 +38833,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:286
+#: core/libs/onlineversion/onlineversiondlg.cpp:287
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -38812,40 +38846,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:314
+#: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:321
+#: core/libs/onlineversion/onlineversiondlg.cpp:322
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:329
+#: core/libs/onlineversion/onlineversiondlg.cpp:330
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:339
-#: core/libs/onlineversion/onlineversiondlg.cpp:381
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:341
+#: core/libs/onlineversion/onlineversiondlg.cpp:383
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:342
+#: core/libs/onlineversion/onlineversiondlg.cpp:343
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38854,20 +38888,20 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:348
-#: core/libs/onlineversion/onlineversiondlg.cpp:390
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:350
+#: core/libs/onlineversion/onlineversiondlg.cpp:392
 #, fuzzy, kde-format
 #| msgid "Version"
 msgid "version %1"
 msgstr "Έκδοση"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:351
+#: core/libs/onlineversion/onlineversiondlg.cpp:352
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38876,7 +38910,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:384
+#: core/libs/onlineversion/onlineversiondlg.cpp:385
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38885,7 +38919,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:393
+#: core/libs/onlineversion/onlineversiondlg.cpp:394
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38894,14 +38928,14 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:420
+#: core/libs/onlineversion/onlineversiondlg.cpp:421
 #, fuzzy, kde-format
 #| msgid "Open..."
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Άνοιγμα..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:431
+#: core/libs/onlineversion/onlineversiondlg.cpp:432
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38913,7 +38947,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:440
+#: core/libs/onlineversion/onlineversiondlg.cpp:441
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38925,12 +38959,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:451
+#: core/libs/onlineversion/onlineversiondlg.cpp:452
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:456
+#: core/libs/onlineversion/onlineversiondlg.cpp:457
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -38942,7 +38976,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:465
+#: core/libs/onlineversion/onlineversiondlg.cpp:466
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38954,7 +38988,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:489
+#: core/libs/onlineversion/onlineversiondlg.cpp:490
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -38963,7 +38997,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:496
+#: core/libs/onlineversion/onlineversiondlg.cpp:497
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -38972,7 +39006,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:588
+#: core/libs/onlineversion/onlineversiondlg.cpp:589
 #, fuzzy, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -39017,27 +39051,27 @@ msgstr "Επισκεφτείτε τον ιστοχώρο του digiKam"
 msgid "Aborting..."
 msgstr "Εγκαταλείπει..."
 
-#: core/libs/progressmanager/progressview.cpp:204
+#: core/libs/progressmanager/progressview.cpp:205
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Ακύρωση αυτής της λειτουργίας."
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "Άνοιγμα διαλόγου λεπτομερειών προόδου"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
 #, kde-format
 msgid "No active process"
 msgstr "Καμία ενεργή διεργασία"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Απόκρυψη παραθύρου λεπτομερειών προόδου"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Εμφάνιση παραθύρου λεπτομερειών προόδου"
@@ -45714,6 +45748,14 @@ msgstr ""
 #| msgid "Show Thumbbar"
 msgid "Show Statusbar"
 msgstr "Εμφάνιση γραμμής επισκόπησης"
+
+#: core/libs/widgets/mainview/dzoombar.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the zoom percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%1 %2"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -60467,7 +60509,7 @@ msgid "Creating Map"
 msgstr "Ημερομηνία δημιουργίας"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
 #, fuzzy, kde-format
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -60515,11 +60557,17 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
+msgstr ""
+
+#. i18n: ectx: property (format), widget (QProgressBar, progressBar)
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
+#, no-c-format, kde-format
+msgid "%p%"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -69215,43 +69263,43 @@ msgstr "Επιλέξτε έτος"
 msgid "Your collection will use this category:"
 msgstr "Η νέα συλλογή σας θα δημιουργηθεί με αυτό το όνομα:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:127
+#: core/utilities/setup/downloader/filesdownloader.cpp:128
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Λήψη αρχείου %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:221
+#: core/utilities/setup/downloader/filesdownloader.cpp:222
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "Επιτυχής λήψη %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Λήψη νέου"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:229
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -69263,36 +69311,36 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Προσθήκη κόκκων στο φιλμ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:366
+#: core/utilities/setup/downloader/filesdownloader.cpp:367
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:390
+#: core/utilities/setup/downloader/filesdownloader.cpp:391
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:397
+#: core/utilities/setup/downloader/filesdownloader.cpp:398
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "Εργαλεία εξαγωγής"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:412
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:485
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -69307,13 +69355,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:498
+#: core/utilities/setup/downloader/filesdownloader.cpp:499
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:505
+#: core/utilities/setup/downloader/filesdownloader.cpp:506
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""

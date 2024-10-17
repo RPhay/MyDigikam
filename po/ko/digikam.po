@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-16 01:49+0000\n"
+"POT-Creation-Date: 2024-10-17 01:48+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -983,7 +983,7 @@ msgstr "이름:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:247
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2599,7 +2599,7 @@ msgstr "도움말(&H)"
 msgid "Main Toolbar"
 msgstr "주 도구 모음"
 
-#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3462,6 +3462,22 @@ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:136
+#, kde-format
+msgid ""
+"More compact icon-view thumbnails by using a simple horizontal line instead "
+"a frame to render Color Labels."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:138
+#, kde-format
+msgid ""
+"Adding YuNet DNN model to process faces detection and replace older SSD "
+"model. Adding Sface DNN model to process face recognition and replace older "
+"OpenFace model. Both are faster and requires less memory at run-time with "
+"better faces-management results."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
@@ -3471,7 +3487,7 @@ msgstr ""
 "내장 RAW 엔진을 libraw 0.20.0 릴리스 기반으로 업데이트하여 캐논 CR3 및 소니 "
 "A7R4 지원을 추가했습니다."
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
@@ -3482,27 +3498,27 @@ msgid ""
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "...and much more."
 msgstr "...이외 더 많은 기능."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "New Features"
 msgstr "새로운 기능"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3514,18 +3530,18 @@ msgstr ""
 "이 버전의 digiKam에서 추가된 기능 중 일부는 다음과 같습니다(digiKam 6.x 기"
 "준):"
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:177
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "정보"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:175
+#: core/app/views/stack/welcomepageview.cpp:180
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3535,7 +3551,7 @@ msgstr ""
 "digiKam은 오픈 소스 사진 관리 프로그램입니다. 컴퓨터에 저장된 이미지를 가져오"
 "고, 정리하고, 보정하고, 검색하고 내보낼 수 있습니다."
 
-#: core/app/views/stack/welcomepageview.cpp:176
+#: core/app/views/stack/welcomepageview.cpp:181
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3545,12 +3561,12 @@ msgstr ""
 "지금 보이는 화면은 digiKam의 앨범 보기 모드입니다. 앨범에는 개인 파일이 저장"
 "되며 하드 디스크의 폴더와 동일합니다."
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:182
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:178
+#: core/app/views/stack/welcomepageview.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3562,7 +3578,7 @@ msgstr ""
 "digiKam의 강력한 기능을 알아 보려면 <a href=\"https://docs.kde.org/?"
 "application=digikam\">문서</a>를 참조하십시오."
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3571,36 +3587,36 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam 홈페이지</a>에는 digiKam의 새로"
 "운 버전에 대한 정보가 올라옵니다."
 
-#: core/app/views/stack/welcomepageview.cpp:234
+#: core/app/views/stack/welcomepageview.cpp:239
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "digiKam %1에 오신 것을 환영합니다"
 
-#: core/app/views/stack/welcomepageview.cpp:237
+#: core/app/views/stack/welcomepageview.cpp:242
 #, kde-format
 msgid "Background Image Credits"
 msgstr "배경 그림 제작자"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:245
 #, fuzzy, kde-format
 #| msgid "Author:"
 msgid "Author:"
 msgstr "작성자:"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "위치:"
 
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:248
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgid "Camera:"
 msgstr "카메라"
 
-#: core/app/views/stack/welcomepageview.cpp:244
+#: core/app/views/stack/welcomepageview.cpp:249
 #, fuzzy, kde-format
 #| msgid "Lens"
 msgid "Lens:"
@@ -30096,6 +30112,15 @@ msgstr "계속"
 msgid "Do not ask again"
 msgstr "다시 묻지 않기"
 
+#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -32078,7 +32103,7 @@ msgstr ""
 msgid "Rain Drops Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
 #, fuzzy, kde-format
 msgid "Greycstoration Filter"
 msgstr "RAW 그림"
@@ -32277,6 +32302,15 @@ msgstr "목록 비우기"
 #, kde-format
 msgid "Loading Frame"
 msgstr "프레임 불러오는 중"
+
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/utilities/import/widgets/freespacewidget.cpp:301
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%2 %1"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -34454,8 +34488,8 @@ msgid "&Start"
 msgstr "시작(&S)"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:307
-#: core/libs/onlineversion/onlineversiondlg.cpp:484
+#: core/libs/onlineversion/onlineversiondlg.cpp:308
+#: core/libs/onlineversion/onlineversiondlg.cpp:485
 #, kde-format
 msgid "Close"
 msgstr "닫기"
@@ -37049,24 +37083,24 @@ msgstr ""
 msgid "Check for new stable version available, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:231
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure..."
 msgstr "설정"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:232
+#: core/libs/onlineversion/onlineversiondlg.cpp:233
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:260
-#: core/utilities/setup/downloader/filesdownloader.cpp:139
+#: core/libs/onlineversion/onlineversiondlg.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:273
+#: core/libs/onlineversion/onlineversiondlg.cpp:274
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -37077,7 +37111,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:286
+#: core/libs/onlineversion/onlineversiondlg.cpp:287
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -37090,40 +37124,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:314
+#: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:321
+#: core/libs/onlineversion/onlineversiondlg.cpp:322
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:329
+#: core/libs/onlineversion/onlineversiondlg.cpp:330
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:339
-#: core/libs/onlineversion/onlineversiondlg.cpp:381
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:341
+#: core/libs/onlineversion/onlineversiondlg.cpp:383
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:342
+#: core/libs/onlineversion/onlineversiondlg.cpp:343
 #, fuzzy, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -37131,20 +37165,20 @@ msgid ""
 "in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:348
-#: core/libs/onlineversion/onlineversiondlg.cpp:390
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:350
+#: core/libs/onlineversion/onlineversiondlg.cpp:392
 #, fuzzy, kde-format
 #| msgid "Version"
 msgid "version %1"
 msgstr "버전"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:351
+#: core/libs/onlineversion/onlineversiondlg.cpp:352
 #, fuzzy, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -37152,7 +37186,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:384
+#: core/libs/onlineversion/onlineversiondlg.cpp:385
 #, fuzzy, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -37160,7 +37194,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:393
+#: core/libs/onlineversion/onlineversiondlg.cpp:394
 #, fuzzy, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -37168,13 +37202,13 @@ msgid ""
 "in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:420
+#: core/libs/onlineversion/onlineversiondlg.cpp:421
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "열기..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:431
+#: core/libs/onlineversion/onlineversiondlg.cpp:432
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37186,7 +37220,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:440
+#: core/libs/onlineversion/onlineversiondlg.cpp:441
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37198,12 +37232,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:451
+#: core/libs/onlineversion/onlineversiondlg.cpp:452
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:456
+#: core/libs/onlineversion/onlineversiondlg.cpp:457
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -37215,7 +37249,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:465
+#: core/libs/onlineversion/onlineversiondlg.cpp:466
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -37227,7 +37261,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:489
+#: core/libs/onlineversion/onlineversiondlg.cpp:490
 #, fuzzy, kde-format
 #| msgid ""
 #| "Error when loading bookmarks on line %1, column %2:\n"
@@ -37241,7 +37275,7 @@ msgstr ""
 "%1행, %2열에서 책갈피 불러오는 중 오류:\n"
 "%3"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:496
+#: core/libs/onlineversion/onlineversiondlg.cpp:497
 #, fuzzy, kde-format
 #| msgid ""
 #| "Error when loading bookmarks on line %1, column %2:\n"
@@ -37255,7 +37289,7 @@ msgstr ""
 "%1행, %2열에서 책갈피 불러오는 중 오류:\n"
 "%3"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:588
+#: core/libs/onlineversion/onlineversiondlg.cpp:589
 #, fuzzy, kde-format
 #| msgid "Cannot open file"
 msgid ""
@@ -37302,27 +37336,27 @@ msgstr "digiKam 프로젝트 웹사이트 방문"
 msgid "Aborting..."
 msgstr "중단 중..."
 
-#: core/libs/progressmanager/progressview.cpp:204
+#: core/libs/progressmanager/progressview.cpp:205
 #, kde-format
 msgid "Cancel this operation."
 msgstr "이 작업을 취소합니다."
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "자세한 진행 정보 대화 상자 열기"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
 #, kde-format
 msgid "No active process"
 msgstr "활성 작업 없음"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "자세한 진행 정보 창 닫기"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "자세한 진행 정보 창 열기"
@@ -43509,6 +43543,14 @@ msgstr "다음 오른쪽 사이드바 탭"
 #, kde-format
 msgid "Show Statusbar"
 msgstr "상태 표시줄 표시"
+
+#: core/libs/widgets/mainview/dzoombar.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info: month-name year-string"
+#| msgid "%1 %2"
+msgctxt "%1 is the zoom percent value, % is the percent sign"
+msgid "%1%"
+msgstr "%2 %1"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -57815,7 +57857,7 @@ msgid "Creating Map"
 msgstr "만든 날짜"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
 #, fuzzy, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -57845,11 +57887,17 @@ msgstr ""
 "지정한 달력에 포함된 모든 행사는 빨간 날로 인쇄합니다.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
+msgstr ""
+
+#. i18n: ectx: property (format), widget (QProgressBar, progressBar)
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
+#, no-c-format, kde-format
+msgid "%p%"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -65735,36 +65783,36 @@ msgstr "선택"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:127
+#: core/utilities/setup/downloader/filesdownloader.cpp:128
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "\"%1\"의 원격 파일 다운로드 중"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "얼굴 감지"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:149
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "자동 조정"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:221
+#: core/utilities/setup/downloader/filesdownloader.cpp:222
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:229
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -65772,7 +65820,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "새로운 항목 다운로드"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:229
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65784,37 +65832,37 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, fuzzy, kde-format
 #| msgid "Add again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "다시 추가"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:366
+#: core/utilities/setup/downloader/filesdownloader.cpp:367
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:390
+#: core/utilities/setup/downloader/filesdownloader.cpp:391
 #, kde-format
 msgid "File write error."
 msgstr "파일 쓰기 오류입니다."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:397
+#: core/utilities/setup/downloader/filesdownloader.cpp:398
 #, fuzzy, kde-format
 #| msgid "Token error"
 msgid "File open error."
 msgstr "토큰 오류"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:412
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, fuzzy, kde-format
 msgid "File on the server is too large."
 msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:485
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65829,13 +65877,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:498
+#: core/utilities/setup/downloader/filesdownloader.cpp:499
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:505
+#: core/utilities/setup/downloader/filesdownloader.cpp:506
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
