@@ -244,9 +244,10 @@ void DNNModelManager::getSettings()
 
         // Get from bundle
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation,
+        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                  QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
                                                  QStandardPaths::LocateFile);
+
         d->settings     = new QSettings(appPath, QSettings::IniFormat);
     }
 }
