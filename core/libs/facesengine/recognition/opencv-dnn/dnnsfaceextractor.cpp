@@ -179,31 +179,40 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     try 
     {
-        QMutexLocker detectorLock(&d->detectorModel->mutex);
-
-        // redetect face using YuNet to get landmarks
-
-        cv::Mat faceLandmark;
-
-        d->detectorModel->getNet()->setInputSize(paddedFace.size());
-        d->detectorModel->getNet()->detect(paddedFace, faceLandmark);
-
-        detectorLock.unlock();
-
-        if (0 < faceLandmark.rows)
+        if (
+            d->model                                              &&
+            d->detectorModel                                      &&
+            !d->detectorModel->getNet().empty()                   &&
+            !static_cast<DNNModelSFace*>(d->model)->getNet().empty()
+           )
         {
-            QMutexLocker lock(&d->model->mutex);
-            // align and crop the face to standard size
+            QMutexLocker detectorLock(&d->detectorModel->mutex);
 
-            static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(paddedFace, faceLandmark, alignedFace);
+            // redetect face using YuNet to get landmarks
 
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+            cv::Mat faceLandmark;
 
-            timer.start();
+            d->detectorModel->getNet()->setInputSize(paddedFace.size());
+            d->detectorModel->getNet()->detect(paddedFace, faceLandmark);
 
-            static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
-            normalize(face_descriptors, face_descriptors);
+            detectorLock.unlock();
+
+            if (0 < faceLandmark.rows)
+            {
+                QMutexLocker lock(&d->model->mutex);
+
+                // align and crop the face to standard size
+
+                static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(paddedFace, faceLandmark, alignedFace);
+
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+
+                timer.start();
+
+                static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
+                normalize(face_descriptors, face_descriptors);
+            }
         }
     }
     catch (cv::Exception& e)
