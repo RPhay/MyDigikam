@@ -88,7 +88,7 @@ bool DNNSFaceExtractor::loadModels()
 {
     d->model = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition);
 
-    if (!(d->model->modelLoaded))
+    if (d->model && !(d->model->modelLoaded))
     {
         try
         {
@@ -115,7 +115,12 @@ bool DNNSFaceExtractor::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model" << d->model->info.displayName;
+        if (d->model)
+        {
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
+                                           << d->model->info.displayName;
+        }
+
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
         return false;
