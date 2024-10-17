@@ -37,7 +37,7 @@ public:
     // ---------- public methods ----------
 
     DNNModelInfoContainer()                                         = default;
-    DNNModelInfoContainer(const DNNModelInfoContainer&)             = default;
+    DNNModelInfoContainer(const DNNModelInfoContainer&);
     explicit DNNModelInfoContainer(
                                    const QString&           _displayName,
                                    const QString&           _fileName,
@@ -55,8 +55,8 @@ public:
                                   );
     ~DNNModelInfoContainer()                                        = default;
 
-    DNNModelInfoContainer& operator=(const DNNModelInfoContainer&)  = default;
-    DNNModelInfoContainer& operator=(DNNModelInfoContainer&&)       = default;
+    DNNModelInfoContainer& operator=(const DNNModelInfoContainer&);
+    DNNModelInfoContainer& operator=(DNNModelInfoContainer&&);
 
     // bool isEmpty()                               const;
     // bool isNull()                                const;

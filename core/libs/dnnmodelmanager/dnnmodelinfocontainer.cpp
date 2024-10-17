@@ -27,6 +27,61 @@
 namespace Digikam
 {
 
+DNNModelInfoContainer::DNNModelInfoContainer(const DNNModelInfoContainer& o)
+    : displayName       (o.displayName),
+      fileName          (o.fileName),
+      usage             (o.usage),
+      minVersion        (o.minVersion),
+      downloadPath      (o.downloadPath),
+      sha256            (o.sha256),
+      configName        (o.configName),
+      fileSize          (o.fileSize),
+      minUsableThreshold(o.minUsableThreshold),
+      maxUsableThreshold(o.maxUsableThreshold),
+      loaderType        (o.loaderType),
+      meanValToSubtract (o.meanValToSubtract),
+      imageSize         (o.imageSize)
+{
+}
+
+DNNModelInfoContainer& DNNModelInfoContainer::operator=(const DNNModelInfoContainer& o)
+{
+    displayName        = o.displayName;
+    fileName           = o.fileName;
+    usage              = o.usage;
+    minVersion         = o.minVersion;
+    downloadPath       = o.downloadPath;
+    sha256             = o.sha256;
+    configName         = o.configName;
+    fileSize           = o.fileSize;
+    minUsableThreshold = o.minUsableThreshold;
+    maxUsableThreshold = o.maxUsableThreshold;
+    loaderType         = o.loaderType;
+    meanValToSubtract  = o.meanValToSubtract;
+    imageSize          = o.imageSize;
+
+    return *this;
+}
+
+DNNModelInfoContainer& DNNModelInfoContainer::operator=(DNNModelInfoContainer&& o)
+{
+    displayName        = o.displayName;
+    fileName           = o.fileName;
+    usage              = o.usage;
+    minVersion         = o.minVersion;
+    downloadPath       = o.downloadPath;
+    sha256             = o.sha256;
+    configName         = o.configName;
+    fileSize           = o.fileSize;
+    minUsableThreshold = o.minUsableThreshold;
+    maxUsableThreshold = o.maxUsableThreshold;
+    loaderType         = o.loaderType;
+    meanValToSubtract  = o.meanValToSubtract;
+    imageSize          = o.imageSize;
+
+    return *this;
+}
+
 DNNModelInfoContainer::DNNModelInfoContainer(
                                              const QString&           _displayName,
                                              const QString&           _fileName,
@@ -58,20 +113,20 @@ DNNModelInfoContainer::DNNModelInfoContainer(
 {
 }
 
-bool DNNModelInfoContainer::operator==(const DNNModelInfoContainer& t) const
+bool DNNModelInfoContainer::operator==(const DNNModelInfoContainer& o) const
 {
     bool b = true;
-    b     &= (displayName         == t.displayName);
-    b     &= (fileName            == t.fileName);
-    b     &= (usage               == t.usage);
-    b     &= (minVersion          == t.minVersion);
-    b     &= (downloadPath        == t.downloadPath);
-    b     &= (sha256              == t.sha256);
-    b     &= (configName          == t.configName);
-    b     &= (fileSize            == t.fileSize);
-    b     &= (minUsableThreshold  == t.minUsableThreshold);
-    b     &= (loaderType          == t.loaderType);
-    b     &= (imageSize           == t.imageSize);
+    b     &= (displayName         == o.displayName);
+    b     &= (fileName            == o.fileName);
+    b     &= (usage               == o.usage);
+    b     &= (minVersion          == o.minVersion);
+    b     &= (downloadPath        == o.downloadPath);
+    b     &= (sha256              == o.sha256);
+    b     &= (configName          == o.configName);
+    b     &= (fileSize            == o.fileSize);
+    b     &= (minUsableThreshold  == o.minUsableThreshold);
+    b     &= (loaderType          == o.loaderType);
+    b     &= (imageSize           == o.imageSize);
 
     return b;
 }
