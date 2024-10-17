@@ -779,7 +779,7 @@ QPair<QList<qlonglong>, QList<qlonglong> > ItemHistoryGraph::relationCloudParall
 
     for (const HistoryGraph::VertexPair& edge : std::as_const(edges))
     {
-        const auto infs = closure.properties(edge.first).infos;
+        const auto& infs = closure.properties(edge.first).infos;
 
         for (const ItemInfo& source : infs)
         {
