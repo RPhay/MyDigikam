@@ -118,6 +118,7 @@ void DNNModelManager::loadConfig()
     for (const auto& model : groups)
     {
         DNNModelInfoContainer info;
+
         // Load the keys and values for this group
 
         d->settings->beginGroup(model);
@@ -126,8 +127,7 @@ void DNNModelManager::loadConfig()
 
         if (d->settings->value(QLatin1String("Application")).toString().toLower().contains(appName))
         {
-
-            // set basic values
+            // Set basic values
 
             info.displayName        = d->settings->value(QString::fromUtf8("DisplayName")).toString();
             info.fileName           = d->settings->value(QString::fromUtf8("FileName")).toString();
@@ -142,6 +142,7 @@ void DNNModelManager::loadConfig()
             // Create usage
 
             // DNNModelUsageList usage;
+
             QString usageStr =  d->settings->value(QLatin1String("Usage")).toString();
 
             if (usageStr.contains(QLatin1String("face_detection")))
@@ -172,6 +173,7 @@ void DNNModelManager::loadConfig()
             // Create version
 
             // QVersionNumber version;
+
             QString strVersion       = d->settings->value(QLatin1String("MinVersion")).toString();
             QStringList versionParts = d->settings->value(QLatin1String("MinVersion")).toString().toLower().split(QLatin1String("."));
 
@@ -188,6 +190,7 @@ void DNNModelManager::loadConfig()
             // Create version
 
             // cv::Scalar meanValToSubtract;
+
             QString mvtsStr          = d->settings->value(QLatin1String("MeanValueToSubtract")).toString();
             QStringList mvtsParts    = d->settings->value(QLatin1String("MeanValueToSubtract")).toString().toLower().split(QLatin1String(","));
 
@@ -205,84 +208,92 @@ void DNNModelManager::loadConfig()
                 case DNNLoaderType::DNNLoaderNet:
                 {
                     modelPtr = new DNNModelNet(info);
-                    // modelPtr = new DNNModelNet(
-                    //                            d->settings->value(QString::fromUtf8("DisplayName")).toString(),
-                    //                            d->settings->value(QString::fromUtf8("FileName")).toString(),
-                    //                            usage,
-                    //                            version,
-                    //                            d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
-                    //                            d->settings->value(QString::fromUtf8("SHA256")).toString(),
-                    //                            d->settings->value(QString::fromUtf8("FileSize")).toInt(),
-                    //                            d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
-                    //                            d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
-                    //                            loaderType,
-                    //                            d->settings->value(QString::fromUtf8("ConfigName")).toString(),
-                    //                            meanValToSubtract,
-                    //                            d->settings->value(QString::fromUtf8("ImageSize")).toInt()
-                    //                           );
+/*
+                    modelPtr = new DNNModelNet(
+                                               d->settings->value(QString::fromUtf8("DisplayName")).toString(),
+                                               d->settings->value(QString::fromUtf8("FileName")).toString(),
+                                               usage,
+                                               version,
+                                               d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
+                                               d->settings->value(QString::fromUtf8("SHA256")).toString(),
+                                               d->settings->value(QString::fromUtf8("FileSize")).toInt(),
+                                               d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
+                                               d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
+                                               loaderType,
+                                               d->settings->value(QString::fromUtf8("ConfigName")).toString(),
+                                               meanValToSubtract,
+                                               d->settings->value(QString::fromUtf8("ImageSize")).toInt()
+                                              );
+*/
                     break;
                 }
 
                 case DNNLoaderType::DNNLoaderConfig:
                 {
                     modelPtr = new DNNModelConfig(info);
-                    // modelPtr = new DNNModelConfig(
-                    //                               d->settings->value(QString::fromUtf8("DisplayName")).toString(),
-                    //                               d->settings->value(QString::fromUtf8("FileName")).toString(),
-                    //                               usage,
-                    //                               version,
-                    //                               d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
-                    //                               d->settings->value(QString::fromUtf8("SHA256")).toString(),
-                    //                               d->settings->value(QString::fromUtf8("FileSize")).toInt(),
-                    //                               d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
-                    //                               d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
-                    //                               loaderType,
-                    //                               d->settings->value(QString::fromUtf8("ConfigName")).toString(),
-                    //                               meanValToSubtract,
-                    //                               d->settings->value(QString::fromUtf8("ImageSize")).toInt()
-                    //                              );
+/*
+                    modelPtr = new DNNModelConfig(
+                                                  d->settings->value(QString::fromUtf8("DisplayName")).toString(),
+                                                  d->settings->value(QString::fromUtf8("FileName")).toString(),
+                                                  usage,
+                                                  version,
+                                                  d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
+                                                  d->settings->value(QString::fromUtf8("SHA256")).toString(),
+                                                  d->settings->value(QString::fromUtf8("FileSize")).toInt(),
+                                                  d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
+                                                  d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
+                                                  loaderType,
+                                                  d->settings->value(QString::fromUtf8("ConfigName")).toString(),
+                                                  meanValToSubtract,
+                                                  d->settings->value(QString::fromUtf8("ImageSize")).toInt()
+                                                 );
+*/
                     break;
                 }
 
                 case DNNLoaderType::DNNLoaderYuNet:
                 {
                     modelPtr = new DNNModelYuNet(info);
-                    // modelPtr = new DNNModelYuNet(
-                    //                              d->settings->value(QString::fromUtf8("DisplayName")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("FileName")).toString(),
-                    //                              usage,
-                    //                              version,
-                    //                              d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("SHA256")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("FileSize")).toInt(),
-                    //                              d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
-                    //                              d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
-                    //                              loaderType,
-                    //                              d->settings->value(QString::fromUtf8("ConfigName")).toString(),
-                    //                              meanValToSubtract,
-                    //                              d->settings->value(QString::fromUtf8("ImageSize")).toInt()
-                    //                             );
+/*
+                    modelPtr = new DNNModelYuNet(
+                                                 d->settings->value(QString::fromUtf8("DisplayName")).toString(),
+                                                 d->settings->value(QString::fromUtf8("FileName")).toString(),
+                                                 usage,
+                                                 version,
+                                                 d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
+                                                 d->settings->value(QString::fromUtf8("SHA256")).toString(),
+                                                 d->settings->value(QString::fromUtf8("FileSize")).toInt(),
+                                                 d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
+                                                 d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
+                                                 loaderType,
+                                                 d->settings->value(QString::fromUtf8("ConfigName")).toString(),
+                                                 meanValToSubtract,
+                                                 d->settings->value(QString::fromUtf8("ImageSize")).toInt()
+                                                );
+*/
                     break;
                 }
 
                 case DNNLoaderType::DNNLoaderSFace:
                 {
                     modelPtr = new DNNModelSFace(info);
-                    // modelPtr = new DNNModelSFace(
-                    //                              d->settings->value(QString::fromUtf8("DisplayName")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("FileName")).toString(),
-                    //                              usage,
-                    //                              version,
-                    //                              d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("SHA256")).toString(),
-                    //                              d->settings->value(QString::fromUtf8("FileSize")).toInt(),
-                    //                              d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
-                    //                              d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
-                    //                              loaderType,
-                    //                              d->settings->value(QString::fromUtf8("ConfigName")).toString(),
-                    //                              meanValToSubtract,
-                    //                              d->settings->value(QString::fromUtf8("ImageSize")).toInt()
-                    //                             );
+/*
+                    modelPtr = new DNNModelSFace(
+                                                 d->settings->value(QString::fromUtf8("DisplayName")).toString(),
+                                                 d->settings->value(QString::fromUtf8("FileName")).toString(),
+                                                 usage,
+                                                 version,
+                                                 d->settings->value(QString::fromUtf8("DownloadPath")).toString(),
+                                                 d->settings->value(QString::fromUtf8("SHA256")).toString(),
+                                                 d->settings->value(QString::fromUtf8("FileSize")).toInt(),
+                                                 d->settings->value(QString::fromUtf8("MinUsageThreshold")).toInt(),
+                                                 d->settings->value(QString::fromUtf8("MaxUsageThreshold")).toInt(),
+                                                 loaderType,
+                                                 d->settings->value(QString::fromUtf8("ConfigName")).toString(),
+                                                 meanValToSubtract,
+                                                 d->settings->value(QString::fromUtf8("ImageSize")).toInt()
+                                                );
+*/
                     break;
                 }
             }
