@@ -39,20 +39,20 @@ public:
     DNNModelInfoContainer()                                         = default;
     DNNModelInfoContainer(const DNNModelInfoContainer&)             = default;
     explicit DNNModelInfoContainer(
-                          const QString&                 _displayName,
-                          const QString&                 _fileName,
-                          const DNNModelUsageList&       _usage,
-                          const QVersionNumber&          _minVersion,
-                          const QString&                 _downloadPath,
-                          const QString&                 _sha256,
-                          const qint64&                  _fileSize,
-                          int                            _minUsableThreshold,
-                          int                            _maxUsableThreshold,
-                          DNNLoaderType                  _loaderType,
-                          const QString&                 _configName,
-                          const cv::Scalar&              _meanValToSubtract,
-                          int                            _imageSize
-                         );
+                                   const QString&           _displayName,
+                                   const QString&           _fileName,
+                                   const DNNModelUsageList& _usage,
+                                   const QVersionNumber&    _minVersion,
+                                   const QString&           _downloadPath,
+                                   const QString&           _sha256,
+                                   const qint64&            _fileSize,
+                                   int                      _minUsableThreshold,
+                                   int                      _maxUsableThreshold,
+                                   DNNLoaderType            _loaderType,
+                                   const QString&           _configName,
+                                   const cv::Scalar&        _meanValToSubtract,
+                                   int                      _imageSize
+                                  );
     ~DNNModelInfoContainer()                                        = default;
 
     DNNModelInfoContainer& operator=(const DNNModelInfoContainer&)  = default;
@@ -65,20 +65,20 @@ public:
 
 public:
 
-    QString            displayName;                                     ///< name used for display in UI (QComboBox)
-    QString            fileName;                                        ///< used by the downloader and model loader
-    DNNModelUsageList  usage;                                           ///< how the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
-    QVersionNumber     minVersion;                                      ///< minimum version of digiKam needed to use this model
-    QString            downloadPath;                                    ///< used by the downloader for the download path
+    QString            displayName;                                     ///< Name used for display in UI (QComboBox)
+    QString            fileName;                                        ///< Used by the downloader and model loader
+    DNNModelUsageList  usage;                                           ///< How the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
+    QVersionNumber     minVersion;                                      ///< Minimum version of digiKam needed to use this model
+    QString            downloadPath;                                    ///< Used by the downloader for the download path
     QString            sha256;                                          ///< SHA265 hash of the file for download
     QString            configName;
 
-    qint64             fileSize            = 0;                         ///< used by the downloader to verify size
-    int                minUsableThreshold  = 0;                         ///< used to convert UI 1-10 slider to float for processing
-    int                maxUsableThreshold  = 0;                         ///< used to convert UI 1-10 slider to float for processing
+    qint64             fileSize            = 0;                         ///< Used by the downloader to verify size
+    int                minUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
+    int                maxUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
     DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
     cv::Scalar         meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
-    int                imageSize           = 0;                         ///< max dimension of a side of an image
+    int                imageSize           = 0;                         ///< Max dimension of a side of an image
 };
 
 } // namespace Digikam
