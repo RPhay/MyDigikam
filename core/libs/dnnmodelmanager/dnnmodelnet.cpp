@@ -90,8 +90,8 @@ bool DNNModelNet::loadModel()
 
         if (0 < info.configName.size())
         {
-            DNNModelConfig* const configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(info.configName, info.usage[0]));
-            configPath                        = configModel->getModelPath();
+            const DNNModelConfig* const configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(info.configName, info.usage[0]));
+            configPath                              = configModel->getModelPath();
         }
 
         // Create the cv::dnn::Net instance with the config
