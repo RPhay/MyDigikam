@@ -35,6 +35,7 @@ class DIGIKAM_EXPORT DNNModelInfoContainer
 public:
 
     // ---------- public methods ----------
+
     DNNModelInfoContainer()                                         = default;
     DNNModelInfoContainer(const DNNModelInfoContainer&)             = default;
     explicit DNNModelInfoContainer(
@@ -78,7 +79,6 @@ public:
     DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
     cv::Scalar         meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
     int                imageSize           = 0;                         ///< max dimension of a side of an image
-
 };
 
 } // namespace Digikam

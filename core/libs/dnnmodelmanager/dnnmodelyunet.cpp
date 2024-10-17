@@ -26,38 +26,40 @@
 namespace Digikam
 {
 
-// DNNModelYuNet::DNNModelYuNet(
-//                              const QString&           _displayName,
-//                              const QString&           _fileName,
-//                              const DNNModelUsageList& _usage,
-//                              const QVersionNumber&    _minVersion,
-//                              const QString&           _downloadPath,
-//                              const QString&           _sha256,
-//                              const qint64&            _fileSize,
-//                              int                      _minUsableThreshold,
-//                              int                      _maxUsableThreshold,
-//                              DNNLoaderType            _loaderType,
-//                              const QString&           _configName,
-//                              const cv::Scalar&        _meanValToSubtract,
-//                              int                      _imageSize
-//                             )
-//     : DNNModelBase(
-//                     _displayName,
-//                     _fileName,
-//                     _usage,
-//                     _minVersion,
-//                     _downloadPath,
-//                     _sha256,
-//                     _fileSize,
-//                     _minUsableThreshold,
-//                     _maxUsableThreshold,
-//                     _loaderType,
-//                     _configName,
-//                     _meanValToSubtract,
-//                     _imageSize
-//                    )
-// {
-// }
+/*
+DNNModelYuNet::DNNModelYuNet(
+                             const QString&           _displayName,
+                             const QString&           _fileName,
+                             const DNNModelUsageList& _usage,
+                             const QVersionNumber&    _minVersion,
+                             const QString&           _downloadPath,
+                             const QString&           _sha256,
+                             const qint64&            _fileSize,
+                             int                      _minUsableThreshold,
+                             int                      _maxUsableThreshold,
+                             DNNLoaderType            _loaderType,
+                             const QString&           _configName,
+                             const cv::Scalar&        _meanValToSubtract,
+                             int                      _imageSize
+                            )
+    : DNNModelBase(
+                    _displayName,
+                    _fileName,
+                    _usage,
+                    _minVersion,
+                    _downloadPath,
+                    _sha256,
+                    _fileSize,
+                    _minUsableThreshold,
+                    _maxUsableThreshold,
+                    _loaderType,
+                    _configName,
+                    _meanValToSubtract,
+                    _imageSize
+                   )
+{
+}
+*/
 
 cv::Ptr<cv::FaceDetectorYN>& DNNModelYuNet::getNet()
 {
@@ -101,16 +103,16 @@ bool DNNModelYuNet::callLoader()
 
     QString modelPath    = getModelPath();
 
-    net = cv::FaceDetectorYN::create(
-                                     modelPath.toStdString(),
-                                     "",
-                                     cv::Size(info.imageSize, info.imageSize),
-                                     conf_threshold,
-                                     nms_threshold,
-                                     top_k,
-                                     backend_id,
-                                     target_id
-                                    );
+    net                  = cv::FaceDetectorYN::create(
+                                                      modelPath.toStdString(),
+                                                      "",
+                                                      cv::Size(info.imageSize, info.imageSize),
+                                                      conf_threshold,
+                                                      nms_threshold,
+                                                      top_k,
+                                                      backend_id,
+                                                      target_id
+                                                     );
 
     return true;
 }

@@ -28,36 +28,38 @@
 namespace Digikam
 {
 
-// DNNModelBase::DNNModelBase(
-//                            const QString&           _displayName,
-//                            const QString&           _fileName,
-//                            const DNNModelUsageList& _usage,
-//                            const QVersionNumber&    _minVersion,
-//                            const QString&           _downloadPath,
-//                            const QString&           _sha256,
-//                            const qint64&            _fileSize,
-//                            int                      _minUsableThreshold,
-//                            int                      _maxUsableThreshold,
-//                            DNNLoaderType            _loaderType,
-//                            const QString&           _configName,
-//                            const cv::Scalar&        _meanValToSubtract,
-//                            int                      _imageSize
-//                           )
-//     : displayName       (_displayName),
-//       fileName          (_fileName),
-//       usage             (_usage),
-//       minVersion        (_minVersion),
-//       downloadPath      (_downloadPath),
-//       sha256            (_sha256),
-//       configName        (_configName),
-//       fileSize          (_fileSize),
-//       minUsableThreshold(_minUsableThreshold),
-//       maxUsableThreshold(_maxUsableThreshold),
-//       loaderType        (_loaderType),
-//       meanValToSubtract (_meanValToSubtract),
-//       imageSize         (_imageSize)
-// {
-// }
+/*
+DNNModelBase::DNNModelBase(
+                           const QString&           _displayName,
+                           const QString&           _fileName,
+                           const DNNModelUsageList& _usage,
+                           const QVersionNumber&    _minVersion,
+                           const QString&           _downloadPath,
+                           const QString&           _sha256,
+                           const qint64&            _fileSize,
+                           int                      _minUsableThreshold,
+                           int                      _maxUsableThreshold,
+                           DNNLoaderType            _loaderType,
+                           const QString&           _configName,
+                           const cv::Scalar&        _meanValToSubtract,
+                           int                      _imageSize
+                          )
+    : displayName       (_displayName),
+      fileName          (_fileName),
+      usage             (_usage),
+      minVersion        (_minVersion),
+      downloadPath      (_downloadPath),
+      sha256            (_sha256),
+      configName        (_configName),
+      fileSize          (_fileSize),
+      minUsableThreshold(_minUsableThreshold),
+      maxUsableThreshold(_maxUsableThreshold),
+      loaderType        (_loaderType),
+      meanValToSubtract (_meanValToSubtract),
+      imageSize         (_imageSize)
+{
+}
+*/
 
 DownloadInfo DNNModelBase::getDownloadInformation() const
 {
@@ -78,9 +80,9 @@ bool DNNModelBase::checkFilename() const
 
 const QString DNNModelBase::getModelPath() const
 {
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
+    QString appPath   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                               QLatin1String("digikam/facesengine"),
+                                               QStandardPaths::LocateDirectory);
 
     QString modelPath = appPath + QLatin1Char('/') + info.fileName;
 
