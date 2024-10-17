@@ -35,21 +35,22 @@ public:
 
     // ---------- public methods ----------
 
-    explicit DNNModelYuNet(
-                           const QString&           _displayName,
-                           const QString&           _fileName,
-                           const DNNModelUsageList& _usage,
-                           const QVersionNumber&    _minVersion,
-                           const QString&           _downloadPath,
-                           const QString&           _sha256,
-                           const qint64&            _fileSize,
-                           int                      _minUsableThreshold,
-                           int                      _maxUsableThreshold,
-                           DNNLoaderType            _loaderType,
-                           const QString&           _configName,
-                           const cv::Scalar&        _meanValToSubtract,
-                           int                      _imageSize
-                          );
+    explicit DNNModelYuNet(const DNNModelInfoContainer& _info) : DNNModelBase(_info)  {};
+    // explicit DNNModelYuNet(
+    //                        const QString&           _displayName,
+    //                        const QString&           _fileName,
+    //                        const DNNModelUsageList& _usage,
+    //                        const QVersionNumber&    _minVersion,
+    //                        const QString&           _downloadPath,
+    //                        const QString&           _sha256,
+    //                        const qint64&            _fileSize,
+    //                        int                      _minUsableThreshold,
+    //                        int                      _maxUsableThreshold,
+    //                        DNNLoaderType            _loaderType,
+    //                        const QString&           _configName,
+    //                        const cv::Scalar&        _meanValToSubtract,
+    //                        int                      _imageSize
+    //                       );
     virtual ~DNNModelYuNet() override   = default;
 
 public:

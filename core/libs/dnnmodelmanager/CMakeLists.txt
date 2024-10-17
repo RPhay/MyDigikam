@@ -7,6 +7,7 @@
 APPLY_COMMON_POLICIES()
 
 set(libdnnmodelmanager_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelinfocontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelbase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelnet.cpp

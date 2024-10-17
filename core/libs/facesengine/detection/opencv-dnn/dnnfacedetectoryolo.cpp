@@ -59,7 +59,7 @@ bool DNNFaceDetectorYOLO::loadModels()
             // NOTE: this will throw an exception if the model can't be loaded.
 
             cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();
-            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->displayName << ", YOLOv3 data:" << model->configName;
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->info.displayName << ", YOLOv3 data:" << model->info.configName;
         }
         catch (cv::Exception& e)
         {

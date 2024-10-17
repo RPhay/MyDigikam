@@ -26,38 +26,38 @@
 namespace Digikam
 {
 
-DNNModelNet::DNNModelNet(
-                         const QString&           _displayName,
-                         const QString&           _fileName,
-                         const DNNModelUsageList& _usage,
-                         const QVersionNumber&    _minVersion,
-                         const QString&           _downloadPath,
-                         const QString&           _sha256,
-                         const qint64&            _fileSize,
-                         int                      _minUsableThreshold,
-                         int                      _maxUsableThreshold,
-                         DNNLoaderType            _loaderType,
-                         const QString&           _configName,
-                         const cv::Scalar&        _meanValToSubtract,
-                         int                      _imageSize
-                        )
-    : DNNModelBase(
-                   _displayName,
-                   _fileName,
-                   _usage,
-                   _minVersion,
-                   _downloadPath,
-                   _sha256,
-                   _fileSize,
-                   _minUsableThreshold,
-                   _maxUsableThreshold,
-                   _loaderType,
-                   _configName,
-                   _meanValToSubtract,
-                   _imageSize
-                  )
-{
-}
+// DNNModelNet::DNNModelNet(
+//                          const QString&           _displayName,
+//                          const QString&           _fileName,
+//                          const DNNModelUsageList& _usage,
+//                          const QVersionNumber&    _minVersion,
+//                          const QString&           _downloadPath,
+//                          const QString&           _sha256,
+//                          const qint64&            _fileSize,
+//                          int                      _minUsableThreshold,
+//                          int                      _maxUsableThreshold,
+//                          DNNLoaderType            _loaderType,
+//                          const QString&           _configName,
+//                          const cv::Scalar&        _meanValToSubtract,
+//                          int                      _imageSize
+//                         )
+//     : DNNModelBase(
+//                    _displayName,
+//                    _fileName,
+//                    _usage,
+//                    _minVersion,
+//                    _downloadPath,
+//                    _sha256,
+//                    _fileSize,
+//                    _minUsableThreshold,
+//                    _maxUsableThreshold,
+//                    _loaderType,
+//                    _configName,
+//                    _meanValToSubtract,
+//                    _imageSize
+//                   )
+// {
+// }
 
 cv::dnn::Net& DNNModelNet::getNet()
 {
@@ -86,9 +86,9 @@ bool DNNModelNet::loadModel()
     {
         // Load config model if needed
 
-        if (0 < configName.size())
+        if (0 < info.configName.size())
         {
-            DNNModelConfig* const configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(configName, usage[0]));
+            DNNModelConfig* const configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(info.configName, info.usage[0]));
             configPath                        = configModel->getModelPath();
         }
 
@@ -102,40 +102,19 @@ bool DNNModelNet::loadModel()
 
 bool DNNModelNet::callLoader(const QString& configPath)
 {
-    QString appPath   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                               QLatin1String("digikam/") + (downloadPath.split(QLatin1String("/"))[0]),
-                                               QStandardPaths::LocateDirectory);
-
-    QString modelPath = appPath + QLatin1Char('/') + fileName;
+    QString modelPath = getModelPath();
 
     if (0 < configPath.size())
     {
 
-#ifdef Q_OS_WIN
-
-        net = cv::dnn::readNet(modelPath.toLocal8Bit().constData(),
-                               configPath.toLocal8Bit().constData());
-
-#else
-
         net = cv::dnn::readNet(modelPath.toStdString(),
                                configPath.toStdString());
-
-#endif
 
     }
     else
     {
 
-#ifdef Q_OS_WIN
-
-        net = cv::dnn::readNet(modelPath.toLocal8Bit().constData());
-
-#else
-
         net = cv::dnn::readNet(modelPath.toStdString());
-
-#endif
 
     }
 

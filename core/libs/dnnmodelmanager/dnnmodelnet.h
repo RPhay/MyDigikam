@@ -34,22 +34,22 @@ class DIGIKAM_EXPORT DNNModelNet: public DNNModelBase
 public:
 
     // ---------- public methods ----------
-
-    explicit DNNModelNet(
-                         const QString&           _displayName,
-                         const QString&           _fileName,
-                         const DNNModelUsageList& _usage,
-                         const QVersionNumber&    _minVersion,
-                         const QString&           _downloadPath,
-                         const QString&           _sha256,
-                         const qint64&            _fileSize,
-                         int                      _minUsableThreshold,
-                         int                      _maxUsableThreshold,
-                         DNNLoaderType            _loaderType,
-                         const QString&           _configName,
-                         const cv::Scalar&        _meanValToSubtract,
-                         int                      _imageSize
-                        );
+    explicit DNNModelNet(const DNNModelInfoContainer& _info) : DNNModelBase(_info)  {};
+    // explicit DNNModelNet(
+    //                      const QString&           _displayName,
+    //                      const QString&           _fileName,
+    //                      const DNNModelUsageList& _usage,
+    //                      const QVersionNumber&    _minVersion,
+    //                      const QString&           _downloadPath,
+    //                      const QString&           _sha256,
+    //                      const qint64&            _fileSize,
+    //                      int                      _minUsableThreshold,
+    //                      int                      _maxUsableThreshold,
+    //                      DNNLoaderType            _loaderType,
+    //                      const QString&           _configName,
+    //                      const cv::Scalar&        _meanValToSubtract,
+    //                      int                      _imageSize
+    //                     );
 
     virtual ~DNNModelNet() override     = default;
 

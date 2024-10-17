@@ -23,48 +23,49 @@
 
 #include "digikam_debug.h"
 #include "dnnmodelmanager.h"
+#include "dnnmodelinfocontainer.h"
 
 namespace Digikam
 {
 
-DNNModelBase::DNNModelBase(
-                           const QString&           _displayName,
-                           const QString&           _fileName,
-                           const DNNModelUsageList& _usage,
-                           const QVersionNumber&    _minVersion,
-                           const QString&           _downloadPath,
-                           const QString&           _sha256,
-                           const qint64&            _fileSize,
-                           int                      _minUsableThreshold,
-                           int                      _maxUsableThreshold,
-                           DNNLoaderType            _loaderType,
-                           const QString&           _configName,
-                           const cv::Scalar&        _meanValToSubtract,
-                           int                      _imageSize
-                          )
-    : displayName       (_displayName),
-      fileName          (_fileName),
-      usage             (_usage),
-      minVersion        (_minVersion),
-      downloadPath      (_downloadPath),
-      sha256            (_sha256),
-      configName        (_configName),
-      fileSize          (_fileSize),
-      minUsableThreshold(_minUsableThreshold),
-      maxUsableThreshold(_maxUsableThreshold),
-      loaderType        (_loaderType),
-      meanValToSubtract (_meanValToSubtract),
-      imageSize         (_imageSize)
-{
-}
+// DNNModelBase::DNNModelBase(
+//                            const QString&           _displayName,
+//                            const QString&           _fileName,
+//                            const DNNModelUsageList& _usage,
+//                            const QVersionNumber&    _minVersion,
+//                            const QString&           _downloadPath,
+//                            const QString&           _sha256,
+//                            const qint64&            _fileSize,
+//                            int                      _minUsableThreshold,
+//                            int                      _maxUsableThreshold,
+//                            DNNLoaderType            _loaderType,
+//                            const QString&           _configName,
+//                            const cv::Scalar&        _meanValToSubtract,
+//                            int                      _imageSize
+//                           )
+//     : displayName       (_displayName),
+//       fileName          (_fileName),
+//       usage             (_usage),
+//       minVersion        (_minVersion),
+//       downloadPath      (_downloadPath),
+//       sha256            (_sha256),
+//       configName        (_configName),
+//       fileSize          (_fileSize),
+//       minUsableThreshold(_minUsableThreshold),
+//       maxUsableThreshold(_maxUsableThreshold),
+//       loaderType        (_loaderType),
+//       meanValToSubtract (_meanValToSubtract),
+//       imageSize         (_imageSize)
+// {
+// }
 
 DownloadInfo DNNModelBase::getDownloadInformation() const
 {
     return DownloadInfo(
-                        downloadPath,
-                        fileName,
-                        sha256,
-                        fileSize
+                        info.downloadPath,
+                        info.fileName,
+                        info.sha256,
+                        info.fileSize
                        );
 }
 
@@ -72,7 +73,7 @@ bool DNNModelBase::checkFilename() const
 {
     QFileInfo fileInfo(getModelPath());
 
-    return (fileInfo.exists() && (fileInfo.size() == fileSize));
+    return (fileInfo.exists() && (fileInfo.size() == info.fileSize));
 }
 
 const QString DNNModelBase::getModelPath() const
@@ -81,7 +82,7 @@ const QString DNNModelBase::getModelPath() const
                                              QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
-    QString modelPath = appPath + QLatin1Char('/') + fileName;
+    QString modelPath = appPath + QLatin1Char('/') + info.fileName;
 
     return modelPath;
 }
