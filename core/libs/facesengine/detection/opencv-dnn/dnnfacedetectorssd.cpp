@@ -47,7 +47,7 @@ bool DNNFaceDetectorSSD::loadModels()
 
     model = DNNModelManager::instance()->getModel(QLatin1String("MobilenetSSD"), DNNModelUsage::DNNUsageFaceDetection);
 
-    if (!(model->modelLoaded))
+    if (!model->modelLoaded)
     {
         try
         {

@@ -29,6 +29,7 @@
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
+#include "dnnmodelbase.h"
 
 namespace Digikam
 {
@@ -61,9 +62,9 @@ public:
     /**
      * Convert face embedding between different formats
      */
-    static cv::Mat            vectortomat(const std::vector<float>& vector);
-    static QJsonArray         encodeVector(const std::vector<float>& vector);
-    static std::vector<float> decodeVector(const QJsonArray& json);
+    static cv::Mat              vectortomat(const std::vector<float>& vector);
+    static QJsonArray           encodeVector(const std::vector<float>& vector);
+    static std::vector<float>   decodeVector(const QJsonArray& json);
 
 private:
 

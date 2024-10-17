@@ -46,8 +46,7 @@ public:
 
 protected:
 
-    cv::Ptr<cv::FaceDetectorYN> cv_model;                   ///< The YuNet DNN model.
-    QMutex                      lockModel;                  ///< Mutex for single-threading calls to the model.
+    cv::Ptr<cv::FaceDetectorYN> net;                            ///< The YuNet DNN model.
 
 private:
 

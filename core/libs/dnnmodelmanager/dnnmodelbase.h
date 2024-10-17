@@ -18,6 +18,7 @@
 
 #include <QMutex>
 #include <QVersionNumber>
+#include <QPair>
 
 // Local includes
 
@@ -35,66 +36,31 @@ class DIGIKAM_EXPORT DNNModelBase
 
 public:
 
-    // ---------- public methods ----------
-
-    // explicit DNNModelBase(
-    //                       const QString&                 _displayName,
-    //                       const QString&                 _fileName,
-    //                       const DNNModelUsageList&       _usage,
-    //                       const QVersionNumber&          _minVersion,
-    //                       const QString&                 _downloadPath,
-    //                       const QString&                 _sha256,
-    //                       const qint64&                  _fileSize,
-    //                       int                            _minUsableThreshold,
-    //                       int                            _maxUsableThreshold,
-    //                       DNNLoaderType                  _loaderType,
-    //                       const QString&                 _configName,
-    //                       const cv::Scalar&              _meanValToSubtract,
-    //                       int                            _imageSize
-    //                      );
-    explicit DNNModelBase(const DNNModelInfoContainer& _info)
-        : info(_info)
-    {
-    };
-
+    explicit DNNModelBase(const DNNModelInfoContainer& _info) : info(_info) {};
     virtual ~DNNModelBase() = default;
+
+
+    // ---------- public members ----------
 
     /**
      * input:  uiThreshold is the slider value from the UI
      * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
      */
-    float processingThreshold(int uiThreshold);
+    float                       processingThreshold(int uiThreshold)    const;
+    DownloadInfo                getDownloadInformation()                const;
+    const QString               getModelPath()                          const;
 
 public:
 
-    // ---------- public members ----------
+    bool                        modelLoaded                 = false;    ///< check if the model has been loaded
+    const DNNModelInfoContainer info;                                   ///< information about the model
+    QMutex                      mutex;                                  ///< mutex to sigle-thread model during critical processing functions
 
-    DownloadInfo       getDownloadInformation()    const;
-    bool               checkFilename()             const;
-    const QString      getModelPath()              const;
+protected:
+    QMutex                      loaderMutex;
 
-public:
-
-    bool                        modelLoaded         = false;            ///< Check if the model has been loaded
-    const DNNModelInfoContainer info;
-    QMutex             mutex;                                           ///< Mutex to sigle-thread model during critical processing functions
-
-/*
-    QString            displayName;                                     ///< name used for display in UI (QComboBox)
-    QString            fileName;                                        ///< used by the downloader and model loader
-    DNNModelUsageList  usage;                                           ///< how the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
-    QVersionNumber     minVersion;                                      ///< minimum version of digiKam needed to use this model
-    QString            downloadPath;                                    ///< used by the downloader for the download path
-    QString            sha256;                                          ///< SHA265 hash of the file for download
-    QString            configName;
-
-    qint64             fileSize            = 0;                         ///< used by the downloader to verify size
-    int                minUsableThreshold  = 0;                         ///< used to convert UI 1-10 slider to float for processing
-    int                maxUsableThreshold  = 0;                         ///< used to convert UI 1-10 slider to float for processing
-    DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
-    cv::Scalar         meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
-    int                imageSize           = 0;                         ///< max dimension of a side of an image
-*/
+    bool                        checkFilename()             const;
+    const QPair<int, int>       getBackendAndTarget()       const;
 
 private:
 

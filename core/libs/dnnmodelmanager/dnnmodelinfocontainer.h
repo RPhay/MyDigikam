@@ -58,9 +58,6 @@ public:
     DNNModelInfoContainer& operator=(const DNNModelInfoContainer&);
     DNNModelInfoContainer& operator=(DNNModelInfoContainer&&);
 
-    // bool isEmpty()                               const;
-    // bool isNull()                                const;
-
     bool operator==(const DNNModelInfoContainer& t) const;
 
 public:

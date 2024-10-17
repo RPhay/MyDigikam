@@ -34,43 +34,12 @@ class DIGIKAM_EXPORT DNNModelConfig: public DNNModelBase
 public:
 
     // ---------- public methods ----------
-
-    explicit DNNModelConfig(const DNNModelInfoContainer& _info)
-        : DNNModelBase(_info)
-    {
-    };
-/*
-    explicit DNNModelConfig(
-                            const QString&           _displayName,
-                            const QString&           _fileName,
-                            const DNNModelUsageList& _usage,
-                            const QVersionNumber&    _minVersion,
-                            const QString&           _downloadPath,
-                            const QString&           _sha256,
-                            const qint64&            _fileSize,
-                            int                      _minUsableThreshold,
-                            int                      _maxUsableThreshold,
-                            DNNLoaderType            _loaderType,
-                            const QString&           _configName,
-                            const cv::Scalar&        _meanValToSubtract,
-                            int                      _imageSize
-                           );
-*/
+    explicit DNNModelConfig(const DNNModelInfoContainer& _info) : DNNModelBase(_info)  {};
     virtual ~DNNModelConfig() override  = default;
-
-/*
-    // input: uiThreshold is the slider value from the UI
-    // return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
-    float processingThreshold(int uiThreshold);
-*/
 
 public:
 
     // ---------- public members ----------
-
-/*
-    const QString      getConfig();
-*/
 
 private:
 

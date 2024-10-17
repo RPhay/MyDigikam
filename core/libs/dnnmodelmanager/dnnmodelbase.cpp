@@ -28,39 +28,6 @@
 namespace Digikam
 {
 
-/*
-DNNModelBase::DNNModelBase(
-                           const QString&           _displayName,
-                           const QString&           _fileName,
-                           const DNNModelUsageList& _usage,
-                           const QVersionNumber&    _minVersion,
-                           const QString&           _downloadPath,
-                           const QString&           _sha256,
-                           const qint64&            _fileSize,
-                           int                      _minUsableThreshold,
-                           int                      _maxUsableThreshold,
-                           DNNLoaderType            _loaderType,
-                           const QString&           _configName,
-                           const cv::Scalar&        _meanValToSubtract,
-                           int                      _imageSize
-                          )
-    : displayName       (_displayName),
-      fileName          (_fileName),
-      usage             (_usage),
-      minVersion        (_minVersion),
-      downloadPath      (_downloadPath),
-      sha256            (_sha256),
-      configName        (_configName),
-      fileSize          (_fileSize),
-      minUsableThreshold(_minUsableThreshold),
-      maxUsableThreshold(_maxUsableThreshold),
-      loaderType        (_loaderType),
-      meanValToSubtract (_meanValToSubtract),
-      imageSize         (_imageSize)
-{
-}
-*/
-
 DownloadInfo DNNModelBase::getDownloadInformation() const
 {
     return DownloadInfo(
@@ -87,6 +54,72 @@ const QString DNNModelBase::getModelPath() const
     QString modelPath = appPath + QLatin1Char('/') + info.fileName;
 
     return modelPath;
+}
+
+const QPair<int, int> DNNModelBase::getBackendAndTarget() const
+{
+    int backend_id       = cv::dnn::DNN_BACKEND_DEFAULT;
+    int target_id        = cv::dnn::DNN_TARGET_CPU;
+
+    const std::map<std::string, int> str2backend
+    {
+        { "default", cv::dnn::DNN_BACKEND_DEFAULT          },
+        { "halide",  cv::dnn::DNN_BACKEND_HALIDE           },
+        { "ie",      cv::dnn::DNN_BACKEND_INFERENCE_ENGINE },
+        { "opencv",  cv::dnn::DNN_BACKEND_OPENCV           },
+        { "cuda",    cv::dnn::DNN_BACKEND_CUDA             }
+    };
+
+    const std::map<std::string, int> str2target
+    {
+        { "cpu",         cv::dnn::DNN_TARGET_CPU           },
+        { "opencl",      cv::dnn::DNN_TARGET_OPENCL        },
+        { "myriad",      cv::dnn::DNN_TARGET_MYRIAD        },
+        { "vulkan",      cv::dnn::DNN_TARGET_VULKAN        },
+        { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16   },
+        { "cuda",        cv::dnn::DNN_TARGET_CUDA          },
+        { "cuda_fp16",   cv::dnn::DNN_TARGET_CUDA_FP16     }
+    };
+
+    // env vars for testing combinations
+    QString cvBackend    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_BACKEND"));
+    QString cvTarget     = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_TARGET"));
+
+    if (cvBackend.length() > 0)
+    {
+        try
+        {
+            backend_id = str2backend.at(cvBackend.toLower().toUtf8().data());
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Using OpenCV backend:" << cvBackend;
+        }
+        catch (...)
+        {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid OpenCV backend:" << cvBackend;
+        }
+    }
+
+    if (cvTarget.length() > 0)
+    {
+        try
+        {
+            target_id = str2target.at(cvTarget.toLower().toUtf8().data());
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Using OpenCV target:" << cvTarget;
+        }
+        catch (...)
+        {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid OpenCV target:" << cvTarget;
+        }
+    }
+
+    // TODO: query OpenCV for capabilities.  Return best match
+    //
+    //
+    //
+
+
+    // return the result
+
+    return QPair<int, int>(backend_id, target_id);
 }
 
 } // namespace Digikam

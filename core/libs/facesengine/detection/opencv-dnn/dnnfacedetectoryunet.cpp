@@ -33,27 +33,10 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dnnmodelyunet.h"
 
 namespace Digikam
 {
-
-const std::map<std::string, int> str2backend
-{
-    { "default", cv::dnn::DNN_BACKEND_DEFAULT          },
-    { "halide",  cv::dnn::DNN_BACKEND_HALIDE           },
-    { "ie",      cv::dnn::DNN_BACKEND_INFERENCE_ENGINE },
-    { "opencv",  cv::dnn::DNN_BACKEND_OPENCV           },
-    { "vkcom",   cv::dnn::DNN_BACKEND_VKCOM            }
-};
-
-const std::map<std::string, int> str2target
-{
-    { "cpu",         cv::dnn::DNN_TARGET_CPU           },
-    { "opencl",      cv::dnn::DNN_TARGET_OPENCL        },
-    { "myriad",      cv::dnn::DNN_TARGET_MYRIAD        },
-    { "vulkan",      cv::dnn::DNN_TARGET_VULKAN        },
-    { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16   }
-};
 
 const std::map<FaceScanSettings::FaceDetectionSize, int> faceenum2size
 {
@@ -80,66 +63,17 @@ DNNFaceDetectorYuNet::~DNNFaceDetectorYuNet()
 
 bool DNNFaceDetectorYuNet::loadModels()
 {
-    QString appPath      = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                  QLatin1String("digikam/facesengine"),
-                                                  QStandardPaths::LocateDirectory);
-    float conf_threshold = 0.3F;
-    float nms_threshold  = 0.3F;
-    int top_k            = 5000;
-    int backend_id       = cv::dnn::DNN_BACKEND_DEFAULT;
-    int target_id        = cv::dnn::DNN_TARGET_CPU;
 
-    // TODO: detect backends and targets. Pick the best one.
+   model = DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection);
 
-    QString cvBackend    = QString::fromLocal8Bit(qgetenv("DIGIKAM_YUNET_BACKEND"));
-    QString cvTarget     = QString::fromLocal8Bit(qgetenv("DIGIKAM_YUNET_TARGET"));
-
-    if (cvBackend.length() > 0)
+    if (!(model->modelLoaded))
     {
         try
         {
-            backend_id = str2backend.at(cvBackend.toLower().toUtf8().data());
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet using OpenCV backend:" << cvBackend;
-        }
-        catch (...)
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid YuNet OpenCV backend:" << cvBackend;
-        }
-    }
 
-    if (cvTarget.length() > 0)
-    {
-        try
-        {
-            target_id = str2target.at(cvTarget.toLower().toUtf8().data());
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet using OpenCV target:" << cvTarget;
-        }
-        catch (...)
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid YuNet OpenCV target:" << cvTarget;
-        }
-    }
-
-    QString model   = QLatin1String("face_detection_yunet_2023mar.onnx");
-
-    QString nnmodel = appPath + QLatin1Char('/') + model;
-
-    if (QFileInfo::exists(nnmodel))
-    {
-        try
-        {
+            cv::Ptr<cv::FaceDetectorYN> net = static_cast<DNNModelYuNet*>(model)->getNet();
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet model:" << model;
 
-            cv_model = cv::FaceDetectorYN::create(
-                                                  nnmodel.toStdString(),
-                                                  "",
-                                                  inputImageSize,
-                                                  conf_threshold,
-                                                  nms_threshold,
-                                                  top_k,
-                                                  backend_id,
-                                                  target_id
-                                                 );
         }
         catch (cv::Exception& e)
         {
@@ -174,11 +108,11 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     // Lock the model for single threading
 
-    QMutexLocker lock(&lockModel);
+    QMutexLocker lock(&(model->mutex));
 
     try
     {
-        if (!cv_model.empty())
+        if (model->modelLoaded)
         {
             // Start the timer so we know how long we're locking for
 
@@ -186,13 +120,13 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
             // Set up the detector with new params
 
-            cv_model->setInputSize(inputImage.size());
-            cv_model->setScoreThreshold(confidenceThreshold);
-            cv_model->setNMSThreshold(nmsThreshold);
+            static_cast<DNNModelYuNet*>(model)->getNet()->setInputSize(inputImage.size());
+            static_cast<DNNModelYuNet*>(model)->getNet()->setScoreThreshold(confidenceThreshold);
+            static_cast<DNNModelYuNet*>(model)->getNet()->setNMSThreshold(nmsThreshold);
 
             // Detect faces
 
-            cv_model->detect(inputImage, faces);
+            static_cast<DNNModelYuNet*>(model)->getNet()->detect(inputImage, faces);
 
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
         }

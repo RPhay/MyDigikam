@@ -20,6 +20,7 @@
 // Local includes
 
 #include "dnnfaceextractorbase.h"
+#include "dnnmodelyunet.h"
 
 namespace Digikam
 {
@@ -53,7 +54,9 @@ private:
 private:
 
     class Private;
-    Private* const d = nullptr;
+    Private* const d                = nullptr;
+
+    // DNNModelYuNet*  detectorModel   = nullptr;
 };
 
 } // namespace Digikam

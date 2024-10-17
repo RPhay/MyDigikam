@@ -52,7 +52,7 @@ bool DNNFaceDetectorYOLO::loadModels()
 {
     model = DNNModelManager::instance()->getModel(QLatin1String("YOLOv3"), DNNModelUsage::DNNUsageFaceDetection);
 
-    if (!(model->modelLoaded))
+    if (!model->modelLoaded)
     {
         try
         {

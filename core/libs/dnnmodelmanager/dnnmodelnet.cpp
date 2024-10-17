@@ -26,47 +26,12 @@
 namespace Digikam
 {
 
-/*
-DNNModelNet::DNNModelNet(
-                         const QString&           _displayName,
-                         const QString&           _fileName,
-                         const DNNModelUsageList& _usage,
-                         const QVersionNumber&    _minVersion,
-                         const QString&           _downloadPath,
-                         const QString&           _sha256,
-                         const qint64&            _fileSize,
-                         int                      _minUsableThreshold,
-                         int                      _maxUsableThreshold,
-                         DNNLoaderType            _loaderType,
-                         const QString&           _configName,
-                         const cv::Scalar&        _meanValToSubtract,
-                         int                      _imageSize
-                        )
-    : DNNModelBase(
-                   _displayName,
-                   _fileName,
-                   _usage,
-                   _minVersion,
-                   _downloadPath,
-                   _sha256,
-                   _fileSize,
-                   _minUsableThreshold,
-                   _maxUsableThreshold,
-                   _loaderType,
-                   _configName,
-                   _meanValToSubtract,
-                   _imageSize
-                  )
-{
-}
-*/
-
 cv::dnn::Net& DNNModelNet::getNet()
 {
+   QMutexLocker lock(&loaderMutex);
+
     if (!modelLoaded)
     {
-        QMutexLocker lock(&mutex);
-
         if (loadModel())
         {
             modelLoaded = true;
@@ -105,6 +70,8 @@ bool DNNModelNet::loadModel()
 bool DNNModelNet::callLoader(const QString& configPath)
 {
     QString modelPath = getModelPath();
+    QPair<int, int> backendAndTarget = getBackendAndTarget();
+
 
     if (0 < configPath.size())
     {
@@ -119,6 +86,8 @@ bool DNNModelNet::callLoader(const QString& configPath)
         net = cv::dnn::readNet(modelPath.toStdString());
 
     }
+    net.setPreferableBackend(backendAndTarget.first);
+    net.setPreferableTarget(backendAndTarget.second);
 
     return true;
 }
