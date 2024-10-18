@@ -46,7 +46,7 @@ public:
      * input:  uiThreshold is the slider value from the UI
      * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
      */
-    float                       processingThreshold(int uiThreshold)    const;
+    float                       getThreshold(int uiThreshold = 1000)    const;
     DownloadInfo                getDownloadInformation()                const;
     const QString               getModelPath()                          const;
 

@@ -122,4 +122,17 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     return QPair<int, int>(backend_id, target_id);
 }
 
+float DNNModelBase::getThreshold(int uiThreshold) const
+{
+    if (1000 == uiThreshold)
+    {
+        return (float)info.baseThreshold / 100.0f;
+    }
+    else
+    {
+        float increment = (info.maxUsableThreshold - info.minUsableThreshold) / 10;
+        return ((float)(uiThreshold) * increment) + (float)info.minUsableThreshold;
+    }
+}
+
 } // namespace Digikam
