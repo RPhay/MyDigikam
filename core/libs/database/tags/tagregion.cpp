@@ -73,7 +73,7 @@ bool TagRegion::isValid() const
 bool TagRegion::operator==(const TagRegion& other) const
 {
     return (
-            (m_type  == other.m_type) &&
+            (m_type  == other.m_type ) &&
             (m_value == other.m_value)
            );
 }
@@ -140,12 +140,31 @@ TagRegion TagRegion::fromVariant(const QVariant& var)
 #endif
 
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QRect:
+
+#else
+
         case QVariant::Rect:
+
+#endif
+
         {
             return TagRegion(var.toRect());
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QString:
+
+#else
+
         case QVariant::String:
+
+#endif
+
         {
             return TagRegion(var.toString());
         }
@@ -192,7 +211,9 @@ bool TagRegion::intersects(const TagRegion& other, double fraction)
     return false;
 }
 
-QRect TagRegion::mapToOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& reducedSizeDetail)
+QRect TagRegion::mapToOriginalSize(const QSize& fullImageSize,
+                                   const QSize& reducedImageSize,
+                                   const QRect& reducedSizeDetail)
 {
     if (fullImageSize == reducedImageSize)
     {
@@ -366,13 +387,32 @@ QDebug operator<<(QDebug dbg, const TagRegion& r)
 #endif
 
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QRect:
+
+#else
+
         case QVariant::Rect:
+
+#endif
+
         {
             dbg.nospace() << var.toRect();
             break;
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QString:
+
+#else
+
         case QVariant::String:
+
+#endif
+
         {
             dbg.nospace() << var.toString();
             break;
