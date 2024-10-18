@@ -88,7 +88,7 @@ public:
     QVariantMap                             parameters;
     QHash<int, Identity>                    identityCache;
     OpenCVDNNFaceRecognizer*                recognizer      = nullptr;
-    FaceScanSettings::FaceRecognitionModel  recognizeModel;
+    FaceScanSettings::FaceRecognitionModel  recognizeModel  = FaceScanSettings::FaceRecognitionModel::OpenFace;
 };
 
 } // namespace Digikam

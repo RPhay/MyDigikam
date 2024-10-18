@@ -39,9 +39,9 @@ public:
 
 public:
 
-    FaceDbBackend* db = nullptr;
+    FaceDbBackend* db                                     = nullptr;
 
-    FaceScanSettings::FaceRecognitionModel recognizeModel;
+    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::OpenFace;
 };
 
 } // namespace Digikam

@@ -142,7 +142,7 @@ public:
 
 public:
 
-    int                             ref          = 1;
+    int                             ref                   = 1;
 
     Classifier                      method;
 
@@ -150,13 +150,13 @@ public:
     cv::Ptr<cv::ml::SVM>            svm;
     cv::Ptr<cv::ml::KNearest>       knn;
 
-    KDTreeBase*                     tree         = nullptr;
-    int                             kNeighbors   = 5;
-    float                           threshold    = 0.4F;
+    KDTreeBase*                     tree                  = nullptr;
+    int                             kNeighbors            = 5;
+    float                           threshold             = 0.4F;
 
-    bool                            newDataAdded = true;
+    bool                            newDataAdded          = true;
 
-    FaceScanSettings::FaceRecognitionModel recognizeModel;
+    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::OpenFace;
 
 public:
 
