@@ -204,7 +204,7 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
 DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bool mustBeAvailable)
 {
     DImageHistory h;
-    const auto entries = history.entries();
+    const auto& entries = history.entries();
 
     for (const DImageHistory::Entry& e : entries)
     {
