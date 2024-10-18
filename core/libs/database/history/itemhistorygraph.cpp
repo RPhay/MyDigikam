@@ -808,7 +808,7 @@ QList<qlonglong> ItemHistoryGraph::allImageIds() const
 
     for (const HistoryGraph::Vertex& v : verts)
     {
-        const auto infs = d->properties(v).infos;
+        const auto& infs = d->properties(v).infos;
 
         for (const ItemInfo& info : infs)
         {
