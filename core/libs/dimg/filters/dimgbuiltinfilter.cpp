@@ -120,7 +120,7 @@ bool DImgBuiltinFilter::isValid() const
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            return (m_arg.typeId() == QVariant::Rect);
+            return (m_arg.typeId() == QMetaType::QRect);
 
 #else
 
@@ -135,7 +135,7 @@ bool DImgBuiltinFilter::isValid() const
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            return (m_arg.typeId() == QVariant::Size);
+            return (m_arg.typeId() == QMetaType::QSize);
 
 #else
 

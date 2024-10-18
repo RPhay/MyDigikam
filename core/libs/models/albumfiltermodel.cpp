@@ -487,7 +487,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if ((valLeft.typeId() == QVariant::String) && (valRight.typeId() == QVariant::String))
+    if ((valLeft.typeId() == QMetaType::QString) && (valRight.typeId() == QMetaType::QString))
 
 #else
 
@@ -504,7 +504,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    else if ((valLeft.typeId() == QVariant::Date) && (valRight.typeId() == QVariant::Date))
+    else if ((valLeft.typeId() == QMetaType::QDate) && (valRight.typeId() == QMetaType::QDate))
 
 #else
 

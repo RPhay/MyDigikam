@@ -208,7 +208,7 @@ void DConfigDlgMngr::setupWidget(QWidget* widget, KConfigSkeletonItem* item)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        if (sitem->property().typeId() == QVariant::Int)
+        if (sitem->property().typeId() == QMetaType::Int)
 
 #else
 

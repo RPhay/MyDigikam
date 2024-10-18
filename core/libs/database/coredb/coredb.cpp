@@ -1604,7 +1604,7 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if ((values.at(i).typeId() == QVariant::String) &&
+                if ((values.at(i).typeId() == QMetaType::QString) &&
 
 #else
 
@@ -1675,7 +1675,7 @@ QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, Database
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if ((values.at(i).typeId() == QVariant::String) &&
+                if ((values.at(i).typeId() == QMetaType::QString) &&
 
 #else
 

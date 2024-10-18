@@ -1407,7 +1407,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                else if (value.typeId() == QVariant::StringList)
+                else if (value.typeId() == QMetaType::QStringList)
 
 #else
 
