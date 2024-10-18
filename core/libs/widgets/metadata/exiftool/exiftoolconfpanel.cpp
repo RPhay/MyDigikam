@@ -196,8 +196,9 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
 void ExifToolConfPanel::slotSearchTextChanged(const SearchTextSettings& settings)
 {
     bool query     = false;
-    int  results   = 0;
     QString search = settings.text.toLower();
+    int  results   = 0;
+    Q_UNUSED(results);
 
     QTreeWidgetItemIterator it(d->exifToolFormats);
 
