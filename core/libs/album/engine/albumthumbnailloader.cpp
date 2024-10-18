@@ -598,11 +598,11 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (loadingDescription.previewParameters.extraParameter.typeId() == QVariant::List)
+    if (loadingDescription.previewParameters.extraParameter.typeId() == QMetaType::QRect)
 
 #else
 
-    if (loadingDescription.previewParameters.extraParameter.type() == QVariant::List)
+    if (loadingDescription.previewParameters.extraParameter.type() == QVariant::Rect)
 
 #endif
 
