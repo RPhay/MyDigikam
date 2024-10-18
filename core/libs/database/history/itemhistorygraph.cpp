@@ -596,7 +596,7 @@ void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong ex
 
     HistoryGraph::Vertex  last;
     HistoryEdgeProperties edgeProps;
-    const auto entries = history.entries();
+    const auto& entries = history.entries();
 
     for (const DImageHistory::Entry& entry : entries)
     {
