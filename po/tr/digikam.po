@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-17 01:48+0000\n"
-"PO-Revision-Date: 2024-10-13 12:26+0300\n"
+"PO-Revision-Date: 2024-10-18 01:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3583,6 +3583,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Renk etiketlerini sunmak için çerçeve yerine basit bir yatay çizgi "
+"kullanarak daha kompakt simge görünümü küçük görselleri."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3592,6 +3594,10 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"Yüz algılamayı işlemek ve eski SSD modelini değiştirmek için YuNet DNN "
+"modeli eklendi. Yüz tanımayı işlemek ve eski OpenFace modelini değiştirmek "
+"için Sface DNN modeli eklendi. Her ikisi de daha hızlıdır ve daha iyi yüz "
+"yönetimi sonuçlarıyla çalışma zamanında daha az bellek gerektirir."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -29811,7 +29817,7 @@ msgstr "Bir daha sorma"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%​%p"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32059,12 +32065,10 @@ msgstr "Kare yükleniyor…"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%​%1"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -43157,12 +43161,10 @@ msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%%1"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -56457,7 +56459,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%​%p"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
