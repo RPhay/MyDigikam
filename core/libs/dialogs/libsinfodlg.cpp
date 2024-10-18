@@ -106,6 +106,7 @@ extern "C"
 #   if defined(Q_CC_CLANG)
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Wundef"
+#       pragma clang diagnostic ignored "-Wpedantic"
 #   endif
 
 #   include <jasper/jas_version.h>
