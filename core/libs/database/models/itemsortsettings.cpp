@@ -492,48 +492,131 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 #endif
 
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::Int:
+
+#else
+
         case QVariant::Int:
+
+#endif
+
         {
             return compareByOrder(left.toInt(), right.toInt(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::UInt:
+
+#else
+
         case QVariant::UInt:
+
+#endif
+
         {
             return compareByOrder(left.toUInt(), right.toUInt(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::LongLong:
+
+#else
+
         case QVariant::LongLong:
+
+#endif
+
         {
             return compareByOrder(left.toLongLong(), right.toLongLong(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::ULongLong:
+
+#else
+
         case QVariant::ULongLong:
+
+#endif
+
         {
             return compareByOrder(left.toULongLong(), right.toULongLong(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::Double:
+
+#else
+
         case QVariant::Double:
+
+#endif
+
         {
             return compareByOrder(left.toDouble(), right.toDouble(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QDate:
+
+#else
+
         case QVariant::Date:
+
+#endif
+
         {
             return compareByOrder(left.toDate(), right.toDate(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QDateTime:
+
+#else
+
         case QVariant::DateTime:
+
+#endif
+
         {
             return compareByOrder(left.toDateTime(), right.toDateTime(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QTime:
+
+#else
+
         case QVariant::Time:
+
+#endif
+
         {
             return compareByOrder(left.toTime(), right.toTime(), currentSortOrder);
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QRect:
+        case QMetaType::QRectF:
+
+#else
+
         case QVariant::Rect:
         case QVariant::RectF:
+
+#endif
+
         {
             QRectF rectLeft  = left.toRectF();
             QRectF rectRight = right.toRectF();
