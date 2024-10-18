@@ -60,18 +60,41 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 #endif
 
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::Int:
+            case QMetaType::UInt:
+            case QMetaType::Bool:
+            case QMetaType::LongLong:
+            case QMetaType::ULongLong:
+
+#else
+
             case QVariant::Int:
             case QVariant::UInt:
             case QVariant::Bool:
             case QVariant::LongLong:
             case QVariant::ULongLong:
+
+#endif
+
             {
                 success = meta->setXmpTagString(xmpTagName, QString::number(value.toInt()));
 
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::Double:
+
+#else
+
             case QVariant::Double:
+
+#endif
+
             {
                 long num, den;
                 meta->convertToRationalSmallDenominator(value.toDouble(), &num, &den);
@@ -80,7 +103,16 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QVariant::List: // TODO: Port to QMetaType
+
+#else
+
             case QVariant::List:
+
+#endif
+
             {
                 long num             = 0;
                 long den             = 1;
@@ -101,8 +133,18 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::QDate:
+            case QMetaType::QDateTime:
+
+#else
+
             case QVariant::Date:
             case QVariant::DateTime:
+
+#endif
+
             {
                 QDateTime dateTime = value.toDateTime();
 
@@ -116,15 +158,34 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::QString:
+            case QMetaType::QChar:
+
+#else
+
             case QVariant::String:
             case QVariant::Char:
+
+#endif
+
             {
                 success = meta->setXmpTagString(xmpTagName, value.toString());
 
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::QByteArray:
+
+#else
+
             case QVariant::ByteArray:
+
+#endif
+
             {
                 /// @todo I don't know a straightforward way to convert a byte array to XMP
 
