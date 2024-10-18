@@ -204,6 +204,11 @@ public:
             return (v == other);
         }
 
+        bool operator!=(const vertex_t& other) const
+        {
+            return (v != other);
+        }
+
         bool isNull() const
         {
             return (v == graph_traits::null_vertex());
