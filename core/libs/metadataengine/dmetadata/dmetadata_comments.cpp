@@ -662,13 +662,32 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
 #endif
 
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QMetaType::QString:
+
+#else
+
         case QVariant::String:
+
+#endif
+
         {
             map.insert(QLatin1String("x-default"), var.toString());
             break;
         }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        case QVariant::Map: // FIXME: port to QMetaType
+
+#else
+
         case QVariant::Map:
+
+#endif
+
         {
             QMap<QString, QVariant> varMap = var.toMap();
 
