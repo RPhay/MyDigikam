@@ -78,6 +78,7 @@ DigikamApp::DigikamApp()
 
     // Ensure creation
 
+    DNNModelManager::instance();
     AlbumManager::instance();
     LoadingCacheInterface::initialize();
     IccSettings::instance()->loadAllProfilesProperties();
@@ -88,7 +89,6 @@ DigikamApp::DigikamApp()
     DIO::instance();
     LocalizeSettings::instance();
     NetworkManager::instance();
-    DNNModelManager::instance();
 
 #ifdef HAVE_GEOLOCATION
 

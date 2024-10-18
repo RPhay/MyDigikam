@@ -18,6 +18,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dnnmodelnet.h"
 
 namespace Digikam
 {
@@ -95,7 +96,7 @@ double DNNBaseDetectorModel::showInferenceTime()
     std::vector<double> layersTimes;
     double freq = cv::getTickFrequency() / 1000.0;
 
-    return (net.getPerfProfile(layersTimes) / freq);
+    return (static_cast<DNNModelNet*>(model)->getNet().getPerfProfile(layersTimes) / freq);
 }
 
 } // namespace Digikam

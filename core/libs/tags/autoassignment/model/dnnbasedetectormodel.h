@@ -31,6 +31,7 @@
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
+#include "dnnmodelbase.h"
 
 namespace Digikam
 {
@@ -89,12 +90,11 @@ public:
 
 protected:
 
-    float        scaleFactor = 1.0F;
-    cv::Scalar   meanValToSubtract;
-    cv::Size     inputImageSize;
+    float           scaleFactor = 1.0F;
+    cv::Scalar      meanValToSubtract;
+    cv::Size        inputImageSize;
 
-    cv::dnn::Net net;
-    QMutex       mutex;
+    DNNModelBase*   model   = nullptr;
 
 private:
 

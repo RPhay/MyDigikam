@@ -100,7 +100,15 @@ DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage 
 {
     Q_UNUSED(usage);       // For future reference
 
-    return d->modelMap[modelName.toLower()];
+    if (d->modelMap.contains(modelName.toLower()))
+    {
+        return d->modelMap[modelName.toLower()];
+    }
+    else
+    {
+        return nullptr;
+    }
+
 }
 
 // --------------- private ---------------------
@@ -115,13 +123,13 @@ void DNNModelManager::loadConfig()
 
     const auto groups = d->settings->childGroups();
 
-    for (const auto& model : groups)
+    for (const auto& modelName : groups)
     {
         DNNModelInfoContainer info;
 
         // Load the keys and values for this group
 
-        d->settings->beginGroup(model);
+        d->settings->beginGroup(modelName);
 
         // Check if model is used with this application
 
@@ -136,12 +144,11 @@ void DNNModelManager::loadConfig()
             info.fileSize           = d->settings->value(QString::fromUtf8("FileSize")).toInt();
             info.minUsableThreshold = d->settings->value(QString::fromUtf8("MinUsableThreshold")).toInt();
             info.minUsableThreshold = d->settings->value(QString::fromUtf8("MaxUsableThreshold")).toInt();
+            info.classList          = d->settings->value(QString::fromUtf8("ClassList")).toString();
             info.configName         = d->settings->value(QString::fromUtf8("ConfigName")).toString();
             info.imageSize          = d->settings->value(QString::fromUtf8("ImageSize")).toInt();
 
             // Create usage
-
-            // DNNModelUsageList usage;
 
             QString usageStr =  d->settings->value(QLatin1String("Usage")).toString();
 
@@ -181,7 +188,6 @@ void DNNModelManager::loadConfig()
 
             // Loader type
 
-            QString loadertypeStr    = d->settings->value(QLatin1String("LoaderType")).toString();
             info.loaderType = str2loader.at(d->settings->value(QLatin1String("LoaderType")).toString().toLower().toUtf8().data());
 
             // Create version
@@ -226,7 +232,10 @@ void DNNModelManager::loadConfig()
 
             // Add the model to map
 
-            d->modelMap.insert(model.toLower(), modelPtr);
+            if (modelPtr)
+            {
+                d->modelMap.insert(modelName.toLower(), modelPtr);
+            }
         }
 
         // Done with this group
@@ -244,7 +253,7 @@ void DNNModelManager::getSettings()
 
         // Get from bundle
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+        QString appPath = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                  QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
                                                  QStandardPaths::LocateFile);
 

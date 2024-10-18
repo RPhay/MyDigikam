@@ -49,6 +49,7 @@ public:
                                    int                      _minUsableThreshold,
                                    int                      _maxUsableThreshold,
                                    DNNLoaderType            _loaderType,
+                                   const QString&           _classList,
                                    const QString&           _configName,
                                    const cv::Scalar&        _meanValToSubtract,
                                    int                      _imageSize
@@ -68,6 +69,7 @@ public:
     QVersionNumber     minVersion;                                      ///< Minimum version of digiKam needed to use this model
     QString            downloadPath;                                    ///< Used by the downloader for the download path
     QString            sha256;                                          ///< SHA265 hash of the file for download
+    QString            classList;                                       ///< Name of model containing list of class names for classification 
     QString            configName;
 
     qint64             fileSize            = 0;                         ///< Used by the downloader to verify size

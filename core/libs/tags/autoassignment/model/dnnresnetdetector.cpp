@@ -31,6 +31,9 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dnnmodelmanager.h"
+#include "dnnmodelnet.h"
+#include "dnnmodelconfig.h"
 
 namespace Digikam
 {
@@ -53,20 +56,22 @@ DNNResnetDetector::~DNNResnetDetector()
 QList<QString> DNNResnetDetector::loadImageNetClass()
 {
     QList<QString> classList;
+    QString classFile;
 
     // NOTE: storing all model definitions at the same application path as face engine
-
-    QString appPath         = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                     QLatin1String("digikam/facesengine"),
-                                                     QStandardPaths::LocateDirectory);
-
-    QString imageNetClasses = appPath           +
-                              QDir::separator() +
-                              QLatin1String("classification_classes_ILSVRC2012.txt");
-
-    if (QFileInfo::exists(imageNetClasses))
+    
+    if (model && model->modelLoaded)
     {
-        std::ifstream ifs(imageNetClasses.toStdString());
+        const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList, DNNModelUsage::DNNUsageObjectDetection));
+        if (configModel)
+        {
+            classFile = configModel->getModelPath();
+        }
+    }
+
+    if (QFileInfo::exists(classFile))
+    {
+        std::ifstream ifs(classFile.toStdString());
         std::string line;
 
         while (getline(ifs, line))
@@ -85,24 +90,14 @@ QList<QString> DNNResnetDetector::getPredefinedClasses() const
 
 bool DNNResnetDetector::loadModels()
 {
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
 
-    QString model;
-    model           = appPath           +
-                      QDir::separator() +
-                      QLatin1String("resnet50.onnx");
+    model = DNNModelManager::instance()->getModel(QLatin1String("ResNet50"), DNNModelUsage::DNNUsageObjectDetection);
 
-    if (QFileInfo::exists(model))
+    if (model && !model->modelLoaded)
     {
         try
         {
-            net = cv::dnn::readNet(model.toStdString());
-            net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
-            net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
-
-            // TODO: verify GPU Options here
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  // check we can load the DNN net
         }
         catch (cv::Exception& e)
         {
@@ -117,9 +112,10 @@ bool DNNResnetDetector::loadModels()
            return false;
         }
     }
-    else
+
+    if (model && !model->modelLoaded)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot found objected classification DNN model" << model;
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot find object classification DNN model";
 
         return false;
     }
@@ -170,11 +166,11 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
                                                    true,
                                                    false);
 
-        if (!net.empty())
+        if (model && model->modelLoaded)
         {
-            QMutexLocker lock(&mutex);
-            net.setInput(inputBlob);
-            net.forward(outs, getOutputsNames());
+            QMutexLocker lock(&model->mutex);
+            static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
+            static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
         }
     }
     catch (cv::Exception& e)
@@ -202,14 +198,14 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
                                                     true,
                                                     false);
 
-        if (!net.empty())
+        if (model && model->modelLoaded)
         {
-            QMutexLocker lock(&mutex);
+            QMutexLocker lock(&model->mutex);
             QElapsedTimer timer;
             timer.start();
 
-            net.setInput(inputBlob);
-            net.forward(outs, getOutputsNames());
+            static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
+            static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
 
             int elapsed = timer.elapsed();
 
@@ -272,15 +268,15 @@ std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
-    if (!net.empty() && names.empty())
+    if (model && model->modelLoaded && names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 
-        std::vector<int> outLayers          = net.getUnconnectedOutLayers();
+        std::vector<int> outLayers          = static_cast<DNNModelNet*>(model)->getNet().getUnconnectedOutLayers();
 
         // Get the names of all the layers in the network
 
-        std::vector<cv::String> layersNames = net.getLayerNames();
+        std::vector<cv::String> layersNames = static_cast<DNNModelNet*>(model)->getNet().getLayerNames();
 
         // Get the names of the output layers in names
 

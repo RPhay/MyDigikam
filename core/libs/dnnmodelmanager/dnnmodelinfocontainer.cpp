@@ -34,6 +34,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(const DNNModelInfoContainer& o)
       minVersion        (o.minVersion),
       downloadPath      (o.downloadPath),
       sha256            (o.sha256),
+      classList         (o.classList),
       configName        (o.configName),
       fileSize          (o.fileSize),
       minUsableThreshold(o.minUsableThreshold),
@@ -52,6 +53,7 @@ DNNModelInfoContainer& DNNModelInfoContainer::operator=(const DNNModelInfoContai
     minVersion         = o.minVersion;
     downloadPath       = o.downloadPath;
     sha256             = o.sha256;
+    classList          = o.classList;
     configName         = o.configName;
     fileSize           = o.fileSize;
     minUsableThreshold = o.minUsableThreshold;
@@ -71,6 +73,7 @@ DNNModelInfoContainer& DNNModelInfoContainer::operator=(DNNModelInfoContainer&& 
     minVersion         = o.minVersion;
     downloadPath       = o.downloadPath;
     sha256             = o.sha256;
+    classList          = o.classList;
     configName         = o.configName;
     fileSize           = o.fileSize;
     minUsableThreshold = o.minUsableThreshold;
@@ -93,6 +96,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(
                                              int                      _minUsableThreshold,
                                              int                      _maxUsableThreshold,
                                              DNNLoaderType            _loaderType,
+                                             const QString&           _classList,
                                              const QString&           _configName,
                                              const cv::Scalar&        _meanValToSubtract,
                                              int                      _imageSize
@@ -103,6 +107,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(
       minVersion        (_minVersion),
       downloadPath      (_downloadPath),
       sha256            (_sha256),
+      classList         (_classList),
       configName        (_configName),
       fileSize          (_fileSize),
       minUsableThreshold(_minUsableThreshold),
@@ -122,6 +127,7 @@ bool DNNModelInfoContainer::operator==(const DNNModelInfoContainer& o) const
     b     &= (minVersion          == o.minVersion);
     b     &= (downloadPath        == o.downloadPath);
     b     &= (sha256              == o.sha256);
+    b     &= (classList           == o.classList);
     b     &= (configName          == o.configName);
     b     &= (fileSize            == o.fileSize);
     b     &= (minUsableThreshold  == o.minUsableThreshold);
