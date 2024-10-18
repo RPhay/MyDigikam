@@ -250,7 +250,7 @@ bool DMediaServerMngr::save()
         // ----------------------
 
         QDomElement data;
-        const auto urls = it.value();
+        const auto& urls = it.value();
 
         for (const QUrl& url : urls)
         {
