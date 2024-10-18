@@ -37,6 +37,8 @@ public:
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
 
+public:
+
     QWidget*               displayWidget        = nullptr;
 
     ThumbnailLoadThread*   loadingThread        = nullptr;
@@ -285,7 +287,17 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
 #endif
 
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::UnknownType:
+
+#else
+
             case QVariant::Invalid:
+
+#endif
+
             {
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
@@ -293,7 +305,16 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::Int:
+
+#else
+
             case QVariant::Int:
+
+#endif
+
             {
                 if (value.isNull())
                 {
@@ -307,7 +328,16 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::QRect:
+
+#else
+
             case QVariant::Rect:
+
+#endif
+
             {
                 if (value.isNull())
                 {
@@ -345,7 +375,8 @@ void ItemThumbnailModel::slotThumbnailLoadedFromStorage(const LoadingDescription
     }
 }
 
-void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& thumb)
+void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDescription,
+                                             const QPixmap& thumb)
 {
     if (thumb.isNull())
     {
