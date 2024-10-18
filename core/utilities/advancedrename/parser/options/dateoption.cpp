@@ -209,7 +209,7 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (v.typeId() == QVariant::String)
+    if (v.typeId() == QMetaType::QString)
 
 #else
 
@@ -352,7 +352,7 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        if (v.typeId() == QVariant::String)
+        if (v.typeId() == QMetaType::QString)
 
 #else
 
@@ -419,7 +419,7 @@ void DateOption::slotTokenTriggered(const QString& token)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (v.typeId() == QVariant::String)
+                if (v.typeId() == QMetaType::QString)
 
 #else
 

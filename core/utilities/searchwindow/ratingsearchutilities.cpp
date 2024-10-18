@@ -72,7 +72,7 @@ QSize RatingComboBoxDelegate::sizeHint(const QStyleOptionViewItem& option, const
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (value.typeId() == QVariant::Int)
+    if (value.typeId() == QMetaType::Int)
 
 #else
 
@@ -97,7 +97,7 @@ void RatingComboBoxDelegate::paint(QPainter* painter, const QStyleOptionViewItem
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (value.typeId() == QVariant::Int)
+    if (value.typeId() == QMetaType::Int)
 
 #else
 
