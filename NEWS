@@ -152,7 +152,7 @@ BUGFIXES:
 127 ==> 489751 - digiKam freezes and closes if you save a face tag.
 128 ==> 494754 - Customized Raw Import Tool Crashes (Randomly) When Using Image Editor.
 129 ==> 494890 - Star rating systematically also sets colors, and vice versa.
-130 ==> 
+130 ==> 494934 - Selecting the maintenance tool will cause Digikam to stop responding and crash every time.
 131 ==> 
 132 ==> 
 133 ==> 

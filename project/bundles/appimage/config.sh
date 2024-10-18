@@ -85,15 +85,15 @@ else
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.2.0"
+    DK_KP_VERSION="v6.2.1"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="v24.08.1"
+    DK_KA_VERSION="v24.08.2"
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.6.0"
+    DK_KDE_VERSION="v6.7.0"
 
     # Absolute path where are downloaded all tarballs to compile.
     DOWNLOAD_DIR="/mnt/data/d"

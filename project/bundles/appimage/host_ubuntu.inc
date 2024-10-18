@@ -100,6 +100,7 @@ done
 optional_packages=("ruby"                               # For i18n extraction
                    "subversion"                         # For i18n extraction
                    "hunspell"                           # For check spelling
+                   "libhunspell-dev"                    # For check spelling
                    "keychain"                           # For git-ssh
                    "ssh-askpass"                        # For git-ssh
                    "ccache"                             # For compiling
