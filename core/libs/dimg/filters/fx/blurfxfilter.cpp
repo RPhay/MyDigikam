@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     int     blurFXType  = ZoomBlur;
     int     distance    = 100;
     int     level       = 45;
@@ -1308,7 +1310,7 @@ void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
     int bytesDepth  = prm.orgImage->bytesDepth();
 
     int sumR, sumG, sumB, nCount;
-    DColor color, radiusColor, radiusColorBlur;
+    DColor color, radiusColor;
     int offset, loopOffset;
 
     for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)

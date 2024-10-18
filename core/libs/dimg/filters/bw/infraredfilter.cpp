@@ -96,7 +96,7 @@ void InfraredFilter::filterImage()
     uchar* pOverlayBits = nullptr;                  // Overlay to merge with original converted in gray scale.
     uchar*     pOutBits = m_destImage.bits(); // Destination image with merged grain mask and original.
 
-    DColor bwData, bwBlurData, maskData, overData, outData;
+    DColor bwData, overData, outData;
 
     postProgress(20);
 
