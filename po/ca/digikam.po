@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-17 01:48+0000\n"
-"PO-Revision-Date: 2024-10-17 00:35+0200\n"
+"PO-Revision-Date: 2024-10-17 13:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -3582,6 +3582,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Miniatures més compactes a la vista d'icones utilitzant una única línia "
+"horitzontal en lloc d'un marc per a renderitzar etiquetes de color."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3591,6 +3593,11 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"Afegeix el model YuNet DNN per a processar la detecció de cares i reemplaçar "
+"el model SSD antic. Afegeix el model DNN Sface per a processar el "
+"reconeixement de cares i substituir el model OpenFace anterior. Tots dos són "
+"més ràpids i requereixen menys memòria en temps d'execució amb resultats "
+"millors de gestió de cares."
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -30096,7 +30103,7 @@ msgstr "No ho tornis a preguntar"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32377,12 +32384,10 @@ msgstr "S'està carregant el fotograma"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -43613,12 +43618,10 @@ msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -57001,7 +57004,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29

@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-17 01:48+0000\n"
-"PO-Revision-Date: 2024-10-13 15:50+0200\n"
+"PO-Revision-Date: 2024-10-17 12:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -3626,6 +3626,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Compacter miniaturen in pictogram-weergave door een eenvoudige horizontale "
+"lijn te gebruiken in plaats van een frame om kleurlabels weer te geven."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3635,6 +3637,11 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"YuNet DNN model toevoegen aan het proces van gezichtsherkenning en oudere "
+"SSD model te vervangen. Sface DNN-model toevoegen aan het proces van "
+"gezichtsherkenning en het oudere OpenFace model te vervangen. Beiden zijn "
+"sneller en vereisen minder geheugen bij uitvoeren met betere resultaten van "
+"gezichtsherkenning."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -30099,7 +30106,7 @@ msgstr "Deze vraag niet meer stellen"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32360,12 +32367,10 @@ msgstr "Frame wordt geladen"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -43544,12 +43549,10 @@ msgid "Show Statusbar"
 msgstr "Statusbalk tonen"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -56894,7 +56897,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
