@@ -138,17 +138,17 @@ void DNNModelManager::loadConfig()
         {
             // Set basic values
 
-            info.displayName         = d->settings->value(QString::fromUtf8("DisplayName")).toString();
-            info.fileName            = d->settings->value(QString::fromUtf8("FileName")).toString();
-            info.downloadPath        = d->settings->value(QString::fromUtf8("DownloadPath")).toString();
-            info.sha256              = d->settings->value(QString::fromUtf8("SHA256")).toString();
-            info.fileSize            = d->settings->value(QString::fromUtf8("FileSize")).toInt();
-            info.baseThreshold       = d->settings->value(QString::fromUtf8("BaseThreshold")).toInt();
-            info.minUsableThreshold  = d->settings->value(QString::fromUtf8("MinUsableThreshold")).toInt();
-            info.minUsableThreshold  = d->settings->value(QString::fromUtf8("MaxUsableThreshold")).toInt();
-            info.classList           = d->settings->value(QString::fromUtf8("ClassList")).toString();
-            info.configName          = d->settings->value(QString::fromUtf8("ConfigName")).toString();
-            info.imageSize           = d->settings->value(QString::fromUtf8("ImageSize")).toInt();
+            info.displayName         = d->settings->value(QLatin1String("DisplayName")).toString();
+            info.fileName            = d->settings->value(QLatin1String("FileName")).toString();
+            info.downloadPath        = d->settings->value(QLatin1String("DownloadPath")).toString();
+            info.sha256              = d->settings->value(QLatin1String("SHA256")).toString();
+            info.fileSize            = d->settings->value(QLatin1String("FileSize")).toInt();
+            info.baseThreshold       = d->settings->value(QLatin1String("BaseThreshold")).toInt();
+            info.minUsableThreshold  = d->settings->value(QLatin1String("MinUsableThreshold")).toInt();
+            info.minUsableThreshold  = d->settings->value(QLatin1String("MaxUsableThreshold")).toInt();
+            info.classList           = d->settings->value(QLatin1String("ClassList")).toString();
+            info.configName          = d->settings->value(QLatin1String("ConfigName")).toString();
+            info.imageSize           = d->settings->value(QLatin1String("ImageSize")).toInt();
 
             // Create usage
 
