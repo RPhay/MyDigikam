@@ -206,7 +206,17 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
 #endif
 
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::UnknownType:
+
+#else
+
             case QVariant::Invalid:
+
+#endif
+
             {
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
@@ -214,7 +224,16 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::Int:
+
+#else
+
             case QVariant::Int:
+
+#endif
+
             {
                 if (value.isNull())
                 {
@@ -228,7 +247,16 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 break;
             }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            case QMetaType::QRect:
+
+#else
+
             case QVariant::Rect:
+
+#endif
+
             {
                 if (value.isNull())
                 {
@@ -252,7 +280,8 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
     return ShowfotoItemModel::setData(index, value, role);
 }
 
-void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& thumb)
+void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDescription,
+                                                 const QPixmap& thumb)
 {
     if (thumb.isNull())
     {
@@ -283,7 +312,8 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
     }
 }
 
-bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QImage& thumbnail) const
+bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo,
+                                          QImage& thumbnail) const
 {
     QString path = itemInfo.folder + QLatin1Char('/') + itemInfo.name;
 
