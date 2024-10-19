@@ -56,6 +56,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<DownloadInfo>    files;
     DownloadInfo           currentInfo;
 
@@ -145,8 +147,8 @@ void FilesDownloader::startDownload()
 
     d->infoLabel->setWordWrap(true);
 
-    d->facesEngineCheck  = new QCheckBox(i18n("Use Face Detection feature"), mainWidget);
-    d->aestheticCheck    = new QCheckBox(i18n("Use Aesthetic Detection feature"), mainWidget);
+    d->facesEngineCheck  = new QCheckBox(i18n("Use Face Management feature"),      mainWidget);
+    d->aestheticCheck    = new QCheckBox(i18n("Use Aesthetic Detection feature"),  mainWidget);
     d->autoTagsCheck     = new QCheckBox(i18n("Use Auto Tags Assignment feature"), mainWidget);
 
     d->progress          = new QProgressBar(mainWidget);
@@ -333,8 +335,10 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     d->reply = nullptr;
 
-    if ((reply->error() != QNetworkReply::NoError)             &&
-        (reply->error() != QNetworkReply::InsecureRedirectError))
+    if (
+        (reply->error() != QNetworkReply::NoError)             &&
+        (reply->error() != QNetworkReply::InsecureRedirectError)
+       )
     {
         d->error = reply->errorString();
 
@@ -431,7 +435,9 @@ QString FilesDownloader::getFacesEnginePath() const
 
 void FilesDownloader::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("getting_started"), QLatin1String("quick_start"), QLatin1String("firstrun-downloads"));
+    openOnlineDocumentation(QLatin1String("getting_started"),
+                            QLatin1String("quick_start"),
+                            QLatin1String("firstrun-downloads"));
 }
 
 void FilesDownloader::createDownloadInfo()
@@ -453,13 +459,11 @@ void FilesDownloader::createDownloadInfo()
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
     }
-
 }
 
 void FilesDownloader::slotUpdateDownloadInfo()
 {
-    QString path = QDir::toNativeSeparators(getFacesEnginePath());
-
+    QString path               = QDir::toNativeSeparators(getFacesEnginePath());
     d->system.enableFaceEngine = d->facesEngineCheck->isChecked();
     d->system.enableAesthetic  = d->aestheticCheck->isChecked();
     d->system.enableAutoTags   = d->autoTagsCheck->isChecked();
@@ -483,7 +487,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
     QString sizeString = ItemPropertiesTab::humanReadableBytesCount(size);
 
     d->infoLabel->setText(i18nc("%1: folder path",
-                                "<p>For face detection, the red-eye removal tool, the classification "
+                                "<p>For the face management, the red-eye removal tool, and the classification "
                                 "of images according to aesthetics or the automatic assignment "
                                 "of tags to images, digiKam requires some large binary files. You "
                                 "can choose which feature you want to use.</p>"
@@ -491,7 +495,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                 "downloading the files you need. You can close this dialog, you "
                                 "will be asked again the next time you start digiKam. Without "
                                 "these files the selected features will not work.</p>"
-                                "<p>The files will be downloaded to %1.</p>"
+                                "<p>The files will be downloaded to \"<i>%1</i>\".</p>"
                                 "<p><b>After the successful download you have to restart digiKam.</b></p>", path));
     if (size > 0)
     {

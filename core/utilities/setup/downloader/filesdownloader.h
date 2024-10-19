@@ -45,22 +45,22 @@ public:
     DownloadInfo& operator=(const DownloadInfo& other);
 
     /**
-     * The file path on the server
+     * The file path on the server.
      */
     QString path;
 
     /**
-     * The file name on the server
+     * The file name on the server.
      */
     QString name;
 
     /**
-     * The file hash as SHA256
+     * The file hash as SHA256.
      */
     QString hash;
 
     /**
-     * The file size
+     * The file size.
      */
     qint64  size = 0;
 };
