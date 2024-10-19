@@ -36,7 +36,11 @@ class DIGIKAM_EXPORT DNNModelBase
 
 public:
 
-    explicit DNNModelBase(const DNNModelInfoContainer& _info) : info(_info) {};
+    explicit DNNModelBase(const DNNModelInfoContainer& _info)
+        : info(_info)
+    {
+    };
+
     virtual ~DNNModelBase() = default;
 
 
@@ -48,6 +52,10 @@ public:
      */
     float                       getThreshold(int uiThreshold = 1000)    const;
     DownloadInfo                getDownloadInformation()                const;
+
+    /**
+     * Return path to the model, or null string if path cannot be found.
+     */
     const QString               getModelPath()                          const;
 
 public:
@@ -57,6 +65,7 @@ public:
     QMutex                      mutex;                                  ///< mutex to sigle-thread model during critical processing functions
 
 protected:
+
     QMutex                      loaderMutex;
 
     bool                        checkFilename()             const;

@@ -88,17 +88,18 @@ bool DNNSFaceExtractor::loadModels()
 {
     d->model = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition);
 
-    if (d->model && !(d->model->modelLoaded))
+    if (d->model && !d->model->modelLoaded)
     {
         try
         {
-            cv::Ptr<cv::FaceRecognizerSF> net = static_cast<DNNModelSFace*>(d->model)->getNet();
+            cv::Ptr<cv::FaceRecognizerSF> net  = static_cast<DNNModelSFace*>(d->model)->getNet();
+
             qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
 
-            d->detectorModel = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
+            d->detectorModel                   = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
             cv::Ptr<cv::FaceDetectorYN> detNet = static_cast<DNNModelYuNet*>(d->detectorModel)->getNet();
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
 
+            qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
         }
         catch (cv::Exception& e)
         {

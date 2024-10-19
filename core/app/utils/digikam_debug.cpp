@@ -33,6 +33,7 @@ Q_LOGGING_CATEGORY(DIGIKAM_FACESENGINE_LOG,             "digikam.facesengine",  
 Q_LOGGING_CATEGORY(DIGIKAM_AUTOTAGSENGINE_LOG,          "digikam.autotagsengine",           QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_GEOIFACE_LOG,                "digikam.geoiface",                 QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MARBLE_LOG,                  "digikam.marble",                   QtInfoMsg)
+Q_LOGGING_CATEGORY(DIGIKAM_DNNMODELMNGR_LOG,            "digikam.dnnmodelmanager",          QtInfoMsg)
 
 Q_LOGGING_CATEGORY(DIGIKAM_TESTS_LOG,                   "digikam.tests",                    QtInfoMsg)
 

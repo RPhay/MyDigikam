@@ -64,16 +64,14 @@ DNNFaceDetectorYuNet::~DNNFaceDetectorYuNet()
 bool DNNFaceDetectorYuNet::loadModels()
 {
 
-   model = DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection);
+    model = DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection);
 
-    if (!(model->modelLoaded))
+    if (model && !model->modelLoaded)
     {
         try
         {
-
             cv::Ptr<cv::FaceDetectorYN> net = static_cast<DNNModelYuNet*>(model)->getNet();
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet model:" << model;
-
         }
         catch (cv::Exception& e)
         {
@@ -90,7 +88,12 @@ bool DNNFaceDetectorYuNet::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Cannot find faces engine DNN model" << model;
+        if (model)
+        {
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
+                                           << model->info.displayName;
+        }
+
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Faces detection feature cannot be used!";
 
         return false;

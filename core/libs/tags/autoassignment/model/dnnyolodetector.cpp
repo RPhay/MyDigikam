@@ -58,10 +58,11 @@ QList<QString> DNNYoloDetector::loadCOCOClass()
     QString classFile;
 
     // NOTE: storing all model definitions at the same application path as face engine
-    
+
     if (model && model->modelLoaded)
     {
         const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList, DNNModelUsage::DNNUsageObjectDetection));
+
         if (configModel)
         {
             classFile = configModel->getModelPath();
@@ -106,6 +107,7 @@ bool DNNYoloDetector::loadModels()
         case (YoloVersions::RESNET50):
         {
             // NOTE: nothing to do here.
+
             break;
         }
     }

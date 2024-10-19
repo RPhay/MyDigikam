@@ -51,6 +51,7 @@ public:
      * This will load and create the model on first use
      * It will also find the best OpenCV Target and Backend for the model
      * based on computer capabilities
+     * Returns nullptr if 'modelName' cannot be found.
      */
     DNNModelBase* getModel(const QString& modelName, DNNModelUsage usage) const;
 

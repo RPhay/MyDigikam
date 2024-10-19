@@ -53,8 +53,10 @@ bool DNNFaceDetectorSSD::loadModels()
         {
             // NOTE This will throw an exception if the model can't be loaded.
 
-            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();  
-            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName << ", SSD data:" << model->info.configName;
+            cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();
+
+            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName
+                                        << ", SSD data:" << model->info.configName;
         }
         catch (cv::Exception& e)
         {
@@ -71,7 +73,12 @@ bool DNNFaceDetectorSSD::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "MobilenetSSD Cannot find faces engine DNN model";
+        if (model)
+        {
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
+                                           << model->info.displayName;
+        }
+
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
 
         return false;

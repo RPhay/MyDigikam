@@ -47,13 +47,20 @@ bool DNNModelBase::checkFilename() const
 
 const QString DNNModelBase::getModelPath() const
 {
-    QString appPath   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                               QLatin1String("digikam/facesengine"),
-                                               QStandardPaths::LocateDirectory);
+    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine"),
+                                             QStandardPaths::LocateDirectory);
 
-    QString modelPath = appPath + QLatin1Char('/') + info.fileName;
+    if (!appPath.isEmpty())
+    {
+        QString modelPath = appPath + QLatin1Char('/') + info.fileName;
 
-    return modelPath;
+        return modelPath;
+    }
+
+    qCCritical(DIGIKAM_DNNMODELMNGR_LOG) << "Cannot find DNN models path";
+
+    return QString();
 }
 
 const QPair<int, int> DNNModelBase::getBackendAndTarget() const
@@ -82,6 +89,7 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     };
 
     // env vars for testing combinations
+
     QString cvBackend    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_BACKEND"));
     QString cvTarget     = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_TARGET"));
 
@@ -90,11 +98,11 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         try
         {
             backend_id = str2backend.at(cvBackend.toLower().toUtf8().data());
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Using OpenCV backend:" << cvBackend;
+            qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Using OpenCV backend:" << cvBackend;
         }
         catch (...)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid OpenCV backend:" << cvBackend;
+            qCWarning(DIGIKAM_DNNMODELMNGR_LOG) << "Invalid OpenCV backend:" << cvBackend;
         }
     }
 
@@ -103,11 +111,11 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         try
         {
             target_id = str2target.at(cvTarget.toLower().toUtf8().data());
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Using OpenCV target:" << cvTarget;
+            qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Using OpenCV target:" << cvTarget;
         }
         catch (...)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid OpenCV target:" << cvTarget;
+            qCWarning(DIGIKAM_DNNMODELMNGR_LOG) << "Invalid OpenCV target:" << cvTarget;
         }
     }
 
@@ -115,7 +123,6 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     //
     //
     //
-
 
     // return the result
 
@@ -131,6 +138,7 @@ float DNNModelBase::getThreshold(int uiThreshold) const
     else
     {
         float increment = (info.maxUsableThreshold - info.minUsableThreshold) / 10;
+
         return ((float)(uiThreshold) * increment) + (float)info.minUsableThreshold;
     }
 }

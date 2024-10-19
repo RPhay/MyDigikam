@@ -106,9 +106,10 @@ DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage 
     }
     else
     {
+        qCCritical(DIGIKAM_DNNMODELMNGR_LOG) << "Cannot found model:" << modelName;
+
         return nullptr;
     }
-
 }
 
 // --------------- private ---------------------
@@ -117,7 +118,7 @@ void DNNModelManager::loadConfig()
 {
     // Get the current application name
 
-    QString appName = qApp->applicationName().toLower();
+    QString appName   = qApp->applicationName().toLower();
 
     // Load the group from the config file
 
@@ -189,7 +190,7 @@ void DNNModelManager::loadConfig()
 
             // Loader type
 
-            info.loaderType = str2loader.at(d->settings->value(QLatin1String("LoaderType")).toString().toLower().toUtf8().data());
+            info.loaderType          = str2loader.at(d->settings->value(QLatin1String("LoaderType")).toString().toLower().toUtf8().data());
 
             // Create version
 
@@ -258,7 +259,14 @@ void DNNModelManager::getSettings()
                                                  QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
                                                  QStandardPaths::LocateFile);
 
-        d->settings     = new QSettings(appPath, QSettings::IniFormat);
+        if (!appPath.isEmpty())
+        {
+            d->settings = new QSettings(appPath, QSettings::IniFormat);
+        }
+        else
+        {
+            qCCritical(DIGIKAM_DNNMODELMNGR_LOG) << "Cannot find configuration file dnnmodels.conf";
+        }
     }
 }
 

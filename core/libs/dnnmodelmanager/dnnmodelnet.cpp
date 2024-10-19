@@ -69,23 +69,20 @@ bool DNNModelNet::loadModel()
 
 bool DNNModelNet::callLoader(const QString& configPath)
 {
-    QString modelPath = getModelPath();
+    QString modelPath                = getModelPath();
     QPair<int, int> backendAndTarget = getBackendAndTarget();
-
 
     if (0 < configPath.size())
     {
 
         net = cv::dnn::readNet(modelPath.toStdString(),
                                configPath.toStdString());
-
     }
     else
     {
-
         net = cv::dnn::readNet(modelPath.toStdString());
-
     }
+
     net.setPreferableBackend(backendAndTarget.first);
     net.setPreferableTarget(backendAndTarget.second);
 

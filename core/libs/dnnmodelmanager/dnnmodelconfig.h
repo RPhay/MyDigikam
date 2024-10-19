@@ -34,7 +34,12 @@ class DIGIKAM_EXPORT DNNModelConfig: public DNNModelBase
 public:
 
     // ---------- public methods ----------
-    explicit DNNModelConfig(const DNNModelInfoContainer& _info) : DNNModelBase(_info)  {};
+
+    explicit DNNModelConfig(const DNNModelInfoContainer& _info)
+        : DNNModelBase(_info)
+    {
+    };
+
     virtual ~DNNModelConfig() override  = default;
 
 public:

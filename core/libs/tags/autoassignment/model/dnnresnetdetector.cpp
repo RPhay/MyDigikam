@@ -59,10 +59,11 @@ QList<QString> DNNResnetDetector::loadImageNetClass()
     QString classFile;
 
     // NOTE: storing all model definitions at the same application path as face engine
-    
+
     if (model && model->modelLoaded)
     {
         const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList, DNNModelUsage::DNNUsageObjectDetection));
+
         if (configModel)
         {
             classFile = configModel->getModelPath();
@@ -90,7 +91,6 @@ QList<QString> DNNResnetDetector::getPredefinedClasses() const
 
 bool DNNResnetDetector::loadModels()
 {
-
     model = DNNModelManager::instance()->getModel(QLatin1String("ResNet50"), DNNModelUsage::DNNUsageObjectDetection);
 
     if (model && !model->modelLoaded)

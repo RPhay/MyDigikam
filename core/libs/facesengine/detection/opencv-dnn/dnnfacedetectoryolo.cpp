@@ -52,14 +52,16 @@ bool DNNFaceDetectorYOLO::loadModels()
 {
     model = DNNModelManager::instance()->getModel(QLatin1String("YOLOv3"), DNNModelUsage::DNNUsageFaceDetection);
 
-    if (!model->modelLoaded)
+    if (model && !model->modelLoaded)
     {
         try
         {
             // NOTE: this will throw an exception if the model can't be loaded.
 
             cv::dnn::Net net = static_cast<DNNModelNet*>(model)->getNet();
-            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->info.displayName << ", YOLOv3 data:" << model->info.configName;
+
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->info.displayName
+                                        << ", YOLOv3 data:" << model->info.configName;
         }
         catch (cv::Exception& e)
         {
@@ -76,7 +78,12 @@ bool DNNFaceDetectorYOLO::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "YOLOv3 Cannot find faces engine DNN model";
+        if (model)
+        {
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
+                                           << model->info.displayName;
+        }
+
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
 
         return false;
