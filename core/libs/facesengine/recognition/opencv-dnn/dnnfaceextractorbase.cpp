@@ -34,27 +34,28 @@
 namespace Digikam
 {
 
-// class Q_DECL_HIDDEN DNNFaceExtractorBase::Private
-// {
-// public:
+/*
+class Q_DECL_HIDDEN DNNFaceExtractorBase::Private
+{
+public:
 
-//     Private() = default;
+    Private()  = default;
+    ~Private() = default;
 
-//     ~Private() = 
+public:
 
-// public:
+    int                      ref                = 1;
 
-//     int                      ref                = 1;
+    cv::dnn::Net             net;
+    QMutex                   mutex;
 
-//     cv::dnn::Net             net;
-//     QMutex                   mutex;
+    // As we use OpenFace, we need to set appropriate values for image color space and image size
 
-//     // As we use OpenFace, we need to set appropriate values for image color space and image size
-
-//     cv::Size                 imageSize          = cv::Size(96, 96);
-//     float                    scaleFactor        = 1.0F / 255.0F;
-//     cv::Scalar               meanValToSubtract  = cv::Scalar(0.0, 0.0, 0.0);
-// };
+    cv::Size                 imageSize          = cv::Size(96, 96);
+    float                    scaleFactor        = 1.0F / 255.0F;
+    cv::Scalar               meanValToSubtract  = cv::Scalar(0.0, 0.0, 0.0);
+};
+*/
 
 DNNFaceExtractorBase::DNNFaceExtractorBase()
 {
@@ -107,7 +108,7 @@ double DNNFaceExtractorBase::L2squareNormDistance(const std::vector<float>& v1,
 
     for (size_t i = 0 ; i < v1.size() ; ++i)
     {
-        sqrDistance += pow((v1[i]/normV1 - v2[i]/normV2), 2);
+        sqrDistance += pow((v1[i] / normV1 - v2[i] / normV2), 2);
     }
 
     return sqrDistance;

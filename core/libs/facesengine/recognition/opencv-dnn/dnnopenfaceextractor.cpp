@@ -54,7 +54,7 @@ public:
     cv::dnn::Net             net;
     QMutex                   mutex;
 
-    // As we use OpenFace, we need to set appropriate values for image color space and image size
+    // As we use OpenFace, we need to set appropriate values for image color space and image size.
 
     cv::Size                 imageSize          = cv::Size(96, 96);
     float                    scaleFactor        = 1.0F / 255.0F;
@@ -105,15 +105,7 @@ bool DNNOpenFaceExtractor::loadModels()
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << nnmodel;
 
-#ifdef Q_OS_WIN
-
-            d->net = cv::dnn::readNetFromTorch(nnmodel.toLocal8Bit().constData());
-
-#else
-
             d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
-
-#endif
 
 #if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
 

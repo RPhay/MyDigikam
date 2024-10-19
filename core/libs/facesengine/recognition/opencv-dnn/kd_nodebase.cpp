@@ -202,19 +202,21 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
         return sqRange;
     }
 
-    // compare the sample node to the tree node
+    // Compare the sample node to the tree node.
 
     KDNodeBase::NodeCompareResult result = nodeCompare(position, d->position, sqRange, cosThreshold, d->nbDimension);
 
-    // add current node to the list
+    // Add current node to the list.
 
     if (result.result)
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "FACE MATCH Id:" << d->identity << "dist1:" << result.distance1 << " dist2:" << result.distance2;
+        qCDebug(DIGIKAM_FACEDB_LOG) << "FACE MATCH Id:" << d->identity
+                                    << "dist1:" << result.distance1
+                                    << " dist2:" << result.distance2;
 
         neighborList[result.distance1].append(d->identity);
 
-        // limit the size of the Map to maxNbNeighbors
+        // Limit the size of the Map to maxNbNeighbors.
 
         int size = 0;
 
@@ -227,7 +229,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
         if (size > maxNbNeighbors)
         {
-            // Eliminate the farthest neighbor
+            // Eliminate the farthest neighbor.
 
             QMap<double, QVector<int>>::iterator farthestNodes = std::prev(neighborList.end(), 1);
 
@@ -240,13 +242,13 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
                 farthestNodes.value().pop_back();
             }
 
-            // update the searching range
+            // Update the searching range.
 
             sqRange = neighborList.lastKey();
         }
     }
 
-    // sub-trees Traversal
+    // Sub-trees Traversal.
     // NOTE: DBL_MAX helps avoiding accessing nullptr
 
     double sqrDistanceleftTree = 0.0;
@@ -287,13 +289,13 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
         }
     }
 
-    // traverse the closest area
+    // Traverse the closest area.
 
     if (sqrDistanceleftTree < sqrDistancerightTree)
     {
 //        if (sqrDistanceleftTree < sqRange)
         {
-            // traverse left Tree
+            // Traverse left Tree.
 
             if (d->left)
             {
@@ -301,7 +303,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
                 if (sqrDistancerightTree < sqRange)
                 {
-                    // traverse right Tree
+                    // Traverse right Tree.
 
                     if (d->right)
                     {
@@ -315,7 +317,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     {
 //        if (sqrDistancerightTree < sqRange)
         {
-            // traverse right Tree
+            // Traverse right Tree.
 
             if (d->right)
             {
@@ -323,7 +325,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
                 if (sqrDistanceleftTree < sqRange)
                 {
-                    // traverse left Tree
+                    // Traverse left Tree.
 
                     if (d->left)
                     {

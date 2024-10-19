@@ -49,13 +49,14 @@ public:
 
 public:
 
-    int                             ref             = 1;
-    DNNModelBase*                   model           = nullptr;
-    DNNModelYuNet*                  detectorModel   = nullptr;
-
-    // cv::Ptr<cv::FaceRecognizerSF>   net         = nullptr;
-    // cv::Ptr<cv::FaceDetectorYN>     cv_model    = nullptr;
-    // QMutex                          mutex;
+    int                             ref           = 1;
+    DNNModelBase*                   model         = nullptr;
+    DNNModelYuNet*                  detectorModel = nullptr;
+/*
+    cv::Ptr<cv::FaceRecognizerSF>   net           = nullptr;
+    cv::Ptr<cv::FaceDetectorYN>     cv_model      = nullptr;
+    QMutex                          mutex;
+*/
 };
 
 DNNSFaceExtractor::DNNSFaceExtractor()
@@ -146,17 +147,17 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     QElapsedTimer timer;
 
-    // start the timer for profiling
+    // Start the timer for profiling.
 
     timer.start();
 
-    // resize the thumbnail if necessary to match SFace detection
-    // SFace wants 112x112px images.  Resize so 112 is the smallest dimension
+    // Resize the thumbnail if necessary to match SFace detection
+    // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
 
     if (std::min(faceImage.cols, faceImage.rows) > 112)
     {
-        // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
-        // so we just need to make sure no one bound exceeds the max. No padding needed
+        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
+        // so we just need to make sure no one bound exceeds the max. No padding needed.
 
         float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
                                            static_cast<float>(112) / static_cast<float>(faceImage.rows));
@@ -170,7 +171,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
         paddedFace = faceImage.clone();
     }
 
-    // add a border so there is room to rotate the image during alignment
+    // Add a border so there is room to rotate the image during alignment.
 
     cv::copyMakeBorder(paddedFace, paddedFace,
                        60, 60,
@@ -178,7 +179,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
                        cv::BORDER_CONSTANT,
                        cv::Scalar(0, 0, 0));
 
-    try 
+    try
     {
         if (
             d->model                                              &&
@@ -189,7 +190,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
 
-            // redetect face using YuNet to get landmarks
+            // Redetect face using YuNet to get landmarks.
 
             cv::Mat faceLandmark;
 
@@ -202,7 +203,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             {
                 QMutexLocker lock(&d->model->mutex);
 
-                // align and crop the face to standard size
+                // Align and crop the face to standard size.
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(paddedFace, faceLandmark, alignedFace);
 
@@ -227,7 +228,6 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
-
 
     return face_descriptors;
 }

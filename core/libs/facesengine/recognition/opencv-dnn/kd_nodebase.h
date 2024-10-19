@@ -49,17 +49,17 @@ public:
 public:
 
     /**
-     * Insert a new node to the sub-tree
+     * Insert a new node to the sub-tree.
      */
     KDNodeBase* insert(const cv::Mat& nodePos, const int identity);
 
     /**
-     * Return position vector of a node
+     * Return position vector of a node.
      */
     cv::Mat getPosition() const;
 
     /**
-     * Return a list of closest neighbors, limited by maxNbNeighbors and sqRange
+     * Return a list of closest neighbors, limited by maxNbNeighbors and sqRange.
      */
     double getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                const cv::Mat&               position,
@@ -67,14 +67,14 @@ public:
                                float                        cosThreshold,
                                int                          maxNbNeighbors) const;
     /**
-     * Return identity of the node
+     * Return identity of the node.
      */
     int getIdentity();
 
     int getDimension();
 
     /**
-     * Set database entry ID of the node
+     * Set database entry ID of the node.
      */
     void setNodeId(int id);
 
@@ -96,7 +96,7 @@ public:
 protected:
 
     /**
-     * pure virtual functions to be overridden in child classes
+     * Pure virtual functions to be overridden in child classes.
      */
     virtual KDNodeBase* createNode(const cv::Mat& nodePos,
                                    const int identity,
