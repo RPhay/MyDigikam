@@ -284,8 +284,8 @@ void FaceScanWidget::setupUi()
                                        "It is much faster and will reduce the number of false-positives, but will not detect small faces "
                                        "in the background or faces in large group photos.</p>"
                                        "<p>If you want to detect all faces in one pass, select <b>Extra Small</b> faces and set the detection "
-                                       "accuracy to about 45%. Unfortunately, this will give a significant number of false-positives. "
-                                       "It's recommended to set a detection accuracy of about 55% and face size of <b>Small</b> or <b>Medium</b> "
+                                       "accuracy to 2. Unfortunately, this will create a significant number of false-positives. "
+                                       "It's recommended to set a detection accuracy of 6-8 and face size of <b>Medium</b> or <b>Large</b> "
                                        "for normal use.</p><p>This setting applies only to YuNet.</p>"));
 
     detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 1);

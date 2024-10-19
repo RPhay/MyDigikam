@@ -76,8 +76,8 @@ RELOCATE_PREFIX="/Applications/digiKam.org"
 
 # URL to git repository to checkout digiKam source code
 # git protocol version which require a developer account with ssh keys.
-DK_GITURL="git@invent.kde.org:graphics/digikam.git"
-#DK_GITURL="git@invent.kde.org:michmill/digiKam.git"
+#DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+DK_GITURL="git@invent.kde.org:michmill/digiKam.git"
 # https protocol version which give annonyous access.
 #DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
@@ -103,7 +103,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.2.0-beta1
 DK_VERSION=master
-#DK_VERSION="work/michmill/dnnmodelmanager"
+#DK_VERSION="work/michmill/FaceSettingsWidget-1-10-update"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
