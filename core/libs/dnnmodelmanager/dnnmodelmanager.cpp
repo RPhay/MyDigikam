@@ -138,21 +138,21 @@ void DNNModelManager::loadConfig()
         {
             // Set basic values
 
-            info.displayName        = d->settings->value(QString::fromUtf8("DisplayName")).toString();
-            info.fileName           = d->settings->value(QString::fromUtf8("FileName")).toString();
-            info.downloadPath       = d->settings->value(QString::fromUtf8("DownloadPath")).toString();
-            info.sha256             = d->settings->value(QString::fromUtf8("SHA256")).toString();
-            info.fileSize           = d->settings->value(QString::fromUtf8("FileSize")).toInt();
-            info.baseThreshold      = d->settings->value(QString::fromUtf8("BaseThreshold")).toInt();
-            info.minUsableThreshold = d->settings->value(QString::fromUtf8("MinUsableThreshold")).toInt();
-            info.minUsableThreshold = d->settings->value(QString::fromUtf8("MaxUsableThreshold")).toInt();
-            info.classList          = d->settings->value(QString::fromUtf8("ClassList")).toString();
-            info.configName         = d->settings->value(QString::fromUtf8("ConfigName")).toString();
-            info.imageSize          = d->settings->value(QString::fromUtf8("ImageSize")).toInt();
+            info.displayName         = d->settings->value(QString::fromUtf8("DisplayName")).toString();
+            info.fileName            = d->settings->value(QString::fromUtf8("FileName")).toString();
+            info.downloadPath        = d->settings->value(QString::fromUtf8("DownloadPath")).toString();
+            info.sha256              = d->settings->value(QString::fromUtf8("SHA256")).toString();
+            info.fileSize            = d->settings->value(QString::fromUtf8("FileSize")).toInt();
+            info.baseThreshold       = d->settings->value(QString::fromUtf8("BaseThreshold")).toInt();
+            info.minUsableThreshold  = d->settings->value(QString::fromUtf8("MinUsableThreshold")).toInt();
+            info.minUsableThreshold  = d->settings->value(QString::fromUtf8("MaxUsableThreshold")).toInt();
+            info.classList           = d->settings->value(QString::fromUtf8("ClassList")).toString();
+            info.configName          = d->settings->value(QString::fromUtf8("ConfigName")).toString();
+            info.imageSize           = d->settings->value(QString::fromUtf8("ImageSize")).toInt();
 
             // Create usage
 
-            QString usageStr =  d->settings->value(QLatin1String("Usage")).toString();
+            QString usageStr         = d->settings->value(QLatin1String("Usage")).toString();
 
             if (usageStr.contains(QLatin1String("face_detection")))
             {
