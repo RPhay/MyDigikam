@@ -118,7 +118,7 @@ void DNNModelManager::loadConfig()
 {
     // Get the current application name
 
-    QString appName   = qApp->applicationName().toLower();
+    QString appName    = qApp->applicationName().toLower();
 
     // Load the group from the config file
 
