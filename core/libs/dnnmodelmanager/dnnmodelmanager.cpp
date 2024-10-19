@@ -260,7 +260,7 @@ void DNNModelManager::getSettings()
         {
             qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Load DNN Models Configuration File from" << appPath;
 
-            d->settings = new QSettings(appPath, QSettings::IniFormat);
+            d->settings = new QSettings(appPath, QSettings::IniFormat, this);
         }
         else
         {
