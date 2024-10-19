@@ -83,9 +83,9 @@ const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage
 {
     d->downloadInfo.clear();
 
-    const auto keys = d->modelMap.keys();
+    const auto& keys = d->modelMap.keys();
 
-    for (auto& model : keys)
+    for (const auto& model : keys)
     {
         if (d->modelMap[model]->info.usage.contains(usage))
         {
@@ -122,7 +122,7 @@ void DNNModelManager::loadConfig()
 
     // Load the group from the config file
 
-    const auto groups = d->settings->childGroups();
+    const auto& groups = d->settings->childGroups();
 
     for (const auto& modelName : groups)
     {
