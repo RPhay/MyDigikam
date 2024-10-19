@@ -207,12 +207,12 @@ VersionManagerSettings ApplicationSettings::getVersionManagerSettings() const
     return d->versionSettings;
 }
 
-double ApplicationSettings::getFaceDetectionAccuracy() const
+int ApplicationSettings::getFaceDetectionAccuracy() const
 {
     return d->faceDetectionAccuracy;
 }
 
-void ApplicationSettings::setFaceDetectionAccuracy(double value)
+void ApplicationSettings::setFaceDetectionAccuracy(int value)
 {
     d->faceDetectionAccuracy = value;
 }
@@ -237,12 +237,12 @@ void ApplicationSettings::setFaceDetectionSize(FaceScanSettings::FaceDetectionSi
     d->faceDetectionSize = size;
 }
 
-double ApplicationSettings::getFaceRecognitionAccuracy() const
+int ApplicationSettings::getFaceRecognitionAccuracy() const
 {
     return d->faceRecognitionAccuracy;
 }
 
-void ApplicationSettings::setFaceRecognitionAccuracy(double value)
+void ApplicationSettings::setFaceRecognitionAccuracy(int value)
 {
     d->faceRecognitionAccuracy = value;
 }

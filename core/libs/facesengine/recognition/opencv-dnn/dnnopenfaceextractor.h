@@ -33,7 +33,7 @@ public:
 
     DNNOpenFaceExtractor();
     DNNOpenFaceExtractor(const DNNOpenFaceExtractor&);
-    ~DNNOpenFaceExtractor();
+    ~DNNOpenFaceExtractor() override;
 
 public:
 

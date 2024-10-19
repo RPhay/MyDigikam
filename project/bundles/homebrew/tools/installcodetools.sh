@@ -24,7 +24,6 @@ echo -e "\n"
 echo "---------- Installing code analysis tools"
 $INSTALL_PREFIX/bin/brew install \
                 cppcheck \
-                clazy \
                 flawfinder
 
 

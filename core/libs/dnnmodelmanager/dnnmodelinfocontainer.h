@@ -46,7 +46,7 @@ public:
                                    const QString&           _downloadPath,
                                    const QString&           _sha256,
                                    const qint64&            _fileSize,
-                                   int                      _baseThreshold,
+                                   int                      _defaultThreshold,
                                    int                      _minUsableThreshold,
                                    int                      _maxUsableThreshold,
                                    DNNLoaderType            _loaderType,
@@ -74,7 +74,7 @@ public:
     QString            configName;
 
     qint64             fileSize            = 0;                         ///< Used by the downloader to verify size
-    int                baseThreshold       = 0;                         ///< Threshold used for models that aren't configured by the UI
+    int                defaultThreshold    = 0;                         ///< Threshold used for models that aren't configured by the UI
     int                minUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
     int                maxUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
     DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow

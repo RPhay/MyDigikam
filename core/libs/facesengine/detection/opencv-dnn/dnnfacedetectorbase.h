@@ -71,7 +71,7 @@ protected:
 
 public:
 
-    static float confidenceThreshold;    ///< Threshold for bbox detection. It can be init and changed in the GUI
+    static int   uiConfidenceThreshold;    ///< Threshold for bbox detection. It can be init and changed in the GUI
     static float nmsThreshold;           ///< Threshold for nms suppression
 
 protected:

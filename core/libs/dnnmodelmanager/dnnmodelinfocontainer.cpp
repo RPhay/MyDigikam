@@ -37,7 +37,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(const DNNModelInfoContainer& o)
       classList         (o.classList),
       configName        (o.configName),
       fileSize          (o.fileSize),
-      baseThreshold     (o.baseThreshold),
+      defaultThreshold  (o.defaultThreshold),
       minUsableThreshold(o.minUsableThreshold),
       maxUsableThreshold(o.maxUsableThreshold),
       loaderType        (o.loaderType),
@@ -57,7 +57,7 @@ DNNModelInfoContainer& DNNModelInfoContainer::operator=(const DNNModelInfoContai
     classList          = o.classList;
     configName         = o.configName;
     fileSize           = o.fileSize;
-    baseThreshold      = o.baseThreshold;
+    defaultThreshold   = o.defaultThreshold;
     minUsableThreshold = o.minUsableThreshold;
     maxUsableThreshold = o.maxUsableThreshold;
     loaderType         = o.loaderType;
@@ -78,7 +78,7 @@ DNNModelInfoContainer& DNNModelInfoContainer::operator=(DNNModelInfoContainer&& 
     classList          = o.classList;
     configName         = o.configName;
     fileSize           = o.fileSize;
-    baseThreshold      = o.baseThreshold;
+    defaultThreshold   = o.defaultThreshold;
     minUsableThreshold = o.minUsableThreshold;
     maxUsableThreshold = o.maxUsableThreshold;
     loaderType         = o.loaderType;
@@ -96,7 +96,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(
                                              const QString&           _downloadPath,
                                              const QString&           _sha256,
                                              const qint64&            _fileSize,
-                                             int                      _baseThreshold,
+                                             int                      _defaultThreshold,
                                              int                      _minUsableThreshold,
                                              int                      _maxUsableThreshold,
                                              DNNLoaderType            _loaderType,
@@ -114,7 +114,7 @@ DNNModelInfoContainer::DNNModelInfoContainer(
       classList         (_classList),
       configName        (_configName),
       fileSize          (_fileSize),
-      baseThreshold     (_baseThreshold),
+      defaultThreshold  (_defaultThreshold),
       minUsableThreshold(_minUsableThreshold),
       maxUsableThreshold(_maxUsableThreshold),
       loaderType        (_loaderType),
@@ -135,7 +135,7 @@ bool DNNModelInfoContainer::operator==(const DNNModelInfoContainer& o) const
     b     &= (classList           == o.classList);
     b     &= (configName          == o.configName);
     b     &= (fileSize            == o.fileSize);
-    b     &= (baseThreshold       == o.baseThreshold);
+    b     &= (defaultThreshold    == o.defaultThreshold);
     b     &= (minUsableThreshold  == o.minUsableThreshold);
     b     &= (maxUsableThreshold  == o.maxUsableThreshold);
     b     &= (loaderType          == o.loaderType);

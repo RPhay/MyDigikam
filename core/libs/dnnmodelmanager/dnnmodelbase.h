@@ -50,7 +50,7 @@ public:
      * input:  uiThreshold is the slider value from the UI
      * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
      */
-    float                       getThreshold(int uiThreshold = 1000)    const;
+    float                       getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)    const;
     DownloadInfo                getDownloadInformation()                const;
 
     /**

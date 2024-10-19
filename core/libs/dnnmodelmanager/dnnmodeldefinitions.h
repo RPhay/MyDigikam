@@ -40,4 +40,6 @@ typedef enum _DNNModelUsage
 
 typedef QList<DNNModelUsage> DNNModelUsageList;
 
+#define DNN_MODEL_THRESHOLD_NOT_SET 1000
+
 } // namespace Digikam

@@ -143,9 +143,9 @@ void DNNModelManager::loadConfig()
             info.downloadPath        = d->settings->value(QLatin1String("DownloadPath")).toString();
             info.sha256              = d->settings->value(QLatin1String("SHA256")).toString();
             info.fileSize            = d->settings->value(QLatin1String("FileSize")).toInt();
-            info.baseThreshold       = d->settings->value(QLatin1String("BaseThreshold")).toInt();
+            info.defaultThreshold    = d->settings->value(QLatin1String("DefaultThreshold")).toInt();
             info.minUsableThreshold  = d->settings->value(QLatin1String("MinUsableThreshold")).toInt();
-            info.minUsableThreshold  = d->settings->value(QLatin1String("MaxUsableThreshold")).toInt();
+            info.maxUsableThreshold  = d->settings->value(QLatin1String("MaxUsableThreshold")).toInt();
             info.classList           = d->settings->value(QLatin1String("ClassList")).toString();
             info.configName          = d->settings->value(QLatin1String("ConfigName")).toString();
             info.imageSize           = d->settings->value(QLatin1String("ImageSize")).toInt();
@@ -253,18 +253,23 @@ void DNNModelManager::getSettings()
         // Check potential download location
         // TODO: Maybe download the config file from the web
 
+        // Get from bundle
+
         QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                 QLatin1String("digikam/dnnmodels/dnnmodels.conf"));
+                                                 QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
+                                                 QStandardPaths::LocateFile);
+
+        // env var for tuning model settings
+        QString dnnModelConf    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_MODEL_CONF"));
+
+        if (0 < dnnModelConf.length())
+        {
+            appPath = dnnModelConf;
+        }
 
         if (!appPath.isEmpty())
         {
-            qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Load DNN Models Configuration File from" << appPath;
-
-            d->settings = new QSettings(appPath, QSettings::IniFormat, this);
-        }
-        else
-        {
-            qCCritical(DIGIKAM_DNNMODELMNGR_LOG) << "Cannot find configuration file dnnmodels.conf";
+            d->settings     = new QSettings(appPath, QSettings::IniFormat, this);
         }
     }
 }

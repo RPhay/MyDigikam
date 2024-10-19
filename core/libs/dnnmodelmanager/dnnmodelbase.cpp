@@ -131,16 +131,25 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
 
 float DNNModelBase::getThreshold(int uiThreshold) const
 {
-    if (1000 == uiThreshold)
+    float threshold = 0.5f;
+
+    if (DNN_MODEL_THRESHOLD_NOT_SET == uiThreshold)
     {
-        return (float)info.baseThreshold / 100.0f;
+        threshold = (float)info.defaultThreshold / 100.0f;
     }
     else
     {
-        float increment = (info.maxUsableThreshold - info.minUsableThreshold) / 10;
-
-        return ((float)(uiThreshold) * increment) + (float)info.minUsableThreshold;
+        float increment = (float)(info.maxUsableThreshold - info.minUsableThreshold) / 9.0f;
+        threshold = (((float)(uiThreshold-1) * increment) + (float)info.minUsableThreshold) / 100;
     }
+
+    if (info.usage.contains(DNNModelUsage::DNNUsageFaceRecognition))
+    {
+        // the threshold is the inverse for face recognition
+        threshold = 1 - threshold;
+    }
+
+    return threshold;
 }
 
 } // namespace Digikam

@@ -61,8 +61,10 @@ private Q_SLOTS:
 //    void slotRebuildFaceTraining():
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
+    void slotDetectAccuracyChanged();
     void slotDetectModelChanged();
     void slotDetectSizeChanged();
+    void slotRecognizeAccuracyChanged();
     void slotRecognizeModelChanged();
 
 private:

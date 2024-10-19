@@ -17,6 +17,7 @@
  * ============================================================ */
 
 #include "facialrecognition_wrapper_p.h"
+#include "dnnmodeldefinitions.h"
 
 namespace Digikam
 {
@@ -24,20 +25,21 @@ namespace Digikam
 void FacialRecognitionWrapper::Private::applyParameters()
 {
     int k           = 5;
-    float threshold = 0.6F;
+    int threshold   = DNN_MODEL_THRESHOLD_NOT_SET;
     FaceScanSettings::FaceRecognitionModel oldModel = recognizeModel;
 
-    if      (parameters.contains(QLatin1String("k-nearest")))
+    // if      (parameters.contains(QLatin1String("k-nearest")))
+    // {
+    //     k = parameters.value(QLatin1String("k-nearest")).toInt();
+    // }
+    // else if (parameters.contains(QLatin1String("threshold")))
+    // {
+    //     threshold = parameters.value(QLatin1String("threshold")).toFloat();
+    // }
+    // else 
+    if (parameters.contains(QLatin1String("recognizeAccuracy")))
     {
-        k = parameters.value(QLatin1String("k-nearest")).toInt();
-    }
-    else if (parameters.contains(QLatin1String("threshold")))
-    {
-        threshold = parameters.value(QLatin1String("threshold")).toFloat();
-    }
-    else if (parameters.contains(QLatin1String("recognizeAccuracy")))
-    {
-        threshold = parameters.value(QLatin1String("recognizeAccuracy")).toFloat();
+        threshold = parameters.value(QLatin1String("recognizeAccuracy")).toInt();
     }
 
     if      (parameters.contains(QLatin1String("recognizeModel")))
@@ -56,8 +58,6 @@ void FacialRecognitionWrapper::Private::applyParameters()
 
         recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
     }
-
-    threshold = 1 - threshold;
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "recognition threshold" << threshold;
 
@@ -101,7 +101,7 @@ void FacialRecognitionWrapper::setParameters(const FaceScanSettings& parameters)
 {
     FaceScanSettings::FaceRecognitionModel oldModel = d->recognizeModel;
 
-    float threshold   = parameters.recognizeAccuracy;
+    int threshold   = parameters.recognizeAccuracy;
     d->recognizeModel = parameters.recognizeModel;
 
     // check if d and if recModel is changing.  Rebuild d if needed

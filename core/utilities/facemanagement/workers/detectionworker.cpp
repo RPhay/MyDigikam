@@ -64,10 +64,10 @@ QImage DetectionWorker::scaleForDetection(const DImg& image) const
     return image.copyQImage();
 }
 
-void DetectionWorker::setAccuracyAndModel(double detectAccuracy,
+void DetectionWorker::setAccuracyAndModel(int detectAccuracy,
                                           FaceScanSettings::FaceDetectionModel detectModel,
                                           FaceScanSettings::FaceDetectionSize detectSize,
-                                          double recognizeAccuracy,
+                                          int recognizeAccuracy,
                                           FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     QVariantMap params;

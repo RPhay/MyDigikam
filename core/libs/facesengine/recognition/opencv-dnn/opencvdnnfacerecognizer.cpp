@@ -49,9 +49,9 @@ void OpenCVDNNFaceRecognizer::setNbNeighbors(int k)
     d->kNeighbors = k;
 }
 
-void OpenCVDNNFaceRecognizer::setThreshold(float threshold)
+void OpenCVDNNFaceRecognizer::setThreshold(int threshold)
 {
-    d->threshold = threshold;
+    d->uiThreshold = threshold;
 }
 
 cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(QImage& inputImage)

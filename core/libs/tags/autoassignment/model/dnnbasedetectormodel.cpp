@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-float DNNBaseDetectorModel::confidenceThreshold = 0.5F;
+int DNNBaseDetectorModel::uiConfidenceThreshold = DNN_MODEL_THRESHOLD_NOT_SET; ///< setting 1000 will use the value from dnnmodels.conf if passed in
 float DNNBaseDetectorModel::nmsThreshold        = 0.4F;
 float DNNBaseDetectorModel::scoreThreshold      = 0.45F;
 

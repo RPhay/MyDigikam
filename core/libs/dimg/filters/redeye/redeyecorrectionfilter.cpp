@@ -32,6 +32,7 @@
 #include "facedetector.h"
 #include "shapepredictor.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -97,29 +98,31 @@ void RedEyeCorrectionFilter::filterImage()
 {
     if (!d->sp)
     {
+        QString spdata;
+
         // Loading the shape predictor model
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                 QLatin1String("digikam/facesengine"),
-                                                 QStandardPaths::LocateDirectory);
+        DNNModelBase* model = DNNModelManager::instance()->getModel(QLatin1String("ShapePredictor"), DNNModelUsage::DNNUsageFaceDetection);
 
-        QString data    = QLatin1String("shapepredictor.dat");
-        QString spdata  = appPath + QLatin1Char('/') + data;
+        if (model)
+        {
+            spdata = model->getModelPath();
+        }
 
-        QFile model(spdata);
+        QFile modelFile(spdata);
 
-        if (model.open(QIODevice::ReadOnly))
+        if (modelFile.open(QIODevice::ReadOnly))
         {
             RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
-            QDataStream dataStream(&model);
+            QDataStream dataStream(&modelFile);
             dataStream.setFloatingPointPrecision(QDataStream::SinglePrecision);
             dataStream >> *temp;
             d->sp                              = temp;
-            model.close();
+            modelFile.close();
         }
         else
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Error open file" << data;
+            qCDebug(DIGIKAM_DIMG_LOG) << "Error opening file" << spdata;
             return;
         }
     }
@@ -147,7 +150,7 @@ void RedEyeCorrectionFilter::filterImage()
     }
 
     QVariantMap params;
-    params[QLatin1String("detectAccuracy")]  = 0.6;
+    params[QLatin1String("detectAccuracy")]  = DNN_MODEL_THRESHOLD_NOT_SET; // use the default value from dnnmodels.conf
     params[QLatin1String("detectModel")] = FaceScanSettings::FaceDetectionModel::YuNet;
     d->facedetector.setParameters(params);
     const RedEye::ShapePredictor& sp   = *(d->sp);

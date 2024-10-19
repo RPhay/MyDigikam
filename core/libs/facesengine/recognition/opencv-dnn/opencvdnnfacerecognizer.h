@@ -93,7 +93,7 @@ public:
     /**
      * Set maximum square distance of 2 vectors
      */
-    void setThreshold(float threshold);
+    void setThreshold(int threshold);
 
     /**
      * @brief register training data for unit test

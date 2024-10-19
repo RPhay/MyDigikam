@@ -338,13 +338,13 @@ public:
     VersionManagerSettings                       versionSettings;
 
     /// face detection settings
-    double                                       faceDetectionAccuracy                              = 0.6;
+    int                                          faceDetectionAccuracy                              = 7;
     FaceScanSettings::FaceDetectionModel         faceDetectionModel                                 = FaceScanSettings::FaceDetectionModel::YuNet;
     FaceScanSettings::FaceDetectionSize          faceDetectionSize                                  = FaceScanSettings::FaceDetectionSize::Medium;
 
     /// face recognition settings
-    double                                       faceRecognitionAccuracy                            = 0.7;
-    FaceScanSettings::FaceRecognitionModel       faceRecognitionModel                               = FaceScanSettings::FaceRecognitionModel::OpenFace;
+    int                                          faceRecognitionAccuracy                            = 7;
+    FaceScanSettings::FaceRecognitionModel       faceRecognitionModel                               = FaceScanSettings::FaceRecognitionModel::SFace;
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;

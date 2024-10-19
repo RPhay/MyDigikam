@@ -78,10 +78,11 @@ void FaceScanWidget::doLoadState()
 
     d->albumSelectors->loadState();
 
-    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
+    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
+    // d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
     d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
     d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
-    d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy() * 100);
+    d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
     d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(ApplicationSettings::instance()->getFaceRecognitionModel()));
 
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
@@ -118,10 +119,10 @@ void FaceScanWidget::doSaveState()
 
     d->albumSelectors->saveState();
 
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value() / 100.0);
+    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
     ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
     ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
-    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value() / 100.0);
+    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
     ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
 
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
@@ -224,8 +225,8 @@ void FaceScanWidget::setupUi()
     detectAccuracyLabel->setAlignment(Qt::AlignLeft);
 
     d->detectAccuracyInput              = new DIntNumInput(d->settingsTab);
-    d->detectAccuracyInput->setDefaultValue(70);
-    d->detectAccuracyInput->setRange(0, 100, 10);
+    d->detectAccuracyInput->setDefaultValue(7);
+    d->detectAccuracyInput->setRange(1, 10, 1);
     d->detectAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                              "Adjust sensitivity versus specificity: the higher the value, "
                                              "the more accurately faces will\n"
@@ -287,12 +288,21 @@ void FaceScanWidget::setupUi()
                                        "It's recommended to set a detection accuracy of about 55% and face size of <b>Small</b> or <b>Medium</b> "
                                        "for normal use.</p><p>This setting applies only to YuNet.</p>"));
 
-    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
-    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
-    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
-    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
-    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
-    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
+    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 1);
+    detectGrid->addWidget(d->detectAccuracyInput,   0, 2, 1, 1);
+    detectGrid->addWidget(detectModelLabel,         1, 0, 1, 1);
+    detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
+    detectGrid->addWidget(detectSizeLabel,          2, 0, 1, 1);
+    detectGrid->addWidget(d->detectSizeBox,         2, 2, 1, 1);
+
+    // old layout for easy revert
+
+    // detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
+    // detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
+    // detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
+    // detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
+    // detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
+    // detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
 
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
@@ -307,8 +317,8 @@ void FaceScanWidget::setupUi()
     recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeAccuracyInput            = new DIntNumInput(d->settingsTab);
-    d->recognizeAccuracyInput->setDefaultValue(70);
-    d->recognizeAccuracyInput->setRange(0, 100, 10);
+    d->recognizeAccuracyInput->setDefaultValue(7);
+    d->recognizeAccuracyInput->setRange(1, 10, 1);
     d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                                 "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
                                                 "be recognized, but less faces will be recognized.\n"
@@ -342,10 +352,17 @@ void FaceScanWidget::setupUi()
 
 #endif
 
-    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
-    recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
-    recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
-    recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 1);
+    recognizeGrid->addWidget(d->recognizeAccuracyInput, 0, 2, 1, 1);
+    recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
+
+    // old layout for easy revert
+    
+    // recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
+    // recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
+    // recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
+    // recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
 
     // ---
 
@@ -388,11 +405,10 @@ void FaceScanWidget::setupConnections()
             this, SLOT(slotPrepareForRecognize(bool)));
 
     connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
-            this, [this](int value)
-        {
-            ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100.0);
-        }
-    );
+            this, &FaceScanWidget::slotDetectAccuracyChanged);
+
+    connect(d->recognizeAccuracyInput, &DIntNumInput::valueChanged,
+            this, &FaceScanWidget::slotRecognizeAccuracyChanged);
 
     connect(d->detectModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &FaceScanWidget::slotDetectModelChanged);
@@ -427,6 +443,11 @@ void FaceScanWidget::slotDetectModelChanged()
     {
         d->detectSizeBox->setEnabled(false);
     }
+}
+
+void FaceScanWidget::slotDetectAccuracyChanged()
+{
+    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
 }
 
 void FaceScanWidget::slotDetectSizeChanged()
@@ -493,6 +514,11 @@ void FaceScanWidget::slotRecognizeModelChanged()
     delete dlg;
 }
 
+void FaceScanWidget::slotRecognizeAccuracyChanged()
+{
+    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
+}
+
 bool FaceScanWidget::settingsConflicted() const
 {
     return d->settingsConflicted;
@@ -542,10 +568,10 @@ FaceScanSettings FaceScanWidget::settings() const
         d->settingsConflicted       = (numberOfIdentities == 0);
     }
 
-    settings.detectAccuracy         = d->detectAccuracyInput->value() / 100.0;
+    settings.detectAccuracy         = d->detectAccuracyInput->value();
     settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
     settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
-    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value() / 100.0;
+    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
     settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();

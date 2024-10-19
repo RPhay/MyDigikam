@@ -21,6 +21,7 @@
 #include "album.h"
 #include "iteminfo.h"
 #include "digikam_export.h"
+#include "dnnmodeldefinitions.h"
 
 namespace Digikam
 {
@@ -100,13 +101,13 @@ public:
     FaceDetectionSize                       detectSize                  = FaceDetectionSize::Medium;
 
     /// Detection accuracy
-    double                                  detectAccuracy              = 0.6;
+    int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
 
     /// detection Model
     FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::OpenFace;
 
     /// Detection accuracy
-    double                                  recognizeAccuracy           = 0.7;
+    int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
 
     /// Albums to scan
     AlbumList                               albums;

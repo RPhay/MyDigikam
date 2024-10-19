@@ -222,9 +222,9 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
     return cvImage;
 }
 
-void OpenCVDNNFaceDetector::setAccuracy(const float accuracy)
+void OpenCVDNNFaceDetector::setAccuracy(const int accuracy)
 {
-    m_inferenceEngine->confidenceThreshold = accuracy;
+    m_inferenceEngine->uiConfidenceThreshold = accuracy;
 }
 
 void OpenCVDNNFaceDetector::setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size)

@@ -84,12 +84,13 @@ public:
 
 public:
 
-    static float confidenceThreshold;    ///< Threshold for bbox detection. It can be init and changed in the GUI
+    static int   uiConfidenceThreshold;  ///< Threshold for bbox detection. It can be init and changed in the GUI
     static float nmsThreshold;           ///< Threshold for nms suppression
     static float scoreThreshold;         ///< Threshold for class detection score
 
 protected:
 
+    // TODO: Set these from the DNNModel
     float           scaleFactor = 1.0F;
     cv::Scalar      meanValToSubtract;
     cv::Size        inputImageSize;

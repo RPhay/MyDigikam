@@ -119,6 +119,8 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
 
     cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
+    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+
     // TODO: model problem, confidence of ssd output too low ===> false detection
 
     for (int i = 0 ; i < detectionMat.rows ; ++i)

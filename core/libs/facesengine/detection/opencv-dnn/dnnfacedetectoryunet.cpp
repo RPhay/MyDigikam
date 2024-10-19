@@ -107,6 +107,8 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     QElapsedTimer timer;
     cv::Mat faces;
 
+    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "starting YuNet face detection";
 
     // Lock the model for single threading

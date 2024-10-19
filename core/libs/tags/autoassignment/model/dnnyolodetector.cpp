@@ -266,6 +266,8 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
 {
     QHash<QString, QVector<QRect> > detectedBoxes;
 
+    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+
     if (predefinedClasses.isEmpty())
     {
         return detectedBoxes;

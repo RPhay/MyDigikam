@@ -136,6 +136,8 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
     std::vector<cv::Rect> doubtBoxes;
     std::vector<cv::Rect> boxes;
 
+    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+
     for (size_t i = 0 ; i < outs.size() ; ++i)
     {
         // Scan through all the bounding boxes output from the network and keep only the

@@ -37,10 +37,10 @@ public:
 public Q_SLOTS:
 
     void process(const FacePipelineExtendedPackage::Ptr& package);
-    void setAccuracyAndModel(double detectAccuracy,
+    void setAccuracyAndModel(int detectAccuracy,
                              FaceScanSettings::FaceDetectionModel detectModel,
                              FaceScanSettings::FaceDetectionSize detectSize,
-                             double recognizeAccuracy,
+                             int recognizeAccuracy,
                              FaceScanSettings::FaceRecognitionModel recognizeModel);
 
 Q_SIGNALS:

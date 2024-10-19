@@ -49,14 +49,12 @@ public:
 
 public:
 
-    int                             ref           = 1;
-    DNNModelBase*                   model         = nullptr;
-    DNNModelYuNet*                  detectorModel = nullptr;
-/*
-    cv::Ptr<cv::FaceRecognizerSF>   net           = nullptr;
-    cv::Ptr<cv::FaceDetectorYN>     cv_model      = nullptr;
-    QMutex                          mutex;
-*/
+    int                             ref             = 1;
+
+    // TODO move d private to base. Move DNNModelBase* to d private.  YuNet stays in SFace
+
+    DNNModelBase*                   model           = nullptr;
+    DNNModelYuNet*                  detectorModel   = nullptr;
 };
 
 DNNSFaceExtractor::DNNSFaceExtractor()
@@ -88,41 +86,45 @@ DNNSFaceExtractor::~DNNSFaceExtractor()
 bool DNNSFaceExtractor::loadModels()
 {
     d->model = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition);
+    d->detectorModel = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
 
-    if (d->model && !d->model->modelLoaded)
+    try
     {
-        try
+        if (d->model && d->detectorModel)
         {
-            cv::Ptr<cv::FaceRecognizerSF> net  = static_cast<DNNModelSFace*>(d->model)->getNet();
+            // load the SFace model for feature extraction
 
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
+            if (!d->model->modelLoaded)
+            {
+                cv::Ptr<cv::FaceRecognizerSF> net = static_cast<DNNModelSFace*>(d->model)->getNet();
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
+            }
 
-            d->detectorModel                   = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
-            cv::Ptr<cv::FaceDetectorYN> detNet = static_cast<DNNModelYuNet*>(d->detectorModel)->getNet();
+            // load the YuNet model for 5-point face alignment
 
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
+            if (!d->detectorModel->modelLoaded)
+            {
+                cv::Ptr<cv::FaceDetectorYN> detNet = static_cast<DNNModelYuNet*>(d->detectorModel)->getNet();
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
+            }
         }
-        catch (cv::Exception& e)
+        else
         {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+            qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot load faces engine DNN models";
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
             return false;
         }
-        catch (...)
-        {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
-
-           return false;
-        }
     }
-    else
+    catch (cv::Exception& e)
     {
-        if (d->model)
-        {
-            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
-                                           << d->model->info.displayName;
-        }
+        qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
 
+        return false;
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot find faces engine DNN models";
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
         return false;
@@ -182,10 +184,11 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     try
     {
         if (
-            d->model                                              &&
-            d->detectorModel                                      &&
-            !d->detectorModel->getNet().empty()                   &&
-            !static_cast<DNNModelSFace*>(d->model)->getNet().empty()
+            d->model                        &&
+            d->model->modelLoaded           &&
+            d->detectorModel                &&
+            d->detectorModel->modelLoaded
+            
            )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
@@ -195,6 +198,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             cv::Mat faceLandmark;
 
             d->detectorModel->getNet()->setInputSize(paddedFace.size());
+            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold());
             d->detectorModel->getNet()->detect(paddedFace, faceLandmark);
 
             detectorLock.unlock();
@@ -214,6 +218,10 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
                 normalize(face_descriptors, face_descriptors);
+            }
+            else
+            {
+                qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
             }
         }
     }

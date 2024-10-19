@@ -61,7 +61,7 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     Q_EMIT processed(package);
 }
 
-void RecognitionWorker::setThreshold(double threshold, bool)
+void RecognitionWorker::setThreshold(int threshold, bool)
 {
     recognizer.setParameter(QLatin1String("recognizeAccuracy"), threshold);
 }
@@ -71,10 +71,10 @@ void RecognitionWorker::aboutToDeactivate()
     imageRetriever.cancel();
 }
 
-void RecognitionWorker::setAccuracyAndModel(double detectAccuracy,
+void RecognitionWorker::setAccuracyAndModel(int detectAccuracy,
                                             FaceScanSettings::FaceDetectionModel detectModel,
                                             FaceScanSettings::FaceDetectionSize detectSize,
-                                            double recognizeAccuracy,
+                                            int recognizeAccuracy,
                                             FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     // michmill added

@@ -50,7 +50,7 @@ public:
     cv::Mat prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize)    const;
     cv::Mat prepareForDetectionYuNet(cv::Mat& cvImage, cv::Size& paddedSize)            const;
 
-    void setAccuracy(const float accuracy);
+    void setAccuracy(const int accuracy);
     void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size);
 
     QList<QRect> detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);

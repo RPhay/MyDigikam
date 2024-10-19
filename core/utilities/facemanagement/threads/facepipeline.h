@@ -203,7 +203,7 @@ public Q_SLOTS:
      */
     void process(const QList<ItemInfo>& infos);
 
-    void setAccuracyAndModel(double detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, double recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
+    void setAccuracyAndModel(int detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, int recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
 
 Q_SIGNALS:
 

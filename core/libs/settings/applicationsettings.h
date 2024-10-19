@@ -467,8 +467,8 @@ public:
     void setVersionManagerSettings(const VersionManagerSettings& settings);
     VersionManagerSettings getVersionManagerSettings() const;
 
-    double getFaceDetectionAccuracy() const;
-    void setFaceDetectionAccuracy(double value);
+    int getFaceDetectionAccuracy() const;
+    void setFaceDetectionAccuracy(int value);
 
     FaceScanSettings::FaceDetectionModel getFaceDetectionModel() const;
     void setFaceDetectionModel(FaceScanSettings::FaceDetectionModel model);
@@ -476,8 +476,8 @@ public:
     FaceScanSettings::FaceDetectionSize getFaceDetectionSize() const;
     void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size);
 
-    double getFaceRecognitionAccuracy() const;
-    void setFaceRecognitionAccuracy(double value);
+    int getFaceRecognitionAccuracy() const;
+    void setFaceRecognitionAccuracy(int value);
 
     FaceScanSettings::FaceRecognitionModel getFaceRecognitionModel() const;
     void setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel model);

@@ -95,7 +95,7 @@ public:
 
         if (m_parameters.contains(QLatin1String("detectAccuracy")))
         {
-            backend()->setAccuracy(static_cast<float>(m_parameters.value(QLatin1String("detectAccuracy")).toDouble()));
+            backend()->setAccuracy(m_parameters.value(QLatin1String("detectAccuracy")).toInt());
         }
 
         if (m_parameters.contains(QLatin1String("detectSize")))

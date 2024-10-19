@@ -61,7 +61,7 @@ private:
     ~DNNModelManager();
 
     // Disable
-
+    
     explicit DNNModelManager(QObject*) = delete;
 
 private:
@@ -75,11 +75,12 @@ private:
     };
 
     /**
-     * Read the configuration file.  The configuration is a .csv hardcoded in dnnmodelmanager.cpp but
-     * could be a csv, yaml, or json packed with digiKam or downloaded from the Internet
+     * Read the configuration file.  The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and 
+     * bundled with digiKam, but could be downloaded from the Internet
      */
     void loadConfig();      ///<  load the Model map, but don't create the cv::dnn::Net objects yet
     void getSettings();     ///<  loads the settings from disk (or web: future)
+
 
 private:
 

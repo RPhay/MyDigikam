@@ -30,6 +30,8 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "recognitionpreprocessor.h"
+#include "dnnmodelmanager.h"
+#include "dnnmodelnet.h"
 
 namespace Digikam
 {
@@ -51,8 +53,7 @@ public:
 
     int                      ref                = 1;
 
-    cv::dnn::Net             net;
-    QMutex                   mutex;
+    DNNModelBase*            model              = nullptr;
 
     // As we use OpenFace, we need to set appropriate values for image color space and image size.
 
@@ -89,30 +90,20 @@ DNNOpenFaceExtractor::~DNNOpenFaceExtractor()
 
 bool DNNOpenFaceExtractor::loadModels()
 {
-    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine"),
-                                             QStandardPaths::LocateDirectory);
-
     d->preprocessor = new RecognitionPreprocessor;
     d->preprocessor->init(PreprocessorSelection::OPENFACE);
 
-    QString model   = QLatin1String("openface_nn4.small2.v1.t7");
-    QString nnmodel = appPath + QLatin1Char('/') + model;
+    d->model = DNNModelManager::instance()->getModel(QLatin1String("OpenFace"), DNNModelUsage::DNNUsageFaceRecognition);
 
-    if (QFileInfo::exists(nnmodel))
+    if (d->model)
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << nnmodel;
-
-            d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
-
-#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
-
-            d->net.enableWinograd(false);
-
-#endif
-
+            if (!d->model->modelLoaded)
+            {
+                cv::dnn::Net net = static_cast<DNNModelNet*>(d->model)->getNet();
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
+            }
         }
         catch (cv::Exception& e)
         {
@@ -129,7 +120,7 @@ bool DNNOpenFaceExtractor::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "OpenFace cannot find faces engine DNN model";
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
         return false;
@@ -164,11 +155,11 @@ cv::Mat DNNOpenFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     cv::Mat blob = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
 
-    if (!d->net.empty())
+    if (d->model && d->model->modelLoaded)
     {
-        QMutexLocker lock(&d->mutex);
-        d->net.setInput(blob);
-        face_descriptors = d->net.forward();
+        QMutexLocker lock(&(d->model->mutex));
+        static_cast<DNNModelNet*>(d->model)->getNet().setInput(blob);
+        face_descriptors = static_cast<DNNModelNet*>(d->model)->getNet().forward();
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "

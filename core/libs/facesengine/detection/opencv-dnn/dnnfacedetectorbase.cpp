@@ -29,8 +29,8 @@ namespace Digikam
 
 // TODO: re-verify these threshold
 
-float DNNFaceDetectorBase::confidenceThreshold  = 0.6F;
-float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
+int   DNNFaceDetectorBase::uiConfidenceThreshold  = DNN_MODEL_THRESHOLD_NOT_SET;
+float DNNFaceDetectorBase::nmsThreshold           = 0.4F;
 
 // --------------------------------------------------------------------------------------------------------
 

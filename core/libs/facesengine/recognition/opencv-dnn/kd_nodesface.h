@@ -40,7 +40,7 @@ public:
                          int            splitAxis,
                          int            dimension);
                          // cv::Ptr<cv::FaceRecognizerSF> net);
-    virtual ~KDNodeSFace();
+    virtual ~KDNodeSFace() override;
 
 protected:
 

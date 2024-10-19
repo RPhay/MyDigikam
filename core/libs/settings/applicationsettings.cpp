@@ -287,10 +287,10 @@ void ApplicationSettings::readSettings()
 
     group                       = config->group(d->configGroupFaceDetection);
 
-    d->faceDetectionAccuracy    = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.6));
+    d->faceDetectionAccuracy    = group.readEntry(d->configFaceDetectionAccuracyEntry, 7);
     d->faceDetectionModel       = static_cast<FaceScanSettings::FaceDetectionModel>(group.readEntry(d->configFaceDetectionModelEntry, (int)FaceScanSettings::FaceDetectionModel::YuNet));
     d->faceDetectionSize        = static_cast<FaceScanSettings::FaceDetectionSize>(group.readEntry(d->configFaceDetectionSizeEntry, (int)FaceScanSettings::FaceDetectionSize::Large));
-    d->faceRecognitionAccuracy  = group.readEntry(d->configFaceRecognitionAccuracyEntry, double(0.5));
+    d->faceRecognitionAccuracy  = group.readEntry(d->configFaceRecognitionAccuracyEntry, 7);
     d->faceRecognitionModel     = static_cast<FaceScanSettings::FaceRecognitionModel>(group.readEntry(d->configFaceRecognitionModelEntry, (int)FaceScanSettings::FaceRecognitionModel::SFace));
 
     // ---------------------------------------------------------------------

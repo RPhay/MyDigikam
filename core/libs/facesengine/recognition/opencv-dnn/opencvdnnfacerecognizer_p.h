@@ -152,11 +152,12 @@ public:
 
     KDTreeBase*                     tree                  = nullptr;
     int                             kNeighbors            = 5;
-    float                           threshold             = 0.4F;
+    // float                           threshold             = 0.4F;
+    int                             uiThreshold           = DNN_MODEL_THRESHOLD_NOT_SET;
 
     bool                            newDataAdded          = true;
 
-    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::OpenFace;
+    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::SFace;
 
 public:
 
@@ -341,6 +342,17 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
         return -1;
     }
 
+    double threshold;
+
+    if (FaceScanSettings::FaceRecognitionModel::SFace == recognizeModel)
+    {
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+    }
+    else
+    {
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("OpenFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+    }
+
     // Look for K-nearest neighbor which have the cosine distance greater than the threshold.
 
     QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, kNeighbors);
@@ -387,6 +399,17 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
 int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) const
 {
+    double threshold;
+
+    if (FaceScanSettings::FaceRecognitionModel::SFace == recognizeModel)
+    {
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+    }
+    else
+    {
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("OpenFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+    }
+    
     QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, threshold, 0.8, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
