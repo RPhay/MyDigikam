@@ -154,7 +154,7 @@ BUGFIXES:
 129 ==> 494890 - Star rating systematically also sets colors, and vice versa.
 130 ==> 494934 - Selecting the maintenance tool will cause Digikam to stop responding and crash every time.
 131 ==> 495014 - Why im not able to use opencl?
-132 ==> 
+132 ==> 495011 - digiKam crash when making "search faces" on an image.
 133 ==> 
 134 ==> 
 135 ==> 
