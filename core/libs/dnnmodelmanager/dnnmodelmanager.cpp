@@ -253,8 +253,8 @@ void DNNModelManager::getSettings()
         // Check potential download location
         // TODO: Maybe download the config file from the web
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                                 QLatin1String("dnnmodels/dnnmodels.conf"));
+        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                 QLatin1String("digikam/dnnmodels/dnnmodels.conf"));
 
         if (!appPath.isEmpty())
         {
