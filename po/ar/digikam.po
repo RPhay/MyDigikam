@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 01:48+0000\n"
+"POT-Creation-Date: 2024-10-19 01:50+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3062,7 +3062,7 @@ msgstr ""
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3998,7 +3998,7 @@ msgstr "خصائص الملفّ"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
 #, kde-format
 msgid "Filename"
 msgstr "اسم الملفّ"
@@ -4063,7 +4063,7 @@ msgstr "الإحداثيّات"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Altitude"
 msgstr "الارتفاع الرّأسيّ"
@@ -4321,7 +4321,7 @@ msgstr "الوحدة"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
 msgstr "المصغّرة"
@@ -4502,8 +4502,8 @@ msgstr "مرماز الفيديو"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
-#: core/libs/dialogs/libsinfodlg.cpp:615
+#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
+#: core/libs/dialogs/libsinfodlg.cpp:616
 #, kde-format
 msgid "no entry"
 msgstr "ممنوع الدخول"
@@ -11256,31 +11256,31 @@ msgid "Edit Geolocation"
 msgstr "حرّر الموقع الجغرافيّ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
 #, kde-format
 msgid "Latitude"
 msgstr "دائرة العرض"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
 msgstr "خطّ الطول"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Speed"
 msgstr "السّرعة"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "# satellites"
 msgstr "# الأقمار الصّناعيّة"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Fix type"
 msgstr ""
@@ -11296,7 +11296,7 @@ msgid "3-d"
 msgstr "3-الأبعاد"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15667,7 +15667,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
 msgstr "الحالة"
@@ -29649,7 +29649,7 @@ msgstr "<i>معدّل الإطارات:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>مرماز الفيديو:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29675,68 +29675,68 @@ msgstr ""
 msgid "Items List"
 msgstr "قائمة الصّور"
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "لا"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "الميزات"
 
-#: core/libs/dialogs/libsinfodlg.cpp:221
+#: core/libs/dialogs/libsinfodlg.cpp:222
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "المكتبات"
 
-#: core/libs/dialogs/libsinfodlg.cpp:324
+#: core/libs/dialogs/libsinfodlg.cpp:325
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/libs/dialogs/libsinfodlg.cpp:425
+#: core/libs/dialogs/libsinfodlg.cpp:426
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/libs/dialogs/libsinfodlg.cpp:453
+#: core/libs/dialogs/libsinfodlg.cpp:454
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:488
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ضبط الكمرات"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "لا"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -31203,7 +31203,7 @@ msgstr ""
 msgid "Blur Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
 #, kde-format
 msgid "Blur FX Filter"
 msgstr ""
@@ -51344,7 +51344,7 @@ msgid "Tilt"
 msgstr "الإمالة"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Accuracy"
 msgstr "الدّقّة"
@@ -57198,64 +57198,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#نقاط"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
 msgid "Not available"
 msgstr "غير متوفّر"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, fuzzy, kde-format
 msgid "DOP: %1"
 msgstr "DOP"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, fuzzy, kde-format
 msgid "#Sat: %1"
 msgstr "سبت"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, kde-format
 msgid "%1d"
 msgstr "%1ي"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "Modified"
 msgstr "معدّل"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
 #, kde-format
 msgid "Date and time"
 msgstr "التّاريخ والوقت"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, kde-format
 msgid "Failed to open file."
 msgstr "فشل فتح الملفّ."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "فشلت إضافة معلومات جي‌بي‌إس إلى الصّورة."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "فشلت إزالة معلومات جي‌بي‌إس من الصّورة"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "فشل حفظ الوسوم في الملفّ."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "تعذّر حفظ التّغييرات في الملفّ."

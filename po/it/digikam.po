@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 01:48+0000\n"
-"PO-Revision-Date: 2024-10-06 20:23+0200\n"
+"POT-Creation-Date: 2024-10-19 01:50+0000\n"
+"PO-Revision-Date: 2024-10-15 17:18+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2986,7 +2986,7 @@ msgstr "Nessun album dei tag"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3984,7 +3984,7 @@ msgstr "Proprietà del file"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
 #, kde-format
 msgid "Filename"
 msgstr "Nome del file"
@@ -4049,7 +4049,7 @@ msgstr "Coordinate"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Altitude"
 msgstr "Altitudine"
@@ -4307,7 +4307,7 @@ msgstr "Unità"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
 msgstr "Mostra le miniature"
@@ -4475,8 +4475,8 @@ msgstr "Decodificatori video"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
-#: core/libs/dialogs/libsinfodlg.cpp:615
+#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
+#: core/libs/dialogs/libsinfodlg.cpp:616
 #, kde-format
 msgid "no entry"
 msgstr "nessuna voce"
@@ -11734,31 +11734,31 @@ msgid "Edit Geolocation"
 msgstr "Modifica la geolocalizzazione"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
 #, kde-format
 msgid "Latitude"
 msgstr "Latitudine"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
 msgstr "Longitudine"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Speed"
 msgstr "Velocità"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "# satellites"
 msgstr "№ satelliti"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Fix type"
 msgstr "Fissa tipo"
@@ -11776,7 +11776,7 @@ msgstr "3-d"
 # «Dilution of precision», vedi articolo Wikipedia:
 # http://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16152,7 +16152,7 @@ msgstr "Data e ora aggiornate"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
 msgstr "Stato"
@@ -30230,7 +30230,7 @@ msgstr "<i>VelocitàFotogrammi:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>CodificatoreVideo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30254,13 +30254,13 @@ msgstr ""
 msgid "Items List"
 msgstr "Elenco degli elementi"
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sì"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
@@ -30268,55 +30268,55 @@ msgstr "No"
 
 # Secondo la definizione che Wikipedia dà di «Feature Story», essa dovrebbe essere molto vicina al nostro «Dossier».
 # http://en.wikipedia.org/wiki/Feature_story
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Caratteristiche"
 
-#: core/libs/dialogs/libsinfodlg.cpp:221
+#: core/libs/dialogs/libsinfodlg.cpp:222
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Librerie"
 
-#: core/libs/dialogs/libsinfodlg.cpp:324
+#: core/libs/dialogs/libsinfodlg.cpp:325
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Sconosciuta"
 
-#: core/libs/dialogs/libsinfodlg.cpp:425
+#: core/libs/dialogs/libsinfodlg.cpp:426
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Sconosciuta"
 
-#: core/libs/dialogs/libsinfodlg.cpp:453
+#: core/libs/dialogs/libsinfodlg.cpp:454
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:488
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configurazione OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sì"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -31868,7 +31868,7 @@ msgstr "Il filtro identificativo o la versione non è supportato"
 msgid "Blur Filter"
 msgstr "Filtro Sfocatura"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtro Sfocatura FX"
@@ -43024,15 +43024,16 @@ msgstr ""
 "neurale OpenCV"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Miscelatore dei canali"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgstr ""
+"Integrazione dei modelli SFace e YuNet DNN. Miglioramenti alla gestione dei "
+"volti"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -51870,7 +51871,7 @@ msgid "Tilt"
 msgstr "Inclinazione"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Accuracy"
 msgstr "Accuratezza"
@@ -52184,23 +52185,18 @@ msgid "No address book entries found"
 msgstr "Nessuna voce trovata nella rubrica "
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Modello di selezione: "
+msgstr "Modello di riconoscimento facciale"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "OpenFace"
+#, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "SFace"
+#, kde-format
 msgid "SFace"
 msgstr "SFace"
 
@@ -52222,13 +52218,27 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
+"Stai per cambiare il modello di riconoscimento facciale. Questa operazione "
+"può impiegare svariati minuti in base alla dimensione della tua libreria e "
+"alla velocità del tuo computer. SFace è il modello preferito. Non utilizzare "
+"le funzioni di individuazione e riconoscimento facciale durante "
+"l'operazione.\n"
+"\n"
+"Vuoi davvero continuare?"
 msgstr[1] ""
+"Stai per cambiare il modello di riconoscimento facciale in %1. Questa "
+"operazione può impiegare svariati minuti in base alla dimensione della tua "
+"libreria e alla velocità del tuo computer. SFace è il modello preferito. Non "
+"utilizzare le funzioni di individuazione e di riconoscimento facciale "
+"durante l'operazione.\n"
+"\n"
+"Vuoi davvero continuare?"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Inizia"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52445,21 +52455,13 @@ msgid "YOLOv3"
 msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
@@ -52468,8 +52470,8 @@ msgid ""
 "later."
 msgstr ""
 "Modello di rilevamento per trovare volti. YuNet è il modello predefinito.\n"
-"Più veloce e configurabile di YOLOv3.\n"
-"Nota: YuNet è disponibile solo se digiKam viene compilato con OpenCV 4.10 o "
+"Più veloce e configurabile di SSD e YOLOv3.\n"
+"Nota: YuNet è disponibile solo se digiKam viene compilato con OpenCV 4.6.0 o "
 "versione successiva."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
@@ -52526,6 +52528,19 @@ msgid ""
 "about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>Selezionare l'opzione <b>Molto piccolo</b> significa che il modello "
+"rileverà visi piccoli sullo sfondo in aggiunta a quelli medi e più grandi. "
+"Selezionare <b>piccolo</b> aumenterà la sensibilità del modello regolando "
+"uno dei parametri. Aumenterà anche la probabilità di falsi positivi e il "
+"tempo del rilevamento.</p><p>Selezionare <b>Grande</b> o <b>Molto grande</b> "
+"eliminerà dal rilevamento i volti sullo sfondo. Sarà molto più rapido e "
+"ridurrà il numero di falsi positivi ma non rileverà i visi piccoli sullo "
+"sfondo o i volti nelle grandi foto di gruppo.</p><p>Se vuoi rilevare tutti i "
+"visi in un colpo solo, seleziona <b>Molto piccolo</b> e imposta "
+"l'accuratezza del rilevamento attorno al 45%. Purtroppo questa opzione "
+"restituirà molti falsi positivi. Per un normale utilizzo, consigliamo di "
+"impostare l'accuratezza del rilevamento attorno al 55% e la dimensione dei "
+"volti a <b>Piccolo</b> o <b>Medio</b>.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
 #, kde-format
@@ -52539,13 +52554,7 @@ msgid "Accuracy:"
 msgstr "Accuratezza:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52555,9 +52564,9 @@ msgid ""
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
-"saranno riconosciuti i volti, ma ne saranno riconosciuti di meno\n"
+"saranno riconosciuti i volti, ma ne saranno riconosciuti di meno.\n"
 "Nota: saranno riconosciuti solo i volti molto simili a quelli cui sono già "
-"stati attribuiti dei tag"
+"stati attribuiti dei tag."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, kde-format
@@ -52578,11 +52587,7 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the default detection model. It is faster and more accurate.\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
@@ -52591,7 +52596,9 @@ msgid ""
 "later."
 msgstr ""
 "SFace è il modello di rilevamento predefinito. È più veloce e accurato.\n"
-"OpenFace può essere utilizzato con le librerie più vecchie."
+"OpenFace può essere utilizzato con le librerie più vecchie.\n"
+"Nota: SFace è disponibile soltanto se digiKam è compilato con OpenCV "
+"versione 4.6.0 o successiva."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -57548,67 +57555,67 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "N. punti"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
 msgid "Not available"
 msgstr "Non disponibile"
 
 # «Dilution of precision», vedi articolo Wikipedia:
 # http://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
 # «Fix» è un termine tecnico del GPS per il posizionamento sulla mappa.
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, kde-format
 msgid "#Sat: %1"
 msgstr "№ sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "Modified"
 msgstr "Modificato"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
 #, kde-format
 msgid "Date and time"
 msgstr "Giorno e ora"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, kde-format
 msgid "Failed to open file."
 msgstr "Apertura del file non riuscita."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Aggiunta di informazioni GPS all'immagine non riuscita."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Rimozione di informazioni GPS dall'immagine non riuscita."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Salvataggio di tag nel file non riuscito."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Impossibile salvare le modifiche al file"
@@ -61548,16 +61555,14 @@ msgid "Keywords: %1"
 msgstr "Parole chiave: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per i tag automatici: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per i tag automatici: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61660,16 +61665,14 @@ msgstr ""
 "%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per la catalogazione: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per la catalogazione: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61694,28 +61697,24 @@ msgstr[0] "Un duplicato"
 msgstr[1] "%1 duplicati"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per i duplicati: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per i duplicati: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Duplicati per: %1\n"
+msgstr "Trovati duplicati: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Duplicati per: %1\n"
+msgstr "Trovato duplicato: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
@@ -61743,28 +61742,24 @@ msgid "Updating faces database"
 msgstr "Aggiornamento della banca dati dei volti"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per i volti: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per i volti: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
-#, fuzzy, kde-format
-#| msgid "placemarks found: %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "segnaposti trovati: %1"
+msgstr "Volti trovati: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
-#, fuzzy, kde-format
-#| msgid "placemarks found: %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "segnaposti trovati: %1"
+msgstr "Volto trovato: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, kde-format
@@ -61802,16 +61797,14 @@ msgid "Path: %1"
 msgstr "Percorso: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per il codice di controllo: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per il codice di controllo: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
 #, kde-format
@@ -61824,16 +61817,14 @@ msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per la qualità: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per la qualità: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -61869,28 +61860,24 @@ msgid "Clear Metadata for: %1\n"
 msgstr "Pulisci metadati per: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per la rimozione di volti: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per la rimozione di volti: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per la rimozione di tag: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per la rimozione di tag: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61908,34 +61895,29 @@ msgid "Metadata Sync for: %1\n"
 msgstr "Sincronizzazione metadati per: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Sincronizzazione dei metadati delle immagini con la banca dati."
+msgstr "Elementi analizzati per sincronizzare i metadati con la banca dati: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Sincronizzazione dei metadati delle immagini con la banca dati."
+msgstr "Elemento analizzato per sincronizzare i metadati con la banca dati: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per aggiornare la banca dati con i metadati: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per aggiornare la banca dati con i metadati: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Miniature"
+msgstr "Genera miniature"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
@@ -61943,16 +61925,14 @@ msgid "Thumbnail for: %1\n"
 msgstr "Miniatura per: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elementi analizzati per le miniature: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Analisi dei volti: %1\n"
+msgstr "Elemento analizzato per le miniature: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -66317,30 +66297,20 @@ msgid "Reading and Writing Metadata"
 msgstr "Lettura e scrittura dei metadati"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"Delega il motore ExifTool a tutte le operazioni per scrivere i metadati nei "
-"file"
+msgstr "Usa il motore ExifTool per leggere i metadati dai file"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Abilita questa opzione per scrivere i metadati nei file col motore ExifTool "
+"Abilita questa opzione per leggere i metadati dai file col motore ExifTool "
 "invece che Exiv2. La sincronizzazione dei metadati dei file con la banca "
 "dati verrà rallentata leggermente."
 

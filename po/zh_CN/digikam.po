@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 01:48+0000\n"
+"POT-Creation-Date: 2024-10-19 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2910,7 +2910,7 @@ msgstr "无标签相册"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3452,6 +3452,7 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"图标视图的缩略图使用简洁的水平线代替框架来渲染颜色标签，使显示效果更加紧凑。"
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3461,6 +3462,9 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"新增 YuNet DNN 模型来代替旧版的 SSD 模型来处理人脸检测。新增 Sface DNN 模型来"
+"代替旧版的 OpenFace 模型来处理人脸检测。两款新模型速度更快，运行所需内存更"
+"少，人脸识别管理效果也更好。"
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3829,7 +3833,7 @@ msgstr "文件属性"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
 #, kde-format
 msgid "Filename"
 msgstr "文件名"
@@ -3894,7 +3898,7 @@ msgstr "坐标"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Altitude"
 msgstr "海拔"
@@ -4150,7 +4154,7 @@ msgstr "单位"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
 msgstr "缩略图"
@@ -4318,8 +4322,8 @@ msgstr "视频解码器"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
-#: core/libs/dialogs/libsinfodlg.cpp:615
+#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
+#: core/libs/dialogs/libsinfodlg.cpp:616
 #, kde-format
 msgid "no entry"
 msgstr "没有条目"
@@ -11092,31 +11096,31 @@ msgid "Edit Geolocation"
 msgstr "编辑地理位置"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
 #, kde-format
 msgid "Latitude"
 msgstr "纬度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
 msgstr "经度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "# satellites"
 msgstr "卫星数量"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Fix type"
 msgstr "定位模式"
@@ -11132,7 +11136,7 @@ msgid "3-d"
 msgstr "三维"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "DOP"
 msgstr "精度因子"
@@ -15339,7 +15343,7 @@ msgstr "已更新时间戳"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
 msgstr "状态"
@@ -28771,7 +28775,7 @@ msgstr "不再询问"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -28870,7 +28874,7 @@ msgstr "<b>帧速率：</b>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>视频编码：</b>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28893,67 +28897,67 @@ msgstr "<font size=\"5\">%1</font><br/><b>版本 %2</b><p>%3</p><p><i>%4</i></p>
 msgid "Items List"
 msgstr "项目列表"
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "功能"
 
-#: core/libs/dialogs/libsinfodlg.cpp:221
+#: core/libs/dialogs/libsinfodlg.cpp:222
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "程序库"
 
-#: core/libs/dialogs/libsinfodlg.cpp:324
+#: core/libs/dialogs/libsinfodlg.cpp:325
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:425
+#: core/libs/dialogs/libsinfodlg.cpp:426
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:453
+#: core/libs/dialogs/libsinfodlg.cpp:454
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "清单"
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:488
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 配置"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30427,7 +30431,7 @@ msgstr "滤镜标识符或版本不支持"
 msgid "Blur Filter"
 msgstr "模糊滤镜"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "模糊特效滤镜"
@@ -30945,12 +30949,10 @@ msgstr "正在加载黑帧"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%2 年 %1 月"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -41142,15 +41144,14 @@ msgstr ""
 "OpenCV 神经网络"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "色彩通道混合"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
+msgstr "集成 SFace 和 YuNet 深度神经网络模型。改进人脸管理功能。"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -41738,12 +41739,10 @@ msgid "Show Statusbar"
 msgstr "显示状态栏"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%2 年 %1 月"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -49834,7 +49833,7 @@ msgid "Tilt"
 msgstr "俯仰"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Accuracy"
 msgstr "精度"
@@ -50141,23 +50140,18 @@ msgid "No address book entries found"
 msgstr "未找到地址簿条目"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "人脸识别"
+msgstr "人脸识别模型"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "OpenFace"
+#, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "SFace"
+#, kde-format
 msgid "SFace"
 msgstr "SFace"
 
@@ -50179,12 +50173,17 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
+"您即将把人脸识别模型为 %1。此过程可能需要几分钟时间，取决于升级所需的程序库的"
+"大小和本机的性能。SFace 是首选模型。在此过程中请不要使用任何人脸检测或者识别"
+"功能。\n"
+"\n"
+"您确定要继续吗？"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "开始"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -50398,21 +50397,13 @@ msgid "YOLOv3"
 msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "屏幕显示"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
@@ -50421,8 +50412,8 @@ msgid ""
 "later."
 msgstr ""
 "用于查找人脸的检测模型。YuNet 是默认模型。\n"
-"它比 YOLOv3 速度更快，可配置性也更好。\n"
-"注意：YuNet 仅在 digiKam 使用 OpenCV 4.10 或者更新版本编译时才可用。"
+"它比 SSD 和 YOLOv3 速度更快，可配置性也更好。\n"
+"注意：YuNet 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
 #, kde-format
@@ -50461,22 +50452,7 @@ msgid "Extra Large"
 msgstr "超大"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning one "
-#| "of the parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>large</"
-#| "b> or <b>extra-large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the the background or faces "
-#| "in large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra-Small</b> faces and set the detection accuracy to about "
-#| "45%. Unfortunately, this will give a significant number of false-"
-#| "positives. It's recommended to set a detection accuracy of about 55% and "
-#| "face size of <b>small</b> or <b>medium</b> for normal use.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -50494,12 +50470,13 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 "<p>选择 <b>超小</b> 时模型将在中、大人脸的基础上额外检测到背景中的超小人脸。"
-"选择 <b>小</b> 时将通过调整参数中的一种来提高灵敏度，并且增加假阳性的概率和检"
-"测所需时间。</p><p>选择 <b>大</b> 或者 <b>超大</b> 时将不检测背景中的超小人"
-"脸，速度更快，并且能降低假阳性的概率，但也会造成大型群体照片中的人脸无法被检"
-"测到。</p><p>如果您想要一次性把所有人脸全部检测到，请选择 <b>超小</b> 并将检"
-"测精度设置为 45% 左右。但是这也会造成大量的假阳性。在通常使用情况下，建议将检"
-"测精度设置为 55% 并将人脸大小设置为 <b>小</b> 或者 <b>中</b>。</p>"
+"选择 <b>小</b> 时将通过调整模型的参数来提高灵敏度，但错误命中的概率更高，且检"
+"测所需时间更长。</p><p>选择 <b>大</b> 或者 <b>超大</b> 时将不检测背景中的超小"
+"人脸，速度更快，错误命中的概率更低，但也会造成大型群体照片中的人脸无法被检测"
+"到。</p><p>如果您想要一次性把所有人脸全部检测到，可以选择 <b>超小</b> 并将检"
+"测精度设置为 45% 左右，但是此精度容易导致大量的错误命中。在通常使用情况下，建"
+"议将检测精度设置为 55% 并将人脸大小设置为 <b>小</b> 或者 <b>中</b>。</p><p>此"
+"设置仅适用于 YuNet。</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
 #, kde-format
@@ -50513,13 +50490,7 @@ msgid "Accuracy:"
 msgstr "精度："
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -50550,11 +50521,7 @@ msgid "OpenFace"
 msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "SFace is the default detection model. It is faster and more accurate.\n"
-#| "OpenFace can be used for older libraries."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
@@ -50562,8 +50529,9 @@ msgid ""
 "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
-"SFace 是默认的检测模型，它速度更快也更准确。\n"
-"OpenFace 可以在程序库比较老旧的环境中使用。"
+"SFace 是默认的检测模型，它速度更快且更精确。\n"
+"OpenFace 支持程序库较为老旧的环境。\n"
+"注意：SFace 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -54854,7 +54822,7 @@ msgstr "Marble 将要创建此地图。本操作只需执行一次，可能要�
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -55388,64 +55356,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "轨迹点数量"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
 msgid "Not available"
 msgstr "不可用"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "DOP: %1"
 msgstr "精度因子：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
 msgstr "定位模式：%1 维"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, kde-format
 msgid "#Sat: %1"
 msgstr "卫星数量：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, kde-format
 msgid "%1d"
 msgstr "%1 维"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "Modified"
 msgstr "修改时间"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
 #, kde-format
 msgid "Date and time"
 msgstr "日期和时间"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, kde-format
 msgid "Failed to open file."
 msgstr "无法打开文件。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "无法添加 GPS 信息到图像。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "无法移除图像 GPS 信息。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "无法保存标签到文件。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "无法保存更改到文件。"
@@ -59239,14 +59207,14 @@ msgid "Keywords: %1"
 msgstr "关键词：%1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描自动标签的项目：%1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描自动标签的项目：%1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -59346,14 +59314,14 @@ msgstr ""
 "%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描编目的项目：%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描编目的项目：%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -59377,26 +59345,24 @@ msgid_plural "%1 duplicates"
 msgstr[0] "%1 个重复项"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描重复项的项目：%1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描重复项的项目：%1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "%1 的重复项\n"
+msgstr "已找到重复项：%1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates for: %1\n"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "%1 的重复项\n"
+msgstr "已找到重复项：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
@@ -59424,24 +59390,24 @@ msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描人脸的项目：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描人脸的项目：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
-#, fuzzy, kde-format
+#, kde-format
 msgid "Faces found: %1"
-msgstr "在 %1 中找到的图像"
+msgstr "已找到人脸：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
-#, fuzzy, kde-format
+#, kde-format
 msgid "Face found: %1"
-msgstr "在 %1 中找到的图像"
+msgstr "已找到人脸：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, kde-format
@@ -59478,14 +59444,14 @@ msgid "Path: %1"
 msgstr "路径：%1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描指纹的项目：%1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描指纹的项目：%1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
 #, kde-format
@@ -59498,14 +59464,14 @@ msgid "Pick Label: %1"
 msgstr "挑选标记：%1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描品质的项目：%1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描品质的项目：%1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -59541,24 +59507,24 @@ msgid "Clear Metadata for: %1\n"
 msgstr "清除 %1 的元数据\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以移除人脸的项目：%1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以移除人脸的项目：%1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以移除标签的项目：%1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以移除标签的项目：%1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -59576,33 +59542,29 @@ msgid "Metadata Sync for: %1\n"
 msgstr "%1 的元数据同步\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "正在同步图像和数据库的元数据"
+msgstr "已扫描以与数据库同步元数据的项目：%1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "正在同步图像和数据库的元数据"
+msgstr "已扫描以与数据库同步元数据的项目：%1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以更新数据库元数据的项目：%1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描以更新数据库元数据的项目：%1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "缩略图"
+msgstr "生成缩略图"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
@@ -59610,14 +59572,14 @@ msgid "Thumbnail for: %1\n"
 msgstr "%1 的缩略图\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描缩略图的项目：%1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "已扫描人脸：%1\n"
+msgstr "已扫描缩略图的项目：%1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -63716,28 +63678,20 @@ msgid "Reading and Writing Metadata"
 msgstr "元数据的读取和写入方式"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr "使用 ExifTool 后端程序执行所有元数据写入文件操作"
+msgstr "使用 ExifTool 后端程序从文件读取元数据"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"勾选此项后，文件的元数据写入后端程序将从 Exiv2 改为 ExifTool。这将稍微拖慢文"
+"勾选此项后，文件的元数据读取后端程序将从 Exiv2 改为 ExifTool。这将稍微拖慢文"
 "件元数据同步到数据库的速度。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
@@ -65670,14 +65624,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Thumbs"
-#~ msgstr "缩略图"
-
-#, fuzzy
-#~| msgctxt "@option"
-#~| msgid "Login Information"
-#~ msgctxt "@action"
-#~ msgid "Begin operation"
-#~ msgid_plural "Begin %1."
-#~ msgstr[0] "登录信息"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 01:48+0000\n"
+"POT-Creation-Date: 2024-10-19 01:50+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2896,14 +2896,10 @@ msgid "Scan collection for faces"
 msgstr "Vyhledat obličeje ve sbírce"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr ""
-"Použijte toto tlačítko k prohledání vybraného alba a nalezení položek, které "
-"se vyskytují vícekrát."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:166
 #, kde-format
@@ -2957,7 +2953,7 @@ msgstr "Album bez značek"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3861,7 +3857,7 @@ msgstr "Vlastnosti souboru"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
 #, kde-format
 msgid "Filename"
 msgstr "Název souboru"
@@ -3926,7 +3922,7 @@ msgstr "Souřadnice"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Altitude"
 msgstr "Výška"
@@ -4182,7 +4178,7 @@ msgstr "Jednotka"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
 msgstr "Náhled"
@@ -4350,8 +4346,8 @@ msgstr "Dekodéry videa"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
-#: core/libs/dialogs/libsinfodlg.cpp:615
+#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
+#: core/libs/dialogs/libsinfodlg.cpp:616
 #, kde-format
 msgid "no entry"
 msgstr "žádný záznam"
@@ -11044,31 +11040,31 @@ msgid "Edit Geolocation"
 msgstr "Upravit geolokaci"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
 #, kde-format
 msgid "Latitude"
 msgstr "Zem. šířka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
 msgstr "Zem. délka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Speed"
 msgstr "Rychlost"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "# satellites"
 msgstr "# družic"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Fix type"
 msgstr "Typ fixace"
@@ -11084,7 +11080,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15353,7 +15349,7 @@ msgstr "Časové razítko bylo aktualizováno"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
 msgstr "Stav"
@@ -28656,7 +28652,7 @@ msgstr "Znovu se nedotazovat"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -28755,7 +28751,7 @@ msgstr "<i>Vzorkovací frekvence:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28779,67 +28775,67 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:192
+#: core/libs/dialogs/libsinfodlg.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Vlastnosti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:221
+#: core/libs/dialogs/libsinfodlg.cpp:222
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Knihovny"
 
-#: core/libs/dialogs/libsinfodlg.cpp:324
+#: core/libs/dialogs/libsinfodlg.cpp:325
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:425
+#: core/libs/dialogs/libsinfodlg.cpp:426
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:453
+#: core/libs/dialogs/libsinfodlg.cpp:454
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:488
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Nastavení openCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:684
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:689
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:694
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30361,7 +30357,7 @@ msgstr "Identifikátor nebo verze filtru není podporována"
 msgid "Blur Filter"
 msgstr "Filtr rozostření"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtr rozostření FX"
@@ -30891,12 +30887,10 @@ msgstr ""
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -41204,10 +41198,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Směšovač kanálů"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
@@ -41798,12 +41791,10 @@ msgid "Show Statusbar"
 msgstr "Zobrazit stavový panel"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr ""
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -49902,7 +49893,7 @@ msgid "Tilt"
 msgstr "Náklon"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Accuracy"
 msgstr "Přesnost"
@@ -50210,24 +50201,20 @@ msgid "No address book entries found"
 msgstr "Nebyly nalezeny žádné záznamy knihy adres"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
-#, fuzzy, kde-format
-#| msgid "Face Recognition DB"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Databáze rozpoznávání obličejů"
+msgstr ""
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgid "OpenFace"
-msgstr "Otevřít soubor"
+msgstr ""
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "SFace"
-msgstr "Obličeje"
+msgstr ""
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
 #, kde-format
@@ -50434,11 +50421,10 @@ msgid "Search in"
 msgstr "Hledat v"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Přesnost"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
@@ -50450,12 +50436,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
-msgstr "Model:"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, kde-format
@@ -50470,12 +50454,10 @@ msgid "YOLOv3"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
@@ -50488,18 +50470,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Max velikost:"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
-msgstr "Dodatečné značky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
@@ -50508,26 +50488,22 @@ msgid "Small"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
-msgstr "Střední"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
-msgstr "Cíl"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
-msgstr "Dodatečné značky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
@@ -50549,17 +50525,15 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Detekce obličeje"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Přesnost"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
 #, kde-format
@@ -50572,27 +50546,22 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
-msgstr "Model:"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Obličeje"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Otevřít soubor"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, kde-format
@@ -50624,10 +50593,9 @@ msgstr ""
 "nebo pracovat pouze s jedním jádrem na pozadí."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Detekce obličeje"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
 #, kde-format
@@ -54879,7 +54847,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -55426,64 +55394,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#body"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "Modified"
 msgstr "Změněno"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
 #, kde-format
 msgid "Date and time"
 msgstr "Datum a čas"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, kde-format
 msgid "Failed to open file."
 msgstr "Nelze otevřít soubor."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Ukládání informací GPS do obrázku selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Odstranění informací GPS z obrázku selhalo"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Ukládání značek do souboru selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Nelze uložit změny do souboru"
@@ -59343,23 +59311,19 @@ msgid "Path: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Klíčová slova: "
+msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -59459,16 +59423,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -59481,45 +59443,37 @@ msgid "Duplicates for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Najít duplicity"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Najít duplicity"
-msgstr[1] "Najít duplicity"
-msgstr[2] "Najít duplicity"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Nalezeny obrázky v %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Nalezeny obrázky v %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
 #, kde-format
@@ -59547,28 +59501,24 @@ msgid "Updating faces database"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Nalezeny obrázky v %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Nalezeny obrázky v %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
 #, kde-format
@@ -59607,43 +59557,34 @@ msgid "Path: %1"
 msgstr "Cesta: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Řazení podle kvality obrázků"
+msgstr ""
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
-msgstr "Popisek výběru: %1"
+msgstr "Štítek výběru: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -59675,28 +59616,24 @@ msgid "Clear Metadata for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -59714,35 +59651,29 @@ msgid "Metadata Sync for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Synchronizace metadat obrázků s databází"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Synchronizace metadat obrázků s databází"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Miniatury"
+msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
@@ -59750,16 +59681,14 @@ msgid "Thumbnail for: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -63944,12 +63873,10 @@ msgid "Reading and Writing Metadata"
 msgstr "Načítání a zápis metadat"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr "Odstranit ze souboru metadata"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -65937,44 +65864,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#~ msgid "Thumbs"
-#~ msgstr "Náhledy"
-
-#, fuzzy
-#~| msgctxt "@option"
-#~| msgid "Login Information"
-#~ msgctxt "@action"
-#~ msgid "Begin operation"
-#~ msgid_plural "Begin %1."
-#~ msgstr[0] "Přihlašovací informace"
-#~ msgstr[1] "Přihlašovací informace"
-#~ msgstr[2] "Přihlašovací informace"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Face Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Přesnost obličeje"
-
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgctxt "@label AI model used for detection"
-#~ msgid "AI Model:"
-#~ msgstr "Model:"
-
-#, fuzzy
-#~| msgid "Face Recognition DB"
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Recognition Accuracy:"
-#~ msgstr "Databáze rozpoznávání obličejů"
-
-#~ msgctxt "@label left extremities of a scale"
-#~ msgid "Sensitivity"
-#~ msgstr "Citlivost"
-
-#~ msgctxt "@label right extremities of a scale"
-#~ msgid "Specificity"
-#~ msgstr "Specifická"
