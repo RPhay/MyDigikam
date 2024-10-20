@@ -15,7 +15,17 @@
  * ============================================================ */
 
 #include "GeoDataOverlay.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-copy-with-user-provided-copy"
+#endif
+
 #include "GeoDataOverlay_p.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 namespace Marble
 {
