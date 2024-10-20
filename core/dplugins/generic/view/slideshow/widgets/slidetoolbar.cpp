@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QToolButton*          playBtn           = nullptr;
     QToolButton*          prevBtn           = nullptr;
     QToolButton*          nextBtn           = nullptr;
@@ -260,7 +262,7 @@ void SlideToolBar::slotNexPrevClicked()
 
 void SlideToolBar::slotMenuSlideShowConfiguration()
 {
-    d->currentlyPause = isPaused();
+    d->currentlyPause                    = isPaused();
 
     if (!d->currentlyPause && d->playBtn->isEnabled())
     {
@@ -268,7 +270,7 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
     }
 
     QPointer<SetupSlideShowDialog> setup = new SetupSlideShowDialog(d->settings);
-    int ret = setup->exec();
+    int ret                              = setup->exec();
     delete setup;
 
     if (ret == QDialog::Accepted)
@@ -286,7 +288,7 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
 {
     if      (e->key() == Qt::Key_F1)
     {
-        d->currentlyPause = isPaused();
+        d->currentlyPause              = isPaused();
 
         if (!d->currentlyPause && d->playBtn->isEnabled())
         {
@@ -359,7 +361,7 @@ void SlideToolBar::slotScreenSelected(QAction* act)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (!act || (act->data().typeId() != QVariant::Int))
+    if (!act || (act->data().typeId() != QMetaType::Int))
 
 #else
 
