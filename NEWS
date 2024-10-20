@@ -158,7 +158,7 @@ BUGFIXES:
 133 ==> 485029 - Upgrade YOLO to a more recent version to improve face recognition.
 134 ==> 437896 - Face Recognition with Time taken into consideration.
 135 ==> 435146 - Feature Request: Clear all unconfirmed faces before starting recognition.
-136 ==> 
+136 ==> 449310 - Add a DOB (date of birth) feature to facial recognition that will improve indexing and exclude all pictures prior to a given date.
 137 ==> 
 138 ==> 
 139 ==> 
