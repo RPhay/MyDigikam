@@ -1339,7 +1339,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if      (value.typeId() == QVariant::Map)
+                if      (value.typeId() == QVariant::Map)   // TODO: Port to QMetaType
 
 #else
 
@@ -1370,7 +1370,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                else if (value.typeId() == QVariant::List)
+                else if (value.typeId() == QVariant::List)   // TODO: Port to QMetaType
 
 #else
 
