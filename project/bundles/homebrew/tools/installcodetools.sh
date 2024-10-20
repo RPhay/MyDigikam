@@ -18,18 +18,10 @@ set -e
 . ../common.sh
 StartScript
 
-# Update Homebrew binary
-
 echo -e "\n"
 echo "---------- Installing code analysis tools"
 $INSTALL_PREFIX/bin/brew install \
                 cppcheck \
                 flawfinder
-
-
-# Update all already install packages
-
-$INSTALL_PREFIX/bin/brew -v upgrade
-echo -e "\n"
 
 TerminateScript

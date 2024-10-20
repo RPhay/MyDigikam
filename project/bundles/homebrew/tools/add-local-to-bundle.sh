@@ -60,6 +60,7 @@ copy_lib="$INSTALL_PREFIX/bin/python3 $PWD/package_lib.py --file="$TEMPROOT/$DK_
 eval "$copy_lib"
 
 cp $PWD/../../../core/data//dnnmodels/dnnmodels.conf $TEMPROOT/$DK_APP_CONTENTS/Resources/digikam/dnnmodels
+cp $PWD/../../../core/data//dnnmodels/dnnmodels.conf "$HOME/Library/Application Support/digikam/dnnmodels/"
 
 TerminateScript
 

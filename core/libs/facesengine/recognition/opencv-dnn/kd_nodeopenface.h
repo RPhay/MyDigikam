@@ -39,7 +39,7 @@ public:
                             const int      identity,
                             int            splitAxis,
                             int            dimension);
-    virtual ~KDNodeOpenFace();
+    virtual ~KDNodeOpenFace() override;
 
 protected:
 

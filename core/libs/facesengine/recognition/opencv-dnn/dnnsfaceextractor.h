@@ -34,7 +34,7 @@ public:
 
     DNNSFaceExtractor();
     DNNSFaceExtractor(const DNNSFaceExtractor&);
-    ~DNNSFaceExtractor();
+    ~DNNSFaceExtractor() override;
 
 public:
 

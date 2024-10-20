@@ -67,19 +67,21 @@ rm -fr build.scan
 mkdir -p build.scan
 cd build.scan
 
-if [[ -d /opt/qt6 ]] ; then
+if [[ $DK_APPLE_PACKAGE_MANAGER != "homebrew" ]] ; then
+    if [[ -d /opt/qt6 ]] ; then
 
-    export BUILD_WITH_QT6=1
-    export Qt6_DIR=/opt/qt6
-    QTPATHS="/opt/qt6/bin/qtpaths6"
-    export CMAKE_BINARY=/opt/qt6/bin/cmake
+        export BUILD_WITH_QT6=1
+        export Qt6_DIR=/opt/qt6
+        QTPATHS="/opt/qt6/bin/qtpaths6"
+        export CMAKE_BINARY=/opt/qt6/bin/cmake
 
-else
+    else
 
-    export BUILD_WITH_QT6=0
-    QTPATHS="qtpaths"
-    export CMAKE_BINARY=cmake
+        export BUILD_WITH_QT6=0
+        QTPATHS="qtpaths"
+        export CMAKE_BINARY=cmake
 
+    fi
 fi
 
 $SCAN_BUILD_BIN $CMAKE_BINARY -G "Unix Makefiles" \

@@ -31,7 +31,7 @@ public:
                          int dim,
                          int threshold = KDTREE_MAP_THRESHOLD
                         );
-    ~KDTreeSFace();
+    ~KDTreeSFace() override;
 
 private:
 
