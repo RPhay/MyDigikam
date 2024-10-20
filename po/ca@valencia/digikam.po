@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-19 01:50+0000\n"
-"PO-Revision-Date: 2024-10-13 11:47+0200\n"
+"POT-Creation-Date: 2024-10-20 01:48+0000\n"
+"PO-Revision-Date: 2024-10-17 13:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -3502,7 +3502,7 @@ msgid ""
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 "Afegir una eina nova <a href=\"https://community.kde.org/GSoC/2022/"
-"StatusReports/QuocHungTran\">per a portar a treme OCR de text escanejat</a>."
+"StatusReports/QuocHungTran\">per a portar a terme OCR de text escanejat</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
@@ -3582,6 +3582,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Miniatures més compactes a la vista d'icones utilitzant una única línia "
+"horitzontal en lloc d'un marc per a renderitzar etiquetes de color."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3591,6 +3593,11 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"Afig el model YuNet DNN per a processar la detecció de cares i reemplaçar el "
+"model SSD antic. Afig el model DNN Sface per a processar el reconeixement de "
+"cares i substituir el model OpenFace anterior. Tots dos són més ràpids i "
+"requerixen menys memòria en temps d'execució amb resultats millors de gestió "
+"de cares."
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -7184,8 +7191,8 @@ msgstr ""
 "Experts Group» (JPEG) és un mètode utilitzat normalment de compressió amb "
 "pèrdua per a les imatges digitals, particularment per a aquelles imatges "
 "produïdes per la fotografia digital. Es pot ajustar el grau de compressió, "
-"permetent seleccionar el balanç entre la mida d'emmagatzematge i la qualitat "
-"d'imatge.</para><para>Per als detalls, vegeu la <a href='https://en."
+"que permet seleccionar el balanç entre la mida d'emmagatzematge i la "
+"qualitat d'imatge.</para><para>Per als detalls, vegeu la <a href='https://en."
 "wikipedia.org/wiki/JPEG'>documentació del Joint Photographic Experts Group</"
 "a>.</para>"
 
@@ -15073,7 +15080,7 @@ msgstr "Instruccions especials:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
 #, kde-format
 msgid "Set here the content instructions"
-msgstr "Establiu ací s'instruccions del contingut"
+msgstr "Establiu ací les instruccions del contingut"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
 #, kde-format
@@ -21348,7 +21355,7 @@ msgid ""
 "automatically on the next startup."
 msgstr ""
 "Si s'ha establit, la pista de so de l'àlbum actual es guardarà i es "
-"restaurarà automàticament en el proper inici."
+"restaurarà automàticament en l'inici següent."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
 #, kde-format
@@ -22938,7 +22945,7 @@ msgid ""
 "here: <a href='https://bugs.kde.org/show_bug.cgi?id=182838'>KDE Bugtracking "
 "System</a></p>"
 msgstr ""
-"<p>Actualment, coma projecte de codi font obert, no podem complir els "
+"<p>Actualment, com a projecte de codi font obert, no podem complir els "
 "requisits de Facebook per a reactivar este connector.</p><p>Per a més "
 "informació, vegeu ací: <a href='https://bugs.kde.org/show_bug.cgi?"
 "id=182838'>Sistema de seguiment d'errors de KDE</a></p>"
@@ -25562,7 +25569,7 @@ msgid ""
 msgstr ""
 "Esta eina permet als usuaris exportar elements al servei web OneDrive.\n"
 "\n"
-"Per als detalls, vegeu el lloc web de l'OneDrive: %1"
+"Per als detalls, vegeu el lloc web del OneDrive: %1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
 #, kde-format
@@ -25580,7 +25587,7 @@ msgstr "Exporteu cap a Onedrive"
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
-msgstr "Comença la pujada a Onedrive"
+msgstr "Comença la pujada al Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:281
 #, kde-format
@@ -25597,7 +25604,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a l'OneDrive.\n"
+"No s'ha pogut pujar la fotografia al OneDrive.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -25609,7 +25616,7 @@ msgid ""
 "Onedrive call failed:\n"
 "%1"
 msgstr ""
-"La crida a Onedrive ha fallat:\n"
+"La crida al Onedrive ha fallat:\n"
 "%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:44
@@ -27300,7 +27307,7 @@ msgid ""
 "Trying to upgrade old databases."
 msgstr ""
 "No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"ubicació nova («%2»). S'està intentat actualitzar la base de dades antiga."
+"ubicació nova («%2»). S'està intentant actualitzar la base de dades antiga."
 
 #: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
@@ -30084,7 +30091,7 @@ msgstr "No ho tornes a preguntar"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32366,12 +32373,10 @@ msgstr "S'està carregant el fotograma"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -33406,7 +33411,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Conversió RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Eina de correcció dels ulls rojos"
@@ -35670,7 +35675,7 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
-msgstr "Ja existix un fitxer o una carpeta anomenat %1 a %2"
+msgstr "Ja existix un fitxer o una carpeta anomenats %1 a %2"
 
 #: core/libs/iojobs/iojob.cpp:165
 #, kde-format
@@ -36885,7 +36890,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Rètol de color"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1592
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -37051,7 +37056,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:142
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -43137,7 +43142,7 @@ msgstr "Tarek Talaat"
 #: core/libs/widgets/mainview/daboutdata.cpp:198
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
-msgstr "Eines noves per a l'exportació des d'OneDrive, Pinterrest i Box"
+msgstr "Eines noves per a l'exportació des del OneDrive, Pinterrest i Box"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
@@ -43607,12 +43612,10 @@ msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -46229,7 +46232,7 @@ msgstr "Portugués (Portugal)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:334
 msgctxt "@info: country code"
 msgid "Portuguese (São Tomé e Principe)"
-msgstr "Portugués (São Tomé i Principe)"
+msgstr "Portugués (São Tomé i Príncipe)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
 msgctxt "@info: country code"
@@ -46414,7 +46417,7 @@ msgstr "Turcman (Turkmenistan)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
-msgstr "Klíngon (Estat d'EUA)"
+msgstr "Klíngon (Estat dels EUA)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
 msgctxt "@info: country code"
@@ -52309,7 +52312,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rebutja este suggeriment"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52321,59 +52324,59 @@ msgstr ""
 "Quan hàgeu identificat els vostres amics en algunes fotografies,\n"
 "es podrà reconéixer a les persones que es mostren a les fotografies."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Omet les imatges que ja s'han explorat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Torna a explorar i fusiona els resultats"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Neteja els resultats no confirmats i torna a explorar"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Neteja els resultats anteriors i torna a explorar"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Detecta les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Busca totes les cares en les fotografies"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:172
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Detecta i reconeix les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52383,13 +52386,13 @@ msgstr ""
 "Busca totes les cares en les fotografies i\n"
 "intenta reconéixer la persona representada"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Reconeix les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52399,25 +52402,25 @@ msgstr ""
 "Torna a intentar reconéixer les persones representades\n"
 "en les cares marcades però encara no confirmades."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de treball"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Busca a"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:224
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52429,31 +52432,31 @@ msgstr ""
 "valor, amb més precisió\n"
 "es detectaran les cares, però es reconeixeran menys cares."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "SSD"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52462,50 +52465,66 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
-"Model de detecció emprat per a trobar cares. YuNet s'el model "
+"Model de detecció emprat per a trobar cares. YuNet és el model "
 "predeterminat.\n"
 "És més ràpid i més configurable que el SSD i el YOLOv3.\n"
 "Nota: El YuNet només estarà disponible si digiKam s'ha compilat amb l'OpenCV "
 "4.6.0 o posterior."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Molt xicoteta"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr "Xicoteta"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Mitjana"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Molt gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
+#| "background faces in addition to medium and larger faces. Selecting "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
+#| "model parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
+#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
+#| "detected. It is much faster and will reduce the number of false-"
+#| "positives, but will not detect small faces in the background or faces in "
+#| "large group photos.</p><p>If you want to detect all faces in one pass, "
+#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
+#| "45%. Unfortunately, this will give a significant number of false-"
+#| "positives. It's recommended to set a detection accuracy of about 55% and "
+#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
+#| "setting applies only to YuNet.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -52517,9 +52536,9 @@ msgid ""
 "will reduce the number of false-positives, but will not detect small faces "
 "in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to about 45%. Unfortunately, this will give a significant "
+"detection accuracy to 2. Unfortunately, this will create a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 "<p>Seleccionant <b>Molt xicoteta</b> significa que el model detectarà cares "
@@ -52535,20 +52554,20 @@ msgstr ""
 "Desgraciadament, açò dona un nombre significatiu de falsos positius. Es "
 "recomana establir una precisió de detecció d'aproximadament el 55% i una "
 "mida de cara <b>Xicoteta</b> o <b>Mitjana</b> per a ús normal.</p><p>Este "
-"paràmetres no s'aplica a YuNet.</p>"
+"paràmetre no s'aplica a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configureu la detecció de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52563,25 +52582,25 @@ msgstr ""
 "Nota: només es reconeixeran les cares que siguen molt similars a les cares "
 "etiquetades amb anterioritat."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52595,14 +52614,14 @@ msgstr ""
 "Nota: El SFace només estarà disponible si digiKam s'ha compilat amb l'OpenCV "
 "4.6.0 o posterior."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:370
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:355
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52614,12 +52633,12 @@ msgstr ""
 "Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configureu el reconeixement de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -57008,7 +57027,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -65131,39 +65150,40 @@ msgstr "Seleccioneu la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:128
+#: core/utilities/setup/downloader/filesdownloader.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Baixada dels fitxers necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
-#, kde-format
-msgid "Use Face Detection feature"
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#, fuzzy, kde-format
+#| msgid "Use Face Detection feature"
+msgid "Use Face Management feature"
 msgstr "Utilitza la característica de detecció de cares"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:151
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Utilitza la característica de detecció estètica"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:152
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Utilitza la característica d'assignació automàtica d'etiquetes"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:222
+#: core/utilities/setup/downloader/filesdownloader.cpp:224
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tots els fitxers s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:229
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:232
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65182,45 +65202,56 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torneu-ho a provar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:367
+#: core/utilities/setup/downloader/filesdownloader.cpp:371
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:391
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:398
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:413
+#: core/utilities/setup/downloader/filesdownloader.cpp:417
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path"
+#| msgid ""
+#| "<p>For face detection, the red-eye removal tool, the classification of "
+#| "images according to aesthetics or the automatic assignment of tags to "
+#| "images, digiKam requires some large binary files. You can choose which "
+#| "feature you want to use.</p><p>Some of these files were not found. Click "
+#| "“Download” to begin downloading the files you need. You can close this "
+#| "dialog, you will be asked again the next time you start digiKam. Without "
+#| "these files the selected features will not work.</p><p>The files will be "
+#| "downloaded to %1.</p><p><b>After the successful download you have to "
+#| "restart digiKam.</b></p>"
 msgctxt "%1: folder path"
 msgid ""
-"<p>For face detection, the red-eye removal tool, the classification of "
-"images according to aesthetics or the automatic assignment of tags to "
+"<p>For the face management, the red-eye removal tool, and the classification "
+"of images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
 "“Download” to begin downloading the files you need. You can close this "
 "dialog, you will be asked again the next time you start digiKam. Without "
 "these files the selected features will not work.</p><p>The files will be "
-"downloaded to %1.</p><p><b>After the successful download you have to restart "
-"digiKam.</b></p>"
+"downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
+"to restart digiKam.</b></p>"
 msgstr ""
 "<p>Per al motor de cares, l'eina d'eliminació dels ulls rojos, la "
 "classificació d'imatges segons l'estètica o l'assignació automàtica "
@@ -65232,13 +65263,13 @@ msgstr ""
 "</p><p>Els fitxers es descarregaran a %1.</p><p><b>Una vegada finalitzada la "
 "baixada, caldrà reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:499
+#: core/utilities/setup/downloader/filesdownloader.cpp:503
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:506
+#: core/utilities/setup/downloader/filesdownloader.cpp:510
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "S'han trobat tots els fitxers de les característiques seleccionades."
@@ -67482,7 +67513,7 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
-"Perquè funcione de manera fàcil, Google Maps necessita una clau d´API que "
+"Perquè funcione de manera fàcil, Google Maps necessita una clau d'API que "
 "els usuaris finals poden comprar en línia per a aconseguir les credencials. "
 "Sense esta clau, Google Maps encara és utilitzable però amb un marc "
 "superposat que té l'anotació «Només per a desenvolupament». Per a més "

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-19 01:50+0000\n"
-"PO-Revision-Date: 2024-10-16 18:04+0200\n"
+"POT-Creation-Date: 2024-10-20 01:48+0000\n"
+"PO-Revision-Date: 2024-10-18 11:02+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3682,6 +3682,9 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Des vignettes sous forme d'icônes plus synthétiques en utilisant une simple "
+"ligne horizontale au lieu d'un cadre pour l'affichage des étiquettes de "
+"couleur."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3691,6 +3694,11 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"Ajout du modèle « DNN YuNet » pour traiter la reconnaissance faciale et "
+"remplacer l'ancien modèle « SSD ». Ajout du modèle « Sface DNN » pour "
+"traiter la reconnaissance faciale et remplacer l'ancien modèle « OpenFace ». "
+"Les deux sont plus rapides et nécessitent moins de mémoire durant "
+"l'exécution avec de meilleurs résultats pour la gestion des visages."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -30340,7 +30348,7 @@ msgstr "Ne plus poser la question"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32615,12 +32623,10 @@ msgstr "Chargement de la trame"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1 %"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -33665,7 +33671,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Conversion RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filtre de correction de l'effet « yeux rouges »"
@@ -37151,7 +37157,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Colorer une étiquette"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1592
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -37315,7 +37321,7 @@ msgstr ""
 "Ouvrir la boîte de dialogue de paramétrage pour configurer les mises à jour."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:142
 #, kde-format
 msgid "Download"
 msgstr "Télécharger"
@@ -43912,12 +43918,10 @@ msgid "Show Statusbar"
 msgstr "Afficher la barre d'état"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1 %"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -52625,7 +52629,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rejeter cette suggestion"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52638,59 +52642,59 @@ msgstr ""
 " DigiKam peut également reconnaître les personnes représentées sur vos "
 "photos."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Ignorer les images déjà analysées"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Analyser à nouveau et fusionner les résultats"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Effacer les résultats non confirmés et analyser à nouveau"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Effacer les résultats précédents et analyser à nouveau"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Aide"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Détecter les visages"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Cherche tous les visages dans vos photos"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:172
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Détecter et reconnaître des visages"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52700,13 +52704,13 @@ msgstr ""
 "Rechercher tous les visages dans vos photos et \n"
 "essayer de reconnaître quelle personne est représentée."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Reconnaître des visages"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52716,25 +52720,25 @@ msgstr ""
 "Veuillez essayer à nouveau de reconnaître les personnes représentées sur \n"
 "les visages marqués mais pas encore confirmés."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de traitement"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Chercher dans"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:224
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Précision :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52746,31 +52750,31 @@ msgstr ""
 "élevée, plus la reconnaissance\n"
 "de visages sera précise mais moins de visages seront reconnus."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Modèle :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "SSD"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52785,44 +52789,60 @@ msgstr ""
 "Remarque : YuNet est uniquement disponible si Digikam est compilé avec "
 "OpenCV en version 4.6.0 ou supérieure."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Taille de visages :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Extrêmement petit"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr "Petit"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Moyen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Grand"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Extrêmement grand"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
+#| "background faces in addition to medium and larger faces. Selecting "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
+#| "model parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
+#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
+#| "detected. It is much faster and will reduce the number of false-"
+#| "positives, but will not detect small faces in the background or faces in "
+#| "large group photos.</p><p>If you want to detect all faces in one pass, "
+#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
+#| "45%. Unfortunately, this will give a significant number of false-"
+#| "positives. It's recommended to set a detection accuracy of about 55% and "
+#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
+#| "setting applies only to YuNet.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -52834,9 +52854,9 @@ msgid ""
 "will reduce the number of false-positives, but will not detect small faces "
 "in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to about 45%. Unfortunately, this will give a significant "
+"detection accuracy to 2. Unfortunately, this will create a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 "<p>Le choix <a>Sélectionner <b>Extrêmement petit</b> signifie que le modèle "
@@ -52855,18 +52875,18 @@ msgstr ""
 "d'environ 55 % et une taille de visage <b>Petit</b> ou <b>Moyen</b> pour une "
 "utilisation normale. </p><p>Cette configuration ne s'applique qu'à YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configuration pour la détection de visages"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Précision :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52881,25 +52901,25 @@ msgstr ""
 "Remarque : seuls les visages, très proches des visages préenregistrés, "
 "seront reconnus."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modèle :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52913,14 +52933,14 @@ msgstr ""
 "Remarque : SFace n'est disponible que si Digikam est compilé avec OpenCV en "
 "version 4.6.0 ou supérieure."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:370
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Travailler sur tous les cœurs de processeurs"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:355
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52934,12 +52954,12 @@ msgstr ""
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configuration pour la détection de visages"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -57346,7 +57366,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -65542,39 +65562,40 @@ msgstr "Sélectionner une catégorie"
 msgid "Your collection will use this category:"
 msgstr "Votre collection utilisera cette catégorie :"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:128
+#: core/utilities/setup/downloader/filesdownloader.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Télécharger les fichiers demandés"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
-#, kde-format
-msgid "Use Face Detection feature"
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#, fuzzy, kde-format
+#| msgid "Use Face Detection feature"
+msgid "Use Face Management feature"
 msgstr "Utiliser la fonctionnalité de détection de visages"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:151
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Utiliser la fonctionnalité de détection d'esthétique"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:152
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Utiliser la fonctionnalité d'association automatique d'étiquettes"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:222
+#: core/utilities/setup/downloader/filesdownloader.cpp:224
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tous les fichiers ont été téléchargés avec succès."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:229
+#: core/utilities/setup/downloader/filesdownloader.cpp:231
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erreur de téléchargement"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:232
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65593,45 +65614,56 @@ msgstr ""
 "\n"
 "Vous pouvez ré-essayer ou continuer le téléchargement au prochain démarrage."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Essayer à nouveau"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:367
+#: core/utilities/setup/downloader/filesdownloader.cpp:371
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La somme de contrôle est incorrecte."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:391
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "File write error."
 msgstr "Erreur d'écriture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:398
+#: core/utilities/setup/downloader/filesdownloader.cpp:402
 #, kde-format
 msgid "File open error."
 msgstr "Erreur d'ouverture du fichier."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:413
+#: core/utilities/setup/downloader/filesdownloader.cpp:417
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Le fichier sur le serveur est trop volumineux."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path"
+#| msgid ""
+#| "<p>For face detection, the red-eye removal tool, the classification of "
+#| "images according to aesthetics or the automatic assignment of tags to "
+#| "images, digiKam requires some large binary files. You can choose which "
+#| "feature you want to use.</p><p>Some of these files were not found. Click "
+#| "“Download” to begin downloading the files you need. You can close this "
+#| "dialog, you will be asked again the next time you start digiKam. Without "
+#| "these files the selected features will not work.</p><p>The files will be "
+#| "downloaded to %1.</p><p><b>After the successful download you have to "
+#| "restart digiKam.</b></p>"
 msgctxt "%1: folder path"
 msgid ""
-"<p>For face detection, the red-eye removal tool, the classification of "
-"images according to aesthetics or the automatic assignment of tags to "
+"<p>For the face management, the red-eye removal tool, and the classification "
+"of images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
 "“Download” to begin downloading the files you need. You can close this "
 "dialog, you will be asked again the next time you start digiKam. Without "
 "these files the selected features will not work.</p><p>The files will be "
-"downloaded to %1.</p><p><b>After the successful download you have to restart "
-"digiKam.</b></p>"
+"downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
+"to restart digiKam.</b></p>"
 msgstr ""
 "<p> Pour les outils de reconnaissance faciale, de suppression de l'effet "
 "« Yeux rouges  et de la classification des images selon des allocations "
@@ -65646,13 +65678,13 @@ msgstr ""
 "p><p><b>Après un téléchargement réussi, vous devrez re-démarrer DigiKam.</"
 "b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:499
+#: core/utilities/setup/downloader/filesdownloader.cpp:503
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Le téléchargement nécessite %1 fichiers d'une taille de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:506
+#: core/utilities/setup/downloader/filesdownloader.cpp:510
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Tous les fichiers des fonctionnalités sélectionnées ont été trouvés."
