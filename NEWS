@@ -156,7 +156,7 @@ BUGFIXES:
 131 ==> 495014 - Why im not able to use opencl?
 132 ==> 495011 - digiKam crash when making "search faces" on an image.
 133 ==> 485029 - Upgrade YOLO to a more recent version to improve face recognition.
-134 ==> 
+134 ==> 437896 - Face Recognition with Time taken into consideration.
 135 ==> 
 136 ==> 
 137 ==> 
