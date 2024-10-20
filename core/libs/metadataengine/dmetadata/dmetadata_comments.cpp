@@ -535,7 +535,7 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
                 {
                     case NamespaceEntry::COMMENT_ATLLANGLIST:
                     {
-                        // NOTE : setXmpTagStringListLangAlt remove xmp tag before to add new values
+                        // NOTE : setXmpTagStringListLangAlt remove xmp tag before to add new values.
 
                         if (!setXmpTagStringListLangAlt(nameSpace, titles.toAltLangMap()))
                         {
@@ -680,7 +680,7 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        case QVariant::Map: // FIXME: port to QMetaType
+        case QVariant::Map: // TODO: Port to QMetaType
 
 #else
 
