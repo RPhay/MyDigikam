@@ -57,8 +57,8 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 return;
             }
 
-            QJsonObject   jsonObject  = jsonArray.at(0).toObject();
-            QVariantMap   metadataMap = jsonObject.toVariantMap();
+            QJsonObject jsonObject    = jsonArray.at(0).toObject();
+            QVariantMap metadataMap   = jsonObject.toVariantMap();
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool Json map size:" << metadataMap.size();
 
@@ -110,7 +110,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (propsMap.find(QLatin1String("val")).value().typeId() == QVariant::List)
+                if (propsMap.find(QLatin1String("val")).value().typeId() == QVariant::List) // TODO: port to QMetaType
 
 #else
 
@@ -127,7 +127,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                     data             = propsMap.find(QLatin1String("val")).value().toString();
                 }
 
-                QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
+                QString desc              = propsMap.find(QLatin1String("desc")).value().toString();
 
                 // Optional numerical value extraction, if any
 
@@ -239,7 +239,6 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 QString desc = s.section(QLatin1Char(' '), 1, -1);
                 lst << ext << desc;
             }
-
 
             exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << lst);
             break;
@@ -399,8 +398,10 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
         }
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(result.cmdAction)
-                                    << exifToolData.count() << "properties decoded";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action"
+                                    << d->actionString(result.cmdAction)
+                                    << exifToolData.count()
+                                    << "properties decoded";
 
     d->exifToolData = exifToolData;
 
@@ -418,7 +419,8 @@ void ExifToolParser::errorOccurred(const ExifToolProcess::Result& result,
 {
     qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action"
                                       << d->actionString(result.cmdAction)
-                                      << "exited with error:" << error;
+                                      << "exited with error:"
+                                      << error;
 
     d->errorString = description;
 
