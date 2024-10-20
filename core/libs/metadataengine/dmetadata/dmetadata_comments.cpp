@@ -680,7 +680,7 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        case QVariant::Map: // TODO: Port to QMetaType
+        case  qMetaTypeId<QMap<QString, QVariant> >():
 
 #else
 

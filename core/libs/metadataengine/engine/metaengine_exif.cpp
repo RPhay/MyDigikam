@@ -607,7 +607,7 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        case QVariant::List: // TODO: Port to QMetaType
+        case qMetaTypeId<QList<QVariant> >():
 
 #else
 
@@ -787,7 +787,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            case QVariant::List: // TODO: Port to QMetaType
+            case qMetaTypeId<QList<QVariant> >():
 
 #else
 

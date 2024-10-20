@@ -105,7 +105,7 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            case QVariant::List: // TODO: Port to QMetaType
+            case qMetaTypeId<QList<QVariant> >():
 
 #else
 

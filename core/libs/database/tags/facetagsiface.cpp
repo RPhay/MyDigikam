@@ -215,7 +215,7 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if (var.typeId() == QVariant::List) // TODO: Port to QMetaType
+    if (var.typeId() == qMetaTypeId<QList<QVariant> >())
 
 #else
 
