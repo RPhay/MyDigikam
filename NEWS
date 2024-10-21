@@ -6,7 +6,7 @@ NEW FEATURES:
 Bundles:         Update to last Exiv2 version 0.28.3.
 Bundles:         Update to last ExifTool version 12.98.
 Bundles:         AppImage are now based on Qt framework 6.8.0 and KDE framework 6.7.0.
-Bundles:         Windows installer are now based on KDE framework 6.5.0.
+Bundles:         Windows installer are now based on KDE framework 6.7.0.
 Bundles:         New MacOS Silicon (arm64) package based on Qt6 framework 6.7.2,
                  KDE framework 6.5.0, and ffmpeg 6.1.
 
@@ -17,7 +17,7 @@ Video:           Update internal QtAVPlayer to last 20240820 upstream (Qt5 only)
 IconView:        More compact thumbnails by using a simple horizontal line instead a frame
                  to render Color Labels.
 FacesManagement: Adding YuNet DNN model to process faces detection and replace older SSD model.
-                 Adding Sface DNN model to process face recognition and replace older OpenFace model. 
+                 Adding Sface DNN model to process face recognition and replace older OpenFace model.
                  There are faster and requires less memory at run-time with better results.
 
 *****************************************************************************************************
