@@ -160,7 +160,7 @@ BUGFIXES:
 135 ==> 435146 - Feature Request: Clear all unconfirmed faces before starting recognition.
 136 ==> 449310 - Add a DOB (date of birth) feature to facial recognition that will improve indexing and exclude all pictures prior to a given date.
 137 ==> 401458 - Rename file name with recognized faces-tags.
-138 ==> 
+138 ==> 495006 - digiKam crashes when trying to run yunet face detection.
 139 ==> 
 140 ==> 
 141 ==> 
