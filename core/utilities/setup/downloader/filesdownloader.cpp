@@ -81,6 +81,8 @@ public:
 
     QString                error;
     const QString          downloadUrl      = QLatin1String("https://files.kde.org/digikam/");
+    const QString          userAgent        = QLatin1String("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                                            "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36");
 };
 
 FilesDownloader::FilesDownloader(QWidget* const parent)
@@ -285,8 +287,11 @@ void FilesDownloader::createRequest(const QUrl& url)
     d->progress->setValue(0);
     printDownloadInfo(url);
 
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::UserAgentHeader, d->userAgent);
+
     d->redirects++;
-    d->reply = d->netMngr->get(QNetworkRequest(url));
+    d->reply = d->netMngr->get(request);
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
