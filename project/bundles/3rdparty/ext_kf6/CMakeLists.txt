@@ -109,7 +109,7 @@ InstallKF6Component(extra-cmake-modules      ${KDE_VERSION}     "${Qt6CommonOpti
 InstallKF6Component(plasma-wayland-protocols ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "wayland-proto-ecm-version.patch")
 InstallKF6Component(kconfig                  ${KDE_VERSION}     "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"                 "")
 InstallKF6Component(breeze-icons             ${KDE_VERSION}     "${Qt6CommonOptions};${BreezeIconsOptions}"                 "breeze-icons-dropsvg.patch")
-InstallKF6Component(solid                    ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "solid-iokit-cfrelease.patch")
+InstallKF6Component(solid                    ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "solid-iokit-fixes.patch")
 InstallKF6Component(kcoreaddons              ${KDE_VERSION}     "${Qt6CommonOptions};-DKCOREADDONS_USE_QML=OFF"             "")
 InstallKF6Component(threadweaver             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kwindowsystem            ${KDE_VERSION}     "${Qt6CommonOptions};-DKWINDOWSYSTEM_WAYLAND=OFF"           "")
