@@ -35,7 +35,7 @@ class DIGIKAM_DATABASE_EXPORT FaceTags
 public:
 
     /**
-     * Returns a boolean value indicating whether the given tagId represents a person
+     * Returns a boolean value indicating whether the given tagId represents a person.
      */
     static bool           isPerson(int tagId);
 
@@ -51,22 +51,22 @@ public:
     static bool           isSystemPersonTagId(int tagId);
 
     /**
-     * A method to return a list of all person tags in the DB
+     * A method to return a list of all person tags in the DB.
      */
     static QList<int>     allPersonTags();
 
     /**
-     * A method to return a list of all person tag names in the DB
+     * A method to return a list of all person tag names in the DB.
      */
     static QList<QString> allPersonNames();
 
     /**
-     * A method to return a list of all person tag paths in the DB
+     * A method to return a list of all person tag paths in the DB.
      */
     static QList<QString> allPersonPaths();
 
     /**
-     * The suggested parent tag for persons
+     * The suggested parent tag for persons.
      */
     static int            personParentTag();
 
@@ -87,7 +87,7 @@ public:
 
     /**
      * Ensure that the given tag is a person tag. If not, it will be converted.
-     * Optionally, pass the full name. (tag name is not changed)
+     * Optionally, pass the full name. (tag name is not changed).
      */
     static void           ensureIsPerson(int tagId, const QString& fullName = QString());
 
@@ -107,7 +107,7 @@ public:
     static void applyTagIdentityMapping(int tagId, const QMultiMap<QString, QString>& attributes);
 
     /**
-     * Return a person's name for a tag
+     * Return a person's name for a tag.
      */
     static QString        faceNameForTag(int tagId);
 

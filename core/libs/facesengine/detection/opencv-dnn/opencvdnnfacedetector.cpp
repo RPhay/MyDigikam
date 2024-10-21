@@ -75,7 +75,7 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
     return 800;
 }
 
-// TODO: prepareForDetection give different performances
+// TODO: prepareForDetection give different performances.
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
@@ -129,7 +129,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
         {
-            // I think we can ignore premultiplication when converting to grayscale
+            // I think we can ignore premultiplication when converting to grayscale.
 
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                      qimage.scanLine(0), qimage.bytesPerLine());
@@ -171,7 +171,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
-    // Resize image before padding to fit in neural net
+    // Resize image before padding to fit in neural net.
 
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0F / cvImage.cols,
@@ -181,7 +181,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
     int newHeight           = (int)(k * cvImage.rows);
     cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
 
-    // Pad with black pixels
+    // Pad with black pixels.
 
     int padX                = (inputImageSize.width  - newWidth)  / 2;
     int padY                = (inputImageSize.height - newHeight) / 2;
@@ -207,7 +207,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
     if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
     {
         // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
-        // so we just need to make sure no one bound exceeds the max. No padding needed
+        // so we just need to make sure no one bound exceeds the max. No padding needed.
 
         resizeFactor            = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
                                            static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
@@ -217,7 +217,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
         cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
     }
 
-    paddedSize = cv::Size(0, 0); // Special case for YuNet
+    paddedSize = cv::Size(0, 0); // Special case for YuNet.
 
     return cvImage;
 }
@@ -239,7 +239,7 @@ void OpenCVDNNFaceDetector::setFaceDetectionSize(FaceScanSettings::FaceDetection
 
 void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& height)
 {
-    // Human head sizes data
+    // Human head sizes data.
     // https://en.wikipedia.org/wiki/Human_head#Average_head_sizes
 
     float maxRatioFrontalFace    = 15.4 / 15.5;

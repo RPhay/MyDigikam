@@ -44,18 +44,21 @@ public:
     QMutex               mutex;
 
     QVector<KDNodeBase*> nodeMap;
-    int                  mapThreshold   = KDTREE_MAP_THRESHOLD;    ///< above this size start using the KDTree instead of the vector
+    int                  mapThreshold   = KDTREE_MAP_THRESHOLD;    ///< above this size start using the KDTree instead of the vector.
     bool                 useMap         = true;
 
 };
 
 KDTreeBase::KDTreeBase(
                        int dim,
-                       int threshold = KDTREE_MAP_THRESHOLD    // if the vector grows to 500 items, start using the KDTree
+                       int threshold = KDTREE_MAP_THRESHOLD        // If the vector grows to 500 items, start using the KDTree.
                       )
                     : d(new Private(dim, threshold))
 {
-    // using this to compare brute force vs kdtree performance due to sparse data in k-dimensions (128 dimensions for face features)
+    /**
+     * Using this to compare brute force vs kdtree performance due to sparse data
+     * in k-dimensions (128 dimensions for face features).
+     */
 
     QString bruteForce = QString::fromLocal8Bit(qgetenv("DIGIKAM_KDREE_USEBRUTEFORCE"));
 
@@ -66,7 +69,7 @@ KDTreeBase::KDTreeBase(
             QString::fromUtf8("true") == bruteForce.toLower()
            )
         {
-            d->mapThreshold = std::numeric_limits<int>::max();      // set the vectorThreshold so high we always use the vector
+            d->mapThreshold = std::numeric_limits<int>::max();      // set the vectorThreshold so high we always use the vector.
         }
     }
 }
@@ -93,10 +96,10 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
             newNode = d->root->insert(position, identity);
         }
 
-        // to avoid issues with sparse density in the tree we initially use a vector of nodes
+        // To avoid issues with sparse density in the tree we initially use a vector of nodes
         // and compare all targets to the samples in the vector.  When sufficient data density
         // has been achieved, we delete the vector (but not the nodes), and begin using the tree
-        // for classification
+        // for classification.
 
         if (d->useMap)
         {
@@ -108,7 +111,7 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
             else
             {
                 d->useMap = false;
-                d->nodeMap.clear();     // don't delete the nodes. The nodes are also used by the tree
+                d->nodeMap.clear();     // Don't delete the nodes. The nodes are also used by the tree.
             }
         }
     }
@@ -123,10 +126,10 @@ QMap<double, QVector<int> > KDTreeBase::getClosestNeighbors(const cv::Mat& posit
 {
     QMap<double, QVector<int> > closestNeighbors;
 
-    // to avoid issues with sparse density in the tree we initially use a vector of nodes
+    // To avoid issues with sparse density in the tree we initially use a vector of nodes
     // and compare all targets to the sample nodes in the vector.  When sufficient data density
     // has been achieved, we delete the vector (but not the nodes), and begin using the tree
-    // for classification
+    // for classification.
 
     if (d->useMap)
     {

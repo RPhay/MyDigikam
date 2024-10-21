@@ -40,11 +40,11 @@ namespace Digikam
 
 const std::map<FaceScanSettings::FaceDetectionSize, int> faceenum2size
 {
-    { FaceScanSettings::FaceDetectionSize::ExtraLarge, 420   },
-    { FaceScanSettings::FaceDetectionSize::Large,      620   },
-    { FaceScanSettings::FaceDetectionSize::Medium,     800   },
-    { FaceScanSettings::FaceDetectionSize::Small,      1200  },
-    { FaceScanSettings::FaceDetectionSize::ExtraSmall, 2000  }
+    { FaceScanSettings::FaceDetectionSize::ExtraLarge, 420  },
+    { FaceScanSettings::FaceDetectionSize::Large,      620  },
+    { FaceScanSettings::FaceDetectionSize::Medium,     800  },
+    { FaceScanSettings::FaceDetectionSize::Small,      1200 },
+    { FaceScanSettings::FaceDetectionSize::ExtraSmall, 2000 }
 };
 
 DNNFaceDetectorYuNet::DNNFaceDetectorYuNet()
@@ -63,7 +63,6 @@ DNNFaceDetectorYuNet::~DNNFaceDetectorYuNet()
 
 bool DNNFaceDetectorYuNet::loadModels()
 {
-
     model = DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection);
 
     if (model && !model->modelLoaded)
@@ -111,7 +110,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "starting YuNet face detection";
 
-    // Lock the model for single threading
+    // Lock the model for single threading.
 
     QMutexLocker lock(&(model->mutex));
 
@@ -119,17 +118,17 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     {
         if (model->modelLoaded)
         {
-            // Start the timer so we know how long we're locking for
+            // Start the timer so we know how long we're locking for.
 
             timer.start();
 
-            // Set up the detector with new params
+            // Set up the detector with new params.
 
             static_cast<DNNModelYuNet*>(model)->getNet()->setInputSize(inputImage.size());
             static_cast<DNNModelYuNet*>(model)->getNet()->setScoreThreshold(confidenceThreshold);
             static_cast<DNNModelYuNet*>(model)->getNet()->setNMSThreshold(nmsThreshold);
 
-            // Detect faces
+            // Detect faces.
 
             static_cast<DNNModelYuNet*>(model)->getNet()->detect(inputImage, faces);
 
@@ -162,40 +161,41 @@ void DNNFaceDetectorYuNet::detectFaces(const cv::Mat& inputImage,
 
     std::vector<float> confidences;
 
-    // Safety check
+    // Safety check.
 
     if (inputImage.empty())
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid image given to YuNet, not detecting faces.";
+
         return;
     }
 
-    // All calls to the model need to be in this method
+    // All calls to the model need to be in this method.
 
     cv::Mat faces = callModel(inputImage);
 
-    // Process faces found
+    // Process faces found.
 
     if ( faces.rows > 0)
     {
-        // Loop through the faces found
+        // Loop through the faces found.
 
         for (int i = 0 ; i < faces.rows ; ++i)
         {
             double confidence = faces.at<float>(i, 14);
 
-            // Add the confidence to the result list
+            // Add the confidence to the result list.
 
             confidences.push_back(confidence);
 
-            // Create the rect of the face
+            // Create the rect of the face.
 
             int X       = static_cast<int>(faces.at<float>(i, 0));
             int Y       = static_cast<int>(faces.at<float>(i, 1));
             int width   = static_cast<int>(faces.at<float>(i, 2));
             int height  = static_cast<int>(faces.at<float>(i, 3));
 
-            // Add the rect to result list
+            // Add the rect to result list.
 
             detectedBboxes.push_back(cv::Rect(X, Y, width, height));
         }

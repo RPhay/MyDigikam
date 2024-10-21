@@ -17,6 +17,9 @@
  * ============================================================ */
 
 #include "facialrecognition_wrapper_p.h"
+
+// Local includes
+
 #include "dnnmodeldefinitions.h"
 
 namespace Digikam
@@ -24,19 +27,20 @@ namespace Digikam
 
 void FacialRecognitionWrapper::Private::applyParameters()
 {
-    int k           = 5;
-    int threshold   = DNN_MODEL_THRESHOLD_NOT_SET;
+    int k                                           = 5;
+    int threshold                                   = DNN_MODEL_THRESHOLD_NOT_SET;
     FaceScanSettings::FaceRecognitionModel oldModel = recognizeModel;
-
-    // if      (parameters.contains(QLatin1String("k-nearest")))
-    // {
-    //     k = parameters.value(QLatin1String("k-nearest")).toInt();
-    // }
-    // else if (parameters.contains(QLatin1String("threshold")))
-    // {
-    //     threshold = parameters.value(QLatin1String("threshold")).toFloat();
-    // }
-    // else 
+/*
+    if      (parameters.contains(QLatin1String("k-nearest")))
+    {
+        k = parameters.value(QLatin1String("k-nearest")).toInt();
+    }
+    else if (parameters.contains(QLatin1String("threshold")))
+    {
+        threshold = parameters.value(QLatin1String("threshold")).toFloat();
+    }
+    else
+*/
     if (parameters.contains(QLatin1String("recognizeAccuracy")))
     {
         threshold = parameters.value(QLatin1String("recognizeAccuracy")).toInt();
@@ -47,7 +51,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
         recognizeModel = static_cast<FaceScanSettings::FaceRecognitionModel>(parameters.value(QLatin1String("recognizeModel")).toInt());
     }
 
-    // check if d and if recModel is changing.  Rebuild d if needed
+    // Check if d and if recModel is changing. Rebuild d if needed.
 
     if (recognizeModel != oldModel)
     {
@@ -100,11 +104,10 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
 void FacialRecognitionWrapper::setParameters(const FaceScanSettings& parameters)
 {
     FaceScanSettings::FaceRecognitionModel oldModel = d->recognizeModel;
+    int threshold                                   = parameters.recognizeAccuracy;
+    d->recognizeModel                               = parameters.recognizeModel;
 
-    int threshold   = parameters.recognizeAccuracy;
-    d->recognizeModel = parameters.recognizeModel;
-
-    // check if d and if recModel is changing.  Rebuild d if needed
+    // Check if d and if recModel is changing. Rebuild d if needed.
 
     if (d->recognizeModel != oldModel)
     {

@@ -32,6 +32,11 @@
 #include "GeoDataMultiGeometry.h"
 #include "digikam_debug.h"
 
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wbitwise-instead-of-logical"
+#endif
+
 namespace Marble
 {
 
@@ -94,12 +99,11 @@ bool Pn2Runner::importPolygon(QDataStream& stream, GeoDataLineString* linestring
     qint8 relativeLat, relativeLon;
     bool error = false;
 
-
-    for (quint32 absoluteNode = 1; absoluteNode <= nrAbsoluteNodes; absoluteNode++)
+    for (quint32 absoluteNode = 1 ; absoluteNode <= nrAbsoluteNodes ; absoluteNode++)
     {
         stream >> lat >> lon >> nrRelativeNodes;
 
-        error = error | errorCheckLat(lat) | errorCheckLon(lon);
+        error        = error | errorCheckLat(lat) | errorCheckLon(lon);
 
         qreal degLat = (1.0 * lat / 120.0);
         qreal degLon = (1.0 * lon / 120.0);
@@ -107,19 +111,17 @@ bool Pn2Runner::importPolygon(QDataStream& stream, GeoDataLineString* linestring
         GeoDataCoordinates coord(degLon / 180 * M_PI, degLat / 180 * M_PI);
         linestring->append(coord);
 
-        for (qint16 relativeNode = 1; relativeNode <= nrRelativeNodes; ++relativeNode)
+        for (qint16 relativeNode = 1 ; relativeNode <= nrRelativeNodes ; ++relativeNode)
         {
             stream >> relativeLat >> relativeLon;
 
-            qint16 currLat = relativeLat + lat;
-            qint16 currLon = relativeLon + lon;
+            qint16 currLat   = relativeLat + lat;
+            qint16 currLon   = relativeLon + lon;
 
-
-            error = error | errorCheckLat(currLat) | errorCheckLon(currLon);
+            error            = error | errorCheckLat(currLat) | errorCheckLon(currLon);
 
             qreal currDegLat = (1.0 * currLat / 120.0);
             qreal currDegLon = (1.0 * currLon / 120.0);
-
 
             GeoDataCoordinates currCoord(currDegLon / 180 * M_PI, currDegLat / 180 * M_PI);
             linestring->append(currCoord);
@@ -139,6 +141,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
     {
         error = QStringLiteral("File %1 does not have a pn2 suffix").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
+
         return nullptr;
     }
 
@@ -148,6 +151,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
+
         return nullptr;
     }
 
@@ -159,14 +163,20 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
     switch (m_fileHeaderVersion)
     {
         case 1:
+        {
             return parseForVersion1(fileName, role);
+        }
 
         case 2:
+        {
             return parseForVersion2(fileName, role);
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "File can't be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
             break;
+        }
     }
 
     return nullptr;
@@ -177,22 +187,20 @@ GeoDataDocument* Pn2Runner::parseForVersion1(const QString& fileName, DocumentRo
     GeoDataDocument* document = new GeoDataDocument();
     document->setDocumentRole(role);
 
-    bool error = false;
+    bool error                = false;
 
     quint32 ID, nrAbsoluteNodes;
-    quint8 flag, prevFlag = -1;
+    quint8 flag, prevFlag     = -1;
 
     GeoDataStyle::Ptr style;
-    GeoDataPolygon* polygon = new GeoDataPolygon;
+    GeoDataPolygon* polygon   = new GeoDataPolygon;
 
-    for (quint32 currentPoly = 1; (currentPoly <= m_fileHeaderPolygons) && (!error) && (!m_stream.atEnd()); currentPoly++)
+    for (quint32 currentPoly = 1 ; (currentPoly <= m_fileHeaderPolygons) && (!error) && (!m_stream.atEnd()) ; currentPoly++)
     {
-
         m_stream >> ID >> nrAbsoluteNodes >> flag;
 
         if (flag != INNERBOUNDARY && (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY))
         {
-
             GeoDataPlacemark* placemark = new GeoDataPlacemark;
             placemark->setGeometry(polygon);
 
@@ -210,9 +218,9 @@ GeoDataDocument* Pn2Runner::parseForVersion1(const QString& fileName, DocumentRo
         if (flag == LINESTRING)
         {
             GeoDataLineString* linestring = new GeoDataLineString;
-            error = error | importPolygon(m_stream, linestring, nrAbsoluteNodes);
+            error                         = error | importPolygon(m_stream, linestring, nrAbsoluteNodes);
 
-            GeoDataPlacemark* placemark = new GeoDataPlacemark;
+            GeoDataPlacemark* placemark   = new GeoDataPlacemark;
             placemark->setGeometry(linestring);
             document->append(placemark);
         }
@@ -279,10 +287,12 @@ GeoDataDocument* Pn2Runner::parseForVersion1(const QString& fileName, DocumentRo
     {
         delete document;
         document = nullptr;
+
         return nullptr;
     }
 
     document->setFileName(fileName);
+
     return document;
 }
 
@@ -335,6 +345,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
             placemark = new GeoDataPlacemark;
 
             // Handle the color index
+
             if (m_isMapColorField)
             {
                 quint8 colorIndex;
@@ -370,7 +381,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
             if ((flag == LINEARRING) || (flag == OUTERBOUNDARY) || (flag == INNERBOUNDARY))
             {
                 GeoDataLinearRing* linearring = new GeoDataLinearRing;
-                error = error || importPolygon(m_stream, linearring, nrAbsoluteNodes);
+                error                         = error || importPolygon(m_stream, linearring, nrAbsoluteNodes);
 
                 if (flag == LINEARRING)
                 {
@@ -379,7 +390,6 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
                         placemark->setGeometry(linearring);
                     }
                 }
-
                 else
                 {
                     if (flag == OUTERBOUNDARY)
@@ -433,7 +443,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
                 if ((flagInMulti == LINEARRING) || (flagInMulti == OUTERBOUNDARY) || (flagInMulti == INNERBOUNDARY))
                 {
                     GeoDataLinearRing* linearring = new GeoDataLinearRing;
-                    error = error | importPolygon(m_stream, linearring, nrAbsoluteNodes);
+                    error                         = error | importPolygon(m_stream, linearring, nrAbsoluteNodes);
 
                     if (flagInMulti == LINEARRING)
                     {
@@ -478,7 +488,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
         placemark                                                &&
         (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY) &&
         (prevFlag != MULTIGEOMETRY)
-    )
+       )
     {
         placemark->setGeometry(polygon);
     }
@@ -487,13 +497,21 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
     {
         delete document;
         document = nullptr;
+
         return nullptr;
     }
 
     document->setFileName(fileName);
+
     return document;
 }
 
 } // namespace Marble
+
+// Restore warnings
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 #include "moc_Pn2Runner.cpp"

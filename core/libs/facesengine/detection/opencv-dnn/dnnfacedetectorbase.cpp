@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-// TODO: re-verify these threshold
+// TODO: re-verify these threshold.
 
 int   DNNFaceDetectorBase::uiConfidenceThreshold  = DNN_MODEL_THRESHOLD_NOT_SET;
 float DNNFaceDetectorBase::nmsThreshold           = 0.4F;
@@ -66,7 +66,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
 
     cv::Rect bbox(left, top, width, height);
 
-    // Take the net size of image
+    // Take the net size of image.
 
     int borderLeft   = paddedSize.width;
     int borderRight  = inputImageSize.width  - paddedSize.width;

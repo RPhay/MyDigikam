@@ -59,6 +59,7 @@ public:
 public:
 
     // --- Backend parameters (facesengine_interface_setup.cpp) --------------------------
+
     /**
      * Tunes backend parameters.
      * Available parameters:
@@ -73,7 +74,7 @@ public:
     void        setParameters(const FaceScanSettings& parameters);
     QVariantMap parameters()                                                const;
 
-    // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
+    // --- Identity management (facesengine_interface_identity.cpp) ----------------------
 
     /// NOTE: For the documentation of standard attributes, see identity.h
 
@@ -126,7 +127,8 @@ public:
      */
     void deleteIdentities(QList<Identity> identitiesToBeDeleted);
 
-    // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------------------------
+    // --- Faces Training management (facesengine_interface_training.cpp) ----------------
+
     /**
      * Performs training.
      * The identities which have new images to be trained are given.
@@ -173,15 +175,17 @@ public:
     void clearTraining(const QList<Identity>& identitiesToClean,
                        const QString& trainingContext = QString());
 
-    // --- Recognition management (facesengine_interface_recognize.cpp) -------------------
+    // --- Recognition management (facesengine_interface_recognize.cpp) ------------------
 
     /**
      * Returns the recommended size if you want to scale face images for recognition.
      * Larger images can be passed, but may be downscaled.
      */
-    // TODO : review to see if this function is necessary
-    //int recommendedImageSize(const QSize& availableSize = QSize()) const;
 
+    // TODO : review to see if this function is necessary
+/*
+    int recommendedImageSize(const QSize& availableSize = QSize()) const;
+*/
     /**
      * Performs recognition.
      * The face details to be recognized are passed by the provider.
@@ -201,8 +205,9 @@ private:
 
     class Private;
     static Private* d;
-
-    // static FaceScanSettings::FaceRecognitionModel recognizeModel;
+/*
+    static FaceScanSettings::FaceRecognitionModel recognizeModel;
+*/
 };
 
 } // namespace Digikam

@@ -28,10 +28,10 @@
 #include "digikam_opencv.h"
 #include "kd_nodebase.h"
 
-// due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
+// Due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
 // once we have achieved a suitabe data density we delete the vector (but not the nodes)
 // and begin using the tree.
-// the next refactor will include replacing the tree with a more appropriate HDLSS classifier
+// The next refactor will include replacing the tree with a more appropriate HDLSS classifier.
 
 #define KDTREE_MAP_THRESHOLD 500 // size of the vector before we start using the tree
 

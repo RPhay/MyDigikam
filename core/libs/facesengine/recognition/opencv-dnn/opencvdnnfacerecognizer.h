@@ -43,7 +43,7 @@ public:
     };
 
     /**
-     *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm
+     *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm.
      */
     explicit OpenCVDNNFaceRecognizer(Classifier method, FaceScanSettings::FaceRecognitionModel recModel);
     ~OpenCVDNNFaceRecognizer();
@@ -51,17 +51,17 @@ public:
 public:
 
     /**
-     *  Returns a cvMat created from the inputImage, optimized for recognition
+     *  Returns a cvMat created from the inputImage, optimized for recognition.
      */
     static cv::Mat prepareForRecognition(QImage& inputImage);
 
     /**
-     *  Returns a cvMat created from the cvinputImage, optimized for recognition
+     *  Returns a cvMat created from the cvinputImage, optimized for recognition.
      */
     static cv::Mat prepareForRecognition(const cv::Mat& cvinputImage);
 
     /**
-     * Register faces corresponding to an identity
+     * Register faces corresponding to an identity.
      */
     void train(const QList<QImage*>& images, const int label, const QString& context);
 
@@ -69,7 +69,7 @@ public:
      * Try to recognize the given image.
      * Returns the identity id.
      * If the identity cannot be recognized, returns -1.
-     * TODO: verify workflow to economize this routine
+     * TODO: verify workflow to economize this routine.
      */
     int recognize(QImage* inputImage);
 
@@ -81,27 +81,27 @@ public:
     QVector<int> recognize(const QList<QImage*>& inputImages);
 
     /**
-     * Clear specified trained data
+     * Clear specified trained data.
      */
     void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
 
     /**
-     * Set K parameter of K-Nearest neighbors algorithm
+     * Set K parameter of K-Nearest neighbors algorithm.
      */
     void setNbNeighbors(int k);
 
     /**
-     * Set maximum square distance of 2 vectors
+     * Set maximum square distance of 2 vectors.
      */
     void setThreshold(int threshold);
 
     /**
-     * @brief register training data for unit test
+     * @brief register training data for unit test.
      */
     bool registerTrainingData(const cv::Mat& preprocessedImage, int label);
 
     /**
-     * @brief predict label of test data for unit test
+     * @brief predict label of test data for unit test.
      */
     int verifyTestData(const cv::Mat& preprocessedImage);
 
@@ -114,7 +114,9 @@ private:
 private:
 
     class Private;
-    // Private* const d = nullptr;
+/*
+    Private* const d = nullptr;
+*/
     static Private* d;
 };
 

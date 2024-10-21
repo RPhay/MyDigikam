@@ -60,7 +60,7 @@ public:
 
 public:
 
-    // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------
+    // --- Faces Training management (facesengine_interface_training.cpp) ----------------
 
     void trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
                             TrainingDataProvider* const data,
@@ -68,7 +68,7 @@ public:
 
     void clear(const QList<int>& idsToClear, const QString& trainingContext);
 
-    // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
+    // --- Identity management (facesengine_interface_identity.cpp) ----------------------
 
     static bool identityContains(const Identity& identity,
                                  const QString& attribute,

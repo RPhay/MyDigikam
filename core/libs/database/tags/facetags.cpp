@@ -82,13 +82,14 @@ void FaceTagsHelper::makeFaceTag(int tagId, const QString& fullName)
 {
     QString faceEngineName  = fullName;
 
-    /*
-     *    // find a unique FacesEngineId
-     *    for (int i = 0 ; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId) ; ++i)
-     *    {
-     *        FacesEngineId = fullName + QString::fromUtf8(" (%1)").arg(i);
-     *    }
-     */
+/*
+    // Find a unique FacesEngineId.
+
+    for (int i = 0 ; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId) ; ++i)
+    {
+        FacesEngineId = fullName + QString::fromUtf8(" (%1)").arg(i);
+    }
+*/
 
     TagProperties props(tagId);
     props.setProperty(TagPropertyName::person(),         fullName);
@@ -130,7 +131,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         return 0;
     }
 
-    // First attempt: Find by full name in "person" attribute
+    // First attempt: Find by full name in "person" attribute.
 
     QList<int> candidates = TagsCache::instance()->tagsWithProperty(TagPropertyName::person(), fullName);
 
@@ -148,7 +149,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         }
     }
 
-    // Second attempt: Find by tag name
+    // Second attempt: Find by tag name.
 
     if (parentId == -1)
     {
@@ -184,7 +185,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         }
     }
 
-    // Third: If desired, create a new tag
+    // Third: If desired, create a new tag.
 
     if (create)
     {
@@ -204,7 +205,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     return 0;
 }
 
-// --- public methods ---
+// --- Public methods ---
 
 QList<QString> FaceTags::allPersonNames()
 {
@@ -258,7 +259,7 @@ QList<int> FaceTags::allPersonTags()
 
 int FaceTags::scannedForFacesTagId()
 {
-    return TagsCache::instance()->getOrCreateInternalTag(InternalTagName::scannedForFaces()); // no i18n
+    return TagsCache::instance()->getOrCreateInternalTag(InternalTagName::scannedForFaces()); // NOTE: no i18n here.
 }
 
 bool FaceTags::isSystemPersonTagId(int tagId)
@@ -312,7 +313,7 @@ void FaceTags::applyTagIdentityMapping(int tagId, const QMultiMap<QString, QStri
         props.setProperty(TagPropertyName::person(), attributes.value(QLatin1String("fullName")));
     }
 
-    // we do not change the digikam tag name at this point, but we have this extra tag property
+    // We do not change the digikam tag name at this point, but we have this extra tag property.
 
     if (attributes.contains(QLatin1String("name")))
     {
@@ -325,7 +326,7 @@ void FaceTags::applyTagIdentityMapping(int tagId, const QMultiMap<QString, QStri
 int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attributes)
 {
     // Attributes from FacesEngine's Identity object.
-    // The text constants are defines in FacesEngine's API docs
+    // The text constants are defines in FacesEngine's API docs.
 
     if (attributes.isEmpty())
     {
@@ -334,7 +335,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
 
     int tagId;
 
-    // First, look for UUID
+    // First, look for UUID.
 
     if (!attributes.value(QLatin1String("uuid")).isEmpty())
     {
@@ -347,7 +348,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
         }
     }
 
-    // Second, look for full name
+    // Second, look for full name.
 
     if (!attributes.value(QLatin1String("fullName")).isEmpty())
     {
@@ -360,8 +361,8 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
         }
     }
 
-    // Third, look for either name or full name
-    // TODO: better support for "fullName"
+    // Third, look for either name or full name.
+    // TODO: better support for "fullName".
 
     QString name = attributes.value(QLatin1String("name"));
 
@@ -385,7 +386,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
         return tagId;
     }
 
-    // identity is in FacesEngine's database, but not in ours, so create.
+    // Identity is in FacesEngine's database, but not in ours, so create.
 
     tagId = FaceTagsHelper::tagForName(name, 0, -1, attributes.value(QLatin1String("fullName")), true, true);
     applyTagIdentityMapping(tagId, attributes);
@@ -412,7 +413,7 @@ QString FaceTags::faceNameForTag(int tagId)
 
 int FaceTags::personParentTag()
 {
-    // check default
+    // Check default.
 
     QString i18nName = i18nc("People on your photos", "People");
     int tagId        = TagsCache::instance()->tagForPath(i18nName);
@@ -422,13 +423,13 @@ int FaceTags::personParentTag()
         return tagId;
     }
 
-    // employ a heuristic
+    // Employ a heuristic.
 
     QList<int> personTags = allPersonTags();
 
     if (!personTags.isEmpty())
     {
-        // we find the most toplevel parent tag of person tags
+        // We find the most toplevel parent tag of person tags.
 
         QMap<int, int> tiers;
         QMap<int, int>::const_iterator it;
@@ -462,7 +463,7 @@ int FaceTags::personParentTag()
         }
     }
 
-    // create default
+    // Create default.
 
     return TagsCache::instance()->getOrCreateTag(i18nName);
 }
@@ -483,8 +484,8 @@ int FaceTags::unknownPersonTagId()
                                         personParentTag()));
 
     TagProperties props(unknownPersonTagId);
-    props.setProperty(TagPropertyName::person(),        QString()); // no name associated
-    props.setProperty(TagPropertyName::unknownPerson(), QString()); // special property
+    props.setProperty(TagPropertyName::person(),        QString()); // No name associated.
+    props.setProperty(TagPropertyName::unknownPerson(), QString()); // Special property.
 
     return unknownPersonTagId;
 }
@@ -505,8 +506,8 @@ int FaceTags::unconfirmedPersonTagId()
                                         personParentTag()));
 
     TagProperties props(unknownPersonTagId);
-    props.setProperty(TagPropertyName::person(),            QString()); // no name associated
-    props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // special property
+    props.setProperty(TagPropertyName::person(),            QString()); // No name associated.
+    props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // Special property.
 
     return unknownPersonTagId;
 }

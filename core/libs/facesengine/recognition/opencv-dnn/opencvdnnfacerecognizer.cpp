@@ -23,7 +23,7 @@ OpenCVDNNFaceRecognizer::Private* OpenCVDNNFaceRecognizer::d = nullptr;
 
 OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer(Classifier method, FaceScanSettings::FaceRecognitionModel recModel)
 {
-    if(!d)
+    if (!d)
     {
         d = new Private(method, recModel);
     }

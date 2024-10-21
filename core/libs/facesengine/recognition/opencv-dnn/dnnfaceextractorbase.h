@@ -53,14 +53,14 @@ public:
     virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)  = 0;
 
     /**
-     * Calculate different between 2 vectors
+     * Calculate different between 2 vectors.
      */
     static double cosineDistance(const std::vector<float>& v1, const std::vector<float>& v2);
     static double L2squareDistance(const std::vector<float>& v1, const std::vector<float>& v2);
     static double L2squareNormDistance(const std::vector<float>& v1, const std::vector<float>& v2);
 
     /**
-     * Convert face embedding between different formats
+     * Convert face embedding between different formats.
      */
     static cv::Mat              vectortomat(const std::vector<float>& vector);
     static QJsonArray           encodeVector(const std::vector<float>& vector);

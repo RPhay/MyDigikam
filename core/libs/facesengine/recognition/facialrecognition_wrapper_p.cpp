@@ -17,6 +17,9 @@
  * ============================================================ */
 
 #include "facialrecognition_wrapper_p.h"
+
+// Local includes
+
 #include "applicationsettings.h"
 
 namespace Digikam
@@ -51,8 +54,8 @@ FacialRecognitionWrapper::Private::Private()
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Face database ready for use";
 
-        // Load identity cache
-        // TODO: load cache dynamically
+        // Load identity cache.
+        // TODO: load cache dynamically.
 
         const auto ids = FaceDbAccess().db()->identities();
 

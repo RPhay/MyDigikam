@@ -121,7 +121,7 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
 
     const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
 
-    // TODO: model problem, confidence of ssd output too low ===> false detection
+    // TODO: model problem, confidence of ssd output too low ==> false detection.
 
     for (int i = 0 ; i < detectionMat.rows ; ++i)
     {
@@ -166,12 +166,12 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
         confidences = goodConfidences;
     }
 
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
+    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
 
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
 
-    // Get detected bounding boxes
+    // Get detected bounding boxes.
 
     for (size_t i = 0 ; i < indices.size() ; ++i)
     {

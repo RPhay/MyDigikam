@@ -30,7 +30,7 @@ namespace Digikam
 
 /**
  * A simple QImage training data container used by
- * RecognitionDatabase::train(Identity, QImage, QString)
+ * RecognitionDatabase::train(Identity, QImage, QString).
  */
 class RecognitionTrainingProvider : public TrainingDataProvider
 {

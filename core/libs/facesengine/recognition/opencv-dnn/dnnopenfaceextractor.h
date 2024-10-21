@@ -24,7 +24,7 @@
 namespace Digikam
 {
 
-// TODO: remove export macro after testing
+// TODO: remove export macro after testing.
 
 class DIGIKAM_GUI_EXPORT DNNOpenFaceExtractor: public DNNFaceExtractorBase
 {

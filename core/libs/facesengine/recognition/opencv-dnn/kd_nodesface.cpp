@@ -81,11 +81,11 @@ KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
     double norm_l1Distance = norm(queryPosition, currentPosition);
 
     // Recompute cosThreshold for SFace based on passed in sqRange.
-    // sqRange is controlled via the UI. cosThreshold is hard coded.  Need to fix that later
+    // sqRange is controlled via the UI. cosThreshold is hard coded. Need to fix that later.
     // We use the inverse of the cos result to compare to sqRange
-    // and norm_l1 distance compared to recomputed cosThreshold
+    // and norm_l1 distance compared to recomputed cosThreshold.
     // norm_l1 is almost always < 1 for a good match. We add .1 of sqRange for extra verification
-    // to avoid false negatives
+    // to avoid false negatives.
 
     cosThreshold = 1.0 + (sqRange / 10.0);
 
@@ -95,7 +95,7 @@ KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
     result.distance1 = 1.0 - cosDistance;
     result.distance2 = norm_l1Distance;
 
-    // NOTE: both Euclidean distance and cosine distance can help to avoid error in similarity prediction
+    // NOTE: both Euclidean distance and cosine distance can help to avoid error in similarity prediction.
 
     result.result = (result.distance1 < sqRange) &&
                     (result.distance2 < cosThreshold);

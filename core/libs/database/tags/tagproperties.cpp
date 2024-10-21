@@ -171,7 +171,7 @@ void TagProperties::setProperty(const QString& key, const QString& value)
         return;
     }
 
-    // for single entries in db, this can of course be optimized using a single UPDATE WHERE
+    // For single entries in db, this can of course be optimized using a single UPDATE WHERE.
 
     removeProperties(key);
     d->properties.insert(key, value);

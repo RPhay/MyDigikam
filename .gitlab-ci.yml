@@ -11,6 +11,7 @@ include:
 
       # - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/json-validation.yml
+      - /gitlab-templates/xml-lint.yml
 
       # --- Continuous Integration Qt5 ---
 

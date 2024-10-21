@@ -106,7 +106,7 @@ QString TagRegion::toXml() const
         writer.writeEndElement();
     }
 
-    // cut off the <?xml> tag at start of document
+    // Cut off the <?xml> tag at start of document.
 
     return output.mid(lengthOfHeader);
 }
