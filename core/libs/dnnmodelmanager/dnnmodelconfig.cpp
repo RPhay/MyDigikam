@@ -29,9 +29,9 @@ bool DNNModelConfig::loadModel()
 {
     if (checkFilename())
     {
-        // do nothing.  Config don't have a cv::dnn::Net pointer
+        // Do nothing. Config don't have a cv::dnn::Net pointer.
 
-        return modelLoaded = true;  // set modelLoaded and return true
+        return modelLoaded = true;  // Set modelLoaded and return true.
     }
 
     return false;

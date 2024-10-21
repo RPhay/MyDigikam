@@ -43,13 +43,13 @@ cv::Ptr<cv::FaceRecognizerSF>& DNNModelSFace::getNet()
 
 bool DNNModelSFace::loadModel()
 {
-    // Load the model from disk and create cv::dnn:Net instance
+    // Load the model from disk and create cv::dnn:Net instance.
 
-    // Verify filename
+    // Verify filename.
 
     if (checkFilename())
     {
-        // Create the cv::dnn::Net instance with the config
+        // Create the cv::dnn::Net instance with the config.
 
         return callLoader();
 

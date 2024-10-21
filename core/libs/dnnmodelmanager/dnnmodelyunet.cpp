@@ -43,13 +43,13 @@ cv::Ptr<cv::FaceDetectorYN>& DNNModelYuNet::getNet()
 
 bool DNNModelYuNet::loadModel()
 {
-    // Load the model from disk and create cv::dnn:Net instance
+    // Load the model from disk and create cv::dnn:Net instance.
 
-    // Verify filename
+    // Verify filename.
 
     if (checkFilename())
     {
-        // Create the cv::dnn::Net instance with the config
+        // Create the cv::dnn::Net instance with the config.
 
         return callLoader();
 
@@ -60,12 +60,11 @@ bool DNNModelYuNet::loadModel()
 
 bool DNNModelYuNet::callLoader()
 {
-    float conf_threshold = 0.3F;
-    float nms_threshold  = 0.3F;
-    int top_k            = 5000;
+    float conf_threshold             = 0.3F;
+    float nms_threshold              = 0.3F;
+    int top_k                        = 5000;
 
-
-    QString modelPath    = getModelPath();
+    QString modelPath                = getModelPath();
     QPair<int, int> backendAndTarget = getBackendAndTarget();
 
     net = cv::FaceDetectorYN::create(

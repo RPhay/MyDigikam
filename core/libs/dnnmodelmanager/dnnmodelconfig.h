@@ -50,7 +50,7 @@ private:
 
     DNNModelConfig()                    = delete;
 
-    virtual bool loadModel() override;                  ///< Must be overridden in child class
+    virtual bool loadModel() override;                  ///< Must be overridden in child class.
 };
 
 } // namespace Digikam

@@ -43,15 +43,15 @@ cv::dnn::Net& DNNModelNet::getNet()
 
 bool DNNModelNet::loadModel()
 {
-    // Load the model from disk and create cv::dnn:Net instance
+    // Load the model from disk and create cv::dnn:Net instance.
 
     QString configPath;
 
-    // Verify filename
+    // Verify filename.
 
     if (checkFilename())
     {
-        // Load config model if needed
+        // Load config model if needed.
 
         if (0 < info.configName.size())
         {
@@ -59,7 +59,7 @@ bool DNNModelNet::loadModel()
             configPath                              = configModel->getModelPath();
         }
 
-        // Create the cv::dnn::Net instance with the config
+        // Create the cv::dnn::Net instance with the config.
 
         return callLoader(configPath);
     }
