@@ -131,7 +131,7 @@ fi
 
 cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
-cp -r /usr/share/lensfun                                  ./usr/share
+cp -r /usr/lensfun                                        ./usr/share
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
