@@ -59,19 +59,24 @@ protected:
 
 private:
 
-    // // hide this contstructor so we don't use it
-    // explicit KDNodeSFace(const cv::Mat& nodePos,
-    //                 const int      identity,
-    //                 int            splitAxis,
-    //                 int            dimension);
+/*
+    // Hide this constructor so we don't use it.
 
+    explicit KDNodeSFace(const cv::Mat& nodePos,
+                         const int      identity,
+                         int            splitAxis,
+                         int            dimension);
+*/
     // Disable
     KDNodeSFace(const KDNodeSFace&)             = delete;
     KDNodeSFace& operator=(const KDNodeSFace&)  = delete;
 
 private:
 
-    // cv::Ptr<cv::FaceRecognizerSF> m_net         = nullptr;
+/*
+    cv::Ptr<cv::FaceRecognizerSF> m_net         = nullptr;
+*/
+
 };
 
 } // namespace Digikam

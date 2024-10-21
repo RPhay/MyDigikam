@@ -249,7 +249,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     }
 
     // Sub-trees Traversal.
-    // NOTE: DBL_MAX helps avoiding accessing nullptr
+    // NOTE: DBL_MAX helps avoiding accessing nullptr.
 
     double sqrDistanceleftTree = 0.0;
 

@@ -42,16 +42,13 @@ class Q_DECL_HIDDEN DNNSFaceExtractor::Private
 public:
 
     Private() = default;
-
-    ~Private()
-    {
-    }
+    ~Private() = default;
 
 public:
 
     int                             ref             = 1;
 
-    // TODO move d private to base. Move DNNModelBase* to d private.  YuNet stays in SFace
+    // TODO move d private to base. Move DNNModelBase* to d private. YuNet stays in SFace.
 
     DNNModelBase*                   model           = nullptr;
     DNNModelYuNet*                  detectorModel   = nullptr;
@@ -92,7 +89,7 @@ bool DNNSFaceExtractor::loadModels()
     {
         if (d->model && d->detectorModel)
         {
-            // load the SFace model for feature extraction
+            // Load the SFace model for feature extraction.
 
             if (!d->model->modelLoaded)
             {
@@ -100,7 +97,7 @@ bool DNNSFaceExtractor::loadModels()
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
             }
 
-            // load the YuNet model for 5-point face alignment
+            // Load the YuNet model for 5-point face alignment.
 
             if (!d->detectorModel->modelLoaded)
             {
@@ -153,13 +150,13 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     timer.start();
 
-    // Resize the thumbnail if necessary to match SFace detection
+    // Resize the thumbnail if necessary to match SFace detection.
     // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
 
     if (std::min(faceImage.cols, faceImage.rows) > 112)
     {
-        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
-        // so we just need to make sure no one bound exceeds the max. No padding needed.
+        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
+        // So we just need to make sure no one bound exceeds the max. No padding needed.
 
         float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
                                            static_cast<float>(112) / static_cast<float>(faceImage.rows));
@@ -188,7 +185,6 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             d->model->modelLoaded           &&
             d->detectorModel                &&
             d->detectorModel->modelLoaded
-            
            )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);

@@ -77,7 +77,7 @@ KDNodeBase::NodeCompareResult KDNodeOpenFace::nodeCompare(
     result.distance1                      = sqrDistanceToCurrentNode;
     result.distance2                      = cosDistance(queryPosition.ptr<float>(), currentPosition.ptr<float>(), nbDimension);
 
-    // NOTE: both Euclidean distance and cosine distance can help to avoid error in similarity prediction
+    // NOTE: both Euclidean distance and cosine distance can help to avoid error in similarity prediction.
 
     result.result = (result.distance1 < sqRange) &&
                     (result.distance2 > cosThreshold);
