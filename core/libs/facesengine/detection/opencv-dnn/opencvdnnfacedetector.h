@@ -32,9 +32,9 @@ namespace Digikam
 
 enum DetectorNNModel
 {
-    DNNDetectorSSD = 0,   ///< SSD MobileNet neural network inference.
-    DNNDetectorYOLOv3,    ///< YOLO neural network inference.
-    DNNDetectorYuNet      ///< YuNet neural network inference.
+    DNNDetectorSSD = 0,   ///< SSD MobileNet neural network inference [https://github.com/arunponnusamy/cvlib]
+    DNNDetectorYOLOv3,    ///< YOLO neural network inference          [https://github.com/sthanhng/yoloface]
+    DNNDetectorYuNet      ///< YuNet neural network inference         [https://github.com/opencv/opencv_zoo/tree/main]
 };
 
 class DIGIKAM_EXPORT OpenCVDNNFaceDetector
@@ -57,7 +57,7 @@ public:
     std::vector<cv::Rect> cvDetectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
 
     /**
-     * Returns the image size (one dimension)
+     * Returns the image size (one dimension).
      * recommended for face detection. If the image is considerably larger, it will be rescaled automatically.
      */
     static int recommendedImageSizeForDetection();

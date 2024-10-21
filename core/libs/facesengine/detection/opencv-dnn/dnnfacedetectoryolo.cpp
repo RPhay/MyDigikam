@@ -101,6 +101,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     if (inputImage.empty())
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid image given, not detecting faces.";
+
         return;
     }
 
@@ -150,7 +151,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
         {
             cv::Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
 
-            // Get the value and location of the maximum score
+            // Get the value and location of the maximum score.
 
             double confidence;
             cv::minMaxLoc(scores, nullptr, &confidence, nullptr, nullptr);
@@ -195,12 +196,12 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
         confidences = goodConfidences;
     }
 
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
+    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
 
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
 
-    // Get detected bounding boxes
+    // Get detected bounding boxes.
 
     for (size_t i = 0 ; i < indices.size() ; ++i)
     {
@@ -211,7 +212,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
 }
 
 /**
- * Get the names of the output layers
+ * Get the names of the output layers.
  */
 std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {
@@ -219,15 +220,15 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 
     if (!static_cast<DNNModelNet*>(model)->getNet().empty() && names.empty())
     {
-        // Get the indices of the output layers, i.e. the layers with unconnected outputs
+        // Get the indices of the output layers, i.e. the layers with unconnected outputs.
 
         std::vector<int> outLayers          = static_cast<DNNModelNet*>(model)->getNet().getUnconnectedOutLayers();
 
-        // Get the names of all the layers in the network
+        // Get the names of all the layers in the network.
 
         std::vector<cv::String> layersNames = static_cast<DNNModelNet*>(model)->getNet().getLayerNames();
 
-        // Get the names of the output layers in names
+        // Get the names of the output layers in names.
 
         names.resize(outLayers.size());
 
