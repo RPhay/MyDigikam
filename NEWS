@@ -159,7 +159,7 @@ BUGFIXES:
 134 ==> 437896 - Face Recognition with Time taken into consideration.
 135 ==> 435146 - Feature Request: Clear all unconfirmed faces before starting recognition.
 136 ==> 449310 - Add a DOB (date of birth) feature to facial recognition that will improve indexing and exclude all pictures prior to a given date.
-137 ==> 
+137 ==> 401458 - Rename file name with recognized faces-tags.
 138 ==> 
 139 ==> 
 140 ==> 
