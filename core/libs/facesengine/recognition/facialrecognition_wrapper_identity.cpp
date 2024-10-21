@@ -20,8 +20,9 @@
 
 namespace Digikam
 {
+
 /**
- * NOTE: Takes care that there may be multiple values of attribute in identity's attributes
+ * NOTE: Takes care that there may be multiple values of attribute in identity's attributes.
  */
 bool FacialRecognitionWrapper::Private::identityContains(const Identity& identity,
                                                          const QString&  attribute,
@@ -56,7 +57,7 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
 }
 
 /**
- * NOTE: Takes care that there may be multiple values of attribute in valueMap
+ * NOTE: Takes care that there may be multiple values of attribute in valueMap.
  */
 Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attribute,
                                                              const QMultiMap<QString, QString>& valueMap) const
@@ -126,7 +127,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
     Identity match;
 
-    // First and foremost, UUID
+    // First and foremost, UUID.
 
     QString uuid = attributes.value(QLatin1String("uuid"));
     match        = d->findByAttribute(QLatin1String("uuid"), uuid);
@@ -136,14 +137,14 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
         return match;
     }
 
-    // A negative UUID match, with a given UUID, precludes any further search
+    // A negative UUID match, with a given UUID, precludes any further search.
 
     if (!uuid.isNull())
     {
         return Identity();
     }
 
-    // full name
+    // Full name.
 
     match = d->findByAttributes(QLatin1String("fullName"), attributes);
 
@@ -152,7 +153,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
         return match;
     }
 
-    // name
+    // Name.
 
     match = d->findByAttributes(QLatin1String("name"), attributes);
 
