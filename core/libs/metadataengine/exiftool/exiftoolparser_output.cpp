@@ -110,7 +110,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (propsMap.find(QLatin1String("val")).value().typeId() == QVariant::List) // TODO: port to QMetaType
+                if (propsMap.find(QLatin1String("val")).value().typeId() == QMetaType::QStringList)
 
 #else
 
