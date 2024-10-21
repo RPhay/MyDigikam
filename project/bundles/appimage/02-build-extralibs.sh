@@ -38,6 +38,15 @@ RegisterRemoteServers
 
 ORIG_WD="`pwd`"
 
+# We need Clang compiler to build KF6 Framework as G++ can fails.
+
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
+
+fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -56,7 +65,7 @@ cmake $ORIG_WD/../3rdparty \
 
 # NOTE: The order to compile each component here is very important.
 
-# core KF5 frameworks dependencies
+# core KF frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kconfig                    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_breeze-icons               -- -j$CPU_CORES
