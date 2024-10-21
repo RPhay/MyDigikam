@@ -43,7 +43,7 @@ public:
     FaceTagsEditor()          = default;
     virtual ~FaceTagsEditor() = default;
 
-    // --- Read from database -----------------------------------------------------------------------------------------
+    // --- Read from database ----
 
     /**
      * Returns the number of faces present in an image.
@@ -51,24 +51,24 @@ public:
     int                  numberOfFaces(qlonglong imageid)                                       const;
 
     /**
-     * Returns the number of faces a particular person has in the specified image
+     * Returns the number of faces a particular person has in the specified image.
      */
     int                  faceCountForPersonInImage(qlonglong imageid, int tagId)                const;
 
     /**
-     * Reads the FaceTagsIfaces for the given image id from the database
+     * Reads the FaceTagsIfaces for the given image id from the database.
      */
     QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                       const;
 
     /**
      * Returns list of Unconfirmed and Unknown faces in the Image.
-     * If you want just Unconfirmed Faces, @see unconfirmedNameFaceTagsIfaces
+     * If you want just Unconfirmed Faces, @see unconfirmedNameFaceTagsIfaces.
      */
     QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                           const;
 
     /**
      * Returns a list of UnconfirmedFaces in the Image.
-     * Different from @see unconfirmedFaceTagsIfaces
+     * Different from @see unconfirmedFaceTagsIfaces.
      */
     QList<FaceTagsIface> unconfirmedNameFaceTagsIfaces(qlonglong imageid)                       const;
 
@@ -95,7 +95,7 @@ public:
     FaceTagsIface addManually(const FaceTagsIface& face);
 
     /**
-     * Switches an unknownPersonEntry or unconfirmedEntry to an unconfirmedEntry (with a different suggested name)
+     * Switches an unknownPersonEntry or unconfirmedEntry to an unconfirmedEntry (with a different suggested name).
      */
     FaceTagsIface changeSuggestedName(const FaceTagsIface& previousEntry, int unconfirmedNameTagId);
 
@@ -165,7 +165,7 @@ public:
     FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId);
 
     /**
-     * Rotate face tags
+     * Rotate face tags.
      */
     bool                 rotateFaces(qlonglong imageId, const QSize& size,
                                      int oldOrientation, int newOrientation);

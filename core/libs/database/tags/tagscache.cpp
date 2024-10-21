@@ -78,7 +78,7 @@ public:
     QList<TagProperty>          tagProperties;
     QHash<QString, QList<int> > tagsWithProperty;
     QSet<int>                   internalTags;
-    QVector<int>                colorLabelsTags; ///< index = Label enum, value = tagId
+    QVector<int>                colorLabelsTags;        ///< index = Label enum, value = tagId.
     QVector<int>                pickLabelsTags;
 
     TagsCache* const            q                       = nullptr;
@@ -120,7 +120,7 @@ public:
         {
             QList<TagProperty> props = CoreDbAccess().db()->getTagProperties();
 
-            // Ensure not to lock both locks at the same time
+            // Ensure not to lock both locks at the same time.
 
             QWriteLocker locker(&lock);
 
@@ -140,14 +140,14 @@ public:
         }
     }
 
-    // remember to call under lock
+    // Remember to call under lock.
 
     QList<TagShortInfo>::const_iterator find(int id) const
     {
         TagShortInfo info;
         info.id = id;
 
-        // we use the fact that d->infos is sorted by id
+        // We use the fact that d->infos is sorted by id.
 
         QList<TagShortInfo>::const_iterator it;
         it = std::lower_bound(infos.constBegin(),
@@ -175,7 +175,7 @@ public:
 
     inline TagPropertiesConstIterator toNextTag(TagPropertiesConstIterator it) const
     {
-        // increment iterator until the next tagid is reached
+        // Increment iterator until the next tagid is reached.
 
         int currentId = it->tagId;
 
@@ -237,7 +237,7 @@ public:
         }
     }
 
-    // remember to call under lock
+    // Remember to call under lock.
 
     QString tagPath(int id, LeadingSlashPolicy slashPolicy) const
     {
@@ -397,14 +397,14 @@ QLatin1String TagsCache::tagPathOfDigikamInternalTags(LeadingSlashPolicy slashPo
 
 QLatin1String TagsCache::propertyNameDigikamInternalTag()
 {
-    // Do not change, is written to users' databases
+    // Do not change, is written to users' databases.
 
     return QLatin1String("internalTag");
 }
 
 QLatin1String TagsCache::propertyNameExcludedFromWriting()
 {
-    // Do not change, is written to users' databases
+    // Do not change, is written to users' databases.
 
     return QLatin1String("noMetadataTag");
 }
@@ -537,7 +537,7 @@ int TagsCache::tagForName(const QString& tagName, int parentId) const
 
         if (tag == d->infos.constEnd())
         {
-            continue;    // error
+            continue;    // Error.
         }
 
         if (tag->pid == parentId)
@@ -597,7 +597,7 @@ int TagsCache::tagForPath(const QString& path) const
         fullPath.remove(0, 1);
     }
 
-    // split the path into its components
+    // Split the path into its components.
 
     QStringList tagHierarchy = path.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
@@ -611,7 +611,7 @@ int TagsCache::tagForPath(const QString& path) const
 
     // The last entry in the list is the leaf node tag name, we use this
     // to lookup all the tag ids with that name, then find the one
-    // with a matching full path
+    // with a matching full path.
 
     int tagID                       = 0;
     QString tagName                 = tagHierarchy.last();
@@ -659,7 +659,7 @@ QList<int> TagsCache::tagsForPaths(const QStringList& tagPaths) const
 
 int TagsCache::createTag(const QString& tagPathToCreate)
 {
-    // split full tag "url" into list of single tag names
+    // Split full tag "url" into list of single tag names.
 
     QStringList tagHierarchy = tagPathToCreate.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
@@ -679,19 +679,19 @@ int TagsCache::createTag(const QString& tagPathToCreate)
         int  parentTagID = 0;
         QReadLocker locker(&d->lock);
 
-        // Traverse hierarchy from top to bottom
+        // Traverse hierarchy from top to bottom.
 
         for (const QString& tagName : std::as_const(tagHierarchy))
         {
             tagID = 0;
 
-            // if the parent tag did not exist, we need not check if the child exists
+            // If the parent tag did not exist, we need not check if the child exists.
 
             if (parentTagExisted)
             {
                 QList<TagShortInfo>::const_iterator tag;
 
-                // find the tag with tag name according to tagHierarchy,
+                // Find the tag with tag name according to tagHierarchy,
                 // and parent ID identical to the ID of the tag we found in
                 // the previous run.
 
@@ -711,7 +711,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 
             if (tagID)
             {
-                // tag already found in DB
+                // Tag already found in DB.
 
                 parentTagID      = tagID;
                 parentTagExisted = true;
@@ -742,13 +742,13 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 
             if (tagID == -1)
             {
-                // something wrong with DB
+                // Something wrong with DB.
 
                 break;
             }
             else
             {
-                // change signals may be queued within a transaction. We know it changed.
+                // Change signals may be queued within a transaction. We know it changed.
 
                 d->needUpdateInfos = true;
                 d->needUpdateHash  = true;
@@ -870,7 +870,7 @@ QStringList TagsCache::propertyValues(int tagId, const QString& property) const
     {
         if (it->property == property)
         {
-            // the list is ordered by property, after id
+            // The list is ordered by property, after id.
 
             for ( ; (it != range.second) && (it->property == property) ; ++it)
             {
@@ -908,7 +908,7 @@ QList<int> TagsCache::tagsWithProperty(const QString& property, const QString& v
 
     for (TagPropertiesConstIterator it = d->tagProperties.constBegin() ; it != d->tagProperties.constEnd() ; )
     {
-        // sort out invalid entries, see bug #277169
+        // Sort out invalid entries, see bug #277169.
 
         if (it->tagId <= 0)
         {
@@ -985,14 +985,14 @@ QList<int> TagsCache::publicTags(const QList<int>& tagIds) const
     QList<int> publicIds;
     publicIds.reserve(it - tagIds.begin());
 
-    // copy to the point of the first internal tag
+    // Copy to the point of the first internal tag.
 
     for (it2 = tagIds.begin() ; it2 != it ; ++it2)
     {
         publicIds << *it2;
     }
 
-    // continue filtering
+    // Continue filtering.
 
     for ( ; it2 != tagIds.end() ; ++it2)
     {
@@ -1023,9 +1023,10 @@ bool TagsCache::containsPublicTags(const QList<int>& tagIds) const
 
 bool TagsCache::canBeWrittenToMetadata(int tagId) const
 {
-    // as long as we always call isInternalTag first, no need to call checkProperties() again
-    //d->checkProperties();
-
+    // As long as we always call isInternalTag first, no need to call checkProperties() again.
+/*
+    d->checkProperties();
+*/
     if (isInternalTag(tagId))
     {
         return false;
@@ -1041,7 +1042,7 @@ bool TagsCache::canBeWrittenToMetadata(int tagId) const
 
 int TagsCache::getOrCreateInternalTag(const QString& tagName)
 {
-    // ensure the parent tag exists, including the internal property
+    // Ensure the parent tag exists, including the internal property.
 
     getOrCreateTagWithProperty(tagPathOfDigikamInternalTags(IncludeLeadingSlash), propertyNameDigikamInternalTag());
     QString path = tagPathOfDigikamInternalTags(IncludeLeadingSlash) + QLatin1Char('/') + tagName;
@@ -1177,7 +1178,7 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
     QStringList paths;
     QList<QVariant> variantIds;
 
-    // duplicates tagPath(), but we need the additional list of tag ids
+    // Duplicates tagPath(), but we need the additional list of tag ids.
 
     for (int id : std::as_const(ids))
     {
@@ -1188,7 +1189,7 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
         }
     }
 
-    // The code is needed in libdigikamcore, so it cannot be moved here. TODO: Find a good place
+    // The code is needed in libdigikamcore, so it cannot be moved here. TODO: Find a good place.
 
     QStringList shortenedPaths = ItemPropertiesTab::shortenedTagPaths(paths, &variantIds);
 

@@ -242,8 +242,8 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 
 QVariant FaceTagsIface::toVariant() const
 {
-    // This is still not perfect, with QList<QVariant> being inefficient
-    // we must keep to native types, to make operator== work.
+    // This is still not perfect, with QList<QVariant> being inefficient.
+    // We must keep to native types, to make operator== work.
 
     QList<QVariant> list;
     list << (int)m_type;
@@ -261,7 +261,7 @@ FaceTagsIface FaceTagsIface::fromListing(qlonglong imageId, const QList<QVariant
         return FaceTagsIface();
     }
 
-    // See imagelister.cpp: value - property - tagId
+    // See imagelister.cpp: value - property - tagId.
 
     int tagId         = extraValues.at(2).toInt();
     QString attribute = extraValues.at(1).toString();

@@ -30,7 +30,7 @@
 namespace Digikam
 {
 
-// --- Read from database -----------------------------------------------------------------------------------
+// --- Read from database ---
 
 int FaceTagsEditor::faceCountForPersonInImage(qlonglong imageid, int tagId) const
 {
@@ -85,7 +85,8 @@ QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIf
             {
                 TagRegion region(regionString);
 /*
-                qCDebug(DIGIKAM_DATABASE_LOG) << "rect found as "<< region << "for attribute" << attribute << "tag" << pair.tagId();
+                qCDebug(DIGIKAM_DATABASE_LOG) << "rect found as "<< region << "for attribute"
+                                              << attribute << "tag" << pair.tagId();
 */
                 if (!region.isValid())
                 {
@@ -116,7 +117,7 @@ QList<ItemTagPair> FaceTagsEditor::faceItemTagPairs(qlonglong imageid, FaceTagsI
             continue;
         }
 
-        // UnknownName and UnconfirmedName have the same attribute
+        // UnknownName and UnconfirmedName have the same attribute.
 
         if (!(flags & FaceTagsIface::UnknownName) && FaceTags::isTheUnknownPerson(pair.tagId()))
         {
@@ -159,7 +160,7 @@ QList< QRect > FaceTagsEditor::getTagRects(qlonglong imageid) const
 
 int FaceTagsEditor::numberOfFaces(qlonglong imageid) const
 {
-    // Use case for this? Depending on a use case, we can think of an optimization
+    // Use case for this? Depending on a use case, we can think of an optimization.
 
     int                count = 0;
     QList<ItemTagPair> pairs = ItemTagPair::availablePairs(imageid);
@@ -230,7 +231,7 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
 
     ItemTagPair pair(newEntry.imageId(), newEntry.tagId());
 
-    // UnconfirmedName and UnknownName have the same attribute
+    // UnconfirmedName and UnknownName have the same attribute.
 
     addFaceAndTag(pair, newEntry, attributesList, false);
 
@@ -302,7 +303,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
 
     ItemTagPair pair(newEntry.imageId(), newEntry.tagId());
 
-    // Remove entry from autodetection
+    // Remove entry from autodetection.
 
     if (newEntry.tagId() == face.tagId())
     {
@@ -314,7 +315,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
         removeFaceAndTag(pairOldEntry, face, true);
     }
 
-    // Add new full entry
+    // Add new full entry.
 
     addFaceAndTag(pair, newEntry,
                   FaceTagsIface::attributesForFlags(FaceTagsIface::ConfirmedName | FaceTagsIface::FaceForTraining),
@@ -455,7 +456,7 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
     }
 
     // Remove the unconfirmed property for the image id and the unconfirmed tag
-    // with the original tag id and the confirmed region
+    // with the original tag id and the confirmed region.
 
     ItemTagPair unconfirmedAssociation(face.imageId(),
                                        FaceTags::unconfirmedPersonTagId());
@@ -510,7 +511,7 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
 
     return newFace;
 
-    // todo: the Training entry is cleared.
+    // TODO: the Training entry is cleared.
 }
 
 FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
@@ -526,7 +527,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
      * the face and the old tagId.
      *
      * If the face is being ignored and it was an unconfirmed or
-     * unknown face don't remove a possible tag. See bug 449142
+     * unknown face don't remove a possible tag. See bug 449142.
      */
 
     removeFace(face, (face.type() == FaceTagsIface::ConfirmedName));
@@ -560,7 +561,7 @@ bool FaceTagsEditor::rotateFaces(qlonglong imageId, const QSize& size,
 {
     bool hasConfirmed = false;
 
-    // Get all faces from database and rotate them
+    // Get all faces from database and rotate them.
 
     QList<FaceTagsIface> facesList = databaseFaces(imageId);
 

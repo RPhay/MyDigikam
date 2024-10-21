@@ -35,8 +35,8 @@ public:
 
     enum LeadingSlashPolicy
     {
-        NoLeadingSlash,      ///< Ex: "Places/Cities/Paris"
-        IncludeLeadingSlash  ///< Ex: "/Places/Cities/Paris"
+        NoLeadingSlash,      ///< Ex: "Places/Cities/Paris".
+        IncludeLeadingSlash  ///< Ex: "/Places/Cities/Paris".
     };
 
     enum HiddenTagsPolicy
@@ -134,9 +134,9 @@ public:
                                    const QString& value = QString());
 
     /**
-     * Tests if the tag has the given property
-     *  a) just has the property
-     *  b) has the property with the given value (value not null)
+     * Tests if the tag has the given property:
+     *  a) just has the property.
+     *  b) has the property with the given value (value not null).
      */
     bool hasProperty(int tagId, const QString& property, const QString& value = QString())              const;
 
@@ -156,9 +156,9 @@ public:
     QMap<QString, QString> properties(int tagId)                                                        const;
 
     /**
-     * Finds all tags with the given property. The tag
-     *  a)just has the property
-     *  b) has the property with the given value (value not null)
+     * Finds all tags with the given property. The tag:
+     *  a) just has the property.
+     *  b) has the property with the given value (value not null).
      * Note: The returned list is sorted.
      */
     QList<int> tagsWithProperty(const QString& property, const QString& value = QString())              const;
@@ -185,7 +185,7 @@ public:
 
     /**
      * Returns true if the given list of tag ids contains at
-     * least one non-internal tag
+     * least one non-internal tag.
      */
     bool  containsPublicTags(const QList<int>& tagIds)                                                  const;
 

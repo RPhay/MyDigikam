@@ -110,18 +110,17 @@ public:
     bool operator==(const FaceTagsIface& other) const;
 
     /**
-     * Returns a list of all image tag properties for which flags are set
+     * Returns a list of all image tag properties for which flags are set.
      */
     static QStringList attributesForFlags(TypeFlags flags);
 
     /**
-     * Return the corresponding image tag property for the given type
+     * Return the corresponding image tag property for the given type.
      */
     static QString attributeForType(Type type);
 
     /**
-     * Returns the Face Type corresponding to
-     * the given TagId.
+     * Returns the Face Type corresponding to the given TagId.
      */
     static Type typeForId(int tagId);
 
@@ -132,7 +131,7 @@ public:
     static Type typeForAttribute(const QString& attribute, int tagId = 0);
 
     /**
-     * Returns the string tagId + ',' + unconfirmedFace + ',' + regionXml
+     * Returns the string tagId + ',' + unconfirmedFace + ',' + regionXml.
      */
     QString getAutodetectedPersonString()       const;
 

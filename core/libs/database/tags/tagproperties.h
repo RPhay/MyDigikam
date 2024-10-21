@@ -41,7 +41,7 @@ public:
     TagProperties();
 
     /**
-     * Access the properties of the given tag
+     * Access the properties of the given tag.
      */
     explicit TagProperties(int tagId);
 
@@ -77,10 +77,10 @@ public:
      */
     QString value(const QString& key)                           const;
 
-    /// Returns all set property keys
+    /// Returns all set property keys.
     QStringList propertyKeys()                                  const;
 
-    /// Returns a map of all key->value pairs
+    /// Returns a map of all key->value pairs.
     QMultiMap<QString, QString> properties()                    const;
 
     /// Set the given property. Replaces all previous occurrences of this property.
@@ -92,10 +92,10 @@ public:
      */
     void addProperty(const QString& key, const QString& value);
 
-    /// Remove the given property/value
+    /// Remove the given property/value.
     void removeProperty(const QString& key, const QString& value);
 
-    /// Remove all occurrences of the property
+    /// Remove all occurrences of the property.
     void removeProperties(const QString& key);
 
 public:
