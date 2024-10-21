@@ -98,7 +98,7 @@ const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage
 
 DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage usage) const
 {
-    Q_UNUSED(usage);       // For future reference
+    Q_UNUSED(usage);       // For future reference.
 
     if (d->modelMap.contains(modelName.toLower()))
     {
@@ -116,11 +116,11 @@ DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage 
 
 void DNNModelManager::loadConfig()
 {
-    // Get the current application name
+    // Get the current application name.
 
     QString appName    = qApp->applicationName().toLower();
 
-    // Load the group from the config file
+    // Load the group from the config file.
 
     const auto& groups = d->settings->childGroups();
 
@@ -128,15 +128,15 @@ void DNNModelManager::loadConfig()
     {
         DNNModelInfoContainer info;
 
-        // Load the keys and values for this group
+        // Load the keys and values for this group.
 
         d->settings->beginGroup(modelName);
 
-        // Check if model is used with this application
+        // Check if model is used with this application.
 
         if (d->settings->value(QLatin1String("Application")).toString().toLower().contains(appName))
         {
-            // Set basic values
+            // Set basic values.
 
             info.displayName         = d->settings->value(QLatin1String("DisplayName")).toString();
             info.fileName            = d->settings->value(QLatin1String("FileName")).toString();
@@ -150,7 +150,7 @@ void DNNModelManager::loadConfig()
             info.configName          = d->settings->value(QLatin1String("ConfigName")).toString();
             info.imageSize           = d->settings->value(QLatin1String("ImageSize")).toInt();
 
-            // Create usage
+            // Create usage.
 
             QString usageStr         = d->settings->value(QLatin1String("Usage")).toString();
 
@@ -179,7 +179,7 @@ void DNNModelManager::loadConfig()
                 info.usage.append(DNNModelUsage::DNNUsageAesthetics);
             }
 
-            // Create version
+            // Create version.
 
             QStringList versionParts = d->settings->value(QLatin1String("MinVersion")).toString().toLower().split(QLatin1String("."));
 
@@ -188,11 +188,11 @@ void DNNModelManager::loadConfig()
                 info.minVersion = QVersionNumber(versionParts[0].toInt(), versionParts[1].toInt(), versionParts[2].toInt());
             }
 
-            // Loader type
+            // Loader type.
 
             info.loaderType          = str2loader.at(d->settings->value(QLatin1String("LoaderType")).toString().toLower().toUtf8().data());
 
-            // Create version
+            // Create version.
 
             QStringList mvtsParts    = d->settings->value(QLatin1String("MeanValueToSubtract")).toStringList();
 
@@ -201,7 +201,7 @@ void DNNModelManager::loadConfig()
                 info.meanValToSubtract = cv::Scalar(mvtsParts[0].toFloat(), mvtsParts[1].toFloat(), mvtsParts[2].toFloat());
             }
 
-            // create the model
+            // Create the model.
 
             DNNModelBase* modelPtr = nullptr;
 
@@ -232,7 +232,7 @@ void DNNModelManager::loadConfig()
                 }
             }
 
-            // Add the model to map
+            // Add the model to map.
 
             if (modelPtr)
             {
@@ -240,7 +240,7 @@ void DNNModelManager::loadConfig()
             }
         }
 
-        // Done with this group
+        // Done with this group.
 
         d->settings->endGroup();
     }
@@ -250,16 +250,17 @@ void DNNModelManager::getSettings()
 {
     if (!d->settings)
     {
-        // Check potential download location
-        // TODO: Maybe download the config file from the web
+        // Check potential download location.
+        // TODO: Maybe download the config file from the web.
 
-        // Get from bundle
+        // Get from bundle.
 
         QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                  QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
                                                  QStandardPaths::LocateFile);
 
-        // env var for tuning model settings
+        // Env var for tuning model settings.
+
         QString dnnModelConf    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_MODEL_CONF"));
 
         if (0 < dnnModelConf.length())

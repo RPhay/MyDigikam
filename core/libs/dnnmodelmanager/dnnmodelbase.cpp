@@ -88,7 +88,7 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         { "cuda_fp16",   cv::dnn::DNN_TARGET_CUDA_FP16     }
     };
 
-    // env vars for testing combinations
+    // Env vars for testing combinations.
 
     QString cvBackend    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_BACKEND"));
     QString cvTarget     = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_TARGET"));
@@ -119,34 +119,35 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         }
     }
 
-    // TODO: query OpenCV for capabilities.  Return best match
+    // TODO: query OpenCV for capabilities. Return best match.
     //
     //
     //
 
-    // return the result
+    // Return the result.
 
     return QPair<int, int>(backend_id, target_id);
 }
 
 float DNNModelBase::getThreshold(int uiThreshold) const
 {
-    float threshold = 0.5f;
+    float threshold = 0.5F;
 
     if (DNN_MODEL_THRESHOLD_NOT_SET == uiThreshold)
     {
-        threshold = (float)info.defaultThreshold / 100.0f;
+        threshold = (float)info.defaultThreshold / 100.0F;
     }
     else
     {
-        float increment = (float)(info.maxUsableThreshold - info.minUsableThreshold) / 9.0f;
-        threshold = (((float)(uiThreshold-1) * increment) + (float)info.minUsableThreshold) / 100;
+        float increment = (float)(info.maxUsableThreshold - info.minUsableThreshold) / 9.0F;
+        threshold       = (((float)(uiThreshold - 1.0F) * increment) + (float)info.minUsableThreshold) / 100.F;
     }
 
     if (info.usage.contains(DNNModelUsage::DNNUsageFaceRecognition))
     {
-        // the threshold is the inverse for face recognition
-        threshold = 1 - threshold;
+        // The threshold is the inverse for face recognition.
+
+        threshold = 1.0F - threshold;
     }
 
     return threshold;

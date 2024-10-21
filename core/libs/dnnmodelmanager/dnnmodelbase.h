@@ -47,8 +47,8 @@ public:
     // ---------- public members ----------
 
     /**
-     * input:  uiThreshold is the slider value from the UI
-     * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...)
+     * input:  uiThreshold is the slider value from the UI.
+     * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...).
      */
     float                       getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)    const;
     DownloadInfo                getDownloadInformation()                const;
@@ -60,9 +60,9 @@ public:
 
 public:
 
-    bool                        modelLoaded                 = false;    ///< check if the model has been loaded
-    const DNNModelInfoContainer info;                                   ///< information about the model
-    QMutex                      mutex;                                  ///< mutex to sigle-thread model during critical processing functions
+    bool                        modelLoaded                 = false;    ///< check if the model has been loaded.
+    const DNNModelInfoContainer info;                                   ///< information about the model.
+    QMutex                      mutex;                                  ///< mutex to sigle-thread model during critical processing functions.
 
 protected:
 
@@ -74,7 +74,7 @@ protected:
 private:
 
     DNNModelBase()           = delete;
-    virtual bool loadModel() = 0;                                       ///< Must be overridden in child class
+    virtual bool loadModel() = 0;                                       ///< Must be overridden in child class.
 };
 
 } // namespace Digikam

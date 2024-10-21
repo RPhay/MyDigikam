@@ -56,7 +56,7 @@ private:
 
     DNNModelYuNet()                     = delete;
 
-    virtual bool loadModel() override;                  ///< Must be overridden in child class
+    virtual bool loadModel() override;                  ///< Must be overridden in child class.
     bool callLoader();
 };
 

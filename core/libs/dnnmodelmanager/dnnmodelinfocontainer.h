@@ -64,22 +64,22 @@ public:
 
 public:
 
-    QString            displayName;                                     ///< Name used for display in UI (QComboBox)
-    QString            fileName;                                        ///< Used by the downloader and model loader
+    QString            displayName;                                     ///< Name used for display in UI (QComboBox).
+    QString            fileName;                                        ///< Used by the downloader and model loader.
     DNNModelUsageList  usage;                                           ///< How the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
-    QVersionNumber     minVersion;                                      ///< Minimum version of digiKam needed to use this model
-    QString            downloadPath;                                    ///< Used by the downloader for the download path
-    QString            sha256;                                          ///< SHA265 hash of the file for download
-    QString            classList;                                       ///< Name of model containing list of class names for classification 
+    QVersionNumber     minVersion;                                      ///< Minimum version of digiKam needed to use this model.
+    QString            downloadPath;                                    ///< Used by the downloader for the download path.
+    QString            sha256;                                          ///< SHA265 hash of the file for download.
+    QString            classList;                                       ///< Name of model containing list of class names for classification.
     QString            configName;
 
-    qint64             fileSize            = 0;                         ///< Used by the downloader to verify size
-    int                defaultThreshold    = 0;                         ///< Threshold used for models that aren't configured by the UI
-    int                minUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
-    int                maxUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing
-    DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow
+    qint64             fileSize            = 0;                         ///< Used by the downloader to verify size.
+    int                defaultThreshold    = 0;                         ///< Threshold used for models that aren't configured by the UI.
+    int                minUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing.
+    int                maxUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing.
+    DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow.
     cv::Scalar         meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
-    int                imageSize           = 0;                         ///< Max dimension of a side of an image
+    int                imageSize           = 0;                         ///< Max dimension of a side of an image.
 };
 
 } // namespace Digikam
