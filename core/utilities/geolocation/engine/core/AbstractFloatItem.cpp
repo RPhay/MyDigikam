@@ -91,7 +91,7 @@ QHash<QString, QVariant> AbstractFloatItem::settings() const
 {
     QHash<QString, QVariant> updated = RenderPlugin::settings();
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
     updated.insert(QStringLiteral("position"), position().toPoint());
 
@@ -119,7 +119,7 @@ void AbstractFloatItem::setSettings(const QHash<QString, QVariant>& settings)
 
     {
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
         setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
 
