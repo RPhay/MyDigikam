@@ -61,6 +61,7 @@
 #   pragma clang diagnostic ignored "-Wdate-time"
 #   pragma clang diagnostic ignored "-Wconstant-conversion"
 #   pragma clang diagnostic ignored "-Wdeprecated-volatile"
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #   pragma clang diagnostic ignored "-Wunused-but-set-variable"
 #endif
 
