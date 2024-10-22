@@ -35,12 +35,12 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if      (package->databaseFaces.isEmpty())
     {
-        // Detection / Recognition
+        // Detection / Recognition.
 
         FaceUtils utils;
 
         // OverwriteUnconfirmed means that a new scan discarded unconfirmed results of previous scans
-        // (assuming at least equal or new, better methodology is in use compared to the previous scan)
+        // (assuming at least equal or new, better methodology is in use compared to the previous scan).
 
         if      (
                  (mode == FacePipeline::OverwriteUnconfirmed) &&
@@ -59,7 +59,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
             utils.removeAllFaces(package->info.id());
         }
 
-        // mark the whole image as scanned-for-faces
+        // Mark the whole image as scanned-for-faces.
 
         utils.markAsScanned(package->info);
 
@@ -86,7 +86,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
         {
             if (package->databaseFaces[i].roles & FacePipelineFaceTagsIface::ForRecognition)
             {
-                // Allow to overwrite existing recognition with new, possibly valid, "not recognized" status
+                // Allow to overwrite existing recognition with new, possibly valid, "not recognized" status.
 
                 int tagId = FaceTags::unknownPersonTagId();
 
@@ -97,7 +97,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                     !package->recognitionResults[i].isNull()
                    )
                 {
-                    // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624
+                    // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624.
 
                     tagId = FaceTags::getOrCreateTagForIdentity(package->recognitionResults[i].attributesMap());
                 }
@@ -109,7 +109,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
     }
     else
     {
-        // Editing database entries
+        // Editing database entries.
 
         FaceUtils utils;
         FacePipelineFaceTagsIfaceList add;
@@ -127,7 +127,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
             {
                 if      (it->isNull())
                 {
-                    // add Manually
+                    // Add Manually.
 
                     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), it->assignedTagId, it->assignedRegion);
                     utils.addManually(newFace);
@@ -152,7 +152,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                 it->roles |= FacePipelineFaceTagsIface::Edited;
             }
 
-            // Training is done by trainerWorker
+            // Training is done by trainerWorker.
         }
 
         if (utils.normalTagChanged())

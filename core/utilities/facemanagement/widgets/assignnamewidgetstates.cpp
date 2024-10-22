@@ -28,7 +28,7 @@ namespace Digikam
 AssignNameWidgetStates::AssignNameWidgetStates(FaceItem* const item)
     : HidingStateChanger(item->widget(), "mode", item)
 {
-    // The WidgetProxyItem
+    // The WidgetProxyItem.
 
     addItem(item->hudWidget());
 
@@ -40,7 +40,7 @@ void AssignNameWidgetStates::slotStateChanged()
 {
     FaceItem* const item = static_cast<FaceItem*>(parent());
 
-    // Show resize handles etc. only in edit modes
+    // Show resize handles etc. only in edit modes.
 
     item->setEditable(
                       !(

@@ -74,18 +74,19 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const dd)
 
 TrainerWorker::~TrainerWorker()
 {
-    wait();    // protect detector
+    wait();    // Protect the detector.
 }
 
 /**
- * TODO: investigate this method
+ * TODO: investigate this method.
  */
 void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
 */
-    // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace)
+
+    // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace).
 
     QList<FaceTagsIface> toTrain;
     QList<int>           identities;
@@ -126,7 +127,7 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 
         MapListTrainingDataProvider provider;
 
-        // Group images by identity
+        // Group images by identity.
 
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
@@ -135,7 +136,7 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
             provider.imagesToTrain[identities[i]] = imageList;
         }
 
-        // NOTE: cropped faces will be deleted by training provider
+        // NOTE: cropped faces will be deleted by training provider.
 
         recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }

@@ -31,11 +31,11 @@ RecognitionWorker::RecognitionWorker(FacePipeline::Private* const dd)
 
 RecognitionWorker::~RecognitionWorker()
 {
-    wait();    // protect database
+    wait();    // Protect the database.
 }
 
 /**
- *TODO: investigate this method
+ * TODO: investigate this method.
  */
 void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
@@ -44,7 +44,7 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 
     if      (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
-        // assume we have an image
+        // Assume we have an image.
 
         images = imageRetriever.getDetails(package->image, package->detectedFaces);
     }
@@ -53,7 +53,7 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
     }
 
-    // NOTE: cropped faces will be deleted by training provider
+    // NOTE: cropped faces will be deleted by training provider.
 
     package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
@@ -77,7 +77,7 @@ void RecognitionWorker::setAccuracyAndModel(int detectAccuracy,
                                             int recognizeAccuracy,
                                             FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
-    // michmill added
+    // michmill added.
 
     QVariantMap params;
     params[QLatin1String("detectAccuracy")]       = detectAccuracy;
@@ -86,14 +86,15 @@ void RecognitionWorker::setAccuracyAndModel(int detectAccuracy,
     params[QLatin1String("recognizeAccuracy")]    = recognizeAccuracy;
     params[QLatin1String("recognizeModel")]       = recognizeModel;
     recognizer.setParameters(params);
+/*
+    recognizer.setParameter(QLatin1String("detectAccuracy"), detectAccuracy);
+    recognizer.setParameter(QLatin1String("detectModel"), detectModel);
+    recognizer.setParameter(QLatin1String("detectSize"), detectSize);
+    recognizer.setParameter(QLatin1String("recognizeAccuracy"), recognizeAccuracy);
+    recognizer.setParameter(QLatin1String("recognizeModel"), recognizeModel);
 
-    // recognizer.setParameter(QLatin1String("detectAccuracy"), detectAccuracy);
-    // recognizer.setParameter(QLatin1String("detectModel"), detectModel);
-    // recognizer.setParameter(QLatin1String("detectSize"), detectSize);
-    // recognizer.setParameter(QLatin1String("recognizeAccuracy"), recognizeAccuracy);
-    // recognizer.setParameter(QLatin1String("recognizeModel"), recognizeModel);
-
-    // Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
+    Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
+*/
 }
 
 } // namespace Digikam

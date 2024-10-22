@@ -28,7 +28,7 @@ class Q_DECL_HIDDEN FacePreviewLoader : public PreviewLoadThread
 public:
 
     explicit FacePreviewLoader(FacePipeline::Private* const dd);
-    ~FacePreviewLoader() override;
+    ~FacePreviewLoader() override = default;
 
     void cancel();
     bool sentOutLimitReached() const;
@@ -47,7 +47,7 @@ protected:
 
     PackageLoadingDescriptionList scheduledPackages;
 
-    /// upper limit for memory cost
+    /// Upper limit for memory cost.
     int                           maximumSentOutPackages = qMin(QThread::idealThreadCount(), 4);
 
     FacePipeline::Private* const  d                      = nullptr;

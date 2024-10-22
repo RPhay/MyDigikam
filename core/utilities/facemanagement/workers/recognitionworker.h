@@ -43,7 +43,7 @@ public Q_SLOTS:
                              int recognizeAccuracy,
                              FaceScanSettings::FaceRecognitionModel recognizeModel);
 
-    // TODO: add set K-Nearest method
+    // TODO: add set K-Nearest method.
 
 protected:
 

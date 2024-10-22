@@ -79,7 +79,9 @@ void FaceScanWidget::doLoadState()
     d->albumSelectors->loadState();
 
     d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
-    // d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
+/*
+    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
+*/
     d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
     d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
     d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
@@ -215,7 +217,7 @@ void FaceScanWidget::setupUi()
 
     DExpanderBox* const expBox          = new DExpanderBox(d->settingsTab);
 
-    // --- detection settings
+    // --- Detection settings
 
     QWidget* const detectWidget         = new QWidget(expBox);
     QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
@@ -294,20 +296,20 @@ void FaceScanWidget::setupUi()
     detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
     detectGrid->addWidget(detectSizeLabel,          2, 0, 1, 1);
     detectGrid->addWidget(d->detectSizeBox,         2, 2, 1, 1);
-
+/*
     // old layout for easy revert
 
-    // detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
-    // detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
-    // detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
-    // detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
-    // detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
-    // detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
-
+    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
+    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
+    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
+    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
+    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
+    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
+*/
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
 
-    // --- recognition settings
+    // --- Recognition settings.
 
     QWidget* const recognizeWidget       = new QWidget(expBox);
     QGridLayout* const recognizeGrid     = new QGridLayout(recognizeWidget);
@@ -357,13 +359,14 @@ void FaceScanWidget::setupUi()
     recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
 
+/*
     // old layout for easy revert
-    
-    // recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
-    // recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
-    // recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
-    // recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
 
+    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
+    recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+*/
     // ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
@@ -457,24 +460,23 @@ void FaceScanWidget::slotDetectSizeChanged()
 
 void FaceScanWidget::slotRecognizeModelChanged()
 {
-    // save the model values if we have to revert
+    // Save the model values if we have to revert.
 
     FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
     FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
     ChangeFaceRecognitionModelDlg* dlg              = new ChangeFaceRecognitionModelDlg(this, newModel);
 
-    // show the upgrade warning dialog box
+    // Show the upgrade warning dialog box.
 
     if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
     {
-
-        // upgrade was approved.  Save new value
+        // Upgrade was approved. Save new value.
 
         ApplicationSettings* const appSettings = ApplicationSettings::instance();
         appSettings->setFaceRecognitionModel(newModel);
         appSettings->saveSettings();
 
-        // start retraining and update pipeline here
+        // Start retraining and update pipeline here.
 
         FaceScanSettings settings;
 
@@ -488,28 +490,26 @@ void FaceScanWidget::slotRecognizeModelChanged()
         settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
         PeopleSideBarWidget::doFaceScan(settings);
-
     }
     else
     {
-
-        // disconnect so we don't get multiple dialogs
+        // Disconnect so we don't get multiple dialogs.
 
         disconnect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
                                                             this, &FaceScanWidget::slotRecognizeModelChanged);
 
-        // reselect the old model value in the drop-down
+        // Reselect the old model value in the drop-down.
 
         d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
 
-        // reconnect for future notifications
-        
+        // Reconnect for future notifications.
+
         connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
                                                          this, &FaceScanWidget::slotRecognizeModelChanged);
 
     }
 
-    // clean up the dialog
+    // Clean up the dialog.
 
     delete dlg;
 }
@@ -543,14 +543,14 @@ FaceScanSettings FaceScanWidget::settings() const
         {
             settings.task = FaceScanSettings::DetectAndRecognize;
         }
-        else // recognize only
+        else // Recognize only.
 
 #endif
 
         {
             settings.task = FaceScanSettings::RecognizeMarkedFaces;
 
-            // preset settingsConflicted as True, since by default there are no tags to recognize
+            // Preset settingsConflicted as True, since by default there are no tags to recognize.
 
             d->settingsConflicted = true;
         }

@@ -111,14 +111,14 @@ public:
     ItemInfo info()                         const;
     QVariant  faceIdentifier()              const;
 
-    /// The combo box or line edit in use, if any
+    /// The combo box or line edit in use, if any.
     AddTagsComboBox* comboBox()             const;
     AddTagsLineEdit* lineEdit()             const;
 
 public Q_SLOTS:
 
     /**
-     * The identifying information emitted with the signals
+     * The identifying information emitted with the signals.
      */
     void setUserData(const ItemInfo& info, const QVariant& faceIdentifier = QVariant());
 
@@ -152,12 +152,12 @@ Q_SIGNALS:
     void ignored(const ItemInfo& info, const QVariant& faceIdentifier);
 
     /**
-     * In IgnoredMode, this signal is emitted when the user clicked on the label
+     * In IgnoredMode, this signal is emitted when the user clicked on the label.
      */
     void ignoredClicked(const ItemInfo& info, const QVariant& faceIdentifier);
 
     /**
-     * In ConfirmedMode, this signal is emitted when the user clicked on the label
+     * In ConfirmedMode, this signal is emitted when the user clicked on the label.
      */
     void labelClicked(const ItemInfo& info, const QVariant& faceIdentifier);
 

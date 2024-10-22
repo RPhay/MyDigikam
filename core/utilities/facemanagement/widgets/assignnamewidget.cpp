@@ -64,7 +64,7 @@ void AssignNameWidget::setAlbumModels(TagModel* const model,
 
     if (model || filteredModel || filterModel)
     {
-        // possibly set later on box
+        // Possibly set later on box.
 
         d->modelsGiven      = true;
         d->tagModel         = model;
@@ -101,11 +101,13 @@ void AssignNameWidget::setMode(Mode mode)
 {
     /**
      * Reject tooltip and icon should be updated even if the
-     * same mode is passed, because Unconfirmed and Unknown
+     * same mode is passed, because Unconfirmed and Unknown.
      * Faces have the same mode but different tooltips and icons.
      */
-    if ((d->layoutMode == Compact)                    &&
-        (mode == AssignNameWidget::UnconfirmedEditMode))
+    if (
+        (d->layoutMode == Compact)                    &&
+        (mode == AssignNameWidget::UnconfirmedEditMode)
+       )
     {
         d->updateRejectButton();
     }

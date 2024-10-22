@@ -36,7 +36,6 @@ FacePipeline::FacePipeline()
     : d(new Private(this))
 {
     qRegisterMetaType<FacePipelineExtendedPackage::Ptr>("FacePipelineExtendedPackage::Ptr");
-
     qRegisterMetaType<FaceScanSettings::FaceDetectionModel>("FaceScanSettings::FaceDetectionModel");
     qRegisterMetaType<FaceScanSettings::FaceDetectionSize>("FaceScanSettings::FaceDetectionSize");
     qRegisterMetaType<FaceScanSettings::FaceRecognitionModel>("FaceScanSettings::FaceRecognitionModel");
@@ -124,7 +123,7 @@ void FacePipeline::plugParallelFaceDetectors()
         return;
     }
 
-    // limit number of parallel detectors to 3, because of memory cost (cascades)
+    // Limit number of parallel detectors to 3, because of memory cost (cascades).
 
     const int n          = qMin(3, QThread::idealThreadCount());
     d->parallelDetectors = new ParallelPipes;
@@ -366,7 +365,9 @@ FaceTagsIface FacePipeline::addManually(const ItemInfo& info,
                                         const DImg& image,
                                         const TagRegion& assignedRegion)
 {
-    FacePipelineFaceTagsIface face;     // giving a null face => no existing face yet, add it
+    // NOTE: giving a null face => no existing face yet, add it.
+
+    FacePipelineFaceTagsIface face;
     face.assignedTagId                        = -1;
     face.assignedRegion                       = assignedRegion;
     face.roles                               |= FacePipelineFaceTagsIface::ForEditing;
@@ -429,7 +430,11 @@ void FacePipeline::process(const QList<ItemInfo>& infos)
     d->processBatch(infos);
 }
 
-void FacePipeline::setAccuracyAndModel(int detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, int recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel)
+void FacePipeline::setAccuracyAndModel(int detectAccuracy,
+                                       FaceScanSettings::FaceDetectionModel detectModel,
+                                       FaceScanSettings::FaceDetectionSize detectSize,
+                                       int recognizeAccuracy,
+                                       FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
 }

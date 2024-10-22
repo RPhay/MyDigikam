@@ -31,19 +31,19 @@ public:
 
     enum FilterMode
     {
-        /// Will read any given image
+        /// Will read any given image.
         ScanAll,
 
-        /// Will skip any image that is already marked as scanned
+        /// Will skip any image that is already marked as scanned.
         SkipAlreadyScanned,
 
-        /// Will read unconfirmed faces for recognition
+        /// Will read unconfirmed faces for recognition.
         ReadUnconfirmedFaces,
 
-        /// Will read faces marked for training
+        /// Will read faces marked for training.
         ReadFacesForTraining,
 
-        /// Will read faces which are confirmed
+        /// Will read faces which are confirmed.
         ReadConfirmedFaces
     };
 
@@ -57,7 +57,6 @@ public:
 
         /// Add new results. Previous unconfirmed results will be cleared.
         OverwriteUnconfirmed
-
     };
 
 public:
@@ -111,12 +110,12 @@ public:
     void construct();
 
     /**
-     * Cancels all processing
+     * Cancels all processing.
      */
     void cancel();
 
     /**
-     * Cancels and waits for the pipeline to finish
+     * Cancels and waits for the pipeline to finish.
      */
     void shutDown();
 
@@ -210,17 +209,17 @@ Q_SIGNALS:
     /// Emitted when processing is scheduled.
     void scheduled();
 
-    /// Emitted when processing has started
+    /// Emitted when processing has started.
     void started(const QString& message);
 
-    /// Emitted when one package begins processing
+    /// Emitted when one package begins processing.
     void processing(const FacePipelinePackage& package);
 
-    /// Emitted when one package has finished processing
+    /// Emitted when one package has finished processing.
     void processed(const FacePipelinePackage& package);
     void progressValueChanged(float progress);
 
-    /// Emitted when the last package has finished processing
+    /// Emitted when the last package has finished processing.
     void finished();
 
     /// Emitted when one or several packages were skipped, usually because they have already been scanned.

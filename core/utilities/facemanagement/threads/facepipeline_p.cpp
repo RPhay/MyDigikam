@@ -50,7 +50,7 @@ void FacePipeline::Private::processBatch(const QList<ItemInfo>& infos)
     }
 }
 
-/// called by filter
+/// called by filter.
 void FacePipeline::Private::sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages)
 {
     infosForFiltering -= packages.size();
@@ -61,14 +61,14 @@ void FacePipeline::Private::sendFromFilter(const QList<FacePipelineExtendedPacka
     }
 }
 
-/// called by filter
+/// called by filter.
 void FacePipeline::Private::skipFromFilter(const QList<ItemInfo>& infosForSkipping)
 {
     infosForFiltering -= infosForSkipping.size();
 
     Q_EMIT q->skipped(infosForSkipping);
 
-    // everything skipped?
+    // Everything skipped?
 
     checkFinished();
 }
@@ -165,7 +165,9 @@ void FacePipeline::Private::receiverFlowControl()
 {
     if (!delayedPackages.isEmpty() && packagesOnTheRoad <= maxPackagesOnTheRoad)
     {
-        --totalPackagesAdded; // do not add twice
+        // NOTE: do not add twice.
+
+        --totalPackagesAdded;
         send(delayedPackages.takeFirst());
     }
 }
@@ -186,7 +188,7 @@ void FacePipeline::Private::checkFinished()
 
         Q_EMIT q->finished();
 
-        // stop threads
+        // Stop threads.
 
         stop();
     }
@@ -331,9 +333,9 @@ ThumbnailLoadThread* FacePipeline::Private::createThumbnailLoadThread()
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
-
-    // Image::recommendedSizeForRecognition()
-
+/*
+    Image::recommendedSizeForRecognition()
+*/
     thumbnailLoadThread->setPriority(priority);
 
     thumbnailLoadThreads << thumbnailLoadThread;

@@ -76,7 +76,7 @@ void ParallelPipes::add(WorkerObject* const worker)
     m_workers << worker;
     m_methods << worker->metaObject()->method(methodIndex);
 
-    // collect the worker's signals and bundle them to our single signal, which is further connected
+    // Collect the worker's signals and bundle them to our single signal, which is further connected.
 
     connect(worker, SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
             this, SIGNAL(processed(FacePipelineExtendedPackage::Ptr)));
@@ -84,7 +84,7 @@ void ParallelPipes::add(WorkerObject* const worker)
 
 void ParallelPipes::process(const FacePipelineExtendedPackage::Ptr& package)
 {
-    // Here, we send the package to one of the workers, in turn
+    // Here, we send the package to one of the workers, in turn.
 
     m_methods.at(m_currentIndex).invoke(m_workers.at(m_currentIndex), Qt::QueuedConnection,
                                         Q_ARG(FacePipelineExtendedPackage::Ptr, package));

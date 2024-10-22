@@ -24,16 +24,12 @@ namespace Digikam
 FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const dd)
     : d(dd)
 {
-    // this is crucial! Per default, only the last added image will be loaded
+    // NOTE: this is crucial! Per default, only the last added image will be loaded.
 
     setLoadingPolicy(PreviewLoadThread::LoadingPolicySimpleAppend);
 
     connect(this, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
             this, SLOT(slotImageLoaded(LoadingDescription,DImg)));
-}
-
-FacePreviewLoader::~FacePreviewLoader()
-{
 }
 
 void FacePreviewLoader::cancel()

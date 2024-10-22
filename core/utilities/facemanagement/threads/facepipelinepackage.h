@@ -28,7 +28,9 @@
 #include "dimg.h"
 #include "loadingdescription.h"
 #include "iteminfo.h"
-//#include "recognitiondatabase.h"
+/*
+#include "recognitiondatabase.h"
+*/
 
 namespace Digikam
 {
@@ -52,18 +54,18 @@ public:
     {
         NoRole             = 0,
 
-        /// Source
+        /// Source.
         GivenAsArgument    = 1 << 0,
         ReadFromDatabase   = 1 << 1,
         DetectedFromImage  = 1 << 2,
 
-        /// Task
+        /// Task.
         ForRecognition     = 1 << 10,
         ForConfirmation    = 1 << 11,
         ForTraining        = 1 << 12,
-        ForEditing         = 1 << 13, ///< Add, Change or remove
+        ForEditing         = 1 << 13, ///< Add, Change or remove.
 
-        /// Executed action (task is cleared)
+        /// Executed action (task is cleared).
         Confirmed          = 1 << 20,
         Trained            = 1 << 21,
         Edited             = 1 << 22

@@ -115,7 +115,7 @@ void ScanStateFilter::run()
 {
     while (runningFlag())
     {
-        // get todo list
+        // Get todo list.
 
         QList<ItemInfo> todo;
         {
@@ -132,7 +132,7 @@ void ScanStateFilter::run()
             }
         }
 
-        // process list
+        // Process list.
 
         if (!todo.isEmpty())
         {
