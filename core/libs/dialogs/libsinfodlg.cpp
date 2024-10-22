@@ -107,7 +107,10 @@ extern "C"
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Wunknown-warning-option"
 #       pragma clang diagnostic ignored "-Wpedantic"
+#       pragma clang diagnostic ignored "-Wshift-negative-value"
+#       pragma clang diagnostic ignored "-Werror"
 #       pragma clang diagnostic ignored "-Wundef"
+#       pragma clang diagnostic ignored "-Wsign-compare"
 #   endif
 
 #   include <jasper/jas_version.h>
