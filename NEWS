@@ -163,7 +163,7 @@ BUGFIXES:
 138 ==> 495006 - digiKam crashes when trying to run yunet face detection.
 139 ==> 495199 - digiKam-8.4.0-Qt6-x86-64.AppImage does not start on Tumbleweed.
 140 ==> 494284 - Facedetecting - recommented name often not the detected name.
-141 ==> 
+141 ==> 495185 - Decimal separators need to be locale-aware.
 142 ==> 
 143 ==> 
 144 ==> 

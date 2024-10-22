@@ -249,10 +249,10 @@ QString ItemPropertiesTab::humanReadableBytesCount(qint64 bytes, bool si)
         QString pre = QString(si ? QLatin1String("kMGTPEZY")
                                  : QLatin1String("KMGTPEZY")).at(exp-1) + (si ? QLatin1String("")
                                                                               : QLatin1String("i"));
-        ret         = QString().asprintf("%.1f %s", bytes / qPow(unit, exp), pre.toUtf8().constData());
+        ret         = QLocale().toString(bytes / qPow(unit, exp), 'f', 1) + QLatin1Char(' ') + pre;
     }
 
-    return (QString::fromUtf8("%1%2").arg(ret).arg(byteStr));
+    return (ret + byteStr);
 }
 
 } // namespace Digikam
