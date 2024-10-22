@@ -161,8 +161,8 @@ BUGFIXES:
 136 ==> 449310 - Add a DOB (date of birth) feature to facial recognition that will improve indexing and exclude all pictures prior to a given date.
 137 ==> 401458 - Rename file name with recognized faces-tags.
 138 ==> 495006 - digiKam crashes when trying to run yunet face detection.
-139 ==> 
-140 ==> 
+139 ==> 495199 - digiKam-8.4.0-Qt6-x86-64.AppImage does not start on Tumbleweed.
+140 ==> 494284 - Facedetecting - recommented name often not the detected name.
 141 ==> 
 142 ==> 
 143 ==> 

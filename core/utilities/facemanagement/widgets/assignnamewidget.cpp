@@ -314,11 +314,26 @@ void AssignNameWidget::showEvent(QShowEvent* e)
         if      (d->comboBox)
         {
             d->comboBox->setMinimumWidth(qMax(250, size().width() - 4));
+
+            if (d->currentTag)
+            {
+                d->comboBox->blockSignals(true);
+                d->comboBox->setCurrentTag(d->currentTag);
+                d->comboBox->blockSignals(false);
+            }
+
             d->comboBox->lineEdit()->selectAll();
             d->comboBox->lineEdit()->setFocus();
         }
         else if (d->lineEdit)
         {
+            if (d->currentTag)
+            {
+                d->lineEdit->blockSignals(true);
+                d->lineEdit->setCurrentTag(d->currentTag);
+                d->lineEdit->blockSignals(false);
+            }
+
             d->lineEdit->selectAll();
             d->lineEdit->setFocus();
         }
