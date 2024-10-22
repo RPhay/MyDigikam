@@ -19,12 +19,15 @@
 
 extern "C"
 {
+
 #ifndef Q_CC_MSVC
 #   include <unistd.h>
 #endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+
 }
 
 // C++ includes
@@ -57,6 +60,7 @@ extern "C"
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wkeyword-macro"
+#   pragma clang diagnostic ignored "-Wreorder-ctor"
 #endif
 
 #include "PGFimage.h"

@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     QGridLayout*  PGFGrid               = nullptr;
 
     QLabel*       labelPGFcompression   = nullptr;

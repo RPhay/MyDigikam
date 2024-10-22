@@ -43,6 +43,7 @@ extern "C"
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wkeyword-macro"
+#   pragma clang diagnostic ignored "-Wreorder-ctor"
 #endif
 
 #include "PGFimage.h"
