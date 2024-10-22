@@ -154,6 +154,7 @@ void FilesDownloader::startDownload()
     d->autoTagsCheck     = new QCheckBox(i18n("Use Auto Tags Assignment feature"), mainWidget);
 
     d->progress          = new QProgressBar(mainWidget);
+    d->progress->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->progress->setMinimum(0);
     d->progress->setMaximum(1);
     d->progress->setValue(0);
