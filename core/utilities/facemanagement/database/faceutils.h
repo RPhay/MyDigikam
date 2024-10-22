@@ -53,7 +53,7 @@ public:
 public:
 
     explicit FaceUtils(QObject* const parent = nullptr);
-    ~FaceUtils()                                                                              override;
+    ~FaceUtils()                                                                              override = default;
 
     // --- Face detection and recognition ---
 
@@ -121,12 +121,15 @@ public:
     static QRect         faceRectToDisplayRect(const QRect& rect);
 
     // TODO: investigate this method
+
     Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)            const;
     int      tagForIdentity(const Identity& identity)                                   const;
 
 protected:
 
-    // Reimplemented
+    /**
+     * Reimplemented from parent class.
+     */
     void addNormalTag(qlonglong imageId, int tagId)                                           override;
     void removeNormalTag(qlonglong imageId, int tagId)                                        override;
     void removeNormalTags(qlonglong imageId, const QList<int>& tagIds)                        override;

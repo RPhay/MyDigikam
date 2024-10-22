@@ -26,7 +26,7 @@ class Q_DECL_HIDDEN FaceItemRetriever
 public:
 
     explicit FaceItemRetriever(FacePipeline::Private* const d);
-    ~FaceItemRetriever();
+    ~FaceItemRetriever() = default;
 
     void cancel();
 

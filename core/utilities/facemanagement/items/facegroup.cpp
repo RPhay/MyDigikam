@@ -15,6 +15,9 @@
  * ============================================================ */
 
 #include "facegroup_p.h"
+
+// Local includes
+
 #include "assignnamewidget_p.h"
 
 namespace Digikam
@@ -52,7 +55,9 @@ void FaceGroup::itemStateChanged(int itemState)
     switch (itemState)
     {
         case DImgPreviewItem::NoImage:
-        //case DImgPreviewItem::Loading:
+/*
+        case DImgPreviewItem::Loading:
+*/
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
@@ -197,9 +202,11 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
         QRectF r       = item->boundingRect().translated(item->pos());
         qreal distance = (p - closestPointOfRect(p, r)).manhattanLength();
 
-        if (!closestItem             ||
+        if (
+            !closestItem             ||
             (distance < minDistance) ||
-            ((distance == 0) && (p - r.center()).manhattanLength() < minCenterDistance))
+            ((distance == 0) && (p - r.center()).manhattanLength() < minCenterDistance)
+           )
         {
             closestItem = item;
             minDistance = distance;
@@ -299,9 +306,11 @@ bool FaceGroup::hasUnconfirmed()
 
 void FaceGroup::load()
 {
-    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate            ||
+    d->exifRotate = (
+                     MetaEngineSettings::instance()->settings().exifRotate            ||
                      ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
-                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
+                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool())
+                    );
 
     if (d->info.isNull())
     {
@@ -474,8 +483,8 @@ void FaceGroup::slotFocusRandomFace()
 {
     for (FaceItem* const item : std::as_const(d->items))
     {
-        FaceTagsIface face = item->face();
-        AddTagsComboBox* comboBox = item->widget()->comboBox();
+        FaceTagsIface face              = item->face();
+        AddTagsComboBox* const comboBox = item->widget()->comboBox();
 
         if ((comboBox) && (!face.isConfirmedName()))
         {

@@ -60,7 +60,7 @@ public:
     bool autoSuggest()                                                   const;
 
     /**
-     * Even if visible() is false, show the item under the mouse cursor
+     * Even if visible() is false, show the item under the mouse cursor.
      */
     void setShowOnHover(bool show);
     bool showOnHover()                                                   const;
@@ -89,13 +89,13 @@ public:
 public Q_SLOTS:
 
     /**
-     * Shows or hides the frames
+     * Shows or hides the frames.
      */
     void setVisible(bool visible);
     void setVisibleItem(RegionFrameItem* item);
 
     /**
-     * Sets the current ItemInfo
+     * Sets the current ItemInfo.
      */
     void setInfo(const ItemInfo& info);
 
@@ -107,17 +107,17 @@ public Q_SLOTS:
     void aboutToSetInfo(const ItemInfo& info);
 
     /**
-     * Enters a special state where by click + drag a new face can be created
+     * Enters a special state where by click + drag a new face can be created.
      */
     void addFace();
 
     /**
-     * Rejects (clears) all faces on the current image
+     * Rejects (clears) all faces on the current image.
      */
     void rejectAll();
 
     /**
-     * Mark all unconfirmed faces as ignored on the current image
+     * Mark all unconfirmed faces as ignored on the current image.
      */
     void markAllAsIgnored();
 

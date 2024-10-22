@@ -22,10 +22,6 @@ FaceItemRetriever::FaceItemRetriever(FacePipeline::Private* const d)
 {
 }
 
-FaceItemRetriever::~FaceItemRetriever()
-{
-}
-
 void FaceItemRetriever::cancel()
 {
     catcher->cancel();
@@ -66,6 +62,7 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTa
 QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const
 {
     Q_UNUSED(filePath)
+
     catcher->setActive(true);
 
     for (const FaceTagsIface& face : std::as_const(faces))

@@ -37,12 +37,12 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
         qCDebug(DIGIKAM_GENERAL_LOG) << "Benchmarking image" << package->info.name();
 
         FaceUtils utils;
-        QList<FaceTagsIface> groundTruth = utils.databaseFaces(package->info.id());
+        QList<FaceTagsIface> groundTruth          = utils.databaseFaces(package->info.id());
 
-        QList<FaceTagsIface> testedFaces = utils.toFaceTagsIfaces(package->info.id(),
-                                                                  package->detectedFaces,
-                                                                  package->recognitionResults,
-                                                                  package->image.originalSize());
+        QList<FaceTagsIface> testedFaces          = utils.toFaceTagsIfaces(package->info.id(),
+                                                                           package->detectedFaces,
+                                                                           package->recognitionResults,
+                                                                           package->image.originalSize());
 
         QList<FaceTagsIface> unmatchedTrueFaces   = groundTruth;
         QList<FaceTagsIface> unmatchedTestedFaces = testedFaces;
@@ -51,7 +51,8 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
         int trueFaces                             = groundTruth.size();
         const double minOverlap                   = 0.75;
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "There are" << trueFaces << "faces to be detected. The detector found" << testedFaces.size();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "There are" << trueFaces
+                                     << "faces to be detected. The detector found" << testedFaces.size();
 
         ++totalImages;
         faces       += trueFaces;
@@ -104,6 +105,7 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
         truePositiveFaces  += matchedTrueFaces.size();
         falseNegativeFaces += unmatchedTrueFaces.size();
         falsePositiveFaces += unmatchedTestedFaces.size();
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Faces detected correctly:"
                                      << matchedTrueFaces.size()
                                      << ", faces missed:"
@@ -113,6 +115,7 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
     }
 
     package->processFlags  |= FacePipelinePackage::WrittenToDatabase;
+
     Q_EMIT processed(package);
 }
 
@@ -124,6 +127,7 @@ QString DetectionBenchmarker::result() const
     qCDebug(DIGIKAM_GENERAL_LOG) << "Per-image:"
                                  << trueNegativeImages
                                  << falsePositiveFaces;
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Per-face:"
                                  << truePositiveFaces
                                  << falseNegativeFaces
@@ -153,11 +157,16 @@ QString DetectionBenchmarker::result() const
     }
 
     // collection properties
+
     double pixelCoverage     = facePixels                  / totalPixels;
+
     // per-image
+
     double specificity       = double(trueNegativeImages)  / negativeImages;
     double falsePositiveRate = double(falsePositiveImages) / negativeImages;
+
     // per-face
+
     double sensitivity       = double(truePositiveFaces)   / trueFaces;
     double ppv               = double(truePositiveFaces)   / (truePositiveFaces + falsePositiveFaces);
 

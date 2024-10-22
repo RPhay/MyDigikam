@@ -46,10 +46,6 @@ FaceUtils::FaceUtils(QObject* const parent)
 {
 }
 
-FaceUtils::~FaceUtils()
-{
-}
-
 // --- Mark for scanning and training -------------------------------------------------------------------------------
 
 bool FaceUtils::hasBeenScanned(qlonglong imageid) const
