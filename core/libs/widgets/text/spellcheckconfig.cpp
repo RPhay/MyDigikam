@@ -37,8 +37,17 @@
 
 #ifdef HAVE_SONNET
 
-#   include <sonnet/speller.h>
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wnonportable-include-path"
+#   endif
+
+#       include <sonnet/speller.h>
 using namespace Sonnet;
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
 
 #endif
 

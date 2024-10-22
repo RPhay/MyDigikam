@@ -38,10 +38,21 @@
 // KDE includes
 
 #ifdef HAVE_SONNET
-#   include <sonnet/spellcheckdecorator.h>
-#   include <sonnet/highlighter.h>
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wnonportable-include-path"
+#   endif
+
+
+#       include <sonnet/spellcheckdecorator.h>
+#       include <sonnet/highlighter.h>
 
 using namespace Sonnet;
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
 
 #endif
 
