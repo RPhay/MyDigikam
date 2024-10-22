@@ -60,7 +60,7 @@ public:
 
 QPen  AbstractFloatItemPrivate::s_pen  = QPen(Qt::black);
 
-#ifdef Q_OS_MACX
+#ifdef Q_OS_MACOS
 
 QFont AbstractFloatItemPrivate::s_font = QFont(QStringLiteral("Sans Serif"), 10);
 

@@ -915,7 +915,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
 
     QString defaultFamily = m_defaultFont.family();
 
-#ifdef Q_OS_MACX
+#ifdef Q_OS_MACOS
     int defaultSize = 10;
 #else
     int defaultSize = 8;

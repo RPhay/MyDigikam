@@ -46,7 +46,7 @@ namespace Marble
 MeasureToolPlugin::MeasureToolPlugin(const MarbleModel* marbleModel)
     : RenderPlugin(marbleModel),
       m_measureLineString(GeoDataLineString(Tessellate)),
-#ifdef Q_OS_MACX
+#ifdef Q_OS_MACOS
       m_font_regular(QFont(QStringLiteral("Sans Serif"), 10, 50, false)),
 #else
       m_font_regular(QFont(QStringLiteral("Sans Serif"),  8, 50, false)),

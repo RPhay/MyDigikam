@@ -286,7 +286,7 @@ bool GraticulePlugin::render(GeoPainter* painter, ViewportParams* viewport,
 
     // Setting the label font for the coordinate lines.
 
-#ifdef Q_OS_MACX
+#ifdef Q_OS_MACOS
 
     int defaultFontSize = 10;
 
