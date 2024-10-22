@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-21 01:49+0000\n"
+"POT-Creation-Date: 2024-10-22 01:47+0000\n"
 "PO-Revision-Date: 2024-10-20 08:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -29095,25 +29095,25 @@ msgstr ""
 "формат бази даних є занадто новим) Будь ласка, використовуйте новішу версію "
 "digiKam, якою ви користувалися раніше. "
 
-#: core/libs/database/tags/facetags.cpp:417
+#: core/libs/database/tags/facetags.cpp:418
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Люди"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:483
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Невідомі"
 
-#: core/libs/database/tags/facetags.cpp:504
+#: core/libs/database/tags/facetags.cpp:505
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Не підтверджено"
 
-#: core/libs/database/tags/facetags.cpp:526
+#: core/libs/database/tags/facetags.cpp:527
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -37181,7 +37181,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Відкрити сторінку вікна налаштовування для налаштовування оновлень."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:142
+#: core/utilities/setup/downloader/filesdownloader.cpp:144
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
@@ -65331,39 +65331,39 @@ msgstr "Виберіть категорію"
 msgid "Your collection will use this category:"
 msgstr "Для вашої збірки буде використано таку категорію:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:130
+#: core/utilities/setup/downloader/filesdownloader.cpp:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Отримання потрібних файлів"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:152
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Використати можливість керування обличчями"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:151
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Використати можливість визначення естетичності"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:152
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Використати можливість автоматичного призначення міток"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:224
+#: core/utilities/setup/downloader/filesdownloader.cpp:226
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Усі файли було успішно отримано."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:233
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Помилка під час отримання"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65383,33 +65383,33 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:240
+#: core/utilities/setup/downloader/filesdownloader.cpp:242
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Спробувати ще раз"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:371
+#: core/utilities/setup/downloader/filesdownloader.cpp:376
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:395
+#: core/utilities/setup/downloader/filesdownloader.cpp:400
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:422
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:495
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65433,13 +65433,13 @@ msgstr ""
 "</p><p>Файли буде отримано до «<i>%1</i>».</p><p><b>Після успішного "
 "отримання файлів вам слід перезапустити digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:503
+#: core/utilities/setup/downloader/filesdownloader.cpp:508
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Для отримання даних потрібні дані %1 файлів розміром %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:510
+#: core/utilities/setup/downloader/filesdownloader.cpp:515
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Знайдено усі файли для реалізації вибраних можливостей."

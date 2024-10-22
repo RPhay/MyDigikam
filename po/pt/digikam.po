@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-21 01:49+0000\n"
+"POT-Creation-Date: 2024-10-22 01:47+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -29099,25 +29099,25 @@ msgstr ""
 "o formato da base de dados é demasiado recente). Use por favor a versão mais "
 "recente do digikam que tiver usado anteriormente."
 
-#: core/libs/database/tags/facetags.cpp:417
+#: core/libs/database/tags/facetags.cpp:418
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Pessoas"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:483
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Desconhecidas"
 
-#: core/libs/database/tags/facetags.cpp:504
+#: core/libs/database/tags/facetags.cpp:505
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Sem Confirmação"
 
-#: core/libs/database/tags/facetags.cpp:526
+#: core/libs/database/tags/facetags.cpp:527
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -37151,7 +37151,7 @@ msgstr ""
 "actualizações."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:142
+#: core/utilities/setup/downloader/filesdownloader.cpp:144
 #, kde-format
 msgid "Download"
 msgstr "Obter"
@@ -65507,41 +65507,41 @@ msgstr "Seleccionar a Categoria"
 msgid "Your collection will use this category:"
 msgstr "A sua colecção irá usar esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:130
+#: core/utilities/setup/downloader/filesdownloader.cpp:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Transferir os Ficheiros Necessários"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:152
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Management feature"
 msgstr "Detecção de Caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:151
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:152
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Ajuste Automático"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:224
+#: core/utilities/setup/downloader/filesdownloader.cpp:226
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Todos os ficheiros foram transferidos com sucesso."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:231
+#: core/utilities/setup/downloader/filesdownloader.cpp:233
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erro de Transferência"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:232
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, fuzzy, kde-format
 #| msgid ""
 #| "An error occurred during the download.\n"
@@ -65568,33 +65568,33 @@ msgstr ""
 "\n"
 "Poderá tentar de novo ou prosseguir a transferência no próximo início."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:240
+#: core/utilities/setup/downloader/filesdownloader.cpp:242
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tentar de Novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:371
+#: core/utilities/setup/downloader/filesdownloader.cpp:376
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "O código de validação é incorrecto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:395
+#: core/utilities/setup/downloader/filesdownloader.cpp:400
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escrita no ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:402
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "File open error."
 msgstr "Erro de acesso ao ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:422
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro no servidor é demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:490
+#: core/utilities/setup/downloader/filesdownloader.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -65626,13 +65626,13 @@ msgstr ""
 "se que tem cerca de %2 disponíveis. <b>Após a transferência terminar com "
 "sucesso, terá de reiniciar o digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:503
+#: core/utilities/setup/downloader/filesdownloader.cpp:508
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:510
+#: core/utilities/setup/downloader/filesdownloader.cpp:515
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
