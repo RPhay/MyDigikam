@@ -46,6 +46,8 @@ extern "C"
 
 #if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-warning-option"
+#   pragma clang diagnostic ignored "-Wpedantic"
 #   pragma clang diagnostic ignored "-Wshift-negative-value"
 #   pragma clang diagnostic ignored "-Werror"
 #   pragma clang diagnostic ignored "-Wundef"
