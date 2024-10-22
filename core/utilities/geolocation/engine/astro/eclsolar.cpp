@@ -769,7 +769,7 @@ int EclSolar::getEclTxt(int k, char* jtxt)
 
     j = k - 1;
 
-    snprintf(jtxt, sizeof(jtxt), "%2i :", (j + 1));
+    sprintf(jtxt, "%2i :", (j + 1));
     snprintf(dts, sizeof(dts), "%5i ", eb_year);
     strcat(jtxt, dts);
     dtmstr((eb_eclmjd[j] + eb_tzone / 24.0), dts);
