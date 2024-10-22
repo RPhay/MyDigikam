@@ -657,24 +657,24 @@ void MixerSettings::saveAsSettings()
         fprintf(fp, "PRESERVE_LUMINOSITY: %s\n",
                 d->mixerSettings.bPreserveLum ? "true" : "false");
 
-        sprintf(buf1, "%5.3f", d->mixerSettings.redRedGain);
-        sprintf(buf2, "%5.3f", d->mixerSettings.redGreenGain);
-        sprintf(buf3, "%5.3f", d->mixerSettings.redBlueGain);
+        snprintf(buf1, sizeof(buf1), "%5.3f", d->mixerSettings.redRedGain);
+        snprintf(buf2, sizeof(buf2), "%5.3f", d->mixerSettings.redGreenGain);
+        snprintf(buf3, sizeof(buf3), "%5.3f", d->mixerSettings.redBlueGain);
         fprintf(fp, "RED: %s %s %s\n", buf1, buf2, buf3);
 
-        sprintf(buf1, "%5.3f", d->mixerSettings.greenRedGain);
-        sprintf(buf2, "%5.3f", d->mixerSettings.greenGreenGain);
-        sprintf(buf3, "%5.3f", d->mixerSettings.greenBlueGain);
+        snprintf(buf1, sizeof(buf1), "%5.3f", d->mixerSettings.greenRedGain);
+        snprintf(buf2, sizeof(buf2), "%5.3f", d->mixerSettings.greenGreenGain);
+        snprintf(buf3, sizeof(buf3), "%5.3f", d->mixerSettings.greenBlueGain);
         fprintf(fp, "GREEN: %s %s %s\n", buf1, buf2, buf3);
 
-        sprintf(buf1, "%5.3f", d->mixerSettings.blueRedGain);
-        sprintf(buf2, "%5.3f", d->mixerSettings.blueGreenGain);
-        sprintf(buf3, "%5.3f", d->mixerSettings.blueBlueGain);
+        snprintf(buf1, sizeof(buf1), "%5.3f", d->mixerSettings.blueRedGain);
+        snprintf(buf2, sizeof(buf2), "%5.3f", d->mixerSettings.blueGreenGain);
+        snprintf(buf3, sizeof(buf3), "%5.3f", d->mixerSettings.blueBlueGain);
         fprintf(fp, "BLUE: %s %s %s\n", buf1, buf2, buf3);
 
-        sprintf(buf1, "%5.3f", d->mixerSettings.blackRedGain);
-        sprintf(buf2, "%5.3f", d->mixerSettings.blackGreenGain);
-        sprintf(buf3, "%5.3f", d->mixerSettings.blackBlueGain);
+        snprintf(buf1, sizeof(buf1), "%5.3f", d->mixerSettings.blackRedGain);
+        snprintf(buf2, sizeof(buf2), "%5.3f", d->mixerSettings.blackGreenGain);
+        snprintf(buf3, sizeof(buf3), "%5.3f", d->mixerSettings.blackBlueGain);
         fprintf(fp, "BLACK: %s %s %s\n", buf1, buf2, buf3);
 
         fclose(fp);

@@ -281,7 +281,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     // use sprintf for locale-aware string
 
     char rateBuffer[16];
-    sprintf(rateBuffer, "rate=%.2g", (quality / 100.0));
+    snprintf(rateBuffer, sizeof(rateBuffer), "rate=%.2g", (quality / 100.0));
 
     qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "JPEG2000 quality: " << quality;
     qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "JPEG2000 "          << rateBuffer;

@@ -335,7 +335,7 @@ QString dkCmsTakeProductName(cmsHPROFILE hProfile)
     }
     else
     {
-        sprintf(Name, "%s - %s", Model, Manufacturer);
+        snprintf(Name, sizeof(Name), "%s - %s", Model, Manufacturer);
     }
 
     return QLatin1String(Name);

@@ -810,7 +810,7 @@ bool ImageLevels::saveLevelsToGimpLevelsFile(const QUrl& fileUrl)
     for (i = 0 ; i < 5 ; ++i)
     {
         char buf[256];
-        sprintf(buf, "%f", getLevelGammaValue(i));
+        snprintf(buf, sizeof(buf), "%f", getLevelGammaValue(i));
 
         fprintf(file, "%d %d %d %d %s\n",
                 d->sixteenBit ? getLevelLowInputValue(i)  / 255 : getLevelLowInputValue(i),

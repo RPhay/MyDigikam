@@ -585,7 +585,7 @@ void EclSolar::getEclYearInfo(char* wbuf)
 
     for (j = 0; j < eb_numecl; j++)
     {
-        sprintf(dts, "%1i : ", kecl);
+        snprintf(dts, sizeof(dts), "%1i : ", kecl);
         strcpy(outbuf, dts);
         dtmstr((eb_eclmjd[j] + eb_tzone / 24.0), dts);
         dts[12] = '\0';
@@ -596,7 +596,7 @@ void EclSolar::getEclYearInfo(char* wbuf)
         {
             case 1:
                 strcat(outbuf, "\t Partial Sun");
-                sprintf(magbuf, "  (magnitude:%5.2f)", eb_magnitude[j]);
+                snprintf(magbuf, sizeof(magbuf), "  (magnitude:%5.2f)", eb_magnitude[j]);
                 strcat(outbuf, magbuf);
                 break;
 
@@ -623,19 +623,19 @@ void EclSolar::getEclYearInfo(char* wbuf)
             case -1:
             case -2:
                 strcat(outbuf, "\t Penumbral Moon");
-                sprintf(magbuf, "  (magnitude:%5.2f)", eb_magnitude[j]);
+                snprintf(magbuf, sizeof(magbuf), "  (magnitude:%5.2f)", eb_magnitude[j]);
                 strcat(outbuf, magbuf);
                 break;
 
             case -3:
                 strcat(outbuf, "\t Partial Moon");
-                sprintf(magbuf, "  (magnitude:%5.2f)", eb_magnitude[j]);
+                snprintf(magbuf, sizeof(magbuf), "  (magnitude:%5.2f)", eb_magnitude[j]);
                 strcat(outbuf, magbuf);
                 break;
 
             case -4:
                 strcat(outbuf, "\t Total Moon");
-                sprintf(magbuf, "  (magnitude:%5.2f)", eb_magnitude[j]);
+                snprintf(magbuf, sizeof(magbuf), "  (magnitude:%5.2f)", eb_magnitude[j]);
                 strcat(outbuf, magbuf);
                 break;
         };
@@ -769,8 +769,8 @@ int EclSolar::getEclTxt(int k, char* jtxt)
 
     j = k - 1;
 
-    sprintf(jtxt, "%2i :", (j + 1));
-    sprintf(dts, "%5i ", eb_year);
+    snprintf(jtxt, sizeof(jtxt), "%2i :", (j + 1));
+    snprintf(dts, sizeof(dts), "%5i ", eb_year);
     strcat(jtxt, dts);
     dtmstr((eb_eclmjd[j] + eb_tzone / 24.0), dts);
     dts[6] = '\0';
@@ -3244,7 +3244,7 @@ void EclSolar::getLocalDetails(char* otxt)
 
     strcat(otxt, outb);
 
-    sprintf(outb, "\n\nMaximum Eclipse at ");
+    snprintf(outb, sizeof(outb), "\n\nMaximum Eclipse at ");
 
     strcat(otxt, outb);
 
@@ -3256,7 +3256,7 @@ void EclSolar::getLocalDetails(char* otxt)
 
     if (p < 4)
     {
-        sprintf(outb, "   with magnitude:%5.2f", eb_magnitude[j]);
+        snprintf(outb, sizeof(outb), "   with magnitude:%5.2f", eb_magnitude[j]);
         strcat(otxt, outb);
     }
 
@@ -3298,7 +3298,7 @@ void EclSolar::getLocalDetails(char* otxt)
     strcat(otxt, "\n\n\nLocal Circumstances for ");
     jd = eb_geolat;
     jdf = eb_geolong;
-    sprintf(outb, "\nLat: %g   Long: %g   height: %g m\n\n",
+    snprintf(outb, sizeof(outb), "\nLat: %g   Long: %g   height: %g m\n\n",
             jd, jdf, eb_geoheight);
     strcat(otxt, outb);
 
@@ -3306,7 +3306,7 @@ void EclSolar::getLocalDetails(char* otxt)
     {
         if (eb_lccnt > 0)
         {
-            sprintf(outb, "Eclipse visible from ");
+            snprintf(outb, sizeof(outb), "Eclipse visible from ");
             dtmstr((eb_lcb1 + eb_tzone / 24.0), dts);
             dts[12] = '\0';
             strcat(outb, " ");
@@ -3333,7 +3333,7 @@ void EclSolar::getLocalDetails(char* otxt)
 
         else
         {
-            sprintf(outb, "Eclipse not visible");
+            snprintf(outb, sizeof(outb), "Eclipse not visible");
         }
 
         strcat(otxt, outb);
@@ -3342,14 +3342,14 @@ void EclSolar::getLocalDetails(char* otxt)
     // local solar eclipse magnitude
     if ((p > 0) && (eb_lccnt > 0))
     {
-        sprintf(outb, "\nMaximum Eclipse at ");
+        snprintf(outb, sizeof(outb), "\nMaximum Eclipse at ");
         strcat(otxt, outb);
         dtmstr((eb_jdmaxps + eb_tzone / 24.0), dts);
         dts[12] = '\0';
         strcat(otxt, dts);
-        sprintf(outb, "   with magnitude %6.3f", eb_maxps);
+        snprintf(outb, sizeof(outb), "   with magnitude %6.3f", eb_maxps);
         strcat(otxt, outb);
-        sprintf(outb, "   elev:%4.1f", 180.0 * eb_maxelv / M_PI);
+        snprintf(outb, sizeof(outb), "   elev:%4.1f", 180.0 * eb_maxelv / M_PI);
         strcat(otxt, outb);
 
         if (eb_ltotb <= eb_ltote)
@@ -3376,7 +3376,7 @@ void EclSolar::getLocalDetails(char* otxt)
             hh = DegFDms(hh);
             jd = DegFDms(jd);
             jdf = (eb_ltote - eb_ltotb) * 86400.0;
-            sprintf(outb, "%8.4f  to%8.4f   del.t:%3.0f sec \n", hh, jd, jdf);
+            snprintf(outb, sizeof(outb), "%8.4f  to%8.4f   del.t:%3.0f sec \n", hh, jd, jdf);
             strcat(otxt, outb);
         }
     }
