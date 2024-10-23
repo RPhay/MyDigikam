@@ -29,9 +29,18 @@
 #include "album.h"
 #include "albummanager.h"
 
-// NOTE: ust be declared outside namespace
+// NOTE: must be declared outside namespace.
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+inline size_t qHash(const QList<Digikam::Album*>& key)
+
+#else
 
 inline uint qHash(const QList<Digikam::Album*>& key)
+
+#endif
+
 {
     if (key.isEmpty())
     {
@@ -40,7 +49,7 @@ inline uint qHash(const QList<Digikam::Album*>& key)
 
     Digikam::Album* const temp = key.first();
     quint64 myint              = (unsigned long long)temp;
-    uint value                 = ::qHash(myint);
+    uint value                 = (uint)::qHash(myint);
 
     for (int it = 1 ; it < key.size() ; ++it)
     {

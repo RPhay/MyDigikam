@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCache<QString, QPixmap> thumbnailBorderCache;
     QCache<QString, QString> squeezedTextCache;
 };
@@ -136,7 +138,8 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
     QPainter p(&pix);
 
 /*
-    // border
+    // Border.
+
     p.fillRect(0, 0, pix.width()-1, pix.height()-1, QColor(Qt::white));
     p.setPen(QPen(Qt::black, 1));
     p.drawRect(0, 0, pix.width()-1, pix.height()-1);
@@ -196,7 +199,7 @@ QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QS
 
     // We do not need to include the font into cache key, the cache is cleared on font change
 
-    QString cacheKey                      = QString::number(width) + QString::number(qHash(text));
+    QString cacheKey                      = QString::number(width) + QString::number((uint)qHash(text));
     QString* const cachedString           = cache->object(cacheKey);
 
     if (cachedString)
