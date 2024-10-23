@@ -61,6 +61,8 @@ public:
 
     Private() = default;
 
+public:
+
     QStringList               fileFormats;
     QList<QUrl>               urls;
     DFileDialog*              dlg           = nullptr;

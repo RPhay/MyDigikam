@@ -23,6 +23,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*              imageLabel      = nullptr;
     QLabel*              infoLabel       = nullptr;
 
@@ -42,7 +44,7 @@ ImageDialogPreview::ImageDialogPreview(QWidget* const parent)
     d->imageLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     d->imageLabel->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
-    d->infoLabel = new QLabel(this);
+    d->infoLabel             = new QLabel(this);
     d->infoLabel->setAlignment(Qt::AlignCenter);
 
     vlay->setContentsMargins(QMargins());

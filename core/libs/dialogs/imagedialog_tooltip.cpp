@@ -23,6 +23,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAbstractItemView*     view    = nullptr;
     QModelIndex            index;
     QUrl                   url;

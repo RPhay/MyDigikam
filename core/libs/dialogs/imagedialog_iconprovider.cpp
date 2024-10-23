@@ -24,6 +24,8 @@ public:
 
     Private() = default;
 
+public:
+
     QMutex               mutex;
 
     QTimer*              timer     = nullptr;
@@ -50,7 +52,6 @@ ImageDialogIconProvider::ImageDialogIconProvider()
 
     connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)));
-
 }
 
 ImageDialogIconProvider::~ImageDialogIconProvider()
@@ -65,7 +66,7 @@ ImageDialogIconProvider::~ImageDialogIconProvider()
 
 QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
 {
-    // We will only process image files
+    // We will only process image files.
 
     if (info.isFile() && !info.isSymLink() && !info.isRoot())
     {
@@ -125,7 +126,7 @@ QIcon ImageDialogIconProvider::icon(IconType type) const
 
 void ImageDialogIconProvider::slotThumbnailLoaded(const LoadingDescription& desc, const QImage& img)
 {
-    // resize and center pixmap on target icon.
+    // Resize and center pixmap on target icon.
 
     if (!img.isNull())
     {

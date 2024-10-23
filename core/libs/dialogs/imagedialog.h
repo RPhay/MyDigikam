@@ -132,6 +132,11 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit ImageDialogIconProvider(QObject*);
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };

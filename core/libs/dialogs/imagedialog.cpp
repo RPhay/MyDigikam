@@ -23,7 +23,7 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url,
       d      (new Private)
 {
     QString all;
-    d->fileFormats = supportedImageMimeTypes(QIODevice::ReadOnly, all);
+    d->fileFormats  = supportedImageMimeTypes(QIODevice::ReadOnly, all);
     qCDebug(DIGIKAM_GENERAL_LOG) << "file formats=" << d->fileFormats;
 
     d->toolTip      = new ImageDialogToolTip();
@@ -193,7 +193,7 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
         }
     }
 
-    // pass the event on to the parent class
+    // Pass the event on to the parent class.
 
     return QObject::eventFilter(obj, ev);
 }
