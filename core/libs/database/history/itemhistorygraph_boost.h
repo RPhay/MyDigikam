@@ -15,6 +15,7 @@
 #pragma once
 
 // To include pragma directives for MSVC
+
 #include "digikam_config.h"
 
 #ifdef Q_CC_MSVC
@@ -49,7 +50,8 @@
 
 // Boost includes
 
-// Prohibit boost using deprecated header files
+// Prohibit boost using deprecated header files.
+
 #define BOOST_NO_HASH
 #define BOOST_BIND_GLOBAL_PLACEHOLDERS
 #define BOOST_ALLOW_DEPRECATED_HEADERS
@@ -71,8 +73,10 @@
 #include "digikam_debug.h"
 #include "digikam_export.h"
 
+// clazy:excludeall=missing-typeinfo,copyable-polymorphic,explicit
+
 /**
- * Install custom property ids, out-of-namespace
+ * Install custom property ids, out-of-namespace.
  */
 enum vertex_properties_t { vertex_properties };
 enum edge_properties_t   { edge_properties   };
@@ -88,7 +92,7 @@ namespace Digikam
 
 /**
  * Adds the necessary typedefs so that associative_property_map
- * accepts a QMap, and it can be used as a Boost Property Map
+ * accepts a QMap, and it can be used as a Boost Property Map.
  */
 template <typename Key, typename Value>
 class QMapForAdaptors : public QMap<Key, Value>
@@ -111,29 +115,29 @@ public:
  */
 enum MeaningOfDirection
 {
-    ParentToChild,          ///< Edges are directed from a parent to its child
-    ChildToParent           ///< Edges are direct from a child to its parent
+    ParentToChild,          ///< Edges are directed from a parent to its child.
+    ChildToParent           ///< Edges are direct from a child to its parent.
 };
 
 /**
- * The graph base class template
+ * The graph base class template.
  */
 template <class VertexProperties, class EdgeProperties>
-class DIGIKAM_DATABASE_EXPORT Graph                                     // clazy:exclude=missing-typeinfo,copyable-polymorphic
+class DIGIKAM_DATABASE_EXPORT Graph
 {
 public:
 
     typedef boost::adjacency_list<
-          boost::vecS,                                                  ///< Standard storage. listS was desirable, but many algorithms work only with vecS
+          boost::vecS,                                                  ///< Standard storage. listS was desirable, but many algorithms work only with vecS.
           boost::vecS,
-          boost::bidirectionalS,                                        ///< directed graph
+          boost::bidirectionalS,                                        ///< Directed graph.
           boost::property<boost::vertex_index_t, int,
           boost::property<vertex_properties_t, VertexProperties> >,
-          boost::property<edge_properties_t, EdgeProperties>            ///< One property for each edge: EdgeProperties
+          boost::property<edge_properties_t, EdgeProperties>            ///< One property for each edge: EdgeProperties.
     > GraphContainer;
 
     /**
-     * a bunch of graph-specific typedefs that make the long boost types manageable
+     * a bunch of graph-specific typedefs that make the long boost types manageable.
      */
     typedef typename boost::graph_traits<GraphContainer>                                    graph_traits;
 
@@ -168,7 +172,7 @@ public:
      * These two classes provide source-compatible wrappers for the vertex and edge descriptors,
      * providing default construction to null and the isNull() method.
      */
-    class DIGIKAM_DATABASE_EXPORT Vertex                                // clazy:exclude=missing-typeinfo
+    class DIGIKAM_DATABASE_EXPORT Vertex
     {
     public:
 
@@ -178,7 +182,7 @@ public:
         }
 
         // cppcheck-suppress noExplicitConstructor
-        Vertex(const vertex_t& vv)    // krazy:exclude=explicit
+        Vertex(const vertex_t& vv)
             : v(vv)
         {
         }
@@ -220,14 +224,14 @@ public:
         vertex_t v;
     };
 
-    class DIGIKAM_DATABASE_EXPORT Edge                                  // clazy:exclude=missing-typeinfo
+    class DIGIKAM_DATABASE_EXPORT Edge
     {
     public:
 
         Edge() = default;
 
         // cppcheck-suppress noExplicitConstructor
-        Edge(const edge_t& e)    // krazy:exclude=explicit
+        Edge(const edge_t& e)
             : e   (e),
               null(false)
         {
@@ -275,7 +279,8 @@ public:
 
         edge_t e;
 
-        /// there is not null_edge, we must emulate it
+        // NOTE: there is not null_edge, we must emulate it.
+
         bool   null = true;
     };
 
@@ -378,7 +383,8 @@ public:
         return boost::edge(v1, v2, graph).second;
     }
 
-    /// Does not care for direction
+    // NOTE: Does not care for direction.
+
     bool isConnected(const Vertex& v1, const Vertex& v2) const
     {
         if (boost::edge(v1, v2, graph).second)
@@ -423,7 +429,7 @@ public:
         {
             const VertexProperties& props = properties(*it);
 
-            // must implement operator==(const T&)
+            // Must implement operator==(const T&).
 
             if (props == value)
             {
@@ -457,7 +463,7 @@ public:
     }
 
     /**
-     * Accessing vertices and edges
+     * Accessing vertices and edges.
      */
     const GraphContainer& getGraph() const
     {
@@ -474,7 +480,7 @@ public:
         OutboundEdges = 1 << 0,
         InboundEdges  = 1 << 1,
 
-        /// These resolve to one of the flags above, depending on MeaningOfDirection
+        /// These resolve to one of the flags above, depending on MeaningOfDirection.
 
         EdgesToLeaf   = 1 << 2,
         EdgesToRoot   = 1 << 3,
@@ -510,7 +516,7 @@ public:
         return verticesLst;
     }
 
-    /// NOTE: for "hasAdjacentVertices", simply use hasEdges(v, flags)
+    /// NOTE: for "hasAdjacentVertices", simply use hasEdges(v, flags).
 
     int vertexCount() const
     {
@@ -675,13 +681,13 @@ public:
     };
 
     /**
-     * Returns a copy of this graph with all edges added to form the transitive closure
+     * Returns a copy of this graph with all edges added to form the transitive closure.
      */
     Graph transitiveClosure(GraphCopyFlags flags = CopyAllProperties) const
     {
         // make_iterator_property_map:
-        // 1. The second parameter, our verteX_index map, converts the key (Vertex) into an index
-        // 2. The index is used to store the value (Vertex) in the first argument, which is our vector
+        // 1. The second parameter, our verteX_index map, converts the key (Vertex) into an index.
+        // 2. The index is used to store the value (Vertex) in the first argument, which is our vector.
 
         std::vector<vertex_t> copiedVertices(vertexCount(), Vertex());
         Graph closure;
@@ -716,7 +722,7 @@ public:
         std::vector<vertex_t> copiedVertices(vertexCount(), Vertex());
         Graph reduction;
 
-        // NOTE: named parameters is not implemented
+        // NOTE: named parameters is not implemented.
 
         try
         {
@@ -859,7 +865,7 @@ public:
         }
         else
         {
-            // assume inverted parameters
+            // Assume inverted parameters.
 
             path.shortestPath(graph, v2);
 
@@ -890,7 +896,7 @@ public:
             path.shortestPath(boost::make_reverse_graph(graph), v);
         }
 
-        // Change 2147483647 to -1
+        // Change 2147483647 to -1.
 
         typename QMap<Vertex, int>::iterator it;
 
@@ -957,7 +963,7 @@ public:
      * all vertices dominated by v starting from root.
      * The order is the same as in the given, sorted list of all vertices in this graph
      * (or all vertices expected to be returned. The returned list is the intersection
-     *  of the dominated vertices and presortedVertices, in order of presortedVertices)
+     * of the dominated vertices and presortedVertices, in order of presortedVertices).
      */
     QList<Vertex> verticesDominatedBy(const Vertex& v,
                                       const Vertex& root,
@@ -973,7 +979,7 @@ public:
 
         QList<Vertex> dominatedTree = treeFromPredecessors(v, tree.predecessors);
 
-        /// remove all vertices from the DFS of v that are not in the dominated tree
+        /// Remove all vertices from the DFS of v that are not in the dominated tree.
 
         QList<Vertex> orderedTree;
 
@@ -1031,7 +1037,7 @@ public:
             return verticesLst;
         }
 
-        // Sort in any so far unreachable nodes
+        // Sort in any so far unreachable nodes.
 
         vertex_range_t range = boost::vertices(graph);
 
@@ -1044,7 +1050,7 @@ public:
                 QList<Vertex> childBfs = childSearch.vertices;
                 QList<Vertex> toInsert;
 
-                // Any item reachable from *it should come after it
+                // Any item reachable from *it should come after it.
 
                 int minIndex = verticesLst.size();
 
@@ -1140,7 +1146,7 @@ protected:
     }
 
     /**
-     * Returns a list of vertex ids of vertices in the given range
+     * Returns a list of vertex ids of vertices in the given range.
      */
     template <typename Value, typename range_t>
     static QList<Value> toList(const range_t& range)
@@ -1174,7 +1180,7 @@ protected:
 
     /**
      * According to the given flags and based on the map,
-     * copies vertex and edge properties from this to the other graph
+     * copies vertex and edge properties from this to the other graph.
      */
     void copyProperties(Graph& other, GraphCopyFlags flags, const std::vector<vertex_t>& copiedVertices) const
     {
@@ -1322,11 +1328,11 @@ protected:
                 boost::dag_shortest_paths(
                                           graph, v,
 
-                                          /// we provide a constant weight of 1
+                                          /// we provide a constant weight of 1.
 
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
 
-                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps
+                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps.
 
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
@@ -1348,19 +1354,19 @@ protected:
                 boost::dag_shortest_paths(
                                           graph, v,
 
-                                          /// we provide a constant weight of 1
+                                          /// We provide a constant weight of 1.
 
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
 
-                                          /// Invert the default compare method: With greater, we get the longest path
+                                          /// Invert the default compare method: With greater, we get the longest path.
 
                                           distance_compare(std::greater<int>()).
 
-                                          /// will be returned if a node is unreachable
+                                          /// Will be returned if a node is unreachable.
 
                                           distance_inf(-1).
 
-                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps
+                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps.
 
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
@@ -1416,7 +1422,7 @@ protected:
         template <class GraphType>
         void depthFirstSearch(const GraphType& graph, const Vertex& v, bool invertGraph)
         {
-            // remember that the visitor is passed by value
+            // Remember that the visitor is passed by value.
 
             DepthFirstSearchVisitor vis(this);
 
@@ -1440,7 +1446,7 @@ protected:
         template <class GraphType, typename LessThan>
         void depthFirstSearchSorted(const GraphType& graph, const Vertex& v, bool invertGraph, LessThan lessThan)
         {
-            // Remember that the visitor is passed by value
+            // Remember that the visitor is passed by value.
 
             DepthFirstSearchVisitor vis(this);
             std::vector<boost::default_color_type> color_vec(boost::num_vertices(graph), boost::white_color);
@@ -1575,8 +1581,9 @@ protected:
                                        ColorMap color,
                                        LessThan lessThan)
         {
-            //typedef std::pair<Vertex, QList<Edge> > VertexInfo;
-
+/*
+            typedef std::pair<Vertex, QList<Edge> > VertexInfo;
+*/
             typedef typename boost::graph_traits<IncidenceGraph>::edge_descriptor edge_descriptor;
             QList<edge_descriptor> outEdges;
 /*
@@ -1622,7 +1629,7 @@ protected:
     };
 
     /**
-     * Get the list of vertices with the largest value in the given distance map
+     * Get the list of vertices with the largest value in the given distance map.
      */
     QList<Vertex> mostRemoteNodes(const VertexIntMap& distances) const
     {
@@ -1635,16 +1642,17 @@ protected:
             if (it.value() > maxDist)
             {
                 maxDist = it.value();
-
-                //qDebug() << "Increasing maxDist to" << maxDist;
-
+/*
+                qDebug() << "Increasing maxDist to" << maxDist;
+*/
                 candidates.clear();
             }
 
             if (it.value() >= maxDist)
             {
-                //qDebug() << "Adding candidate" << id(it.key()) <<  "at distance" << maxDist;
-
+/*
+                qDebug() << "Adding candidate" << id(it.key()) <<  "at distance" << maxDist;
+*/
                 candidates << it.key();
             }
 
@@ -1676,8 +1684,9 @@ protected:
 
         for (Vertex v = root ; v != target ; v = predecessors.value(v))
         {
-            //qDebug() << "Adding waypoint" << id(v);
-
+/*
+            qDebug() << "Adding waypoint" << id(v);
+*/
             if (dir == ParentToChild)
             {
                 verticesLst.append(v);
@@ -1687,8 +1696,8 @@ protected:
                 verticesLst.prepend(v);
             }
 
-            // If a node is not reachable, it seems its entry in the predecessors map is itself
-            // Avoid endless loop
+            // If a node is not reachable, it seems its entry in the predecessors map is itself.
+            // Avoid endless loop.
 
             if (predecessors.value(v) == v)
             {
@@ -1707,7 +1716,8 @@ protected:
 
 } // namespace Digikam
 
-// Restore warnings
+// Restore warnings.
+
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
 #endif
