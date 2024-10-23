@@ -114,7 +114,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Advanced Search: add search for items without face regions.");
     newFeatures << i18n("Collections: add support for cross-platform network paths.");
     newFeatures << i18n("Database: add support for SQLite WAL (Write-Ahead-Logging) mode.");
-    newFeatures << i18n("Add spell-checking support in caption text widget using KF5::Sonnet component.");
+    newFeatures << i18n("Add spell-checking support in caption text widget using KDE framework Sonnet component.");
     newFeatures << i18n("Add Spellcheck config panel in Settings/Miscellaneous for digiKam and Showfoto.");
     newFeatures << i18n("Add online translations support to Alternative Language text editor widget.");
     newFeatures << i18n("Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto.");
@@ -138,8 +138,8 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Adding YuNet DNN model to process faces detection and replace older SSD model. "
                         "Adding Sface DNN model to process face recognition and replace older OpenFace model. "
                         "Both are faster and requires less memory at run-time with better faces-management results.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2024-06-16.");
-    newFeatures << i18n("New RAW features: "
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2024-10-09.");
+    newFeatures << i18n("New RAW camera supported: "
                         "Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
                         "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
                         "Hasselblad X2D-100c."
