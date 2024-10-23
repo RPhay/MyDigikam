@@ -39,6 +39,8 @@
 #include "tagscache.h"
 #include "modeltest.h"
 
+// clazy:excludeall=missing-typeinfo
+
 using namespace Digikam;
 
 QTEST_MAIN(DImgHistoryGraphTest)
@@ -188,7 +190,7 @@ void DImgHistoryGraphTest::testEditing()
     ItemHistoryGraph graph3 = ItemHistoryGraph::fromInfo(one);
     qCDebug(DIGIKAM_TESTS_LOG) << graph3;
 
-    // all three must have the full cloud
+    // All three must have the full cloud.
 
     QVERIFY(graph1.data().vertexCount() == 5);
     QVERIFY(graph2.data().vertexCount() == 5);
@@ -204,9 +206,9 @@ void DImgHistoryGraphTest::testEditing()
     int originalVersionTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
     int currentVersionTag      = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::currentVersion());
     int intermediateVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::intermediateVersion());
-
-    //qCDebug(DIGIKAM_TESTS_LOG) << orig.tagIds() << one.tagIds() << two.tagIds() << three.tagIds() << four.tagIds();
-
+/*
+    qCDebug(DIGIKAM_TESTS_LOG) << orig.tagIds() << one.tagIds() << two.tagIds() << three.tagIds() << four.tagIds();
+*/
     QVERIFY(!orig.tagIds().contains(needResolvingTag));
     QVERIFY(!orig.tagIds().contains(needTaggingTag));
 
@@ -222,12 +224,12 @@ void DImgHistoryGraphTest::testEditing()
     CollectionScanner().completeScan();
     graph2 = ItemHistoryGraph::fromInfo(four);
 
-    // graph is prepared for display, vertex of removed file cleared
+    // Graph is prepared for display, vertex of removed file cleared.
 
     QVERIFY(graph2.data().vertexCount() == 4);
     qCDebug(DIGIKAM_TESTS_LOG) << graph2;
 
-    // Check that removal of current version leads to resetting of current version tag
+    // Check that removal of current version leads to resetting of current version tag.
 
     QFile fileThree(three.filePath());
     fileThree.remove();
@@ -384,7 +386,8 @@ void DImgHistoryGraphTest::testGraph()
     pairs << IdPair(22, 12); //X
     pairs << IdPair(23, 12); //X
 
-    // no more a polytree
+    // No more a polytree.
+
     pairs << IdPair(24, 13); //X
     pairs << IdPair(24, 23); //X
     pairs << IdPair(24, 4);
@@ -441,27 +444,27 @@ void DImgHistoryGraphTest::testGraph()
     QList<qlonglong> longestPath2 = mapList(graph.data().longestPathTouching(idToVertex.value(24)), vertexToId);
     QVERIFY(longestPath2 == controlLongestPathTwentyFour);
 
-    // depth-first
+    // Depth-first.
 
     QList<qlonglong> subgraphTwo = mapList(graph.data().verticesDominatedBy(idToVertex.value(2), idToVertex.value(1),
                                            HistoryGraph::DepthFirstOrder), vertexToId);
     std::sort(subgraphTwo.begin(), subgraphTwo.end());
     QVERIFY(subgraphTwo == controlSubgraphTwo);
 
-    // breadth-first
+    // Breadth-first.
 
     QList<qlonglong> subgraphFour = mapList(graph.data().verticesDominatedBy(idToVertex.value(4), idToVertex.value(1)), vertexToId);
     QVERIFY(subgraphFour.indexOf(22) > subgraphFour.indexOf(13));
     std::sort(subgraphFour.begin(), subgraphFour.end());
     QVERIFY(subgraphFour == controlSubgraphFour);
 
-    // depth-first
+    // Depth-first.
 
     QList<qlonglong> subgraphTwoSorted = mapList(
             graph.data().verticesDominatedByDepthFirstSorted(idToVertex.value(2), idToVertex.value(1),lessThanById(vertexToId)),
             vertexToId);
 
-    // no sorting this time
+    // No sorting this time.
 
     QVERIFY(subgraphTwoSorted == controlSubgraphTwoSorted);
 
