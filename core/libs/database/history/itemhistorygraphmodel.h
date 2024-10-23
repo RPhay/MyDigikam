@@ -89,7 +89,8 @@ public:
     FilterAction filterAction(const QModelIndex& index)                                       const;
 
     ///@{
-    /// QAbstractItemModel implementation
+    /// QAbstractItemModel implementation.
+
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
     int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
@@ -121,6 +122,8 @@ private:
     // Disable
     ItemHistoryGraphModel(const ItemHistoryGraphModel&)            = delete;
     ItemHistoryGraphModel& operator=(const ItemHistoryGraphModel&) = delete;
+
+private:
 
     class Private;
     Private* const d = nullptr;

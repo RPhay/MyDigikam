@@ -30,6 +30,8 @@
 #include "itemlistmodel.h"
 #include "itemhistorygraphdata.h"
 
+// clazy:excludeall=missing-typeinfo
+
 namespace Digikam
 {
 
@@ -288,6 +290,8 @@ public:
 
     Private() = default;
 
+public:
+
     ItemHistoryGraphModel::Mode                        mode         = ItemHistoryGraphModel::CombinedTreeMode;
 
     ItemHistoryGraph                                   historyGraph;
@@ -425,17 +429,17 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
 
         if (currentLevel == -1)
         {
-            // unreachable from first root
+            // Unreachable from first root.
 
             if (graph().isRoot(v) && (parent == rootItem))
             {
-                // other first-level root?
+                // Other first-level root?
 
                 parent->addItem(createVertexItem(v));
             }
             else
             {
-                // add later as sources
+                // Add later as sources.
 
                 sources << v;
             }
@@ -454,7 +458,7 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
         {
             parent->addItem(item);
         }
-        else if (currentLevel > previousLevel && previousItem) // check pointer, prevent crash is distances are faulty
+        else if (currentLevel > previousLevel && previousItem) // Check pointer, prevent crash is distances are faulty.
         {
             previousItem->addItem(item);
             parent = previousItem;
@@ -495,13 +499,13 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 /*
         qCDebug(DIGIKAM_DATABASE_LOG) << "Vertex on path" << path[i];
 */
-        // create new item
+        // Create new item.
 
         item                                = createVertexItem(v);
 
         QList<HistoryGraph::Vertex> vertices;       // clazy:exclude=missing-typeinfo
 
-        // any extra sources?
+        // Any extra sources?
 
         QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);    // clazy:exclude=missing-typeinfo
 
@@ -530,7 +534,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         addItemSubgroup(item, subgraph, i18nc("@title", "More Derived Images"));
 */
 
-        // Add filter actions above item
+        // Add filter actions above item.
 
         HistoryEdgeProperties props = graph().properties(v, previous);
 
@@ -539,12 +543,12 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
             rootItem->addItem(createFilterActionItem(action));
         }
 
-        // now, add item
+        // now, add item.
 
         rootItem->addItem(item);
         added << v;
 
-        // If there are multiple derived images, we display them in the next section
+        // If there are multiple derived images, we display them in the next section.
 
         if ((v == ref) && !onePath)
         {
@@ -622,7 +626,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         parentItem->addItem(item);
         added << v;
 
-        // Provide access to intermediates
+        // Provide access to intermediates.
 
         shortestPath.removeOne(showActionsFrom);
         shortestPath.removeOne(v);
@@ -663,7 +667,7 @@ void ItemHistoryGraphModel::Private::addIdenticalItems(HistoryTreeItem* parentIt
 {
     parentItem->addItem(new CategoryItem(title));
 
-    // the properties image info list is already sorted by proximity to subject
+    // The properties image info list is already sorted by proximity to subject.
 
     VertexItem* item = nullptr;
     bool isFirst     = true;
@@ -732,7 +736,7 @@ void ItemHistoryGraphModel::setHistory(const ItemInfo& subject, const ItemHistor
         d->historyGraph.prepareForDisplay(subject);
     }
 
-    // fill helper model
+    // Fill helper model.
 
     d->imageModel->clearItemInfos();
     d->imageModel->addItemInfos(d->historyGraph.allImages());
@@ -792,7 +796,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
         return QModelIndex();
     }
 
-    // try with primary info
+    // Try with primary info.
 
     for (VertexItem* const item : std::as_const(d->vertexItems))
     {
@@ -802,7 +806,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
         }
     }
 
-    // try all associated infos
+    // Try all associated infos.
 
     for (VertexItem* const item : std::as_const(d->vertexItems))
     {
@@ -861,7 +865,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
             return data;
         }
 
-        // else: read HistoryImageId from d->graph().properties(vertexItem->vertex)?
+        // Else, read HistoryImageId from d->graph().properties(vertexItem->vertex)?
     }
     else if_isItem(FilterActionItem, filterActionItem, item)
     {
@@ -1076,14 +1080,14 @@ QModelIndex ItemHistoryGraphModel::parent(const QModelIndex& index) const
 
     if (!parent)
     {
-        return QModelIndex();    // index was an invalid index
+        return QModelIndex();    // Index was an invalid index.
     }
 
     HistoryTreeItem* const grandparent = parent->parent;
 
     if (!grandparent)
     {
-        return QModelIndex();    // index was a top-level index, was the invisible rootItem as parent
+        return QModelIndex();    // Index was a top-level index, was the invisible rootItem as parent.
     }
 
     return createIndex(grandparent->children.indexOf(parent), 0, parent);

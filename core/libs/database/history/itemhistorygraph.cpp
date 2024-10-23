@@ -21,6 +21,8 @@
 #include "itemscanner.h"
 #include "itemhistorygraphdata.h"
 
+// clazy:excludeall=missing-typeinfo
+
 namespace Digikam
 {
 
@@ -234,7 +236,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
 /*
     qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex" << imageId.m_uuid.left(6) << imageId.fileName();
 */
-    // find by HistoryImageId (most notably, by UUID)
+    // Find by HistoryImageId (most notably, by UUID).
 
     v = findVertexByProperties(imageId);
 /*
@@ -242,7 +244,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
 */
     if (v.isNull())
     {
-        // Resolve HistoryImageId, find by ItemInfo
+        // Resolve HistoryImageId, find by ItemInfo.
 
         const auto ids = ItemScanner::resolveHistoryImageId(imageId);
 
@@ -276,7 +278,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
     QString        uuid;
     HistoryImageId id;
 
-    // Simply find by image id
+    // Simply find by image id.
 
     v = findVertexByProperties(info);
 /*
@@ -284,7 +286,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
 */
     if (v.isNull())
     {
-        // Find by contents
+        // Find by contents.
 
         uuid = info.uuid();
 
@@ -304,7 +306,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
 */
         }
 
-        // Need to add new vertex. Do this through the method which will resolve the history id
+        // Need to add new vertex. Do this through the method which will resolve the history id.
 
         if (v.isNull())
         {
@@ -321,7 +323,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
 
 HistoryGraph::Vertex ItemHistoryGraphData::addVertexScanned(qlonglong id)
 {
-    // short version where we do not read information about id from an ItemInfo
+    // Short version where we do not read information about id from an ItemInfo.
 
     Vertex v = findVertexByProperties(id);
 
@@ -334,7 +336,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
                                            const QList<ItemInfo>& infos,
                                            const QList<HistoryImageId>& ids)
 {
-    // if needed, add a new vertex; or retrieve properties to add possibly new entries
+    // If needed, add a new vertex; or retrieve properties to add possibly new entries.
 
     if (v.isNull())
     {
@@ -343,7 +345,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
 
     HistoryVertexProperties& props = properties(v);
 
-    // adjust properties
+    // Adjust properties.
 
     for (const ItemInfo& info : std::as_const(infos))
     {
@@ -410,13 +412,13 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
         }
         else if (isLeaf(v))
         {
-            // Leaf: Assume current version
+            // Leaf: Assume current version.
 
             type |= HistoryImageId::Current;
         }
         else if (isRoot(v))
         {
-            // Root: Assume original if at least once marked as such
+            // Root: Assume original if at least once marked as such.
 
             if (props.markedAs(HistoryImageId::Original))
             {
@@ -435,7 +437,7 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
          */
         if (!(type & HistoryImageId::Current) && hasEdges(v, EdgesToLeaf))
         {
-            // We check if all immediate actions set the ExplicitBranch flag
+            // We check if all immediate actions set the ExplicitBranch flag.
 
             bool allBranches = true;
             const auto edlf  = edges(v, EdgesToLeaf);
@@ -446,7 +448,7 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
 
                 if (props2.actions.isEmpty())
                 {
-                    continue; // unclear situation, ignore
+                    continue; // Unclear situation, ignore.
                 }
 
                 if (!(props2.actions.first().flags() & FilterAction::ExplicitBranch))
@@ -570,7 +572,7 @@ void ItemHistoryGraph::addHistory(const DImageHistory& givenHistory, const ItemI
 
 void ItemHistoryGraph::addHistory(const DImageHistory& givenHistory, const HistoryImageId& subjectId)
 {
-    // append the subject to its history
+    // Append the subject to its history.
 
     DImageHistory history = givenHistory;
 
@@ -624,7 +626,8 @@ void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong ex
                 }
                 else
                 {
-                    qCWarning(DIGIKAM_DATABASE_LOG) << "Broken history: Same file referred by different entries. Refusing to add a loop.";
+                    qCWarning(DIGIKAM_DATABASE_LOG) << "Broken history: Same file referred by different entries. "
+                                                       "Refusing to add a loop.";
                 }
             }
 
@@ -682,14 +685,14 @@ void ItemHistoryGraph::reduceEdges()
 
     if (reduction.isEmpty())
     {
-        return;    // reduction failed, not a DAG
+        return;    // Reduction failed, not a DAG.
     }
 
     for (const HistoryGraph::Edge& e : std::as_const(removedEgdes))   // cppcheck-suppress knownEmptyContainer
     {
         if (!d->properties(e).actions.isEmpty())
         {
-            // TODO: conflict resolution
+            // TODO: conflict resolution.
 
             qCDebug(DIGIKAM_DATABASE_LOG) << "Conflicting history information: Edge removed by transitiveReduction is not empty.";
         }
@@ -715,10 +718,10 @@ bool ItemHistoryGraph::hasUnresolvedEntries() const
 
 void ItemHistoryGraph::dropUnresolvedEntries()
 {
-    // Remove nodes which could not be resolved into image infos
+    // Remove nodes which could not be resolved into image infos.
 
     // The problem is that with each removable, the vertex list is invalidated,
-    // so we cannot do one loop over d->vertices
+    // so we cannot do one loop over d->vertices.
 
     for (int i = 0 ; i < d->vertexCount() ; )
     {
@@ -728,7 +731,7 @@ void ItemHistoryGraph::dropUnresolvedEntries()
 
 void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 {
-    // Remove nodes which could not be resolved into image infos
+    // Remove nodes which could not be resolved into image infos.
 
     QList<HistoryGraph::Vertex> toRemove;   // clazy:exclude=missing-typeinfo
     const auto verts = d->vertices();

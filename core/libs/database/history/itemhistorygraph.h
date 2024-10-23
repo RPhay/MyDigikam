@@ -38,13 +38,13 @@ public:
 
     enum HistoryLoadingFlag
     {
-        /// Load the relation cloud to the graph. Will give all edges, but no further info
+        /// Load the relation cloud to the graph. Will give all edges, but no further info.
         LoadRelationCloud  = 1 << 0,
 
-        /// Will load the DImageHistory of the given subject
+        /// Will load the DImageHistory of the given subject.
         LoadSubjectHistory = 1 << 1,
 
-        /// Will load the DImageHistory of all leave vertices of the graph
+        /// Will load the DImageHistory of all leave vertices of the graph.
         LoadLeavesHistory  = 1 << 2,
 
         LoadAll            = LoadRelationCloud | LoadSubjectHistory | LoadLeavesHistory
@@ -129,17 +129,17 @@ public:
 
     /**
      * Remove all vertices from the graph for which no existing ItemInfo
-     * could be found in the database
+     * could be found in the database.
      */
     void dropUnresolvedEntries();
 
     /**
-     * Sort vertex information prioritizing for the given vertex
+     * Sort vertex information prioritizing for the given vertex.
      */
     void sortForInfo(const ItemInfo& subject);
 
     /**
-     * Combines reduceEdges(), dropOrphans() and sortForInfo()
+     * Combines reduceEdges(), dropOrphans() and sortForInfo().
      */
     void prepareForDisplay(const ItemInfo& subject);
 
@@ -152,7 +152,7 @@ public:
     QPair<QList<qlonglong>, QList<qlonglong> > relationCloudParallel()  const;
 
     /**
-     * Returns image infos / ids from all vertices in this graph
+     * Returns image infos / ids from all vertices in this graph.
      */
     QList<ItemInfo> allImages()                                         const;
     QList<qlonglong> allImageIds()                                      const;
