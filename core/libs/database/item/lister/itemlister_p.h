@@ -59,9 +59,19 @@ namespace Digikam
 {
 
 /**
- * Used by QSet
+ * Used by QSet.
  */
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+inline size_t qHash(const ItemListerRecord& key)
+
+#else
+
 inline uint qHash(const ItemListerRecord& key)
+
+#endif
+
 {
     return key.imageID;
 }
