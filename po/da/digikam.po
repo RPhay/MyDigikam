@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-22 01:47+0000\n"
+"POT-Creation-Date: 2024-10-23 01:48+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -4773,8 +4773,8 @@ msgstr "Videocodec"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
+#: core/libs/dialogs/libsinfodlg.cpp:620
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -7645,12 +7645,12 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "nej"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid "Lossless PGF files"
 msgstr "Tabsfri PGF-filer"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:66
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
@@ -7660,12 +7660,12 @@ msgstr ""
 "indstilling aktiveres, vil en tabsfri metode til komprimering af PGF-"
 "billeder blive brugt.</p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid "PGF quality:"
 msgstr "PGF-kvalitet:"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
@@ -31373,6 +31373,7 @@ msgstr "Spørg ikke igen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -31479,7 +31480,7 @@ msgstr "<i>Billedrate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videocodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31506,21 +31507,21 @@ msgstr "Version"
 msgid "Items List"
 msgstr "Billedhistorik"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:183
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Nej"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31528,14 +31529,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Hovednyhed"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "&Bibliotek:"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:329
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31543,7 +31544,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31551,34 +31552,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:458
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:492
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguration af kamera"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nej"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:698
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -33533,7 +33534,7 @@ msgstr "Oliemalingseffekt"
 msgid "Rain Drops Effect"
 msgstr "Regndråbeeffekt"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration-filter"
@@ -45520,6 +45521,7 @@ msgid "Show Statusbar"
 msgstr "Vis statuslinje"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
+#: core/libs/widgets/mainview/dzoombar.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"
@@ -52190,13 +52192,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Versalfølsom"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:92
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:103
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52209,14 +52211,14 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:104
+#: core/libs/widgets/text/spellcheckconfig.cpp:113
 #, fuzzy, kde-format
 #| msgid "Default Language"
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Standardsprog"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:117
 #, fuzzy, kde-format
 #| msgid "Reset all settings to default values."
 msgctxt "@info: edit widget default language"
@@ -52225,40 +52227,40 @@ msgid ""
 "alternative language strings."
 msgstr "Nulstil alle indstillinger til standardværdier."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, fuzzy, kde-format
 #| msgid "Auto-&Detect"
 msgid "Auto-detect"
 msgstr "Auto&detektér"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:112
+#: core/libs/widgets/text/spellcheckconfig.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:125
+#: core/libs/widgets/text/spellcheckconfig.cpp:134
 #, fuzzy, kde-format
 #| msgid "Wiktionary"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Wiktionary"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:138
+#: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, fuzzy, kde-format
 #| msgid "Codec"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Codec"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Navn"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:146
+#: core/libs/widgets/text/spellcheckconfig.cpp:155
 #, fuzzy, kde-format
 #| msgctxt "@info Storage"
 #| msgid "Available:"
@@ -52266,41 +52268,41 @@ msgctxt "@title"
 msgid "Available Backends"
 msgstr "Tilgængelig:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:165
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Skærmprofil:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:171
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Sæt det antal elementer der skal findes med skitse her."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:174
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Tilføj..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:180
+#: core/libs/widgets/text/spellcheckconfig.cpp:189
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Fjern"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -55423,7 +55425,7 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
 #, kde-format
 msgid "Applying face changes"
 msgstr "Anvendelse af ansigtsændringer"
@@ -55506,7 +55508,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55518,28 +55520,28 @@ msgstr ""
 "dine venner i et vist antal fotos,<nl/> kan det også genkende de personer "
 "der er vist i dine fotos."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Skip billeder der allerede er scannet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Scan igen og sammenflet resultater"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Ryd ubekræftede resultater og scan igen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
@@ -55548,26 +55550,26 @@ msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Ryd ubekræftede resultater og scan igen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Hjælp"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Detektér ansigter"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Find alle ansigter i dine fotos"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
@@ -55575,7 +55577,7 @@ msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Find og genkend ansigter (eksperimentelt)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55585,14 +55587,14 @@ msgstr ""
 "Find alle ansigter i dine fotos<nl/> og prøv at genkende hvilken person der "
 "er afbilledet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Synkronisér"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55602,27 +55604,27 @@ msgstr ""
 "Prøv igen at genkende de personer der er afbilledet<nl/> på markerede men "
 "endnu ubekræftede ansigter."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Arbejdsgang"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Søg i:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:224
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nøjagtighed"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -55637,7 +55639,7 @@ msgstr ""
 "Justér hastighed kontra præcision. Des højere værdi, des mere præcis vil "
 "resultaterne være, men det vil tage længere tid."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -55645,26 +55647,26 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "OSM"
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "OSM"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55674,27 +55676,27 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Filstørrelse"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Ekstra mærker"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -55702,21 +55704,21 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Mellem"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Mål"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Ekstra mærker"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55735,20 +55737,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Ansigtsgenkendelse"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nøjagtighed"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -55764,7 +55766,7 @@ msgstr ""
 "Justér hastighed kontra præcision. Des højere værdi, des mere præcis vil "
 "resultaterne være, men det vil tage længere tid."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -55772,7 +55774,7 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
@@ -55780,14 +55782,14 @@ msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Detektér ansigter"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Åbn fil"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55797,14 +55799,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:370
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Arbejd på alle processorkerner"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:372
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -55821,13 +55823,13 @@ msgstr ""
 "anvende alle processorkerner på dit system, eller arbejde i baggrunden på en "
 "enkelt kerne."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "Ansigtsgenkendelse"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -69237,13 +69239,13 @@ msgstr ""
 msgid "Use Auto Tags Assignment feature"
 msgstr "Automatisk justering"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:226
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "Download af %1 gennemført..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:233
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -69251,7 +69253,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Download ny"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:235
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -69263,36 +69265,36 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:242
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, fuzzy, kde-format
 #| msgid "Add again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tilføj igen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:376
+#: core/utilities/setup/downloader/filesdownloader.cpp:377
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:400
+#: core/utilities/setup/downloader/filesdownloader.cpp:401
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, fuzzy, kde-format
 #| msgid "Token error"
 msgid "File open error."
 msgstr "Symbolfejl"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:422
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "Kunne ikke gemme mærker til fil."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:495
+#: core/utilities/setup/downloader/filesdownloader.cpp:496
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -69307,13 +69309,13 @@ msgid ""
 "to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:508
+#: core/utilities/setup/downloader/filesdownloader.cpp:509
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:515
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""

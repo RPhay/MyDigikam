@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-22 01:47+0000\n"
+"POT-Creation-Date: 2024-10-23 01:48+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -4330,8 +4330,8 @@ msgstr "視訊解碼器"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
+#: core/libs/dialogs/libsinfodlg.cpp:620
 #, kde-format
 msgid "no entry"
 msgstr "無項目"
@@ -6954,12 +6954,12 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "否"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid "Lossless PGF files"
 msgstr "無損壓縮 PGF 檔案"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:66
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
@@ -6968,12 +6968,12 @@ msgstr ""
 "<p>PGF 影像切換為無損壓縮。</p><p>如果啟用這個選項，會使用無損的方式來壓縮 "
 "PGF 影像。</p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid "PGF quality:"
 msgstr "PGF 品質:"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
@@ -29358,6 +29358,7 @@ msgstr "不要再詢問"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -29462,7 +29463,7 @@ msgstr "<i>影格率：</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>影像編解碼器：</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29489,19 +29490,19 @@ msgstr "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "影像歷史紀錄"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:183
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -29509,50 +29510,50 @@ msgctxt "@title"
 msgid "Features"
 msgstr "專題"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "相簿櫃"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:329
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:458
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:492
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 設定"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:698
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -31415,7 +31416,7 @@ msgstr "油畫效果"
 msgid "Rain Drops Effect"
 msgstr "雨滴效果"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration 濾鏡"
@@ -42545,6 +42546,7 @@ msgid "Show Statusbar"
 msgstr "顯示狀態列"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
+#: core/libs/widgets/mainview/dzoombar.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@info: month-name year-string"
 #| msgid "%1 %2"
@@ -48324,13 +48326,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "區分大小寫"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:92
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "輸入文字時在背景啟用拼字檢查"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:103
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48343,13 +48345,13 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:104
+#: core/libs/widgets/text/spellcheckconfig.cpp:113
 #, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "預設語言："
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:117
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -48357,73 +48359,73 @@ msgid ""
 "alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, kde-format
 msgid "Auto-detect"
 msgstr "自動偵測"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:112
+#: core/libs/widgets/text/spellcheckconfig.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr "剖析文字內容來自動偵測語言"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:125
+#: core/libs/widgets/text/spellcheckconfig.cpp:134
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "可用的語言字典"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:138
+#: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "代碼"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "名稱"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:146
+#: core/libs/widgets/text/spellcheckconfig.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "可用的後端"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:165
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "忽略單詞"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:171
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "在這裡設定用速寫尋找的項目數量。"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:174
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "新增(&A)..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:180
+#: core/libs/widgets/text/spellcheckconfig.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "移除(&R)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:190
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -51281,7 +51283,7 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
 #, kde-format
 msgid "Applying face changes"
 msgstr "套用臉孔改變"
@@ -51356,7 +51358,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "拒絕這個建議"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51367,59 +51369,59 @@ msgstr ""
 "digiKam 可以搜尋您的相片中的臉孔。<nl/> 當您已經在相當數量中的相片標記出您的"
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳過已掃描的影像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "再次掃描並合併結果"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未確認的結果並重新掃描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "清除先前所有結果並重新掃描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "說明"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "偵測臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "找出您的相片中的所有臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "偵測與辨識臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -51427,13 +51429,13 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr "找出您的相片中的所有臉孔<nl/>並試著辨識標記出來的是哪個人"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "辨識臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51441,27 +51443,27 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr "重新嘗試辨識已標記但未確認臉孔的人物。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "工作流"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "搜尋於："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:224
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51474,7 +51476,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -51482,19 +51484,19 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "型號："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "@title: On Screen Display"
 #| msgid "OSD"
@@ -51502,7 +51504,7 @@ msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "OSD 螢幕顯示"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51512,14 +51514,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "檔案大小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51527,13 +51529,13 @@ msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -51541,14 +51543,14 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "中"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "目標"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51556,7 +51558,7 @@ msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51575,20 +51577,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "臉孔偵測"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51602,7 +51604,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -51610,14 +51612,14 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "型號："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Open File"
@@ -51625,7 +51627,7 @@ msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "開啟檔案"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51635,14 +51637,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:370
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "在所有的處理器核心上工作"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:372
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -51658,13 +51660,13 @@ msgstr ""
 "臉孔偵測是個很花時間的工作。您可以選擇是否要使用您電腦中所有的處理器核心來進"
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "臉孔辨識"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -63946,18 +63948,18 @@ msgstr "使用美感偵測功能"
 msgid "Use Auto Tags Assignment feature"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:226
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "已成功下載所有檔案。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:233
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載錯誤"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:235
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63969,34 +63971,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:242
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:376
+#: core/utilities/setup/downloader/filesdownloader.cpp:377
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:400
+#: core/utilities/setup/downloader/filesdownloader.cpp:401
 #, kde-format
 msgid "File write error."
 msgstr "檔案寫入錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File open error."
 msgstr "檔案開啟錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:422
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, kde-format
 msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:495
+#: core/utilities/setup/downloader/filesdownloader.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -64028,13 +64030,13 @@ msgstr ""
 "法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
 "動 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:508
+#: core/utilities/setup/downloader/filesdownloader.cpp:509
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:515
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"

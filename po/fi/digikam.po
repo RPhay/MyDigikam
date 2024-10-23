@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-22 01:47+0000\n"
+"POT-Creation-Date: 2024-10-23 01:48+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -4543,8 +4543,8 @@ msgstr "Videokoodauksen purkajat"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
+#: core/libs/dialogs/libsinfodlg.cpp:620
 #, fuzzy, kde-format
 #| msgid "Country"
 msgid "no entry"
@@ -7608,24 +7608,24 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "ei"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid "Lossless PGF files"
 msgstr "Häviöttömät PGF-tiedostot"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:66
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr "<p>Määritä käytetäänkö häviötöntä PGF-kuvapakkausta.</p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid "PGF quality:"
 msgstr "PGF-pakkausaste:"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
@@ -30216,6 +30216,7 @@ msgstr "Älä kysy uudelleen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30320,7 +30321,7 @@ msgstr "<i>Kuvanopeus:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokoodekki:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30344,67 +30345,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Kohdeluettelo"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:183
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Ominaisuudet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Kirjastot"
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:329
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:430
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:458
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:492
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV-asetukset"
 
-#: core/libs/dialogs/libsinfodlg.cpp:684
+#: core/libs/dialogs/libsinfodlg.cpp:688
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/libs/dialogs/libsinfodlg.cpp:689
+#: core/libs/dialogs/libsinfodlg.cpp:693
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:694
+#: core/libs/dialogs/libsinfodlg.cpp:698
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -32219,7 +32220,7 @@ msgstr "Öljyvärimaalaustehoste"
 msgid "Rain Drops Effect"
 msgstr "Sadepisaratehoste"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:166
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greystoration-suodatin"
@@ -43374,6 +43375,7 @@ msgid "Show Statusbar"
 msgstr "Näytä tilarivi"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:120
+#: core/libs/widgets/mainview/dzoombar.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@info: month-name year-string"
 #| msgid "%1 %2"
@@ -48904,13 +48906,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Erota pien- ja suuraakkoset"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:92
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:103
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48923,13 +48925,13 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:104
+#: core/libs/widgets/text/spellcheckconfig.cpp:113
 #, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Oletuskieli:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:117
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -48937,18 +48939,18 @@ msgid ""
 "alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, kde-format
 msgid "Auto-detect"
 msgstr "Tunnista automaattisesti"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:112
+#: core/libs/widgets/text/spellcheckconfig.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:125
+#: core/libs/widgets/text/spellcheckconfig.cpp:134
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Wiktionary"
@@ -48956,38 +48958,38 @@ msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Wiktionary"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:138
+#: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Koodekki"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:146
+#: core/libs/widgets/text/spellcheckconfig.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Käytettävissä olevat taustajärjestelmät"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:165
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Sivuutetut sanat"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:171
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Määritä kuinka monta kohdetta haku palauttaa."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:174
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "You can add or remove bookmarked places here."
@@ -48995,19 +48997,19 @@ msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr "Tässä kirjanmerkittyjä sijaintia voi lisätä ja poistaa."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "L&isää…"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:180
+#: core/libs/widgets/text/spellcheckconfig.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Poista"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:190
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -51887,7 +51889,7 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
 #, kde-format
 msgid "Applying face changes"
 msgstr "Päivitetään kasvomuutokset"
@@ -51962,7 +51964,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Hylkää tämä ehdotus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51974,59 +51976,59 @@ msgstr ""
 "Tunnistettuaan tuttavasi joukosta kuvia se osaa\n"
 "tunnistaa kasvot myös muista kuvistasi."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Ohita jo etsityt kuvat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Etsi uudestaan ja yhdistä tulokset"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Tyhjennä varmistamattomat tulokset ja etsi uudelleen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Tyhjennä aiemmat tulokset ja etsi uudelleen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ohje"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Tunnista kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Etsi kaikki kasvot valokuvista"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Etsi ja tunnista kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52036,13 +52038,13 @@ msgstr ""
 "Etsi kuvista kaikki kasvot ja yritä\n"
 "tunnistaa, kuka kuvassa on"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Tunnista kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52052,26 +52054,26 @@ msgstr ""
 "Yritä uudestaan tunnistaa kasvot merkityistä\n"
 "mutta vielä vahvistamattomista kuvista."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Työnkulku"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Etsi"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:224
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Tarkkuus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52080,7 +52082,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52088,19 +52090,19 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Malli:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "@title: On Screen Display"
 #| msgid "OSD"
@@ -52108,7 +52110,7 @@ msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "Ruutunäyttö"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52118,27 +52120,27 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:268
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Tiedoston koko"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Lisätunnisteet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -52146,21 +52148,21 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Keskitaso"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Käsitelty"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Lisätunnisteet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52179,20 +52181,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:307
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Kasvontunnistus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:316
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Tarkkuus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52202,7 +52204,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52210,14 +52212,14 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Malli:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Open File"
@@ -52225,7 +52227,7 @@ msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Avaa tiedosto"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52235,14 +52237,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:370
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Käytä kaikkia suoritinytimiä"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:372
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52254,13 +52256,13 @@ msgstr ""
 "Voit valita, haluatko hyödyntää kaikki järjestelmän\n"
 "suoritinytimiä vai vain yhtä ydintä taustalla."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "Kasvontunnistus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -64904,18 +64906,18 @@ msgstr ""
 msgid "Use Auto Tags Assignment feature"
 msgstr "Automaattinen asetus"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:226
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:233
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Latausvirhe"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:235
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64934,33 +64936,33 @@ msgstr ""
 "\n"
 "Voit yrittää uudelleen tai jatkaa latausta seuraavalla käynnistyskerralla."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:242
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Yritä uudelleen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:376
+#: core/utilities/setup/downloader/filesdownloader.cpp:377
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:400
+#: core/utilities/setup/downloader/filesdownloader.cpp:401
 #, kde-format
 msgid "File write error."
 msgstr "Tiedoston kirjoitusvirhe."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File open error."
 msgstr "Tiedoston avausvirhe."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:422
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Palvelimella oleva tiedosto on liian iso."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:495
+#: core/utilities/setup/downloader/filesdownloader.cpp:496
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64975,13 +64977,13 @@ msgid ""
 "to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:508
+#: core/utilities/setup/downloader/filesdownloader.cpp:509
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:515
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
