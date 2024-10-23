@@ -165,7 +165,16 @@ public:
         return (m_status == LocationNull);
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    size_t hash()                             const
+
+#else
+
     uint hash()                               const
+
+#endif
+
     {
         return ::qHash(m_id);
     }
@@ -184,7 +193,16 @@ protected:
     CaseSensitivity m_caseSensitivity   = UnknownCaseSensitivity;
 };
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+inline size_t qHash(const CollectionLocation& loc)
+
+#else
+
 inline uint qHash(const CollectionLocation& loc)
+
+#endif
+
 {
     return loc.hash();
 }
