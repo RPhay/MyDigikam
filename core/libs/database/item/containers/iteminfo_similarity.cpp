@@ -58,7 +58,16 @@ QList<ItemInfo> ItemInfo::fromUniqueHash(const QString& uniqueHash, qlonglong fi
     return infos;
 }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+size_t ItemInfo::hash() const
+
+#else
+
 uint ItemInfo::hash() const
+
+#endif
+
 {
     if (!m_data)
     {
