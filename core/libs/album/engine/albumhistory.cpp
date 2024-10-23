@@ -49,7 +49,16 @@ inline uint qHash(const QList<Digikam::Album*>& key)
 
     Digikam::Album* const temp = key.first();
     quint64 myint              = (unsigned long long)temp;
-    uint value                 = (uint)::qHash(myint);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    size_t value                 = ::qHash(myint);
+
+#else
+
+    uint value                   = ::qHash(myint);
+
+#endif
 
     for (int it = 1 ; it < key.size() ; ++it)
     {
