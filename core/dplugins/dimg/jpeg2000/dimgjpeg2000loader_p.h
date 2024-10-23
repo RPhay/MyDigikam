@@ -52,6 +52,7 @@ extern "C"
 #   pragma clang diagnostic ignored "-Werror"
 #   pragma clang diagnostic ignored "-Wundef"
 #   pragma clang diagnostic ignored "-Wsign-compare"
+#   pragma clang diagnostic ignored "-W#warnings"
 #endif
 
 #include <jasper/jasper.h>

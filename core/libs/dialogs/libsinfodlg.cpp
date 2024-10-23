@@ -25,7 +25,6 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QTextStream>
-
 #include <QtWebEngineWidgetsVersion>
 
 // KDE includes
@@ -61,6 +60,7 @@
 #ifdef HAVE_IMAGE_MAGICK
 
 // Pragma directives to reduce warnings from ImageMagick header files.
+
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
 #       pragma GCC diagnostic ignored "-Wignored-qualifiers"
@@ -97,6 +97,8 @@ extern "C"
 
 #ifdef HAVE_JASPER
 
+// Pragma directives to reduce warnings from libjasper header files.
+
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
 #       pragma GCC diagnostic ignored "-Wcpp"
@@ -111,11 +113,13 @@ extern "C"
 #       pragma clang diagnostic ignored "-Werror"
 #       pragma clang diagnostic ignored "-Wundef"
 #       pragma clang diagnostic ignored "-Wsign-compare"
+#       pragma clang diagnostic ignored "-W#warnings"
 #   endif
 
 #   include <jasper/jas_version.h>
 
 // Restore warnings
+
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic pop
 #   endif
@@ -133,9 +137,9 @@ extern "C"
 #   include <libheif/heif_version.h>
 #endif
 
-// libx265 includes
+// Pragma directives to reduce warnings from libx265 header files.
 
-#if defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wundef"
 #   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
@@ -147,11 +151,12 @@ extern "C"
 #   include <x265.h>
 #endif
 
-#if defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
 
 // Avoid Warnings under Win32
+
 #undef HAVE_STDLIB_H
 #undef HAVE_STDDEF_H
 #include <jpeglib.h>
@@ -162,7 +167,8 @@ extern "C"
 
 #include "digikam_opencv.h"
 
-// defined in OpenCV core/private.hpp
+// NOTE: defined in OpenCV core/private.hpp.
+
 namespace cv
 {
 
@@ -436,10 +442,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Image cache size") << ItemPropertiesTab::humanReadableBytesCount(cacheSize));
 
-    // NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
-    //       One section title start with '+'.
-    //       All component revisions are listed below line by line with the name and the revision separated by ':'.
-    //       More than one section can be listed in manifest.
+    /**
+     * NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
+     *       One section title start with '+'.
+     *       All component revisions are listed below line by line with the name and the revision separated by ':'.
+     *       More than one section can be listed in manifest.
+     */
 
     const QString gitRevs = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                    QLatin1String("MANIFEST.txt"));
@@ -492,7 +500,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     QTreeWidgetItem* const opencvHead = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: opencv info", "OpenCV Configuration"));
     listView()->addTopLevelItem(opencvHead);
 
-    // --- OpenCV::OpenCL features
+    // --- OpenCV::OpenCL features.
 
     try
     {
@@ -628,7 +636,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
     }
 
-    // --- OpenCV::Hardware features
+    // --- OpenCV::Hardware features.
 
     try
     {
@@ -659,7 +667,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Hardware features availability") << SUPPORTED_NO);
     }
 
-    // --- OpenCV::Threads features
+    // --- OpenCV::Threads features.
 
     try
     {
@@ -702,14 +710,14 @@ QString LibsInfoDlg::checkTriState(int value) const
 
 QString LibsInfoDlg::openCVBytesToStringRepr(size_t value) const
 {
-    size_t b = value % 1024;
-    value /= 1024;
+    size_t b  = value % 1024;
+    value    /= 1024;
 
     size_t kb = value % 1024;
-    value /= 1024;
+    value    /= 1024;
 
     size_t mb = value % 1024;
-    value /= 1024;
+    value    /= 1024;
 
     size_t gb = value;
 
