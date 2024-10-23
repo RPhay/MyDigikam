@@ -87,7 +87,16 @@ public:
 
 // --------------------------------------------------------------------
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+inline size_t qHash(const NewlyAppearedFile& file)
+
+#else
+
 inline uint qHash(const NewlyAppearedFile& file)
+
+#endif
+
 {
     return (::qHash(file.albumId) ^ ::qHash(file.fileName));
 }
