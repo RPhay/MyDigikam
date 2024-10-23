@@ -47,6 +47,11 @@ using namespace std;
 
 #include "astrolib.h"
 
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 namespace Marble
 {
 
@@ -3986,3 +3991,7 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
 }
 
 } // namespace Marble
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
