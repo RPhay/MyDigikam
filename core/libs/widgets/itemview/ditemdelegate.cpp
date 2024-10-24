@@ -201,8 +201,7 @@ QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QS
 
     // We do not need to include the font into cache key, the cache is cleared on font change.
 
-    QString cacheKey                      = QString::number(width) +
-                                            QString::number(static_cast<qulonglong>(qHash(text)));  // clazy:exclude=qt6-qhash-signature
+    QString cacheKey                      = QString::number(width) + QString::number(static_cast<qulonglong>(qHash(text)));  // clazy:exclude=qt6-qhash-signature
     QString* const cachedString           = cache->object(cacheKey);
 
     if (cachedString)
