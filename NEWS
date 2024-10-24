@@ -165,7 +165,7 @@ BUGFIXES:
 140 ==> 494284 - Facedetecting - recommented name often not the detected name.
 141 ==> 495185 - Decimal separators need to be locale-aware.
 142 ==> 485992 - Face recognition, small part or half face.
-143 ==> 
+143 ==> 495269 - MXF files not displayed on digiKam.
 144 ==> 
 145 ==> 
 146 ==> 
