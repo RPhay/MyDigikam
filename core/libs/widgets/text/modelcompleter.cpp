@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                          displayRole        = Qt::DisplayRole;
     int                          uniqueIdRole       = Qt::DisplayRole;
 
@@ -47,7 +49,7 @@ public:
      * completion object. This is needed because if data changes in one index,
      * the old text value is not known anymore, so that it cannot be removed
      * from the completion object.
-     * TODO: if we want to use models that return unique strings but not integer, add support
+     * TODO: if we want to use models that return unique strings but not integer, add support.
      */
     QHash<int, QString>          idToTextHash;
 };
@@ -88,7 +90,7 @@ ModelCompleter::~ModelCompleter()
 
 void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdRole, int displayRole)
 {
-    // first release old model
+    // First release old model.
 
     if (d->model)
     {
@@ -101,7 +103,7 @@ void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdR
     d->displayRole  = displayRole;
     d->uniqueIdRole = uniqueIdRole;
 
-    // connect to the new model
+    // Connect to the new model.
 
     if (d->model)
     {
@@ -117,7 +119,7 @@ void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdR
         connect(d->model, SIGNAL(modelReset()),
                 this, SLOT(slotModelReset()));
 
-        // do an initial sync wit the new model
+        // Do an initial sync wit the new model.
 
         sync(d->model);
     }
@@ -156,7 +158,7 @@ void ModelCompleter::slotRowsInserted(const QModelIndex& parent, int start, int 
 {
     for (int i = start ; i <= end ; ++i)
     {
-        // this cannot work if this is called from rowsAboutToBeInserted
+        // This cannot work if this is called from rowsAboutToBeInserted
         // because then the model doesn't know the index yet. So never do this
         // ;)
 
@@ -196,8 +198,8 @@ void ModelCompleter::slotRowsAboutToBeRemoved(const QModelIndex& parent, int sta
             QString itemName = d->idToTextHash.value(id);
             d->idToTextHash.remove(id);
 
-            // only delete an item in the completion object if there is no other
-            // item with the same display name
+            // Only delete an item in the completion object if there is no other
+            // item with the same display name.
 
             if (d->idToTextHash.keys(itemName).isEmpty())
             {
