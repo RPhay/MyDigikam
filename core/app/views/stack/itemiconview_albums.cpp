@@ -169,6 +169,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
 
     if      (album->isRoot())
     {
+        slotTogglePreviewMode(ItemInfo());
         d->stackedView->setViewMode(StackedView::WelcomePageMode);
     }
     else if (album->isTrashAlbum())
