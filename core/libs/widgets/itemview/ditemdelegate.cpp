@@ -167,7 +167,9 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
 
         if ((r2.width() > pixmapRect.width()) || (r2.height() > pixmapRect.height()))
         {
-//            textRect     = r1;
+/*
+            textRect     = r1;
+*/
             text         = text1;
             int rectSize = qMax(r1.width(), r1.height());
             textRect     = QRect(0, 0, rectSize, rectSize);
@@ -197,9 +199,10 @@ QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QS
 {
     QCache<QString, QString>* const cache = &const_cast<DItemDelegate*>(this)->d->squeezedTextCache;
 
-    // We do not need to include the font into cache key, the cache is cleared on font change
+    // We do not need to include the font into cache key, the cache is cleared on font change.
 
-    QString cacheKey                      = QString::number(width) + QString::number(static_cast<qulonglong>(qHash(text)));
+    QString cacheKey                      = QString::number(width) +
+                                            QString::number(static_cast<qulonglong>(qHash(text)));  // clazy:exclude=qt6-qhash-signature
     QString* const cachedString           = cache->object(cacheKey);
 
     if (cachedString)

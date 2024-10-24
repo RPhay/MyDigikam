@@ -63,7 +63,8 @@ inline uint qHash(const QList<Digikam::Album*>& key)
     for (int it = 1 ; it < key.size() ; ++it)
     {
         Digikam::Album* const al = key.at(it);
-        quint64 myint2           = (unsigned long long)al;
+        quint64 myint2           = (unsigned long long)al;   // clazy:exclude=qt6-qhash-signature
+
         value                   ^= ::qHash(myint2);
     }
 
