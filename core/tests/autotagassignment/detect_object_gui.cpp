@@ -128,7 +128,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
     connect(m_applyButton, SIGNAL(clicked()),
             this, SLOT(slotApplySettings()));
 
-    for (auto opt : m_objectOptions)
+    for (auto opt : std::as_const(m_objectOptions))
     {
         connect(opt, SIGNAL(toggled(bool)),
                 this, SLOT(slotObjectSelected()));
@@ -179,7 +179,7 @@ void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect> >&
 
     // Decide which object we want to show
 
-    for (auto label : m_objectSelected)
+    for (auto label : std::as_const(m_objectSelected))
     {
         QString cleanLabel = label.remove(QLatin1Char('&'));
 
@@ -265,7 +265,7 @@ void MainWindow::slotObjectSelected()
 {
     m_objectSelected.clear();
 
-    for (const auto opt : m_objectOptions)
+    for (const auto opt : std::as_const(m_objectOptions))
     {
         if (opt->isChecked())
         {
