@@ -214,7 +214,6 @@ StackedView::StackedView(QWidget* const parent)
 
 StackedView::~StackedView()
 {
-    qDebug() << "Angeeeeeeeeeeeeee";
     delete d;
 }
 
