@@ -95,11 +95,9 @@ void ItemIconView::slotImagePreview()
 void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
 {
     if (
-        (
-         (viewMode() == StackedView::IconViewMode)   ||
-         (viewMode() == StackedView::TableViewMode)  ||
-         (viewMode() == StackedView::MapWidgetMode)
-        )
+        (viewMode() == StackedView::IconViewMode)   ||
+        (viewMode() == StackedView::TableViewMode)  ||
+        (viewMode() == StackedView::MapWidgetMode)
        )
     {
         d->lastViewMode = viewMode();
