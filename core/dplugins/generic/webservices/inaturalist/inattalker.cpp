@@ -192,7 +192,9 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 
     if (taxon.contains(ANCESTORS))
     {
-        for (const auto& ancestorTaxon : taxon[ANCESTORS].toArray())
+        const auto array = taxon[ANCESTORS].toArray();
+
+        for (const auto& ancestorTaxon : array)
         {
             ancestors << parseTaxon(ancestorTaxon.toObject());
         }
@@ -360,14 +362,15 @@ bool INatTalker::restoreApiToken(const QString& username,
     if (!cookiesStr.isEmpty())
     {
         QDateTime now(QDateTime::currentDateTime());
+        const auto strs = cookiesStr.split(QLatin1Char(COOKIE_SEPARATOR));
 
-        for (const auto& str : cookiesStr.split(QLatin1Char(COOKIE_SEPARATOR)))
+        for (const auto& str : strs)
         {
             QList<QNetworkCookie> lst(QNetworkCookie::parseCookies(str.toUtf8()));
 
             Q_ASSERT(lst.count() == 1);
 
-            for (const auto& cookie : lst)
+            for (const auto& cookie : std::as_const(lst))
             {
                 if (INatBrowserDlg::filterCookie(cookie, true, now))
                 {
@@ -694,7 +697,7 @@ public:
             QJsonArray results = json[RESULTS].toArray();
             QList<Taxon> taxa;
 
-            for (const auto& result : results)
+            for (const auto& result : std::as_const(results))
             {
                 taxa << parseTaxon(result.toObject());
             }
@@ -776,10 +779,13 @@ public:
             static const QString DISPLAY_NAME = QLatin1String("display_name");
             QJsonObject results               = json[RESULTS].toObject();
             QList<Place> places;
+            const auto keys                   = results.keys();
 
-            for (const auto& key : results.keys())
+            for (const auto& key : keys)
             {
-                for (const auto& placeValue : results.value(key).toArray())
+                const auto array = results.value(key).toArray();
+
+                for (const auto& placeValue : array)
                 {
                     QJsonObject place = placeValue.toObject();
                     places.push_front(Place(place[DISPLAY_NAME].toString(),
@@ -954,7 +960,7 @@ public:
                     m_longitude
                 );
 
-                QJsonArray results = json[RESULTS].toArray();
+                const auto results = json[RESULTS].toArray();
 
                 for (const auto& resultValue : results)
                 {
@@ -1164,7 +1170,9 @@ public:
 
         if (json.contains(RESULTS))
         {
-            for (const auto& result : json[RESULTS].toArray())
+            const auto array = json[RESULTS].toArray();
+
+            for (const auto& result : array)
             {
                 parseScore(result.toObject(), scores);
             }
