@@ -150,7 +150,6 @@ StackedView::StackedView(QWidget* const parent)
 #endif // HAVE_MEDIAPLAYER
 
     setViewMode(IconViewMode);
-    setAttribute(Qt::WA_DeleteOnClose);
 
     readSettings();
 
@@ -215,6 +214,7 @@ StackedView::StackedView(QWidget* const parent)
 
 StackedView::~StackedView()
 {
+    qDebug() << "Angeeeeeeeeeeeeee";
     delete d;
 }
 
