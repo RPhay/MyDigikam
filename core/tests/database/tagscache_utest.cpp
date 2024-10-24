@@ -66,8 +66,8 @@ void TagsCacheTest::init()
 
 void TagsCacheTest::cleanup()
 {
-    auto coredb = Digikam::CoreDbAccess().db();
-    auto tags   = coredb->getTagShortInfos();
+    auto coredb     = Digikam::CoreDbAccess().db();
+    const auto tags = coredb->getTagShortInfos();
 
     for (const auto& tag : tags)
     {
@@ -130,7 +130,7 @@ void TagsCacheTest::testRepeatedNames()
 {
     tagsCache->createTag(QLatin1String("Repeat Me/Repeat Me/Repeat Me/Repeat Me"));
 
-    auto repeatMeIds = tagsCache->tagsForName(QLatin1String("Repeat Me"));
+    const auto repeatMeIds = tagsCache->tagsForName(QLatin1String("Repeat Me"));
     QCOMPARE(repeatMeIds.size(), 4);
 
     // all ids should be unique
