@@ -368,7 +368,7 @@ void TimeAdjustDialog::slotUpdateTimer()
     d->listView->setWaitStatus();
 
     d->progressBar->show();
-    d->progressBar->setMaximum(d->itemsUsedMap.keys().size());
+    d->progressBar->setMaximum(d->itemsUsedMap.size());
     d->progressBar->progressScheduled(i18nc("@info", "Adjust Time and Date"), true, true);
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("appointment-new")).pixmap(22, 22));
 
