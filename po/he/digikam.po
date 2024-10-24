@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 01:48+0000\n"
+"POT-Creation-Date: 2024-10-24 01:46+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1135,7 +1135,7 @@ msgstr "מוקד/מיפתח:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
-#: core/libs/dialogs/imagedialog_preview.cpp:184
+#: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -3159,7 +3159,7 @@ msgid "Map Search"
 msgstr "חיפושי מפות"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
 #, kde-format
 msgid "Last Search"
 msgstr "חיפוש אחרון"
@@ -3417,7 +3417,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid ""
-"Add spell-checking support in caption text widget using KF5::Sonnet "
+"Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 
@@ -3549,17 +3549,17 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
-"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
-"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
-"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
-"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
+"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
@@ -4423,8 +4423,8 @@ msgstr "קבצי שמע"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
-#: core/libs/dialogs/libsinfodlg.cpp:620
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, fuzzy, kde-format
 msgid "no entry"
 msgstr "ספירה:"
@@ -26792,7 +26792,7 @@ msgid ""
 " Details: %1"
 msgstr "שגיאה בעת פתיחה של מסד הנתונים."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:200
+#: core/libs/database/coredb/coredbschemaupdater.cpp:201
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -26801,7 +26801,7 @@ msgid ""
 "Check your privileges on the database and restart digiKam."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:234
+#: core/libs/database/coredb/coredbschemaupdater.cpp:235
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -26809,7 +26809,7 @@ msgid ""
 "empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:264
+#: core/libs/database/coredb/coredbschemaupdater.cpp:265
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -26818,7 +26818,7 @@ msgid ""
 "recent.) Please use the more recent version of digiKam that you used before. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:327
+#: core/libs/database/coredb/coredbschemaupdater.cpp:328
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, fuzzy, kde-format
@@ -26827,7 +26827,7 @@ msgid ""
 " "
 msgstr "שגיאה בעת יצירת טבלאות במסד הנתונים.\n"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:348
+#: core/libs/database/coredb/coredbschemaupdater.cpp:349
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -26837,7 +26837,7 @@ msgid ""
 "please have a look at what digiKam prints on the console. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:409
+#: core/libs/database/coredb/coredbschemaupdater.cpp:412
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -26848,7 +26848,7 @@ msgid ""
 "support). As well, please have a look at what digiKam prints on the console. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:447
+#: core/libs/database/coredb/coredbschemaupdater.cpp:450
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26857,7 +26857,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:456
+#: core/libs/database/coredb/coredbschemaupdater.cpp:459
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26865,7 +26865,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:677
+#: core/libs/database/coredb/coredbschemaupdater.cpp:686
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -26873,12 +26873,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:698
+#: core/libs/database/coredb/coredbschemaupdater.cpp:707
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:846
+#: core/libs/database/coredb/coredbschemaupdater.cpp:855
 #, fuzzy, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26888,12 +26888,12 @@ msgstr ""
 "נכשלה פעולת העתקה של קובץ מסד הנתונים הישן (\"%1\") למיקומו החדש (\"%2\"). "
 "אנא התחילו עם מסד נתונים חדש."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:868
+#: core/libs/database/coredb/coredbschemaupdater.cpp:877
 #, kde-format
 msgid "Copied database file"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:873
+#: core/libs/database/coredb/coredbschemaupdater.cpp:882
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -26901,22 +26901,22 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:903
 #, kde-format
 msgid "Opened new database file"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:993
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
 #, kde-format
 msgid "Prepared table creation"
 msgstr "הכנה ליצירת טבלה"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid "Created tables"
 msgstr "טבלאות נוצרו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -26924,7 +26924,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -26936,52 +26936,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
 #, kde-format
 msgid "Configured one album root"
 msgstr "הגדרת אוסף תמונות אחד כשורש לאוספים האחרים"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
 #, kde-format
 msgid "Imported albums"
 msgstr "אוספי תמונות מיובאים"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
 #, kde-format
 msgid "Imported images information"
 msgstr "נתוני תמונות מיובאות"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
 #, fuzzy, kde-format
 msgid "Last Search (0.9)"
 msgstr "חיפוש אחרון"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "אתחול מסנן הקבצים המיובאים"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "סריקה ראשונית מלאה הושלמה"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
 #, kde-format
 msgid "Imported creation dates"
 msgstr "תאריכי יצירה יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
 #, kde-format
 msgid "Imported comments"
 msgstr "הערות יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
 #, kde-format
 msgid "Imported ratings"
 msgstr "הדרוגים יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "טבלאות V3 הוסרו"
@@ -27054,43 +27054,43 @@ msgid ""
 " %1"
 msgstr ""
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:450
+#: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "סידור תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:479
+#: core/libs/database/history/itemhistorygraphmodel.cpp:483
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "עורך תמונה"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:562
+#: core/libs/database/history/itemhistorygraphmodel.cpp:566
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "שמירת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:572
+#: core/libs/database/history/itemhistorygraphmodel.cpp:576
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "בחירת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:583
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "פתיחת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:635
+#: core/libs/database/history/itemhistorygraphmodel.cpp:639
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "צעד אינטגרלי:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:849
+#: core/libs/database/history/itemhistorygraphmodel.cpp:853
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27098,7 +27098,7 @@ msgid ""
 "(Original Image)"
 msgstr "תמונה מקורית:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:858
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28253,83 +28253,83 @@ msgstr "בחירת פריטים חדשים"
 msgid "Select Items"
 msgstr "בחירת פריטים חדשים"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:259
+#: core/libs/dialogs/imagedialog_preview.cpp:261
 #, fuzzy, kde-format
 #| msgid "<i>Created:</i>"
 msgid "<i>Preview:</i>"
 msgstr "<i>נוצר:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:265
+#: core/libs/dialogs/imagedialog_preview.cpp:267
 #, kde-format
 msgid "<i>Make:</i>"
 msgstr "<i>יצרן:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:266
+#: core/libs/dialogs/imagedialog_preview.cpp:268
 #, kde-format
 msgid "<i>Model:</i>"
 msgstr "<i>דגם:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:267
+#: core/libs/dialogs/imagedialog_preview.cpp:269
 #, kde-format
 msgid "<i>Created:</i>"
 msgstr "<i>נוצר:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:268
+#: core/libs/dialogs/imagedialog_preview.cpp:270
 #, kde-format
 msgid "<i>Aperture:</i>"
 msgstr "<i>מפתח הצמצם:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:269
+#: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
 msgid "<i>Focal:</i>"
 msgstr "<i>מוקד:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:270
+#: core/libs/dialogs/imagedialog_preview.cpp:272
 #, kde-format
 msgid "<i>Exposure:</i>"
 msgstr "<i>:חשיפה</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:271
+#: core/libs/dialogs/imagedialog_preview.cpp:273
 #, kde-format
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>רגישות:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, fuzzy, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "יחס:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, fuzzy, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>נוצר:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, fuzzy, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>לא השתנה</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, fuzzy, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<i>דגם:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, fuzzy, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<li>דרוג</li>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:283
+#: core/libs/dialogs/imagedialog_preview.cpp:285
 #, fuzzy, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>נוצר:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:284
+#: core/libs/dialogs/imagedialog_preview.cpp:286
 #, fuzzy, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>דגם:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -28353,34 +28353,34 @@ msgstr ""
 msgid "Items List"
 msgstr "עורך תמונה"
 
-#: core/libs/dialogs/libsinfodlg.cpp:182
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "כן"
 
-#: core/libs/dialogs/libsinfodlg.cpp:183
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "לא"
 
-#: core/libs/dialogs/libsinfodlg.cpp:197
+#: core/libs/dialogs/libsinfodlg.cpp:203
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "טבע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:226
+#: core/libs/dialogs/libsinfodlg.cpp:232
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "ספריית אלבום"
 
-#: core/libs/dialogs/libsinfodlg.cpp:329
+#: core/libs/dialogs/libsinfodlg.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28388,7 +28388,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:430
+#: core/libs/dialogs/libsinfodlg.cpp:436
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28396,34 +28396,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:458
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:492
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "הגדרות מצלמה"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:696
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "כן"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:701
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "לא"
 
-#: core/libs/dialogs/libsinfodlg.cpp:698
+#: core/libs/dialogs/libsinfodlg.cpp:706
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -40482,7 +40482,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr "קובצי פרופיל צבע ICC (*.icc; *.icm)"
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:160
+#: core/libs/widgets/itemview/ditemdelegate.cpp:163
 #, fuzzy, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"

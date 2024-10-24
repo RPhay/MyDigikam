@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 01:48+0000\n"
+"POT-Creation-Date: 2024-10-24 01:46+0000\n"
 "PO-Revision-Date: 2024-10-22 22:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1154,7 +1154,7 @@ msgstr "Açıklık/Odak:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
-#: core/libs/dialogs/imagedialog_preview.cpp:184
+#: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -3147,7 +3147,7 @@ msgid "Map Search"
 msgstr "Aramayı Eşlemle"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
 #, kde-format
 msgid "Last Search"
 msgstr "Son Arama"
@@ -3426,9 +3426,12 @@ msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr "Veritabanı: SQLite WAL (Önden Günlükleme) kipi için destek eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add spell-checking support in caption text widget using KF5::Sonnet "
+#| "component."
 msgid ""
-"Add spell-checking support in caption text widget using KF5::Sonnet "
+"Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 "KF5::Sonnet bileşeniyle alt yazı metinlerinde yazım denetimi desteği eklendi."
@@ -3600,18 +3603,27 @@ msgstr ""
 "yönetimi sonuçlarıyla çalışma zamanında daha az bellek gerektirir."
 
 #: core/app/views/stack/welcomepageview.cpp:141
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr "İçsel RAW işletkesi, güncel 2024-06-16 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+#| "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
+#| "Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+#| "ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
+#| "II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-"
+#| "HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with DNG "
+#| "format recorded."
 msgid ""
-"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
-"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
-"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
-"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
+"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 "Yeni RAW özellikleri: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS "
@@ -4458,8 +4470,8 @@ msgstr "Video Kod Çözücüleri"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
-#: core/libs/dialogs/libsinfodlg.cpp:620
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, kde-format
 msgid "no entry"
 msgstr "girdi yok"
@@ -28166,7 +28178,7 @@ msgstr ""
 "Veritabanını dönüştürürken hata.\n"
 "Ayrıntılar: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:200
+#: core/libs/database/coredb/coredbschemaupdater.cpp:201
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28179,7 +28191,7 @@ msgstr ""
 " %1\n"
 "Veritabanındaki ayrıcalıklarınızı denetleyin ve digiKam’i yeniden başlatın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:234
+#: core/libs/database/coredb/coredbschemaupdater.cpp:235
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28189,7 +28201,7 @@ msgstr ""
 "Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şeması "
 "sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı deneyin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:264
+#: core/libs/database/coredb/coredbschemaupdater.cpp:265
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28203,7 +28215,7 @@ msgstr ""
 "gelir.) Lütfen daha önce kullandığınız digiKam’ın daha yeni sürümünü "
 "kullanın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:327
+#: core/libs/database/coredb/coredbschemaupdater.cpp:328
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28214,7 +28226,7 @@ msgstr ""
 "Veritabanında tablolar oluşturulamadı.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:348
+#: core/libs/database/coredb/coredbschemaupdater.cpp:349
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28229,7 +28241,7 @@ msgstr ""
 "e-posta listesinden yardım alabilirsiniz (bkz. www.digikam.org/support). "
 "Lütfen digiKam’ın konsolda ne yazdırdığına da bir göz atın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:409
+#: core/libs/database/coredb/coredbschemaupdater.cpp:412
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28247,7 +28259,7 @@ msgstr ""
 "digikam.org/support). Lütfen digiKam’ın konsolda ne yazdırdığına da bir göz "
 "atın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:447
+#: core/libs/database/coredb/coredbschemaupdater.cpp:450
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28260,7 +28272,7 @@ msgstr ""
 "olabilir. Şimdi veritabanının gerekli yükseltmesini gerçekleştirmek için "
 "digiKam’ı yeniden başlatın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:456
+#: core/libs/database/coredb/coredbschemaupdater.cpp:459
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28271,7 +28283,7 @@ msgstr ""
 "Lütfen konsolda yazılı olan hata iletilerini okuyun ve bu hatayı bugs.kde."
 "org adresinde bir hata olarak bildirin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:677
+#: core/libs/database/coredb/coredbschemaupdater.cpp:686
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28281,12 +28293,12 @@ msgstr ""
 "Veritabanı güncelleme eylemi bulunamıyor. Lütfen digiKam’ın güncel sürümünün "
 "dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:698
+#: core/libs/database/coredb/coredbschemaupdater.cpp:707
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Şema %1 sürümüne güncellendi."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:846
+#: core/libs/database/coredb/coredbschemaupdater.cpp:855
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28296,12 +28308,12 @@ msgstr ""
 "Eski veritabanı dosyası (“%1”) yeni konumuna (“%2”) kopyalanamadı. Hata "
 "iletisi: “%3”. Lütfen dosyanın kopyalanabildiğinden emin olun veya silin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:868
+#: core/libs/database/coredb/coredbschemaupdater.cpp:877
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopyalanan veritabanı dosyası"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:873
+#: core/libs/database/coredb/coredbschemaupdater.cpp:882
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28312,22 +28324,22 @@ msgstr ""
 "açılamıyor. Lütfen her iki dosyayı da silin ve boş bir veritabanıyla "
 "başlayarak yeniden deneyin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:903
 #, kde-format
 msgid "Opened new database file"
 msgstr "Yeni veritabanı dosyası açıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:993
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tablo oluşumu hazırlandı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid "Created tables"
 msgstr "Tablolar oluşturuldu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28338,7 +28350,7 @@ msgstr ""
 "işleminden vazgeçiliyor. Lütfen boş bir veritabanıyla deneyin veya "
 "yapılandırmanızı onarın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28358,52 +28370,52 @@ msgstr ""
 "veritabanı oluşturmak istemediğimiz için veritabanı güncelleme işlemi artık "
 "iptal edilecek."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
 #, kde-format
 msgid "Configured one album root"
 msgstr "Bir albüm kökü yapılandırıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
 #, kde-format
 msgid "Imported albums"
 msgstr "Albümler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
 #, kde-format
 msgid "Imported images information"
 msgstr "Görsel bilgisi içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Son Arama (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Dosya sonek süzgeci ilklendirildi ve içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "İlk tam tarama gerçekleştirildi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Oluşturulma tarihleri içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
 #, kde-format
 msgid "Imported comments"
 msgstr "Yorumlar içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
 #, kde-format
 msgid "Imported ratings"
 msgstr "Derecelendirmeler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3 tabloları bırakıldı"
@@ -28492,43 +28504,43 @@ msgstr ""
 "<p><b>Bir veritabanı hatası oluştu.</b></p>Ayrıntılar:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:450
+#: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Kaynak Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:479
+#: core/libs/database/history/itemhistorygraphmodel.cpp:483
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Görsel Geçmişi"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:562
+#: core/libs/database/history/itemhistorygraphmodel.cpp:566
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Türetilen Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:572
+#: core/libs/database/history/itemhistorygraphmodel.cpp:576
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "İlgili Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:583
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Özdeş Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:635
+#: core/libs/database/history/itemhistorygraphmodel.cpp:639
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Ara Adımlar:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:849
+#: core/libs/database/history/itemhistorygraphmodel.cpp:853
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28538,7 +28550,7 @@ msgstr ""
 "%1\n"
 "(Özgün Görsel)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:858
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29841,82 +29853,82 @@ msgstr "Bir Öge Seç"
 msgid "Select Items"
 msgstr "Ögeler Seç"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:259
+#: core/libs/dialogs/imagedialog_preview.cpp:261
 #, kde-format
 msgid "<i>Preview:</i>"
 msgstr "<i>Önizleme:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:265
+#: core/libs/dialogs/imagedialog_preview.cpp:267
 #, kde-format
 msgid "<i>Make:</i>"
 msgstr "<i>Yapımcı:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:266
+#: core/libs/dialogs/imagedialog_preview.cpp:268
 #, kde-format
 msgid "<i>Model:</i>"
 msgstr "<i>Model:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:267
+#: core/libs/dialogs/imagedialog_preview.cpp:269
 #, kde-format
 msgid "<i>Created:</i>"
 msgstr "<i>Oluşturulma:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:268
+#: core/libs/dialogs/imagedialog_preview.cpp:270
 #, kde-format
 msgid "<i>Aperture:</i>"
 msgstr "<i>Açıklık:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:269
+#: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
 msgid "<i>Focal:</i>"
 msgstr "<i>Odak:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:270
+#: core/libs/dialogs/imagedialog_preview.cpp:272
 #, kde-format
 msgid "<i>Exposure:</i>"
 msgstr "<i>Pozlandırma:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:271
+#: core/libs/dialogs/imagedialog_preview.cpp:273
 #, kde-format
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>Duyarlılık:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "<i>En–boy oranı:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>Ses bit hızı:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>Ses kanalı türü:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<i>Ses kodlayıcısı:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<i>Süre:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:283
+#: core/libs/dialogs/imagedialog_preview.cpp:285
 #, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>Kare hızı:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:284
+#: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodlayıcısı:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29940,67 +29952,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Ögeler Listesi"
 
-#: core/libs/dialogs/libsinfodlg.cpp:182
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:183
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:197
+#: core/libs/dialogs/libsinfodlg.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Özellikler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:226
+#: core/libs/dialogs/libsinfodlg.cpp:232
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Kitaplıklar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:329
+#: core/libs/dialogs/libsinfodlg.cpp:335
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:430
+#: core/libs/dialogs/libsinfodlg.cpp:436
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:458
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Bildiriler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:492
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV Yapılandırması"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:696
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:701
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:698
+#: core/libs/dialogs/libsinfodlg.cpp:706
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -42413,7 +42425,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr "ICC Dosyaları (*.icc; *.icm)"
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:160
+#: core/libs/widgets/itemview/ditemdelegate.cpp:163
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"

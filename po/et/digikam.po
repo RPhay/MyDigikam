@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 01:48+0000\n"
+"POT-Creation-Date: 2024-10-24 01:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1221,7 +1221,7 @@ msgstr "Ava/fookuskaugus:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
-#: core/libs/dialogs/imagedialog_preview.cpp:184
+#: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -3393,7 +3393,7 @@ msgid "Map Search"
 msgstr "Kaardiotsing"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
 #, kde-format
 msgid "Last Search"
 msgstr "Viimane otsing"
@@ -3664,7 +3664,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid ""
-"Add spell-checking support in caption text widget using KF5::Sonnet "
+"Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 
@@ -3819,7 +3819,7 @@ msgstr ""
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
 #| "CR3 and Sony A7R4 support."
-msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr ""
 "Sisemise toorpiltide mootori uuendamine uusima Libraw 0.20.0 väljalaske "
 "peale, mis sisaldab ka Canon CR3 ja Sony A7R4 toetust."
@@ -3827,11 +3827,11 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
-"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
-"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
-"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
-"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
+"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
@@ -4757,8 +4757,8 @@ msgstr "Videokoodek"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:539 core/libs/dialogs/libsinfodlg.cpp:545
-#: core/libs/dialogs/libsinfodlg.cpp:620
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -30036,7 +30036,7 @@ msgstr ""
 "Tõrge andmebaasi teisendamisel.\n"
 " Üksikasjad: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:200
+#: core/libs/database/coredb/coredbschemaupdater.cpp:201
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -30048,7 +30048,7 @@ msgstr ""
 "Sul pole järgmisi õigusi:  %1\n"
 "Kontrolli oma õigusi ja käivita digiKam uuesti."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:234
+#: core/libs/database/coredb/coredbschemaupdater.cpp:235
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -30059,7 +30059,7 @@ msgstr ""
 "andmebaasi skeemi versiooni ei saa kontrollida. Proovi alustada tühja "
 "andmebaasiga. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:264
+#: core/libs/database/coredb/coredbschemaupdater.cpp:265
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -30073,7 +30073,7 @@ msgstr ""
 "uus.) Palun kasuta digiKami uuemat versiooni, mida oled juba varem "
 "kasutanud. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:327
+#: core/libs/database/coredb/coredbschemaupdater.cpp:328
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -30084,7 +30084,7 @@ msgstr ""
 "Tabelite loomine andmebaasis nurjus.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:348
+#: core/libs/database/coredb/coredbschemaupdater.cpp:349
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -30099,7 +30099,7 @@ msgstr ""
 "digiKamiarendajate postiloendist (vt www.digikam.org/support). Samuti tasuks "
 "uurida, mida digiKam teatab konsoolis."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:409
+#: core/libs/database/coredb/coredbschemaupdater.cpp:412
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -30116,7 +30116,7 @@ msgstr ""
 "digiKami arendajate postiloendis (vt www.digikam.org/support). Samuti tasuks "
 "uurida, mida digiKam teatab konsoolis."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:447
+#: core/libs/database/coredb/coredbschemaupdater.cpp:450
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -30132,7 +30132,7 @@ msgstr ""
 "loe konsoolis näidatavaid veateateid ja anna sellest teada veana veebisaidil "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:456
+#: core/libs/database/coredb/coredbschemaupdater.cpp:459
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -30147,7 +30147,7 @@ msgstr ""
 "loe konsoolis näidatavaid veateateid ja anna sellest teada veana veebisaidil "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:677
+#: core/libs/database/coredb/coredbschemaupdater.cpp:686
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -30157,12 +30157,12 @@ msgstr ""
 "Andmebaasi uuendamise toimingut ei leitud. Palun kontrolli, kas digiKami "
 "aktiivse versiooni fail dbconfig.xml on ikka paigaldatud õigesse kohta. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:698
+#: core/libs/database/coredb/coredbschemaupdater.cpp:707
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Skeem uuendati versioonile %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:846
+#: core/libs/database/coredb/coredbschemaupdater.cpp:855
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -30172,12 +30172,12 @@ msgstr ""
 "Vana andmebaasifaili (\"%1\") kopeerimine uude asukohta (\"%2\") nurjus. "
 "Veateade: \"%3\". Palun kontrolli, kas faili saab kopeerida, või kustuta see."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:868
+#: core/libs/database/coredb/coredbschemaupdater.cpp:877
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopeeriti andmebaasifail"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:873
+#: core/libs/database/coredb/coredbschemaupdater.cpp:882
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -30188,22 +30188,22 @@ msgstr ""
 "õnnestu avada. Palun kustuta mõlemad failid ja proovi uuesti, alustades "
 "tühja andmebaasiga. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:903
 #, kde-format
 msgid "Opened new database file"
 msgstr "Avati uus andmebaasifail"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:993
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Valmistuti tabeli loomiseks"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid "Created tables"
 msgstr "Loodi tabelid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -30213,7 +30213,7 @@ msgstr ""
 "Seadistustefailis ei leitud ühtegi albumiteegi asukohta. Skeemi uuendamisest "
 "loobuti. Palun proovi tühja andmebaasiga või paranda seadistust."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -30231,52 +30231,52 @@ msgstr ""
 "Andmebaasi uuendamisest nüüd loobutakse, sest me ei soovi luua uut "
 "andmebaasi võib-olla vigase paigalduse baasil."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
 #, kde-format
 msgid "Configured one album root"
 msgstr "Seadistati üks albumi juurkataloog"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
 #, kde-format
 msgid "Imported albums"
 msgstr "Imporditi albumid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
 #, kde-format
 msgid "Imported images information"
 msgstr "Imporditi piltide info"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Viimane otsing (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Initsialiseeriti ja imporditi failisufiksi filter"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Sooritati esialgne täielik läbiuurimine"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Imporditi loomisajad"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
 #, kde-format
 msgid "Imported comments"
 msgstr "Imporditi kommentaarid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
 #, kde-format
 msgid "Imported ratings"
 msgstr "Imporditi hinnangud"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Visati ära v3 tabelid"
@@ -30368,43 +30368,43 @@ msgstr ""
 "<p><b>Tekkis andmebaasi viga.</b></p>Üksikasjad:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:450
+#: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Lähtepildid"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:479
+#: core/libs/database/history/itemhistorygraphmodel.cpp:483
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Pildiajalugu"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:562
+#: core/libs/database/history/itemhistorygraphmodel.cpp:566
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Muudetud pildid"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:572
+#: core/libs/database/history/itemhistorygraphmodel.cpp:576
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Seotud pildid"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:583
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Identsed pildid"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:635
+#: core/libs/database/history/itemhistorygraphmodel.cpp:639
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Vaheversioonid:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:849
+#: core/libs/database/history/itemhistorygraphmodel.cpp:853
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -30414,7 +30414,7 @@ msgstr ""
 "%1\n"
 "(originaalpilt)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:858
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -31740,83 +31740,83 @@ msgstr "Elemendi valimine"
 msgid "Select Items"
 msgstr "Elementide valimine"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:259
+#: core/libs/dialogs/imagedialog_preview.cpp:261
 #, fuzzy, kde-format
 #| msgid "<i>Created:</i>"
 msgid "<i>Preview:</i>"
 msgstr "<i>Loodud:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:265
+#: core/libs/dialogs/imagedialog_preview.cpp:267
 #, kde-format
 msgid "<i>Make:</i>"
 msgstr "<i>Valmistaja:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:266
+#: core/libs/dialogs/imagedialog_preview.cpp:268
 #, kde-format
 msgid "<i>Model:</i>"
 msgstr "<i>Mudel:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:267
+#: core/libs/dialogs/imagedialog_preview.cpp:269
 #, kde-format
 msgid "<i>Created:</i>"
 msgstr "<i>Loodud:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:268
+#: core/libs/dialogs/imagedialog_preview.cpp:270
 #, kde-format
 msgid "<i>Aperture:</i>"
 msgstr "<i>Ava:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:269
+#: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
 msgid "<i>Focal:</i>"
 msgstr "<i>Fookuskaugus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:270
+#: core/libs/dialogs/imagedialog_preview.cpp:272
 #, kde-format
 msgid "<i>Exposure:</i>"
 msgstr "<i>Säritus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:271
+#: core/libs/dialogs/imagedialog_preview.cpp:273
 #, kde-format
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>Tundlikkus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "<i>Proportsioon:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>Heli bitikiirus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>Helikanali tüüp:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<i>Helikoodek:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<i>Kestus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:283
+#: core/libs/dialogs/imagedialog_preview.cpp:285
 #, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>Kaadrisagedus:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:284
+#: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokoodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31842,21 +31842,21 @@ msgstr ""
 msgid "Items List"
 msgstr "Pildiloend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:182
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Jah"
 
-#: core/libs/dialogs/libsinfodlg.cpp:183
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:197
+#: core/libs/dialogs/libsinfodlg.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31864,14 +31864,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Olemuslugu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:226
+#: core/libs/dialogs/libsinfodlg.cpp:232
 #, fuzzy, kde-format
 #| msgid "Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Teek"
 
-#: core/libs/dialogs/libsinfodlg.cpp:329
+#: core/libs/dialogs/libsinfodlg.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31879,7 +31879,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:430
+#: core/libs/dialogs/libsinfodlg.cpp:436
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31887,34 +31887,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:458
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:492
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kaamera seadistus"
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:696
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Jah"
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:701
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:698
+#: core/libs/dialogs/libsinfodlg.cpp:706
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -45132,7 +45132,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr "ICC-failid (*.icc; *.icm)"
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:160
+#: core/libs/widgets/itemview/ditemdelegate.cpp:163
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
