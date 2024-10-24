@@ -53,6 +53,8 @@ public:
 
         ClickInfo() = default;
 
+    public:
+
         TileIndex::List tileIndicesList;
         QVariant        representativeIndex;
         GeoGroupState   groupSelectionState;
@@ -141,7 +143,7 @@ public:
     explicit AbstractMarkerTiler(QObject* const parent = nullptr);
     ~AbstractMarkerTiler() override;
 
-    /// these have to be implemented
+    /// These have to be implemented.
     virtual TilerFlags tilerFlags() const;
     virtual Tile* tileNew()                                                                                 = 0;
     virtual void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) = 0;
@@ -150,7 +152,7 @@ public:
     virtual int getTileMarkerCount(const TileIndex& tileIndex)                                              = 0;
     virtual int getTileSelectedCount(const TileIndex& tileIndex)                                            = 0;
 
-    /// these should be implemented for thumbnail handling
+    /// These should be implemented for thumbnail handling.
     virtual QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)             = 0;
     virtual QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)     = 0;
     virtual QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                 = 0;
@@ -158,7 +160,7 @@ public:
     virtual GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                     = 0;
     virtual GeoGroupState getGlobalGroupState()                                                             = 0;
 
-    /// these can be implemented if you want to react to actions in geolocation interface
+    /// These can be implemented if you want to react to actions in geolocation interface.
     virtual void onIndicesClicked(const ClickInfo& clickInfo);
     virtual void onIndicesMoved(const TileIndex::List& tileIndicesList, const GeoCoordinates& targetCoordinates,
                                 const QPersistentModelIndex& targetSnapIndex);

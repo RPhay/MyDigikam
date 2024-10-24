@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     QScopedPointer<AbstractMarkerTiler::Tile> rootTile;
     bool                                      isDirty = true;
 };
@@ -430,7 +432,7 @@ AbstractMarkerTiler* AbstractMarkerTiler::NonEmptyIterator::model() const
 
 AbstractMarkerTiler::Tile::~Tile()
 {
-    for (auto* const tile : children)
+    for (auto* const tile : std::as_const(children))
     {
         if (tile)
         {
@@ -441,7 +443,7 @@ AbstractMarkerTiler::Tile::~Tile()
 
 int AbstractMarkerTiler::Tile::maxChildCount()
 {
-    return TileIndex::Tiling * TileIndex::Tiling;
+    return (TileIndex::Tiling * TileIndex::Tiling);
 }
 
 AbstractMarkerTiler::Tile* AbstractMarkerTiler::Tile::getChild(const int linearIndex)
