@@ -52,7 +52,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 18;
+    return 19;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -85,7 +85,7 @@ public:
     CoreDB*                 albumDB                 = nullptr;
     DbEngineParameters      parameters;
 
-    // legacy
+    // Legacy.
     CoreDbAccess*           dbAccess                = nullptr;
 
     QString                 lastErrorMessage;
@@ -120,16 +120,17 @@ const QString CoreDbSchemaUpdater::getLastErrorMessage()
 bool CoreDbSchemaUpdater::update()
 {
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: running schema update";
+
     bool success = startUpdates();
 
-    // cancelled?
+    // Cancelled?
 
     if (d->observer && !d->observer->continueQuery())
     {
         return false;
     }
 
-    // even on failure, try to set current version - it may have incremented
+    // Even on failure, try to set current version - it may have incremented.
 
     setVersionSettings();
 
@@ -188,7 +189,7 @@ void CoreDbSchemaUpdater::setObserver(InitializationObserver* const observer)
 
 bool CoreDbSchemaUpdater::startUpdates()
 {
-    // Do we have sufficient privileges
+    // Do we have sufficient privileges.
 
     QStringList insufficientRights;
     CoreDbPrivilegesChecker checker(d->parameters);
@@ -218,12 +219,12 @@ bool CoreDbSchemaUpdater::startUpdates()
 
     if (tables.contains(QLatin1String("Albums"), Qt::CaseInsensitive))
     {
-        // Find out schema version of db file
+        // Find out schema version of db file.
 
         readVersionSettings();
         qCDebug(DIGIKAM_COREDB_LOG) << "Core database: have a structure version " << d->currentVersion.toInt();
 
-        // We absolutely require the DBVersion setting
+        // We absolutely require the DBVersion setting.
 
         if (!d->currentVersion.isValid())
         {
@@ -246,16 +247,16 @@ bool CoreDbSchemaUpdater::startUpdates()
             return false;
         }
 
-        // current version describes the current state of the schema in the db,
+        // Current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
 
         if (d->currentVersion.toInt() > schemaVersion())
         {
-            // trying to open a database with a more advanced than this CoreDbSchemaUpdater supports
+            // Trying to open a database with a more advanced than this CoreDbSchemaUpdater supports.
 
-            if (d->currentRequiredVersion.isValid() && d->currentRequiredVersion.toInt() <= schemaVersion())
+            if (d->currentRequiredVersion.isValid() && (d->currentRequiredVersion.toInt() <= schemaVersion()))
             {
-                // version required may be less than current version
+                // Version required may be less than current version.
 
                 return true;
             }
@@ -287,19 +288,19 @@ bool CoreDbSchemaUpdater::startUpdates()
 
         // Legacy handling?
 
-        // first test if there are older files that need to be upgraded.
+        // First test if there are older files that need to be upgraded.
         // This applies to "digikam.db" for 0.7 and "digikam3.db" for 0.8 and 0.9,
         // all only SQLite databases.
 
         // Version numbers used in this source file are a bit confused for the historic versions.
-        // Version 1 is 0.6 (no db), Version 2 is 0.7 (SQLite 2),
-        // Version 3 is 0.8-0.9,
-        // Version 3 wrote the setting "DBVersion", "1",
+        // Version 1 is 0.6 (no db), Version 2 is 0.7 (SQLite 2).
+        // Version 3 is 0.8-0.9.
+        // Version 3 wrote the setting "DBVersion", "1".
         // Version 4 is 0.10, the digikam3.db file copied to digikam4.db, no schema changes.
         // Version 4 writes "4", and from now on version x writes "x".
-        // Version 5 includes the schema changes from 0.9 to 0.10
-        // Version 6 brought new tables for history and ImageTagProperties, with version 2.0
-        // Version 7 brought the VideoMetadata table with 3.0
+        // Version 5 includes the schema changes from 0.9 to 0.10.
+        // Version 6 brought new tables for history and ImageTagProperties, with version 2.0.
+        // Version 7 brought the VideoMetadata table with 3.0.
 
         if (d->parameters.isSQLite())
         {
@@ -313,13 +314,13 @@ bool CoreDbSchemaUpdater::startUpdates()
                     return false;
                 }
 
-                // d->currentVersion is now 4;
+                // d->currentVersion is now 4.
 
                 return makeUpdates();
             }
         }
 
-        // No legacy handling: start with a fresh db
+        // No legacy handling: start with a fresh db.
 
         // cppcheck-suppress knownConditionTrueFalse
         if (!createDatabase() || !createFilterSettings())
@@ -368,7 +369,7 @@ bool CoreDbSchemaUpdater::endWrapSchemaUpdateStep(bool stepOperationSuccess, con
 
         if (d->observer)
         {
-            // error or cancelled?
+            // Error or cancelled?
 
             if      (!d->observer->continueQuery())
             {
@@ -392,7 +393,9 @@ bool CoreDbSchemaUpdater::endWrapSchemaUpdateStep(bool stepOperationSuccess, con
 
 bool CoreDbSchemaUpdater::makeUpdates()
 {
-    qCDebug(DIGIKAM_COREDB_LOG) << "Core database: makeUpdates " << d->currentVersion.toInt() << " to " << schemaVersion();
+    qCDebug(DIGIKAM_COREDB_LOG) << "Core database: makeUpdates "
+                                << d->currentVersion.toInt()
+                                << " to " << schemaVersion();
 
     if (d->currentVersion.toInt() < schemaVersion())
     {
@@ -403,7 +406,7 @@ bool CoreDbSchemaUpdater::makeUpdates()
                 return false;
             }
 
-            // v4 was always SQLite
+            // Version 4 was always SQLite.
 
             QFileInfo currentDBFile(d->parameters.databaseNameCore);
             QString errorMsg = i18n("The schema updating process from version 4 to 6 failed, "
@@ -424,12 +427,12 @@ bool CoreDbSchemaUpdater::makeUpdates()
 
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: success updating v4 to v6";
 
-            // Still set these even in >= 1.4 because 0.10 - 1.3 may want to apply the updates if not set
+            // Still set these even in >= 1.4 because 0.10 - 1.3 may want to apply the updates if not set.
 
             setLegacySettingEntries();
         }
 
-        // Incremental updates, starting from version 5
+        // Incremental updates, starting from version 5.
 
         for (int v = d->currentVersion.toInt() ; v < schemaVersion() ; ++v)
         {
@@ -468,17 +471,18 @@ bool CoreDbSchemaUpdater::makeUpdates()
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: success updating to version " << d->currentVersion.toInt();
         }
 
-        // add future updates here
+        // NOTE: add future updates here.
     }
 
     return true;
 }
 
-void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, QStringList& defaultVideoFilter,
+void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter,
+                                                QStringList& defaultVideoFilter,
                                                 QStringList& defaultAudioFilter)
 {
-    // NOTE for updating:
-    // When changing anything here, just increment filterSettingsVersion() so that the changes take effect
+    // NOTE: when updating this section,
+    // just increment filterSettingsVersion() so that the changes take effect.
 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
@@ -529,7 +533,8 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                        << QLatin1String("3g2")  << QLatin1String("m4v") << QLatin1String("m2v")
                        << QLatin1String("mkv")  << QLatin1String("webm")                         // Matroska
                        << QLatin1String("mng")                                                   // Animated PNG image
-                       << QLatin1String("m2ts");                                                 // Blu-ray
+                       << QLatin1String("m2ts")                                                  // Blu-ray
+                       << QLatin1String("mxf");                                                  // Material Exchange Format
 
     // Audio files: https://en.wikipedia.org/wiki/Audio_file_format
 
@@ -545,8 +550,8 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
 void CoreDbSchemaUpdater::defaultIgnoreDirectoryFilterSettings(QStringList& defaultIgnoreDirectoryFilter)
 {
-    // NOTE: when update this section,
-    // just increment filterSettingsVersion() so that the changes take effect
+    // NOTE: when updating this section,
+    // just increment filterSettingsVersion() so that the changes take effect.
 
     defaultIgnoreDirectoryFilter << QLatin1String("@eaDir");
 }
@@ -570,8 +575,10 @@ bool CoreDbSchemaUpdater::updateFilterSettings()
     QString filterVersion      = d->albumDB->getSetting(QLatin1String("FilterSettingsVersion"));
     QString dcrawFilterVersion = d->albumDB->getSetting(QLatin1String("DcrawFilterSettingsVersion"));
 
-    if (filterVersion.toInt() < filterSettingsVersion() ||
-        dcrawFilterVersion.toInt() < DRawDecoder::rawFilesVersion())
+    if (
+        (filterVersion.toInt() < filterSettingsVersion()) ||
+        (dcrawFilterVersion.toInt() < DRawDecoder::rawFilesVersion())
+       )
     {
         createFilterSettings();
     }
@@ -587,11 +594,13 @@ bool CoreDbSchemaUpdater::createDatabase()
 
         d->currentVersion = schemaVersion();
 
-        // if we start with the V2 hash, version 6 is required
+        // If we start with the V2 hash, version 6 is required.
+
         d->albumDB->setUniqueHashVersion(uniqueHashVersion());
         d->currentRequiredVersion = schemaVersion();
 /*
-        // digiKam for database version 5 can work with version 6, though not using the new features
+        // digiKam for database version 5 can work with version 6, though not using the new features.
+
         d->currentRequiredVersion = 5;
 */
         return true;
@@ -609,8 +618,8 @@ bool CoreDbSchemaUpdater::createTables()
 
 bool CoreDbSchemaUpdater::createIndices()
 {
-    // TODO: see which more indices are needed
-    // create indices
+    // TODO: see which more indices are needed.
+    // Create indices.
 
     return d->backend->execDBAction(d->backend->getDBAction(QLatin1String("CreateIndices")));
 }
@@ -646,7 +655,7 @@ bool CoreDbSchemaUpdater::updateUniqueHash()
 
         scanner.completeScan();
 
-        // earlier digiKam does not know about the hash
+        // Earlier digiKam does not know about the hash.
 
         if (d->currentRequiredVersion.toInt() < 6)
         {
@@ -683,7 +692,7 @@ bool CoreDbSchemaUpdater::performUpdateToVersion(const QString& actionName, int 
     {
         qCDebug(DIGIKAM_COREDB_LOG) << "Core database: schema update to V" << newVersion << "failed!";
 
-        // resort to default error message, set above
+        // Resort to default error message, set above.
 
         return false;
     }
@@ -700,8 +709,8 @@ bool CoreDbSchemaUpdater::performUpdateToVersion(const QString& actionName, int 
 
     d->currentVersion = newVersion;
 
-    // digiKam for database version 5 can work with version 6, though not using the new features
-    // Note: We do not upgrade the uniqueHash
+    // digiKam for database version 5 can work with version 6, though not using the new features.
+    // NOTE: We do not upgrade the uniqueHash.
 
     d->currentRequiredVersion = newRequiredVersion;
 
@@ -723,8 +732,8 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
         case 6:
         {
             // digiKam for database version 5 can work with version 6,
-            // though not using the new features.
-            // Note: We do not upgrade the uniqueHash.
+            // hough not using the new features.
+            // NOTE: We do not upgrade the uniqueHash.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV5ToV6"), 6, 5);
         }
@@ -832,12 +841,12 @@ bool CoreDbSchemaUpdater::copyV3toV4(const QString& digikam3DBPath, const QStrin
 
     d->backend->close();
 
-    // We cannot use KIO here because KIO only works from the main thread
+    // We cannot use KIO here because KIO only works from the main thread.
 
     QFile oldFile(digikam3DBPath);
     QFile newFile(currentDBPath);
 
-    // QFile won't override. Remove the empty db file created when a non-existent file is opened
+    // QFile won't override. Remove the empty db file created when a non-existent file is opened.
 
     newFile.remove();
 
@@ -901,7 +910,7 @@ bool CoreDbSchemaUpdater::copyV3toV4(const QString& digikam3DBPath, const QStrin
 
 static QStringList cleanUserFilterString(const QString& filterString)
 {
-    // splits by either ; or space, removes "*.", trims
+    // Splits by either ; or space, removes "*.", trims.
 
     QStringList filterList;
 
@@ -948,8 +957,8 @@ bool CoreDbSchemaUpdater::updateV4toV7()
         d->observer->moreSchemaUpdateSteps(11);
     }
 
-    // This update was introduced from digikam version 0.9 to digikam 0.10
-    // We operator on an SQLite3 database under a transaction (which will be rolled back on error)
+    // This update was introduced from digikam version 0.9 to digikam 0.10.
+    // We operator on an SQLite3 database under a transaction (which will be rolled back on error).
 
     // --- Make space for new tables ---
 
@@ -972,7 +981,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
 
     // --- Drop some triggers and indices ---
 
-    // Don't check for errors here. The "IF EXISTS" clauses seem not supported in SQLite
+    // Don't check for errors here. The "IF EXISTS" clauses seem not supported in SQLite.
 
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_album;"));
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_image;"));
@@ -1123,7 +1132,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
         return false;
     }
 
-    // remove orphan images that would not be removed by CollectionScanner
+    // Remove orphan images that would not be removed by CollectionScanner.
 
     d->backend->execSql(QString::fromUtf8("DELETE FROM Images WHERE album NOT IN (SELECT id FROM Albums);"));
 
@@ -1209,7 +1218,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     QSet<QString> configVideoFilter(listMovieFilter.begin(), listMovieFilter.end());
     QSet<QString> configAudioFilter(listAudioFilter.begin(), listAudioFilter.end());
 
-    // remove those that are included in the default filter
+    // Remove those that are included in the default filter.
 
     configItemFilter.subtract(QSet<QString>(defaultItemFilter.begin(), defaultItemFilter.end()));
     configVideoFilter.subtract(QSet<QString>(defaultVideoFilter.begin(), defaultVideoFilter.end()));
@@ -1228,7 +1237,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
         d->observer->schemaUpdateProgress(i18n("Initialized and imported file suffix filter"));
     }
 
-    // --- do a full scan ---
+    // --- Do a full scan ---
 
     CollectionScanner scanner;
 
@@ -1252,7 +1261,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
 
     // --- Port date, comment and rating (_after_ the scan) ---
 
-    // Port ImagesV3.date -> ImageInformation.creationDate
+    // Port ImagesV3.date -> ImageInformation.creationDate.
 
     if (!d->backend->execSql(QString::fromUtf8(
                                 "UPDATE ImageInformation SET "
@@ -1274,7 +1283,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
         d->observer->schemaUpdateProgress(i18n("Imported creation dates"));
     }
 
-    // Port ImagesV3.comment to ItemComments
+    // Port ImagesV3.comment to ItemComments.
 
     // An author of NULL will inhibt the UNIQUE restriction to take effect (but #189080). Work around.
 
@@ -1305,7 +1314,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
         d->observer->schemaUpdateProgress(i18n("Imported comments"));
     }
 
-    // Port rating storage in ImageProperties to ItemInformation
+    // Port rating storage in ImageProperties to ItemInformation.
 
     if (!d->backend->execSql(QString::fromUtf8(
                                 "UPDATE ImageInformation SET "
@@ -1535,7 +1544,7 @@ void CoreDbSchemaUpdater::beta010Update1()
         return;
     }
 
-    // if Image has been deleted
+    // If Image has been deleted.
 
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_image;"));
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_image DELETE ON Images\n"
@@ -1574,7 +1583,7 @@ void CoreDbSchemaUpdater::beta010Update2()
         return;
     }
 
-    // force rescan and creation of ImageInformation entry for videos and audio
+    // Force rescan and creation of ImageInformation entry for videos and audio.
 
     d->backend->execSql(QString::fromUtf8("DELETE FROM Images WHERE category=2 OR category=3;"));
 
@@ -1657,16 +1666,15 @@ bool CoreDbSchemaUpdater::createTablesV3()
         return false;
     }
 
-    // TODO: see which more indices are needed
-    // create indices
+    // TODO: see which more indices are needed.
+    // Create indices.
 
     d->backend->execSql(QString::fromUtf8("CREATE INDEX dir_index ON Images    (dirid);"));
     d->backend->execSql(QString::fromUtf8("CREATE INDEX tag_index ON ImageTags (tagid);"));
 
-    // create triggers
+    // Create triggers.
 
-    // trigger: delete from Images/ImageTags/ImageProperties
-    // if Album has been deleted
+    // Trigger: delete from Images/ImageTags/ImageProperties if Album has been deleted.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_album DELETE ON Albums\n"
                                           "BEGIN\n"
@@ -1678,8 +1686,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "   WHERE dirid = OLD.id;\n"
                                           "END;"));
 
-    // trigger: delete from ImageTags/ImageProperties
-    // if Image has been deleted
+    // Trigger: delete from ImageTags/ImageProperties if Image has been deleted.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_image DELETE ON Images\n"
                                           "BEGIN\n"
@@ -1693,14 +1700,14 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "    WHERE icon=OLD.id;\n"
                                           "END;"));
 
-    // trigger: delete from ImageTags if Tag has been deleted
+    // Trigger: delete from ImageTags if Tag has been deleted.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_tag DELETE ON Tags\n"
                                           "BEGIN\n"
                                           "  DELETE FROM ImageTags WHERE tagid=OLD.id;\n"
                                           "END;"));
 
-    // trigger: insert into TagsTree if Tag has been added
+    // Trigger: insert into TagsTree if Tag has been added.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags\n"
                                           "BEGIN\n"
@@ -1710,7 +1717,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "    SELECT NEW.id, pid FROM TagsTree WHERE id=NEW.pid;\n"
                                           "END;"));
 
-    // trigger: delete from TagsTree if Tag has been deleted
+    // Trigger: delete from TagsTree if Tag has been deleted.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_tagstree DELETE ON Tags\n"
                                           "BEGIN\n"
@@ -1722,7 +1729,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "    WHERE id=OLD.id;\n"
                                           "END;"));
 
-    // trigger: delete from TagsTree if Tag has been deleted
+    // Trigger: delete from TagsTree if Tag has been deleted.
 
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER move_tagstree UPDATE OF pid ON Tags\n"
                                           "BEGIN\n"
