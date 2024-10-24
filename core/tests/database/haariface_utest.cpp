@@ -141,7 +141,9 @@ void HaarIfaceTest::initTestCase()
 
     // Update collection path, because this is hardcoded
 
-    for (const auto& col : CollectionManager::instance()->allLocations())
+    const auto locs = CollectionManager::instance()->allLocations();
+
+    for (const auto& col : locs)
     {
         CollectionManager::instance()->removeLocation(col);
     }
@@ -267,7 +269,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -322,7 +324,7 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -370,7 +372,7 @@ void HaarIfaceTest::testPreferNewerCreationDate()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -412,7 +414,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -491,7 +493,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
     AlbumList tags; // empty
     AlbumList searchAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -509,7 +511,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
 
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -565,7 +567,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected()
     AlbumList tags; // empty
     AlbumList searchAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -589,7 +591,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected()
 
     AlbumList referenceAlbums;
 
-    for (auto* const a : all)
+    for (auto* const a : std::as_const(all))
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
