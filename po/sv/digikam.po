@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-25 01:48+0000\n"
 "PO-Revision-Date: 2024-10-19 16:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1757,7 +1757,7 @@ msgid "Thumbnails"
 msgstr "Miniatyrbilder"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:305
+#: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3111,7 +3111,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filter"
 
-#: core/app/views/stack/itemiconview_albums.cpp:301
+#: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Kan inte öppna rotalbumet. Det är inte en fysisk plats."
@@ -3162,7 +3162,7 @@ msgstr ""
 "En ansiktsigenkänningsaktivitet pågår redan. Bara en aktivitet kan utföras "
 "åt gången. Vänta till den är klar."
 
-#: core/app/views/stack/itemiconview_views.cpp:129
+#: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3172,7 +3172,7 @@ msgstr ""
 "Lagringsplatsen för den här bilden\n"
 "är för närvarande inte tillgänglig"
 
-#: core/app/views/stack/itemiconview_views.cpp:245
+#: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -24274,37 +24274,37 @@ msgstr "Hittad i närheten"
 msgid "invalid name"
 msgstr "Ogiltigt namn"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:553
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, kde-format
 msgid "iNaturalist"
 msgstr "iNaturalist"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:555
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, kde-format
 msgid "Login"
 msgstr "Inloggning"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1328
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1494
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "FEL när observation skapades"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1572
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1690
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "FEL vid uppladdning av foto"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1814
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "FEL när observation togs bort"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Tidsgräns efter att ha överskridit %1 sekunder"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-25 01:48+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1721,7 +1721,7 @@ msgid "Thumbnails"
 msgstr "サムネイル"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:305
+#: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3086,7 +3086,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "フィルタ"
 
-#: core/app/views/stack/itemiconview_albums.cpp:301
+#: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "ルートアルバムを開けません。物理的な場所ではありません。"
@@ -3137,7 +3137,7 @@ msgstr ""
 "顔認識タスクが既に実行中です。同時に実行できるタスクは 1 つだけです。終了する"
 "までお待ちください。"
 
-#: core/app/views/stack/itemiconview_views.cpp:129
+#: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3145,7 +3145,7 @@ msgid ""
 "is currently not available"
 msgstr "指定されたコレクションの場所は、無効か現在利用できません。"
 
-#: core/app/views/stack/itemiconview_views.cpp:245
+#: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -24636,41 +24636,41 @@ msgstr ""
 msgid "invalid name"
 msgstr "ファイル名"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:553
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, fuzzy, kde-format
 msgid "iNaturalist"
 msgstr "自然"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:555
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgid "Login"
 msgstr "プロファイルのエラー"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1328
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1494
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "画像の読み込みに失敗しました"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1572
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1690
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "画像の読み込みに失敗しました"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1814
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "画像の読み込みに失敗しました"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 01:46+0000\n"
-"PO-Revision-Date: 2024-10-22 12:19+0200\n"
+"POT-Creation-Date: 2024-10-25 01:48+0000\n"
+"PO-Revision-Date: 2024-10-24 16:30+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1798,7 +1798,7 @@ msgid "Thumbnails"
 msgstr "Vignettes"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:305
+#: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3185,7 +3185,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtres"
 
-#: core/app/views/stack/itemiconview_albums.cpp:301
+#: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
@@ -3239,7 +3239,7 @@ msgstr ""
 "tâche à la fois ne peut d'exécuter. Veuillez attendre jusqu'à ce qu'elle se "
 "termine."
 
-#: core/app/views/stack/itemiconview_views.cpp:129
+#: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3249,7 +3249,7 @@ msgstr ""
 "L'emplacement d'enregistrement de cette image \n"
 "n'est pas disponible actuellement."
 
-#: core/app/views/stack/itemiconview_views.cpp:245
+#: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -24736,37 +24736,37 @@ msgstr "Vu à proximité"
 msgid "invalid name"
 msgstr "nom incorrect"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:553
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, kde-format
 msgid "iNaturalist"
 msgstr "iNaturalist"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:555
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, kde-format
 msgid "Login"
 msgstr "Connexion :"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1328
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1494
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "ERREUR lors de la création de l'observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1572
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1690
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERREUR lors de l'envoi d'une photo"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1814
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERREUR lors de la suppression de l'observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Délai d'attente après dépassement de %1 secondes"
@@ -52840,23 +52840,7 @@ msgid "Extra Large"
 msgstr "Extrêmement grand"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
-#| "45%. Unfortunately, this will give a significant number of false-"
-#| "positives. It's recommended to set a detection accuracy of about 55% and "
-#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
-#| "setting applies only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -52873,21 +52857,21 @@ msgid ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
-"<p>Le choix <a>Sélectionner <b>Extrêmement petit</b> signifie que le modèle "
-"détectera des visages avec un petit arrière-plan en plus des visages moyens "
-"et grands. La sélection de <b>Petits visages</b> augmente la sensibilité du "
-"modèle en réglant les paramètres du modèle. Il augmentera également la "
-"probabilité de faux positifs et le temps de détection.</p><p>La sélection de "
-"<b>Grand</b> ou <b>Extrêmement grand</b> éliminera de la détection les "
-"visages avec un petit arrière-plan. Elle est beaucoup plus rapide et réduira "
-"le nombre de faux positifs, mais ne détectera pas les petits visages dans "
-"l’arrière-plan ou les visages dans de grandes photos de groupe. </p><p>Si "
-"vous voulez détecter tous les visages en une seule passe, veuillez "
-"sélectionner les <b>Extrêmement petits</b> et définir précision de détection "
-"à environ 45 %. Malheureusement, ceci vous donnera un important nombre de "
-"faux positifs. Il est recommandé d’établir une précision de détection "
-"d'environ 55 % et une taille de visage <b>Petit</b> ou <b>Moyen</b> pour une "
-"utilisation normale. </p><p>Cette configuration ne s'applique qu'à YuNet.</p>"
+"<p>La sélection de <b>Extrêmement petit</b> signifie que le modèle détectera "
+"des visages avec un petit arrière-plan en plus des visages moyens et grands. "
+"La sélection de <b>Petits visages</b> augmente la sensibilité du modèle en "
+"réglant les paramètres du modèle. Il augmentera également la probabilité de "
+"faux positifs et le temps de détection.</p><p>La sélection de <b>Grand</b> "
+"ou <b>Extrêmement grand</b> éliminera de la détection les visages avec un "
+"petit arrière-plan. Elle est beaucoup plus rapide et réduira le nombre de "
+"faux positifs, mais ne détectera pas les petits visages dans l’arrière-plan "
+"ou les visages dans de grandes photos de groupe. </p><p>Si vous voulez "
+"détecter tous les visages en une seule passe, veuillez sélectionner le choix "
+"<b>Extrêmement petit</b> et définir la précision de détection à 2. "
+"Malheureusement, ceci vous donnera un important nombre de faux positifs. Il "
+"est recommandé de définir une précision de détection de 6 à 8 et une taille "
+"de visage <b>Moyen</b> ou <b>Grand</b> pour une utilisation normale. </"
+"p><p>Cette configuration ne s'applique qu'à YuNet.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
 #, kde-format
@@ -65654,18 +65638,7 @@ msgid "File on the server is too large."
 msgstr "Le fichier sur le serveur est trop volumineux."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can close this "
-#| "dialog, you will be asked again the next time you start digiKam. Without "
-#| "these files the selected features will not work.</p><p>The files will be "
-#| "downloaded to %1.</p><p><b>After the successful download you have to "
-#| "restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
@@ -65678,18 +65651,18 @@ msgid ""
 "downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
 "to restart digiKam.</b></p>"
 msgstr ""
-"<p> Pour les outils de reconnaissance faciale, de suppression de l'effet "
-"« Yeux rouges  et de la classification des images selon des allocations "
-"esthétiques ou automatiques d'étiquettes aux images, DigiKam a besoin de "
-"certains fichiers exécutable de grande taille. Vous pouvez sélectionner les "
-"fonctionnalités que vous voulez utiliser. </p><p>Il a été impossible de "
-"trouver certains de ces fichiers. Veuillez cliquer sur « Télécharger » pour "
-"lancer le téléchargement des fichiers nécessaires. Vous pouvez fermer cette "
-"boîte de dialogue. Elle vous sera présentée à nouveau lors du prochain "
-"démarrage de DigiKam. Sans ces fichiers, les fonctionnalités sélectionnées "
-"ne pourront fonctionner. </p><p>Les fichiers seront téléchargés vers %1. </"
-"p><p><b>Après un téléchargement réussi, vous devrez re-démarrer DigiKam.</"
-"b></p>"
+"<p> Pour les outils de reconnaissance faciale, l'outil de suppression de "
+"l'effet « Yeux rouges  et la classification des images selon des critères "
+"esthétiques ou des allocations automatiques d'étiquettes aux images, DigiKam "
+"a besoin de certains fichiers exécutable de grande taille. Vous pouvez "
+"sélectionner les fonctionnalités que vous voulez utiliser. </p><p>Il a été "
+"impossible de trouver certains de ces fichiers. Veuillez cliquer sur "
+"« Télécharger » pour lancer le téléchargement des fichiers nécessaires. Vous "
+"pouvez fermer cette boîte de dialogue. Elle vous sera présentée à nouveau "
+"lors du prochain démarrage de DigiKam. Sans ces fichiers, les "
+"fonctionnalités sélectionnées ne pourront fonctionner. </p><p>Les fichiers "
+"seront téléchargés vers « <i>%1</i> ».</p><p><b>Après un téléchargement "
+"réussi, vous devrez re-démarrer DigiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:509
 #, kde-format

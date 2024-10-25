@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-25 01:48+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1824,7 +1824,7 @@ msgid "Thumbnails"
 msgstr "Миниатюры"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:305
+#: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3206,7 +3206,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: core/app/views/stack/itemiconview_albums.cpp:301
+#: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
@@ -3258,7 +3258,7 @@ msgstr ""
 "Операция распознавания лиц может выполняться только в одном экземпляре и уже "
 "запущена. Для повторного запуска дождитесь окончания выполнения."
 
-#: core/app/views/stack/itemiconview_views.cpp:129
+#: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3268,7 +3268,7 @@ msgstr ""
 "Место хранения этого изображения\n"
 "сейчас недоступно"
 
-#: core/app/views/stack/itemiconview_views.cpp:245
+#: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -24573,37 +24573,37 @@ msgstr "Замечено вблизи"
 msgid "invalid name"
 msgstr "неверное имя"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:553
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, kde-format
 msgid "iNaturalist"
 msgstr "iNaturalist"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:555
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, kde-format
 msgid "Login"
 msgstr "Вход в систему"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1328
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1494
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "Ошибка создания записи наблюдения"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1572
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1690
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Ошибка отправки изображения"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1814
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Ошибка удаления записи наблюдения"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Превышено время ожидания после %1 сек"
