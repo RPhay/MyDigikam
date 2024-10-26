@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-25 01:48+0000\n"
-"PO-Revision-Date: 2024-10-24 13:05+0300\n"
+"PO-Revision-Date: 2024-10-25 21:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -3299,7 +3299,7 @@ msgstr "Bugzilla’da 1500’den fazla kullanıcı raporu kapatıldı."
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-msgstr "Kod, Qt6 çatısına aktarıldı (halen Qt5 API'si ile uyumlu)."
+msgstr "Kod Qt6 çatısına aktarıldı (halen Qt5 API’si ile uyumlu)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
@@ -3327,7 +3327,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Toplu Kuyruk Yöneticisi'ne JPEG-XL, WEBP ve AVIF dönüştürücüleri eklendi."
+"Toplu Kuyruk Yöneticisi’ne JPEG-XL, WEBP ve AVIF dönüştürücüleri eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
@@ -3559,7 +3559,7 @@ msgstr ""
 "atamak için yeni bakım ve kuyruk yöneticisi araçları eklendi.<a href="
 "\"https://community.kde.org/GSoc/2023/StatusReports/"
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
-"\">Ayrıntılar için bu GoSC-2023 raporuna bakın.</a>"
+"\">Ayrıntılar için bu GSoC 2023 raporuna bakın.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -4585,14 +4585,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
-msgstr "Siyah–Beyaz'a Dönüştür"
+msgstr "Siyah–Beyaz’a Dönüştür"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
-msgstr "Siyah–beyaz'a dönüştürmek için bir araç"
+msgstr "Siyah–beyaz’a dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
 #, kde-kuit-format
@@ -4601,7 +4601,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri siyah–beyaz'a "
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri siyah–beyaz’a "
 "dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
@@ -4897,7 +4897,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To AVIF"
-msgstr "AVIF'e Dönüştür"
+msgstr "AVIF’e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, kde-format
@@ -4926,7 +4926,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert RAW To DNG"
-msgstr "RAW'ı DNG’ye Dönüştür"
+msgstr "RAW’ı DNG’ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:57
 #, kde-format
@@ -4953,7 +4953,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To HEIF"
-msgstr "HEIF'e Dönüştür"
+msgstr "HEIF’e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, kde-format
@@ -4983,7 +4983,7 @@ msgstr ""
 "(MPEG) tarafından geliştirilmiştir ve bir HEIF görselinde, aynı boyuttaki "
 "bir JPEG görseline göre iki kat daha fazla bilgi depolanabileceğini ve bunun "
 "sonucunda daha kaliteli bir görsel elde edilebileceğini iddia etmektedir. "
-"HEIF, aynı zamanda canlandırmaları da destekler ve canlandırmalı bir GIF'ten "
+"HEIF, aynı zamanda canlandırmaları da destekler ve canlandırmalı bir GIF’ten "
 "daha küçük bir boyutta daha fazla bilgi depolayabilir.</para> "
 "<para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
 "High_Efficiency_Image_File_Format'>Yüksek Verimli Görsel Dosyası Biçimi</a> "
@@ -4993,7 +4993,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
-msgstr "JP2'ye Dönüştür"
+msgstr "JP2’ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, kde-format
@@ -5056,7 +5056,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JXL"
-msgstr "JXL'e Dönüştür"
+msgstr "JXL’e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, kde-format
@@ -5086,7 +5086,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
-msgstr "PGF'ye Dönüştür"
+msgstr "PGF’ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, kde-format
@@ -5117,7 +5117,7 @@ msgid ""
 "Simply insert the tool for color profile conversion before this tool and "
 "select the desired color profile.</b>"
 msgstr ""
-"<b>PNG'ye dönüştürme işlemi başarısız olursa bunun nedeni renk profili "
+"<b>PNG’ye dönüştürme işlemi başarısız olursa bunun nedeni renk profili "
 "denetimi olabilir. Renk profili dönüştürme aracını bu aracın önüne "
 "yerleştirmeniz ve istediğiniz renk profilini seçmeniz yeterlidir.</b>"
 
@@ -5125,7 +5125,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
-msgstr "PNG'ye Dönüştür"
+msgstr "PNG’ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, kde-format
@@ -5153,7 +5153,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
-msgstr "TIFF'e Dönüştür"
+msgstr "TIFF’e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, kde-format
@@ -5183,7 +5183,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To WEBP"
-msgstr "WEBP'ye Dönüştür"
+msgstr "WEBP’ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, kde-format
@@ -5204,7 +5204,7 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini WEBP biçimine "
-"dönüştürebilir.</para> <para>WEBP, Google'ın JPEG, PNG ve GIF dosya "
+"dönüştürebilir.</para> <para>WEBP, Google’ın JPEG, PNG ve GIF dosya "
 "biçimlerinin yerine geçmek üzere geliştirdiği bir görsel dosyası biçimidir. "
 "WEBP, aynı kalite için daha küçük veya aynı boyut için daha yüksek kaliteli "
 "görseller sağlar. Hem kayıplı hem de kayıpsız sıkıştırmanın yanı sıra "
@@ -5288,7 +5288,7 @@ msgid ""
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
 "<b>Not:</b> TITLE, COMMENTS, COLORLABEL, PICKLABEL, RATING ve TAGSPATH çevre "
-"değişkenleri, ';' ile ayrılarak kullanılabilir."
+"değişkenleri, “;” ile ayrılarak kullanılabilir."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
@@ -6983,8 +6983,8 @@ msgstr ""
 "görselinde, aynı boyuttaki bir JPEG görseline göre iki kat daha fazla bilgi "
 "depolanabileceğini ve bunun sonucunda daha kaliteli bir görsel elde "
 "edilebileceğini iddia etmektedirler. HEIF aynı zamanda canlandırmaları da "
-"destekler ve çok daha küçük bir boyutta canlandırmalı bir GIF'ten daha fazla "
-"bilgi depolayabilir.</para> <para>HEIC'in kodlanması isteğe bağlı libde265 "
+"destekler ve çok daha küçük bir boyutta canlandırmalı bir GIF’ten daha fazla "
+"bilgi depolayabilir.</para> <para>HEIC’in kodlanması isteğe bağlı libde265 "
 "kodlayıcısı bileşeniyle ilgilidir. %1</para> <para>Ayrıntılar için <a "
 "href='https://en.wikipedia.org/wiki/"
 "High_Efficiency_Image_File_Format'>Yüksek Verimli Görsel Dosyası Biçimi</a> "
@@ -7123,11 +7123,11 @@ msgstr ""
 "duyarlılığından yararlanarak dosya boyutunu küçültür. Farkın ne kadar "
 "algılanabilir olduğu görsele bağlıdır; büyük fotoğraflar genellikle hiçbir "
 "fark göstermezken; keskin, küçültülmüş piksel grafikler renk ayrıntısı "
-"inceliklerini kaybedebilir.</p><p><b>4:4:4</b> - Kroma alt örneklemesi yok, "
-"en yüksek kalite; ancak en düşük sıkıştırma.</p><p><b>4:2:2</b> - Kroma "
+"inceliklerini kaybedebilir.</p><p><b>4:4:4</b> — Kroma alt örneklemesi yok, "
+"en yüksek kalite; ancak en düşük sıkıştırma.</p><p><b>4:2:2</b> — Kroma "
 "yatay olarak yarıya indirilir; ortalama sıkıştırma, ortalama kalite.</"
-"p><p><b>4:2:0</b> - Kroma 2 × 2 blok halinde dörde bölünmüş, yüksek "
-"sıkıştırma; ancak düşük kalite.</p><p><b>4:1:1</b> - Kroma 4 × 1 bloklara "
+"p><p><b>4:2:0</b> — Kroma 2 × 2 blok halinde dörde bölünmüş, yüksek "
+"sıkıştırma; ancak düşük kalite.</p><p><b>4:1:1</b> — Kroma 4 × 1 bloklara "
 "bölünmüştür, yüksek sıkıştırma; ancak düşük kalite.</p><p><b>Not: JPEG her "
 "zaman kayıplı sıkıştırma kullanır.</b></p>"
 
@@ -7392,7 +7392,7 @@ msgid ""
 "compression format.</b></p>"
 msgstr ""
 "<p>PNG görselleri için sıkıştırma değeri:</p><p><b>1</b>: Düşük sıkıştırma "
-"(büyük dosya boyutu; ancak kısa sıkıştırma süresi - öntanımlı)<br/><b>5</b>: "
+"(büyük dosya boyutu; ancak kısa sıkıştırma süresi — öntanımlı)<br/><b>5</b>: "
 "Orta sıkıştırma<br/><b>9</b>: Yüksek sıkıştırma (küçük dosya boyutu; ancak "
 "yüksek sıkıştırma süresi)</p><p><b>Not: PNG her zaman kayıpsız bir görsel "
 "sıkıştırma biçimidir.</b></p>"
@@ -7531,9 +7531,9 @@ msgstr ""
 "kullanıcıların görsel yüklemelerine ve kaydetmelerine izin verir.</"
 "para><para>Yerel olarak desteklenen biçimlerin bir listesini görmek için <a "
 "href='https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files'>Qt "
-"Framework belgelendirmesine</a> bakın.</para> <para>Desteklenen biçimlerin "
+"Frameworks belgelendirmesine</a> bakın.</para> <para>Desteklenen biçimlerin "
 "genişçe bir listesini görmek için <a href='https://invent.kde.org/frameworks/"
-"kimageformats/-/blob/master/README.md'>KDE Framework belgelendirmesine</a> "
+"kimageformats/-/blob/master/README.md'>KDE Frameworks belgelendirmesine</a> "
 "bakın.</para>"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
@@ -7607,7 +7607,7 @@ msgstr ""
 "işlenmemiştir ve bu nedenle bir biteşlem grafik düzenleyicisiyle baskıya "
 "veya düzenlenmeye hazır değildir. RAW, depolama, baskı veya daha fazla "
 "düzenleme için TIFF veya JPEG’e dönüştürülmeden önce kesin ayarlamaların "
-"yapılabildiği geniş gamlı dahili renk alanındaki bir RAW dönüştürücüsü "
+"yapılabildiği geniş gamlı içsel renk alanındaki bir RAW dönüştürücüsü "
 "tarafından işlenir. Bu genellikle görseli aygıta bağlı bir renk uzayında "
 "kodlar.</para> <para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
 "Raw_image_format'>RAW Görsel Dosyası belgelendirmesine</a> bakın.</para>"
@@ -8225,7 +8225,7 @@ msgid ""
 "Standard values are 1.8 or 2.2."
 msgstr ""
 "Film negatiflerinin doğrusal ham taramaları, bir gama eğrisinin "
-"uygulanmasını gerektirir. Standart değerler 1,8 veya 2,2'dir."
+"uygulanmasını gerektirir. Standart değerler 1,8 veya 2,2’dir."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:642
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
@@ -8700,7 +8700,7 @@ msgstr ""
 "Kementli çokgen seçimi.\n"
 "Kısayol: L\n"
 "Poligonu sürdürmek için L düğmesine basın veya çift tıklayın\n"
-"İptal etmek için Vazgeç'e basın"
+"İptal etmek için Vazgeç’e basın"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
@@ -9670,18 +9670,18 @@ msgid ""
 "image.</p>"
 msgstr ""
 "<p>Burada, bir görsele uygulanacak efekt türünü seçin.</p><p><b>Balıkgözü</"
-"b>: Pek yaygın kullanılan bir efekt olan 'Balıkgözü' efektini uygulamak için "
+"b>: Pek yaygın kullanılan bir efekt olan “Balıkgözü” efektini uygulamak için "
 "fotoğrafı 3B silindirik bir şekil etrafında büker.</p><p><b>Burgu</b>: "
 "Fotoğrafı bir burgu deseni oluşturacak şekilde döndürür.</p><p><b>Silindir "
 "Yatay</b>: Fotoğrafı yatay bir silindir etrafında büker.</p><p><b>Silindir "
 "Dikey</b>: Fotoğrafı dikey bir silindir etrafında büker.</p><p><b>Silindir Y/"
 "D.</b>: Fotoğrafı dikey ve yatay olmak üzere 2 silindir etrafında büker.</"
-"p><p><b>Karikatür</b>: 'Balık Gözü' efekti ters çevrilerek fotoğrafı bozar.</"
+"p><p><b>Karikatür</b>: “Balıkgözü” efekti ters çevrilerek fotoğrafı bozar.</"
 "p><p><b>Çoklu Köşeler</b>: Fotoğrafı çok köşeli bir desen gibi böler.</"
 "p><p><b>Yatay Dalgalar</b>: Fotoğrafı yatay dalgalarla bozar.</p><p><b>Dikey "
 "Dalgalar</b>: Fotoğrafı dikey dalgalarla bozar.</p><p><b>Blok Dalgalar 1</"
 "b>: Görseli hücrelere bölerek sanki cam blokların arkasından bakılıyormuş "
-"gibi görünmesini sağlar.</p><p><b>Blok Dalgalar 2</b>: Blok Dalgalar 1'e "
+"gibi görünmesini sağlar.</p><p><b>Blok Dalgalar 2</b>: Blok Dalgalar 1’e "
 "benzer; ancak cam blok bozunumunun başka bir sürümünü uygular.</"
 "p><p><b>Dairesel Dalgalar 1</b>: Fotoğrafı dairesel dalgalarla bozar.</"
 "p><p><b>Dairesel Dalgalar 2</b>: Dairesel Dalgalar 1 efektinin başka bir "
@@ -10175,7 +10175,7 @@ msgstr ""
 "değerlerin kullanılması daha iyidir). Bu ayar, herhangi bir sertlik maskesi "
 "kullanılmadığı durumda seçilen katmanın tümüne uygulanır. Not: Sapma, "
 "birbirini takip eden her iki nokta arasındaki enine koordinat farkıyla "
-"orantılıdır, 1,5'in kuvvetine yükseltilir ve tüm dikiş için toplanır."
+"orantılıdır, 1,5’in kuvvetine yükseltilir ve tüm dikiş için toplanır."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
@@ -10195,7 +10195,7 @@ msgid ""
 "setting."
 msgstr ""
 "Bu seçenek, dikişlerdeki piksellerin alabileceği en çok çapraz adımı "
-"seçmenizi sağlar. Öntanımlı değer olan adım = 1'e karşılık gelen standart "
+"seçmenizi sağlar. Öntanımlı değer olan adım = 1’e karşılık gelen standart "
 "algoritmada, bir dikişteki her piksel, komşularına oranla en çok bir piksel "
 "kaydırılabilir. Bu, dikişlerin taban çizgisine göre en fazla 45 derecelik "
 "bir açı oluşturabileceği anlamına gelir. Adım değerini artırmak bu sınırı "
@@ -10377,8 +10377,8 @@ msgid ""
 "in the preview widget and clicking <i>Adjust</i>.<br/>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
-"<p>Önizleme araç takımında iki nokta atayıp <i>Ayarla</i>'yı tıklayarak "
-"görsellerinizin dönüşünü otomatik olarak düzeltin.<br/>Yatay veya dikey "
+"<p>Önizleme araç takımında iki nokta atayıp <i>Ayarla</i>’ya tıklayarak "
+"görsellerinizin dönüşünü kendiliğinden düzeltin.<br/>Yatay veya dikey "
 "çizgiler ayarlayabilirsiniz.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
@@ -10643,18 +10643,18 @@ msgstr ""
 "olacağı ve fiziksel boyutu belirtmediği anlamına gelir.</p><p>Aşağıda "
 "geleneksel fotoğraf kağıdı boyutları ve en–boy oranı kırpmasının bir "
 "listesini görebilirsiniz:</p><p><b>2:3</b>: 10 × 15 cm, 20 × 30 cm, 30 × 45 "
-"cm, 4 × 6\", 8 × 12\", 12 × 18\", 16 × 24\", 20 × 30\"</p><p><b>3:4</b>: 6 × "
-"8 cm, 15 × 20 cm, 18 × 24 cm, 30 × 40 cm, 3,75 × 5\", 4,5 × 6\", 6 × 8\", "
-"7,5 × 10\", 9 × 12\"</p><p><b>4:5</b>: 20 × 25 cm, 40 × 50 cm, 8 × 10\", 16 "
-"x 20\"</p><p><b>5:7</b>: 15 × 21 cm, 30 × 42 cm, 5 × 7\"</p><p><b>7:10</b>: "
-"21 × 30 cm, 42 × 60 cm, 3,5 × 5\"</p><p><b>8:5</b>: Yaygın geniş ekran "
-"monitör (1680 × 1050 olarak)</p><p><b>2:1</b>, <b>3:1</b>, <b>4:1</b>: "
-"Yaygın panoramik boyutlar</p><p><b>16:9</b>: Yaygın TV ekranı (HDTV veya Tam "
-"YB)</p><p><b>DIN A Biçimi</b> kağıt, 1:1,414 oranını kullanır</p><p><b>Altın "
-"Oran</b> ise 1:1,618'dir. Bu kurala uyan bir kompozisyon görsel olarak "
-"uyumlu kabul edilir; ancak standart fotoğraf kağıdına baskı için uygun "
-"olmayabilir.</p><p><b>Geçerli En–Boy Oranı</b>, en–boy oranını şu anda açık "
-"olan görselden alır.</p>"
+"cm, 4 × 6”, 8 × 12”, 12 × 18”, 16 × 24”, 20 × 30”</p><p><b>3:4</b>: 6 × 8 "
+"cm, 15 × 20 cm, 18 × 24 cm, 30 × 40 cm, 3,75 × 5”, 4,5 × 6”, 6 × 8”, 7,5 × "
+"10”, 9 × 12”</p><p><b>4:5</b>: 20 × 25 cm, 40 × 50 cm, 8 × 10”, 16 x 20”</"
+"p><p><b>5:7</b>: 15 × 21 cm, 30 × 42 cm, 5 × 7”</p><p><b>7:10</b>: 21 × 30 "
+"cm, 42 × 60 cm, 3,5 × 5”</p><p><b>8:5</b>: Yaygın geniş ekran monitör (1680 "
+"× 1050 olarak)</p><p><b>2:1</b>, <b>3:1</b>, <b>4:1</b>: Yaygın panoramik "
+"boyutlar</p><p><b>16:9</b>: Yaygın TV ekranı (HDTV veya Tam YB)</p><p><b>DIN "
+"A Biçimi</b> kağıt, 1:1,414 oranını kullanır</p><p><b>Altın Oran</b> ise "
+"1:1,618’dir. Bu kurala uyan bir kompozisyon görsel olarak uyumlu kabul "
+"edilir; ancak standart fotoğraf kağıdına baskı için uygun olmayabilir.</"
+"p><p><b>Geçerli En–Boy Oranı</b>, en–boy oranını şu anda açık olan görselden "
+"alır.</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:256
 #, kde-format
@@ -11080,7 +11080,7 @@ msgid ""
 "process can take some time."
 msgstr ""
 "<b>Not:</b> Bir görseli çok büyük bir boyuta büyütmek için Restorasyon "
-"Kipi'ni kullanın. Bu işlem biraz zaman alabilir."
+"Kipi’ni kullanın. Bu işlem biraz zaman alabilir."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
 #: core/utilities/searchwindow/searchfields_createfield.cpp:214
@@ -11390,7 +11390,7 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
-msgstr "%1 dosyası kaydediliyor -"
+msgstr "%1 dosyası kaydediliyor —"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
@@ -11434,13 +11434,13 @@ msgstr "Tek harita"
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "İki harita - sağ ve sol"
+msgstr "İki harita — sağ ve sol"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "İki harita - alt ve üst"
+msgstr "İki harita — alt ve üst"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
@@ -11512,7 +11512,7 @@ msgstr "KML Dışa Aktar"
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
-msgstr "Üst veri yükleniyor -"
+msgstr "Üst veri yükleniyor —"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
 #, kde-format
@@ -11538,7 +11538,7 @@ msgstr "%1 Yaptığınız değişiklikleri kaydetmek ister misiniz?"
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
-msgstr "Değişiklikler kaydediliyor -"
+msgstr "Değişiklikler kaydediliyor —"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
@@ -11685,7 +11685,7 @@ msgstr ""
 "Bu araç, GPS verisini elle veya bir harita üzerinden düzenleyebilir. Ters "
 "coğrafi kodlama da web hizmetleri aracılığıyla kullanılabilir.\n"
 "\n"
-"Bu araç aynı zamanda harita izlerini Google biçiminde depolamak için KML'ye "
+"Bu araç aynı zamanda harita izlerini Google biçiminde depolamak için KML’ye "
 "dışa aktarma işlevine de sahiptir.\n"
 "\n"
 "Son olarak bu araç, eğer kameranızda yerleşik bir GPS aygıtı yoksa ögelerin "
@@ -11760,7 +11760,7 @@ msgstr "%1 GPX dosyası ayrıştırılamıyor."
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:367
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
-msgstr "%1 GPX dosyası, kullanılabilir tarih-zaman izi içermiyor."
+msgstr "%1 GPX dosyası, kullanılabilir tarih–zaman izi içermiyor."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:375
 #, kde-format
@@ -12264,7 +12264,7 @@ msgstr "XMP Bilgisini Düzenle"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
-msgstr "%1 (%2/%3) - Üst Veriyi Düzenle"
+msgstr "%1 (%2/%3) — Üst Veriyi Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
@@ -12780,7 +12780,7 @@ msgid ""
 "wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
 msgstr ""
 "<b>Not:</b> (*) ile imlenmiş <b><a href='https://en.wikipedia.org/wiki/"
-"EXIF’>Exif</a></b> metin künyeleri yalnzıca yazdırılabilir <b><a "
+"EXIF’>Exif</a></b> metin künyeleri yalnızca yazdırılabilir <b><a "
 "href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> karakterlerini "
 "destekler."
 
@@ -13642,25 +13642,25 @@ msgstr "Gölge"
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
-msgstr "Gün ışığı floresanı (D 5700 - 7100K)"
+msgstr "Gün ışığı floresanı (D 5700–7100K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
-msgstr "Gündüz beyaz floresan (N 4600 - 5400K)"
+msgstr "Gündüz beyaz floresan (N 4600–5400K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
-msgstr "Soğuk beyaz floresan (W 3900 - 4500K)"
+msgstr "Soğuk beyaz floresan (W 3900–4500K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
-msgstr "Beyaz floresan (WW 3200 - 3700K)"
+msgstr "Beyaz floresan (WW 3200–3700K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
@@ -14989,10 +14989,10 @@ msgid ""
 "the content. The default value for the I.P.R is \"IPTC\" if a standard "
 "Reference Code is used. This field is limited to 32 characters."
 msgstr ""
-"Bilgi Verici Sağlayıcı Başvurusunu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
+"Bilgi Sağlayıcısı Başvurusu’nu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
 "kaydedilmiş, bir içerik bildiricisi sağlayan sağlayıcıyı tanımlayan bir "
-"addır. Eğer standart bir  başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
-"\"IPTC\"'dir. Bu alan 32 karakterle sınırlıdır."
+"addır. Eğer standart bir başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
+"“IPTC”dir. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:45
 #, kde-format
@@ -15846,10 +15846,10 @@ msgid ""
 "content. The default value for the I.P.R is \"XMP\" if a standard Reference "
 "Code is used."
 msgstr ""
-"Bilgi Verici Sağlayıcı Başvurusunu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
+"Bilgi Sağlayıcısı Başvurusu’nu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
 "kaydedilmiş, bir içerik bildiricisi sağlayan sağlayıcıyı tanımlayan bir "
-"addır. Eğer standart bir  başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
-"\"XMP\"'dir. Bu alan 32 karakterle sınırlıdır."
+"addır. Eğer standart bir başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
+"“XMP”dir. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:52
 #, kde-format
@@ -16147,7 +16147,7 @@ msgid ""
 "This is fully optional. All the events from this calendar will be printed in "
 "green."
 msgstr ""
-"<a href=\"https://en.wikipedia.org/wiki/ICalendar\">iCalendar biçimi</a>'ni "
+"<a href=\"https://en.wikipedia.org/wiki/ICalendar\">iCalendar biçimi</a>’ni "
 "destekleyen bir program kullanarak böyle bir takvim oluşturabilirsiniz.\n"
 "Bu tamamen isteğe bağlıdır. Bu takvimdeki tüm etkinlikler yeşil ile "
 "yazdırılır."
@@ -16303,9 +16303,9 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 "<p>Bu araç, takviminizdeki belirli tarihleri <a href='https://en.wikipedia."
-"org/wiki/VCalendar'>vCalendar</a>, and <a href='https://en.wikipedia.org/"
-"wiki/Icalendar'>iCalendar</a> biçimlerinde dış etkinlik veri dosyaları "
-"olarak ayarlamanıza izin verir.</p>"
+"org/wiki/VCalendar'>vCalendar</a> ve <a href='https://en.wikipedia.org/wiki/"
+"Icalendar'>iCalendar</a> biçimlerinde dış etkinlik veri dosyaları olarak "
+"ayarlamanıza izin verir.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
 #, kde-format
@@ -16351,8 +16351,8 @@ msgstr "Takvim Veri Dosyasını Seç"
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
-"Aylar için seçili geçerli görseller yok<br/>Görseller seçmek için Geri'ye "
-"tıkla"
+"Aylar için seçili geçerli görseller yok<br/>Görseller seçmek için Geri’ye "
+"tıklayın"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
 #, kde-format
@@ -16369,7 +16369,7 @@ msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
 "year %1:<br/>"
 msgstr ""
-"Baskıyı başlatmak için Sonraki'ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
+"Baskıyı başlatmak için Sonraki’ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
 "için basılacaktır:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
@@ -16788,7 +16788,7 @@ msgid ""
 "and default color blending algorithm is very slight, and will be most "
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
-"Ayrıntılı renkleri oluşturmak için Renk Görünüşü Modelleme'yi (CIECAM02) "
+"Ayrıntılı renkleri oluşturmak için Renk Görünüşü Modelleme’yi (CIECAM02) "
 "kullanın. Giriş dosyalarınızın gömülü ICC profilleri olmalıdır. ICC profili "
 "yoksa sRGB renk alanı var olarak sayılır. Bu seçeneği ve öntanımlı renk "
 "karıştırma algoritmasını kullanmak arasındaki fark çok azdır ve farklı ana "
@@ -17796,7 +17796,7 @@ msgstr "Ayarlar dosyası oluşturulamadı"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
 #, kde-format
 msgid "Launch jAlbum with new project files"
-msgstr "jAlbum'ü yeni proje dosyalarıyla başlat"
+msgstr "jAlbum’ü yeni proje dosyalarıyla başlat"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
 #, kde-format
@@ -18073,7 +18073,7 @@ msgstr ""
 "ögeleri paylaşmasına olanak tanır.</p><p>Paylaşılacak ögeler, çeşitli "
 "albümler aracılığıyla tek tek veya grup halinde seçilebilir.</"
 "p><p>Tabletler, cep telefonları, TV vb. gibi pek çok türde elektronik aygıt "
-"DLNA'yı destekleyebilir.</p>"
+"DLNA’yı destekleyebilir.</p>"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
 #, kde-format
@@ -18168,7 +18168,7 @@ msgstr ""
 "akışları, ağ istemcilerinin ek bir modül olmadan bağlanmasına olanak tanıyan "
 "bir standarttır. Çoğu büyük web tarayıcısı ve oynatıcı MJPEG akışını "
 "destekler. Tarayıcınızdan akışa erişmek için URL olarak http://adres:"
-"kapı'yı, MJPEG sunucusu IP adresini ve bu yapılandırma iletişim kutusunda "
+"kapı’yı, MJPEG sunucusu IP adresini ve bu yapılandırma iletişim kutusunda "
 "ayarlanan sunucu kapısını kullanın."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
@@ -18203,7 +18203,7 @@ msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
 "more network bandwidth"
 msgstr ""
-"JPEG kalitesi [50:düşük - 100:yüksek]. Uyarı: Yüksek kalite daha çok ağ bant "
+"JPEG kalitesi [50:düşük–100:yüksek]. Uyarı: Yüksek kalite daha çok ağ bant "
 "genişliği gerektirir"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
@@ -18464,7 +18464,7 @@ msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
-"Ham satır. Tesseract'a özgü üzerinde oynamaları atlayarak görseli tek bir "
+"Ham satır. Tesseract’a özgü üzerinde oynamaları atlayarak görseli tek bir "
 "metin satırı olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
@@ -18510,7 +18510,7 @@ msgstr "OCR Metin Dönüştürücüsü"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
-msgstr "OCR'yi &Başlat"
+msgstr "OCR’yi &Başlat"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
 #, kde-format
@@ -18620,7 +18620,7 @@ msgstr "Ham dosyaların Optik Karakter Tanıma işlemini durdurun."
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
-msgstr "OCR'yi &Başlat"
+msgstr "OCR’yi &Başlat"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:658
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:697
@@ -18683,9 +18683,9 @@ msgid ""
 "\n"
 "See details on %1 for more information on Tesseract"
 msgstr ""
-"Bu araç, özgün olarak HP laboratuarlarında geliştirilen ve şu anda Google'ın "
+"Bu araç, özgün olarak HP laboratuarlarında geliştirilen ve şu anda Google’ın "
 "sponsorluğunu üstlendiği, açık kaynaklı bir Optik Karakter Tanıma işletkesi "
-"olan Tesseract'ı kullanarak belgelenmiş görsel verisini metin biçimine "
+"olan Tesseract’ı kullanarak belgelenmiş görsel verisini metin biçimine "
 "dönüştürebilir.\n"
 "\n"
 "Birden fazla dili ve betiği (sağdan sola metin dahil) ve sayfa yerleşimi "
@@ -19697,11 +19697,11 @@ msgid ""
 "Enable \"Do not crop\" to avoid cropping all the photos."
 msgstr ""
 "Fotoğrafları, verdiğiniz fotoğraf boyutlarına sığacak şekilde kırpmak için "
-"kutuyu hareket ettirin.  \n"
+"kutuyu hareket ettirin.\n"
 "Her görseli farklı biçimde kırpabilir veya her fotoğraf için öntanımlı "
 "kırpma ayarını kullanmak üzere \n"
-"'Sonraki' düğmesine tıklayabilirsiniz.\n"
-"Tüm fotoğrafların kırpılmasını önlemek için \"Kırpma\" seçeneğini "
+"“Sonraki” düğmesine tıklayabilirsiniz.\n"
+"Tüm fotoğrafların kırpılmasını önlemek için “Kırpma” seçeneğini "
 "etkinleştirin."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_disableCrop)
@@ -20024,7 +20024,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
-msgstr "GIMP'in geçici dosyaları kaldırılamadı."
+msgstr "GIMP’in geçici dosyaları kaldırılamadı."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
@@ -20340,7 +20340,7 @@ msgstr "Görselleriniz e-postayla gönderildikten sonra…"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:666
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
-msgstr "Geçici dosyaları temizlemek için 'Bitir' düğmesine basın"
+msgstr "Geçici dosyaları temizlemek için “Bitir” düğmesine basın"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
@@ -21150,7 +21150,7 @@ msgstr ""
 "tr><tr><td>Özgün boyut:</td><td><i>O</i> düğmesi</td></"
 "tr><tr><td>Yakınlaştırma:</td><td>Sağ fare düğmesine basarken fareyi yukarı "
 "aşağı yönünde hareket ettir</td></tr><tr><td></td><td><i>C</i> düğmesi ve "
-"fare tekerleği</td></tr><tr><td></td><td><i>+</i> ve <i>-</i> düğmeleri</"
+"fare tekerleği</td></tr><tr><td></td><td><i>+</i> ve <i>−</i> düğmeleri</"
 "td></tr><tr><td></td><td>Kontrol + Fare tekerleği</td></tr><tr><td>Kaydırma:"
 "</td><td>Sol fare düğmesine basarken fareyi hareket ettir</td></tr><tr><td "
 "colspan=\"2\"><nobr><center><b><h1>Diğer</h1></b></center></nobr></td></"
@@ -21386,7 +21386,7 @@ msgstr "Fon müziği:"
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
@@ -23012,7 +23012,7 @@ msgid ""
 "used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgstr ""
 "Görsellerin karşıya yükleneceği hedef adresi ayarlar. Bu, Dolphin veya "
-"Konqueror'da kullanılan herhangi bir adres olabilir; örneğin, ftp://benim."
+"Konqueror’da kullanılan herhangi bir adres olabilir; örneğin, ftp://benim."
 "sunucum.org/alt/klasör."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
@@ -23240,7 +23240,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
-msgstr "&Flickr'a Dışa Aktar…"
+msgstr "&Flickr’a Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
 #, kde-format
@@ -23596,7 +23596,7 @@ msgstr "Yalnızca Photostream"
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:777
 #, kde-format
 msgid "Flickr Export"
-msgstr "Flickr'a Dışa Aktar"
+msgstr "Flickr’a Dışa Aktar"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:812
 #, kde-format
@@ -23713,7 +23713,7 @@ msgstr "Google"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with Google web-service"
-msgstr "Google web hizmetine içe-dışa aktarmak için bir araç"
+msgstr "Google web hizmetine içe–dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
 #, kde-format
@@ -24796,7 +24796,7 @@ msgstr "IPFS’ye yüklemeyi başlat"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
 #, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr "Fotoğraf, IPFS'ye yüklenemedi: %1\n"
+msgstr "Fotoğraf IPFS’ye yüklenemedi: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #, kde-format
@@ -25178,7 +25178,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item"
 msgid "First published in the United States before 1923"
-msgstr "İlk olarak 1923’ten önce Amerika Birleşik Devletleri'nde yayımlandı"
+msgstr "İlk olarak 1923’ten önce Amerika Birleşik Devletleri’nde yayımlandı"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
 #, kde-format
@@ -25249,7 +25249,7 @@ msgid ""
 "default of 'Uploaded via digiKam uploader' will be used if empty."
 msgstr ""
 "Burası, yükleme yorumları olarak kullanılacak metnin girileceği yerdir. "
-"Boşsa 'digiKam yükleyicisi ile karşıya yüklendi' öntanımlısı kullanılacaktır."
+"Boşsa “digiKam yükleyicisi ile karşıya yüklendi” öntanımlısı kullanılacaktır."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
 #, kde-format
@@ -25321,7 +25321,7 @@ msgstr "MediaWiki’ye yüklemeyi başlat"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:297
 #, kde-format
 msgid "MediaWiki export"
-msgstr "MediaWiki'ye dışa aktar"
+msgstr "MediaWiki’ye dışa aktar"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:333
 #, kde-format
@@ -25368,13 +25368,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
-msgstr "&OneDrive'a Dışa Aktar…"
+msgstr "&OneDrive’a Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr "OneDrive'a Dışa Aktar"
+msgstr "OneDrive’a Dışa Aktar"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:76
 #, kde-format
@@ -25386,7 +25386,7 @@ msgstr "OneDrive’a yüklemeyi başlat"
 #, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
-msgstr "Onedrive'a dışa aktar"
+msgstr "OneDrive’a dışa aktar"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:318
 #, kde-format
@@ -25440,7 +25440,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
-msgstr "&Pinterest'e Dışa Aktar…"
+msgstr "&Pinterest’e Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:491
 #, kde-format
@@ -25456,7 +25456,7 @@ msgstr "Tahtalar listelenemedi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr "Pinterest'e Dışa Aktar"
+msgstr "Pinterest’e Dışa Aktar"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:76
 #, kde-format
@@ -25474,7 +25474,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:285
 #, kde-format
 msgid "Pinterest export"
-msgstr "Pinterest'e dışa aktar"
+msgstr "Pinterest’e dışa aktar"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:322
 #, kde-format
@@ -25541,7 +25541,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
-msgstr "&Piwigo'ya Dışa Aktar…"
+msgstr "&Piwigo’ya Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
 #, kde-format
@@ -25571,7 +25571,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
-msgstr "Uzak Piwigo'dan geçersiz yanıt alındı"
+msgstr "Uzak Piwigo’dan geçersiz yanıt alındı"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
@@ -25612,7 +25612,7 @@ msgstr "%1 üst verisi yükleniyor…"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
-msgstr "Uzak Piwigo'dan (%1) geçersiz yanıt alındı"
+msgstr "Uzak Piwigo’dan geçersiz yanıt alındı (%1)"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:122
 #, kde-format
@@ -25683,7 +25683,7 @@ msgstr "Yeniden boyutlandırılmış JPEG kalitesi:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
-msgstr "Piwigo'ya Dışa Aktar"
+msgstr "Piwigo’ya Dışa Aktar"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:285
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:420
@@ -25695,7 +25695,7 @@ msgstr "Piwigo Verisini Düzenle"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:411
 #, kde-format
 msgid "Failed to login into remote piwigo. "
-msgstr "Uzak Piwigo'ya oturum açılamadı."
+msgstr "Uzak Piwigo’ya oturum açılamadı."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
 #, kde-format
@@ -25723,7 +25723,7 @@ msgstr "Albüm"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:567
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
-msgstr "Karşıya yüklenecek bir şey yok - lütfen yüklenecek fotoğrafları seçin."
+msgstr "Karşıya yüklenecek bir şey yok — lütfen yüklenecek fotoğrafları seçin."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:610
 #, kde-format
@@ -25738,7 +25738,7 @@ msgstr "%1 dosyası karşıya yükleniyor…"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Uzak Piwigo'ya ortam yüklenemedi."
+msgstr "Uzak Piwigo’ya ortam yüklenemedi."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
 #, kde-format
@@ -25796,7 +25796,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
-msgstr "&Rajce'ye Dışa Aktar…"
+msgstr "&Rajce’ye Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:162
 #, kde-format
@@ -25894,7 +25894,7 @@ msgstr "Fotoğraflar ekleniyor %​%v"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
-msgstr "Rajce'ye Dışa Aktar"
+msgstr "Rajce’ye Dışa Aktar"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
 #, kde-format
@@ -26007,7 +26007,7 @@ msgstr "SmugMug"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with SmugMug web-service"
-msgstr "SmugMug web hizmetine içe-dışa aktarmak için bir araç"
+msgstr "SmugMug web hizmetine içe–dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:65
 #, kde-format
@@ -26026,13 +26026,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
-msgstr "&SmugMug'a Dışa Aktar…"
+msgstr "&SmugMug’a Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Import from &SmugMug..."
-msgstr "&SmugMug'dan İçe Aktar…"
+msgstr "&SmugMug’dan İçe Aktar…"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:352
 #, kde-format
@@ -26192,7 +26192,7 @@ msgstr "SmugMug web hizmetinden indirmeyi başlat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "SmugMug'a Dışa Aktar"
+msgstr "SmugMug’a Dışa Aktar"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:118
 #, kde-format
@@ -26226,12 +26226,12 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:748
 #, kde-format
 msgid "SmugMug Import"
-msgstr "SmugMug'a İçe Aktar"
+msgstr "SmugMug’ İçe Aktar"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:784
 #, kde-format
 msgid "SmugMug Export"
-msgstr "SmugMug'a Dışa Aktar"
+msgstr "SmugMug’a Dışa Aktar"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:906
 #, kde-format
@@ -26291,7 +26291,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
-msgstr "&Twitter'a Dışa Aktar…"
+msgstr "&Twitter’a Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
@@ -26323,7 +26323,7 @@ msgstr "Karşıya yüklenen fotoğraf için Tweet oluşturulamadı"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr "Twitter'a Dışa Aktar"
+msgstr "Twitter’a Dışa Aktar"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:76
 #, kde-format
@@ -26334,7 +26334,7 @@ msgstr "Twitter’a yüklemeyi başlat"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:285
 #, kde-format
 msgid "Twitter export"
-msgstr "Twitter'a dışa aktar"
+msgstr "Twitter’a dışa aktar"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:321
 #, kde-format
@@ -26457,7 +26457,7 @@ msgstr "<h3>Bu görünüm, kullanıcı albümlerini listeler.</h3>"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
-msgstr "%1 - Albüm Oluşturma Başarısız"
+msgstr "%1 — Albüm Oluşturma Başarısız"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:78
 #, kde-format
@@ -26946,11 +26946,12 @@ msgid ""
 msgstr ""
 "Bu albüm son açıldığından bu yana veritabanı karakter kümesi değişti.\n"
 "Eski karakter kümesi: %1, yeni karakter kümesi: %2\n"
-"Yakın zamanda bu ayarı değiştirdiyseniz endişelenmeniz gereken bir şey yok.\n"
+"Yakın zamanda bu ayarı değiştirdiyseniz endişelenmeniz gereken bir şey "
+"yoktur.\n"
 "Koleksiyonunuzdaki bazı dosya adlarını desteklemeyen bir veritabanı karakter "
 "kümesine geçiş yaptıysanız bu dosyaların artık koleksiyonda "
 "bulunamayabileceğini lütfen unutmayın. Sürdürmek istediğinizden eminseniz "
-"'Evet'e tıklayın. Aksi takdirde, 'Hayır'a tıklayın ve digiKam’i yeniden "
+"“Evet”e tıklayın. Aksi takdirde, “Hayır”a tıklayın ve digiKam’i yeniden "
 "başlatmadan önce veritabanı karakter kümesi ayarlarınızı düzeltin."
 
 #: core/libs/album/manager/albummanager_database.cpp:309
@@ -27017,9 +27018,9 @@ msgid ""
 msgstr ""
 "<p>Veritabanının depolanacağı yer olarak “%1” klasörünü seçtiniz. Bu "
 "klasörde digiKam’ın eski bir sürümünden bir veritabanı dosyası bulundu.</"
-"p><p>Eski veritabanı dosyasını yükseltmek ister misiniz - bu veritabanı "
+"p><p>Eski veritabanı dosyasını yükseltmek ister misiniz —bu veritabanı "
 "dosyasının gerçekten “%2” klasöründe bulunan resimler için oluşturulduğunu "
-"onaylayın - yoksa eski dosyayı yok sayıp yeni bir veritabanıyla mı "
+"onaylayın— yoksa eski dosyayı yok sayıp yeni bir veritabanıyla mı "
 "başlarsınız?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:485
@@ -27178,7 +27179,7 @@ msgstr "Albüm adı boş bırakılamaz."
 #: core/libs/album/manager/albummanager_palbum.cpp:389
 #, kde-format
 msgid "Album name cannot contain '/'."
-msgstr "Albüm adı '/' içeremez."
+msgstr "Albüm adı “/” içeremez."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
@@ -27223,7 +27224,7 @@ msgstr "Kök albüm yeniden adlandırılamaz"
 #: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
 msgid "Album name cannot contain '/'"
-msgstr "Albüm adı '/' içeremez"
+msgstr "Albüm adı “/” içeremez"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:489
 #, kde-format
@@ -27258,7 +27259,7 @@ msgstr "Künye adı boş bırakılamaz"
 #: core/libs/album/manager/albummanager_talbum.cpp:473
 #, kde-format
 msgid "Tag name cannot contain '/'"
-msgstr "Künye adı '/' içeremez"
+msgstr "Künye adı “/” içeremez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
 #: core/libs/tags/widgets/tageditdlg.cpp:462
@@ -28239,7 +28240,7 @@ msgid ""
 "this error to the digikam developers mailing list (see www.digikam.org/"
 "support). As well, please have a look at what digiKam prints on the console. "
 msgstr ""
-"Sürüm 4'ten 6'ya şema güncelleme işlemi, beklemediğimiz bir hata nedeniyle "
+"Sürüm 4’ten 6’ya şema güncelleme işlemi, beklemediğimiz bir hata nedeniyle "
 "başarısız oldu. Eski veritabanınızı atmayı ve boş bir veritabanıyla "
 "başlamayı deneyebilirsiniz. (Bu durumda, lütfen “%1” ve “%2” veritabanı "
 "dosyalarını “%3” dizininden taşıyın). Büyük olasılıkla bu hatayı digiKam "
@@ -28349,9 +28350,9 @@ msgid ""
 "process will now be aborted because we do not want to create a new database "
 "based on false assumptions from a broken installation."
 msgstr ""
-"albumLibraryPath'inizi (“%1”) sisteminizin depolama birimiyle "
+"albumLibraryPath’inizi (“%1”) sisteminizin depolama birimiyle "
 "ilişkilendirirken bir hata oluştu. Bu durum, kurulumunuzda bir sorun "
-"olduğunu gösterebilir. Linux üzerinde çalışıyorsanız HAL'in kurulu ve "
+"olduğunu gösterebilir. Linux üzerinde çalışıyorsanız HAL’in kurulu ve "
 "çalışır durumda olduğunu denetleyin. Her durumda, digiKam geliştiricilerinin "
 "e-posta listesinden öneriler alabilirsiniz (bkz. www.digikam.org/support). "
 "Bozuk bir kurulumdan kaynaklanan yanlış varsayımlara dayalı yeni bir "
@@ -28454,7 +28455,7 @@ msgid ""
 "The XML in the configuration file <b>%1</b> is missing the required element "
 "<icode>%2</icode>"
 msgstr ""
-"<b>%1</b> yapılandırma dosyasındaki XML'de gerekli <icode>%2</icode> ögesi "
+"<b>%1</b> yapılandırma dosyasındaki XML’de gerekli <icode>%2</icode> ögesi "
 "eksik"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:209
@@ -28463,7 +28464,7 @@ msgid ""
 "The XML in the configuration file <b>%1</b> is missing the required element "
 "<b>%2</b>"
 msgstr ""
-"<b>%1</b> yapılandırma dosyasındaki XML'de gerekli <b>%2</b> ögesi eksik"
+"<b>%1</b> yapılandırma dosyasındaki XML’de gerekli <b>%2</b> ögesi eksik"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:228
 #, kde-format
@@ -29291,7 +29292,7 @@ msgstr ""
 "<p>digiKam, veritabanının halihazırda özel bir kullanıcı hesabıyla "
 "oluşturulmuş olmasını bekler. Bu kullanıcı adı <i>digikam</i>, veritabanına "
 "tam erişim gerektirecektir.<br/>Veritabanınız henüz ayarlanmadıysa aşağıdaki "
-"SQL komutlarını kullanabilirsiniz (<b><i>password</i></b>'ü doğrusuyla "
+"SQL komutlarını kullanabilirsiniz (<b><i>password</i></b>’ü doğrusuyla "
 "değiştirdikten sonra).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
@@ -29662,7 +29663,7 @@ msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr ""
-"İşaretlenirse dosyalar, Çöp Kutusu'na atılmak yerine kalıcı olarak "
+"İşaretlenirse dosyalar, Çöp Kutusu’na atılmak yerine kalıcı olarak "
 "kaldırılır."
 
 #: core/libs/dialogs/deletedialog.cpp:291
@@ -29672,9 +29673,9 @@ msgid ""
 "of being placed in the Trash.</p><p><em>Use this option with caution</em>: "
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
-"<p>Bu kutu işaretlenirse öğeler Çöp Kutusu'na atılmak yerine <b>kalıcı "
+"<p>Bu kutu işaretlenirse ögeler Çöp Kutusu’na atılmak yerine <b>kalıcı "
 "olarak kaldırılır</b>.</p><p><em>Bu seçeneği dikkatli kullanın</em>: Çoğu "
-"dosya sistemi silinen ögeleri güvenilir bir şekilde geri alamıyor.</p>"
+"dosya sistemi silinen ögeleri güvenilir bir şekilde geri alamaz.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
@@ -29711,7 +29712,7 @@ msgid ""
 "moved to the Trash."
 msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan Çöp "
-"Kutusu'na gönderilirler."
+"Kutusu’na gönderilirler."
 
 #: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
@@ -29720,7 +29721,7 @@ msgid ""
 "be directly moved to the Trash."
 msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
-"doğrudan Çöp Kutusu'na gönderilirler."
+"doğrudan Çöp Kutusu’na gönderilirler."
 
 #: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
@@ -29730,7 +29731,7 @@ msgstr "Bu öğeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
 #: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
-msgstr "Bu ögeler Çöp Kutusu'na taşınacaklar."
+msgstr "Bu ögeler Çöp Kutusu’na taşınacaklar."
 
 #: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
@@ -29747,7 +29748,7 @@ msgstr "Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek."
 #: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
-msgstr "Bu albümler Çöp Kutusu'na taşınacak."
+msgstr "Bu albümler Çöp Kutusu’na taşınacak."
 
 #: core/libs/dialogs/deletedialog.cpp:415
 #: core/libs/dialogs/deletedialog.cpp:442
@@ -29774,13 +29775,13 @@ msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
-"<p>Bu albümler Çöp Kutusu'na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
-"de bu listede olduğunu ve onların da Çöp Kutusu'na taşınacağını not edin.</p>"
+"<p>Bu albümler Çöp Kutusu’na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
+"de bu listede olduğunu ve onların da Çöp Kutusu’na taşınacağını not edin.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Move to Trash"
-msgstr "&Çöp Kutusu'na Taşı"
+msgstr "&Çöp Kutusu’na Taşı"
 
 #: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
@@ -29829,7 +29830,7 @@ msgstr "Görsel Dosyası Kaydetme Ayarları"
 #, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr "Renk Profili Bilgisi - %1"
+msgstr "Renk Profili Bilgisi — %1"
 
 #: core/libs/dialogs/imagedialog.cpp:223
 #, kde-format
@@ -30049,7 +30050,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
-msgstr "Tak-Çıkar Aygıt Olayları"
+msgstr "Tak–Çıkar Aygıt Olayları"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, kde-format
@@ -30281,7 +30282,7 @@ msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
 "p>"
 msgstr ""
-"<b>Agfa 200X</b>:<p>Agfa 200X siyah beyaz filmine 200 ISO'da öykünün.</p>"
+"<b>Agfa 200X</b>:<p>Agfa 200X siyah–beyaz filmine 200 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
 #, kde-format
@@ -30294,7 +30295,7 @@ msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
 "p>"
 msgstr ""
-"<b>Agfa Pan 25</b>:<p>Agfa Pan siyah beyaz filmine 25 ISO'da öykünün.</p>"
+"<b>Agfa Pan 25</b>:<p>Agfa Pan siyah–beyaz filmine 25 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
 #, kde-format
@@ -30307,7 +30308,7 @@ msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
 "</p>"
 msgstr ""
-"<b>Agfa Pan 100</b>:<p>Agfa Pan siyah beyaz filmine 100 ISO'da öykünün.</p>"
+"<b>Agfa Pan 100</b>:<p>Agfa Pan siyah–beyaz filmine 100 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
 #, kde-format
@@ -30320,7 +30321,7 @@ msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
 "</p>"
 msgstr ""
-"<b>Agfa Pan 400</b>:<p>Agfa Pan siyah beyaz filmine 400 ISO'da öykünün.</p>"
+"<b>Agfa Pan 400</b>:<p>Agfa Pan siyah–beyaz filmine 400 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
 #, kde-format
@@ -30333,7 +30334,7 @@ msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
 "100 ISO.</p>"
 msgstr ""
-"<b>Ilford Delta 100</b>:<p>Ilford Delta siyah beyaz filmine 100 ISO'da "
+"<b>Ilford Delta 100</b>:<p>Ilford Delta siyah–beyaz filmine 100 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
@@ -30347,7 +30348,7 @@ msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
 "400 ISO.</p>"
 msgstr ""
-"<b>İlford Delta 400</b>:<p>Ilford Delta siyah beyaz filmine 400 ISO'da "
+"<b>İlford Delta 400</b>:<p>Ilford Delta siyah–beyaz filmine 400 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
@@ -30361,8 +30362,8 @@ msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
 "and white film at 3200 ISO.</p>"
 msgstr ""
-"<b>Ilford Delta 400 Pro 3200</b>:<p>Ilford Delta 400 Pro siyah beyaz filmine "
-"3200 ISO'da öykünün.</p>"
+"<b>Ilford Delta 400 Pro 3200</b>:<p>Ilford Delta 400 Pro siyah–beyaz filmine "
+"3200 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
 #, kde-format
@@ -30375,7 +30376,7 @@ msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
 "at 125 ISO.</p>"
 msgstr ""
-"<b>Ilford FP4 Plus</b>:<p>Ilford FP4 Plus siyah-beyaz filmine 125 ISO'da "
+"<b>Ilford FP4 Plus</b>:<p>Ilford FP4 Plus siyah–beyaz filmine 125 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
@@ -30389,7 +30390,7 @@ msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
 "at 400 ISO.</p>"
 msgstr ""
-"<b>Ilford FP5 Plus</b>:<p>Ilford FP5 Plus siyah-beyaz filmine 400 ISO'da "
+"<b>Ilford FP5 Plus</b>:<p>Ilford FP5 Plus siyah–beyaz filmine 400 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
@@ -30403,7 +30404,7 @@ msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
 "film at 50 ISO.</p>"
 msgstr ""
-"<b>Ilford PanF Plus</b>:<p>Ilford PanF Plus siyah-beyaz filmine 50 ISO'da "
+"<b>Ilford PanF Plus</b>:<p>Ilford PanF Plus siyah–beyaz filmine 50 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
@@ -30417,7 +30418,7 @@ msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
 "film at 400 ISO.</p>"
 msgstr ""
-"<b>Ilford XP2 Süper</b>:<p>Ilford XP2 Süper siyah beyaz filmine 400 ISO'da "
+"<b>Ilford XP2 Süper</b>:<p>Ilford XP2 Süper siyah–beyaz filmine 400 ISO’da "
 "öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
@@ -30431,7 +30432,7 @@ msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
 "ISO.</p>"
 msgstr ""
-"<b>Kodak Tmax 100</b>.:<p>Kodak Tmax siyah beyaz filmine 100 ISO'da öykünün."
+"<b>Kodak Tmax 100</b>.:<p>Kodak Tmax siyah–beyaz filmine 100 ISO’da öykünün."
 "</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
@@ -30445,7 +30446,7 @@ msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
 "ISO.</p>"
 msgstr ""
-"<b>Kodak Tmax 400</b>:<p>Kodak Tmax siyah beyaz filmine 400 ISO'da öykünün.</"
+"<b>Kodak Tmax 400</b>:<p>Kodak Tmax siyah–beyaz filmine 400 ISO’da öykünün.</"
 "p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
@@ -30459,7 +30460,7 @@ msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
 "</p>"
 msgstr ""
-"<b>Kodak TriX</b>:<p>Kodak TriX siyah beyaz filmine 400 ISO'da öykünün.</p>"
+"<b>Kodak TriX</b>:<p>Kodak TriX siyah–beyaz filmine 400 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
 #, kde-format
@@ -30472,7 +30473,7 @@ msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 200</b>:<p>Ilford SPX kızılötesi filmine 200 ISO'da öykünün.</"
+"<b>Ilford SPX 200</b>:<p>Ilford SPX kızılötesi filmine 200 ISO’da öykünün.</"
 "p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
@@ -30486,7 +30487,7 @@ msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 400</b>:<p>Ilford SPX kızılötesi filmine 400 ISO'da öykünün.</"
+"<b>Ilford SPX 400</b>:<p>Ilford SPX kızılötesi filmine 400 ISO’da öykünün.</"
 "p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
@@ -30500,7 +30501,7 @@ msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
 "p>"
 msgstr ""
-"<b>Ilford SPX 800</b>:<p>Ilford SPX kızılötesi filme 800 ISO'da öykünün.</p>"
+"<b>Ilford SPX 800</b>:<p>Ilford SPX kızılötesi filme 800 ISO’da öykünün.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
 #, kde-format
@@ -30593,7 +30594,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
 #, kde-format
 msgid "Yellow-Green Filter"
-msgstr "Sarı-Yeşil Süzgeci"
+msgstr "Sarı–Yeşil Süzgeci"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:246
 #, kde-format
@@ -30605,8 +30606,8 @@ msgid ""
 "expressions in close-ups and emphasizing the feeling of liveliness. This "
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
-"<b>Sarı-Yeşil Süzgeçli Siyah Beyaz</b>:<p>Sarı-yeşil süzgeç kullanarak siyah "
-"beyaz film pozlamasına öykünün. Sarı-yeşil süzgeç, dış mekan portreleri için "
+"<b>Sarı–Yeşil Süzgeçli Siyah Beyaz</b>:<p>Sarı–yeşil süzgeç kullanarak siyah "
+"beyaz film pozlamasına öykünün. Sarı–yeşil süzgeç, dış mekan portreleri için "
 "oldukça etkilidir; çünkü kırmızı koyu, yeşil ise daha açık görünür. Cilt "
 "tonlarını düzeltmek, yakın çekimlerde yüz ifadelerini öne çıkarmak ve "
 "canlılık hissini vurgulamak için idealdir. Bu süzgeç, tungsten aydınlatma "
@@ -30884,11 +30885,10 @@ msgid ""
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
-"Renkli görseli Siyah-Beyaz'a dönüştürmek için \"Tek Renkli\" kipini "
-"kullanın:\n"
-"\"Kırmızı kanal\" fotoğrafın karşıtlığını değiştirir.\n"
-"\"Yeşil kanal\" fotoğrafın ayrıntı düzeyini artırır veya azaltır.\n"
-"\"Mavi kanal\" fotoğrafın gürültüsünü etkiler.\n"
+"Renkli görseli siyah–beyaz’a dönüştürmek için “Tek Renkli” kipini kullanın:\n"
+"“Kırmızı kanal” fotoğrafın karşıtlığını değiştirir.\n"
+"“Yeşil kanal” fotoğrafın ayrıntı düzeyini artırır veya azaltır.\n"
+"“Mavi kanal” fotoğrafın gürültüsünü etkiler.\n"
 "Not: Bu kipte histogram yalnızca parlaklık değerlerini gösterecektir."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:321
@@ -32022,7 +32022,7 @@ msgstr "Doğrusal"
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
-msgstr "Runge-Kutta"
+msgstr "Runge–Kutta"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
@@ -32635,7 +32635,7 @@ msgstr "Mercek Kendiliğinden Düzeltme Aracı"
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
-msgstr "Kamera: %1-%2"
+msgstr "Kamera: %1–%2"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
 #, kde-format
@@ -32771,8 +32771,8 @@ msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
-"Burada dört geometri ele alınmaktadır: Dikdörtgen (tüm merceklerin yüzde "
-"99'u), Balıkgözü, Silindirik, Eşkenar Dörtgen."
+"Burada dört geometri ele alınmaktadır: Dikdörtgen (tüm merceklerin %​99’u), "
+"Balıkgözü, Silindirik, Eşkenar Dörtgen."
 
 #: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
 #, kde-format
@@ -33195,8 +33195,8 @@ msgid ""
 "effect of the tool."
 msgstr ""
 "Karşılıklı ilişkinin artırılması kalıntıların azaltılmasına yardımcı "
-"olabilir. Karşılıklı ilişki, 0-1 arasında değişebilir. Yararlı değerler 0,5 "
-"ve 1'e yakın değerlerdir; 0,95 ve 0,99 gibi. Karşılıklı ilişki için yüksek "
+"olabilir. Karşılıklı ilişki, 0–1 arasında değişebilir. Yararlı değerler 0,5 "
+"ve 1’e yakın değerlerdir; 0,95 ve 0,99 gibi. Karşılıklı ilişki için yüksek "
 "bir değer kullanılması aracın keskinleştirme etkisini azaltacaktır."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
@@ -33214,7 +33214,7 @@ msgid ""
 "filter will reduce the sharpening effect of the tool."
 msgstr ""
 "Gürültü süzgeci parametresinin artırılması kalıntıların azaltılmasına "
-"yardımcı olabilir. Gürültü süzgeci 0-1 aralığında olabilir; ancak 0,1’den "
+"yardımcı olabilir. Gürültü süzgeci 0–1 aralığında olabilir; ancak 0,1’den "
 "yüksek değerler nadiren yardımcı olur. Gürültü süzgeci değeri çok düşük "
 "olduğunda; örneğin, 0.0’da görsel kalitesi çok düşük olacaktır. Yararlı bir "
 "değer 0,01’dir. Gürültü süzgeci için yüksek bir değer kullanılması aracın "
@@ -33676,7 +33676,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
-msgstr "E.V.'deki ana pozlama telafisi değerini burada ayarlayın."
+msgstr "E.V.’deki ana pozlama telafisi değerini burada ayarlayın."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, kde-format
@@ -33691,7 +33691,7 @@ msgid ""
 "This value in E.V will be added to main exposure compensation value to set "
 "fine exposure adjustment."
 msgstr ""
-"E.V'deki bu değer, ince pozlama ayarını yapmak için ana pozlama telafisi "
+"E.V.’deki bu değer, ince pozlama ayarını yapmak için ana pozlama telafisi "
 "değerine eklenecektir."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:487
@@ -35091,7 +35091,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr "Düşük kaliteli resimlere 'Reddedildi' etiketini ata"
+msgstr "Düşük kaliteli resimlere “Reddedildi” etiketini ata"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
@@ -35101,13 +35101,13 @@ msgid ""
 "assigned to Rejected label."
 msgstr ""
 "Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen düşük "
-"kaliteli görsellere 'Reddedildi' etiketi atanır."
+"kaliteli görsellere “Reddedildi” etiketi atanır."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgstr "Orta kaliteli resimlere 'Beklemede' etiketini ata"
+msgstr "Orta kaliteli resimlere “Beklemede” etiketini ata"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
@@ -35117,13 +35117,13 @@ msgid ""
 "be assigned to Pending label."
 msgstr ""
 "Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen orta kaliteli "
-"görsellere 'Beklemede' etiketi atanır."
+"görsellere “Beklemede” etiketi atanır."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgstr "Yüksek kaliteli resimlere 'Kabul Edildi' etiketini ata"
+msgstr "Yüksek kaliteli resimlere “Kabul Edildi” etiketini ata"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
@@ -35133,7 +35133,7 @@ msgid ""
 "be assigned to Accepted label."
 msgstr ""
 "Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen yüksek "
-"kaliteli görsellere 'Kabul Edildi' etiketi atanır."
+"kaliteli görsellere “Kabul Edildi” etiketi atanır."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
@@ -35178,7 +35178,7 @@ msgstr "Reddedilme eşiği:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
-msgstr "Tüm resimlere 'Reddedildi' etiketi atanması için gereken eşik"
+msgstr "Tüm resimlere “Reddedildi” etiketi atanması için gereken eşik"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, kde-format
@@ -35190,7 +35190,7 @@ msgstr "Beklemede eşiği:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
-msgstr "Tüm resimlere 'Beklemede' etiketi atanması için gereken eşik"
+msgstr "Tüm resimlere “Beklemede” etiketi atanması için gereken eşik"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:173
 #, kde-format
@@ -35202,7 +35202,7 @@ msgstr "Kabul Edildi eşiği:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
-msgstr "Tüm resimlere 'Kabul Edildi' etiketi atanması için gereken eşik"
+msgstr "Tüm resimlere “Kabul Edildi” etiketi atanması için gereken eşik"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:180
 #, kde-format
@@ -36647,7 +36647,7 @@ msgstr "Tahmini bitiş:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Çevrimiçi Sürüm Denetleyicisi - Ön Yayım"
+msgstr "Çevrimiçi Sürüm Denetleyicisi — Ön Yayım"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
@@ -36658,7 +36658,7 @@ msgstr "Kullanılabilir ön yayım sürümleri denetleniyor, lütfen bekleyin…
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
-msgstr "Çevrimiçi Sürüm Denetleyicisi - Kararlı Sürüm"
+msgstr "Çevrimiçi Sürüm Denetleyicisi — Kararlı Sürüm"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
@@ -37289,8 +37289,8 @@ msgid ""
 "hierarchy of tags. ',' can be used to create more than one hierarchy at the "
 "same time."
 msgstr ""
-"Künyeleri oluşturmak için kullanılan metni buraya girin. '/' künyelerin "
-"hiyerarşisini oluşturmak için; ',' ise aynı anda birden fazla hiyerarşi "
+"Künyeleri oluşturmak için kullanılan metni buraya girin. “/” künyelerin "
+"hiyerarşisini oluşturmak için; “,” ise aynı anda birden fazla hiyerarşi "
 "oluşturmak için kullanılabilir."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
@@ -38191,7 +38191,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
-msgstr "RGB'yi dört renk olarak aradeğerle"
+msgstr "RGB’yi dört renk olarak aradeğerle"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:200
 #, kde-kuit-format
@@ -38205,7 +38205,7 @@ msgid ""
 "but it eliminates false 2x2 mesh patterns with VNG quality method or mazes "
 "with AHD quality method.</para>"
 msgstr ""
-"<title>RGB'yi dört renk olarak aradeğerle</title><para>Öntanımlı değer, tüm "
+"<title>RGB’yi dört renk olarak aradeğerle</title><para>Öntanımlı değer, tüm "
 "yeşil piksellerin aynı olduğunu varsaymaktır. Çift sıralı yeşil pikseller "
 "morötesi ışığa tek sıralı yeşil piksellerden daha duyarlıysa bu fark çıktıda "
 "bir ağ desenine neden olur; bu seçeneğin kullanılması bu sorunu en düşük "
@@ -38325,13 +38325,13 @@ msgstr ""
 "kullanılacak mozaik giderme yöntemini buradan seçin. Mozaik giderme "
 "algoritması, birçok sayısal kameranın içindeki renk süzgeçli görüntü "
 "algılayıcısından alınan, renkli piksellerden oluşan bir matris biçimindeki "
-"kısımsal ham verilerden tam bir görüntünün aradeğerlemesini yapmak için "
+"kısımsal ham verilerden tam bir görselin aradeğerlemesini yapmak için "
 "kullanılan bir sayısal görsel işlemidir. CFA aradeğerlemesi veya renk "
 "yeniden yapılandırması olarak da bilinir ve mozaik giderme da başka bir "
 "adıdır. RAW görsellerin mozaiğinin giderilmesi için aşağıdaki yöntemler "
 "kullanılabilir:</para><para><list><item><emphasis strong='true'>İki yönlü</"
 "emphasis>: Yüksek hızlı; ancak düşük kaliteli iki yönlü aradeğerleme "
-"kullanın (öntanımlı - yavaş bilgisayarlar için). Bu yöntemde, kırmızı "
+"kullanın (öntanımlı — yavaş bilgisayarlar için). Bu yöntemde, kırmızı "
 "olmayan bir pikselin kırmızı değeri, komşu kırmızı piksellerin ortalaması "
 "olarak hesaplanır ve benzer şekilde mavi ve yeşil için de yapılır.</"
 "item><item><emphasis strong='true'>VNG</emphasis>: Değişken Gradyan Sayısı "
@@ -38340,7 +38340,7 @@ msgstr ""
 "(görselin daha düzgün ve daha benzer kısımlarını temsil eden) kullanır.</"
 "item><item><emphasis strong='true'>PPG</emphasis>: Desenli Piksel "
 "Gruplandırma aradeğerlemesini kullanın. Piksel Gruplaması, tahminlerde "
-"bulunurken doğal manzaraya ilişkin varsayımları kullanır. Doğal görüntülerde "
+"bulunurken doğal manzaraya ilişkin varsayımları kullanır. Doğal görsellerde "
 "Değişken Gradyan Sayısı yöntemine göre daha az renk kusuru vardır.</"
 "item><item><emphasis strong='true'>AHD</emphasis>: Uyarlanır Homojenliğe "
 "Yönelik aradeğerlemeyi kullanın. Bu yöntem, bir homojenlik ölçüsünü en üst "
@@ -38370,7 +38370,7 @@ msgid ""
 "strong='true'>AHD</emphasis>, <emphasis strong='true'>DCB</emphasis>, and "
 "<emphasis strong='true'>VCD & AHD</emphasis>.</para>"
 msgstr ""
-"<title>Geçiş</title><para>Kırmızı-Yeşil ve Mavi-Yeşil kanallara "
+"<title>Geçiş</title><para>Kırmızı–Yeşil ve Mavi–Yeşil kanallara "
 "aradeğerlemeden sonra uygulanan ortanca süzgeç tarafından kullanılan "
 "geçişleri burada ayarlayın.</para> <para>Bu ayar, yalnızca belirli kalite "
 "seçenekleri için kullanılabilirdir: <emphasis strong='true'>İki yönlü</"
@@ -38588,7 +38588,7 @@ msgid ""
 "<title>Shift</title><para>Linear Shift of exposure correction before "
 "interpolation in E.V</para>"
 msgstr ""
-"<title>Kayma</title><para>E.V'de aradeğerlemeden önce pozlama düzeltmesinin "
+"<title>Kayma</title><para>E.V.’de aradeğerlemeden önce pozlama düzeltmesinin "
 "doğrusal kayması</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:404
@@ -38605,8 +38605,8 @@ msgid ""
 "correction before interpolation in E.V. Only take effect if Shift Correction "
 "is > 1.0 E.V</para>"
 msgstr ""
-"<title>Vurgu</title><para>E.V.'de aradeğerlemeden önce pozlama düzeltmesi "
-"için parlak nokta koruma miktarı kayma düzeltmesi > 1,0 E.V ise yalnızca "
+"<title>Vurgu</title><para>E.V.’de aradeğerlemeden önce pozlama düzeltmesi "
+"için parlak nokta koruma miktarı kayma düzeltmesi > 1,0 E.V. ise yalnızca "
 "etkili olur</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:413
@@ -38623,8 +38623,8 @@ msgid ""
 "accurately, without 'pink clouds' (and blue highlights under tungsten lamps)."
 "</para>"
 msgstr ""
-"<para>Etkinleştirilirse aşırı şişirilmiş kanallara sahip görseller, 'pembe "
-"bulutlar' (ve tungsten lambaların altındaki mavi vurgular) olmadan çok daha "
+"<para>Etkinleştirilirse aşırı şişirilmiş kanallara sahip görseller, “pembe "
+"bulutlar” (ve tungsten lambaların altındaki mavi vurgular) olmadan çok daha "
 "doğru şekilde işlenir.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:418
@@ -39165,7 +39165,7 @@ msgstr "Ögeleri ışık tablasına eklemek"
 #: core/libs/settings/applicationsettings_miscs.cpp:530
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Ögeleri Toplu Kuyruk Yöneticisi'ne eklemek"
+msgstr "Ögeleri Toplu Kuyruk Yöneticisi’ne eklemek"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:535
 #, kde-format
@@ -39404,7 +39404,7 @@ msgstr "Listeye Ekle"
 #: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
-msgstr "Seçili künyeleri Hızlı Erişim Listesi'ne ekle"
+msgstr "Seçili künyeleri Hızlı Erişim Listesi’ne ekle"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:137
 #, kde-format
@@ -39575,7 +39575,7 @@ msgid ""
 msgstr ""
 "<qt>digiKam, künyeleri veritabanından koymadan önce künye üst verisini "
 "temizleyecektir.<br/> Künyeleri daha önceden okumadıysanız (Görselden "
-"Künyeleri Oku'yu çağırarak) künyeleri <b>kaybedebilirsiniz</b>.<br/"
+"Künyeleri Oku’yu çağırarak) künyeleri <b>kaybedebilirsiniz</b>.<br/"
 ">Sürdürmek istiyor musunuz?</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:508
@@ -39784,10 +39784,10 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Yeni künyeler oluşturmak için aşağıdaki kuralları kullanabilirsiniz:</"
-"p><p><ul><li>'/', künye hiyerarşisi oluşturmak için kullanılabilir.<br/"
-">Örneğin: <i>\"Ülke/Kent/Artvin\"</i></li><li>',', aynı anda birden fazla "
-"künye hiyerarşisi oluşturmak için kullanılabilir.<br/>Örneğin: <i>\"Kent/"
-"Samsun, Anıt/Atatürk\"</i></li><li>Bir künye hiyerarşisi '/' ile başlıyorsa "
+"p><p><ul><li>“/”, künye hiyerarşisi oluşturmak için kullanılabilir.<br/"
+">Örneğin: <i>“Ülke/Kent/Artvin\"</i></li><li>“,”, aynı anda birden fazla "
+"künye hiyerarşisi oluşturmak için kullanılabilir.<br/>Örneğin: <i>“Kent/"
+"Samsun, Anıt/Atatürk”</i></li><li>Bir künye hiyerarşisi “/” ile başlıyorsa "
 "kök künye albümü üst öge olarak kullanılır.</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:172
@@ -39899,10 +39899,9 @@ msgid ""
 "content. The default value for the I.P.R is \"XMP\" if a standard Reference "
 "Code is used."
 msgstr ""
-"Buraya Bilgilendirici Sağlayıcı Başvurusunu girin. I.P.R, XMP/NAA'ya "
-"kayıtlı, içerik göstergesi sağlayan sağlayıcıyı tanımlayan bir addır. "
-"Standart bir Başvuru Kodu kullanıldığında I.P.R için öntanımlı değer \"XMP"
-"\"dir."
+"Buraya Bilgi Sağlayıcısı Başvurusu’nu girin. I.P.R, XMP/NAA’ya kayıtlı, "
+"içerik göstergesi sağlayan sağlayıcıyı tanımlayan bir addır. Standart bir "
+"Başvuru Kodu kullanıldığında I.P.R için öntanımlı değer “XMP”dir."
 
 #: core/libs/template/subjectedit.cpp:53
 #, kde-format
@@ -39916,12 +39915,12 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Buraya Konu Başvuru Numarası'nı girin. Hizmetin dilinde Konu Adı'nın yanı "
-"sıra isteğe bağlı Konu Konusu ve Konu Ayrıntısı Adları'nı belirtmek için "
+"Buraya Konu Başvuru Numarası’nı girin. Hizmetin dilinde Konu Adı’nın yanı "
+"sıra isteğe bağlı Konu Konusu ve Konu Ayrıntısı Adları’nı belirtmek için "
 "sayısal bir kod sağlar. Konu Başvurusu, 01000000 ile 17999999 arasında bir "
-"sayıdır ve bir Konu'ya yönelik dilden bağımsız uluslararası bir başvuruyu "
+"sayıdır ve bir Konu’ya yönelik dilden bağımsız uluslararası bir başvuruyu "
 "temsil eder. Bir Konu, Başvuru Numarası ve XMP/NAA tarafından verilen "
-"standart listelerden alınan karşılık gelen Ad'larla tanımlanır. Standart bir "
+"standart listelerden alınan karşılık gelen Ad’larla tanımlanır. Standart bir "
 "başvuru kodu kullanılıyorsa bu listeler İngilizce dilindeki başvuru "
 "sürümleridir. Bu alan 8 basamaklı kodla sınırlıdır."
 
@@ -39931,7 +39930,7 @@ msgid ""
 "Enter the Subject Name here. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Buraya Konu Adı'nı girin. Standart bir XMP/NAA başvuru kodu seçtiyseniz "
+"Buraya Konu Adı’nı girin. Standart bir XMP/NAA başvuru kodu seçtiyseniz "
 "İngilizce dili kullanılır."
 
 #: core/libs/template/subjectedit.cpp:70
@@ -39940,7 +39939,7 @@ msgid ""
 "Enter the Subject Matter Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Buraya Konu Maddesi Adı'nı girin. Standart bir XMP/NAA başvuru kodu "
+"Buraya Konu Maddesi Adı’nı girin. Standart bir XMP/NAA başvuru kodu "
 "seçtiyseniz İngilizce dili kullanılır."
 
 #: core/libs/template/subjectedit.cpp:74
@@ -39949,7 +39948,7 @@ msgid ""
 "Enter the Subject Detail Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Buraya Konu Ayrıntısı Adı'nı girin. Standart bir XMP/NAA başvuru kodu "
+"Buraya Konu Ayrıntısı Adı’nı girin. Standart bir XMP/NAA başvuru kodu "
 "seçtiyseniz İngilizce dili kullanılır."
 
 #: core/libs/template/templatelist.cpp:70
@@ -40027,7 +40026,7 @@ msgstr ""
 "<p>Bu alan, yazarların iş unvanlarını içermelidir. Örnekler arasında şu gibi "
 "unvanlar yer alabilir: Personel Fotoğrafçısı, Serbest Fotoğrafçı veya "
 "Bağımsız Ticari Fotoğrafçı. Bu fotoğrafçı alanı için bir niteleyici "
-"olduğundan Yazar alanının da doldurulması gerekir.</p><p>IPTC'de bu alan 32 "
+"olduğundan Yazar alanının da doldurulması gerekir.</p><p>IPTC’de bu alan 32 "
 "karakterle sınırlıdır.</p>"
 
 #: core/libs/template/templatepanel.cpp:117
@@ -40049,9 +40048,9 @@ msgstr ""
 "<p>(Sağlayıcı ile eşanlamlıdır): Fotoğrafı kimin sağladığını belirlemek için "
 "Sağlayıcı alanını kullanın. Bu mutlaka fotoğrafçı olmak zorunda değildir. "
 "Bir fotoğrafçı Reuters veya Associated Press gibi bir haber ajansı için "
-"çalışıyorsa bu kuruluşlar görseli başkalarının kullanımına \"sağladıkları\" "
+"çalışıyorsa bu kuruluşlar görseli başkalarının kullanımına “sağladıkları” "
 "için burada listelenebilir. Görsel stok fotoğraf ise görselin sağlanmasında "
-"yer alan grup (ajans) burada listelenmelidir.</p><p>IPTC'de bu alan 32 "
+"yer alan grup (ajans) burada listelenmelidir.</p><p>IPTC’de bu alan 32 "
 "karakterle sınırlıdır.</p>"
 
 #: core/libs/template/templatepanel.cpp:131
@@ -40093,20 +40092,20 @@ msgstr ""
 "telif hakkı bildirimlerini içermeli ve fotoğrafın telif hakkının geçerli "
 "sahibini/sahiplerini tanımlamalıdır. Bu genellikle fotoğrafçı olur; ancak "
 "görsel bir çalışan tarafından veya işe alım için yapılmışsa ajans veya "
-"şirket listelenmelidir. Ülkenize uygun formu kullanın. \"&copy;2005 Hakan "
-"Gürsoy.\" örneğinde olduğu gibi, ABD: &copy; {İlk yayın tarihi} telif hakkı "
-"sahibi adı. &copy; yerine \"telif hakkı\" veya \"kopr\" kısaltması "
-"kullanılabilir. Bazı yabancı ülkelerde yalnızca telif hakkı sembolü tanınır "
-"ve kısaltması çalışmaz. Ayrıca, telif hakkı sembolü, içinde \"c\" bulunan "
-"sembol tam daire olmalıdır; (C) gibi bir şeyi kullanarak, parantezlerin "
-"kısmi daire oluşturması yeterli değildir. Dünya genelinde ek koruma sağlamak "
-"için, yukarıdaki uyarıyı takiben \"tüm hakları saklıdır\" ifadesinin "
-"kullanılması önerilir. \n"
+"şirket listelenmelidir. Ülkenize uygun formu kullanın. “&copy; 2005 Hakan "
+"Gürsoy.” örneğinde olduğu gibi, ABD: &copy; {İlk yayın tarihi} telif hakkı "
+"sahibi adı. &copy; yerine “copyright” veya “copr” kısaltması kullanılabilir. "
+"Bazı yabancı ülkelerde yalnızca telif hakkı sembolü tanınır ve kısaltması "
+"çalışmaz. Ayrıca, telif hakkı sembolü, içinde “c” bulunan sembol tam daire "
+"olmalıdır; (C) gibi bir şeyi kullanarak, parantezlerin kısmi daire "
+"oluşturması yeterli değildir. Dünya genelinde ek koruma sağlamak için, "
+"yukarıdaki uyarıyı takiben “tüm hakları saklıdır” ifadesinin kullanılması "
+"önerilir. \n"
 "Avrupa'da aşağıdakileri kullanabilirsiniz: Telif Hakkı {Yıl} {Telif hakkı "
 "sahibi}, tüm hakları saklıdır. \n"
 "Japonya'da, maksimum koruma için aşağıdaki üç madde IPTC Çekirdeğinin telif "
 "hakkı alanında görünmelidir: (a) Telif hakkı; (b) ilk yayınlanma yılı; ve "
-"(c) yazarın adı. Aynı zamanda \"tüm hakları saklıdır\" ifadesini içermesini "
+"(c) yazarın adı. Aynı zamanda “tüm hakları saklıdır” ifadesini içermesini "
 "isteyebilirsiniz.</p><p>XMP ile farklı diller kullanarak birden fazla telif "
 "hakkı dizisi ekleyebilirsiniz.</p><p>IPTC ile bu alan 128 karakter ile "
 "sınırlıdır.</p>"
@@ -40130,7 +40129,7 @@ msgstr ""
 "<p>Bir kaynağın yasal olarak nasıl kullanılabileceğine ilişkin yönergeleri "
 "listelemek için Doğru Kullanım Koşulları alanı kullanılmalıdır.</p><p>XMP "
 "ile, farklı diller kullanılarak birden fazla hak kullanım şartları dizisi "
-"ekleyebilirsiniz.</p ><p>Bu alan IPTC'de yoktur.</p>"
+"ekleyebilirsiniz.</p ><p>Bu alan IPTC’de yoktur.</p>"
 
 #: core/libs/template/templatepanel.cpp:163
 #: core/libs/template/templateviewer.cpp:112
@@ -40161,12 +40160,12 @@ msgstr ""
 "<p>Kaynak alanı, fotoğrafın özgün sahibini veya telif hakkı sahibini "
 "tanımlamak için kullanılmalıdır. Görsel oluşturulup bilgiler girildikten "
 "sonra bu alanın değeri asla değiştirilmemelidir. Henüz özel paneller "
-"tarafından zorunlu kılınmasa da, bunu bir \"bir kez yazılan\" alan olarak "
+"tarafından zorunlu kılınmasa da, bunu bir “bir kez yazılan” alan olarak "
 "düşünmelisiniz. Kaynak; bir birey, bir kurum veya bir kurumun üyesi "
-"olabilir. Daha sonraki aramalara yardımcı olmak için, tüm eğik çizgilerin \"/"
-"\" boşlukla ayrılması önerilir. \"Fotoğrafçı/ajans\" yerine \"Fotoğrafçı / "
-"Ajans\" biçimini kullanın. Kaynak, Yaratıcı'dan ve Telif Hakkı Uyarısı'nda "
-"listelenen adlardan da farklı olabilir.</p><p>IPTC'de bu alan 32 karakterle "
+"olabilir. Daha sonraki aramalara yardımcı olmak için, tüm eğik çizgilerin "
+"“ / ” boşlukla ayrılması önerilir. “Fotoğrafçı/Ajans” yerine “Fotoğrafçı / "
+"Ajans” biçimini kullanın. Kaynak, Yaratıcı’dan ve Telif Hakkı Uyarısı’nda "
+"listelenen adlardan da farklı olabilir.</p><p>IPTC’de bu alan 32 karakterle "
 "sınırlıdır.</p>"
 
 #: core/libs/template/templatepanel.cpp:179
@@ -40188,7 +40187,7 @@ msgid ""
 "256 characters.</p>"
 msgstr ""
 "<p>Fotoğrafın kullanımına ilişkin editoryal yönergeleri listelemek için "
-"Yönergeler alanı kullanılmalıdır.</p><p>IPTC'de bu alan 256 karakterle "
+"Yönergeler alanı kullanılmalıdır.</p><p>IPTC’de bu alan 256 karakterle "
 "sınırlıdır.</p>"
 
 #: core/libs/template/templatepanel.cpp:209
@@ -40628,37 +40627,37 @@ msgstr "Yok"
 #, kde-format
 msgctxt "Effect: KenBurnsZoomIn"
 msgid "Ken Burns - Camera Zoom In"
-msgstr "Ken Burns - Kamerayı Yakınlaştır"
+msgstr "Ken Burns — Kamerayı Yakınlaştır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:101
 #, kde-format
 msgctxt "Effect: KenBurnsZoomOut"
 msgid "Ken Burns - Camera Zoom Out"
-msgstr "Ken Burns - Kamerayı Uzaklaştır"
+msgstr "Ken Burns — Kamerayı Uzaklaştır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:102
 #, kde-format
 msgctxt "Effect: KenBurnsPanLR"
 msgid "Ken Burns - Camera Pan Left to Right"
-msgstr "Ken Burns - Kamerayı Soldan Sağa Kaydır"
+msgstr "Ken Burns — Kamerayı Soldan Sağa Kaydır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:103
 #, kde-format
 msgctxt "Effect: KenBurnsPanRL"
 msgid "Ken Burns - Camera Pan Right to Left"
-msgstr "Ken Burns - Kamerayı Sağdan Sola Kaydır"
+msgstr "Ken Burns — Kamerayı Sağdan Sola Kaydır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:104
 #, kde-format
 msgctxt "Effect: KenBurnsPanTB"
 msgid "Ken Burns - Camera Pan Top to Bottom"
-msgstr "Ken Burns - Kamerayı Yukarıdan Aşağıya Kaydır"
+msgstr "Ken Burns — Kamerayı Yukarıdan Aşağıya Kaydır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:105
 #, kde-format
 msgctxt "Effect: KenBurnsPanBT"
 msgid "Ken Burns - Camera Pan Bottom to Top"
-msgstr "Ken Burns - Kamerayı Aşağıdan Yukarıya Kaydır"
+msgstr "Ken Burns — Kamerayı Aşağıdan Yukarıya Kaydır"
 
 #: core/libs/transitionmngr/effectmngr.cpp:106
 #, kde-format
@@ -40853,331 +40852,331 @@ msgstr ""
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
-msgstr "QVGA - 320 × 180 - 16:9"
+msgstr "QVGA — 320 × 180 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:470
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
-msgstr "VCD - 352 × 240 - 7:5"
+msgstr "VCD — 352 × 240 — 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:471
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
-msgstr "VCD - 352 × 288 - 6:5"
+msgstr "VCD — 352 × 288 — 6:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:472
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
-msgstr "CVD - 352 × 480 - 4:3"
+msgstr "CVD — 352 × 480 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:473
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
-msgstr "CVD - 352 × 576 - 16:9"
+msgstr "CVD — 352 × 576 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:474
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
-msgstr "HVGA - 480 × 270 - 16:9"
+msgstr "HVGA — 480 × 270 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:475
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
-msgstr "SVCD - 480 × 480 - 1:1"
+msgstr "SVCD — 480 × 480 — 1:1"
 
 #: core/libs/video/manager/vidslidesettings.cpp:476
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
-msgstr "SDTV - 528 × 480 - 11:10"
+msgstr "SDTV — 528 × 480 — 11:10"
 
 #: core/libs/video/manager/vidslidesettings.cpp:477
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
-msgstr "SDTV - 544 × 480 - 17:15"
+msgstr "SDTV — 544 × 480 — 17:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
-msgstr "EDTV - 544 × 576 - 17:18"
+msgstr "EDTV — 544 × 576 — 17:18"
 
 #: core/libs/video/manager/vidslidesettings.cpp:479
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
-msgstr "SVCD - 480 × 576 - 5:6"
+msgstr "SVCD — 480 × 576 — 5:6"
 
 #: core/libs/video/manager/vidslidesettings.cpp:480
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
-msgstr "EGA - 640 × 350 - 16:9"
+msgstr "EGA — 640 × 350 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:481
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
-msgstr "VGA - 640 × 480 - 4:3"
+msgstr "VGA — 640 × 480 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:482
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
-msgstr "SDTV - 704 × 480 - 22:15"
+msgstr "SDTV — 704 × 480 — 22:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:483
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
-msgstr "EDTV - 704 × 576 - 11:9"
+msgstr "EDTV — 704 × 576 — 11:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:484
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
-msgstr "DVD - 720 × 480 - 3:2"
+msgstr "DVD — 720 × 480 — 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:485
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
-msgstr "DVD - 720 × 576 - 5:4"
+msgstr "DVD — 720 × 576 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:486
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
-msgstr "WVGA - 800 × 450 - 16:9"
+msgstr "WVGA — 800 × 450 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:487
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
-msgstr "SVGA - 800 × 600 - 4:3"
+msgstr "SVGA — 800 × 600 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
-msgstr "DVGA - 960 × 640 - 3:2"
+msgstr "DVGA — 960 × 640 — 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
-msgstr "XVGA - 1024 × 576 - 16:9"
+msgstr "XVGA — 1024 × 576 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:490
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
-msgstr "HDTV - 1280 × 720 - 16:9"
+msgstr "HDTV — 1280 × 720 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
-msgstr "WXGA - 1280 × 768 - 5:3"
+msgstr "WXGA — 1280 × 768 — 5:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:492
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
-msgstr "WXGA - 1280 × 800 - 8:5"
+msgstr "WXGA — 1280 × 800 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:493
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
-msgstr "SXGA - 1280 × 1024 - 5:4"
+msgstr "SXGA — 1280 × 1024 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
-msgstr "SXGAPLUS - 1400 × 1050 - 4:3"
+msgstr "SXGAPLUS — 1400 × 1050 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
-msgstr "WSXGA - 1440 × 900 - 8:5"
+msgstr "WSXGA — 1440 × 900 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
-msgstr "HDPLUS - 1600 × 900 - 16:9"
+msgstr "HDPLUS — 1600 × 900 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
-msgstr "WSXGAPLUS - 1680 × 1050 - 8:5"
+msgstr "WSXGAPLUS — 1680 × 1050 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
-msgstr "UXGA - 1600 × 1200 - 4:3"
+msgstr "UXGA — 1600 × 1200 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
-msgstr "BLUERAY - 1920 × 1080 - 16:9"
+msgstr "BLURAY — 1920 × 1080 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
-msgstr "WUXGA - 1920 × 1200 - 8:5"
+msgstr "WUXGA — 1920 × 1200 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
-msgstr "TXGA - 1920 × 1440 - 7:5"
+msgstr "TXGA — 1920 × 1440 — 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
-msgstr "QXGA - 2048 × 1536 - 4:3"
+msgstr "QXGA — 2048 × 1536 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
-msgstr "UWFHD - 2560 × 1080 - 21:9"
+msgstr "UWFHD — 2560 × 1080 — 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
-msgstr "WQHD - 2560 × 1440 - 16:9"
+msgstr "WQHD — 2560 × 1440 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
-msgstr "WQXGA - 2560 × 1600 - 8:5"
+msgstr "WQXGA — 2560 × 1600 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
-msgstr "QSXGA - 2560 × 2048 - 5:4"
+msgstr "QSXGA — 2560 × 2048 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
-msgstr "QSXGAPLUS - 2800 × 2100 - 4:3"
+msgstr "QSXGAPLUS — 2800 × 2100 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
-msgstr "WQXGAPLUS - 3200 × 1800 - 16:9"
+msgstr "WQXGAPLUS — 3200 × 1800 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
-msgstr "WQSXGA - 3200 × 2048 - 25:16"
+msgstr "WQSXGA — 3200 × 2048 — 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
-msgstr "QUXGA - 3200 × 2400 - 4:3"
+msgstr "QUXGA — 3200 × 2400 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
-msgstr "UHD4K - 3840 × 2160 - 16:9"
+msgstr "UHD4K — 3840 × 2160 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
-msgstr "WQUXGA - 3840 × 2400 - 8:5"
+msgstr "WQUXGA — 3840 × 2400 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
-msgstr "HXGA - 4096 × 3072 - 4:3"
+msgstr "HXGA — 4096 × 3072 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
-msgstr "UHD5K - 5120 × 2880 - 16:9"
+msgstr "UHD5K — 5120 × 2880 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
-msgstr "WHXGA - 5120 × 3200 - 8:5"
+msgstr "WHXGA — 5120 × 3200 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
-msgstr "HSXGA - 5120 × 4096 - 5:4"
+msgstr "HSXGA — 5120 × 4096 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
-msgstr "UHD6K - 6016 × 3384 - 16:9"
+msgstr "UHD6K — 6016 × 3384 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
-msgstr "WHSXGA - 6400 × 4096 - 25:16"
+msgstr "WHSXGA — 6400 × 4096 — 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
-msgstr "HUXGA - 6400 × 4800 - 4:3"
+msgstr "HUXGA — 6400 × 4800 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
-msgstr "UHD8K - 7680 × 4320 - 16:9"
+msgstr "UHD8K — 7680 × 4320 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
-msgstr "WHUXGA - 7680 × 4800 - 8:5"
+msgstr "WHUXGA — 7680 × 4800 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
-msgstr "UW10K - 10240 × 4320 - 21:9"
+msgstr "UW10K — 10240 × 4320 — 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
-msgstr "UW16K - 15360 × 8640 - 16:9"
+msgstr "UW16K — 15360 × 8640 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:746
 #, kde-format
@@ -41261,13 +41260,13 @@ msgstr "8000 k"
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
-msgstr "PAL - 25 FPS"
+msgstr "PAL — 25 FPS"
 
 #: core/libs/video/manager/vidslidesettings.cpp:768
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
-msgstr "NTSC - 29,97 FPS"
+msgstr "NTSC — 29,97 FPS"
 
 #: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
@@ -41291,25 +41290,25 @@ msgstr "MPEG-2 Video"
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
-msgstr "AVI - Audio Video Interleave"
+msgstr "AVI — Audio Video Interleave"
 
 #: core/libs/video/manager/vidslidesettings.cpp:800
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
-msgstr "MKV - Matroska"
+msgstr "MKV — Matroska"
 
 #: core/libs/video/manager/vidslidesettings.cpp:801
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
-msgstr "MP4 - MPEG-4"
+msgstr "MP4 — MPEG-4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:802
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
-msgstr "MPG - MPEG-2"
+msgstr "MPG — MPEG-2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:811
 #, kde-format
@@ -41661,7 +41660,7 @@ msgid ""
 msgstr ""
 "<qt><p><font color=\"red\"><b>Uyarı:</b> Sisteminizde bazı gerekli ikili "
 "dosyalar bulunamadı. Bu ikili dosyalara sahipseniz bunları sisteminizde "
-"bulmak için lütfen 'Bul' düğmesine tıklayın, aksi halde lütfen sürdürmek "
+"bulmak için lütfen “Bul” düğmesine tıklayın, aksi halde lütfen sürdürmek "
 "için bunları indirip kurun.</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:171
@@ -42553,7 +42552,7 @@ msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
-"Danışmanlık, web hizmeti araçlarını OAuth'a taşıma, web hizmeti araçlarını "
+"Danışmanlık, web hizmeti araçlarını OAuth’a taşıma, web hizmeti araçlarını "
 "yeniden organize edilmesi ve yüz tanıma işletkesini OpenCV sinirsel ağına "
 "taşıma"
 
@@ -43046,7 +43045,7 @@ msgstr "Renchi Raju"
 #: core/libs/widgets/mainview/daboutdata.cpp:429
 #, kde-format
 msgid "Developer (2001-2005)"
-msgstr "Geliştirici (2002-2005)"
+msgstr "Geliştirici (2001–2005)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
@@ -43057,7 +43056,7 @@ msgstr "Joern Ahrens"
 #: core/libs/widgets/mainview/daboutdata.cpp:441
 #, kde-format
 msgid "Developer (2004-2005)"
-msgstr "Geliştirici (2004-2005)"
+msgstr "Geliştirici (2004–2005)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:440
 #, kde-format
@@ -47628,7 +47627,7 @@ msgstr "Özel tanım kullan"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "Bilgilendirici Sağlayıcı Başvurusu’nu burada ayarla"
+msgstr "Bilgi Sağlayıcı Başvurusu’nu burada ayarla"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:164
 #, kde-format
@@ -47660,7 +47659,7 @@ msgctxt ""
 "@label: Information Provider Reference: A name, registered with the IPTC/"
 "NAA, identifying the provider that guarantees the uniqueness of the UNO"
 msgid "I.P.R:"
-msgstr "B.S.B.:"
+msgstr "I.P.R.:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:210
 #, kde-format
@@ -48573,7 +48572,7 @@ msgstr "Hata: Web sürümünden Yandex SID çıkarılamadı."
 #, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr "Kod (Dil-Ülke)"
+msgstr "Kod (Dil–Ülke)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
 #, kde-format
@@ -48719,7 +48718,7 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
-"Alternatif dil dizileri için \"x-default\" değeriyle kullanılacak öntanımlı "
+"Alternatif dil dizileri için “x-default” değeriyle kullanılacak öntanımlı "
 "dili burada seçin."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
@@ -49511,7 +49510,7 @@ msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
-"<qt>Çeşitli Ayarlar<br/><i>FotoGöster'in diğer kısımlarının davranışını "
+"<qt>Çeşitli Ayarlar<br/><i>FotoGöster’in diğer kısımlarının davranışını "
 "özelleştirin</i></qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
@@ -49562,7 +49561,7 @@ msgstr ""
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
-"IPTC'nin yerini almak üzere tasarlanmış, sayısal fotoğrafçılıkta kullanılan "
+"IPTC’nin yerini almak üzere tasarlanmış, sayısal fotoğrafçılıkta kullanılan "
 "yeni bir standart."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
@@ -50921,7 +50920,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
-msgstr "Belirli bir erimi çıkar (eğer '||to||' atlanmışsa dizinin sonuna git)"
+msgstr "Belirli bir erimi çıkar (eğer “||to||” atlanmışsa dizinin sonuna git)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:19
@@ -51492,7 +51491,7 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-"Üst dizinin adı, ek '.' karakterler dizin hiyerarşisinde yukarı taşınır"
+"Üst dizinin adı, ek “.” karakterler dizin hiyerarşisinde yukarı taşınır"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
@@ -51516,7 +51515,7 @@ msgid ""
 "File extension, prepend with a '.' character, to modify the real file "
 "extension"
 msgstr ""
-"Dosya uzantısı, gerçek dosya uzantısını değiştirmek için, bir '.' karakter "
+"Dosya uzantısı, gerçek dosya uzantısını değiştirmek için, bir “.” karakter "
 "ile başa ekleyin"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:50
@@ -52238,7 +52237,7 @@ msgstr ""
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:62
 #, kde-format
 msgid "Migration from digiKam 4"
-msgstr "digiKam 4'ten göç"
+msgstr "digiKam 4’ten göç"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:70
 #, kde-format
@@ -52253,20 +52252,20 @@ msgid ""
 "</p><p>In either case you are recommended to backup the configuration files "
 "and databases before proceeding.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Yapılandırmayı ve üst veriyi digiKam 4'ten taşıyın</b></h1></"
-"p><p>digiKam 4'teki yapılandırmanızı ve albümlerinizi yeni digiKam’da "
+"<qt><p><h1><b>Yapılandırmayı ve üst veriyi digiKam 4’ten taşıyın</b></h1></"
+"p><p>digiKam 4’teki yapılandırmanızı ve albümlerinizi yeni digiKam’da "
 "kullanmak istiyorsanız burayı seçebilirsiniz. Lütfen aşağıdaki uyarılara "
 "dikkat edin:</p><p>Göç işlemi tümüyle <b>sizin kendi riskinize tabidir</b>. "
 "digiKam geliştiricileri bunu tavsiye etmez ve desteklemez. Öte yandan, yeni "
 "bir yapılandırma oluşturmak, görsellerin içine gömülü olmayan ve yalnızca "
-"digiKam 4'ün veritabanında var olan künyelerin ve diğer üst verinin "
+"digiKam 4’ün veritabanında var olan künyelerin ve diğer üst verinin "
 "kaybolmasıyla sonuçlanabilir.</p><p>Her iki durumda da sürdürmeden önce "
 "yapılandırma dosyalarını ve veritabanlarını yedeklemeniz önerilir.</p></qt>"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:87
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
-msgstr "digiKam 4'ten yapılandırma göçü"
+msgstr "digiKam 4’ten yapılandırma göçü"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:96
 #, kde-format
@@ -52348,7 +52347,7 @@ msgid ""
 msgstr ""
 "<qt><p><i>Not:</i> Bir görselin indirgenmiş sürümünün yüklenmesi daha "
 "hızlıdır; ancak özellikle RAW biçimde özgününden farklı olabilir. Bu "
-"durumda, gerçek görsel verisi yerine RAW'ın kamera tarafından önceden "
+"durumda, gerçek görsel verisi yerine RAW’ın kamera tarafından önceden "
 "işlenmiş bir JPEG sürümü yüklenir. Bu JPEG görseli dosya üst verisine "
 "gömülüdür ve kamera tarafından RAW görselini TV ekranında daha hızlı "
 "görüntülemek için kullanılır.</p></qt>"
@@ -52496,8 +52495,8 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 "<qt><br/><p>digiKam’i ilk kez kullanıyorsanız aşağıdakileri yok "
-"sayabilirsiniz:</p><p><b>digiKam 4'ten göç</b></p><p>Yapılandırma dosyaları, "
-"digiKam 4'ten aktarılmaz. Eski veritabanı hâlâ kullanılabilir; aşağıdaki "
+"sayabilirsiniz:</p><p><b>digiKam 4’ten göç</b></p><p>Yapılandırma dosyaları, "
+"digiKam 4’ten aktarılmaz. Eski veritabanı hâlâ kullanılabilir; aşağıdaki "
 "iletişim kutularında koleksiyonlar ve veritabanı için aynı konumları "
 "seçmeniz yeterlidir. Sürdürmeden önce veritabanınızın yedeğini almanız "
 "önerilir.</p><p>Yapılandırma dosyalarının yeni konumu %1 olarak ayarlıdır "
@@ -53633,7 +53632,7 @@ msgstr "Acil Durum Telefonu"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:733
 #, kde-format
 msgid "Mountain Rescue"
-msgstr "Dağ Arama-Kurtarma"
+msgstr "Dağ Arama–Kurtarma"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:736
 #, kde-format
@@ -54375,7 +54374,7 @@ msgstr "Yüzme Havuzu"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1186
 #, kde-format
 msgid "Miniature Golf Course"
-msgstr "Mini-Golf Sahası"
+msgstr "Mini Golf Sahası"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1189
 #, kde-format
@@ -56443,8 +56442,8 @@ msgstr ""
 "indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Uydu "
 "Görünümü</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-"
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Uzaydan "
-"görülen Dünya. Harita, NASA'nın güzel \"Mavi Mermer Yeni Nesil\" resimlerine "
-"dayanmaktadır. Emeği geçenler: NASA'nın Dünya Gözlemevi</p></body></html>"
+"görülen Dünya. Harita, NASA’nın güzel “Mavi Mermer Yeni Nesil” resimlerine "
+"dayanmaktadır. Emeği geçenler: NASA’nın Dünya Gözlemevi</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
@@ -56453,7 +56452,7 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
-"Bilye'nin bu haritayı oluşturması gerekiyor. Bunun yalnızca bir kez "
+"Bilye’nin bu haritayı oluşturması gerekiyor. Bunun yalnızca bir kez "
 "yapılması gerekir ve birkaç saniye sürebilir."
 
 #. i18n: ectx: property (format), widget (QProgressBar, progressBar)
@@ -56850,8 +56849,8 @@ msgid ""
 msgstr ""
 "<p>Fotoğraf çekimi sırasında kameranın ayarlandığı zaman dilimini ayarlar, "
 "böylece görsellerin zaman damgalarının GPS zaman başvurusuyla eşleşmesi için "
-"GMT'ye dönüştürülebilir.</p><p>Not: Pozitif ofsetler sıfır boylamından (GMT) "
-"doğuya doğru sayılır; \"vaktinden ileride\"dirler.</p>"
+"GMT’ye dönüştürülebilir.</p><p>Not: Pozitif ofsetler sıfır boylamından (GMT) "
+"doğuya doğru sayılır; “vakitlerinden ileridedirler”.</p>"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
 #, kde-format
@@ -56934,7 +56933,7 @@ msgstr[1] "GPX Dosyaları Yükleme Hatası"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
 #, kde-format
 msgid "Correlating images -"
-msgstr "Görseller ilişkilendiriliyor - "
+msgstr "Görseller ilişkilendiriliyor —"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
 #, kde-format
@@ -57117,7 +57116,7 @@ msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr ""
-"Panoda birden fazla nokta bulundu - bir kerede yalnızca bir nokta atanabilir."
+"Panoda birden fazla nokta bulundu — bir kerede yalnızca bir nokta atanabilir."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
 #, kde-format
@@ -57400,7 +57399,7 @@ msgstr "Görsel künyeleri değiştirildi."
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:420
 #, kde-format
 msgid "Retrieving RG info -"
-msgstr "RG bilgisi alınıyor -"
+msgstr "RG bilgisi alınıyor —"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:457
 #, kde-format
@@ -57655,7 +57654,7 @@ msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
 "to 2 GiB! Undo cache is now disabled!"
 msgstr ""
-"Geri alma önbellek dosyası için “%1” yolundaki boş disk alanı 2 GiB'den az! "
+"Geri alma önbellek dosyası için “%1” yolundaki boş disk alanı 2 GiB’den az! "
 "Önbelleği geri alma artık devre dışı!"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:98
@@ -57687,7 +57686,7 @@ msgstr "Kalibre Edilmemiş Renkli Görsel"
 #, kde-format
 msgctxt "<Problem> - <b>"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
 #, kde-format
@@ -58645,7 +58644,7 @@ msgstr "Birlikte Aç…"
 #: core/utilities/imageeditor/main/imagewindow.cpp:200
 #, kde-format
 msgid "Image Editor - %1"
-msgstr "Görsel Düzenleyicisi - %1"
+msgstr "Görsel Düzenleyicisi — %1"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:204
 #, kde-format
@@ -58709,7 +58708,7 @@ msgstr "Onaylama Olmaksızın Kalıcı Olarak Sil"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:53
 #, kde-format
 msgid "Move to Trash without Confirmation"
-msgstr "Onaylama Olmaksızın Çöp Kutusu'na Taşı"
+msgstr "Onay Olmaksızın Çöp Kutusu’na Taşı"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
 #, kde-format
@@ -59199,7 +59198,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
-msgstr "%1 - Kamera Klasörü Seç"
+msgstr "%1 — Kamera Klasörü Seç"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:81
 #, kde-format
@@ -60122,21 +60121,20 @@ msgid ""
 "b> : Photo shot on Sunday</p>"
 msgstr ""
 "<p>Tarih biçimini özelleştirmek için şu ifadeler kullanılabilir:</p><p><b>d</"
-"b>: Başında sıfır olmadan sayı türünden tarih (1-31 aralığı)</p><p><b>dd</"
-"b>: Başında sıfır olan sayı türünden tarih (01-31 aralığı)</p><p><b>ddd</b>: "
-"Yerelleştirilmiş kısa haftanın günü ('Pts'-'Paz' aralığı)</p><p><b>dddd</b>: "
-"Yerelleştirilmiş uzun haftanın günü ('Pazartesi'-'Pazar' aralığı).</"
-"p><p><b>M</b>: Başında sıfır olmadan sayı türünden ay (1-12 aralığı)</"
-"p><p><b>MM</b>: Başında sıfır olan sayı türünden ay (01-12 aralığı)</"
-"p><p><b>MMM</b>: Yerelleştirilmiş kısa ay adı ('Oca'-'Ara' aralığı)</"
-"p><p><b>MMMM</b>: Yerelleştirilmiş uzun ay adı ('Ocak'-'Aralık' aralığı)</"
-"p><p><b>yy</b>: İki basamaklı yıl (00-99 aralığı)</p><p><b>yyyy</b>: Dört "
-"basamaklı yıl (2012)</p><p>Tüm diğer girdi karakterlerine metin olarak "
-"davranılacaktır. Tekli tırnak içine alınmış tüm karakterlere metin olarak "
-"davranılacaktır. Örneğin, tarih 20 Temmuz 1969 ise:</p><p><b>dd.MM.yyyy</"
-"b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Paz Temmuz 20 69</"
-"p><p><b>'Fotoğraf ' dddd 'günü çekildi.'</b> : Fotoğraf Pazar günü çekildi.</"
-"p>"
+"b>: Başında sıfır olmadan sayı türünden tarih (1–31 aralığı)</p><p><b>dd</"
+"b>: Başında sıfır olan sayı türünden tarih (01–31 aralığı)</p><p><b>ddd</b>: "
+"Yerelleştirilmiş kısa haftanın günü (“Pts–Paz” aralığı)</p><p><b>dddd</b>: "
+"Yerelleştirilmiş uzun haftanın günü (“Pazartesi–Pazar” aralığı).</p><p><b>M</"
+"b>: Başında sıfır olmadan sayı türünden ay (1–12 aralığı)</p><p><b>MM</b>: "
+"Başında sıfır olan sayı türünden ay (01–12 aralığı)</p><p><b>MMM</b>: "
+"Yerelleştirilmiş kısa ay adı (“Oca–Ara” aralığı)</p><p><b>MMMM</b>: "
+"Yerelleştirilmiş uzun ay adı (“Ocak–Aralık” aralığı)</p><p><b>yy</b>: İki "
+"basamaklı yıl (00–99 aralığı)</p><p><b>yyyy</b>: Dört basamaklı yıl (2012)</"
+"p><p>Tüm diğer girdi karakterlerine metin olarak davranılacaktır. Tekli "
+"tırnak içine alınmış tüm karakterlere metin olarak davranılacaktır. Örneğin, "
+"tarih 20 Temmuz 1969 ise:</p><p><b>dd.MM.yyyy</b>: 20.07.1969</p><p><b>ddd "
+"MMMM d yy</b>: Paz Temmuz 20 69</p><p><b>“Fotoğraf ” dddd “günü çekildi.”</"
+"b>: Fotoğraf Pazar günü çekildi.</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
@@ -60230,12 +60228,12 @@ msgid ""
 msgstr ""
 "Yeni albümler oluşturmak için kullanılan tercih edilen\n"
 "tarih biçiminizi seçin Kullanılabilir seçenekler:\n"
-"\"ISO\": ISO 8601 belirtimiyle uyumlu tarih biçimi\n"
+"“ISO”: ISO 8601 belirtimiyle uyumlu tarih biçimi\n"
 "(YYYY-AA-GG). Örneğin: 2006-08-24\n"
-"\"Tam Metin\": Kullanıcı tarafından okunabilen bir\n"
+"“Tam Metin”: Kullanıcı tarafından okunabilen bir\n"
 "metin dizisi. Örneğin: Per Ağu 24 2006\n"
-"\"Yerel Ayarlar\": KDE yerel ayarlarındaki biçim.\n"
-"\"Özel\": Tarih için özel bir biçim kullanın."
+"“Yerel Ayarlar”: KDE yerel ayarlarındaki biçim.\n"
+"“Özel”: Tarih için özel bir biçim kullanın."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:140
 #, kde-format
@@ -62412,7 +62410,7 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:469
 #, kde-format
 msgid "35mm equivalent focal length"
-msgstr "35 mm'ye eşdeğer odak uzunluğu"
+msgstr "35 mm’ye eşdeğer odak uzunluğu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:470
 #, kde-format
@@ -63600,11 +63598,11 @@ msgid ""
 msgstr ""
 "<p>Burada, Albüm görünümünde görüntülenecek görsel dosyalarının (RAW "
 "dosyaları dahil) uzantılarını ekleyebilirsiniz. Albüm görünümünüzde xyz ve "
-"abc uzantılı dosyaları görüntülemek için \"xyz abc\" yazmanız yeterlidir.</"
+"abc uzantılı dosyaları görüntülemek için “xyz abc” yazmanız yeterlidir.</"
 "p><p>Uzantının önüne eksi işareti koyarak öntanımlı olarak gösterilen dosya "
-"biçimlerini de kaldırabilirsiniz: Örneğin, \"-gif\", tüm GIF dosyalarını "
-"Albüm görünümünüzden ve veritabanınızdaki tüm izlerini kaldırır. "
-"Silinmezler, sadece digiKam’da gösterilmezler.</p><p><b>Uyarı:</b> Dosyaları "
+"biçimlerini de kaldırabilirsiniz: Örneğin, “−gif”, tüm GIF dosyalarını Albüm "
+"görünümünüzden ve veritabanınızdaki tüm izlerini kaldırır. Silinmezler, "
+"yalnızca digiKam’da gösterilmezler.</p><p><b>Uyarı:</b> Dosyaları "
 "veritabanından kaldırmak, tüm künyelerini ve derecelendirmelerini kaybetmek "
 "anlamına gelir.</p>"
 
@@ -63637,13 +63635,13 @@ msgid ""
 msgstr ""
 "<p>Burada, Albüm görünümünüzde görüntülenecek video dosyalarının ek "
 "uzantılarını ekleyebilirsiniz. *.xyz ve *.abc uzantılı dosyaları desteklemek "
-"için \"xyz abc\" yazmanız yeterlidir. Bu dosyalara tıklamak, onları gömülü "
-"bir video oynatıcısında oynatacaktır.</p><p>Uzantının önüne eksi işareti "
-"koyarak öntanımlı olarak gösterilen dosya biçimlerini de kaldırabilirsiniz: "
-"Örneğin, \"-avi\", tüm AVI dosyalarını Albüm görünümünüzden ve "
-"veritabanınızdaki tüm izlerini kaldırır. Silinmezler, sadece digiKam’da "
-"gösterilmezler.</p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm "
-"künyelerini ve derecelendirmelerini kaybetmek anlamına gelir.</p>"
+"için “xyz abc” yazmanız yeterlidir. Bu dosyalara tıklamak, onları gömülü bir "
+"video oynatıcısında oynatacaktır.</p><p>Uzantının önüne eksi işareti koyarak "
+"öntanımlı olarak gösterilen dosya biçimlerini de kaldırabilirsiniz: Örneğin, "
+"“−avi”, tüm AVI dosyalarını Albüm görünümünüzden ve veritabanınızdaki tüm "
+"izlerini kaldırır. Silinmezler, yalnızca digiKam’da gösterilmezler.</"
+"p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm künyelerini ve "
+"derecelendirmelerini kaybetmek anlamına gelir.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:144
 #, kde-format
@@ -63656,7 +63654,7 @@ msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
 "types</a>):"
 msgstr ""
-"Ek ses dosy&ası uzantıları (<a href='audio'>Şu an desteklenen türler</a>):"
+"Ek ses dosy&ası uzantıları (<a href='audio'>Şu anda desteklenen türler</a>):"
 
 #: core/utilities/setup/album/setupmime.cpp:167
 #, kde-format
@@ -63673,12 +63671,12 @@ msgid ""
 msgstr ""
 "<p>Burada, Albüm görünümünüzde görüntülenecek ses dosyalarının ek "
 "uzantılarını ekleyebilirsiniz. *.xyz ve *.abc uzantılı dosyaları desteklemek "
-"için \"xyz abc\" yazmanız yeterlidir. Bu dosyalara tıklamak, onları gömülü "
-"bir ses çalarda oynatacaktır.</p><p>Uzantının önüne eksi işareti koyarak "
-"öntanımlı olarak gösterilen dosya biçimlerini de kaldırabilirsiniz: Örneğin, "
-"\"-ogg\", tüm OGG dosyalarını Albüm görünümünüzden ve veritabanınızdaki tüm "
-"izlerini kaldırır. Silinmezler, sadece digiKam’da gösterilmezler.</"
-"p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm künyelerini ve "
+"için “xyz abc” yazmanız yeterlidir. Bu dosyalara tıklamak, onları gömülü bir "
+"ses çalarda çalacaktır.</p><p>Uzantının önüne eksi işareti koyarak öntanımlı "
+"olarak gösterilen dosya biçimlerini de kaldırabilirsiniz: Örneğin, “−ogg”, "
+"tüm OGG dosyalarını Albüm görünümünüzden ve veritabanınızdaki tüm izlerini "
+"kaldırır. Silinmezler, yalnızca digiKam’da gösterilmezler.</p><p><b>Uyarı:</"
+"b> Dosyaları veritabanından kaldırmak, tüm künyelerini ve "
 "derecelendirmelerini kaybetmek anlamına gelir.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:179
@@ -64288,13 +64286,13 @@ msgid ""
 msgstr ""
 "<p>Fotoğraf koleksiyonlarınızdan çıkarmak istediğiniz dizinlerin adlarını "
 "ayarlayın. Adlar BÜYÜK/küçük harfe duyarlıdır ve noktalı virgülle "
-"ayrılmalıdır.</p><p>Bu, örneğin fotoğraflarınızı bir Synology NAS'ta (Ağa "
+"ayrılmalıdır.</p><p>Bu, örneğin fotoğraflarınızı bir Synology NAS’ta (Ağa "
 "Bağlı Depolama) depoladığınızda kullanışlıdır. Her dizinde sistem, küçük "
 "görselleri depolamak için bir @eaDir alt dizini oluşturur. digiKam’ın özgün "
 "fotoğrafı ve ona karşılık gelen küçük görseli iki kez eklemesini önlemek "
 "için @eaDir öntanımlı olarak dikkate alınmaz.</p><p>Öntanımlı olarak yok "
-"sayılan dizinleri yeniden içermek için önüne bir eksi ekleyin; örneğin, -"
-"@eaDir.</p>"
+"sayılan dizinleri yeniden içermek için önüne bir eksi ekleyin; örneğin, "
+"−@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:152
 #, kde-format
@@ -65073,7 +65071,7 @@ msgstr ""
 "strong='true'>PGF</emphasis>: Bu, kayıplı veya kayıpsız sıkıştırmayla iyi "
 "sıkıştırma oranları sunan, teknik açıdan üstün bir dosya biçimidir. Ancak "
 "henüz yaygın olarak kullanılmadığı ve desteklenmediği için arkadaşlarınız bu "
-"dosyaları doğrudan açamayabilir ve siz de bunları doğrudan web'de "
+"dosyaları doğrudan açamayabilir ve siz de bunları doğrudan Web’de "
 "yayınlayamayabilirsiniz.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:492
@@ -65085,7 +65083,7 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
-"<item><emphasis strong='true'>JPEG-2000</emphasis>: PGF'ye benzer. Yükleme "
+"<item><emphasis strong='true'>JPEG-2000</emphasis>: PGF’ye benzer. Yükleme "
 "veya kaydetme daha yavaştır, sıkıştırma oranı daha iyidir ve biçim daha "
 "geniş çapta desteklenir; ancak yine de geleneksel JPEG, PNG veya TIFF "
 "biçimleriyle karşılaştırılamaz. </item>"
@@ -65127,8 +65125,8 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
-"<item><emphasis strong='true'>WEBP</emphasis>: Google'ın JPEG, PNG ve GIF "
-"dosya biçimlerinin yerine geliştirdiği bir görsel dosyası formatıdır. "
+"<item><emphasis strong='true'>WEBP</emphasis>: Google’ın JPEG, PNG ve GIF "
+"dosya biçimlerinin yerine geliştirdiği bir görsel dosyası biçimidir. "
 "Dosyalar aynı kalite için daha küçüktür veya aynı boyut için daha yüksek "
 "kaliteye sahiptir. Hem kayıplı hem de kayıpsız sıkıştırmayı destekler. </"
 "item>"
@@ -65145,7 +65143,7 @@ msgstr ""
 "<item><emphasis strong='true'>AVIF</emphasis>: AV1 Görsel Dosyası Biçimi, "
 "açık ve telifsiz bir kodlama biçimi olan AOMedia Video 1 (AV1) kodlayıcısı "
 "bileşeniyle sıkıştırılmış görselleri ISOBMFF kapsayıcısında (HEIF olarak) "
-"depolamaya yönelik bir belirtimdir. </item>"
+"depolamaya yönelik bir biçimdir. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
 #, kde-format
@@ -65468,7 +65466,7 @@ msgstr "Baloo Masaüstü Araması"
 #, kde-format
 msgctxt "@option"
 msgid "Store metadata from digiKam in Baloo"
-msgstr "DigiKam'daki üst veriyi Baloo’da sakla"
+msgstr "digiKam üst verisini Baloo’da sakla"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:36
 #, kde-format
@@ -66495,7 +66493,7 @@ msgstr "Gruplama"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
-msgstr "Ekran çarpanından yüksek DPİ'li ölçeklendirme kullan"
+msgstr "Ekran çarpanından yüksek DPI’li ölçeklendirme kullan"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
@@ -66841,10 +66839,10 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
-"Google Haritalar'ın dostane bir şekilde çalışabilmesi için son "
+"Google Haritalar’ın kullanıcı dostu bir şekilde çalışabilmesi için son "
 "kullanıcıların kimlik bilgileri kazanmak üzere çevrimiçi olarak satın "
 "almaları gereken bir API anahtarı gerekir. Bu anahtar olmadan, Google "
-"Haritalar hala kullanılabilir; ancak \"Yalnızca Geliştirme İçindir\" "
+"Haritalar hala kullanılabilir; ancak “Yalnızca Geliştirme İçindir” "
 "açıklamalı bir filigran çerçevesiyle kullanılabilir. Daha fazla bilgi için "
 "kullanımlar, yöntemler ve fiyatlar hakkındaki bu <a href='https://"
 "mapsplatform.google.com/pricing/'>Google sayfasına</a> bir bakın."
@@ -67197,7 +67195,7 @@ msgid ""
 "Windows/Color/</li></ul>On your system, currently these paths exist and are "
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
-"Windows'ta, öntanımlı arama yolları şunları içerir: <ul><li>%1/Windows/"
+"Windows’ta, öntanımlı arama yolları şunları içerir: <ul><li>%1/Windows/"
 "System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
 "li><li>%2/Windows/Color/</li></ul>Sisteminizde şu anda bu yollar vardır ve "
 "taranmıştır:<ul><li>%3</li></ul>"
@@ -67212,7 +67210,7 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"macOS'te, öntanımlı arama yolları şunları içerir: <ul><li>/System/Library/"
+"macOS’te, öntanımlı arama yolları şunları içerir: <ul><li>/System/Library/"
 "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
 "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
 "Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
@@ -67227,7 +67225,7 @@ msgid ""
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
 "currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
-"Linux'ta, öntanımlı arama yolları şunları içerir: <ul><li>/usr/share/color/"
+"Linux’ta, öntanımlı arama yolları şunları içerir: <ul><li>/usr/share/color/"
 "icc</li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Sisteminizde şu "
 "anda bu yollar vardır ve taranmıştır:<ul><li>%1</li></ul>"
