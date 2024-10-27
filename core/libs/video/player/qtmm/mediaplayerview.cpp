@@ -51,7 +51,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "metaengine_rotation.h"
 #include "thememanager.h"
 #include "stackedview.h"
 #include "dlayoutbox.h"
@@ -690,7 +689,6 @@ void MediaPlayerView::slotCapture()
 
         if (!image.isNull() && d->currentItem.isValid())
         {
-            MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
             QFileInfo info(d->currentItem.toLocalFile());
             QDateTime dateTime;
 
@@ -718,47 +716,9 @@ void MediaPlayerView::slotCapture()
                 dateTime = QDateTime::currentDateTime();
             }
 
-            switch (d->videoOrientation)
-            {
-                case 0:
-                {
-                    orientation = MetaEngine::ORIENTATION_NORMAL;
-                    break;
-                }
-
-                case 90:
-                {
-                    orientation = MetaEngine::ORIENTATION_ROT_90;
-                    break;
-                }
-
-                case 180:
-                {
-                    orientation = MetaEngine::ORIENTATION_ROT_180;
-                    break;
-                }
-
-                case 270:
-                {
-                    orientation = MetaEngine::ORIENTATION_ROT_270;
-                    break;
-                }
-
-                default:
-                {
-                    orientation = MetaEngine::ORIENTATION_NORMAL;
-                    break;
-                }
-            }
-
-            if (orientation != MetaEngine::ORIENTATION_NORMAL)
-            {
-                MetaEngineRotation matrix(orientation);
-                QTransform transform = matrix.toTransform();
-                image                = image.transformed(transform);
-            }
-
-            orientation      = MetaEngine::ORIENTATION_NORMAL;
+            QTransform transform;
+            transform.rotate(d->videoOrientation);
+            image = std::move(image.transformed(transform));
 
             QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
                               .arg(info.path())
@@ -771,9 +731,9 @@ void MediaPlayerView::slotCapture()
 
                 if (meta->load(tempPath))
                 {
+                    meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
                     meta->setImageDateTime(dateTime, true);
                     meta->setItemDimensions(image.size());
-                    meta->setItemOrientation(orientation);
                     meta->save(tempPath, true);
                 }
 
