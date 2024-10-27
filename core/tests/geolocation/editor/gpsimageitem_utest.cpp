@@ -78,7 +78,7 @@ void TestGPSItemContainer::testBasicLoading()
         // test failure on not-existing file
         QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("not-existing"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
-        QVERIFY(imageItem);
+        QVERIFY(!imageItem);
     }
 
     {

@@ -74,6 +74,8 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
                         // cppcheck-suppress knownConditionTrueFalse
                         if (!(hasLoaded = false/*loadUsingImageMagick(filePath)*/))
                         {
+                            hasLoaded   = loadFromSidecarAndMerge(filePath);
+
                             usedBackend = NoBackend;
                         }
                         else
@@ -140,6 +142,8 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         }
         else
         {
+            hasLoaded   = loadFromSidecarAndMerge(filePath);
+
             usedBackend = NoBackend;
         }
     }
