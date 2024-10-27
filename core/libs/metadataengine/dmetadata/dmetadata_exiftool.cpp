@@ -31,7 +31,7 @@
 namespace Digikam
 {
 
-bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll, bool merge)
+bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll)
 {
     QFileInfo info(filePath);
 
@@ -76,24 +76,7 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll, bool m
         return false;
     }
 
-    if (merge)
-    {
-        QStringList exclude;
-
-        // Remove orientation and dates from the ExifTool container
-        // if the FFmpeg backend has already found this metadata.
-
-        exclude << QLatin1String("Exif.Image.DateTime");
-        exclude << QLatin1String("Exif.Image.Orientation");
-        exclude << QLatin1String("Exif.Photo.DateTimeOriginal");
-        exclude << QLatin1String("Exif.Photo.DateTimeDigitized");
-
-        loadFromDataAndMerge(exv, exclude);
-    }
-    else
-    {
-        loadFromData(exv);
-    }
+    loadFromData(exv);
 
     // Restore file path.
 

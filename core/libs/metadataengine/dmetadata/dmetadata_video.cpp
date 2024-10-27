@@ -1168,7 +1168,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.Comment")
                                              << QLatin1String("Xmp.xmpDM.logComment"));
-
+/*
     if (!data.isEmpty())
     {
         // Backport comment in Exif and Iptc
@@ -1180,7 +1180,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
         setItemComments(capMap);
     }
-
+*/
     // --------------
 
     s_setXmpTagStringFromEntry(this,

@@ -107,6 +107,11 @@ QString MetaEngine::backendName(Backend t)
             return QLatin1String("ExifTool");
         }
 
+        case VideoMergeBackend:
+        {
+            return QLatin1String("VideoMerge");
+        }
+
         case NoBackend:
         {
             return QLatin1String("No Backend");
@@ -198,6 +203,8 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
             *backend = Exiv2Backend;
         }
 
+        loadFromSidecarAndMerge(filePath);
+
         hasLoaded = true;
 
     }
@@ -209,8 +216,6 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
-
-    hasLoaded |= loadFromSidecarAndMerge(filePath);
 
     return hasLoaded;
 }

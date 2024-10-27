@@ -69,25 +69,33 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
 #else
                         false
 #endif
-                        ))
+                       ))
                     {
                         // cppcheck-suppress knownConditionTrueFalse
                         if (!(hasLoaded = false/*loadUsingImageMagick(filePath)*/))
                         {
+                            loadFromSidecarAndMerge(filePath);
+
                             usedBackend = NoBackend;
                         }
                         else
                         {
+                            loadFromSidecarAndMerge(filePath);
+
                             usedBackend = ImageMagickBackend;
                         }
                     }
                     else
                     {
+                        loadFromSidecarAndMerge(filePath);
+
                         usedBackend = LibHeifBackend;
                     }
                 }
                 else
                 {
+                    loadFromSidecarAndMerge(filePath);
+
                     usedBackend = LibRawBackend;
                 }
             }
@@ -101,7 +109,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             // Special case when Exiv2 has empty metadata container
             // but no loading error, give ExifTool a chance.
 
-            if (isEmpty() && loadUsingExifTool(filePath))
+            if (isEmpty() && (hasLoaded = loadUsingExifTool(filePath)))
             {
                 usedBackend = ExifToolBackend;
             }
@@ -115,44 +123,27 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
     {
         // No image files (aka video or audio), process with ExifTool or ffmpeg backends.
 
-        if (videoAll)
+        if      ((hasLoaded = loadUsingExifTool(filePath, videoAll)))
         {
-            if (!(hasLoaded = loadUsingFFmpeg(filePath)))
+            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
             {
-                if (!(hasLoaded = loadUsingExifTool(filePath, videoAll)))
-                {
-                    usedBackend = NoBackend;
-                }
-                else
-                {
-                    usedBackend = ExifToolBackend;
-                }
-            }
-            else
-            {
-                if (loadUsingExifTool(filePath, videoAll, true))
-                {
-                    usedBackend = VideoMergeBackend;
-                }
-                else
-                {
-                    usedBackend = FFMpegBackend;
-                }
-            }
-        }
-        else
-        {
-            if (!(hasLoaded = loadUsingExifTool(filePath)))
-            {
-                usedBackend = NoBackend;
+                usedBackend = VideoMergeBackend;
             }
             else
             {
                 usedBackend = ExifToolBackend;
             }
         }
+        else if ((hasLoaded = loadUsingFFmpeg(filePath)))
+        {
+            loadFromSidecarAndMerge(filePath);
 
-        hasLoaded |= loadFromSidecarAndMerge(filePath);
+            usedBackend = FFMpegBackend;
+        }
+        else
+        {
+            usedBackend = NoBackend;
+        }
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with"
