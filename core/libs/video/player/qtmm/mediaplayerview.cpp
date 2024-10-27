@@ -585,7 +585,7 @@ void MediaPlayerView::slotEscapePressed()
 
 void MediaPlayerView::slotRotateVideo()
 {
-    if (d->player->isPlaying())
+    if (d->player->playbackState() != QMediaPlayer::StoppedState)
     {
         int orientation = 0;
 
