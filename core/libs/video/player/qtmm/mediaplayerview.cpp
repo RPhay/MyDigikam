@@ -51,6 +51,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "metaengine_rotation.h"
 #include "thememanager.h"
 #include "stackedview.h"
 #include "dlayoutbox.h"
@@ -689,7 +690,76 @@ void MediaPlayerView::slotCapture()
 
         if (!image.isNull() && d->currentItem.isValid())
         {
+            MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
             QFileInfo info(d->currentItem.toLocalFile());
+            QDateTime dateTime;
+
+            if (d->iface)
+            {
+                DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+                dateTime = dinfo.dateTime();
+            }
+            else
+            {
+                QScopedPointer<DMetadata> meta2(new DMetadata);
+
+                if (meta2->load(d->currentItem.toLocalFile()))
+                {
+                    dateTime = meta2->getItemDateTime();
+                }
+            }
+
+            if (dateTime.isValid())
+            {
+                dateTime = dateTime.addMSecs(capturePosition);
+            }
+            else
+            {
+                dateTime = QDateTime::currentDateTime();
+            }
+
+            switch (d->videoOrientation)
+            {
+                case 0:
+                {
+                    orientation = MetaEngine::ORIENTATION_NORMAL;
+                    break;
+                }
+
+                case 90:
+                {
+                    orientation = MetaEngine::ORIENTATION_ROT_90;
+                    break;
+                }
+
+                case 180:
+                {
+                    orientation = MetaEngine::ORIENTATION_ROT_180;
+                    break;
+                }
+
+                case 270:
+                {
+                    orientation = MetaEngine::ORIENTATION_ROT_270;
+                    break;
+                }
+
+                default:
+                {
+                    orientation = MetaEngine::ORIENTATION_NORMAL;
+                    break;
+                }
+            }
+
+            if (orientation != MetaEngine::ORIENTATION_NORMAL)
+            {
+                MetaEngineRotation matrix(orientation);
+                QTransform transform = matrix.toTransform();
+                image                = image.transformed(transform);
+            }
+
+            orientation      = MetaEngine::ORIENTATION_NORMAL;
+
             QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
                               .arg(info.path())
                               .arg(info.baseName())
@@ -701,41 +771,6 @@ void MediaPlayerView::slotCapture()
 
                 if (meta->load(tempPath))
                 {
-                    QDateTime dateTime;
-                    MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
-
-                    if (d->iface)
-                    {
-                        DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
-
-                        dateTime    = dinfo.dateTime();
-                        orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
-                    }
-                    else
-                    {
-                        QScopedPointer<DMetadata> meta2(new DMetadata);
-
-                        if (meta2->load(d->currentItem.toLocalFile()))
-                        {
-                            dateTime    = meta2->getItemDateTime();
-                            orientation = meta2->getItemOrientation();
-                        }
-                    }
-
-                    if (dateTime.isValid())
-                    {
-                        dateTime = dateTime.addMSecs(capturePosition);
-                    }
-                    else
-                    {
-                        dateTime = QDateTime::currentDateTime();
-                    }
-
-                    if (orientation == MetaEngine::ORIENTATION_UNSPECIFIED)
-                    {
-                        orientation = MetaEngine::ORIENTATION_NORMAL;
-                    }
-
                     meta->setImageDateTime(dateTime, true);
                     meta->setItemDimensions(image.size());
                     meta->setItemOrientation(orientation);
