@@ -95,15 +95,13 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             {
                 usedBackend = ExifToolBackend;
             }
-
-            hasLoaded |= loadFromSidecarAndMerge(filePath);
         }
         else
         {
             // Special case when Exiv2 has empty metadata container
             // but no loading error, give ExifTool a chance.
 
-            if (isEmpty() && (hasLoaded = loadUsingExifTool(filePath)))
+            if (isEmpty() && (loadUsingExifTool(filePath)))
             {
                 usedBackend = ExifToolBackend;
             }
@@ -112,6 +110,8 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
                 usedBackend = Exiv2Backend;
             }
         }
+
+        hasLoaded |= loadFromSidecarAndMerge(filePath);
     }
     else
     {
