@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 01:46+0000\n"
+"POT-Creation-Date: 2024-10-25 01:48+0000\n"
 "PO-Revision-Date: 2024-08-27 20:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -996,7 +996,7 @@ msgstr "Namn:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:247
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1116,7 +1116,7 @@ msgstr "Blendaropning/brennvidd:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
-#: core/libs/dialogs/imagedialog_preview.cpp:184
+#: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -1322,27 +1322,27 @@ msgstr "<i>Binærdata</i>"
 msgid "Initializing..."
 msgstr "Førebur …"
 
-#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Lastar inn programtillegg …"
 
-#: core/app/main/digikamapp.cpp:178 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Kontrollerer ICC-lager …"
 
-#: core/app/main/digikamapp.cpp:192
+#: core/app/main/digikamapp.cpp:193
 #, kde-format
 msgid "Clean up Database..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:214
+#: core/app/main/digikamapp.cpp:215
 #, kde-format
 msgid "Loading albums..."
 msgstr "Lastar album …"
 
-#: core/app/main/digikamapp.cpp:361
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1353,7 +1353,7 @@ msgstr ""
 "på nytt og «Nei» elles. I så fall vert farge­handteringa slått av til du "
 "rettar opp i dette.</p>"
 
-#: core/app/main/digikamapp.cpp:417
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1362,92 +1362,92 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ingen merkte element (%1 element)"
 msgstr[1] "Ingen merkte element (%1 element)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ingen merkte element (%1 [%2] element)"
 msgstr[1] "Ingen merkte element (%1 [%2] element)"
 
-#: core/app/main/digikamapp.cpp:714
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Ingen merkte element (%1 element – med grupperte element: %2)"
 msgstr[1] "Ingen merkte element (%1 element – med grupperte element: %2)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element merkt (%3/%4)"
 msgstr[1] "%1/%2 element merkte (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:739
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element merkt (%4/%5)"
 msgstr[1] "%1/%2 [%3] element merkte (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element merkt. Til saman med grupperte element: %3"
 msgstr[1] "%1/%2 element merkte. Til saman med grupperte element: %3"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:755
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element merkt (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] element merkte (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 element merkt. Med grupperte element: %3/%4"
 msgstr[1] "%1/%2 element merkte. Med grupperte element: %3/%4"
 
-#: core/app/main/digikamapp.cpp:794
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 av %2)"
 
-#: core/app/main/digikamapp.cpp:808
+#: core/app/main/digikamapp.cpp:809
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 av %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 av %2. Til saman med grupperte element: %3)"
 
-#: core/app/main/digikamapp.cpp:823
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 gøymd element"
 msgstr[1] "%1 gøymde element"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Lagra metadata til biletfil"
 msgstr[1] "Lagra metadata til merkte biletfiler"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1722,7 +1722,7 @@ msgid "Thumbnails"
 msgstr "Miniatyrbilete"
 
 #: core/app/main/digikamapp_setup.cpp:340
-#: core/app/views/stack/itemiconview_views.cpp:305
+#: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2503,21 +2503,21 @@ msgid "Main Tools"
 msgstr "Hovudverktøy"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Etterhandsaming"
 
 #: core/app/main/digikamapp_tools.cpp:58
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Eksportering"
 
 #: core/app/main/digikamapp_tools.cpp:69
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2678
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2620,7 +2620,7 @@ msgstr "&Hjelp"
 msgid "Main Toolbar"
 msgstr "Hovudverktøylinje"
 
-#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2843,7 +2843,7 @@ msgstr "Vis i fullskjerm"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2944,12 +2944,12 @@ msgid "No Tags Album"
 msgstr "Ingen albummerkelappar"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3051,7 +3051,7 @@ msgstr ""
 "søk / virtuelt album med namn lik teksten i skrivefeltet."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:145
 #, kde-format
 msgid "Timeline"
 msgstr "Tidslinje"
@@ -3076,7 +3076,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filter"
 
-#: core/app/views/stack/itemiconview_albums.cpp:301
+#: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Kan ikkje opna rotalbumet. Det er ikkje ei fysisk mappe."
@@ -3088,23 +3088,23 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:126
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Skissesøk"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:130
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Uklare søk"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:134
 #, kde-format
 msgid "Map Search"
 msgstr "Kartsøk"
 
-#: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1165
+#: core/app/views/stack/itemiconview_p.h:141
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
 #, kde-format
 msgid "Last Search"
 msgstr "Førre søk"
@@ -3123,7 +3123,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:129
+#: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3133,7 +3133,7 @@ msgstr ""
 "Lagringsområdet til biletet\n"
 "er ikkje tilgjengeleg nett no"
 
-#: core/app/views/stack/itemiconview_views.cpp:245
+#: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -3358,7 +3358,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid ""
-"Add spell-checking support in caption text widget using KF5::Sonnet "
+"Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 
@@ -3474,60 +3474,76 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+msgid ""
+"More compact icon-view thumbnails by using a simple horizontal line instead "
+"a frame to render Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
-"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
-"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
-"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
-"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Adding YuNet DNN model to process faces detection and replace older SSD "
+"model. Adding Sface DNN model to process face recognition and replace older "
+"OpenFace model. Both are faster and requires less memory at run-time with "
+"better faces-management results."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:141
+#, kde-format
+msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:142
+#, kde-format
+msgid ""
+"New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
+"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid "...and much more."
 msgstr "Og mykje meir …"
 
 # Tankestrek som listeteikn (vanleg i norsk typografi).
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li style=\"list-style-type: '– ';\">%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "New Features"
 msgstr "Nye funksjonar"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:177
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:175
+#: core/app/views/stack/welcomepageview.cpp:180
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3538,7 +3554,7 @@ msgstr ""
 "importering, organisering, forbetring, søk og eksportering av digitale "
 "bilete."
 
-#: core/app/views/stack/welcomepageview.cpp:176
+#: core/app/views/stack/welcomepageview.cpp:181
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3548,19 +3564,19 @@ msgstr ""
 "Du er no i albumvisinga. Album er der biletfilene dine vert lagra, og svarar "
 "til mapper på harddisken."
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:182
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:178
+#: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a "
 "href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3569,35 +3585,35 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">Heimesida</a> inneheld informasjon om "
 "nye versjonar av programmet."
 
-#: core/app/views/stack/welcomepageview.cpp:234
+#: core/app/views/stack/welcomepageview.cpp:239
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Velkommen til digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:237
+#: core/app/views/stack/welcomepageview.cpp:242
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Fotografen av bakgrunnsbiletet"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:245
 #, kde-format
 msgid "Author:"
 msgstr "Fotograf:"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Stad:"
 
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:248
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
 # Brukar helst «objektiv» på norsk, *ikkje* «linse».
-#: core/app/views/stack/welcomepageview.cpp:244
+#: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Lens:"
 msgstr "Objektiv:"
@@ -3835,7 +3851,7 @@ msgstr "Fileigenskapar"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
 #, kde-format
 msgid "Filename"
 msgstr "Filnamn"
@@ -3843,7 +3859,7 @@ msgstr "Filnamn"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:176
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
 msgstr "Adresse"
@@ -3900,7 +3916,7 @@ msgstr "Koordinatar"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Altitude"
 msgstr "Høgd over havet"
@@ -4156,7 +4172,7 @@ msgstr "Eining"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatyrbilete"
@@ -4324,8 +4340,8 @@ msgstr ""
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:535 core/libs/dialogs/libsinfodlg.cpp:541
-#: core/libs/dialogs/libsinfodlg.cpp:616
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, kde-format
 msgid "no entry"
 msgstr ""
@@ -6913,24 +6929,24 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid "Lossless PGF files"
 msgstr "PGF-filer utan kvalitetstap"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:66
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid "PGF quality:"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
@@ -10859,9 +10875,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Klarta ikkje lagra fila «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11052,33 +11068,33 @@ msgid "Edit Geolocation"
 msgstr "Rediger geografisk plassering"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
 #, kde-format
 msgid "Latitude"
 msgstr "Breiddegrad"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
 msgstr "Lengdegrad"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Speed"
 msgstr "Fart"
 
 # Står eit tal, så det er openbart at det er snakk om «talet på» satellittar.
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "# satellites"
 msgstr "Satellittar"
 
 # https://en.wikipedia.org/wiki/Geopositioning#Background
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Fix type"
 msgstr "Type posisjon"
@@ -11094,7 +11110,7 @@ msgid "3-d"
 msgstr "3D"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -11634,7 +11650,7 @@ msgid "Toggle the visibility of the search results on the map."
 msgstr "Slå på/av vising av søkjeresultat på kartet."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:160
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
 #, kde-format
 msgid "Copy coordinates"
 msgstr "Kopier koordinatar"
@@ -11655,7 +11671,7 @@ msgid "Select which service you would like to use."
 msgstr "Vel kva nett-teneste du vil bruka."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:193
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:124
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmerke"
@@ -15326,7 +15342,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
 msgstr "Status"
@@ -18078,17 +18094,17 @@ msgstr ""
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:172
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:200
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr ""
@@ -20817,27 +20833,27 @@ msgid "Presentation..."
 msgstr "Presentasjon …"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:387
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:388
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr ""
@@ -21238,12 +21254,12 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:116
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
 #, kde-format
 msgid "Switch Screen"
 msgstr "Byt skjerm"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:129
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -23094,37 +23110,37 @@ msgstr ""
 msgid "invalid name"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:553
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, kde-format
 msgid "iNaturalist"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:555
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, kde-format
 msgid "Login"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1328
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1494
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1572
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1690
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1814
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -25204,26 +25220,26 @@ msgstr ""
 msgid "Export by Web Service"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr ""
@@ -25403,62 +25419,62 @@ msgstr ""
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr "Papirkorg"
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:751
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Gjeldande tidssøk"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Gjeldande uklare søk"
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:762
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Gjeldande skissesøk"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:770
 #, kde-format
 msgid "Current Map Search"
 msgstr "Gjeldande kartsøk"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:777
 #, kde-format
 msgid "Current Search"
 msgstr "Gjeldande søk"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Gjeldande duplikatsøk"
@@ -26780,7 +26796,7 @@ msgstr ""
 "Feil ved konvertering av databaseskjema.\n"
 " Detaljar: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:200
+#: core/libs/database/coredb/coredbschemaupdater.cpp:201
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -26793,7 +26809,7 @@ msgstr ""
 " %1\n"
 "Kontroller løyva dine på databasen og start digiKam på nytt."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:234
+#: core/libs/database/coredb/coredbschemaupdater.cpp:235
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -26804,7 +26820,7 @@ msgstr ""
 "versjonen av databaseskjemaet kan ikkje stadfestast. Prøv å starta med ein "
 "tom database. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:264
+#: core/libs/database/coredb/coredbschemaupdater.cpp:265
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -26817,7 +26833,7 @@ msgstr ""
 "tyder at denne versjonen av digiKam er for gammal eller at databaseformatet "
 "er for nytt.) Bruk heller den nye versjonen av digiKam som du brukte før. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:327
+#: core/libs/database/coredb/coredbschemaupdater.cpp:328
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -26828,7 +26844,7 @@ msgstr ""
 "Klarte ikkje å laga tabellar i databasen.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:348
+#: core/libs/database/coredb/coredbschemaupdater.cpp:349
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -26843,7 +26859,7 @@ msgstr ""
 "diskusjon av digiKam-utviklinga (sjå www.digikam.org/support). Sjå òg på "
 "eventuelle meldingar som digiKam har skrive på terminalen. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:409
+#: core/libs/database/coredb/coredbschemaupdater.cpp:412
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -26860,7 +26876,7 @@ msgstr ""
 "digikam.org/support). Sjå òg på eventuelle meldingar som digiKam har skrive "
 "på terminalen. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:447
+#: core/libs/database/coredb/coredbschemaupdater.cpp:450
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26869,7 +26885,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:456
+#: core/libs/database/coredb/coredbschemaupdater.cpp:459
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26877,7 +26893,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:677
+#: core/libs/database/coredb/coredbschemaupdater.cpp:686
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -26887,12 +26903,12 @@ msgstr ""
 "Finn ikkje handlinga for databaseoppdatering. Kontroller at dbconfig.xml-"
 "fila for gjeldande versjon av digiKam er installert på rett stad. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:698
+#: core/libs/database/coredb/coredbschemaupdater.cpp:707
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Oppdaterte skjemaet til versjon %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:846
+#: core/libs/database/coredb/coredbschemaupdater.cpp:855
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26902,12 +26918,12 @@ msgstr ""
 "Klarte ikkje kopiera den gamle databasefila («%1») til den nye mappa («%2»). "
 "Feilmelding: «%3». Kontroller at fila kan kopierast, eventuelt slett ho."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:868
+#: core/libs/database/coredb/coredbschemaupdater.cpp:877
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopierte databasefil"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:873
+#: core/libs/database/coredb/coredbschemaupdater.cpp:882
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -26917,22 +26933,22 @@ msgstr ""
 "Den gamle databasefila («%1») vart kopiert til den nye mappa («%2») men kan "
 "ikkje opnast. Fjern begge filene og prøv på nytt med ein tom database. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:903
 #, kde-format
 msgid "Opened new database file"
 msgstr "Opna ny databasefil"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:993
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Førebudde skiping av tabellar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1012
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid "Created tables"
 msgstr "Skipa tabellar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -26942,7 +26958,7 @@ msgstr ""
 "Fann ikkje noko albumbibliotek i oppsettfila. Gjev opp å oppdatera skjema. "
 "Prøv med ein tom database, eller rett opp i  oppsettet."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1047
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -26961,52 +26977,52 @@ msgstr ""
 "ikkje vil laga ein ny database frå galne føresetnadar frå ein øydelagd "
 "installasjon."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1074
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
 #, kde-format
 msgid "Configured one album root"
 msgstr "Sette opp éi albumrot"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1100
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
 #, kde-format
 msgid "Imported albums"
 msgstr "Importerte album"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1137
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
 #, kde-format
 msgid "Imported images information"
 msgstr "Importerte biletinformasjon"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Førre søk (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1228
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Gjorde klart og importerte filter for filetternamn"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1250
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Gjorde første fullskanning"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1274
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Importerte opprettingsdatoar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1305
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
 #, kde-format
 msgid "Imported comments"
 msgstr "Importerte kommentarar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
 #, kde-format
 msgid "Imported ratings"
 msgstr "Importerte karakterar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1343
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Fjerna v3-tabellar"
@@ -27095,43 +27111,43 @@ msgstr ""
 "<p><b>Det oppstod ein databasefeil.</b></p>Detaljar:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:450
+#: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Kjeldebilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:479
+#: core/libs/database/history/itemhistorygraphmodel.cpp:483
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Biletlogg"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:562
+#: core/libs/database/history/itemhistorygraphmodel.cpp:566
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Avleidde bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:572
+#: core/libs/database/history/itemhistorygraphmodel.cpp:576
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Nærskylde bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:583
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Identiske bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:635
+#: core/libs/database/history/itemhistorygraphmodel.cpp:639
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Mellomliggjande steg:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:849
+#: core/libs/database/history/itemhistorygraphmodel.cpp:853
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27141,7 +27157,7 @@ msgstr ""
 "%1\n"
 "(opphavleg bilete)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:854
+#: core/libs/database/history/itemhistorygraphmodel.cpp:858
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27313,25 +27329,25 @@ msgstr ""
 "databaseformatet er for nytt.) Bruk heller den nye versjonen av digiKam som "
 "du brukte før. "
 
-#: core/libs/database/tags/facetags.cpp:417
+#: core/libs/database/tags/facetags.cpp:418
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Personar"
 
-#: core/libs/database/tags/facetags.cpp:482
+#: core/libs/database/tags/facetags.cpp:483
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: core/libs/database/tags/facetags.cpp:504
+#: core/libs/database/tags/facetags.cpp:505
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Ikkje stadfesta"
 
-#: core/libs/database/tags/facetags.cpp:526
+#: core/libs/database/tags/facetags.cpp:527
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28330,6 +28346,16 @@ msgstr "Hald fram"
 msgid "Do not ask again"
 msgstr "Ikkje spør igjen"
 
+#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -28352,82 +28378,82 @@ msgstr "Vel eit element"
 msgid "Select Items"
 msgstr "Vel element"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:259
+#: core/libs/dialogs/imagedialog_preview.cpp:261
 #, kde-format
 msgid "<i>Preview:</i>"
 msgstr ""
 
-#: core/libs/dialogs/imagedialog_preview.cpp:265
+#: core/libs/dialogs/imagedialog_preview.cpp:267
 #, kde-format
 msgid "<i>Make:</i>"
 msgstr "<i>Merke:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:266
+#: core/libs/dialogs/imagedialog_preview.cpp:268
 #, kde-format
 msgid "<i>Model:</i>"
 msgstr "<i>Modell:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:267
+#: core/libs/dialogs/imagedialog_preview.cpp:269
 #, kde-format
 msgid "<i>Created:</i>"
 msgstr "<i>Bilete teke:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:268
+#: core/libs/dialogs/imagedialog_preview.cpp:270
 #, kde-format
 msgid "<i>Aperture:</i>"
 msgstr "<i>Blendaropning:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:269
+#: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
 msgid "<i>Focal:</i>"
 msgstr "<i>Brennvidd:</i> "
 
-#: core/libs/dialogs/imagedialog_preview.cpp:270
+#: core/libs/dialogs/imagedialog_preview.cpp:272
 #, kde-format
 msgid "<i>Exposure:</i>"
 msgstr "<i>Eksponering:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:271
+#: core/libs/dialogs/imagedialog_preview.cpp:273
 #, kde-format
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>ISO-verdi:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "<i>Breidd/høgd-forhold:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>Bitrate lyd:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>Kanaltype lyd:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr ""
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<i>Lengd:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:283
+#: core/libs/dialogs/imagedialog_preview.cpp:285
 #, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>Biletfrekvens:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:284
+#: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:175
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28451,67 +28477,67 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:193
+#: core/libs/dialogs/libsinfodlg.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:222
+#: core/libs/dialogs/libsinfodlg.cpp:232
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:325
+#: core/libs/dialogs/libsinfodlg.cpp:335
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:436
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:454
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:488
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:683
+#: core/libs/dialogs/libsinfodlg.cpp:696
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:688
+#: core/libs/dialogs/libsinfodlg.cpp:701
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:693
+#: core/libs/dialogs/libsinfodlg.cpp:706
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -28571,7 +28597,7 @@ msgid "Refresh"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:391
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -28587,7 +28613,7 @@ msgid "empty"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
@@ -28607,21 +28633,21 @@ msgid "Vendor"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
@@ -28633,40 +28659,40 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:384
+#: core/libs/dialogs/solidhardwaredlg.cpp:385
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:394
-#: core/libs/dialogs/solidhardwaredlg.cpp:406
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:407
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:397
-#: core/libs/dialogs/solidhardwaredlg.cpp:400
-#: core/libs/dialogs/solidhardwaredlg.cpp:403
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:416
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:419
+#: core/libs/dialogs/solidhardwaredlg.cpp:420
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -30017,7 +30043,7 @@ msgstr "Filteridentifikator eller versjon er ikkje støtta"
 msgid "Blur Filter"
 msgstr "Slørfilter"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Sløreffektsfilter"
@@ -30325,7 +30351,7 @@ msgstr "Oljemålerieffekt"
 msgid "Rain Drops Effect"
 msgstr "Regndropeeffekt"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration-filter"
@@ -30530,6 +30556,13 @@ msgstr ""
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
 #, kde-format
 msgid "Loading Frame"
+msgstr ""
+
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/utilities/import/widgets/freespacewidget.cpp:301
+#, kde-format
+msgctxt "%1 is the percent value, % is the percent sign"
+msgid "%1%"
 msgstr ""
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
@@ -31062,79 +31095,79 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -31479,7 +31512,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr ""
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr ""
@@ -32674,8 +32707,8 @@ msgid "&Start"
 msgstr "&Start"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:98
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:308
+#: core/libs/onlineversion/onlineversiondlg.cpp:485
 #, kde-format
 msgid "Close"
 msgstr "Lukk"
@@ -34806,7 +34839,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1592
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -34876,101 +34909,101 @@ msgstr ""
 msgid "Close message"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:105
+#: core/libs/onlineversion/onlineversionchecker.cpp:108
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:189
+#: core/libs/onlineversion/onlineversionchecker.cpp:192
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:206
-#: core/libs/onlineversion/onlineversiondwnl.cpp:143
+#: core/libs/onlineversion/onlineversionchecker.cpp:209
+#: core/libs/onlineversion/onlineversiondwnl.cpp:146
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:234
+#: core/libs/onlineversion/onlineversionchecker.cpp:237
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:258
+#: core/libs/onlineversion/onlineversionchecker.cpp:261
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:291
+#: core/libs/onlineversion/onlineversionchecker.cpp:294
 #, kde-format
 msgid "Invalid format returned from the remote connection."
-msgstr ""
-
-#: core/libs/onlineversion/onlineversiondlg.cpp:157
-#, kde-format
-msgctxt "@info: download status"
-msgid "Received:"
-msgstr ""
-
-#: core/libs/onlineversion/onlineversiondlg.cpp:158
-#, kde-format
-msgctxt "@info: download status"
-msgid "Total:"
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:159
 #, kde-format
 msgctxt "@info: download status"
-msgid "Rate:"
+msgid "Received:"
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, kde-format
 msgctxt "@info: download status"
+msgid "Total:"
+msgstr ""
+
+#: core/libs/onlineversion/onlineversiondlg.cpp:161
+#, kde-format
+msgctxt "@info: download status"
+msgid "Rate:"
+msgstr ""
+
+#: core/libs/onlineversion/onlineversiondlg.cpp:162
+#, kde-format
+msgctxt "@info: download status"
 msgid "ETA:"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:176
+#: core/libs/onlineversion/onlineversiondlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:177
+#: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:229
+#: core/libs/onlineversion/onlineversiondlg.cpp:232
 #, kde-format
 msgid "Configure..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:230
+#: core/libs/onlineversion/onlineversiondlg.cpp:233
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:258
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/libs/onlineversion/onlineversiondlg.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:144
 #, kde-format
 msgid "Download"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:274
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -34981,7 +35014,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:287
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
@@ -34994,40 +35027,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:322
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:330
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:341
+#: core/libs/onlineversion/onlineversiondlg.cpp:383
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:343
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35035,19 +35068,19 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:350
+#: core/libs/onlineversion/onlineversiondlg.cpp:392
 #, kde-format
 msgid "version %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:352
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35055,7 +35088,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:385
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -35063,7 +35096,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:394
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -35071,13 +35104,13 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:421
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:432
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35089,7 +35122,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:441
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35101,12 +35134,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:452
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:457
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -35118,7 +35151,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:466
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35130,7 +35163,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:490
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35139,7 +35172,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:497
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35148,34 +35181,34 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:589
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
 "%1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum file is empty."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:254
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:271
+#: core/libs/onlineversion/onlineversiondwnl.cpp:276
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:304
+#: core/libs/onlineversion/onlineversiondwnl.cpp:309
 #, kde-format
 msgid "Checksums error."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:332
+#: core/libs/onlineversion/onlineversiondwnl.cpp:337
 #, kde-format
 msgid "Cannot open target file."
 msgstr ""
@@ -35190,27 +35223,27 @@ msgstr ""
 msgid "Aborting..."
 msgstr "Avbryt …"
 
-#: core/libs/progressmanager/progressview.cpp:204
+#: core/libs/progressmanager/progressview.cpp:205
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Avbryt denne operasjonen."
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "Opna detaljert framdriftsvisar"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
 #, kde-format
 msgid "No active process"
 msgstr ""
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Gøym detaljert framdriftsvisar"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Vis detaljert framdriftsvisar"
@@ -39805,20 +39838,20 @@ msgid ""
 "special characters."
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:713
-#: core/libs/widgets/fonts/dfontproperties.cpp:753
+#: core/libs/widgets/fonts/dfontproperties.cpp:720
+#: core/libs/widgets/fonts/dfontproperties.cpp:771
 #, kde-format
 msgctxt "@info: font style"
 msgid "Normal"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:760
+#: core/libs/widgets/fonts/dfontproperties.cpp:779
 #, kde-format
 msgctxt "@info: font style"
 msgid "Italic"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:761
+#: core/libs/widgets/fonts/dfontproperties.cpp:780
 #, kde-format
 msgctxt "@info: font style"
 msgid "Oblique"
@@ -40289,7 +40322,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr ""
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:160
+#: core/libs/widgets/itemview/ditemdelegate.cpp:163
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -41017,6 +41050,13 @@ msgstr ""
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Vis statuslinje"
+
+#: core/libs/widgets/mainview/dzoombar.cpp:120
+#: core/libs/widgets/mainview/dzoombar.cpp:209
+#, kde-format
+msgctxt "%1 is the zoom percent value, % is the percent sign"
+msgid "%1%"
+msgstr ""
 
 #: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
@@ -46501,13 +46541,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:92
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:103
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -46520,13 +46560,13 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:104
+#: core/libs/widgets/text/spellcheckconfig.cpp:113
 #, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:117
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -46534,72 +46574,72 @@ msgid ""
 "alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, kde-format
 msgid "Auto-detect"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:112
+#: core/libs/widgets/text/spellcheckconfig.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:125
+#: core/libs/widgets/text/spellcheckconfig.cpp:134
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:138
+#: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:146
+#: core/libs/widgets/text/spellcheckconfig.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:165
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:171
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:174
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:180
+#: core/libs/widgets/text/spellcheckconfig.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:190
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -49044,7 +49084,7 @@ msgid "Tilt"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Accuracy"
 msgstr ""
@@ -49389,7 +49429,7 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
 #, kde-format
 msgid "Applying face changes"
 msgstr ""
@@ -49464,7 +49504,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49473,59 +49513,59 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:144
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
 #: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Hopp over bilete som allereie er skanna"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
 #: core/utilities/maintenance/main/maintenancedlg.cpp:152
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Skann igjen og flett saman resultat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:146
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:153
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Nullstill ikkje-stadfesta resultat og skann på nytt"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #: core/utilities/maintenance/main/maintenancedlg.cpp:154
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Finn ansikt"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Finn alle ansikt i fotoa dine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:172
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Finn og kjenn att ansikt"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49533,13 +49573,13 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Kjenn att ansikt"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49547,25 +49587,25 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Arbeidsflyt"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Søk i"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:223
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49574,31 +49614,31 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49608,43 +49648,43 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:267
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:271
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:272
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49657,24 +49697,24 @@ msgid ""
 "will reduce the number of false-positives, but will not detect small faces "
 "in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to about 45%. Unfortunately, this will give a significant "
+"detection accuracy to 2. Unfortunately, this will create a significant "
 "number of false-positives. It's recommended to set a detection accuracy of "
-"about 55% and face size of <b>Small</b> or <b>Medium</b> for normal use.</"
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:297
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
 #, kde-format
 msgid "Face Detection Settings"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:306
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:313
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49684,25 +49724,25 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:322
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49712,14 +49752,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:353
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Arbeid på alle prosessorkjernane"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:355
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49728,12 +49768,12 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:359
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:367
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -50590,38 +50630,38 @@ msgid "No description available."
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:519
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "National Capital"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:440
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
 #: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "City"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "State Capital"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:453
 #, kde-format
 msgid "County Capital"
 msgstr ""
@@ -50632,7 +50672,7 @@ msgid "Capital"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Village"
 msgstr ""
@@ -50669,1635 +50709,1635 @@ msgstr ""
 msgid "S"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
 #, kde-format
 msgid "Valley"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Terrain"
 msgstr "Terreng"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Crater"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:386
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
 msgid "Sea"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Manned Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Robotic Rover"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
 msgid "Unmanned Soft Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Unmanned Hard Landing Site"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:401
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Mountain"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:413
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:425
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:437
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:459
 #, kde-format
 msgid "Nation Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:462
 #, kde-format
 msgid "Nation"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:458
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:807
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:817
 #, kde-format
 msgid "Volcano"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Continent"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Ocean"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Geographic Pole"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Magnetic Pole"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Ship Wreck"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:486
 #, kde-format
 msgid "Air Port"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Observatory"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Military Danger Area"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "OSM Site"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Coordinate"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:491
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
 #, kde-format
 msgid "Satellite"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "City Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Suburb"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:517
 #, kde-format
 msgid "Hamlet"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Locality"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Town"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
 msgid "Town Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:535
 #, kde-format
 msgid "Village Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Water"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Reef"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Wood"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Beach"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Wetland"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Glacier"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Ice Shelf"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
 msgid "Scrub"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Cliff"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Heath"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Traffic Signals"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Elevator"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:577
 #, kde-format
 msgid "Steps"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
 msgid "Unknown Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:576
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Footway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:579
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1170
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1180
 #, kde-format
 msgid "Track"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Cycleway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Service Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
 msgid "Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Residential Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Living Street"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Unclassified Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Tertiary Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Secondary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Secondary Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "Primary Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Primary Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Raceway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Trunk Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Trunk Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Motorway Link Road"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
 msgid "Motorway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:646
 #, kde-format
 msgid "Corridor"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:649
 #, kde-format
 msgid "Building"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Camping"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:655
 #, kde-format
 msgid "Hostel"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Motel"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Youth Hostel"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Guest House"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:670
 #, kde-format
 msgid "Library"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:663
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:673
 #, kde-format
 msgid "Kindergarten"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:676
 #, kde-format
 msgid "College"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:669
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:679
 #, kde-format
 msgid "School"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:672
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:682
 #, kde-format
 msgid "University"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:675
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:685
 #, kde-format
 msgid "Bar"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:678
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:688
 #, kde-format
 msgid "Biergarten"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:681
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:691
 #, kde-format
 msgid "Cafe"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:684
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:694
 #, kde-format
 msgid "Fast Food"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:687
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:697
 #, kde-format
 msgid "Pub"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:690
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:700
 #, kde-format
 msgid "Restaurant"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:693
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:703
 #, kde-format
 msgid "Dentist"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:696
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:706
 #, kde-format
 msgid "Doctors"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:699
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:709
 #, kde-format
 msgid "Hospital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:702
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:712
 #, kde-format
 msgid "Pharmacy"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:705
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:715
 #, kde-format
 msgid "Veterinary"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:708
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:718
 #, kde-format
 msgid "ATM"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:711
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:721
 #, kde-format
 msgid "Bank"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:714
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:724
 #, kde-format
 msgid "Archaeological Site"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:717
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:727
 #, kde-format
 msgid "Embassy"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:720
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:730
 #, kde-format
 msgid "Emergency Phone"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:723
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:733
 #, kde-format
 msgid "Mountain Rescue"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:726
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:736
 #, kde-format
 msgid "Water Park"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:729
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:739
 #, kde-format
 msgid "Community Centre"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:732
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:742
 #, kde-format
 msgid "Fountain"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:735
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:745
 #, kde-format
 msgid "Night Club"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:738
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:748
 #, kde-format
 msgid "Bench"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:741
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:751
 #, kde-format
 msgid "Court House"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:744
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:754
 #, kde-format
 msgid "Fire Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:747
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:757
 #, kde-format
 msgid "Hunting Stand"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:750
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:760
 #, kde-format
 msgid "Police"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:753
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:763
 #, kde-format
 msgid "Post Box"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:756
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:766
 #, kde-format
 msgid "Post Office"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:759
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:769
 #, kde-format
 msgid "Prison"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:762
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:772
 #, kde-format
 msgid "Recycling"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:765
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:775
 #, kde-format
 msgid "Shelter"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:768
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:778
 #, kde-format
 msgid "Telephone"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:771
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:781
 #, kde-format
 msgid "Toilets"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:774
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:784
 #, kde-format
 msgid "Town Hall"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:777
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:787
 #, kde-format
 msgid "Waste Basket"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:780
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:790
 #, kde-format
 msgid "Drinking Water"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:783
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:793
 #, kde-format
 msgid "Graveyard"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:786
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:796
 #, kde-format
 msgid "Charging Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:789
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:799
 #, kde-format
 msgid "Car Wash"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:792
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:802
 #, kde-format
 msgid "Social Facility"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:795
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:805
 #, kde-format
 msgid "City Wall"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:798
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:808
 #, kde-format
 msgid "Gate"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:801
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:811
 #, kde-format
 msgid "Lift Gate"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:804
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1428
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:814
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1438
 #, kde-format
 msgid "Wall"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:810
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:820
 #, kde-format
 msgid "Peak"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:813
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:823
 #, kde-format
 msgid "Tree"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:816
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:826
 #, kde-format
 msgid "Cave Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:819
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:829
 #, kde-format
 msgid "Beverages"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:822
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:832
 #, kde-format
 msgid "Hifi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:825
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:835
 #, kde-format
 msgid "Supermarket"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:828
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:838
 #, kde-format
 msgid "Liquor Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:831
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:841
 #, kde-format
 msgid "Bakery"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:834
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:844
 #, kde-format
 msgid "Butcher"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:837
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:847
 #, kde-format
 msgid "Confectionery"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:840
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:850
 #, kde-format
 msgid "Convenience Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:843
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:853
 #, kde-format
 msgid "Greengrocer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:846
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:856
 #, kde-format
 msgid "Seafood Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:849
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
 #, kde-format
 msgid "Department Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:852
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
 msgid "Kiosk"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:855
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:865
 #, kde-format
 msgid "Bag Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:858
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:868
 #, kde-format
 msgid "Clothes Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:861
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:871
 #, kde-format
 msgid "Fashion Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:864
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:874
 #, kde-format
 msgid "Jewelry Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:867
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:877
 #, kde-format
 msgid "Shoe Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:870
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:880
 #, kde-format
 msgid "Variety Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:873
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:883
 #, kde-format
 msgid "Beauty Services"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:876
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:886
 #, kde-format
 msgid "Chemist"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:879
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:889
 #, kde-format
 msgid "Cosmetics"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:882
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:892
 #, kde-format
 msgid "Hairdresser"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:885
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:895
 #, kde-format
 msgid "Optician"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:888
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:898
 #, kde-format
 msgid "Perfumery"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:891
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:897
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:901
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:907
 #, kde-format
 msgid "Hardware Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:894
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:904
 #, kde-format
 msgid "Florist"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:900
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:910
 #, kde-format
 msgid "Furniture Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:903
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:913
 #, kde-format
 msgid "Electronics Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:906
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:916
 #, kde-format
 msgid "Mobile Phone Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:909
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:919
 #, kde-format
 msgid "Bicycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:912
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:922
 #, kde-format
 msgid "Car Dealer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:915
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:925
 #, kde-format
 msgid "Car Repair Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:918
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:928
 #, kde-format
 msgid "Car Parts"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:921
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:931
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:924
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:934
 #, kde-format
 msgid "Outdoor Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:927
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:937
 #, kde-format
 msgid "Sports Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:930
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:940
 #, kde-format
 msgid "Printing Services"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:933
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:943
 #, kde-format
 msgid "Art Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:936
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:946
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:939
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:949
 #, kde-format
 msgid "Photo Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:942
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:952
 #, kde-format
 msgid "Bookshop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:945
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:955
 #, kde-format
 msgid "Gift Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:948
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:958
 #, kde-format
 msgid "Stationery"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:951
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:961
 #, kde-format
 msgid "Laundry"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:954
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:964
 #, kde-format
 msgid "Pet Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:957
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:967
 #, kde-format
 msgid "Toy Store"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:960
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:970
 #, kde-format
 msgid "Travel Agency"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:963
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:973
 #, kde-format
 msgid "Deli"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:966
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:976
 #, kde-format
 msgid "Tobacco Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:969
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:979
 #, kde-format
 msgid "Tea Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:972
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:982
 #, kde-format
 msgid "Computer Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:975
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:985
 #, kde-format
 msgid "Garden Centre"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:978
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:988
 #, kde-format
 msgid "Shop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:981
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:991
 #, kde-format
 msgid "Bridge"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:984
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:994
 #, kde-format
 msgid "Lighthouse"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:987
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:997
 #, kde-format
 msgid "Pier"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:990
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1000
 #, kde-format
 msgid "Water Tower"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:993
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1003
 #, kde-format
 msgid "Wind Mill"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:996
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1006
 #, kde-format
 msgid "Communications Tower"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:999
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1009
 #, kde-format
 msgid "Tourist Attraction"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1002
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1012
 #, kde-format
 msgid "Artwork"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1005
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1015
 #, kde-format
 msgid "Castle"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1008
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1018
 #, kde-format
 msgid "Cinema"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1011
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1021
 #, kde-format
 msgid "Information"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1014
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1024
 #, kde-format
 msgid "Monument"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1017
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1027
 #, kde-format
 msgid "Museum"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1020
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1030
 #, kde-format
 msgid "Ruin"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1023
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1033
 #, kde-format
 msgid "Theatre"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1026
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1036
 #, kde-format
 msgid "Theme Park"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1029
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1039
 #, kde-format
 msgid "View Point"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1032
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1042
 #, kde-format
 msgid "Zoo"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1035
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1045
 #, kde-format
 msgid "Alpine Hut"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1038
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1048
 #, kde-format
 msgid "Wilderness Hut"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1041
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1051
 #, kde-format
 msgid "Memorial"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1044
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1054
 #, kde-format
 msgid "Aerodrome"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1047
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1057
 #, kde-format
 msgid "Helipad"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1050
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1060
 #, kde-format
 msgid "Airport Gate"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1053
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1063
 #, kde-format
 msgid "Airport Runway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1056
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1066
 #, kde-format
 msgid "Airport Apron"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1059
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1069
 #, kde-format
 msgid "Airport Taxiway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1062
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1072
 #, kde-format
 msgid "Airport Terminal"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1065
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1075
 #, kde-format
 msgid "Bus Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1068
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1078
 #, kde-format
 msgid "Bus Stop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1071
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1081
 #, kde-format
 msgid "Car Sharing"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1074
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1084
 #, kde-format
 msgid "Gas Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1077
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1087
 #, kde-format
 msgid "Parking"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1080
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1090
 #, kde-format
 msgid "Parking Space"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1083
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1093
 #, kde-format
 msgid "Platform"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1086
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1096
 #, kde-format
 msgid "Bicycle Rental"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1089
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1099
 #, kde-format
 msgid "Car Rental"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1092
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1102
 #, kde-format
 msgid "Ski Rental"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1095
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1105
 #, kde-format
 msgid "Taxi Rank"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1098
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1108
 #, kde-format
 msgid "Train Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1101
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1111
 #, kde-format
 msgid "Tram Stop"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1104
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1114
 #, kde-format
 msgid "Bicycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1107
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1117
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1110
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1120
 #, kde-format
 msgid "Subway Entrance"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1113
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1123
 #, kde-format
 msgid "Speed Camera"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1116
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1126
 #, kde-format
 msgid "Place Of Worship"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1119
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1129
 #, kde-format
 msgid "Bahai"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1122
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1132
 #, kde-format
 msgid "Buddhist"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1125
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1135
 #, kde-format
 msgid "Christian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1128
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1138
 #, kde-format
 msgid "Muslim"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1131
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1141
 #, kde-format
 msgid "Hindu"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1134
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
 msgid "Jain"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1137
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1147
 #, kde-format
 msgid "Jewish"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1140
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1150
 #, kde-format
 msgid "Shinto"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1143
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1153
 #, kde-format
 msgid "Sikh"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1146
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1156
 #, kde-format
 msgid "Taoist"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1149
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1159
 #, kde-format
 msgid "Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1152
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1162
 #, kde-format
 msgid "Marina"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1155
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1165
 #, kde-format
 msgid "Park"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1158
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1168
 #, kde-format
 msgid "Playground"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1161
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1171
 #, kde-format
 msgid "Pitch"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1164
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1174
 #, kde-format
 msgid "Sports Centre"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1167
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1177
 #, kde-format
 msgid "Stadium"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1173
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1183
 #, kde-format
 msgid "Swimming Pool"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1176
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1186
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1179
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1189
 #, kde-format
 msgid "Allotments"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1182
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1192
 #, kde-format
 msgid "Basin"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1185
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1195
 #, kde-format
 msgid "Cemetery"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1188
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1198
 #, kde-format
 msgid "Commercial"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1191
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1201
 #, kde-format
 msgid "Construction"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1194
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1204
 #, kde-format
 msgid "Farmland"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1197
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1207
 #, kde-format
 msgid "Farmyard"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1200
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1210
 #, kde-format
 msgid "Garages"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1203
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1213
 #, kde-format
 msgid "Grass"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1206
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1216
 #, kde-format
 msgid "Industrial"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1209
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1219
 #, kde-format
 msgid "Landfill"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1212
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1222
 #, kde-format
 msgid "Meadow"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1215
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1225
 #, kde-format
 msgid "Military"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1218
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1228
 #, kde-format
 msgid "Quarry"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1221
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1231
 #, kde-format
 msgid "Railway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1224
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1234
 #, kde-format
 msgid "Reservoir"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1227
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1237
 #, kde-format
 msgid "Residential"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1230
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1240
 #, kde-format
 msgid "Retail"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1233
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1243
 #, kde-format
 msgid "Orchard"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1236
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1246
 #, kde-format
 msgid "Vineyard"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1239
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1249
 #, kde-format
 msgid "Rail"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1242
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1252
 #, kde-format
 msgid "Narrow Gauge"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1245
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1255
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:312
 #, kde-format
 msgid "Tram"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1248
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1258
 #, kde-format
 msgid "Light Rail"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1251
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1261
 #, kde-format
 msgid "Abandoned Railway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1254
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1264
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:308
 #, kde-format
 msgid "Subway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1257
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1267
 #, kde-format
 msgid "Preserved Railway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1260
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1270
 #, kde-format
 msgid "Miniature Railway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1263
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1273
 #, kde-format
 msgid "Railway Construction"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1266
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1276
 #, kde-format
 msgid "Monorail"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1269
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1279
 #, kde-format
 msgid "Funicular Railway"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1272
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1282
 #, kde-format
 msgid "Power Tower"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1275
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1285
 #, kde-format
 msgid "Aerialway Station"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1278
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1288
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1281
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1291
 #, kde-format
 msgid "Cable Car"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1284
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1294
 #, kde-format
 msgid "Gondola"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1287
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1297
 #, kde-format
 msgid "Chair Lift"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1290
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1300
 #, kde-format
 msgid "Mixed Lift"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1293
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1303
 #, kde-format
 msgid "Drag Lift"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1296
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1306
 #, kde-format
 msgid "T-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1299
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1309
 #, kde-format
 msgid "J-Bar"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1302
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1312
 #, kde-format
 msgid "Platter"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1305
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1315
 #, kde-format
 msgid "Rope Tow"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1308
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1318
 #, kde-format
 msgid "Magic Carpet"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1311
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1321
 #, kde-format
 msgid "Zip Line"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1314
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1324
 #, kde-format
 msgid "Goods"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1317
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1327
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:348
 #, kde-format
 msgid "Downhill Piste"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1320
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1330
 #, kde-format
 msgid "Nordic Piste"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1323
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1333
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:356
 #, kde-format
 msgid "Skitour"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1326
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1336
 #, kde-format
 msgid "Sled Piste"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1329
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1339
 #, kde-format
 msgid "Winter Hike"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1332
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1342
 #, kde-format
 msgid "Sleigh Piste"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1335
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1345
 #, kde-format
 msgid "Ice Skate"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1338
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1348
 #, kde-format
 msgid "Snow Park"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1341
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1351
 #, kde-format
 msgid "Ski Playground"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1344
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1354
 #, kde-format
 msgid "Ski Jump"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1347
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1357
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1350
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1360
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1353
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1363
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1356
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1366
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1359
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1369
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1362
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1372
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1365
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1375
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1368
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1378
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1371
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1381
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1374
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1384
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1377
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1387
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1380
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1390
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1383
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1393
 #, kde-format
 msgid "Land Mass"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1386
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1396
 #, kde-format
 msgid "Urban Area"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1389
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1399
 #, kde-format
 msgid "International Date Line"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1392
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1402
 #, kde-format
 msgid "Bathymetry"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1395
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1405
 #, kde-format
 msgid "Canal"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1398
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1408
 #, kde-format
 msgid "Drain"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1401
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1411
 #, kde-format
 msgid "Ditch"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1404
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1414
 #, kde-format
 msgid "Stream"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1407
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1417
 #, kde-format
 msgid "River"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1410
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1420
 #, kde-format
 msgid "Weir"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1413
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1416
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1419
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1423
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1426
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1429
 #, kde-format
 msgid "Crosswalk"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1422
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1432
 #, kde-format
 msgid "Railway Crossing"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1425
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1435
 #, kde-format
 msgid "Door"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1431
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1441
 #, kde-format
 msgid "Room"
 msgstr ""
@@ -53840,7 +53880,7 @@ msgid "Creating Map"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:507
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
 #, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
@@ -53855,11 +53895,17 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:517
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
 #, kde-format
 msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
+msgstr ""
+
+#. i18n: ectx: property (format), widget (QProgressBar, progressBar)
+#: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
+#, no-c-format, kde-format
+msgid "%p%"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -54387,154 +54433,154 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
 msgid "Not available"
 msgstr "Ikkje tilgjengeleg"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "DOP: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, kde-format
 msgid "#Sat: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "Modified"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
 #, kde-format
 msgid "Date and time"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, kde-format
 msgid "Failed to open file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
 #, kde-format
 msgid "Paste coordinates"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
 #, kde-format
 msgid "Paste coordinates swapped"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:91
 #, kde-format
 msgid "Remove coordinates"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:90
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
 #, kde-format
 msgid "Remove altitude"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:91
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Remove uncertainty"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:691
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
 #, kde-format
 msgid "Remove speed"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:95
 #, kde-format
 msgid "Look up missing altitude values"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:420
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:525
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
 #, kde-format
 msgid "Coordinates pasted"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:558
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
 #, kde-format
 msgid "Bookmark selected"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:670
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
 #, kde-format
 msgid "Remove coordinates information"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
 #, kde-format
 msgid "Remove altitude information"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:747
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
 #, kde-format
 msgid "Looking up altitudes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
 "%1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:806
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
 #, kde-format
 msgid "Altitude looked up"
 msgstr ""
@@ -55910,44 +55956,44 @@ msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Omdanna"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2594
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekorer"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2605
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2608
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Effektar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2616
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2619
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Fargar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2630
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Forbetra"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2817
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2871
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2838
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -61405,39 +61451,39 @@ msgstr ""
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:126
+#: core/utilities/setup/downloader/filesdownloader.cpp:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:146
+#: core/utilities/setup/downloader/filesdownloader.cpp:152
 #, kde-format
-msgid "Use Face Detection feature"
+msgid "Use Face Management feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:220
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:228
+#: core/utilities/setup/downloader/filesdownloader.cpp:235
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61449,54 +61495,54 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:365
+#: core/utilities/setup/downloader/filesdownloader.cpp:377
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:389
+#: core/utilities/setup/downloader/filesdownloader.cpp:401
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:396
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:564
+#: core/utilities/setup/downloader/filesdownloader.cpp:496
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
-"<p>For face detection, the red-eye removal tool, the classification of "
-"images according to aesthetics or the automatic assignment of tags to "
+"<p>For the face management, the red-eye removal tool, and the classification "
+"of images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p><p>Some of these files were not found. Click "
 "“Download” to begin downloading the files you need. You can close this "
 "dialog, you will be asked again the next time you start digiKam. Without "
 "these files the selected features will not work.</p><p>The files will be "
-"downloaded to %1.</p><p><b>After the successful download you have to restart "
-"digiKam.</b></p>"
+"downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
+"to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:577
+#: core/utilities/setup/downloader/filesdownloader.cpp:509
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:584
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -61632,12 +61678,12 @@ msgid ""
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:182
+#: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:183
+#: core/utilities/setup/editor/setupiofiles.cpp:184
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "

@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-25 01:48+0000\n"
-"PO-Revision-Date: 2024-10-24 16:30+0200\n"
+"PO-Revision-Date: 2024-10-25 18:06+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3514,17 +3514,14 @@ msgstr ""
 "Logging) pour SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add spell-checking support in caption text widget using KF5::Sonnet "
-#| "component."
+#, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 "Ajouter la prise en charge de la vérification orthographique dans le "
-"composant graphique pour les textes de légende, en utilisant le composant "
-"« KF5::Sonnet »."
+"composant graphique des textes de légende, en utilisant le composant "
+"« Sonnet » de l'environnement de développement de KDE."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3704,23 +3701,14 @@ msgstr ""
 "l'exécution avec de meilleurs résultats pour la gestion des visages."
 
 #: core/app/views/stack/welcomepageview.cpp:141
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr ""
 "Mise à jour du moteur interne « RAW » vers la dernière version de la "
-"bibliothèque « libraw » en date du 16 Juin 2024."
+"bibliothèque « libraw » en date du 09 Septembre 2024."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-#| "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
-#| "Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-#| "ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
-#| "II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-"
-#| "HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with DNG "
-#| "format recorded."
+#, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
 "EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
@@ -3729,13 +3717,13 @@ msgid ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
-"Nouvelles fonctionnalités « RAW » pour Canon EOS R6 Mark II, EOS R8, EOS "
-"R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
-"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
-"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
-"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
-"ILME-FX30, DSC-HX95, A1. Multiple drones DJI et Skdio. Multiples téléphones "
-"au format « DNG » enregistrés."
+"Nouveaux appareils photo en mode « RAW » pris en charge : Canon EOS R6 Mark "
+"II, EOS R8, EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, "
+"X-H2S.Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital "
+"OM-5.Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-"
+"S5-II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-"
+"V), ILME-FX30, DSC-HX95, A1.Nombreux drones DJI et Skdio. Nombreux "
+"téléphones avec enregistrement au format « DNG »."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format

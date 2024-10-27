@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-25 01:48+0000\n"
-"PO-Revision-Date: 2024-10-25 21:44+0300\n"
+"PO-Revision-Date: 2024-10-26 18:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2689,12 +2689,12 @@ msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com, emir_sari@icloud.com"
 #: core/app/main/main.cpp:240
 #, kde-format
 msgid "Open camera dialog at \"path\""
-msgstr "\"Yol\"da Kamera İletişim Kutusunu Aç"
+msgstr "“Yol”da kamera iletişim kutusunu aç"
 
 #: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
-msgstr "Solid UDI \"udi\"li aygıt için kamera iletişim kutusunu Aç"
+msgstr "Solid UDI “udi”li aygıt için kamera iletişim kutusunu aç"
 
 #: core/app/main/main.cpp:246
 #, kde-format
@@ -2705,13 +2705,12 @@ msgstr "Bağlı bir gphoto2 kamerayı otomatik olarak algıla ve aç"
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
-msgstr ""
-"digiKam’i \"dir\" dizininde bulunan SQLite veritabanı dosyasıyla başlat"
+msgstr "digiKam’i “dir” dizininde bulunan SQLite veritabanı dosyasıyla başlat"
 
 #: core/app/main/main.cpp:251
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "digiKam’i \"config\" yapılandırma dosyasıyla başlat"
+msgstr "digiKam’i “config” yapılandırma dosyasıyla başlat"
 
 #: core/app/main/main.cpp:280
 #, kde-format
@@ -3075,7 +3074,7 @@ msgstr "Bu düğmeye basarsanız zaman çizgisindeki geçerli tarih seçimi sili
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
-msgstr "\"Aramalar\" görünümüne kaydetmek için geçerli tarihlerin adını gir"
+msgstr "“Aramalar” görünümüne kaydetmek için geçerli tarihlerin adını gir"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:196
 #, kde-format
@@ -5595,7 +5594,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
-msgstr "Filigranın yinelenme sıklığı (\"Belirli Konum\" kipinde devre dışıdır)"
+msgstr "Filigranın yinelenme sıklığı (“Belirli Konum” kipinde devre dışıdır)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
@@ -5613,8 +5612,7 @@ msgstr ""
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
-"Filigran yönünü rastgele seç (Yalnızca \"Rastgele Yineleme\" kipinde "
-"etkindir)"
+"Filigran yönünü rastgele seç (Yalnızca “Rastgele Yineleme” kipinde etkindir)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:358
 #, kde-format
@@ -7941,8 +7939,8 @@ msgstr ""
 "<b>Olağanlaştır</b>:<p>Bu seçenek, etkin görseldeki parlaklık değerlerini "
 "ölçeklendirerek en karanlık noktanın siyah olmasını ve en parlak noktanın "
 "renk tonunu değiştirmeden olabildiğince parlak olmasını sağlar. Bu "
-"genellikle kararmış veya soluk görseller için \"sihirli bir düzeltme\" "
-"olarak geçer.</p>"
+"genellikle kararmış veya soluk görseller için “sihirli bir düzeltme” olarak "
+"geçer.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
 #, kde-format
@@ -9180,7 +9178,7 @@ msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
 "the \"Settings\" button.</p>"
 msgstr ""
-"<p>Renk Yönetimi devre dışı.</p><p>\"Ayarlar\" düğmesine basarak "
+"<p>Renk Yönetimi devre dışı.</p><p>“Ayarlar” düğmesine basarak "
 "etkinleştirebilirsiniz.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
@@ -14332,7 +14330,7 @@ msgstr "Freehand (sürüm 5.5)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "Hypertext Markup Language \"HTML\""
-msgstr "Köprü Metni Biçimlendirme Dili \"HTML\""
+msgstr "Köprü Metni Biçimlendirme Dili “HTML”"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
@@ -16136,7 +16134,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:75
 #, kde-format
 msgid "Select an optional calendar file with your \"family holidays\""
-msgstr "\"Aile tatillerinin\" olduğu isteğe bağlı bir takvim dosyası seç"
+msgstr "“Aile tatillerinin” olduğu isteğe bağlı bir takvim dosyası seç"
 
 #. i18n: ectx: property (text), widget (QLabel, fhExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:94
@@ -17138,7 +17136,7 @@ msgstr "Bu işlemi gerçekleştirmek için Enblend programı kullanılacak."
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
-"Ögelerinizi kaynaştırmak ve sahte bir HDR görseli yapmak için \"Bitir\" "
+"Ögelerinizi kaynaştırmak ve sahte bir HDR görseli yapmak için “Bitir” "
 "düğmesine basın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
@@ -17187,7 +17185,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
-msgstr "Ön işlemeyi başlatmak için \"Sonraki\" düğmesine basın."
+msgstr "Ön işlemeyi başlatmak için “Sonraki” düğmesine basın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
@@ -19028,7 +19026,7 @@ msgid ""
 "cost of information loss during compression. This is the easiest way to "
 "share the result, or print it online or in a shop."
 msgstr ""
-"\"JPEG çıktısı\": JPEG çıktısı kullanıldığında, sıkıştırma sırasında bilgi "
+"“JPEG çıktısı”: JPEG çıktısı kullanıldığında, sıkıştırma sırasında bilgi "
 "kaybı pahasına panorama dosyası daha küçük olacaktır. Bu, sonucu paylaşmanın "
 "veya çevrimiçi olarak veya bir fotoğrafçıda bastırmanın en kolay yoludur."
 
@@ -19055,7 +19053,7 @@ msgid ""
 "\"TIFF output\": Using TIFF output, you get the same color depth than your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
-"\"TIFF çıktısı\": TIFF çıktısını kullanarak, daha büyük bir panorama dosyası "
+"“TIFF çıktısı”: TIFF çıktısını kullanarak, daha büyük bir panorama dosyası "
 "karşılığında, RAW görseller kullanan özgün fotoğraflarınızla aynı renk "
 "derinliğini elde edersiniz."
 
@@ -19131,10 +19129,10 @@ msgid ""
 "you choose to save also the project file, it will have the name \"panorama."
 "pto\"."
 msgstr ""
-"\"Dosya adı şablonu\": Kaydedilecek dosyaların taban adını burada ayarlayın. "
-"Örneğin, şablonunuz \"panorama\" ise ve bir JPEG çıktısı seçtiyseniz "
-"panoramanız \"panorama.jpg\" olarak kaydedilecektir. Proje dosyasını da "
-"kaydetmeyi seçerseniz dosya \"panorama.pto\" adını alacaktır."
+"“Dosya adı şablonu”: Kaydedilecek dosyaların taban adını burada ayarlayın. "
+"Örneğin, şablonunuz “panorama” ise ve bir JPEG çıktısı seçtiyseniz "
+"panoramanız “panorama.jpg” olarak kaydedilecektir. Proje dosyasını da "
+"kaydetmeyi seçerseniz dosya “panorama.pto” adını alacaktır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
@@ -19157,7 +19155,7 @@ msgid ""
 "useful if you want a different projection, modify the horizon or the center "
 "of the panorama, or modify the control points to get better results."
 msgstr ""
-"\"Proje dosyasını kaydet\": Bunu işaretleyerek panoramanızı dikmek için "
+"“Proje dosyasını kaydet”: Bunu işaretleyerek panoramanızı dikmek için "
 "oluşturulan proje dosyasını %1 bünyesinde daha fazla ince ayar yapmak üzere "
 "tutabilirsiniz. Bu, farklı bir projeksiyon istiyorsanız, panoramanın ufkunu "
 "veya merkezini değiştirmek istiyorsanız veya daha iyi sonuçlar elde etmek "
@@ -19208,7 +19206,7 @@ msgstr "Panoramanız şu dizinde oluşturulacak:"
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
-msgstr "\"Bitir\" düğmesine bastığınızda, aşağıda ayarlanan adı kullanarak."
+msgstr "“Bitir” düğmesine bastığınızda, aşağıda ayarlanan adı kullanarak."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, kde-format
@@ -19254,8 +19252,8 @@ msgid ""
 "\"Level horizon\": Detect the horizon and adapt the projection so that the "
 "detected horizon is an horizontal line in the final panorama"
 msgstr ""
-"\"Ufku hizala\": Ufku algılayın ve projeksiyonu, algılanan ufuk son "
-"panoramada yatay bir çizgi olacak şekilde uyarlayın"
+"“Ufku hizala”: Ufku algılayın ve projeksiyonu, algılanan ufuk son panoramada "
+"yatay bir çizgi olacak şekilde uyarlayın"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
 #, kde-format
@@ -19290,7 +19288,7 @@ msgstr "Bu işlemi gerçekleştirmek için “%1” programı kullanılacak."
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
-msgstr "Eniyilemeyi çalıştırmak için \"Sonraki\" düğmesine basın."
+msgstr "Eniyilemeyi çalıştırmak için “Sonraki” düğmesine basın."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
 #, kde-format
@@ -19329,7 +19327,7 @@ msgid ""
 "This is useful to prevent moving clouds from altering the control points "
 "matching process."
 msgstr ""
-"\"Hareket eden gökyüzünü algıla\": Denetim noktalarının seçimi ve "
+"“Hareket eden gökyüzünü algıla”: Denetim noktalarının seçimi ve "
 "eşleştirilmesi sırasında, bu seçenek olası bir bulutla ilişkili tüm "
 "noktaları atar. Bu, hareketli bulutların kontrol noktaları eşleştirme "
 "sürecini değiştirmesini önlemek için kullanışlıdır."
@@ -19620,10 +19618,10 @@ msgid ""
 "\"%l\" :\n"
 "\"\\n\" :"
 msgstr ""
-"\"%r\" :\n"
-"\"%a\" :\n"
-"\"%l\" :\n"
-"\"\\n\" :"
+"“%r”:\n"
+"“%a”:\n"
+"“%l”:\n"
+"“\\n”:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:113
@@ -19635,11 +19633,11 @@ msgid ""
 "\"%i\" :\n"
 "\"%d\" :"
 msgstr ""
-"\"%f\" :\n"
-"\"%t\" :\n"
-"\"%c\" :\n"
-"\"%i\" :\n"
-"\"%d\" :"
+"“%f”:\n"
+"“%t”:\n"
+"“%c”:\n"
+"“%i”:\n"
+"“%d”:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:126
@@ -20920,7 +20918,7 @@ msgstr ""
 "<i>Efekt, bir görsel görüntülenirken uygulanan bir görsel kaydırma veya "
 "yakınlaştırma işlemidir. Efekt süresi video akışında görseli sunmak için "
 "kullanılan karelerin sayısını izleyecektir. Hızlandırılmış bir çekim için "
-"ayarı \"Yok\" olarak ayarlayın.</i>"
+"ayarı “Yok” olarak ayarlayın.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
 #, kde-format
@@ -20936,8 +20934,7 @@ msgid ""
 msgstr ""
 "<i>Geçiş, iki görsel arasında uygulanan bir efekttir. Bazı efektler için "
 "süre rastgele değerlere bağlı olabilir ve slayt gösterisi sırasında "
-"değişebilir. Hızlandırılmış bir çekim için ayarı \"Yok\" olarak ayarlayın.</"
-"i>"
+"değişebilir. Hızlandırılmış bir çekim için ayarı “Yok” olarak ayarlayın.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
 #, kde-format
@@ -21151,8 +21148,8 @@ msgstr ""
 "tr><tr><td>Yakınlaştırma:</td><td>Sağ fare düğmesine basarken fareyi yukarı "
 "aşağı yönünde hareket ettir</td></tr><tr><td></td><td><i>C</i> düğmesi ve "
 "fare tekerleği</td></tr><tr><td></td><td><i>+</i> ve <i>−</i> düğmeleri</"
-"td></tr><tr><td></td><td>Kontrol + Fare tekerleği</td></tr><tr><td>Kaydırma:"
-"</td><td>Sol fare düğmesine basarken fareyi hareket ettir</td></tr><tr><td "
+"td></tr><tr><td></td><td>Kontrol+Fare tekerleği</td></tr><tr><td>Kaydırma:</"
+"td><td>Sol fare düğmesine basarken fareyi hareket ettir</td></tr><tr><td "
 "colspan=\"2\"><nobr><center><b><h1>Diğer</h1></b></center></nobr></td></"
 "tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> düğmesi</td></tr></table>"
 
@@ -22474,7 +22471,7 @@ msgstr "Uyarı"
 msgctxt "@info"
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr ""
-"Kimlik doğrulama başarısız. Kimliği doğrulamak için \"Sürdür\"e tıklayın."
+"Kimlik doğrulama başarısız. Kimliği doğrulamak için “Sürdür”e tıklayın."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:249
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
@@ -24001,7 +23998,7 @@ msgid ""
 "for another account"
 msgstr ""
 "Hesabınızın oturumu kapatılacaktır; başka bir hesabı yetkilendirmek için "
-"\"Sürdür\"e tıklayın"
+"“Sürdür”e tıklayın"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:44
 #, kde-format
@@ -25469,7 +25466,7 @@ msgstr "Pinterest’e yüklemeyi başlat"
 #, kde-format
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr ""
-"Kimlik doğrulama başarısız. Kimliği doğrulamak için \"Sürdür\"e tıklayın."
+"Kimlik doğrulama başarısız. Kimliği doğrulamak için “Sürdür”e tıklayın."
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:285
 #, kde-format
@@ -26221,7 +26218,7 @@ msgid ""
 "for another account."
 msgstr ""
 "Hesabınızın oturumu kapatılacak; başka bir hesabı yetkilendirmek için "
-"\"Sürdür\"e tıklayın."
+"“Sürdür”e tıklayın."
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:748
 #, kde-format
@@ -28097,7 +28094,7 @@ msgid ""
 "\"relative path\" on harddisk partition with \"UUID\"\n"
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
-"\"UUID\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
+"“UUID” olan sabit disk bölüntüsündeki “göreceli yol”\n"
 "“%2” kimlikli disk bölümündeki “%1” klasörü"
 
 #: core/libs/database/collection/collectionmanager_p.cpp:483
@@ -28107,7 +28104,7 @@ msgid ""
 "\"relative path\" on harddisk partition with \"label\"\n"
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
-"\"etiket\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
+"“Etiket” olan sabit disk bölüntüsündeki “göreceli yol”\n"
 "“%2” etiketli disk bölümündeki “%1” klasörü"
 
 #: core/libs/database/collection/collectionmanager_p.cpp:497
@@ -28187,7 +28184,7 @@ msgid ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şeması "
+"Veritabanı geçerli değil: “DBVersion” ayarı yok. Geçerli veritabanı şeması "
 "sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı deneyin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:265
@@ -28415,7 +28412,7 @@ msgid ""
 "The driver \"SQLITE\" for Sqlite3 databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"Sqlite3 veritabanları için \"SQLITE\" sürücüsü kullanılabilir değil.\n"
+"Sqlite3 veritabanları için “SQLITE” sürücüsü kullanılabilir değil.\n"
 "digiKam, Qt::SQL modülü tarafından sağlanan sürücülere bağlıdır."
 
 #: core/libs/database/engine/dbengineaccess.cpp:70
@@ -28424,7 +28421,7 @@ msgid ""
 "The driver \"MYSQL\" for MySQL databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"MySQL veritabanları için \"MYSQL\" sürücüsü kullanılabilir değil.\n"
+"MySQL veritabanları için “MYSQL” sürücüsü kullanılabilir değil.\n"
 "digiKam, Qt::SQL modülü tarafından sağlanan sürücülere bağlıdır."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:170
@@ -28695,7 +28692,7 @@ msgid ""
 "exist. The current database schema version cannot be verified. Try to start "
 "with an empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBSimilarityVersion\" ayarı yok. Geçerli "
+"Veritabanı geçerli değil: “DBSimilarityVersion” ayarı yok. Geçerli "
 "veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı "
 "deneyin."
 
@@ -28745,7 +28742,7 @@ msgid ""
 "exist. The current database schema version cannot be verified. Try to start "
 "with an empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBThumbnailsVersion\" ayarı yok. Geçerli "
+"Veritabanı geçerli değil: “DBThumbnailsVersion” ayarı yok. Geçerli "
 "veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı "
 "deneyin."
 
@@ -29084,7 +29081,7 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 "Bu, MySQL sunucusunu çalıştıran bilgisayarın adıdır.\n"
-"Bu, yerel bir sunucu için \"localhost\" veya uzak bilgisayar\n"
+"Bu, yerel bir sunucu için “localhost” veya uzak bilgisayar\n"
 "olması durumunda ağ bilgisayarının adı (veya IP adresi) olabilir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
@@ -30044,7 +30041,7 @@ msgid ""
 msgstr ""
 "%1, bilgisayarınızdaki aygıtları algılamak ve yönetmek için Solid çatısının "
 "%2 sürümünü kullanıyor. Kaldırılabilir bir aygıt takarsanız listeyi "
-"güncellemek için \"Yenile\"ye basın."
+"güncellemek için “Yenile”ye basın."
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
@@ -31586,13 +31583,13 @@ msgid ""
 "\"Lut3D\": coloring images with Lut3D filters"
 msgstr ""
 "Görsele uygulanacak efekt türünü burada seçin.\n"
-"\"Soldur\": Fotoğrafın solarizasyonuna öykünür.\n"
-"\"Canlı\": Velvia™ slayt filmi renklerine öykünür.\n"
-"\"Neon\": Floresan ışık efekti oluşturmak için\n"
+"“Soldur”: Fotoğrafın solarizasyonuna öykünür.\n"
+"“Canlı”: Velvia™ slayt filmi renklerine öykünür.\n"
+"“Neon”: Floresan ışık efekti oluşturmak için\n"
 "fotoğraftaki kenarların renklendirilmesi.\n"
-"\"Kenarları Bul\": Fotoğraftaki kenarları ve\n"
+"“Kenarları Bul”: Fotoğraftaki kenarları ve\n"
 "bunların gücünü algılar.\n"
-"\"Lut3D\": Görselleri Lut3D süzgeçleriyle renklendirme"
+"“Lut3D”: Görselleri Lut3D süzgeçleriyle renklendirme"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:133
 #, kde-format
@@ -32147,11 +32144,11 @@ msgid ""
 msgstr ""
 "<p>Sıcak pikselleri kaldırma süzgeci tarafından kullanılacak yeni bir siyah "
 "kare dosyası eklemek için bu düğmeyi kullanın.</p><p>Siyah Kare çıkarma "
-"yöntemi, en doğru \"Sıcak Pikselleri\" ve \"Sıkışmış Pikselleri\" kaldırma "
-"yöntemidir. Öncelikle referans olarak bir \"Siyah Kare\" oluşturmalısınız. "
+"yöntemi, en doğru “Sıcak Pikselleri” ve “Sıkışmış Pikselleri” kaldırma "
+"yöntemidir. Öncelikle referans olarak bir “Siyah Kare” oluşturmalısınız. "
 "Bunu yapmak kolaydır. Uzun pozlamalı çekimlerinizi bitirdiğinizde, kameraya "
 "bir lens kapağı takın ve önceki görsellerle aynı pozlama süresine sahip bir "
-"\"karanlık\" fotoğraf çekin. Bu görsel tümüyle karanlık olacaktır; ancak "
+"“karanlık” fotoğraf çekin. Bu görsel tümüyle karanlık olacaktır; ancak "
 "yakından incelendiğinde Sıcak ve Sıkışmış Piksellerin (renkli noktalar) "
 "bulunduğunu göreceksiniz. Bunlar önceki çekimlerinizle aynı yerlere "
 "yerleştirilir. Bu araç, siyah kareyi ayrıştıracak, sıcak pikselleri "
@@ -34559,7 +34556,7 @@ msgid ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBFaceVersion\" ayarı yok. Geçerli veritabanı "
+"Veritabanı geçerli değil: “DBFaceVersion” ayarı yok. Geçerli veritabanı "
 "şeması sürümü doğrulanamıyor. Boş bir veritabanıyla başlamayı deneyin."
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
@@ -34932,7 +34929,7 @@ msgid ""
 "The Gimp, Krita, etc."
 msgstr ""
 "Gösterilmesini istediğiniz dosya türlerini (MIME türleri) seçin. Not: "
-"\"Raster Grafikler\", Photoshop, GIMP, Krita vb. gibi raster grafik "
+"“Raster Grafikler”, Photoshop, GIMP, Krita vb. gibi raster grafik "
 "düzenleyicilerinin dosya biçimleridir."
 
 #: core/libs/filters/ratingfilter.cpp:60
@@ -35364,7 +35361,7 @@ msgid ""
 "collection."
 msgstr ""
 "%1 klasörü çöp kutusuna taşınamadı.\n"
-"Görsel koleksiyonundaki \".dtrash\" çöp kutusu klasörünün dosya izinlerini "
+"Görsel koleksiyonundaki “.dtrash” çöp kutusu klasörünün dosya izinlerini "
 "denetleyin."
 
 #: core/libs/iojobs/iojob.cpp:310
@@ -35375,7 +35372,7 @@ msgid ""
 "collection."
 msgstr ""
 "%1 görseli çöp kutusuna taşınamadı.\n"
-"Görsel koleksiyonundaki \".dtrash\" çöp kutusu klasörünün dosya izinlerini "
+"Görsel koleksiyonundaki “.dtrash” çöp kutusu klasörünün dosya izinlerini "
 "denetleyin."
 
 #: core/libs/iojobs/iojob.cpp:327
@@ -36839,7 +36836,7 @@ msgstr ""
 "%3\n"
 "\n"
 "konumuna indirildi.\n"
-"Demeti dosya yöneticisinde açmak için \"Aç\"a basın."
+"Demeti dosya yöneticisinde açmak için “Aç”a basın."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:441
 #, kde-format
@@ -36858,7 +36855,7 @@ msgstr ""
 "%3\n"
 "\n"
 "konumuna indirildi.\n"
-"Demeti dosya yöneticisinde açmak için \"Aç\"a basın."
+"Demeti dosya yöneticisinde açmak için “Aç”a basın."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:452
 #, kde-format
@@ -36882,7 +36879,7 @@ msgstr ""
 "%3\n"
 "\n"
 "konumuna indirildi.\n"
-"Geçerli oturumu kapatıp yükseltmek için \"Kur\"a basın."
+"Geçerli oturumu kapatıp yükseltmek için “Kur”a basın."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:466
 #, kde-format
@@ -36901,7 +36898,7 @@ msgstr ""
 "%3\n"
 "\n"
 "konumuna indirildi.\n"
-"Geçerli oturumu kapatıp yükseltmek için \"Kur\"a basın."
+"Geçerli oturumu kapatıp yükseltmek için “Kur”a basın."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:490
 #, kde-format
@@ -39361,7 +39358,7 @@ msgstr[1] ""
 #: core/libs/tags/engine/tagsactionmngr.cpp:215
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
-msgstr "\"%1 Yıldız\" Derecelendirme Ata"
+msgstr "“%1 Yıldız” Derecelendirme Ata"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
@@ -39785,7 +39782,7 @@ msgid ""
 msgstr ""
 "<p>Yeni künyeler oluşturmak için aşağıdaki kuralları kullanabilirsiniz:</"
 "p><p><ul><li>“/”, künye hiyerarşisi oluşturmak için kullanılabilir.<br/"
-">Örneğin: <i>“Ülke/Kent/Artvin\"</i></li><li>“,”, aynı anda birden fazla "
+">Örneğin: <i>“Ülke/Kent/Artvin”</i></li><li>“,”, aynı anda birden fazla "
 "künye hiyerarşisi oluşturmak için kullanılabilir.<br/>Örneğin: <i>“Kent/"
 "Samsun, Anıt/Atatürk”</i></li><li>Bir künye hiyerarşisi “/” ile başlıyorsa "
 "kök künye albümü üst öge olarak kullanılır.</li></ul></p>"
@@ -41854,7 +41851,7 @@ msgstr "Göreceli"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
-msgstr "Yazıtipi boyutu \"sabit\" veya ortama \"göreceli\""
+msgstr "Yazıtipi boyutu “sabit” veya ortama “göreceli”"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:406
 #, kde-format
@@ -49252,7 +49249,7 @@ msgid ""
 msgstr ""
 "<p>ICC profili yolu geçersiz görünüyor.</p><p>Şimdi ayarlamak istiyorsanız "
 "“Evet”i, aksi halde “Hayır”ı seçin. Bu durumda, siz bu sorunu çözene kadar "
-"\"Renk Yönetimi\" özelliği devre dışı bırakılacaktır.</p>"
+"“Renk Yönetimi” özelliği devre dışı bırakılacaktır.</p>"
 
 #: core/showfoto/main/showfoto.cpp:266
 #, kde-format
@@ -49703,8 +49700,9 @@ msgid ""
 msgstr ""
 "Hangi tür yeni sürüm güncellemelerinin denetlenmesi gerektiğini "
 "yapılandırmak için bu seçeneği ayarlayın.\n"
-"\"Kararlı\" sürümler, üretimde kullanılması güvenli olan resmi sürümlerdir.\n"
-"Yeni özellikleri hızlı bir şekilde sınamak için \"ön yayımlar\" haftalık\n"
+"“Kararlı” sürümler, iş ortamında kullanılması güvenli olan resmi "
+"sürümlerdir.\n"
+"Yeni özellikleri hızlı bir şekilde sınamak için “ön yayımlar” haftalık\n"
 "çıkarılır ve hatalar sürebileceğinden iş ortamında kullanılması önerilmez."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
@@ -49915,7 +49913,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "Yeni sürümü denetle seçeneği ön yayımları doğrulayacaktır.\n"
-"Yeni özellikleri tez sınamak için haftalık olarak \"ön yayımlar\"\n"
+"Yeni özellikleri tez sınamak için haftalık olarak “ön yayımlar”\n"
 "çıkarılır. Ne yaptığınızı bilmiyorsanız hatalar sürebileceğinden\n"
 "iş ortamında ön yayımları kullanmanız önerilmez.\n"
 "Sürdürmek istiyor musunuz?"
@@ -50244,9 +50242,9 @@ msgid ""
 "date, icon, description, and images list. A \"Favorite Folder\" is a simple "
 "entry in the hierarchy without extra property."
 msgstr ""
-"\"Sık Kullanılan Öge\" tarih, simge, açıklama ve görsel listesi gibi "
-"gelişmiş özellikleri barındıran bir hiyerarşi girdisidir. \"Sık Kullanılan "
-"Klasör\" hiyerarşide fazladan özellik gerektirmeyen basit bir girdidir."
+"“Sık Kullanılan Öge”; tarih, simge, açıklama ve görsel listesi gibi gelişmiş "
+"özellikleri barındıran bir hiyerarşi girdisidir. “Sık Kullanılan Klasör”, "
+"hiyerarşide fazladan özellik gerektirmeyen basit bir girdidir."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
 #, kde-format
@@ -52706,15 +52704,15 @@ msgid ""
 msgstr ""
 "Seçili albümlerin ve künyelerin ilişkisine karar vermek için bu seçeneği "
 "kullanın.\n"
-"\"Biri\", görsellerin seçilen albümlerde veya künyelerde olduğu anlamına "
+"“Biri”, görsellerin seçilen albümlerde veya künyelerde olduğu anlamına "
 "gelir.\n"
-"\"Her ikisi\", görsellerin hem seçili albümlerde hem de künyelerde olduğu "
+"“Her ikisi”, görsellerin hem seçili albümlerde hem de künyelerde olduğu "
 "anlamına gelir.\n"
-"\"Albümler; ancak künyeler değil\", görsellerin seçili albümlerde olması; "
+"“Albümler; ancak künyeler değil”, görsellerin seçili albümlerde olması; "
 "ancak künyelerin olmaması gerektiği anlamına gelir.\n"
-"\"Künyeler; ancak albümler değil\", görsellerin seçili künyelerde olması; "
+"“Künyeler; ancak albümler değil”, görsellerin seçili künyelerde olması; "
 "ancak albümlerde olmaması gerektiği anlamına gelir.\n"
-"\"Yalnızca seçili sekme\" yalnızca seçilen sekmenin kullanıldığı anlamına "
+"“Yalnızca seçili sekme” yalnızca seçilen sekmenin kullanıldığı anlamına "
 "gelir."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
@@ -52802,8 +52800,8 @@ msgid ""
 "Enter the name of the current similar image search to save in the "
 "\"Similarity Searches\" view."
 msgstr ""
-"\"Benzer Aramalar\" görünümüne kaydetmek için geçerli benzer görsel "
-"aramasının adını girin."
+"“Benzer Aramalar” görünümüne kaydetmek için geçerli benzer görsel aramasının "
+"adını girin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
@@ -52876,7 +52874,7 @@ msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
 "Searches\" view."
 msgstr ""
-"\"Benzer Aramalar\" görünümüne kaydetmek için geçerli eskiz aramasının adını "
+"“Benzer Aramalar” görünümüne kaydetmek için geçerli eskiz aramasının adını "
 "girin."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
@@ -55822,7 +55820,7 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
-"<p><b>Azimutal Eşit Uzaklıklı İzdüşüm</b> (\"Balık Gözü\")</"
+"<p><b>Güney Açısal Eşit Uzaklıklı İzdüşüm</b> (“Balıkgözü”)</"
 "p><p>Uygulamalar: Sismik ve radyo verilerinin görüntülenmesi ve sayısal "
 "gezegenevlerinde kullanım için.</p>"
 
@@ -55837,7 +55835,7 @@ msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
-"<p><b>Eşdikdörtgensel İzdüşüm</b> (\"Plate carrée\")</p><p>Uygulamalar: "
+"<p><b>Eşdikdörtgensel İzdüşüm</b> (“Plate carrée”)</p><p>Uygulamalar: "
 "Bilgisayar yazılımı için küresel doku veri kümeleri için fiili standart.</p>"
 
 #: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:78
@@ -55852,7 +55850,7 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
-"<p><b>Nomonik İzdüşüm</b> (\"Doğrusal\")</p><p>Uygulamalar: Panoramik "
+"<p><b>Nomonik İzdüşüm</b> (“Doğrusal”)</p><p>Uygulamalar: Panoramik "
 "fotoğrafçılığı görüntülemek için kullanılır. Ayrıca navigasyon, radyo ve "
 "sismik çalışmalar için de kullanılır.</p>"
 
@@ -55897,7 +55895,7 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
-"<p><b>Dikey İzdüşüm</b> (\"Dikey\")</p><p>Uygulamalar: Bir kürenin "
+"<p><b>Dikey İzdüşüm</b> (“Dikey”)</p><p>Uygulamalar: Bir kürenin "
 "yarıküresini uzaydan göründüğü haliyle görüntülemek için kullanılan "
 "perspektif projeksiyon.</p>"
 
@@ -55912,7 +55910,7 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
-"<p><b>Stereografik İzdüşüm</b> (\"Dikey\")</p><p>Uygulamalar: Gezegensel "
+"<p><b>Stereografik İzdüşüm</b> (“Dikey”)</p><p>Uygulamalar: Gezegensel "
 "haritacılık, jeoloji ve panorama fotoğrafçılığı için kullanılır.</p>"
 
 #: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:94
@@ -55927,7 +55925,7 @@ msgid ""
 "earth as it appears from a relatively short distance above the surface. "
 "Applications: Used for Virtual Globes.</p>"
 msgstr ""
-"<p><b>Dikey Perspektif İzdüşümü</b> (\"Dikey\")</p><p>Dünyayı yüzeyden "
+"<p><b>Dikey Perspektif İzdüşümü</b> (“Dikey”)</p><p>Dünyayı yüzeyden "
 "nispeten kısa bir uzaklıktan göründüğü haliyle gösterir. Uygulamalar: Sanal "
 "Küreler için kullanılır.</p>"
 
@@ -56056,9 +56054,8 @@ msgid ""
 "speed."
 msgstr ""
 "Harita canlandırmaları sırasında (örneğin dünyayı sürüklerken) görüntülenen\n"
-"harita kalitesini belirtir. Özellikle yavaş makinelerde bu seçeneğin "
-"\"düşük\n"
-"kalite\"ye ayarlanması tavsiye edilir; çünkü bu daha iyi hız sağlayacaktır."
+"harita kalitesini belirtir. Özellikle yavaş makinelerde bu seçeneğin\n"
+"“düşük kalite”ye ayarlanması tavsiye edilir; bu daha iyi hız sağlayacaktır."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -56103,9 +56100,9 @@ msgid ""
 "and if high usage of the Internet is not an issue."
 msgstr ""
 "Kullanılan iki önbellek vardır:\n"
-"Harita verisini bilgisayar belleğinde tutan \"fiziksel bellek\".\n"
+"Harita verisini bilgisayar belleğinde tutan “fiziksel bellek”.\n"
 "Değeri artırmak bilgisayarın daha iyi tepki vermesini sağlar.\n"
-"\"Sabit disk belleği\", internetten gelen harita verisi için kullanılır.\n"
+"“Sabit disk belleği”, internetten gelen harita verisi için kullanılır.\n"
 "Yüksek internet kullanımı sizin için sorun değilse ve sabit disk\n"
 "alanından tasarruf etmek istiyorsanız bu değeri düşürün."
 
@@ -57591,7 +57588,7 @@ msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
-"\"Harita Aramaları\" görünümüne kaydedilecek geçerli harita aramasının adını "
+"“Harita Aramaları” görünümüne kaydedilecek geçerli harita aramasının adını "
 "girin."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
@@ -59097,7 +59094,7 @@ msgid ""
 "\n"
 msgstr ""
 "USB/IEEE1394 yığın depolama kameraları ve Flash disk kartı okuyucuları için "
-"\"Bağlı Kamera\" sürücüsü.\n"
+"“Bağlı Kamera” sürücüsü.\n"
 "\n"
 
 #: core/utilities/import/backend/umscamera.cpp:573
@@ -59167,8 +59164,8 @@ msgid ""
 "For more information about the \"Mounted Camera\" driver, please read the "
 "\"Supported Digital Still Cameras\" section in the digiKam manual."
 msgstr ""
-"\"Bağlı Kamera\" sürücüsü hakkında daha fazla bilgi için lütfen digiKam "
-"kılavuzundaki \"Desteklenen Sayısal Sabit Kameralar\" bölümünü okuyun."
+"“Bağlı Kamera” sürücüsü hakkında daha fazla bilgi için lütfen digiKam "
+"kılavuzundaki “Desteklenen Sayısal Sabit Kameralar” bölümünü okuyun."
 
 #: core/utilities/import/backend/umscamera.cpp:606
 #, kde-format
@@ -59184,13 +59181,13 @@ msgid ""
 "\n"
 "https://www.digikam.org/?q=contact"
 msgstr ""
-"\"Bağlı Kamera\" sürücüsü, sisteminize yerel olarak takılı bir kamera "
-"diskine yönelik basit bir arayüzdür.\n"
+"“Bağlı Kamera” sürücüsü, sisteminize yerel olarak takılı bir kamera diskine "
+"yönelik basit bir arayüzdür.\n"
 "\n"
 "Libgphoto2 sürücülerini kullanmaz.\n"
 "\n"
 "Bu sürücüyle ilgili herhangi bir sorunu bildirmek için lütfen şu adresten "
-"digiKam ekibiyle iletişime geçin:\n"
+"digiKam takımıyla iletişime geçin:\n"
 "\n"
 "https://www.digikam.org/?q=contact"
 
@@ -63007,7 +63004,7 @@ msgstr "Geçerli Aramayı Kaydet"
 #: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
-msgstr "Geçerli aramayı \"Aramalar\" görünümüne kaydetmek için bir ad gir"
+msgstr "Geçerli aramayı “Aramalar” görünümüne kaydetmek için bir ad gir"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
@@ -65279,10 +65276,11 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 "<p>Yeni ad alanları oluşturmak için parametreler belirtmelisiniz:</"
-"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>\"Xmp.digiKam.KünyelerListesi"
-"\"</i></li><li>Künye yolları tarafından kullanılan ayırıcı parametre.<br/"
-">Örneğin: \"Kent/Bilecik\" veya \"Kent|Uşak\"</li><li>Yalnızca anahtar "
-"sözcüğün mü yoksa tüm yolun mu yazılması gerektiğini belirtin.</li></ul></p>"
+"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>“Xmp.digiKam."
+"KünyelerListesi”</i></li><li>Künye yolları tarafından kullanılan ayırıcı "
+"parametre.<br/>Örneğin: “Kent/Bilecik” veya “Kent|Uşak”</li><li>Yalnızca "
+"anahtar sözcüğün mü yoksa tüm yolun mu yazılması gerektiğini belirtin.</li></"
+"ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
@@ -65294,8 +65292,8 @@ msgid ""
 "from list.</li></ul></p>"
 msgstr ""
 "<p>Yeni derecelendirme ad alanları oluşturmak için parametreler "
-"belirtmelisiniz:</p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>\"Xmp.xmp."
-"Derecelendirme\"</i></li><li>Ad alanı, 0–5’ten başka değerler gerektiriyorsa "
+"belirtmelisiniz:</p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>“Xmp.xmp."
+"Derecelendirme”</i></li><li>Ad alanı, 0–5’ten başka değerler gerektiriyorsa "
 "derecelendirme eşlemleri.<br/>Örneğin: Microsoft 0 1 25 50 75 99 kullanır</"
 "li><li>Listeden doğru ad alanını seçeneğini seçin.</li></ul></p>"
 
@@ -65307,7 +65305,7 @@ msgid ""
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 "<p>Yeni açıklama ad alanları oluşturmak için parametreler belirtmelisiniz:</"
-"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>\"Xmp.xmp.Yorum\"</i></"
+"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>“Xmp.xmp.Yorum”</i></"
 "li><li>Listeden doğru ad alanını seçeneğini seçin.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
@@ -66098,7 +66096,7 @@ msgstr ""
 "digiKam (isteğe bağlı olarak) üst veriyi *.xmp sepet dosyalarına yazar. "
 "Diğer programlar aşağıda belirtilebilecek farklı türleri kullanabilir. "
 "digiKam bunları görüntülemez, okumaz veya yazmaz. Ancak eşleşen bir albüm "
-"ögesi (örn., \"görsel.dng.pp3\" için \"görsel.dng\") yeniden "
+"ögesi (örneğin, “görsel.dng.pp3” için “görsel.dng”) yeniden "
 "adlandırıldığında, taşındığında, kopyalandığında veya silindiğinde, aynı "
 "işlem bu sepet dosyaları üzerinde de yapılacaktır.\n"
 "Birden çok uzantı noktalı virgül veya boşlukla ayrılmalıdır."
@@ -66118,8 +66116,8 @@ msgstr ""
 "Normal ögelerle birlikte işlenecek sepet dosyalarının ek uzantılarını burada "
 "ekleyebilirsiniz. Bu dosyalar görülmezler; ancak ana dosyanın bir uzantısı "
 "olarak kabul edileceklerdir. *.xyz ve *.abc uzantılı dosyaları desteklemek "
-"için \"xyz abc\" yazmanız yeterlidir. İçsel olarak kullanılan sepet türü *."
-"xmp her zaman içerilir."
+"için “xyz abc” yazmanız yeterlidir. İçsel olarak kullanılan sepet türü *.xmp "
+"her zaman içerilir."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
@@ -66445,8 +66443,7 @@ msgid ""
 msgstr ""
 "Kenar çubuğu sekmesi başlıklarının nasıl görüneceğini yapılandırmak için bu "
 "seçeneği ayarlayın. Dizüstü bilgisayarlarda olduğu gibi küçük bir ekran "
-"çözünürlüğü kullanıyorsanız \"Yalnızca etkin sekme için\" seçeneğini "
-"kullanın."
+"çözünürlüğü kullanıyorsanız “Yalnızca etkin sekme için” seçeneğini kullanın."
 
 #: core/utilities/setup/misc/setupmisc.cpp:302
 #, kde-format
@@ -67731,7 +67728,7 @@ msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
-"Not: Bu ayarlar, Kamera Davranışı sayfasındaki \"Dosya üst verisini kullan\" "
+"Not: Bu ayarlar, Kamera Davranışı sayfasındaki “Dosya üst verisini kullan” "
 "seçeneğini gerektirir."
 
 #: core/utilities/setup/setuptooltip.cpp:406
