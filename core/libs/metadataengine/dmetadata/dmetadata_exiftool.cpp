@@ -81,7 +81,6 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll)
     // Restore file path.
 
     setFilePath(filePath);
-    loadFromSidecarAndMerge(filePath);
 
     return true;
 }

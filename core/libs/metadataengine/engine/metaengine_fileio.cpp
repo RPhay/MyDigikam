@@ -203,8 +203,6 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
             *backend = Exiv2Backend;
         }
 
-        loadFromSidecarAndMerge(filePath);
-
         hasLoaded = true;
 
     }

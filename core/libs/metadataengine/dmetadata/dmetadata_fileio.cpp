@@ -74,28 +74,20 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
                         // cppcheck-suppress knownConditionTrueFalse
                         if (!(hasLoaded = false/*loadUsingImageMagick(filePath)*/))
                         {
-                            hasLoaded   = loadFromSidecarAndMerge(filePath);
-
                             usedBackend = NoBackend;
                         }
                         else
                         {
-                            loadFromSidecarAndMerge(filePath);
-
                             usedBackend = ImageMagickBackend;
                         }
                     }
                     else
                     {
-                        loadFromSidecarAndMerge(filePath);
-
                         usedBackend = LibHeifBackend;
                     }
                 }
                 else
                 {
-                    loadFromSidecarAndMerge(filePath);
-
                     usedBackend = LibRawBackend;
                 }
             }
@@ -103,6 +95,8 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             {
                 usedBackend = ExifToolBackend;
             }
+
+            hasLoaded |= loadFromSidecarAndMerge(filePath);
         }
         else
         {
@@ -125,6 +119,8 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
 
         if      ((hasLoaded = loadUsingExifTool(filePath, videoAll)))
         {
+            loadFromSidecarAndMerge(filePath);
+
             if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
             {
                 usedBackend = VideoMergeBackend;
@@ -142,7 +138,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         }
         else
         {
-            hasLoaded   = loadFromSidecarAndMerge(filePath);
+            hasLoaded  |= loadFromSidecarAndMerge(filePath);
 
             usedBackend = NoBackend;
         }
