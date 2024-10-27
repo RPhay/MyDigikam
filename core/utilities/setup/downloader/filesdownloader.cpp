@@ -65,6 +65,8 @@ public:
     int                    total            = 0;
     int                    count            = 0;
 
+    bool                   fallback         = false;
+
     QDialogButtonBox*      buttons          = nullptr;
     QProgressBar*          progress         = nullptr;
     QCheckBox*             facesEngineCheck = nullptr;
@@ -81,6 +83,7 @@ public:
 
     QString                error;
     const QString          downloadUrl      = QLatin1String("https://files.kde.org/digikam/");
+    const QString          fallbackUrl      = QLatin1String("https://cdn.files.kde.org/digikam/");
     const QString          userAgent        = QLatin1String("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                                                             "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36");
 };
@@ -248,6 +251,7 @@ void FilesDownloader::slotDownload()
 
         if (result == QMessageBox::Yes)
         {
+            d->fallback = !d->fallback;
             d->error.clear();
             download();
 
@@ -269,7 +273,10 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    QUrl request(d->downloadUrl      +
+    QString serverUrl(d->fallback ? d->fallbackUrl
+                                  : d->downloadUrl);
+
+    QUrl request(serverUrl           +
                  d->currentInfo.path +
                  d->currentInfo.name);
 
