@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 01:48+0000\n"
+"POT-Creation-Date: 2024-10-28 01:53+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -23400,7 +23400,7 @@ msgstr "iNaturalist"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export photos as iNaturalist observations."
-msgstr "导出照片到 iNaturalist 观察记录。"
+msgstr "导出照片到 iNaturalist 观察记录"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:66
 #, kde-format
@@ -28772,7 +28772,7 @@ msgstr "不再询问"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -35455,7 +35455,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "打开设置对话框以配置更新功能。"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:144
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Download"
 msgstr "下载"
@@ -62581,39 +62581,39 @@ msgstr "选择相册集合类型"
 msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:132
+#: core/utilities/setup/downloader/filesdownloader.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "下载所需文件"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:152
+#: core/utilities/setup/downloader/filesdownloader.cpp:155
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "使用人脸管理功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "使用美感检测功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "使用自动标签分配功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "已成功下载所有文件。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下载错误"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:235
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62632,33 +62632,33 @@ msgstr ""
 "\n"
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:246
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "重试"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:377
+#: core/utilities/setup/downloader/filesdownloader.cpp:384
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "文件的校验和不正确。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:401
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File write error."
 msgstr "文件写入错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:408
+#: core/utilities/setup/downloader/filesdownloader.cpp:415
 #, kde-format
 msgid "File open error."
 msgstr "文件打开错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:430
 #, kde-format
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:496
+#: core/utilities/setup/downloader/filesdownloader.cpp:503
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -62678,13 +62678,13 @@ msgstr ""
 "框，digiKam 会在下一次启动时再次提示您下载。</p><p>这些软件包将被下载到“<i>"
 "%1</i>”。</p><p><b>下载完成后，请重新启动 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:509
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:516
+#: core/utilities/setup/downloader/filesdownloader.cpp:523
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "选中功能所需的所有文件均已找到。"

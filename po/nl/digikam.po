@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 01:48+0000\n"
+"POT-Creation-Date: 2024-10-28 01:53+0000\n"
 "PO-Revision-Date: 2024-10-24 12:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -30103,7 +30103,7 @@ msgstr "Deze vraag niet meer stellen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37023,7 +37023,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:144
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -65008,39 +65008,39 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:132
+#: core/utilities/setup/downloader/filesdownloader.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:152
+#: core/utilities/setup/downloader/filesdownloader.cpp:155
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Functie beheer van gezichten gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Functie esthetische detectie gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Functie automatisch toekennen van tags gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:235
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65059,33 +65059,33 @@ msgstr ""
 "\n"
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende start."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:246
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:377
+#: core/utilities/setup/downloader/filesdownloader.cpp:384
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:401
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:408
+#: core/utilities/setup/downloader/filesdownloader.cpp:415
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:430
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:496
+#: core/utilities/setup/downloader/filesdownloader.cpp:503
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65110,13 +65110,13 @@ msgstr ""
 "werken.</p><p>De bestanden zullen gedownload worden naar \"<i>%1</i>\".</"
 "p><p><b>Na het met succes downloaden moet u digiKam herstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:509
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Het downloaden vereist %1 bestanden met een grootte van %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:516
+#: core/utilities/setup/downloader/filesdownloader.cpp:523
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Alle bestanden van de geselecteerde functies zijn gevonden."

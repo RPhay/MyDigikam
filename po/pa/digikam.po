@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 01:48+0000\n"
+"POT-Creation-Date: 2024-10-28 01:53+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -29579,7 +29579,7 @@ msgstr "ਮੁੜ ਨਾ ਪੁੱਛੋ"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -36489,7 +36489,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:144
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
@@ -65166,42 +65166,42 @@ msgstr "ਸਾਲ ਚੁਣੋ"
 msgid "Your collection will use this category:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:132
+#: core/utilities/setup/downloader/filesdownloader.cpp:135
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 ਫਾਇਲ ਡਾਊਨਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:152
+#: core/utilities/setup/downloader/filesdownloader.cpp:155
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "ਉਲਟ ਕ੍ਰਮ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "ਆਟੋਮੈਟਿਕ ਅਡਜੱਸਟਮੈਂਟ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "%1 ਠੀਕ ਤਰ੍ਹਾਂ ਡਾਊਨਲੋਡ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "ਨਵੇਂ ਡਾਊਨਲੋਡ ਕਰੋ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:235
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65213,34 +65213,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:246
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਲ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:377
+#: core/utilities/setup/downloader/filesdownloader.cpp:384
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:401
+#: core/utilities/setup/downloader/filesdownloader.cpp:408
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:408
+#: core/utilities/setup/downloader/filesdownloader.cpp:415
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:430
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:496
+#: core/utilities/setup/downloader/filesdownloader.cpp:503
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65255,13 +65255,13 @@ msgid ""
 "to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:509
+#: core/utilities/setup/downloader/filesdownloader.cpp:516
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:516
+#: core/utilities/setup/downloader/filesdownloader.cpp:523
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
