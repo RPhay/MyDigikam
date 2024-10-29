@@ -82,7 +82,6 @@ void EqualizeFilter::equalizeImage()
     }
 
     struct double_packet  high, low, intensity;
-    int                   i;
     int                   progress;
 
     // Create an histogram of the reference image.
@@ -103,7 +102,7 @@ void EqualizeFilter::equalizeImage()
 
     // Integrate the histogram to get the equalization map.
 
-    for (i = 0 ; runningFlag() && (i < histogram->getHistogramSegments()) ; ++i)
+    for (int i = 0 ; runningFlag() && (i < histogram->getHistogramSegments()) ; ++i)
     {
         intensity.red   += histogram->getValue(RedChannel,   i);
         intensity.green += histogram->getValue(GreenChannel, i);
@@ -119,7 +118,7 @@ void EqualizeFilter::equalizeImage()
 
     // TODO magic number 256
 
-    for (i = 0 ; runningFlag() && (i < histogram->getHistogramSegments()) ; ++i)
+    for (int i = 0 ; runningFlag() && (i < histogram->getHistogramSegments()) ; ++i)
     {
         if (high.red != low.red)
             equalize_map[i].red = (uint)(((256 * histogram->getHistogramSegments() - 1) *
@@ -139,10 +138,10 @@ void EqualizeFilter::equalizeImage()
     }
 
     uchar* data     = m_orgImage.bits();
-    int w           = m_orgImage.width();
-    int h           = m_orgImage.height();
+    uint w          = m_orgImage.width();
+    uint h          = m_orgImage.height();
     bool sixteenBit = m_orgImage.sixteenBit();
-    int size        = w * h;
+    uint size       = w * h;
 
     // Apply results to image.
     // TODO magic number 257
@@ -152,7 +151,7 @@ void EqualizeFilter::equalizeImage()
         uchar  red, green, blue, alpha;
         uchar* ptr = data;
 
-        for (i = 0 ; runningFlag() && (i < size) ; ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
@@ -198,7 +197,7 @@ void EqualizeFilter::equalizeImage()
         unsigned short  red, green, blue, alpha;
         unsigned short* ptr = reinterpret_cast<unsigned short*>(data);
 
-        for (i = 0 ; runningFlag() && (i < size) ; ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];

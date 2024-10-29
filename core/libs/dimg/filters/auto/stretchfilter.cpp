@@ -78,7 +78,6 @@ void StretchFilter::stretchContrastImage()
 
     struct double_packet high, low, intensity;
     long long            number_pixels;
-    long                 i;
     int                  progress;
     unsigned long        threshold_intensity;
 
@@ -280,7 +279,7 @@ void StretchFilter::stretchContrastImage()
     // Stretch the histogram to create the normalized image mapping.
     // TODO magic number 256
 
-    for (i = 0 ; runningFlag() && (i <= (long)histogram->getMaxSegmentIndex()) ; ++i)
+    for (long i = 0 ; runningFlag() && (i <= (long)histogram->getMaxSegmentIndex()) ; ++i)
     {
         if      (i < (long) low.red)
         {
@@ -338,10 +337,10 @@ void StretchFilter::stretchContrastImage()
     // Apply result to image.
 
     uchar* data     = m_orgImage.bits();
-    int w           = m_orgImage.width();
-    int h           = m_orgImage.height();
+    uint w          = m_orgImage.width();
+    uint h          = m_orgImage.height();
     bool sixteenBit = m_orgImage.sixteenBit();
-    int size        = w * h;
+    uint size       = w * h;
 
     // TODO magic number 257
 
@@ -350,7 +349,7 @@ void StretchFilter::stretchContrastImage()
         uchar  red, green, blue, alpha;
         uchar* ptr = data;
 
-        for (i = 0 ; runningFlag() && (i < size) ; ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
@@ -396,7 +395,7 @@ void StretchFilter::stretchContrastImage()
         unsigned short  red, green, blue, alpha;
         unsigned short* ptr = reinterpret_cast<unsigned short*>(data);
 
-        for (i = 0 ; runningFlag() && (i < size) ; ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];

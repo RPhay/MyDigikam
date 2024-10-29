@@ -90,8 +90,8 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     postProgress(10);
 
-    int sizeSixteenBit = w * h * 8;
-    int sizeEightBit   = w * h * 4;
+    quint64 sizeSixteenBit = (quint64)w * (quint64)h * 8;
+    quint64 sizeEightBit   = (quint64)w * (quint64)h * 4;
 
     // Create the new empty destination image data space.
 
