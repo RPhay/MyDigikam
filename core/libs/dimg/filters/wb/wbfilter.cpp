@@ -291,9 +291,9 @@ void WBFilter::setLUTv()
     }
 }
 
-void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit)
+void WBFilter::adjustWhiteBalance(uchar* const data, uint width, uint height, bool sixteenBit)
 {
-    uint size = (uint)(width * height);
+    uint size = width * height;
     uint j;
     int  progress;
 
