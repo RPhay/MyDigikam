@@ -110,9 +110,9 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
         postProgress(20);
     }
 
-    if (!desData)
+    if (desData.isNull())
     {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Failed to allocate chunk of memory for AutoLevelsFilter";
+        qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
 
         return;
     }

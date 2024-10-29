@@ -87,7 +87,7 @@ void StretchFilter::stretchContrastImage()
 
     if (histogram.isNull())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << ("Unable to allocate memory!");
+        qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
         return;
     }
 
@@ -99,7 +99,7 @@ void StretchFilter::stretchContrastImage()
 
     if (normalize_map.isNull())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << ("Unable to allocate memory!");
+        qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
         return;
     }
 
