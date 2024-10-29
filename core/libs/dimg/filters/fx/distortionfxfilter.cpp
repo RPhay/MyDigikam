@@ -304,7 +304,7 @@ void DistortionFXFilter::fisheye(DImg* orgImage, DImg* destImage, double Coeff, 
 
     // main loop
 
-    for (int h = 0; runningFlag() && (h < (int)orgImage->height()); ++h)
+    for (int h = 0 ; runningFlag() && (h < (int)orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {

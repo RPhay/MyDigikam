@@ -91,7 +91,7 @@ public:
     static QList<int> SupportedVersions();
     static int CurrentVersion();
 
-    static void srgb2ycbcr(float** const fimg, int size);
+    static void srgb2ycbcr(float** const fimg, uint size);
 
 private:
 
@@ -101,7 +101,7 @@ private:
                         float threshold, double softness);
     inline void hatTransform(float* const temp, float* const base, int st, int size, int sc);
 
-    void ycbcr2srgb(float** const fimg, int size);
+    void ycbcr2srgb(float** const fimg, uint size);
 
     void calculteStdevMultithreaded(const Args& prm);
     void thresholdingMultithreaded(const Args& prm);

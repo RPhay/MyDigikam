@@ -141,9 +141,9 @@ void NRFilter::filterImage()
     DColor col;
     int    progress;
 
-    int width  = m_orgImage.width();
-    int height = m_orgImage.height();
-    float clip = m_orgImage.sixteenBit() ? 65535.0 : 255.0;
+    uint width  = m_orgImage.width();
+    uint height = m_orgImage.height();
+    float clip  = m_orgImage.sixteenBit() ? 65535.0 : 255.0;
 
     // Allocate buffers.
 
@@ -159,9 +159,9 @@ void NRFilter::filterImage()
 
     int j = 0;
 
-    for (int y = 0 ; runningFlag() && (y < height) ; ++y)
+    for (uint y = 0 ; runningFlag() && (y < height) ; ++y)
     {
-        for (int x = 0 ; runningFlag() && (x < width) ; ++x)
+        for (uint x = 0 ; runningFlag() && (x < width) ; ++x)
         {
             col           = m_orgImage.getPixelColor(x, y);
             d->fimg[0][j] = col.red()   / clip;
@@ -214,7 +214,7 @@ void NRFilter::filterImage()
 
     for (int c = 0 ; runningFlag() && (c < 3) ; ++c)
     {
-        for (int i = 0 ; i < width * height ; ++i)
+        for (uint i = 0 ; i < width * height ; ++i)
         {
             d->fimg[c][i] = qBound(0.0F, d->fimg[c][i] * clip, clip);
         }
@@ -226,9 +226,9 @@ void NRFilter::filterImage()
 
     j = 0;
 
-    for (int y = 0 ; runningFlag() && (y < height) ; ++y)
+    for (uint y = 0 ; runningFlag() && (y < height) ; ++y)
     {
-        for (int x = 0 ; x < width ; ++x)
+        for (uint x = 0 ; x < width ; ++x)
         {
             col.setRed((int)(d->fimg[0][j]   + 0.5));
             col.setGreen((int)(d->fimg[1][j] + 0.5));
@@ -488,11 +488,11 @@ void NRFilter::hatTransform(float* const temp, float* const base, int st, int si
 
 // -- Color Space conversion methods --------------------------------------------------
 
-void NRFilter::srgb2ycbcr(float** const fimg, int size)
+void NRFilter::srgb2ycbcr(float** const fimg, uint size)
 {
     float y, cb, cr;
 
-    for (int i = 0 ; i < size ; ++i)
+    for (uint i = 0 ; i < size ; ++i)
     {
         y          =  0.2990 * fimg[0][i] + 0.5870 * fimg[1][i] + 0.1140 * fimg[2][i];
         cb         = -0.1687 * fimg[0][i] - 0.3313 * fimg[1][i] + 0.5000 * fimg[2][i] + 0.5;
@@ -503,11 +503,11 @@ void NRFilter::srgb2ycbcr(float** const fimg, int size)
     }
 }
 
-void NRFilter::ycbcr2srgb(float** const fimg, int size)
+void NRFilter::ycbcr2srgb(float** const fimg, uint size)
 {
     float r, g, b;
 
-    for (int i = 0 ; i < size ; ++i)
+    for (uint i = 0 ; i < size ; ++i)
     {
         r          = fimg[0][i] + 1.40200 * (fimg[2][i] - 0.5);
         g          = fimg[0][i] - 0.34414 * (fimg[1][i] - 0.5) - 0.71414 * (fimg[2][i] - 0.5);

@@ -112,8 +112,8 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
 {
     bool stretch = true;
 
-    int w             = orgImage->width();
-    int h             = orgImage->height();
+    uint w            = orgImage->width();
+    uint h            = orgImage->height();
     const uchar* data = orgImage->bits();
     bool sb           = orgImage->sixteenBit();
     uchar* pResBits   = destImage->bits();
@@ -126,7 +126,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
         uchar* dst       = pResBits;
         uchar  a, r, g, b;
 
-        for (int x = 0 ; x < w * h ; ++x)
+        for (uint x = 0 ; x < w * h ; ++x)
         {
             b = ptr[0];
             g = ptr[1];
@@ -175,7 +175,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
         unsigned short* dst       = reinterpret_cast<unsigned short*>(pResBits);
         unsigned short  a, r, g, b;
 
-        for (int x = 0 ; x < w * h ; ++x)
+        for (uint x = 0 ; x < w * h ; ++x)
         {
             b = ptr[0];
             g = ptr[1];

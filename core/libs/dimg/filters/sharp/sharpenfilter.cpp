@@ -190,9 +190,7 @@ void SharpenFilter::convolveImageMultithreaded(const Args& prm)
 
 bool SharpenFilter::convolveImage(const unsigned int order, const double* const kernel)
 {
-    uint    y;
     int     progress;
-    long    i;
     double  normalize = 0.0;
 
     Args prm;
@@ -215,7 +213,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
         return false;
     }
 
-    for (i = 0 ; i < (prm.kernelWidth * prm.kernelWidth) ; ++i)
+    for (long i = 0 ; i < (prm.kernelWidth * prm.kernelWidth) ; ++i)
     {
         normalize += kernel[i];
     }
@@ -227,7 +225,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
 
     normalize = 1.0 / normalize;
 
-    for (i = 0 ; i < (prm.kernelWidth * prm.kernelWidth) ; ++i)
+    for (long i = 0 ; i < (prm.kernelWidth * prm.kernelWidth) ; ++i)
     {
         normal_kernel[i] = normalize * kernel[i];
     }
@@ -235,7 +233,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
     prm.normal_kernel = normal_kernel.data();
     QList<int> vals   = multithreadedSteps(m_destImage.width());
 
-    for (y = 0 ; runningFlag() && (y < m_destImage.height()) ; ++y)
+    for (uint y = 0 ; runningFlag() && (y < m_destImage.height()) ; ++y)
     {
         QList <QFuture<void> > tasks;
 

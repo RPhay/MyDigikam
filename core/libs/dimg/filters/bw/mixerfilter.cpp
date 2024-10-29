@@ -64,7 +64,6 @@ void MixerFilter::filterImage()
     uint size       = width * height;
     int  progress;
 
-    uint i;
     double   rnorm  = 1;    // red channel normalizer use in RGB mode.
     double   mnorm  = 1;    // monochrome normalizer used in Monochrome mode.
 
@@ -89,7 +88,7 @@ void MixerFilter::filterImage()
         uchar  nGray, red, green, blue;
         uchar* ptr = bits;
 
-        for (i = 0 ; i < size ; ++i)
+        for (uint i = 0 ; i < size ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
@@ -130,7 +129,7 @@ void MixerFilter::filterImage()
         unsigned short  nGray, red, green, blue;
         unsigned short* ptr = reinterpret_cast<unsigned short*>(bits);
 
-        for (i = 0 ; i < size ; ++i)
+        for (uint i = 0 ; i < size ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
