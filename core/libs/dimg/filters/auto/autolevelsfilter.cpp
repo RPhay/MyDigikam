@@ -100,14 +100,21 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     {
         if (sixteenBit)
         {
-            desData.reset(new uchar[sizeSixteenBit]);
+            desData.reset(new (std::nothrow) uchar[sizeSixteenBit]);
         }
         else
         {
-            desData.reset(new uchar[sizeEightBit]);
+            desData.reset(new (std::nothrow) uchar[sizeEightBit]);
         }
 
         postProgress(20);
+    }
+
+    if (!desData)
+    {
+        qCCritical(DIGIKAM_DIMG_LOG) << "Failed to allocate chunk of memory for AutoLevelsFilter";
+
+        return;
     }
 
     // Create an histogram of the reference image.
