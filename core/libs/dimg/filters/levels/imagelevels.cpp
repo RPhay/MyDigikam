@@ -491,8 +491,6 @@ void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, int 
 {
     unsigned short* lut0 = nullptr, *lut1 = nullptr, *lut2 = nullptr, *lut3 = nullptr;
 
-    int   i;
-
     if (d->lut->nchannels > 0)
     {
         lut0 = d->lut->luts[0];
@@ -519,7 +517,7 @@ void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, int 
         uchar* ptr = srcPR;
         uchar* dst = destPR;
 
-        for (i = 0 ; i < w * h ; ++i)
+        for (uint i = 0 ; i < (uint)w * (uint)h ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
@@ -561,7 +559,7 @@ void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, int 
         unsigned short* ptr = reinterpret_cast<unsigned short*>(srcPR);
         unsigned short* dst = reinterpret_cast<unsigned short*>(destPR);
 
-        for (i = 0 ; i < w * h ; ++i)
+        for (uint i = 0 ; i < (uint)w * (uint)h ; ++i)
         {
             blue  = ptr[0];
             green = ptr[1];
