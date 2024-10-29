@@ -80,8 +80,8 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     uchar* data     = m_orgImage.bits();
-    int w           = m_orgImage.width();
-    int h           = m_orgImage.height();
+    uint w          = m_orgImage.width();
+    uint h          = m_orgImage.height();
     bool sixteenBit = m_orgImage.sixteenBit();
 
     QScopedArrayPointer<uchar> desData;

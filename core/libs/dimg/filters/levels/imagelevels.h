@@ -53,7 +53,7 @@ public:
     void   levelsCalculateTransfers();
     float  levelsLutFunc(int nchannels, int channel, float value);
     void   levelsLutSetup(int nchannels);
-    void   levelsLutProcess(uchar* const srcPR, uchar* const destPR, int w, int h);
+    void   levelsLutProcess(uchar* const srcPR, uchar* const destPR, uint w, uint h);
 
     /**
      * Methods to set manually the levels values.
