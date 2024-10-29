@@ -77,9 +77,9 @@ void StretchFilter::stretchContrastImage()
     }
 
     struct double_packet high, low, intensity;
-    long long            number_pixels;
+    uint                 threshold_intensity;
+    uint                 number_pixels;
     int                  progress;
-    unsigned long        threshold_intensity;
 
     // Create an histogram of the reference image.
 
@@ -105,7 +105,7 @@ void StretchFilter::stretchContrastImage()
 
     // Find the histogram boundaries by locating the 0.1 percent levels.
 
-    number_pixels       = (long long)m_refImage.width() * (long long)m_refImage.height();
+    number_pixels       = (uint)m_refImage.width() * (uint)m_refImage.height();
     threshold_intensity = number_pixels / 1000;
 
     // Red.
@@ -279,13 +279,13 @@ void StretchFilter::stretchContrastImage()
     // Stretch the histogram to create the normalized image mapping.
     // TODO magic number 256
 
-    for (long i = 0 ; runningFlag() && (i <= (long)histogram->getMaxSegmentIndex()) ; ++i)
+    for (int i = 0 ; runningFlag() && (i <= histogram->getMaxSegmentIndex()) ; ++i)
     {
-        if      (i < (long) low.red)
+        if      (i < (int) low.red)
         {
             normalize_map[i].red = 0;
         }
-        else if (i > (long) high.red)
+        else if (i > (int) high.red)
         {
             normalize_map[i].red = (256 * histogram->getHistogramSegments() - 1);
         }
@@ -294,11 +294,11 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].red = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.red)) / (high.red - low.red));
         }
 
-        if      (i < (long) low.green)
+        if      (i < (int) low.green)
         {
             normalize_map[i].green = 0;
         }
-        else if (i > (long) high.green)
+        else if (i > (int) high.green)
         {
             normalize_map[i].green = (256 * histogram->getHistogramSegments() - 1);
         }
@@ -307,11 +307,11 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].green = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.green)) / (high.green - low.green));
         }
 
-        if      (i < (long) low.blue)
+        if      (i < (int) low.blue)
         {
             normalize_map[i].blue = 0;
         }
-        else if (i > (long) high.blue)
+        else if (i > (int) high.blue)
         {
             normalize_map[i].blue = (256 * histogram->getHistogramSegments() - 1);
         }
@@ -320,11 +320,11 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].blue = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.blue)) / (high.blue - low.blue));
         }
 
-        if      (i < (long) low.alpha)
+        if      (i < (int) low.alpha)
         {
             normalize_map[i].alpha = 0;
         }
-        else if (i > (long) high.alpha)
+        else if (i > (int) high.alpha)
         {
             normalize_map[i].alpha = (256 * histogram->getHistogramSegments() - 1);
         }
