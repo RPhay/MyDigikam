@@ -167,7 +167,7 @@ BUGFIXES:
 142 ==> 485992 - Face recognition, small part or half face.
 143 ==> 495269 - MXF files not displayed on digiKam.
 144 ==> 495428 - Binary file download is broken for digiKam >= 8.4.0.
-145 ==> 
+145 ==> 495523 - digiKam not opening on Mac Silicon.
 146 ==> 
 147 ==> 
 148 ==> 
