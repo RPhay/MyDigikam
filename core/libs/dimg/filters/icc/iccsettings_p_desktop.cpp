@@ -53,7 +53,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #ifdef HAVE_X11
 
-    if (!QX11Info::isPlatformX11() || (qApp->platformName() == QLatin1String("wayland")))
+    if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
 
