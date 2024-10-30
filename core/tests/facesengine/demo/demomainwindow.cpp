@@ -306,7 +306,7 @@ void MainWindow::slotUpdateDatabase()
             QImage* face = new QImage();
             *face        = d->currentPhoto.copy(item->originalRect());
 
-            d->database.train(identity, face, QString::fromLatin1("test application"));
+            d->database.train(identity, QPair<QImage*, QString>(face, QLatin1String("f00d")));
 
             int elapsed  = timer.elapsed();
 

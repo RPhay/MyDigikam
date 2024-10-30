@@ -77,7 +77,6 @@ void RecognitionWorker::setAccuracyAndModel(int detectAccuracy,
                                             int recognizeAccuracy,
                                             FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
-    // michmill added.
 
     QVariantMap params;
     params[QLatin1String("detectAccuracy")]       = detectAccuracy;

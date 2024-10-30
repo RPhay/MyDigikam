@@ -45,7 +45,7 @@ public:
 
     FaceDb*        db()         const;
     FaceDbBackend* backend()    const;
-    QString        lastError()  const;
+    const QString& lastError()  const;
 
     /**
      * Set the "last error" message. This method is not for public use.

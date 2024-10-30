@@ -50,6 +50,7 @@ private:
     bool updateV1ToV2();
     bool updateV2ToV3();
     bool updateV3ToV4();
+    bool updateV4ToV5();
 
 private:
 

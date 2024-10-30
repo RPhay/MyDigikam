@@ -61,16 +61,26 @@ public:
      */
     virtual KDNodeBase* add(const cv::Mat& position, const int identity);
 
+
+    /**
+     * @brief create an ew node
+     * @param nodePos   : extracted face vectors
+     * @param identity  : identity of this face vector
+     * @param splitAxis : current axis/dimension of the vector
+     * @param dimension : number of dimensions (usually 128)
+     * @return : KDNodeBase pointer
+     */
+    virtual KDNodeBase* createNode(const cv::Mat& nodePos,
+                                   const int identity,
+                                   int splitAxis,
+                                   int dimension)                                                   = 0;
+
 private:
 
     // Disable
     KDTreeBase(const KDTreeBase&)                                                                   = delete;
     KDTreeBase& operator=(const KDTreeBase&)                                                        = delete;
 
-    virtual KDNodeBase* createNode(const cv::Mat& nodePos,
-                                   const int identity,
-                                   int splitAxis,
-                                   int dimension)                                                   = 0;
     virtual float getCosThreshold(float sqRange) const                                              = 0;
 
 private:

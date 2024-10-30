@@ -60,7 +60,7 @@ public:
             QMultiMap<QString, QString> attributes;
             attributes.insert(QString::fromLatin1("name"), name);
             identity                                = db.addIdentity(attributes);
-            db.train(identity, image, QString::fromLatin1("test application"));
+            db.train(identity, QPair<QImage*, QString>(image, QLatin1String("f00d")));
         }
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Trained group" << number;

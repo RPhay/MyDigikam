@@ -24,15 +24,15 @@ namespace Digikam
 
 int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
                              const int label,
-                             const QString& context) const
+                             const QString& hash) const
 {
     QVariantList bindingValues;
 
     bindingValues << label;
-    bindingValues << context;
+    bindingValues << hash;
     bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
 
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, `context`, embedding) "
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, removeHash, embedding) "
                                                             "VALUES (?,?,?);"),
                                               bindingValues);
 
@@ -51,6 +51,26 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     }
 
     return query.lastInsertId().toInt();
+}
+
+bool FaceDb::removeFaceVector(const int nodeId) const
+{
+    d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE id=?;"),
+                                            nodeId);
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted nodeId " << nodeId << " from FaceMatricies";
+
+    return true;
+}
+
+bool FaceDb::removeFaceVector(const QString& hash) const
+{
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE removeHash=?;"), hash);        
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted hash " << hash << " from FaceMatricies";
+
+    // TO DO: Check query result
+
+    return true;
 }
 
 KDTreeBase* FaceDb::reconstructTree(FaceScanSettings::FaceRecognitionModel recModel)
@@ -121,11 +141,6 @@ void FaceDb::clearDNNTraining(const QString& context)
     {
         d->db->execSql(QLatin1String("DELETE FROM FaceMatrices;"));
     }
-    else
-    {
-        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"),
-                       context);
-    }
 }
 
 void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& context)
@@ -136,11 +151,6 @@ void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& conte
         {
             d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"),
                            id);
-        }
-        else
-        {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"),
-                           id, context);
         }
     }
 }

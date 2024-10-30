@@ -63,7 +63,7 @@ public:
         ForRecognition     = 1 << 10,
         ForConfirmation    = 1 << 11,
         ForTraining        = 1 << 12,
-        ForEditing         = 1 << 13, ///< Add, Change or remove.
+        ForEditing         = 1 << 13,
 
         /// Executed action (task is cleared).
         Confirmed          = 1 << 20,
@@ -82,8 +82,8 @@ public:
 
 public:
 
-    Roles     roles             = NoRole;
-    int       assignedTagId     = 0;
+    Roles     roles                     = NoRole;
+    int       assignedTagId             = 0;
     TagRegion assignedRegion;
 };
 

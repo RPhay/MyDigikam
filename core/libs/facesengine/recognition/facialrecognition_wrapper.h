@@ -142,11 +142,9 @@ public:
      * non-overlapping collections of images. Keep it always constant for your app.)
      */
     void train(const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+               TrainingDataProvider* const data);
     void train(const Identity& identityToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+               TrainingDataProvider* const data);
 
     /**
      * Performs training by using image data directly.
@@ -156,24 +154,27 @@ public:
      * implement your own TrainingDataProvider and use one of the above functions.
      */
     void train(const Identity& identityToBeTrained,
-               QImage* const image,
-               const QString& trainingContext);
+               QPair<QImage*, QString> const image);
     void train(const Identity& identityToBeTrained,
-               const QList<QImage*>& images,
-               const QString& trainingContext);
+               const QList<QPair<QImage*, QString>>& images);
 
     /**
      * Deletes the training data for all identities,
      * leaving the identities as such in the database.
      */
-    void clearAllTraining(const QString& trainingContext = QString());
+    void clearAllTraining();
 
     /**
      * Deletes the training data for the given identity,
      * leaving the identity as such in the database.
      */
-    void clearTraining(const QList<Identity>& identitiesToClean,
-                       const QString& trainingContext = QString());
+    void clearTraining(const QList<Identity>& identitiesToClean);
+
+    /**
+     * Deletes the training image for the given identity,
+     * leaving the identity as such in the database.
+     */
+    void clearTraining(const QString& hash);
 
     // --- Recognition management (facesengine_interface_recognize.cpp) ------------------
 

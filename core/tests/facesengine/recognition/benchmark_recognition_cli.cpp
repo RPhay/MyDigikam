@@ -146,7 +146,7 @@ Benchmark::Benchmark(QObject* const parent)
     m_detector             = new FaceDetector();
     m_recognizer           = new FacialRecognitionWrapper();
 
-    m_recognizer->clearAllTraining(QLatin1String("train face classifier"));
+    m_recognizer->clearAllTraining();
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 }
 
@@ -187,7 +187,14 @@ void Benchmark::registerTrainingSet()
 
         qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
 
-        m_recognizer->train(newIdentity, iter.value(), QLatin1String("train face classifier"));
+        QList<QPair<QImage*, QString>> faceSet;
+        QList<QImage*>::iterator fsi;
+        for(fsi = iter.value().begin(); fsi != iter.value().end(); ++fsi)
+        {
+            faceSet << QPair<QImage*, QString>(*fsi, QLatin1String("f00d"));
+        }
+
+        m_recognizer->train(newIdentity, faceSet);
 
         m_trainSize += iter.value().size();
     }

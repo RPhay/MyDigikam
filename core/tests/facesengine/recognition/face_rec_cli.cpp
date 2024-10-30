@@ -346,8 +346,6 @@ int main(int argc, char* argv[])
     QStringList undetectedTestedFaces;
     QStringList falsePositiveFaces;
 
-    QLatin1String trainingContext("Debug");
-
     for (QMap<unsigned, QStringList>::const_iterator it = trainingset.constBegin() ;
          it != trainingset.constEnd() ; ++it)
     {
@@ -389,10 +387,17 @@ int main(int argc, char* argv[])
 
         // Start timing for benchmark training
 
+        QList<QPair<QImage*, QString>> faceSet;
+        QList<QImage*>::iterator fsi;
+        for(fsi = faces.begin(); fsi != faces.end(); ++fsi)
+        {
+            faceSet << QPair<QImage*, QString>(*fsi, QLatin1String("f00d"));
+        }
+
         QElapsedTimer timer;
         timer.start();
 
-        recognizer.train(identity, faces, trainingContext);
+        recognizer.train(identity, faceSet);
 
         elapsedTraining += timer.elapsed();
     }

@@ -88,6 +88,22 @@ public:
                          const int label,
                          const QString& context)                                const;
 
+
+    /**
+     * @brief removeFaceVector : remove a face embedding from the database
+     * @param hash the removeHash (removeHash) to remove
+     * @return bool
+     */
+    bool removeFaceVector(const QString& hash)                                  const;
+
+    /**
+     * @brief removeFaceVector : remove a face embedding from the database
+     * @param nodeId the nodeId (row id) to remove
+     * @return bool
+     */
+    bool removeFaceVector(const int id)                                         const;
+
+
     /**
      * @brief reconstructTree: reconstruct KD-Tree from data in the database
      * @return

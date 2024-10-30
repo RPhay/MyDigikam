@@ -18,6 +18,10 @@
 
 #include "facialrecognition_wrapper_p.h"
 
+// Qt includes
+
+#include <QtConcurrent>
+
 // Local includes
 
 #include "applicationsettings.h"
@@ -39,6 +43,7 @@ T* getObjectOrCreate(T* &ptr)
 */
 
 FacialRecognitionWrapper::Private::Private()
+                                 : trainingLock(QReadWriteLock::RecursionMode::Recursive)                                            
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
@@ -69,12 +74,62 @@ FacialRecognitionWrapper::Private::Private()
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to initialize face database";
     }
 
+    trainingLock.lockForWrite();
+
     recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
+
+    trainingLock.unlock();
+
+    removeThreadPool = new QThreadPool();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    // priority should be equal or greater than trainer or recognizer threads
+
+    removeThreadPool->setThreadPriority(QThread::NormalPriority);
+
+#endif
+
+    // we only need 1 thread for the training remover
+
+    removeThreadPool->setMaxThreadCount(1);
+
+    // run the remove queue listener thread
+
+    removeThreadResult = QtConcurrent::run(removeThreadPool, &trainingRemoveConcurrent, this);
 }
 
 FacialRecognitionWrapper::Private::~Private()
 {
+    // send the end signal to the queue
+    removeQueue.push(removeQueue.endSignal());
+
+    // clean up dynamic objects
     delete recognizer;
+    delete removeThreadPool;
+}
+
+bool FacialRecognitionWrapper::Private::trainingRemoveConcurrent(FacialRecognitionWrapper::Private* self)
+{
+    QString hash;
+
+    while (true)
+    {
+        hash = self->removeQueue.front();
+        self->removeQueue.pop();
+
+        if (self->removeQueue.endSignal() != hash)
+        {
+            self->clear(hash);
+            hash.clear();
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return true;
 }
 
 } // namespace Digikam

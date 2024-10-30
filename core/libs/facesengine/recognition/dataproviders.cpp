@@ -24,11 +24,11 @@ QListImageListProvider::QListImageListProvider()
 
 QListImageListProvider::~QListImageListProvider()
 {
-    QList<QImage*>::iterator img = list.begin();
+    QList<QPair<QImage*, QString>>::iterator img = list.begin();
 
     while (img != list.end())
     {
-        delete *img;
+        delete (*img).first;
         img = list.erase(img);
     }
 }
@@ -53,22 +53,31 @@ void QListImageListProvider::reset()
     it = list.constBegin();
 }
 
-QImage* QListImageListProvider::image()
+QPair<QImage*, QString> QListImageListProvider::image()
 {
     return *it;
 }
 
-QList<QImage*> QListImageListProvider::images()
+QList<QPair<QImage*, QString>> QListImageListProvider::images()
 {
     return list;
 }
 
-void QListImageListProvider::setImages(const QList<QImage*>& lst)
+void QListImageListProvider::setImages(const QList<QPair<QImage*, QString>>& lst)
 {
     list = lst;
     it   = list.constBegin();
 }
 
+void QListImageListProvider::setUnpairedImages(const QList<QImage*>& lst)
+{
+    QList<QImage*>::const_iterator i;
+    for (i = lst.begin(); i != lst.end(); ++i)
+    {
+        // add to QPair list here
+        list << QPair<QImage*, QString>(*i, QString());
+    }
+}
 // ----------------------------------------------------------------------------------------
 
 int  EmptyImageListProvider::size()  const
@@ -86,17 +95,21 @@ void EmptyImageListProvider::proceed(int steps)
     Q_UNUSED(steps)
 }
 
-QImage* EmptyImageListProvider::image()
+QPair<QImage*, QString> EmptyImageListProvider::image()
 {
-    return nullptr;
+    return QPair<QImage*, QString>(nullptr, QString());
 }
 
-QList<QImage*> EmptyImageListProvider::images()
+QList<QPair<QImage*, QString>> EmptyImageListProvider::images()
 {
-    return QList<QImage*>();
+    return QList<QPair<QImage*, QString>>();
 }
 
-void EmptyImageListProvider::setImages(const QList<QImage*>&)
+void EmptyImageListProvider::setImages(const QList<QPair<QImage*, QString>>&)
+{
+}
+
+void EmptyImageListProvider::setUnpairedImages(const QList<QImage*>&)
 {
 }
 

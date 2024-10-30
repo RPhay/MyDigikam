@@ -1,5 +1,6 @@
 #
 # SPDX-FileCopyrightText: 2010-2024, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2024     , Michael Miller <michael underscore miller at msn dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -52,6 +53,7 @@ set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryolo.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryunet.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorbase.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingupdatequeue.cpp
 )
 
 # Used by digikamcore

@@ -22,11 +22,12 @@
 
 // Qt includes
 
-#include <QMutexLocker>
 #include <QUuid>
 #include <QDir>
 #include <QStandardPaths>
-#include <QRecursiveMutex>
+#include <QReadWriteLock>
+#include <QThreadPool>
+#include <QFuture>
 
 // Local includes
 
@@ -41,6 +42,7 @@
 #include "facedb.h"
 #include "identity.h"
 #include "facescansettings.h"
+#include "recognitiontrainingupdatequeue.h"
 
 namespace Digikam
 {
@@ -63,11 +65,13 @@ public:
     // --- Faces Training management (facesengine_interface_training.cpp) ----------------
 
     void trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
-                            TrainingDataProvider* const data,
-                            const QString& trainingContext);
+                            TrainingDataProvider* const data);
 
-    void clear(const QList<int>& idsToClear, const QString& trainingContext);
 
+    void clear(const QList<int>& idsToClear);
+
+    void clear(const QString& hash);
+    
     // --- Identity management (facesengine_interface_identity.cpp) ----------------------
 
     static bool identityContains(const Identity& identity,
@@ -82,13 +86,20 @@ public:
 
 public:
 
-    bool                                    dbAvailable     = false;
-    int                                     ref             = 1;
-    mutable QRecursiveMutex                 mutex;
+    bool                                    dbAvailable             = false;
+    int                                     ref                     = 1;
+    QReadWriteLock                          trainingLock;
     QVariantMap                             parameters;
     QHash<int, Identity>                    identityCache;
-    OpenCVDNNFaceRecognizer*                recognizer      = nullptr;
-    FaceScanSettings::FaceRecognitionModel  recognizeModel  = FaceScanSettings::FaceRecognitionModel::OpenFace;
+    OpenCVDNNFaceRecognizer*                recognizer              = nullptr;
+    FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
+
+    RecognitionTrainingUpdateQueue          removeQueue;
+    QThreadPool*                            removeThreadPool        = nullptr;
+    QFuture<bool>                           removeThreadResult;
+
+private:
+    static bool trainingRemoveConcurrent(FacialRecognitionWrapper::Private* self);
 };
 
 } // namespace Digikam

@@ -295,6 +295,14 @@ Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recogniz
     return identity;
 }
 
+Identity FaceUtils::identityForUuid(const QString& uuid, FacialRecognitionWrapper& recognizer) const
+{
+    QMultiMap<QString, QString> attributes;
+    attributes.insert(QLatin1String("uuid"), uuid);
+
+    return recognizer.findIdentity(attributes);
+}
+
 int FaceUtils::tagForIdentity(const Identity& identity) const
 {
     return FaceTags::getOrCreateTagForIdentity(identity.attributesMap());

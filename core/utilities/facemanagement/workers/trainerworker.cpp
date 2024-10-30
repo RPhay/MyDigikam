@@ -91,8 +91,9 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     QList<FaceTagsIface> toTrain;
     QList<int>           identities;
     QList<Identity>      identitySet;
+    QList<QString>       hashSet;
     FaceUtils            utils;
-
+    
     for (const FacePipelineFaceTagsIface& face : std::as_const(package->databaseFaces))
     {
         if (face.roles & FacePipelineFaceTagsIface::ForTraining)
@@ -104,6 +105,8 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
             Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
 
             identities << identity.id();
+
+            hashSet << face.hash();
 
             if (!identitySet.contains(identity))
             {
@@ -132,13 +135,13 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
             QListImageListProvider* const imageList = new QListImageListProvider;
-            imageList->setImages(QList<QImage*>() << images[i]);
+            imageList->setImages(QList<QPair<QImage*, QString>>() << QPair<QImage*, QString>(images[i], hashSet[i]));
             provider.imagesToTrain[identities[i]] = imageList;
         }
 
-        // NOTE: cropped faces will be deleted by training provider.
+        // use the face for training
+        recognizer.train(identitySet, &provider);    
 
-        recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }
 
     utils.removeFaces(toTrain);

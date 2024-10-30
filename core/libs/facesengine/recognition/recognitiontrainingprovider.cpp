@@ -19,7 +19,7 @@ namespace Digikam
 {
 
 RecognitionTrainingProvider::RecognitionTrainingProvider(const Identity& identity,
-                                                         const QList<QImage*>& newImages)
+                                                         const QList<QPair<QImage*, QString>>& newImages)
     : m_identity(identity)
 {
     m_toTrain.setImages(newImages);

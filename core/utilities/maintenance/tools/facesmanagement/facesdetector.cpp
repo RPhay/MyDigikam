@@ -116,7 +116,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         // clear all training data in the database
 
         FacialRecognitionWrapper().setParameters(settings);
-        FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
+        FacialRecognitionWrapper().clearAllTraining();
         d->pipeline.plugRetrainingDatabaseFilter();
         d->pipeline.plugTrainer();
         d->pipeline.construct();

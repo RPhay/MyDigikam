@@ -86,20 +86,41 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const cv::Mat& cvInputIma
 }
 
 
-void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
-                                    const int             label,
-                                    const QString&        context)
+void OpenCVDNNFaceRecognizer::train(const QList<QPair<QImage*, QString>>& images,
+                                    const int             label)
 {
-    cv::parallel_for_(cv::Range(0, images.size()), Private::ParallelTrainer(d, images, label, context));
+    cv::parallel_for_(cv::Range(0, images.size()), Private::ParallelTrainer(d, images, label));
 
     d->newDataAdded = true;
 }
 
-int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
+bool OpenCVDNNFaceRecognizer::remove(const QString& hash)
+{
+
+    bool result = FaceDbAccess().db()->removeFaceVector(hash);
+
+    if (result)
+    {
+        // rebuild the tree
+
+        if (d->tree)
+        {
+            delete d->tree;
+            d->tree = nullptr; // safety in case reconstructTree fails
+        }
+
+        d->tree = FaceDbAccess().db()->reconstructTree(d->recognizeModel);
+    }
+
+    return result;
+}
+
+
+int OpenCVDNNFaceRecognizer::recognize(QPair<QImage*, QString> inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractors[0]->getFaceEmbedding(prepareForRecognition(*inputImage));
+    cv::Mat faceEmbedding = d->extractors[0]->getFaceEmbedding(prepareForRecognition(*(inputImage.first)));
 
     switch (d->method)
     {
@@ -136,7 +157,7 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
     return id;
 }
 
-QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QImage*>& inputImages)
+QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QPair<QImage*, QString>>& inputImages)
 {
     QVector<int> ids;
 
@@ -145,15 +166,15 @@ QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QImage*>& inputImage
     return ids;
 }
 
-void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
+void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear)
 {
     if (idsToClear.isEmpty())
     {
-        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+        FaceDbAccess().db()->clearDNNTraining();
     }
     else
     {
-        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+        FaceDbAccess().db()->clearDNNTraining(idsToClear);
     }
 /*
     FaceDbAccess().db()->clearTreeDb();

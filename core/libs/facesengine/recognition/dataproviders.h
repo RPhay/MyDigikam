@@ -7,6 +7,7 @@
  *
  * SPDX-FileCopyrightText: 2013      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2014-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -36,15 +37,16 @@ class DIGIKAM_GUI_EXPORT ImageListProvider
 {
 public:
 
-    ImageListProvider()                           = default;
-    virtual ~ImageListProvider()                  = default;
+    ImageListProvider()                                             = default;
+    virtual ~ImageListProvider()                                    = default;
 
-    virtual int            size() const           = 0;
-    virtual bool           atEnd() const          = 0;
-    virtual void           proceed(int steps = 1) = 0;
-    virtual QImage*        image()                = 0;
-    virtual QList<QImage*> images()               = 0;
-    virtual void setImages(const QList<QImage*>&) = 0;
+    virtual int            size() const                             = 0;
+    virtual bool           atEnd() const                            = 0;
+    virtual void           proceed(int steps = 1)                   = 0;
+    virtual QPair<QImage*, QString>        image()                  = 0;
+    virtual QList<QPair<QImage*, QString>> images()                 = 0;
+    virtual void setImages(const QList<QPair<QImage*, QString>>&)   = 0;
+    virtual void setUnpairedImages(const QList<QImage*>&) = 0;
 
 private:
 
@@ -61,23 +63,24 @@ class DIGIKAM_GUI_EXPORT QListImageListProvider : public ImageListProvider
 public:
 
     QListImageListProvider();
-    ~QListImageListProvider()             override;
+    ~QListImageListProvider()                               override;
 
     void reset();
 
 public:
 
-    int            size()  const          override;
-    bool           atEnd() const          override;
-    void           proceed(int steps = 1) override;
-    QImage*        image()                override;
-    QList<QImage*> images()               override;
-    void setImages(const QList<QImage*>&) override;
+    int            size()  const                            override;
+    bool           atEnd() const                            override;
+    void           proceed(int steps = 1)                   override;
+    QPair<QImage*, QString>        image()                  override;
+    QList<QPair<QImage*, QString>> images()                 override;
+    void setImages(const QList<QPair<QImage*, QString>>&)   override;
+    void setUnpairedImages(const QList<QImage*>&)           override;
 
 public:
 
-    QList<QImage*>                 list;
-    QList<QImage*>::const_iterator it;
+    QList<QPair<QImage*, QString>>                 list;
+    QList<QPair<QImage*, QString>>::const_iterator it;
 
 private:
 
@@ -90,15 +93,16 @@ class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    EmptyImageListProvider()              = default;
-    ~EmptyImageListProvider()             = default;
+    EmptyImageListProvider()                                    = default;
+    ~EmptyImageListProvider()                                   = default;
 
-    int     size()  const                 override;
-    bool    atEnd() const                 override;
-    void    proceed(int steps = 1)        override;
-    QImage* image()                       override;
-    QList<QImage*> images()               override;
-    void setImages(const QList<QImage*>&) override;
+    int     size()  const                                   override;
+    bool    atEnd() const                                   override;
+    void    proceed(int steps = 1)                          override;
+    QPair<QImage*, QString> image()                         override;
+    QList<QPair<QImage*, QString>> images()                 override;
+    void setImages(const QList<QPair<QImage*, QString>>&)   override;
+    void setUnpairedImages(const QList<QImage*>&)           override;
 
 private:
 
@@ -125,13 +129,13 @@ public:
      * supplied for training.
      * Ownership of the returned object stays with the TrainingDataProvider.
      */
-    virtual ImageListProvider* newImages(const Identity& identity) = 0;
+    virtual ImageListProvider* newImages(const Identity& identity)  = 0;
 
     /**
      * Provides all images known for the given identity.
      * Ownership of the returned object stays with the TrainingDataProvider.
      */
-    virtual ImageListProvider* images(const Identity& identity)    = 0;
+    virtual ImageListProvider* images(const Identity& identity)     = 0;
 
 private:
 

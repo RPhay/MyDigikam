@@ -87,9 +87,13 @@ QList<Identity> FacialRecognitionWrapper::allIdentities() const
         return QList<Identity>();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
-    return (d->identityCache.values());
+    QList<Identity> result = (d->identityCache.values());
+
+    d->trainingLock.unlock();
+
+    return result;
 }
 
 Identity FacialRecognitionWrapper::identity(int id) const
@@ -99,9 +103,13 @@ Identity FacialRecognitionWrapper::identity(int id) const
         return Identity();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
-    return (d->identityCache.value(id));
+    Identity result = d->identityCache.value(id);
+
+    d->trainingLock.unlock();
+
+    return result;
 }
 
 Identity FacialRecognitionWrapper::findIdentity(const QString& attribute, const QString& value) const
@@ -111,9 +119,13 @@ Identity FacialRecognitionWrapper::findIdentity(const QString& attribute, const 
         return Identity();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
-    return (d->findByAttribute(attribute, value));
+    Identity result = d->findByAttribute(attribute, value);
+
+    d->trainingLock.unlock();
+
+    return result;
 }
 
 Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString>& attributes) const
@@ -123,7 +135,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
         return Identity();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
     Identity match;
 
@@ -134,6 +146,8 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
     if (!match.isNull())
     {
+        d->trainingLock.unlock();
+        
         return match;
     }
 
@@ -141,6 +155,8 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
     if (!uuid.isNull())
     {
+        d->trainingLock.unlock();
+
         return Identity();
     }
 
@@ -150,6 +166,8 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
     if (!match.isNull())
     {
+        d->trainingLock.unlock();
+
         return match;
     }
 
@@ -159,6 +177,8 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
     if (!match.isNull())
     {
+        d->trainingLock.unlock();
+
         return match;
     }
 
@@ -179,9 +199,13 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
 
         if (!match.isNull())
         {
+            d->trainingLock.unlock();
+
             return match;
         }
     }
+
+    d->trainingLock.unlock();
 
     return Identity();
 }
@@ -193,11 +217,13 @@ Identity FacialRecognitionWrapper::addIdentity(const QMultiMap<QString, QString>
         return Identity();
     }
 
-    QMutexLocker lock(&d->mutex);
-
     if (attributes.contains(QLatin1String("uuid")))
     {
+        d->trainingLock.lockForRead();
+
         Identity matchByUuid = findIdentity(QLatin1String("uuid"), attributes.value(QLatin1String("uuid")));
+
+        d->trainingLock.unlock();
 
         if (!matchByUuid.isNull())
         {
@@ -213,11 +239,17 @@ Identity FacialRecognitionWrapper::addIdentity(const QMultiMap<QString, QString>
     Identity identity;
     {
         FaceDbOperationGroup group;
+
+        d->trainingLock.lockForWrite();
+
         int id = FaceDbAccess().db()->addIdentity();
         identity.setId(id);
         identity.setAttributesMap(attributes);
         identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+
         FaceDbAccess().db()->updateIdentity(identity);
+
+        d->trainingLock.unlock();
     }
 
     d->identityCache[identity.id()] = identity;
@@ -236,6 +268,8 @@ Identity FacialRecognitionWrapper::addIdentityDebug(const QMultiMap<QString, QSt
 
     d->identityCache[identity.id()] = identity;
 
+    d->trainingLock.unlock();
+
     return identity;
 }
 
@@ -246,7 +280,7 @@ void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMultiMap<QSt
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     QHash<int, Identity>::iterator it = d->identityCache.find(id);
 
@@ -257,6 +291,9 @@ void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMultiMap<QSt
         it->setAttributesMap(map);
         FaceDbAccess().db()->updateIdentity(*it);
     }
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attribute, const QString& value)
@@ -266,7 +303,8 @@ void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attri
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
+
     QHash<int, Identity>::iterator it = d->identityCache.find(id);
 
     if (it != d->identityCache.end())
@@ -276,6 +314,9 @@ void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attri
         it->setAttributesMap(map);
         FaceDbAccess().db()->updateIdentity(*it);
     }
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes)
@@ -285,7 +326,8 @@ void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QSt
             return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
+
     QHash<int, Identity>::iterator it = d->identityCache.find(id);
 
     if (it != d->identityCache.end())
@@ -293,6 +335,9 @@ void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QSt
         it->setAttributesMap(attributes);
         FaceDbAccess().db()->updateIdentity(*it);
     }
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::deleteIdentity(const Identity& identityToBeDeleted)
@@ -302,10 +347,13 @@ void FacialRecognitionWrapper::deleteIdentity(const Identity& identityToBeDelete
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     FaceDbAccess().db()->deleteIdentity(identityToBeDeleted.id());
     d->identityCache.remove(identityToBeDeleted.id());
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::deleteIdentities(QList<Identity> identitiesToBeDeleted)

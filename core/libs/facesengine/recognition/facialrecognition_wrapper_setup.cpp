@@ -76,10 +76,13 @@ void FacialRecognitionWrapper::setParameter(const QString& parameter, const QVar
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     d->parameters.insert(parameter, value);
     d->applyParameters();
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
@@ -89,7 +92,7 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     for (QVariantMap::const_iterator it  = parameters.begin() ;
                                      it != parameters.end() ;
@@ -99,6 +102,9 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
     }
 
     d->applyParameters();
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::setParameters(const FaceScanSettings& parameters)
@@ -129,9 +135,13 @@ QVariantMap FacialRecognitionWrapper::parameters() const
         return QVariantMap();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
-    return d->parameters;
+    QVariantMap result = d->parameters;
+
+    d->trainingLock.unlock();
+
+    return result;
 }
 
 } // namespace Digikam

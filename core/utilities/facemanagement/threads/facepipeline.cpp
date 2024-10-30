@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -305,19 +306,6 @@ bool FacePipeline::process(const ItemInfo& info,
 
     return true;
 }
-
-/*
-bool FacePipeline::add(const ItemInfo& info,
-                       const QRect& rect,
-                       const DImg& image)
-{
-    FacePipelineExtendedPackage::Ptr package = d->buildPackage(info);
-    package->image                           = image;
-    package->detectionImage                  = image;
-    package->faces << Face(rect);
-    d->send(package);
-}
-*/
 
 void FacePipeline::train(const ItemInfo& info,
                          const QList<FaceTagsIface>& databaseFaces)

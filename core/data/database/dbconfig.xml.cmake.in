@@ -574,7 +574,7 @@
                 <statement mode="plain">CREATE TABLE FaceMatrices
                 (id INTEGER PRIMARY KEY,
                 identity INTEGER NOT NULL,
-                context TEXT,
+                removeHash TEXT NOT NULL,
                 embedding BLOB NOT NULL);
                 </statement>
             </dbaction>
@@ -589,6 +589,18 @@
                     parent INTEGER,
                     left INTEGER,
                     right INTEGER);
+                </statement>
+            </dbaction>
+
+            <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
+                <statement mode="plain">ALTER TABLE FaceMatrices
+                                        RENAME COLUMN `context` TO removeHash;
+                </statement>
+            </dbaction>
+
+            <dbaction name="IndexFaceDBFaceMatrices_removeHash_V5" mode="transaction">
+                <statement mode="plain">CREATE INDEX idx_FaceMatricesHash 
+                                        ON FaceMatrices(removeHash);
                 </statement>
             </dbaction>
 
@@ -1700,7 +1712,7 @@
                 <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     identity INTEGER NOT NULL,
-                    `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    removeHash LONGTEXT NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci,
                     embedding BLOB NOT NULL,
                     CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
@@ -1722,6 +1734,18 @@
                     CONSTRAINT Left_node FOREIGN KEY (`left`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     CONSTRAINT Right_node FOREIGN KEY (`right`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
+                </statement>
+            </dbaction>
+
+            <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
+                <statement mode="plain">ALTER TABLE FaceMatrices
+                                        CHANGE `context` removeHash LONGTEXT;
+                </statement>
+            </dbaction>
+
+            <dbaction name="IndexFaceDBFaceMatrices_removeHash_V5" mode="transaction">
+                <statement mode="plain">CREATE INDEX idx_FaceMatricesHash 
+                                        ON FaceMatrices(removeHash);
                 </statement>
             </dbaction>
 

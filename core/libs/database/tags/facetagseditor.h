@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -139,18 +140,18 @@ public:
      * Remove the given face.
      * If appropriate, the tag is also removed.
      */
-    void                removeFace(const FaceTagsIface& face, bool touchTags = true);
-    void                removeFaces(const QList<FaceTagsIface>& faces);
+    void                 removeFace(const FaceTagsIface& face, bool touchTags = true);
+    void                 removeFaces(const QList<FaceTagsIface>& faces);
 
     /**
      * Unassigns all face tags from the image and sets it's scanned property to false.
      */
-    void                removeAllFaces(qlonglong imageid);
+    void                 removeAllFaces(qlonglong imageid);
 
     /**
      * Remove a face or the face for a certain rect from an image.
      */
-    void                removeFace(qlonglong imageid, const QRect& rect);
+    void                 removeFace(qlonglong imageid, const QRect& rect);
 
     // --- Edit entry ---
 
@@ -173,7 +174,7 @@ public:
     // --- Utilities ---
 
     QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)       const;
-    QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)     const;
+    QList<ItemTagPair>   faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)    const;
 
 protected:
 

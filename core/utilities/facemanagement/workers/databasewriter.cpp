@@ -57,6 +57,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                 )
         {
             utils.removeAllFaces(package->info.id());
+            // TODO: remove all faces from training here.  This resets all facial recognition to 0
         }
 
         // Mark the whole image as scanned-for-faces.
@@ -140,7 +141,6 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                 else if (FaceTags::isPerson(it->assignedTagId))
                 {
                     // Change Tag operation.
-
                     add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId));
                 }
                 else

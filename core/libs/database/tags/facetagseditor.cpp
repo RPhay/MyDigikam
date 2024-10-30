@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -448,6 +449,9 @@ void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
 void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags)
 {
     QString regionString = TagRegion(face.region().toRect()).toXml();
+
+    face.removeFaceTraining();
+
     pair.removeProperty(FaceTagsIface::attributeForType(face.type()), regionString);
 
     if (face.type() == FaceTagsIface::ConfirmedName)

@@ -61,9 +61,14 @@ public:
     static cv::Mat prepareForRecognition(const cv::Mat& cvinputImage);
 
     /**
+     *  Returns a cvMat of the extracted features from the cvinputImage, optimized for recognition.
+     */
+    bool remove(const QString& hash);
+
+    /**
      * Register faces corresponding to an identity.
      */
-    void train(const QList<QImage*>& images, const int label, const QString& context);
+    void train(const QList<QPair<QImage*, QString>>& images, const int label);
 
     /**
      * Try to recognize the given image.
@@ -71,19 +76,19 @@ public:
      * If the identity cannot be recognized, returns -1.
      * TODO: verify workflow to economize this routine.
      */
-    int recognize(QImage* inputImage);
+    int recognize(QPair<QImage*, QString> inputImage);
 
     /**
      * Try to recognize a list of given images.
      * Returns a list of identity ids.
      * If an identity cannot be recognized, returns -1.
      */
-    QVector<int> recognize(const QList<QImage*>& inputImages);
+    QVector<int> recognize(const QList<QPair<QImage*, QString>>& inputImages);
 
     /**
      * Clear specified trained data.
      */
-    void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
+    void clearTraining(const QList<int>& idsToClear);
 
     /**
      * Set K parameter of K-Nearest neighbors algorithm.

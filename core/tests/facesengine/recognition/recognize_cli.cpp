@@ -23,6 +23,7 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
+#include <QPair>
 
 // Local includes
 
@@ -115,7 +116,13 @@ int main(int argc, char** argv)
         QElapsedTimer timer;
         timer.start();
 
-        recognizer.train(identity, images, QString::fromLatin1("test application"));
+        QList<QPair<QImage*, QString>> imageSet;
+        QList<QImage*>::iterator isi;
+        for(isi = images.begin(); isi != images.end(); ++isi)
+        {
+            imageSet << QPair<QImage*, QString>(*isi, QLatin1String("f00d"));
+        }
+        recognizer.train(identity, imageSet);
 
         int elapsed = timer.elapsed();
         qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for "
@@ -166,7 +173,7 @@ int main(int argc, char** argv)
             }
         }
 
-        recognizer.clearTraining(trainingToBeCleared, trainingContext);
+        recognizer.clearTraining(trainingToBeCleared);
         QMap<int, QStringList> trainingImages, recognitionImages;
 
         for (int i = 1 ; i <= OrlIdentities ; ++i)
@@ -214,7 +221,15 @@ int main(int argc, char** argv)
 
             QList<QImage*> images = toImages(it.value());
             qCDebug(DIGIKAM_TESTS_LOG) << "Training ORL directory " << it.key();
-            recognizer.train(identity, images, trainingContext);
+
+            QList<QPair<QImage*, QString>> imageSet;
+            QList<QImage*>::iterator isi;
+            for(isi = images.begin(); isi != images.end(); ++isi)
+            {
+                imageSet << QPair<QImage*, QString>(*isi, QLatin1String("f00d"));
+            }
+
+            recognizer.train(identity, imageSet);
             totalTrained        += images.size();
         }
 

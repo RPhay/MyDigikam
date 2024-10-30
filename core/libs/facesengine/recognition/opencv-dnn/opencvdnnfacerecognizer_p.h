@@ -172,7 +172,7 @@ class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::Parallel
 public:
 
     ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* const d,
-                       const QList<QImage*>& images,
+                       const QList<QPair<QImage*, QString>>& images,
                        QVector<int>& ids)
         : images    (images),
           ids       (ids),
@@ -187,7 +187,7 @@ public:
         {
             int id = -1;
 
-            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*(images[i].first)));
 
             switch (d->method)
             {
@@ -228,7 +228,7 @@ public:
 
 private:
 
-    const QList<QImage*>&                   images;
+    const QList<QPair<QImage*, QString>>&   images;
     QVector<int>&                           ids;
 
     OpenCVDNNFaceRecognizer::Private* const d = nullptr;
@@ -243,12 +243,10 @@ class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoop
 public:
 
     ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const d,
-                    const QList<QImage*>& images,
-                    const int& id,
-                    const QString& context)
+                    const QList<QPair<QImage*, QString>>& images,
+                    const int& id)
         : images    (images),
           id        (id),
-          context   (context),
           d         (d)
     {
     }
@@ -258,9 +256,9 @@ public:
         for(int i = range.start ; i < range.end ; ++i)
         {
             cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->
-                getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+                getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*(images[i].first)));
 
-            if (!d->insertData(faceEmbedding, id, context))
+            if (!d->insertData(faceEmbedding, id, images[i].second))
             {
                 qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << id;
             }
@@ -269,9 +267,8 @@ public:
 
 private:
 
-    const QList<QImage*>&                   images;
+    const QList<QPair<QImage*, QString>>&   images;
     const int&                              id;
-    const QString&                          context;
 
     OpenCVDNNFaceRecognizer::Private* const d = nullptr;
 
@@ -452,7 +449,7 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
     return prediction;
 }
 
-bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const int label, const QString& context)
+bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const int label, const QString& hash)
 {
     if (nodePos.rows != 1)
     {
@@ -461,7 +458,7 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
         return false;
     }
 
-    int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
+    int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, hash);
 
     if (nodeId <= 0)
     {

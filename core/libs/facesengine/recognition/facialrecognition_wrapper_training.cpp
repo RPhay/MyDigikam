@@ -22,19 +22,19 @@ namespace Digikam
 {
 
 void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>&      identitiesToBeTrained,
-                                                           TrainingDataProvider* const data,
-                                                           const QString&              trainingContext)
+                                                           TrainingDataProvider* const data)
 {
     for (const Identity& identity : std::as_const(identitiesToBeTrained))
     {
+        // TO DO: possible memory leak?  Where/when do the images get deleted?  Need to investigate
         ImageListProvider* const imageList = data->newImages(identity);
-        QList<QImage*> images              = imageList->images();
+        QList<QPair<QImage*, QString>> images              = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 
         try
         {
-            recognizer->train(images, identity.id(), trainingContext);
+            recognizer->train(images, identity.id());
         }
         catch (cv::Exception& e)
         {
@@ -47,83 +47,95 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
     }
 }
 
-void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, const QString& trainingContext)
+void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear)
 {
-    recognizer->clearTraining(idsToClear, trainingContext);
+    recognizer->clearTraining(idsToClear);
 
     delete recognizer;
 
     recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
 }
 
+void FacialRecognitionWrapper::Private::clear(const QString& hash)
+{
+    trainingLock.lockForWrite();
+
+    recognizer[0].remove(hash);
+
+    trainingLock.unlock();
+
+}
+
 // -------------------------------------------------------------------------------------
 
 void FacialRecognitionWrapper::train(const QList<Identity>& identitiesToBeTrained,
-                                     TrainingDataProvider* const data,
-                                     const QString& trainingContext)
+                                     TrainingDataProvider* const data)
 {
     if (!d || !d->dbAvailable)
     {
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
-    d->trainIdentityBatch(identitiesToBeTrained, data, trainingContext);
+    d->trainIdentityBatch(identitiesToBeTrained, data);
+
+    d->trainingLock.unlock();
+
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                     TrainingDataProvider* const data,
-                                     const QString& trainingContext)
+                                     TrainingDataProvider* const data)
 {
-    train((QList<Identity>() << identityToBeTrained), data, trainingContext);
+    train((QList<Identity>() << identityToBeTrained), data);
 }
 
 // cppcheck-suppress constParameterPointer
-void FacialRecognitionWrapper::train(const Identity& identityToBeTrained, QImage* const image,
-                                     const QString& trainingContext)
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained, QPair<QImage*, QString> const image)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
-                                                                              QList<QImage*>() << image);
-    train(identityToBeTrained, data, trainingContext);
+                                                                              QList<QPair<QImage*, QString>>() << image);
+    train(identityToBeTrained, data);
     delete data;
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                     const QList<QImage*>& images,
-                                     const QString& trainingContext)
+                                     const QList<QPair<QImage*, QString>>& images)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
-    train(identityToBeTrained, data, trainingContext);
+    train(identityToBeTrained, data);
     delete data;
 }
 
 // -------------------------------------------------------------------------------------
 
-void FacialRecognitionWrapper::clearAllTraining(const QString& trainingContext)
+void FacialRecognitionWrapper::clearAllTraining()
 {
     if (!d || !d->dbAvailable)
     {
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     d->identityCache.clear();
     FaceDbAccess().db()->clearIdentities();
 
-    d->clear(QList<int>(), trainingContext);
+    d->clear(QList<int>());
+
+    d->trainingLock.unlock();
+
 }
 
-void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesToClean,
-                                             const QString& trainingContext)
+void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesToClean)
 {
     if (!d || !d->dbAvailable || identitiesToClean.isEmpty())
     {
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
+
     QList<int>   ids;
 
     for (const Identity& id : std::as_const(identitiesToClean))
@@ -131,7 +143,26 @@ void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesTo
         ids << id.id();
     }
 
-    d->clear(ids, trainingContext);
+    d->clear(ids);
+
+    d->trainingLock.unlock();
+
 }
+
+// void FacialRecognitionWrapper::clearTraining(const QString& hash)
+// {
+
+//     if (!d || !d->dbAvailable)
+//     {
+//         return;
+//     }
+
+//     d->trainingLock.lockForWrite();
+
+//     d->clear(hash);
+
+//     d->trainingLock.unlock();
+
+// }
 
 } // namespace Digikam

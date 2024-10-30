@@ -32,7 +32,7 @@ namespace Digikam
 
 int FaceDbSchemaUpdater::schemaVersion()
 {
-    return 4;
+    return 5;
 }
 
 // -------------------------------------------------------------------------------------
@@ -214,6 +214,10 @@ bool FaceDbSchemaUpdater::makeUpdates()
         {
             updateV3ToV4();
         }
+        else if (d->currentVersion == 4)
+        {
+            updateV4ToV5();
+        }
     }
 
     return true;
@@ -247,7 +251,10 @@ bool FaceDbSchemaUpdater::createTables()
 
 bool FaceDbSchemaUpdater::createIndices()
 {
-    return d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceIndices")));
+    return (
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceIndices"))) &&
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("IndexFaceDBFaceMatrices_removeHash_V5")))
+           );
 }
 
 bool FaceDbSchemaUpdater::createTriggers()
@@ -298,6 +305,30 @@ bool FaceDbSchemaUpdater::updateV3ToV4()
 
     d->currentVersion         = 4;
     d->currentRequiredVersion = 4;
+
+    // TODO: retrain recognized identities
+
+    return true;
+}
+
+bool FaceDbSchemaUpdater::updateV4ToV5()
+{
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("RenameFaceDBFaceMatrices_contextcolumn_V5")))))
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to recreate FaceMatrices table";
+
+        return false;
+    }
+
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("IndexFaceDBFaceMatrices_removeHash_V5")))))
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create KDTree table";
+
+        return false;
+    }
+
+    d->currentVersion         = 5;
+    d->currentRequiredVersion = 5;
 
     // TODO: retrain recognized identities
 

@@ -18,6 +18,9 @@
 // Qt includes
 
 #include <QStringList>
+#include <QCryptographicHash>
+#include <QByteArray>
+
 
 // Local includes
 
@@ -25,6 +28,8 @@
 #include "coredbconstants.h"
 #include "tagscache.h"
 #include "facetags.h"
+#include "recognitiontrainingupdatequeue.h"
+
 
 namespace Digikam
 {
@@ -301,6 +306,38 @@ QDebug operator<<(QDebug dbg, const FaceTagsIface& f)
                   << ", tag "         << f.tagId()
                   << ", region"       << f.region();
     return dbg;
+}
+
+void FaceTagsIface::removeFaceTraining() const
+{
+    // we have to remove training for confirmed names only
+    if (ConfirmedName == m_type)
+    {
+        // get faceEngineUuid for tag
+        QMultiMap<QString, QString> attributes =  FaceTags::identityAttributes(m_tagId);
+
+        if (attributes.contains(QLatin1String("uuid")))
+        {
+            RecognitionTrainingUpdateQueue queue;
+
+            queue.push(hash());
+        }
+    }
+}
+
+const QString FaceTagsIface::hash() const
+{
+    // create a unique hash consisting of the imageId, rect, and tagId.
+    // order is important so as to not combine the imageId and tagId
+    // into a single number.
+    QCryptographicHash hasher(QCryptographicHash::Sha256);
+    hasher.addData(QString::number(m_imageId).toLocal8Bit().data());
+    hasher.addData(m_region.toXml().toLocal8Bit().data());
+    hasher.addData(QString::number(m_tagId).toLocal8Bit().data());
+
+    QByteArray hexHash = hasher.result().toHex();
+
+    return QLatin1String(hexHash.toHex().toStdString().c_str());
 }
 
 } // namespace Digikam

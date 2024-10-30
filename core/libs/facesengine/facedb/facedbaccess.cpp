@@ -261,7 +261,7 @@ bool FaceDbAccess::checkReadyForUse(InitializationObserver* const observer)
     return d->backend->isReady();
 }
 
-QString FaceDbAccess::lastError() const
+const QString& FaceDbAccess::lastError() const
 {
     return d->lastError;
 }

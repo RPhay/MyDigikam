@@ -63,9 +63,13 @@ bool FacialRecognitionWrapper::integrityCheck()
         return false;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
-    return FaceDbAccess().db()->integrityCheck();
+    bool result = FaceDbAccess().db()->integrityCheck();
+
+    d->trainingLock.unlock();
+
+    return result;
 }
 
 void FacialRecognitionWrapper::vacuum()
@@ -75,9 +79,12 @@ void FacialRecognitionWrapper::vacuum()
         return;
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForWrite();
 
     FaceDbAccess().db()->vacuum();
+
+    d->trainingLock.unlock();
+
 }
 
 } // namespace Digikam

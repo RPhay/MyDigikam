@@ -28,7 +28,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
         return QList<Identity>();
     }
 
-    QMutexLocker lock(&d->mutex);
+    d->trainingLock.lockForRead();
 
     QVector<int> ids;
 
@@ -52,13 +52,15 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
         results << d->identityCache.value(ids.at(i));
     }
 
+    d->trainingLock.unlock();
+
     return results;
 }
 
 QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage*>& images)
 {
     QListImageListProvider provider;
-    provider.setImages(images);
+    provider.setUnpairedImages(images);
 
     return recognizeFaces(&provider);
 }
