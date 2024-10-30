@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 01:53+0000\n"
+"POT-Creation-Date: 2024-10-30 01:47+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -47685,7 +47685,7 @@ msgstr "עיצוב"
 msgid "Effec&ts"
 msgstr "אפקט טשטוש"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -47753,14 +47753,14 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "מיקום-גאוגרפי"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64013,13 +64013,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:128
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "יצירת תיקייה למסד הנתונים?"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:129
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64027,14 +64027,14 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:133
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "אגדים"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:134
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64042,13 +64042,13 @@ msgid ""
 "Set root albums locations"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:138
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "תצוגה"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:139
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64056,14 +64056,14 @@ msgid ""
 "Customize the look of the views"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:143
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "עצה"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:144
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64071,14 +64071,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:148
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "מידע-נוסף"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:149
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64086,13 +64086,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:153
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "נוצר:"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:154
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64100,14 +64100,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "עורך תמונה"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64115,14 +64115,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "ניהול צבע"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64130,14 +64130,14 @@ msgid ""
 "Customize the color management settings"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "שולחן השוואת תמונות"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64145,13 +64145,13 @@ msgid ""
 "Customize tool used to compare items"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "עורך תמונה"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64159,14 +64159,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "מצלמות"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:188
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64174,13 +64174,13 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:195
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "תוספי KIPI"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:196
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -64188,14 +64188,14 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "שונות"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:201
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""

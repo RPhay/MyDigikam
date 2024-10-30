@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 01:53+0000\n"
+"POT-Creation-Date: 2024-10-30 01:47+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -50687,7 +50687,7 @@ msgstr "តុបតែង"
 msgid "Effec&ts"
 msgstr "បែបផែន"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -50759,14 +50759,14 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "ទីតាំង​ភូមិសាស្ត្រ"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67484,14 +67484,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:128
 #, fuzzy, kde-format
 #| msgid "Database backend"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "កម្មវិធី​ខាងក្រោយ​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:129
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67503,14 +67503,14 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:133
 #, fuzzy, kde-format
 #| msgid "Collection:"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "សម្រាំង ៖"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:134
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67522,14 +67522,14 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:138
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "មើល"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:139
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67541,14 +67541,14 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:143
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:144
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67560,13 +67560,13 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "ប្រអប់​កែសម្រួល​ទិន្នន័យ​មេតា​"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:149
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67574,14 +67574,14 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:153
 #, fuzzy, kde-format
 #| msgid "File Name Template: "
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "ពុម្ព​ឈ្មោះ​ឯកសារ​ ៖"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67589,14 +67589,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "កម្មវិធី​កែសម្រួល​រូបភាព"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67608,13 +67608,13 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "បាន​បិទ​ការ​គ្រប់គ្រង​ពណ៌..."
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67626,14 +67626,14 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "ស្រាល​"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67645,13 +67645,13 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "កម្មវិធី​កែសម្រួល​រូបភាព"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67663,14 +67663,14 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "ម៉ាស៊ីន​ថតរូប"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "
@@ -67682,13 +67682,13 @@ msgid ""
 msgstr ""
 "<qt>ព័ត៌មាន​ខាងក្រៅ​​​​<br/><i>ប្រើ​បន្ទះ​នេះ​ ដើម្បី​កត់​ត្រា​សេចក្ដី​លម្អិត​អំពី​វិចារណកថា</i></qt>"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:195
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "កម្មវិធី​ជំនួយ KIPI"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:196
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67696,14 +67696,14 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "ដែល​ផ្សេងៗ​គ្នា"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:201
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Envelope Information<br/><i>Use this panel to record editorial "

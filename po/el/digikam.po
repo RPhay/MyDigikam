@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-28 01:53+0000\n"
+"POT-Creation-Date: 2024-10-30 01:47+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -53026,7 +53026,7 @@ msgstr "&Διακόσμηση"
 msgid "Effec&ts"
 msgstr "Ε&φέ"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -53112,14 +53112,14 @@ msgstr ""
 "<qt>Ρυθμίσεις αποθήκευσης αρχείων εικόνας<br/><i>Ορισμός της προκαθορισμένης "
 "διαμόρφωσης για την αποθήκευση των εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Γεωτοποθέτηση"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -71355,13 +71355,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Βάση δεδομένων"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71371,13 +71371,13 @@ msgstr ""
 "Ρυθμίσεις Βάσης Δεδομένων\n"
 "Προσαρμογή ρυθμίσεων βάσης δεδομένων"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Συλλογές"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:134
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71387,13 +71387,13 @@ msgstr ""
 "Ρυθμίσεις Συλλογών\n"
 "Ορισμός τοποθεσιών ριζικών άλμπουμ"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Προβολές"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71403,13 +71403,13 @@ msgstr ""
 "Ρυθμίσεις Προβολών Εφαρμογής\n"
 "Διαμορφώστε την εμφάνιση των προβολών"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Υπόδειξη"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:144
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -71422,13 +71422,13 @@ msgstr ""
 "<qt>Ρυθμίσεις υποδείξεων αντικειμένων λευκώματος<br/><i>Προσαρμογή των "
 "περιεχομένων των υποδείξεων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -71441,13 +71441,13 @@ msgstr ""
 "<qt>Διαχείριση ενσωματωμένης πληροφορίας εικόνας<br/><i>Ρύθμιση σχέσεων "
 "μεταξύ των μεταδεδομένων και των εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Πρότυπα"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71457,14 +71457,14 @@ msgstr ""
 "Πρότυπα μεταδεδομένων\n"
 "Διαχειριστείτε τη συλλογή των προτύπων μεταδεδομένων"
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -71476,14 +71476,14 @@ msgstr ""
 "<qt>Ρυθμίσεις επεξεργαστή εικόνων<br/><i>Προσαρμογή της συμπεριφοράς του "
 "επεξεργαστή εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Διαχείριση χρωμάτων"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -71496,13 +71496,13 @@ msgstr ""
 "<qt>Ρυθμίσεις διαχείρισης χρωμάτων<br/><i>Προσαρμογή των ρυθμίσεων "
 "διαχείρισης χρωμάτων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Πίνακας φωτός"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -71515,13 +71515,13 @@ msgstr ""
 "<qt>Ρυθμίσεις φωτεινού πίνακα<br/><i>Προσαρμογή του εργαλείου σύγκρισης των "
 "εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -71533,13 +71533,13 @@ msgstr ""
 "<qt>Ρυθμίσεις επεξεργαστή εικόνων<br/><i>Προσαρμογή της συμπεριφοράς του "
 "επεξεργαστή εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Φωτογραφικές μηχανές"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71549,13 +71549,13 @@ msgstr ""
 "Ρυθμίσεις φωτογραφικής\n"
 "Διαχείριση των φωτογραφικών σας μηχανών"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Πρόσθετα"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:196
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -71565,14 +71565,14 @@ msgstr ""
 "Ρυθμίσεις πρόσθετων\n"
 "Ρυθμίστε ποιο πρόσθετο θα είναι προσβάσιμο από την εφαρμογή"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:201
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
