@@ -348,20 +348,9 @@ const QString FaceTagsIface::hash() const
 
     QCryptographicHash hasher(QCryptographicHash::Sha1);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
-
-    hasher.addData(QByteArrayView(fastNumberToString(m_imageId).toLatin1()));
-    hasher.addData(QByteArrayView(fastNumberToString(m_tagId).toLatin1()));
-    hasher.addData(QByteArrayView(m_region.toXml().toLatin1()));
-
-
-#else
-
     hasher.addData(fastNumberToString(m_imageId).toLatin1());
     hasher.addData(fastNumberToString(m_tagId).toLatin1());
     hasher.addData(m_region.toXml().toLatin1());
-
-#endif
 
     return QLatin1String(hasher.result().toHex());
 }
