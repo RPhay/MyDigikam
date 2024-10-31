@@ -15,16 +15,13 @@
 
 #include "dnnbasedetectormodel.h"
 
-// C++ includes
-
-#include <fstream>
-
 // Qt includes
 
 #include <QDir>
-#include <QStandardPaths>
-#include <QFileInfo>
+#include <QFile>
+#include <QTextStream>
 #include <QElapsedTimer>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -115,28 +112,27 @@ double DNNBaseDetectorModel::showInferenceTime()
 QList<QString> DNNBaseDetectorModel::loadDetectionClasses()
 {
     QList<QString> classList;
-    QString classFile;
 
     // NOTE: storing all model definitions at the same application path as face engine
 
     if (model && model->modelLoaded)
     {
-        const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList, DNNModelUsage::DNNUsageObjectDetection));
+        const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList,
+                                                                                                               DNNModelUsage::DNNUsageObjectDetection));
 
         if (configModel)
         {
-            classFile = configModel->getModelPath();
-        }
-    }
+            QFile classFile(configModel->getModelPath());
 
-    if (QFileInfo::exists(classFile))
-    {
-        std::ifstream ifs(classFile.toStdString());
-        std::string line;
+            if (classFile.exists() && classFile.open(QIODeviceBase::ReadOnly))
+            {
+                QTextStream stream(&classFile);
 
-        while (getline(ifs, line))
-        {
-            classList.append(QString::fromStdString(line));
+                while (!stream.atEnd())
+                {
+                    classList.append(stream.readLine());
+                }
+            }
         }
     }
 
