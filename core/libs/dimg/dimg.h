@@ -608,8 +608,9 @@ public:
      * In smoothScaleSection, you specify the source region, here, the result region.
      * It will often not be possible to find _integer_ source coordinates for a result region!
      */
-    DImg smoothScaleClipped(int width, int height, int clipx, int clipy, int clipwidth, int clipheight) const;
-    DImg smoothScaleClipped(const QSize& destSize, const QRect& clip) const;
+    DImg smoothScaleClipped(int width, int height, int clipx, int clipy,
+                            int clipwidth, int clipheight, bool smooth = true)            const;
+    DImg smoothScaleClipped(const QSize& destSize, const QRect& clip, bool smooth = true) const;
 
     /**
      * Take the region specified by the rectangle sx|sy, width and height sw * sh,

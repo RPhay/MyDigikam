@@ -64,12 +64,14 @@ public:
         delete [] yapoints;
     }
 
-    int*     xpoints    = nullptr;
-    uint**   ypoints    = nullptr;
-    ullong** ypoints16  = nullptr;
-    int*     xapoints   = nullptr;
-    int*     yapoints   = nullptr;
-    int      xup_yup    = 0;
+    int*     xpoints     = nullptr;
+    uint**   ypoints     = nullptr;
+    ullong** ypoints16   = nullptr;
+    int*     xapoints    = nullptr;
+    int*     yapoints    = nullptr;
+    int      xup_yup     = 0;
+
+    bool     scaleSmooth = true;
 };
 
 uint**   dimgCalcYPoints(uint* const src, int sw, int sh, int dh);
@@ -80,7 +82,7 @@ int*     dimgCalcApoints(int s, int d, int up);
 DImgScaleInfo* dimgCalcScaleInfo(const DImg& img,
                                  int sw, int sh,
                                  int dw, int dh,
-                                 bool aa);
+                                 bool aa, bool smooth);
 /**
  * For internal scale by pixel sampling only not smoothed in 8 bits RGBA.
  * Arguments:
@@ -314,7 +316,7 @@ DImg DImg::smoothScale(const QSize& destSize, Qt::AspectRatioMode aspectRatioMod
         return DImg();
     }
 
-    return smoothScaleClipped(scaleSize, QRect(QPoint(0, 0), scaleSize));
+    return smoothScaleClipped(scaleSize, QRect(QPoint(0, 0), scaleSize), true);
 }
 
 DImg DImg::smoothScale(int dw, int dh, Qt::AspectRatioMode aspectRatioMode) const
@@ -322,13 +324,13 @@ DImg DImg::smoothScale(int dw, int dh, Qt::AspectRatioMode aspectRatioMode) cons
     return smoothScale(QSize(dw, dh), aspectRatioMode);
 }
 
-DImg DImg::smoothScaleClipped(const QSize& destSize, const QRect& clip) const
+DImg DImg::smoothScaleClipped(const QSize& destSize, const QRect& clip, bool smooth) const
 {
     return DImg::smoothScaleClipped(destSize.width(), destSize.height(),
-                                    clip.x(), clip.y(), clip.width(), clip.height());
+                                    clip.x(), clip.y(), clip.width(), clip.height(), smooth);
 }
 
-DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, int cliph) const
+DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, int cliph, bool smooth) const
 {
     if ((dw <= 0) || (dh <= 0) || (clipw <= 0) || (cliph <= 0) || isNull())
     {
@@ -364,7 +366,7 @@ DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, i
         }
     }
 
-    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, w, h, dw, dh, true);
+    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, w, h, dw, dh, true, smooth);
 
     DImg buffer(*this, clipw, cliph);
 
@@ -478,7 +480,7 @@ DImg DImg::smoothScaleSection(int sx, int sy,
 
     // calculate scaleinfo
 
-    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, sw, sh, dw, dh, true);
+    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, sw, sh, dw, dh, true, true);
 
     DImg buffer(*this, dw, dh);
 
@@ -644,16 +646,18 @@ int* DImgScale::dimgCalcApoints(int s, int d, int up)
 DImgScaleInfo* DImgScale::dimgCalcScaleInfo(const DImg& img,
                                             int sw, int sh,
                                             int dw, int dh,
-                                            bool aa)
+                                            bool aa, bool smooth)
 {
     DImgScaleInfo* const isi = new DImgScaleInfo;
 
-    int scw = (ullong)dw * (ullong)img.width()  / (ullong)sw;
-    int sch = (ullong)dh * (ullong)img.height() / (ullong)sh;
+    int scw          = (ullong)dw * (ullong)img.width()  / (ullong)sw;
+    int sch          = (ullong)dh * (ullong)img.height() / (ullong)sh;
 
-    isi->xup_yup = (abs(dw) >= sw) + ((abs(dh) >= sh) << 1);
+    isi->xup_yup     = (abs(dw) >= sw) + ((abs(dh) >= sh) << 1);
 
-    isi->xpoints = dimgCalcXPoints(img.width(), scw);
+    isi->xpoints     = dimgCalcXPoints(img.width(), scw);
+
+    isi->scaleSmooth = smooth;
 
     if (img.sixteenBit())
     {
@@ -826,14 +830,14 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
-            if (YAP > 0)
+            if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
                 {
                     int r, g, b, a;
                     uint* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int rr, gg, bb, aa;
 
@@ -901,7 +905,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                 {
                     uint* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int r, g, b, a;
 
@@ -1315,14 +1319,14 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
-            if (YAP > 0)
+            if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
                 {
                     int   r = 0, g = 0, b = 0;
                     uint* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int rr = 0, gg = 0, bb = 0;
 
@@ -1382,7 +1386,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                 {
                     uint* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int r = 0, g = 0, b = 0;
 
@@ -1765,14 +1769,14 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
-            if (YAP > 0)
+            if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
                 {
                     llong r = 0, g = 0, b = 0;
                     ullong* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         llong rr = 0, gg = 0, bb = 0;
 
@@ -1832,7 +1836,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                 {
                     ullong* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         llong r = 0, g = 0, b = 0;
 
@@ -2208,7 +2212,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
-            if (YAP > 0)
+            if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
                 {
@@ -2216,7 +2220,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                     llong rr, gg, bb, aa;
                     ullong* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         pix  = ypoints[dyy + y] + xpoints[x];
                         r    = R_VAL16(pix) * INV_XAP;
@@ -2283,7 +2287,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                     llong r, g, b, a;
                     ullong* pix = nullptr;
 
-                    if (XAP > 0)
+                    if ((XAP > 0) && isi->scaleSmooth)
                     {
                         pix = ypoints[dyy + y] + xpoints[x];
                         r   = R_VAL16(pix) * INV_XAP;
