@@ -148,14 +148,14 @@ public:
      */
     static FaceTagsIface fromListing(qlonglong imageid, const QList<QVariant>& values);
 
-    /*
+    /**
      * Remove the face from face training based on the current imageId, tagId, and rect hash.
      */
     void removeFaceTraining() const;
 
-    /*
-    * generate a hash based on the imageId, tagId, and rect to uniquely identify this entry in the face training DB
-    */
+    /**
+     * Generate a hash based on the imageId, tagId, and rect to uniquely identify this entry in the face training DB.
+     */
     const QString hash() const;
 
 protected:

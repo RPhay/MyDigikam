@@ -310,10 +310,12 @@ QDebug operator<<(QDebug dbg, const FaceTagsIface& f)
 
 void FaceTagsIface::removeFaceTraining() const
 {
-    // we have to remove training for confirmed names only
+    // We have to remove training for confirmed names only.
+
     if (ConfirmedName == m_type)
     {
-        // get faceEngineUuid for tag
+        // Get faceEngineUuid for tag.
+
         QMultiMap<QString, QString> attributes =  FaceTags::identityAttributes(m_tagId);
 
         if (attributes.contains(QLatin1String("uuid")))
@@ -325,7 +327,9 @@ void FaceTagsIface::removeFaceTraining() const
     }
 }
 
-// Feel free to optimize. QString::number is 3x slower.
+/**
+ * NOTE: Feel free to optimize. QString::number is 3x slower.
+ */
 static inline QString fastNumberToString(qlonglong id)
 {
     const int size   = sizeof(qlonglong) * 2;
@@ -344,7 +348,7 @@ static inline QString fastNumberToString(qlonglong id)
 
 const QString FaceTagsIface::hash() const
 {
-    // create a unique hash consisting of the imageId, rect and tagId.
+    // Create a unique hash consisting of the imageId, rect and tagId.
 
     QCryptographicHash hasher(QCryptographicHash::Sha1);
 
