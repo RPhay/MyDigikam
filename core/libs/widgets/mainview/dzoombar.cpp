@@ -114,6 +114,7 @@ DZoomBar::DZoomBar(QWidget* const parent)
     zoomLevels << 600.0;
     zoomLevels << 800.0;
     zoomLevels << 1200.0;
+    zoomLevels << 1600.0;
 
     for (const double zoom : std::as_const(zoomLevels))
     {

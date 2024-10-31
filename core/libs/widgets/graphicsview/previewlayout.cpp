@@ -55,7 +55,7 @@ public:
     double                           previousZoom   = 1.0;
 
     double                           zoomMultiplier = 1.2;
-    double                           maxZoom        = 12.0;
+    double                           maxZoom        = 16.0;
     double                           minZoom        = 0.1;
 };
 
@@ -322,7 +322,7 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
     double minZoom = qBound(0.01, fitZoom - 0.01, 0.1);
 
     setMinZoomFactor(minZoom);
-    setMaxZoomFactor(12.0);
+    setMaxZoomFactor(16.0);
 
     // Is currently the zoom factor set to fit to window? Then set it again to fit the new size.
 
