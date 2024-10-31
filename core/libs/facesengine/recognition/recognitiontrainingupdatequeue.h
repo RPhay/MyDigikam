@@ -32,91 +32,93 @@
 namespace Digikam
 {
 
-template <typename T>
-class SharedQueue
-{
-public:
+// template <typename T>
+// class SharedQueue
+// {
+// public:
 
-    SharedQueue();
-    ~SharedQueue();
+//     SharedQueue();
+//     ~SharedQueue();
 
-    T&   front();
-    void pop_front();
+//     T&   front();
+//     void pop_front();
 
-    void push_back(T& item);
-    void push_back(T&& item);
+//     void push_back(T& item);
+//     void push_back(T&& item);
 
-    int  size();
-    bool empty();
+//     int  size();
+//     bool empty();
 
-private:
+// private:
 
-    std::deque<T>           queue_;
-    std::mutex              mutex_;
-    std::condition_variable cond_;
-}; 
+//     std::deque<T>           queue_;
+//     std::mutex              mutex_;
+//     std::condition_variable cond_;
+// }; 
 
-template <typename T>
-SharedQueue<T>::SharedQueue()  {}
+// template <typename T>
+// SharedQueue<T>::SharedQueue()  {}
 
-template <typename T>
-SharedQueue<T>::~SharedQueue() {}
+// template <typename T>
+// SharedQueue<T>::~SharedQueue() {}
 
-template <typename T>
-T& SharedQueue<T>::front()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
+// template <typename T>
+// T& SharedQueue<T>::front()
+// {
+//     std::unique_lock<std::mutex> mlock(mutex_);
 
-    while (queue_.empty())
-    {
-        cond_.wait(mlock);
-    }
+//     while (queue_.empty())
+//     {
+//         cond_.wait(mlock);
+//     }
 
-    return queue_.front();
-}
+//     return queue_.front();
+// }
 
-template <typename T>
-void SharedQueue<T>::pop_front()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
+// template <typename T>
+// void SharedQueue<T>::pop_front()
+// {
+//     std::unique_lock<std::mutex> mlock(mutex_);
 
-    while (queue_.empty())
-    {
-        cond_.wait(mlock);
-    }
+//     while (queue_.empty())
+//     {
+//         cond_.wait(mlock);
+//     }
 
-    queue_.pop_front();
-}
+//     queue_.pop_front();
+// }
 
-template <typename T>
-void SharedQueue<T>::push_back(T& item)
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    queue_.push_back(item);
-    mlock.unlock();         // Unlock before notificiation to minimize mutex con.
-    cond_.notify_one();     // Notify one waiting thread.
-}
+// template <typename T>
+// void SharedQueue<T>::push_back(T& item)
+// {
+//     std::unique_lock<std::mutex> mlock(mutex_);
+//     queue_.push_back(item);
+//     mlock.unlock();         // Unlock before notificiation to minimize mutex con.
+//     cond_.notify_one();     // Notify one waiting thread.
+// }
 
-template <typename T>
-void SharedQueue<T>::push_back(T&& item)
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    queue_.push_back(std::move(item));
-    mlock.unlock();         // Unlock before notificiation to minimize mutex con.
-    cond_.notify_one();     // Notify one waiting thread?
-}
+// template <typename T>
+// void SharedQueue<T>::push_back(T&& item)
+// {
+//     std::unique_lock<std::mutex> mlock(mutex_);
+//     queue_.push_back(std::move(item));
+//     mlock.unlock();         // Unlock before notificiation to minimize mutex con.
+//     cond_.notify_one();     // Notify one waiting thread?
+// }
 
-template <typename T>
-int SharedQueue<T>::size()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    int size = queue_.size();
-    mlock.unlock();
+// template <typename T>
+// int SharedQueue<T>::size()
+// {
+//     std::unique_lock<std::mutex> mlock(mutex_);
+//     int size = queue_.size();
+//     mlock.unlock();
 
-    return size;
-}
+//     return size;
+// }
 
 // -----------------------------------------------------
+template <typename T>
+class SharedQueue;
 
 class DIGIKAM_GUI_EXPORT RecognitionTrainingUpdateQueue
 {
@@ -127,11 +129,11 @@ public:
 
 public:
 
-    void push(const QString& hash)          { QString val = hash; queue.push_back(val); }
-    void pop()                              { queue.pop_front();                        }
-    QString front()                         { return queue.front();                     }
+    void push(const QString& hash);
+    void pop();
+    QString front();
 
-    QString endSignal()                     { return QLatin1String("TERMINATE");        }
+    QString endSignal();
 
     void registerReaderThread(const QThread* thread);
     void unregisterReaderThread(const QThread* thread);

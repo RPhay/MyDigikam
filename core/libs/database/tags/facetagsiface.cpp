@@ -314,16 +314,9 @@ void FaceTagsIface::removeFaceTraining() const
 
     if (ConfirmedName == m_type)
     {
-        // Get faceEngineUuid for tag.
+        RecognitionTrainingUpdateQueue queue;
 
-        QMultiMap<QString, QString> attributes =  FaceTags::identityAttributes(m_tagId);
-
-        if (attributes.contains(QLatin1String("uuid")))
-        {
-            RecognitionTrainingUpdateQueue queue;
-
-            queue.push(hash());
-        }
+        queue.push(hash());
     }
 }
 
