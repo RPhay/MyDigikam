@@ -40,8 +40,6 @@ ExifToolProcess::ExifToolProcess()
 
 ExifToolProcess::~ExifToolProcess()
 {
-    killExifTool();
-
     delete d;
 }
 
