@@ -325,24 +325,41 @@ void FaceTagsIface::removeFaceTraining() const
     }
 }
 
+// Feel free to optimize. QString::number is 3x slower.
+static inline QString fastNumberToString(qlonglong id)
+{
+    const int size   = sizeof(qlonglong) * 2;
+    qlonglong number = id;
+    char c[size + 1];
+    c[size]          = '\0';
+
+    for (int i = 0 ; i < size ; ++i)
+    {
+        c[i]     = 'a' + (number & 0xF);
+        number >>= 4;
+    }
+
+    return QLatin1String(c);
+}
+
 const QString FaceTagsIface::hash() const
 {
-    // create a unique hash consisting of the imageId, rect, and tagId.
-    // order is important so as to not combine the imageId and tagId
-    // into a single number.
+    // create a unique hash consisting of the imageId, tagId and rect.
 
     QCryptographicHash hasher(QCryptographicHash::Sha1);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
 
-    hasher.addData(QByteArrayView(QString::number(m_imageId).toLatin1()));
+    hasher.addData(QByteArrayView(fastNumberToString(m_imageId).toLatin1()));
+    hasher.addData(QByteArrayView(fastNumberToString(m_tagId).toLatin1()));
     hasher.addData(QByteArrayView(m_region.toXml().toLatin1()));
-    hasher.addData(QByteArrayView(QString::number(m_tagId).toLatin1()));
+
+
 #else
 
-    hasher.addData(QString::number(m_imageId).toLatin1());
+    hasher.addData(fastNumberToString(m_imageId).toLatin1());
+    hasher.addData(fastNumberToString(m_tagId).toLatin1());
     hasher.addData(m_region.toXml().toLatin1());
-    hasher.addData(QString::number(m_tagId).toLatin1());
 
 #endif
 
