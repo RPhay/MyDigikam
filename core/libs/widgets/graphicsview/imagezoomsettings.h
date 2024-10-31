@@ -28,8 +28,6 @@
 namespace Digikam
 {
 
-extern bool s_imageSmoothScale;
-
 class DIGIKAM_EXPORT ImageZoomSettings
 {
 
@@ -148,7 +146,11 @@ public:
      */
     double snappedZoomFactor(double newZoom, const QSizeF& frameSize)               const;
 
+    /**
+     * Static functions to define the smooth scaling of the image.
+     */
     static void setImageSmoothScale(bool enable);
+    static bool getImageSmoothScale();
 
 private:
 

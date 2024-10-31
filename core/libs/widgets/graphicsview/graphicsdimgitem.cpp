@@ -271,7 +271,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
                                                        scaledDrawRect.y(),
                                                        scaledDrawRect.width(),
                                                        scaledDrawRect.height(),
-                                                       s_imageSmoothScale
+                                                       d->zoomSettings.getImageSmoothScale()
                                                       );
 
         pix              = scaledImage.convertToPixmap();
