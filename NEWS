@@ -169,7 +169,7 @@ BUGFIXES:
 144 ==> 495428 - Binary file download is broken for digiKam >= 8.4.0.
 145 ==> 495523 - digiKam not opening on Mac Silicon.
 146 ==> 495508 - Crash in image editor wihile opening Color Auto Correction.
-147 ==> 
+147 ==> 495628 - When starting digiKam the error appears: The application "Finder" does not have the permission to open "(null)".
 148 ==> 
 149 ==> 
 150 ==> 
