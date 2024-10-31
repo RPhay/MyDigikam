@@ -330,14 +330,24 @@ const QString FaceTagsIface::hash() const
     // create a unique hash consisting of the imageId, rect, and tagId.
     // order is important so as to not combine the imageId and tagId
     // into a single number.
-    QCryptographicHash hasher(QCryptographicHash::Sha256);
-    hasher.addData(QString::number(m_imageId).toLocal8Bit().data());
-    hasher.addData(m_region.toXml().toLocal8Bit().data());
-    hasher.addData(QString::number(m_tagId).toLocal8Bit().data());
 
-    QByteArray hexHash = hasher.result().toHex();
+    QCryptographicHash hasher(QCryptographicHash::Sha1);
 
-    return QLatin1String(hexHash.toHex().toStdString().c_str());
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+
+    hasher.addData(QByteArrayView(QString::number(m_imageId).toLatin1()));
+    hasher.addData(QByteArrayView(QString::number(m_tagId).toLatin1()));
+    hasher.addData(QByteArrayView(m_region.toXml().toLatin1()));
+
+#else
+
+    hasher.addData(QByteArrayView(QString::number(m_imageId).toLatin1()));
+    hasher.addData(QByteArrayView(QString::number(m_tagId).toLatin1()));
+    hasher.addData(QByteArrayView(m_region.toXml().toLatin1()));
+
+#endif
+
+    return QLatin1String(hasher.result().toHex());
 }
 
 } // namespace Digikam
