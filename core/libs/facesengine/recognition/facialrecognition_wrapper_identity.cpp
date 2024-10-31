@@ -147,7 +147,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
     if (!match.isNull())
     {
         d->trainingLock.unlock();
-        
+
         return match;
     }
 
@@ -293,7 +293,6 @@ void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMultiMap<QSt
     }
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attribute, const QString& value)
@@ -316,7 +315,6 @@ void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attri
     }
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes)
@@ -337,7 +335,6 @@ void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QSt
     }
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::deleteIdentity(const Identity& identityToBeDeleted)
@@ -353,7 +350,6 @@ void FacialRecognitionWrapper::deleteIdentity(const Identity& identityToBeDelete
     d->identityCache.remove(identityToBeDeleted.id());
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::deleteIdentities(QList<Identity> identitiesToBeDeleted)

@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-08
- * Description : Node of KD-Tree for vector space partitioning
+ * Description : Node of KD-Tree for vector space partitioning.
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
@@ -76,7 +76,6 @@ private:
 /*
     cv::Ptr<cv::FaceRecognizerSF> m_net         = nullptr;
 */
-
 };
 
 } // namespace Digikam

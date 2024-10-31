@@ -183,7 +183,7 @@ public:
      * Larger images can be passed, but may be downscaled.
      */
 
-    // TODO : review to see if this function is necessary
+    // TODO: review to see if this function is necessary
 /*
     int recommendedImageSize(const QSize& availableSize = QSize()) const;
 */

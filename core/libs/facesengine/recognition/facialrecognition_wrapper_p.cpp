@@ -43,7 +43,7 @@ T* getObjectOrCreate(T* &ptr)
 */
 
 FacialRecognitionWrapper::Private::Private()
-                                 : trainingLock(QReadWriteLock::RecursionMode::Recursive)                                            
+    : trainingLock(QReadWriteLock::RecursionMode::Recursive)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
@@ -51,7 +51,6 @@ FacialRecognitionWrapper::Private::Private()
     recognizeModel            = ApplicationSettings::instance()->getFaceRecognitionModel();
 
     FaceDbAccess::setParameters(params, recognizeModel);
-
 
     dbAvailable               = FaceDbAccess::checkReadyForUse(nullptr);
 
@@ -76,7 +75,7 @@ FacialRecognitionWrapper::Private::Private()
 
     trainingLock.lockForWrite();
 
-    recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
+    recognizer       = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, recognizeModel);
 
     trainingLock.unlock();
 
@@ -84,27 +83,29 @@ FacialRecognitionWrapper::Private::Private()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    // priority should be equal or greater than trainer or recognizer threads
+    // Priority should be equal or greater than trainer or recognizer threads.
 
     removeThreadPool->setThreadPriority(QThread::NormalPriority);
 
 #endif
 
-    // we only need 1 thread for the training remover
+    // We only need 1 thread for the training remover.
 
     removeThreadPool->setMaxThreadCount(1);
 
-    // run the remove queue listener thread
+    // Run the remove queue listener thread.
 
     removeThreadResult = QtConcurrent::run(removeThreadPool, &trainingRemoveConcurrent, this);
 }
 
 FacialRecognitionWrapper::Private::~Private()
 {
-    // send the end signal to the queue
+    // Send the end signal to the queue.
+
     removeQueue.push(removeQueue.endSignal());
 
-    // clean up dynamic objects
+    // Clean up dynamic objects.
+
     delete recognizer;
     delete removeThreadPool;
 }

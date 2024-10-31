@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-08
- * Description : Implementation of KD-Tree for vector space partitioning
+ * Description : Implementation of KD-Tree for vector space partitioning.
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
@@ -44,14 +44,14 @@ public:
     QMutex               mutex;
 
     QVector<KDNodeBase*> nodeMap;
-    int                  mapThreshold   = KDTREE_MAP_THRESHOLD;    ///< above this size start using the KDTree instead of the vector.
+    int                  mapThreshold   = KDTREE_MAP_THRESHOLD;    ///< Above this size start using the KDTree instead of the vector.
     bool                 useMap         = true;
 
 };
 
 KDTreeBase::KDTreeBase(
                        int dim,
-                       int threshold = KDTREE_MAP_THRESHOLD        // If the vector grows to 500 items, start using the KDTree.
+                       int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
                       )
                     : d(new Private(dim, threshold))
 {
@@ -69,7 +69,7 @@ KDTreeBase::KDTreeBase(
             QString::fromUtf8("true") == bruteForce.toLower()
            )
         {
-            d->mapThreshold = std::numeric_limits<int>::max();      // set the vectorThreshold so high we always use the vector.
+            d->mapThreshold = std::numeric_limits<int>::max();      // Set the vectorThreshold so high we always use the vector.
         }
     }
 }
@@ -103,7 +103,6 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
 
         if (d->useMap)
         {
-
             if (d->nodeMap.size() < d->mapThreshold)
             {
                 d->nodeMap.append(newNode);
@@ -127,7 +126,7 @@ QMap<double, QVector<int> > KDTreeBase::getClosestNeighbors(const cv::Mat& posit
     QMap<double, QVector<int> > closestNeighbors;
 
     // To avoid issues with sparse density in the tree we initially use a vector of nodes
-    // and compare all targets to the sample nodes in the vector.  When sufficient data density
+    // and compare all targets to the sample nodes in the vector. When sufficient data density
     // has been achieved, we delete the vector (but not the nodes), and begin using the tree
     // for classification.
 

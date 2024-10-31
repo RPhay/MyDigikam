@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-08
- * Description : Node of KD-Tree for vector space partitioning
+ * Description : Node of KD-Tree for vector space partitioning.
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
@@ -212,7 +212,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "FACE MATCH Id:" << d->identity
                                     << "dist1:" << result.distance1
-                                    << " dist2:" << result.distance2;
+                                    << "dist2:" << result.distance2;
 
         neighborList[result.distance1].append(d->identity);
 
@@ -293,7 +293,9 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
     if (sqrDistanceleftTree < sqrDistancerightTree)
     {
-//        if (sqrDistanceleftTree < sqRange)
+/*
+        if (sqrDistanceleftTree < sqRange)
+*/
         {
             // Traverse left Tree.
 
@@ -315,7 +317,9 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     }
     else
     {
-//        if (sqrDistancerightTree < sqRange)
+/*
+        if (sqrDistancerightTree < sqRange)
+*/
         {
             // Traverse right Tree.
 

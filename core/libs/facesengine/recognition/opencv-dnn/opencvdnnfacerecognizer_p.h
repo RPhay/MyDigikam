@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2020-05-22
- * Description : Wrapper of face recognition using OpenFace
+ * Description : Wrapper of face recognition using OpenFace.
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -187,7 +187,8 @@ public:
         {
             int id = -1;
 
-            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*(images[i].first)));
+            cv::Mat faceEmbedding = d->extractors[i % (d->extractors.size())]->
+                getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*(images[i].first)));
 
             switch (d->method)
             {
@@ -243,7 +244,8 @@ class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoop
 public:
 
     ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const d,
-                    const QList<QPair<QImage*, QString>>& images,
+                    const QList<QPair<QImage*,
+                    QString>>& images,
                     const int& id)
         : images    (images),
           id        (id),
@@ -255,7 +257,7 @@ public:
     {
         for(int i = range.start ; i < range.end ; ++i)
         {
-            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->
+            cv::Mat faceEmbedding = d->extractors[i % (d->extractors.size())]->
                 getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*(images[i].first)));
 
             if (!d->insertData(faceEmbedding, id, images[i].second))
@@ -345,11 +347,13 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
     if (FaceScanSettings::FaceRecognitionModel::SFace == recognizeModel)
     {
-        threshold = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("SFace"),
+                                                          DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
     }
     else
     {
-        threshold = DNNModelManager::instance()->getModel(QLatin1String("OpenFace"), DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
+        threshold = DNNModelManager::instance()->getModel(QLatin1String("OpenFace"),
+                                                          DNNModelUsage::DNNUsageFaceRecognition)->getThreshold(uiThreshold);
     }
 
     // Look for K-nearest neighbor which have the cosine distance greater than the threshold.

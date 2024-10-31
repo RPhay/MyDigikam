@@ -3,8 +3,8 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-01
- * Description : Face recognition using deep learning
- *               The internal DNN library interface
+ * Description : Face recognition using deep learning.
+ *               The internal DNN library interface.
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -41,14 +41,14 @@ class Q_DECL_HIDDEN DNNSFaceExtractor::Private
 {
 public:
 
-    Private() = default;
+    Private()  = default;
     ~Private() = default;
 
 public:
 
     int                             ref             = 1;
 
-    // TODO move d private to base. Move DNNModelBase* to d private. YuNet stays in SFace.
+    // TODO: move d private to base. Move DNNModelBase* to d private. YuNet stays in SFace.
 
     DNNModelBase*                   model           = nullptr;
     DNNModelYuNet*                  detectorModel   = nullptr;
@@ -82,7 +82,7 @@ DNNSFaceExtractor::~DNNSFaceExtractor()
 
 bool DNNSFaceExtractor::loadModels()
 {
-    d->model = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition);
+    d->model         = DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition);
     d->detectorModel = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
 
     try
@@ -94,6 +94,7 @@ bool DNNSFaceExtractor::loadModels()
             if (!d->model->modelLoaded)
             {
                 cv::Ptr<cv::FaceRecognizerSF> net = static_cast<DNNModelSFace*>(d->model)->getNet();
+
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
             }
 
@@ -102,6 +103,7 @@ bool DNNSFaceExtractor::loadModels()
             if (!d->detectorModel->modelLoaded)
             {
                 cv::Ptr<cv::FaceDetectorYN> detNet = static_cast<DNNModelYuNet*>(d->detectorModel)->getNet();
+
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
             }
         }

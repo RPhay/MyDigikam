@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-08
- * Description : Node of KD-Tree for vector space partitioning
+ * Description : Node of KD-Tree for vector space partitioning.
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
@@ -37,10 +37,10 @@ KDNodeSFace::KDNodeSFace(const cv::Mat& nodePos,
                          const int      identity,
                          int            splitAxis,
                          int            dimension)
-            : KDNodeBase(nodePos,
-                         identity,
-                         splitAxis,
-                         dimension)
+    : KDNodeBase(nodePos,
+                 identity,
+                 splitAxis,
+                 dimension)
 {
 }
 
@@ -88,10 +88,10 @@ KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
     // to avoid false negatives.
 
     cosThreshold = 1.0 + (sqRange / 10.0);
-
-    // qCDebug(DIGIKAM_FACEDB_LOG) << "Checking cos:" << cosDistance << " norm_l1:" << norm_l1Distance;
-    // qCDebug(DIGIKAM_FACEDB_LOG) << "params: sqRange" << sqRange << " cosThreshold:" << cosThreshold;
-
+/*
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Checking cos:" << cosDistance << " norm_l1:" << norm_l1Distance;
+    qCDebug(DIGIKAM_FACEDB_LOG) << "params: sqRange" << sqRange << " cosThreshold:" << cosThreshold;
+*/
     result.distance1 = 1.0 - cosDistance;
     result.distance2 = norm_l1Distance;
 

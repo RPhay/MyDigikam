@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2020-05-22
- * Description : Wrapper of face recognition using OpenFace
+ * Description : Wrapper of face recognition using OpenFace.
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -85,9 +85,9 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const cv::Mat& cvInputIma
     return cvOutputImage;
 }
 
-
-void OpenCVDNNFaceRecognizer::train(const QList<QPair<QImage*, QString>>& images,
-                                    const int             label)
+void OpenCVDNNFaceRecognizer::train(const QList<QPair<QImage*,
+                                    QString>>& images,
+                                    const int label)
 {
     cv::parallel_for_(cv::Range(0, images.size()), Private::ParallelTrainer(d, images, label));
 
@@ -114,7 +114,6 @@ bool OpenCVDNNFaceRecognizer::remove(const QString& hash)
 
     return result;
 }
-
 
 int OpenCVDNNFaceRecognizer::recognize(QPair<QImage*, QString> inputImage)
 {

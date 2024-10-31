@@ -72,9 +72,11 @@ void QListImageListProvider::setImages(const QList<QPair<QImage*, QString>>& lst
 void QListImageListProvider::setUnpairedImages(const QList<QImage*>& lst)
 {
     QList<QImage*>::const_iterator i;
-    for (i = lst.begin(); i != lst.end(); ++i)
+
+    for (i = lst.begin() ; i != lst.end() ; ++i)
     {
-        // add to QPair list here
+        // Add to QPair list here.
+
         list << QPair<QImage*, QString>(*i, QString());
     }
 }

@@ -3,8 +3,8 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-01
- * Description : Face recognition using deep learning
- *               The internal DNN library interface
+ * Description : Face recognition using deep learning.
+ *               The internal DNN library interface.
  *
  * SPDX-FileCopyrightText: 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -55,8 +55,9 @@ private:
 
     class Private;
     Private* const d                = nullptr;
-
-    // DNNModelYuNet*  detectorModel   = nullptr;
+/*
+    DNNModelYuNet*  detectorModel   = nullptr;
+*/
 };
 
 } // namespace Digikam

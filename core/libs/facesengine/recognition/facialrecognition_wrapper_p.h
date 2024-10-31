@@ -71,7 +71,7 @@ public:
     void clear(const QList<int>& idsToClear);
 
     void clear(const QString& hash);
-    
+
     // --- Identity management (facesengine_interface_identity.cpp) ----------------------
 
     static bool identityContains(const Identity& identity,
@@ -99,6 +99,7 @@ public:
     QFuture<bool>                           removeThreadResult;
 
 private:
+
     static bool trainingRemoveConcurrent(FacialRecognitionWrapper::Private* self);
 };
 

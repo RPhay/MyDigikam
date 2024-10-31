@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-06-08
- * Description : Implementation of KD-Tree for vector space partitioning
+ * Description : Implementation of KD-Tree for vector space partitioning.
  *
  * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
@@ -28,12 +28,14 @@
 #include "digikam_opencv.h"
 #include "kd_nodebase.h"
 
-// Due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
-// once we have achieved a suitabe data density we delete the vector (but not the nodes)
-// and begin using the tree.
-// The next refactor will include replacing the tree with a more appropriate HDLSS classifier.
+/**
+ * Due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
+ * once we have achieved a suitabe data density we delete the vector (but not the nodes)
+ * and begin using the tree.
+ * The next refactor will include replacing the tree with a more appropriate HDLSS classifier.
+ */
 
-#define KDTREE_MAP_THRESHOLD 500 // size of the vector before we start using the tree
+#define KDTREE_MAP_THRESHOLD 500 ///< Size of the vector before we start using the tree.
 
 namespace Digikam
 {
@@ -60,7 +62,6 @@ public:
      * @return
      */
     virtual KDNodeBase* add(const cv::Mat& position, const int identity);
-
 
     /**
      * @brief create an ew node

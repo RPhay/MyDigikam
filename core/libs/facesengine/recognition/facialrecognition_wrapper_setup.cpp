@@ -46,7 +46,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
         threshold = parameters.value(QLatin1String("recognizeAccuracy")).toInt();
     }
 
-    if      (parameters.contains(QLatin1String("recognizeModel")))
+    if (parameters.contains(QLatin1String("recognizeModel")))
     {
         recognizeModel = static_cast<FaceScanSettings::FaceRecognitionModel>(parameters.value(QLatin1String("recognizeModel")).toInt());
     }
@@ -82,7 +82,6 @@ void FacialRecognitionWrapper::setParameter(const QString& parameter, const QVar
     d->applyParameters();
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
@@ -104,7 +103,6 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
     d->applyParameters();
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::setParameters(const FaceScanSettings& parameters)

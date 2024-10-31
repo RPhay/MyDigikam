@@ -26,9 +26,12 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
 {
     for (const Identity& identity : std::as_const(identitiesToBeTrained))
     {
-        // TO DO: possible memory leak?  Where/when do the images get deleted?  Need to investigate
-        ImageListProvider* const imageList = data->newImages(identity);
-        QList<QPair<QImage*, QString>> images              = imageList->images();
+        // TODO: possible memory leak?
+        //       Where/when do the images get deleted?
+        //       Need to investigate.
+
+        ImageListProvider* const imageList    = data->newImages(identity);
+        QList<QPair<QImage*, QString>> images = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 
@@ -63,7 +66,6 @@ void FacialRecognitionWrapper::Private::clear(const QString& hash)
     recognizer[0].remove(hash);
 
     trainingLock.unlock();
-
 }
 
 // -------------------------------------------------------------------------------------
@@ -81,7 +83,6 @@ void FacialRecognitionWrapper::train(const QList<Identity>& identitiesToBeTraine
     d->trainIdentityBatch(identitiesToBeTrained, data);
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
@@ -96,6 +97,7 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained, QPair<
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
                                                                               QList<QPair<QImage*, QString>>() << image);
     train(identityToBeTrained, data);
+
     delete data;
 }
 
@@ -104,6 +106,7 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
     train(identityToBeTrained, data);
+
     delete data;
 }
 
@@ -124,7 +127,6 @@ void FacialRecognitionWrapper::clearAllTraining()
     d->clear(QList<int>());
 
     d->trainingLock.unlock();
-
 }
 
 void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesToClean)
@@ -136,7 +138,7 @@ void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesTo
 
     d->trainingLock.lockForWrite();
 
-    QList<int>   ids;
+    QList<int> ids;
 
     for (const Identity& id : std::as_const(identitiesToClean))
     {
@@ -146,23 +148,22 @@ void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesTo
     d->clear(ids);
 
     d->trainingLock.unlock();
-
 }
 
-// void FacialRecognitionWrapper::clearTraining(const QString& hash)
-// {
+/*
+void FacialRecognitionWrapper::clearTraining(const QString& hash)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
 
-//     if (!d || !d->dbAvailable)
-//     {
-//         return;
-//     }
+    d->trainingLock.lockForWrite();
 
-//     d->trainingLock.lockForWrite();
+    d->clear(hash);
 
-//     d->clear(hash);
-
-//     d->trainingLock.unlock();
-
-// }
+    d->trainingLock.unlock();
+}
+*/
 
 } // namespace Digikam

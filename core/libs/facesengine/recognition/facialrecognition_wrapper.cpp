@@ -84,7 +84,6 @@ void FacialRecognitionWrapper::vacuum()
     FaceDbAccess().db()->vacuum();
 
     d->trainingLock.unlock();
-
 }
 
 } // namespace Digikam
