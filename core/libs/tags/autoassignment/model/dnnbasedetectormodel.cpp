@@ -124,7 +124,7 @@ QList<QString> DNNBaseDetectorModel::loadDetectionClasses()
         {
             QFile classFile(configModel->getModelPath());
 
-            if (classFile.exists() && classFile.open(QIODeviceBase::ReadOnly))
+            if (classFile.exists() && classFile.open(QIODevice::ReadOnly))
             {
                 QTextStream stream(&classFile);
 
