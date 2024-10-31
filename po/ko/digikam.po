@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 01:47+0000\n"
+"POT-Creation-Date: 2024-10-31 01:48+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -50646,7 +50646,7 @@ msgstr "장식(&D)"
 msgid "Effec&ts"
 msgstr "효과(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -50719,14 +50719,14 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "위치"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67600,14 +67600,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:127
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "데이터베이스"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67615,14 +67615,14 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:132
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "모음집"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67630,14 +67630,14 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:137
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "보기"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67650,14 +67650,14 @@ msgstr ""
 "<qt>축소판 표시줄 항목 도구 팁 설정<br/><i>도구 팁의 정보 사용자 정의</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:142
 #, fuzzy, kde-format
 #| msgid "Tool Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "도구 팁"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:143
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67670,14 +67670,14 @@ msgstr ""
 "<qt>축소판 표시줄 항목 도구 팁 설정<br/><i>도구 팁의 정보 사용자 정의</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:147
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "메타데이터"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67685,14 +67685,14 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "템플릿"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67700,14 +67700,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:157
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "이미지 편집기"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67720,14 +67720,14 @@ msgstr ""
 "<qt>축소판 표시줄 항목 도구 팁 설정<br/><i>도구 팁의 정보 사용자 정의</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "색 관리"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67735,14 +67735,14 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:167
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "라이트 테이블"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67755,14 +67755,14 @@ msgstr ""
 "<qt>축소판 표시줄 항목 도구 팁 설정<br/><i>도구 팁의 정보 사용자 정의</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:181
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "이미지 품질 정렬 도구"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67775,14 +67775,14 @@ msgstr ""
 "<qt>축소판 표시줄 항목 도구 팁 설정<br/><i>도구 팁의 정보 사용자 정의</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:186
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "카메라"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67790,14 +67790,14 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 #| msgid "Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "플러그인"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:195
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -67810,14 +67810,14 @@ msgstr ""
 "<qt>기본 인터페이스 플러그인 설정<br/><i>응용 프로그램에서 접근 할 수있는 플"
 "러그인 설정</i></qt>"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "기타"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""

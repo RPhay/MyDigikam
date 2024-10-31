@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 01:47+0000\n"
+"POT-Creation-Date: 2024-10-31 01:48+0000\n"
 "PO-Revision-Date: 2024-10-29 14:55+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -49276,7 +49276,7 @@ msgstr "S&kreyting"
 msgid "Effec&ts"
 msgstr "Sjón&hverfingar"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49355,13 +49355,13 @@ msgstr ""
 "<qt>Stillingar fyrir vistun myndskráa<br/><i>Setur sjálfgefnar stillingar "
 "sem notaðar eru við vistun myndskráa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Hnattstaðsetning"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66389,13 +66389,13 @@ msgstr ""
 "endurræsinguna. Sumar stillingar eru háðar vélbúnaði og gætu haft engin "
 "áhrif.</b>"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Gagnagrunnur"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66405,13 +66405,13 @@ msgstr ""
 "Stillingar gagnagrunns\n"
 "Sérsníddu stillingar gagnagrunnsins"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Söfn"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66421,13 +66421,13 @@ msgstr ""
 "Stillingar myndasafna\n"
 "Stilltu staðsetningu á grunnmöppum"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Skoðun"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66437,13 +66437,13 @@ msgstr ""
 "Stillingar albúmasýna\n"
 "Sérsníddu útlit sýnanna"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Vísbendingar verkfæra"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66453,13 +66453,13 @@ msgstr ""
 "Stillingar verkfæravísbendinga í albúmum\n"
 "Sérsníddu upplýsingar í vísbendingum verkfæra"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Lýsigögn"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66469,13 +66469,13 @@ msgstr ""
 "Stjórnun ígræddra myndupplýsinga\n"
 "Setur upp vensl milli mynda og lýsigagna (metadata)"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sniðskrár"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66485,13 +66485,13 @@ msgstr ""
 "Sniðmát lýsigagna\n"
 "Sýsla með forsniðin sniðmát fyrir lýsigagnaupplýsingar"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Myndvinnsluforrit"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66501,13 +66501,13 @@ msgstr ""
 "Stillingar myndvinnsluforrits\n"
 "Sérsníddu hegðun myndvinnsluforritsins"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Litastýring"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66517,13 +66517,13 @@ msgstr ""
 "Stillingar litastýringar\n"
 "Sérsníddu stillingar litastýringar"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Ljósaborð"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66533,13 +66533,13 @@ msgstr ""
 "Stillingar ljósaborðs\n"
 "Sérsníddu verkfærið sem notað er til að bera saman atriði"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66549,13 +66549,13 @@ msgstr ""
 "Stillingar myndgæðaröðunar\n"
 "Sérsníddu sjálfgefnar stillingar til röðunar á myndum eftir gæðum þeirra"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Myndavélar"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66565,13 +66565,13 @@ msgstr ""
 "Myndavélastillingar\n"
 "Sýslaðu með myndavélarnar þínar"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Viðbætur"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66581,13 +66581,13 @@ msgstr ""
 "Stillingar viðbóta\n"
 "Stilltu hvaða viðbætur séu aðgengilegar úr aðalviðmótinu"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""

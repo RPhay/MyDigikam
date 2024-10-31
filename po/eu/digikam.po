@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 01:47+0000\n"
+"POT-Creation-Date: 2024-10-31 01:48+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -51635,7 +51635,7 @@ msgstr "&Apaindu"
 msgid "Effec&ts"
 msgstr "Lausotze-efektuak"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -51718,14 +51718,14 @@ msgstr ""
 "<qt>Irudien fitxategiak gordetzeko ezarpenak<br/><i>Ezarri konfigurazio "
 "lehenetsia irudiak gordetzean erabiltzeko.</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokalizazioa"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -69244,13 +69244,13 @@ msgstr ""
 "berrabiatu beharra dago. Ezarpen batzuk hardwarearekiko mendekoak dira eta "
 "baliteke eraginik ez izatea.</b>"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Datu-basea"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69260,13 +69260,13 @@ msgstr ""
 "Datu-basearen ezarpenak\n"
 "Datu-basearen ezarpenak neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Bildumak"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69276,13 +69276,13 @@ msgstr ""
 "Bildumen ezarpenak\n"
 "Ezarri erroko albumen kokalekuak"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Ikuspegiak"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69292,13 +69292,13 @@ msgstr ""
 "Aplikazioaren ikuspegien ezarpenak\n"
 "Ikuspegien itxura neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Argibidea"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69308,13 +69308,13 @@ msgstr ""
 "Elementuen argibideen ezarpenak\n"
 "Elementuen argibideen informazioa neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadatuak"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69324,13 +69324,13 @@ msgstr ""
 "Irudien kapsulatutako informazioaren kudeaketa\n"
 "Irudien eta metadatuen arteko erlazioak ezarri"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Txantiloiak"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69340,13 +69340,13 @@ msgstr ""
 "Metadatuen txantiloiak\n"
 "Metadatu txantiloien zure bilduma kudeatu"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Irudi-editorea"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69356,13 +69356,13 @@ msgstr ""
 "Irudi-editorearen ezarpenak\n"
 "Irudi-editorearen ezarpenak neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Kolore-kudeaketa"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69372,13 +69372,13 @@ msgstr ""
 "Kolore-kudeaketarako ezarpenak\n"
 "Kolore-kudeaketaren ezarpenak neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Argi-mahaia"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69388,13 +69388,13 @@ msgstr ""
 "Argi-mahaiaren ezarpenak\n"
 "Irudiak konparatzeko erabilitako tresna neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Irudi-kalitatearen sailkatzailea"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69404,13 +69404,13 @@ msgstr ""
 "Irudi-kalitate sailkatzailearen ezarpenak\n"
 "Irudi-triajea kalitatearen arabera egiteko ezarpen lehenetsiak neurrira ipini"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamerak"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69420,13 +69420,13 @@ msgstr ""
 "Kamera ezarpenak\n"
 "Zure kamera gailuak kudeatu"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginak"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -69436,13 +69436,13 @@ msgstr ""
 "Plugin ezarpenak\n"
 "Aplikaziotik atzigarri izango diren pluginak ezarri"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Askotarikoak"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""

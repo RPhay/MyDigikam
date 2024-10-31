@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 01:47+0000\n"
+"POT-Creation-Date: 2024-10-31 01:48+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -46575,7 +46575,7 @@ msgstr ""
 msgid "Effec&ts"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:121
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -46642,13 +46642,13 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "გეოლოკაცია"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62608,13 +62608,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "მონაცემთა ბაზა"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62622,13 +62622,13 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "კოლექციები"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62636,13 +62636,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "ხედები"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62650,13 +62650,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "მინიშნება"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62664,13 +62664,13 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "მეტამონაცემები"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62678,13 +62678,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "შაბლონები"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62692,13 +62692,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "გამოსახულებების რედაქტორი"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62706,13 +62706,13 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "ფერების მართვა"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62720,13 +62720,13 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "სინათლის მაგიდა"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62734,13 +62734,13 @@ msgid ""
 "Customize tool used to compare items"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62748,13 +62748,13 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "კამერები"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62762,13 +62762,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "დამატებები"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62776,13 +62776,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "სხვადასხვა"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
