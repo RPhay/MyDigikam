@@ -297,7 +297,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewScaleFitToWindow    = new QCheckBox(i18n("Preview image is always scaled to fit to window"), pwpanel);
     d->previewScaleFitToWindow->setWhatsThis(i18n("Uncheck this if you do not want to scale small images to fit to window."));
 
-    d->previewSmoothScaled       = new QCheckBox(i18n("Preview image use Anti-aliasing to scale up"), pwpanel);
+    d->previewSmoothScaled        = new QCheckBox(i18n("Preview image use Anti-aliasing to scale up"), pwpanel);
     d->previewSmoothScaled->setWhatsThis(i18n("Uncheck this if you do not want use Anti-aliasing to scale up."));
 
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
