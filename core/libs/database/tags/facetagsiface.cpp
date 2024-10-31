@@ -348,13 +348,13 @@ static inline QString fastNumberToString(qlonglong id)
 
 const QString FaceTagsIface::hash() const
 {
-    // Create a unique hash consisting of the imageId, rect and tagId.
+    // Create a unique hash consisting of the imageId, tagId and rect.
 
     QCryptographicHash hasher(QCryptographicHash::Sha1);
 
     hasher.addData(fastNumberToString(m_imageId).toLatin1());
-    hasher.addData(m_region.toXml().toLatin1());
     hasher.addData(fastNumberToString(m_tagId).toLatin1());
+    hasher.addData(m_region.toXml().toLatin1());
 
     return QLatin1String(hasher.result().toHex());
 }
