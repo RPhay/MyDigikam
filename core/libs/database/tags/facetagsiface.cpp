@@ -341,9 +341,9 @@ const QString FaceTagsIface::hash() const
 
 #else
 
-    hasher.addData(QByteArrayView(QString::number(m_imageId).toLatin1()));
-    hasher.addData(QByteArrayView(QString::number(m_tagId).toLatin1()));
-    hasher.addData(QByteArrayView(m_region.toXml().toLatin1()));
+    hasher.addData(QString::number(m_imageId).toLatin1());
+    hasher.addData(QString::number(m_tagId).toLatin1());
+    hasher.addData(m_region.toXml().toLatin1());
 
 #endif
 
