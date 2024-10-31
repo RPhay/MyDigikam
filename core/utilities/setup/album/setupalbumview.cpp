@@ -81,6 +81,7 @@ public:
     QComboBox*          previewRawMode                  = nullptr;
     QCheckBox*          previewConvertToEightBit        = nullptr;
     QCheckBox*          previewScaleFitToWindow         = nullptr;
+    QCheckBox*          previewSmoothScaled             = nullptr;
     QCheckBox*          previewShowIcons                = nullptr;
     QCheckBox*          showFolderTreeViewItemsCount    = nullptr;
     QCheckBox*          largeThumbsBox                  = nullptr;
@@ -296,6 +297,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewScaleFitToWindow    = new QCheckBox(i18n("Preview image is always scaled to fit to window"), pwpanel);
     d->previewScaleFitToWindow->setWhatsThis(i18n("Uncheck this if you do not want to scale small images to fit to window."));
 
+    d->previewSmoothScaled       = new QCheckBox(i18n("Preview image use Anti-aliasing to scale up"), pwpanel);
+    d->previewSmoothScaled->setWhatsThis(i18n("Uncheck this if you do not want use Anti-aliasing to scale up."));
+
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
 
@@ -307,8 +311,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(d->previewRawMode,           2, 1, 1, 1);
     grid3->addWidget(d->previewConvertToEightBit, 3, 0, 1, 2);
     grid3->addWidget(d->previewScaleFitToWindow,  4, 0, 1, 2);
-    grid3->addWidget(d->previewShowIcons,         5, 0, 1, 2);
-    grid3->setRowStretch(6, 10);
+    grid3->addWidget(d->previewSmoothScaled,      5, 0, 1, 2);
+    grid3->addWidget(d->previewShowIcons,         6, 0, 1, 2);
+    grid3->setRowStretch(7, 10);
 
     d->previewFastPreview->setChecked(true);
     d->previewRawMode->setCurrentIndex(0);
@@ -408,6 +413,7 @@ void SetupAlbumView::applySettings()
     settings->setPreviewSettings(previewSettings);
 
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());
+    settings->setPreviewSmoothScaled(d->previewSmoothScaled->isChecked());
     settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
     settings->setShowFolderTreeViewItemsCount(d->showFolderTreeViewItemsCount->isChecked());
     settings->saveSettings();
@@ -474,6 +480,7 @@ void SetupAlbumView::readSettings()
     d->previewRawMode->setCurrentIndex(d->previewRawMode->findData(previewSettings.rawLoading));
 
     d->previewShowIcons->setChecked(settings->getPreviewShowIcons());
+    d->previewSmoothScaled->setChecked(settings->getPreviewSmoothScaled());
     d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());
     d->previewConvertToEightBit->setChecked(previewSettings.convertToEightBit);
     d->showFolderTreeViewItemsCount->setChecked(settings->getShowFolderTreeViewItemsCount());

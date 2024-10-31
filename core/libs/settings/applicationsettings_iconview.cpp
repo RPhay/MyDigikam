@@ -281,4 +281,16 @@ bool ApplicationSettings::getScaleFitToWindow() const
     return d->scaleFitToWindow;
 }
 
+void ApplicationSettings::setPreviewSmoothScaled(bool val)
+{
+    d->imageSmoothScaled = val;
+
+    ImageZoomSettings::setImageSmoothScale(val);
+}
+
+bool ApplicationSettings::getPreviewSmoothScaled() const
+{
+    return d->imageSmoothScaled;
+}
+
 } // namespace Digikam

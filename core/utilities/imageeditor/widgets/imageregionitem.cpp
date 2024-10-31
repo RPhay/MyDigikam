@@ -114,7 +114,8 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
                                                        dd->drawRect.x(),
                                                        dd->drawRect.y(),
                                                        dd->drawRect.width(),
-                                                       dd->drawRect.height()
+                                                       dd->drawRect.height(),
+                                                       s_imageSmoothScale
                                                       );
 
     if (d->cachedPixmaps.find(dd->drawRect, &pix, &pixSourceRect))

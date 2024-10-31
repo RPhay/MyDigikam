@@ -29,6 +29,8 @@
 namespace Digikam
 {
 
+bool s_imageSmoothScale = true;
+
 ImageZoomSettings::ImageZoomSettings(const QSize& imageSize, const QSize& originalSize)
 {
     setImageSize(imageSize, originalSize);
@@ -221,6 +223,11 @@ double ImageZoomSettings::snappedZoomFactor(double zoom, const QSizeF& frameSize
     }
 
     return zoom;
+}
+
+void ImageZoomSettings::setImageSmoothScale(bool enable)
+{
+    s_imageSmoothScale = enable;
 }
 
 double ImageZoomSettings::displayRatio() const

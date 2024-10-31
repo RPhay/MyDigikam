@@ -45,19 +45,19 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "previewsettings.h"
 #include "dbengineparameters.h"
+#include "imagezoomsettings.h"
 #include "versionmanager.h"
 #include "itemfiltersettings.h"
 #include "itemsortsettings.h"
 #include "mimefilter.h"
 #include "thumbnailsize.h"
 #include "thememanager.h"
-#include "digikam_debug.h"
 #include "drawdecoder.h"
 #include "coredbaccess.h"
 #include "coredb.h"
-#include "haariface.h"
 
 namespace Digikam
 {
@@ -159,6 +159,7 @@ public:
     const QString configPreviewLoadFullItemSizeEntry                = QLatin1String("Preview Load Full Image Size");
     const QString configPreviewRawUseLoadingDataEntry               = QLatin1String("Preview Raw Use Loading Data");
     const QString configPreviewConvertToEightBitEntry               = QLatin1String("Preview Convert To Eight Bit");
+    const QString configPreviewImageSmoothScaledEntry               = QLatin1String("Preview Image Smooth Scaled");
     const QString configPreviewScaleFitToWindowEntry                = QLatin1String("Preview Scale Fit To Window");
     const QString configPreviewShowIconsEntry                       = QLatin1String("Preview Show Icons");
     const QString configShowThumbbarEntry                           = QLatin1String("Show Thumbbar");
@@ -281,6 +282,7 @@ public:
 
     /// preview settings
     PreviewSettings                              previewSettings;
+    bool                                         imageSmoothScaled                                  = true;
     bool                                         scaleFitToWindow                                   = false;
     bool                                         previewShowIcons                                   = true;
     bool                                         showThumbbar                                       = true;

@@ -194,6 +194,10 @@ void ApplicationSettings::readSettings()
     }
 
     d->previewSettings.convertToEightBit = group.readEntry(d->configPreviewConvertToEightBitEntry,     false);
+    d->imageSmoothScaled                 = group.readEntry(d->configPreviewImageSmoothScaledEntry,     true);
+
+    setPreviewSmoothScaled(d->imageSmoothScaled);
+
     d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
     d->showThumbbar                      = group.readEntry(d->configShowThumbbarEntry,                 true);
@@ -419,6 +423,7 @@ void ApplicationSettings::saveSettings()
     }
 
     group.writeEntry(d->configPreviewConvertToEightBitEntry,            d->previewSettings.convertToEightBit);
+    group.writeEntry(d->configPreviewImageSmoothScaledEntry,            d->imageSmoothScaled);
     group.writeEntry(d->configPreviewScaleFitToWindowEntry,             d->scaleFitToWindow);
     group.writeEntry(d->configPreviewShowIconsEntry,                    d->previewShowIcons);
     group.writeEntry(d->configShowThumbbarEntry,                        d->showThumbbar);

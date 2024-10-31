@@ -270,7 +270,8 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
                                                        scaledDrawRect.x(),
                                                        scaledDrawRect.y(),
                                                        scaledDrawRect.width(),
-                                                       scaledDrawRect.height()
+                                                       scaledDrawRect.height(),
+                                                       s_imageSmoothScale
                                                       );
 
         pix              = scaledImage.convertToPixmap();

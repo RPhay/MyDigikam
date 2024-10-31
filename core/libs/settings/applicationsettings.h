@@ -31,19 +31,18 @@
 #include "digikam_config.h"
 #include "digikam_export.h"
 #include "digikam_globals.h"
-#include "sidebar.h"
-#include "dbengineparameters.h"
-#include "versionmanager.h"
-#include "haariface.h"
 #include "facescansettings.h"
+#include "haariface.h"
+#include "sidebar.h"
+
 
 class KConfigGroup;
 
 namespace Digikam
 {
 
-class DbEngineParameters;
 class VersionManagerSettings;
+class DbEngineParameters;
 class PreviewSettings;
 
 class DIGIKAM_GUI_EXPORT ApplicationSettings : public QObject
@@ -259,6 +258,9 @@ public:
 
     void setScaleFitToWindow(bool val);
     bool getScaleFitToWindow() const;
+
+    void setPreviewSmoothScaled(bool val);
+    bool getPreviewSmoothScaled() const;
 
     // -- Mime-Types Settings -------------------------------------------------------
 

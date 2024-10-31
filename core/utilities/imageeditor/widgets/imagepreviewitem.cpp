@@ -94,7 +94,8 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
                                                    scaledDrawRect.x(),
                                                    scaledDrawRect.y(),
                                                    scaledDrawRect.width(),
-                                                   scaledDrawRect.height()
+                                                   scaledDrawRect.height(),
+                                                   s_imageSmoothScale
                                                   );
 
     if (d->cachedPixmaps.find(scaledDrawRect, &pix, &pixSourceRect))
