@@ -16,6 +16,9 @@
  * ============================================================ */
 
 #include "facedb_p.h"
+
+// Local includes
+
 #include "kd_nodebase.h"
 
 namespace Digikam
@@ -64,7 +67,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
     bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
     bindingValues << parentID;
 
-    // insert node to database
+    // Insert node to database.
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO KDTree "
                                                             "(split_axis, position, max_range, min_range, parent, `left`, `right`) "
@@ -84,7 +87,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         bindingValues << newNode;
         bindingValues << parentID;
 
-        // not root -> update parent
+        // Not root -> update parent.
 
         if (isLeftChild)
         {
@@ -112,7 +115,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
                                                             "FROM KDTree WHERE id = 1"));
     if (query.next())
     {
-        // encapsulate data node
+        // Encapsulate data node.
 
         root.nodeID     = 1;
         int embeddingID = query.value(0).toInt();
@@ -215,12 +218,13 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         bindingValues.clear();
         bindingValues << embeddingId;
 
-        query = d->db->execQuery(QLatin1String("SELECT embedding FROM FaceMatrices WHERE id = ?"),
-                                 bindingValues);
+        query            = d->db->execQuery(QLatin1String("SELECT embedding FROM FaceMatrices WHERE id = ?"),
+                                            bindingValues);
 
         if (! query.next())
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "fail to find parent face embedding" << query.lastError();
+
             return -1;
         }
 
@@ -255,7 +259,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         return sqRange;
     }
 
-    // try to add current node to the list
+    // Try to add current node to the list.
 
     const float sqrdistanceToCurrentNode = KDNodeBase::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
@@ -266,7 +270,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
-        // limit the size of the Map to maxNbNeighbors
+        // Limit the size of the Map to maxNbNeighbors.
 
         int size = 0;
 
@@ -279,7 +283,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
         if (size > maxNbNeighbors)
         {
-            // Eliminate the farthest neighbor
+            // Eliminate the farthest neighbor.
 
             QMap<double, QVector<int> >::iterator farthestNodes = std::prev(neighborList.end(), 1);
 
@@ -292,13 +296,13 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
                 farthestNodes.value().pop_back();
             }
 
-            // update the searching range
+            // Update the searching range.
 
             sqRange = neighborList.lastKey();
         }
     }
 
-    // sub-trees Traversal
+    // Sub-trees Traversal.
 
     double sqrDistanceLeftTree  = 0.0;
     double sqrDistanceRightTree = 0.0;
@@ -320,7 +324,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
         if (query.next())
         {
-            // encapsulate data node
+            // Encapsulate data node.
 
             leftNode.nodeID   = subTree.left;
             int embeddingID   = query.value(0).toInt();
@@ -332,8 +336,8 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             bindingValues.clear();
             bindingValues << embeddingID;
 
-            query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
-                                     bindingValues);
+            query             = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
+                                                 bindingValues);
 
             if (query.next())
             {
@@ -368,7 +372,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
         if (query.next())
         {
-            // encapsulate data node
+            // Encapsulate data node.
 
             rightNode.nodeID   = subTree.right;
             int embeddingID    = query.value(0).toInt();
@@ -380,8 +384,8 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             bindingValues.clear();
             bindingValues << embeddingID;
 
-            query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
-                                     bindingValues);
+            query              = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
+                                                  bindingValues);
 
             if (query.next())
             {
@@ -401,19 +405,19 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         }
     }
 
-    // traverse the closest area
+    // Traverse the closest area.
 
     if (sqrDistanceLeftTree < sqrDistanceRightTree)
     {
         if (sqrDistanceLeftTree < sqRange)
         {
-            // traverse left Tree
+            // Traverse left Tree.
 
             sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
             if (sqrDistanceRightTree < sqRange)
             {
-                // traverse right Tree
+                // Traverse right Tree.
 
                 sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
             }
@@ -423,13 +427,13 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     {
         if (sqrDistanceRightTree < sqRange)
         {
-            // traverse right Tree
+            // Traverse right Tree.
 
             sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
             if (sqrDistanceLeftTree < sqRange)
             {
-                // traverse left Tree
+                // Traverse left Tree.
 
                 sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
             }

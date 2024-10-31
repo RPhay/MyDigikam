@@ -16,6 +16,9 @@
  * ============================================================ */
 
 #include "facedb_p.h"
+
+// Local includes
+
 #include "kd_treeopenface.h"
 #include "kd_treesface.h"
 
@@ -68,7 +71,7 @@ bool FaceDb::removeFaceVector(const QString& hash) const
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted hash " << hash << " from FaceMatricies";
 
-    // TO DO: Check query result
+    // TODO: Check query result.
 
     return true;
 }

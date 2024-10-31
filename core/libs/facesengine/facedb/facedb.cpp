@@ -46,7 +46,7 @@ QString FaceDb::setting(const QString& keyword) const
     parameters.insert(QLatin1String(":keyword"), keyword);
     QList<QVariant> values;
 
-    // TODO Should really check return status here
+    // TODO: Should really check return status here.
 
     BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectFaceSetting")),
                                                                        parameters, &values);

@@ -73,7 +73,7 @@ bool FaceDbSchemaUpdater::update()
 {
     bool success = startUpdates();
 
-    // even on failure, try to set current version - it may have incremented
+    // Even on failure, try to set current version - it may have incremented.
 
     if (d->currentVersion)
     {
@@ -96,20 +96,20 @@ bool FaceDbSchemaUpdater::startUpdates()
 
     if (tables.contains(QLatin1String("Identities"), Qt::CaseInsensitive))
     {
-        // Find out schema version of db file
+        // Find out schema version of db file.
 
         QString version         = d->dbAccess->db()->setting(QLatin1String("DBFaceVersion"));
         QString versionRequired = d->dbAccess->db()->setting(QLatin1String("DBFaceVersionRequired"));
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face database: have a structure version " << version;
 
-        // mini schema update
+        // Mini schema update.
 
         if (version.isEmpty() && d->dbAccess->parameters().isSQLite())
         {
             version = d->dbAccess->db()->setting(QLatin1String("DBVersion"));
         }
 
-        // We absolutely require the DBFaceVersion setting
+        // We absolutely require the DBFaceVersion setting.
 
         if (version.isEmpty())
         {
@@ -133,18 +133,18 @@ bool FaceDbSchemaUpdater::startUpdates()
             return false;
         }
 
-        // current version describes the current state of the schema in the db,
+        // Current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
 
         d->currentVersion = version.toInt();
 
         if (d->currentVersion > schemaVersion())
         {
-            // trying to open a database with a more advanced than this FaceDbSchemaUpdater supports
+            // Trying to open a database with a more advanced than this FaceDbSchemaUpdater supports.
 
             if (!versionRequired.isEmpty() && (versionRequired.toInt() <= schemaVersion()))
             {
-                // version required may be less than current version
+                // Version required may be less than current version.
 
                 return true;
             }
@@ -177,7 +177,7 @@ bool FaceDbSchemaUpdater::startUpdates()
 
         DbEngineParameters parameters = d->dbAccess->parameters();
 
-        // No legacy handling: start with a fresh db
+        // No legacy handling: start with a fresh db.
 
         if (!createDatabase())
         {
@@ -240,7 +240,7 @@ bool FaceDbSchemaUpdater::createDatabase()
 
 bool FaceDbSchemaUpdater::createTables()
 {
-    // the creation order is important because of the foreign keys in MySQL
+    // The creation order is important because of the foreign keys in MySQL.
 
     return (
             d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
@@ -306,7 +306,7 @@ bool FaceDbSchemaUpdater::updateV3ToV4()
     d->currentVersion         = 4;
     d->currentRequiredVersion = 4;
 
-    // TODO: retrain recognized identities
+    // TODO: retrain recognized identities.
 
     return true;
 }
@@ -330,7 +330,7 @@ bool FaceDbSchemaUpdater::updateV4ToV5()
     d->currentVersion         = 5;
     d->currentRequiredVersion = 5;
 
-    // TODO: retrain recognized identities
+    // TODO: retrain recognized identities.
 
     return true;
 }

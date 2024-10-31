@@ -79,7 +79,7 @@ public:
     // --- OpenCV DNN
 
     /**
-     * @brief insertFaceVector : insert a new face embedding to database
+     * @brief insertFaceVector: insert a new face embedding to database
      * @param faceEmbedding
      * @param label
      * @return id of newly inserted entry
@@ -90,52 +90,52 @@ public:
 
 
     /**
-     * @brief removeFaceVector : remove a face embedding from the database
+     * @brief removeFaceVector: remove a face embedding from the database
      * @param hash the removeHash (removeHash) to remove
      * @return bool
      */
     bool removeFaceVector(const QString& hash)                                  const;
 
     /**
-     * @brief removeFaceVector : remove a face embedding from the database
-     * @param nodeId the nodeId (row id) to remove
+     * @brief removeFaceVector: remove a face embedding from the database.
+     * @param nodeId the nodeId (row id) to remove.
      * @return bool
      */
     bool removeFaceVector(const int id)                                         const;
 
 
     /**
-     * @brief reconstructTree: reconstruct KD-Tree from data in the database
-     * @return
+     * @brief reconstructTree: reconstruct KD-Tree from data in the database.
+     * @return the KD-Tree instance.
      */
     KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
 
     /**
      * @brief trainData: extract train data from database
-     * @return
+     * @return the train data instance.
      */
     cv::Ptr<cv::ml::TrainData> trainData()                                      const;
 
     /**
-     * @brief insertToTreeDb : insert a new node to spatial database
+     * @brief insertToTreeDb: insert a new node to spatial database.
      * @param nodeID
      * @param label
      * @param faceEmbedding
-     * @return true if successed
+     * @return true if successed.
      */
     bool insertToTreeDb(const int nodeID,
                         const cv::Mat& faceEmbedding)                           const;
 
     /**
-     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @brief getClosestNeighbors: return a list of closest neighbor, limited by maxNbNeighbors and sqRange.
      * @param subTree
      * @param neighborList
      * @param position
      * @param sqRange
      * @param cosThreshold
      * @param maxNbNeighbors
-
-     * @return
+     *
+     * @return the map of data.
      */
     QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
                                                           float sqRange,
@@ -145,7 +145,7 @@ public:
     void clearTreeDb()                                                          const;
 
     /**
-     * @brief clearDNNTraining : clear all trained data in the database
+     * @brief clearDNNTraining: clear all trained data in the database.
      * @param context
      */
     void clearDNNTraining(const QString& context = QString());
@@ -171,8 +171,8 @@ private:
      * @param sqRange
      * @param cosThreshold
      * @param maxNbNeighbors
-
-     * @return
+     *
+     * @return double
      */
     double getClosestNeighborsTreeDb(const DataNode& subTree,
                                      QMap<double, QVector<int> >& neighborList,
