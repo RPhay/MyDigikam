@@ -45,21 +45,34 @@ public:
     explicit DNNBaseDetectorModel(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
     virtual ~DNNBaseDetectorModel();
 
+    QList<QString> loadDetectionClasses();
+
+    std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);
+    std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
+
+    QList<QHash<QString, QVector<QRect> > > postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                        const std::vector<cv::Mat>& outs)   const;
+
+    virtual QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
+                                                       const cv::Mat& out)                  const   = 0;
+
+    std::vector<cv::String> getOutputsNames() const;
+
     /**
      * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
      * otherwise the map whose the key is the objects name and their values are empty
      */
-    virtual QHash<QString, QVector<QRect> > detectObjects(const cv::Mat& inputImage) = 0;
+    virtual QHash<QString, QVector<QRect> > detectObjects(const cv::Mat& inputImage);
 
     /**
      * detectObjects in batch images (fixed batch size)
      */
-    virtual QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
+    virtual QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages);
 
     /**
      * get predefined objects according to selected model
      */
-    virtual QList<QString> getPredefinedClasses() const = 0;
+    virtual QList<QString> getPredefinedClasses() const;
 
     /**
      * generateObjects in one image return just the predicted objects without locations of objects
@@ -94,8 +107,11 @@ protected:
     float           scaleFactor = 1.0F;
     cv::Scalar      meanValToSubtract;
     cv::Size        inputImageSize;
+    QList<QString>  predefinedClasses;
 
-    DNNModelBase*   model   = nullptr;
+    DNNModelBase*   model       = nullptr;
+
+    virtual bool loadModels()   = 0;
 
 private:
 

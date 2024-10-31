@@ -14,6 +14,8 @@
 
 #include "recognitiontrainingupdatequeue.h"
 
+#include "digikam_debug.h"
+
 namespace Digikam
 {
 
@@ -32,8 +34,10 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
 
     if (0 == ref)
     {
-        queue.push_back(endSignal());
+        // queue.push_back(endSignal());
     }
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue destroyed";
 }
 
 void RecognitionTrainingUpdateQueue::registerReaderThread(const QThread* thread)

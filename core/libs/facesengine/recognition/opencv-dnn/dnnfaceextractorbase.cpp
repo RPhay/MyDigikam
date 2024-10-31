@@ -61,11 +61,6 @@ DNNFaceExtractorBase::DNNFaceExtractorBase()
 {
 }
 
-DNNFaceExtractorBase::DNNFaceExtractorBase(const DNNFaceExtractorBase& other)
-{
-    Q_UNUSED(other);
-}
-
 DNNFaceExtractorBase::~DNNFaceExtractorBase()
 {
 }

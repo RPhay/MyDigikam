@@ -26,38 +26,16 @@ class DIGIKAM_GUI_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNResnetDetector();
-    ~DNNResnetDetector()                                                                                    override;
+    ~DNNResnetDetector()                                                                    override;
 
-public:
+protected:
 
-    QList<QString>    getPredefinedClasses()                                                const           override;
-    bool              loadModels();
-
-    /**
-     * load 80 predefined classes for object detection "...".
-     */
-    QList<QString>    loadImageNetClass();
-
-public:
-
-    QHash<QString, QVector<QRect> >         detectObjects(const cv::Mat& inputImage)                        override;
-    QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages)     override;
+    bool loadModels()                                                                       override;
 
 private:
 
-    /**
-     * Get the names of the output layers
-     */
-    std::vector<cv::String> getOutputsNames()                                               const;
-
-    std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);
-    std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
-
-    QHash<QString, QVector<QRect> >         postprocess(const cv::Mat& inputImage,
-                                                        const cv::Mat& out)                 const;
-
-    QList<QHash<QString, QVector<QRect> > > postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                        const std::vector<cv::Mat>& outs)   const;
+    QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
+                                                       const cv::Mat& out)                const override;
 
 private:
 
@@ -65,9 +43,6 @@ private:
     DNNResnetDetector(const DNNResnetDetector&)            = delete;
     DNNResnetDetector& operator=(const DNNResnetDetector&) = delete;
 
-private:
-
-    QList<QString> predefinedClasses;
 };
 
 } // namespace Digikam

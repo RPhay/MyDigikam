@@ -32,7 +32,6 @@ class DIGIKAM_GUI_EXPORT DNNOpenFaceExtractor: public DNNFaceExtractorBase
 public:
 
     DNNOpenFaceExtractor();
-    DNNOpenFaceExtractor(const DNNOpenFaceExtractor&);
     ~DNNOpenFaceExtractor() override;
 
 public:
@@ -49,7 +48,8 @@ public:
 private:
 
     /// Disable
-    DNNOpenFaceExtractor& operator=(const DNNOpenFaceExtractor&) = delete;
+    DNNOpenFaceExtractor(const DNNOpenFaceExtractor&)               = delete;
+    DNNOpenFaceExtractor& operator=(const DNNOpenFaceExtractor&)    = delete;
 
 private:
 

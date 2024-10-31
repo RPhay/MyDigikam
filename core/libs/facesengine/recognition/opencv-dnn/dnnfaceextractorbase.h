@@ -40,7 +40,6 @@ class DIGIKAM_GUI_EXPORT DNNFaceExtractorBase
 public:
 
     DNNFaceExtractorBase();
-    DNNFaceExtractorBase(const DNNFaceExtractorBase&);
     virtual ~DNNFaceExtractorBase();
 
 public:
@@ -69,7 +68,8 @@ public:
 private:
 
     /// Disable
-    DNNFaceExtractorBase& operator=(const DNNFaceExtractorBase&) = delete;
+    DNNFaceExtractorBase(const DNNFaceExtractorBase&)               = delete;
+    DNNFaceExtractorBase& operator=(const DNNFaceExtractorBase&)    = delete;
 };
 
 } // namespace Digikam

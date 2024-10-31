@@ -15,10 +15,23 @@
 
 #include "dnnbasedetectormodel.h"
 
+// C++ includes
+
+#include <fstream>
+
+// Qt includes
+
+#include <QDir>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QElapsedTimer>
+
 // Local includes
 
 #include "digikam_debug.h"
 #include "dnnmodelnet.h"
+#include "dnnmodelconfig.h"
+
 
 namespace Digikam
 {
@@ -97,6 +110,188 @@ double DNNBaseDetectorModel::showInferenceTime()
     double freq = cv::getTickFrequency() / 1000.0;
 
     return (static_cast<DNNModelNet*>(model)->getNet().getPerfProfile(layersTimes) / freq);
+}
+
+QList<QString> DNNBaseDetectorModel::loadDetectionClasses()
+{
+    QList<QString> classList;
+    QString classFile;
+
+    // NOTE: storing all model definitions at the same application path as face engine
+
+    if (model && model->modelLoaded)
+    {
+        const DNNModelConfig* configModel = static_cast<DNNModelConfig*>(DNNModelManager::instance()->getModel(model->info.classList, DNNModelUsage::DNNUsageObjectDetection));
+
+        if (configModel)
+        {
+            classFile = configModel->getModelPath();
+        }
+    }
+
+    if (QFileInfo::exists(classFile))
+    {
+        std::ifstream ifs(classFile.toStdString());
+        std::string line;
+
+        while (getline(ifs, line))
+        {
+            classList.append(QString::fromStdString(line));
+        }
+    }
+
+    return classList;
+}
+
+QList<QString> DNNBaseDetectorModel::getPredefinedClasses() const
+{
+    return predefinedClasses;
+}
+
+QHash<QString, QVector<QRect> > DNNBaseDetectorModel::detectObjects(const::cv::Mat& inputImage)
+{
+    if (inputImage.empty())
+    {
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Invalid image given, not detecting objects";
+
+        return {};
+    }
+
+    std::vector<cv::Mat> outs = preprocess(inputImage);
+
+    return postprocess(inputImage, outs[0]);
+}
+
+QList<QHash<QString, QVector<QRect> > > DNNBaseDetectorModel::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+{
+    if (inputBatchImages.empty())
+    {
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Invalid image list given, not detecting objects";
+
+        return {};
+    }
+
+    std::vector<cv::Mat> outs = preprocess(inputBatchImages);
+
+    // outs = [1 x [rows x 85]]
+
+    return postprocess(inputBatchImages, outs);
+}
+
+std::vector<cv::Mat> DNNBaseDetectorModel::preprocess(const cv::Mat& inputImage)
+{
+    std::vector<cv::Mat> outs;
+
+    try
+    {
+        cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage,
+                                                   scaleFactor,
+                                                   inputImageSize,
+                                                   meanValToSubtract,
+                                                   true,
+                                                   false);
+
+        if (model && model->modelLoaded)
+        {
+            QMutexLocker lock(&model->mutex);
+            static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
+            static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return outs;
+}
+
+std::vector<cv::Mat> DNNBaseDetectorModel::preprocess(const std::vector<cv::Mat>& inputBatchImages)
+{
+    std::vector<cv::Mat> outs;
+
+    try
+    {
+        cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages,
+                                                    scaleFactor,
+                                                    inputImageSize,
+                                                    meanValToSubtract,
+                                                    true,
+                                                    false);
+
+        if (model && model->modelLoaded)
+        {
+            QMutexLocker lock(&model->mutex);
+            QElapsedTimer timer;
+            timer.start();
+
+            static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
+            static_cast<DNNModelNet*>(model)->getNet().forward(outs, getOutputsNames());
+
+            int elapsed = timer.elapsed();
+
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Batch forward (Inference) takes: " << elapsed << " ms";
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return outs;
+}
+
+QList<QHash<QString, QVector<QRect> > > DNNBaseDetectorModel::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                                     const std::vector<cv::Mat>& outs) const
+{
+    QList<QHash<QString, QVector<QRect> > > detectedBoxesList;
+
+    // outs = [batch_size x [rows x 85]]
+
+    if (!outs.empty())
+    {
+        for (unsigned int i = 0 ; i < inputBatchImages.size() ; i++)
+        {
+            detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+        }
+    }
+
+    return detectedBoxesList;
+}
+
+std::vector<cv::String> DNNBaseDetectorModel::getOutputsNames() const
+{
+    static std::vector<cv::String> names;
+
+    if (model && model->modelLoaded && names.empty())
+    {
+        // Get the indices of the output layers, i.e. the layers with unconnected outputs
+
+        std::vector<int> outLayers          = static_cast<DNNModelNet*>(model)->getNet().getUnconnectedOutLayers();
+
+        // Get the names of all the layers in the network
+
+        std::vector<cv::String> layersNames = static_cast<DNNModelNet*>(model)->getNet().getLayerNames();
+
+        // Get the names of the output layers in names
+
+        names.resize(outLayers.size());
+
+        for (size_t i = 0 ; i < outLayers.size() ; ++i)
+        {
+            names[i] = layersNames[outLayers[i] - 1];
+        }
+    }
+
+    return names;
 }
 
 } // namespace Digikam

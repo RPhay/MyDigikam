@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "applicationsettings.h"
 
 namespace Digikam
@@ -129,6 +130,8 @@ bool FacialRecognitionWrapper::Private::trainingRemoveConcurrent(FacialRecogniti
             break;
         }
     }
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue thread terminated";
 
     return true;
 }

@@ -33,35 +33,16 @@ class DIGIKAM_GUI_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNYoloDetector(YoloVersions modelVersion = YoloVersions::YOLOV5NANO);
-    ~DNNYoloDetector()                                                                                  override;
+    ~DNNYoloDetector()                                                                     override;
 
-public:
+protected:
 
-    QList<QString>    getPredefinedClasses()                                              const         override;
-    bool              loadModels();
-
-    /**
-     * load 80 predefined classes for object detection "coco.names".
-     */
-    QList<QString>    loadCOCOClass();
-
-public:
-
-    QHash<QString, QVector<QRect> >         detectObjects(const cv::Mat& inputImage)                    override;
-    QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages) override;
+    bool loadModels()                                                                       override;
 
 private:
 
-    std::vector<cv::String> getOutputsNames()                                             const;
-
-    std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);
-    std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
-
     QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
-                                                       const cv::Mat& out)                const;
-
-    QList<QHash<QString, QVector<QRect> > > postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                        const std::vector<cv::Mat>& outs) const;
+                                                       const cv::Mat& out)                  const override;
 
 private:
 
@@ -71,7 +52,6 @@ private:
 
 private:
 
-    QList<QString> predefinedClasses;
     YoloVersions   yoloVersion;
 };
 

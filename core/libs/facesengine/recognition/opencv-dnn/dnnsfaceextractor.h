@@ -33,7 +33,6 @@ class DIGIKAM_GUI_EXPORT DNNSFaceExtractor: public DNNFaceExtractorBase
 public:
 
     DNNSFaceExtractor();
-    DNNSFaceExtractor(const DNNSFaceExtractor&);
     ~DNNSFaceExtractor() override;
 
 public:
@@ -49,15 +48,13 @@ public:
 private:
 
     /// Disable
-    DNNSFaceExtractor& operator=(const DNNSFaceExtractor&) = delete;
+    DNNSFaceExtractor(const DNNSFaceExtractor&)             = delete;
+    DNNSFaceExtractor& operator=(const DNNSFaceExtractor&)  = delete;
 
 private:
 
     class Private;
     Private* const d                = nullptr;
-/*
-    DNNModelYuNet*  detectorModel   = nullptr;
-*/
 };
 
 } // namespace Digikam

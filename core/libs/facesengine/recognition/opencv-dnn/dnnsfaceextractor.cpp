@@ -63,13 +63,6 @@ DNNSFaceExtractor::DNNSFaceExtractor()
     this->loadModels();
 }
 
-DNNSFaceExtractor::DNNSFaceExtractor(const DNNSFaceExtractor& other)
-    : DNNFaceExtractorBase(),
-      d                   (other.d)
-{
-    ++(d->ref);
-}
-
 DNNSFaceExtractor::~DNNSFaceExtractor()
 {
     --(d->ref);

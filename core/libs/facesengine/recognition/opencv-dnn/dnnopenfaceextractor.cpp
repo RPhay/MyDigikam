@@ -71,13 +71,6 @@ DNNOpenFaceExtractor::DNNOpenFaceExtractor()
     this->loadModels();
 }
 
-DNNOpenFaceExtractor::DNNOpenFaceExtractor(const DNNOpenFaceExtractor& other)
-    : DNNFaceExtractorBase(),
-      d                   (other.d)
-{
-    ++(d->ref);
-}
-
 DNNOpenFaceExtractor::~DNNOpenFaceExtractor()
 {
     --(d->ref);
