@@ -106,7 +106,7 @@ public:
                                          const DImg& image);
 
     /**
-     * Conversion
+     * Conversion.
      */
     QList<FaceTagsIface> toFaceTagsIfaces(qlonglong imageid,
                                          const QList<QRectF>& detectedFaces,
@@ -120,7 +120,7 @@ public:
      */
     static QRect         faceRectToDisplayRect(const QRect& rect);
 
-    // TODO: investigate this method
+    // TODO: investigate this method.
 
     Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)            const;
     Identity identityForUuid(const QString& uuid, FacialRecognitionWrapper& recognizer) const;

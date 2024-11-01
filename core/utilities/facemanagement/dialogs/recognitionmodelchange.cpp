@@ -54,7 +54,8 @@ public:
     QPushButton*            cancelButton        = nullptr;
 };
 
-ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const parent, FaceScanSettings::FaceRecognitionModel newModel)
+ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const parent,
+                                                             FaceScanSettings::FaceRecognitionModel newModel)
     : QDialog(parent),
       d      (new Private)
 {
@@ -66,7 +67,7 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
     QString changeTypeString;
     QString newModelString;
 
-    // use a switch instead of if/else to allow for other models in the future
+    // Use a switch instead of if/else to allow for other models in the future.
 
     switch (newModel)
     {

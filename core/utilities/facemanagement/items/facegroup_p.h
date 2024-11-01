@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "assignnamewidget_p.h"
 #include "digikam_debug.h"
 #include "addtagscombobox.h"
 #include "albummodel.h"

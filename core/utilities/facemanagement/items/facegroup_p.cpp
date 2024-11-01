@@ -60,7 +60,7 @@ void FaceGroup::Private::applyVisible()
     }
     else if (state == FacesLoaded)
     {
-        // show existing faces, if we have an image
+        // Show existing faces, if we have an image.
 
         if (view->previewItem()->isLoaded())
         {
@@ -93,7 +93,7 @@ FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
 {
     FaceItem* const item                 = createItem(face);
 
-    // for identification, use index in our list
+    // For identification, use index in our list.
 
     QList<QVariant> identifier(face.toVariant().toList());
     identifier << items.size();

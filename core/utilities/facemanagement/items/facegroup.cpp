@@ -16,10 +16,6 @@
 
 #include "facegroup_p.h"
 
-// Local includes
-
-#include "assignnamewidget_p.h"
-
 namespace Digikam
 {
 
@@ -247,11 +243,11 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
         }
         else
         {
-            // get all items close to pos
+            // Get all items close to pos.
 
             QList<QGraphicsItem*> hItems = d->hotItems(e->scenePos());
 
-            // this will be the one item shown by mouse over
+            // This will be the one item shown by mouse over.
 
             QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
@@ -334,7 +330,7 @@ void FaceGroup::load()
         d->visibilityController->show();
     }
 
-    // See bug 408982
+    // See bug 408982.
 
     if (d->visibilityController->hasVisibleItems())
     {
@@ -732,7 +728,7 @@ void ItemPreviewView::trainFaces()
 
 void ItemPreviewView::suggestFaces()
 {
-    // Assign tentative names to the face list
+    // Assign tentative names to the face list.
 
     QList<Face> recogList;
 
@@ -743,7 +739,7 @@ void ItemPreviewView::suggestFaces()
             f.setName(d->faceIface->recognizedName(f));
             d->faceIface->markFaceAsRecognized(getItemInfo().id(), f.toRect(), f.name());
 
-            // If the face wasn't recognized (too distant) don't suggest anything
+            // If the face wasn't recognized (too distant) don't suggest anything.
 
             if (f.name().isEmpty())
             {
@@ -759,7 +755,7 @@ void ItemPreviewView::suggestFaces()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Number of suggestions = " << recogList.size();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Number of faceitems = " << d->faceitems.size();
 
-    // Now find the relevant face items and suggest faces
+    // Now find the relevant face items and suggest faces.
 
     for (int i = 0 ; i < recogList.size() ; ++i)
     {

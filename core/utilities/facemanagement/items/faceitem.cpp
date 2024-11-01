@@ -47,7 +47,7 @@ void FaceItem::setHudWidget(AssignNameWidget* const widget)
     updateCurrentTag();
     RegionFrameItem::setHudWidget(widget);
 
-    // Ensure that all HUD widgets are stacked before the frame items
+    // Ensure that all HUD widgets are stacked before the frame items.
 
     hudWidget()->setZValue(1);
 }

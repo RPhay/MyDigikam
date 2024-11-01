@@ -41,7 +41,7 @@ public:
 
 private:
 
-    // hide
+    // Disable
     explicit ChangeFaceRecognitionModelDlg(QWidget* const parent)    = delete;
 
 private Q_SLOTS:
