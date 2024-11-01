@@ -113,7 +113,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
 {
     if      (settings.task == FaceScanSettings::RetrainAll)
     {
-        // clear all training data in the database
+        // Clear all training data in the database.
 
         FacialRecognitionWrapper().setParameters(settings);
         FacialRecognitionWrapper().clearAllTraining();
@@ -279,7 +279,7 @@ void FacesDetector::slotStart()
 
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-detect")).pixmap(48));
 
-    // set label depending on settings
+    // Set label depending on settings.
 
     if      (d->albumTodoList.size() > 0)
     {
@@ -351,7 +351,7 @@ void FacesDetector::slotStart()
 
     setUsesBusyIndicator(true);
 
-    // get total count, cached by AlbumManager
+    // Get total count, cached by AlbumManager.
 
     QHash<int, int> palbumCounts;
     QHash<int, int> talbumCounts;

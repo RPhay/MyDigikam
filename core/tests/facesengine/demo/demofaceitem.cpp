@@ -7,8 +7,8 @@
  * Description : Demo test program for FacesEngine
  *
  * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText:      2010 by Alex Jironkin <alexjironkin at gmail dot com>
- * SPDX-FileCopyrightText:      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Alex Jironkin <alexjironkin at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -41,22 +41,22 @@ class Q_DECL_HIDDEN FaceItem::Private
 public:
 
     explicit Private()
-      : suggestionMode(false),
-        sceneWidth(0),
-        sceneHeight(0),
-        x1(0),
-        x2(0),
-        y1(0),
-        y2(0),
-        name(),
-        faceMarquee(nullptr),
-        faceName(nullptr),
-        nameRect(nullptr),
-        origRect(),
-        origScale(0.0),
-        scale(0.0),
-        rejectButton(nullptr),
-        acceptButton(nullptr),
+      : suggestionMode        (false),
+        sceneWidth            (0),
+        sceneHeight           (0),
+        x1                    (0),
+        x2                    (0),
+        y1                    (0),
+        y2                    (0),
+        name                  (),
+        faceMarquee           (nullptr),
+        faceName              (nullptr),
+        nameRect              (nullptr),
+        origRect              (),
+        origScale             (0.0),
+        scale                 (0.0),
+        rejectButton          (nullptr),
+        acceptButton          (nullptr),
         suggestionRejectButton(nullptr),
         suggestionAcceptButton(nullptr)
     {
@@ -91,7 +91,7 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
                    const QString& name,
                    double originalscale)
         : QGraphicsObject(parent),
-          d(new Private)
+          d              (new Private)
 {
     setAcceptHoverEvents(true);
 
@@ -101,26 +101,27 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     d->sceneWidth    = scene->width();
     d->sceneHeight   = scene->height();
 
-    // Scale all coordinates to fit the initial size of the scene
+    // Scale all coordinates to fit the initial size of the scene.
 
     d->x1 = rect.topLeft().x()     * scale;
     d->y1 = rect.topLeft().y()     * scale;
     d->x2 = rect.bottomRight().x() * scale;
     d->y2 = rect.bottomRight().y() * scale;
 
-    // A QRect containing coordinates for the face rectangle
+    // A QRect containing coordinates for the face rectangle.
 
     QRect scaledRect;
     scaledRect.setTopLeft(QPoint(d->x1, d->y1));
     scaledRect.setBottomRight(QPoint(d->x2, d->y2));
 
-    // marquee
+    // Marquee.
 
     FancyRect* const fancy = new FancyRect(scaledRect);
     d->faceMarquee         = new Marquee(fancy);
     scene->addItem(d->faceMarquee);
 
-    // Make a new QGraphicsTextItem for writing the name text, and a new QGraphicsRectItem to draw a good-looking, semi-transparent bounding box.
+    // Make a new QGraphicsTextItem for writing the name text,
+    // and a new QGraphicsRectItem to draw a good-looking, semi-transparent bounding box.
 
     d->nameRect = new QGraphicsRectItem(nullptr);
     scene->addItem(d->nameRect);
@@ -128,18 +129,18 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     d->faceName = new QGraphicsTextItem(name, nullptr);
     scene->addItem(d->faceName);
 
-    // Make the bounding box for the name update itself to cover all the text whenever contents are changed
+    // Make the bounding box for the name update itself to cover all the text whenever contents are changed.
 
     QTextDocument* const doc = d->faceName->document();
     QTextOption o;
     o.setAlignment(Qt::AlignCenter);
     doc->setDefaultTextOption(o);
 
-    // Get coordinates of the name relative to the scene
+    // Get coordinates of the name relative to the scene.
 
     QRectF r = d->faceName->mapRectToScene(d->faceName->boundingRect());
 
-    // Draw the bounding name rectangle with the scene coordinates
+    // Draw the bounding name rectangle with the scene coordinates.
 
     d->nameRect->setRect(r);
     QPen p(QColor(QLatin1String("white")));
@@ -149,7 +150,7 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     d->nameRect->setOpacity(0.6);
     d->nameRect->show();
 
-    // Draw the name input item
+    // Draw the name input item.
 
     d->faceName->setDefaultTextColor(QColor(QLatin1String("white")));
     d->faceName->setFont(QFont(QLatin1String("Helvetica"), 9));
@@ -171,8 +172,9 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
 */
     d->suggestionRejectButton = new Button(rejectPix, rejectPix);
     scene->addItem(d->suggestionRejectButton);
-    //d->suggestionAcceptButton->hide();
-
+/*
+    d->suggestionAcceptButton->hide();
+*/
     d->suggestionAcceptButton = new Button(acceptPix, acceptPix);
     scene->addItem(d->suggestionAcceptButton);
 /*
@@ -332,12 +334,14 @@ double FaceItem::originalScale() const
 void FaceItem::reject()
 {
     Q_EMIT rejectButtonClicked(this->text(), this->originalRect());
+
     clearAndHide();
 }
 
 void FaceItem::suggest(const QString& name)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "suggested name is " << name;
+
     d->name = name;
     this->switchToSuggestionMode();
 }
@@ -367,6 +371,7 @@ void FaceItem::slotSuggestionAccepted()
     switchToEditMode();
     d->faceName->setHtml(QLatin1String("<b>") + d->name + QLatin1String("</b>"));
     accepted();
+
     Q_EMIT suggestionAcceptButtonClicked(this->text(), this->originalRect());
 }
 
@@ -374,6 +379,7 @@ void FaceItem::slotSuggestionRejected()
 {
     switchToEditMode();
     d->faceName->setHtml(QLatin1String("<b>") + QString() + QLatin1String("</b>"));
+
     Q_EMIT suggestionRejectButtonClicked(this->text(), this->originalRect());
 }
 

@@ -7,8 +7,8 @@
  * Description : face marquer widget for FacesEngine Demo
  *
  * SPDX-FileCopyrightText: 2009-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText:      2010 by Adrien Bustany <madcat at mymadcat dot com>
- * SPDX-FileCopyrightText:      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Adrien Bustany <madcat at mymadcat dot com>
+ * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -168,7 +168,7 @@ void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
     Q_EMIT selected(this);
 
-    // Check for some resize handles under the mouse
+    // Check for some resize handles under the mouse.
 
     if (d->htl->isUnderMouse())
     {
@@ -198,7 +198,7 @@ void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
         return;
     }
 
-    // If no handle is under the mouse, then we move the frame
+    // If no handle is under the mouse, then we move the frame.
 
     d->resizing   = false;
     d->moving     = true;

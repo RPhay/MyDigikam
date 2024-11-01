@@ -7,8 +7,8 @@
  * Description : GUI test program for FacesEngine
  *
  * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText:      2010 by Alex Jironkin <alexjironkin at gmail dot com>
- * SPDX-FileCopyrightText:      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Alex Jironkin <alexjironkin at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -45,32 +45,26 @@ class Q_DECL_HIDDEN MainWindow::Private
 {
 public:
 
-    explicit Private()
-      : ui            (nullptr),
-        myScene       (nullptr),
-        myView        (nullptr),
-        lastPhotoItem (nullptr),
-        detector      (nullptr),
-        scale         (0.0)
-    {
-    }
+    Private() = default;
 
-    Ui::MainWindow*          ui;
-    QGraphicsScene*          myScene;
-    QGraphicsView*           myView;
-    QGraphicsPixmapItem*     lastPhotoItem;
+public:
+
+    Ui::MainWindow*          ui             = nullptr;
+    QGraphicsScene*          myScene        = nullptr;
+    QGraphicsView*           myView         = nullptr;
+    QGraphicsPixmapItem*     lastPhotoItem  = nullptr;
     QList<FaceItem*>         faceitems;
 
     FacialRecognitionWrapper database;
-    FaceDetector*            detector;
+    FaceDetector*            detector       = nullptr;
     QImage                   currentPhoto;
-    double                   scale;
+    double                   scale          = 0.0;
     QString                  lastFileOpenPath;
 };
 
 MainWindow::MainWindow(QWidget* const parent)
     : QMainWindow(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->ui = new Ui::MainWindow;
     d->ui->setupUi(this);
@@ -111,12 +105,12 @@ MainWindow::MainWindow(QWidget* const parent)
 
     d->myView->show();
 
-    d->detector = new FaceDetector();
+    d->detector               = new FaceDetector();
 
     d->ui->accuracySlider->setValue(80);
     d->ui->sensitivitySlider->setValue(80);
 
-    d->lastFileOpenPath = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first();
+    d->lastFileOpenPath       = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first();
 }
 
 MainWindow::~MainWindow()
@@ -175,7 +169,10 @@ void MainWindow::slotOpenImage()
     d->currentPhoto.load(file);
     d->lastPhotoItem = new QGraphicsPixmapItem(QPixmap::fromImage(d->currentPhoto));
 
-    if ((1.0 * d->ui->widget->width() / d->currentPhoto.width()) < (1.0 * d->ui->widget->height() / d->currentPhoto.height()))
+    if (
+        (1.0 * d->ui->widget->width()  / d->currentPhoto.width()) <
+        (1.0 * d->ui->widget->height() / d->currentPhoto.height())
+       )
     {
         d->scale = 1.0 * d->ui->widget->width() / d->currentPhoto.width();
     }
@@ -259,8 +256,9 @@ void MainWindow::slotRecognise()
         {
             item->suggest(identity.attribute(QString::fromLatin1("name")));
 
-            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << " is closest to the person with ID " << identity.id()
-                     << " and name "<< identity.attribute(QString::fromLatin1("name"));
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1
+                                       << " is closest to the person with ID " << identity.id()
+                                       << " and name "<< identity.attribute(QString::fromLatin1("name"));
         }
         else
         {
@@ -295,20 +293,22 @@ void MainWindow::slotUpdateDatabase()
             {
                 QMultiMap<QString, QString> attributes;
                 attributes.insert(QString::fromLatin1("name"), name);
-                identity                                = d->database.addIdentity(attributes);
-                qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity ID " << identity.id() << " to database for name " << name;
+                identity = d->database.addIdentity(attributes);
+                qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity ID " << identity.id()
+                                           << " to database for name " << name;
             }
             else
             {
-                qCDebug(DIGIKAM_TESTS_LOG) << "Found existing identity ID " << identity.id() << " from database for name " << name;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Found existing identity ID " << identity.id()
+                                           << " from database for name " << name;
             }
 
-            QImage* face = new QImage();
-            *face        = d->currentPhoto.copy(item->originalRect());
+            QImage* const face = new QImage();
+            *face              = d->currentPhoto.copy(item->originalRect());
 
             d->database.train(identity, QPair<QImage*, QString>(face, QLatin1String("f00d")));
 
-            int elapsed  = timer.elapsed();
+            int elapsed        = timer.elapsed();
 
             qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for Face #" << i+1;
         }

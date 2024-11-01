@@ -26,32 +26,31 @@ class Q_DECL_HIDDEN Button::Private
 {
 public:
 
-    explicit Private()
-      : isPressed(false)
-    {
-    }
+    Private() = default;
 
-    bool    isPressed;
+public:
+
+    bool    isPressed = false;
     QPixmap normal;
     QPixmap pressed;
 };
 
 Button::Button(QGraphicsItem* const parent)
     : QGraphicsItem(parent),
-      d(new Private)
+      d            (new Private)
 {
 }
 
 Button::Button(const QString& normal, const QString& pressed, QGraphicsItem* const parent)
     : QGraphicsItem(parent),
-      d(new Private)
+      d            (new Private)
 {
     setPixmap(normal, pressed);
 }
 
 Button::Button(const QPixmap& normal, const QPixmap& pressed, QGraphicsItem* const parent)
    : QGraphicsItem(parent),
-     d(new Private)
+     d            (new Private)
 {
     setPixmap(normal, pressed);
 }

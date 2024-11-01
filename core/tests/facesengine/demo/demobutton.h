@@ -60,6 +60,8 @@ private:
     // Disable
     explicit Button(QObject*);
 
+private:
+
     class Private;
     Private* const d = nullptr;
 };
