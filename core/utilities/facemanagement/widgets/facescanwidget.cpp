@@ -241,9 +241,9 @@ void FaceScanWidget::setupUi()
     d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
 
 
-    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),    FaceScanSettings::FaceDetectionModel::YuNet);
-    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"),   FaceScanSettings::FaceDetectionModel::YOLOv3);
-    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "SSD"),      FaceScanSettings::FaceDetectionModel::SSDMOBILENET);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),  FaceScanSettings::FaceDetectionModel::YuNet);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"), FaceScanSettings::FaceDetectionModel::YOLOv3);
+    d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "SSD"),    FaceScanSettings::FaceDetectionModel::SSDMOBILENET);
     d->detectModelBox->setEditable(false);
     d->detectModelBox->setToolTip(i18nc("@info:tooltip",
                                         "Detection model used to find faces. YuNet is the default model.\n"
@@ -271,11 +271,11 @@ void FaceScanWidget::setupUi()
     detectSizeLabel->setAlignment(Qt::AlignLeft);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"),   FaceScanSettings::FaceDetectionSize::ExtraSmall);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),         FaceScanSettings::FaceDetectionSize::Small);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),        FaceScanSettings::FaceDetectionSize::Medium);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),         FaceScanSettings::FaceDetectionSize::Large);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"),   FaceScanSettings::FaceDetectionSize::ExtraLarge);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"), FaceScanSettings::FaceDetectionSize::ExtraSmall);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),       FaceScanSettings::FaceDetectionSize::Small);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),      FaceScanSettings::FaceDetectionSize::Medium);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),       FaceScanSettings::FaceDetectionSize::Large);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"), FaceScanSettings::FaceDetectionSize::ExtraLarge);
     d->detectSizeBox->setEditable(false);
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
                                        "<p>Selecting <b>Extra Small</b> means the model will detect small background faces in addition "
@@ -331,8 +331,8 @@ void FaceScanWidget::setupUi()
     recognizeModelLabel->setAlignment(Qt::AlignLeft);
 
     d->recognizeModelBox                 = new SqueezedComboBox(d->settingsTab);
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),     FaceScanSettings::FaceRecognitionModel::SFace);
-    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"),  FaceScanSettings::FaceRecognitionModel::OpenFace);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "SFace"),    FaceScanSettings::FaceRecognitionModel::SFace);
+    d->recognizeModelBox->addSqueezedItem(i18nc("@label:listbox", "OpenFace"), FaceScanSettings::FaceRecognitionModel::OpenFace);
     d->recognizeModelBox->setEditable(false);
     d->recognizeModelBox->setToolTip(i18nc("@info:tooltip",
                                            "SFace is the default detection model. It is faster and more accurate.\n"
@@ -464,11 +464,11 @@ void FaceScanWidget::slotRecognizeModelChanged()
 
     FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
     FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
-    ChangeFaceRecognitionModelDlg* dlg              = new ChangeFaceRecognitionModelDlg(this, newModel);
+    ChangeFaceRecognitionModelDlg* const dlg        = new ChangeFaceRecognitionModelDlg(this, newModel);
 
     // Show the upgrade warning dialog box.
 
-    if (d->recognizeModelBox->isVisible() && QDialog::Accepted == dlg->exec())
+    if (d->recognizeModelBox->isVisible() && (QDialog::Accepted == dlg->exec()))
     {
         // Upgrade was approved. Save new value.
 
@@ -506,7 +506,6 @@ void FaceScanWidget::slotRecognizeModelChanged()
 
         connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
                                                          this, &FaceScanWidget::slotRecognizeModelChanged);
-
     }
 
     // Clean up the dialog.

@@ -568,8 +568,10 @@ void AssignNameWidget::Private::updateIgnoreButton()
     {
         FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
 
-        if ((face.type() == FaceTagsIface::IgnoredName) ||
-            (face.type() == FaceTagsIface::UnknownName))
+        if (
+            (face.type() == FaceTagsIface::IgnoredName) ||
+            (face.type() == FaceTagsIface::UnknownName)
+           )
         {
             ignoreButton->hide();
         }
