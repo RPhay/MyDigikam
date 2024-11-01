@@ -27,9 +27,11 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "facedetector.h"
 #include "faceutils.h"
 #include "previewloadthread.h"
+#include "scanstatefilter.h"
 #include "thumbnailloadthread.h"
 #include "workerobject.h"
 

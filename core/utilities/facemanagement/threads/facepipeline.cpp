@@ -18,15 +18,14 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "databasewriter.h"
-#include "detectionbenchmarker.h"
 #include "detectionworker.h"
-#include "recognitionbenchmarker.h"
 #include "recognitionworker.h"
 #include "trainerworker.h"
-#include "facepreviewloader.h"
 #include "faceitemretriever.h"
+#include "recognitionbenchmarker.h"
+#include "detectionbenchmarker.h"
+#include "facepreviewloader.h"
 #include "parallelpipes.h"
 #include "scanstatefilter.h"
 

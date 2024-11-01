@@ -21,10 +21,8 @@
 
 // Local includes
 
-#include "digikam_debug.h"
-#include "facepreviewloader.h"
 #include "parallelpipes.h"
-#include "scanstatefilter.h"
+#include "facepreviewloader.h"
 
 namespace Digikam
 {
