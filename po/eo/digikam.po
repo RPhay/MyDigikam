@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 01:48+0000\n"
+"POT-Creation-Date: 2024-11-01 01:47+0000\n"
 "PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -36388,12 +36388,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binaraj datumoj %1 bajtoj"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:377
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool ne ekzistas aŭ plenuma permeso mankas"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:391
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl ne ekzistas aŭ plenuma permeso mankas"
@@ -43019,8 +43019,8 @@ msgstr "Sekva Dekstra Flankbreto Tab"
 msgid "Show Statusbar"
 msgstr "Montru Statusbreton"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:120
-#: core/libs/widgets/mainview/dzoombar.cpp:209
+#: core/libs/widgets/mainview/dzoombar.cpp:121
+#: core/libs/widgets/mainview/dzoombar.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "@info: month-name year-string"
 #| msgid "%1 %2"
@@ -43028,7 +43028,7 @@ msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1 %2"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:222
+#: core/libs/widgets/mainview/dzoombar.cpp:223
 #, kde-format
 msgid "Size: %1"
 msgstr "Grandeco: %1"
@@ -58605,18 +58605,18 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Post"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
 #, kde-format
 msgid "Before"
 msgstr "Antaŭ"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
 #, kde-format
 msgid "After"
 msgstr "Post"
@@ -62939,49 +62939,49 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Altnivela Serĉo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:118
+#: core/utilities/setup/album/setupalbumview.cpp:119
 #: core/utilities/setup/camera/setupcamera.cpp:420
 #, kde-format
 msgid "Show file&name"
 msgstr "Montri dosier&nomon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:119
+#: core/utilities/setup/album/setupalbumview.cpp:120
 #: core/utilities/setup/camera/setupcamera.cpp:421
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la dosiernomon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/album/setupalbumview.cpp:122
 #: core/utilities/setup/camera/setupcamera.cpp:423
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Montri dosiergrande&con"
 
-#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/album/setupalbumview.cpp:123
 #: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la dosiergrandecon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/album/setupalbumview.cpp:125
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Montri fotilan kreo&daton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/album/setupalbumview.cpp:126
 #: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la fotilan kredaton sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:128
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Montri dosieran &modifodaton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -62992,12 +62992,12 @@ msgstr ""
 "estas malsama ol fotila krea dato. Ĉi tiu opcio estas utila por identigi "
 "rapide kiuj eroj estis modifitaj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Montri bildajn &dimensiojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -63005,56 +63005,56 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la grandecon de bildo en rastrumeroj sub la "
 "bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:137
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Montri bildan proporcion"
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la bildan bildformaton sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:141
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
 msgid "Show image format"
 msgstr "Montri bildformaton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:143
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri bildmimspecon super bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:144
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Montri digiKam tito&lon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la titolon de digiKam sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:148
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Montri digiKam &subtitolojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la subtitolojn de digiKam sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #: core/utilities/setup/camera/setupcamera.cpp:442
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Montri digiKam e&tikedojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -63062,33 +63062,33 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la liston de digiKam-etikedoj sub la "
 "bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Mont&ri digiKam taksadon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la digiKam-takson sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Montri digiKam &elekt-etikedon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la digiKam-elektidon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "Montri digiKam-kolor&etikedon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -63097,13 +63097,13 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la digiKam-koloretikedon kiel randon ĉirkaŭ "
 "la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Montri rotaciajn tegmentajn butonojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -63112,12 +63112,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri supermetitajn butonojn super la bildeto por "
 "povi prilabori maldekstren aŭ dekstran rotacion de bildo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Montri plenekranan tegmentbutonon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -63126,13 +63126,13 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri supermetitan butonon super la bildeto por "
 "malfermi ĝin en plenekrana reĝimo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #: core/utilities/setup/camera/setupcamera.cpp:439
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Montri Geolokigan Indikilon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -63141,56 +63141,56 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri piktogramon super la bildeto se objekto "
 "havas informojn pri geolokigo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #: core/utilities/setup/camera/setupcamera.cpp:454
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Bildetklaka ago:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, kde-format
 msgid "Show Preview"
 msgstr "Montri Antaŭrigardon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Komenci Bildredaktilon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Montri sur Luma Tablo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Malfermi kun Defaŭlta Apliko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Elektu kio devus okazi kiam vi alklakas bildeton."
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Icon View font:"
 msgstr "Piktogramvida tiparo:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Elektu ĉi tie la tiparon uzatan por montri tekston en piktogramaj vidoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Uzi grandan bildeton por alta ekrana distingivo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63213,18 +63213,18 @@ msgstr ""
 "Rekonstrui Bildetojn de Prizorga ilo devas esti prilaborita en tutaj "
 "kolektoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:226
+#: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Piktogramoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:233
+#: core/utilities/setup/album/setupalbumview.cpp:234
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Grando de piktogramo de Arba Vido:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:240
+#: core/utilities/setup/album/setupalbumview.cpp:241
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63233,12 +63233,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
 "piktogramoj de Arbo-Vido en la flankaj bretoj de digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:243
+#: core/utilities/setup/album/setupalbumview.cpp:244
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Grandeco de la piktogramo de Homoj Arbo:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:251
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63247,22 +63247,22 @@ msgstr ""
 "Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
 "piktogramoj de Arbo-Vido en la flanka kolumno de homoj de digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:254
+#: core/utilities/setup/album/setupalbumview.cpp:255
 #, kde-format
 msgid "Tree View font:"
 msgstr "Tiparo de Arbovido:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:255
+#: core/utilities/setup/album/setupalbumview.cpp:256
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Elekti ĉi tie la tiparon uzatan por montri tekston en Arbaj Vidoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:257
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Montri nombron de eroj en Arbaj Vidoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:258
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -63271,60 +63271,60 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri laŭ la nomo de la albumo la nombron da "
 "piktogram-videblaj eroj ene."
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Arbaj Vidoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:279
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Antaŭrigardo montras enigitan vidon se disponebla (pli rapide)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:280
+#: core/utilities/setup/album/setupalbumview.cpp:281
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Antaŭrigardo montras la plenan bildon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:282
+#: core/utilities/setup/album/setupalbumview.cpp:283
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Krudaj bildoj:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:285
+#: core/utilities/setup/album/setupalbumview.cpp:286
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Aŭtomata"
 
-#: core/utilities/setup/album/setupalbumview.cpp:287
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Enigita antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Krudaj datumoj en duona grandeco"
 
-#: core/utilities/setup/album/setupalbumview.cpp:291
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Krudaj datumoj en plena grandeco (alta kvalito)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:293
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Antaŭrigarda bildo estas konvertita al 8 bitoj por pli rapida spektado"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -63332,25 +63332,40 @@ msgstr ""
 "Malmarku ĉi tion se vi ne volas konverti antaŭrigardan bildon de 16 bitoj al "
 "8 bitoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:296
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Antaŭrigarda bildo estas ĉiam skalata por kongrui al fenestro"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 "Malmarku ĉi tion se vi ne volas skali malgrandajn bildojn por kongrui al "
 "fenestro."
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
+#, fuzzy, kde-format
+#| msgid "Preview image is always scaled to fit to window"
+msgid "Preview image use Anti-aliasing to scale up"
+msgstr "Antaŭrigarda bildo estas ĉiam skalata por kongrui al fenestro"
+
+#: core/utilities/setup/album/setupalbumview.cpp:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgstr ""
+"Malmarku ĉi tion se vi ne volas skali malgrandajn bildojn por kongrui al "
+"fenestro."
+
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Montri piktogramojn kaj tekston super antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid ""
@@ -63359,31 +63374,31 @@ msgstr ""
 "Malmarku ĉi tion se vi ne volas vidi piktogramojn kaj tekston en la bilda "
 "antaŭprezento."
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Plenekrane"
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:342
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Mimaj Tipoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:340
+#: core/utilities/setup/album/setupalbumview.cpp:345
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:506
+#: core/utilities/setup/album/setupalbumview.cpp:513
 #, kde-format
 msgctxt "@info"
 msgid ""

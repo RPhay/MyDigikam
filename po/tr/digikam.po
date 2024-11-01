@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 01:48+0000\n"
+"POT-Creation-Date: 2024-11-01 01:47+0000\n"
 "PO-Revision-Date: 2024-10-29 22:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -36520,12 +36520,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 bayt ikili veri"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:377
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool yok veya yürütme izni eksik"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:391
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl yok veya yürütme izni eksik"
@@ -43156,14 +43156,14 @@ msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:120
-#: core/libs/widgets/mainview/dzoombar.cpp:209
+#: core/libs/widgets/mainview/dzoombar.cpp:121
+#: core/libs/widgets/mainview/dzoombar.cpp:210
 #, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%%1"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:222
+#: core/libs/widgets/mainview/dzoombar.cpp:223
 #, kde-format
 msgid "Size: %1"
 msgstr "Boyut: %1"
@@ -58758,18 +58758,18 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Sonrası"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
 #, kde-format
 msgid "Before"
 msgstr "Öncesi"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
 #, kde-format
 msgid "After"
 msgstr "Sonrası"
@@ -63047,26 +63047,26 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Gelişmiş Arama"
 
-#: core/utilities/setup/album/setupalbumview.cpp:118
+#: core/utilities/setup/album/setupalbumview.cpp:119
 #: core/utilities/setup/camera/setupcamera.cpp:420
 #, kde-format
 msgid "Show file&name"
 msgstr "&Dosya adını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:119
+#: core/utilities/setup/album/setupalbumview.cpp:120
 #: core/utilities/setup/camera/setupcamera.cpp:421
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr ""
 "Dosya adının küçük görselin altında görünmesi için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/album/setupalbumview.cpp:122
 #: core/utilities/setup/camera/setupcamera.cpp:423
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Dosya &boyutunu göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/album/setupalbumview.cpp:123
 #: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
@@ -63074,13 +63074,13 @@ msgstr ""
 "Dosya boyutunun küçük görselin altında görünmesi için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/album/setupalbumview.cpp:125
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Kamera oluştur&ma zamanını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/album/setupalbumview.cpp:126
 #: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid ""
@@ -63089,12 +63089,12 @@ msgstr ""
 "Kamera oluşturma tarihinin küçük görsellerin altında görünmesi için bu "
 "seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:128
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Dosya &değişiklik tarihini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -63105,12 +63105,12 @@ msgstr ""
 "görselin altında gösterilmesi için bu seçeneği ayarlayın. Bu seçenek, hangi "
 "ögelerin değiştirildiğini tez belirlemek için kullanışlıdır."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "&Görsel boyutlarını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -63118,12 +63118,12 @@ msgstr ""
 "Görsel boyutunu, küçük görselin altında piksel türünden göstermek için bu "
 "seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:137
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Görsel en–boy oranını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
@@ -63131,49 +63131,49 @@ msgstr ""
 "Görselin en–boy oranını küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:141
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
 msgid "Show image format"
 msgstr "Görsel biçimini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:143
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr ""
 "Küçük görselin üzerinde görselin MIME türünü göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:144
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "digiKam baş&lığını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 "digiKam başlığını küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:148
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "digiKam &alt yazılarını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "digiKam alt yazılarını küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #: core/utilities/setup/camera/setupcamera.cpp:442
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "digiKam &künyelerini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -63181,24 +63181,24 @@ msgstr ""
 "digiKam künyelerini küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "digiKam &derecelendirmesini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 "digiKam derecelendirmesini küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "digiKam &seçim etiketini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
@@ -63206,12 +63206,12 @@ msgstr ""
 "digiKam seçim etiketini küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "digiKam &renk etiketini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -63220,13 +63220,13 @@ msgstr ""
 "digiKam renk etiketini küçük görselin çevresinde bir kenarlık olarak "
 "göstermek için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Katmanlı döndürme düğmelerini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -63235,12 +63235,12 @@ msgstr ""
 "Görseli sola veya sağa döndürme işlemini gerçekleştirebilmek amacıyla küçük "
 "görselin üzerinde katman düğmeleri göstermek için bu seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Tam ekran kaplama düğmesini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -63249,13 +63249,13 @@ msgstr ""
 "Görseli tam ekran kipinde açmak üzere küçük görselin üzerinde bir katman "
 "düğmesi görüntülenecek biçimde bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #: core/utilities/setup/camera/setupcamera.cpp:439
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Coğrafi konum göstergesini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -63264,57 +63264,57 @@ msgstr ""
 "Ögenin coğrafi konum bilgisi varsa küçük görselin üzerinde bir simge "
 "göstermek için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #: core/utilities/setup/camera/setupcamera.cpp:454
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Küçük görsel tıklama eylemi:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, kde-format
 msgid "Show Preview"
 msgstr "Önizlemeyi göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Görsel düzenleyicisini başlat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Işık tablasında göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Öntanımlı uygulama ile aç"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Küçük görsele tıklayınca ne yapılacağını seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Icon View font:"
 msgstr "Simge görünümü yazıtipi:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Simge görünümünde görüntülenecek metin için kullanılan yazıtipini burada "
 "seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Yüksek ekran çözünürlüğü için büyük küçük görsel boyutunu kullan"
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63337,18 +63337,18 @@ msgstr ""
 "başlatılması gerekir ve Bakım aracındaki Küçük Görselleri Yeniden Yap "
 "seçeneğinin tüm koleksiyonlar üzerinde işlenmesi gerekir."
 
-#: core/utilities/setup/album/setupalbumview.cpp:226
+#: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Simgeler"
 
-#: core/utilities/setup/album/setupalbumview.cpp:233
+#: core/utilities/setup/album/setupalbumview.cpp:234
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Ağaç görünümü simge boyutu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:240
+#: core/utilities/setup/album/setupalbumview.cpp:241
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63357,12 +63357,12 @@ msgstr ""
 "digiKam’ın kenar çubuklarındaki Ağaç Görünümü simgelerinin boyutunu piksel "
 "türünden yapılandırmak için bu seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:243
+#: core/utilities/setup/album/setupalbumview.cpp:244
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Kişi ağacı görünümü simge boyutu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:251
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63371,24 +63371,24 @@ msgstr ""
 "digiKam’ın kişi kenar çubuklarındaki Ağaç Görünümü simgelerinin boyutunu "
 "piksel türünden yapılandırmak için bu seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:254
+#: core/utilities/setup/album/setupalbumview.cpp:255
 #, kde-format
 msgid "Tree View font:"
 msgstr "Ağaç görünümü yazıtipi:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:255
+#: core/utilities/setup/album/setupalbumview.cpp:256
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 "Ağaç görünümünde metin görüntülemek için kullanılacak yazıtipini burada "
 "seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:257
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Ağaç görünümünde ögelerin sayısını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:258
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -63397,60 +63397,60 @@ msgstr ""
 "Albüm adı boyunca içindeki simge görünümü ögelerinin sayısını görüntülemek "
 "için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Ağaç Görünümleri"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:279
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Önizleme, kullanılabiliyorsa gömülü görünümü gösterir (daha hızlı)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:280
+#: core/utilities/setup/album/setupalbumview.cpp:281
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Önizleme, bütün görseli gösterir"
 
-#: core/utilities/setup/album/setupalbumview.cpp:282
+#: core/utilities/setup/album/setupalbumview.cpp:283
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "RAW görselleri:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:285
+#: core/utilities/setup/album/setupalbumview.cpp:286
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Kendiliğinden"
 
-#: core/utilities/setup/album/setupalbumview.cpp:287
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Gömülü önizleme"
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Yarım boyutta RAW verisi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:291
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Tam boyutta RAW verisi (yüksek kaliteli)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:293
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Önizleme görseli, daha hızlı görüntüleme için 8 bit’e dönüştürülür"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -63458,25 +63458,40 @@ msgstr ""
 "Eğer önizleme görsellerini 16 bitten 8 bite dönüştürmek istemiyorsanız bu "
 "seçeneğin işaretini kaldırın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:296
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Önizleme görseli her zaman pencereye sığacak biçimde ölçeklenir"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 "Küçük görsellerin pencereye sığdırılması için ölçeklenmesini istemiyorsanız "
 "bu seçeneğin işaretini kaldırın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
+#, fuzzy, kde-format
+#| msgid "Preview image is always scaled to fit to window"
+msgid "Preview image use Anti-aliasing to scale up"
+msgstr "Önizleme görseli her zaman pencereye sığacak biçimde ölçeklenir"
+
+#: core/utilities/setup/album/setupalbumview.cpp:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgstr ""
+"Küçük görsellerin pencereye sığdırılması için ölçeklenmesini istemiyorsanız "
+"bu seçeneğin işaretini kaldırın."
+
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Önizlemede simgeleri ve metni göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid ""
@@ -63485,31 +63500,31 @@ msgstr ""
 "Görsel önizlemesinde simgeler ve metin görmek istemiyorsanız bu seçeneğin "
 "işaretini kaldırın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Önizleme"
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Tam Ekran"
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:342
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME Türleri"
 
-#: core/utilities/setup/album/setupalbumview.cpp:340
+#: core/utilities/setup/album/setupalbumview.cpp:345
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: core/utilities/setup/album/setupalbumview.cpp:506
+#: core/utilities/setup/album/setupalbumview.cpp:513
 #, kde-format
 msgctxt "@info"
 msgid ""
