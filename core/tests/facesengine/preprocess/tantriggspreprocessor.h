@@ -18,7 +18,7 @@
 
 #pragma once
 
-// Locak includes
+// Local includes
 
 #include "digikam_opencv.h"
 
@@ -45,18 +45,19 @@ public:
     cv::Mat preprocessRaw(const cv::Mat& inputImage);
 
     /**
-     * Converts CV_32F1 -> CV_8UC1
+     * Converts CV_32F1 -> CV_8UC1.
      */
     cv::Mat normalize(const cv::Mat& preprocessedImage);
 
 public:
 
     /// Parameters, initialized with the default values from the paper.
-    float alpha;
-    float tau;
-    float gamma;
-    float sigma0;
-    float sigma1;
+
+    float alpha  = 0.0F;
+    float tau    = 0.0F;
+    float gamma  = 0.0F;
+    float sigma0 = 0.0F;
+    float sigma1 = 0.0F;
 };
 
 } // namespace Digikam

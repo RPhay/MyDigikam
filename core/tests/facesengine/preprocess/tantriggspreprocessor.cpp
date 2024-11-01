@@ -39,22 +39,22 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
 {
     cv::Mat X = inputImage;
 
-    // Ensure it's grayscale
+    // Ensure it's grayscale.
 
     if (X.channels() > 1)
     {
         cvtColor(X, X, CV_RGB2GRAY);
     }
 
-    // Convert to floating point:
+    // Convert to floating point.
 
     X.convertTo(X, CV_32FC1);
 
-    // Start preprocessing:
+    // Start preprocessing.
 
     cv::Mat I;
 
-    // Gamma correction
+    // Gamma correction.
 
     cv::pow(X, gamma, I);
 
@@ -63,12 +63,12 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
     {
         cv::Mat gaussian0, gaussian1;
 
-        // Kernel Size:
+        // Kernel Size.
 
         int kernel_sz0 = (int)(3*sigma0);
         int kernel_sz1 = (int)(3*sigma1);
 
-        // Make them odd for OpenCV:
+        // Make them odd for OpenCV.
 
         kernel_sz0    += ((kernel_sz0 % 2) == 0) ? 1 : 0;
         kernel_sz1    += ((kernel_sz1 % 2) == 0) ? 1 : 0;
@@ -101,7 +101,7 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
         I = I / cv::pow(meanI, 1.0/alpha);
     }
 
-    // Squash into the tanh:
+    // Squash into the tanh.
 
     {
         for (int r = 0 ; r < I.rows ; ++r)
@@ -130,14 +130,22 @@ cv::Mat TanTriggsPreprocessor::normalize(const cv::Mat& src)
     switch (src.channels())
     {
         case 1:
+        {
             cv::normalize(src, dst, 0, 255, cv::NORM_MINMAX, CV_8UC1);
             break;
+        }
+
         case 3:
+        {
             cv::normalize(src, dst, 0, 255, cv::NORM_MINMAX, CV_8UC3);
             break;
+        }
+
         default:
+        {
             src.copyTo(dst);
             break;
+        }
     }
 
     return dst;

@@ -51,7 +51,7 @@ void detectFaces(const QString& imagePath)
     QList<QRectF> faces = detector.detectFaces(imagePath);
     elapsedDetection = timer.elapsed();
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found" << faces.size() << "faces, in" << elapsedDetection << "ms";
 
     if (faces.isEmpty())
     {
@@ -59,21 +59,21 @@ void detectFaces(const QString& imagePath)
         return;
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces:";
 
     for (const QRectF& r : std::as_const(faces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
-    QWidget* const mainWidget = new QWidget;
+    QWidget* const mainWidget     = new QWidget;
 
     QScrollArea* const scrollArea = new QScrollArea;
     scrollArea->setWidget(mainWidget);
     scrollArea->setWidgetResizable(true);
 
-    QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
-    QLabel* const fullImage = new QLabel;
+    QHBoxLayout* const layout     = new QHBoxLayout(mainWidget);
+    QLabel* const fullImage       = new QLabel;
     fullImage->setScaledContents(true);
     layout->addWidget(fullImage);
 
@@ -96,20 +96,20 @@ void detectFaces(const QString& imagePath)
         painter.drawRect(rectDraw);
     }
 
-    // Only setPixmap after finishing drawing bboxes around detected faces
+    // Only setPixmap after finishing drawing bboxes around detected faces.
 
     fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 
     scrollArea->show();
     scrollArea->setWindowTitle(imagePath);
-    qApp->processEvents(); // dirty hack
+    qApp->processEvents(); // Dirty hack.
 }
 
 int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0] << " <image1> <image2> ...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage:" << argv[0] << "<image1> <image2>...";
         return 0;
     }
 

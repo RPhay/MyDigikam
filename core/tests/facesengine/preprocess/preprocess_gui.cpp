@@ -74,15 +74,14 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 public:
 
     explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
-        : bigImage(cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3)),
-          uiSize(uiSize),
-          currentRow(0)
+        : bigImage(cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
+          uiSize  (uiSize)
     {
     }
 
     void add(const cv::Mat& left, const cv::Mat& right)
     {
-        // Draw images side-by-side for later display
+        // Draw images side-by-side for later display.
 
         QSize size(left.cols, left.rows);
         size.scale(uiSize, uiSize, Qt::KeepAspectRatio);
@@ -120,8 +119,8 @@ public:
 public:
 
     cv::Mat   bigImage;
-    const int uiSize;
-    int       currentRow;
+    const int uiSize     = 0;
+    int       currentRow = 0;
 };
 
 // --------------------------------------------------------------------------------------------------
@@ -130,7 +129,7 @@ int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0] << " preprocess <image1> <image2> ... ";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage:" << argv[0] << "preprocess <image1> <image2> ...";
         return 0;
     }
 
@@ -153,8 +152,9 @@ int main(int argc, char** argv)
     }
 
     int elapsed = timer.elapsed();
-    qCDebug(DIGIKAM_TESTS_LOG) << "Preprocessing took " << elapsed << " for " << images.size() << " , "
-             << ((float)elapsed/images.size()) << " per image";
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Preprocessing took" << elapsed << "for" << images.size() << ","
+                               << ((float)elapsed/images.size()) << "per image";
 
     display.show();
     app.exec();

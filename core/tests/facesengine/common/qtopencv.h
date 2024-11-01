@@ -8,7 +8,7 @@
  *               Partially inspired from:
  *               https://asmaloney.com/2013/11/code/converting-between-cvmat-and-qimage-or-qpixmap
  *
- * SPDX-FileCopyrightText:      2013 by Andy Maloney <asmaloney at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Andy Maloney <asmaloney at gmail dot com>
  * SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -35,7 +35,7 @@ namespace QtOpenCV
     {
         switch (inMat.type())
         {
-            // 8-bit, 4 channel
+            // 8-bit, 4 channel.
 
             case CV_8UC4:
             {
@@ -48,7 +48,7 @@ namespace QtOpenCV
                 return image;
             }
 
-            // 8-bit, 3 channel
+            // 8-bit, 3 channel.
 
             case CV_8UC3:
             {
@@ -61,7 +61,7 @@ namespace QtOpenCV
                 return image.rgbSwapped();
             }
 
-            // 8-bit, 1 channel
+            // 8-bit, 1 channel.
 
             case CV_8UC1:
             {
@@ -95,7 +95,7 @@ namespace QtOpenCV
 
     /**
      * If inImage exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inImage's
-     * data with the cv::Mat directly
+     * data with the cv::Mat directly.
      * NOTE: Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
      * NOTE: This does not cover all cases - it should be easy to add new ones as required.
      */
@@ -103,7 +103,7 @@ namespace QtOpenCV
     {
         switch (inImage.format())
         {
-            // 8-bit, 4 channel
+            // 8-bit, 4 channel.
 
             case QImage::Format_ARGB32:
             case QImage::Format_ARGB32_Premultiplied:
@@ -117,7 +117,7 @@ namespace QtOpenCV
                 return (inCloneImageData ? mat.clone() : mat);
             }
 
-            // 8-bit, 3 channel
+            // 8-bit, 3 channel.
 
             case QImage::Format_RGB32:
             case QImage::Format_RGB888:
@@ -146,7 +146,7 @@ namespace QtOpenCV
                               ).clone();
             }
 
-            // 8-bit, 1 channel
+            // 8-bit, 1 channel.
 
             case QImage::Format_Indexed8:
             {
@@ -174,7 +174,7 @@ namespace QtOpenCV
 
     /**
      * If inPixmap exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inPixmap's data
-     * with the cv::Mat directly
+     * with the cv::Mat directly.
      * NOTE: Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
      */
     inline cv::Mat QPixmapToCvMat(const QPixmap& inPixmap, bool inCloneImageData = true)

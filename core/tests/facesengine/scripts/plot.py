@@ -1,7 +1,18 @@
+#!/usr/bin/env python3
+
+# ============================================================
+#
+# This file is a part of digiKam project
+# https://www.digikam.org
+#
+# Date        : 2020-08-11
+# Description : A script to plot UMAP projection of the face embedding from Extended Yale B dataset.
 #
 # SPDX-FileCopyrightText: 2020, Nghia Duong, <minhnghiaduong997 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
+#
+# ============================================================ */
 
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score

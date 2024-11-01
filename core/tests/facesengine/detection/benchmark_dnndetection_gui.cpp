@@ -63,12 +63,12 @@ private Q_SLOTS:
 
 private:
 
-    OpenCVDNNFaceDetector* m_detector;
+    OpenCVDNNFaceDetector* m_detector           = nullptr;
 
-    QLabel*                m_fullImage;
-    QLabel*                m_paddedImage;
-    QListWidget*           m_imageListView;
-    QListWidget*           m_croppedfaceList;
+    QLabel*                m_fullImage          = nullptr;
+    QLabel*                m_paddedImage        = nullptr;
+    QListWidget*           m_imageListView      = nullptr;
+    QListWidget*           m_croppedfaceList    = nullptr;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
@@ -120,7 +120,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
-    // clear faces layout
+    // Clear faces layout.
 
     QListWidgetItem* wItem = nullptr;
 
@@ -133,7 +133,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     extractFaces(img, imgScaled, faces);
 
-    // Only setPixmap after finishing drawing bboxes around detected faces
+    // Only setPixmap after finishing drawing bboxes around detected faces.
 
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 }
@@ -173,8 +173,8 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
         unsigned int elapsedDetection = 0;
         timer.start();
 
-        // NOTE detection with filePath won't work when format is not standard
-        // NOTE unexpected behaviour with detecFaces(const QString&)
+        // NOTE: detection with filePath won't work when format is not standard.
+        // NOTE: unexpected behaviour with detecFaces(const QString&).
 
         cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
@@ -184,7 +184,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection      = timer.elapsed();
 
-        // debug padded image
+        // Debug padded image.
 
         m_paddedImage->setPixmap(showCVMat(cvImage));
 
@@ -228,7 +228,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         QRect  rect     = FaceDetector::toAbsoluteRect(rr, img.size());
         QImage part     = img.copy(rect);
 
-        // Show cropped faces
+        // Show cropped faces.
 
         QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
                                                          qMin(img.size().width(), 100),
@@ -297,7 +297,7 @@ QWidget* MainWindow::setupCroppedFaceArea()
 
 QWidget* MainWindow::setupImageList(const QDir& directory)
 {
-    // Itemlist area
+    // Itemlist area.
 
     QScrollArea* const itemsArea = new QScrollArea;
     itemsArea->setWidgetResizable(true);
@@ -351,7 +351,7 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
 
-    // Options for commandline parser
+    // Options for commandline parser.
 
     QCommandLineParser* const parser = parseOptions(app);
 

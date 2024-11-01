@@ -39,8 +39,10 @@ int main(int argc, char** argv)
     QCoreApplication app(argc, argv);
     QCommandLineParser* const parser = parseOptions(app);
 
-    if (!parser->isSet(QLatin1String("source")) &&
-        !parser->isSet(QLatin1String("destination")))
+    if (
+        !parser->isSet(QLatin1String("source")) &&
+        !parser->isSet(QLatin1String("destination"))
+       )
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Folders are not set !!!";
 
@@ -50,7 +52,7 @@ int main(int argc, char** argv)
     QDir source(parser->value(QLatin1String("source")));
     QDir destination(parser->value(QLatin1String("destination")));
 
-    if (! source.exists())
+    if (!source.exists())
     {
         return 1;
     }
