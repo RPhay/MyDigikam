@@ -91,7 +91,6 @@ public:
 private:
 
     Q_DISABLE_COPY(Runnable)
-
 };
 
 int main(int argc, char** argv)
@@ -123,7 +122,7 @@ int main(int argc, char** argv)
     {
         for (const Identity& id : std::as_const(list))
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Identity" << id.attribute(QString::fromLatin1("name")) << "recognized";
         }
     }
     else

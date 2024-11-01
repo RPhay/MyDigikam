@@ -47,43 +47,41 @@ void intersection(const std::vector<int>& v1,
                   const std::vector<int>& v2,
                   std::vector<int>& vout)
 {
-    // Find the intersection of the two sets
+    // Find the intersection of the two sets.
 
     std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(),
                           std::inserter(vout, vout.begin()));
 }
 
 /**
- * Function to return the Jaccard distance of two vectors
+ * Function to return the Jaccard distance of two vectors.
  */
 double jaccard_distance(const std::vector<int>& v1,
                         const std::vector<int>& v2)
 {
-    // Sizes of both the sets
+    // Sizes of both the sets.
 
     double size_v1       = v1.size();
     double size_v2       = v2.size();
 
-    // Get the intersection set
+    // Get the intersection set.
 
     std::vector<int> intersect;
     intersection(v1, v2, intersect);
 
-    // Size of the intersection set
+    // Size of the intersection set.
 
     double size_in       = intersect.size();
 
-    // Calculate the Jaccard index
-    // using the formula
+    // Calculate the Jaccard index using the formula.
 
     double jaccard_index = size_in / (size_v1 + size_v2 - size_in);
 
-    // Calculate the Jaccard distance
-    // using the formula
+    // Calculate the Jaccard distance using the formula.
 
     double jaccard_dist  = 1 - jaccard_index;
 
-    // Return the Jaccard distance
+    // Return the Jaccard distance.
 
     return jaccard_dist;
 }
@@ -237,7 +235,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             }
         }
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "testCluster " << i << " with group " << indice;
+        qCDebug(DIGIKAM_TESTS_LOG) << "testCluster" << i << "with group" << indice;
 
         std::vector<int> similarSet = clusters.at(indice);
 
@@ -309,26 +307,25 @@ int main(int argc, char* argv[])
 
     QString facedb         = parser.value(QLatin1String("db"));
 
-    // Init config for digiKam
+    // Init config for digiKam.
 
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     FacialRecognitionWrapper recognizer;
-
-    //db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering
-
-    // Construct test set, data set
+/*
+    db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering.
+*/
+    // Construct test set, data set.
 
     QStringList dataset;
     std::vector<int> testClusteredIndices;
     int nbOfClusters = prepareForTrain(facedb, dataset, testClusteredIndices);
 
-    // Init FaceDetector used for detecting faces and bounding box
-    // before recognizing
+    // Init FaceDetector used for detecting faces and bounding box before recognizing.
 
     FaceDetector detector;
 
-    // Evaluation metrics
+    // Evaluation metrics.
 
     unsigned totalClustered    = 0;
     unsigned elapsedClustering = 0;
@@ -365,22 +362,23 @@ int main(int argc, char* argv[])
 
     timer.start();
 /*
-    TODO: port to new API
+    TODO: port to new API.
     db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);
 */
     elapsedClustering  += timer.elapsed();
 
-    // Verify clustering
+    // Verify clustering.
 
     QStringList falsePositiveCases;
     verifyClusteringResults(clusteredIndices, testClusteredIndices, dataset, falsePositiveCases);
 
-    // Display results
+    // Display results.
 
     unsigned nbUndetectedFaces = undetectedFaces.size();
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedFaces << " / " << dataset.size() + nbUndetectedFaces
-             << " (" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)"
-             << " faces cannot be detected";
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedFaces << "/" << dataset.size() + nbUndetectedFaces
+                               << "(" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)"
+                               << "faces cannot be detected";
 
     for (const QString& path : std::as_const(undetectedFaces))
     {
@@ -388,17 +386,18 @@ int main(int argc, char* argv[])
     }
 
     unsigned nbOfFalsePositiveCases = falsePositiveCases.size();
+
     qCDebug(DIGIKAM_TESTS_LOG) << "\nFalse positive cases";
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbOfFalsePositiveCases << " / " << dataset.size()
-             << " (" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
-             << " faces were wrongly clustered";
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbOfFalsePositiveCases << "/" << dataset.size()
+                               << "(" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
+                               << "faces were wrongly clustered";
 
     for (const QString& imagePath : std::as_const(falsePositiveCases))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << imagePath;
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n Time for clustering " << elapsedClustering << " ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "\nTime for clustering" << elapsedClustering << "ms";
 
     return 0;
 }

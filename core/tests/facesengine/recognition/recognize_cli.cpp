@@ -65,8 +65,8 @@ int main(int argc, char** argv)
     if ((argc < 2) || ((QString::fromLatin1(argv[1]) == QString::fromLatin1("train")) && (argc < 3)))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0]
-                 << " identify <image1> <image2> ... | train name <image1> <image2> ... "
-                                                    "| ORL <path to orl_faces>";
+                                   << "identify <image1> <image2> ... | train name <image1> <image2> ..."
+                                      "| ORL <path to orl_faces>";
         return 0;
     }
 
@@ -86,14 +86,14 @@ int main(int argc, char** argv)
         QList<Identity> identities = recognizer.recognizeFaces(images);
         int elapsed                = timer.elapsed();
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took " << elapsed
-                 << " for " << images.size() << ", "
-                 << ((float)elapsed/images.size()) << " per image";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took" << elapsed
+                                   << " for " << images.size() << ", "
+                                   << ((float)elapsed/images.size()) << " per image";
 
         for (int i = 0 ; i < paths.size() ; ++i)
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Identified " << identities[i].attribute(QString::fromLatin1("name"))
-                     << " in " << paths[i];
+                                       << " in " << paths[i];
         }
     }
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("train"))
@@ -107,7 +107,7 @@ int main(int argc, char** argv)
 
         if (identity.isNull())
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity to database for name " << name;
+            qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity to database for name" << name;
             QMultiMap<QString, QString> attributes;
             attributes.insert(QString::fromLatin1("name"), name);
             identity                                = recognizer.addIdentity(attributes);
@@ -118,16 +118,19 @@ int main(int argc, char** argv)
 
         QList<QPair<QImage*, QString>> imageSet;
         QList<QImage*>::iterator isi;
-        for(isi = images.begin(); isi != images.end(); ++isi)
+
+        for (isi = images.begin() ; isi != images.end() ; ++isi)
         {
             imageSet << QPair<QImage*, QString>(*isi, QLatin1String("f00d"));
         }
+
         recognizer.train(identity, imageSet);
 
         int elapsed = timer.elapsed();
-        qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for "
-                 << images.size() << ", "
-                 << ((float)elapsed/images.size()) << " per image";
+
+        qCDebug(DIGIKAM_TESTS_LOG) << "Training took" << elapsed << "for"
+                                   << images.size() << ","
+                                   << ((float)elapsed / images.size()) << "per image";
     }
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("orl"))
     {
@@ -135,7 +138,7 @@ int main(int argc, char** argv)
 
         if (orlPath.isEmpty())
         {
-            orlPath = QString::fromLatin1("orl_faces"); // relative to current dir
+            orlPath = QString::fromLatin1("orl_faces"); // Relative to current dir.
         }
 
         QDir orlDir(orlPath);
@@ -143,6 +146,7 @@ int main(int argc, char** argv)
         if (!orlDir.exists())
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Cannot find orl_faces directory";
+
             return 0;
         }
 
@@ -163,11 +167,11 @@ int main(int argc, char** argv)
             {
                 Identity identity2 = recognizer.addIdentity(attributes);
                 idMap[i]           = identity2;
-                qCDebug(DIGIKAM_TESTS_LOG) << "Created identity " << identity2.id() << " for ORL directory " << i;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Created identity" << identity2.id() << "for ORL directory" << i;
             }
             else
             {
-                qCDebug(DIGIKAM_TESTS_LOG) << "Already have identity for ORL directory " << i << ", clearing training data";
+                qCDebug(DIGIKAM_TESTS_LOG) << "Already have identity for ORL directory" << i << ", clearing training data";
                 idMap[i] = identity;
                 trainingToBeCleared << identity;
             }
@@ -196,6 +200,7 @@ int main(int argc, char** argv)
         if (!QFileInfo::exists(trainingImages.value(1).first()))
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Could not find files of ORL database";
+
             return 0;
         }
 
@@ -216,15 +221,16 @@ int main(int argc, char** argv)
 
             if (identity.isNull())
             {
-                qCDebug(DIGIKAM_TESTS_LOG) << "Identity management failed for ORL person " << it.key();
+                qCDebug(DIGIKAM_TESTS_LOG) << "Identity management failed for ORL person" << it.key();
             }
 
             QList<QImage*> images = toImages(it.value());
-            qCDebug(DIGIKAM_TESTS_LOG) << "Training ORL directory " << it.key();
+            qCDebug(DIGIKAM_TESTS_LOG) << "Training ORL directory" << it.key();
 
             QList<QPair<QImage*, QString>> imageSet;
             QList<QImage*>::iterator isi;
-            for(isi = images.begin(); isi != images.end(); ++isi)
+
+            for (isi = images.begin() ; isi != images.end() ; ++isi)
             {
                 imageSet << QPair<QImage*, QString>(*isi, QLatin1String("f00d"));
             }
@@ -237,9 +243,9 @@ int main(int argc, char** argv)
 
         if (totalTrained)
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Training 5/10 or ORL took " << elapsed
-                     << " ms, " << ((float)elapsed/totalTrained)
-                     << " ms per image";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Training 5/10 or ORL took" << elapsed
+                                       << "ms," << ((float)elapsed/totalTrained)
+                                       << "ms per image";
         }
 
         for (QMap<int, QStringList>::const_iterator it = recognitionImages.constBegin() ;
@@ -249,8 +255,8 @@ int main(int argc, char** argv)
             QList<QImage*> images    = toImages(it.value());
             QList<Identity> results  = recognizer.recognizeFaces(images);
 
-            qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first()
-                     << " is identity " << results.first().id();
+            qCDebug(DIGIKAM_TESTS_LOG) << "Result for" << it.value().first()
+                                       << "is identity" << results.first().id();
 
             for (const Identity& foundId : std::as_const(results))
             {
@@ -275,10 +281,10 @@ int main(int argc, char** argv)
 
         if (totalRecognized)
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Recognition of 5/10 or ORL took " << elapsed << " ms, " << ((float)elapsed/totalRecognized) << " ms per image";
-            qCDebug(DIGIKAM_TESTS_LOG) << correct       << " of 200 (" << (float(correct)       / totalRecognized*100) << "%) were correctly recognized";
-            qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << " of 200 (" << (float(falsePositive) / totalRecognized*100) << "%) were falsely assigned to an identity";
-            qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << " of 200 (" << (float(notRecognized) / totalRecognized*100) << "%) were not recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Recognition of 5/10 or ORL took" << elapsed << "ms," << ((float)elapsed/totalRecognized) << "ms per image";
+            qCDebug(DIGIKAM_TESTS_LOG) << correct       << "of 200 (" << (float(correct)       / totalRecognized*100) << "%) were correctly recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << "of 200 (" << (float(falsePositive) / totalRecognized*100) << "%) were falsely assigned to an identity";
+            qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << "of 200 (" << (float(notRecognized) / totalRecognized*100) << "%) were not recognized";
         }
         else
         {

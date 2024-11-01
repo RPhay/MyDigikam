@@ -57,10 +57,10 @@ public:
 
 public:
 
-    QCommandLineParser* m_parser;
-    float               m_error;
-    int                 m_trainSize;
-    int                 m_testSize;
+    QCommandLineParser* m_parser    = nullptr;
+    float               m_error     = -1.0;
+    int                 m_trainSize = 0;
+    int                 m_testSize  = 0;
 
 private:
 
@@ -83,13 +83,13 @@ private:
     QHash<QString, QList<QImage*> > m_trainSet;
     QHash<QString, QList<QImage*> > m_testSet;
 
-    FaceDetector*                   m_detector;
-    FacialRecognitionWrapper*       m_recognizer;
+    FaceDetector*                   m_detector      = nullptr;
+    FacialRecognitionWrapper*       m_recognizer    = nullptr;
 };
 
 // --------------------------------------------------------
 
-// NOTE: dnn face detector can be parallelized but it takes longer than a single thread
+// NOTE: dnn face detector can be parallelized but it takes longer than a single thread.
 
 class ParallelDetector: public cv::ParallelLoopBody
 {
@@ -122,7 +122,7 @@ public:
 
 private:
 
-    FaceDetector*            m_detector;
+    FaceDetector*            m_detector = nullptr;
     const QList<QImage*>&    m_images;
     QVector<QList<QRectF> >& m_rects;
 
@@ -134,11 +134,7 @@ private:
 // --------------------------------------------------------
 
 Benchmark::Benchmark(QObject* const parent)
-    : QObject    (parent),
-      m_parser   (nullptr),
-      m_error    (-1),
-      m_trainSize(0),
-      m_testSize (0)
+    : QObject(parent)
 {
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
@@ -189,7 +185,8 @@ void Benchmark::registerTrainingSet()
 
         QList<QPair<QImage*, QString>> faceSet;
         QList<QImage*>::iterator fsi;
-        for(fsi = iter.value().begin(); fsi != iter.value().end(); ++fsi)
+
+        for(fsi = iter.value().begin() ; fsi != iter.value().end() ; ++fsi)
         {
             faceSet << QPair<QImage*, QString>(*fsi, QLatin1String("f00d"));
         }
@@ -202,7 +199,7 @@ void Benchmark::registerTrainingSet()
     unsigned int elapsedDetection = timer.elapsed();
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Registered <<  :" << m_trainSize
-             << "faces in training set";
+                               << "faces in training set";
 
     if (m_trainSize != 0)
     {
@@ -234,14 +231,14 @@ void Benchmark::verifyTestSet()
             {
                 if (m_trainSet.contains(iter.key()))
                 {
-                    // cannot recognize when label is already register
+                    // Cannot recognize when label is already register.
 
                     ++nbNotRecognize;
                 }
             }
             else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
             {
-                // wrong label
+                // Wrong label.
 
                 ++nbWrongLabel;
             }
@@ -265,9 +262,9 @@ void Benchmark::verifyTestSet()
     qCDebug(DIGIKAM_TESTS_LOG) << "nb Wrong Label :"    << nbWrongLabel;
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy :" << (1 - m_error) * 100 << "%"
-             << "on total"   << m_trainSize << "training faces, and"
-                             << m_testSize << "test faces";
-    qCDebug(DIGIKAM_TESTS_LOG) << "(" << float(elapsedDetection) / m_testSize << "ms/face )";
+                               << "on total"   << m_trainSize << "training faces, and"
+                               << m_testSize << "test faces";
+    qCDebug(DIGIKAM_TESTS_LOG) << "(" << float(elapsedDetection) / m_testSize << "ms/face)";
 }
 
 QImage* Benchmark::detect(const QImage& faceImg) const
@@ -338,7 +335,7 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face) const
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
         {
-            // I think we can ignore premultiplication when converting to grayscale
+            // I think we can ignore premultiplication when converting to grayscale.
 
             cvImageWrapper = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC4, croppedFace.scanLine(0), croppedFace.bytesPerLine());
             cv::cvtColor(cvImageWrapper, face, CV_RGBA2RGB);
@@ -364,7 +361,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
     int nbData = 0;
 
-    // Each subdirectory in data directory should match with a label
+    // Each subdirectory in data directory should match with a label.
 
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
 
@@ -393,8 +390,9 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
             std::swap(*(it++), *(it1));
          }
-
-        //QString faceDir = QLatin1String("./cropped_face/");
+/*
+        QString faceDir = QLatin1String("./cropped_face/");
+*/
 /*
         QList<QImage*> images;
 
@@ -405,13 +403,14 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
         QList<QImage*> croppedFaces = detect(images);
 
-        // split train/test
+        // split train/test.
 
         for (int i = 0 ; i < croppedFaces.size() ; ++i)
         {
             if (croppedFaces[i])
             {
-                croppedFaces[i]->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
+                croppedFaces[i]->save(faceDir + label + QLatin1String("_") +
+                                      QString::number(i) + QLatin1String(".png"), "PNG");
             }
 
             if (i < (filesInfo.size() * splitRatio))
@@ -438,7 +437,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
             QImage* const croppedFace = detect(img);
 
-            // Save cropped face for detection testing
+            // Save cropped face for detection testing.
 
             if (croppedFace)
             {
@@ -583,7 +582,8 @@ void Benchmark::testWriteDb()
 */
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
+    qCDebug(DIGIKAM_TESTS_LOG) << "write face embedding to spatial database with average"
+                               << timer.elapsed() / data.size() << "ms/faceEmbedding";
 }
 
 void Benchmark::verifyKNearestDb()
@@ -594,7 +594,7 @@ void Benchmark::verifyKNearestDb()
 
     if (!dataFile.open(QIODevice::ReadOnly))
     {
-        qWarning("Couldn't open data file.");
+        qWarning(DIGIKAM_TESTS_LOG) << "Couldn't open data file.";
         return;
     }
 
@@ -663,8 +663,8 @@ void Benchmark::verifyKNearestDb()
     if (data.size() != 0)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy"     << (float(nbCorrect) / data.size())*100
-                 << "with average" << timer.elapsed()   / data.size()
-                 << "ms/faceEmbedding";
+                                   << "with average" << timer.elapsed()   / data.size()
+                                   << "ms/faceEmbedding";
     }
 }
 

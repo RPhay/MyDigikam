@@ -49,7 +49,7 @@
 
 using namespace Digikam;
 
-// TODO: Recognition is incorrect where human are wearing glasses
+// TODO: Recognition is incorrect where human are wearing glasses.
 
 static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio ,
                                            QHash<QString, QVector<QImage> >& trainSet,
@@ -58,7 +58,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
 
     QVector<QListWidgetItem*> imageItems;
 
-    // Each subdirectory in data directory should match with a label
+    // Each subdirectory in data directory should match with a label.
 
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
 
@@ -69,7 +69,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
         QString label           = subDirs[i].fileName();
         QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
 
-        // suffle dataset
+        // Suffle dataset.
 
         QList<QFileInfo>::iterator it = filesInfo.begin();
         QList<QFileInfo>::iterator it1;
@@ -84,7 +84,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
             std::swap(*(it++), *(it1));
         }
 
-        // split train/test
+        // Split train/test.
 
         for (int j = 0 ; i < filesInfo.size() ; ++j)
         {
@@ -143,26 +143,29 @@ private Q_SLOTS:
 
 private:
 
-    OpenCVDNNFaceDetector*    m_detector;
-    FacialRecognitionWrapper* recognitionWrapper;
-    OpenCVDNNFaceRecognizer*  m_recognizer;
-    DNNFaceExtractorBase*     m_extractor;
+    OpenCVDNNFaceDetector*    m_detector            = nullptr;
+    FacialRecognitionWrapper* recognitionWrapper    = nullptr;
+    OpenCVDNNFaceRecognizer*  m_recognizer          = nullptr;
+    DNNFaceExtractorBase*     m_extractor           = nullptr;
     QVector<cv::Mat>          m_preprocessedFaces;
     Identity                  m_currentIdenity;
 
 
-    QLabel*                   m_fullImage;
-    QListWidget*              m_imageListView;
-    QListWidget*              m_croppedfaceList;
-    //QVBoxLayout*              m_preprocessedList;
-    QListWidget*              m_preprocessedList;
-    QListWidget*              m_alignedList;
+    QLabel*                   m_fullImage           = nullptr;
+    QListWidget*              m_imageListView       = nullptr;
+    QListWidget*              m_croppedfaceList     = nullptr;
+/*
+    QVBoxLayout*              m_preprocessedList    = nullptr;
+*/
+    QListWidget*              m_preprocessedList    = nullptr;
+    QListWidget*              m_alignedList         = nullptr;
 
-    // control panel
-    QLineEdit*                m_imageLabel;
-    QLabel*                   m_similarityLabel;
-    QLabel*                   m_recognizationInfo;
-    QPushButton*              m_applyButton;
+    // Control panel.
+
+    QLineEdit*                m_imageLabel          = nullptr;
+    QLabel*                   m_similarityLabel     = nullptr;
+    QLabel*                   m_recognizationInfo   = nullptr;
+    QPushButton*              m_applyButton         = nullptr;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
@@ -179,7 +182,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
     m_recognizer           = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree, FaceScanSettings::FaceRecognitionModel::SFace);
     m_extractor            = new DNNSFaceExtractor();
 
-    // Image erea
+    // Image area.
 
     QWidget*     const imageArea        = new QWidget(this);
     QHBoxLayout*       processingLayout = new QHBoxLayout(imageArea);
@@ -224,7 +227,9 @@ MainWindow::~MainWindow()
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 {
     QString imagePath = imageItem->text();
-    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
+
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
@@ -234,7 +239,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     disconnect(m_alignedList, &QListWidget::currentRowChanged,
                this, &MainWindow::slotIdentify);
 
-    // clear faces layout
+    // Clear faces layout.
 
     QListWidgetItem* wItem = nullptr;
 
@@ -257,7 +262,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     extractFaces(img, imgScaled, faces);
 
-    // Only setPixmap after finishing drawing bboxes around detected faces
+    // Only setPixmap after finishing drawing bboxes around detected faces.
+
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 
     connect(m_alignedList, &QListWidget::currentRowChanged,
@@ -291,8 +297,9 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
         unsigned int elapsedDetection = 0;
         timer.start();
 
-        // NOTE detection with filePath won't work when format is not standard
-        // NOTE unexpected behaviour with detecFaces(const QString&)
+        // NOTE: detection with filePath won't work when format is not standard.
+        // NOTE: unexpected behaviour with detecFaces(const QString&).
+
         cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
@@ -301,7 +308,8 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection = timer.elapsed();
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
+        qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found" << absRects.size()
+                                   << "faces, in" << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
@@ -323,7 +331,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         return;
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces:";
 
     for (const QRectF& r : std::as_const(faces))
     {
@@ -343,7 +351,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         QRect rect          = FaceDetector::toAbsoluteRect(rr, img.size());
         QImage part         = img.copy(rect);
 
-        // Show cropped faces
+        // Show cropped faces.
 
         QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
                                                          qMin(img.size().width(), 100),
@@ -352,14 +360,14 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         m_croppedfaceList->addItem(new QListWidgetItem(croppedFace, QLatin1String("")));
         painter.drawRect(rectDraw);
 
-        // Show preprocessed faces
+        // Show preprocessed faces.
 
         cv::Mat cvPreprocessedFace = m_recognizer->prepareForRecognition(part);
         m_preprocessedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvPreprocessedFace)), QLatin1String("")));
 
         m_preprocessedFaces << cvPreprocessedFace;
 
-        // Show aligned faces
+        // Show aligned faces.
 
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
         m_alignedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvAlignedFace)), QLatin1String("")));
@@ -407,7 +415,7 @@ QWidget* MainWindow::setupCroppedFaceArea()
 
 QWidget* MainWindow::setupPreprocessedFaceArea()
 {
-    // preprocessed face area
+    // Preprocessed face area.
 
     QScrollArea* const preprocessedFacesArea = new QScrollArea(this);
     preprocessedFacesArea->setWidgetResizable(true);
@@ -436,7 +444,7 @@ QWidget* MainWindow::setupPreprocessedFaceArea()
 
 QWidget* MainWindow::setupAlignedFaceArea()
 {
-    // aligned face area
+    // Aligned face area.
 
     QScrollArea* const alignedFacesArea = new QScrollArea(this);
     alignedFacesArea->setWidgetResizable(true);
@@ -494,7 +502,7 @@ QWidget* MainWindow::setupControlPanel()
 
 QWidget* MainWindow::setupImageList(const QDir& directory)
 {
-    // Itemlist erea
+    // Itemlist area.
 
     QScrollArea* const itemsArea = new QScrollArea;
     itemsArea->setWidgetResizable(true);
@@ -532,9 +540,10 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
 void MainWindow::slotIdentify(int /*index*/)
 {
-    // TODO : fix this
-    //m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
-
+/*
+    // TODO: fix this.
+    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
+*/
     if (m_currentIdenity.isNull())
     {
         m_recognizationInfo->setText(QLatin1String("Cannot recognized"));
@@ -550,8 +559,9 @@ void MainWindow::slotSaveIdentity()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "assign identity" << m_imageLabel->text();
     m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
-
-    //m_recognizer->saveIdentity(m_currentIdenity, false);
+/*
+    m_recognizer->saveIdentity(m_currentIdenity, false);
+*/
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
@@ -569,23 +579,23 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     app.setApplicationName(QString::fromLatin1("digikam"));
 
-    // Options for commandline parser
+    // Options for commandline parser.
 
-   QCommandLineParser* const parser = parseOptions(app);
+    QCommandLineParser* const parser = parseOptions(app);
 
-   if (!parser->isSet(QLatin1String("dataset")))
-   {
-       qWarning("Data set is not set !!!");
+    if (!parser->isSet(QLatin1String("dataset")))
+    {
+        qWarning(DIGIKAM_TESTS_LOG) << "Data set is not set !!!";
 
-       return 1;
-   }
+        return 1;
+    }
 
-   QDir dataset(parser->value(QLatin1String("dataset")));
+    QDir dataset(parser->value(QLatin1String("dataset")));
 
-   MainWindow* const window = new MainWindow(dataset, nullptr);
-   window->show();
+    MainWindow* const window = new MainWindow(dataset, nullptr);
+    window->show();
 
-   return app.exec();
+    return app.exec();
 }
 
 #include "recognition_gui.moc"

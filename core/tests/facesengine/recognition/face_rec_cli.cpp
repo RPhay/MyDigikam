@@ -75,7 +75,7 @@ void prepareForTrain(const QString& testSetPath,
     QDir testSet(testSetPath);
     QStringList subjects = testSet.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
 
-    qCDebug(DIGIKAM_TESTS_LOG) << nbOfSamples << ", " << nbOfIdentities;
+    qCDebug(DIGIKAM_TESTS_LOG) << nbOfSamples << "," << nbOfIdentities;
 
     if (nbOfIdentities == 0)
     {
@@ -99,12 +99,12 @@ void prepareForTrain(const QString& testSetPath,
             if (j <= static_cast<unsigned int>(qRound(nbOfSamplePerIdentity * ratio)))
             {
                 trainingset[i] << path;
-                qCDebug(DIGIKAM_TESTS_LOG) << "training " << path;
+                qCDebug(DIGIKAM_TESTS_LOG) << "training" << path;
             }
             else
             {
                 testset[i] << path;
-                qCDebug(DIGIKAM_TESTS_LOG) << "test " << path;
+                qCDebug(DIGIKAM_TESTS_LOG) << "test" << path;
             }
         }
     }
@@ -128,7 +128,7 @@ QList<QRectF> processFaceDetection(const QImage& image, FaceDetector& detector)
     QImage detectionImage       = scaleForDetection(img, detector);
     QList<QRectF> detectedFaces = detector.detectFaces(detectionImage, img.originalSize());
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Found " << detectedFaces.size() << " faces";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << detectedFaces.size() << "faces";
 
     return detectedFaces;
 }
@@ -137,7 +137,7 @@ QList<QRectF> processFaceDetection(const QString& imagePath, FaceDetector& detec
 {
     QList<QRectF> detectedFaces = detector.detectFaces(imagePath);
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << detectedFaces.size() << " faces";
+    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found" << detectedFaces.size() << "faces";
 
     return detectedFaces;
 }
@@ -163,8 +163,8 @@ QList<QImage*> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& r
     for (const QRectF& rect : std::as_const(rects))
     {
         DImg temp(images.at(index));
-        QImage* croppedFace = new QImage();
-        *croppedFace        = temp.copyQImage(rect);
+        QImage* const croppedFace = new QImage();
+        *croppedFace              = temp.copyQImage(rect);
 
         faces << croppedFace;
         ++index;
@@ -180,7 +180,7 @@ int main(int argc, char* argv[])
     QCoreApplication app(argc, argv);
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
 
-    // Options for commandline parser
+    // Options for commandline parser.
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption(QLatin1String("db"), QLatin1String("Faces database"),                     QLatin1String("path to db folder")));
@@ -193,7 +193,7 @@ int main(int argc, char* argv[])
     parser.addHelpOption();
     parser.process(app);
 
-    // Parse arguments
+    // Parse arguments.
 
     bool optionErrors = false;
 
@@ -207,8 +207,10 @@ int main(int argc, char* argv[])
         qCWarning(DIGIKAM_TESTS_LOG) << "MISSING database for test!!!";
         optionErrors = true;
     }
-    else if (!parser.isSet(QLatin1String("as")) &&
-             (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
+    else if (
+             !parser.isSet(QLatin1String("as")) &&
+             (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns")))
+            )
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "UNKNOWN training set / test set separation!!!";
         optionErrors = true;
@@ -247,13 +249,13 @@ int main(int argc, char* argv[])
         ratio = parser.value(QLatin1String("rs")).toDouble();
     }
 
-    // Init config for digiKam
+    // Init config for digiKam.
 
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     FacialRecognitionWrapper recognizer;
 
-    // Construct training set, test set
+    // Construct training set, test set.
 
     QMap<unsigned, QStringList> testset, trainingset;
 
@@ -266,10 +268,10 @@ int main(int argc, char* argv[])
         QString testsetFolder    = parser.value(QLatin1String("ts"));
         QString trainingsetFoler = parser.value(QLatin1String("ds"));
 
-        // TODO: Overload of prepareForTrain() to create training set and test set here
+        // TODO: Overload of prepareForTrain() to create training set and test set here.
     }
 
-    // Create IDs
+    // Create IDs.
 
     QMap<unsigned, Identity> idMap;
 
@@ -280,18 +282,18 @@ int main(int argc, char* argv[])
         idMap[i] = recognizer.addIdentityDebug(attributes);
     }
 
-    // Init FaceDetector used for detecting faces and bounding box
-    // before recognizing
+    // Init FaceDetector used for detecting faces and bounding box before recognizing.
 
     FaceDetector detector;
 
-    // Evaluation metrics
+    // Evaluation metrics.
+
     unsigned int correct = 0, notRecognized = 0, falsePositive = 0, totalTrained = 0, totalRecognized = 0;
     unsigned int elapsedTraining = 0, elapsedTesting = 0;
     unsigned int detectingTime = 0;
 
 /*
- *  // Without using detector
+ *  // Without using detector.
 
     for (QMap<unsigned, QStringList>::const_iterator it = trainingset.constBegin() ;
          it != trainingset.constEnd() ; ++it)
@@ -339,7 +341,6 @@ int main(int argc, char* argv[])
 
         totalRecognized += images.size();
     }
-
 */
 
     QStringList undetectedTrainedFaces;
@@ -362,7 +363,7 @@ int main(int argc, char* argv[])
         {
             QString imagePath = imagePaths.takeFirst();
 
-            // Start timing for benchmark face detection
+            // Start timing for benchmark face detection.
 
             QElapsedTimer timer;
             timer.start();
@@ -385,11 +386,12 @@ int main(int argc, char* argv[])
 
         QList<QImage*> faces = retrieveFaces(detectedFaces, bboxes);
 
-        // Start timing for benchmark training
+        // Start timing for benchmark training.
 
         QList<QPair<QImage*, QString>> faceSet;
         QList<QImage*>::iterator fsi;
-        for(fsi = faces.begin(); fsi != faces.end(); ++fsi)
+
+        for (fsi = faces.begin() ; fsi != faces.end() ; ++fsi)
         {
             faceSet << QPair<QImage*, QString>(*fsi, QLatin1String("f00d"));
         }
@@ -416,7 +418,7 @@ int main(int argc, char* argv[])
         {
             QString imagePath = imagePaths.takeFirst();
 
-            // Start timing for benchmark face detection
+            // Start timing for benchmark face detection.
 
             QElapsedTimer timer;
             timer.start();
@@ -440,16 +442,17 @@ int main(int argc, char* argv[])
 
         QList<QImage*> faces = retrieveFaces(detectedFaces, bboxes);
 
-        // Start timing for benchmark testing
+        // Start timing for benchmark testing.
 
         QElapsedTimer timer;
         timer.start();
 
         QList<Identity> results = recognizer.recognizeFaces(faces);
         elapsedTesting         += timer.elapsed();
-
-        // qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first() << " is identity " << results.first().id();
-
+/*
+        qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first()
+                                   << " is identity " << results.first().id();
+*/
         for (const Identity& foundId : std::as_const(results))
         {
             QString imagePath = imagePaths.takeFirst();
@@ -470,14 +473,16 @@ int main(int argc, char* argv[])
                                                .arg(foundId.id());
             }
         }
-
-        // totalRecognized += images.size();
+/*
+        totalRecognized += images.size();
+*/
     }
 
     unsigned nbUndetectedTrainedFaces = undetectedTrainedFaces.size();
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedTrainedFaces << " / " << totalTrained + nbUndetectedTrainedFaces
-             << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)"
-             << " faces cannot be detected for training";
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedTrainedFaces << "/" << totalTrained + nbUndetectedTrainedFaces
+                               << "(" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100
+                               << "%)" << "faces cannot be detected for training";
 
     for (const QString& path : std::as_const(undetectedTrainedFaces))
     {
@@ -486,15 +491,16 @@ int main(int argc, char* argv[])
 
     if (totalTrained)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Training " << totalTrained << "of " << nbOfIdentities
-                 << " different objects took " << elapsedTraining << " ms, "
-                 << ((float)elapsedTraining/totalTrained) << " ms per image";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Training" << totalTrained << "of" << nbOfIdentities
+                                   << "different objects took" << elapsedTraining << "ms,"
+                                   << ((float)elapsedTraining/totalTrained) << "ms per image";
     }
 
     unsigned nbUndetectedTestedFaces = undetectedTestedFaces.size();
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedTestedFaces << " / " << totalRecognized + nbUndetectedTestedFaces
-             << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)"
-             << " faces cannot be detected for testing";
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedTestedFaces << "/" << totalRecognized + nbUndetectedTestedFaces
+                               << "(" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100
+                               << "%)" << "faces cannot be detected for testing";
 
     for (const QString& path : std::as_const(undetectedTestedFaces))
     {
@@ -503,10 +509,10 @@ int main(int argc, char* argv[])
 
     if (totalRecognized)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition test performed on " << totalRecognized << " of " << nbOfIdentities << " different objects took " << elapsedTesting << " ms, " << ((float)elapsedTesting/totalRecognized) << " ms per image";
-        qCDebug(DIGIKAM_TESTS_LOG) << correct       << " / " << totalRecognized << " (" << (float(correct) / totalRecognized*100) << "%) were correctly recognized";
-        qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << " / " << totalRecognized << " (" << (float(falsePositive) / totalRecognized*100) << "%) were falsely assigned to an identity (false positive)";
-        qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << " / " << totalRecognized << " (" << (float(notRecognized) / totalRecognized*100) << "%) were not recognized";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition test performed on" << totalRecognized << "of" << nbOfIdentities << "different objects took " << elapsedTesting << " ms, " << ((float)elapsedTesting/totalRecognized) << " ms per image";
+        qCDebug(DIGIKAM_TESTS_LOG) << correct       << "/" << totalRecognized << "(" << (float(correct) / totalRecognized*100) << "%) were correctly recognized";
+        qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << "/" << totalRecognized << "(" << (float(falsePositive) / totalRecognized*100) << "%) were falsely assigned to an identity (false positive)";
+        qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << "/" << totalRecognized << "(" << (float(notRecognized) / totalRecognized*100) << "%) were not recognized";
     }
     else
     {
@@ -520,9 +526,9 @@ int main(int argc, char* argv[])
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "\n Average time of face detection "
-             << detectingTime*1.0 / (totalTrained + nbUndetectedTrainedFaces + totalRecognized + nbUndetectedTestedFaces)
-             << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n Average time of face detection"
+                               << detectingTime * 1.0 / (totalTrained + nbUndetectedTrainedFaces + totalRecognized + nbUndetectedTestedFaces)
+                               << "ms";
 
     return 0;
 }
