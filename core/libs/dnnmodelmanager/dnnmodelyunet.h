@@ -35,11 +35,7 @@ public:
 
     // ---------- public methods ----------
 
-    explicit DNNModelYuNet(const DNNModelInfoContainer& _info)
-        : DNNModelBase(_info)
-    {
-    };
-
+    explicit DNNModelYuNet(const DNNModelInfoContainer& _info);
     virtual ~DNNModelYuNet() override   = default;
 
 public:

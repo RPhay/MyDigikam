@@ -26,6 +26,11 @@
 namespace Digikam
 {
 
+DNNModelNet::DNNModelNet(const DNNModelInfoContainer& _info)
+    : DNNModelBase(_info)
+{
+}
+
 cv::dnn::Net& DNNModelNet::getNet()
 {
    QMutexLocker lock(&loaderMutex);

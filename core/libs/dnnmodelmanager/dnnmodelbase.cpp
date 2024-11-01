@@ -28,6 +28,11 @@
 namespace Digikam
 {
 
+DNNModelBase::DNNModelBase(const DNNModelInfoContainer& _info)
+    : info(_info)
+{
+}
+
 DownloadInfo DNNModelBase::getDownloadInformation() const
 {
     return DownloadInfo(

@@ -36,11 +36,7 @@ class DIGIKAM_EXPORT DNNModelBase
 
 public:
 
-    explicit DNNModelBase(const DNNModelInfoContainer& _info)
-        : info(_info)
-    {
-    };
-
+    explicit DNNModelBase(const DNNModelInfoContainer& _info);
     virtual ~DNNModelBase() = default;
 
 

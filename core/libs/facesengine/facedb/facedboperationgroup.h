@@ -51,7 +51,7 @@ public:
     void setMaximumTime(int msecs);
 
     /**
-     * Resets to 0 the time used by allowLift()
+     * Resets to 0 the time used by allowLift().
      */
     void resetTime();
 

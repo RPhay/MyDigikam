@@ -26,6 +26,11 @@
 namespace Digikam
 {
 
+DNNModelYuNet::DNNModelYuNet(const DNNModelInfoContainer& _info)
+    : DNNModelBase(_info)
+{
+}
+
 cv::Ptr<cv::FaceDetectorYN>& DNNModelYuNet::getNet()
 {
     QMutexLocker lock(&loaderMutex);

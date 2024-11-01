@@ -35,11 +35,7 @@ public:
 
     // ---------- public methods ----------
 
-    explicit DNNModelSFace(const DNNModelInfoContainer& _info)
-        : DNNModelBase(_info)
-    {
-    };
-
+    explicit DNNModelSFace(const DNNModelInfoContainer& _info);
     virtual ~DNNModelSFace() override   = default;
 
 public:

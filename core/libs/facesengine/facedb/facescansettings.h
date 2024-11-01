@@ -32,37 +32,46 @@ class DIGIKAM_GUI_EXPORT FaceScanSettings
 
 public:
 
+    /**
+     * Different possible tasks processed while scanning operation.
+     */
     enum ScanTask
     {
-        Detect,
-        DetectAndRecognize,
-        RecognizeMarkedFaces,
-        RetrainAll,
-        BenchmarkDetection,
-        BenchmarkRecognition
+        Detect,                 ///< Detect faces only.
+        DetectAndRecognize,     ///< Detect and recognize faces only.
+        RecognizeMarkedFaces,   ///< Recognize already marked faces only.
+        RetrainAll,             ///< Retrain faces only.
+        BenchmarkDetection,     ///< Bench performances of detect faces.
+        BenchmarkRecognition    ///< Bench performance of recognize faces.
     };
     Q_ENUM(ScanTask)
 
-    /// To detect and recognize
+    /**
+     * To detect and recognize.
+     */
     enum AlreadyScannedHandling
     {
-        Skip,
-        Merge,
-        Rescan,
-        ClearAll
+        Skip,                   ///< Skip faces from images already scanned.
+        Merge,                  ///< Merge faces from images already scanned.
+        Rescan,                 ///< Rescan faces from images already scanned.
+        ClearAll                ///< Clear all faces data from images already scanned.
     };
     Q_ENUM(AlreadyScannedHandling)
 
-    /// face detection AI models
+    /**
+     * Face detection AI models.
+     */
     enum FaceDetectionModel
     {
-        SSDMOBILENET,
-        YOLOv3,
-        YuNet
+        SSDMOBILENET,           ///< SSD MobileNet neural network inference [https://github.com/arunponnusamy/cvlib]
+        YOLOv3,                 ///< YOLO neural network inference          [https://github.com/sthanhng/yoloface]
+        YuNet                   ///< YuNet neural network inference         [https://github.com/opencv/opencv_zoo/tree/main]
     };
     Q_ENUM(FaceDetectionModel)
 
-    /// Face detection size
+    /**
+     * Face detection size.
+     */
     enum FaceDetectionSize
     {
         ExtraSmall,
@@ -73,11 +82,13 @@ public:
     };
     Q_ENUM(FaceDetectionSize)
 
-    /// face recognition AI models
+    /**
+     * Face recognition AI models.
+     */
     enum FaceRecognitionModel
     {
-        OpenFace,
-        SFace
+        OpenFace,               ///< OpenFace pre-trained neural network model [https://github.com/sahilshah/openface/tree/master]
+        SFace                   ///< SFace pre-trained neural network model    [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
     };
     Q_ENUM(FaceRecognitionModel)
 
@@ -88,31 +99,31 @@ public:
 
 public:
 
-    /// whole albums checked
+    /// Whole albums checked.
     bool                                    wholeAlbums                 = false;
 
-    /// Processing power
+    /// Processing power.
     bool                                    useFullCpu                  = false;
 
-    /// detection Model
+    /// Detection Model.
     FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
 
-    /// detection Model
+    /// Detection Model.
     FaceDetectionSize                       detectSize                  = FaceDetectionSize::Medium;
 
-    /// Detection accuracy
+    /// Detection accuracy.
     int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
 
-    /// detection Model
+    /// Detection Model.
     FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::OpenFace;
 
-    /// Detection accuracy
+    /// Detection accuracy.
     int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
 
-    /// Albums to scan
+    /// Albums to scan.
     AlbumList                               albums;
 
-    /// Image infos to scan
+    /// Image infos to scan.
     ItemInfoList                            infos;
 
     ScanTask                                task                        = Detect;

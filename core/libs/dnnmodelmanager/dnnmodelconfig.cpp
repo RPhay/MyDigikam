@@ -25,6 +25,11 @@
 namespace Digikam
 {
 
+DNNModelConfig::DNNModelConfig(const DNNModelInfoContainer& _info)
+    : DNNModelBase(_info)
+{
+}
+
 bool DNNModelConfig::loadModel()
 {
     if (checkFilename())

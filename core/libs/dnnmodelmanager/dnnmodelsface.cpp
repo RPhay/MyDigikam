@@ -26,6 +26,11 @@
 namespace Digikam
 {
 
+DNNModelSFace::DNNModelSFace(const DNNModelInfoContainer& _info)
+    : DNNModelBase(_info)
+{
+}
+
 cv::Ptr<cv::FaceRecognizerSF>& DNNModelSFace::getNet()
 {
     QMutexLocker lock(&loaderMutex);
