@@ -49,12 +49,14 @@ DPluginDialog::DPluginDialog(QWidget* const parent, const QString& objName)
                    Qt::WindowMinMaxButtonsHint);
 
     m_buttons = new QDialogButtonBox(this);
-    restoreDialogSize();
 }
 
 DPluginDialog::~DPluginDialog()
 {
-    saveDialogSize();
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
+
+    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 }
 
 void DPluginDialog::setPlugin(DPlugin* const tool)
@@ -92,22 +94,16 @@ void DPluginDialog::slotOnlineHandbook()
     openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
 }
 
-void DPluginDialog::restoreDialogSize()
+void DPluginDialog::showEvent(QShowEvent* e)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(objectName());
 
-    winId();
     DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
-}
 
-void DPluginDialog::saveDialogSize()
-{
-    KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group(objectName());
-    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+    QDialog::showEvent(e);
 }
 
 } // namespace Digikam

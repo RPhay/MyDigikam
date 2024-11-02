@@ -160,7 +160,7 @@ WebBrowserDlg::~WebBrowserDlg()
     delete d;
 }
 
-void WebBrowserDlg::showEvent(QShowEvent* event)
+void WebBrowserDlg::showEvent(QShowEvent* e)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("WebBrowserDlg"));
@@ -169,10 +169,10 @@ void WebBrowserDlg::showEvent(QShowEvent* event)
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 
-    QDialog::showEvent(event);
+    QDialog::showEvent(e);
 }
 
-void WebBrowserDlg::closeEvent(QCloseEvent* event)
+void WebBrowserDlg::closeEvent(QCloseEvent* e)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("WebBrowserDlg"));
@@ -181,7 +181,7 @@ void WebBrowserDlg::closeEvent(QCloseEvent* event)
 
     Q_EMIT closeView(false);
 
-    event->accept();
+    e->accept();
 }
 
 void WebBrowserDlg::slotUrlChanged(const QUrl& url)

@@ -496,20 +496,13 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
 
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 DeleteDialog::~DeleteDialog()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
@@ -690,6 +683,18 @@ void DeleteDialog::keyPressEvent(QKeyEvent* e)
     }
 
     QDialog::keyPressEvent(e);
+}
+
+void DeleteDialog::showEvent(QShowEvent* e)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
+
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(e);
 }
 
 void DeleteDialog::slotHelp()

@@ -271,7 +271,7 @@ void DConfigDlg::setButtonBox(QDialogButtonBox* const box)
     d_func()->init();
 }
 
-void DConfigDlg::showEvent(QShowEvent* event)
+void DConfigDlg::showEvent(QShowEvent* e)
 {
     if (!d_func()->configGroupName.isNull())
     {
@@ -283,7 +283,7 @@ void DConfigDlg::showEvent(QShowEvent* event)
         resize(windowHandle()->size());
     }
 
-    QDialog::showEvent(event);
+    QDialog::showEvent(e);
 }
 
 } // namespace Digikam

@@ -176,9 +176,10 @@ private Q_SLOTS:
 
     void slotHelp();
 
-private:
+protected:
 
     void keyPressEvent(QKeyEvent*)  override;
+    void showEvent(QShowEvent*)     override;
 
 private:
 

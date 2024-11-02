@@ -391,7 +391,7 @@ void MaintenanceDlg::slotHelp()
     openOnlineDocumentation(QLatin1String("maintenance_tools"));
 }
 
-void MaintenanceDlg::showEvent(QShowEvent* event)
+void MaintenanceDlg::showEvent(QShowEvent* e)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
@@ -400,7 +400,7 @@ void MaintenanceDlg::showEvent(QShowEvent* event)
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 
-    QDialog::showEvent(event);
+    QDialog::showEvent(e);
 }
 
 } // namespace Digikam

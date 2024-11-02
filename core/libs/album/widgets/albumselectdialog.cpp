@@ -129,14 +129,6 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
 
     // -------------------------------------------------------------
 
-    KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group(objectName());
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
-
     slotSelectionChanged();
 }
 
@@ -144,6 +136,7 @@ AlbumSelectDialog::~AlbumSelectDialog()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(objectName());
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     delete d;
@@ -184,6 +177,18 @@ void AlbumSelectDialog::slotHelp()
 {
     openOnlineDocumentation(QLatin1String("main_window"),
                             QLatin1String("albums_view"));
+}
+
+void AlbumSelectDialog::showEvent(QShowEvent* e)
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
+
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(e);
 }
 
 } // namespace Digikam

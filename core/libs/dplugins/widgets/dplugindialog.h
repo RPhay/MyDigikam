@@ -39,17 +39,14 @@ public:
 
     void setPlugin(DPlugin* const tool);
 
-protected:
-
-    void restoreDialogSize();
-    void saveDialogSize();
-
 private Q_SLOTS:
 
     void slotAboutPlugin();
     void slotOnlineHandbook();
 
 protected:
+
+    void showEvent(QShowEvent*) override;
 
     QDialogButtonBox* m_buttons = nullptr;
 

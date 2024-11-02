@@ -46,6 +46,10 @@ private Q_SLOTS:
     void slotSelectionChanged();
     void slotHelp();
 
+protected:
+
+    void showEvent(QShowEvent*) override;
+
 private:
 
     class Private;
