@@ -122,7 +122,6 @@ bool DMetadata::setIccProfile(const IccProfile& profile)
     if (profile.isNull())
     {
         removeExifTag("Exif.Image.InterColorProfile");
-        setItemIccProfile(QByteArray());
     }
     else
     {
@@ -132,8 +131,6 @@ bool DMetadata::setIccProfile(const IccProfile& profile)
         {
             return false;
         }
-
-        setItemIccProfile(data);
     }
 
     removeExifColorSpace();
@@ -146,6 +143,7 @@ bool DMetadata::removeExifColorSpace() const
     bool ret =  true;
     ret     &= removeExifTag("Exif.Photo.ColorSpace");
     ret     &= removeXmpTag("Xmp.exif.ColorSpace");
+    ret     &= setItemIccProfile(QByteArray());
 
     return ret;
 }

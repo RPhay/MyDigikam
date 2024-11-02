@@ -520,6 +520,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
        )
     {
         parent->setItemIccProfile(data);
+        parent->removeExifTag("Exif.Image.InterColorProfile");
     }
 
     QString dir                   = QDir::temp().path();
