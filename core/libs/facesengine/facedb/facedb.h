@@ -146,10 +146,9 @@ public:
 
     /**
      * @brief clearDNNTraining: clear all trained data in the database.
-     * @param context
      */
-    void clearDNNTraining(const QString& context = QString());
-    void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
+    void clearDNNTraining();
+    void clearDNNTraining(const QList<int>& identities);
 
 private:
 

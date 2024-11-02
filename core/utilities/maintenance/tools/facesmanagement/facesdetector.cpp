@@ -167,6 +167,14 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         }
         else if (settings.alreadyScannedHandling == FaceScanSettings::ClearAll)
         {
+            // delete existing identities from FacesDb
+
+            FacialRecognitionWrapper().deleteIdentities(FacialRecognitionWrapper().allIdentities());
+
+            // delete all training from FacesDb
+
+            FacialRecognitionWrapper().clearAllTraining();
+
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::OverwriteAllFaces;
         }

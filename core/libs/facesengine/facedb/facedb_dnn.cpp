@@ -138,23 +138,17 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
     return cv::ml::TrainData::create(feature, 0, label);
 }
 
-void FaceDb::clearDNNTraining(const QString& context)
+void FaceDb::clearDNNTraining()
 {
-    if (context.isNull())
-    {
-        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices;"));
-    }
+    d->db->execSql(QLatin1String("DELETE FROM FaceMatrices;"));
 }
 
-void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& context)
+void FaceDb::clearDNNTraining(const QList<int>& identities)
 {
     for (int id : std::as_const(identities))
     {
-        if (context.isNull())
-        {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"),
-                           id);
-        }
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"),
+                       id);
     }
 }
 

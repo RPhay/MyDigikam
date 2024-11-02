@@ -14,6 +14,10 @@
 
 #include "maintenancedlg_p.h"
 
+// Qt includes
+
+#include <QMessageBox>
+
 namespace Digikam
 {
 
@@ -151,13 +155,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
 
-    d->retrainAllFaces    = new QCheckBox(d->vbox4);
-    d->retrainAllFaces->setText(i18nc("@option:check", "Clear and rebuild all training data"));
+    d->retrainAllFaces     = new QCheckBox(d->vbox4);
+    d->retrainAllFaces->setText(i18nc("@option:check", "Rebuild all training data"));
     d->retrainAllFaces->setToolTip(i18nc("@info:tooltip",
-                                         "This will clear all training data for recognition "
-                                         "and rebuild it from all available faces."));
+                                         "This will re-train the face recognizer with tagged faces in your library."));
+    d->resetFaceDb         = new QCheckBox(d->vbox4);
+    d->resetFaceDb->setText(i18nc("@option:check", "Reset and clear all faces and training"));
+    d->resetFaceDb->setToolTip(i18nc("@info:tooltip",
+                                         "This will clear all detected and tagged faces, and then rescan images to detect faces."));
     d->expanderBox->insertItem(Private::FaceManagement, d->vbox4, QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
                                i18n("Detect and recognize Faces"), QLatin1String("FaceManagement"), false);
     d->expanderBox->setCheckBoxVisible(Private::FaceManagement, true);
@@ -298,6 +305,28 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             this, [hbox3](bool on)
         {
             hbox3->setEnabled(!on);
+        }
+    );
+    connect(d->resetFaceDb, &QCheckBox::toggled,
+            this, [hbox3, this](bool on)
+        {
+            if (on)
+            {
+                int mbResult = QMessageBox(
+                                           QMessageBox::Warning,
+                                           i18n("Warning"),
+                                           i18n("Are you sure you want to delete all confirmed, unconfirmed, and unknown faces? "
+                                                "You’ll need to start tagging unknown faces again before any faces can be recognized."),
+                                           QMessageBox::Ok | QMessageBox::Cancel,
+                                           this
+                                           ).exec();
+                if (QMessageBox::Cancel == mbResult)
+                {
+                    d->resetFaceDb->setChecked(false);
+                }
+            }
+            d->retrainAllFaces->setEnabled(!(Qt::Checked == d->resetFaceDb->checkState()));
+            hbox3->setEnabled(!(Qt::Checked == d->retrainAllFaces->checkState()) && d->retrainAllFaces->isEnabled());
         }
     );
 

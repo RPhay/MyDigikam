@@ -125,6 +125,7 @@ public:
     QCheckBox*                cleanFacesDb              = nullptr;
     QCheckBox*                cleanSimilarityDb         = nullptr;
     QCheckBox*                retrainAllFaces           = nullptr;
+    QCheckBox*                resetFaceDb               = nullptr;
     QCheckBox*                shrinkDatabases           = nullptr;
     QComboBox*                qualityScanMode           = nullptr;
     QComboBox*                autotaggingScanMode       = nullptr;

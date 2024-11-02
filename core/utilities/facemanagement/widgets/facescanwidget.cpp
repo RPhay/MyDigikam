@@ -73,15 +73,18 @@ void FaceScanWidget::doLoadState()
     handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
                                                                          (int)FaceScanSettings::Skip);
 
+    // ClearAll isn't a valid value anymore so set it Rescan.  ClearAll is only used by ResetFacesDb in maintenance.
+    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == handling)
+    {
+        handling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+    }
+
     d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
 
 
     d->albumSelectors->loadState();
 
     d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
-/*
-    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy() * 100);
-*/
     d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
     d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
     d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
@@ -147,7 +150,7 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+    // d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);

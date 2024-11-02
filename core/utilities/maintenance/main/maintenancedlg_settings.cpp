@@ -45,6 +45,15 @@ MaintenanceSettings MaintenanceDlg::settings() const
                                                   d->faceScannedHandling->itemData(d->faceScannedHandling->currentIndex()).toInt();
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
                                                                               : FaceScanSettings::DetectAndRecognize;
+    
+    // overwrite previous task value if reset is checked
+
+    if (d->resetFaceDb->isChecked())
+    {
+        prm.faceSettings.task               = FaceScanSettings::DetectAndRecognize;
+        prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::ClearAll;
+    }
+
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
 
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
@@ -111,6 +120,12 @@ void MaintenanceDlg::readSettings()
 
         d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
         int faceHandling = d->faceScannedHandling->findData(group.readEntry(d->configFaceScannedHandling,       (int)prm.faceSettings.alreadyScannedHandling));
+        
+        // ClearAll isn't a valid value anymore so set it Rescan.  ClearAll is only used by ResetFacesDb in maintenance.
+        if (FaceScanSettings::AlreadyScannedHandling::ClearAll == faceHandling)
+        {
+            faceHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+        }        
         d->faceScannedHandling->setCurrentIndex(faceHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
