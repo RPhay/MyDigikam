@@ -150,6 +150,12 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     // -- Read settings --------------------------------
 
     this->readSettings();
+
+    // we need process events to
+    // initialize the color theme
+
+    qApp->processEvents();
+
     applySettings();
 
     setAutoSaveSettings(configGroupName(), true);
