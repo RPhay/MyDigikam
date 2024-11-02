@@ -162,7 +162,8 @@ WebBrowserDlg::~WebBrowserDlg()
 
 void WebBrowserDlg::showEvent(QShowEvent* event)
 {
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("WebBrowserDlg"));
 
     DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
@@ -173,7 +174,9 @@ void WebBrowserDlg::showEvent(QShowEvent* event)
 
 void WebBrowserDlg::closeEvent(QCloseEvent* event)
 {
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("WebBrowserDlg"));
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     Q_EMIT closeView(false);
