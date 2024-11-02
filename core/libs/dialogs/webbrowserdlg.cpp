@@ -152,13 +152,6 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     // ----------------------
 
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
-
-    winId();
-    windowHandle()->resize(800, 600);
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
-
     slotGoHome();
 }
 
@@ -167,14 +160,25 @@ WebBrowserDlg::~WebBrowserDlg()
     delete d;
 }
 
-void WebBrowserDlg::closeEvent(QCloseEvent* e)
+void WebBrowserDlg::showEvent(QShowEvent* event)
+{
+    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
+
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(event);
+}
+
+void WebBrowserDlg::closeEvent(QCloseEvent* event)
 {
     KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     Q_EMIT closeView(false);
 
-    e->accept();
+    event->accept();
 }
 
 void WebBrowserDlg::slotUrlChanged(const QUrl& url)

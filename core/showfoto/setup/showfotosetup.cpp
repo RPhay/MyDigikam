@@ -38,7 +38,6 @@
 #include "showfotosetupmetadata.h"
 #include "showfotosetuptooltip.h"
 #include "showfotosetupplugins.h"
-#include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
 #ifdef HAVE_GEOLOCATION
@@ -98,6 +97,7 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     setWindowTitle(i18nc("@title:window", "Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     button(QDialogButtonBox::Ok)->setDefault(true);
+    setConfigGroup(QLatin1String("Setup Dialog"));
     setFaceType(DConfigDlg::List);
     setModal(true);
 
@@ -208,11 +208,6 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     {
         showPage((Page)group.readEntry(QLatin1String("Setup Page"), (int)EditorPage));
     }
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 ShowfotoSetup::~ShowfotoSetup()
@@ -232,7 +227,6 @@ ShowfotoSetup::~ShowfotoSetup()
 #endif
 
     group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
-    Digikam::DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
     delete d;

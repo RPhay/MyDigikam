@@ -146,11 +146,6 @@ void MaintenanceDlg::readSettings()
     {
         slotItemToggled(i, d->expanderBox->isChecked(i));
     }
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 void MaintenanceDlg::writeSettings()

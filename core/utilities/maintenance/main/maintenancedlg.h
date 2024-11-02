@@ -51,6 +51,10 @@ private:
     void writeSettings();
     void readSettings();
 
+protected:
+
+    void showEvent(QShowEvent*) override;
+
 private:
 
     class Private;

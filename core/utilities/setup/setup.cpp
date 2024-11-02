@@ -45,7 +45,6 @@
 #include "setupdatabase.h"
 #include "setupplugins.h"
 #include "importsettings.h"
-#include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
 #ifdef HAVE_GEOLOCATION
@@ -120,6 +119,7 @@ Setup::Setup(QWidget* const parent)
     setWindowTitle(i18nc("@title:window", "Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     button(QDialogButtonBox::Ok)->setDefault(true);
+    setConfigGroup(QLatin1String("Setup Dialog"));
     setFaceType(List);
     setModal(true);
 
@@ -226,14 +226,6 @@ Setup::Setup(QWidget* const parent)
 
     connect(buttonBox()->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
             this, &Setup::slotCancelClicked);
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 Setup::~Setup()
@@ -257,7 +249,6 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Camera Tab"),      (int)d->cameraPage->activeTab());
     group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
     group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
-    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
     delete d;

@@ -94,6 +94,12 @@ public:
     void setFaceType(FaceType faceType);
 
     /**
+     * Sets the config group name for restore
+     * or save dialog window size.
+     */
+    void setConfigGroup(const QString& group);
+
+    /**
      * Adds a new top level page to the dialog.
      *
      * @param widget The widget of the page.
@@ -251,6 +257,10 @@ protected:
      * it without parent and you are not allowed to delete it.
      */
     void setButtonBox(QDialogButtonBox* const box);
+
+protected:
+
+    void showEvent(QShowEvent*) override;
 
 protected:
 

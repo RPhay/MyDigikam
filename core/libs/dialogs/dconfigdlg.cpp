@@ -23,6 +23,15 @@
 #include <QTimer>
 #include <QLayout>
 
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
+// Local includes
+
+#include "dxmlguiwindow.h"
+
 namespace Digikam
 {
 
@@ -80,6 +89,8 @@ protected:
     DConfigDlg* const q_ptr         = nullptr;
     DConfigDlgWdg*    mPageWidget   = nullptr;
     QDialogButtonBox* mButtonBox    = nullptr;
+
+    QString configGroupName;
 
 private:
 
@@ -144,12 +155,26 @@ DConfigDlg::DConfigDlg(DConfigDlgPrivate& dd, DConfigDlgWdg* const widget, QWidg
 
 DConfigDlg::~DConfigDlg()
 {
+    if (!d_func()->configGroupName.isNull())
+    {
+        KSharedConfig::Ptr config = KSharedConfig::openConfig();
+        KConfigGroup group        = config->group(d_func()->configGroupName);
+
+        DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+        config->sync();
+    }
+
     delete d_ptr;
 }
 
 void DConfigDlg::setFaceType(FaceType faceType)
 {
     d_func()->mPageWidget->setFaceType(static_cast<DConfigDlgWdg::FaceType>(faceType));
+}
+
+void DConfigDlg::setConfigGroup(const QString& group)
+{
+    d_func()->configGroupName = group;
 }
 
 DConfigDlgWdgItem* DConfigDlg::addPage(QWidget* const widget, const QString& name)
@@ -244,6 +269,21 @@ void DConfigDlg::setButtonBox(QDialogButtonBox* const box)
     delete d_func()->mButtonBox;
     d_func()->mButtonBox = box;
     d_func()->init();
+}
+
+void DConfigDlg::showEvent(QShowEvent* event)
+{
+    if (!d_func()->configGroupName.isNull())
+    {
+        KSharedConfig::Ptr config = KSharedConfig::openConfig();
+        KConfigGroup group        = config->group(d_func()->configGroupName);
+
+        DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+        DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+        resize(windowHandle()->size());
+    }
+
+    QDialog::showEvent(event);
 }
 
 } // namespace Digikam
