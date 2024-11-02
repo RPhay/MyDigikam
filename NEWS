@@ -177,7 +177,7 @@ BUGFIXES:
 152 ==> 468980 - digiKam and Showfoto interface becomes buggy/broken after opening/closing settings page on Fedora.
 153 ==> 446511 - Heavy visual glitches when trying to move settings window on Wayland.
 154 ==> 487004 - Faces-recognition filtering.
-155 ==> 
+155 ==> 467766 - MySQL foreign key error on a zero image id.
 156 ==> 
 157 ==> 
 158 ==> 
