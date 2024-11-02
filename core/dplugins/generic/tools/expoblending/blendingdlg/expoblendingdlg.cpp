@@ -391,11 +391,6 @@ void ExpoBlendingDlg::readSettings()
     d->saveSettingsBox->readSettings(group);
 
     d->templateFileName->setText(group.readEntry("Template File Name", QString::fromLatin1("enfuse")));
-
-    winId();
-    KConfigGroup group2 = config->group(QLatin1String("ExpoBlending Dialog"));
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void ExpoBlendingDlg::saveSettings()
@@ -683,6 +678,17 @@ void ExpoBlendingDlg::slotCloseClicked()
     {
         Q_EMIT cancelClicked();
     }
+}
+
+void ExpoBlendingDlg::showEvent(QShowEvent* e)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("ExpoBlending Dialog"));
+
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(e);
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin

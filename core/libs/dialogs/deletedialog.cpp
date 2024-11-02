@@ -504,7 +504,6 @@ DeleteDialog::~DeleteDialog()
     KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
 
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config->sync();
 
     delete d;
 }

@@ -110,6 +110,10 @@ private:
 
     bool canAccept()                const;
 
+protected:
+
+    void showEvent(QShowEvent*) override;
+
 private:
 
     class Private;

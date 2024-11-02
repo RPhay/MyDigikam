@@ -288,6 +288,18 @@ void BookmarksDialog::accept()
     QDialog::accept();
 }
 
+void BookmarksDialog::showEvent(QShowEvent* e)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(objectName());
+    KConfigGroup groupDialog  = KConfigGroup(&group, QLatin1String("Dialog"));
+
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), groupDialog);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(e);
+}
+
 void BookmarksDialog::closeEvent(QCloseEvent* e)
 {
     if (!e)
@@ -454,11 +466,6 @@ void BookmarksDialog::readSettings()
     KConfigGroup group        = config->group(objectName());
     KConfigGroup groupGPSTab  = KConfigGroup(&group, QLatin1String("GPS Properties Tab"));
     d->mapView->readSettings(groupGPSTab);
-
-    KConfigGroup groupDialog  = KConfigGroup(&group, QLatin1String("Dialog"));
-    winId();
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), groupDialog);
-    resize(windowHandle()->size());
 }
 
 void BookmarksDialog::saveSettings()

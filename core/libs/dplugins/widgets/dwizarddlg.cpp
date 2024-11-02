@@ -45,7 +45,6 @@ DWizardDlg::DWizardDlg(QWidget* const parent, const QString& objName)
 {
     setWizardStyle(QWizard::ClassicStyle);
     setObjectName(objName);
-    restoreDialogSize();
 }
 
 DWizardDlg::~DWizardDlg()
@@ -94,39 +93,24 @@ void DWizardDlg::restoreDialogSize()
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(objectName());
 
-    if (group.exists())
-    {
-        winId();
-        DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-        resize(windowHandle()->size());
-    }
-    else
-    {
-        QScreen* screen = qApp->primaryScreen();
-
-        if (QWidget* const widget = qApp->activeWindow())
-        {
-            if (QWindow* const window = widget->windowHandle())
-            {
-                screen = window->screen();
-            }
-        }
-
-        QRect srect = screen->availableGeometry();
-
-        resize(
-               (800 <= srect.width())  ? 800 : srect.width(),
-               (750 <= srect.height()) ? 750 : srect.height()
-              );
-    }
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
 }
 
 void DWizardDlg::saveDialogSize()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(objectName());
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config->sync();
+}
+
+void DWizardDlg::showEvent(QShowEvent* e)
+{
+    restoreDialogSize();
+
+    QWizard::showEvent(e);
 }
 
 } // namespace Digikam

@@ -58,6 +58,10 @@ private:
     void loadSettings();
     void saveSettings();
 
+protected:
+
+    void showEvent(QShowEvent*) override;
+
 private:
 
     class Private;

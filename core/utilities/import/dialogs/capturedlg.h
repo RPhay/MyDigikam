@@ -43,6 +43,7 @@ public:
 
 protected:
 
+    void showEvent(QShowEvent* e)   override;
     void closeEvent(QCloseEvent* e) override;
 
 private Q_SLOTS:

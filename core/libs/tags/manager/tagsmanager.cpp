@@ -110,6 +110,7 @@ public:
     TagModel*        tagModel           = nullptr;
 
     bool             tagPropVisible     = false;
+    bool             firstShowEvent     = true;
 };
 
 TagsManager::TagsManager()
@@ -202,13 +203,6 @@ void TagsManager::setupUi()
     mainLayout->addWidget(d->splitter);
     centralView->setLayout(mainLayout);
     setCentralWidget(centralView);
-
-    KConfigGroup group = getConfigGroup();
-
-    winId();
-    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 void TagsManager::slotSelectionChanged()
@@ -643,7 +637,18 @@ void TagsManager::closeEvent(QCloseEvent* event)
 
 void TagsManager::showEvent(QShowEvent* event)
 {
-   // Set main window in center of the screen
+    if (d->firstShowEvent)
+    {
+        KConfigGroup group = getConfigGroup();
+
+        DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+        DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+        resize(windowHandle()->size());
+
+        d->firstShowEvent = false;
+    }
+
+    // Set main window in center of the screen
 
     QScreen* screen = qApp->primaryScreen();
 

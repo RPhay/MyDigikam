@@ -134,7 +134,6 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
 
     // Show the window.
 
-    loadSettings();
     show();
 
     if (defaultUrl.isValid())
@@ -205,16 +204,18 @@ bool ClockPhotoDialog::setImage(const QUrl& imageFile)
 
 void ClockPhotoDialog::loadSettings()
 {
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("Clock Photo Dialog"));
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Clock Photo Dialog"));
 
-    winId();
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 }
 
 void ClockPhotoDialog::saveSettings()
 {
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("Clock Photo Dialog"));
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Clock Photo Dialog"));
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 }
 
@@ -284,6 +285,13 @@ void ClockPhotoDialog::slotCancel()
 {
     saveSettings();
     reject();
+}
+
+void ClockPhotoDialog::showEvent(QShowEvent* e)
+{
+    loadSettings();
+
+    QDialog::showEvent(e);
 }
 
 } // namespace Digikam

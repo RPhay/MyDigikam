@@ -74,12 +74,6 @@ CaptureDlg::CaptureDlg(QWidget* const parent,
     vbx->addWidget(d->buttons);
     setLayout(vbx);
 
-    KConfigGroup group     = KSharedConfig::openConfig()->group(QLatin1String("Capture Tool Dialog"));
-
-    winId();
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
-
     // -------------------------------------------------------------
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
@@ -117,6 +111,17 @@ CaptureDlg::~CaptureDlg()
     delete d;
 }
 
+void CaptureDlg::showEvent(QShowEvent* e)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Capture Tool Dialog"));
+
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    QDialog::showEvent(e);
+}
+
 void CaptureDlg::closeEvent(QCloseEvent* e)
 {
     d->stopPreview = true;
@@ -126,7 +131,9 @@ void CaptureDlg::closeEvent(QCloseEvent* e)
         d->timer->stop();
     }
 
-    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("Capture Tool Dialog"));
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Capture Tool Dialog"));
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     e->accept();

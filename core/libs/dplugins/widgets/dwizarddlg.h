@@ -48,6 +48,10 @@ private Q_SLOTS:
     void slotAboutPlugin();
     void slotOnlineHandbook();
 
+protected:
+
+    void showEvent(QShowEvent*) override;
+
 private:
 
     DPlugin* m_tool = nullptr;

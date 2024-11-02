@@ -81,6 +81,10 @@ private Q_SLOTS:
     void slotPreviewButtonClicked();
     void slotFileFormatChanged();
 
+protected:
+
+    void showEvent(QShowEvent*)     override;
+
 private:
 
     class Private;

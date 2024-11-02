@@ -161,7 +161,6 @@ DConfigDlg::~DConfigDlg()
         KConfigGroup group        = config->group(d_func()->configGroupName);
 
         DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-        config->sync();
     }
 
     delete d_ptr;

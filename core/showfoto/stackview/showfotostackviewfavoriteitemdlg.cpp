@@ -308,21 +308,13 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     connect(d->dateHighButton, SIGNAL(clicked()),
             this, SLOT(slotDateHighButtonClicked()));
-
-    // --------------------------------------------------------
-
-    d->nameEdit->setFocus();
-
-    KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
-    winId();
-    adjustSize();
-    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 }
 
 ShowfotoStackViewFavoriteItemDlg::~ShowfotoStackViewFavoriteItemDlg()
 {
-    KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(objectName());
+
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     delete d;
@@ -794,6 +786,19 @@ void ShowfotoStackViewFavoriteItemDlg::slotHelp()
     Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"),
                                          QLatin1String("showfoto_leftsidebar"),
                                          QLatin1String("showfoto-stacktab"));
+}
+
+void ShowfotoStackViewFavoriteItemDlg::showEvent(QShowEvent* e)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(objectName());
+
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
+    d->nameEdit->setFocus();
+
+    QDialog::showEvent(e);
 }
 
 } // namespace ShowFoto
