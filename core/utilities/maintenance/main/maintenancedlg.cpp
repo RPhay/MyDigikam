@@ -307,6 +307,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             hbox3->setEnabled(!on);
         }
     );
+
     connect(d->resetFaceDb, &QCheckBox::toggled,
             this, [hbox3, this](bool on)
         {
@@ -320,11 +321,13 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                                            QMessageBox::Ok | QMessageBox::Cancel,
                                            this
                                            ).exec();
+
                 if (QMessageBox::Cancel == mbResult)
                 {
                     d->resetFaceDb->setChecked(false);
                 }
             }
+
             d->retrainAllFaces->setEnabled(!(Qt::Checked == d->resetFaceDb->checkState()));
             hbox3->setEnabled(!(Qt::Checked == d->retrainAllFaces->checkState()) && d->retrainAllFaces->isEnabled());
         }
