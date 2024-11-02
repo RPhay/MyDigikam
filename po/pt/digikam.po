@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 01:47+0000\n"
+"POT-Creation-Date: 2024-11-02 01:48+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -11661,7 +11661,7 @@ msgstr "Dois mapas - horizontal"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:109
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -22830,7 +22830,7 @@ msgstr "Continuar"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -29274,7 +29274,7 @@ msgstr "Migrar ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:113
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -52215,7 +52215,7 @@ msgstr "Criar uma Marca a Partir do Livro de Endereços"
 msgid "No address book entries found"
 msgstr "Não foram encontrados itens no livro de endereços"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Segmentation mode:"
@@ -52223,20 +52223,20 @@ msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "Modo de segmentação:"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Open File"
 msgid "OpenFace"
 msgstr "Abrir um Ficheiro"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgid "SFace"
 msgstr "Caras"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52256,13 +52256,13 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "A aplicar as modificações das caras"
@@ -52325,13 +52325,13 @@ msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar esta cara como Ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 01:47+0000\n"
-"PO-Revision-Date: 2024-10-24 16:52+0200\n"
+"POT-Creation-Date: 2024-11-02 01:48+0000\n"
+"PO-Revision-Date: 2024-11-01 18:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -11578,7 +11578,7 @@ msgstr "Dos mapas (arriba y abajo)"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:109
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -22752,7 +22752,7 @@ msgstr "Continuar"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -29179,7 +29179,7 @@ msgstr "Migrar ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:113
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -52198,23 +52198,23 @@ msgstr "Crear etiqueta desde la libreta de direcciones"
 msgid "No address book entries found"
 msgstr "No se han encontrado entradas en la libreta de direcciones"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "Modelo de reconocimiento facial"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
 #, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
 #, kde-format
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52247,13 +52247,13 @@ msgstr[1] ""
 "\n"
 "¿Seguro que desea continuar?"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "Empezar"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "Aplicando cambios en caras"
@@ -52316,13 +52316,13 @@ msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar esta cara como ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -64070,21 +64070,16 @@ msgstr ""
 "a la ventana."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
-"La imagen de la vista previa siempre se escala para que se ajuste a la "
-"ventana"
+"La imagen de vista previa siempre usa suavizado de bordes para escalarse"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Desmarque esto si no desea escalar las imágenes pequeñas para que se ajusten "
-"a la ventana."
+"Desmarque esto si no desea usar suavizado de bordes para escalar imágenes."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498

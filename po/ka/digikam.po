@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 01:47+0000\n"
+"POT-Creation-Date: 2024-11-02 01:48+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -10570,7 +10570,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:109
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -20991,7 +20991,7 @@ msgstr "გაგრძელება"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -27002,7 +27002,7 @@ msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:113
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -48731,26 +48731,26 @@ msgstr ""
 msgid "No address book entries found"
 msgstr "მისამართების წიგნაკის ჩანაწერები ვერ მოიძებნა"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
 #, fuzzy, kde-format
 #| msgid "Selection model: "
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "მონიშვნის მოდელი: "
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgid "OpenFace"
 msgstr "ფაილის გახსნა"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgid "SFace"
 msgstr "სახეები"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48770,13 +48770,13 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "სახის ცვლილებების გამოყენება"
@@ -48839,13 +48839,13 @@ msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "ამ სახის იგნორირება"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

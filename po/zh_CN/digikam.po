@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 01:47+0000\n"
+"POT-Creation-Date: 2024-11-02 01:48+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10946,7 +10946,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:109
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:637
@@ -21666,7 +21666,7 @@ msgstr "继续"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -27897,7 +27897,7 @@ msgstr "迁移 ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:113
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -50141,23 +50141,23 @@ msgstr "从地址簿创建标签"
 msgid "No address book entries found"
 msgstr "未找到地址簿条目"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:62
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "人脸识别模型"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
 #, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
 #, kde-format
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:88
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50181,13 +50181,13 @@ msgstr[0] ""
 "\n"
 "您确定要继续吗？"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "开始"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:224
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "应用人脸更改"
@@ -50250,13 +50250,13 @@ msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "忽略这张人脸"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -61620,17 +61620,14 @@ msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "预览图像总是缩放至适合窗口"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
