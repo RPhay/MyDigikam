@@ -176,7 +176,7 @@ BUGFIXES:
 151 ==> 494993 - digiKam crashes immediately upon trying to access Configuration panel (under Wayland).
 152 ==> 468980 - digiKam and Showfoto interface becomes buggy/broken after opening/closing settings page on Fedora.
 153 ==> 446511 - Heavy visual glitches when trying to move settings window on Wayland.
-154 ==> 
+154 ==> 487004 - Faces-recognition filtering.
 155 ==> 
 156 ==> 
 157 ==> 
