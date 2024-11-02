@@ -237,7 +237,7 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
         // There's a possible nuisance when the direct mouse way from hovering pos to HUD widget
         // is not part of the condition. Maybe, we should add a exemption for this case.
 
-        if (distance < 25)
+        if (distance < d->MaxMouseDistance)
         {
             setVisibleItem(item);
         }
@@ -414,7 +414,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 {
    QList<QVariant> faceList(faceIdentifier.toList());
 
-    if (faceList.size() != 5)
+    if (faceList.size() != d->MaxFaceListSize)
     {
         return;
     }
@@ -495,7 +495,7 @@ void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
 {
     QList<QVariant> faceList(faceIdentifier.toList());
 
-    if (faceList.size() == 5)
+    if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
         d->editPipeline.remove(d->info, item->face());
@@ -511,7 +511,7 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
 {
     QList<QVariant> faceList(faceIdentifier.toList());
 
-    if (faceList.size() == 5)
+    if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
         QRect faceRect       = item->originalRect();
@@ -553,7 +553,7 @@ void FaceGroup::slotLabelClicked(const ItemInfo&, const QVariant& faceIdentifier
 {
     QList<QVariant> faceList(faceIdentifier.toList());
 
-    if (faceList.size() == 5)
+    if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
         item->switchMode(AssignNameWidget::ConfirmedEditMode);
@@ -564,7 +564,7 @@ void FaceGroup::slotIgnoredClicked(const ItemInfo&, const QVariant& faceIdentifi
 {
     QList<QVariant> faceList(faceIdentifier.toList());
 
-    if (faceList.size() == 5)
+    if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
         item->switchMode(AssignNameWidget::UnconfirmedEditMode);

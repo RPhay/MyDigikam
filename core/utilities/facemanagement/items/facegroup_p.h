@@ -71,6 +71,19 @@ public:
 
 public:
 
+    /**
+     * The maximum distance of the mouse coordinate, when a face overlay widget is shown or hidden in
+     * the image, or whether the input widget moves up or down.
+     */
+    const qreal                MaxMouseDistance         = 25.0;
+
+    /**
+     * Maximum size of faces in FaceTagsIface container while processing before to clean up and create again.
+     */
+    const int                  MaxFaceListSize          = 5;
+
+public:
+
     GraphicsDImgView*          view                     = nullptr;
     ItemInfo                   info;
     bool                       exifRotate               = true;
