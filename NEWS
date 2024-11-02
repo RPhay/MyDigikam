@@ -178,14 +178,14 @@ BUGFIXES:
 153 ==> 446511 - Heavy visual glitches when trying to move settings window on Wayland.
 154 ==> 487004 - Faces-recognition filtering.
 155 ==> 467766 - MySQL foreign key error on a zero image id.
-156 ==> 
-157 ==> 
-158 ==> 
-159 ==> 
-160 ==> 
-161 ==> 
-162 ==> 
-163 ==> 
+156 ==> 469329 - Too many wrong faces detected.
+157 ==> 431797 - Face recognition <50% despite extensive training data of up to 300 occasions of faces.
+158 ==> 415782 - Face recognition "favors" people with few images: missing faces clustering.
+159 ==> 472031 - Faces detection gets worse with lots of faces to train on.
+160 ==> 464266 - Face detection is extremely slow - face recognition is almost impossible.
+161 ==> 423113 - Deleted Faces still serve as information to Facial Recognition.
+162 ==> 444160 - Face matching is guess work at best.
+163 ==> 436544 - Problem by Face recognition.
 164 ==> 
 165 ==> 
 166 ==> 
