@@ -76,16 +76,14 @@ bool DNNFaceDetectorYOLO::loadModels()
            return false;
         }
     }
+
+    if (model && model->modelLoaded)
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName << "ready";
+    }
     else
     {
-        if (model)
-        {
-            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
-                                           << model->info.displayName;
-        }
-
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
-
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YOLOv3 not loaded";
         return false;
     }
 
@@ -108,7 +106,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     std::vector<cv::Mat> outs;
 
-    if (!static_cast<DNNModelNet*>(model)->getNet().empty())
+    if (model && !static_cast<DNNModelNet*>(model)->getNet().empty())
     {
         QMutexLocker lock(&(model->mutex));
 
@@ -118,6 +116,11 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
+    else
+    {
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YOLOv3 not loaded. Processed 0 images.";
+    }
+
 
     timer.start();
 

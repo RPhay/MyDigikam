@@ -71,16 +71,14 @@ bool DNNFaceDetectorSSD::loadModels()
            return false;
         }
     }
+
+    if (model && model->modelLoaded)
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName << "ready";
+    }
     else
     {
-        if (model)
-        {
-            qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot find faces engine DNN model"
-                                           << model->info.displayName;
-        }
-
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
-
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: SSD not loaded";
         return false;
     }
 
@@ -100,12 +98,17 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
     cv::Mat detection;
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
 
-    if (!static_cast<DNNModelNet*>(model)->getNet().empty())
+    if (model && !static_cast<DNNModelNet*>(model)->getNet().empty())
     {
         QMutexLocker lock(&(model->mutex));
         static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
         detection = static_cast<DNNModelNet*>(model)->getNet().forward();
     }
+    else
+    {
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: SSD not loaded. Processed 0 images.";
+    }
+
 
     postprocess(detection, paddedSize, detectedBboxes);
 }
