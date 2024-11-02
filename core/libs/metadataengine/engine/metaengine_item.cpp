@@ -1457,7 +1457,7 @@ bool MetaEngine::setItemIccProfile(const QByteArray& iccData) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set image ICC prfile Exiv2:"), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set image ICC profile Exiv2:"), e);
     }
     catch (...)
     {

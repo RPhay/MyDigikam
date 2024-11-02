@@ -438,7 +438,12 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
 
         if (!iccProfileBuf().empty())
         {
-            image->setIccProfile(Exiv2::DataBuf(iccProfileBuf()));
+            mode = image->checkMode(Exiv2::mdIccProfile);
+
+            if ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite))
+            {
+                image->setIccProfile(Exiv2::DataBuf(iccProfileBuf()));
+            }
         }
 
         image->writeMetadata();
