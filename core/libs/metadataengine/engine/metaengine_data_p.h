@@ -42,6 +42,8 @@ public:
 #endif
 
     Exiv2::ByteOrder exifByteOrder = Exiv2::invalidByteOrder;
+
+    Exiv2::DataBuf   iccProfileBuf;
 };
 
 } // namespace Digikam

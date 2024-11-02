@@ -41,6 +41,8 @@ void MetaEngineData::Private::clear()
 
         exifByteOrder = Exiv2::invalidByteOrder;
 
+        iccProfileBuf.reset();
+
     }
     catch (Exiv2::AnyError& e)
     {

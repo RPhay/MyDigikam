@@ -92,6 +92,11 @@ const Exiv2::ByteOrder& MetaEngine::Private::exifByteOrder() const
     return data.constData()->exifByteOrder;
 }
 
+const Exiv2::DataBuf& MetaEngine::Private::iccProfileBuf() const
+{
+    return data.constData()->iccProfileBuf;
+}
+
 Exiv2::ExifData& MetaEngine::Private::exifMetadata()
 {
     return data.data()->exifMetadata;
@@ -110,6 +115,11 @@ std::string& MetaEngine::Private::itemComments()
 Exiv2::ByteOrder& MetaEngine::Private::exifByteOrder()
 {
     return data.data()->exifByteOrder;
+}
+
+Exiv2::DataBuf& MetaEngine::Private::iccProfileBuf()
+{
+    return data.data()->iccProfileBuf;
 }
 
 #ifdef _XMP_SUPPORT_
@@ -422,6 +432,13 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
         else if (!wroteEXIF || !wroteIPTC || !wroteXMP)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
+        }
+
+        // ICC Profile -----------------------------------
+
+        if (!iccProfileBuf().empty())
+        {
+            image->setIccProfile(Exiv2::DataBuf(iccProfileBuf()));
         }
 
         image->writeMetadata();

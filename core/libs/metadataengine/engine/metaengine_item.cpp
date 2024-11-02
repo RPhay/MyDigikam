@@ -1400,7 +1400,64 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get image preview with Exiv2:"), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set image preview with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
+QByteArray MetaEngine::getItemIccProfile() const
+{
+   QMutexLocker lock(&s_metaEngineMutex);
+
+   try
+    {
+        if (d->iccProfileBuf().empty())
+        {
+            return QByteArray();
+        }
+
+        QByteArray iccData((const char*)d->iccProfileBuf().data(), d->iccProfileBuf().size());
+
+        return iccData;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot get image ICC profile with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return QByteArray();
+}
+
+bool MetaEngine::setItemIccProfile(const QByteArray& iccData) const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        if (iccData.isNull())
+        {
+            d->iccProfileBuf().reset();
+
+            return true;
+        }
+
+        Exiv2::DataBuf buf((Exiv2::byte*)iccData.data(), iccData.size());
+        d->iccProfileBuf() = buf;
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot set image ICC prfile Exiv2:"), e);
     }
     catch (...)
     {

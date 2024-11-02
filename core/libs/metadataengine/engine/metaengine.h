@@ -499,6 +499,16 @@ public:
      */
     bool setItemPreview(const QImage& preview) const;
 
+    /**
+     * Get image ICC profile.
+     */
+    QByteArray getItemIccProfile() const;
+
+    /**
+     * Set image ICC profile.
+     */
+    bool setItemIccProfile(const QByteArray& iccData) const;
+
     //@}
 
     //-----------------------------------------------------------------

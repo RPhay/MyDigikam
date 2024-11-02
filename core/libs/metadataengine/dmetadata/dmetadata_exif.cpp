@@ -72,9 +72,19 @@ bool DMetadata::mSecTimeStamp(const char* const exifTagName, int& ms) const
 
 IccProfile DMetadata::getIccProfile() const
 {
+    // Check if image metadata contains an ICC color profile.
+
+    QByteArray data = getItemIccProfile();
+
+    if (!data.isNull())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Found an ICC profile in image metadata";
+        return IccProfile(data);
+    }
+
     // Check if Exif data contains an ICC color profile.
 
-    QByteArray data = getExifTagData("Exif.Image.InterColorProfile");
+   data = getExifTagData("Exif.Image.InterColorProfile");
 
     if (!data.isNull())
     {
@@ -109,23 +119,12 @@ IccProfile DMetadata::getIccProfile() const
 
 bool DMetadata::setIccProfile(const IccProfile& profile)
 {
-    if (profile.isNull())
-    {
-        removeExifTag("Exif.Image.InterColorProfile");
-    }
-    else
-    {
-        QByteArray data = IccProfile(profile).data();
+    bool ret =  true;
+    ret     &= removeExifColorSpace();
+    ret     &= removeExifTag("Exif.Image.InterColorProfile");
+    ret     &= setItemIccProfile(IccProfile(profile).data());
 
-        if (!setExifTagData("Exif.Image.InterColorProfile", data))
-        {
-            return false;
-        }
-    }
-
-    removeExifColorSpace();
-
-    return true;
+    return ret;
 }
 
 bool DMetadata::removeExifColorSpace() const

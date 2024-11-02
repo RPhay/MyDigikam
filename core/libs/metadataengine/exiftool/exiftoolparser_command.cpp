@@ -93,6 +93,7 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
     }
 
     cmdArgs << cpyOpt;
+    cmdArgs << QByteArray("-icc_profile");
 
     if (copyToAll)
     {

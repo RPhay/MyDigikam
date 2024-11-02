@@ -172,7 +172,7 @@ BUGFIXES:
 147 ==> 495628 - When starting digiKam the error appears: The application "Finder" does not have the permission to open "(null)".
 148 ==> 431788 - Add option available to not resample images in viewer.
 149 ==> 491580 - How can I see the pixels?
-150 ==> 
+150 ==> 495646 - ICC metadata lost.
 151 ==> 
 152 ==> 
 153 ==> 

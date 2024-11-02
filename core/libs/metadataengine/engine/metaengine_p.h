@@ -165,11 +165,13 @@ public:
     const Exiv2::IptcData&  iptcMetadata()                                        const;
     const std::string&      itemComments()                                        const;
     const Exiv2::ByteOrder& exifByteOrder()                                       const;
+    const Exiv2::DataBuf&   iccProfileBuf()                                       const;
 
     Exiv2::ExifData&        exifMetadata();
     Exiv2::IptcData&        iptcMetadata();
     std::string&            itemComments();
     Exiv2::ByteOrder&       exifByteOrder();
+    Exiv2::DataBuf&         iccProfileBuf();
 
 public:
 

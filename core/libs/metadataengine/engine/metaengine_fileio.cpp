@@ -161,15 +161,15 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         // Image comments ---------------------------------
 
-        d->itemComments()   = image->comment();
+        d->itemComments()  = image->comment();
 
         // Exif metadata ----------------------------------
 
-        d->exifMetadata()   = image->exifData();
+        d->exifMetadata()  = image->exifData();
 
         // Iptc metadata ----------------------------------
 
-        d->iptcMetadata()   = image->iptcData();
+        d->iptcMetadata()  = image->iptcData();
 
 #ifdef _XMP_SUPPORT_
 
@@ -179,9 +179,13 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
 #endif // _XMP_SUPPORT_
 
-        // Exif byte order  -------------------------------
+        // Exif byte order --------------------------------
 
         d->exifByteOrder() = image->byteOrder();
+
+        // ICC Profile ------------------------------------
+
+        d->iccProfileBuf() = image->iccProfile();
 
         if (s_metaEngineWarnOrError)
         {
@@ -428,6 +432,11 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile) const
         targetExv->setXmpData(d->xmpMetadata());
 
 #endif // _XMP_SUPPORT_
+
+        if (!d->iccProfileBuf().empty())
+        {
+            targetExv->setIccProfile(Exiv2::DataBuf(d->iccProfileBuf()));
+        }
 
         targetExv->writeMetadata();
 

@@ -269,11 +269,11 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
         // Image comments ---------------------------------
 
-        d->itemComments()   = image->comment();
+        d->itemComments()  = image->comment();
 
         // Exif metadata ----------------------------------
 
-        d->exifMetadata()   = image->exifData();
+        d->exifMetadata()  = image->exifData();
 
         // Iptc metadata ----------------------------------
 
@@ -290,6 +290,10 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
         // Exif byte order  -------------------------------
 
         d->exifByteOrder() = image->byteOrder();
+
+        // ICC Profile ------------------------------------
+
+        d->iccProfileBuf() = image->iccProfile();
 
         return true;
     }
