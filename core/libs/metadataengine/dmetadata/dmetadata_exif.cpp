@@ -119,12 +119,26 @@ IccProfile DMetadata::getIccProfile() const
 
 bool DMetadata::setIccProfile(const IccProfile& profile)
 {
-    bool ret =  true;
-    ret     &= removeExifColorSpace();
-    ret     &= removeExifTag("Exif.Image.InterColorProfile");
-    ret     &= setItemIccProfile(IccProfile(profile).data());
+    if (profile.isNull())
+    {
+        removeExifTag("Exif.Image.InterColorProfile");
+        setItemIccProfile(QByteArray());
+    }
+    else
+    {
+        QByteArray data = IccProfile(profile).data();
 
-    return ret;
+        if (!setExifTagData("Exif.Image.InterColorProfile", data))
+        {
+            return false;
+        }
+
+        setItemIccProfile(data);
+    }
+
+    removeExifColorSpace();
+
+    return true;
 }
 
 bool DMetadata::removeExifColorSpace() const

@@ -225,6 +225,7 @@ bool ExifToolParser::applyChanges(const QString& path,
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
+    cmdArgs << QByteArray("-icc_profile");
 
     if (isVideo)
     {

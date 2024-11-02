@@ -305,6 +305,22 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
 
         if ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite))
         {
+            QByteArray data = parent->getExifTagData("Exif.Image.InterColorProfile");
+
+            if (
+                data.isNull()         &&
+                readWithExifTool      &&
+                !iccProfileBuf().empty()
+               )
+            {
+                data = parent->getItemIccProfile();
+
+                if (!data.isNull())
+                {
+                    parent->setExifTagData("Exif.Image.InterColorProfile", data);
+                }
+            }
+
             if (image->mimeType() == "image/tiff")
             {
                 Exiv2::ExifData orgExif = image->exifData();
@@ -434,16 +450,6 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
         }
 
-        // ICC Profile -----------------------------------
-
-        if (!iccProfileBuf().empty())
-        {
-            if (image->imageType() != Exiv2::ImageType::xmp)
-            {
-                image->setIccProfile(Exiv2::DataBuf(iccProfileBuf()));
-            }
-        }
-
         image->writeMetadata();
 
         if (!updateFileTimeStamp && modTime.isValid())
@@ -504,6 +510,16 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
 
         return false;
+    }
+
+    QByteArray data = parent->getExifTagData("Exif.Image.InterColorProfile");
+
+    if (
+        !data.isNull()       &&
+        iccProfileBuf().empty()
+       )
+    {
+        parent->setItemIccProfile(data);
     }
 
     QString dir                   = QDir::temp().path();
