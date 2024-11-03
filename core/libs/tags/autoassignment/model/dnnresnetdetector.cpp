@@ -35,7 +35,7 @@ DNNResnetDetector::DNNResnetDetector()
                            cv::Scalar(0.0 ,0.0 ,0.0),
                            cv::Size(224, 224))
 {
-    if (loadModels())
+    if (this->loadModels())
     {
         predefinedClasses = loadDetectionClasses();
     }

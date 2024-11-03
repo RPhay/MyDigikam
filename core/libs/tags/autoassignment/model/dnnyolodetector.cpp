@@ -34,7 +34,7 @@ DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
     : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(320, 320)),
       yoloVersion         (modelVersion)
 {
-    if (loadModels())
+    if (this->loadModels())
     {
         predefinedClasses = loadDetectionClasses();
     }
