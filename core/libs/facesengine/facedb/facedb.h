@@ -79,19 +79,18 @@ public:
     // --- OpenCV DNN
 
     /**
-     * @brief insertFaceVector: insert a new face embedding to database
+     * @brief insertFaceVector: insert a new face embedding to database.
      * @param faceEmbedding
      * @param label
-     * @return id of newly inserted entry
+     * @return id of newly inserted entry.
      */
     int insertFaceVector(const cv::Mat& faceEmbedding,
                          const int label,
                          const QString& context)                                const;
 
-
     /**
-     * @brief removeFaceVector: remove a face embedding from the database
-     * @param hash the removeHash (removeHash) to remove
+     * @brief removeFaceVector: remove a face embedding from the database.
+     * @param hash the removeHash (removeHash) to remove.
      * @return bool
      */
     bool removeFaceVector(const QString& hash)                                  const;
@@ -103,7 +102,6 @@ public:
      */
     bool removeFaceVector(const int id)                                         const;
 
-
     /**
      * @brief reconstructTree: reconstruct KD-Tree from data in the database.
      * @return the KD-Tree instance.
@@ -111,7 +109,7 @@ public:
     KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
 
     /**
-     * @brief trainData: extract train data from database
+     * @brief trainData: extract train data from database.
      * @return the train data instance.
      */
     cv::Ptr<cv::ml::TrainData> trainData()                                      const;
@@ -127,7 +125,7 @@ public:
                         const cv::Mat& faceEmbedding)                           const;
 
     /**
-     * @brief getClosestNeighbors: return a list of closest neighbor, limited by maxNbNeighbors and sqRange.
+     * @brief getClosestNeighborsTreeDb: return a list of closest neighbor, limited by maxNbNeighbors and sqRange.
      * @param subTree
      * @param neighborList
      * @param position
@@ -142,6 +140,9 @@ public:
                                                           float cosThreshold,
                                                           int maxNbNeighbors)   const;
 
+    /**
+     * @brief clearTreeDb: clear the KD-Tree from data in the database.
+     */
     void clearTreeDb()                                                          const;
 
     /**
@@ -163,14 +164,13 @@ private:
     class DataNode;
 
     /**
-     * @brief getClosestNeighborsTreeDb : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange
+     * @brief getClosestNeighborsTreeDb: return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange.
      * @param subTree
      * @param neighborList
      * @param position
      * @param sqRange
      * @param cosThreshold
      * @param maxNbNeighbors
-     *
      * @return double
      */
     double getClosestNeighborsTreeDb(const DataNode& subTree,

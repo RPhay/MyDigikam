@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                    setError                = false;
 
     int                     currentVersion          = 0;
@@ -77,12 +79,14 @@ bool FaceDbSchemaUpdater::update()
 
     if (d->currentVersion)
     {
-        d->dbAccess->db()->setSetting(QLatin1String("DBFaceVersion"), QString::number(d->currentVersion));
+        d->dbAccess->db()->setSetting(QLatin1String("DBFaceVersion"),
+                                      QString::number(d->currentVersion));
     }
 
     if (d->currentRequiredVersion)
     {
-        d->dbAccess->db()->setSetting(QLatin1String("DBFaceVersionRequired"), QString::number(d->currentRequiredVersion));
+        d->dbAccess->db()->setSetting(QLatin1String("DBFaceVersionRequired"),
+                                      QString::number(d->currentRequiredVersion));
     }
 
     return success;
@@ -100,6 +104,7 @@ bool FaceDbSchemaUpdater::startUpdates()
 
         QString version         = d->dbAccess->db()->setting(QLatin1String("DBFaceVersion"));
         QString versionRequired = d->dbAccess->db()->setting(QLatin1String("DBFaceVersionRequired"));
+
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face database: have a structure version " << version;
 
         // Mini schema update.
@@ -223,13 +228,13 @@ bool FaceDbSchemaUpdater::makeUpdates()
     return true;
 }
 
-
 bool FaceDbSchemaUpdater::createDatabase()
 {
     if (createTables() && createIndices() && createTriggers())
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 4;
+
         return true;
     }
     else
@@ -267,7 +272,8 @@ bool FaceDbSchemaUpdater::updateV1ToV2()
 /*
     if (!d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction("UpdateDBSchemaFromV1ToV2")))
     {
-        qError() << "Schema upgrade in DB from V1 to V2 failed!";
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Schema upgrade in DB from V1 to V2 failed!";
+
         return false;
     }
 */

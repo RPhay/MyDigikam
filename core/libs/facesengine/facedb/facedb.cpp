@@ -50,7 +50,7 @@ QString FaceDb::setting(const QString& keyword) const
 
     BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectFaceSetting")),
                                                                        parameters, &values);
-    qCDebug(DIGIKAM_FACEDB_LOG) << "FaceDB SelectFaceSetting val ret = "
+    qCDebug(DIGIKAM_FACEDB_LOG) << "FaceDB SelectFaceSetting val ret ="
                                 << (BdEngineBackend::QueryStateEnum)queryStateResult;
 
     if (values.isEmpty())

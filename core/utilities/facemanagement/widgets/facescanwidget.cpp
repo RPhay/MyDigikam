@@ -73,14 +73,17 @@ void FaceScanWidget::doLoadState()
     handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
                                                                          (int)FaceScanSettings::Skip);
 
-    // ClearAll isn't a valid value anymore so set it Rescan.  ClearAll is only used by ResetFacesDb in maintenance.
+    /**
+     * ClearAll isn't a valid value anymore so set it Rescan.
+     * ClearAll is only used by ResetFacesDb in maintenance.
+     */
+
     if (FaceScanSettings::AlreadyScannedHandling::ClearAll == handling)
     {
         handling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     }
 
     d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
-
 
     d->albumSelectors->loadState();
 
@@ -150,7 +153,9 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-    // d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+/*
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+*/
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
@@ -220,7 +225,7 @@ void FaceScanWidget::setupUi()
 
     DExpanderBox* const expBox          = new DExpanderBox(d->settingsTab);
 
-    // --- Detection settings
+    // --- Detection settings ---
 
     QWidget* const detectWidget         = new QWidget(expBox);
     QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
@@ -312,7 +317,7 @@ void FaceScanWidget::setupUi()
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
 
-    // --- Recognition settings.
+    // --- Recognition settings ---
 
     QWidget* const recognizeWidget       = new QWidget(expBox);
     QGridLayout* const recognizeGrid     = new QGridLayout(recognizeWidget);

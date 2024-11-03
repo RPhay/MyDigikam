@@ -56,6 +56,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
     if (parentID < 0)
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "fail to find parent node";
+
         return false;
     }
 
@@ -261,7 +262,9 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     // Try to add current node to the list.
 
-    const float sqrdistanceToCurrentNode = KDNodeBase::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
+    const float sqrdistanceToCurrentNode = KDNodeBase::sqrDistance(position.ptr<float>(),
+                                                                   subTree.position.ptr<float>(),
+                                                                   128);
 
     if (
         (sqrdistanceToCurrentNode < sqRange) &&

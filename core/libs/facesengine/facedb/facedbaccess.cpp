@@ -165,7 +165,8 @@ void FaceDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorhan
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
-void FaceDbAccess::setParameters(const DbEngineParameters& parameters, FaceScanSettings::FaceRecognitionModel recognizeModel)
+void FaceDbAccess::setParameters(const DbEngineParameters& parameters,
+                                 FaceScanSettings::FaceRecognitionModel recognizeModel)
 {
     if (!d)
     {
