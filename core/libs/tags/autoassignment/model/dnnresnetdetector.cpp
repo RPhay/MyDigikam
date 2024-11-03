@@ -45,7 +45,7 @@ bool DNNResnetDetector::loadModels()
 {
     model = DNNModelManager::instance()->getModel(QLatin1String("ResNet50"), DNNModelUsage::DNNUsageObjectDetection);
 
-    if (model && !model->modelLoaded)
+    if (model && !model->modelLoaded)   // cppcheck-suppress duplicateCondition
     {
         try
         {
@@ -65,7 +65,7 @@ bool DNNResnetDetector::loadModels()
         }
     }
 
-    if (model && !model->modelLoaded)
+    if (model && !model->modelLoaded)   // cppcheck-suppress duplicateCondition
     {
         qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot find object classification DNN model";
 
