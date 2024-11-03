@@ -133,84 +133,87 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
                                       const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes) const
 {
-    std::vector<float>    goodConfidences;
-    std::vector<float>    doubtConfidences;
-    std::vector<float>    confidences;
-    std::vector<cv::Rect> goodBoxes;
-    std::vector<cv::Rect> doubtBoxes;
-    std::vector<cv::Rect> boxes;
-
-    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
-
-    for (size_t i = 0 ; i < outs.size() ; ++i)
+    if (model)
     {
-        // Scan through all the bounding boxes output from the network and keep only the
-        // ones with high confidence scores. Assign the box's class label as the class
-        // with the highest score for the box.
+        std::vector<float>    goodConfidences;
+        std::vector<float>    doubtConfidences;
+        std::vector<float>    confidences;
+        std::vector<cv::Rect> goodBoxes;
+        std::vector<cv::Rect> doubtBoxes;
+        std::vector<cv::Rect> boxes;
 
-        float* data = reinterpret_cast<float*>(outs[i].data);
+        const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
 
-        for (int j = 0 ; j < outs[i].rows ; ++j, data += outs[i].cols)
+        for (size_t i = 0 ; i < outs.size() ; ++i)
         {
-            cv::Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
+            // Scan through all the bounding boxes output from the network and keep only the
+            // ones with high confidence scores. Assign the box's class label as the class
+            // with the highest score for the box.
 
-            // Get the value and location of the maximum score.
+            float* data = reinterpret_cast<float*>(outs[i].data);
 
-            double confidence;
-            cv::minMaxLoc(scores, nullptr, &confidence, nullptr, nullptr);
-
-            if (confidence > confidenceThreshold)
+            for (int j = 0 ; j < outs[i].rows ; ++j, data += outs[i].cols)
             {
-                int centerX = (int)(data[0] * inputImageSize.width);
-                int centerY = (int)(data[1] * inputImageSize.height);
-                int width   = (int)(data[2] * inputImageSize.width);
-                int height  = (int)(data[3] * inputImageSize.height);
+                cv::Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
 
-                int left    = centerX - width  / 2;
-                int right   = centerX + width  / 2;
-                int top     = centerY - height / 2;
-                int bottom  = centerY + height / 2;
+                // Get the value and location of the maximum score.
 
-                selectBbox(paddedSize,
-                           confidence,
-                           left,
-                           right,
-                           top,
-                           bottom,
-                           goodConfidences,
-                           goodBoxes,
-                           doubtConfidences,
-                           doubtBoxes);
+                double confidence;
+                cv::minMaxLoc(scores, nullptr, &confidence, nullptr, nullptr);
+
+                if (confidence > confidenceThreshold)
+                {
+                    int centerX = (int)(data[0] * inputImageSize.width);
+                    int centerY = (int)(data[1] * inputImageSize.height);
+                    int width   = (int)(data[2] * inputImageSize.width);
+                    int height  = (int)(data[3] * inputImageSize.height);
+
+                    int left    = centerX - width  / 2;
+                    int right   = centerX + width  / 2;
+                    int top     = centerY - height / 2;
+                    int bottom  = centerY + height / 2;
+
+                    selectBbox(paddedSize,
+                            confidence,
+                            left,
+                            right,
+                            top,
+                            bottom,
+                            goodConfidences,
+                            goodBoxes,
+                            doubtConfidences,
+                            doubtBoxes);
+                }
             }
         }
-    }
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = "  << goodBoxes.size();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = "  << goodBoxes.size();
 
-    if (goodBoxes.empty())
-    {
-        boxes       = doubtBoxes;
-        confidences = doubtConfidences;
-    }
-    else
-    {
-        boxes       = goodBoxes;
-        confidences = goodConfidences;
-    }
+        if (goodBoxes.empty())
+        {
+            boxes       = doubtBoxes;
+            confidences = doubtConfidences;
+        }
+        else
+        {
+            boxes       = goodBoxes;
+            confidences = goodConfidences;
+        }
 
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
+        // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
 
-    std::vector<int> indices;
-    cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
+        std::vector<int> indices;
+        cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
 
-    // Get detected bounding boxes.
+        // Get detected bounding boxes.
 
-    for (size_t i = 0 ; i < indices.size() ; ++i)
-    {
-        cv::Rect bbox = boxes[indices[i]];
-        correctBbox(bbox, paddedSize);
-        detectedBboxes.push_back(cv::Rect(bbox.x, bbox.y, bbox.width, bbox.height));
+        for (size_t i = 0 ; i < indices.size() ; ++i)
+        {
+            cv::Rect bbox = boxes[indices[i]];
+            correctBbox(bbox, paddedSize);
+            detectedBboxes.push_back(cv::Rect(bbox.x, bbox.y, bbox.width, bbox.height));
+        }
     }
 }
 

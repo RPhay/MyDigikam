@@ -117,70 +117,73 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                                      const cv::Size& paddedSize,
                                      std::vector<cv::Rect>& detectedBboxes) const
 {
-    std::vector<float> goodConfidences, doubtConfidences, confidences;
-    std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
-
-    cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
-
-    const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
-
-    // TODO: model problem, confidence of ssd output too low ==> false detection.
-
-    for (int i = 0 ; i < detectionMat.rows ; ++i)
+    if (model)
     {
-        float confidence = detectionMat.at<float>(i, 2);
+        std::vector<float> goodConfidences, doubtConfidences, confidences;
+        std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
 
-        if (confidence > confidenceThreshold)
+        cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
+
+        const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+
+        // TODO: model problem, confidence of ssd output too low ==> false detection.
+
+        for (int i = 0 ; i < detectionMat.rows ; ++i)
         {
-            float leftRatio   = detectionMat.at<float>(i, 3);
-            float topRatio    = detectionMat.at<float>(i, 4);
-            float rightRatio  = detectionMat.at<float>(i, 5);
-            float bottomRatio = detectionMat.at<float>(i, 6);
+            float confidence = detectionMat.at<float>(i, 2);
 
-            int left          = (int)(leftRatio   * inputImageSize.width);
-            int right         = (int)(rightRatio  * inputImageSize.width);
-            int top           = (int)(topRatio    * inputImageSize.height);
-            int bottom        = (int)(bottomRatio * inputImageSize.height);
+            if (confidence > confidenceThreshold)
+            {
+                float leftRatio   = detectionMat.at<float>(i, 3);
+                float topRatio    = detectionMat.at<float>(i, 4);
+                float rightRatio  = detectionMat.at<float>(i, 5);
+                float bottomRatio = detectionMat.at<float>(i, 6);
 
-            selectBbox(paddedSize,
-                       confidence,
-                       left,
-                       right,
-                       top,
-                       bottom,
-                       goodConfidences,
-                       goodBoxes,
-                       doubtConfidences,
-                       doubtBoxes);
+                int left          = (int)(leftRatio   * inputImageSize.width);
+                int right         = (int)(rightRatio  * inputImageSize.width);
+                int top           = (int)(topRatio    * inputImageSize.height);
+                int bottom        = (int)(bottomRatio * inputImageSize.height);
+
+                selectBbox(paddedSize,
+                        confidence,
+                        left,
+                        right,
+                        top,
+                        bottom,
+                        goodConfidences,
+                        goodBoxes,
+                        doubtConfidences,
+                        doubtBoxes);
+            }
         }
-    }
-/*
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
-*/
-    if (goodBoxes.empty())
-    {
-        boxes       = doubtBoxes;
-        confidences = doubtConfidences;
-    }
-    else
-    {
-        boxes       = goodBoxes;
-        confidences = goodConfidences;
-    }
+    /*
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
+    */
+        if (goodBoxes.empty())
+        {
+            boxes       = doubtBoxes;
+            confidences = doubtConfidences;
+        }
+        else
+        {
+            boxes       = goodBoxes;
+            confidences = goodConfidences;
+        }
 
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
+        // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
 
-    std::vector<int> indices;
-    cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
+        std::vector<int> indices;
+        cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
 
-    // Get detected bounding boxes.
+        // Get detected bounding boxes.
 
-    for (size_t i = 0 ; i < indices.size() ; ++i)
-    {
-        cv::Rect bbox = boxes[indices[i]];
-        correctBbox(bbox, paddedSize);
-        detectedBboxes.push_back(cv::Rect(bbox.x, bbox.y, bbox.width, bbox.height));
+        for (size_t i = 0 ; i < indices.size() ; ++i)
+        {
+            cv::Rect bbox = boxes[indices[i]];
+            correctBbox(bbox, paddedSize);
+            detectedBboxes.push_back(cv::Rect(bbox.x, bbox.y, bbox.width, bbox.height));
+        }
     }
 }
 
