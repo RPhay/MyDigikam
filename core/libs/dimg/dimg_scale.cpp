@@ -837,6 +837,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                     int r, g, b, a;
                     uint* pix = nullptr;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int rr, gg, bb, aa;
@@ -1319,6 +1320,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
@@ -1769,6 +1771,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
             dptr = dest + (y - y_begin) * dow;
             sptr = ypoints[dyy + y];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if ((YAP > 0) && isi->scaleSmooth)
             {
                 for (x = x_begin ; x < x_end ; ++x)
@@ -2220,6 +2223,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                     llong rr, gg, bb, aa;
                     ullong* pix = nullptr;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((XAP > 0) && isi->scaleSmooth)
                     {
                         pix  = ypoints[dyy + y] + xpoints[x];
