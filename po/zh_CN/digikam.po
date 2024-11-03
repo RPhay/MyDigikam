@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-02 01:48+0000\n"
+"POT-Creation-Date: 2024-11-03 01:43+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3096,7 +3096,7 @@ msgid "Tools"
 msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:840
+#: core/libs/tags/manager/tagsmanager.cpp:845
 #, kde-format
 msgid "Help"
 msgstr "帮助"
@@ -6032,25 +6032,25 @@ msgstr ""
 "将它们存储到数据库中。</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, kde-format
 msgid "Selection model: "
 msgstr "选择模型："
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:196
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:197
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:205
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
@@ -6090,7 +6090,7 @@ msgstr ""
 "类型广泛的对象、动物和场景。</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
@@ -8768,7 +8768,7 @@ msgstr "对打印流程进行色彩管理"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:259
 #, kde-format
 msgid "Settings..."
 msgstr "设置..."
@@ -13252,7 +13252,7 @@ msgstr "添加(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:586
 #, kde-format
 msgid "&Delete"
 msgstr "删除(&D)"
@@ -15300,7 +15300,7 @@ msgid "Adjust Time and Date"
 msgstr "调整时间和日期"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
 msgctxt "@action"
@@ -15308,21 +15308,21 @@ msgid "Cancel"
 msgstr "取消"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消当前操作"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "关闭"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
 msgid "Close window"
@@ -16244,37 +16244,37 @@ msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Enfuse 处理消息"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "无法保存图像到 %1。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, kde-format
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "正在处理包围 (阶段) 曝光图像的预览..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:543
 #, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "正在处理包围 (阶段) 曝光图像的输出..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:570
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "无法加载已处理图像。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "无法处理包围 (阶段) 曝光图像的预览。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:591
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
@@ -19346,7 +19346,7 @@ msgstr "再次添加"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
 #, kde-format
 msgid "Remove"
 msgstr "移除"
@@ -26553,7 +26553,7 @@ msgstr "标记相册"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:721
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28736,18 +28736,18 @@ msgstr ""
 "<p>这些相册将被移动到回收站。</p><p>提示：这些相册包含的<b>所有子相册</b>也将"
 "被移动到回收站。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Move to Trash"
 msgstr "移动到回收站(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:658
+#: core/libs/dialogs/deletedialog.cpp:650
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "即将删除所选项"
 
-#: core/libs/dialogs/deletedialog.cpp:665
+#: core/libs/dialogs/deletedialog.cpp:657
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -29130,7 +29130,7 @@ msgstr "桌面浏览器"
 msgid "Open Home page with default desktop Web browser"
 msgstr "使用默认桌面浏览器打开主页"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:210
+#: core/libs/dialogs/webbrowserdlg.cpp:217
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "无法加载页面 %1"
@@ -33261,21 +33261,21 @@ msgctxt "@title"
 msgid "User6"
 msgstr "用户 6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "帮助"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "在线使用手册..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, kde-format
 msgid "About..."
 msgstr "关于..."
@@ -33349,7 +33349,7 @@ msgstr ""
 "p><p><b>PPM</b>：输出已处理图像为 PPM 格式。此格式的文件体积较大，数据不会被"
 "压缩，不会影响画质。</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
@@ -36671,7 +36671,7 @@ msgid "Map"
 msgstr "地图"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -38106,38 +38106,38 @@ msgid "Delete Tags"
 msgstr "删除标签"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "编辑标签标题"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重置标签图标"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:718
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "反向选择"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:724
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展开标签树"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:727
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "折叠标签树"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:730
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "从图像中移除标签"
@@ -38209,13 +38209,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "原有标签已被更改。是否保存更改？ "
 
-#: core/libs/tags/manager/tagsmanager.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "标签管理器"
 
-#: core/libs/tags/manager/tagsmanager.cpp:331
+#: core/libs/tags/manager/tagsmanager.cpp:325
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -38227,7 +38227,7 @@ msgid_plural ""
 msgstr[0] ""
 "标签 %2 含有一个或多个子标签。删除此标签将同时删除它的子标签。您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:354
+#: core/libs/tags/manager/tagsmanager.cpp:348
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -38235,21 +38235,21 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "标签 %2 已被指定到一个或多个项目。您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:358
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "删除标签 %2 吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:370
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "删除标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:496
+#: core/libs/tags/manager/tagsmanager.cpp:490
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -38260,8 +38260,8 @@ msgstr ""
 "这之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签"
 "</b>。<br/> 您想要继续吗？</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:508
-#: core/libs/tags/manager/tagsmanager.cpp:527
+#: core/libs/tags/manager/tagsmanager.cpp:502
+#: core/libs/tags/manager/tagsmanager.cpp:521
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -38270,7 +38270,7 @@ msgstr ""
 "此操作可能耗时较长，这取决于相册集合的规模。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:547
+#: core/libs/tags/manager/tagsmanager.cpp:541
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -38281,119 +38281,119 @@ msgstr ""
 "要应用更改到文件，您必须在这之后选择写入元数据到文件。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:611
+#: core/libs/tags/manager/tagsmanager.cpp:605
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您确定要从所有图像中移除所选标签吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:692
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "组织标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:695
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "同步导出(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:712
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "从地址簿创建标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:715
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "标记未指定标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "添加新标签到当前标签。当前标签是最后一个点击的标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr "删除所选项目。这也可以删除多个项目。但不能删除根标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "编辑所选标签的标题"
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重置图标到所选标签。可以重置多个选中标签的图标。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "标记所有未分配到图像的标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "反向选择。只有可见项目会被选择。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "所选项目将被展开"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "展开整个标签树"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "折叠整个标签树"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "从图像中杉树所选标签。可以删除多个标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:806
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "写入数据库标签到图像"
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "读取图像标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "仅从数据库清除所有标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "写入标签元数据到图像。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "读取图像的标签到数据库。已有标签将不受影响。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr "删除数据库中的所有标签。更改不会同步到文件。请谨慎操作。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:841
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -39079,17 +39079,17 @@ msgstr ""
 "它，让 digiKam 的日期和时间指示器显示照片中的日期和时间。相机内部时钟与实际时"
 "钟的时间差也将根据此设置确定。"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:166
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>无法加载<br/>图像 %1。</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:182
 #, kde-format
 msgid "The clock date and time:"
 msgstr "时钟日期和时间："
 
-#: core/libs/timeadjust/clockphotodialog.cpp:235
+#: core/libs/timeadjust/clockphotodialog.cpp:236
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "选择要提取时钟照片的图像"
@@ -41032,7 +41032,7 @@ msgid "Mod.: %1"
 msgstr "修改于：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:267
+#: core/showfoto/main/showfoto.cpp:273
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -41298,7 +41298,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:234
+#: core/utilities/maintenance/main/maintenancedlg.cpp:241
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -47803,7 +47803,7 @@ msgstr "要打开的文件或文件夹"
 msgid "Loading themes..."
 msgstr "正在加载主题..."
 
-#: core/showfoto/main/showfoto.cpp:226
+#: core/showfoto/main/showfoto.cpp:232
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -47813,13 +47813,13 @@ msgstr ""
 "<p>ICC 色彩特性文件路径无效。</p><p>要重新设置路径，请选择“是”。如果选"
 "择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
-#: core/showfoto/main/showfoto.cpp:266
+#: core/showfoto/main/showfoto.cpp:272
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/showfoto/main/showfoto.cpp:291
+#: core/showfoto/main/showfoto.cpp:297
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -47948,7 +47948,7 @@ msgstr "装饰(&D)"
 msgid "Effec&ts"
 msgstr "特效(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -48854,74 +48854,74 @@ msgstr ""
 "将自动显示在编辑器中。如果没有选中的文件，\n"
 "将自动显示列表中的第一个文件。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "提示：收藏图集项目名称不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "提示：收藏图集项目文件列表不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "提示：收藏图集项目名称已存在于层级结构中。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "提示：收藏图集文件夹名称不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "提示：收藏图集文件夹名称已存在于层级结构中。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "新建收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "编辑收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "新建收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "编辑收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -50262,7 +50262,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "否决此次建议"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50274,59 +50274,52 @@ msgstr ""
 "您只需事先人工识别数张照片，\n"
 "即可在整个相册中自动识别出对应的人物。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/maintenance/main/maintenancedlg.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳过已扫描图像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
-#: core/utilities/maintenance/main/maintenancedlg.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:156
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "重新扫描并合并结果"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/maintenance/main/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未确认结果并重新扫描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:154
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Clear all previous results and rescan"
-msgstr "清除所有之前的结果并重新扫描"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "帮助"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "检测人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "查找照片中所有的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50336,13 +50329,13 @@ msgstr ""
 "查找照片中所有的人脸，\n"
 "并尝试识别人脸所属的人物"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50352,25 +50345,25 @@ msgstr ""
 "尝试重新识别\n"
 "已标记但未确认人物的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "扫描流程"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "扫描范围"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50380,31 +50373,31 @@ msgid ""
 msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "模型："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "SSD"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50417,43 +50410,43 @@ msgstr ""
 "它比 SSD 和 YOLOv3 速度更快，可配置性也更好。\n"
 "注意：YuNet 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "人脸大小："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "超小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr "小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "中"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "大"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "超大"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50480,18 +50473,18 @@ msgstr ""
 "测精度设置为 6 - 8，并将人脸大小设置为 <b>中</b> 或者 <b>大</b>。</p><p>此设"
 "置仅适用于 YuNet。</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "人脸检测设置"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50504,25 +50497,25 @@ msgstr ""
 "数值越高，识别精度越高，识别到的人脸也越少。\n"
 "提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "模型："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50535,14 +50528,14 @@ msgstr ""
 "OpenFace 支持程序库较为老旧的环境。\n"
 "注意：SFace 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50554,12 +50547,12 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "人脸检测设置"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -55022,18 +55015,18 @@ msgstr "移除(&R)"
 msgid "Add Folder"
 msgstr "添加文件夹"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, kde-format
 msgid "New Folder"
 msgstr "新建文件夹"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "书签管理"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -58882,53 +58875,53 @@ msgstr "左视图(&L)"
 msgid "&Right Panel"
 msgstr "右视图(&R)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:29
+#: core/utilities/maintenance/main/maintenancedlg.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "系统维护"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:44
+#: core/utilities/maintenance/main/maintenancedlg.cpp:48
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>选择要进行的系统维护操作</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:50
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "系统维护处理范围："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:52
+#: core/utilities/maintenance/main/maintenancedlg.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "使用上次保存的活动工具和设置"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:57
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "使用所有处理器核心 (如果可能)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:58
 #, kde-format
 msgid "Common Options"
 msgstr "通用选项"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr "<qt>无选项<br/><b>提示：</b>此工具只会扫描相册集合的文件夹。</qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:60
+#: core/utilities/maintenance/main/maintenancedlg.cpp:64
 #, kde-format
 msgid "Scan for new items"
 msgstr "扫描新增项目"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:66
+#: core/utilities/maintenance/main/maintenancedlg.cpp:70
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -58940,27 +58933,27 @@ msgstr ""
 "选择要清理的其他数据库。<br/>如果选择了下面的任意一项，清理将需要更长时间才能"
 "完成，<br/>digiKam 可能会暂时停止响应以防止数据库在清理过程中损坏。</qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:69
+#: core/utilities/maintenance/main/maintenancedlg.cpp:73
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "同时清理缩略图数据库。"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:74
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "同时清理人脸识别数据库。"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:71
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "同时清理相似度数据库。"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:76
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "深度清理并压缩所有数据库。"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -58969,82 +58962,98 @@ msgstr ""
 "此选项将对数据库进行压缩 (vacuuming/shrinking)，SQLite 和 MySQL 均支持此功"
 "能。"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "数据库清理"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:82
-#: core/utilities/maintenance/main/maintenancedlg.cpp:89
+#: core/utilities/maintenance/main/maintenancedlg.cpp:86
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "只扫描已更改和未分类项目 (更快)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:84
+#: core/utilities/maintenance/main/maintenancedlg.cpp:88
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "重建缩略图"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "重建文件指纹"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:104
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "相似度范围(百分比)："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:124
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "重复项目位置限制："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:128
 #, kde-format
 msgid "No restriction"
 msgstr "无限制"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:129
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "仅限参考图像相册"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:126
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "排除参考图像相册"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:140
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "查找重复项目"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:147
+#: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgid "Faces data management: "
 msgstr "人脸数据管理："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
-#, kde-format
+#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Clear and rebuild all training data"
 msgctxt "@option:check"
-msgid "Clear and rebuild all training data"
+msgid "Rebuild all training data"
 msgstr "清除并重建所有训练数据"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:159
+#: core/utilities/maintenance/main/maintenancedlg.cpp:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"This will clear all training data for recognition and rebuild it from all "
-"available faces."
-msgstr "此选项将清除所有人脸识别训练数据，然后基于可用的人脸进行重建。"
+"This will re-train the face recognizer with tagged faces in your library."
+msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:162
+#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#, fuzzy, kde-format
+#| msgid "Clear all faces on this image"
+msgctxt "@option:check"
+msgid "Reset and clear all faces and training"
+msgstr "清除此图像的所有人脸标签"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will clear all detected and tagged faces, and then rescan images to "
+"detect faces."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -59060,23 +59069,23 @@ msgstr ""
 "定照片主体。选定的神经网络模型会在后台自动生成一系列描述了图像内容的标签，并"
 "将它们存储到数据库中。</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:179
+#: core/utilities/maintenance/main/maintenancedlg.cpp:186
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "自动标签模式："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:184
+#: core/utilities/maintenance/main/maintenancedlg.cpp:191
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr "清理所有标签并重新分配"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:185
-#: core/utilities/maintenance/main/maintenancedlg.cpp:229
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "仅扫描未指定品质项目"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:194
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59087,7 +59096,7 @@ msgstr ""
 "<p><b>清理所有标签并重新分配</b>：清理所有已经分配的标签，并重新扫描所有项"
 "目。</p><p><b>仅扫描未指定品质项目</b>：仅扫描未分配品质标签的项目。</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:200
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59121,45 +59130,60 @@ msgstr ""
 "图像分类，它并不提供对象定位功能。它能够识别大于 1000 类的大型数据集，涵盖了"
 "类型广泛的对象、动物和场景。</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "自动标签分配"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:223
+#: core/utilities/maintenance/main/maintenancedlg.cpp:230
 #, kde-format
 msgid "Scan Mode: "
 msgstr "扫描模式："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:228
+#: core/utilities/maintenance/main/maintenancedlg.cpp:235
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "清除所有信息并重新扫描"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
 #, kde-format
 msgid "From database to image metadata"
 msgstr "从数据库到图像元数据"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, kde-format
 msgid "From image metadata to database"
 msgstr "从图像元数据到数据库"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "打开元数据管理配置对话框："
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "图像与数据库元数据同步"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgid "Warning"
+msgstr "警告"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#, kde-format
+msgid ""
+"Are you sure you want to delete all confirmed, unconfirmed, and unknown "
+"faces? You’ll need to start tagging unknown faces again before any faces can "
+"be recognized."
+msgstr ""
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -59197,7 +59221,7 @@ msgstr "%1 的自动标签\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -59366,62 +59390,62 @@ msgstr "已找到重复项：%1"
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "扫描相册中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "扫描 %1 个相册中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "扫描图像中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "扫描 %1 张图像中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
 msgid "Faces found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, kde-format
 msgid "Face found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "已扫描人脸：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
 #, kde-format
 msgid "No face"
 msgstr "没有人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -65636,3 +65660,13 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Clear all previous results and rescan"
+#~ msgstr "清除所有之前的结果并重新扫描"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "This will clear all training data for recognition and rebuild it from all "
+#~ "available faces."
+#~ msgstr "此选项将清除所有人脸识别训练数据，然后基于可用的人脸进行重建。"

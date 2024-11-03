@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-02 01:48+0000\n"
+"POT-Creation-Date: 2024-11-03 01:43+0000\n"
 "PO-Revision-Date: 2024-11-01 07:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3219,7 +3219,7 @@ msgid "Tools"
 msgstr "Orodja"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:840
+#: core/libs/tags/manager/tagsmanager.cpp:845
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
@@ -6304,25 +6304,25 @@ msgstr ""
 "rezultate v bazo podatkov.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, kde-format
 msgid "Selection model: "
 msgstr "Model izbiranja: "
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:196
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:197
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:205
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
@@ -6370,7 +6370,7 @@ msgstr ""
 "ki zajemajo široko paleto predmetov, živali in prizorov.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
@@ -9178,7 +9178,7 @@ msgstr "Za tiskanje uporabi upravljanje barv"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:259
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavitve ..."
@@ -13831,7 +13831,7 @@ msgstr "Dodaj"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:586
 #, kde-format
 msgid "&Delete"
 msgstr "Izbriši"
@@ -15909,7 +15909,7 @@ msgid "Adjust Time and Date"
 msgstr "Prilagodi čas in datum"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
 msgctxt "@action"
@@ -15917,21 +15917,21 @@ msgid "Cancel"
 msgstr "Prekliči"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Prekliči trenutno opravilo"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Zapri"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
 msgid "Close window"
@@ -16880,37 +16880,37 @@ msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Sporočila obdelave enfuse"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "Ni bilo mogoče shraniti slike v %1."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, kde-format
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "Obdelava predogleda kadriranih slik..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:543
 #, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "Obdelava izhoda kadriranih slik..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:570
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "Ni bilo mogoče naložiti obdelane slike."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "Obdelava predogleda kadriranih slik ni uspela."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:591
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
@@ -20099,7 +20099,7 @@ msgstr "Dodaj spet"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
@@ -27455,7 +27455,7 @@ msgstr "Album z oznakami"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:721
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29760,18 +29760,18 @@ msgstr ""
 "<p>Ti albumi bodo premaknjeni v Smeti.</p><p>Prav tako bodo premaknjeni v "
 "Smeti <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Pre&makni v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:658
+#: core/libs/dialogs/deletedialog.cpp:650
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Izbrani predmeti bodo pravkar izbrisani"
 
-#: core/libs/dialogs/deletedialog.cpp:665
+#: core/libs/dialogs/deletedialog.cpp:657
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -30171,7 +30171,7 @@ msgstr "Namizni brskalnik"
 msgid "Open Home page with default desktop Web browser"
 msgstr "Odpri domačo stran s privzetim spletnim brskalnikom"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:210
+#: core/libs/dialogs/webbrowserdlg.cpp:217
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "Ni mogoče naložiti strani %1"
@@ -34453,21 +34453,21 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Uporabnik6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Sprotni priročnik..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, kde-format
 msgid "About..."
 msgstr "O programu..."
@@ -34544,7 +34544,7 @@ msgstr ""
 "ustvarja največje datoteke, ne da bi pri tem izgubili kakovost. Slika ni "
 "stisnjena.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
@@ -37936,7 +37936,7 @@ msgid "Map"
 msgstr "Zemljevid"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -39478,38 +39478,38 @@ msgid "Delete Tags"
 msgstr "Izbriši značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Uredi imena značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Ponastavi ikono značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:718
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbiro"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:724
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Razširi drevo značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:727
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Strni drevo značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:730
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Odstrani značko iz slik"
@@ -39582,13 +39582,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Predhodne značke so bile spremenjene. Ali želite shraniti spremembe? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Upravljalnik oznak"
 
-#: core/libs/tags/manager/tagsmanager.cpp:331
+#: core/libs/tags/manager/tagsmanager.cpp:325
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39610,7 +39610,7 @@ msgstr[3] ""
 "Značke %2 imajo eno ali več pod-značk. Z brisanjem teh značk boste izbrisali "
 "tudi vse njihove pod-značke. Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:354
+#: core/libs/tags/manager/tagsmanager.cpp:348
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39625,7 +39625,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Značke %2 so dodeljene enemu ali več predmetom. Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:358
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39635,7 +39635,7 @@ msgstr[1] "Izbrišem znački %2?"
 msgstr[2] "Izbrišem značke %2?"
 msgstr[3] "Izbrišem značke %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:370
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39645,7 +39645,7 @@ msgstr[1] "Izbriši znački"
 msgstr[2] "Izbriši značke"
 msgstr[3] "Izbriši značke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:496
+#: core/libs/tags/manager/tagsmanager.cpp:490
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39657,8 +39657,8 @@ msgstr ""
 "značke iz slike), lahko pride do <b>izgube značk</b>.<br/>Ali želite "
 "nadaljevati?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:508
-#: core/libs/tags/manager/tagsmanager.cpp:527
+#: core/libs/tags/manager/tagsmanager.cpp:502
+#: core/libs/tags/manager/tagsmanager.cpp:521
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39667,7 +39667,7 @@ msgstr ""
 "Če je vaša zbirka velika, lahko to opravilo traja dlje časa.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:547
+#: core/libs/tags/manager/tagsmanager.cpp:541
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39679,7 +39679,7 @@ msgstr ""
 "metapodatkov v datoteke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:611
+#: core/libs/tags/manager/tagsmanager.cpp:605
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39688,36 +39688,36 @@ msgstr[1] "Ali resnično želite iz vseh slik odstraniti izbrani znački?"
 msgstr[2] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 msgstr[3] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:692
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:695
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhroniziraj izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:712
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Ustvari značko iz mape"
 
-#: core/libs/tags/manager/tagsmanager.cpp:715
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Označi nedodeljene značke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novo značko k trenutni. Trenutna značka je tista, ki ste jo nazadnje "
 "kliknili."
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39726,74 +39726,74 @@ msgstr ""
 "Izbriši izbrane predmete. To deluje tudi z več predmeti, ampak ne bo "
 "izbrisalo korenske značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Odstrani ime izbrane značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponastavi ikono izbranih značk. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Označi vse značke, ki niso dodeljene slikam."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Obrni izbor. Izbrani bodo samo vidni predmeti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Izbrani predmeti bodo razširjeni"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Razširi drevo oznak v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Strni drevo značk v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši izbrane značke iz slik. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:806
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Zapiši značke iz podatkovne zbirke v sliko"
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Preberi značke iz slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Izbriši vse značke, ampak le iz podatkovne zbirke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Zapiši značke metapodatkov v sliko."
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Preberi značke iz slik v podatkovno zbirko. Obstoječe značke ne bodo "
 "spremenjene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39802,7 +39802,7 @@ msgstr ""
 "Izbriši vse značke, ampak le iz podatkovne zbirke. Uskladitve z datotekami "
 "ne bo. Priporočamo previdnost."
 
-#: core/libs/tags/manager/tagsmanager.cpp:841
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -40530,18 +40530,18 @@ msgstr ""
 "jo lahko naložite sem in nastavite kazalnik na prikazan (datum in) čas. "
 "Razlika v uri vaše notranje ure kamere bo določena iz te nastavitve."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:166
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 "<font color=\"red\"><b>Ni bilo mogoče naložiti<br/>slike %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:182
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Datum in čas:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:235
+#: core/libs/timeadjust/clockphotodialog.cpp:236
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Izberite sliko za izvleček slike z uro"
@@ -42515,7 +42515,7 @@ msgid "Mod.: %1"
 msgstr "Spr.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:267
+#: core/showfoto/main/showfoto.cpp:273
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -42790,7 +42790,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:234
+#: core/utilities/maintenance/main/maintenancedlg.cpp:241
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -49316,7 +49316,7 @@ msgstr "Datoteke ali mape za odprtje"
 msgid "Loading themes..."
 msgstr "Nalaganje tem..."
 
-#: core/showfoto/main/showfoto.cpp:226
+#: core/showfoto/main/showfoto.cpp:232
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49328,13 +49328,13 @@ msgstr ""
 "onemogočena zmožnost \"Upravljanja barv\", dokler ne boste te težave rešili."
 "</p>"
 
-#: core/showfoto/main/showfoto.cpp:266
+#: core/showfoto/main/showfoto.cpp:272
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/showfoto/main/showfoto.cpp:291
+#: core/showfoto/main/showfoto.cpp:297
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49463,7 +49463,7 @@ msgstr "Okrasi"
 msgid "Effec&ts"
 msgstr "Učinki"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -50421,37 +50421,37 @@ msgstr ""
 "izbrana datoteka iz tega seznama bo samodejno prikazana v urejevalniku, ko "
 "je priljubljena odprta. Če ni nobene izbrane, bo prikazana prva na seznamu."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Opomba: ime priljubljene ne sme biti prazno!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Opomba: seznam datotek priljubljene postavke ne sme biti prazen!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Opomba: ime priljubljene postavke že obstaja v hierarhiji!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Opomba: ime priljubljene mape ne sme biti prazno!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Opomba: ime priljubljene mape že obstaja v hierarhiji!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -50461,37 +50461,37 @@ msgstr[1] "%1 datoteki"
 msgstr[2] "%1 datoteke"
 msgstr[3] "%1 datotek"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nova priljubljena postavka"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Uredi priljubljeno postavko"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Nova priljubljena mapa"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Uredi priljubljeno mapo"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Povprečja ni bilo mogoče izračunati"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -51885,7 +51885,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Zavrni ta predlog"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51897,59 +51897,52 @@ msgstr ""
 "Ko ste identificirali vaše prijatelje na več slikah,\n"
 "lahko prepozna tudi na drugih fotografijah."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/maintenance/main/maintenancedlg.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Preskoči že preiskane slike"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
-#: core/utilities/maintenance/main/maintenancedlg.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:156
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Preišči znova in združi rezultate"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/maintenance/main/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Počisti nepotrjene rezultate in znova preišči"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:154
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Clear all previous results and rescan"
-msgstr "Počisti vse pretekle rezultate in znova preišči"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Zaznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Najde vse obraze v vaših fotografijah"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Zaznaj in prepoznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51959,13 +51952,13 @@ msgstr ""
 "Najde vse obraze v vaših fotografijah in poskuša prepoznati, katera oseba je "
 "upodobljena"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Prepoznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51975,25 +51968,25 @@ msgstr ""
 "Znova poskusi prepoznati upodobljene ljudi\n"
 "na označenih, ampak še ne potrjenih obrazih."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Potek dela"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Išči v"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Natančnost:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52005,31 +51998,31 @@ msgstr ""
 "vrednost,\n"
 "natančnejše bodo zaznani obrazi, vendar bo zaznanih manj obrazov."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "SSD"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52043,43 +52036,43 @@ msgstr ""
 "Opomba: YuNet je na voljo samo, če je digiKam preveden z OpenCV 4.10 ali "
 "novejšim."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Velikost obraza:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Zelo majhen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr "Majhen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Srednji"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Velik"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Zelo velik"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52112,18 +52105,18 @@ msgstr ""
 "na <b>Srednje</b> ali <b>Velike</b>.</p><p>Ta nastavitev velja samo za "
 "YuNet. </p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Nastavitve zaznava obrazov"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Natančnost:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52137,25 +52130,25 @@ msgstr ""
 "Opomba: prepoznani so samo obrazi, ki so zelo podobni predhodno označenim "
 "obrazom."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52169,14 +52162,14 @@ msgstr ""
 "Opomba: SFace je na voljo samo, če je digiKam preveden z OpenCV 4.6.0 ali "
 "novejšim."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Delaj na vseh procesorskih jedrih"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52188,12 +52181,12 @@ msgstr ""
 "na vseh procesorskih jedrih na vašem sistemu ali pa, da se opravilo\n"
 "izvaja v ozadju na le enem jedru."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Nastavitve prepoznavanja obrazov"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -56733,18 +56726,18 @@ msgstr "Odst&rani"
 msgid "Add Folder"
 msgstr "Dodaj mapo"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, kde-format
 msgid "New Folder"
 msgstr "Nova mapa"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Upravljanje zaznamkov"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -60736,41 +60729,41 @@ msgstr "&Levi pult"
 msgid "&Right Panel"
 msgstr "&Desni pult"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:29
+#: core/utilities/maintenance/main/maintenancedlg.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Vzdrževanje"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:44
+#: core/utilities/maintenance/main/maintenancedlg.cpp:48
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Izberite opravila vzdrževanja</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:50
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Obdelaj predmete od:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:52
+#: core/utilities/maintenance/main/maintenancedlg.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Uporabi zadnja shranjena aktivna orodja in nastavitve"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:57
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Obdeluj na vseh procesorskih jedrih (kadar je mogoče)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:58
 #, kde-format
 msgid "Common Options"
 msgstr "Splošne možnosti"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -60779,12 +60772,12 @@ msgstr ""
 "<qt>Brez možnosti<br/><i>Opomba: to orodje obdeluje le zbirke albumov.</i></"
 "qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:60
+#: core/utilities/maintenance/main/maintenancedlg.cpp:64
 #, kde-format
 msgid "Scan for new items"
 msgstr "Preišči za novimi predmeti"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:66
+#: core/utilities/maintenance/main/maintenancedlg.cpp:70
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -60798,27 +60791,27 @@ msgstr ""
 "začasno zamrzne<br/>da bi zagotovili, da ne pride do poškodbe baze podatkov."
 "</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:69
+#: core/utilities/maintenance/main/maintenancedlg.cpp:73
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Tudi počisti podatkovno zbirko sličic."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:74
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Tudi počisti podatkovno zbirko obrazov."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:71
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Počisti tudi podatkovno zbirko podobnosti."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:76
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Razširjeno čiščenje in strnjevanje vseh podatkovnih zbirk."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -60827,85 +60820,99 @@ msgstr ""
 "Ta možnost vodi do pospravljanja (krčenja) podatkovnih baz. Pospravljanje je "
 "podprto tako za SQLite kot MySQL."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Izvedi čiščenje podatkovne baze"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:82
-#: core/utilities/maintenance/main/maintenancedlg.cpp:89
+#: core/utilities/maintenance/main/maintenancedlg.cpp:86
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 "Preišči za spremenjenimi predmeti ali tistimi, ki niso v katalogu (hitreje)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:84
+#: core/utilities/maintenance/main/maintenancedlg.cpp:88
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Ponovno izgradi sličice"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Ponovno izgradi prstne odtise"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:104
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Obseg podobnosti (v odstotkih): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:124
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Omejitev na dvojnikih:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:128
 #, kde-format
 msgid "No restriction"
 msgstr "Brez omejitev"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:129
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Omeji na album referenčne slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:126
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Izvzemi album referenčne slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:140
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Najdi podvojene predmete"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:147
+#: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, kde-format
 msgid "Faces data management: "
 msgstr "Upravljanje podatkov obrazov: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
-#, kde-format
+#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Clear and rebuild all training data"
 msgctxt "@option:check"
-msgid "Clear and rebuild all training data"
+msgid "Rebuild all training data"
 msgstr "Počisti in znova izgradi vse podatke učenja"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:159
+#: core/utilities/maintenance/main/maintenancedlg.cpp:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"This will clear all training data for recognition and rebuild it from all "
-"available faces."
+"This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
-"To bo počistilo podatke učenja prepoznavanja in jih ponovno izgradilo iz "
-"vseh obrazov, ki so na voljo."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:162
+#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#, fuzzy, kde-format
+#| msgid "Clear all faces on this image"
+msgctxt "@option:check"
+msgid "Reset and clear all faces and training"
+msgstr "Počisti vse obraze na tej sliki"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will clear all detected and tagged faces, and then rescan images to "
+"detect faces."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Zaznaj in prepoznaj obraze"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -60923,23 +60930,23 @@ msgstr ""
 "mreža, ki se uporablja v ozadju, bo samodejno ustvarila niz oznak, ki "
 "opisujejo vsebino, in shranila rezultate v bazo podatkov.</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:179
+#: core/utilities/maintenance/main/maintenancedlg.cpp:186
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Način samodejnega dodeljevanja: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:184
+#: core/utilities/maintenance/main/maintenancedlg.cpp:191
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr "Počisti vse in znova dodeli"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:185
-#: core/utilities/maintenance/main/maintenancedlg.cpp:229
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Preišči samo ne-dodeljene"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:194
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60951,7 +60958,7 @@ msgstr ""
 "dodeljene, in ponovno prečeši vse elemente od začetka.</p><p><b>Prečeši samo "
 "nedodeljene</b> : prečeši samo elemente brez dodeljene oznake.</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:200
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60993,45 +61000,60 @@ msgstr ""
 "lokalizacije objektov. Prepozna lahko predmete iz velikega nabora več kot "
 "1000 razredov, ki zajemajo široko paleto predmetov, živali in prizorov.</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Samodejna dodelitev značk"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:223
+#: core/utilities/maintenance/main/maintenancedlg.cpp:230
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Način preiskovanja: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:228
+#: core/utilities/maintenance/main/maintenancedlg.cpp:235
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Počisti vse in znova preišči"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Smer uskladitve: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Iz podatkovne zbirke v metapodatke slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Iz metapodatkov slik v podatkovno zbirko"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Za podrobnosti si oglejte pult z nastavitvami metapodatkov: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Uskladi metapodatke s podatkovno zbirko"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgid "Warning"
+msgstr "Opozorilo"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#, kde-format
+msgid ""
+"Are you sure you want to delete all confirmed, unconfirmed, and unknown "
+"faces? You’ll need to start tagging unknown faces again before any faces can "
+"be recognized."
+msgstr ""
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -61069,7 +61091,7 @@ msgstr "Samodejne oznake za: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -61243,62 +61265,62 @@ msgstr "Najdenih dvojnikov: %1"
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Preišči obraze v albumu: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Preišči obraze v %1 albumih"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Preišči obraze v sliki: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Preišči obraze v %1 slikah"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #, kde-format
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Postavk preiskanih za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Postavka preiskana za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Najdenih obrazov: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, kde-format
 msgid "Face found: %1"
 msgstr "Najden obraz: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Preiskano za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
 #, kde-format
 msgid "No face"
 msgstr "Ni obraza"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -67825,6 +67847,18 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Clear all previous results and rescan"
+#~ msgstr "Počisti vse pretekle rezultate in znova preišči"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "This will clear all training data for recognition and rebuild it from all "
+#~ "available faces."
+#~ msgstr ""
+#~ "To bo počistilo podatke učenja prepoznavanja in jih ponovno izgradilo iz "
+#~ "vseh obrazov, ki so na voljo."
 
 #~ msgid "Thumbs"
 #~ msgstr "Sličice"

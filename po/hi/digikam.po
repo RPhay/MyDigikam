@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-02 01:48+0000\n"
+"POT-Creation-Date: 2024-11-03 01:43+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -3171,7 +3171,7 @@ msgid "Tools"
 msgstr "औज़ार (&T)"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:840
+#: core/libs/tags/manager/tagsmanager.cpp:845
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -6073,26 +6073,26 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection model: "
 msgstr "गंतव्य:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:196
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:197
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:205
 #, kde-format
 msgid "ResNet50"
 msgstr ""
@@ -6122,7 +6122,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
@@ -8751,7 +8751,7 @@ msgstr "रंग प्रबंधन विन्यास"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:259
 #, fuzzy, kde-format
 msgid "Settings..."
 msgstr "विन्यास"
@@ -13243,7 +13243,7 @@ msgstr "जोड़ें (&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:586
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "मिटाएँ"
@@ -15302,7 +15302,7 @@ msgid "Adjust Time and Date"
 msgstr "समायोजन:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, fuzzy, kde-format
 #| msgid "Cancel"
@@ -15311,14 +15311,14 @@ msgid "Cancel"
 msgstr "रद्द करें"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "कैमरा जानकारी"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action"
@@ -15326,7 +15326,7 @@ msgid "Close"
 msgstr "बंद करें (&C)"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@info"
@@ -16232,37 +16232,37 @@ msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "पिछली छवि"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "%1 में फ़ाइल सूची बनाना असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "कैमरा से फ़ाइल %1 निकाल पाने में असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:543
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "कैमरा से फ़ाइल %1 निकाल पाने में असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:570
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "%1 में फ़ाइल सूची बनाना असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:580
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "कैमरा से फ़ाइल %1 निकाल पाने में असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:591
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
@@ -19341,7 +19341,7 @@ msgstr "फ़िल्म ग्रेन जोड़ें..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "मिटाएँ (&R)"
@@ -26491,7 +26491,7 @@ msgstr "नया एलबम"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:721
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -28561,18 +28561,18 @@ msgid ""
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:587
 #, fuzzy, kde-format
 msgid "&Move to Trash"
 msgstr "कूडे में डालें"
 
-#: core/libs/dialogs/deletedialog.cpp:658
+#: core/libs/dialogs/deletedialog.cpp:650
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "चयनित फ़ाइलों को मिटाया जाने वाला है"
 
-#: core/libs/dialogs/deletedialog.cpp:665
+#: core/libs/dialogs/deletedialog.cpp:657
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -28971,7 +28971,7 @@ msgstr "फ़ोल्डर खोलें"
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:210
+#: core/libs/dialogs/webbrowserdlg.cpp:217
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot load page %1"
@@ -33145,23 +33145,23 @@ msgctxt "@title"
 msgid "User6"
 msgstr "ऊपरी"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@action: button"
 msgid "Help"
 msgstr "मदद (&H)"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Online Handbook..."
 msgstr "केआईपीआई प्लगइन हैण्डबुक"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, fuzzy, kde-format
 msgid "About..."
 msgstr "के बारे में"
@@ -33234,7 +33234,7 @@ msgid ""
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@action:button"
@@ -36580,7 +36580,7 @@ msgid "Map"
 msgstr "नक्शा"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
 #| msgid "RAW Image"
@@ -37949,39 +37949,39 @@ msgid "Delete Tags"
 msgstr "टैग मिटाएँ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "छवि फ़ाइलें"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "टैग प्रतीक रीसेट करें"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:718
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "चयन पलटें"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:724
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "टैग उप-शाखा शामिल करें"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:727
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse Tag Tree"
 msgstr "मेरे एलबम"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:730
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "फ़ाइल से डाटाबेस में मेटाडाटा पढ़ें"
@@ -38056,13 +38056,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:166
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "रंग प्रबंधन"
 
-#: core/libs/tags/manager/tagsmanager.cpp:331
+#: core/libs/tags/manager/tagsmanager.cpp:325
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -38074,7 +38074,7 @@ msgid_plural ""
 msgstr[0] "क्या आप जारी रखना चाहते हैं?"
 msgstr[1] "क्या आप जारी रखना चाहते हैं?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:354
+#: core/libs/tags/manager/tagsmanager.cpp:348
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -38083,7 +38083,7 @@ msgid_plural ""
 msgstr[0] "क्या आप जारी रखना चाहते हैं?"
 msgstr[1] "क्या आप जारी रखना चाहते हैं?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:358
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -38091,7 +38091,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "टैग मिटाएँ"
 msgstr[1] "टैग मिटाएँ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:370
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -38099,7 +38099,7 @@ msgid_plural "Delete tags"
 msgstr[0] "टैग मिटाएँ"
 msgstr[1] "टैग मिटाएँ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:496
+#: core/libs/tags/manager/tagsmanager.cpp:490
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -38107,15 +38107,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:508
-#: core/libs/tags/manager/tagsmanager.cpp:527
+#: core/libs/tags/manager/tagsmanager.cpp:502
+#: core/libs/tags/manager/tagsmanager.cpp:521
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:547
+#: core/libs/tags/manager/tagsmanager.cpp:541
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -38123,121 +38123,121 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:611
+#: core/libs/tags/manager/tagsmanager.cpp:605
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 msgstr[1] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:692
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:695
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "निर्यात (&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:712
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, fuzzy, kde-format
 msgid "Create Tag from Address Book"
 msgstr "पतापुस्तिका से टैग बनाएँ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:715
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "हाल ही में आबंटित कोई टैग नहीं है"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "पाठ को बाईं ओर जमाएँ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "टैग उप-शाखा शामिल करें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, fuzzy, kde-format
 #| msgid "Download Selected"
 msgid "Collapse tag tree completely"
 msgstr "चयनित डाउनलोड करें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:806
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "फ़ाइल से डाटाबेस में मेटाडाटा पढ़ें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:841
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -38878,18 +38878,18 @@ msgid ""
 "from this setting."
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:166
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:182
 #, fuzzy, kde-format
 #| msgid "Creation date and time"
 msgid "The clock date and time:"
 msgstr "तैयार करने की तारीख़ और समय"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:235
+#: core/libs/timeadjust/clockphotodialog.cpp:236
 #, fuzzy, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "छवियाँ सहेजें"
@@ -40885,7 +40885,7 @@ msgid "Mod.: %1"
 msgstr "परिवर्धित: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:267
+#: core/showfoto/main/showfoto.cpp:273
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, fuzzy, kde-format
@@ -41147,7 +41147,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:234
+#: core/utilities/maintenance/main/maintenancedlg.cpp:241
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -48581,7 +48581,7 @@ msgstr "खोलने के लिए फ़ाइल फ़ोल्डर"
 msgid "Loading themes..."
 msgstr "प्रसंग लोड किया जा रहा है"
 
-#: core/showfoto/main/showfoto.cpp:226
+#: core/showfoto/main/showfoto.cpp:232
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -48589,13 +48589,13 @@ msgid ""
 "Management\" feature will be disabled until you solve this issue</p>"
 msgstr ""
 
-#: core/showfoto/main/showfoto.cpp:266
+#: core/showfoto/main/showfoto.cpp:272
 #, fuzzy, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/showfoto/main/showfoto.cpp:291
+#: core/showfoto/main/showfoto.cpp:297
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -48726,7 +48726,7 @@ msgstr "डेकोरेट (&D)"
 msgid "Effec&ts"
 msgstr "धुंधला प्रभाव"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -49630,40 +49630,40 @@ msgid ""
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "टैग नाम रिक्त नहीं हो सकता"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "टैग नाम रिक्त नहीं हो सकता"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "इसी नाम के साथ फ़ाइल या फ़ोल्डर मौजूद है"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "टैग नाम रिक्त नहीं हो सकता"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "इसी नाम के साथ फ़ाइल या फ़ोल्डर मौजूद है"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -49671,38 +49671,38 @@ msgid_plural "%1 files"
 msgstr[0] "कोई सक्रिय फ़िल्टर नहीं"
 msgstr[1] "कोई सक्रिय फ़िल्टर नहीं"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "विशेषता"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "छवि फ़ाइलें"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "विशेषता"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "छवि फ़ाइलें"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "औसत की गणना नहीं किया जा सका."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, fuzzy, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -51040,7 +51040,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51049,61 +51049,54 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/maintenance/main/maintenancedlg.cpp:155
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "टैग्स पहले से आबंटित है."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
-#: core/utilities/maintenance/main/maintenancedlg.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:156
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/maintenance/main/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:154
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Clear all previous results and rescan"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "मदद (&H)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "कुछ नहीं चुनें"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "सिंक्रोनाइज़"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51111,14 +51104,14 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "सिंक्रोनाइज़"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51126,26 +51119,26 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "विन्डो में फिट करें (&W)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "ढूंढें:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51154,31 +51147,31 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, fuzzy, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "मॉडलः"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51188,44 +51181,44 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, fuzzy, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "फ़ाइल आकार से"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "विन्यास"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "मध्यम"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "लक्ष्य"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "विन्यास"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51244,18 +51237,18 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "कोई चयन नहीं"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, fuzzy, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "कोई चयन नहीं"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51265,25 +51258,25 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, fuzzy, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "मॉडलः"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "कुछ नहीं चुनें"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "फ़ोल्डर खोलें"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51293,14 +51286,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51309,12 +51302,12 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "कोई चयन नहीं"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -55783,20 +55776,20 @@ msgstr "मिटाएँ (&R)"
 msgid "Add Folder"
 msgstr "फ़ोल्डर जोड़ें..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "New Folder"
 msgstr "फ़ोल्डर से"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -59625,53 +59618,53 @@ msgstr "रंग प्रबंधन"
 msgid "&Right Panel"
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:29
+#: core/utilities/maintenance/main/maintenancedlg.cpp:33
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "मुख्य कोण:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:44
+#: core/utilities/maintenance/main/maintenancedlg.cpp:48
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:50
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:52
+#: core/utilities/maintenance/main/maintenancedlg.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:57
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:58
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "विन्यास"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:60
+#: core/utilities/maintenance/main/maintenancedlg.cpp:64
 #, fuzzy, kde-format
 msgid "Scan for new items"
 msgstr "नई छवियों के लिए ढूंढें"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:66
+#: core/utilities/maintenance/main/maintenancedlg.cpp:70
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -59680,111 +59673,125 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:69
+#: core/utilities/maintenance/main/maintenancedlg.cpp:73
 #, fuzzy, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:74
 #, fuzzy, kde-format
 msgid "Also clean up the faces database."
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:71
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, fuzzy, kde-format
 msgid "Also clean up the similarity database."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:76
 #, fuzzy, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:82
-#: core/utilities/maintenance/main/maintenancedlg.cpp:89
+#: core/utilities/maintenance/main/maintenancedlg.cpp:86
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:84
+#: core/utilities/maintenance/main/maintenancedlg.cpp:88
 #, fuzzy, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "सभी लघुछवि फिर से बनाएं..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, fuzzy, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "सभी लघुछवि फिर से बनाएं..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:104
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:124
 #, fuzzy, kde-format
 msgid "Restriction on duplicates:"
 msgstr "/छवियाँ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:128
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "कोई चयन नहीं"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:129
 #, fuzzy, kde-format
 msgid "Restrict to album of reference image"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:126
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:140
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, fuzzy, kde-format
 msgid "Find Duplicate Items"
 msgstr "/छवियाँ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:147
+#: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, fuzzy, kde-format
 msgid "Faces data management: "
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
-#, kde-format
+#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#, fuzzy, kde-format
+#| msgid "Rebuild all Thumbnails..."
 msgctxt "@option:check"
-msgid "Clear and rebuild all training data"
-msgstr ""
+msgid "Rebuild all training data"
+msgstr "सभी लघुछवि फिर से बनाएं..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:159
+#: core/utilities/maintenance/main/maintenancedlg.cpp:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"This will clear all training data for recognition and rebuild it from all "
-"available faces."
+"This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:162
+#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Reset and clear all faces and training"
+msgstr "सभी परिवर्तनों को छवियों में लागू करें"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will clear all detected and tagged faces, and then rescan images to "
+"detect faces."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Detect and recognize Faces"
 msgstr "सिंक्रोनाइज़"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -59796,24 +59803,24 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:179
+#: core/utilities/maintenance/main/maintenancedlg.cpp:186
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "मीटरिंग मोड"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:184
+#: core/utilities/maintenance/main/maintenancedlg.cpp:191
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:185
-#: core/utilities/maintenance/main/maintenancedlg.cpp:229
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:194
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59822,7 +59829,7 @@ msgid ""
 "the items with no assigned tag.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:200
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59846,45 +59853,59 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, fuzzy, kde-format
 msgid "Auto-tags Assignment"
 msgstr "समायोजन:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:223
+#: core/utilities/maintenance/main/maintenancedlg.cpp:230
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "मॉडलः"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:228
+#: core/utilities/maintenance/main/maintenancedlg.cpp:235
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "लेंस सुधार..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "फ़ाइलों पर मेटाडाटा लिखा जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "फ़ाइलों पर मेटाडाटा लिखा जा रहा है. कृपया इंतजार करें..."
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgid "Warning"
+msgstr "चेतावनी"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#, kde-format
+msgid ""
+"Are you sure you want to delete all confirmed, unconfirmed, and unknown "
+"faces? You’ll need to start tagging unknown faces again before any faces can "
+"be recognized."
+msgstr ""
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -59919,7 +59940,7 @@ msgstr "मीटरिंग मोड"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"
@@ -60088,67 +60109,67 @@ msgstr "यह टैग मिटाएँ"
 msgid "Duplicate found: %1"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "नई छवियों के लिए ढूंढें"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "नई छवियों के लिए ढूंढें"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "%1 में चित्र मिले"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "%1 में चित्र मिले"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "ढूंढें:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "कोई फ्लैश नहीं"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -71685,11 +71706,6 @@ msgstr "छवियाँ छांटें (&S)"
 #~| msgid "Updating items, please wait..."
 #~ msgid "The database of detected faces has been updated."
 #~ msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
-
-#, fuzzy
-#~| msgid "Rebuild all Thumbnails..."
-#~ msgid "Rebuild All Fingerprints"
-#~ msgstr "सभी लघुछवि फिर से बनाएं..."
 
 #, fuzzy
 #~| msgid "Rebuild all Thumbnails..."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-02 01:48+0000\n"
+"POT-Creation-Date: 2024-11-03 01:43+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3310,7 +3310,7 @@ msgid "Tools"
 msgstr "เ&ครื่องมือ"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:840
+#: core/libs/tags/manager/tagsmanager.cpp:845
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -6281,26 +6281,26 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection model: "
 msgstr "ปลายทาง:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:196
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:197
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:205
 #, kde-format
 msgid "ResNet50"
 msgstr ""
@@ -6330,7 +6330,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
@@ -9128,7 +9128,7 @@ msgstr "ใช้ระบบการจัดการสีสำหรับ
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:259
 #, kde-format
 msgid "Settings..."
 msgstr "ตั้งค่าต่าง ๆ ..."
@@ -13781,7 +13781,7 @@ msgstr "เ&พิ่ม"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:586
 #, kde-format
 msgid "&Delete"
 msgstr "&ลบ"
@@ -16054,7 +16054,7 @@ msgid "Adjust Time and Date"
 msgstr "ปรับแก้:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, fuzzy, kde-format
 #| msgid "Cancel"
@@ -16063,14 +16063,14 @@ msgid "Cancel"
 msgstr "ยกเลิก"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "ข้อมูลกล้อง"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action"
@@ -16078,7 +16078,7 @@ msgid "Close"
 msgstr "ปิ&ด"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@info"
@@ -17048,28 +17048,28 @@ msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "แสดงตัวอย่างภาพเดี่ยว"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, fuzzy, kde-format
 #| msgid "Blend bracketed images..."
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "ผสานส่วนมุมของภาพต่าง ๆ ..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:543
 #, fuzzy, kde-format
 #| msgid "Blend bracketed images..."
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "ผสานส่วนมุมของภาพต่าง ๆ ..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:570
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
@@ -17077,13 +17077,13 @@ msgstr ""
 "ล้มเหลวในการโหลดภาพ\n"
 "\"%1\""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:580
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "ล้มเหลวในการรับแฟ้ม %1 จากกล้อง"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:591
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
@@ -20241,7 +20241,7 @@ msgstr "เพิ่มเกรนของฟิล์ม..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "เ&อาออก"
@@ -27668,7 +27668,7 @@ msgstr "อัลบั้มใหม่"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:721
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -29904,18 +29904,18 @@ msgstr ""
 "<p>อัลบั้มเหล่านี้จะถูกทิ้งลงในถังขยะ</p><p>ควรทราบไว้ว่า <b>อัลบั้มย่อยทั้งหมด</"
 "b>ที่อยู่ภายในรายการเหล่านี้ จะถูกทิ้งลงถังขยะเช่นเดียวกัน</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Move to Trash"
 msgstr "ทิ้งลง&ถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:658
+#: core/libs/dialogs/deletedialog.cpp:650
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "ทำการลบแฟ้มต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/dialogs/deletedialog.cpp:665
+#: core/libs/dialogs/deletedialog.cpp:657
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -30333,7 +30333,7 @@ msgstr "เปิดใน Konqueror"
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:210
+#: core/libs/dialogs/webbrowserdlg.cpp:217
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -34681,23 +34681,23 @@ msgctxt "@title"
 msgid "User6"
 msgstr "ปรับเป็นตัวพิมพ์ใหญ่"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@action: button"
 msgid "Help"
 msgstr "&ช่วยเหลือ"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Online Handbook..."
 msgstr "คู่มือของส่วนเสริม Kipi"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, fuzzy, kde-format
 msgid "About..."
 msgstr "เกี่ยวกับ"
@@ -34773,7 +34773,7 @@ msgid ""
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@action:button"
@@ -38217,7 +38217,7 @@ msgid "Map"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
 #| msgid "RAW Image"
@@ -39619,39 +39619,39 @@ msgid "Delete Tags"
 msgstr "ลบป้ายกำกับ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "แฟ้มภาพ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "ปรับไอคอนป้ายกำกับกลับเป็นค่าเดิม"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:718
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "กลับค่าการเลือก"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:724
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "รวมส่วนย่อยภายใต้ผังต้นไม้ของป้ายด้วย"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:727
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse Tag Tree"
 msgstr "อัลบั้มของฉัน"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:730
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "อ่านข้อมูลกำกับจากภาพต่าง ๆ อีกครั้ง"
@@ -39726,13 +39726,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:166
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "การจัดการสิทธิ์"
 
-#: core/libs/tags/manager/tagsmanager.cpp:331
+#: core/libs/tags/manager/tagsmanager.cpp:325
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39746,7 +39746,7 @@ msgstr[0] ""
 "การลบมันจะเป็นการลบป้ายกำกับย่อยออกไปด้วย \n"
 "คุณแน่ใจว่าต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:354
+#: core/libs/tags/manager/tagsmanager.cpp:348
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39756,21 +39756,21 @@ msgstr[0] ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:358
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "ลบป้ายกำกับ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:370
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "ลบป้ายกำกับ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:496
+#: core/libs/tags/manager/tagsmanager.cpp:490
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39778,15 +39778,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:508
-#: core/libs/tags/manager/tagsmanager.cpp:527
+#: core/libs/tags/manager/tagsmanager.cpp:502
+#: core/libs/tags/manager/tagsmanager.cpp:521
 #, fuzzy, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "การเรียกใช้ปฏิบัติการนี้ จะมีการลดคุณภาพสีของภาพ คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:547
+#: core/libs/tags/manager/tagsmanager.cpp:541
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39794,120 +39794,120 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:611
+#: core/libs/tags/manager/tagsmanager.cpp:605
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "คุณต้องการจะลบคลังภาพ \"%1\" ออกจากรายการคลังภาพต่าง ๆ ของคุณจริงหรือไม่ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:692
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:695
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "&ส่งออก"
 
-#: core/libs/tags/manager/tagsmanager.cpp:712
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, fuzzy, kde-format
 msgid "Create Tag from Address Book"
 msgstr "สร้างป้ายกำกับจากสมุดที่อยู่"
 
-#: core/libs/tags/manager/tagsmanager.cpp:715
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "ยังไม่เคยมีการกำหนดป้ายกำกับมาก่อน"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "จัดเรียงข้อความชิดด้านซ้าย"
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "รวมส่วนย่อยภายใต้ผังต้นไม้ของป้ายด้วย"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "ดาวน์โหลดเสร็จสมบูรณ์แล้ว..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:806
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "อ่านข้อมูลกำกับจากภาพต่าง ๆ ที่เลือกไว้อีกครั้ง"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:841
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -40569,18 +40569,18 @@ msgid ""
 "from this setting."
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:166
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:182
 #, fuzzy, kde-format
 #| msgid "Creation date and time"
 msgid "The clock date and time:"
 msgstr "วันและเวลาที่สร้างภาพ"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:235
+#: core/libs/timeadjust/clockphotodialog.cpp:236
 #, fuzzy, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "เลือกภาพที่จะทำการอัปโหลด"
@@ -42641,7 +42641,7 @@ msgid "Mod.: %1"
 msgstr "รุ่น: %1\n"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:267
+#: core/showfoto/main/showfoto.cpp:273
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -42906,7 +42906,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:234
+#: core/utilities/maintenance/main/maintenancedlg.cpp:241
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -50485,7 +50485,7 @@ msgstr "แฟ้มหรือโฟลเดอร์ที่จะเปิ
 msgid "Loading themes..."
 msgstr "กำลังโหลดชุดตกแต่ง"
 
-#: core/showfoto/main/showfoto.cpp:226
+#: core/showfoto/main/showfoto.cpp:232
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -50496,13 +50496,13 @@ msgstr ""
 "ให้เลือกที่ปุ่ม \"ใช่\" หากไม่ต้องการ ให้เลือกที่ปุ่ม \"ไม่ใช่\" ในกรณีนี้ คุณสมบัติ \"การจัดการระบบสี"
 "\" จะถูกปิดการทำงาน จนกว่าคุณจะแก้ปัญหานี้ให้เรียบร้อยเสียก่อน</p>"
 
-#: core/showfoto/main/showfoto.cpp:266
+#: core/showfoto/main/showfoto.cpp:272
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/showfoto/main/showfoto.cpp:291
+#: core/showfoto/main/showfoto.cpp:297
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -50633,7 +50633,7 @@ msgstr "ตกแต่&งภาพ"
 msgid "Effec&ts"
 msgstr "ทำภาพเบลอ"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -51622,78 +51622,78 @@ msgid ""
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "ชื่อของป้ายกำกับไม่สามารถว่างไว้ได้"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "ชื่อของป้ายกำกับไม่สามารถว่างไว้ได้"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "มีแฟ้มหรือโฟลเดอร์อื่นที่มีชื่อเดียวกันนี้อยู่แล้ว"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "ชื่อของป้ายกำกับไม่สามารถว่างไว้ได้"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "มีแฟ้มหรือโฟลเดอร์อื่นที่มีชื่อเดียวกันนี้อยู่แล้ว"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
 msgstr[0] "ไม่มีฟิลเตอร์ที่ทำงานอยู่"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "สารคดีพิเศษ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "แฟ้มภาพ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "สารคดีพิเศษ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "แฟ้มภาพ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "ไม่สามารถคำนวณหาช่วงเฉลี่ยได้"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, fuzzy, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -53056,7 +53056,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53065,61 +53065,54 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:147
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/maintenance/main/maintenancedlg.cpp:155
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "ถูกกำหนดป้ายกำกับแล้ว"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:148
-#: core/utilities/maintenance/main/maintenancedlg.cpp:152
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:156
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
+#: core/utilities/maintenance/main/maintenancedlg.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:154
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Clear all previous results and rescan"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&ช่วยเหลือ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "ไม่เลือกเลย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53127,14 +53120,14 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:180
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:181
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53142,26 +53135,26 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, fuzzy, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53170,7 +53163,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -53178,25 +53171,25 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "รุ่น:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53206,26 +53199,26 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:270
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "ขนาดของแฟ้ม"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:274
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:275
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:276
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -53233,20 +53226,20 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "ปานกลาง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "ภาพเป้าหมาย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53265,18 +53258,18 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:309
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:318
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, fuzzy, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:325
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53286,7 +53279,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:330
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -53294,19 +53287,19 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "รุ่น:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:334
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "ไม่เลือกเลย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:335
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "เปิดโฟลเดอร์"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53316,14 +53309,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:373
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:375
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53332,12 +53325,12 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:379
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -58058,20 +58051,20 @@ msgstr "เ&อาออก"
 msgid "Add Folder"
 msgstr "เพิ่มโฟลเดอร์..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "New Folder"
 msgstr "ตามโฟลเดอร์"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "การจัดการระบบสี"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -62129,53 +62122,53 @@ msgstr "พาเนลด้านซ้า&ย"
 msgid "&Right Panel"
 msgstr "พาเนลด้านข&วา"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:29
+#: core/utilities/maintenance/main/maintenancedlg.cpp:33
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "มุมหลัก:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:44
+#: core/utilities/maintenance/main/maintenancedlg.cpp:48
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:50
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "เอารายการต่าง ๆ ที่ประมวลผลแล้วออก"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:52
+#: core/utilities/maintenance/main/maintenancedlg.cpp:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:57
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:58
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "ตั้งค่าต่าง ๆ ของการครอบตัด"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:60
+#: core/utilities/maintenance/main/maintenancedlg.cpp:64
 #, fuzzy, kde-format
 msgid "Scan for new items"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:66
+#: core/utilities/maintenance/main/maintenancedlg.cpp:70
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -62184,112 +62177,126 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:69
+#: core/utilities/maintenance/main/maintenancedlg.cpp:73
 #, fuzzy, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "ล้มเหลวในการเพิ่มป้ายกำกับไปยังฐานข้อมูล"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:74
 #, fuzzy, kde-format
 msgid "Also clean up the faces database."
 msgstr "<b>กำลังทำการปรับปรุงฐานข้อมูลอัตลักษณ์ของภาพ โปรดรอสักครู่...</b>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:71
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, fuzzy, kde-format
 msgid "Also clean up the similarity database."
 msgstr "ล้มเหลวในการเพิ่มป้ายกำกับไปยังฐานข้อมูล"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:76
 #, fuzzy, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "ล้มเหลวในการเพิ่มป้ายกำกับไปยังฐานข้อมูล"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:82
-#: core/utilities/maintenance/main/maintenancedlg.cpp:89
+#: core/utilities/maintenance/main/maintenancedlg.cpp:86
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:84
+#: core/utilities/maintenance/main/maintenancedlg.cpp:88
 #, fuzzy, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "สร้างภาพตัวอย่างอีกครั้ง..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, fuzzy, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "สร้างอัตลักษณ์ของภาพอีกครั้ง..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:104
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:124
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "ค้นหาภาพซ้ำ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:128
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "ยังไม่มีการเลือกพื้นที่ใด ๆ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:129
 #, fuzzy, kde-format
 msgid "Restrict to album of reference image"
 msgstr "ปรับการตั้งค่าทั้งหมดกลับไปใช้ค่าปริยาย"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:126
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:140
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, fuzzy, kde-format
 msgid "Find Duplicate Items"
 msgstr "ค้นหาภาพซ้ำ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:147
+#: core/utilities/maintenance/main/maintenancedlg.cpp:151
 #, fuzzy, kde-format
 msgid "Faces data management: "
 msgstr "การจัดการสื่อ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
-#, kde-format
+#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#, fuzzy, kde-format
+#| msgid "Rebuild All Fingerprints"
 msgctxt "@option:check"
-msgid "Clear and rebuild all training data"
-msgstr ""
+msgid "Rebuild all training data"
+msgstr "สร้างอัตลักษณ์ของภาพทั้งหมดใหม่"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:159
+#: core/utilities/maintenance/main/maintenancedlg.cpp:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"This will clear all training data for recognition and rebuild it from all "
-"available faces."
+"This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:162
+#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Reset and clear all faces and training"
+msgstr "ปรับใช้การเปลี่ยนแปลงทั้งหมดไปยังรูปภาพ"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will clear all detected and tagged faces, and then rescan images to "
+"detect faces."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Detect and recognize Faces"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -62301,24 +62308,24 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:179
+#: core/utilities/maintenance/main/maintenancedlg.cpp:186
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "โหมดการวัดแสง:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:184
+#: core/utilities/maintenance/main/maintenancedlg.cpp:191
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:185
-#: core/utilities/maintenance/main/maintenancedlg.cpp:229
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:194
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62327,7 +62334,7 @@ msgid ""
 "the items with no assigned tag.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:200
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62351,46 +62358,60 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:223
+#: core/utilities/maintenance/main/maintenancedlg.cpp:230
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "รุ่น: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:228
+#: core/utilities/maintenance/main/maintenancedlg.cpp:235
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "กำลังทำการปรับปรุงฐานข้อมูลจากข้อมูลกำกับของภาพ โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgid "Warning"
+msgstr "แจ้งเตือน"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#, kde-format
+msgid ""
+"Are you sure you want to delete all confirmed, unconfirmed, and unknown "
+"faces? You’ll need to start tagging unknown faces again before any faces can "
+"be recognized."
+msgstr ""
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -62426,7 +62447,7 @@ msgstr "โหมดการวัดแสง:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:528
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"
@@ -62600,67 +62621,67 @@ msgstr "ภาพซ้ำ"
 msgid "Duplicate found: %1"
 msgstr "ภาพซ้ำ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:288
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:292
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:303
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:308
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>กำลังทำการปรับปรุงฐานข้อมูลอัตลักษณ์ของภาพ โปรดรอสักครู่...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:482
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:486
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:491
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "พบภาพใน %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "พบภาพใน %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:527
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:532
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "ไม่ใช้แฟลช"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -77219,9 +77240,6 @@ msgstr "จัดเ&รียงรูปภาพ"
 
 #~ msgid "Images' metadata synchronization with database is done."
 #~ msgstr "การปรับเทียบข้อมูลกำกับภาพด้วยฐานข้อมูลเสร็จเรียบร้อยแล้ว"
-
-#~ msgid "Rebuild All Fingerprints"
-#~ msgstr "สร้างอัตลักษณ์ของภาพทั้งหมดใหม่"
 
 #~ msgid "Rebuild Changed Fingerprints"
 #~ msgstr "สร้างอัตลักษณ์ของภาพที่มีการเปลี่ยนแปลง"
