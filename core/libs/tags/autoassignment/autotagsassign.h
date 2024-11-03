@@ -31,8 +31,8 @@ namespace Digikam
 
 enum DetectorModel
 {
-    YOLOV5NANO = 0,   ///< YOLO neural network inference.
-    YOLOV5XLARGE,
+    YOLOV5NANO = 0,   ///< YOLO nano neural network model.
+    YOLOV5XLARGE,     ///< YOLO large neural network model.
     RESNET50
 
     // Add here another model.
@@ -57,8 +57,8 @@ public:
     QList<QString> generateTagsList(const QString& inputImagePath);
 
     /**
-     * run in batch return the list of tags name corresponding to
-     * NOTE: the batch size is fixed depending on the deep NN model we choose
+     * Run in batch return the list of tags name corresponding to.
+     * NOTE: the batch size is fixed depending on the deep NN model we choose.
      */
     QList<QList<QString> > generateTagsList(const QList<DImg>& inputImages, int batchSize)          const;
     QList<QList<QString> > generateTagsList(const QList<QString>& inputImagePaths, int batchSize)   const;

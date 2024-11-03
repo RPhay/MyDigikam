@@ -128,7 +128,7 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QImage& inputImage) const
             case QImage::Format_ARGB32:
             case QImage::Format_ARGB32_Premultiplied:
             {
-                // I think we can ignore premultiplication when converting to grayscale
+                // I think we can ignore pre-multiplication when converting to grayscale.
 
                 cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                          qimage.scanLine(0), qimage.bytesPerLine());
@@ -201,7 +201,7 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<DImg>& inpu
             result.push_back(prepareForDetection(img));
         }
 
-        // Add black imgs to fullfill the batch size
+        // Add black images to fullfill the batch size.
 
         cv::Size inputSize = m_inferenceEngine->getinputImageSize();
 
@@ -234,7 +234,7 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& i
             result.push_back(prepareForDetection(imgPath));
         }
 
-        // Add black imgs to fullfill the batch size
+        // Add black images to fullfill the batch size.
 
         cv::Size inputSize = m_inferenceEngine->getinputImageSize();
 
