@@ -151,8 +151,8 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     this->readSettings();
 
-    // we need process events to
-    // initialize the color theme
+    // We need process events to
+    // initialize the color theme.
 
     qApp->processEvents();
 
