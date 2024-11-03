@@ -35,6 +35,8 @@ using namespace Digikam;
 namespace DigikamGenericGoogleServicesPlugin
 {
 
+static QString s_refreshToken;
+
 class Q_DECL_HIDDEN GSTalkerBase::Private
 {
 public:
@@ -101,6 +103,9 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
 /*
     m_service->setRefreshToken(WSToolUtils::readToken(m_serviceName));
 */
+
+    m_service->setRefreshToken(s_refreshToken);
+
     connect(m_service, &QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,
             this, &GSTalkerBase::slotOpenBrowser);
 
@@ -186,6 +191,7 @@ void GSTalkerBase::slotTokenChanged(const QString& token)
 /*
     WSToolUtils::saveToken(m_serviceName, m_service->refreshToken());
 */
+    s_refreshToken      = m_service->refreshToken();
 }
 
 void GSTalkerBase::doOAuth()
