@@ -55,44 +55,84 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                                                     d->configGroupName, options, AlbumSelectors::AlbumType::All, true);
     d->useLastSettings         = new QCheckBox(i18nc("@option:check", "Use the last saved active tools and settings"), options);
     d->useMutiCoreCPU          = new QCheckBox(i18nc("@option:check", "Work on all processor cores (when it's possible)"), options);
-    d->expanderBox->insertItem(Private::Options, options, QIcon::fromTheme(QLatin1String("configure")), i18n("Common Options"), QLatin1String("Options"), true);
+
+    d->expanderBox->insertItem(
+                               Private::Options,
+                               options,
+                               QIcon::fromTheme(QLatin1String("configure")),
+                               i18n("Common Options"),
+                               QLatin1String("Options"),
+                               true
+                              );
 
     // --------------------------------------------------------------------------------------
 
-    d->expanderBox->insertItem(Private::NewItems, new QLabel(i18n("<qt>No option<br/>"
-                               "<i>Note: only Albums Collection are processed by this tool.</i></qt>")),
-                               QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Scan for new items"), QLatin1String("NewItems"), false);
+    d->expanderBox->insertItem(
+                               Private::NewItems,
+                               new QLabel(i18n("<qt>No option<br/>"
+                                               "<i>Note: only Albums Collection are processed by this tool.</i></qt>")),
+                               QIcon::fromTheme(QLatin1String("view-refresh")),
+                               i18n("Scan for new items"),
+                               QLatin1String("NewItems"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::NewItems, true);
 
     // --------------------------------------------------------------------------------------
 
     d->vbox3                   = new DVBox;
-    new QLabel(i18n("<qt><i>Note: If activated, the Core DB is always cleaned. You can select additional databases for cleaning.<br/>"
-                    " If you select one of the options below, the process may take much time and can freeze digiKam temporarily<br/>"
-                    " in order to make sure that no database corruption occurs.</i></qt>"), d->vbox3);
+    new QLabel(i18n("<qt><i>Note: If activated, the core database is always cleaned. "
+                    "You can select additional databases for cleaning.<br/>"
+                    "If you select one of the options below, the process may take "
+                    "much time and can freeze digiKam temporarily "
+                    "in order to make sure that no database corruption occurs.</i></qt>"), d->vbox3);
     d->cleanThumbsDb           = new QCheckBox(i18n("Also clean up the thumbnail database."), d->vbox3);
     d->cleanFacesDb            = new QCheckBox(i18n("Also clean up the faces database."), d->vbox3);
     d->cleanSimilarityDb       = new QCheckBox(i18n("Also clean up the similarity database."), d->vbox3);
     d->shrinkDatabases         = new QCheckBox(i18n("Extended clean up and shrink all databases."), d->vbox3);
     d->shrinkDatabases->setToolTip(i18n("This option leads to the vacuuming (shrinking) of the databases. "
                                         "Vacuuming is supported both for SQLite and MySQL."));
-    d->expanderBox->insertItem(Private::DbCleanup, d->vbox3,
+
+    d->expanderBox->insertItem(
+                               Private::DbCleanup,
+                               d->vbox3,
                                QIcon::fromTheme(QLatin1String("run-build")),
-                               i18n("Perform database cleaning"), QLatin1String("DbCleanup"), false);
+                               i18n("Perform database cleaning"),
+                               QLatin1String("DbCleanup"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::DbCleanup, true);
 
     // --------------------------------------------------------------------------------------
 
     d->scanThumbs              = new QCheckBox(i18n("Scan for changed or non-cataloged items (faster)"));
-    d->expanderBox->insertItem(Private::Thumbnails, d->scanThumbs, QIcon::fromTheme(QLatin1String("photo")),
-                               i18n("Rebuild Thumbnails"), QLatin1String("Thumbnails"), false);
+
+    d->expanderBox->insertItem(
+                               Private::Thumbnails,
+                               d->scanThumbs,
+                               QIcon::fromTheme(QLatin1String("photo")),
+                               i18n("Rebuild Thumbnails"),
+                               QLatin1String("Thumbnails"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::Thumbnails, true);
 
     // --------------------------------------------------------------------------------------
 
     d->scanFingerPrints        = new QCheckBox(i18n("Scan for changed or non-cataloged items (faster)"));
-    d->expanderBox->insertItem(Private::FingerPrints, d->scanFingerPrints, QIcon::fromTheme(QLatin1String("fingerprint")),
-                               i18n("Rebuild Finger-prints"), QLatin1String("Fingerprints"), false);
+
+    d->expanderBox->insertItem(
+                               Private::FingerPrints,
+                               d->scanFingerPrints,
+                               QIcon::fromTheme(QLatin1String("fingerprint")),
+                               i18n("Rebuild Finger-prints"),
+                               QLatin1String("Fingerprints"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::FingerPrints, true);
 
     // --------------------------------------------------------------------------------------
@@ -140,8 +180,15 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
 
-    d->expanderBox->insertItem(Private::Duplicates, d->duplicatesBox, QIcon::fromTheme(QLatin1String("tools-wizard")),
-                               i18n("Find Duplicate Items"), QLatin1String("Duplicates"), false);
+    d->expanderBox->insertItem(
+                               Private::Duplicates,
+                               d->duplicatesBox,
+                               QIcon::fromTheme(QLatin1String("tools-wizard")),
+                               i18n("Find Duplicate Items"),
+                               QLatin1String("Duplicates"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::Duplicates, true);
 
     // --------------------------------------------------------------------------------------
@@ -155,7 +202,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+/*
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+*/
 
     d->retrainAllFaces     = new QCheckBox(d->vbox4);
     d->retrainAllFaces->setText(i18nc("@option:check", "Rebuild all training data"));
@@ -165,8 +214,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->resetFaceDb->setText(i18nc("@option:check", "Reset and clear all faces and training"));
     d->resetFaceDb->setToolTip(i18nc("@info:tooltip",
                                          "This will clear all detected and tagged faces, and then rescan images to detect faces."));
-    d->expanderBox->insertItem(Private::FaceManagement, d->vbox4, QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
-                               i18n("Detect and recognize Faces"), QLatin1String("FaceManagement"), false);
+
+    d->expanderBox->insertItem(
+                               Private::FaceManagement,
+                               d->vbox4,
+                               QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
+                               i18n("Detect and recognize Faces"),
+                               QLatin1String("FaceManagement"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::FaceManagement, true);
 
     // --------------------------------------------------------------------------------------
@@ -188,8 +245,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     hbox12->setStretchFactor(space8, 10);
 
     d->autotaggingScanMode = new QComboBox(hbox12);
-    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
-    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
+    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"), AutotagsAssignment::AllItems);
+    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),  AutotagsAssignment::NonAssignedItems);
     d->autotaggingScanMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-scan all items from scratch.</p>"
         "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag.</p>"));
@@ -218,9 +275,15 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->trSelectorList      = new LocalizeSelectorList(d->vbox5);
     d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
 
-    d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
-                               QIcon::fromTheme(QLatin1String("tag")), i18n("Auto-tags Assignment"),
-                               QLatin1String("AutotagsAssignment"), false);
+    d->expanderBox->insertItem(
+                               Private::AutotagsAssignment,
+                               d->vbox5,
+                               QIcon::fromTheme(QLatin1String("tag")),
+                               i18n("Auto-tags Assignment"),
+                               QLatin1String("AutotagsAssignment"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
     // --------------------------------------------------------------------------------------
@@ -237,8 +300,15 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     d->qualitySelector    = new ImageQualityConfSelector(d->vbox);
 
-    d->expanderBox->insertItem(Private::ImageQualitySorter, d->vbox, QIcon::fromTheme(QLatin1String("flag-green")),
-                               i18n("Image Quality Sorter"), QLatin1String("ImageQualitySorter"), false);
+    d->expanderBox->insertItem(
+                               Private::ImageQualitySorter,
+                               d->vbox,
+                               QIcon::fromTheme(QLatin1String("flag-green")),
+                               i18n("Image Quality Sorter"),
+                               QLatin1String("ImageQualitySorter"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::ImageQualitySorter, true);
 
     // --------------------------------------------------------------------------------------
@@ -257,8 +327,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space6 = new QWidget(hbox22);
     hbox22->setStretchFactor(space6, 10);
     d->metadataSetup      = new QPushButton(i18n("Settings..."), hbox22);
-    d->expanderBox->insertItem(Private::MetadataSync, d->vbox2, QIcon::fromTheme(QLatin1String("run-build-file")),
-                               i18n("Sync Metadata and Database"), QLatin1String("MetadataSync"), false);
+
+    d->expanderBox->insertItem(
+                               Private::MetadataSync,
+                               d->vbox2,
+                               QIcon::fromTheme(QLatin1String("run-build-file")),
+                               i18n("Sync Metadata and Database"),
+                               QLatin1String("MetadataSync"),
+                               false
+                              );
+
     d->expanderBox->setCheckBoxVisible(Private::MetadataSync, true);
 
     d->expanderBox->insertStretch(Private::Stretch);

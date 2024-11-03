@@ -167,18 +167,18 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         }
         else if (settings.alreadyScannedHandling == FaceScanSettings::ClearAll)
         {
-            // delete existing identities from FacesDb
+            // Delete existing identities from FacesDb.
 
             FacialRecognitionWrapper().deleteIdentities(FacialRecognitionWrapper().allIdentities());
 
-            // delete all training from FacesDb
+            // Delete all training from FacesDb.
 
             FacialRecognitionWrapper().clearAllTraining();
 
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::OverwriteAllFaces;
         }
-        else // FaceScanSettings::Merge
+        else // FaceScanSettings::Merge.
         {
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::NormalWrite;
@@ -212,7 +212,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
                                         settings.recognizeModel);
         d->pipeline.construct();
     }
-    else // FaceScanSettings::RecognizeMarkedFaces
+    else // FaceScanSettings::RecognizeMarkedFaces.
     {
         d->pipeline.plugRerecognizingDatabaseFilter();
         d->pipeline.plugFaceRecognizer();
