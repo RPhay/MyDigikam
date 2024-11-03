@@ -26,7 +26,7 @@ class DIGIKAM_GUI_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNResnetDetector();
-    ~DNNResnetDetector()                                                                    override;
+    ~DNNResnetDetector()                                                                    override = default;
 
 protected:
 
@@ -42,7 +42,6 @@ private:
     // Disable
     DNNResnetDetector(const DNNResnetDetector&)            = delete;
     DNNResnetDetector& operator=(const DNNResnetDetector&) = delete;
-
 };
 
 } // namespace Digikam

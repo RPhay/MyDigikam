@@ -22,9 +22,9 @@ namespace Digikam
 
 enum class YoloVersions
 {
-    YOLOV5NANO = 0,
-    YOLOV5XLARGE,
-    RESNET50
+    YOLOV5NANO = 0,         ///< yolov5n_batch_16_s320.onnx
+    YOLOV5XLARGE,           ///< yolov5x_batch_16_s320.onnx
+    RESNET50                ///< resnet50.onnx
 };
 
 class DIGIKAM_GUI_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
@@ -33,7 +33,7 @@ class DIGIKAM_GUI_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNYoloDetector(YoloVersions modelVersion = YoloVersions::YOLOV5NANO);
-    ~DNNYoloDetector()                                                                     override;
+    ~DNNYoloDetector()                                                                      override = default;
 
 protected:
 
@@ -41,8 +41,8 @@ protected:
 
 private:
 
-    QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
-                                                       const cv::Mat& out)                  const override;
+    QHash<QString, QVector<QRect> > postprocess(const cv::Mat& inputImage,
+                                                const cv::Mat& out)                   const override;
 
 private:
 

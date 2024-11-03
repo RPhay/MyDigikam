@@ -53,10 +53,6 @@ DNNBaseDetectorModel::DNNBaseDetectorModel(float scale,
 {
 }
 
-DNNBaseDetectorModel::~DNNBaseDetectorModel()
-{
-}
-
 QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
 {
     QHash<QString, QVector<QRect> > results = detectObjects(inputImage);
@@ -113,7 +109,7 @@ QList<QString> DNNBaseDetectorModel::loadDetectionClasses()
 {
     QList<QString> classList;
 
-    // NOTE: storing all model definitions at the same application path as face engine
+    // NOTE: storing all model definitions at the same application path as face engine.
 
     if (model && model->modelLoaded)
     {
@@ -169,7 +165,7 @@ QList<QHash<QString, QVector<QRect> > > DNNBaseDetectorModel::detectObjects(cons
 
     std::vector<cv::Mat> outs = preprocess(inputBatchImages);
 
-    // outs = [1 x [rows x 85]]
+    // NOTE: outs = [1 x [rows x 85]]
 
     return postprocess(inputBatchImages, outs);
 }
@@ -250,7 +246,7 @@ QList<QHash<QString, QVector<QRect> > > DNNBaseDetectorModel::postprocess(const 
 {
     QList<QHash<QString, QVector<QRect> > > detectedBoxesList;
 
-    // outs = [batch_size x [rows x 85]]
+    // NOTE: outs = [batch_size x [rows x 85]]
 
     if (!outs.empty())
     {
@@ -269,15 +265,15 @@ std::vector<cv::String> DNNBaseDetectorModel::getOutputsNames() const
 
     if (model && model->modelLoaded && names.empty())
     {
-        // Get the indices of the output layers, i.e. the layers with unconnected outputs
+        // Get the indices of the output layers, i.e. the layers with unconnected outputs.
 
         std::vector<int> outLayers          = static_cast<DNNModelNet*>(model)->getNet().getUnconnectedOutLayers();
 
-        // Get the names of all the layers in the network
+        // Get the names of all the layers in the network.
 
         std::vector<cv::String> layersNames = static_cast<DNNModelNet*>(model)->getNet().getLayerNames();
 
-        // Get the names of the output layers in names
+        // Get the names of the output layers in names.
 
         names.resize(outLayers.size());
 

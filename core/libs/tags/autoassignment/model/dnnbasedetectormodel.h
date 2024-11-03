@@ -43,7 +43,7 @@ public:
 
     explicit DNNBaseDetectorModel();
     explicit DNNBaseDetectorModel(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
-    virtual ~DNNBaseDetectorModel();
+    virtual ~DNNBaseDetectorModel() = default;
 
     QList<QString> loadDetectionClasses();
 
@@ -53,43 +53,43 @@ public:
     QList<QHash<QString, QVector<QRect> > > postprocess(const std::vector<cv::Mat>& inputBatchImages,
                                                         const std::vector<cv::Mat>& outs)   const;
 
-    virtual QHash<QString, QVector<QRect> >        postprocess(const cv::Mat& inputImage,
-                                                       const cv::Mat& out)                  const   = 0;
+    virtual QHash<QString, QVector<QRect> > postprocess(const cv::Mat& inputImage,
+                                                        const cv::Mat& out)                 const   = 0;
 
-    std::vector<cv::String> getOutputsNames() const;
+    std::vector<cv::String> getOutputsNames()                                               const;
 
     /**
      * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
-     * otherwise the map whose the key is the objects name and their values are empty
+     * otherwise the map whose the key is the objects name and their values are empty.
      */
     virtual QHash<QString, QVector<QRect> > detectObjects(const cv::Mat& inputImage);
 
     /**
-     * detectObjects in batch images (fixed batch size)
+     * detectObjects in batch images (fixed batch size).
      */
     virtual QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages);
 
     /**
-     * get predefined objects according to selected model
+     * Get predefined objects according to selected model.
      */
-    virtual QList<QString> getPredefinedClasses() const;
+    virtual QList<QString> getPredefinedClasses()                                           const;
 
     /**
      * generateObjects in one image return just the predicted objects without locations of objects
-     * using for the assignment tagging names
+     * using for the assignment tagging names.
      */
     QList<QString> generateObjects(const cv::Mat& inputImage);
 
     /**
      * generateObjects in batch images return just the predicted objects without locations of objects
-     * using for the assignment tagging names
+     * using for the assignment tagging names.
      */
     QList<QList<QString> > generateObjects(const std::vector<cv::Mat>& inputImage);
 
     /**
-     * return the input Image Size from Deep NN model
+     * Return the input Image Size from Deep NN model.
      */
-   cv::Size getinputImageSize() const;
+   cv::Size getinputImageSize()                                                             const;
 
 public:
 
@@ -97,19 +97,22 @@ public:
 
 public:
 
-    static int   uiConfidenceThreshold;  ///< Threshold for bbox detection. It can be init and changed in the GUI
-    static float nmsThreshold;           ///< Threshold for nms suppression
-    static float scoreThreshold;         ///< Threshold for class detection score
+    static int   uiConfidenceThreshold;  ///< Threshold for bbox detection. It can be init and changed in the GUI.
+    static float nmsThreshold;           ///< Threshold for nms suppression.
+    static float scoreThreshold;         ///< Threshold for class detection score.
 
 protected:
 
-    // TODO: Set these from the DNNModel
+    // TODO: Set these from the DNNModel.
+
     float           scaleFactor = 1.0F;
     cv::Scalar      meanValToSubtract;
     cv::Size        inputImageSize;
     QList<QString>  predefinedClasses;
 
     DNNModelBase*   model       = nullptr;
+
+protected:
 
     virtual bool loadModels()   = 0;
 

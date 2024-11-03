@@ -41,10 +41,6 @@ DNNResnetDetector::DNNResnetDetector()
     }
 }
 
-DNNResnetDetector::~DNNResnetDetector()
-{
-}
-
 bool DNNResnetDetector::loadModels()
 {
     model = DNNModelManager::instance()->getModel(QLatin1String("ResNet50"), DNNModelUsage::DNNUsageObjectDetection);

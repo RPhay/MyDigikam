@@ -40,10 +40,6 @@ DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
     }
 }
 
-DNNYoloDetector::~DNNYoloDetector()
-{
-}
-
 bool DNNYoloDetector::loadModels()
 {
     switch (yoloVersion)
@@ -120,8 +116,8 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
         float y_factor = float(inputImage.rows) / float(inputImageSize.height);
         float* data    = reinterpret_cast<float*>(out.data);
 
-        // Calculate the size of the data array and number of outputs
-        // NOTE: outsput is a cv::Mat vector of [1 x (250200 * 85)]
+        // Calculate the size of the data array and number of outputs.
+        // NOTE: output is a cv::Mat vector of [1 x (250200 * 85)].
 
         size_t data_size = out.total() * out.channels();
         int rows         = data_size / 85;
@@ -183,7 +179,7 @@ QHash<QString, QVector<QRect> > DNNYoloDetector::postprocess(const cv::Mat& inpu
             data += 85;
         }
 
-        // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
+        // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences.
 
         std::vector<int> indices;
         cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
