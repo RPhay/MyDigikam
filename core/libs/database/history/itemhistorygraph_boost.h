@@ -182,7 +182,7 @@ public:
         }
 
         // cppcheck-suppress noExplicitConstructor
-        Vertex(const vertex_t& vv)
+        Vertex(const vertex_t& vv)       // krazy:exclude=explicit
             : v(vv)
         {
         }
@@ -231,7 +231,7 @@ public:
         Edge() = default;
 
         // cppcheck-suppress noExplicitConstructor
-        Edge(const edge_t& e)
+        Edge(const edge_t& e)    // krazy:exclude=explicit
             : e   (e),
               null(false)
         {
