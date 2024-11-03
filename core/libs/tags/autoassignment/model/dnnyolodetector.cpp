@@ -64,7 +64,7 @@ bool DNNYoloDetector::loadModels()
         }
     }
 
-    if (model && !model->modelLoaded)
+    if (model && !model->modelLoaded)   // cppcheck-suppress duplicateCondition
     {
         try
         {
@@ -84,7 +84,7 @@ bool DNNYoloDetector::loadModels()
         }
     }
 
-    if (model && !model->modelLoaded)
+    if (model && !model->modelLoaded)   // cppcheck-suppress duplicateCondition
     {
         qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Cannot find object detection DNN model";
 
