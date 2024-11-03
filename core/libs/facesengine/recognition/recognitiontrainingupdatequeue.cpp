@@ -18,6 +18,7 @@
 
 namespace Digikam
 {
+
 template <typename T>
 class SharedQueue
 {
@@ -40,7 +41,7 @@ private:
     std::deque<T>           queue_;
     std::mutex              mutex_;
     std::condition_variable cond_;
-}; 
+};
 
 template <typename T>
 SharedQueue<T>::SharedQueue()  {}
