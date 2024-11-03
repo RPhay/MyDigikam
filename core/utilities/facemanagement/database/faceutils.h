@@ -122,9 +122,9 @@ public:
 
     // TODO: investigate this method.
 
-    Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)            const;
-    Identity identityForUuid(const QString& uuid, FacialRecognitionWrapper& recognizer) const;
-    int      tagForIdentity(const Identity& identity)                                   const;
+    Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)                  const;
+    Identity identityForUuid(const QString& uuid, const FacialRecognitionWrapper& recognizer) const;
+    int      tagForIdentity(const Identity& identity)                                         const;
 
 protected:
 
