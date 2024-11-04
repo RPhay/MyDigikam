@@ -154,9 +154,9 @@ public:
      * implement your own TrainingDataProvider and use one of the above functions.
      */
     void train(const Identity& identityToBeTrained,
-               QPair<QImage*, QString> const image);
+               const QPair<QImage*, QString>& image);
     void train(const Identity& identityToBeTrained,
-               const QList<QPair<QImage*, QString>>& images);
+               const QList<QPair<QImage*, QString> >& images);
 
     /**
      * Deletes the training data for all identities,

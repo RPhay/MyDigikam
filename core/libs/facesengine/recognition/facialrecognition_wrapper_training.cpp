@@ -30,8 +30,8 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
         //       Where/when do the images get deleted?
         //       Need to investigate.
 
-        ImageListProvider* const imageList    = data->newImages(identity);
-        QList<QPair<QImage*, QString>> images = imageList->images();
+        ImageListProvider* const imageList     = data->newImages(identity);
+        QList<QPair<QImage*, QString> > images = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 
@@ -91,18 +91,18 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
     train((QList<Identity>() << identityToBeTrained), data);
 }
 
-// cppcheck-suppress constParameterPointer
-void FacialRecognitionWrapper::train(const Identity& identityToBeTrained, QPair<QImage*, QString> const image)
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
+                                     const QPair<QImage*, QString>& image)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
-                                                                              QList<QPair<QImage*, QString>>() << image);
+                                                                              QList<QPair<QImage*, QString> >() << image);
     train(identityToBeTrained, data);
 
     delete data;
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                     const QList<QPair<QImage*, QString>>& images)
+                                     const QList<QPair<QImage*, QString> >& images)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
     train(identityToBeTrained, data);
