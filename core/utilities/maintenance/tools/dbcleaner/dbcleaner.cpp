@@ -70,7 +70,7 @@ DbCleaner::DbCleaner(bool cleanThumbsDb,
 {
     // register the identity list as meta type to be able to use it in signal/slot connection
 
-    qRegisterMetaType<QList<Identity>>("QList<Identity>");
+    qRegisterMetaType<QList<Identity> >("QList<Identity>");
 
     d->cleanThumbsDb     = cleanThumbsDb;
 

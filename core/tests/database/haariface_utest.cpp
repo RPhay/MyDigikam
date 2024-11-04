@@ -226,7 +226,7 @@ void HaarIfaceTest::testOriginal()
     AlbumList searchAlbums       = all;
     AlbumList referenceAlbums;
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES
 
     QCOMPARE(references.count(), 3);
@@ -281,7 +281,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES
 
     QCOMPARE(references.count(), 3);
@@ -336,7 +336,7 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);
@@ -384,7 +384,7 @@ void HaarIfaceTest::testPreferNewerCreationDate()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);
@@ -426,7 +426,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);
@@ -459,7 +459,7 @@ void HaarIfaceTest::testPreferFolderWhole()
     AlbumList searchAlbums       = all;
     AlbumList referenceAlbums    = all;
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);
@@ -523,7 +523,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);
@@ -603,7 +603,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected()
         }
     }
 
-    QHash<ImagePath, QList<ItemInfo>> references;
+    QHash<ImagePath, QList<ItemInfo> > references;
     START_SEARCHING_DUPLICATES;
 
     QCOMPARE(references.count(), 3);

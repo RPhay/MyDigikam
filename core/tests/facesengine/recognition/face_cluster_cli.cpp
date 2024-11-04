@@ -175,7 +175,7 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
 }
 
 void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
-                                      QList<std::vector<int>>& clusters)
+                                      QList<std::vector<int> >& clusters)
 {
     int nbOfClusters = 0;
 
@@ -209,14 +209,14 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
                              const QStringList& dataset,
                              QStringList& falsePositiveCases)
 {
-    QList<std::vector<int>> clusters, testClusters;
+    QList<std::vector<int> > clusters, testClusters;
     createClustersFromClusterIndices(clusteredIndices, clusters);
     createClustersFromClusterIndices(testClusteredIndices, testClusters);
 
     std::set<int> falsePositivePoints;
     int testClustersSize = testClusters.size();
     std::vector<float> visited(testClustersSize, 1.0);
-    std::vector<std::set<int>> lastVisit(testClustersSize, std::set<int>{});
+    std::vector<std::set<int> > lastVisit(testClustersSize, std::set<int> {});
 
     for (int i = 0 ; i < testClustersSize ; ++i)
     {

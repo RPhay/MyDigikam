@@ -55,7 +55,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>& detectedBoxes)
+void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect> >& detectedBoxes)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
     QImage img(imagePath);
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
     }
 
     int batch_size = 16;
-    QList<QHash<QString, QVector<QRect>>> results;
+    QList<QHash<QString, QVector<QRect> > > results;
     QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
 
     int s = filesInfo.size() - filesInfo.size() % batch_size;

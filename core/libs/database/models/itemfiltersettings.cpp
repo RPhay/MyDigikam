@@ -842,7 +842,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         const QUrl url = info.fileUrl();
 
-        for (QHash<QString, QList<QUrl>>::const_iterator it = m_urlWhitelists.constBegin() ;
+        for (QHash<QString, QList<QUrl> >::const_iterator it = m_urlWhitelists.constBegin() ;
              it != m_urlWhitelists.constEnd() ; ++it)
         {
             match = it->contains(url);

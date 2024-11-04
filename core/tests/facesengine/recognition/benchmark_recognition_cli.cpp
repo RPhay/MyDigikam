@@ -183,7 +183,7 @@ void Benchmark::registerTrainingSet()
 
         qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
 
-        QList<QPair<QImage*, QString>> faceSet;
+        QList<QPair<QImage*, QString> > faceSet;
         QList<QImage*>::iterator fsi;
 
         for(fsi = iter.value().begin() ; fsi != iter.value().end() ; ++fsi)

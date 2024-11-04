@@ -116,7 +116,7 @@ int main(int argc, char** argv)
         QElapsedTimer timer;
         timer.start();
 
-        QList<QPair<QImage*, QString>> imageSet;
+        QList<QPair<QImage*, QString> > imageSet;
         QList<QImage*>::iterator isi;
 
         for (isi = images.begin() ; isi != images.end() ; ++isi)
@@ -227,7 +227,7 @@ int main(int argc, char** argv)
             QList<QImage*> images = toImages(it.value());
             qCDebug(DIGIKAM_TESTS_LOG) << "Training ORL directory" << it.key();
 
-            QList<QPair<QImage*, QString>> imageSet;
+            QList<QPair<QImage*, QString> > imageSet;
             QList<QImage*>::iterator isi;
 
             for (isi = images.begin() ; isi != images.end() ; ++isi)

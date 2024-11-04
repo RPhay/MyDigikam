@@ -68,7 +68,7 @@ public:
     /**
      * Register faces corresponding to an identity.
      */
-    void train(const QList<QPair<QImage*, QString>>& images, const int label);
+    void train(const QList<QPair<QImage*, QString> >& images, const int label);
 
     /**
      * Try to recognize the given image.
@@ -83,7 +83,7 @@ public:
      * Returns a list of identity ids.
      * If an identity cannot be recognized, returns -1.
      */
-    QVector<int> recognize(const QList<QPair<QImage*, QString>>& inputImages);
+    QVector<int> recognize(const QList<QPair<QImage*, QString> >& inputImages);
 
     /**
      * Clear specified trained data.

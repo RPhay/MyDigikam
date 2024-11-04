@@ -55,7 +55,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>& detectedBoxes)
+void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect> >& detectedBoxes)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
     QImage img(imagePath);

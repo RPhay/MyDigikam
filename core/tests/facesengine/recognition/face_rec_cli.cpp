@@ -388,7 +388,7 @@ int main(int argc, char* argv[])
 
         // Start timing for benchmark training.
 
-        QList<QPair<QImage*, QString>> faceSet;
+        QList<QPair<QImage*, QString> > faceSet;
         QList<QImage*>::iterator fsi;
 
         for (fsi = faces.begin() ; fsi != faces.end() ; ++fsi)

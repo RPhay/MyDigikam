@@ -196,7 +196,7 @@ void MainWindow::slotDetectObjects(const QListWidgetItem* imageItem)
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading" << imagePath;
     QImage img(imagePath);
 
-    QHash<QString, QVector<QRect>> objects = detectObjects(imagePath);
+    QHash<QString, QVector<QRect> > objects = detectObjects(imagePath);
     drawObjects(img, objects);
 
     qCDebug(DIGIKAM_TESTS_LOG) << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime());

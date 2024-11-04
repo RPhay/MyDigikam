@@ -135,13 +135,13 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
             QListImageListProvider* const imageList = new QListImageListProvider;
-            imageList->setImages(QList<QPair<QImage*, QString>>() << QPair<QImage*, QString>(images[i], hashSet[i]));
+            imageList->setImages(QList<QPair<QImage*, QString> >() << QPair<QImage*, QString>(images[i], hashSet[i]));
             provider.imagesToTrain[identities[i]] = imageList;
         }
 
-        // use the face for training
-        recognizer.train(identitySet, &provider);    
+        // Use the face for training.
 
+        recognizer.train(identitySet, &provider);
     }
 
     utils.removeFaces(toTrain);

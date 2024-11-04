@@ -285,7 +285,7 @@ void BackendMarble::createActions()
     connect(d->actionGroupMapTheme, &QActionGroup::triggered,
             this, &BackendMarble::slotMapThemeActionTriggered);
 
-    QList<QPair<QString, QString>> mainThemes;
+    QList<QPair<QString, QString> > mainThemes;
     mainThemes.append( { i18n("Atlas map"),              QLatin1String("earth/srtm/srtm.dgml")                   } );
     mainThemes.append( { i18n("Satellite map"),          QLatin1String("earth/bluemarble/bluemarble.dgml")       } );
     mainThemes.append( { i18n("OpenStreetMap"),          QLatin1String("earth/openstreetmap/openstreetmap.dgml") } );

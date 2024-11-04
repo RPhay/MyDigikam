@@ -61,7 +61,7 @@ ItemAlbumModel::ItemAlbumModel(QWidget* const parent)
     : ItemThumbnailModel(parent),
       d                 (new Private)
 {
-    qRegisterMetaType<QList<ItemListerRecord>>("QList<ItemListerRecord>");
+    qRegisterMetaType<QList<ItemListerRecord> >("QList<ItemListerRecord>");
 
     d->incrementalTimer = new QTimer(this);
     d->incrementalTimer->setSingleShot(true);

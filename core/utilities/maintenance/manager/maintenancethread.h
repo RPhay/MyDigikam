@@ -129,9 +129,9 @@ private:
      */
 /*
     template<typename T>
-    QList<QList<T>> chunkList(const QList<T>& toChunk, int chunkSize=0)
+    QList<QList<T> > chunkList(const QList<T>& toChunk, int chunkSize = 0)
     {
-        QList<QList<T>> chunks;
+        QList<QList<T> > chunks;
 
         // Chunk size 0 means all
 
@@ -141,18 +141,22 @@ private:
             return chunks;
         }
 
-        // Buffer the input list
+        // Buffer the input list.
+
         QList<T> toChunkList = toChunk;
         QList<T> currentChunk;
 
         while (!toChunkList.isEmpty())
         {
-            // Set the current chunk to the first n elements
+            // Set the current chunk to the first n elements.
+
             currentChunk = toChunkList.mid(0,chunkSize);
+
             // Set the buffer list to the rest, i.e.
             // start at position n and take all from this position
             // If n is bigger than the size, an empty list is returned.
             // see qarraydata.cpp in Qt implementation.
+
             toChunkList  = toChunkList.mid(chunkSize);
             chunks << currentChunk;
         }

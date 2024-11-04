@@ -86,7 +86,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const cv::Mat& cvInputIma
 }
 
 void OpenCVDNNFaceRecognizer::train(const QList<QPair<QImage*,
-                                    QString>>& images,
+                                    QString> >& images,
                                     const int label)
 {
     cv::parallel_for_(cv::Range(0, images.size()), Private::ParallelTrainer(d, images, label));

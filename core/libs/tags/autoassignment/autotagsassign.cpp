@@ -333,7 +333,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
     return result;
 }
 
-QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<DImg>& inputImages, int batchSize) const
+QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<DImg>& inputImages, int batchSize) const
 {
     QList<QList<QString> > result;
 
@@ -356,7 +356,7 @@ QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<DImg>& inputI
     return result;
 }
 
-QList<QList<QString>> AutoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
+QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
 {
     QList<QList<QString> > result;
 

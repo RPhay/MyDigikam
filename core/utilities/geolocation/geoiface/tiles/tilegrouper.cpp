@@ -48,7 +48,7 @@ TileGrouper::TileGrouper(const QExplicitlySharedDataPointer<GeoIfaceSharedData>&
       d      (new Private),
       s      (sharedData)
 {
-    qRegisterMetaType<QVector<int>>("QVector<int>");
+    qRegisterMetaType<QVector<int> >("QVector<int>");
 }
 
 TileGrouper::~TileGrouper()

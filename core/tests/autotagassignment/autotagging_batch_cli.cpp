@@ -75,7 +75,7 @@ int main(int argc, char** argv)
     QDir dataset(parser->value(QLatin1String("dataset")));
     QFileInfoList filesInfo = dataset.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
     QScopedPointer<AutoTagsAssign> autotagsEngine (new AutoTagsAssign(DetectorModel::RESNET50));
-    QList<QList<QString>> tags;
+    QList<QList<QString> > tags;
 
     int batch_size = 1;
     int sizeData   = 54;
