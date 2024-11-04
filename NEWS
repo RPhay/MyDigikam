@@ -12,7 +12,7 @@ Bundles:         New MacOS Silicon (arm64) package based on Qt6 framework 6.7.2,
 
 Database:        Update to new unique file hash V3 added.
 RawEngine:       Update internal libraw to last 20241009 upstream.
-Video:           Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
+Video:           Update internal QtAVPlayer to last 20241104 upstream (Qt5 only).
 
 IconView:        More compact thumbnails by using a simple horizontal line instead a frame
                  to render Color Labels.
