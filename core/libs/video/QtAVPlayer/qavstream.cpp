@@ -97,7 +97,7 @@ static int streamRotation(const AVStream *stream)
 #endif
     if (!sideData)
         return 0;
-    auto rotation = static_cast<int>(std::round(av_display_rotation_get(reinterpret_cast<const int32_t *>(sideData))));
+    auto rotation = static_cast<int>(round(av_display_rotation_get(reinterpret_cast<const int32_t *>(sideData))));
     if (rotation % 90 != 0)
         return 0;
     return rotation > 0 ? -rotation % 360 + 360 : -rotation % 360;
