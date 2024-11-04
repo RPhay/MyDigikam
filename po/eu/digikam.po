@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-03 01:43+0000\n"
+"POT-Creation-Date: 2024-11-04 01:44+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -6204,25 +6204,25 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Selection model: "
 msgstr "Hautapen eredua: "
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:203
+#: core/utilities/maintenance/main/maintenancedlg.cpp:260
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:204
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#: core/utilities/maintenance/main/maintenancedlg.cpp:262
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
@@ -6252,7 +6252,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
@@ -9022,7 +9022,7 @@ msgstr "Erabili koloreen kudeaketa inprimatzean"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:259
+#: core/utilities/maintenance/main/maintenancedlg.cpp:329
 #, kde-format
 msgid "Settings..."
 msgstr "Ezarpenak..."
@@ -28758,7 +28758,7 @@ msgstr "Partekatutako direktorioa <b>%1</b>(e)an muntatu da"
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:232
+#: core/libs/facesengine/facedb/facedbaccess.cpp:233
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -35593,7 +35593,7 @@ msgstr "Parket apaingarria"
 msgid "Deletion Time"
 msgstr "Ezabatze-ordua"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
 #, fuzzy, kde-format
 #| msgid ""
 #| "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -35608,7 +35608,7 @@ msgstr ""
 "datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu datu-base huts "
 "batekin hasten. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:158
 #, fuzzy, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -35621,7 +35621,7 @@ msgstr ""
 "bertsio hau zaharregia dela adierazten du, edo datu-basearen formatua "
 "berriegia dela. Erabili digiKam-en bertsio berriagoa."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:189
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to create tables in database.\n"
@@ -44064,7 +44064,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:307
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -54126,7 +54126,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Errefusatu iradokizun hau"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54135,54 +54135,54 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:155
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/maintenance/main/maintenancedlg.cpp:202
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Etiketak jadanik esleituta daude"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
-#: core/utilities/maintenance/main/maintenancedlg.cpp:156
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "Laguntza"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Bat ere ez hautatu"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Sinkronizatu"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54190,13 +54190,13 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:188
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Aurkegiak ezagutzea"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54204,27 +54204,27 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:213
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Lan-fluxua"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Bilatu hemen:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Zehaztasuna"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -54244,7 +54244,7 @@ msgstr ""
 "ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
 "ezagutzen dira)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -54252,25 +54252,25 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Modeloa:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:253
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:254
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54280,7 +54280,7 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgctxt "@option: audio"
 #| msgid "Frame size"
@@ -54288,19 +54288,19 @@ msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Fotogramaren neurria"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Etiketa gehigarriak"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -54308,20 +54308,20 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Ertaina"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Helburua"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Etiketa gehigarriak"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54340,20 +54340,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Aurpegia atzematea"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Zehaztasuna"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -54374,7 +54374,7 @@ msgstr ""
 "ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
 "ezagutzen dira)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -54382,7 +54382,7 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modeloa:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:342
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
@@ -54390,14 +54390,14 @@ msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Aurpegien arabera"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:343
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Ireki fitxategia"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54407,14 +54407,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:381
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54426,13 +54426,13 @@ msgstr ""
 "Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
 "nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "Aurpegi ezagutza"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -63351,139 +63351,140 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "Ezarpen arruntak"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:62
+#: core/utilities/maintenance/main/maintenancedlg.cpp:72
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:64
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, kde-format
 msgid "Scan for new items"
 msgstr "Miatu irudi berri bila"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:85
 #, kde-format
 msgid ""
-"<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-"additional databases for cleaning.<br/> If you select one of the options "
-"below, the process may take much time and can freeze digiKam temporarily<br/"
-"> in order to make sure that no database corruption occurs.</i></qt>"
+"<qt><i>Note: If activated, the core database is always cleaned. You can "
+"select additional databases for cleaning.<br/>If you select one of the "
+"options below, the process may take much time and can freeze digiKam "
+"temporarily in order to make sure that no database corruption occurs.</i></"
+"qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, fuzzy, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Huts egin du etiketa datu-baseari gehitzean"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:74
+#: core/utilities/maintenance/main/maintenancedlg.cpp:91
 #, fuzzy, kde-format
 msgid "Also clean up the faces database."
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:75
+#: core/utilities/maintenance/main/maintenancedlg.cpp:92
 #, fuzzy, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Huts egin du etiketa datu-baseari gehitzean"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:76
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, fuzzy, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Huts egin du etiketa datu-baseari gehitzean"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:94
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:81
+#: core/utilities/maintenance/main/maintenancedlg.cpp:101
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:93
+#: core/utilities/maintenance/main/maintenancedlg.cpp:110
+#: core/utilities/maintenance/main/maintenancedlg.cpp:125
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Miatu aldatutako edo katalogatu gabeko elementu bila (azkarragoa)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:88
+#: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #, fuzzy, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Eraiki berriro koadro txikiak..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:95
+#: core/utilities/maintenance/main/maintenancedlg.cpp:131
 #, fuzzy, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Eraiki berriro hatz-markak..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:104
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:164
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:128
+#: core/utilities/maintenance/main/maintenancedlg.cpp:168
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "Hautapenik ez"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:129
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, fuzzy, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:130
+#: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:144
+#: core/utilities/maintenance/main/maintenancedlg.cpp:187
 #, fuzzy, kde-format
 msgid "Find Duplicate Items"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, fuzzy, kde-format
 msgid "Faces data management: "
 msgstr "Euskarrien kudeaketa"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, fuzzy, kde-format
 #| msgid "Rebuild All Fingerprints"
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Eraiki berriro hatz-marka guztiak"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:163
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Garbitu irudi honetako aurpegi guztiak"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63491,13 +63492,13 @@ msgid ""
 "detect faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Detect and recognize Faces"
 msgstr "Sinkronizatu"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:177
+#: core/utilities/maintenance/main/maintenancedlg.cpp:234
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -63509,24 +63510,24 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:186
+#: core/utilities/maintenance/main/maintenancedlg.cpp:243
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mode de mesure :"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, kde-format
 msgid "Clean all and re-assign"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:192
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
+#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:299
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Miatu esleitu gabekoak bakarrik"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:194
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63538,7 +63539,7 @@ msgstr ""
 "denak eta berriz hutsetik miatu.</p><p><b>Miatu esleitu gabekoak bakarrik</"
 "b>: miatu etiketarik esleitu gabeko elementuak bakarrik.</p>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63562,54 +63563,54 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:222
+#: core/utilities/maintenance/main/maintenancedlg.cpp:282
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Doitze automatikoa"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:230
+#: core/utilities/maintenance/main/maintenancedlg.cpp:293
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Miatzeko modua: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:235
+#: core/utilities/maintenance/main/maintenancedlg.cpp:298
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Garbitu dena eta berriz miatu"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:248
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "ÑSA zuzenketa"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:322
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "Datu-basea irudiaren metadatuetatik eguneratzen. Itxaron..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/utilities/maintenance/main/maintenancedlg.cpp:323
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:256
+#: core/utilities/maintenance/main/maintenancedlg.cpp:326
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:261
+#: core/utilities/maintenance/main/maintenancedlg.cpp:335
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgid "Warning"
 msgstr "Abisua"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/utilities/maintenance/main/maintenancedlg.cpp:397
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-03 01:43+0000\n"
+"POT-Creation-Date: 2024-11-04 01:44+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -6419,26 +6419,26 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection model: "
 msgstr "Προορισμός:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:203
+#: core/utilities/maintenance/main/maintenancedlg.cpp:260
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:204
+#: core/utilities/maintenance/main/maintenancedlg.cpp:261
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#: core/utilities/maintenance/main/maintenancedlg.cpp:262
 #, kde-format
 msgid "ResNet50"
 msgstr ""
@@ -6468,7 +6468,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
@@ -9428,7 +9428,7 @@ msgstr "Χρήση διαχείρισης χρωμάτων στην εκτύπω
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:259
+#: core/utilities/maintenance/main/maintenancedlg.cpp:329
 #, kde-format
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
@@ -29636,7 +29636,7 @@ msgstr "Ο κοινόχρηστος κατάλογος προσαρτήθηκε 
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:232
+#: core/libs/facesengine/facedb/facedbaccess.cpp:233
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -36607,7 +36607,7 @@ msgstr "Σχετική διαδρομή"
 msgid "Deletion Time"
 msgstr "Ώρα διαγραφής"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -36618,7 +36618,7 @@ msgstr ""
 "τρέχουσα έκδοση του σχήματος της βάσης δεδομένων δεν μπορεί να αναλυθεί. "
 "Δοκιμάστε να ξεκινήσετε με μια κενή βάση δεδομένων. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:158
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -36633,7 +36633,7 @@ msgstr ""
 "πρόσφατη.) Χρησιμοποιήστε την πιο πρόσφατη έκδοση του digikam που "
 "χρησιμοποιούσατε πριν."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:189
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -45298,7 +45298,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:241
+#: core/utilities/maintenance/main/maintenancedlg.cpp:307
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -55603,7 +55603,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55615,53 +55615,53 @@ msgstr ""
 "αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
 "και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#: core/utilities/maintenance/main/maintenancedlg.cpp:155
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/maintenance/main/maintenancedlg.cpp:202
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Παράλειψη των ήδη σαρωμένων φωτογραφιών"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:151
-#: core/utilities/maintenance/main/maintenancedlg.cpp:156
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Σάρωση ξανά και συγχώνευση αποτελεσμάτων"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:152
-#: core/utilities/maintenance/main/maintenancedlg.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Βοήθεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:173
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Χωρίς επιλογή"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Ανίχνευση και αναγνώριση προσώπων"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55671,14 +55671,14 @@ msgstr ""
 "Βρείτε όλα τα πρόσωπα στις φωτογραφίες σας<nl/> και προσπαθήστε να "
 "αναγνωρίσετε για ποιο πρόσωπο πρόκειται"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:188
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Συγχρονισμός"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:189
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -55688,28 +55688,28 @@ msgstr ""
 "Προσπαθήστε πάλι να κάνετε αναγνώριση<nl/> σε σημειωμένα αλλά ακόμα "
 "ανεπιβεβαίωτα πρόσωπα."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Ροή εργασιών"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -55724,7 +55724,7 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -55732,26 +55732,26 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Μοντέλο:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:248
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:253
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:254
 #, fuzzy, kde-format
 #| msgid "OSM"
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "OSM"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55761,14 +55761,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:273
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Μέγεθος αρχείου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:277
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -55776,13 +55776,13 @@ msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Ετικέτες εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:279
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -55790,14 +55790,14 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Μεσαίο μέγεθος"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:280
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Προορισμός"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -55805,7 +55805,7 @@ msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Ετικέτες εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55824,20 +55824,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -55853,7 +55853,7 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -55861,19 +55861,19 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Μοντέλο:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:337
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:342
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Χωρίς επιλογή"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:343
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Άνοιγμα φακέλου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55883,14 +55883,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:381
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:383
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -55907,12 +55907,12 @@ msgstr ""
 "θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
 "ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -65078,125 +65078,126 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:58
+#: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "Κοινές ρυθμίσεις"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:62
+#: core/utilities/maintenance/main/maintenancedlg.cpp:72
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:64
+#: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, kde-format
 msgid "Scan for new items"
 msgstr "Σάρωση για νέα αντικείμενα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:70
+#: core/utilities/maintenance/main/maintenancedlg.cpp:85
 #, kde-format
 msgid ""
-"<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-"additional databases for cleaning.<br/> If you select one of the options "
-"below, the process may take much time and can freeze digiKam temporarily<br/"
-"> in order to make sure that no database corruption occurs.</i></qt>"
+"<qt><i>Note: If activated, the core database is always cleaned. You can "
+"select additional databases for cleaning.<br/>If you select one of the "
+"options below, the process may take much time and can freeze digiKam "
+"temporarily in order to make sure that no database corruption occurs.</i></"
+"qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:73
+#: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the thumbnail database."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:74
+#: core/utilities/maintenance/main/maintenancedlg.cpp:91
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Also clean up the faces database."
 msgstr "Ενημέρωση βάσης δεδομένων προσώπων σε εξέλιξη."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:75
+#: core/utilities/maintenance/main/maintenancedlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the similarity database."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:76
+#: core/utilities/maintenance/main/maintenancedlg.cpp:93
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Extended clean up and shrink all databases."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:94
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:81
+#: core/utilities/maintenance/main/maintenancedlg.cpp:101
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:93
+#: core/utilities/maintenance/main/maintenancedlg.cpp:110
+#: core/utilities/maintenance/main/maintenancedlg.cpp:125
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Σάρωση για αλλαγμένα ή μη-καταγεγραμμένα αντικείμενα (ταχύτερο)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:88
+#: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Ανακατασκευή εικονιδίων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:95
+#: core/utilities/maintenance/main/maintenancedlg.cpp:131
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Ανακατασκευή αποτυπωμάτων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:104
+#: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "Similarity (in percents): "
 msgid "Similarity range (in percents): "
 msgstr "Ομοιότητα (σε ποσοστά): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:124
+#: core/utilities/maintenance/main/maintenancedlg.cpp:164
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "Αναζήτηση διπλών εμφανίσεων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:128
+#: core/utilities/maintenance/main/maintenancedlg.cpp:168
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "Καμία επιλογή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:129
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "Store as a different name"
 msgid "Restrict to album of reference image"
 msgstr "Αποθήκευση με διαφορετικό όνομα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:130
+#: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:144
+#: core/utilities/maintenance/main/maintenancedlg.cpp:187
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "Εύρεση διπλών αντικειμένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:151
+#: core/utilities/maintenance/main/maintenancedlg.cpp:198
 #, kde-format
 msgid "Faces data management: "
 msgstr "Διαχείριση δεδομένων χαρακτηριστικών προσώπου: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:161
+#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Clear and rebuild all training data"
@@ -65204,21 +65205,21 @@ msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Καθαρισμός και ανακατασκευή όλων των δεδομένων μάθησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:163
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:165
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Καθαρισμός όλων των προσώπων σε αυτήν την εικόνα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:167
+#: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -65226,12 +65227,12 @@ msgid ""
 "detect faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, fuzzy, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Ανίχνευση και αναγνώριση προσώπων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:177
+#: core/utilities/maintenance/main/maintenancedlg.cpp:234
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -65243,24 +65244,24 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:186
+#: core/utilities/maintenance/main/maintenancedlg.cpp:243
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Λειτουργία μέτρησης:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:191
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, fuzzy, kde-format
 msgid "Clean all and re-assign"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:192
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
+#: core/utilities/maintenance/main/maintenancedlg.cpp:249
+#: core/utilities/maintenance/main/maintenancedlg.cpp:299
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:194
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -65269,7 +65270,7 @@ msgid ""
 "the items with no assigned tag.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -65293,54 +65294,54 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:222
+#: core/utilities/maintenance/main/maintenancedlg.cpp:282
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:230
+#: core/utilities/maintenance/main/maintenancedlg.cpp:293
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "Μοντέλο: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:235
+#: core/utilities/maintenance/main/maintenancedlg.cpp:298
 #, fuzzy, kde-format
 msgid "Clean all and re-scan"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:248
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "Διόρθωση DST: %1"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:322
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "Ενημέρωση βάσης δεδομένων από μεταδεδομένα εικόνας σε εξέλιξη"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/utilities/maintenance/main/maintenancedlg.cpp:323
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "Συγχρονισμός μεταδεδομένων εικόνων με τη βάση δεδομένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:256
+#: core/utilities/maintenance/main/maintenancedlg.cpp:326
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Επιλέξτε πίνακα ρύθμισης μεταδεδομένων για λεπτομέρειες: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:261
+#: core/utilities/maintenance/main/maintenancedlg.cpp:335
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Συγχρονισμός μεταδεδομένων εικόνων με τη βάση δεδομένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/utilities/maintenance/main/maintenancedlg.cpp:397
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
