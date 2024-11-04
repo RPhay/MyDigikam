@@ -24,7 +24,7 @@ QListImageListProvider::QListImageListProvider()
 
 QListImageListProvider::~QListImageListProvider()
 {
-    QList<QPair<QImage*, QString>>::iterator img = list.begin();
+    QList<QPair<QImage*, QString> >::iterator img = list.begin();
 
     while (img != list.end())
     {
@@ -58,12 +58,12 @@ QPair<QImage*, QString> QListImageListProvider::image()
     return *it;
 }
 
-QList<QPair<QImage*, QString>> QListImageListProvider::images()
+QList<QPair<QImage*, QString> > QListImageListProvider::images()
 {
     return list;
 }
 
-void QListImageListProvider::setImages(const QList<QPair<QImage*, QString>>& lst)
+void QListImageListProvider::setImages(const QList<QPair<QImage*, QString> >& lst)
 {
     list = lst;
     it   = list.constBegin();
@@ -102,12 +102,12 @@ QPair<QImage*, QString> EmptyImageListProvider::image()
     return QPair<QImage*, QString>(nullptr, QString());
 }
 
-QList<QPair<QImage*, QString>> EmptyImageListProvider::images()
+QList<QPair<QImage*, QString> > EmptyImageListProvider::images()
 {
-    return QList<QPair<QImage*, QString>>();
+    return QList<QPair<QImage*, QString> >();
 }
 
-void EmptyImageListProvider::setImages(const QList<QPair<QImage*, QString>>&)
+void EmptyImageListProvider::setImages(const QList<QPair<QImage*, QString> >&)
 {
 }
 

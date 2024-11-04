@@ -220,7 +220,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
         int size = 0;
 
-        for (QMap<double, QVector<int>>::const_iterator iter = neighborList.cbegin() ;
+        for (QMap<double, QVector<int> >::const_iterator iter = neighborList.cbegin() ;
              iter != neighborList.cend() ;
              ++iter)
         {
@@ -231,7 +231,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
         {
             // Eliminate the farthest neighbor.
 
-            QMap<double, QVector<int>>::iterator farthestNodes = std::prev(neighborList.end(), 1);
+            QMap<double, QVector<int> >::iterator farthestNodes = std::prev(neighborList.end(), 1);
 
             if (farthestNodes.value().size() == 1)
             {

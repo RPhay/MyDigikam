@@ -172,7 +172,7 @@ class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::Parallel
 public:
 
     ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* const d,
-                       const QList<QPair<QImage*, QString>>& images,
+                       const QList<QPair<QImage*, QString> >& images,
                        QVector<int>& ids)
         : images    (images),
           ids       (ids),
@@ -229,7 +229,7 @@ public:
 
 private:
 
-    const QList<QPair<QImage*, QString>>&   images;
+    const QList<QPair<QImage*, QString> >&  images;
     QVector<int>&                           ids;
 
     OpenCVDNNFaceRecognizer::Private* const d = nullptr;
@@ -245,7 +245,7 @@ public:
 
     ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const d,
                     const QList<QPair<QImage*,
-                    QString>>& images,
+                    QString> >& images,
                     const int& id)
         : images    (images),
           id        (id),
@@ -269,7 +269,7 @@ public:
 
 private:
 
-    const QList<QPair<QImage*, QString>>&   images;
+    const QList<QPair<QImage*, QString> >&  images;
     const int&                              id;
 
     OpenCVDNNFaceRecognizer::Private* const d = nullptr;

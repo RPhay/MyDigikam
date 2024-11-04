@@ -44,8 +44,8 @@ public:
     virtual bool           atEnd() const                            = 0;
     virtual void           proceed(int steps = 1)                   = 0;
     virtual QPair<QImage*, QString>        image()                  = 0;
-    virtual QList<QPair<QImage*, QString>> images()                 = 0;
-    virtual void setImages(const QList<QPair<QImage*, QString>>&)   = 0;
+    virtual QList<QPair<QImage*, QString> > images()                = 0;
+    virtual void setImages(const QList<QPair<QImage*, QString> >&)  = 0;
     virtual void setUnpairedImages(const QList<QImage*>&) = 0;
 
 private:
@@ -73,14 +73,14 @@ public:
     bool           atEnd() const                            override;
     void           proceed(int steps = 1)                   override;
     QPair<QImage*, QString>        image()                  override;
-    QList<QPair<QImage*, QString>> images()                 override;
-    void setImages(const QList<QPair<QImage*, QString>>&)   override;
+    QList<QPair<QImage*, QString> > images()                override;
+    void setImages(const QList<QPair<QImage*, QString> >&)  override;
     void setUnpairedImages(const QList<QImage*>&)           override;
 
 public:
 
-    QList<QPair<QImage*, QString>>                 list;
-    QList<QPair<QImage*, QString>>::const_iterator it;
+    QList<QPair<QImage*, QString> >                 list;
+    QList<QPair<QImage*, QString> >::const_iterator it;
 
 private:
 
@@ -93,15 +93,15 @@ class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    EmptyImageListProvider()                                    = default;
-    ~EmptyImageListProvider()                                   = default;
+    EmptyImageListProvider()                                = default;
+    ~EmptyImageListProvider()                               = default;
 
     int     size()  const                                   override;
     bool    atEnd() const                                   override;
     void    proceed(int steps = 1)                          override;
     QPair<QImage*, QString> image()                         override;
-    QList<QPair<QImage*, QString>> images()                 override;
-    void setImages(const QList<QPair<QImage*, QString>>&)   override;
+    QList<QPair<QImage*, QString> > images()                override;
+    void setImages(const QList<QPair<QImage*, QString> >&)  override;
     void setUnpairedImages(const QList<QImage*>&)           override;
 
 private:

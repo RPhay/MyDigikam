@@ -156,7 +156,7 @@ int OpenCVDNNFaceRecognizer::recognize(QPair<QImage*, QString> inputImage)
     return id;
 }
 
-QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QPair<QImage*, QString>>& inputImages)
+QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QPair<QImage*, QString> >& inputImages)
 {
     QVector<int> ids;
 
