@@ -48,7 +48,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 01:44+0000\n"
-"PO-Revision-Date: 2024-11-03 19:27+0100\n"
+"PO-Revision-Date: 2024-11-04 16:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61265,13 +61265,7 @@ msgid "Scan for new items"
 msgstr "Buscar elementos nuevos"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -61282,8 +61276,8 @@ msgstr ""
 "<qt><i>Nota: Si se activa, la base de datos central siempre se limpia. Puede "
 "seleccionar bases de datos adicionales para su limpieza.<br/>Si selecciona "
 "alguna de las opciones inferiores, el proceso puede tardar más tiempo y "
-"«congelar» digiKam temporalmente<br/>para asegurar que no se daña ninguna "
-"base de datos.</i></qt>"
+"«congelar» digiKam temporalmente para asegurar que no se daña ninguna base "
+"de datos.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format

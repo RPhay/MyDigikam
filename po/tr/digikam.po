@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-04 01:44+0000\n"
-"PO-Revision-Date: 2024-10-29 22:13+0300\n"
+"PO-Revision-Date: 2024-11-04 16:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -60679,13 +60679,7 @@ msgid "Scan for new items"
 msgstr "Yeni ögeleri tara"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -60696,8 +60690,8 @@ msgstr ""
 "<qt><i>Not: Etkinse çekirdek veritabanı her zaman temizlenir. Temizlemek "
 "için ek veritabanları seçebilirsiniz.<br/> Aşağıdaki seçeneklerden birini "
 "seçerseniz işlem çok zaman alabilir ve hiçbir veritabanı bozulmasının "
-"meydana gelmediğinden<br/>emin olmak için digiKam’i geçici olarak "
-"dondurabilir.</i></qt>"
+"meydana gelmediğinden emin olmak için digiKam’i geçici olarak dondurabilir.</"
+"i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
@@ -60785,12 +60779,10 @@ msgid "Faces data management: "
 msgstr "Yüz verisi yönetimi: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Tüm eğitim verisini sil ve yeniden oluştur"
+msgstr "Tüm eğitim verisini yeniden oluştur"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -60798,13 +60790,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Bu, yüz tanımlayıcısını kitaplığınızdaki künyelenmiş yüzlerle yeniden "
+"çalıştırır."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Bu Görseldeki Tüm Yüzleri Temizle"
+msgstr "Tüm yüzleri ve eğitim verisini sıfırla ve temizle"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -60813,6 +60806,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Bu, tüm algılanmış ve künyelenmiş yüzleri temizler ve yüzleri yeniden "
+"algılamak adına görselleri yeniden tarar."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -60949,9 +60944,7 @@ msgid "Sync Metadata and Database"
 msgstr "Üst Veriyi ve Veritabanını Eşzamanla"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Uyarı"
 
@@ -60962,6 +60955,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Tüm onaylı, onaysız ve bilinmeyen yüzleri silmek istediğinizden emin "
+"misiniz? Herhangi bir yüzü tanıyabilmeye başlamak için bilinmeyen yüzleri "
+"yeniden künyelemeniz gerekecek."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406

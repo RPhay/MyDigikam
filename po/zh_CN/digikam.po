@@ -58922,13 +58922,7 @@ msgid "Scan for new items"
 msgstr "扫描新增项目"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -58936,9 +58930,6 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
-"<qt><b>提示：</b>选择此项后，digiKam 将对它的核心数据库进行清理。您还可以额外"
-"选择要清理的其他数据库。<br/>如果选择了下面的任意一项，清理将需要更长时间才能"
-"完成，<br/>digiKam 可能会暂时停止响应以防止数据库在清理过程中损坏。</qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
@@ -59029,20 +59020,20 @@ msgstr "人脸数据管理："
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr ""
+msgstr "重建全部训练数据"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
-msgstr ""
+msgstr "这将使用您图像库中带有标签的人脸重新训练人脸识别程序。"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr ""
+msgstr "重置并清除全部人脸和训练数据"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -59050,7 +59041,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
-msgstr ""
+msgstr "这将清除所有检测到且分配了标签的人脸，然后重新扫描图像以检测人脸。"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -59177,7 +59168,7 @@ msgstr "图像与数据库元数据同步"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:397
 #, kde-format
@@ -59186,6 +59177,8 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"您确定要删除所有已确认、未确认和未知的人脸吗？删除后您必须重新对未知人脸分配"
+"标签，否则将无法识别任何人脸。"
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
