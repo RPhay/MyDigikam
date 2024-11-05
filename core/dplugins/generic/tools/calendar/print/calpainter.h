@@ -35,7 +35,7 @@ class CalPainter : public QObject,      // clazy:exclude=ctor-missing-parent-arg
 public:
 
     explicit CalPainter(QPaintDevice* const pDevice);
-    ~CalPainter() override;
+    virtual ~CalPainter() override;
 
     void setImage(const QUrl& imagePath);
     void paint(int month);
