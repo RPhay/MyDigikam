@@ -90,16 +90,28 @@ void ItemIconView::slotAssignColorLabel(int colorId)
 
 void ItemIconView::slotAssignRating(int rating)
 {
+    this->slotAssignRating(rating, true);
+}
+
+void ItemIconView::slotAssignRating(int rating, bool toggle = true)
+{
     const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyRating               = NoRating;
 
-    for (const ItemInfo& info : std::as_const(itemInfos))
+    if (toggle)
     {
-        if (info.rating() != rating)
+        for (const ItemInfo& info : std::as_const(itemInfos))
         {
-            applyRating = rating;
-            break;
+            if (info.rating() != rating)
+            {
+                applyRating = rating;
+                break;
+            }
         }
+    }
+    else
+    {
+        applyRating = rating;
     }
 
     FileActionMngr::instance()->assignRating(itemInfos, applyRating);

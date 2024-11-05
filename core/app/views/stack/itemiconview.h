@@ -299,6 +299,7 @@ public Q_SLOTS:
     void slotAssignPickLabel(int pickId);
     void slotAssignColorLabel(int colorId);
     void slotAssignRating(int rating);
+    void slotAssignRating(int rating, bool toggle);
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
 
