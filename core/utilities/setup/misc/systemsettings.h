@@ -61,7 +61,7 @@ public:
     bool    enableAutoTags    = false;
     bool    softwareOpenGL    = false;
     bool    enableLogging     = false;
-    bool    disableOpenCL     = true;
+    bool    enableOpenCL      = false;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

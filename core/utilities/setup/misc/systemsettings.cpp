@@ -85,7 +85,7 @@ void SystemSettings::readSettings()
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
     softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    false).toBool();
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
-    disableOpenCL        = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
+    enableOpenCL         = settings.value(QLatin1String("enableOpenCL"),      false).toBool();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -171,7 +171,7 @@ void SystemSettings::saveSettings()
     settings.setValue(QLatin1String("enableAutoTags"),    enableAutoTags);
     settings.setValue(QLatin1String("softwareOpenGL"),    softwareOpenGL);
     settings.setValue(QLatin1String("enableLogging"),     enableLogging);
-    settings.setValue(QLatin1String("disableOpenCL"),     disableOpenCL);
+    settings.setValue(QLatin1String("enableOpenCL"),      enableOpenCL);
 
     if (settings.contains(QLatin1String("disableFaceEngine")))
     {

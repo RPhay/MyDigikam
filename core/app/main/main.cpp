@@ -157,7 +157,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     // https://bugs.kde.org/show_bug.cgi?id=423632
     // https://bugs.kde.org/show_bug.cgi?id=426175
 
-    if (system.disableOpenCL)
+    if (!system.enableOpenCL)
     {
         qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");

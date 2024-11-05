@@ -54,8 +54,8 @@ public:
 #endif
 
     QCheckBox*              softwareOpenGLCheck    = nullptr;
-    QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
+    QCheckBox*              enableOpenCLCheck      = nullptr;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -95,7 +95,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
-    d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
+    d->enableOpenCLCheck      = new QCheckBox(i18n("Try with OpenCL hardware acceleration"), this);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -139,7 +139,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
-        d->disableOpenCLCheck->hide();
+        d->enableOpenCLCheck->hide();
     }
 
     QLabel* const systemNote  = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
@@ -158,7 +158,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
-    layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 2);
+    layout->addWidget(d->enableOpenCLCheck,      row++, 0, 1, 2);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -202,7 +202,7 @@ void SystemSettingsWidget::readSettings()
 
     d->softwareOpenGLCheck->setChecked(system.softwareOpenGL);
     d->enableLoggingCheck->setChecked(system.enableLogging);
-    d->disableOpenCLCheck->setChecked(system.disableOpenCL);
+    d->enableOpenCLCheck->setChecked(system.enableOpenCL);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -239,7 +239,7 @@ void SystemSettingsWidget::saveSettings()
 
     system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
-    system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
+    system.enableOpenCL      = d->enableOpenCLCheck->isChecked();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
