@@ -142,6 +142,12 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         // Use the face for training.
 
         recognizer.train(identitySet, &provider);
+
+        if (package->image.isNull() && 0 < images.size())
+        {
+             package->image = DImg(*images[0]);
+        }
+
     }
 
     utils.removeFaces(toTrain);

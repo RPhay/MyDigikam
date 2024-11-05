@@ -53,6 +53,11 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
     }
 
+    if (package->image.isNull() && 0 < images.size())
+    {
+            package->image = DImg(*images[0]);
+    }
+
     // NOTE: cropped faces will be deleted by training provider.
 
     package->recognitionResults  = recognizer.recognizeFaces(images);
