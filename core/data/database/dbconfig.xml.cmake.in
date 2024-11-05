@@ -1739,7 +1739,7 @@
 
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
                 <statement mode="plain">ALTER TABLE FaceMatrices
-                                        CHANGE `context` removeHash LONGTEXT;
+                                        RENAME COLUMN `context` TO removeHash;
                 </statement>
             </dbaction>
 
