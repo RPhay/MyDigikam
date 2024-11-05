@@ -3181,18 +3181,19 @@ int EclSolar::localStart(int j, double* spt, double* ept, int* spp,
 
 void EclSolar::getLocalDetails(char* otxt)
 {
-    /* get the details of the eclipse selected in eclbuf.select
-       and place the output into otxt
-    */
+    /*
+     * Get the details of the eclipse selected in eclbuf.select
+     * and place the output into otxt.
+     */
     int j, p, i, ecloutbn;
     int dd, mm, yy, deg, mnt;
     double sec, hh;
 
-    int spp[4] = {0}, nump;
-    double spt[4] = {0.0}, ept[4] = {0.0};
-    double jd  = 0.0, jdf = 0.0;
-    char dts[13];
-    char outb[127];
+    int spp[4]     = { 0 }, nump;
+    double spt[4]  = { 0.0 }, ept[4] = { 0.0 };
+    double jd      = 0.0, jdf = 0.0;
+    char dts[13]   = { 0 };
+    char outb[127] = { 0 };
 
     if (!eb_start_called)
     {
