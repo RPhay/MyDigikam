@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
-"PO-Revision-Date: 2024-11-03 11:26+0200\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
+"PO-Revision-Date: 2024-11-05 21:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -52774,7 +52774,7 @@ msgstr ""
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgid "Face Recognition Settings"
-msgstr "Параметри виявлення облич"
+msgstr "Параметри розпізнавання облич"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
 #, kde-format
@@ -61463,13 +61463,7 @@ msgid "Scan for new items"
 msgstr "Виявити нові зображення"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -61480,8 +61474,8 @@ msgstr ""
 "<qt><i>Зауваження: якщо позначено, програма підтримуватиме ущільнений стан "
 "кореневої бази даних. Ви можете вибрати інші бази даних для ущільнення.<br/"
 ">Якщо ви позначите один з наведених нижче пунктів, обробка може бути "
-"тривалішою і може на певний час призупинити роботу digiKam<br/> з метою "
-"запобігти пошкодженню бази даних.</i></qt>"
+"тривалішою і може на певний час призупинити роботу digiKam з метою запобігти "
+"пошкодженню бази даних.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
@@ -67399,51 +67393,59 @@ msgid "Force use of software OpenGL rendering"
 msgstr "Примусово використати програмну обробку OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Disable hardware acceleration OpenCL"
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr "Вимкнути апаратне прискорення OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Виправити проблему декодування на гр. процесорах AMD"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Використаний модуль декодування для відео:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (типовий)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Windows (System)"
 msgstr "Windows (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid "Darwin (System)"
 msgstr "Darwin (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Отримати потрібні двійкові дані…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

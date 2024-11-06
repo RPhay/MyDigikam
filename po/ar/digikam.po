@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -66553,53 +66553,60 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
-msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr " (المبدئيّ)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Windows (System)"
 msgstr "ويندوز (نظام تشغيلي)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Darwin Core"
 msgid "Darwin (System)"
 msgstr "لب داروين"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, fuzzy, kde-format
 msgid "Download required binary data..."
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

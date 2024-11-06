@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -67656,56 +67656,64 @@ msgid "Force use of software OpenGL rendering"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Disable hardware acceleration OpenCL"
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr "Отключить аппаратное ускорение OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr " (по умолчанию)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, fuzzy, kde-format
 #| msgid "Windows only"
 msgid "Windows (System)"
 msgstr "Только для Windows"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Windows only"
 msgid "Darwin (System)"
 msgstr "Только для Windows"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Включить внутреннее журналирование отладки"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgid "Download required binary data..."
 msgstr "Загрузить необходимые файлы"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

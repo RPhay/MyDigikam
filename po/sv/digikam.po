@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
 "PO-Revision-Date: 2024-10-19 16:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -66504,51 +66504,59 @@ msgid "Force use of software OpenGL rendering"
 msgstr "Tvinga användning av OpenGL-återgivning med programvara"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Disable hardware acceleration OpenCL"
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr "Inaktivera OpenCL hårdvaruacceleration"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Rätta problem med videoavkodning med AMD grafikprocessor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Använd avkodningsgränssnitt för video:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (förval)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Windows (System)"
 msgstr "Windows (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid "Darwin (System)"
 msgstr "Darwin (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Aktivera intern felsökningsloggning"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Ladda ner nödvändig binärdata..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

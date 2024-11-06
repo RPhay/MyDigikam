@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
-"PO-Revision-Date: 2024-11-03 09:01+0000\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
+"PO-Revision-Date: 2024-11-05 09:49+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -60551,13 +60551,7 @@ msgid "Scan for new items"
 msgstr "Leita að nýjum atriðum"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -60668,6 +60662,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Þetta mun endurþjálfa andlitakennslakerfið með merktum andlitum í safninu "
+"þínu."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
@@ -60682,6 +60678,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Þetta mun hreinsa út öll greind og merkt andlit og síðan endurskanna myndir "
+"til að finna andlit að nýju."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -60827,6 +60825,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Ertu viss um að þú viljir eyða öllum staðfestum, óstaðfestum og óþekktum "
+"andlitum? Þú munt þurfa að merkja einhver óþekkt andlit aftur áður en hægt "
+"verður að bera kennsl á andlit."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -63342,19 +63343,16 @@ msgstr ""
 "gluggann."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "Forskoðunarmynd er alltaf kvörðuð svo hún passi í gluggann"
+msgstr "Forskoðunarmynd notar afstöllun (anti-aliasing) við uppkvörðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki kvarða litlar myndir svo þær passi í "
-"gluggann."
+"Taktu merkið úr hér ef þú vilt ekki nota afstöllun við að kvarða litlar "
+"myndir svo þær passi í gluggann."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -66374,51 +66372,59 @@ msgid "Force use of software OpenGL rendering"
 msgstr "Þvinga notkun á hugbúnaðar-OpenGL til myndgerðar"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Disable hardware acceleration OpenCL"
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr "Gera OpenCL-vélbúnaðarhröðun óvirka"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Lagað vandamál í myndmerkiskóðun AMD-GPU"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Bakendi notaður fyrir afkóðun myndmerkis:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (sjálfgefið)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Windows (System)"
 msgstr "Windows (kerfi)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid "Darwin (System)"
 msgstr "Darwin (kerfi)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Sæki nauðsynleg tvíundakerfisgögn..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

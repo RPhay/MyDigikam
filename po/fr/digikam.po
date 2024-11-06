@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-04 01:44+0000\n"
-"PO-Revision-Date: 2024-11-02 08:34+0100\n"
+"POT-Creation-Date: 2024-11-06 01:49+0000\n"
+"PO-Revision-Date: 2024-11-05 07:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -61646,13 +61646,7 @@ msgid "Scan for new items"
 msgstr "Effectuer une analyse pour chercher de nouveaux éléments"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -61663,8 +61657,8 @@ msgstr ""
 "<qt><i>Remarque : si ceci est activé, la base principale est toujours "
 "nettoyée. Vous pouvez sélectionner d'autres bases à nettoyer.<br/> Si vous "
 "sélectionnez l'une des options ci-dessous, le processus peut prendre plus de "
-"temps et geler temporairement DigiKam<br/> pour s'assurer qu'aucune "
-"corruption de base de données ne survienne.</i></qt>"
+"temps et geler temporairement DigiKam pour s'assurer qu'aucune corruption de "
+"base de données ne survienne.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
@@ -61754,12 +61748,10 @@ msgid "Faces data management: "
 msgstr "Gestion des données des visages :"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Effacer et reconstruire toutes les données d'apprentissage"
+msgstr "Reconstruire toutes les données d'apprentissage"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -61767,13 +61759,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Cela entraînera à nouveau le moteur de reconnaissance faciale avec des "
+"visages étiquetés dans votre bibliothèque."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Effacer toutes les visages sur cette image"
+msgstr "Ré-initialise et effacer tous les visages et l'apprentissage"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -61782,6 +61775,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Cela effacera tous les visages détectés et étiquetés, puis analysera à "
+"nouveau les images pour détecter les visages."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -61923,9 +61918,7 @@ msgid "Sync Metadata and Database"
 msgstr "Synchroniser les métadonnées et la base de données"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Avertissement"
 
@@ -61936,6 +61929,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Voulez-vous vraiment supprimer tous les visages confirmés, non confirmés et "
+"inconnus ? Vous devrez recommencer à étiqueter les visages inconnus avant de "
+"pouvoir reconnaître des visages."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -67646,51 +67642,59 @@ msgid "Force use of software OpenGL rendering"
 msgstr "Force l'utilisation du rendu avec des logiciels pour OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Disable hardware acceleration OpenCL"
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Try with OpenCL hardware acceleration"
 msgstr "Désactiver l'accélération matérielle « OpenCL »"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid ""
+"This option is still experimental and has no function. It also requires that "
+"certain environment variables are set manual."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Corriger le problème de décodage vidéo du processeur graphique AMD"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Moteur de décodage vidéo utilisé :"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFMpeg (Par défaut)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Système)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Windows (System)"
 msgstr "Windows (Système)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid "Darwin (System)"
 msgstr "Darwin (Système)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Activer une journalisation interne pour débogage"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Télécharger les données binaires requises..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
