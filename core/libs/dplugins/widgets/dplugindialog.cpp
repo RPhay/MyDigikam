@@ -46,7 +46,8 @@ DPluginDialog::DPluginDialog(QWidget* const parent, const QString& objName)
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
                    Qt::WindowCloseButtonHint     |
-                   Qt::WindowMinMaxButtonsHint);
+                   Qt::WindowMinMaxButtonsHint   |
+                   Qt::WindowContextHelpButtonHint);
 
     m_buttons = new QDialogButtonBox(this);
 }

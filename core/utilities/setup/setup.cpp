@@ -114,7 +114,8 @@ Setup::Setup(QWidget* const parent)
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
                    Qt::WindowCloseButtonHint     |
-                   Qt::WindowMinMaxButtonsHint);
+                   Qt::WindowMinMaxButtonsHint   |
+                   Qt::WindowContextHelpButtonHint);
 
     setWindowTitle(i18nc("@title:window", "Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);

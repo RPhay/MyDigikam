@@ -180,7 +180,8 @@ AdvancedRenameDialog::AdvancedRenameDialog(QWidget* const parent)
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
                    Qt::WindowCloseButtonHint     |
-                   Qt::WindowMinMaxButtonsHint);
+                   Qt::WindowMinMaxButtonsHint   |
+                   Qt::WindowContextHelpButtonHint);
 
     setModal(true);
     setupWidgets();

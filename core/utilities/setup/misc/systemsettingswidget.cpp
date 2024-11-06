@@ -97,7 +97,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
     d->enableOpenCLCheck      = new QCheckBox(i18n("Try with OpenCL hardware acceleration"), this);
     d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and has no "
-                                          "function. It also requires that certain "
+                                          "function.\nIt also requires that certain "
                                           "environment variables are set manual."));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
