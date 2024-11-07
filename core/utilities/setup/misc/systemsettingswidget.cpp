@@ -109,7 +109,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #   endif
 
-    QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for video:"), this);
+    QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
     d->videoBackendCBox       = new QComboBox(this);
     d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),   QLatin1String("ffmpeg"));
