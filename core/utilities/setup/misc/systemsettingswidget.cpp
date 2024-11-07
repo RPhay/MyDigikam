@@ -131,7 +131,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
-    d->filesDownloadButton    = new QPushButton(i18n("Download required binary data..."), this);
+    d->filesDownloadButton    = new QPushButton(i18n("Download Required Binary Data..."), this);
 
     // Proxy Settings
 
