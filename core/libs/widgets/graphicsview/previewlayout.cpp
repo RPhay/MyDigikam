@@ -14,6 +14,10 @@
 
 #include "previewlayout.h"
 
+// C ANSI includes
+
+#include <math.h>
+
 // Qt includes
 
 #include <QGraphicsView>
@@ -141,12 +145,12 @@ double SinglePhotoPreviewLayout::minZoomFactor() const
 
 bool SinglePhotoPreviewLayout::atMaxZoom() const
 {
-    return ((std::round(zoomFactor() * 1000.0) / 1000.0) >= d->maxZoom);
+    return ((round(zoomFactor() * 1000.0) / 1000.0) >= d->maxZoom);
 }
 
 bool SinglePhotoPreviewLayout::atMinZoom() const
 {
-    return ((std::round(zoomFactor() * 1000.0) / 1000.0) <= d->minZoom);
+    return ((round(zoomFactor() * 1000.0) / 1000.0) <= d->minZoom);
 }
 
 void SinglePhotoPreviewLayout::setMaxZoomFactor(double z)
