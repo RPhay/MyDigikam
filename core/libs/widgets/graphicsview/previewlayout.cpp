@@ -14,7 +14,7 @@
 
 #include "previewlayout.h"
 
-// C ANSI includes
+// C++ includes
 
 #include <math.h>
 
