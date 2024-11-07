@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-06 01:49+0000\n"
-"PO-Revision-Date: 2024-11-04 06:34+0100\n"
+"POT-Creation-Date: 2024-11-07 01:49+0000\n"
+"PO-Revision-Date: 2024-11-06 06:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -34453,20 +34453,20 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Uporabnik6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Sprotni priročnik..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:74
+#: core/libs/dplugins/widgets/dplugindialog.cpp:75
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, kde-format
 msgid "About..."
@@ -49463,7 +49463,7 @@ msgstr "Okrasi"
 msgid "Effec&ts"
 msgstr "Učinki"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49542,13 +49542,13 @@ msgstr ""
 "<qt>Nastavitve za shranjevanje slikovnih datotek<br/><i>Nastavite privzete "
 "nastavitve za shranjevanje slik</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokacija"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50677,44 +50677,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "ustvarjena: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
 #, kde-format
 msgid "By Name"
 msgstr "Po imenu"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
 #, kde-format
 msgid "By Date"
 msgstr "Po datumu"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By File Size"
 msgstr "Po velikosti datoteke"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:224
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Naraščajoče"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Padajoče"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
 #, kde-format
 msgid "Current Name"
 msgstr "Trenutno ime"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
 #, kde-format
 msgid "New Name"
 msgstr "Novo ime"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:256
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -50725,7 +50725,7 @@ msgstr ""
 "nakazujejo na težave z imenom: ime je enako trenutnemu ali pa je bilo "
 "dodeljeno drugemu predmetu."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:312
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
@@ -50734,7 +50734,7 @@ msgstr[1] "Preimenuj (%1 sliko)"
 msgstr[2] "Preimenuj (%1 sliki)"
 msgstr[3] "Preimenuj (%1 slike)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:414
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
 #, kde-format
 msgid "Sort Images"
 msgstr "Razvrsti slike"
@@ -66613,17 +66613,21 @@ msgid "Force use of software OpenGL rendering"
 msgstr "Prisili upodabljanje z uporabo OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Try with OpenCL hardware acceleration"
-msgstr "Onemogoči strojno pospeševanje OpenCL"
+msgstr "Poskusi s strojnim pospeševanjem OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option is still experimental and has no function. It also requires "
+#| "that certain environment variables are set manual."
 msgid ""
-"This option is still experimental and has no function. It also requires that "
-"certain environment variables are set manual."
+"This option is still experimental and has no function.\n"
+"It also requires that certain environment variables are set manual."
 msgstr ""
+"Ta možnost je še poskusna in nima nobene funkcije. Prav tako zahteva ročno "
+"nastavitev nekaterih spremenljivk okolja."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
@@ -66675,13 +66679,13 @@ msgstr ""
 "zagonu. Nekatere nastavitve so odvisne od strojne opreme in morda nimajo "
 "nobenega učinka.</b>"
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Podatkovna zbirka"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66691,13 +66695,13 @@ msgstr ""
 "Nastavitve podatkovne zbirke\n"
 "Prilagodi nastavitve podatkovne zbirke"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Zbirke"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:134
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66707,13 +66711,13 @@ msgstr ""
 "Nastavitve zbirk\n"
 "Nastavite mesta korenskih albumov"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66723,13 +66727,13 @@ msgstr ""
 "Nastavitve pogledov aplikacije\n"
 "Prilagodite izgled pogledov"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Orodni namig"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66739,13 +66743,13 @@ msgstr ""
 "Nastavitve orodnih namigov\n"
 "Prilagodi informacije v orodnih namigih"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metapodatki"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:149
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66755,13 +66759,13 @@ msgstr ""
 "Upravljanje podatkov vgrajenih v sliko\n"
 "Nastavite povezave med slikami in metapodatki"
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Predloge"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66771,13 +66775,13 @@ msgstr ""
 "Predloge metapodatkov\n"
 "Upravljajte z vašo zbirko predlog metapodatkov"
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66787,13 +66791,13 @@ msgstr ""
 "Nastavitve urejevalnika slik\n"
 "Prilagodi nastavitve urejevalnika slik"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Upravljanje barv"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66803,13 +66807,13 @@ msgstr ""
 "Nastavitve za upravljanje barv\n"
 "Prilagodi nastavitve upravljanja barv"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Osvetlitvena miza"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66819,13 +66823,13 @@ msgstr ""
 "Nastavitve osvetlitvene mize\n"
 "Prilagodi orodje za primerjavo predmetov"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Razvrščevalnik slik po kakovosti"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66835,13 +66839,13 @@ msgstr ""
 "Nastavitve razvrščevalnika slik po kakovosti\n"
 "Prilagodi privzete nastavitve za izvedbo razvrščanja slik po kakovosti"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamere"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66851,13 +66855,13 @@ msgstr ""
 "Nastavitve kamere\n"
 "Upravljaj vaše kamere"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Vtičniki"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:196
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66867,13 +66871,13 @@ msgstr ""
 "Nastavitve vstavkov\n"
 "Nastavi kateri vtičniki bodo dostopni iz aplikacije"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:201
 #, kde-format
 msgctxt "@title"
 msgid ""
