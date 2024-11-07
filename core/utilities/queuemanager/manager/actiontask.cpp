@@ -165,14 +165,14 @@ void ActionTask::run()
 
         // Only true if it is also the last tool
 
-        noWriteMetadata = (
-                           (set.name == QLatin1String("ApplyMetadata")) ||
-                           (set.name == QLatin1String("RemoveMetadata"))
-                          );
+        noWriteMetadata |= (
+                            (set.group == BatchTool::MetadataTool)  &&
+                            (set.name  != QLatin1String("TimeAdjust"))
+                           );
 
-        timeAdjust     |= (set.name == QLatin1String("TimeAdjust"));
-        inUrl           = outUrl;
-        index           = set.index + 1;
+        timeAdjust      |= (set.name == QLatin1String("TimeAdjust"));
+        inUrl            = outUrl;
+        index            = set.index + 1;
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Tool : index= " << index
                  << " :: name= "     << set.name
