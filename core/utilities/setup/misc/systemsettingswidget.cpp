@@ -112,19 +112,19 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
     d->videoBackendCBox       = new QComboBox(this);
-    d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),   QLatin1String("ffmpeg"));
+    d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),      QLatin1String("ffmpeg"));
 
 #   if defined(Q_OS_LINUX)
 
-    d->videoBackendCBox->addItem(i18n("GStreamer (System)"), QLatin1String("gstreamer"));
+    d->videoBackendCBox->addItem(i18n("GStreamer (System)"),    QLatin1String("gstreamer"));
 
 #   elif defined(Q_OS_WIN)
 
-    d->videoBackendCBox->addItem(i18n("Windows (System)"),   QLatin1String("windows"));
+    d->videoBackendCBox->addItem(i18n("WMF (System)"),          QLatin1String("windows"));
 
 #   elif defined(Q_OS_MACOS)
 
-    d->videoBackendCBox->addItem(i18n("Darwin (System)"),    QLatin1String("darwin"));
+    d->videoBackendCBox->addItem(i18n("AVFoundation (System)"), QLatin1String("darwin"));
 
 #   endif
 
