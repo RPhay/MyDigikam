@@ -6,7 +6,7 @@
  * Date        : 2020-27-07
  * Description : system settings widget
  *
- * SPDX-FileCopyrightText: 2020-2023 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2024 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -45,6 +45,8 @@ class Q_DECL_HIDDEN SystemSettingsWidget::Private
 public:
 
     Private() = default;
+
+public:
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
@@ -94,11 +96,10 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
-    d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
-    d->enableOpenCLCheck      = new QCheckBox(i18n("Try with OpenCL hardware acceleration"), this);
-    d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and has no "
-                                          "function.\nIt also requires that certain "
-                                          "environment variables are set manual."));
+    d->softwareOpenGLCheck    = new QCheckBox(i18n("Use the software OpenGL rendering"), this);
+    d->enableOpenCLCheck      = new QCheckBox(i18n("Use the OpenCL hardware acceleration"), this);
+    d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and "
+                                          "requires that certain environment variables are set manually."));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
