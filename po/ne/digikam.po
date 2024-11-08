@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 01:49+0000\n"
+"POT-Creation-Date: 2024-11-08 01:48+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -64320,76 +64320,76 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "समूहबद्ध गर्नुहोस्"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:94
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:95
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Force use of software OpenGL rendering"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Try with OpenCL hardware acceleration"
-msgstr ""
-
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
-msgid ""
-"This option is still experimental and has no function.\n"
-"It also requires that certain environment variables are set manual."
+msgid "Use the software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#, kde-format
+msgid "Use the OpenCL hardware acceleration"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#, kde-format
+msgid ""
+"This option is still experimental and requires that certain environment "
+"variables are set manually."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
-msgid "Used decoding backend for video:"
+msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Use default profile"
 msgid "FFmpeg (Default)"
 msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
-msgid "Windows (System)"
+msgid "WMF (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
-msgid "Darwin (System)"
+msgid "AVFoundation (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
-msgid "Download required binary data..."
+msgid "Download Required Binary Data..."
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

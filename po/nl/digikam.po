@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 01:49+0000\n"
-"PO-Revision-Date: 2024-11-06 11:10+0100\n"
+"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"PO-Revision-Date: 2024-11-07 12:40+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -67049,79 +67049,85 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Groepering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:94
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Hoge DPI schaling gebruiken uit de schermfactor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:95
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Pixmaps gebruiken met hoge DPI resolutie"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Force use of software OpenGL rendering"
-msgstr "Gebruik van renderen met software OpenGL afdwingen"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
-#, kde-format
-msgid "Try with OpenCL hardware acceleration"
-msgstr "Probeer met hardware-versnelling OpenCL"
-
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and has no function. It also requires "
-#| "that certain environment variables are set manual."
-msgid ""
-"This option is still experimental and has no function.\n"
-"It also requires that certain environment variables are set manual."
-msgstr ""
-"Deze optie is nog steeds experimenteel en heeft geen functie. Het vereist "
-"ook dat bepaalde omgevingsvariabelen handmatig zijn ingesteld."
+#| msgid "Force use of software OpenGL rendering"
+msgid "Use the software OpenGL rendering"
+msgstr "Gebruik van renderen met software OpenGL afdwingen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#, fuzzy, kde-format
+#| msgid "Try with OpenCL hardware acceleration"
+msgid "Use the OpenCL hardware acceleration"
+msgstr "Probeer met hardware-versnelling OpenCL"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option is still experimental and has no function.\n"
+#| "It also requires that certain environment variables are set manual."
+msgid ""
+"This option is still experimental and requires that certain environment "
+"variables are set manually."
+msgstr ""
+"Deze optie is nog steeds experimenteel en heeft geen functie.\n"
+"Het vereist ook dat bepaalde omgevingsvariabelen handmatig zijn ingesteld."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Reparatie van probleem met decodering van video voor AMD-GPU"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
-#, kde-format
-msgid "Used decoding backend for video:"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Used decoding backend for video:"
+msgid "Decoding backend to render video:"
 msgstr "Decoderingsbackend voor video gebruikt:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (standaard)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
-#, kde-format
-msgid "Windows (System)"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#, fuzzy, kde-format
+#| msgid "Windows (System)"
+msgid "WMF (System)"
 msgstr "Windows (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
-#, kde-format
-msgid "Darwin (System)"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#, fuzzy, kde-format
+#| msgid "Darwin (System)"
+msgid "AVFoundation (System)"
 msgstr "Darwin (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "Download required binary data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#, fuzzy, kde-format
+#| msgid "Download required binary data..."
+msgid "Download Required Binary Data..."
 msgstr "De vereiste binaire gegevens downloaden..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
