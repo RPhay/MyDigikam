@@ -36,7 +36,7 @@ apps:
           LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:${LD_LIBRARY_PATH}
           PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
           ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
-          QT_MEDIA_BACKEND: "ffmpeg"
+          QT_MEDIA_BACKEND: "gstreamer"
 
 compression: lzo
 
@@ -78,7 +78,7 @@ parts:
           - -DDIGIKAMSC_COMPILE_DIGIKAM=ON
           - -DENABLE_KFILEMETADATASUPPORT=OFF
           - -DENABLE_AKONADICONTACTSUPPORT=OFF
-          - -DENABLE_MYSQLSUPPORT=OFF
+          - -DENABLE_MYSQLSUPPORT=ON
           - -DENABLE_INTERNALMYSQL=OFF
           - -DENABLE_MEDIAPLAYER=ON
           - -DENABLE_LCMS2=ON
@@ -118,6 +118,7 @@ parts:
           - libglib2.0-dev
           - libqt6networkauth6-dev
           - libpulse0
+          - libmariadb-dev
 
         stage-packages:
           - libexif12
@@ -179,6 +180,7 @@ parts:
           - libblas3
           - kimageformat-plugins
           - libpulse0
+          - mariadb-client
 
         build-snaps:
           - ffmpeg-2204-sdk
