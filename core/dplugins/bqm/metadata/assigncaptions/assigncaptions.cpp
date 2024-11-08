@@ -235,7 +235,7 @@ bool AssignCaptions::toolOperations()
 
         for (it = titles.constBegin() ; it != titles.constEnd() ; ++it)
         {
-            orgTitles.insert( it.key(), it.value());
+            orgTitles.insert(it.key(), it.value());
         }
 
         CaptionsMap newTitlesMap;

@@ -186,7 +186,7 @@ BUGFIXES:
 161 ==> 423113 - Deleted Faces still serve as information to Facial Recognition.
 162 ==> 444160 - Face matching is guess work at best.
 163 ==> 436544 - Problem by Face recognition.
-164 ==> 
+164 ==> 490907 - Allow us to set the "specify time delay for slideshow" to 0.5 seconds.
 165 ==> 
 166 ==> 
 167 ==> 

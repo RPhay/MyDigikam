@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 01:49+0000\n"
+"POT-Creation-Date: 2024-11-08 01:48+0000\n"
 "PO-Revision-Date: 2024-10-07 01:50+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -66872,75 +66872,80 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Agrupamento"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:94
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Usar o axuste de escala de DPI altos do factor da pantalla"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:95
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Usar mapas de píxeles de resolución alta de DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Force use of software OpenGL rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, fuzzy, kde-format
+#| msgid "Force use of software OpenGL rendering"
+msgid "Use the software OpenGL rendering"
 msgstr "Forzar o uso de renderización de OpenGL mediante o soporte lóxico"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Disable hardware acceleration OpenCL"
-msgid "Try with OpenCL hardware acceleration"
+msgid "Use the OpenCL hardware acceleration"
 msgstr "Desactivar a aceleración de OpenCL mediante o soporte físico"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:101
 #, kde-format
 msgid ""
-"This option is still experimental and has no function.\n"
-"It also requires that certain environment variables are set manual."
+"This option is still experimental and requires that certain environment "
+"variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Corrixir o problema de descodificación de vídeo con GPU de AMD"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
-#, kde-format
-msgid "Used decoding backend for video:"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Used decoding backend for video:"
+msgid "Decoding backend to render video:"
 msgstr "Motor de descodificación usado para vídeo:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (predeterminado)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
-#, kde-format
-msgid "Windows (System)"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#, fuzzy, kde-format
+#| msgid "Windows (System)"
+msgid "WMF (System)"
 msgstr "Windows (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
-#, kde-format
-msgid "Darwin (System)"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#, fuzzy, kde-format
+#| msgid "Darwin (System)"
+msgid "AVFoundation (System)"
 msgstr "Darwin (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Activar o rexistro interno de información de depuración"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "Download required binary data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#, fuzzy, kde-format
+#| msgid "Download required binary data..."
+msgid "Download Required Binary Data..."
 msgstr "Descargar os datos binarios necesarios…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

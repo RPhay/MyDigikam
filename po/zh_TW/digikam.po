@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 01:49+0000\n"
+"POT-Creation-Date: 2024-11-08 01:48+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -65806,77 +65806,79 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "群組"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:94
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:93
+#: core/utilities/setup/misc/systemsettingswidget.cpp:95
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Force use of software OpenGL rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, fuzzy, kde-format
+#| msgid "Force use of software OpenGL rendering"
+msgid "Use the software OpenGL rendering"
 msgstr "強制使用軟體 OpenGL 算繪"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Disable hardware acceleration OpenCL"
-msgid "Try with OpenCL hardware acceleration"
+msgid "Use the OpenCL hardware acceleration"
 msgstr "停用 OpenCL 硬體加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:101
 #, kde-format
 msgid ""
-"This option is still experimental and has no function.\n"
-"It also requires that certain environment variables are set manual."
+"This option is still experimental and requires that certain environment "
+"variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
-msgid "Used decoding backend for video:"
+msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr "（預設）"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:119
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
-#, kde-format
-msgid "Windows (System)"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, fuzzy, kde-format
-msgid "Darwin (System)"
+msgid "WMF (System)"
 msgstr "都柏林核心集"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#, fuzzy, kde-format
+msgid "AVFoundation (System)"
+msgstr "都柏林核心集"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "啟用內部除錯紀錄"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "Download required binary data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#, fuzzy, kde-format
+#| msgid "Download required binary data..."
+msgid "Download Required Binary Data..."
 msgstr "下載需要的二進制資料..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
