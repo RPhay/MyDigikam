@@ -125,12 +125,12 @@ void ItemIconView::slotImageRecognizeFaces()
 
     // TODO Faces engine : set K-nearest config
 
-    settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
-    settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
-    settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-    settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
-    settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
+    settings.detectAccuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.detectModel       = ApplicationSettings::instance()->getFaceDetectionModel();
+    settings.detectSize        = ApplicationSettings::instance()->getFaceDetectionSize();
+    settings.recognizeAccuracy = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+    settings.recognizeModel    = ApplicationSettings::instance()->getFaceRecognitionModel();
+    settings.task              = FaceScanSettings::RecognizeMarkedFaces;
 
     // Remove possible duplicate ItemInfos.
 
