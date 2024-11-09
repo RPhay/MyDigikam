@@ -64484,16 +64484,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "强制使用 OpenGL 软件渲染"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Try with OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "尝试使用 OpenCL 硬件加速"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
 #, kde-format
@@ -64508,10 +64506,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "修复 AMD-GPU 的视频解码问题"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "视频使用的解码后端程序："
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -64524,16 +64521,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (系统)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (系统)"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (系统)"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -64541,10 +64536,9 @@ msgid "Enable internal debug logging"
 msgstr "启用内部调试日志"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
-msgstr "下载所需的软件包..."
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format

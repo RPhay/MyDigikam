@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:48+0000\n"
-"PO-Revision-Date: 2024-11-07 17:17+0200\n"
+"PO-Revision-Date: 2024-11-08 07:14+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67388,29 +67388,23 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Растрові зображення із високою роздільністю"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "Примусово використати програмну обробку OpenGL"
+msgstr "Використати програмну обробку OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Try with OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Спробувати з апаратним прискоренням OpenCL"
+msgstr "Використати апаратне прискорення OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and has no function.\n"
-#| "It also requires that certain environment variables are set manual."
+#, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
-"Цей пункт усе ще є експериментальним і може не працювати.\n"
-"Крім того, для його роботи потрібно встановлювати вручну значення змінних "
-"середовища."
+"Цей пункт усе ще є експериментальним і для його роботи потрібно "
+"встановлювати вручну значення змінних середовища."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
@@ -67418,10 +67412,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "Виправити проблему декодування на гр. процесорах AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Використаний модуль декодування для відео:"
+msgstr "Модуль декодування для показу відео:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -67434,16 +67427,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (системний)"
+msgstr "WMF (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (системний)"
+msgstr "AVFoundation (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -67451,8 +67442,7 @@ msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
 msgstr "Отримати потрібні двійкові дані…"
 

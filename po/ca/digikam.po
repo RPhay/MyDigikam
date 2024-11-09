@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:48+0000\n"
-"PO-Revision-Date: 2024-11-07 10:09+0100\n"
+"PO-Revision-Date: 2024-11-08 20:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -37133,7 +37133,7 @@ msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
-"S'ha produït un error en intentar comprovar per a una versió nova de %1:\n"
+"S'ha produït un error en intentar comprovar si hi ha una versió nova de %1:\n"
 "«%2»"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:340
@@ -43576,7 +43576,7 @@ msgstr "Col·labora..."
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:89
 #, kde-format
 msgid "Check for New Version..."
-msgstr "Comprova per a una versió nova..."
+msgstr "Comprova si hi ha una versió nova..."
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:106
 #, kde-format
@@ -50160,7 +50160,7 @@ msgstr "Actualitzacions"
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, kde-format
 msgid "Check for new version:"
-msgstr "Comprova per a una versió nova:"
+msgstr "Comprova si hi ha una versió nova:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:121
@@ -50400,7 +50400,7 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
-"L'opció «Comprova per a una versió nova» verificarà si hi ha cap versió "
+"L'opció «Comprova si hi ha una versió nova» verificarà si hi ha cap versió "
 "preliminar.\n"
 "Setmanalment es proposen «prellançaments» per a provar amb rapidesa "
 "característiques noves.\n"
@@ -67183,28 +67183,23 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mapes de píxels amb resolucions de PPP alt"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "Força la renderització del programari OpenGL"
+msgstr "Usa la renderització del programari OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Try with OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Intenta amb l'acceleració de maquinari OpenCL"
+msgstr "Usa l'acceleració de maquinari OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and has no function.\n"
-#| "It also requires that certain environment variables are set manual."
+#, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
-"Aquesta opció encara és experimental i no té funció.\n"
-"També necessita que determinades variables d'entorn es defineixin manualment."
+"Aquesta opció encara és experimental i necessita que determinades variables "
+"d'entorn es defineixin manualment."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
@@ -67212,10 +67207,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "Corregeix un problema de descodificació de vídeo de les GPU AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Dorsal de descodificació usat pel vídeo:"
+msgstr "Dorsal de descodificació per a renderitzar vídeo:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -67228,16 +67222,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (sistema)"
+msgstr "WMF (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (Sistema)"
+msgstr "AVFoundation (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -67245,8 +67237,7 @@ msgid "Enable internal debug logging"
 msgstr "Activa el registre intern de depuració"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
 msgstr "Baixa les dades binàries requerides..."
 
