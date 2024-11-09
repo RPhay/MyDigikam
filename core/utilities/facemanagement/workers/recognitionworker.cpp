@@ -46,23 +46,25 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     {
         // Assume we have an image.
 
-        images = imageRetriever.getDetails(package->image, package->detectedFaces);
+        images = imageRetriever.getDetails(package->image,
+                                           package->detectedFaces);
     }
     else if (!package->databaseFaces.isEmpty())
     {
-        images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
+        images = imageRetriever.getThumbnails(package->filePath,
+                                              package->databaseFaces.toFaceTagsIfaceList());
     }
 
-    if (package->image.isNull() && 0 < images.size())
+    if (package->image.isNull() && (images.size() > 0))
     {
-            package->image = DImg(*images[0]);
-            package->processedFaceCount = images.size();
+        package->image              = DImg(*images[0]);
+        package->processedFaceCount = images.size();
     }
 
     // NOTE: cropped faces will be deleted by training provider.
 
-    package->recognitionResults  = recognizer.recognizeFaces(images);
-    package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
+    package->recognitionResults = recognizer.recognizeFaces(images);
+    package->processFlags      |= FacePipelinePackage::ProcessedByRecognizer;
 
     Q_EMIT processed(package);
 }
