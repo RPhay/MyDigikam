@@ -496,11 +496,11 @@ void FacesDetector::slotDone()
 
     if (d->totalFacesFound > 1)
     {
-        lbl.append(i18n("Faces found: %1", d->totalFacesFound));
+        lbl.append(i18n("Faces processed: %1", d->totalFacesFound));
     }
     else
     {
-        lbl.append(i18n("Face found: %1", d->totalFacesFound));
+        lbl.append(i18n("Face processed: %1", d->totalFacesFound));
     }
 
     setLabel(lbl);
@@ -535,14 +535,14 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
     QString lbl = i18n("Scanned for faces: %1\n", package.info.name());
     lbl.append(i18n("Path: %1\n", package.info.relativePath()));
 
-    if (!package.detectedFaces.count())
+    if (!package.detectedFaces.count() && !package.processedFaceCount)
     {
         lbl.append(i18n("No face"));
     }
     else
     {
-        lbl.append(i18np("1 face", "%1 faces", package.detectedFaces.count()));
-        d->totalFacesFound += package.detectedFaces.count();
+        lbl.append(i18np("1 face", "%1 faces", qMax(package.detectedFaces.count(), package.processedFaceCount)));
+        d->totalFacesFound += qMax(package.detectedFaces.count(), package.processedFaceCount);
     }
 
     setLabel(lbl);

@@ -145,7 +145,8 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 
         if (package->image.isNull() && 0 < images.size())
         {
-             package->image = DImg(*images[0]);
+            package->image = DImg(*images[0]);
+            package->processedFaceCount = images.size();
         }
 
     }

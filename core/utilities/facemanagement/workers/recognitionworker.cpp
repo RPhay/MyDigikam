@@ -56,6 +56,7 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     if (package->image.isNull() && 0 < images.size())
     {
             package->image = DImg(*images[0]);
+            package->processedFaceCount = images.size();
     }
 
     // NOTE: cropped faces will be deleted by training provider.

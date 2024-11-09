@@ -140,6 +140,7 @@ public:
     QList<QRectF>                 detectedFaces;
     QList<Identity>               recognitionResults;
     FacePipelineFaceTagsIfaceList databaseFaces;
+    int                           processedFaceCount  = 0;
 
     ProcessFlags                  processFlags        = NotProcessed;
 };
