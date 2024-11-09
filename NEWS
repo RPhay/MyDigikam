@@ -187,7 +187,7 @@ BUGFIXES:
 162 ==> 444160 - Face matching is guess work at best.
 163 ==> 436544 - Problem by Face recognition.
 164 ==> 490907 - Allow us to set the "specify time delay for slideshow" to 0.5 seconds.
-165 ==> 
+165 ==> 496005 - Buttons overlap in geolocation correlator menu.
 166 ==> 
 167 ==> 
 168 ==> 

@@ -231,9 +231,9 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     settingsLayout->addWidget(d->selectedImages,     3, 0, 1, 1);
     settingsLayout->addWidget(line,                  4, 0, 1, 1);
     settingsLayout->addWidget(offsetWidget,          5, 0, 1, 1);
-    settingsLayout->addWidget(matchWidget,           6, 0, 4, 1);
-    settingsLayout->addWidget(d->correlateButton,    9, 0, 1, 1);
-    settingsLayout->setRowStretch(9, 100);
+    settingsLayout->addWidget(matchWidget,           6, 0, 1, 1);
+    settingsLayout->addWidget(d->correlateButton,    7, 0, 1, 1);
+    settingsLayout->setRowStretch(7, 100);
 
     connect(d->gpxFileList->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotCurrentChanged(QModelIndex,QModelIndex)));
