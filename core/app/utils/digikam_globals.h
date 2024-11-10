@@ -25,7 +25,6 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "systemsettings.h"
 
 class QWidget;
 class QObject;
@@ -267,9 +266,9 @@ DIGIKAM_EXPORT void setMacOSEnvironment();
 DIGIKAM_EXPORT void setWindowsEnvironment(QApplication& app);
 
 /**
- * For OpenCV framework, set necessary environment varible to use OpenCL features.
+ * For OpenCV framework, set necessary environment variables to use OpenCL features.
  */
-DIGIKAM_EXPORT void setOpenCLEnvironment(const SystemSettings& system);
+DIGIKAM_EXPORT void setOpenCLEnvironment(bool b);
 
 /**
  * This method returns QDateTime from with date set to parameter date and time set to start of the day.

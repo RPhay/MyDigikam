@@ -155,7 +155,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     // Common OpenCL rules from digikam_globals.
 
-    setOpenCLEnvironment(system);
+    setOpenCLEnvironment(system.enableOpenCL);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

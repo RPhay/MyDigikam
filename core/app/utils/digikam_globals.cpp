@@ -323,7 +323,7 @@ void openOnlineDocumentation(const QString& section, const QString& chapter, con
     browser->show();
 }
 
-void setOpenCLEnvironment(const SystemSettings& system)
+void setOpenCLEnvironment(bool b)
 {
     /*
      * WARNING: OpenCV can crash with face engine when OpenCL support is enabled.
@@ -332,10 +332,13 @@ void setOpenCLEnvironment(const SystemSettings& system)
      * https://bugs.kde.org/show_bug.cgi?id=426175
      */
 
-    if (!system.enableOpenCL)
+    if (!b)
     {
         qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
+    }
+    else
+    {
 /*
         FIXME: for testing only for the moment.
         qputenv("DIGIKAM_DNN_TARGET",    "opencl");
