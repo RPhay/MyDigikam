@@ -325,9 +325,12 @@ void openOnlineDocumentation(const QString& section, const QString& chapter, con
 
 void setOpenCLEnvironment(const SystemSettings& system)
 {
-    // WARNING: OpenCV can crash with face engine using OpenCL support.
-    // https://bugs.kde.org/show_bug.cgi?id=423632
-    // https://bugs.kde.org/show_bug.cgi?id=426175
+    /*
+     * WARNING: OpenCV can crash with face engine when OpenCL support is enabled.
+     *
+     * https://bugs.kde.org/show_bug.cgi?id=423632
+     * https://bugs.kde.org/show_bug.cgi?id=426175
+     */
 
     if (!system.enableOpenCL)
     {
