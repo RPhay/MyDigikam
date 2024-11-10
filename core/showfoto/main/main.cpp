@@ -138,15 +138,9 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
-    // OpenCV crash with face engine with OpenCL support
-    // https://bugs.kde.org/show_bug.cgi?id=423632
-    // https://bugs.kde.org/show_bug.cgi?id=426175
+    // Common OpenCL rules from digikam_globals.
 
-    if (!system.enableOpenCL)
-    {
-        qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
-        qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
-    }
+    setOpenCLEnvironment(system);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

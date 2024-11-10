@@ -323,4 +323,22 @@ void openOnlineDocumentation(const QString& section, const QString& chapter, con
     browser->show();
 }
 
+void setOpenCLEnvironment(const SystemSettings& system)
+{
+    // WARNING: OpenCV can crash with face engine using OpenCL support.
+    // https://bugs.kde.org/show_bug.cgi?id=423632
+    // https://bugs.kde.org/show_bug.cgi?id=426175
+
+    if (!system.enableOpenCL)
+    {
+        qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
+        qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
+/*
+        FIXME: for testing only for the moment.
+        qputenv("DIGIKAM_DNN_TARGET",    "opencl");
+*/
+    }
+
+}
+
 } // namespace Digikam
