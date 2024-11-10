@@ -189,7 +189,7 @@ BUGFIXES:
 164 ==> 490907 - Allow us to set the "specify time delay for slideshow" to 0.5 seconds.
 165 ==> 496005 - Buttons overlap in geolocation correlator menu.
 166 ==> 495944 - Righclick -> scan for faces on a single picture is not the same as rightclick -> scan for faces on a folder.
-167 ==> 
+167 ==> 496047 - There appears to be no way of adding, deleting or editing items in the "Open with" context menu.
 168 ==> 
 169 ==> 
 170 ==> 
