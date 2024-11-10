@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -62471,13 +62471,13 @@ msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "រក​ឃើញ​រូបភាព​នៅ​ក្នុង %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "រក​ឃើញ​រូបភាព​នៅ​ក្នុង %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

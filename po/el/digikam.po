@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -65633,13 +65633,13 @@ msgstr "Αναζήτηση σε:"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

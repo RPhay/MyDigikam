@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -58254,13 +58254,13 @@ msgstr "Пошук твараў"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "У %1 знойдзеныя выявы"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "У %1 знойдзеныя выявы"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

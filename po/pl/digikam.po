@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -61362,13 +61362,13 @@ msgstr "Poszukaj twarzy w albumie: %1"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "Znaleziono obrazy w %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "Znaleziono obrazy w %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

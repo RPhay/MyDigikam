@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2024-11-08 07:14+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -61990,13 +61990,15 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Запис у пошуку облич: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, kde-format
-msgid "Faces found: %1"
+#, fuzzy, kde-format
+#| msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "Знайдено облич: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, kde-format
-msgid "Face found: %1"
+#, fuzzy, kde-format
+#| msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "Знайдено обличчя: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -61879,13 +61879,13 @@ msgstr "ਇਸ 'ਚ ਖੋਜ:"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "%1 ਵਿੱਚ ਚਿੱਤਰ ਮਿਲੇ"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "%1 ਵਿੱਚ ਚਿੱਤਰ ਮਿਲੇ"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

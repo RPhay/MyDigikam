@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2024-11-08 19:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -61203,13 +61203,15 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Yüzler için taranan öge: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, kde-format
-msgid "Faces found: %1"
+#, fuzzy, kde-format
+#| msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr "Yüzler bulundu: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, kde-format
-msgid "Face found: %1"
+#, fuzzy, kde-format
+#| msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr "Yüz bulundu: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -61189,12 +61189,12 @@ msgstr "ئىزدەش:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, kde-format
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

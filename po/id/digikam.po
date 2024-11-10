@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2023-08-28 07:33+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -61126,14 +61126,16 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Pemindaian Wajah"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, kde-format
-msgid "Faces found: %1"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No active process"
+msgid "Faces processed: %1"
+msgstr "Tidak ada proses yang aktif"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, kde-format
-msgid "Face found: %1"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No active process"
+msgid "Face processed: %1"
+msgstr "Tidak ada proses yang aktif"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, fuzzy, kde-format

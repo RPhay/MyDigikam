@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -58997,12 +58997,12 @@ msgstr "Datoteka: "
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, kde-format
-msgid "Face found: %1"
+msgid "Face processed: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535

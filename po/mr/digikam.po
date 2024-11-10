@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:48+0000\n"
+"POT-Creation-Date: 2024-11-10 01:58+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -60028,13 +60028,13 @@ msgstr "यामध्ये शोधा '%1'..."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
-msgid "Faces found: %1"
+msgid "Faces processed: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, kde-format
-msgid "Face found: %1"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Face processed: %1"
+msgstr "तयार केले :"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, fuzzy, kde-format
