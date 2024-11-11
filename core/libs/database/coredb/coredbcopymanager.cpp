@@ -271,10 +271,16 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
                 (columnName == QLatin1String("modificationDate")) ||
                 (columnName == QLatin1String("digitizationDate")) ||
                 (columnName == QLatin1String("creationDate"))     ||
-                (columnName == QLatin1String("filedate"))
+                (columnName == QLatin1String("filedate"))         ||
+                (columnName == QLatin1String("date"))
                )
             {
-                varValue = QVariant(toDBbackend.asDBDateTime(varValue.toDateTime()));
+                // The "date" column can be a QDate or QDateTime.
+
+                if (varValue.toString().size() > 10)
+                {
+                    varValue = QVariant(toDBbackend.asDBDateTime(varValue.toDateTime()));
+                }
             }
 
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: column: ["
