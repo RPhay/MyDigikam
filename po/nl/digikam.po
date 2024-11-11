@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 01:58+0000\n"
-"PO-Revision-Date: 2024-11-08 10:46+0100\n"
+"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"PO-Revision-Date: 2024-11-10 14:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2686,7 +2686,7 @@ msgstr "&Help"
 msgid "Main Toolbar"
 msgstr "Hoofdwerkbalk"
 
-#: core/app/main/main.cpp:222 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2696,7 +2696,7 @@ msgstr "Hoofdwerkbalk"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:231 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2704,39 +2704,39 @@ msgstr ""
 "Jasper van der Marel,Rinse de Vries,Sander Devrieze,Freek de Kruijf - 2006 t/"
 "m 2022"
 
-#: core/app/main/main.cpp:232 core/showfoto/main/main.cpp:217
+#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ",rinsedevries@kde.nl,s.devrieze@pandora.be,freekdekruijf@kde.nl"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:234
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Cameradialoog openen op \"pad\""
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:237
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Open de cameradialoog voor het apparaat met Solid-UDI \"udi\""
 
-#: core/app/main/main.cpp:246
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Een verbonden gphoto2-camera automatisch vinden en openen"
 
-#: core/app/main/main.cpp:248
+#: core/app/main/main.cpp:242
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "digiKam starten met het SQLite databasebestand uit de map \"dir\""
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:245
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "digiKam starten met het configuratiebestand \"config\""
 
-#: core/app/main/main.cpp:280
+#: core/app/main/main.cpp:274
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2747,7 +2747,7 @@ msgstr ""
 "installeren.\n"
 "Er is geen geïnstalleerde database-plugin op uw computer."
 
-#: core/app/main/main.cpp:289
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2758,7 +2758,7 @@ msgstr ""
 "installeren.\n"
 "Geïnstalleerde database-plugins zijn:"
 
-#: core/app/main/main.cpp:333
+#: core/app/main/main.cpp:327
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49619,13 +49619,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mappen"
 
-#: core/showfoto/main/main.cpp:207
+#: core/showfoto/main/main.cpp:201
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:225
+#: core/showfoto/main/main.cpp:219
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -61683,16 +61683,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Item gescand op gezichten: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Gezichten gevonden: %1"
+msgstr "Gezichten verwerkt: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Gezicht gevonden: %1"
+msgstr "Gezicht verwerkt: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
