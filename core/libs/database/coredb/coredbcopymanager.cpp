@@ -265,11 +265,23 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
         {
             columnName.remove(QLatin1String(" COLLATE utf8_general_ci"));
 
+            QVariant varValue = result.value(i);
+
+            if (
+                (columnName == QLatin1String("modificationDate")) ||
+                (columnName == QLatin1String("digitizationDate")) ||
+                (columnName == QLatin1String("creationDate"))     ||
+                (columnName == QLatin1String("filedate"))
+               )
+            {
+                varValue = QVariant(toDBbackend.asDBDateTime(varValue.toDateTime()));
+            }
+
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: column: ["
                                         << columnName << "] value ["
-                                        << result.value(i) << "]";
+                                        << varValue << "]";
 
-            tempBindingMap.insert(columnName.insert(0, QLatin1Char(':')), result.value(i));
+            tempBindingMap.insert(columnName.insert(0, QLatin1Char(':')), varValue);
             ++i;
         }
 
