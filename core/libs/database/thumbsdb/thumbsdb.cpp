@@ -295,7 +295,7 @@ BdEngineBackend::QueryState ThumbsDb::insertThumbnail(const ThumbsDbInfo& info, 
     QVariant id;
     BdEngineBackend::QueryState lastQueryState;
     lastQueryState = d->db->execSql(QLatin1String("INSERT INTO Thumbnails (type, modificationDate, orientationHint, data) VALUES (?, ?, ?, ?);"),
-                                    info.type, asDateTimeLocal(info.modificationDate), info.orientationHint, info.data, nullptr, &id);
+                                    info.type, d->db->asDBDateTime(info.modificationDate), info.orientationHint, info.data, nullptr, &id);
 
     if (BdEngineBackend::NoErrors == lastQueryState)
     {
@@ -319,14 +319,14 @@ BdEngineBackend::QueryState ThumbsDb::replaceThumbnail(const ThumbsDbInfo& info)
 {
     return d->db->execSql(QLatin1String("REPLACE INTO Thumbnails (id, type, modificationDate, orientationHint, data) VALUES(?, ?, ?, ?, ?);"),
                           QList<QVariant>() << info.id << info.type
-                                            << asDateTimeLocal(info.modificationDate)
+                                            << d->db->asDBDateTime(info.modificationDate)
                                             << info.orientationHint << info.data);
 }
 
 BdEngineBackend::QueryState ThumbsDb::updateModificationDate(int thumbId, const QDateTime& modificationDate)
 {
     return d->db->execSql(QLatin1String("UPDATE Thumbnails SET modificationDate=? WHERE id=?;"),
-                          asDateTimeLocal(modificationDate), thumbId);
+                          d->db->asDBDateTime(modificationDate), thumbId);
 }
 
 void ThumbsDb::replaceUniqueHash(const QString& oldUniqueHash, int oldFileSize,

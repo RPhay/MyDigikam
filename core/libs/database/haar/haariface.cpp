@@ -139,10 +139,12 @@ bool HaarIface::indexImage(qlonglong imageid)
 
     if (!info.isNull() && info.isVisible())
     {
+        QDateTime modDateTime = SimilarityDbAccess().backend()->asDBDateTime(info.modDateTime());
+
         SimilarityDbAccess().backend()->execSql(QString::fromUtf8("REPLACE INTO ImageHaarMatrix "
                                                                   " (imageid, modificationDate, uniqueHash, matrix) "
                                                                   " VALUES(?, ?, ?, ?);"),
-                                                imageid, asDateTimeLocal(info.modDateTime()), info.uniqueHash(), array);
+                                                imageid, modDateTime, info.uniqueHash(), array);
     }
 
     return true;

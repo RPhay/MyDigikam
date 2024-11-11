@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dbengineactiontype.h"
 
 namespace Digikam
@@ -2032,6 +2033,20 @@ void BdEngineBackend::setForeignKeyChecks(bool check)
         {
             execSql(QLatin1String("SET FOREIGN_KEY_CHECKS=0;"));
         }
+    }
+}
+
+QDateTime BdEngineBackend::asDBDateTime(const QDateTime& dateTime) const
+{
+    Q_D(const BdEngineBackend);
+
+    if (d->parameters.isMySQL())
+    {
+        return asDateTimeUTC(dateTime);
+    }
+    else
+    {
+        return asDateTimeLocal(dateTime);
     }
 }
 

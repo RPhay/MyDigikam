@@ -23,6 +23,7 @@
 #include <QStringList>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QDateTime>
 #include <QRecursiveMutex>
 
 // Local includes
@@ -511,6 +512,13 @@ public:
      * This function depends on the database engine.
      */
     void setForeignKeyChecks(bool check);
+
+    /**
+     * Depending on the database backend return a local or UTC date format.
+     * SQLite: local date format
+     * MySQL:  UTC date format
+     */
+    QDateTime asDBDateTime(const QDateTime& dateTime) const;
 
     /*
         Qt SQL driver supported features
