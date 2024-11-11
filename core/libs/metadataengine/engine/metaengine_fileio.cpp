@@ -191,7 +191,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
 #else
 
-        d->iccProfileBuf() = *image->iccProfile();
+        d->iccProfileBuf() = *(image->iccProfile());
 
 #endif
 

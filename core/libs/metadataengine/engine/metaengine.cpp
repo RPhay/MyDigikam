@@ -299,7 +299,7 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
 #else
 
-        d->iccProfileBuf() = *image->iccProfile();
+        d->iccProfileBuf() = *(image->iccProfile());
 
 #endif
 
