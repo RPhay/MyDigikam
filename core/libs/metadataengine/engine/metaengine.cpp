@@ -293,7 +293,15 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
         // ICC Profile ------------------------------------
 
+#if EXIV2_TEST_VERSION(0,28,0)
+
         d->iccProfileBuf() = image->iccProfile();
+
+#else
+
+        d->iccProfileBuf() = *image->iccProfile();
+
+#endif
 
         return true;
     }

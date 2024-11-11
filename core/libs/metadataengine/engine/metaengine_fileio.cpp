@@ -185,7 +185,15 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         // ICC Profile ------------------------------------
 
+#if EXIV2_TEST_VERSION(0,28,0)
+
         d->iccProfileBuf() = image->iccProfile();
+
+#else
+
+        d->iccProfileBuf() = *image->iccProfile();
+
+#endif
 
         if (s_metaEngineWarnOrError)
         {
