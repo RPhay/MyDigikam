@@ -329,6 +329,8 @@ sudo snap remove gnome-42-2204
 sudo snap remove core20
 sudo snap remove core22
 sudo snap remove bare
+sudo snap remove firmware-updater
+sudo snap remove thunderbird
 sudo snap remove snapd
 sudo snap remove snapd-desktop-integration
 
