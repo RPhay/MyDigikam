@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2024-11-10 14:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -28409,7 +28409,7 @@ msgstr "Schema aanmaken..."
 msgid "Error while creating the database schema."
 msgstr "Fout bij aanmaken van databaseschema. "
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, kde-format
 msgid ""
 "Error while converting the database.\n"

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -27157,7 +27157,7 @@ msgstr ""
 "डाटाबेस बैकएण्ड खोलने में त्रुटि.\n"
 " "
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, fuzzy, kde-format
 msgid ""
 "Error while converting the database.\n"

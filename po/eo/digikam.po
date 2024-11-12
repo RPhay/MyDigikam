@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -28029,7 +28029,7 @@ msgstr "Krei Skemon..."
 msgid "Error while creating the database schema."
 msgstr "Eraro dum kreado de la datumbaza skemo."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, kde-format
 msgid ""
 "Error while converting the database.\n"

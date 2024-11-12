@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -29974,7 +29974,7 @@ msgstr "Kreirajte Shemu..."
 msgid "Error while creating the database schema."
 msgstr "Greška prilikom izrade sheme baze podataka."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, fuzzy, kde-format
 msgid ""
 "Error while converting the database.\n"

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -28469,7 +28469,7 @@ msgstr "Создать схему..."
 msgid "Error while creating the database schema."
 msgstr "Ошибка при создании схемы базы данных."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, kde-format
 msgid ""
 "Error while converting the database.\n"

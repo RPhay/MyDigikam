@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27199,7 +27199,7 @@ msgstr "创建纲目结构..."
 msgid "Error while creating the database schema."
 msgstr "创建数据库纲目结构时出错。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, kde-format
 msgid ""
 "Error while converting the database.\n"
@@ -59426,12 +59426,12 @@ msgstr "已扫描人脸的项目：%1\n"
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
 #, kde-format
 msgid "Faces processed: %1"
-msgstr ""
+msgstr "已处理人脸：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
 #, kde-format
 msgid "Face processed: %1"
-msgstr ""
+msgstr "已处理人脸：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format

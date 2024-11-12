@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-11 01:57+0000\n"
+"POT-Creation-Date: 2024-11-12 01:52+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28558,7 +28558,7 @@ msgstr "បង្កើត​​គំនូរ​បំព្រួញ..."
 msgid "Error while creating the database schema."
 msgstr "កំហុស​ខណៈ​ពេល​បង្កើត​​គំនូរ​បំព្រួញ​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:289
+#: core/libs/database/coredb/coredbcopymanager.cpp:307
 #, fuzzy, kde-format
 msgid ""
 "Error while converting the database.\n"
