@@ -310,7 +310,17 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
             if (
                 data.isNull()         &&
                 readWithExifTool      &&
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
                 !iccProfileBuf().empty()
+
+#else
+
+                (iccProfileBuf().size_ > 0)
+
+#endif
+
                )
             {
                 data = parent->getItemIccProfile();
@@ -516,7 +526,17 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
 
     if (
         !data.isNull()       &&
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
         iccProfileBuf().empty()
+
+#else
+
+        (iccProfileBuf().size_ == 0)
+
+#endif
+
        )
     {
         parent->setItemIccProfile(data);

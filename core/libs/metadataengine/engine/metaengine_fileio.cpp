@@ -185,7 +185,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         // ICC Profile ------------------------------------
 
-#if EXIV2_TEST_VERSION(0,28,0)
+#if EXIV2_TEST_VERSION(0,27,99)
 
         d->iccProfileBuf() = image->iccProfile();
 
@@ -441,10 +441,21 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile) const
 
 #endif // _XMP_SUPPORT_
 
+#if EXIV2_TEST_VERSION(0,27,99)
+
         if (!d->iccProfileBuf().empty())
         {
             targetExv->setIccProfile(Exiv2::DataBuf(d->iccProfileBuf()));
         }
+
+#else
+
+        if (d->iccProfileBuf().size_ > 0)
+        {
+            targetExv->setIccProfile(d->iccProfileBuf());
+        }
+
+#endif
 
         targetExv->writeMetadata();
 
