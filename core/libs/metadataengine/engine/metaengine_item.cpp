@@ -1416,12 +1416,30 @@ QByteArray MetaEngine::getItemIccProfile() const
 
    try
     {
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
         if (d->iccProfileBuf().empty())
+
+#else
+
+        if (d->iccProfileBuf().size_ == 0)
+
+#endif
+
         {
             return QByteArray();
         }
 
+#if EXIV2_TEST_VERSION(0,27,99)
+
         QByteArray iccData((const char*)d->iccProfileBuf().data(), d->iccProfileBuf().size());
+
+#else
+
+        QByteArray iccData((const char*)d->iccProfileBuf().pData_, d->iccProfileBuf().size_);
+
+#endif
 
         return iccData;
     }
