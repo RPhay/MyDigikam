@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 01:52+0000\n"
-"PO-Revision-Date: 2024-10-24 19:17+0200\n"
+"PO-Revision-Date: 2024-11-10 18:38+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -61254,13 +61254,7 @@ msgid "Scan for new items"
 msgstr "Cerca nuovi elementi"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -61271,7 +61265,7 @@ msgstr ""
 "<qt><i>Nota: se attivata, la banca dati principale viene sempre ripulita. "
 "Puoi selezionare per la ripulitura banche dati aggiuntive.<br/> Se selezioni "
 "una delle opzioni sotto riportate, il processo potrebbe durare molto e "
-"bloccare temporaneamente digiKam<br/> affinché non si verifichino danni alle "
+"bloccare temporaneamente digiKam affinché non si verifichino danni alle "
 "banche dati.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
@@ -61360,12 +61354,10 @@ msgid "Faces data management: "
 msgstr "Gestione dei dati dei volti: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Azzera e ricostruisci tutte le informazioni di addestramento"
+msgstr "Ricostruisci tutte le informazioni di addestramento"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -61373,13 +61365,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Questa opzione addestrerà di nuovo il riconoscitore facciale con i volti con "
+"tag della tua libreria."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Pulisci tutti i volti in questa immagine"
+msgstr "Azzera, pulisci tutti i volti e addestra"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -61388,6 +61381,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Questa opzione cancellerà tutti i volti rilevati e con tag, quindi "
+"rianalizzerà le immagini per individuare di nuovo i volti."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -61528,9 +61523,7 @@ msgid "Sync Metadata and Database"
 msgstr "Sincronizza metadati e banca dati"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Attenzione"
 
@@ -61541,6 +61534,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Vuoi davvero eliminare tutti i volti confermati, non confermati e "
+"sconosciuti? Sarà necessario attribuire di nuovo i tag ai volti sconosciuti "
+"prima che i volti possano essere riconosciuti."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -61549,7 +61545,7 @@ msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr ""
-"Tutte le operazioni completate.\n"
+"Tutte le operazioni sono state completate.\n"
 "Durata: %1"
 
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:407
@@ -61787,16 +61783,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Elemento analizzato per i volti: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Volti trovati: %1"
+msgstr "Volti elaborati: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Volto trovato: %1"
+msgstr "Volto elaborato: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -64102,19 +64096,15 @@ msgstr ""
 "alla finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "L'immagine in anteprima viene sempre adattata alla finestra"
+msgstr "L'immagine in anteprima usa l'antialias per ridimensionare"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Deseleziona questa opzione se non vuoi ridimensionare le immagini piccole "
-"alla finestra."
+"Deseleziona questa opzione se non vuoi usare l'antialias per ridimensionare."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -67192,16 +67182,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mappe di pixel con risoluzione High DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "Forza l'uso del software OpenGL per la resa"
+msgstr "Usa il software OpenGL per la resa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Disabilita l'accelerazione hardware OpenCL"
+msgstr "Usa l'accelerazione hardware OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
 #, kde-format
@@ -67209,6 +67197,8 @@ msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Questa opzione è ancora sperimentale e richiede anche che certe variabili "
+"d'ambiente siano impostate manualmente."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
@@ -67216,10 +67206,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "Correggi il problema di decodifica video AMD-GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Motore di decodifica utilizzato per il video:"
+msgstr "Motore di decodifica per la resa video:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -67232,16 +67221,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (sistema)"
+msgstr "WMF (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (sistema)"
+msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -67249,8 +67236,7 @@ msgid "Enable internal debug logging"
 msgstr "Abilita il registro del debug interno"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
 msgstr "Scarica i dati degli eseguibili richiesti..."
 
