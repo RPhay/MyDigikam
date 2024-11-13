@@ -310,47 +310,4 @@ sudo apt remove -y libqt6core
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
 
-echo "Remove SNAP and install Native Firefox package"
-echo "-------------------------------------------------------------------"
 
-sudo snap list
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket
-sudo systemctl disable snapd.seeded.service
-
-sudo snap remove firefox
-sudo snap remove thunderbird
-sudo snap remove snap-store
-sudo snap remove gtk-common-themes
-
-sudo snap remove gnome-3-38-2004
-sudo snap remove gnome-32-2204
-sudo snap remove gnome-42-2204
-sudo snap remove core20
-sudo snap remove core22
-sudo snap remove bare
-sudo snap remove firmware-updater
-sudo snap remove thunderbird
-sudo snap remove snapd
-sudo snap remove snapd-desktop-integration
-
-sudo rm -rf /var/cache/snapd/
-sudo apt autoremove --purge snapd
-rm -rf ~/snap
-
-sudo tee /etc/apt/preferences.d/firefox-no-snap << EOF
-Package: firefox*
-Pin: release o=Ubuntu*
-Pin-Priority: -1
-EOF
-
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:mozillateam/ppa
-
-sudo apt install firefox
-
-# Reinstall Plasma Discover without snapd dependency for the system update notifications.
-
-sudo apt install plasma-discover snapd-
-sudo apt --fix-broken install
-sudo apt install plasma-discover-notifier
