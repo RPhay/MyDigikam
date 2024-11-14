@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 01:52+0000\n"
-"PO-Revision-Date: 2024-11-08 20:08+0100\n"
+"PO-Revision-Date: 2024-11-12 15:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -29122,7 +29122,7 @@ msgstr "S'ha produït un error"
 #: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
-msgstr "S'està preparant l'escaneig de la col·lecció…"
+msgstr "S'està preparant l'exploració de la col·lecció…"
 
 #: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
@@ -61791,16 +61791,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Element explorat buscant cares: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Cares trobades: %1"
+msgstr "Cares processades: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Cara trobada: %1"
+msgstr "Cara processada: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -67900,7 +67898,7 @@ msgstr ""
 "En Windows, els camins de busca predeterminats inclouen <ul><li>%1/Windows/"
 "System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
 "li><li>%2/Windows/Color/</li></ul>Actualment estos camins existixen al "
-"vostre sistema i s'han escanejat:<ul><li>%3</li></ul>"
+"vostre sistema i s'han explorat:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:874
 #, kde-format
@@ -67917,7 +67915,7 @@ msgstr ""
 "Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
 "Contents/Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</"
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment estos "
-"camins existixen al vostre sistema i s'han escanejat:<ul><li>%2</li></ul>"
+"camins existixen al vostre sistema i s'han explorat:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:893
 #, kde-format
@@ -67930,7 +67928,7 @@ msgstr ""
 "En Linux, els camins de busca predeterminats inclouen <ul><li>/usr/share/"
 "color/icc</li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/"
 "icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment "
-"estos camins existixen al vostre sistema i s'han escanejat:<ul><li>%1</li></"
+"estos camins existixen al vostre sistema i s'han explorat:<ul><li>%1</li></"
 "ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:51
