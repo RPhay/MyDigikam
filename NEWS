@@ -191,7 +191,7 @@ BUGFIXES:
 166 ==> 495944 - Righclick -> scan for faces on a single picture is not the same as rightclick -> scan for faces on a folder.
 167 ==> 496047 - There appears to be no way of adding, deleting or editing items in the "Open with" context menu.
 168 ==> 496148 - Build failed with : metaengine.cpp.
-169 ==> 
+169 ==> 496131 - Face Tagging multiple incorrectly suggested unconfirmed faces do not move to the corrected person.
 170 ==> 
 171 ==> 
 172 ==> 
