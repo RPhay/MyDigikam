@@ -436,17 +436,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        int newTagId = tagId;
-
-        if ((infos.size() > 1)                            &&
-            (faces[i].tagId() != newTagId)                &&
-            !FaceTags::isSystemPersonTagId(faces[i].tagId())
-           )
-        {
-            newTagId = faces[i].tagId();
-        }
-
-        d->editPipeline.confirm(infos[i], faces[i], newTagId);
+        d->editPipeline.confirm(infos[i], faces[i], tagId);
     }
 
     imageAlbumModel()->removeIndexes(sourceIndexes);
