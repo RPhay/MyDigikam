@@ -8,7 +8,7 @@ Bundles:         Update to last ExifTool version 12.99.
 Bundles:         AppImage are now based on Qt framework 6.7.3 and KDE framework 6.7.0.
 Bundles:         Windows installer are now based on KDE framework 6.7.0.
 Bundles:         New MacOS Silicon (arm64) package based on Qt6 framework 6.7.2,
-                 KDE framework 6.7.0, and ffmpeg 6.1.
+                 KDE framework 6.7.0, and FFmpeg 6.1.
 
 Database:        Update to new unique file hash V3 added.
 RawEngine:       Update internal libraw to last 20240910 upstream.
@@ -190,8 +190,5 @@ BUGFIXES:
 165 ==> 496005 - Buttons overlap in geolocation correlator menu.
 166 ==> 495944 - Righclick -> scan for faces on a single picture is not the same as rightclick -> scan for faces on a folder.
 167 ==> 496047 - There appears to be no way of adding, deleting or editing items in the "Open with" context menu.
-168 ==> 496148 - Build failed with : metaengine.cpp.
+168 ==> 496148 - Build failed with metaengine.cpp.
 169 ==> 496131 - Face Tagging multiple incorrectly suggested unconfirmed faces do not move to the corrected person.
-170 ==> 
-171 ==> 
-172 ==> 
