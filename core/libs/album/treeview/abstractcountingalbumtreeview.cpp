@@ -57,6 +57,26 @@ void AbstractCountingAlbumTreeView::setAlbumModel(AbstractCountingAlbumModel* co
     {
         setShowCountFromSettings();
     }
+
+    if (m_albumModel && m_albumFilterModel)
+    {
+        connect(static_cast<AbstractCountingAlbumModel*>(m_albumModel), &AbstractCountingAlbumModel::updateVisualAlbumCount,
+                this, [this](const QModelIndex& index)
+            {
+               QModelIndex source = m_albumFilterModel->mapFromSourceAlbumModel(index);
+
+               if (source.isValid())
+               {
+                   QRect rect = visualRect(source);
+
+                   if (rect.isValid())
+                   {
+                        viewport()->update(rect);
+                   }
+               }
+            }
+        );
+    }
 }
 
 void AbstractCountingAlbumTreeView::setAlbumFilterModel(AlbumFilterModel* const filterModel)

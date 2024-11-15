@@ -285,6 +285,10 @@ public:
      */
     virtual int albumCount(Album* album)    const;
 
+Q_SIGNALS:
+
+    void updateVisualAlbumCount(const QModelIndex& index);
+
 protected:
 
     /**

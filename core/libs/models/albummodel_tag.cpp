@@ -147,7 +147,7 @@ void TagModel::activateFaceTagModel()
                     continue;
                 }
 
-                Q_EMIT dataChanged(index, index);
+                Q_EMIT updateVisualAlbumCount(index);
             }
         }
     );

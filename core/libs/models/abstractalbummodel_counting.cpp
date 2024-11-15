@@ -152,7 +152,7 @@ void AbstractCountingAlbumModel::updateCount(Album* const album)
 
         if (index.isValid())
         {
-            Q_EMIT dataChanged(index, index);
+            Q_EMIT updateVisualAlbumCount(index);
         }
     }
 }
@@ -193,7 +193,7 @@ void AbstractCountingAlbumModel::setCount(Album* album, int count)
 
     if (changed)
     {
-        Q_EMIT dataChanged(index, index);
+        Q_EMIT updateVisualAlbumCount(index);
     }
 }
 
