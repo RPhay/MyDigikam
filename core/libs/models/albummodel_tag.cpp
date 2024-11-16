@@ -133,21 +133,7 @@ void TagModel::activateFaceTagModel()
 
             for (int id : std::as_const(toUpdatedFaces))
             {
-                Album* const album = albumForId(id);
-
-                if (!album)
-                {
-                    continue;
-                }
-
-                QModelIndex index = indexForAlbum(album);
-
-                if (!index.isValid())
-                {
-                    continue;
-                }
-
-                Q_EMIT updateVisualAlbumCount(index);
+                Q_EMIT signalUpdateAlbumCount(albumForId(id));
             }
         }
     );
