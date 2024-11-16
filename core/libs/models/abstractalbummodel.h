@@ -287,7 +287,7 @@ public:
 
 Q_SIGNALS:
 
-    void updateVisualAlbumCount(const QModelIndex& index);
+    void signalUpdateAlbumCount(Album* album);
 
 protected:
 
