@@ -303,7 +303,7 @@ bool StayPoppedUpComboBox::eventFilter(QObject* o, QEvent* e)
             {
                 QMouseEvent* m = static_cast<QMouseEvent*>(e);
 
-                if (m_view->isVisible() && m_view->rect().contains(m->position().toPoint()))
+                if (m_view->isVisible() && m_view->rect().contains(m->pos()))
                 {
                     if (o == m_view)
                     {
