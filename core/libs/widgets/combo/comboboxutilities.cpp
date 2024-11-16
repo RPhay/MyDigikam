@@ -273,11 +273,37 @@ bool StayPoppedUpComboBox::eventFilter(QObject* o, QEvent* e)
     {
         switch (e->type())
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
+
+            case QEvent::MouseButtonPress:
+            {
+                QMouseEvent* m = static_cast<QMouseEvent*>(e);
+
+                if (m_view->isVisible() && m_view->rect().contains(m->position().toPoint()))
+                {
+                    if ((o == m_view->viewport()) && (m->button() == Qt::RightButton))
+                    {
+                        QContextMenuEvent contextMenu(QContextMenuEvent::Mouse,
+                                                      m->position().toPoint(),
+                                                      m->globalPosition().toPoint());
+
+                        sendViewportEventToView(&contextMenu);
+
+                        return true;
+                    }
+                }
+
+                break;
+            }
+
+#endif
+
             case QEvent::MouseButtonRelease:
             {
                 QMouseEvent* m = static_cast<QMouseEvent*>(e);
 
-                if (m_view->isVisible() && m_view->rect().contains(m->pos()))
+                if (m_view->isVisible() && m_view->rect().contains(m->position().toPoint()))
                 {
                     if (o == m_view)
                     {
