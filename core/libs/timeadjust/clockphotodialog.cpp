@@ -39,6 +39,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dmetadata.h"
 #include "imagedialog.h"
 #include "timeadjustcontainer.h"
@@ -251,7 +252,7 @@ void ClockPhotoDialog::slotOk()
 
     // Determine the number of seconds between the dates.
 
-    int delta = d->photoDateTime.secsTo(d->calendar->dateTime());
+    int delta = d->photoDateTime.secsTo(asDateTimeUTC(d->calendar->dateTime()));
 
     // If the photo datetime is newer than the user datetime, it results in subtraction.
 
