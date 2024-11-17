@@ -74,6 +74,8 @@ public:
 
 public:
 
+    int                  extensionsMsgBoxResult     = QMessageBox::Help;
+
     bool                 exifAutoRotateOriginal     = false;
     bool                 exifAutoRotateShowedInfo   = false;
     bool                 sidecarFileNameShowedInfo  = false;

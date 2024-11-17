@@ -79,6 +79,7 @@ private Q_SLOTS:
     void slotWriteWithExifToolToggled(bool);
     void slotExifToolSettingsChanged(bool);
     void slotWriteRawFilesToggled(bool);
+    void slotExtensionsEdited(const QString& text);
 
 private:
 

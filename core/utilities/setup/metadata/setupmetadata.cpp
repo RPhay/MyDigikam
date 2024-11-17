@@ -91,6 +91,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarReadWriteToggled()));
 
+    connect(d->extensionsEdit, SIGNAL(textEdited(QString)),
+            this, SLOT(slotExtensionsEdited(QString)));
+
     // --------------------------------------------------------
 
     QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
@@ -184,29 +187,8 @@ void SetupMetadata::applySettings()
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
 
     set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
-
-    // Check sidecar extensions for forbidden RAW extensions
-
-    if (!set.sidecarExtensions.isEmpty())
-    {
-        QList<QString> rawList   = s_rawFileExtensionsdWithDesc().keys();
-        rawList << QLatin1String("xmp");
-        QStringList::iterator it = set.sidecarExtensions.begin();
-
-        for ( ; it != set.sidecarExtensions.end() ; )
-        {
-            if (rawList.contains((*it).toLower()))
-            {
-                it = set.sidecarExtensions.erase(it);
-            }
-            else
-            {
-                ++it;
-            }
-        }
-
-        set.sidecarExtensions.removeDuplicates();
-    }
+    set.sidecarExtensions.removeAll(QLatin1String("xmp"));
+    set.sidecarExtensions.removeDuplicates();
 
     set.exifToolPath          = d->exifToolView->exifToolDirectory();
 
@@ -336,6 +318,53 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
         }
 
         d->writeRawFilesBox->setChecked(false);
+    }
+}
+
+void SetupMetadata::slotExtensionsEdited(const QString& text)
+{
+    // Check sidecar extensions for forbidden RAW extensions
+
+    if (!text.isEmpty())
+    {
+        QList<QString> rawList   = s_rawFileExtensionsdWithDesc().keys();
+        QStringList extensions   = cleanUserFilterString(text, true);
+        QStringList::iterator it = extensions.begin();
+
+        for ( ; it != extensions.end() ; )
+        {
+            if (rawList.contains((*it).toLower()))
+            {
+                if (d->extensionsMsgBoxResult == QMessageBox::Help)
+                {
+                    QApplication::beep();
+
+                    QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
+                                                                   qApp->applicationName(),
+                                                                   i18nc("@info",
+                                                                   "A RAW file extension has been added to the list of "
+                                                                   "supported sidecars. There is a risk of accidentally "
+                                                                   "deleting RAW images. Are you sure you want to do that?"),
+                                                                   QMessageBox::Yes | QMessageBox::No, this);
+
+                    msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Yes I Understand"));
+                    msgBox->setDefaultButton(QMessageBox::No);
+
+                    d->extensionsMsgBoxResult = msgBox->exec();
+                    delete msgBox;
+                }
+
+                if (d->extensionsMsgBoxResult == QMessageBox::No)
+                {
+                    it = extensions.erase(it);
+                    d->extensionsEdit->setText(extensions.join(QLatin1Char(' ')));
+
+                    continue;
+                }
+            }
+
+            ++it;
+        }
     }
 }
 
