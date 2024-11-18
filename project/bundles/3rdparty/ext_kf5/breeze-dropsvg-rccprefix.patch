@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 10164bc0..cd87e790 100644
+index ee785bbd..cc871049 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -71,6 +71,13 @@ function(generate_binary_resource target outfile)
+@@ -72,6 +72,13 @@ function(generate_binary_resource target outfile)
      set(RESOURCES_WORKING_DIR ${CMAKE_CURRENT_BINARY_DIR}/res)
      set(RESOURCE_FILE ${RESOURCES_WORKING_DIR}/breeze-${target}.qrc)
      set(BINARY_RESOURCE_FILE ${CMAKE_CURRENT_BINARY_DIR}/breeze-${target}.rcc)
@@ -16,7 +16,7 @@ index 10164bc0..cd87e790 100644
  
      # Use $<IF:$<BOOL:${MSVC}>,PATH,LD_LIBRARY_PATH> instead of ${pathVarName} once CMake 3.8 is minimum
      if(MSVC)
-@@ -102,6 +109,7 @@ function(generate_binary_resource target outfile)
+@@ -103,6 +110,7 @@ function(generate_binary_resource target outfile)
      add_custom_command(OUTPUT ${BINARY_RESOURCE_FILE}
          COMMAND ${QT_RCC_EXECUTABLE} --binary
                      -o ${BINARY_RESOURCE_FILE}
@@ -25,10 +25,10 @@ index 10164bc0..cd87e790 100644
          DEPENDS ${RESOURCE_FILE}
          WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 diff --git a/icons/apps/48/digikam.svg b/icons/apps/48/digikam.svg
-index 63796ad9..3e770fd9 100644
+index 63796ad9..efd6f202 100644
 --- a/icons/apps/48/digikam.svg
 +++ b/icons/apps/48/digikam.svg
-@@ -1,42 +1,744 @@
+@@ -1,42 +1,742 @@
 -<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
 - <defs>
 -  <linearGradient spreadMethod="reflect" id="a" x1="428.57" x2="408.57" gradientUnits="userSpaceOnUse">
@@ -69,7 +69,7 @@ index 63796ad9..3e770fd9 100644
 +   width="128"
 +   height="128"
 +   id="svg2"
-+   sodipodi:docname="digikam.svg"
++   sodipodi:docname="logo-digikam.svg"
 +   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
 +   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 +   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -90,7 +90,7 @@ index 63796ad9..3e770fd9 100644
 +     inkscape:deskcolor="#d1d1d1"
 +     showgrid="false"
 +     inkscape:zoom="1.84375"
-+     inkscape:cx="64"
++     inkscape:cx="47.728814"
 +     inkscape:cy="64"
 +     inkscape:window-width="1444"
 +     inkscape:window-height="898"
@@ -811,10 +811,10 @@ index 63796ad9..3e770fd9 100644
 - </g>
  </svg>
 diff --git a/icons/apps/48/showfoto.svg b/icons/apps/48/showfoto.svg
-index 81645795..41d38e82 100644
+index 81645795..38f903cc 100644
 --- a/icons/apps/48/showfoto.svg
 +++ b/icons/apps/48/showfoto.svg
-@@ -1,42 +1,740 @@
+@@ -1,42 +1,738 @@
 -<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
 - <defs>
 -  <linearGradient spreadMethod="reflect" id="a" x1="428.57" x2="408.57" gradientUnits="userSpaceOnUse">
@@ -855,7 +855,7 @@ index 81645795..41d38e82 100644
 +   width="128"
 +   height="128"
 +   id="svg2"
-+   sodipodi:docname="showfoto.svg"
++   sodipodi:docname="logo-showfoto.svg"
 +   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
 +   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 +   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -866,7 +866,7 @@ index 81645795..41d38e82 100644
 +   xmlns:cc="http://creativecommons.org/ns#"
 +   xmlns:dc="http://purl.org/dc/elements/1.1/">
 +  <sodipodi:namedview
-+     id="namedview482"
++     id="namedview143"
 +     pagecolor="#ffffff"
 +     bordercolor="#000000"
 +     borderopacity="0.25"
@@ -876,7 +876,7 @@ index 81645795..41d38e82 100644
 +     inkscape:deskcolor="#d1d1d1"
 +     showgrid="false"
 +     inkscape:zoom="1.84375"
-+     inkscape:cx="64"
++     inkscape:cx="47.728814"
 +     inkscape:cy="64"
 +     inkscape:window-width="1444"
 +     inkscape:window-height="898"
