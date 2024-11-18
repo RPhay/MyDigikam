@@ -78,7 +78,6 @@ int ItemSortCollator::itemCompare(const QString& a, const QString& b,
 {
     if (natural)
     {
-
         // Check if version string is included, this is
         // faster than always using QRegularExpression.
 
