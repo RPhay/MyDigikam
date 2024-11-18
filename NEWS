@@ -15,7 +15,7 @@ BUGFIXES:
 006 ==> 496378 - No Scanning of Collections/Albums Happen.
 007 ==> 496436 - Improvement in Miscellaneous settings.
 008 ==> 496340 - Missing Context Menu on edit advanced search.
-009 ==>
+009 ==> 496427 - After updating from 8.4.0 to 8.5.0 digiKam there is only a white screen on start-up.
 010 ==>
 011 ==>
 012 ==>
