@@ -131,9 +131,10 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
-    d->filesDownloadButton    = new QPushButton(i18n("Download Required Binary Data..."), this);
+
+    QLabel* const filesLabel  = new QLabel(i18n("Download required binary data:"), this);
+    d->filesDownloadButton    = new QPushButton(i18n("Open Download Dialog..."), this);
     d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
-    d->filesDownloadButton->setIconSize(QSize(32, 32));
 
     // Proxy Settings
 
@@ -180,7 +181,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 2);
-    layout->addWidget(d->filesDownloadButton,    row++, 0, 1, 2);
+    layout->addWidget(filesLabel,                row,   0, 1, 1);
+    layout->addWidget(d->filesDownloadButton,    row++, 1, 1, 1);
     layout->addWidget(proxySettings,             row++, 0, 1, 2);
     layout->addWidget(systemNote,                row++, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
