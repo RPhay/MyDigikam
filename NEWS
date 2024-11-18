@@ -12,7 +12,7 @@ BUGFIXES:
 003 ==> 496389 - Tool to determin time difference from clock photo show diffent timestamp.
 004 ==> 496381 - Possibility to compile MacOS-x86_64 against Qt6?
 005 ==> 496395 - Check for New Version.
-006 ==>
+006 ==> 496378 - No Scanning of Collections/Albums Happen.
 007 ==>
 008 ==>
 009 ==>
