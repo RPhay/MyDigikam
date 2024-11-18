@@ -34,11 +34,12 @@ public:
     {
         itemCollator.setNumericMode(true);
         albumCollator.setNumericMode(true);
+        itemCollator.setIgnorePunctuation(false);
         albumCollator.setIgnorePunctuation(false);
     }
 
     const QString            versionStr     = QLatin1String("_v");
-    const QRegularExpression versionExp     = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(.+)?")));
+    const QRegularExpression versionExp     = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(\\..+)?")));
 
     QCollator                itemCollator;
     QCollator                albumCollator;
@@ -77,21 +78,34 @@ int ItemSortCollator::itemCompare(const QString& a, const QString& b,
 {
     if (natural)
     {
-        bool hasVersion = false;
 
         // Check if version string is included, this is
         // faster than always using QRegularExpression.
 
+        d->itemCollator.setCaseSensitivity(caseSensitive);
+
         if (a.contains(d->versionStr) || b.contains(d->versionStr))
         {
-            hasVersion = (
-                          d->versionExp.match(a).hasMatch() ||
-                          d->versionExp.match(b).hasMatch()
-                         );
-        }
+            QString aa = a;
+            QString bb = b;
 
-        d->itemCollator.setCaseSensitivity(caseSensitive);
-        d->itemCollator.setIgnorePunctuation(hasVersion);
+            QRegularExpressionMatch aMatch = d->versionExp.match(a);
+            QRegularExpressionMatch bMatch = d->versionExp.match(b);
+
+            if (aMatch.hasMatch())
+            {
+                aa = aMatch.captured(1) + QLatin1String("@@") +
+                     aMatch.captured(2) + aMatch.captured(3);
+            }
+
+            if (bMatch.hasMatch())
+            {
+                bb = bMatch.captured(1) + QLatin1String("@@") +
+                     bMatch.captured(2) + bMatch.captured(3);
+            }
+
+            return d->itemCollator.compare(aa, bb);
+        }
 
         return d->itemCollator.compare(a, b);
     }
