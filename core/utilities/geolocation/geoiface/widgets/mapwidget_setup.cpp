@@ -512,7 +512,7 @@ void MapWidget::createActions()
     d->actionIncreaseThumbnailSize->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
     d->actionIncreaseThumbnailSize->setToolTip(i18n("Increase the thumbnail size on the map"));
     d->actionDecreaseThumbnailSize = new QAction(this);
-    d->actionDecreaseThumbnailSize->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
+    d->actionDecreaseThumbnailSize->setIcon(QIcon::fromTheme(QLatin1String("spinbox-decrease")));
     d->actionDecreaseThumbnailSize->setToolTip(i18n("Decrease the thumbnail size on the map"));
 
     d->actionRemoveCurrentRegionSelection = new QAction(this);

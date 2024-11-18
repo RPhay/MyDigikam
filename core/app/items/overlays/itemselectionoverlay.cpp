@@ -39,7 +39,7 @@ QSize ItemSelectionOverlayButton::sizeHint() const
 
 QIcon ItemSelectionOverlayButton::icon()
 {
-    return QIcon::fromTheme(isChecked() ? QLatin1String("list-remove")
+    return QIcon::fromTheme(isChecked() ? QLatin1String("spinbox-decrease")
                                         : QLatin1String("list-add"));
 }
 
