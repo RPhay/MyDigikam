@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -40557,18 +40557,18 @@ msgstr "Nie udało się przygotować bazy danych miniatur"
 msgid "Error message: %1"
 msgstr "Opis błędu: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Określ różnicę czasu na podstawie czasu na zdjęciu"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Wczytaj inne zdjęcie"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40581,17 +40581,17 @@ msgstr ""
 "wyświetlanego (daty i) czasu. Różnica twojego wewnętrznego zegara aparatu "
 "zostanie określona z tego ustawienia."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Nie można wczytać <br/>obrazu %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Data i czas zegara:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Wybierz obraz do wydobycia czasu zdjęcia"
@@ -65626,7 +65626,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Rozszerzone"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65642,7 +65642,7 @@ msgstr ""
 "plik przyboczny nie może już być niepowtarzalnie przypisany i zostanie użyty "
 "do obu obrazów, co może prowadzić do kłopotów z metadanymi,"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65652,7 +65652,7 @@ msgstr ""
 "Wyłączenie samo-obracania exif z pewnością wyświetli twoje obrazy w złym "
 "kierunku, więc wyłącz tę opcję tylko wtedy, gdy na pewno tego potrzebujesz."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65670,17 +65670,27 @@ msgstr ""
 "Jeśli tak postanowisz, to upewnij się, że masz kopie zapasowe swoich plików "
 "RAW.Zalecamy, aby nie włączać tej opcji."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Tak, rozumiem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr "Czy chcesz wyłączyć zapisywanie metadanych do plików RAW?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format

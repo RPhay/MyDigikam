@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
-"PO-Revision-Date: 2024-11-06 09:41+0000\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"PO-Revision-Date: 2024-11-17 11:43+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -40331,18 +40331,18 @@ msgstr "Mistókst að ræsa gagnagrunn smámynda"
 msgid "Error message: %1"
 msgstr "Villukóði: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Ákvarða tímamismun miðað við klukku á mynd"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Hlaða inn annarri mynd"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40355,17 +40355,17 @@ msgstr ""
 "dagsetningu). Þannig verður hægt að ákvarða misræmi í innri klukku "
 "myndavélarinnar frá rauntíma þegar myndin var tekin."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Gat ekki hlaðið inn<br>myndinni %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Dagsetning og tími klukkunnar:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Veldu ljósmynd sem inniheldur mynd af klukku"
@@ -61073,16 +61073,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Leitað í atriði að andlitum: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Andlit fundust: %1"
+msgstr "Andlit meðhöndluð: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Andlit fannst: %1"
+msgstr "Andlit meðhöndlað: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -65263,7 +65261,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Ítarlegra"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65280,7 +65278,7 @@ msgstr ""
 "mynd, hún verður því notuð fyrir báðar myndirnar, sem getur leitt til "
 "vandamála með lýsigögn."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65291,7 +65289,7 @@ msgstr ""
 "að margar myndir birtast með rangri stefnu, þannig að þú ættir ekki að gera "
 "það án þess að sérstakar ástæður liggi að baki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65309,17 +65307,27 @@ msgstr ""
 "Ef þú ákveður að gera þetta, skaltu taka öryggisafrit af RAW-skránum þínum. "
 "Við mælum eindregið gegn því að þú gerir þetta virkt."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Jú, ég skil"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr "Þú myndir frekar gera óvirkt að skrifa lýsigögn í RAW-skrár?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -66369,28 +66377,23 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "Þvinga notkun á hugbúnaðar-OpenGL til myndgerðar"
+msgstr "Nota hugbúnaðar-OpenGL til myndgerðar"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Try with OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Prófa með OpenCL-vélbúnaðarhröðun"
+msgstr "Nota OpenCL-vélbúnaðarhröðun"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and has no function. It also requires "
-#| "that certain environment variables are set manual."
+#, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
-"Þessi valkostur er enn á tilraunastigi og hefur ekkert hlutverk. Hann krefs "
-"líka að ýmsar umhverfisbreytur séu handstilltar."
+"Þessi valkostur er enn á tilraunastigi og krefst líka að ýmsar "
+"umhverfisbreytur séu handstilltar."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
@@ -66398,10 +66401,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "Lagað vandamál í myndmerkiskóðun AMD-GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Bakendi notaður fyrir afkóðun myndmerkis:"
+msgstr "Bakendi fyrir afkóðun myndmerkis:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -66414,16 +66416,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (kerfis)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (kerfi)"
+msgstr "WMF (kerfis)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (kerfi)"
+msgstr "AVFoundation (kerfis)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -66431,10 +66431,9 @@ msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
-msgstr "Sæki nauðsynleg tvíundakerfisgögn..."
+msgstr "Sækja nauðsynleg tvíundakerfisgögn..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:151
 #, kde-format

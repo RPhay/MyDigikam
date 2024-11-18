@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -38858,18 +38858,18 @@ msgstr "डाटाबेस में टैग जोड़ने में �
 msgid "Error message: %1"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -38878,18 +38878,18 @@ msgid ""
 "from this setting."
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, fuzzy, kde-format
 #| msgid "Creation date and time"
 msgid "The clock date and time:"
 msgstr "तैयार करने की तारीख़ और समय"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, fuzzy, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "छवियाँ सहेजें"
@@ -64083,7 +64083,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "विस्तृत"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64094,7 +64094,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64102,7 +64102,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64114,17 +64114,27 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, fuzzy, kde-format

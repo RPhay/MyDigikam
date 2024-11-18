@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
 "PO-Revision-Date: 2024-11-10 07:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -40507,18 +40507,18 @@ msgstr "Ni bilo mogoče nastaviti začetnih vrednosti podatkovne zbirke sličic"
 msgid "Error message: %1"
 msgstr "Sporočilo o napaki: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Določanje časovne razlike s Clock Photo"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Naloži drugo fotografijo"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40530,18 +40530,18 @@ msgstr ""
 "jo lahko naložite sem in nastavite kazalnik na prikazan (datum in) čas. "
 "Razlika v uri vaše notranje ure kamere bo določena iz te nastavitve."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 "<font color=\"red\"><b>Ni bilo mogoče naložiti<br/>slike %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Datum in čas:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Izberite sliko za izvleček slike z uro"
@@ -65505,7 +65505,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65521,7 +65521,7 @@ msgstr ""
 "datoteka ni več edinstveno dodeljena in se bo uporabljala za obe sliki, kar "
 "lahko povzroča težave z metapodatki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65532,7 +65532,7 @@ msgstr ""
 "vaše slike prikazane napačno, zato to možnost izklopite le, če to nujno "
 "potrebno."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65550,18 +65550,28 @@ msgstr ""
 "Če se že za to odločite, naredite vsaj varnostno kopijo surovih datotek "
 "slik. Močno vam priporočamo, da te možnosti ne omogočite."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Da, razumem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr ""
 "Ali ne bi raje onemogočili pisanje metapodatkov v surove (RAW) datoteke?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format

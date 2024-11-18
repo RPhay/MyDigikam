@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
 "PO-Revision-Date: 2024-10-07 01:50+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -40646,18 +40646,18 @@ msgstr "Non foi posíbel inicializar a base de datos de miniaturas."
 msgid "Error message: %1"
 msgstr "Mensaxe de erro: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Determinar a diferenza temporal cunha foto de reloxo"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Cargar unha foto distinta"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40669,17 +40669,17 @@ msgstr ""
 "pódea cargar e configurar o indicador para a (data e) hora que indica. A "
 "diferenza do reloxo interno da cámara determínase a partir desta opción."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Non se puido cargar<br/>a imaxe %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "A data e hora do reloxo:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Escolla a imaxe para extraer a foto de reloxo"
@@ -65755,7 +65755,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65771,7 +65771,7 @@ msgstr ""
 "asignarse de maneira única e usarase para as dúas imaxes, o que pode causar "
 "problemas de metadatos."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65782,7 +65782,7 @@ msgstr ""
 "probabelmente nunha orientación incorrecta, así que só debería cambiar esta "
 "opción se sabe o que fai."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65800,17 +65800,27 @@ msgstr ""
 "Se decide facelo, faga unha salvagarda dos seus ficheiros RAW. Recomendamos "
 "encarecidamente que non active esta opción."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Enténdoo"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr "Preferiría desactivar a escritura de metadatos nos ficheiros RAW?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format

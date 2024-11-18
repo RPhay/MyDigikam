@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
-"PO-Revision-Date: 2024-10-29 21:40+0100\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"PO-Revision-Date: 2024-11-17 21:11+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -40836,18 +40836,18 @@ msgstr "Не успя да се инициализира базата данни
 msgid "Error message: %1"
 msgstr "Съобщение за грешка: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Определяне на часовата разлика със снимка на часовник"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Зареждане на друга снимка"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40860,18 +40860,18 @@ msgstr ""
 "показаните (дата и) час. Разликата на вътрешния часовник на фотоапарата ще "
 "бъде определена от тази настройка."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 "<font color=\"red\"><b>Не можа да се зареди<br/>изображение %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Дата и час на часовника:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Изберете изображение за извличане на снимка на часовник"
@@ -61220,13 +61220,7 @@ msgid "Scan for new items"
 msgstr "Сканиране за нови елементи"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -61325,12 +61319,10 @@ msgid "Faces data management: "
 msgstr "Управление на данните за лица: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Изчистване и възстановяване на всички данни за обучение"
+msgstr "Възстановяване на всички данни за обучение"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -61338,13 +61330,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Това ще обучи отново модула за разпознаване на лица с маркирани лица във "
+"вашата библиотека."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Изчистване на всички лица в това изображение"
+msgstr "Нулиране и изчистване на всички лица и обучени елементи"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -61353,6 +61346,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Това ще изчисти всички открити и маркирани лица и след това ще сканира "
+"отново изображенията, за да разпознае лица."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -61492,9 +61487,7 @@ msgid "Sync Metadata and Database"
 msgstr "Синхронизиране на метаданни и база данни"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Предупреждение"
 
@@ -61505,6 +61498,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Сигурни ли сте, че искате да изтриете всички потвърдени, непотвърдени и "
+"непознати лица? Ще трябва да започнете отново да маркирате непознати лица, "
+"преди лицата да могат да бъдат разпознати."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -61750,16 +61746,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Сканирани обекти за лица: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Открити лица: %1"
+msgstr "Обработени лица: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Открити лица: %1"
+msgstr "Обработени лица: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -64056,21 +64050,18 @@ msgstr ""
 "изображения да пасват в прозореца."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
-"Изображението за предварителен преглед винаги се мащабира за да пасне в "
-"прозореца"
+"Преглед на изображението, използване на Anti-aliasing, за увеличаване на "
+"мащаба"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Махнете отметката от тази опция, ако не искате да мащабирате малки "
-"изображения да пасват в прозореца."
+"Премахнете отметката от това, ако не искате да използвате Anti-aliasing за "
+"увеличаване на мащаба."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -66031,7 +66022,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Разширени"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66048,7 +66039,7 @@ msgstr ""
 "ще се използва и за двете изображения, което може да доведе до проблеми с "
 "метаданните."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66059,7 +66050,7 @@ msgstr ""
 "изображенията ви в неправилна ориентация, така че променете тази опция само "
 "ако изрично изисквате това."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66077,17 +66068,27 @@ msgstr ""
 "Ако решите да го направите, направете резервно копие на вашите RAW файлове. "
 "Силно препоръчваме да не включвате тази опция."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Да, разбирам"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr "Предпочитате да забраните записването на метаданни в RAW файлове?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -67161,16 +67162,14 @@ msgstr ""
 "Използване на растерни изображения с висока разделителна способност DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL rendering"
-msgstr "Принудително използване на софтуер за изобразяване OpenGL"
+msgstr "Използване на софтуер за изобразяване OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Деактивиране на хардуерното ускорение с OpenCL"
+msgstr "Използване на хардуерното ускорение с OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:101
 #, kde-format
@@ -67178,6 +67177,8 @@ msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Тази опция все още е експериментална и изисква определени променливи на "
+"средата да бъдат зададени ръчно."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
@@ -67185,10 +67186,9 @@ msgid "Fix AMD-GPU video decoding issue"
 msgstr "Отстраняване на проблем с декодиране на видео с графични карти на AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Използван бекенд за декодиране на видео:"
+msgstr "Бекенд за декодиране на видео:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
@@ -67201,16 +67201,14 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (System)"
+msgstr "WMF (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (System)"
+msgstr "AVFoundation (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -67218,8 +67216,7 @@ msgid "Enable internal debug logging"
 msgstr "Активиране на вътрешно регистриране на грешки"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download Required Binary Data..."
 msgstr "Изтегляне на необходимите двоични данни..."
 

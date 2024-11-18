@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 01:52+0000\n"
-"PO-Revision-Date: 2024-11-11 10:07+0100\n"
+"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"PO-Revision-Date: 2024-11-15 19:40+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -6076,7 +6076,7 @@ msgstr "Correction de l'effet « yeux rouges »"
 msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
 msgstr ""
-"Un outil de détection et de correction automatique de l'effet « Yeux "
+"Un outil de reconnaissance et de correction automatique de l'effet « Yeux "
 "rouges »."
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
@@ -6452,25 +6452,26 @@ msgid ""
 msgstr ""
 "<p><b>YOLOv5 Nano</b> : ce modèle est un réseau neuronal offrant une vitesse "
 "et une efficacité exceptionnelles. Il vous permet d'évaluer rapidement "
-"l'intégration de scénarios de détection d'objets à plus petite échelle. Il "
-"est conçu pour la détection d'objets avec la capacité de reconnaître et "
-"d'extraire l'emplacement d'objets dans une image. Le nombre maximal d'objets "
-"reconnaissables est fixé à 80.</p><p><b>YOLOv5 XLarge</b> : comme le "
-"précédent, ce modèle est un réseau neuronal dédié aux exigences de détection "
-"d'objets plus complexes et présente des capacités remarquables. Malgré la "
-"complexité supplémentaire introduisant plus de temps de latence et la "
-"consommation de plus de ressources informatiques, il doit être utilisé pour "
-"des scénarios de détection d'objets à plus grande échelle, car il fournit "
-"des prédictions plus précises au détriment de la vitesse.</p><p><b>ResNet50</"
-"b> : ce modèle est un type spécifique de réseau neuronal convolutionnel "
-"formé par l'empilement de blocs résiduels. Il est couramment utilisé pour "
-"alimenter les applications de vision par ordinateur pour la détection "
-"d'objets. Ce type de conception permet l'entraînement de réseaux très "
-"profonds sans rencontrer le problème du gradient de fuite. Contrairement au "
-"modèle « YOLO », le modèle « ResNet50 » se concentre principalement sur la "
-"classification des images et ne fournit aucune localisation d'objet. Il peut "
-"reconnaître des objets à partir d'un vaste ensemble de plus de 1000 classes, "
-"couvrant un large éventail d'objets, d'animaux et de scènes. </p>"
+"l'intégration de scénarios de reconnaissance d'objets à plus petite échelle. "
+"Il est conçu pour la reconnaissance d'objets avec la capacité de reconnaître "
+"et d'extraire l'emplacement d'objets dans une image. Le nombre maximal "
+"d'objets reconnaissables est fixé à 80.</p><p><b>YOLOv5 XLarge</b> : comme "
+"le précédent, ce modèle est un réseau neuronal dédié aux exigences de "
+"reconnaissance d'objets plus complexes et présente des capacités "
+"remarquables. Malgré la complexité supplémentaire introduisant plus de temps "
+"de latence et la consommation de plus de ressources informatiques, il doit "
+"être utilisé pour des scénarios de reconnaissance d'objets à plus grande "
+"échelle, car il fournit des prédictions plus précises au détriment de la "
+"vitesse.</p><p><b>ResNet50</b> : ce modèle est un type spécifique de réseau "
+"neuronal convolutionnel formé par l'empilement de blocs résiduels. Il est "
+"couramment utilisé pour alimenter les applications de vision par ordinateur "
+"pour la reconnaissance d'objets. Ce type de conception permet l'entraînement "
+"de réseaux très profonds sans rencontrer le problème du gradient de fuite. "
+"Contrairement au modèle « YOLO », le modèle « ResNet50 » se concentre "
+"principalement sur la classification des images et ne fournit aucune "
+"localisation d'objet. Il peut reconnaître des objets à partir d'un vaste "
+"ensemble de plus de 1000 classes, couvrant un large éventail d'objets, "
+"d'animaux et de scènes. </p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
@@ -13425,7 +13426,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:254
 #, kde-format
 msgid "Sensing method:"
-msgstr "Méthode de détection :"
+msgstr "Méthode de reconnaissance :"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
@@ -18706,7 +18707,7 @@ msgstr "Partager comme flux « MJPEG »…"
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr ""
-"Module de détection d'orientation et de script (Incrustation vidéo) "
+"Module de reconnaissance d'orientation et de script (Incrustation vidéo) "
 "uniquement."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
@@ -35785,8 +35786,8 @@ msgid ""
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 "Détecter si une image possède une valeur esthétique.\n"
-"Le moteur de détection esthétique utilise un modèle d'apprentissage profond "
-"pour classer les images."
+"Le moteur de reconnaissance esthétique utilise un modèle d'apprentissage "
+"profond pour classer les images."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
@@ -41163,18 +41164,18 @@ msgstr "Impossible d'initialiser la base de données de vignettes"
 msgid "Error message: %1"
 msgstr "Message d'erreur : %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:77
+#: core/libs/timeadjust/clockphotodialog.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Déterminer la différence de temps avec ClockPhoto"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:84
+#: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
 msgid "Load different photo"
 msgstr "Charger une photo différente"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:92
+#: core/libs/timeadjust/clockphotodialog.cpp:93
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -41187,18 +41188,18 @@ msgstr ""
 "date et) à l'heure affichée. La différence avec l'horloge interne de votre "
 "appareil photo sera déterminée à partir de ce paramètre."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:166
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 "<font color=\"red\"><b>Impossible de charger<br/> l'image %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:182
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "La date et l'heure de l'horloge : "
 
-#: core/libs/timeadjust/clockphotodialog.cpp:236
+#: core/libs/timeadjust/clockphotodialog.cpp:237
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Sélectionner l'image pour extraire la photo d'horloge"
@@ -43370,7 +43371,7 @@ msgid ""
 msgstr ""
 "Réécriture des algorithmes de tri pour la qualité d'image. Amélioration des "
 "outils d'extraction d'informations sur la mise au point des photos, de "
-"détection de l'esthétique pour trier les images en utilisant un modèle "
+"reconnaissance esthétique pour trier les images en utilisant un modèle "
 "d'apprentissage en profondeur, de diaporamas et de présentations."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:166
@@ -52778,8 +52779,8 @@ msgid ""
 "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
-"Modèle de détection pour identifier les visages.  YuNet est le modèle par "
-"défaut.\n"
+"Modèle de reconnaissance pour identifier les visages.  YuNet est le modèle "
+"par défaut.\n"
 "Celui-ci est plus rapide et plus configurable que SSD et YOLOv3.\n"
 "Remarque : YuNet est uniquement disponible si Digikam est compilé avec "
 "OpenCV en version 4.6.0 ou supérieure."
@@ -52842,22 +52843,23 @@ msgstr ""
 "des visages avec un petit arrière-plan en plus des visages moyens et grands. "
 "La sélection de <b>Petits visages</b> augmente la sensibilité du modèle en "
 "réglant les paramètres du modèle. Il augmentera également la probabilité de "
-"faux positifs et le temps de détection.</p><p>La sélection de <b>Grand</b> "
-"ou <b>Extrêmement grand</b> éliminera de la détection les visages avec un "
-"petit arrière-plan. Elle est beaucoup plus rapide et réduira le nombre de "
-"faux positifs, mais ne détectera pas les petits visages dans l’arrière-plan "
-"ou les visages dans de grandes photos de groupe. </p><p>Si vous voulez "
-"détecter tous les visages en une seule passe, veuillez sélectionner le choix "
-"<b>Extrêmement petit</b> et définir la précision de détection à 2. "
-"Malheureusement, ceci vous donnera un important nombre de faux positifs. Il "
-"est recommandé de définir une précision de détection de 6 à 8 et une taille "
-"de visage <b>Moyen</b> ou <b>Grand</b> pour une utilisation normale. </"
-"p><p>Cette configuration ne s'applique qu'à YuNet.</p>"
+"faux positifs et le temps de reconnaissance.</p><p>La sélection de <b>Grand</"
+"b> ou <b>Extrêmement grand</b> éliminera de la reconnaissance des visages "
+"avec un petit arrière-plan. Elle est beaucoup plus rapide et réduira le "
+"nombre de faux positifs, mais ne détectera pas les petits visages dans "
+"l’arrière-plan ou les visages dans de grandes photos de groupe. </p><p>Si "
+"vous voulez détecter tous les visages en une seule passe, veuillez "
+"sélectionner le choix <b>Extrêmement petit</b> et définir la précision de "
+"reconnaissance à 2. Malheureusement, ceci vous donnera un important nombre "
+"de faux positifs. Il est recommandé de définir une précision de "
+"reconnaissance de 6 à 8 et une taille de visage <b>Moyen</b> ou <b>Grand</b> "
+"pour une utilisation normale. </p><p>Cette configuration ne s'applique qu'à "
+"YuNet.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, kde-format
 msgid "Face Detection Settings"
-msgstr "Configuration pour la détection de visages"
+msgstr "Configuration pour la reconnaissance de visages"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
 #, kde-format
@@ -52907,7 +52909,8 @@ msgid ""
 "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
-"SFace est le modèle de détection par défaut, plus rapide et plus précis.\n"
+"SFace est le modèle de reconnaissance par défaut, plus rapide et plus "
+"précis.\n"
 "OpenFace peut être utilisé pour les bibliothèques plus anciennes.\n"
 "Remarque : SFace n'est disponible que si Digikam est compilé avec OpenCV en "
 "version 4.6.0 ou supérieure."
@@ -52927,7 +52930,7 @@ msgid ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La détection des visages est une tâche consommatrice de temps de "
+"La reconnaissance des visages est une tâche consommatrice de temps de "
 "traitement.\n"
 "Vous pouvez décider d'utiliser ou non tous les cœurs de vos processeurs "
 "présents \n"
@@ -52936,7 +52939,7 @@ msgstr ""
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #, kde-format
 msgid "Face Recognition Settings"
-msgstr "Configuration pour la détection de visages"
+msgstr "Configuration pour la reconnaissance de visages"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
 #, kde-format
@@ -61856,26 +61859,26 @@ msgid ""
 msgstr ""
 "<p><b>YOLOv5 Nano</b> : ce modèle est un réseau de neurones offrant une "
 "vitesse et une efficacité exceptionnelles. Il vous permet d'évaluer "
-"rapidement l'intégration de scénarios de détection d'objets à plus petite "
-"échelle. Il est conçu pour la détection d'objets avec la capacité de "
-"reconnaître et d'extraire l'emplacement d'objets dans une image. Le nombre "
-"maximal d'objets reconnaissables est fixé à 80.</p><p><b>YOLOv5 XLarge</b> : "
-"comme le précédent, ce modèle est un réseau de neurones dédié aux exigences "
-"de détection d'objets plus complexes et présente des capacités remarquables. "
-"Malgré la complexité supplémentaire introduisant plus de temps de latence et "
-"la consommation de plus de ressources informatiques, il doit être utilisé "
-"pour des scénarios de détection d'objets à plus grande échelle, car il "
-"fournit des prédictions plus précises au détriment de la vitesse.</"
-"p><p><b>ResNet50</b> : ce modèle est un type spécifique de réseau de "
-"neurones convolutionnel formé par l'empilement de blocs résiduels. Il est "
-"couramment utilisé pour alimenter les applications de vision par ordinateur "
-"pour la détection d'objets. Ce type de conception permet l'entraînement de "
-"réseaux très profonds sans rencontrer le problème du gradient de fuite. "
-"Contrairement au modèle « YOLO », le modèle « ResNet50 » se concentre "
-"principalement sur la classification des images et ne fournit aucune "
-"localisation d'objet. Il peut reconnaître des objets à partir d'un vaste "
-"ensemble de plus de 1000 classes, couvrant un large éventail d'objets, "
-"d'animaux et de scènes. </p>"
+"rapidement l'intégration de scénarios de reconnaissance d'objets à plus "
+"petite échelle. Il est conçu pour la reconnaissance d'objets avec la "
+"capacité de reconnaître et d'extraire l'emplacement d'objets dans une image. "
+"Le nombre maximal d'objets reconnaissables est fixé à 80.</p><p><b>YOLOv5 "
+"XLarge</b> : comme le précédent, ce modèle est un réseau de neurones dédié "
+"aux exigences de reconnaissance d'objets plus complexes et présente des "
+"capacités remarquables. Malgré la complexité supplémentaire introduisant "
+"plus de temps de latence et la consommation de plus de ressources "
+"informatiques, il doit être utilisé pour des scénarios de reconnaissance "
+"d'objets à plus grande échelle, car il fournit des prédictions plus précises "
+"au détriment de la vitesse.</p><p><b>ResNet50</b> : ce modèle est un type "
+"spécifique de réseau de neurones convolutionnel formé par l'empilement de "
+"blocs résiduels. Il est couramment utilisé pour alimenter les applications "
+"de vision par ordinateur pour la reconnaissance d'objets. Ce type de "
+"conception permet l'entraînement de réseaux très profonds sans rencontrer le "
+"problème du gradient de fuite. Contrairement au modèle « YOLO », le modèle "
+"« ResNet50 » se concentre principalement sur la classification des images et "
+"ne fournit aucune localisation d'objet. Il peut reconnaître des objets à "
+"partir d'un vaste ensemble de plus de 1000 classes, couvrant un large "
+"éventail d'objets, d'animaux et de scènes. </p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:282
 #, kde-format
@@ -65599,7 +65602,7 @@ msgstr "Utiliser la fonctionnalité de reconnaissance faciale"
 #: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr "Utiliser la fonctionnalité de détection d'esthétique"
+msgstr "Utiliser la fonctionnalité de reconnaissance esthétique"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
@@ -66490,7 +66493,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avancé"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66507,7 +66510,7 @@ msgstr ""
 "manière unique et sera utilisé pour les deux images, ce qui peut entraîner "
 "des problèmes de métadonnées."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66518,7 +66521,7 @@ msgstr ""
 "seront probablement affichées avec une mauvaise orientation. Ne changez donc "
 "cette option que si vous en avez explicitement besoin."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66536,19 +66539,29 @@ msgstr ""
 "Si vous choisissez de continuer, veuillez faire une sauvegarde de vos "
 "fichiers bruts. Il est fortement recommandé de ne pas activer cette option."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:298
+#: core/utilities/setup/metadata/setupmetadata.cpp:350
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Oui, je comprends"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:308
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
 msgstr ""
 "Voulez-vous plutôt désactiver l'écriture des métadonnées dans les fichiers "
 "bruts ?"
+
+#: core/utilities/setup/metadata/setupmetadata.cpp:345
+#, kde-format
+msgctxt "@info"
+msgid ""
+"A RAW file extension has been added to the list of supported sidecars. There "
+"is a risk of accidentally deleting RAW images. Are you sure you want to do "
+"that?"
+msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
