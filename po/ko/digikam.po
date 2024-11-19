@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -67640,13 +67640,19 @@ msgstr "다윈 코어"
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
-msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "\"%1\"의 원격 파일 다운로드 중"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "다운로드 대화 상자 여는 중..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

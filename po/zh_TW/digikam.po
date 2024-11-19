@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -65882,13 +65882,19 @@ msgstr "都柏林核心集"
 msgid "Enable internal debug logging"
 msgstr "啟用內部除錯紀錄"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Download required binary data..."
-msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "下載需要的二進制資料..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "正在開啟下載對話框..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

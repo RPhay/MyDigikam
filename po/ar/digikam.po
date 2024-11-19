@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -66612,12 +66612,18 @@ msgstr "لب داروين"
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
-msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "يفتح حواريّ التّنزيل..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

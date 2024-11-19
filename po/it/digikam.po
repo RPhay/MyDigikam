@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2024-11-10 18:38+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -67245,12 +67245,19 @@ msgstr "AVFoundation (sistema)"
 msgid "Enable internal debug logging"
 msgstr "Abilita il registro del debug interno"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, kde-format
-msgid "Download Required Binary Data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#, fuzzy, kde-format
+#| msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "Scarica i dati degli eseguibili richiesti..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "Apertura della finestra di scaricamento..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

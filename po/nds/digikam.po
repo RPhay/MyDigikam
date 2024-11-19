@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -68963,13 +68963,19 @@ msgstr "Dublin Core"
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
-msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "Datei \"%1\" warrt daallaadt..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "Daalladen-Dialoog warrt opmaakt..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

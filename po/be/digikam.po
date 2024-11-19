@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -63161,12 +63161,18 @@ msgstr "Darwin Core"
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
-msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "Адкрыццё дыялогу спампоўвання..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

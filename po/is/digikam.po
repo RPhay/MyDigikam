@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
-"PO-Revision-Date: 2024-11-17 11:43+0000\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
+"PO-Revision-Date: 2024-11-18 13:03+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -65328,6 +65328,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"RAW-skráarendingu hefur verið bætt á listann yfir studdar hliðarskrár. Þar "
+"með er hætta á að RAW-myndum sé eytt fyrir slysni. Ertu viss um að þú viljir "
+"taka þá áhættu?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -66430,12 +66433,19 @@ msgstr "AVFoundation (kerfis)"
 msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, kde-format
-msgid "Download Required Binary Data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#, fuzzy, kde-format
+#| msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "Sækja nauðsynleg tvíundakerfisgögn..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "Opna hleðsluglugga..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

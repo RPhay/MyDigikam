@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
-"PO-Revision-Date: 2024-11-10 13:13+0300\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
+"PO-Revision-Date: 2024-11-18 21:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -65500,6 +65500,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"Desteklenen sepetlerin listesine bir RAW dosyası uzantısı eklendi. RAW "
+"görselleri yanlışlıkla silme riski bulunuyor. Bunu yapmak istediğinizden "
+"emin misiniz?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -66598,12 +66601,19 @@ msgstr "AVFoundation (Sistem)"
 msgid "Enable internal debug logging"
 msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, kde-format
-msgid "Download Required Binary Data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#, fuzzy, kde-format
+#| msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "Gerekli İkili Veriyi İndir…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "İndirme iletişim kutusu açılıyor…"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

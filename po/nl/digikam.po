@@ -62,15 +62,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 01:55+0000\n"
-"PO-Revision-Date: 2024-11-10 14:28+0100\n"
+"POT-Creation-Date: 2024-11-19 01:49+0000\n"
+"PO-Revision-Date: 2024-11-18 12:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -23133,7 +23133,7 @@ msgstr "Neem de aanhangsel-bestanden van de items mee"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "Metagegevens aanhangsel naar de items schrijven"
+msgstr "Metagegevens aanhangsel-bestand naar de items schrijven"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
@@ -66002,6 +66002,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"Een extensie van een RAW-bestand is toegevoegd aan de lijst met ondersteunde "
+"aanhangsel-bestanden. Er is een risico van per ongeluk verwijderen van RAW-"
+"afbeeldingen. Wilt u dit doen?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -67123,12 +67126,19 @@ msgstr "AVFoundation (systeem)"
 msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, kde-format
-msgid "Download Required Binary Data..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#, fuzzy, kde-format
+#| msgid "Download Required Binary Data..."
+msgid "Download required binary data:"
 msgstr "De vereiste binaire gegevens downloaden..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:151
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#, fuzzy, kde-format
+#| msgid "Opening Download Dialog..."
+msgid "Open Download Dialog..."
+msgstr "Downloaddialoog wordt geopend..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
