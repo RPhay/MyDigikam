@@ -74,6 +74,7 @@ public:
     QCheckBox*             autoTagsCheck    = nullptr;
     QLabel*                nameLabel        = nullptr;
     QLabel*                infoLabel        = nullptr;
+    QLabel*                loadLabel        = nullptr;
     QLabel*                sizeLabel        = nullptr;
 
     QNetworkReply*         reply            = nullptr;
@@ -148,9 +149,11 @@ void FilesDownloader::startDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
     d->infoLabel         = new QLabel(mainWidget);
+    d->loadLabel         = new QLabel(mainWidget);
     d->sizeLabel         = new QLabel(mainWidget);
 
     d->infoLabel->setWordWrap(true);
+    d->loadLabel->setWordWrap(true);
 
     d->facesEngineCheck  = new QCheckBox(i18n("Use Face Management feature"),      mainWidget);
     d->aestheticCheck    = new QCheckBox(i18n("Use Aesthetic Detection feature"),  mainWidget);
@@ -165,6 +168,7 @@ void FilesDownloader::startDownload()
     d->nameLabel         = new QLabel(mainWidget);
 
     vBox->addWidget(d->infoLabel);
+    vBox->addWidget(d->loadLabel);
     vBox->addWidget(d->sizeLabel);
     vBox->addStretch(1);
     vBox->addWidget(d->facesEngineCheck);
@@ -499,11 +503,12 @@ void FilesDownloader::slotUpdateDownloadInfo()
 
     QString sizeString = ItemPropertiesTab::humanReadableBytesCount(size);
 
-    d->infoLabel->setText(i18nc("%1: folder path",
-                                "<p>For the face management, the red-eye removal tool, and the classification "
-                                "of images according to aesthetics or the automatic assignment "
-                                "of tags to images, digiKam requires some large binary files. You "
-                                "can choose which feature you want to use.</p>"
+    d->infoLabel->setText(i18n("<p>For the face management, the red-eye removal tool, and the classification "
+                               "of images according to aesthetics or the automatic assignment "
+                               "of tags to images, digiKam requires some large binary files. You "
+                               "can choose which feature you want to use.</p>"));
+
+    d->loadLabel->setText(i18nc("%1: folder path",
                                 "<p>Some of these files were not found. Click “Download” to begin "
                                 "downloading the files you need. You can close this dialog, you "
                                 "will be asked again the next time you start digiKam. Without "
@@ -516,12 +521,14 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                     "The download requires %1 files with a size of %2.",
                                     d->total, sizeString));
 
+        d->loadLabel->setEnabled(true);
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
     }
     else
     {
         d->sizeLabel->setText(i18n("All files of the selected features were found."));
 
+        d->loadLabel->setEnabled(false);
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
     }
 }
