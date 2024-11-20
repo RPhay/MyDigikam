@@ -183,18 +183,6 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         d->exifByteOrder() = image->byteOrder();
 
-        // ICC Profile ------------------------------------
-
-#if EXIV2_TEST_VERSION(0,27,99)
-
-        d->iccProfileBuf() = image->iccProfile();
-
-#else
-
-        d->iccProfileBuf() = *(image->iccProfile());
-
-#endif
-
         if (s_metaEngineWarnOrError)
         {
             d->itemComments().clear();
