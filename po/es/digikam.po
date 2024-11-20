@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-19 01:49+0000\n"
+"POT-Creation-Date: 2024-11-20 01:50+0000\n"
 "PO-Revision-Date: 2024-11-12 12:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -30123,7 +30123,7 @@ msgstr "No volver a preguntar"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37075,7 +37075,7 @@ msgstr ""
 "actualizaciones."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
@@ -65159,39 +65159,39 @@ msgstr "Seleccione categoría"
 msgid "Your collection will use this category:"
 msgstr "La colección usará esta categoría:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:135
+#: core/utilities/setup/downloader/filesdownloader.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Descargar los archivos necesarios"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:155
+#: core/utilities/setup/downloader/filesdownloader.cpp:158
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Usar la función de gestión de caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Usar la función de detección estética"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Usar la función de asignación automática de etiquetas"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Todos los archivos se han descargado con éxito."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de descarga"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:242
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65210,45 +65210,61 @@ msgstr ""
 "\n"
 "Puede volver a intentarlo o continuar la descarga en el siguiente inicio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:246
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Volver a intentarlo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:384
+#: core/utilities/setup/downloader/filesdownloader.cpp:388
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificación no es correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:408
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File write error."
 msgstr "Ha ocurrido un error de escritura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:415
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File open error."
 msgstr "Ha ocurrido un error de apertura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El archivo del servidor es demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:503
+#: core/utilities/setup/downloader/filesdownloader.cpp:506
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
 "of images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
-"feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can close this "
-"dialog, you will be asked again the next time you start digiKam. Without "
-"these files the selected features will not work.</p><p>The files will be "
-"downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
-"to restart digiKam.</b></p>"
+"feature you want to use.</p>"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path"
+#| msgid ""
+#| "<p>For the face management, the red-eye removal tool, and the "
+#| "classification of images according to aesthetics or the automatic "
+#| "assignment of tags to images, digiKam requires some large binary files. "
+#| "You can choose which feature you want to use.</p><p>Some of these files "
+#| "were not found. Click “Download” to begin downloading the files you need. "
+#| "You can close this dialog, you will be asked again the next time you "
+#| "start digiKam. Without these files the selected features will not work.</"
+#| "p><p>The files will be downloaded to \"<i>%1</i>\".</p><p><b>After the "
+#| "successful download you have to restart digiKam.</b></p>"
+msgctxt "%1: folder path"
+msgid ""
+"<p>Some of these files were not found. Click “Download” to begin downloading "
+"the files you need. You can close this dialog, you will be asked again the "
+"next time you start digiKam. Without these files the selected features will "
+"not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
+"p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
 "<p>Para la gestión de caras, la herramienta de eliminación de ojos rojos, la "
 "clasificación de imágenes según su estética o la asignación automática de "
@@ -65260,13 +65276,13 @@ msgstr ""
 "seleccionadas no funcionarán.</p><p>Los archivos se descargarán en «<i>%1</"
 "i>».</p><p><b>Tras la descarga deberá reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:516
+#: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La descarga necesita %1 archivos con un tamaño de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:523
+#: core/utilities/setup/downloader/filesdownloader.cpp:529
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Se han encontrado todos los archivos de las funciones seleccionadas."
@@ -67238,21 +67254,21 @@ msgid "AVFoundation (System)"
 msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "Enable internal debug logging"
-msgstr "Activar el registro de depuración interno"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Download Required Binary Data..."
 msgid "Download required binary data:"
 msgstr "Descargar los datos binarios requeridos..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Opening Download Dialog..."
 msgid "Open Download Dialog..."
 msgstr "Abriendo diálogo de descarga..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#, kde-format
+msgid "Enable internal debug logging"
+msgstr "Activar el registro de depuración interno"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format

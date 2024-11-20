@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-19 01:49+0000\n"
+"POT-Creation-Date: 2024-11-20 01:50+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -28811,7 +28811,7 @@ msgstr "Đừng &hỏi lại"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -35706,7 +35706,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:147
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Tải về"
@@ -63140,40 +63140,40 @@ msgstr "Chọ&n mục mới"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:135
+#: core/utilities/setup/downloader/filesdownloader.cpp:136
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Đang tải về tệp %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:155
+#: core/utilities/setup/downloader/filesdownloader.cpp:158
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, fuzzy, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "Điều chỉnh:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:234
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:241
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Tải về"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:242
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63185,54 +63185,59 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:246
+#: core/utilities/setup/downloader/filesdownloader.cpp:250
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Thêm hạt mảng thuốc..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:384
+#: core/utilities/setup/downloader/filesdownloader.cpp:388
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:408
+#: core/utilities/setup/downloader/filesdownloader.cpp:412
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:415
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Xuất"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, fuzzy, kde-format
 msgid "File on the server is too large."
 msgstr "Lỗi in tệp: « %1 »"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:503
+#: core/utilities/setup/downloader/filesdownloader.cpp:506
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
 "of images according to aesthetics or the automatic assignment of tags to "
 "images, digiKam requires some large binary files. You can choose which "
-"feature you want to use.</p><p>Some of these files were not found. Click "
-"“Download” to begin downloading the files you need. You can close this "
-"dialog, you will be asked again the next time you start digiKam. Without "
-"these files the selected features will not work.</p><p>The files will be "
-"downloaded to \"<i>%1</i>\".</p><p><b>After the successful download you have "
-"to restart digiKam.</b></p>"
+"feature you want to use.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:516
+#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#, kde-format
+msgctxt "%1: folder path"
+msgid ""
+"<p>Some of these files were not found. Click “Download” to begin downloading "
+"the files you need. You can close this dialog, you will be asked again the "
+"next time you start digiKam. Without these files the selected features will "
+"not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
+"p><p><b>After the successful download you have to restart digiKam.</b></p>"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:523
+#: core/utilities/setup/downloader/filesdownloader.cpp:529
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -64931,20 +64936,20 @@ msgid "AVFoundation (System)"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "Enable internal debug logging"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Download required binary data:"
 msgstr "Đang tải về tệp %1..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, fuzzy, kde-format
 msgid "Open Download Dialog..."
 msgstr "Đang mở hộp thoại tải về..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#, kde-format
+msgid "Enable internal debug logging"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
