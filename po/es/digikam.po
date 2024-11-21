@@ -48,14 +48,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-20 01:50+0000\n"
-"PO-Revision-Date: 2024-11-12 12:15+0100\n"
+"PO-Revision-Date: 2024-11-20 19:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -65244,20 +65244,13 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>Para la gestión de caras, la herramienta de eliminación de ojos rojos, la "
+"clasificación de imágenes según su estética o la asignación automática de "
+"etiquetas a las imágenes, digiKam necesita algunos archivos binarios de gran "
+"tamaño. Puede elegir la función que desea usar.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For the face management, the red-eye removal tool, and the "
-#| "classification of images according to aesthetics or the automatic "
-#| "assignment of tags to images, digiKam requires some large binary files. "
-#| "You can choose which feature you want to use.</p><p>Some of these files "
-#| "were not found. Click “Download” to begin downloading the files you need. "
-#| "You can close this dialog, you will be asked again the next time you "
-#| "start digiKam. Without these files the selected features will not work.</"
-#| "p><p>The files will be downloaded to \"<i>%1</i>\".</p><p><b>After the "
-#| "successful download you have to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -65266,15 +65259,12 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>Para la gestión de caras, la herramienta de eliminación de ojos rojos, la "
-"clasificación de imágenes según su estética o la asignación automática de "
-"etiquetas a las imágenes, digiKam necesita algunos archivos binarios de gran "
-"tamaño. Puede elegir la función que desea usar.</p><p>Algunos de estos "
-"archivos no se han encontrado. Pulse «Descargar» para comenzar la descarga "
-"de los archivos requeridos. Puede cerrar este diálogo y se le preguntará de "
-"nuevo la próxima vez que inicie digiKam. Sin estos archivos, las funciones "
-"seleccionadas no funcionarán.</p><p>Los archivos se descargarán en «<i>%1</"
-"i>».</p><p><b>Tras la descarga deberá reiniciar digiKam.</b></p>"
+"<p>Algunos de estos archivos no se han encontrado. Pulse «Descargar» para "
+"comenzar la descarga de los archivos requeridos. Puede cerrar este diálogo y "
+"se le preguntará de nuevo la próxima vez que inicie digiKam. Sin estos "
+"archivos, las funciones seleccionadas no funcionarán.</p><p>Los archivos se "
+"descargarán en «<i>%1</i>».</p><p><b>Tras la descarga deberá reiniciar "
+"digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -66131,6 +66121,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"Se ha añadido una extensión de archivo RAW a la lista de archivos anexos "
+"permitidos. Existe un riesgo de borrar imágenes RAW de forma accidental. "
+"¿Está seguro de que quiere hacer esto?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -67254,16 +67247,14 @@ msgid "AVFoundation (System)"
 msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "Download Required Binary Data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Descargar los datos binarios requeridos..."
+msgstr "Descargar los datos binarios requeridos:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Abriendo diálogo de descarga..."
+msgstr "Abrir diálogo de descarga..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:137
 #, kde-format
