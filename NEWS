@@ -17,7 +17,7 @@ BUGFIXES:
 008 ==> 496340 - Missing Context Menu on edit advanced search.
 009 ==> 496427 - After updating from 8.4.0 to 8.5.0 digiKam there is only a white screen on start-up.
 010 ==> 496474 - digiKam 8.5 under macOS (Apple Silicon) - problem displaying HEIC of iPhone 16 pro.
-011 ==>
+011 ==> 496570 - {unique} does not take file extension into account.
 012 ==>
 013 ==>
 014 ==>
