@@ -62698,20 +62698,11 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>digiKam 的人脸管理、红眼消除、美感检测、自动分配图像的标签等功能需要使用一"
+"些大型二进制文件。您可以选择要使用哪些功能。</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For the face management, the red-eye removal tool, and the "
-#| "classification of images according to aesthetics or the automatic "
-#| "assignment of tags to images, digiKam requires some large binary files. "
-#| "You can choose which feature you want to use.</p><p>Some of these files "
-#| "were not found. Click “Download” to begin downloading the files you need. "
-#| "You can close this dialog, you will be asked again the next time you "
-#| "start digiKam. Without these files the selected features will not work.</"
-#| "p><p>The files will be downloaded to \"<i>%1</i>\".</p><p><b>After the "
-#| "successful download you have to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -62720,11 +62711,10 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>要使用人脸管理、红眼消除、美感检测分级、自动标签分配等功能，digiKam 需要下"
-"载并安装额外的软件包，否则这些功能将无法工作。</p><p>本机尚未安装这些功能所需"
-"的某些软件包。请选择要启用的功能，然后点击“下载”进行安装。您也可以关闭此对话"
-"框，digiKam 会在下一次启动时再次提示您下载。</p><p>这些软件包将被下载到“<i>"
-"%1</i>”。</p><p><b>下载完成后，请重新启动 digiKam。</b></p>"
+"<p>程序找不到部分所需的文件。请点击“下载”以获取这些文件。您也可以关闭此对话"
+"框，digiKam 将在它下次启动时再次询问。没有这些文件，您选择的功能将无法工作。"
+"</p><p>这些文件将下载到“<i>%1</i>”。</p><p><b>下载完成后，您必须重新启动 "
+"digiKam 才能生效。</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -64561,12 +64551,12 @@ msgstr "AVFoundation (系统)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Download required binary data:"
-msgstr ""
+msgstr "下载所需的软件包："
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Open Download Dialog..."
-msgstr ""
+msgstr "打开下载对话框..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:137
 #, kde-format

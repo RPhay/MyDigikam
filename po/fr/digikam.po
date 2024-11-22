@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-20 01:50+0000\n"
-"PO-Revision-Date: 2024-11-19 09:36+0100\n"
+"PO-Revision-Date: 2024-11-20 08:58+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -67718,16 +67718,14 @@ msgid "AVFoundation (System)"
 msgstr "AVFoundation (Système)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "Download Required Binary Data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Télécharger les données binaires requises..."
+msgstr "Télécharger les données binaires nécessaires :"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Ouverture de la boîte de dialogue de téléchargement…"
+msgstr "Ouvrir la boîte de dialogue de téléchargement…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:137
 #, kde-format
