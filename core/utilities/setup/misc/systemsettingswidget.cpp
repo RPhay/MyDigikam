@@ -61,11 +61,8 @@ public:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    QCheckBox*              disableHWConvCheck     = nullptr;
-
-#   endif
+    QCheckBox*              enableHWTConvCheck     = nullptr;
+    QCheckBox*              enableHWVideoCheck     = nullptr;
 
     QComboBox*              videoBackendCBox       = nullptr;
 
@@ -103,11 +100,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    d->disableHWConvCheck     = new QCheckBox(i18n("Fix AMD-GPU video decoding issue"), this);
-
-#   endif
+    d->enableHWTConvCheck     = new QCheckBox(i18n("Use hardware textures conversion"), this);
+    d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
 
     QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
@@ -169,12 +163,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    layout->addWidget(d->disableHWConvCheck,     row++, 0, 1, 2);
-
-#   endif
-
+    layout->addWidget(d->enableHWTConvCheck,     row++, 0, 1, 2);
+    layout->addWidget(d->enableHWVideoCheck,     row++, 0, 1, 2);
     layout->addWidget(videoLabel,                row,   0, 1, 1);
     layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1); 
 
@@ -214,12 +204,8 @@ void SystemSettingsWidget::readSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    d->disableHWConvCheck->setChecked(system.disableHWConv);
-
-#   endif
-
+    d->enableHWTConvCheck->setChecked(system.enableHWTConv);
+    d->enableHWVideoCheck->setChecked(system.enableHWVideo);
     d->videoBackendCBox->setCurrentIndex(d->videoBackendCBox->findData(system.videoBackend));
 
 #endif
@@ -251,12 +237,8 @@ void SystemSettingsWidget::saveSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    system.disableHWConv     = d->disableHWConvCheck->isChecked();
-
-#   endif
-
+    system.enableHWTConv     = d->enableHWTConvCheck->isChecked();
+    system.enableHWVideo     = d->enableHWVideoCheck->isChecked();
     system.videoBackend      = d->videoBackendCBox->currentData().toString();
 
 #endif

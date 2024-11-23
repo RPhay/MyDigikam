@@ -89,14 +89,8 @@ void SystemSettings::readSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    // Video Settings Windows
-
-    disableHWConv        = settings.value(QLatin1String("disableHWConv"),     false).toBool();
-
-#   endif
-
+    enableHWTConv        = settings.value(QLatin1String("enableHWTConv"),     true).toBool();
+    enableHWVideo        = settings.value(QLatin1String("enableHWVideo"),     true).toBool();
     videoBackend         = settings.value(QLatin1String("videoBackend"),      QLatin1String("ffmpeg")).toString();
 
 #endif
@@ -180,12 +174,8 @@ void SystemSettings::saveSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    settings.setValue(QLatin1String("disableHWConv"),     disableHWConv);
-
-#   endif
-
+    settings.setValue(QLatin1String("enableHWTConv"),     enableHWTConv);
+    settings.setValue(QLatin1String("enableHWVideo"),     enableHWVideo);
     settings.setValue(QLatin1String("videoBackend"),      videoBackend);
 
 #endif
