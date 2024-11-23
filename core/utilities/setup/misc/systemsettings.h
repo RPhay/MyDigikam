@@ -65,8 +65,8 @@ public:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    bool    enableHWTConv     = false;
     bool    enableHWVideo     = false;
+    bool    enableHWTConv     = false;
 
     QString videoBackend      = QLatin1String("ffmpeg");
 

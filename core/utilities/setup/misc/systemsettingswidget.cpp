@@ -61,8 +61,8 @@ public:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QCheckBox*              enableHWTConvCheck     = nullptr;
     QCheckBox*              enableHWVideoCheck     = nullptr;
+    QCheckBox*              enableHWTConvCheck     = nullptr;
 
     QComboBox*              videoBackendCBox       = nullptr;
 
@@ -93,15 +93,15 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
-    d->softwareOpenGLCheck    = new QCheckBox(i18n("Use the software OpenGL rendering"), this);
+    d->softwareOpenGLCheck    = new QCheckBox(i18n("Use the software OpenGL for rendering"), this);
     d->enableOpenCLCheck      = new QCheckBox(i18n("Use the OpenCL hardware acceleration"), this);
     d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and "
                                           "requires that certain environment variables are set manually."));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->enableHWTConvCheck     = new QCheckBox(i18n("Use hardware textures conversion"), this);
-    d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
+    d->enableHWVideoCheck     = new QCheckBox(i18n("Use the video hardware acceleration"), this);
+    d->enableHWTConvCheck     = new QCheckBox(i18n("Use the video textures conversion"), this);
 
     QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
@@ -163,8 +163,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    layout->addWidget(d->enableHWTConvCheck,     row++, 0, 1, 2);
     layout->addWidget(d->enableHWVideoCheck,     row++, 0, 1, 2);
+    layout->addWidget(d->enableHWTConvCheck,     row++, 0, 1, 2);
     layout->addWidget(videoLabel,                row,   0, 1, 1);
     layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1); 
 
@@ -204,8 +204,8 @@ void SystemSettingsWidget::readSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->enableHWTConvCheck->setChecked(system.enableHWTConv);
     d->enableHWVideoCheck->setChecked(system.enableHWVideo);
+    d->enableHWTConvCheck->setChecked(system.enableHWTConv);
     d->videoBackendCBox->setCurrentIndex(d->videoBackendCBox->findData(system.videoBackend));
 
 #endif
@@ -237,8 +237,8 @@ void SystemSettingsWidget::saveSettings()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    system.enableHWTConv     = d->enableHWTConvCheck->isChecked();
     system.enableHWVideo     = d->enableHWVideoCheck->isChecked();
+    system.enableHWTConv     = d->enableHWTConvCheck->isChecked();
     system.videoBackend      = d->videoBackendCBox->currentData().toString();
 
 #endif
