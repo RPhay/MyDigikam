@@ -44,19 +44,19 @@ fi
 
 # Show host OS name and version.
 
-OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+OS_NAME=$(awk -F'"' '$1 ~ /^DISTRIB_ID/ {print $2}' /etc/*-release | tr '[:upper:]' '[:lower:]')
 OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
-OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+OS_VERSION=$(awk -F'"' '$1 ~ /^DISTRIB_RELEASE/ {print $2}' /etc/*-release)
 
 if [ -z "${OS_NAME}" ] ; then
 
-    OS_NAME=$(awk -F'"' '$1 ~ /^NAME/ {print $2}' /etc/os-release)
+    OS_NAME=$(awk -F'"' '$1 ~ /^NAME/ {print $2}' /etc/*-release | tr '[:upper:]' '[:lower:]')
 
 fi
 
 if [ -z "${OS_VERSION}" ] ; then
 
-    OS_VERSION=$(awk -F'"' '$1 ~ /^VERSION_ID/ {print $2}' /etc/os-release)
+    OS_VERSION=$(awk -F'"' '$1 ~ /^VERSION_ID/ {print $2}' /etc/*-release)
 
 fi
 
@@ -186,8 +186,8 @@ preload_shared_library libgmodule-2.0.so.0
 # See bug #216915 and #492040
 
 if [[ ! (($OS_NAME == "manjarolinux"        && $OS_VERSION == "24.7")     ||
-         ($OS_NAME == "Fedora Linux"        && $OS_VERSION -ge 40)        ||
-         ($OS_NAME == "openSUSE Tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
+         ($OS_NAME == "fedora linux"        && $OS_VERSION -ge 40)        ||
+         ($OS_NAME == "opensuse tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
 
     preload_shared_library libgnutls.so.30
 
