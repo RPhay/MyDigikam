@@ -46,7 +46,7 @@ fi
 
 OS_NAME=$(awk -F'"' '$1 ~ /^DISTRIB_ID/ {print $2}' /etc/*-release | tr '[:upper:]' '[:lower:]')
 OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
-OS_VERSION=$(awk -F'"' '$1 ~ /^DISTRIB_RELEASE/ {print $2}' /etc/*-release)
+OS_VERSION=$(awk -F'"' '$1 ~ /^DISTRIB_RELEASE/ {print $2}' /etc/*-release | tr -d '.')
 
 if [ -z "${OS_NAME}" ] ; then
 
@@ -56,7 +56,7 @@ fi
 
 if [ -z "${OS_VERSION}" ] ; then
 
-    OS_VERSION=$(awk -F'"' '$1 ~ /^VERSION_ID/ {print $2}' /etc/*-release)
+    OS_VERSION=$(awk -F'"' '$1 ~ /^VERSION_ID/ {print $2}' /etc/*-release | tr -d '.')
 
 fi
 
@@ -185,7 +185,8 @@ preload_shared_library libgmodule-2.0.so.0
 
 # See bug #216915 and #492040
 
-if [[ ! (($OS_NAME == "manjarolinux"        && $OS_VERSION == "24.7")     ||
+if [[ ! (($OS_NAME == "ubuntu"              && $OS_VERSION -ge 2010)      ||
+         ($OS_NAME == "manjarolinux"        && $OS_VERSION -ge 247)       ||
          ($OS_NAME == "fedora linux"        && $OS_VERSION -ge 40)        ||
          ($OS_NAME == "opensuse tumbleweed" && $OS_VERSION -ge 20240908)) ]] ; then
 
