@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 01:50+0000\n"
+"POT-Creation-Date: 2024-11-24 01:51+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2923,7 +2923,7 @@ msgstr "&Hjælp"
 msgid "Main Toolbar"
 msgstr "Hovedværktøjslinje"
 
-#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2933,36 +2933,36 @@ msgstr "Hovedværktøjslinje"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Jan Madsen,Martin Schlander"
 
-#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jan-portugal@opensuse.org,mschlander@opensuse.org"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:243
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Åbn kameradialog med <sti>"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:246
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Åben kamera-dialogen for enheden med Solid UDI <udi>"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detektér og åbn et tilsluttet gphoto2 kamera automatisk"
 
-#: core/app/main/main.cpp:242
+#: core/app/main/main.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2971,7 +2971,7 @@ msgid ""
 msgstr ""
 "Start digikam med den SQLite-databasefil der blev fundet i mappen <dir>"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:254
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2979,7 +2979,7 @@ msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 "Start digikam med den SQLite-databasefil der blev fundet i mappen <dir>"
 
-#: core/app/main/main.cpp:274
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2990,7 +2990,7 @@ msgstr ""
 "installere det.\n"
 "Der er intet database-plugin installeret på din computer."
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3001,7 +3001,7 @@ msgstr ""
 "skal installere det.\n"
 "Installerede database-plugins er oplistet nedenfor:"
 
-#: core/app/main/main.cpp:327
+#: core/app/main/main.cpp:336
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -71272,85 +71272,90 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruppering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:94
+#: core/utilities/setup/misc/systemsettingswidget.cpp:91
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:95
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:96
 #, kde-format
-msgid "Use the software OpenGL rendering"
+msgid "Use the software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use the OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
-msgid "Fix AMD-GPU video decoding issue"
+msgid "Use the video hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#, kde-format
+msgid "Use the video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "KDE default"
 msgid "FFmpeg (Default)"
 msgstr "Standard"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Same as system"
 msgid "GStreamer (System)"
 msgstr "Samme som systemet"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Darwin Core"
 msgid "WMF (System)"
 msgstr "Darwin Core"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Darwin Core"
 msgid "AVFoundation (System)"
 msgstr "Darwin Core"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Download required binary data:"
 msgstr "Downloader filen %1..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Opening Download Dialog..."
 msgid "Open Download Dialog..."
 msgstr "Åbner download-dialog..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

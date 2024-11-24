@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 01:50+0000\n"
-"PO-Revision-Date: 2024-10-19 16:40+0200\n"
+"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"PO-Revision-Date: 2024-11-23 16:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -2654,7 +2654,7 @@ msgstr "&Hjälp"
 msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
-#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2664,45 +2664,45 @@ msgstr "Huvudverktygsrad"
 msgid "digiKam"
 msgstr "Digikam"
 
-#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Stefan Asserhäll"
 
-#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Öppna kameradialogruta med \"sökväg\""
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Öppna kameradialogruta för enheten med Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detektera och öppna en ansluten gphoto2-kamera automatiskt"
 
-#: core/app/main/main.cpp:242
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Starta Digikam med SQLite databasfilen som hittas i katalogen \"dir\""
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:254
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Starta Digikam med inställningsfilen \"config\""
 
-#: core/app/main/main.cpp:274
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2713,7 +2713,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Det finns inga installerade databasinsticksprogram på datorn."
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2724,7 +2724,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Databasinsticksprogram installerade på datorn listas nedan."
 
-#: core/app/main/main.cpp:327
+#: core/app/main/main.cpp:336
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3425,16 +3425,13 @@ msgstr ""
 "Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add spell-checking support in caption text widget using KF5::Sonnet "
-#| "component."
+#, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 "Lägg till stöd för stavningskontroll i rubriktextkomponenten genom att "
-"använda komponenten KF5::Sonnet."
+"använda komponenten Sonnet i KDE:s ramverk."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3605,23 +3602,14 @@ msgstr ""
 "ansiktshantering."
 
 #: core/app/views/stack/welcomepageview.cpp:141
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr ""
 "Uppdatering av internt gränssnitt för obehandlade bilder till senaste Libraw "
-"avbilden 2024-06-16."
+"avbilden 2024-10-09."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-#| "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
-#| "Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-#| "ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
-#| "II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-"
-#| "HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with DNG "
-#| "format recorded."
+#, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
 "EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
@@ -3630,8 +3618,8 @@ msgid ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
-"Nya funktioner för obehandlade bilder: Canon EOS R6 Mark II, EOS R8, EOS "
-"R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+"Nya kameror med stöd för obehandlade bilder: Canon EOS R6 Mark II, EOS R8, "
+"EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
 "Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
 "Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
 "II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
@@ -51935,23 +51923,7 @@ msgid "Extra Large"
 msgstr "Extra stora"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to about "
-#| "45%. Unfortunately, this will give a significant number of false-"
-#| "positives. It's recommended to set a detection accuracy of about 55% and "
-#| "face size of <b>Small</b> or <b>Medium</b> for normal use.</p><p>This "
-#| "setting applies only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -51977,9 +51949,9 @@ msgstr ""
 "antalet falska positiva, men upptäcker inte små ansikten i bakgrunden eller "
 "ansikten på stora gruppfoton.</p><p>Om alla ansikten ska upptäckas i ett "
 "pass, välj <b>Extra små</b> ansikten och ställ in detekteringsnoggrannheten "
-"till cirka 45 %. Tyvärr ger det ett betydande antal falska positiva. Det "
-"rekommenderas att ställa in en detekteringsnoggrannhet på cirka 55 % och "
-"ansiktsstorlek <b>Små</b> eller <b>Normala</b> för normal användning.</"
+"till 2. Tyvärr skapar det ett betydande antal falska positiva. Det "
+"rekommenderas att ställa in en detekteringsnoggrannhet på 6-8 och "
+"ansiktsstorlek <b>Normala</b> eller <b>Stora</b> för normal användning.</"
 "p><p>Inställningen gäller bara YuNet.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
@@ -60648,13 +60620,7 @@ msgid "Scan for new items"
 msgstr "Sök efter nya objekt"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -60664,7 +60630,7 @@ msgid ""
 msgstr ""
 "<qt><i>Observera: Om aktiverad rensas alltid huvuddatabasen. Det går att "
 "välja ytterligare databaser att rensa.<br/>Om något av alternativen nedan "
-"väljes, kan processen ta lång tid och tillfälligt frysa Digikam.<br/>för att "
+"väljes, kan processen ta lång tid och tillfälligt frysa Digikam för att "
 "försäkra att databaserna inte skadas.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
@@ -60753,12 +60719,10 @@ msgid "Faces data management: "
 msgstr "Hantering av ansiktsdata: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Rensa och bygg om all inlärningsdata"
+msgstr "Bygg om all inlärningsdata"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -60766,13 +60730,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Det lär upp ansiktsigenkänningen med etiketterade ansikten i biblioteket."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Rensa alla ansikten på den här bilden"
+msgstr "Nollställ och rensa alla ansikten och all inlärning"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -60781,6 +60745,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Det rensar alla detekterade och etiketterade ansikten, och söker sedan "
+"igenom bilder för att detektera ansikten."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -60919,9 +60885,7 @@ msgid "Sync Metadata and Database"
 msgstr "Synkronisera metadata och databas"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Varning"
 
@@ -60932,6 +60896,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Är du säker på att du vill ta bort alla bekräftade, obekräftade och okända "
+"ansikten? Du måste börja etikettera okända ansikten igen innan några "
+"ansikten kan kännas igen."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -61176,16 +61143,14 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Objekt genomsökt efter ansikten: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Faces found: %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Funna ansikten: %1"
+msgstr "Behandlade ansikten: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Face found: %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Funnet ansikte: %1"
+msgstr "Behandlat ansikte: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -63456,17 +63421,14 @@ msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr "Avmarkera om du inte vill skala små bilder så att de passar fönstret."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "Förhandsgranskningsbild skalas alltid för att passa fönstret"
+msgstr "Förhandsgranskningsbild använder kantutjämning för att skalas upp"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr "Avmarkera om du inte vill skala små bilder så att de passar fönstret."
+msgstr "Avmarkera om du inte vill använda kantutjämning för att skala upp."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -64514,10 +64476,9 @@ msgid "Download Required Files"
 msgstr "Laddar ner nödvändiga filer"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:158
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgid "Use Face Management feature"
-msgstr "Använd funktionen för ansiktsdetektering"
+msgstr "Använd funktionen för ansiktshantering"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
@@ -64593,20 +64554,13 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>För ansiktsigenkänning, verktyget för borttagning av röda ögon, "
+"klassificering av bilder enligt estetik, och automatisk tilldelning av "
+"etiketter till bilder, behöver Digikam några stora binärfiler. Du kan välja "
+"vilka funktioner du vill använda.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can close this "
-#| "dialog, you will be asked again the next time you start digiKam. Without "
-#| "these files the selected features will not work.</p><p>The files will be "
-#| "downloaded to %1.</p><p><b>After the successful download you have to "
-#| "restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -64615,14 +64569,11 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>För ansiktsigenkänning, verktyget för borttagning av röda ögon, "
-"klassificering av bilder enligt estetik, och automatisk tilldelning av "
-"etiketter till bilder, behöver Digikam några stora binärfiler. Du kan välja "
-"vilka funktioner du vill använda.</p><p>Vissa av filerna hittade inte. "
-"Klicka på 'Ladda ner' för att börja nerladdning av filerna du behöver. Du "
-"kan stänga dialogrutan, du blir tillfrågad igen nästa  gång Digikam startas. "
-"Utan filerna fungerar inte de valda funktionerna.</p><p>Filerna laddas ner "
-"till %1.</p><p><b>Efter lyckad nerladdning måste Digikam startas om</b>.</p>"
+"<p>Vissa av filerna hittade inte. Klicka på 'Ladda ner' för att börja "
+"nerladdning av filerna du behöver. Du kan stänga dialogrutan, du blir "
+"tillfrågad igen nästa  gång Digikam startas. Utan filerna fungerar inte de "
+"valda funktionerna.</p><p>Filerna laddas ner till \"<i>%1</i>\".</"
+"p><p><b>Efter lyckad nerladdning måste Digikam startas om.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -65472,6 +65423,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"En filändelse för obehandlade bilder har lagts till i listan över "
+"associerade filer som stöds. Det finns risk för att obehandlade bilder tas "
+"bort av misstag. Är du säker på att du vill göra det?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -66505,86 +66459,88 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruppering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:94
+#: core/utilities/setup/misc/systemsettingswidget.cpp:91
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Använd skalning med hög upplösning från skärmfaktorn"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:95
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Använd bildpunktsavbildningar med hög upplösning"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:96
 #, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
-msgid "Use the software OpenGL rendering"
-msgstr "Tvinga användning av OpenGL-återgivning med programvara"
+#| msgid "Use the software OpenGL rendering"
+msgid "Use the software OpenGL for rendering"
+msgstr "Använd OpenGL-återgivning med programvara"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Inaktivera OpenCL hårdvaruacceleration"
+msgstr "Använd OpenCL maskinvaruacceleration"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Alternativet är fortfarande experimentellt och kräver att vissa "
+"miljövariabler ställs in manuellt."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
-#, kde-format
-msgid "Fix AMD-GPU video decoding issue"
-msgstr "Rätta problem med videoavkodning med AMD grafikprocessor"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
-msgid "Decoding backend to render video:"
-msgstr "Använd avkodningsgränssnitt för video:"
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use the video hardware acceleration"
+msgstr "Använd OpenCL maskinvaruacceleration"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#, kde-format
+msgid "Use the video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, kde-format
+msgid "Decoding backend to render video:"
+msgstr "Avkodningsgränssnitt för att återge video:"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (förval)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (system)"
+msgstr "WMF (system)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#, kde-format
+msgid "AVFoundation (System)"
+msgstr "AVFoundation (system)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
-msgid "AVFoundation (System)"
-msgstr "Darwin (system)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Ladda ner nödvändig binärdata..."
+msgstr "Ladda ner nödvändig binärdata:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#, kde-format
 msgid "Open Download Dialog..."
 msgstr "Öppnar nerladdningsdialogruta..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Aktivera intern felsökningsloggning"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67781,6 +67737,9 @@ msgstr "Albumobjekt"
 #, kde-format
 msgid "Import Items"
 msgstr "Importera objekt"
+
+#~ msgid "Fix AMD-GPU video decoding issue"
+#~ msgstr "Rätta problem med videoavkodning med AMD grafikprocessor"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Clear all previous results and rescan"

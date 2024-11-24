@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 01:50+0000\n"
+"POT-Creation-Date: 2024-11-24 01:51+0000\n"
 "PO-Revision-Date: 2024-11-20 16:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2674,7 +2674,7 @@ msgstr "&Довідка"
 msgid "Main Toolbar"
 msgstr "Головний пенал"
 
-#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2684,35 +2684,35 @@ msgstr "Головний пенал"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Іван Петрущак,Юрій Чорноіван"
 
-#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ivanpetrouchtchak@yahoo.com,yurchor@ukr.net"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Відкрити вікно фотоапарата у «path»"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Відкрити діалогове вікно фотоапарата для пристрою з UDI Solid «udi»"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Автоматично виявляти і відкривати фотоапарат, з'єднаний за допомогою gphoto2"
 
-#: core/app/main/main.cpp:242
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2720,12 +2720,12 @@ msgstr ""
 "Запустити digiKam з використанням файла бази даних SQLite, виявленого у "
 "каталозі «dir»"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:254
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустити digikam із вказаним файлом налаштувань «config»"
 
-#: core/app/main/main.cpp:274
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2736,7 +2736,7 @@ msgstr ""
 "встановіть його.\n"
 "У вашій системі не встановлено жодного додатка баз даних."
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2747,7 +2747,7 @@ msgstr ""
 "встановіть його.\n"
 "Список встановлених у вашій системі додатків баз даних:"
 
-#: core/app/main/main.cpp:327
+#: core/app/main/main.cpp:336
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -67396,27 +67396,28 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Групування"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:94
+#: core/utilities/setup/misc/systemsettingswidget.cpp:91
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Масштабування для високих роздільностей на основі коефіцієнта екрана"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:95
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Растрові зображення із високою роздільністю"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, kde-format
-msgid "Use the software OpenGL rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:96
+#, fuzzy, kde-format
+#| msgid "Use the software OpenGL rendering"
+msgid "Use the software OpenGL for rendering"
 msgstr "Використати програмну обробку OpenGL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use the OpenCL hardware acceleration"
 msgstr "Використати апаратне прискорення OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67425,52 +67426,58 @@ msgstr ""
 "Цей пункт усе ще є експериментальним і для його роботи потрібно "
 "встановлювати вручну значення змінних середовища."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
-#, kde-format
-msgid "Fix AMD-GPU video decoding issue"
-msgstr "Виправити проблему декодування на гр. процесорах AMD"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use the video hardware acceleration"
+msgstr "Використати апаратне прискорення OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#, kde-format
+msgid "Use the video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Модуль декодування для показу відео:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (типовий)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Отримати потрібні двійкові дані:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Відкрити вікно отримання даних…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -68691,6 +68698,9 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Fix AMD-GPU video decoding issue"
+#~ msgstr "Виправити проблему декодування на гр. процесорах AMD"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Clear all previous results and rescan"

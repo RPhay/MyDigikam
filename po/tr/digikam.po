@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 01:50+0000\n"
+"POT-Creation-Date: 2024-11-24 01:51+0000\n"
 "PO-Revision-Date: 2024-11-21 20:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2664,7 +2664,7 @@ msgstr "&Yardım"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2674,45 +2674,45 @@ msgstr "Ana Araç Çubuğu"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "H.Gökhan SARI, Osman Tosun, Emir SARI"
 
-#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com, emir_sari@icloud.com"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "“Yol”da kamera iletişim kutusunu aç"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI “udi”li aygıt için kamera iletişim kutusunu aç"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Bağlı bir gphoto2 kamerayı otomatik olarak algıla ve aç"
 
-#: core/app/main/main.cpp:242
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "digiKam’i “dir” dizininde bulunan SQLite veritabanı dosyasıyla başlat"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:254
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "digiKam’i “config” yapılandırma dosyasıyla başlat"
 
-#: core/app/main/main.cpp:274
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2723,7 +2723,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2734,7 +2734,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:327
+#: core/app/main/main.cpp:336
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -66542,27 +66542,28 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruplama"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:94
+#: core/utilities/setup/misc/systemsettingswidget.cpp:91
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Ekran çarpanından yüksek DPI’li ölçeklendirme kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:95
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Yüksek DPI çözünürlüğüne sahip piksel eşlemleri kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, kde-format
-msgid "Use the software OpenGL rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:96
+#, fuzzy, kde-format
+#| msgid "Use the software OpenGL rendering"
+msgid "Use the software OpenGL for rendering"
 msgstr "Yazılım OpenGL sunumu kullanılmasını zorla"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use the OpenCL hardware acceleration"
 msgstr "OpenCL donanım ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -66571,52 +66572,58 @@ msgstr ""
 "Bu seçenek hâlâ deneyseldir ve çeşitli çevre değişkenlerinin elle "
 "ayarlanmasını gerektirir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
-#, kde-format
-msgid "Fix AMD-GPU video decoding issue"
-msgstr "AMD GPU’larda video kodlaması sorununu düzelt"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use the video hardware acceleration"
+msgstr "OpenCL donanım ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#, kde-format
+msgid "Use the video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Video sunumu için kullanılan kod çözme arka ucu:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (Öntanımlı)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Gerekli ikili veriyi indir:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "İndirme İletişim Kutusunu Aç…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67814,6 +67821,9 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgid "Fix AMD-GPU video decoding issue"
+#~ msgstr "AMD GPU’larda video kodlaması sorununu düzelt"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Clear all previous results and rescan"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 01:50+0000\n"
+"POT-Creation-Date: 2024-11-24 01:51+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2607,7 +2607,7 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:216 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2617,14 +2617,14 @@ msgstr "主工具列"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:225 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Funda Wang, Wei-Lun Chao, Dongjun Wu, Franklin Weng, pan93412, Kisaragi Hiu"
 
-#: core/app/main/main.cpp:226 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2632,33 +2632,33 @@ msgstr ""
 "fundawang@linux.net.cn, william.chao@ossii.com.tw, ziyawu@gmail.com, "
 "franklin@goodhorse.idv.tw, pan93412@gmail.com, mail@kisaragi-hiu.com"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "在 \"path\" 開啟相機對話框"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:246
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "為 Solid UDI 是 \"udi\" 的裝置開啟相機對話框"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自動偵測並開啟已連線的 gphoto2 相機"
 
-#: core/app/main/main.cpp:242
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "用在目錄 \"dir\" 中找到的 SQLite 資料庫檔案啟動 digikam"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:254
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "用設定檔案 \"config\" 啟動 digikam"
 
-#: core/app/main/main.cpp:274
+#: core/app/main/main.cpp:283
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2668,7 +2668,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "您的電腦上沒有安裝資料庫外掛程式。"
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:292
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2678,7 +2678,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "以下列出您的電腦上安裝的資料庫外掛程式。"
 
-#: core/app/main/main.cpp:327
+#: core/app/main/main.cpp:336
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -65821,85 +65821,91 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "群組"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:94
+#: core/utilities/setup/misc/systemsettingswidget.cpp:91
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:95
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#: core/utilities/setup/misc/systemsettingswidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Force use of software OpenGL rendering"
-msgid "Use the software OpenGL rendering"
+msgid "Use the software OpenGL for rendering"
 msgstr "強制使用軟體 OpenGL 算繪"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:100
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "Disable hardware acceleration OpenCL"
 msgid "Use the OpenCL hardware acceleration"
 msgstr "停用 OpenCL 硬體加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:101
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:108
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Disable hardware acceleration OpenCL"
+msgid "Use the video hardware acceleration"
+msgstr "停用 OpenCL 硬體加速"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
-msgid "Fix AMD-GPU video decoding issue"
+msgid "Use the video textures conversion"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr "（預設）"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:119
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, fuzzy, kde-format
 msgid "WMF (System)"
 msgstr "都柏林核心集"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, fuzzy, kde-format
 msgid "AVFoundation (System)"
 msgstr "都柏林核心集"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Download required binary data..."
 msgid "Download required binary data:"
 msgstr "下載需要的二進制資料..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Opening Download Dialog..."
 msgid "Open Download Dialog..."
 msgstr "正在開啟下載對話框..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:137
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "啟用內部除錯紀錄"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
