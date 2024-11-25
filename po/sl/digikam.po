@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-20 06:37+0100\n"
+"PO-Revision-Date: 2024-11-24 07:56+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -66627,10 +66627,9 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Uporabi točkovne slike z visoko ločljivostjo DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Uporabi programsko opremo za upodabljanje OpenGL"
+msgstr "Uporabi programsko opremo OpenGL za upodabljanje"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -66647,15 +66646,14 @@ msgstr ""
 "okolja."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Uporabi s strojno pospeševanje OpenCL"
+msgstr "Uporabi s strojno pospeševanje videa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Uporabi konverzijo video tekstur"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

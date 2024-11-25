@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-21 20:57+0300\n"
+"PO-Revision-Date: 2024-11-24 20:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -66553,10 +66553,9 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Yüksek DPI çözünürlüğüne sahip piksel eşlemleri kullan"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Yazılım OpenGL sunumu kullanılmasını zorla"
+msgstr "Sunum için yazılım OpenGL kullan"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -66573,15 +66572,14 @@ msgstr ""
 "ayarlanmasını gerektirir."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "OpenCL donanım ivmelendirmesini kullan"
+msgstr "Video donanım ivmelendirmesi kullan"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Video dokuları dönüşümünü kullan"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

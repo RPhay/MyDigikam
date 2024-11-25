@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-20 10:21+0100\n"
+"PO-Revision-Date: 2024-11-24 09:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -67203,10 +67203,9 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Utilitza mapes de píxels amb resolucions de PPP alt"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Utilitza la renderització del programari OpenGL"
+msgstr "Utilitza el programari OpenGL per a la renderització"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -67223,15 +67222,14 @@ msgstr ""
 "d'entorn es definisquen manualment."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Utilitza l'acceleració de maquinari OpenCL"
+msgstr "Utilitza l'acceleració de maquinari de vídeo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Utilitza la conversió de textures de vídeo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format
@@ -68488,6 +68486,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Fix AMD-GPU video decoding issue"
-#~ msgstr "Corregix un problema de descodificació de vídeo de les GPU AMD"

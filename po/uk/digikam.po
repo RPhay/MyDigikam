@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-20 16:47+0200\n"
+"PO-Revision-Date: 2024-11-24 08:24+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67407,8 +67407,7 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Растрові зображення із високою роздільністю"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
 msgstr "Використати програмну обробку OpenGL"
 
@@ -67427,15 +67426,14 @@ msgstr ""
 "встановлювати вручну значення змінних середовища."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Використати апаратне прискорення OpenCL"
+msgstr "Використати апаратне прискорення відео"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Використати перетворення відеотекстур"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

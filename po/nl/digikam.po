@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-21 00:24+0100\n"
+"PO-Revision-Date: 2024-11-24 14:55+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -67078,10 +67078,9 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Pixmaps gebruiken met hoge DPI resolutie"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Gebruik het renderen met de software OpenGL"
+msgstr "Gebruik voor renderen de software OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -67098,15 +67097,14 @@ msgstr ""
 "omgevingsvariabelen handmatig zijn ingesteld."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Gebruik de hardware-versnelling OpenCL"
+msgstr "Gebruik de hardware-versnelling voor video"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Gebruik de conversie video-texturen"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

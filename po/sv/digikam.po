@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-23 16:36+0100\n"
+"PO-Revision-Date: 2024-11-24 15:18+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -60676,12 +60676,12 @@ msgstr "Sök efter ändrade eller ej katalogiserade objekt (snabbare)"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #, kde-format
 msgid "Rebuild Thumbnails"
-msgstr "Skapa om miniatyrbilder"
+msgstr "Återskapa miniatyrbilder"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:131
 #, kde-format
 msgid "Rebuild Finger-prints"
-msgstr "Skapa om fingeravtryck"
+msgstr "Återskapa fingeravtryck"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:144
 #, kde-format
@@ -60722,7 +60722,7 @@ msgstr "Hantering av ansiktsdata: "
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Bygg om all inlärningsdata"
+msgstr "Återskapa all inlärningsdata"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -61177,7 +61177,7 @@ msgstr "Fingeravtryck"
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
 #, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Skapa om fingeravtryck för: %1\n"
+msgstr "Återskapa fingeravtryck för: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
@@ -63286,8 +63286,8 @@ msgstr ""
 "miniatyrbildernas storlek utökas till 512 x 512 bildpunkter.\n"
 "Alternativet lagrar mer information i miniatyrbildsdatabasen och använder "
 "mer systemminne. Digikam måste startas om för att det ska få effekt, och "
-"alternativet Skapa om miniatyrbilder i verktygsmenyn Underhåll måste utföras "
-"för hela samlingar."
+"alternativet Återskapa miniatyrbilder i verktygsmenyn Underhåll måste "
+"utföras för hela samlingar."
 
 #: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
@@ -63479,8 +63479,8 @@ msgid ""
 "Maintenance</interface> menu."
 msgstr ""
 "Alternativet ändrar storleken som miniatyrbilder skapas med. Digikam måste "
-"startas om för att alternativet ska få effekt. Dessutom måste du skapa om "
-"alla miniatyrbilder som redan lagrats genom att använda menyn "
+"startas om för att alternativet ska få effekt. Dessutom måste alla "
+"miniatyrbilder som redan lagrats återskapas genom att använda menyn "
 "<interface>Verktyg - Underhåll</interface>."
 
 #: core/utilities/setup/album/setupcategory.cpp:76
@@ -66470,8 +66470,7 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Använd bildpunktsavbildningar med hög upplösning"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
 msgstr "Använd OpenGL-återgivning med programvara"
 
@@ -66490,15 +66489,14 @@ msgstr ""
 "miljövariabler ställs in manuellt."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Använd OpenCL maskinvaruacceleration"
+msgstr "Använd video maskinvaruacceleration"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Använd video strukturkonversion"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

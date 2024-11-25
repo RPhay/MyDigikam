@@ -64502,10 +64502,9 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "使用软件 OpenGL 渲染"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -64520,10 +64519,9 @@ msgid ""
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "使用 OpenCL 硬件加速"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
@@ -65695,6 +65693,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Fix AMD-GPU video decoding issue"
-#~ msgstr "修复 AMD-GPU 的视频解码问题"
