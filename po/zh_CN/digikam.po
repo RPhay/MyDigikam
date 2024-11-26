@@ -64504,7 +64504,7 @@ msgstr "在高分辨率下使用像素映射"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
 #, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr ""
+msgstr "使用软件 OpenGL 渲染"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
@@ -64521,12 +64521,12 @@ msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Use the video hardware acceleration"
-msgstr ""
+msgstr "使用显卡硬件加速"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "使用显卡纹理转换"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

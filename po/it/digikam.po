@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-24 01:51+0000\n"
-"PO-Revision-Date: 2024-11-18 20:37+0100\n"
+"PO-Revision-Date: 2024-11-20 17:45+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -65243,20 +65243,14 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>Per la gestione dei volti, lo strumento rimozione occhi rossi e la "
+"classificazione delle immagini in base all'estetica o l'assegnazione "
+"automatica di tag alle immagini, digiKam richiede l'uso di alcuni file "
+"eseguibili piuttosto grandi. Puoi scegliere quale funzionalità utilizzare.</"
+"p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For the face management, the red-eye removal tool, and the "
-#| "classification of images according to aesthetics or the automatic "
-#| "assignment of tags to images, digiKam requires some large binary files. "
-#| "You can choose which feature you want to use.</p><p>Some of these files "
-#| "were not found. Click “Download” to begin downloading the files you need. "
-#| "You can close this dialog, you will be asked again the next time you "
-#| "start digiKam. Without these files the selected features will not work.</"
-#| "p><p>The files will be downloaded to \"<i>%1</i>\".</p><p><b>After the "
-#| "successful download you have to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -65265,16 +65259,12 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>Per la gestione dei volti, lo strumento rimozione occhi rossi e la "
-"classificazione delle immagini in base all'estetica o l'assegnazione "
-"automatica di tag alle immagini, digiKam richiede l'uso di alcuni file "
-"eseguibili piuttosto grandi. Puoi scegliere quale funzionalità utilizzare.</"
-"p><p>Alcuni di questi file non sono stati trovati. Fai clic su «Scarica» per "
+"<p>Alcuni di questi file non sono stati trovati. Fai clic su «Scarica» per "
 "iniziare lo scaricamento dei file richiesti. Puoi chiudere questa finestra "
 "di dialogo, ti verrà chiesto di nuovo all'avvio successivo di digiKam. Senza "
 "questi file le funzionalità selezionate non funzioneranno.</p><p>I file "
-"saranno scaricati in %1.</p><p><b>Dopo averli scaricati correttamente dovrai "
-"riavviare il programma.</b></p>"
+"saranno scaricati in «<i>%1</i>».</p><p><b>Dopo averli scaricati "
+"correttamente dovrai riavviare il programma.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -67267,16 +67257,14 @@ msgid "AVFoundation (System)"
 msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Download Required Binary Data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Scarica i dati degli eseguibili richiesti..."
+msgstr "Scarica i dati degli eseguibili richiesti:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Apertura della finestra di scaricamento..."
+msgstr "Apri finestra di dialogo dello scaricamento..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
