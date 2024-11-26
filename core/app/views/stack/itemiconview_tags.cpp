@@ -33,7 +33,7 @@ void ItemIconView::toggleTag(int tagID)
     ItemInfoList tagToRemove, tagToAssign;
     const ItemInfoList& selectedList = selectedInfoList(MetadataOps);
 
-    for (const ItemInfo& info : std::as_const(selectedList))
+    for (const ItemInfo& info : selectedList)
     {
         if (info.tagIds().contains(tagID))
         {
@@ -59,7 +59,7 @@ void ItemIconView::slotAssignPickLabel(int pickId)
     const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyPickId               = NoPickLabel;
 
-    for (const ItemInfo& info : std::as_const(itemInfos))
+    for (const ItemInfo& info : itemInfos)
     {
         if (info.pickLabel() != pickId)
         {
@@ -76,7 +76,7 @@ void ItemIconView::slotAssignColorLabel(int colorId)
     const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyColorId              = NoColorLabel;
 
-    for (const ItemInfo& info : std::as_const(itemInfos))
+    for (const ItemInfo& info : itemInfos)
     {
         if (info.colorLabel() != colorId)
         {
