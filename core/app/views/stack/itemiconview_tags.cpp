@@ -88,19 +88,14 @@ void ItemIconView::slotAssignColorLabel(int colorId)
     FileActionMngr::instance()->assignColorLabel(itemInfos, applyColorId);
 }
 
-void ItemIconView::slotAssignRating(int rating)
-{
-    this->slotAssignRating(rating, true);
-}
-
-void ItemIconView::slotAssignRating(int rating, bool toggle = true)
+void ItemIconView::slotAssignRating(int rating, bool toggle)
 {
     const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyRating               = NoRating;
 
     if (toggle)
     {
-        for (const ItemInfo& info : std::as_const(itemInfos))
+        for (const ItemInfo& info : itemInfos)
         {
             if (info.rating() != rating)
             {
@@ -115,6 +110,12 @@ void ItemIconView::slotAssignRating(int rating, bool toggle = true)
     }
 
     FileActionMngr::instance()->assignRating(itemInfos, applyRating);
+}
+
+void ItemIconView::slotAssignTag()
+{
+    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
+    d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
 }
 
 void ItemIconView::slotAssignTag(int tagID)
@@ -163,7 +164,6 @@ void ItemIconView::slotRemoveTag(int tagID)
     }
 }
 
-
 void ItemIconView::slotNewTag()
 {
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
@@ -200,12 +200,6 @@ void ItemIconView::slotOpenTagsManager()
     tagMngr->show();
     tagMngr->activateWindow();
     tagMngr->raise();
-}
-
-void ItemIconView::slotAssignTag()
-{
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
 }
 
 /*

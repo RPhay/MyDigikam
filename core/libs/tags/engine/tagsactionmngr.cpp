@@ -88,11 +88,11 @@ public:
     QMultiMap<int, QAction*>  tagsActionMap;
     QList<KActionCollection*> actionCollectionList;
 
-    const QString             ratingShortcutPrefix  = QLatin1String("rateshortcut");
-    const QString             tagShortcutPrefix     = QLatin1String("tagshortcut");
-    const QString             pickShortcutPrefix    = QLatin1String("pickshortcut");
-    const QString             colorShortcutPrefix   = QLatin1String("colorshortcut");
-    const QString             noToggleShortcutPrefix   = QLatin1String("notoggle");
+    const QString             ratingShortcutPrefix   = QLatin1String("rateshortcut");
+    const QString             tagShortcutPrefix      = QLatin1String("tagshortcut");
+    const QString             pickShortcutPrefix     = QLatin1String("pickshortcut");
+    const QString             colorShortcutPrefix    = QLatin1String("colorshortcut");
+    const QString             noToggleShortcutPrefix = QLatin1String("notoggle");
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -212,7 +212,9 @@ bool TagsActionMngr::createRatingActionShortcut(KActionCollection* const ac, int
 {
     if (ac)
     {
-        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->ratingShortcutPrefix).arg(rating));
+        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2")
+                                                  .arg(d->ratingShortcutPrefix).arg(rating));
+
         action->setText(i18n("Assign Rating \"%1 Star\"", rating));
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("CTRL+%1").arg(rating)));
         action->setIcon(RatingWidget::buildIcon(rating, 32));
@@ -221,12 +223,14 @@ bool TagsActionMngr::createRatingActionShortcut(KActionCollection* const ac, int
         connect(action, SIGNAL(triggered()),
                 this, SLOT(slotAssignFromShortcut()));
 
-        // create shortcuts without toggling rating
+        // Create shortcuts without toggling rating.
+
         if (rating > 0)
         {
             QAction* const actionNT = ac->addAction(QString::fromUtf8("%1%3-%2")
                                                         .arg(d->ratingShortcutPrefix).arg(rating)
                                                         .arg(d->noToggleShortcutPrefix));
+
             actionNT->setText(i18n("Assign Rating \"%1 Star\" (no toggle)", rating));
             actionNT->setIcon(RatingWidget::buildIcon(rating, 32));
             actionNT->setData(rating);
@@ -245,8 +249,11 @@ bool TagsActionMngr::createPickLabelActionShortcut(KActionCollection* const ac, 
 {
     if (ac)
     {
-        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->pickShortcutPrefix).arg(pickId));
-        action->setText(i18n("Assign Pick Label \"%1\"", PickLabelWidget::labelPickName((PickLabel)pickId)));
+        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2")
+                                                  .arg(d->pickShortcutPrefix).arg(pickId));
+
+        action->setText(i18n("Assign Pick Label \"%1\"",
+                             PickLabelWidget::labelPickName((PickLabel)pickId)));
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+%1").arg(pickId)));
         action->setIcon(PickLabelWidget::buildIcon((PickLabel)pickId));
         action->setData(pickId);
@@ -264,8 +271,11 @@ bool TagsActionMngr::createColorLabelActionShortcut(KActionCollection* const ac,
 {
     if (ac)
     {
-        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->colorShortcutPrefix).arg(colorId));
-        action->setText(i18n("Assign Color Label \"%1\"", ColorLabelWidget::labelColorName((ColorLabel)colorId)));
+        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2")
+                                                  .arg(d->colorShortcutPrefix).arg(colorId));
+
+        action->setText(i18n("Assign Color Label \"%1\"",
+                             ColorLabelWidget::labelColorName((ColorLabel)colorId)));
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+CTRL+%1").arg(colorId)));
         action->setIcon(ColorLabelWidget::buildIcon((ColorLabel)colorId, 32));
         action->setData(colorId);

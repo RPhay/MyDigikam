@@ -296,12 +296,11 @@ public Q_SLOTS:
     void slotEditTag();
     void slotOpenTagsManager();
     void slotAssignTag();
-    void slotAssignPickLabel(int pickId);
-    void slotAssignColorLabel(int colorId);
-    void slotAssignRating(int rating);
-    void slotAssignRating(int rating, bool toggle);
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
+    void slotAssignPickLabel(int pickId);
+    void slotAssignColorLabel(int colorId);
+    void slotAssignRating(int rating, bool toggle = true);
 
 private Q_SLOTS:
 

@@ -19,7 +19,7 @@ BUGFIXES:
 010 ==> 496474 - digiKam 8.5 under macOS (Apple Silicon) - problem displaying HEIC of iPhone 16 pro.
 011 ==> 496570 - {unique} does not take file extension into account.
 012 ==> 496711 - Link to documentation in People View broken.
-013 ==>
+013 ==> 495722 - Assigning rating via keyboard shortcut doesnt work as expected (toggling vs assigning rating).
 014 ==>
 015 ==>
 016 ==>
