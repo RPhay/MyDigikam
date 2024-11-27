@@ -177,6 +177,7 @@ parts:
       - libpulse0
       - mariadb-client
       - mariadb-server
+      - cups-client
     build-snaps:
       - ffmpeg-2204-sdk
     override-pull: |
