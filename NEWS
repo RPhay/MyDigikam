@@ -20,7 +20,7 @@ BUGFIXES:
 011 ==> 496570 - {unique} does not take file extension into account.
 012 ==> 496711 - Link to documentation in People View broken.
 013 ==> 495722 - Assigning rating via keyboard shortcut doesnt work as expected (toggling vs assigning rating).
-014 ==>
+014 ==> 496619 - Fedora 41 appimage: symbol lookup error: /usr/lib64/libgnutls.so.30.
 015 ==>
 016 ==>
 017 ==>
