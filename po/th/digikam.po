@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -39564,22 +39564,27 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "กำหนดความชื่นชอบ \"ไม่ติดดาว\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "กำหนดความชื่นชอบ \"ไม่ติดดาว\""
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "โพรไฟล์สีที่กำหนดมา:"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "กำหนดป้ายกำกับ"

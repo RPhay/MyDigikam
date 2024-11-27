@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -40083,22 +40083,27 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "選択した値をリストから削除"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "「星なし」に評価"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "「星なし」に評価"
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "選抜ラベル \"%1\" を付ける"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "色ラベル \"%1\" を付ける"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "タグ \"%1\" を付ける"

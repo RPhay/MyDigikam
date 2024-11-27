@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -39620,22 +39620,28 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "យក​តម្លៃ​ដែល​បាន​ជ្រើស​​បច្ចុប្បន្ន​ចេញ​​​ពី​បញ្ជី​"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "កំណត់​ការ​វាយ​តម្លៃ \"%1 ផ្កាយ\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+#| msgid "Assign Rating \"%1 Star\""
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "កំណត់​ការ​វាយ​តម្លៃ \"%1 ផ្កាយ\""
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "កំណត់​ស្លាក​ជម្រើស \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "កំណត់​ស្លាក​ពណ៌ \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "កំណត់​​ស្លាក \"%1\""

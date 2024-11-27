@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2024-11-24 23:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -39782,22 +39782,28 @@ msgstr[1] ""
 "¿Eliminar las %1 etiquetas que corresponden a estas etiquetas de caras de "
 "las imágenes?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Asignar puntuación «%1 estrellas»"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+#| msgid "Assign Rating \"%1 Star\""
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "Asignar puntuación «%1 estrellas»"
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Asignar el emblema de elección «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Asignar el emblema de color «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Asignar etiqueta «%1»"

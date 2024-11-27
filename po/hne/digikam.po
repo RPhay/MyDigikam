@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -38207,22 +38207,27 @@ msgid_plural ""
 msgstr[0] "ये सूची मं से अभी हाल के चयनिद मूल्य ल मेटाव"
 msgstr[1] "ये सूची मं से अभी हाल के चयनिद मूल्य ल मेटाव"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "दर्जा देव \"कोइ तारा नइ\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "दर्जा देव \"कोइ तारा नइ\""
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "प्रोफाइल आवंटित करव"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "टैग आवंटित करव"

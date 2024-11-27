@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -38868,22 +38868,27 @@ msgstr[4] "أزل المرشِّح الحالي"
 msgstr[5] "أزل المرشِّح الحالي"
 
 # علة
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr ""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "تعيين التقييم واحد نجم"
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "أسند الوسم ”%1“"
@@ -75169,10 +75174,6 @@ msgstr "استورد عناصر"
 #~ msgctxt "View the selected image"
 #~ msgid "View..."
 #~ msgstr "عرض..."
-
-#, fuzzy
-#~ msgid "Assign Rating \"One Star\""
-#~ msgstr "تعيين التقييم واحد نجم"
 
 #, fuzzy
 #~ msgid "Assign Rating \"Two Stars\""

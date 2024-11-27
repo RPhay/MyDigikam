@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-24 01:51+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -40474,22 +40474,27 @@ msgid_plural ""
 msgstr[0] "Supprimer la valeur actuellement sélectionnée de la liste"
 msgstr[1] "Supprimer la valeur actuellement sélectionnée de la liste"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:215
+#: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Esleitu puntuazioa \"Izarrik gabera\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
+#, fuzzy, kde-format
+msgid "Assign Rating \"%1 Star\" (no toggle)"
+msgstr "Esleitu puntuazioa \"Izarrik gabera\""
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:253
+#: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Esleitutako kolore-profila:"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:301
+#: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Esleitu etiketa"
