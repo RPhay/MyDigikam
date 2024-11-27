@@ -9,188 +9,199 @@ base: core22
 adopt-info: digikam
 grade: stable
 confinement: strict
-
-apps:
-    digikam:
-        command: usr/bin/digikam
-        common-id: org.kde.digikam.desktop
-        desktop: usr/share/applications/org.kde.digikam.desktop
-        extensions:
-          - kde-neon-6
-        plugs:
-          - audio-playback
-          - browser-support
-          - camera
-          - home
-          - mount-observe
-          - network
-          - network-bind
-          - network-manager-observe
-          - removable-media
-          - udisks2
-          - cups
-        environment:
-          DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
-          DICPATH: "$SNAP/usr/share/hunspell"
-          PERL5LIB: "$SNAP/usr/share/perl5"
-          LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:${LD_LIBRARY_PATH}
-          PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
-          ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
-          QT_MEDIA_BACKEND: "gstreamer"
-
 compression: lzo
 
+apps:
+  digikam:
+  command: usr/bin/digikam
+  common-id: org.kde.digikam.desktop
+  desktop: usr/share/applications/org.kde.digikam.desktop
+  extensions:
+    - kde-neon-6
+  plugs:
+    - audio-playback
+    - browser-support
+    - camera
+    - home
+    - mount-observe
+    - network
+    - network-bind
+    - network-manager-observe
+    - removable-media
+    - udisks2
+    - cups
+  environment:
+    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
+    DICPATH: "$SNAP/usr/share/hunspell"
+    PERL5LIB: "$SNAP/usr/share/perl5"
+    LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:${LD_LIBRARY_PATH}
+    PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
+    ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
+    QT_MEDIA_BACKEND: "gstreamer"
+
 plugs:
-    hunspell-dictionaries:
-        content: hunspell-dictionaries
-        interface: content
-        target: "$SNAP/usr/share/hunspell"
-        default-provider: hunspell-dictionaries:hunspell-dictionaries
-    ffmpeg-2204:
-        interface: content
-        target: ffmpeg-platform # the folder where this content snap will be mounted
-        default-provider: ffmpeg-2204
+  hunspell-dictionaries:
+    content: hunspell-dictionaries
+    interface: content
+    target: "$SNAP/usr/share/hunspell"
+    default-provider: hunspell-dictionaries:hunspell-dictionaries
+  ffmpeg-2204:
+    interface: content
+    target: ffmpeg-platform # the folder where this content snap will be mounted
+    default-provider: ffmpeg-2204
 
 slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.digikam
-        bus: session
+  session-dbus-interface:
+    interface: dbus
+    name: org.kde.digikam
+    bus: session
 
 parts:
-    digikam:
-        parse-info:
-          - usr/share/metainfo/org.kde.digikam.appdata.xml
-        source: http://download.kde.org/stable/digikam/8.4.0/digiKam-8.4.0.tar.xz
+  digikam:
+    parse-info:
+      - usr/share/metainfo/org.kde.digikam.appdata.xml
+    source: http://download.kde.org/stable/digikam/8.5.0/digiKam-8.5.0.tar.xz
+    plugin: cmake
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DBUILD_WITH_QT6=ON
+      - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+      - -DBUILD_TESTING=OFF
+      - -DDIGIKAMSC_CHECKOUT_PO=OFF
+      - -DDIGIKAMSC_CHECKOUT_DOC=OFF
+      - -DDIGIKAMSC_COMPILE_PO=OFF
+      - -DDIGIKAMSC_COMPILE_DOC=ON
+      - -DDIGIKAMSC_COMPILE_DIGIKAM=ON
+      - -DENABLE_KFILEMETADATASUPPORT=OFF
+      - -DENABLE_AKONADICONTACTSUPPORT=OFF
+      - -DENABLE_MYSQLSUPPORT=ON
+      - -DENABLE_INTERNALMYSQL=OFF
+      - -DENABLE_MEDIAPLAYER=ON
+      - -DENABLE_LCMS2=ON
+      - -DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS=OFF
+      - -DENABLE_DBUS=ON
+      - -DENABLE_APPSTYLES=ON
+      - -DENABLE_QWEBENGINE=ON
+      - -DENABLE_FACESENGINE_DNN=ON
+      - -DCMAKE_CXX_FLAGS="-DMAGICKCORE_HAVE_ISNAN=0"
+    build-environment:
+      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2204-sdk/current"
+      - PKG_CONFIG_PATH: "/snap/ffmpeg-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
+      - LD_LIBRARY_PATH: "${LD_LIBRARY_PATH}:/snap/ffmpeg-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR"
+    build-packages:
+      - bison
+      - flex
+      - gphoto2
+      - libswscale-dev
+      - libboost-graph-dev
+      - libeigen3-dev
+      - libexiv2-dev
+      - libexpat1-dev
+      - libheif-dev
+      - libgphoto2-dev
+      - libjpeg-dev
+      - liblcms2-dev
+      - liblensfun-dev
+      - libmagick++-dev
+      - libopencv-dev
+      - libpng-dev
+      - libtiff-dev
+      - libusb-1.0-0-dev
+      - libxslt1-dev
+      - libxml2-dev
+      - libglib2.0-dev
+      - libqt6networkauth6-dev
+      - libpulse0
+      - libmariadb-dev
+    stage-packages:
+      - libexif12
+      - libgphoto2-6
+      - libgphoto2-port12
+      - libheif1
+      - libimage-exiftool-perl
+      - libjpeg8
+      - libjpeg-turbo8
+      - liblensfun1
+      - libltdl7
+      - libtbb2
+      - libwlocate0
+      - libshp2
+      - libx265-199
+      - libxerces-c3.2
+      - liburiparser1
+      - libsz2
+      - libsuperlu5
+      - libspatialite7
+      - librttopo1
+      - libqhull-r8.0
+      - libprotobuf23
+      - libqt6networkauth6
+      - libproj22
+      - libpoppler118
+      - libopencv-ml4.5d
+      - libopencv-imgproc4.5d
+      - libopencv-imgcodecs4.5d
+      - libopencv-dnn4.5d
+      - libopencv-core4.5d
+      - libodbcinst2
+      - libnetcdf19
+      - libkmlengine1
+      - libkmldom1
+      - libkmlbase1
+      - libhdf5-103
+      - libhdf5-hl-100
+      - libgif7
+      - libgeotiff5
+      - libgeos-c1v5
+      - libgeos3.10.2
+      - libgdcm3.0
+      - libfyba0
+      - libfreexl1
+      - libfftw3-single3
+      - libcharls2
+      - libcfitsio9
+      - libblosc1
+      - libarpack2
+      - libaec0
+      - libmagickwand-6.q16-6
+      - libmagickcore-6.q16-6
+      - libmagick++-6.q16-8
+      - libimath-3-1-29
+      - libogdi4.1
+      - libgdal30
+      - libarmadillo10
+      - libblas3
+      - kimageformat-plugins
+      - libpulse0
+      - mariadb-client
+      - mariadb-server
+    build-snaps:
+      - ffmpeg-2204-sdk
+    override-pull: |
+        craftctl default
+        patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
+    prime:
+      - -usr/lib/*/cmake/*
+      - -usr/include/*
+      - -usr/share/ECM/*
+      - -usr/share/man/*
+      - -usr/bin/X11
+      - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET_BUILD_FOR/6.0.0
+      - -usr/lib/aspell/*
+      - -usr/share/lintian
 
-        plugin: cmake
-        cmake-generator: Ninja
-        cmake-parameters:
-          - -DBUILD_WITH_QT6=ON
-          - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
-          - -DCMAKE_INSTALL_PREFIX=/usr
-          - -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-          - -DBUILD_TESTING=OFF
-          - -DDIGIKAMSC_CHECKOUT_PO=OFF
-          - -DDIGIKAMSC_CHECKOUT_DOC=OFF
-          - -DDIGIKAMSC_COMPILE_PO=OFF
-          - -DDIGIKAMSC_COMPILE_DOC=ON
-          - -DDIGIKAMSC_COMPILE_DIGIKAM=ON
-          - -DENABLE_KFILEMETADATASUPPORT=OFF
-          - -DENABLE_AKONADICONTACTSUPPORT=OFF
-          - -DENABLE_MYSQLSUPPORT=ON
-          - -DENABLE_INTERNALMYSQL=OFF
-          - -DENABLE_MEDIAPLAYER=ON
-          - -DENABLE_LCMS2=ON
-          - -DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS=OFF
-          - -DENABLE_DBUS=ON
-          - -DENABLE_APPSTYLES=ON
-          - -DENABLE_QWEBENGINE=ON
-          - -DENABLE_FACESENGINE_DNN=ON
-          - -DCMAKE_CXX_FLAGS="-DMAGICKCORE_HAVE_ISNAN=0"
-
-        build-environment:
-          - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2204-sdk/current"
-          - PKG_CONFIG_PATH: "/snap/ffmpeg-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
-          - LD_LIBRARY_PATH: "${LD_LIBRARY_PATH}:/snap/ffmpeg-2204-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR"
-
-        build-packages:
-          - bison
-          - flex
-          - gphoto2
-          - libswscale-dev
-          - libboost-graph-dev
-          - libeigen3-dev
-          - libexiv2-dev
-          - libexpat1-dev
-          - libheif-dev
-          - libgphoto2-dev
-          - libjpeg-dev
-          - liblcms2-dev
-          - liblensfun-dev
-          - libmagick++-dev
-          - libopencv-dev
-          - libpng-dev
-          - libtiff-dev
-          - libusb-1.0-0-dev
-          - libxslt1-dev
-          - libxml2-dev
-          - libglib2.0-dev
-          - libqt6networkauth6-dev
-          - libpulse0
-          - libmariadb-dev
-
-        stage-packages:
-          - libexif12
-          - libgphoto2-6
-          - libgphoto2-port12
-          - libheif1
-          - libimage-exiftool-perl
-          - libjpeg8
-          - libjpeg-turbo8
-          - liblensfun1
-          - libltdl7
-          - libtbb2
-          - libwlocate0
-          - libshp2
-          - libx265-199
-          - libxerces-c3.2
-          - liburiparser1
-          - libsz2
-          - libsuperlu5
-          - libspatialite7
-          - librttopo1
-          - libqhull-r8.0
-          - libprotobuf23
-          - libqt6networkauth6
-          - libproj22
-          - libpoppler118
-          - libopencv-ml4.5d
-          - libopencv-imgproc4.5d
-          - libopencv-imgcodecs4.5d
-          - libopencv-dnn4.5d
-          - libopencv-core4.5d
-          - libodbcinst2
-          - libnetcdf19
-          - libkmlengine1
-          - libkmldom1
-          - libkmlbase1
-          - libhdf5-103
-          - libhdf5-hl-100
-          - libgif7
-          - libgeotiff5
-          - libgeos-c1v5
-          - libgeos3.10.2
-          - libgdcm3.0
-          - libfyba0
-          - libfreexl1
-          - libfftw3-single3
-          - libcharls2
-          - libcfitsio9
-          - libblosc1
-          - libarpack2
-          - libaec0
-          - libmagickwand-6.q16-6
-          - libmagickcore-6.q16-6
-          - libmagick++-6.q16-8
-          - libimath-3-1-29
-          - libogdi4.1
-          - libgdal30
-          - libarmadillo10
-          - libblas3
-          - kimageformat-plugins
-          - libpulse0
-          - mariadb-client
-          - mariadb-server
-
-        build-snaps:
-          - ffmpeg-2204-sdk
-
-        override-pull: |
-          craftctl default
-          patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
-
-
-        prime:
-          - -usr/include/
+  cleanup:
+    after:
+      - digikam
+    plugin: nil
+    build-snaps:
+      - core22
+      - kf6-core22
+    override-prime: |
+      set -eux
+      for snap in "core22" "kf6-core22"; do
+          cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
+      done
 
