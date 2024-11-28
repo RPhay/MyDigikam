@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-27 01:51+0000\n"
-"PO-Revision-Date: 2024-11-24 14:55+0100\n"
+"PO-Revision-Date: 2024-11-27 13:48+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -39726,10 +39726,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Waardering  \"%1 ster\" toewijzen"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Waardering  \"%1 ster\" toewijzen"
+msgstr "Waardering  \"%1 ster\" toewijzen (niet omschakelen)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format

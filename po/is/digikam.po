@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-27 01:51+0000\n"
-"PO-Revision-Date: 2024-11-19 09:23+0000\n"
+"PO-Revision-Date: 2024-11-27 08:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -39240,13 +39240,12 @@ msgstr[1] "Fjarlægja %1 merkin sem samsvara þessum andlitum af myndunum?"
 #: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
-msgstr "Gefa einkunina \"%1 stjarna\""
+msgstr "Gefa einkunnina \"%1 stjarna\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Gefa einkunina \"%1 stjarna\""
+msgstr "Gefa einkunnina \"%1 stjarna\" (víxlar ekki)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -64478,20 +64477,13 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>Fyrir andlitaumsýslukerfið, rauðaugnabanaverkfærið og flokkun mynda út "
+"frá fagurfræði eða sjálfvirka úthlutun merkja á myndir þarfnast digiKam "
+"nokkurra mjög stórra tvíundakerfis-keyrsluskráa. Þú getur valið hvaða "
+"eiginleika þú vilt nota.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For the face management, the red-eye removal tool, and the "
-#| "classification of images according to aesthetics or the automatic "
-#| "assignment of tags to images, digiKam requires some large binary files. "
-#| "You can choose which feature you want to use.</p><p>Some of these files "
-#| "were not found. Click “Download” to begin downloading the files you need. "
-#| "You can close this dialog, you will be asked again the next time you "
-#| "start digiKam. Without these files the selected features will not work.</"
-#| "p><p>The files will be downloaded to \"<i>%1</i>\".</p><p><b>After the "
-#| "successful download you have to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -64500,14 +64492,12 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>Fyrir andlitaumsýslukerfið, rauðaugnabanaverkfærið og flokkun mynda út "
-"frá fagurfræði eða sjálfvirka úthlutun merkja á myndir þarfnast digiKam "
-"nokkurra mjög stórra tvíundakerfis-keyrsluskráa. </p><p>Einhverjar þessara "
-"skráa fundust ekki. Smelltu á 'Sækja' til að byrja að sækja nauðsynlegar "
-"skrár. Þú getur hætt við þetta ferli, næst þegar digiKam ræsist mun þessi "
-"gluggi birtast aftur. Valdir eiginleikar munu ekki virka án þessara skráa.</"
-"p><p>Skránum verður hlaðið yfir í í \"<i>%1</i>\".</p><p><b>Eftir að búið er "
-"að sækja skrárnar þarftu að endurræsa digiKam.</b></p>"
+"<p>Einhverjar þessara skráa fundust ekki. Smelltu á 'Sækja' til að byrja að "
+"sækja nauðsynlegar skrár. Þú getur hætt við þetta ferli, næst þegar digiKam "
+"ræsist mun þessi gluggi birtast aftur. Valdir eiginleikar munu ekki virka án "
+"þessara skráa.</p><p>Skránum verður hlaðið yfir í \"<i>%1</i>\".</"
+"p><p><b>Eftir að búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></"
+"p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -66402,8 +66392,7 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
 msgstr "Nota hugbúnaðar-OpenGL til myndgerðar"
 
@@ -66422,15 +66411,14 @@ msgstr ""
 "umhverfisbreytur séu handstilltar."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Nota OpenCL-vélbúnaðarhröðun"
+msgstr "Nota vélbúnaðarhröðun fyrir myndskeið"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Nota umbreytingu efnisáferða fyrir myndskeið"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
 #, kde-format

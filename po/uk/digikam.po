@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-27 01:51+0000\n"
-"PO-Revision-Date: 2024-11-24 08:24+0200\n"
+"PO-Revision-Date: 2024-11-27 08:28+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -39940,10 +39940,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Призначити оцінку «%1 зірок»"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Призначити оцінку «%1 зірок»"
+msgstr "Призначити оцінку «%1 зірок» (без перемикання)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format

@@ -38058,10 +38058,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "指定评分“%1 星”"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "指定评分“%1 星”"
+msgstr ""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format

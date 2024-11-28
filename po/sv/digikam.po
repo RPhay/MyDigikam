@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-27 01:51+0000\n"
-"PO-Revision-Date: 2024-11-24 15:18+0100\n"
+"PO-Revision-Date: 2024-11-27 17:38+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -39315,10 +39315,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Tilldela betyget \"%1 stjärna\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Tilldela betyget \"%1 stjärna\""
+msgstr "Tilldela betyget \"%1 stjärna\" (ingen växling)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
