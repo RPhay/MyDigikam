@@ -22,7 +22,7 @@ BUGFIXES:
 013 ==> 495722 - Assigning rating via keyboard shortcut doesnt work as expected (toggling vs assigning rating).
 014 ==> 496619 - Fedora 41 appimage: symbol lookup error: /usr/lib64/libgnutls.so.30.
 015 ==> 496771 - It is no longer possible to convert RAW images to DNG images.
-016 ==>
+016 ==> 496785 - digiKam appimage does not start with symbol lookup error: undefined symbol: nettle_rsa_oaep_sha384_decrypt.
 017 ==>
 018 ==>
 019 ==>
