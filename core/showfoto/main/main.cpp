@@ -144,14 +144,15 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#   ifdef Q_OS_WIN
-
-    if (system.disableHWConv)
+    if (system.enableHWTConv)
+    {
+        qunsetenv("QT_DISABLE_HW_TEXTURES_CONVERSION");
+    }
+    else
     {
         qputenv("QT_DISABLE_HW_TEXTURES_CONVERSION", "1");
     }
 
-#   endif
 
     qputenv("QT_MEDIA_BACKEND", system.videoBackend.toLatin1());
 
