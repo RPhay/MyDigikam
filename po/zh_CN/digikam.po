@@ -38060,7 +38060,7 @@ msgstr "指定评分“%1 星”"
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr ""
+msgstr "指定评分“%1 星” (不切换)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
