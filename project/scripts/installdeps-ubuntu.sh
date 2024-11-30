@@ -300,14 +300,13 @@ for pkg in ${optional_packages[@]}; do
     echo "-------------------------------------------------------------------"
 done
 
-# Remove native Qt6 libs from the system
-
-sudo apt remove -y libqt6core
-
-
 # Add symbolic links for Krazy static analyzer
 
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
+
+# Remove native Qt6 libs from the system
+
+sudo apt remove -y libqt6core || true
 
 
