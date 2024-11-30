@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-27 01:51+0000\n"
+"POT-Creation-Date: 2024-11-30 01:48+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -2859,13 +2859,13 @@ msgstr "Bara de unelte principală"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sergiu Bivol"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -49958,13 +49958,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dosar: "
 
-#: core/showfoto/main/main.cpp:201
+#: core/showfoto/main/main.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:219
+#: core/showfoto/main/main.cpp:220
 #, fuzzy, kde-format
 #| msgid "Select folder to parse"
 msgctxt "command line option"

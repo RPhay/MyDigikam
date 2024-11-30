@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-27 01:51+0000\n"
+"POT-Creation-Date: 2024-11-30 01:48+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2751,13 +2751,13 @@ msgstr "شريط الأدوات الرّئيسيّ"
 msgid "digiKam"
 msgstr "دِجي‌كام"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "صفا الفليج,زايد السعيدي"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -49240,13 +49240,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "المجلّدات"
 
-#: core/showfoto/main/main.cpp:201
+#: core/showfoto/main/main.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "شوفوتو"
 
-#: core/showfoto/main/main.cpp:219
+#: core/showfoto/main/main.cpp:220
 #, fuzzy, kde-format
 #| msgid "Select folder to parse"
 msgctxt "command line option"

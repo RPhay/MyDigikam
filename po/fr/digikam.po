@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-27 01:51+0000\n"
-"PO-Revision-Date: 2024-11-25 09:00+0100\n"
+"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"PO-Revision-Date: 2024-11-28 10:33+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2724,13 +2724,13 @@ msgstr "Barre principale"
 msgid "digiKam"
 msgstr "DigiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Joëlle Cornavin, Vincent Pinon, Peter Potrowl, Xavier Besnard"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -40053,10 +40053,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Attribuer une note « %1 étoile »"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Attribuer une note « %1 étoile »"
+msgstr "Attribuer une note « %1 étoile(s) » (Aucune activation)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -50026,13 +50025,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dossiers"
 
-#: core/showfoto/main/main.cpp:201
+#: core/showfoto/main/main.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "ShowFoto"
 
-#: core/showfoto/main/main.cpp:219
+#: core/showfoto/main/main.cpp:220
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"

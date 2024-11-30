@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-27 01:51+0000\n"
+"POT-Creation-Date: 2024-11-30 01:48+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2591,7 +2591,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2599,7 +2599,7 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -47791,13 +47791,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:201
+#: core/showfoto/main/main.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:219
+#: core/showfoto/main/main.cpp:220
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"

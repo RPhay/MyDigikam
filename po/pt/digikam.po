@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-27 01:51+0000\n"
+"POT-Creation-Date: 2024-11-30 01:48+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -2786,13 +2786,13 @@ msgstr "Barra Principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:210
+#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "José Nuno Pires"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -49765,13 +49765,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Pastas"
 
-#: core/showfoto/main/main.cpp:201
+#: core/showfoto/main/main.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:219
+#: core/showfoto/main/main.cpp:220
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
