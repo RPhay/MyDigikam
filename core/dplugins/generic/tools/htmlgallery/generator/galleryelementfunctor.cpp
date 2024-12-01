@@ -137,7 +137,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
     // Save images
 
-    QString baseFileName = GalleryGenerator::webifyFileName(element.m_title);
+    QString baseFileName = element.m_title.section(QLatin1Char('.'), 0, -2);
+    baseFileName         = GalleryGenerator::webifyFileName(baseFileName);
     baseFileName         = m_uniqueNameHelper.makeNameUnique(baseFileName);
 
     // Save full
