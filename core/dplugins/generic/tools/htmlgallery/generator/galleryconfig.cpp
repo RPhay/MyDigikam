@@ -60,8 +60,12 @@ GalleryConfig::GalleryConfig(QObject* const)
     valuesfullFormat.append(choice1);
 
     KConfigSkeleton::ItemEnum::Choice choice2;
-    choice2.name = QLatin1String("PNG");
+    choice2.name = QLatin1String("JPG");
     valuesfullFormat.append(choice2);
+
+    KConfigSkeleton::ItemEnum::Choice choice3;
+    choice3.name = QLatin1String("PNG");
+    valuesfullFormat.append(choice3);
 
     KConfigSkeleton::ItemEnum* const itemfullFormat
         = new KConfigSkeleton::ItemEnum(currentGroup(), QLatin1String("fullFormat"),
@@ -93,13 +97,17 @@ GalleryConfig::GalleryConfig(QObject* const)
 
     QList<KConfigSkeleton::ItemEnum::Choice> valuesthumbnailFormat;
 
-    KConfigSkeleton::ItemEnum::Choice choice3;
-    choice3.name = QLatin1String("JPEG");
-    valuesthumbnailFormat.append(choice3);
-
     KConfigSkeleton::ItemEnum::Choice choice4;
-    choice4.name = QLatin1String("PNG");
+    choice4.name = QLatin1String("JPEG");
     valuesthumbnailFormat.append(choice4);
+
+    KConfigSkeleton::ItemEnum::Choice choice5;
+    choice5.name = QLatin1String("JPG");
+    valuesthumbnailFormat.append(choice5);
+
+    KConfigSkeleton::ItemEnum::Choice choice6;
+    choice6.name = QLatin1String("PNG");
+    valuesthumbnailFormat.append(choice6);
 
     KConfigSkeleton::ItemEnum* const itemthumbnailFormat
         = new KConfigSkeleton::ItemEnum(currentGroup(), QLatin1String("thumbnailFormat"),
@@ -134,17 +142,17 @@ GalleryConfig::GalleryConfig(QObject* const)
 
     QList<KConfigSkeleton::ItemEnum::Choice> valueswebBrowser;
 
-    KConfigSkeleton::ItemEnum::Choice choice5;
-    choice5.name = QLatin1String("NONE");
-    valueswebBrowser.append(choice5);
-
-    KConfigSkeleton::ItemEnum::Choice choice6;
-    choice6.name = QLatin1String("INTERNAL");
-    valueswebBrowser.append(choice6);
-
     KConfigSkeleton::ItemEnum::Choice choice7;
-    choice7.name = QLatin1String("DESKTOP");
+    choice7.name = QLatin1String("NONE");
     valueswebBrowser.append(choice7);
+
+    KConfigSkeleton::ItemEnum::Choice choice8;
+    choice8.name = QLatin1String("INTERNAL");
+    valueswebBrowser.append(choice8);
+
+    KConfigSkeleton::ItemEnum::Choice choice9;
+    choice9.name = QLatin1String("DESKTOP");
+    valueswebBrowser.append(choice9);
 
     KConfigSkeleton::ItemEnum* const itemwebBrowser
         = new KConfigSkeleton::ItemEnum(currentGroup(), QLatin1String("openInBrowser"),

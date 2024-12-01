@@ -84,7 +84,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
     QComboBox* const kcfg_fullFormat = new QComboBox(this);
     kcfg_fullFormat->setObjectName(QLatin1String("kcfg_fullFormat"));
     kcfg_fullFormat->clear();
-    kcfg_fullFormat->insertItems(0, QStringList() << i18n("JPEG") << i18n("PNG"));
+    kcfg_fullFormat->insertItems(0, QStringList() << i18n("JPEG") << i18n("JPG") << i18n("PNG"));
     textLabel2_2_2_2->setBuddy(kcfg_fullFormat);
 
     QSpacerItem* const spacer4 = new QSpacerItem(312, 17, QSizePolicy::Expanding,
@@ -165,7 +165,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
     QComboBox* const kcfg_thumbnailFormat = new QComboBox(this);
     kcfg_thumbnailFormat->setObjectName(QLatin1String("kcfg_thumbnailFormat"));
     kcfg_thumbnailFormat->clear();
-    kcfg_thumbnailFormat->insertItems(0, QStringList() << i18n("JPEG") << i18n("PNG"));
+    kcfg_thumbnailFormat->insertItems(0, QStringList() << i18n("JPEG") << i18n("JPG") << i18n("PNG"));
     textLabel2_2_2->setBuddy(kcfg_thumbnailFormat);
 
     QSpacerItem* const horizontalSpacer_7 = new QSpacerItem(40, 27, QSizePolicy::Fixed,

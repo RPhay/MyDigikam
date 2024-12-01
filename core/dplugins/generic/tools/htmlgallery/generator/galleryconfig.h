@@ -39,6 +39,7 @@ public:
         enum type
         {
             JPEG,
+            JPG,
             PNG,
             COUNT
         };
@@ -51,6 +52,7 @@ public:
         enum type
         {
             JPEG,
+            JPG,
             PNG,
             COUNT
         };
