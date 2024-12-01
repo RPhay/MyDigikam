@@ -4,31 +4,31 @@
 Dependencies:
 - 'on': ['@all']
   'require':
-    'frameworks/extra-cmake-modules':   '@stable'
-    'frameworks/kxmlgui':               '@stable'
-    'frameworks/kcoreaddons':           '@stable'
-    'frameworks/kconfig':               '@stable'
-    'frameworks/kservice':              '@stable'
-    'frameworks/kwindowsystem':         '@stable'
-    'frameworks/solid':                 '@stable'
-    'frameworks/ki18n':                 '@stable'
-    'frameworks/kio':                   '@stable'
-    'frameworks/kiconthemes':           '@stable'
-    'frameworks/threadweaver':          '@stable'
-    'frameworks/knotifications':        '@stable'
-    'frameworks/kcalendarcore':         '@stable'
-    'frameworks/kimageformats':         '@stable'
+    'frameworks/extra-cmake-modules':   '@stable-kf6'
+    'frameworks/kxmlgui':               '@stable-kf6'
+    'frameworks/kcoreaddons':           '@stable-kf6'
+    'frameworks/kconfig':               '@stable-kf6'
+    'frameworks/kservice':              '@stable-kf6'
+    'frameworks/kwindowsystem':         '@stable-kf6'
+    'frameworks/solid':                 '@stable-kf6'
+    'frameworks/ki18n':                 '@stable-kf6'
+    'frameworks/kio':                   '@stable-kf6'
+    'frameworks/kiconthemes':           '@stable-kf6'
+    'frameworks/threadweaver':          '@stable-kf6'
+    'frameworks/knotifications':        '@stable-kf6'
+    'frameworks/kcalendarcore':         '@stable-kf6'
+    'frameworks/kimageformats':         '@stable-kf6'
 
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
-    'frameworks/knotifyconfig':         '@stable'
+    'frameworks/knotifyconfig':         '@stable-kf6'
 
 - 'on': ['FreeBSD']
   'require':
-    'graphics/libksane':                '@stable'
-    'frameworks/kcontacts':             '@stable'
-    'pim/akonadi-contacts':             '@stable'
-    'frameworks/kfilemetadata':         '@stable'
+    'graphics/libksane':                '@stable-kf6'
+    'frameworks/kcontacts':             '@stable-kf6'
+    'pim/akonadi-contacts':             '@stable-kf6'
+    'frameworks/kfilemetadata':         '@stable-kf6'
 
 Options:
     run-cppcheck: False
