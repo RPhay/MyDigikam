@@ -62,6 +62,13 @@ QImage DImg::copyQImage() const
         }
     }
 
+    QByteArray iccProfile = getIccProfile().data();
+
+    if (!iccProfile.isEmpty())
+    {
+        img.setColorSpace(QColorSpace::fromIccProfile(iccProfile));
+    }
+
     return img;
 }
 

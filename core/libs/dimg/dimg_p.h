@@ -53,6 +53,7 @@ extern "C"
 #include <QSysInfo>
 #include <QUuid>
 #include <QScopedPointer>
+#include <QColorSpace>
 
 // KDE includes
 
