@@ -48,7 +48,6 @@ public:
 
 private:
 
-    bool writeDataToFile(const QByteArray& data, const QString& destPath);
     void emitWarning(const QString& msg);
 
 private:

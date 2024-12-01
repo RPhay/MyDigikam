@@ -37,8 +37,8 @@
 #include "gallerygenerator.h"
 #include "galleryelement.h"
 #include "metaengine_rotation.h"
-#include "drawdecoder.h"
-#include "drawinfo.h"
+#include "dfileoperations.h"
+#include "dimg.h"
 
 using namespace Digikam;
 
@@ -88,47 +88,23 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 {
     // Load image
 
-    QString    path = element.m_path;
-    QImage     originalImage;
-    QString    imageFormat;
-    QByteArray imageData;
+    QImage  originalImage;
+    QString path        = element.m_path;
+    QString imageFormat = QFileInfo(path).suffix();
 
-    // Check if RAW file.
-
-    if (DRawDecoder::isRawFile(QUrl::fromLocalFile(path)))
     {
-        if (!DRawDecoder::loadRawPreview(originalImage, path))
-        {
-            emitWarning(i18n("Error loading RAW image '%1'", QDir::toNativeSeparators(path)));
+        DImg img;
 
-            return;
-        }
-    }
-    else
-    {
-        QFile imageFile(path);
-
-        if (!imageFile.open(QIODevice::ReadOnly))
+        if (!img.load(path))
         {
             emitWarning(i18n("Could not read image '%1'", QDir::toNativeSeparators(path)));
 
             return;
         }
 
-        imageFormat = QLatin1String(QImageReader::imageFormat(&imageFile));
+        originalImage = img.copyQImage();
 
-        if (imageFormat.isEmpty())
-        {
-            emitWarning(i18n("Format of image '%1' is unknown", QDir::toNativeSeparators(path)));
-            imageFile.close();
-
-            return;
-        }
-
-        imageData = imageFile.readAll();
-        imageFile.close();
-
-        if (!originalImage.loadFromData(imageData))
+        if (originalImage.isNull())
         {
             emitWarning(i18n("Error loading image '%1'", QDir::toNativeSeparators(path)));
 
@@ -151,7 +127,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         if (element.m_orientation != DMetadata::ORIENTATION_UNSPECIFIED )
         {
             QTransform matrix = MetaEngineRotation::toTransform(element.m_orientation);
-            fullImage      = fullImage.transformed(matrix);
+            fullImage         = fullImage.transformed(matrix);
         }
     }
 
@@ -168,10 +144,13 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
     if (m_info->useOriginalImageAsFullImage())
     {
-        fullFileName = baseFileName + QLatin1Char('.') + imageFormat.toLower();
+        fullFileName     = baseFileName + QLatin1Char('.') + imageFormat.toLower();
+        QString destPath = m_destDir + QLatin1Char('/') + fullFileName;
 
-        if (!writeDataToFile(imageData, m_destDir + QLatin1Char('/') + fullFileName))
+        if (!DFileOperations::copyFile(path, destPath))
         {
+            emitWarning(i18n("Could not copy image to file '%1'", QDir::toNativeSeparators(destPath)));
+
             return;
         }
     }
@@ -196,10 +175,13 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
     if (m_info->copyOriginalImage())
     {
-        QString originalFileName   = QLatin1String("original_") + fullFileName;
+        QString originalFileName = QLatin1String("original_") + fullFileName;
+        QString destPath         = m_destDir + QLatin1Char('/') + originalFileName;
 
-        if (!writeDataToFile(imageData, m_destDir + QLatin1Char('/') + originalFileName))
+        if (!DFileOperations::copyFile(path, destPath))
         {
+            emitWarning(i18n("Could not copy image to file '%1'", QDir::toNativeSeparators(destPath)));
+
             return;
         }
 
@@ -216,8 +198,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     if (!thumbnail.save(destPath, m_info->thumbnailFormatString().toLatin1().data(), m_info->thumbnailQuality()))
     {
         Q_EMIT m_generator->logWarningRequested(i18n("Could not save thumbnail for image '%1' to '%2'",
-                                                   QDir::toNativeSeparators(path),
-                                                   QDir::toNativeSeparators(destPath)));
+                                                     QDir::toNativeSeparators(path),
+                                                     QDir::toNativeSeparators(destPath)));
         return;
     }
 
@@ -229,9 +211,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
     QString unavailable(i18n("unavailable"));
     QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->load(path);
 
-    if (meta->hasExif() || meta->hasXmp())
+    if (meta->load(path) && (meta->hasExif() || meta->hasXmp()))
     {
         // Try to use image metadata to get image info
 
@@ -357,54 +338,6 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
             element.m_exifGPSLongitude = QString::number(gpsvalue, 'f', 6);
         }
     }
-    else
-    {
-        // Try to use Raw decoder to identify image.
-
-        QScopedPointer<DRawInfo> info(new DRawInfo);
-        DRawDecoder* const rawdecoder = new DRawDecoder;
-        rawdecoder->rawFileIdentify(*info, path);
-
-        if (info->isDecodable)
-        {
-            if (!info->make.isEmpty())
-            {
-                element.m_exifImageMake = info->make;
-            }
-
-            if (!info->model.isEmpty())
-            {
-                element.m_exifItemModel = info->model;
-            }
-
-            if (info->dateTime.isValid())
-            {
-                element.m_exifImageDateTime = QLocale().toString(info->dateTime, QLocale::ShortFormat);
-            }
-
-            if (info->aperture != -1.0)
-            {
-                element.m_exifPhotoApertureValue = QString::number(info->aperture);
-            }
-
-            if (info->focalLength != -1.0)
-            {
-                element.m_exifPhotoFocalLength = QString::number(info->focalLength);
-            }
-
-            if (info->exposureTime != -1.0)
-            {
-                element.m_exifPhotoExposureTime = QString::number(info->exposureTime);
-            }
-
-            if (info->sensitivity != -1)
-            {
-                element.m_exifPhotoISOSpeedRatings = QString::number(info->sensitivity);
-            }
-        }
-
-        delete rawdecoder;
-    }
 
     if (element.m_exifImageMake.isEmpty())
     {
@@ -495,30 +428,6 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     {
         element.m_exifGPSLongitude = unavailable;
     }
-}
-
-bool GalleryElementFunctor::writeDataToFile(const QByteArray& data, const QString& destPath)
-{
-    QFile destFile(destPath);
-
-    if (!destFile.open(QIODevice::WriteOnly))
-    {
-        emitWarning(i18n("Could not open file '%1' for writing", QDir::toNativeSeparators(destPath)));
-
-        return false;
-    }
-
-    if (destFile.write(data) != data.size())
-    {
-        emitWarning(i18n("Could not save image to file '%1'", QDir::toNativeSeparators(destPath)));
-        destFile.close();
-
-        return false;
-    }
-
-    destFile.close();
-
-    return true;
 }
 
 void GalleryElementFunctor::emitWarning(const QString& message)
