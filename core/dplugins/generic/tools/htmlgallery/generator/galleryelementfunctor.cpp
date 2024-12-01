@@ -91,6 +91,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     QImage  originalImage;
     QString path        = element.m_path;
     QString imageFormat = QFileInfo(path).suffix();
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     {
         DImg img;
@@ -103,6 +104,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         }
 
         originalImage = img.copyQImage();
+        meta->setData(img.getMetadata());
 
         if (originalImage.isNull())
         {
@@ -210,9 +212,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     // Read Exif Metadata
 
     QString unavailable(i18n("unavailable"));
-    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (meta->load(path) && (meta->hasExif() || meta->hasXmp()))
+    if (meta->hasExif() || meta->hasXmp())
     {
         // Try to use image metadata to get image info
 
