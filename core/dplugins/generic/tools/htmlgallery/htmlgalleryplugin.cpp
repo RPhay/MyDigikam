@@ -107,8 +107,7 @@ void HtmlGalleryPlugin::slotHtmlGallery()
 {
     QPointer<HTMLWizard> wzrd = new HTMLWizard(nullptr, infoIface(sender()));
     wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    wzrd->show();
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin
