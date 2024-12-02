@@ -25,7 +25,7 @@ BUGFIXES:
 016 ==> 496785 - digiKam appimage does not start with symbol lookup error: undefined symbol: nettle_rsa_oaep_sha384_decrypt.
 017 ==> 496868 - The application only starts with a white window.
 018 ==> 496867 - digiKam 8.0 does not display a new album folder.
-019 ==>
+019 ==> 480357 - digiKam 8.2.0 segfaults on importing collection.
 020 ==>
 021 ==>
 022 ==>
