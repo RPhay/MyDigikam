@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -11480,26 +11480,25 @@ msgstr "Rediģēt ģeolokāciju..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "Neizdevās izveidot '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "Kļūda saglabājot failu"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Neizdevās saglabāt attēlu '%1' iekš '%2'"
@@ -16856,33 +16855,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Pamata rīki"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "Kļūda ielādējot attēlu '%1'"
+msgid "Could not copy image to file '%1'"
+msgstr "Neizdevās saglabāt failu: %."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Neizdevās izveidot sīktēlu priekš %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "nav pieejams"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing"
-msgid "Could not open file '%1' for writing"
-msgstr "Neizdevās atvērt failu rakstīšanai"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, fuzzy, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "Neizdevās saglabāt failu: %."
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -17231,6 +17220,12 @@ msgstr "Faila īpašības"
 #, kde-format
 msgid "Save image"
 msgstr "Saglabāt attēlu"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+msgid "JPG"
+msgstr "LibJPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -68078,6 +68073,15 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "Kļūda ielādējot attēlu '%1'"
+
+#, fuzzy
+#~| msgid "Failed to open file for writing"
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "Neizdevās atvērt failu rakstīšanai"
 
 #, fuzzy
 #~ msgid "Thumbs"

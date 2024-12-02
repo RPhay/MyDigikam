@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -11694,26 +11694,25 @@ msgstr "Titlu:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "Eroare la salvarea fișierului"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Could not save image '%1' to '%2'"
@@ -17215,34 +17214,24 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Unelte de bază"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "Niciun fișier GPX"
+#| msgid "Failed to save file: %1"
+msgid "Could not copy image to file '%1'"
+msgstr "Eșec la salvarea fișierului: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Nu pot crea miniatură pentru %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "indisponibil"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing"
-msgid "Could not open file '%1' for writing"
-msgstr "Deschiderea fișierului pentru scriere a eșuat"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
-msgid "Could not save image to file '%1'"
-msgstr "Eșec la salvarea fișierului: %1"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -17604,6 +17593,12 @@ msgstr "Proprietăți fișier"
 #| msgid "Save Images"
 msgid "Save image"
 msgstr "Salvează imaginile"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+msgid "JPG"
+msgstr "LibJPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -68295,6 +68290,15 @@ msgstr "Elementele albumului"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sortează imaginile"
+
+#, fuzzy
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "Niciun fișier GPX"
+
+#, fuzzy
+#~| msgid "Failed to open file for writing"
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "Deschiderea fișierului pentru scriere a eșuat"
 
 #, fuzzy
 #~ msgid "Thumbs"

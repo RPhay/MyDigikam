@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -11249,26 +11249,25 @@ msgstr "सीर्सक संपादित करव..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "'%1' नइ बना सकिस"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "फाइल सहेजे मं गलती होइस"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "फोटू '%1' ल '%2' मं सहेज नइ सकिस"
@@ -16703,33 +16702,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "औजार (&T)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "फोटू '%1' ल लोड करे मं गलती होइस"
+msgid "Could not copy image to file '%1'"
+msgstr "%1 मं फाइल सूची बनाना फेल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "%1 बर छोटेफोटू बनाय नइ जा सके"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "नइ मिलत "
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing"
-msgid "Could not open file '%1' for writing"
-msgstr "फाइल ल लिखे बर खोले मं फेल"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, fuzzy, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "%1 मं फाइल सूची बनाना फेल"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -17080,6 +17069,12 @@ msgstr "फाइल गुन"
 #| msgid "Save Images"
 msgid "Save image"
 msgstr "फोटू सहेजव"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+msgid "JPG"
+msgstr "लिबजेपीईजी"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -66606,6 +66601,15 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "फोटू छांटव (&S)"
+
+#, fuzzy
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "फोटू '%1' ल लोड करे मं गलती होइस"
+
+#, fuzzy
+#~| msgid "Failed to open file for writing"
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "फाइल ल लिखे बर खोले मं फेल"
 
 #, fuzzy
 #~ msgid "Thumbs"

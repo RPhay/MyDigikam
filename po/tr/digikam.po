@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2024-11-27 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -11697,25 +11697,24 @@ msgstr "Coğrafi Konumu Düzenle…"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "“%1” görseli okunamadı"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "“%1” görselinin biçimi bilinmiyor"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "“%1” görselini yüklemede hata"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "“%1” görseli “%2” konumuna kaydedilemedi"
@@ -17229,31 +17228,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Yığılmış Görseller Aracı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
-#, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "“%1” RAW görseli yüklenirken hata"
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
+#, fuzzy, kde-format
+#| msgid "Could not save image to file '%1'"
+msgid "Could not copy image to file '%1'"
+msgstr "Görsel “%1” dosyasına kaydedilemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "“%1” görselinin küçük görseli “%2” konumuna kaydedilemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "kullanılamıyor"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, kde-format
-msgid "Could not open file '%1' for writing"
-msgstr "“%1” dosyası yazmak için açılamıyor"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "Görsel “%1” dosyasına kaydedilemedi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, kde-format
@@ -17587,6 +17578,13 @@ msgstr "Tam görsel özellikleri:"
 #, kde-format
 msgid "Save image"
 msgstr "Resmi kaydet"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+#| msgid "JPEG"
+msgid "JPG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -67824,6 +67822,12 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "“%1” RAW görseli yüklenirken hata"
+
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "“%1” dosyası yazmak için açılamıyor"
 
 #~ msgid "Fix AMD-GPU video decoding issue"
 #~ msgstr "AMD GPU’larda video kodlaması sorununu düzelt"

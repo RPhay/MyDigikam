@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -11209,26 +11209,25 @@ msgstr "चयन"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "रङ गहिराइ:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -16524,33 +16523,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "रङ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "फाइल बचत गर्दा त्रुटि"
+msgid "Could not copy image to file '%1'"
+msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "%1 का लागि थम्बनेल सिर्जना गर्न सकिदैन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "उपलब्ध छैन"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to list files in %1"
-msgid "Could not open file '%1' for writing"
-msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, fuzzy, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -16892,6 +16881,12 @@ msgstr "फाइल गुण"
 #| msgid "Save Images"
 msgid "Save image"
 msgstr "छवि बचत गर्नुहोस्"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+msgid "JPG"
+msgstr "जेपीईजी २००० गुणस्तर:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -65512,6 +65507,15 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "फाइल बचत गर्दा त्रुटि"
+
+#, fuzzy
+#~| msgid "Failed to list files in %1"
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
 #, fuzzy
 #~ msgid "Thumbs"

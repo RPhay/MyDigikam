@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -11628,26 +11628,25 @@ msgstr "แก้ไขคำบรรยายภาพ..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "ไม่สามารถสร้าง '%1 ได้"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "ล้มเหลวในการบันทึกแฟ้ม"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
@@ -17372,34 +17371,24 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "เครื่องมือพื้นฐาน"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "เกิดข้อผิดพลาดระหว่างเรียกภาพ '%1'"
+#| msgid "Failed to save file: %1"
+msgid "Could not copy image to file '%1'"
+msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "ไม่สามารถสร้างภาพตัวอย่างขนาดเล็กสำหรับ %1 ได้"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "ไม่มีข้อมูล"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing"
-msgid "Could not open file '%1' for writing"
-msgstr "ล้มเหลวในการเปิดแฟ้มเพื่อทำการเขียน"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
-msgid "Could not save image to file '%1'"
-msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -17753,6 +17742,12 @@ msgstr "คุณสมบัติของแฟ้ม"
 #| msgid "Save Images"
 msgid "Save image"
 msgstr "บันทึกภาพ"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+msgid "JPG"
+msgstr "LibJPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -69170,6 +69165,15 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "เกิดข้อผิดพลาดระหว่างเรียกภาพ '%1'"
+
+#, fuzzy
+#~| msgid "Failed to open file for writing"
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "ล้มเหลวในการเปิดแฟ้มเพื่อทำการเขียน"
 
 #, fuzzy
 #~ msgid "Thumbs"

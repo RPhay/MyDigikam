@@ -11,7 +11,7 @@
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2006, 2007, 2008, 2009, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013.
-# Tommi Nieminen <translator@legisign.org>, 2014.
+# SPDX-FileCopyrightText: 2014, 2024 Tommi Nieminen <translator@legisign.org>
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2008, 2009.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2012.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2014.
@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
-"PO-Revision-Date: 2024-02-14 19:32+0200\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
+"PO-Revision-Date: 2024-10-29 20:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -54,8 +54,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2013-01-13 20:43:12+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -939,11 +938,10 @@ msgid "No export tool available"
 msgstr "Vientityökaluja ei saatavilla"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:127
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "Eräajojen hallinta"
+msgstr "Eräajohallinta"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, fuzzy, kde-format
@@ -1429,6 +1427,10 @@ msgid ""
 "ExifTool binary file in the metadata section.\n"
 "Error message: %1"
 msgstr ""
+"ExifTool ei ole digiKam-asennuksen käytettävissä tai ei toimi oikein. Siirry "
+"digiKamin asetuksiin ja tarkista metatieto-osiosta, onko ExifTool-"
+"ohjelmatiedosto käytettävissä.\n"
+"Virheviesti: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
@@ -2847,12 +2849,12 @@ msgstr "Kaikki tuetut tiedostot (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Palaute: "
 
 #: core/app/utils/digikam_version.cpp:69
 #, fuzzy, kde-format
@@ -2889,7 +2891,7 @@ msgstr "Keskihajonta: "
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git-haara: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -4515,7 +4517,7 @@ msgstr "LibOpenCV"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
-msgstr ""
+msgstr "Qt:n SQL-ajurit"
 
 #: core/app/views/utils/componentsinfodlg.cpp:198
 #, kde-format
@@ -4637,17 +4639,13 @@ msgid "A tool to fix colors automatically"
 msgstr "Työkalu värien automaattiseen korjaamiseen"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi säätää kuvien värejä automaattisesti.</"
-"p><p>Tällä eräajotyökalulla voi säätää kuvien värejä automaattisesti.</p>"
+"<para>Tällä eräajotyökalulla voi säätää kuvien värejä automaattisesti.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:40
@@ -4665,18 +4663,14 @@ msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "Kirkkaus / kontrasti / gamma..."
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
-#| "from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi säätää kuvien kirkkautta, kontrastia tai "
-"gammaa.</p><p>Tällä eräajotyökalulla voi säätää kuvien kirkkautta, "
-"kontrastia tai gammaa.</p>"
+"<para>Tällä eräajotyökalulla voi säätää kuvien kirkkautta, kontrastia tai "
+"gammaa.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, kde-format
@@ -4693,15 +4687,13 @@ msgid "A tool to convert to black and white"
 msgstr "Ohjelma kuvien muuntamiseksi pgf-muotoon."
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images to black and white.</"
-#| "p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
-msgstr "<p>Tällä eräajotyökalulla voi muuntaa kuvia mustavalkoisiksi.</p>"
+msgstr ""
+"<para>Tällä eräajotyökalulla voi muuntaa kuvat mustavalkoisiksi.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:40
@@ -4718,14 +4710,12 @@ msgid "A tool to mix color channel"
 msgstr "Työkalu värikanavan sekoittamiseen"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can mix color channels from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
-msgstr "<p>Tällä eräajotyökalulla voi sekoittaa kuvien värikanavia.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi sekoittaa kuvien värikanavia.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
@@ -4755,14 +4745,12 @@ msgid "A tool to adjust color balance"
 msgstr "Säädä väritasapainoa."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust color balance from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust color balance from images.</"
 "para>"
-msgstr "<p>Tällä eräajotyökalulla voi säätää kuvien väritasapainoa.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi säätää kuvien väritasapainoa.</para>"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:32
 #, kde-format
@@ -4789,17 +4777,14 @@ msgid "A tool to convert color depth to 8 bits"
 msgstr "Muunna värisyvyys 16-bittisestä 8-bittiseksi."
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert image color depth to 8 bits."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert image color depth to 8 bits."
 "</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 8-bittiseksi.</"
-"p><p>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 8-bittiseksi.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 8-bittiseksi.</"
+"para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:40
@@ -4817,18 +4802,14 @@ msgid "A tool to convert color depth to 16 bits"
 msgstr "Muunna värisyvyys 8-bittisestä 16-bittiseksi."
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images color depth to 16 "
-#| "bits.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
 "bits.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 16-bittiseksi.</"
-"p><p>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 16-bittiseksi.</"
-"p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvien värisyvyyden 16-bittiseksi.</"
+"para>"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
@@ -4900,15 +4881,12 @@ msgid "A tool to adjust color curves"
 msgstr "Työkalu värikäyrien säätämiseksi"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust the color curves from images."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the color curves from images."
 "</para>"
-msgstr "<p>Tällä eräajotyökalulla voi säätää kuvien värikäyriä.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi säätää kuvien värikäyriä.</para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:40
@@ -4926,18 +4904,14 @@ msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "Sävy / värikylläisyys / valoisuus..."
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
-#| "from images.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi säätää kuvien sävyä, kylläisyyttä tai "
-"valoisuutta.</p><p>Tällä eräajotyökalulla voi säätää kuvien sävyä, "
-"kylläisyyttä tai valoisuutta.</p>"
+"<para>Tällä eräajotyökalulla voi säätää kuvien sävyä, kylläisyyttä tai "
+"valoisuutta.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:46
@@ -4954,15 +4928,13 @@ msgid "A tool to convert images to a color space"
 msgstr "Työkalu värien muuntamiseksi väriavaruuteen"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images to a different color "
-#| "space.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to a different color "
 "space.</para>"
-msgstr "<p>Tällä eräajotyökalulla voi muuntaa kuvat eri väriavaruuteen.</p>"
+msgstr ""
+"<para>Tällä eräajotyökalulla voi muuntaa kuvat eri väriavaruuteen.</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:40
@@ -4979,12 +4951,12 @@ msgid "A tool to invert image colors"
 msgstr "Työkalu kuvan värien kääntämiseksi"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can invert colors from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
-msgstr "<p>Tällä eräajotyökalulla voi kääntää kuvien värit vastakkaisiksi.</p>"
+msgstr ""
+"<para>Tällä eräajotyökalulla voi kääntää kuvien värit vastakkaisiksi.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:40
@@ -5002,15 +4974,12 @@ msgid "A tool to adjust white balance"
 msgstr "Säädä valkotasapainoa."
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust the white balance from images."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
-msgstr "<p>Tällä eräajotyökalulla voi säätää kuvien valkotasapainoa.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi säätää kuvien valkotasapainoa.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
@@ -5026,13 +4995,7 @@ msgid "A tool to convert images to AVIF format"
 msgstr "Työkalu kuvien muuntamiseksi HEIF-muotoon"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to TIFF format.</"
-#| "p><p>The Tagged Image File Format is a computer file format for storing "
-#| "raster graphics images, popular among graphic artists, the publishing "
-#| "industry, and photographers.</p><p>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to AVIF format.</"
@@ -5041,12 +5004,11 @@ msgid ""
 "container format.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia TIFF-muotoon.</p><p>TIFF (Tagged "
-"Image File Format) on rasterigrafiikkakuvien tallentamiseen tarkoitettu "
-"tiedostomuoto, joka on graafisen alan työntekijöiden, julkaisualan ja "
-"valokuvaajien suosima.</p><p>Lisätietoa tiedostomuodosta löytyy "
-"englanninkielisestä <a href='https://en.wikipedia.org/wiki/"
-"TIFF'>Wikipediasta</a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia AVIF-muotoon.</para><para>AV1-"
+"kuvatiedostomuotomääritys on tarkoitettu kuvien tai kuvasarjojen "
+"tallettamiseen AV1-pakattuina ISOBMFF-säilömuotoon.</para><para>Lue "
+"tiedostomuodosta lisää <a href='https://en.wikipedia.org/wiki/"
+"AV1'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -5094,19 +5056,7 @@ msgid "A tool to convert images to HEIF format"
 msgstr "Työkalu kuvien muuntamiseksi HEIF-muotoon"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to HEIF format.</"
-#| "p><p>High Efficiency Image File Format (HEIF), also known as High "
-#| "Efficiency Image Coding (HEIC), is a file format for individual images "
-#| "and image sequences. It was developed by the Moving Picture Experts Group "
-#| "(MPEG) and it claims that twice as much information can be stored in a "
-#| "HEIF image as in a JPEG image of the same size, resulting in a better "
-#| "quality image. HEIF also supports animation, and is capable of storing "
-#| "more information than an animated GIF at a small fraction of the size.</"
-#| "p><p>See <a href='https://en.wikipedia.org/wiki/"
-#| "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> "
-#| "for details.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to HEIF format.</"
@@ -5120,15 +5070,16 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia HEIF-muotoon.</p><p>HEIF tai "
-"HEIC (High Efficiency Image File Format/Coding) on kuvasekvenssien ja "
-"yksittäisten kuvien tiedostomuoto, jonka on kehittänyt Moving Picture "
-"Experts Group (MPEG). HEIF-kuvaan voi väitetysti tallentaa kaksi kertaa niin "
-"paljon tietoa kuin saman kokoiseen JPEG-kuvaan, mikä takaa parempilaatuisen "
-"kuvan. HEIF tukee myös animointia ja pystyy tallentamaan enemmän tietoa kuin "
-"animoitu GIF murto-osalla sen koosta.</p><p>Lisätietoa tiedostomuodosta "
-"löytyy englanninkielisestä <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>Wikipediasta</a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia HEIF-muotoon.</"
+"para><para>HEIF tai HEIC (High Efficiency Image File Format/Coding) on "
+"kuvasekvenssien ja yksittäisten kuvien tiedostomuoto, jonka on kehittänyt "
+"Moving Picture Experts Group (MPEG). HEIF-kuvaan voi väitetysti tallentaa "
+"kaksi kertaa niin paljon tietoa kuin saman kokoiseen JPEG-kuvaan, mikä takaa "
+"parempilaatuisen kuvan. HEIF tukee myös animointia ja pystyy tallentamaan "
+"enemmän tietoa kuin animoitu GIF murto-osalla sen koosta.</"
+"para><para>Lisätietoa tiedostomuodosta löytyy englanninkielisestä <a "
+"href='https://en.wikipedia.org/wiki/"
+"High_Efficiency_Image_File_Format'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -5144,15 +5095,7 @@ msgid "A tool to convert images to JPEG-2000 format"
 msgstr "Työkalu kuvien muuntamiseksi JPEG-2000-muotoon"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to JPEG-2000 "
-#| "format.</p><p>This is an image compression standard and coding system. It "
-#| "was created by the Joint Photographic Experts Group committee in 2000 "
-#| "with the intention of superseding their original discrete cosine "
-#| "transform-based JPEG standard (created in 1992) with a newly designed, "
-#| "wavelet-based method.</p><p>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
@@ -5163,14 +5106,14 @@ msgid ""
 "method.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia JPEG-2000-muotoon.</"
-"p><p>JPEG-2000 on kuvapakkauksen standardi ja koodausjärjestelmä, jonka on "
-"luonut Joint Photographic Experts Groupin (JPEG) komitea vuonna 2000 "
-"tarkoituksena korvata alkuperäinen diskreettiin kosinimuunnokseen "
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia JPEG-2000-muotoon.</"
+"para><para>JPEG-2000 on kuvapakkauksen standardi ja koodausjärjestelmä, "
+"jonka on luonut Joint Photographic Experts Groupin (JPEG) komitea vuonna "
+"2000 tarkoituksena korvata alkuperäinen diskreettiin kosinimuunnokseen "
 "pohjautuva, vuonna 1992 luotu JPEG-standardi alusta suunnitellulla "
-"aallokepohjaisella menetelmällä.</p><p>Lisätietoa tiedostomuodosta löytyy "
-"englanninkielisestä <a href='https://en.wikipedia.org/wiki/"
-"JPEG_2000'>Wikipediasta</a>.</p>"
+"aallokepohjaisella menetelmällä.</para><para>Lisätietoa tiedostomuodosta "
+"löytyy <a href='https://fi.wikipedia.org/wiki/JPEG_2000'>Wikipediasta</a>.</"
+"para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -5187,14 +5130,7 @@ msgstr "Työkalu kuvien muuntamiseksi JPEG-muotoon"
 
 # Jopa tämä artikkeli on suomenkielisessä Wikipediassa tynkä
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to JPEG format.</"
-#| "p><p>The Joint Photographic Experts Group format is a commonly used "
-#| "method of lossy compression for digital images, particularly for those "
-#| "images produced by digital photography.</p><p>See details about this "
-#| "format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</"
-#| "p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG format.</"
@@ -5204,11 +5140,11 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</"
 "para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia JPEG-muotoon.</p><p>JPEG (Joint "
-"Photographic Experts Group) on yleisesti käytetty häviöllinen kuvatiedon "
-"pakkausmuoto etenkin digivalokuville.</p><p>Lisätietoa tiedostomuodosta "
-"löytyy englanninkielisestä <a href='https://en.wikipedia.org/wiki/"
-"JPEG'>Wikipediasta</a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia JPEG-muotoon.</"
+"para><para>JPEG (Joint Photographic Experts Group) on yleisesti käytetty "
+"häviöllinen kuvatiedon pakkausmuoto etenkin digivalokuville.</"
+"para><para>Lisätietoa tiedostomuodosta löytyy <a href='https://fi.wikipedia."
+"org/wiki/JPEG'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -5224,13 +5160,7 @@ msgid "A tool to convert images to JXL format"
 msgstr "Työkalu kuvien muuntamiseksi JPEG-muotoon"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PNG format.</"
-#| "p><p>The Portable Network Graphics is a raster-graphics file-format that "
-#| "supports lossless data compression.</p><p>See details about this format "
-#| "from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
@@ -5240,11 +5170,12 @@ msgid ""
 "replacement.</para><para>See details about this format from <a href='https://"
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia PNG-muotoon.</p><p>PNG (Portable "
-"Network Graphics) on rasterigrafiikkamuoto, joka tukee häviötöntä tiedon "
-"pakkausta.</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä <a "
-"href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Wikipediasta</"
-"a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia JPEG-XL-muotoon.</"
+"para><para>JPEG-XL on lisenssimaksuton rasterigrafiikkamuoto, joka tukee "
+"niin häviöllistä kuin häviötöntäkin pakkausta. Se on suunniteltu olemassa "
+"olevia rasterimuotoja tehokkaammaksi ja lopulta korvaamaan ne.</"
+"para><para>Lisätietoa tiedostomuodosta löytyy <a href='https://fi.wikipedia."
+"org/wiki/JPEG_XL'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5260,13 +5191,7 @@ msgid "A tool to convert images to PGF format"
 msgstr "Työkalu kuvien muuntamiseksi PGF-muotoon"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PGF format.</"
-#| "p><p>The Progressive Graphics File is a wavelet-based bitmapped image "
-#| "format that employs lossless and lossy data compression.</p><p>See "
-#| "details about this format from <a href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PGF format.</"
@@ -5275,11 +5200,11 @@ msgid ""
 "details about this format from <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia PGF-muotoon.</p><p>PGF "
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia PGF-muotoon.</para><para>PGF "
 "(Progressive Graphics File) on aallokepohjainen bittikarttakuvamuoto, joka "
-"hyödyntää häviöllistä ja häviötöntä pakkausta.</p><p>Lisätietoa "
-"tiedostomuodosta löytyy englanninkielisestä <a href='https://en.wikipedia."
-"org/wiki/Progressive_Graphics_File'>Wikipediasta</a>.</p>"
+"hyödyntää häviöllistä ja häviötöntä pakkausta.</para><para>Lisätietoa "
+"tiedostomuodosta löytyy <a href='https://en.wikipedia.org/wiki/"
+"Progressive_Graphics_File'>Wikipediasta</a> (englanninkielinen).</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5309,13 +5234,7 @@ msgid "A tool to convert images to PNG format"
 msgstr "Työkalu kuvien muuntamiseksi PNG-muotoon"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PNG format.</"
-#| "p><p>The Portable Network Graphics is a raster-graphics file-format that "
-#| "supports lossless data compression.</p><p>See details about this format "
-#| "from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PNG format.</"
@@ -5324,11 +5243,10 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia PNG-muotoon.</p><p>PNG (Portable "
-"Network Graphics) on rasterigrafiikkamuoto, joka tukee häviötöntä tiedon "
-"pakkausta.</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä <a "
-"href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Wikipediasta</"
-"a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia PNG-muotoon.</para><para>PNG "
+"(Portable Network Graphics) on rasterigrafiikkamuoto, joka tukee häviötöntä "
+"tiedon pakkausta.</para><para>Lisätietoa tiedostomuodosta löytyy <a "
+"href='https://fi.wikipedia.org/wiki/PNG'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5344,13 +5262,7 @@ msgid "A tool to convert images to TIFF format"
 msgstr "Työkalu kuvien muuntamiseksi TIFF-muotoon"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to TIFF format.</"
-#| "p><p>The Tagged Image File Format is a computer file format for storing "
-#| "raster graphics images, popular among graphic artists, the publishing "
-#| "industry, and photographers.</p><p>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to TIFF format.</"
@@ -5360,12 +5272,12 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</"
 "para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia TIFF-muotoon.</p><p>TIFF (Tagged "
-"Image File Format) on rasterigrafiikkakuvien tallentamiseen tarkoitettu "
-"tiedostomuoto, joka on graafisen alan työntekijöiden, julkaisualan ja "
-"valokuvaajien suosima.</p><p>Lisätietoa tiedostomuodosta löytyy "
-"englanninkielisestä <a href='https://en.wikipedia.org/wiki/"
-"TIFF'>Wikipediasta</a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia TIFF-muotoon.</"
+"para><para>TIFF (Tagged Image File Format) on rasterigrafiikkakuvien "
+"tallentamiseen tarkoitettu tiedostomuoto, joka on graafisen alan "
+"työntekijöiden, julkaisualan ja valokuvaajien suosima.</"
+"para><para>Lisätietoa tiedostomuodosta löytyy <a href='https://fi.wikipedia."
+"org/wiki/TIFF'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5381,13 +5293,7 @@ msgid "A tool to convert images to WEBP format"
 msgstr "Työkalu kuvien muuntamiseksi PGF-muotoon"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PNG format.</"
-#| "p><p>The Portable Network Graphics is a raster-graphics file-format that "
-#| "supports lossless data compression.</p><p>See details about this format "
-#| "from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to WEBP format.</"
@@ -5398,11 +5304,13 @@ msgid ""
 "transparency.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia PNG-muotoon.</p><p>PNG (Portable "
-"Network Graphics) on rasterigrafiikkamuoto, joka tukee häviötöntä tiedon "
-"pakkausta.</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä <a "
-"href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Wikipediasta</"
-"a>.</p>"
+"<para>Tällä eräajotyökalulla voi muuntaa kuvia WebP-muotoon.</"
+"para><para>WebP on Googlen JPEG-, PNG- ja GIF-muotojen korvaajaksi kehittämä "
+"kuvatiedostomuoto. WebP tuottaa tiedostoja, jotka ovat samanlaatuisina "
+"pienempiä tai samankokoisina parempilaatuisia. Se tukee niin häviöllistä "
+"kuin häviötöntäkin pakkausta, animointia ja alfaläpinäkyvyyttä.</"
+"para><para>Lisätietoa tiedostomuodosta löytyy <a href='https://fi.wikipedia."
+"org/wiki/WebP'>Wikipediasta</a>.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -5565,6 +5473,13 @@ msgid ""
 "$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
+"<para>Tämä eräajohallintatyökalu voi suorittaa työnkulun vaiheena käyttäjän "
+"skriptejä.</para><para>Skriptimuuttujat:</para><para>Syöte- ja "
+"tulostiedostonimet saa (erikoismerkit lainattuina) muuttujista <b>$INPUT</b> "
+"ja <b>$OUTPUT</b>. Nämä korvataan ennen skriptin suorittamista.</"
+"para><para>digiKamin eri ominaisuuksia saa muuttujista <b>$TITLE</b>, <b>"
+"$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> ja <b>"
+"$TAGSPATH</b>.</para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
@@ -6179,14 +6094,13 @@ msgid "A tool to automatically detect and correct red eye effect"
 msgstr "Tunnista ja korvaa punasilmäisyys automaattisesti."
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can reduce red eye effect on images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
-msgstr "<p>Tällä eräajotyökalulla voi vähentää kuvista punasilmäisyyttä.</p>"
+msgstr ""
+"<para>Tällä eräajotyökalulla voi vähentää kuvista punasilmäisyyttä.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:119
@@ -6292,16 +6206,14 @@ msgid "A tool to apply color effects"
 msgstr "Työkalu väritehosteiden lisäämiseen"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply color effects over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply color effects over images.</"
 "para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi kuvissa ottaa käyttöön väritehosteita.</"
-"p><p>Tällä eräajotyökalulla voi kuvissa ottaa käyttöön väritehosteita.</p>"
+"<para>Tällä eräajotyökalulla voi kuvissa ottaa käyttöön väritehosteita.</"
+"para>"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:40
@@ -6325,6 +6237,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
 msgstr "<p>Tällä eräajotyökalulla voi lisätä kuviin filmin rakeisuutta.</p>"
 
+# Käännös hankala: valittu kuva tai JSON-tiedosto on siis lisättävien metatietojen lähde.
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:82
 #, kde-format
 msgctxt "@label"
@@ -6332,24 +6245,26 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Käytä metatietoja kuviin valitsemalla tietolähteeksi ExifToolin tukema kuva- "
+"tai JSON-tiedosto."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "Metatietojen käyttö: kuva- tai JSON-tiedostoa ei valittu."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Metatietojen käyttö: ExifTool ei ole käytettävissä."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
-msgstr ""
+msgstr "Metatietojen käyttö: JSON-tiedostossa ei ole tiedostonimeä."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
 #, fuzzy, kde-format
@@ -6427,6 +6342,9 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"Jos nämä asetukset valitaan, otsikot ja kuvatekstit tyhjennetään ja "
+"korvataan uusilla arvoilla,\n"
+"muuten vanhat ja uudet arvot yhdistetään."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, fuzzy, kde-format
@@ -6518,6 +6436,12 @@ msgid ""
 "background will generate automatically a serie of tags describing the "
 "contents and store the results in the database.</p>"
 msgstr ""
+"<p><b>Tällä työkalulla voi automaattisesti osoittaa kuviin luokituksia "
+"syväoppivan hermoverkon analyysin perusteella.</b></p><p>Alla olevat "
+"asetukset määrittävät kuvien aiheen määrittämisessä käytettävän kuvia "
+"jäsentävän syväoppivan mallin. Taustalla käytetty hermoverkko luo "
+"automaattisesti sisältöä kuvaavia luokituksia, jotka talletetaan tuloksiksi "
+"tietokantaan.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
@@ -7013,17 +6937,14 @@ msgid "A tool to flip images horizontally or vertically"
 msgstr "Työkalu kuvien vaaka- tai pystykiepauttamiseen"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can run user shell script as workflow "
-#| "stage.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi suorittaa työvaiheena käyttäjän "
-"komentotulkkiskriptejä.</p>"
+"<para>Tällä eräajotyökalulla voi työnkulun vaiheena suorittaa käyttäjän "
+"komentotulkkiskriptejä.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, kde-format
@@ -7109,11 +7030,10 @@ msgid "A tool to resize images with a customized length"
 msgstr "Työkalu kuvien koon muuttamiseen mukautetulla pituudella"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can resize images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
-msgstr "<p>Tällä eräajotyökalulla voi muuttaa kuvien kokoa.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi muuttaa kuvien kokoa.</para>"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, kde-format
@@ -7166,11 +7086,10 @@ msgid "A tool to rotate images"
 msgstr "Työkalu kuvien kääntämiseen"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can rotate images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
-msgstr "<p>Tällä eräajotyökalulla voi kuvia kääntää.</p>"
+msgstr "<para>Tällä eräajotyökalulla voi kuvia kääntää.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
@@ -11983,25 +11902,24 @@ msgstr "Muokkaa maantieteellistä sijaintia…"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Kuvaa ”%1” ei voitu lukea"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Tiedoston ”%1” kuvamuoto on tuntematon"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Virhe ladattaessa kuvaa ”%1”"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Ei voitu tallentaa kuvaa ”%1” kohteeseen ”%2”"
@@ -13921,7 +13839,7 @@ msgstr "Pilvinen sää"
 #, kde-format
 msgctxt "light source"
 msgid "Shade"
-msgstr ""
+msgstr "Varjo"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
@@ -14498,11 +14416,10 @@ msgstr "Tilatiedot"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Redcode RAW Video Information"
+#, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
-msgstr "Redcoden RAW-videotiedot"
+msgstr "Tallenna työnkulun tiedot"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
@@ -14514,11 +14431,10 @@ msgstr "Tietueiden ominaisuudet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
-#, fuzzy, kde-format
-#| msgid "Add file properties"
+#, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
-msgstr "Tiedoston ominaisuudet"
+msgstr "Tallenna työnkulun ominaisuudet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
 #, kde-format
@@ -16428,13 +16344,7 @@ msgstr "Työkalu kohteiden päiväystietojen muuttamiseen"
 
 # Keskimmäinen kappale on id:ssäkin vaikea ymmärtää!
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to adjust date time-stamp of items in batch.</"
-#| "p><p>Many source of original time-stamp can be selected from original "
-#| "items, or a from a common file.</p><p>Many metadata time-stamp can be "
-#| "adjusted or left untouched. The adjustment can be an offset of time or a "
-#| "specific date.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to adjust date time-stamp of items in batch.\n"
@@ -16445,11 +16355,13 @@ msgid ""
 "Many metadata time-stamp can be adjusted or left untouched. The adjustment "
 "can be an offset of time or a specific date."
 msgstr ""
-"<p>Tällä työkalulla voi säätää kohteiden aikaleimoja eräajona.</"
-"p><p>Alkuperäisistä kohteista tai yhteisestä tiedostosta voi valita monia "
-"alkuperäisen aikaleiman lähteitä.</p><p>Useita metatietojen aikaleimoja voi "
-"muuttaa tai jättää sikseen. Muutos voi olla aikasiirtymä tai tietty "
-"ajankohta.</p>"
+"Tällä työkalulla voi säätää eräajona kohteiden aikaleimoja.\n"
+"\n"
+"Alkuperäisistä kohteista tai yhteisestä tiedostosta voi valita monia "
+"alkuperäisen aikaleiman lähteitä.\n"
+"\n"
+"Metatietojen aikaleimoja voi muuttaa tai jättää sikseen. Muutos voi olla "
+"aikasiirtymä tai tietty ajankohta."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
 #, kde-format
@@ -17639,31 +17551,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Kuvatyökalut"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
-#, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "Virhe ladattaessa RAW-kuvaa ”%1”"
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
+#, fuzzy, kde-format
+#| msgid "Could not save image to file '%1'"
+msgid "Could not copy image to file '%1'"
+msgstr "Kuvaa ei voitu tallentaa tiedostoon ”%1”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Kuvan ”%1” pienoiskuvaa ei voitu tallentaa tiedostoon ”%2”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "ei saatavilla"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, kde-format
-msgid "Could not open file '%1' for writing"
-msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "Kuvaa ei voitu tallentaa tiedostoon ”%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, kde-format
@@ -18004,6 +17908,13 @@ msgstr "Täyden kuvan ominaisuudet:"
 #, kde-format
 msgid "Save image"
 msgstr "Tallenna kuva"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+#| msgid "JPEG"
+msgid "JPG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -19101,12 +19012,10 @@ msgid "OCR Text Converter"
 msgstr "Tekstintunnistusmuunnin"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to batch convert RAW camera images to DNG"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
-msgstr "Työkalu RAW-kuvien muuntamiseksi DNG:ksi"
+msgstr "Työkalu kuvien muuntamiseksi tekstintunnistuksella tekstiksi"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
@@ -19510,12 +19419,14 @@ msgid ""
 "Set here the list of your images to blend into a panorama. Please follow "
 "these conditions:"
 msgstr ""
+"Aseta tähän panoraamaksi yhdistettävien kuvien luettelo. Noudata näitä "
+"ehtoja:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
-msgstr ""
+msgstr "Kuvat on otettu samasta näkökulmasta."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
 #, fuzzy, kde-format
@@ -19531,6 +19442,8 @@ msgid ""
 "Note that, in the case of a 360° panorama, the first image in the list will "
 "be the image that will be in the center of the panorama."
 msgstr ""
+"Huomaa, että 360 asteen panoraaman tapauksessa luettelon ensimmäisestä "
+"kuvasta tulee panoraaman keskikohta."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
 #, fuzzy, kde-format
@@ -19593,6 +19506,10 @@ msgid ""
 "useful if you want a different projection, modify the horizon or the center "
 "of the panorama, or modify the control points to get better results."
 msgstr ""
+"”Tallenna projektitiedosto”: kuvien yhdistämiseksi luodun projektitiedoston "
+"voi säilyttää muokattavaksi %1-ohjelmassa valitsemalla tämän. Tästä on apua, "
+"jos haluat tulosten parantamiseksi eri projektion tai muuttaa panoraaman "
+"taivaanrantaa, keskikohtaa tai hallintapisteitä."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:217
@@ -19631,7 +19548,7 @@ msgstr "<b>Leveysaste</b>:"
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
-msgstr ""
+msgstr "Onnittelut! Kuvat yhdistetään panoraamaksi."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
@@ -19653,6 +19570,9 @@ msgid ""
 "then the converted images used during the stitching process will be copied "
 "at the same time (those are TIFF files that can be big)."
 msgstr ""
+"Jos valitset projektitiedoston tallentamisen ja jos kuvat olivat raakakuvia, "
+"yhdistämisessä käytetyt muunnetut kuvat kopioidaan samanaikaisesti (TIFF-"
+"kuvat voivat olla suuria)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:297
 #, kde-format
@@ -19700,7 +19620,7 @@ msgstr "Optimointi käynnissä, odota."
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
-msgstr ""
+msgstr "Asetusten mukainen optimointivaihe on valmiina toteuttavaksi."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
 #, kde-format
@@ -19709,6 +19629,8 @@ msgid ""
 "This step can include an automatic leveling of the horizon, and also an "
 "automatic projection selection and size."
 msgstr ""
+"Tämä vaihe voi sisältää taivaanrannan automaattisen tasoituksen sekä "
+"automaattisen projektion ja koon valinnan."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
@@ -19747,6 +19669,8 @@ msgid ""
 "Automatic detection of clouds to prevent wrong keypoints matching between "
 "images due to moving clouds."
 msgstr ""
+"Pilvien automaattinen tunnistus estää pilvien liikkeestä johtuvan "
+"avainpisteiden väärän yhteensovituksen."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
@@ -21424,6 +21348,10 @@ msgid ""
 "\n"
 "Error: %2"
 msgstr ""
+"Nykyisen työpöydän taustakuvaa ei voi vaihtaa ohjelmalla\n"
+"%1\n"
+"\n"
+"Virhe: %2"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:65
 #, kde-format
@@ -21450,6 +21378,12 @@ msgid ""
 "\n"
 "Error: %3"
 msgstr ""
+"Työpöydän nykyistä taustakuvaa ei voi vaihtaa ohjelmalla\n"
+"%1\n"
+"\n"
+"Konteksti: %2\n"
+"\n"
+"Virhe: %3"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:95
 #, kde-format
@@ -21464,7 +21398,7 @@ msgstr "Taustakuvan sijaintia ei voida asettaa."
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:139
 #, kde-format
 msgid "Cannot set wallpaper properties."
-msgstr ""
+msgstr "Taustakuvan ominaisuuksia ei voi asettaa."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:149
 #, kde-format
@@ -21918,7 +21852,7 @@ msgstr "Poista h&äivytys käytöstä"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:130
 #, kde-format
 msgid "Use &same speed for visual effects"
-msgstr ""
+msgstr "Käytä &visuaalisiin tehosteisiin samaa nopeutta"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.cpp:38
 #, kde-format
@@ -22250,6 +22184,12 @@ msgid ""
 "\n"
 "You can add a sound-track in background while your presentation."
 msgstr ""
+"Tämä työkalu hahmontaa kohdejoukon näyttäväksi diaesitykseksi.\n"
+"\n"
+"Käytettävissä on monia OpenGL-pohjaisia siirtymätehosteita, myös kuuluisa "
+"Ken Burns -tehoste.\n"
+"\n"
+"Esityksen taustalle voi lisätä ääniraidan."
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
@@ -26938,6 +26878,8 @@ msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
+"Virhe tuotaessa RAW-kuvaa DarkTablella.\n"
+"Sulje tämä ikkuna tuodaksesi RAW-kuvan sisäisellä työkalulla"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
 #, kde-format
@@ -30529,7 +30471,7 @@ msgstr "Tilat"
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
-msgstr ""
+msgstr "Ei-siirrettävä tieto"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:385
 #, kde-format
@@ -34599,6 +34541,7 @@ msgstr "Kirjoita kuvan tunniste lähdekuvaan"
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
+"Kirjoita lähettämisen jälkeen valokuvan tunniste lähdekuvan metatiedoiksi."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
@@ -35238,6 +35181,8 @@ msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
 msgstr ""
+"Valitse albumien sisällön suodattamiseen käytetty arvostelu. Suodatusehdot "
+"asetetaan kontekstin ponnahdusvalikosta."
 
 #: core/libs/filters/ratingfilter.cpp:177
 #, kde-format
@@ -35364,7 +35309,7 @@ msgstr "Palauta alkuperäiset asetukset"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
-msgstr ""
+msgstr "Käytä asetusikkunassa annettuja oletuslajitteluparametreja."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, fuzzy, kde-format
@@ -35379,6 +35324,7 @@ msgstr "Käytä mukautettua määritystä"
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
+"Käytä lajittelun parantamiseksi mukautettuja parametreja oletusten sijaan."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, fuzzy, kde-format
@@ -35444,7 +35390,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr ""
+msgstr "Tunnista kuvan esteettisyys syväoppivalla mallilla"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
@@ -35453,12 +35399,15 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"Tunnista, onko kuvalla esteettistä arvoa.\n"
+"Esteettisen tunnistuksen moottori käyttää kuvien luokitteluun syväoppivaa "
+"mallia"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
-msgstr ""
+msgstr "Tunnista laatu perustekijöillä"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
@@ -35467,6 +35416,8 @@ msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
 "exposure, and compression)."
 msgstr ""
+"Tunnista neljällä perustekijällä (sumennus, kohina, valotus ja pakkaus), "
+"sabotoiko kuva."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, fuzzy, kde-format
@@ -35678,6 +35629,8 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Kansiota %1 ei voitu siirtää kokoelman roskakoriin.\n"
+"Tarkista kuvakokoelman roskakorikansion ”.dtrash” käyttöoikeudet."
 
 #: core/libs/iojobs/iojob.cpp:310
 #, kde-format
@@ -35686,6 +35639,8 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Kuvaa %1 ei voitu siirtää kokoelman roskakoriin.\n"
+"Tarkista kuvakokoelman roskakorikansion ”.dtrash” käyttöoikeudet."
 
 #: core/libs/iojobs/iojob.cpp:327
 #, kde-format
@@ -35988,7 +35943,7 @@ msgstr "saksa"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "dzongkha"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
@@ -36051,7 +36006,7 @@ msgstr "suomi"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "Fidži"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
@@ -36416,7 +36371,7 @@ msgstr "oksitaani"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Oromo"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:417
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:565
@@ -38333,7 +38288,7 @@ msgstr "Oheistiedosto: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -38749,6 +38704,15 @@ msgid ""
 "strong='true'>Manual</emphasis>: Set a custom temperature and green level "
 "values.</item></list></para>"
 msgstr ""
+"<title>Valkotasapaino</title><para>Aseta raaka valkotasapaino:</"
+"para><para><list><item><emphasis strong='true'>Oletus (D65)</emphasis>: "
+"käytä D65-vakiopäivänvalon valkotasapainoa.</item><item><emphasis "
+"strong='true'>Kamera</emphasis>: käytä kameran määrittämää valkotasapainoa. "
+"Ellei ole saatavilla, palataan neutraaliin oletusvalkotasapainoon.</"
+"item><item><emphasis strong='true'>Automaattinen</emphasis>: laskee "
+"automaattisen valkotasapainon keskiarvoistamalla koko kuvan.</"
+"item><item><emphasis strong='true'>Käyttäjä</emphasis>: asetetaan mukautetut "
+"lämpötila ja vihreän värin arvo.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:354
 #, kde-format
@@ -43525,6 +43489,15 @@ msgid ""
 "Application will try to find this binary automatically if they are already "
 "installed on your computer."
 msgstr ""
+"%1 on avoimen lähdekoodin ohjelma multimediatiedostojen lukemiseksi, "
+"kirjoittamiseksi ja käsittelemiseksi. Sen saa alustasta riippumatta "
+"komentorivityökaluna. ExifTool yhdistyy yleisesti erilaisiin digitaalisiin "
+"työnkulkuihin ja se tukee monia metatietomuotoja (Exif, IPTC, XMP, JFIF, "
+"GeoTIFF, ICC-profiilit, Photoshopin IRB), myös digikameroiden "
+"valmistajakohtaisia.\n"
+"\n"
+"Tässä voi asettaa ExifTool-ohjelmatiedoston sijainnin. Sovellus yrittää "
+"löytää sen automaattisesti, jos se on jo asennettu."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:85
 #, kde-format
@@ -44412,7 +44385,7 @@ msgstr "Darwin-ydin"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:164
 #, kde-format
 msgid "Adobe Lightroom Schema"
-msgstr ""
+msgstr "Adobe Lightroom -malli"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:168
 #, kde-format
@@ -44570,7 +44543,7 @@ msgstr "Amhara (Etiopia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
-msgstr ""
+msgstr "Pohjois-Levantin arabia (Turkki)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
 msgctxt "@info: country code"
@@ -48388,7 +48361,7 @@ msgstr "latvia"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Levantine Arabic"
-msgstr ""
+msgstr "Levantinarabia"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:295
 #, kde-format
@@ -51896,7 +51869,7 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Aloita"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52096,13 +52069,13 @@ msgstr "Malli:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
-msgstr ""
+msgstr "YuNet"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:253
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
-msgstr ""
+msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:254
 #, fuzzy, kde-format
@@ -52140,7 +52113,7 @@ msgstr "Lisätunnisteet"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, fuzzy, kde-format
@@ -52532,8 +52505,8 @@ msgid ""
 "want to have the best control over the image. This requires more time in "
 "your workflow.</p></qt>"
 msgstr ""
-"<qt><p><i>Huomaa:</i> Raw-tuontityökalu on suunniteltu ammattilaisille, "
-"jotka haluavat täysin hallita kuvan ominaisuuksia. Kuvien käsittely vaatii "
+"<qt><p><i>Huomaa:</i> RAW-tuontityökalu on suunniteltu ammattilaisille, "
+"jotka haluavat täysin hallita kuvan ominaisuuksia. Kuvien käsittely vie "
 "tällöin myös enemmän aikaa.</p></qt>"
 
 #: core/utilities/firstrun/startscanpage.cpp:34
@@ -52807,19 +52780,19 @@ msgstr "luokituksiin muttei albumeihin"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Vanhempi tai suurempi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Suosi viitteeksi valittua kansiota"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Suosi viitteeksi muuta kuin valittua kansiota"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, kde-format
@@ -53089,25 +53062,25 @@ msgstr "Mercator"
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr ""
+msgstr "Venus"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:294
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "Maa"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:299
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "Mars"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:304
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "Jupiter"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:309
 #, fuzzy, kde-format
@@ -53120,19 +53093,19 @@ msgstr "Värikylläisyys"
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "Uranus"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:319
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "Neptunus"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:324
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "Pluto"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:329
 #, fuzzy, kde-format
@@ -53153,7 +53126,7 @@ msgstr "Kuunvalo"
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "Taivas"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:345
 #, fuzzy, kde-format
@@ -53165,12 +53138,12 @@ msgstr "Tuntematon otsikko"
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
 #, kde-format
 msgid "&Lock"
-msgstr ""
+msgstr "&Lukitse"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
 #, kde-format
 msgid "&Hide"
-msgstr ""
+msgstr "P&iilota"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
@@ -53197,7 +53170,7 @@ msgstr "mm"
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
 #, fuzzy, kde-format
@@ -53221,23 +53194,26 @@ msgctxt "means inches"
 msgid "in"
 msgstr "tuumaa"
 
+# Lienee järkevintä käyttää vain alkuperäistä
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:178
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "yd"
 
+# Lienee järkevintä käyttää vain alkuperäistä
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:181
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
+# Wikipedian mukaan nykyinen suomalainen merimailin tunnus
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:184
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "M"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
 #, fuzzy, kde-format
@@ -53268,7 +53244,7 @@ msgstr "Ei kuvausta saatavilla"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "National Capital"
-msgstr ""
+msgstr "Maan pääkaupunki"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
@@ -53288,7 +53264,7 @@ msgstr "Kaupunki"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "State Capital"
-msgstr ""
+msgstr "Osavaltion pääkaupunki"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
@@ -53303,7 +53279,7 @@ msgstr "Valtio:"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "Pääkaupunki"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
@@ -53315,7 +53291,7 @@ msgstr "{Kylä}"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "Ti&etokentät"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
 #, fuzzy, kde-format
@@ -53326,12 +53302,12 @@ msgstr "Osoite:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "W"
-msgstr ""
+msgstr "L"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "E"
-msgstr ""
+msgstr "I"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
@@ -53345,12 +53321,12 @@ msgstr "Ei"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "E"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
 #, kde-format
 msgid "Valley"
-msgstr ""
+msgstr "Laakso"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
@@ -53361,7 +53337,7 @@ msgstr "Maapohja"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Crater"
-msgstr ""
+msgstr "Kraatteri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:396
 #, fuzzy, kde-format
@@ -53373,12 +53349,12 @@ msgstr "Etsi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "Miehitetyn laskeutumisen paikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Robotic Rover"
-msgstr ""
+msgstr "Robottimönkijä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
@@ -53417,7 +53393,7 @@ msgstr "Kuvateksti"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:817
 #, kde-format
 msgid "Volcano"
-msgstr ""
+msgstr "Tulivuori"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:471
 #, fuzzy, kde-format
@@ -53429,7 +53405,7 @@ msgstr "Sisältö"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Ocean"
-msgstr ""
+msgstr "Valtameri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:477
 #, fuzzy, kde-format
@@ -53440,12 +53416,12 @@ msgstr "Maantieteellinen sijainti"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
 msgid "Magnetic Pole"
-msgstr ""
+msgstr "Magneettinen napa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Ship Wreck"
-msgstr ""
+msgstr "Laivan hylky"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:486
 #, fuzzy, kde-format
@@ -53463,7 +53439,7 @@ msgstr "Havainto"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "Sotilaallinen varoalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
@@ -53526,17 +53502,17 @@ msgstr "Lisää kyläluokitus"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Water"
-msgstr ""
+msgstr "Vettä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Reef"
-msgstr ""
+msgstr "Riutta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Wood"
-msgstr ""
+msgstr "Metsä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:550
 #, fuzzy, kde-format
@@ -53555,12 +53531,12 @@ msgstr "Islanti"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Glacier"
-msgstr ""
+msgstr "Jäätikkö"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Ice Shelf"
-msgstr ""
+msgstr "Jäähylly"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
@@ -53570,17 +53546,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "Kallio"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Heath"
-msgstr ""
+msgstr "Nummi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Traffic Signals"
-msgstr ""
+msgstr "Liikennemerkit"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:574
 #, fuzzy, kde-format
@@ -53606,7 +53582,7 @@ msgstr "Tuntematon muoto"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Footway"
-msgstr ""
+msgstr "Jalankulkutie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:589
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1180
@@ -53637,67 +53613,67 @@ msgstr "Tiekartta"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Residential Road"
-msgstr ""
+msgstr "Asutustie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Living Street"
-msgstr ""
+msgstr "Katu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Unclassified Road"
-msgstr ""
+msgstr "Luokittamaton katu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Tertiary Link Road"
-msgstr ""
+msgstr "Kolmannen luokan yhdystie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
 msgid "Tertiary Road"
-msgstr ""
+msgstr "Kolmannen luokan tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Secondary Link Road"
-msgstr ""
+msgstr "Toissijainen tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:622
 #, kde-format
 msgid "Secondary Road"
-msgstr ""
+msgstr "Toissijainen tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:625
 #, kde-format
 msgid "Primary Link Road"
-msgstr ""
+msgstr "Ensisijainen yhdystie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:628
 #, kde-format
 msgid "Primary Road"
-msgstr ""
+msgstr "Ensisijainen tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Raceway"
-msgstr ""
+msgstr "Kilparata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Trunk Link Road"
-msgstr ""
+msgstr "Pääyhdystie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
 msgid "Trunk Road"
-msgstr ""
+msgstr "Päätie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Motorway Link Road"
-msgstr ""
+msgstr "Moottoriyhdystie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
 #, fuzzy, kde-format
@@ -53722,7 +53698,7 @@ msgstr "Koosteversio"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Camping"
-msgstr ""
+msgstr "Leirintäalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:655
 #, fuzzy, kde-format
@@ -53733,22 +53709,22 @@ msgstr "Konenimi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "Hotelli"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Motel"
-msgstr ""
+msgstr "Motelli"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Youth Hostel"
-msgstr ""
+msgstr "Retkeilymaja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Guest House"
-msgstr ""
+msgstr "Vierastalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:670
 #, fuzzy, kde-format
@@ -53767,12 +53743,12 @@ msgstr "Vedenalainen kuva"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:676
 #, kde-format
 msgid "College"
-msgstr ""
+msgstr "Lukio"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:679
 #, kde-format
 msgid "School"
-msgstr ""
+msgstr "Koulu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:682
 #, fuzzy, kde-format
@@ -53790,17 +53766,17 @@ msgstr "bihari"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:688
 #, kde-format
 msgid "Biergarten"
-msgstr ""
+msgstr "Oluthuone"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:691
 #, kde-format
 msgid "Cafe"
-msgstr ""
+msgstr "Kahvila"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:694
 #, kde-format
 msgid "Fast Food"
-msgstr ""
+msgstr "Pikaruokala"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:697
 #, fuzzy, kde-format
@@ -53818,7 +53794,7 @@ msgstr "Retusointi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:703
 #, kde-format
 msgid "Dentist"
-msgstr ""
+msgstr "Hammaslääkäri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:706
 #, fuzzy, kde-format
@@ -53830,12 +53806,12 @@ msgstr "Kansio"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:709
 #, kde-format
 msgid "Hospital"
-msgstr ""
+msgstr "Sairaala"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:712
 #, kde-format
 msgid "Pharmacy"
-msgstr ""
+msgstr "Apteekki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:715
 #, fuzzy, kde-format
@@ -53847,32 +53823,32 @@ msgstr "Binaarinen"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:718
 #, kde-format
 msgid "ATM"
-msgstr ""
+msgstr "Pankkiautomaatti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:721
 #, kde-format
 msgid "Bank"
-msgstr ""
+msgstr "Pankki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:724
 #, kde-format
 msgid "Archaeological Site"
-msgstr ""
+msgstr "Arkeologinen kohde"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:727
 #, kde-format
 msgid "Embassy"
-msgstr ""
+msgstr "Lähetystö"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:730
 #, kde-format
 msgid "Emergency Phone"
-msgstr ""
+msgstr "Hätäpuhelin"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:733
 #, kde-format
 msgid "Mountain Rescue"
-msgstr ""
+msgstr "Vuoripelastus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:736
 #, fuzzy, kde-format
@@ -53895,7 +53871,7 @@ msgstr "Lukumäärä"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:745
 #, kde-format
 msgid "Night Club"
-msgstr ""
+msgstr "Yökerho"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:748
 #, fuzzy, kde-format
@@ -53907,7 +53883,7 @@ msgstr "ranska"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:751
 #, kde-format
 msgid "Court House"
-msgstr ""
+msgstr "Oikeustalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:754
 #, fuzzy, kde-format
@@ -53943,7 +53919,7 @@ msgstr "Postinumero:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:769
 #, kde-format
 msgid "Prison"
-msgstr ""
+msgstr "Vankila"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:772
 #, fuzzy, kde-format
@@ -53960,22 +53936,22 @@ msgstr "Seepiasuodin"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:778
 #, kde-format
 msgid "Telephone"
-msgstr ""
+msgstr "Puhelin"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:781
 #, kde-format
 msgid "Toilets"
-msgstr ""
+msgstr "Vessa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:784
 #, kde-format
 msgid "Town Hall"
-msgstr ""
+msgstr "Kaupungintalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:787
 #, kde-format
 msgid "Waste Basket"
-msgstr ""
+msgstr "Jäteastia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:790
 #, fuzzy, kde-format
@@ -53986,7 +53962,7 @@ msgstr "kutistetaan tietokantoja"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:793
 #, kde-format
 msgid "Graveyard"
-msgstr ""
+msgstr "Hautausmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:796
 #, fuzzy, kde-format
@@ -53997,7 +53973,7 @@ msgstr "Suunta"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:799
 #, kde-format
 msgid "Car Wash"
-msgstr ""
+msgstr "Autopesula"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:802
 #, kde-format
@@ -54013,12 +53989,12 @@ msgstr "Kaupunki"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:808
 #, kde-format
 msgid "Gate"
-msgstr ""
+msgstr "Portti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:811
 #, kde-format
 msgid "Lift Gate"
-msgstr ""
+msgstr "Puomi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:814
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1438
@@ -54031,7 +54007,7 @@ msgstr "Seinä"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:820
 #, kde-format
 msgid "Peak"
-msgstr ""
+msgstr "Vuorenhuippu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:823
 #, fuzzy, kde-format
@@ -54043,7 +54019,7 @@ msgstr "Puussa"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:826
 #, kde-format
 msgid "Cave Entrance"
-msgstr ""
+msgstr "Luolan sisäänkäynti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:829
 #, fuzzy, kde-format
@@ -54055,22 +54031,22 @@ msgstr "Keskiarvo"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:832
 #, kde-format
 msgid "Hifi"
-msgstr ""
+msgstr "Hifi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:835
 #, kde-format
 msgid "Supermarket"
-msgstr ""
+msgstr "Supermarketti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:838
 #, kde-format
 msgid "Liquor Store"
-msgstr ""
+msgstr "Viinakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:841
 #, kde-format
 msgid "Bakery"
-msgstr ""
+msgstr "Leipomo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:844
 #, fuzzy, kde-format
@@ -54089,7 +54065,7 @@ msgstr "Yhteysavaruus"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:850
 #, kde-format
 msgid "Convenience Shop"
-msgstr ""
+msgstr "Lähikauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:853
 #, fuzzy, kde-format
@@ -54101,7 +54077,7 @@ msgstr "Kreikka"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:856
 #, kde-format
 msgid "Seafood Shop"
-msgstr ""
+msgstr "Kalakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
 #, fuzzy, kde-format
@@ -54112,17 +54088,17 @@ msgstr "Kivisomiste"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
 msgid "Kiosk"
-msgstr ""
+msgstr "Kioski"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:865
 #, kde-format
 msgid "Bag Shop"
-msgstr ""
+msgstr "Laukkukauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:868
 #, kde-format
 msgid "Clothes Shop"
-msgstr ""
+msgstr "Vaatekauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:871
 #, fuzzy, kde-format
@@ -54133,7 +54109,7 @@ msgstr "Valonlähdetiedot"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:874
 #, kde-format
 msgid "Jewelry Shop"
-msgstr ""
+msgstr "Jalokiviliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:877
 #, fuzzy, kde-format
@@ -54155,17 +54131,17 @@ msgstr "Sumea haku"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:886
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "Apteekki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:889
 #, kde-format
 msgid "Cosmetics"
-msgstr ""
+msgstr "Kemikalio"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:892
 #, kde-format
 msgid "Hairdresser"
-msgstr ""
+msgstr "Kampaamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:895
 #, fuzzy, kde-format
@@ -54177,23 +54153,23 @@ msgstr "Optimointi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:898
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "Hajuvesikauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:901
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:907
 #, kde-format
 msgid "Hardware Store"
-msgstr ""
+msgstr "Rautakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:904
 #, kde-format
 msgid "Florist"
-msgstr ""
+msgstr "Kukkakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:910
 #, kde-format
 msgid "Furniture Store"
-msgstr ""
+msgstr "Huonekaluliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:913
 #, fuzzy, kde-format
@@ -54211,37 +54187,37 @@ msgstr "Adobe Photoshop"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:919
 #, kde-format
 msgid "Bicycle Shop"
-msgstr ""
+msgstr "Polkupyöräliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:922
 #, kde-format
 msgid "Car Dealer"
-msgstr ""
+msgstr "Autokauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:925
 #, kde-format
 msgid "Car Repair Shop"
-msgstr ""
+msgstr "Autokorjaamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:928
 #, kde-format
 msgid "Car Parts"
-msgstr ""
+msgstr "Autonvaraosaliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:931
 #, kde-format
 msgid "Motorcycle Shop"
-msgstr ""
+msgstr "Moottoripyöräliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:934
 #, kde-format
 msgid "Outdoor Shop"
-msgstr ""
+msgstr "Ulkoilmamyymälä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:937
 #, kde-format
 msgid "Sports Shop"
-msgstr ""
+msgstr "Urheiluliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:940
 #, fuzzy, kde-format
@@ -54252,12 +54228,12 @@ msgstr "Tulostus meneillään"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:943
 #, kde-format
 msgid "Art Shop"
-msgstr ""
+msgstr "Taidegalleria"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:946
 #, kde-format
 msgid "Musical Instrument Shop"
-msgstr ""
+msgstr "Soitinliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:949
 #, fuzzy, kde-format
@@ -54268,7 +54244,7 @@ msgstr "Kuvan leveys"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:952
 #, kde-format
 msgid "Bookshop"
-msgstr ""
+msgstr "Kirjakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:955
 #, fuzzy, kde-format
@@ -54285,7 +54261,7 @@ msgstr "Värikylläisyys"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:961
 #, kde-format
 msgid "Laundry"
-msgstr ""
+msgstr "Pesula"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:964
 #, fuzzy, kde-format
@@ -54296,7 +54272,7 @@ msgstr "Valonlähdetiedot"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:967
 #, kde-format
 msgid "Toy Store"
-msgstr ""
+msgstr "Lelukauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:970
 #, fuzzy, kde-format
@@ -54308,37 +54284,37 @@ msgstr "Matka"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:973
 #, kde-format
 msgid "Deli"
-msgstr ""
+msgstr "Herkkukauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:976
 #, kde-format
 msgid "Tobacco Shop"
-msgstr ""
+msgstr "Tupakkakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:979
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "Teekauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:982
 #, kde-format
 msgid "Computer Shop"
-msgstr ""
+msgstr "Tietokoneliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:985
 #, kde-format
 msgid "Garden Centre"
-msgstr ""
+msgstr "Puutarhakeskus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:988
 #, kde-format
 msgid "Shop"
-msgstr ""
+msgstr "Kauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:991
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "Silta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:994
 #, fuzzy, kde-format
@@ -54349,22 +54325,22 @@ msgstr "Valolähde:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:997
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "Laituri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1000
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "Vesitorni"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1003
 #, kde-format
 msgid "Wind Mill"
-msgstr ""
+msgstr "Tuulimylly"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1006
 #, kde-format
 msgid "Communications Tower"
-msgstr ""
+msgstr "Tietoliikennetorni"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1009
 #, fuzzy, kde-format
@@ -54381,12 +54357,12 @@ msgstr "Verkko"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1015
 #, kde-format
 msgid "Castle"
-msgstr ""
+msgstr "Linna"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1018
 #, kde-format
 msgid "Cinema"
-msgstr ""
+msgstr "Elokuvateatteri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1021
 #, fuzzy, kde-format
@@ -54405,17 +54381,17 @@ msgstr "Tiedosto"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1027
 #, kde-format
 msgid "Museum"
-msgstr ""
+msgstr "Museo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1030
 #, kde-format
 msgid "Ruin"
-msgstr ""
+msgstr "Raunio"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1033
 #, kde-format
 msgid "Theatre"
-msgstr ""
+msgstr "Teatteri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1036
 #, fuzzy, kde-format
@@ -54439,12 +54415,12 @@ msgstr "Lähennys:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1045
 #, kde-format
 msgid "Alpine Hut"
-msgstr ""
+msgstr "Alppimaja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1048
 #, kde-format
 msgid "Wilderness Hut"
-msgstr ""
+msgstr "Korpimaja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1051
 #, fuzzy, kde-format
@@ -54456,37 +54432,37 @@ msgstr "Sarjaportti"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1054
 #, kde-format
 msgid "Aerodrome"
-msgstr ""
+msgstr "Lentokenttä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1057
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "Helikopterikenttä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1060
 #, kde-format
 msgid "Airport Gate"
-msgstr ""
+msgstr "Lentokentän portti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1063
 #, kde-format
 msgid "Airport Runway"
-msgstr ""
+msgstr "Kiitorata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1066
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "Lentoaseman seisontapaikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1069
 #, kde-format
 msgid "Airport Taxiway"
-msgstr ""
+msgstr "Lentokentän rullaustie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1072
 #, kde-format
 msgid "Airport Terminal"
-msgstr ""
+msgstr "Lentokenttäterminaali"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1075
 #, fuzzy, kde-format
@@ -54503,7 +54479,7 @@ msgstr "Pysäytä"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1081
 #, kde-format
 msgid "Car Sharing"
-msgstr ""
+msgstr "Auton jakaminen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1084
 #, fuzzy, kde-format
@@ -54514,7 +54490,7 @@ msgstr "Värikylläisyys"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1087
 #, kde-format
 msgid "Parking"
-msgstr ""
+msgstr "Pysäköinti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1090
 #, fuzzy, kde-format
@@ -54531,17 +54507,17 @@ msgstr "Muunnos"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1096
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "Polkupyörävuokraamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1099
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "Autovuokraamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1102
 #, kde-format
 msgid "Ski Rental"
-msgstr ""
+msgstr "Suksivuokraamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1105
 #, kde-format
@@ -54563,17 +54539,17 @@ msgstr "Pysäytä"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1114
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "Polkupyöräpysäköinti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1117
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "Moottoripyöräpysäköinti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1120
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "Maanalaisen sisäänkäynti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1123
 #, fuzzy, kde-format
@@ -54584,7 +54560,7 @@ msgstr "Massamuistikamera"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1126
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "Palvontapaikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1129
 #, fuzzy, kde-format
@@ -54596,7 +54572,7 @@ msgstr "Bahama"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1132
 #, kde-format
 msgid "Buddhist"
-msgstr ""
+msgstr "Buddhalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1135
 #, fuzzy, kde-format
@@ -54608,7 +54584,7 @@ msgstr "kroatia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1138
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "Islamilainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1141
 #, fuzzy, kde-format
@@ -54620,32 +54596,32 @@ msgstr "hindi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "Jainalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1147
 #, kde-format
 msgid "Jewish"
-msgstr ""
+msgstr "Juutalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1150
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "Šintolainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1153
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "Sikhi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1156
 #, kde-format
 msgid "Taoist"
-msgstr ""
+msgstr "Taolainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1159
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "Golfrata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1162
 #, fuzzy, kde-format
@@ -54657,7 +54633,7 @@ msgstr "mari"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1165
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "Puisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1168
 #, fuzzy, kde-format
@@ -54674,7 +54650,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1174
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "Urheilukeskus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1177
 #, fuzzy, kde-format
@@ -54685,12 +54661,12 @@ msgstr "Keskinkertainen"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1183
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "Uima-allas"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1186
 #, kde-format
 msgid "Miniature Golf Course"
-msgstr ""
+msgstr "Pienoisgolfrata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1189
 #, fuzzy, kde-format
@@ -54700,7 +54676,7 @@ msgstr "Kuvan kommentti"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1192
 #, kde-format
 msgid "Basin"
-msgstr ""
+msgstr "Vesiallas"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1195
 #, fuzzy, kde-format
@@ -54712,7 +54688,7 @@ msgstr "metri"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1198
 #, kde-format
 msgid "Commercial"
-msgstr ""
+msgstr "Kaupallinen alue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1201
 #, fuzzy, kde-format
@@ -54730,7 +54706,7 @@ msgstr "Suomi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1207
 #, kde-format
 msgid "Farmyard"
-msgstr ""
+msgstr "Viljelysmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1210
 #, fuzzy, kde-format
@@ -54741,7 +54717,7 @@ msgstr "Kuvat"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1213
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "Ruohikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1216
 #, fuzzy, kde-format
@@ -54753,27 +54729,27 @@ msgstr "Itävalta"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1219
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "Kaatopaikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1222
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "Niitty"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1225
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "Sotilasalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1228
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "Louhos"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1231
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "Rautatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1234
 #, fuzzy, kde-format
@@ -54784,7 +54760,7 @@ msgstr "Palauta käyrä lineaariseksi"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1237
 #, kde-format
 msgid "Residential"
-msgstr ""
+msgstr "Asuinalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1240
 #, fuzzy, kde-format
@@ -54796,28 +54772,28 @@ msgstr "Yksityiskohdat"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1243
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "Hedelmätarha"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1246
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "Viinitarha"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1249
 #, kde-format
 msgid "Rail"
-msgstr ""
+msgstr "Rata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1252
 #, kde-format
 msgid "Narrow Gauge"
-msgstr ""
+msgstr "Kapearaiteinen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1255
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:312
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "Raitiovaunu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1258
 #, fuzzy, kde-format
@@ -54828,13 +54804,13 @@ msgstr "Valopöytä"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1261
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "Käytöstä poistettu rautatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1264
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:308
 #, kde-format
 msgid "Subway"
-msgstr ""
+msgstr "Maanalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1267
 #, fuzzy, kde-format
@@ -54845,7 +54821,7 @@ msgstr "Säilytä kuvasuhde"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1270
 #, kde-format
 msgid "Miniature Railway"
-msgstr ""
+msgstr "Pienoisrautatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1273
 #, fuzzy, kde-format
@@ -54863,7 +54839,7 @@ msgstr "Mono"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1279
 #, kde-format
 msgid "Funicular Railway"
-msgstr ""
+msgstr "Vuoristorata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1282
 #, fuzzy, kde-format
@@ -54874,13 +54850,13 @@ msgstr "Teho:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1285
 #, kde-format
 msgid "Aerialway Station"
-msgstr ""
+msgstr "Ilmarata-asema"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1288
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
-msgstr ""
+msgstr "Pylväs"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1291
 #, fuzzy, kde-format
@@ -54891,7 +54867,7 @@ msgstr "Vaihda aakkoslajia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1294
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "Gondoli"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1297
 #, fuzzy, kde-format
@@ -54934,12 +54910,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1318
 #, kde-format
 msgid "Magic Carpet"
-msgstr ""
+msgstr "Taikamatto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1321
 #, kde-format
 msgid "Zip Line"
-msgstr ""
+msgstr "Köysirata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1324
 #, kde-format
@@ -54950,43 +54926,43 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:348
 #, kde-format
 msgid "Downhill Piste"
-msgstr ""
+msgstr "Laskettelurata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1330
 #, kde-format
 msgid "Nordic Piste"
-msgstr ""
+msgstr "Hiihtolatu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1333
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:356
 #, kde-format
 msgid "Skitour"
-msgstr ""
+msgstr "Hiihtoreitti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1336
 #, kde-format
 msgid "Sled Piste"
-msgstr ""
+msgstr "Kelkkarata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1339
 #, kde-format
 msgid "Winter Hike"
-msgstr ""
+msgstr "Talvivaellusreitti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1342
 #, kde-format
 msgid "Sleigh Piste"
-msgstr ""
+msgstr "Rekiajelurata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1345
 #, kde-format
 msgid "Ice Skate"
-msgstr ""
+msgstr "Luistelurata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1348
 #, kde-format
 msgid "Snow Park"
-msgstr ""
+msgstr "Talviurheilupuisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1351
 #, kde-format
@@ -54996,67 +54972,67 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1354
 #, kde-format
 msgid "Ski Jump"
-msgstr ""
+msgstr "Mäkihyppy"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1357
 #, kde-format
 msgid "Admin Boundary (Level 1)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 1)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1360
 #, kde-format
 msgid "Admin Boundary (Level 2)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 2)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1363
 #, kde-format
 msgid "Admin Boundary (Level 3)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 3)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1366
 #, kde-format
 msgid "Admin Boundary (Level 4)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 4)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1369
 #, kde-format
 msgid "Admin Boundary (Level 5)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 5)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1372
 #, kde-format
 msgid "Admin Boundary (Level 6)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 6)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1375
 #, kde-format
 msgid "Admin Boundary (Level 7)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 7)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1378
 #, kde-format
 msgid "Admin Boundary (Level 8)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 8)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1381
 #, kde-format
 msgid "Admin Boundary (Level 9)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 9)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1384
 #, kde-format
 msgid "Admin Boundary (Level 10)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 10)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1387
 #, kde-format
 msgid "Admin Boundary (Level 11)"
-msgstr ""
+msgstr "Hallinnollinen raja (taso 11)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1390
 #, kde-format
 msgid "Boundary (Maritime)"
-msgstr ""
+msgstr "Meriraja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1393
 #, fuzzy, kde-format
@@ -55067,17 +55043,17 @@ msgstr "Epäterävyysmaski:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1396
 #, kde-format
 msgid "Urban Area"
-msgstr ""
+msgstr "Kaupunkialue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1399
 #, kde-format
 msgid "International Date Line"
-msgstr ""
+msgstr "Kansainvälinen päivämääräraja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1402
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "Syvyysmittaus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1405
 #, fuzzy, kde-format
@@ -55095,7 +55071,7 @@ msgstr "Maapohja"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1411
 #, kde-format
 msgid "Ditch"
-msgstr ""
+msgstr "Oja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1414
 #, fuzzy, kde-format
@@ -55107,86 +55083,86 @@ msgstr "Virta"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1417
 #, kde-format
 msgid "River"
-msgstr ""
+msgstr "Joki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1420
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "Pato"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1423
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1429
 #, kde-format
 msgid "Crosswalk"
-msgstr ""
+msgstr "Suojatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1432
 #, kde-format
 msgid "Railway Crossing"
-msgstr ""
+msgstr "Rautatien ylitys"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1435
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "Ovi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1441
 #, kde-format
 msgid "Room"
-msgstr ""
+msgstr "Huone"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:60
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:63
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:66
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:69
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:102
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:105
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:108
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:296
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "Kiertotie"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:300
 #, kde-format
 msgid "Ferry Route"
-msgstr ""
+msgstr "Lauttareitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:304
 #, fuzzy, kde-format
@@ -55197,12 +55173,12 @@ msgstr "Maapohja"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:316
 #, kde-format
 msgid "Bus"
-msgstr ""
+msgstr "Bussi"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:320
 #, kde-format
 msgid "Trolley Bus"
-msgstr ""
+msgstr "Johdinauto"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:324
 #, fuzzy, kde-format
@@ -55214,37 +55190,37 @@ msgstr "Ympyrä ulos"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:328
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "Vuoristopyöräilyreitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:332
 #, kde-format
 msgid "Walking Route"
-msgstr ""
+msgstr "Kävelyreitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:336
 #, kde-format
 msgid "Hiking Route"
-msgstr ""
+msgstr "Vaellusreitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:340
 #, kde-format
 msgid "Bridleway"
-msgstr ""
+msgstr "Ratsastusreitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:344
 #, kde-format
 msgid "Inline Skates Route"
-msgstr ""
+msgstr "Rullaluistelureitti"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:352
 #, kde-format
 msgid "Nordic Ski Trail"
-msgstr ""
+msgstr "Hiihtolatu"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:360
 #, kde-format
 msgid "Sled Trail"
-msgstr ""
+msgstr "Kelkkareitti"
 
 #: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:54
 #, kde-format
@@ -55323,7 +55299,7 @@ msgstr "Kuvaa ei valittu"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:107
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "Anna tälle suhteelle tyypin luokitus."
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
@@ -55353,7 +55329,7 @@ msgstr "Nykyinen kuvasuhde"
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:44
 #, kde-format
 msgid "Role"
-msgstr ""
+msgstr "Rooli"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addRelation)
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:67
@@ -55403,101 +55379,87 @@ msgstr ">"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Related Images"
+#, kde-format
 msgid "Related Tags"
-msgstr "Asiaan liittyvät kuvat"
+msgstr "Asiaan liittyvät luokitukset"
 
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:47
-#, fuzzy, kde-format
-#| msgid "Add county tag"
+#, kde-format
 msgid "Add custom tag..."
-msgstr "Lisää piirikuntaluokitus"
+msgstr "Lisää mukautettu luokitus…"
 
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure"
+#, kde-format
 msgid "Configure"
 msgstr "Asetukset"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:73
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "Ilmakehä"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:78
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "Ilmake&hä"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:93
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr ""
+msgstr "Liitännäinen, joka näyttää maata ympäröivän ilmakehän."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Tämän sarakkeen asetukset"
+msgstr "Kompassiliitännäisen asetukset"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:20
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgid "Theme"
-msgstr "&Teemat"
+msgstr "Teema"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:43
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:43
-#, fuzzy, kde-format
-#| msgctxt "@option: default Tesseract mode"
-#| msgid "Default"
+#, kde-format
 msgid "Default"
 msgstr "Oletus"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:52
-#, fuzzy, kde-format
-#| msgid "Browse"
+#, kde-format
 msgid "Arrows"
-msgstr "Selaa"
+msgstr "Nuolet"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "Atomi"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "Magneetti"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:74
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "Compass"
-msgstr "Näytä kompassi"
+msgstr "Kompassi"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:79
-#, fuzzy, kde-format
-#| msgid "Show compass"
+#, kde-format
 msgid "&Compass"
-msgstr "Näytä kompassi"
+msgstr "Ko&mpassi"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "Kohteella on maantieteellinen sijaintitieto."
+msgstr "Liitännäinen kelluvan kompassin lisäämiseksi kartalle."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -55669,18 +55631,14 @@ msgid "Please choose the color for the equator."
 msgstr "Aseta tässä toisen viivan väri."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Equator"
-msgstr "Luoja"
+msgstr "Päiväntasaaja"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Prime Meridian"
-msgstr "Parametrit"
+msgstr "Nollameridiaani"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
 #, kde-format
@@ -55698,18 +55656,14 @@ msgid "Tropic of Capricorn"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Ympyrä ulos"
+msgstr "Pohjoinen napapiiri"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antarktis"
+msgstr "Eteläinen napapiiri"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -55745,17 +55699,14 @@ msgid "&Scale Bar"
 msgstr "&Skaalaa kokoon:"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to show a float item that provides a map scale."
-msgstr "Kohteella on maantieteellinen sijaintitieto."
+msgstr "Liitännäinen kelluvan mittakaavan lisäämiseksi."
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "Alkuperäiset värit:"
+msgstr "Alkuperäinen kehittäjä"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
@@ -55764,10 +55715,9 @@ msgid "km"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
@@ -55787,10 +55737,9 @@ msgstr "Rationaaliluvut"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:14
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgid "Measure Tool Configuration"
-msgstr "Tietokanta-asetukset"
+msgstr "Mittaustyökalun asetukset"
 
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:20
@@ -55810,11 +55759,9 @@ msgstr ""
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "Ympyrä ulos"
+msgstr "Ympyrä"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:51
@@ -55825,33 +55772,27 @@ msgstr "Kuvan selitteet"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "Etäisyys:"
+msgstr "Etäisyys"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:70
-#, fuzzy, kde-format
-#| msgid "Aborting..."
+#, kde-format
 msgid "Bearing"
-msgstr "Keskeytetään…"
+msgstr "Suunta"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Saving changes -"
+#, kde-format
 msgid "Bearing Change"
-msgstr "Tallennetaan muutoksia –"
+msgstr "Suunnanmuutos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:90
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid "Perimeter"
-msgstr "Parametrit"
+msgstr "Piiri"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
@@ -55863,30 +55804,25 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:142
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius"
-msgstr "Säde:"
+msgstr "Säde"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgid "Circumference"
-msgstr "Viite"
+msgstr "Ympärysmitta"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "Measure Tool"
-msgstr "Perustyökalut"
+msgstr "Mittaustyökalu"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:103
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgid "&Measure Tool"
-msgstr "Perustyökalut"
+msgstr "&Mittaustyökalu"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:118
 #, kde-format
@@ -55909,13 +55845,13 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Parameters"
+#, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
-msgstr "Parametrit"
+msgstr ""
+"Piiri:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:647
 #, kde-format
@@ -55923,11 +55859,9 @@ msgid "Polygon Ruler"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:652
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle Ruler"
-msgstr "Ympyrä ulos"
+msgstr "Ympyräviivain"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
 #, kde-format
@@ -55936,10 +55870,9 @@ msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Area: %1<br/>\n"
-msgstr "Tekijä: %1<br/><br/>"
+msgstr "Ala: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, kde-format
@@ -55947,10 +55880,9 @@ msgid "Perimeter: %1<br/>\n"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius: %1<br/>\n"
-msgstr "Säde:"
+msgstr "Säde: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
 #, kde-format
@@ -55958,22 +55890,19 @@ msgid "Circumference: %1<br/>\n"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgid "Add &Measure Point"
-msgstr "Lisää kohdistuspiste"
+msgstr "Lisää &mittauspiste"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:735
-#, fuzzy, kde-format
-#| msgid "Remove Account"
+#, kde-format
 msgid "Remove &Last Measure Point"
-msgstr "Poista tili"
+msgstr "Poista &viimeisin mittauspiste"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:737
-#, fuzzy, kde-format
-#| msgid "Remove Account"
+#, kde-format
 msgid "&Remove Measure Points"
-msgstr "Poista tili"
+msgstr "P&oista mittauspisteet"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
@@ -55995,10 +55924,9 @@ msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:270
-#, fuzzy, kde-format
-#| msgid "Current Aspect Ratio"
+#, kde-format
 msgid "Current Location Button"
-msgstr "Nykyinen kuvasuhde"
+msgstr "Nykyisen sijainnin painike"
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:273
 #, kde-format
@@ -56006,104 +55934,86 @@ msgid "Home Button"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "Näytä yleiskartta"
+msgstr "Yleiskuvakartta"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "Näytä yleiskartta"
+msgstr "&Yleiskuvakartta"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "This item has geolocation information."
+#, kde-format
 msgid "A plugin to add a float item that provides an overview map."
-msgstr "Kohteella on maantieteellinen sijaintitieto."
+msgstr "Liitännäinen kelluvan yleiskuvakartan lisäämiseksi."
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:583
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "Näytä yleiskartta"
+msgstr "Valitse yleiskuvakartta"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
-#, fuzzy, kde-format
-#| msgid "Set here the color of the second line."
+#, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Aseta tässä toisen viivan väri."
+msgstr "Valitse tässä sijainnin ilmaisimen väri"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>Esikatselun asetukset</b>"
+msgstr "Yleiskuvakartan asetukset"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
-#, fuzzy, kde-format
-#| msgid "&Image"
+#, kde-format
 msgid "Map &Image"
-msgstr "&Kuva"
+msgstr "Karttak&uva"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
-#, fuzzy, kde-format
-#| msgid "File name"
+#, kde-format
 msgid "&Planet:"
-msgstr "Tiedostonimi"
+msgstr "&Planeetta:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgid "&Size:"
-msgstr "Koko:"
+msgstr "K&oko:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
-#| msgid "x"
+#, kde-format
 msgid "x"
-msgstr "×"
+msgstr "x"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "Osoita, jos kohteesta on sijaintitieto"
+msgstr "Si&jaintimerkki:"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Download Progress Indicator"
-msgstr "Näytä edistymisen ilmaisin"
+msgstr "Latauksen edistymisen ilmaisin"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Error"
+#, kde-format
 msgid "&Download Progress"
-msgstr "Latausvirhe"
+msgstr "Latauksen &edistyminen"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:121
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "Näytä edistymisen ilmaisin"
+msgstr ""
+"Liitännäinen, joka näyttää latauksen edistymisen kartalla piirakkakaaviona"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "Välimuistitiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:56
 #, kde-format
@@ -56111,17 +56021,14 @@ msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:72
-#, fuzzy, kde-format
-#| msgid "Marble Widget"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "Marble-käyttöliittymäelementti"
+msgstr "Marblen välimuistitiedostot"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "GPSBabel NMEA -tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -56131,18 +56038,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Save files as"
+#, kde-format
 msgid "GPSBabel files"
-msgstr "Tallenna tiedostot muodossa"
+msgstr "GPSBabel-tiedostot"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Gpx File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "GPX-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -56150,18 +56053,14 @@ msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@item: type code"
-#| msgid "Data"
+#, kde-format
 msgid "GPS Data"
-msgstr "Data"
+msgstr "GPS-tiedot"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "GeoJSON-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:52
 #, kde-format
@@ -56174,11 +56073,9 @@ msgid "GeoJSON"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "KML File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "KML-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:52
 #, kde-format
@@ -56197,10 +56094,9 @@ msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:59
 #, kde-format
@@ -56210,11 +56106,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Osm File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "OSM-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:52
 #, kde-format
@@ -56223,17 +56117,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:69
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap Data"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap-tiedot"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pn2 File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "PN2-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -56242,18 +56133,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "Name of the component"
-#| msgid "Component"
+#, kde-format
 msgid "Compressed Pnt"
-msgstr "Komponentti"
+msgstr "Pakattu PNT"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Transfer"
+#, kde-format
 msgid "Pnt File Parser"
-msgstr "Tiedostonsiirto"
+msgstr "PNT-tiedostojäsennin"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -56344,10 +56231,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:79
-#, fuzzy, kde-format
-#| msgid "Raster Graphics"
+#, kde-format
 msgid "Stereographic"
-msgstr "Bittikarttakuva"
+msgstr "Stereografinen"
 
 #: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:84
 #, kde-format
@@ -56429,52 +56315,44 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality"
+#, kde-format
 msgid "Map Quality"
-msgstr "Laatu"
+msgstr "Kartan laatu"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:136
-#, fuzzy, kde-format
-#| msgid "&Shuffle images"
+#, kde-format
 msgid "Still Image:"
-msgstr "&Sekoita kuvat"
+msgstr "Pysähdyskuva:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:138
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:148
-#, fuzzy, kde-format
-#| msgid "Outlined Text"
+#, kde-format
 msgid "Outline Quality"
-msgstr "Ääriviivateksti"
+msgstr "Ääriviivalaatu"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:139
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:149
-#, fuzzy, kde-format
-#| msgid "Quality"
+#, kde-format
 msgid "Low Quality"
-msgstr "Laatu"
+msgstr "Heikko laatu"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:140
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@action: normal exif orientation"
-#| msgid "Normal"
+#, kde-format
 msgid "Normal"
 msgstr "Tavallinen"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:141
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:151
-#, fuzzy, kde-format
-#| msgid "Quality"
+#, kde-format
 msgid "High Quality"
-msgstr "Laatu"
+msgstr "Hyvä laatu"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:142
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Imported ratings"
+#, kde-format
 msgid "Print Quality"
-msgstr "Arviot tuotu tiedostoista"
+msgstr "Tulostuslaatu"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:143
 #, kde-format
@@ -56484,10 +56362,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "Duration:"
+#, kde-format
 msgid "During Animations:"
-msgstr "Kesto:"
+msgstr "Animaatioiden aikana:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -56499,10 +56376,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:164
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgid "Mouse Behavior"
-msgstr "Toiminta"
+msgstr "Hiiren toiminta"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:166
 #, fuzzy, kde-format
@@ -56567,31 +56443,24 @@ msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
+#, kde-format
 msgid "Clear"
 msgstr "Tyhjennä"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:191
-#, fuzzy, kde-format
-#| msgid "Unsharp Mask"
+#, kde-format
 msgid "Hard Disc:"
-msgstr "Epäterävyysmaski:"
+msgstr "Kiintolevy:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Load Contents"
+#, kde-format
 msgid "Map Contents"
-msgstr "Lataa sisältö"
+msgstr "Kartan sisältö"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Default Language:"
+#, kde-format
 msgid "Default Font:"
-msgstr "Oletuskieli:"
+msgstr "Oletusfontti:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -56602,10 +56471,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:215
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Show Coordinate Grid"
-msgstr "Koordinaatit"
+msgstr "Näytä koordinaatisto"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:216
 #, kde-format
@@ -56642,10 +56510,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:230
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show Night Shadow"
-msgstr "Näytä oikeassa paneelissa"
+msgstr "Näytä yön varjo"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:231
 #, kde-format
@@ -56656,10 +56523,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:235
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Show City Place Mark"
-msgstr "Näytä kasvotunnisteet"
+msgstr "Näytä kaupungin paikkamerkki"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -56684,23 +56550,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:276
-#, fuzzy, kde-format
-#| msgid "Marble Widget"
+#, kde-format
 msgid "Map View"
-msgstr "Marble-käyttöliittymäelementti"
+msgstr "Karttanäkymä"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "imageplugins shortcuts"
-#| msgid "Image Plugins"
+#, kde-format
 msgid "Map Plugins"
-msgstr "Liitännäiset"
+msgstr "Karttaliitännäiset"
 
 #: core/utilities/geolocation/engine/settings/MarblePluginSettingsWidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Border Tool"
+#, kde-format
 msgid "Render Tools"
-msgstr "Reunatyökalu"
+msgstr "Hahmonnustyökalut"
 
 #: core/utilities/geolocation/engine/settings/MarblePluginSettingsWidget.cpp:83
 #, fuzzy, kde-format
@@ -56714,23 +56576,19 @@ msgid "Unable to insert data into cache"
 msgstr ""
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Visible to Friends"
+#, kde-format
 msgid "Visible region"
-msgstr "Näkyy kavereille"
+msgstr "Näkyvä alue"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgid "Specify region"
-msgstr "Määräsijainti"
+msgstr "Määritä alue"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
+#, kde-format
 msgid "Download Route"
-msgstr "Lataa uudet"
+msgstr "Lataa reitti"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:144
 #, kde-format
@@ -56743,11 +56601,9 @@ msgid "Offset from route:"
 msgstr ""
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Selection Method"
-msgstr "Kohdekansio:"
+msgstr "Valintatapa"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:200
 #, kde-format
@@ -56755,11 +56611,9 @@ msgid "Number of tiles to download:"
 msgstr ""
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Download New"
+#, kde-format
 msgid "Download Region"
-msgstr "Lataa uudet"
+msgstr "Lataa alue"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, fuzzy, kde-format
@@ -56769,16 +56623,14 @@ msgid "Tile type to be downloaded:"
 msgstr "Tätä kohdetta ei ole koskaan ladattu"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
-#, fuzzy, kde-format
-#| msgid "Texture Filter"
+#, kde-format
 msgid "Texture tiles"
-msgstr "Pintakuviosuodatin"
+msgstr "Pintakuviotiilet"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
-#, fuzzy, kde-format
-#| msgid "Video Files"
+#, kde-format
 msgid "Vector tiles"
-msgstr "Videotiedostot"
+msgstr "Vektoritiilet"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
 #, kde-format
@@ -56807,18 +56659,15 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Select a year"
+#, kde-format
 msgid "Select a geographic region"
-msgstr "Valitse vuosi"
+msgstr "Valitse maantieteellinen alue"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:41
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Northern Ireland"
+#, kde-format
 msgid "Northern Latitude"
-msgstr "Pohjois-Irlanti"
+msgstr "Pohjoinen leveysaste"
 
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
@@ -56840,10 +56689,9 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:93
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgid "Western Longitude"
-msgstr "Pituusaste"
+msgstr "Läntinen pituusaste"
 
 #. i18n: ectx: property (text), widget (QLabel, westLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:118
@@ -56853,10 +56701,9 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:145
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgid "Eastern Longitude"
-msgstr "Pituusaste"
+msgstr "Itäinen pituusaste"
 
 #. i18n: ectx: property (text), widget (QLabel, eastLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:170
@@ -56866,11 +56713,9 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:197
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "GPS Latitude"
+#, kde-format
 msgid "Southern Latitude"
-msgstr "GPS-leveysastetieto"
+msgstr "Eteläinen leveysaste"
 
 #. i18n: ectx: property (text), widget (QLabel, southLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:222
@@ -56880,10 +56725,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:20
-#, fuzzy, kde-format
-#| msgid "Creation date"
+#, kde-format
 msgid "Creating Map"
-msgstr "Luontipäivä"
+msgstr "Luodaan karttaa"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
@@ -56932,10 +56776,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
-#, fuzzy, kde-format
-#| msgid "Zoom:"
+#, kde-format
 msgid "Zoom"
-msgstr "Lähennys:"
+msgstr "Lähennä"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:37
@@ -61413,26 +61256,22 @@ msgid "Autotags Assignment"
 msgstr "Automaattinen asetus"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Mittaustapa:"
+msgstr "Automaattiset luokitukset kohteelle: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Path: %1\n"
-msgstr "Arvio: %1\n"
+msgstr "Sijainti: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Hakusanat:"
+msgstr "Hakusanat: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
 #, fuzzy, kde-format
@@ -61531,19 +61370,18 @@ msgid "Scanning from: %1\n"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Albumi ”%1”"
+msgstr "Albumi: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Etsi albumeista:"
+msgstr ""
+"Tutkittu:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
 #, fuzzy, kde-format
@@ -61571,20 +61409,16 @@ msgid "Duplicates for: %1\n"
 msgstr "Kaksoiskappaleet"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Etsi kaksoiskappaleita"
+msgstr "Ei kaksoiskappaleita"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Etsi kaksoiskappaleita"
-msgstr[1] "Etsi kaksoiskappaleita"
+msgstr[0] "Yksi kaksoiskappale"
+msgstr[1] "%1 kaksoiskappaletta"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, fuzzy, kde-format
@@ -61677,20 +61511,16 @@ msgid "Scanned for faces: %1\n"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "No face"
 msgstr "Ei kasvoja"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Ei kasvoja"
-msgstr[1] "Ei kasvoja"
+msgstr[0] "Yhdet kasvot"
+msgstr[1] "%1 kasvot"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -61698,20 +61528,17 @@ msgid "Finger-prints"
 msgstr "Sormenjäljet"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Luo kuvien sormenjäljet uudelleen"
+msgstr "Rakenne sormenjälki uudelleen: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
-#, fuzzy, kde-format
-#| msgctxt "@label: bookmark properties"
-#| msgid "&Path:"
+#, kde-format
 msgid "Path: %1"
-msgstr "Si&jainti:"
+msgstr "Kohteen sijainti: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
 #, fuzzy, kde-format
@@ -61728,10 +61555,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Kuvalaatuun perustuva järjestely"
+msgstr "Kuvanlaatu kohteelle: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, fuzzy, kde-format
@@ -61866,30 +61692,24 @@ msgid "Item scanned to update database with metadata: %1"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Pienoiskuvat"
+msgstr "Luo pienoiskuvat"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Pienoiskuvan ominaisuudet:"
+msgstr "Pienoiskuva kohteelle: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Etsi albumeista:"
+msgstr "Pienoiskuvia varten tutkittu kohteita: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Etsi albumeista:"
+msgstr "Pienoiskuvaa varten tutkittu kohde: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -62017,7 +61837,7 @@ msgstr "Käsittely on käynnissä"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
-msgstr ""
+msgstr "Eräajohallinta on käynnissä. Haluatko perua meneillään olevan työn?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format
@@ -62288,9 +62108,9 @@ msgid "File Renaming"
 msgstr "Tiedostonimien muutos"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raw Files Loading:"
-msgstr "Raw-tiedostot"
+msgstr "RAW-tiedostot latautuvat:"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:178
 #, kde-format
@@ -62680,10 +62500,9 @@ msgid "File Size"
 msgstr "Tiedostokoko"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in megabytes"
-msgstr "Tiedoston koko"
+msgstr "Tiedoston koko megatavuina"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -62693,10 +62512,9 @@ msgid "-"
 msgstr "–"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in bytes"
-msgstr "Tiedoston koko"
+msgstr "Tiedoston koko tavuina"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -63050,10 +62868,9 @@ msgid "Country"
 msgstr "Maa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "Country shown in the item"
-msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
+msgstr "Kohteessa näytetty maa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
@@ -63061,16 +62878,14 @@ msgid "Province"
 msgstr "Provinssi"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
+msgstr "Kohteessa näytetty alue"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:700
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "City shown in the item"
-msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
+msgstr "Kohteessa näytetty kaupunki"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
 #, kde-format
@@ -63078,10 +62893,9 @@ msgid "Sublocation"
 msgstr "Alisijainti"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
+msgstr "Kohteessa näytetty pienempi alue"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
@@ -63384,12 +63198,10 @@ msgid "New..."
 msgstr "Uusi…"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Kopioi kohteeseen…"
+msgstr "Kopioi…"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -66852,11 +66664,9 @@ msgid "Decoding backend to render video:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (oletus)"
+msgstr "FFmpeg (oletus)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
@@ -68071,6 +67881,12 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "Virhe ladattaessa RAW-kuvaa ”%1”"
+
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Clear all previous results and rescan"

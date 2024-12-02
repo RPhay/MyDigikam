@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2024-11-27 08:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -11616,25 +11616,24 @@ msgstr "Breyta hnattstaðsetningu..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Gat ekki lesið myndina '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Snið myndarinnar '%1' er óþekkjanlegt"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Villa við hleðslu myndarinnar '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Gat ekki vistað myndina '%1' sem '%2'"
@@ -17135,31 +17134,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Myndstaflaverkfæri"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
-#, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "Villa við hleðslu RAW-myndarinnar '%1'"
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
+#, fuzzy, kde-format
+#| msgid "Could not save image to file '%1'"
+msgid "Could not copy image to file '%1'"
+msgstr "Gat ekki vistað mynd í skrána '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Gat ekki vistað smámynd fyrir myndina '%1' í '%2'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "ekki tiltækt"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, kde-format
-msgid "Could not open file '%1' for writing"
-msgstr "Gat ekki opnað skrána '%1' í skrifham"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "Gat ekki vistað mynd í skrána '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, kde-format
@@ -17493,6 +17484,13 @@ msgstr "Allir eiginleikar myndar:"
 #, kde-format
 msgid "Save image"
 msgstr "Vista mynd"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+#| msgid "JPEG"
+msgid "JPG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -67650,6 +67648,12 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "Villa við hleðslu RAW-myndarinnar '%1'"
+
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "Gat ekki opnað skrána '%1' í skrifham"
 
 #~ msgid "Fix AMD-GPU video decoding issue"
 #~ msgstr "Lagað vandamál í myndmerkiskóðun AMD-GPU"

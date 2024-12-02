@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 01:48+0000\n"
+"POT-Creation-Date: 2024-12-02 02:26+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -12082,25 +12082,24 @@ msgstr "Editar localização geográfica..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Não foi possível ler a imagem '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "O formato da imagem '%1' é desconhecido"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Erro ao carregar a imagem '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Não foi possível salvar a imagem '%1' em '%2'"
@@ -18157,31 +18156,23 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Ferramenta Imagens Empilhadas"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
-#, kde-format
-msgid "Error loading RAW image '%1'"
-msgstr "Erro ao carregar a imagem RAW '%1'"
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
+#, fuzzy, kde-format
+#| msgid "Could not save image to file '%1'"
+msgid "Could not copy image to file '%1'"
+msgstr "Não foi possível salvar a imagem no arquivo '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Não foi possível salvar a miniatura da imagem '%1' em '%2'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "indisponível"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, kde-format
-msgid "Could not open file '%1' for writing"
-msgstr "Não foi possível abrir o arquivo '%1' para gravação"
-
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
-#, kde-format
-msgid "Could not save image to file '%1'"
-msgstr "Não foi possível salvar a imagem no arquivo '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, fuzzy, kde-format
@@ -18551,6 +18542,13 @@ msgstr "Propriedades da imagem completa:"
 #, kde-format
 msgid "Save image"
 msgstr "Salvar imagem"
+
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#, fuzzy, kde-format
+#| msgid "JPEG"
+msgid "JPG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -73609,6 +73607,12 @@ msgstr "Itens do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar itens"
+
+#~ msgid "Error loading RAW image '%1'"
+#~ msgstr "Erro ao carregar a imagem RAW '%1'"
+
+#~ msgid "Could not open file '%1' for writing"
+#~ msgstr "Não foi possível abrir o arquivo '%1' para gravação"
 
 # Manter a tradução pequena para não precisar redimencionar a janela. (Alvarenga)
 #, fuzzy
