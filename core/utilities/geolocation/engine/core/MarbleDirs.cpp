@@ -95,14 +95,37 @@ QStringList MarbleDirs::entryList(const QString& relativePath, QDir::Filters fil
 
 QStringList MarbleDirs::pluginEntryList(const QString& relativePath, QDir::Filters filters)
 {
-    QStringList allFiles        = QDir(MarbleDirs::pluginLocalPath() +
-                                       QDir::separator()                  +
-                                       relativePath).entryList(filters);
-    auto const pluginSystemPath = MarbleDirs::pluginSystemPath();
+    QStringList allFiles;
 
-    if (!pluginSystemPath.isEmpty())
+    // First we try to load in first the local plugin if DK_PLUG_PATH variable is declared.
+    // Else, we will load plugins from the system using the standard Qt plugin path.
+
+    QByteArray  dkenv = qgetenv("DK_PLUGIN_PATH");
+
+    if (dkenv.isEmpty())
     {
-        allFiles << QDir(pluginSystemPath + QDir::separator() + relativePath).entryList(filters);
+        allFiles        = QDir(MarbleDirs::pluginLocalPath() +
+                               QDir::separator()             +
+                               relativePath).entryList(filters);
+        auto const pluginSystemPath = MarbleDirs::pluginSystemPath();
+
+        if (!pluginSystemPath.isEmpty())
+        {
+            allFiles << QDir(pluginSystemPath + QDir::separator() + relativePath).entryList(filters);
+        }
+    }
+    else
+    {
+        qCWarning(DIGIKAM_MARBLE_LOG) << "DK_PLUGIN_PATH env.variable detected. "
+                                         "We will use it to load Geolocation plugin...";
+
+        const auto pathList = QString::fromUtf8(dkenv).split(QLatin1Char(';'),
+                                                             Qt::SkipEmptyParts);
+
+        for (const QString& pth : pathList)
+        {
+            allFiles << QDir(pth).entryList(filters);
+        }
     }
 
     // remove duplicate entries
