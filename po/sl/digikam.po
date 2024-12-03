@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 02:26+0000\n"
-"PO-Revision-Date: 2024-11-27 07:42+0100\n"
+"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"PO-Revision-Date: 2024-12-02 07:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -9194,7 +9194,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "Nastavitve slike"
@@ -17211,10 +17211,9 @@ msgstr "Orodje za slike v skladu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
-#, fuzzy, kde-format
-#| msgid "Could not save image to file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Ni bilo mogoče shraniti slike v datoteko '%1'"
+msgstr "Ni bilo mogoče prekopirati slike v datoteko '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
@@ -17562,10 +17561,9 @@ msgstr "Shrani sliko"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -17707,40 +17705,40 @@ msgstr "ni možnosti prilagajanja"
 msgid "Author: %1<br/><br/>"
 msgstr "Avtor: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Ustvari HTML galerijo"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Dobrodošli v orodje za HTML galerije"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr "Izbor predmetov"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "Izbor teme"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Parametri teme"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Nastavitve izhoda"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Ustvarjam galerijo"

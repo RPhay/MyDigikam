@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 02:26+0000\n"
+"POT-Creation-Date: 2024-12-03 01:49+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -8551,7 +8551,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr ""
@@ -16654,40 +16654,40 @@ msgstr "Nije dostupno"
 msgid "Author: %1<br/><br/>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Stvaram KML datoteku…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, fuzzy, kde-format
 msgid "Items Selection"
 msgstr "Koreliraj"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, fuzzy, kde-format
 msgid "Theme Selection"
 msgstr "Koreliraj"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "Zadani jezik"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, fuzzy, kde-format
 msgid "Generating Gallery"
 msgstr "Stvaram KML datoteku…"

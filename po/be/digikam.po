@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 02:26+0000\n"
+"POT-Creation-Date: 2024-12-03 01:49+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -8764,7 +8764,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "Налады выявы"
@@ -16839,40 +16839,40 @@ msgstr ""
 msgid "Author: %1<br/><br/>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Стварыць HTML-галерэю"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr "Выбар элементаў"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "Выбар тэмы"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Параметры тэмы"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Налады вываду"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr ""

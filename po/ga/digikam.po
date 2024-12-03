@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 02:26+0000\n"
+"POT-Creation-Date: 2024-12-03 01:49+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -9223,7 +9223,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "Socruithe Íomhá"
@@ -17994,47 +17994,47 @@ msgstr "Níl aon roghanna ar fáil"
 msgid "Author: %1<br/><br/>"
 msgstr "Údar"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Féilire"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgid "Welcome to HTML Gallery Tool"
 msgstr "<b>Fáilte go dtí an Uirlis Lánléargais</b>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
 msgstr "Roghnúchán"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Theme Selection"
 msgstr "Roghnúchán"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Theme Parameters"
 msgstr "Paraiméadair"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 #| msgid "Queue Settings"
 msgid "Output Settings"
 msgstr "Socruithe an Chiú"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgid "Generating Gallery"
