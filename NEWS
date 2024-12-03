@@ -29,10 +29,10 @@ BUGFIXES:
 018 ==> 496867 - digiKam 8.0 does not display a new album folder.
 019 ==> 480357 - digiKam 8.2.0 segfaults on importing collection.
 020 ==> 477379 - digiKam crashes on start with "failed to create drawable" / "glXCreatePbuffer failed.".
-021 ==>
-022 ==>
-023 ==>
-024 ==>
+021 ==> 492836 - Appimage Integration failed.
+022 ==> 493578 - Impossible to integrate the appimage 8.4.0 and 8.5.0 to the desktop.
+023 ==> 492813 - Appimage crashes when trying to integrate into KDE Neon 6.1 (Ubuntu 24.04 based).
+024 ==> 
 025 ==>
 026 ==>
 027 ==>
