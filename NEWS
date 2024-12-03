@@ -26,7 +26,7 @@ BUGFIXES:
 017 ==> 496868 - The application only starts with a white window.
 018 ==> 496867 - digiKam 8.0 does not display a new album folder.
 019 ==> 480357 - digiKam 8.2.0 segfaults on importing collection.
-020 ==>
+020 ==> 477379 - digiKam crashes on start with "failed to create drawable" / "glXCreatePbuffer failed.".
 021 ==>
 022 ==>
 023 ==>
