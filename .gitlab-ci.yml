@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: CC0-1.0
 #
 # See targets available at https://invent.kde.org/sysadmin/ci-utilities/-/tree/master/gitlab-templates
+# CI use Craft envirronnement to build source code. Configuration is located in ./kde-ci.yml
 
 include:
   - project: sysadmin/ci-utilities
