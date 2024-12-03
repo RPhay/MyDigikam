@@ -49,6 +49,27 @@ DPluginLoader::Private::Private()
     DKBlacklist << QLatin1String("Generic_DNGConverter_Plugin");
     blacklist   << QLatin1String("Generic_YandexFotki_Plugin");
     blacklist   << QLatin1String("Generic_VKontakte_Plugin");
+
+    // Ignore Geolocation plugin which uses a dedicated loader.
+
+    blacklist   << QLatin1String("AtmospherePlugin");
+    blacklist   << QLatin1String("CompassFloatItem");
+    blacklist   << QLatin1String("CrosshairsPlugin");
+    blacklist   << QLatin1String("CachePlugin");
+    blacklist   << QLatin1String("GpsbabelPlugin");
+    blacklist   << QLatin1String("GpxPlugin");
+    blacklist   << QLatin1String("GraticulePlugin");
+    blacklist   << QLatin1String("JsonPlugin");
+    blacklist   << QLatin1String("KmlPlugin");
+    blacklist   << QLatin1String("MapScaleFloatItem");
+    blacklist   << QLatin1String("MeasureTool");
+    blacklist   << QLatin1String("NavigationFloatItem");
+    blacklist   << QLatin1String("NominatimReverseGeocodingPlugin");
+    blacklist   << QLatin1String("OverviewMap");
+    blacklist   << QLatin1String("OsmPlugin");
+    blacklist   << QLatin1String("Pn2Plugin");
+    blacklist   << QLatin1String("PntPlugin");
+    blacklist   << QLatin1String("ProgressFloatItem");
 }
 
 QFileInfoList DPluginLoader::Private::pluginEntriesList() const
