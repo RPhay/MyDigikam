@@ -10,17 +10,30 @@ include:
 
       # --- CI Validators ---
 
+      # Check the licenses in files.
       # - /gitlab-templates/reuse-lint.yml
+
+      # Validate synthax in JSON files.
       - /gitlab-templates/json-validation.yml
+
+      # Validate synthax in XML files.
       - /gitlab-templates/xml-lint.yml
 
       # --- Continuous Integration Qt6 ---
 
+      # Build Qt6 version under Linux and run unit-tests.
       - /gitlab-templates/linux-qt6.yml
+
+      # Build Qt6 version under Windows and run unit-tests.
       # - /gitlab-templates/windows-qt6.yml
+
+      # Build Qt6 version under FreeBSD and run unit-tests.
       # - /gitlab-templates/freebsd-qt6.yml
 
       # --- Continuous Deployement Qt6 ---
 
+      # Create the signed Linux AppImage bundle.
       # - /gitlab-templates/craft-appimage-qt6.yml
+
+      # Create the signed Windows installer.
       # - /gitlab-templates/craft-windows-x86-64-qt6.yml
