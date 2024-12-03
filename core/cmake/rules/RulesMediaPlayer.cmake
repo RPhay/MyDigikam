@@ -7,7 +7,7 @@
 if(ENABLE_MEDIAPLAYER)
 
     # NOTE: For Qt5, QtMultimedia is used to render video on widget.
-    # NOTE: For Qt6, QtMultimedia based on FFMpeg is only supported with version > 6.5.
+    # NOTE: For Qt6, QtMultimedia based on FFMpeg is only supported with Qt version >= 6.5.
 
     find_package(Qt${QT_VERSION_MAJOR}
                  OPTIONAL_COMPONENTS
@@ -22,7 +22,6 @@ if(ENABLE_MEDIAPLAYER)
     if (Qt${QT_VERSION_MAJOR}Multimedia_VERSION VERSION_GREATER_EQUAL 6.5.0)
 
         include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/player/qtmm)
-
 
         set(ENABLE_QTMULTIMEDIA ON)
         message(STATUS "MediaPlayer type:     Qt6::Multimedia")
@@ -57,6 +56,7 @@ if(ENABLE_MEDIAPLAYER)
                 if(VAAPI_X11_FOUND AND OpenGL_GLX_FOUND)
 
                     set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_LIBRARIES})
+                    set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQT_AVPLAYER_VA_X11)
 
                     message(STATUS "MediaPlayer will be compiled with VaAPI X11 support  : yes")
 
@@ -70,6 +70,7 @@ if(ENABLE_MEDIAPLAYER)
                 if(VAAPI_DRM_FOUND AND OPENSLES_FOUND)
 
                     set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENSLES_LIBRARIES})
+                    set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQT_AVPLAYER_VA_DRM)
 
                     message(STATUS "MediaPlayer will be compiled with VaAPI DRM support  : yes")
 
@@ -85,6 +86,7 @@ if(ENABLE_MEDIAPLAYER)
             if(VDPAU_FOUND AND OpenGL_FOUND)
 
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VDPAU_LIBRARIES} ${OPENGL_LIBRARIES})
+                set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQT_AVPLAYER_VDPAU)
 
                 message(STATUS "MediaPlayer will be compiled with VDPAU support      : yes")
 

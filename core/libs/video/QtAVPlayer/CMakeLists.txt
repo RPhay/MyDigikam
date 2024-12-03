@@ -6,7 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-# QtAVPlater depencency rules are managed from top level by core/cmake/rules/RulesMediaPlayer.cmake
+# QtAVPlayer depencency rules are managed from top level by core/cmake/rules/RulesMediaPlayer.cmake
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
@@ -15,6 +15,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiocodec.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/qavaudioconverter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiofilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudioframe.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudioinputfilter.cpp
