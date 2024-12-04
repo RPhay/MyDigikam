@@ -20,7 +20,6 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QImage>
 #include <QImageReader>
 #include <QLocale>
 #include <QPointer>
@@ -44,36 +43,6 @@ using namespace Digikam;
 
 namespace DigikamGenericHtmlGalleryPlugin
 {
-
-/**
- * Generate a thumbnail from @p fullImage of @p size x @p size pixels
- * If @p square == true, crop the result to a square
- */
-static QImage generateThumbnail(const QImage& fullImage, int size, bool square)
-{
-    QImage image = fullImage.scaled(size, size, square ? Qt::KeepAspectRatioByExpanding
-                                                       : Qt::KeepAspectRatio,
-                                    Qt::SmoothTransformation);
-
-    if (square && ((image.width() != size) || (image.height() != size)))
-    {
-        int sx = 0;
-        int sy = 0;
-
-        if (image.width() > size)
-        {
-            sx = (image.width() - size) / 2;
-        }
-        else
-        {
-            sy = (image.height() - size) / 2;
-        }
-
-        image = image.copy(sx, sy, size, size);
-    }
-
-    return image;
-}
 
 GalleryElementFunctor::GalleryElementFunctor(GalleryGenerator* const generator,
                                              GalleryInfo* const info,
@@ -435,6 +404,36 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 void GalleryElementFunctor::emitWarning(const QString& message)
 {
     Q_EMIT m_generator->logWarningRequested(message);
+}
+
+/**
+ * Generate a thumbnail from @p fullImage of @p size x @p size pixels
+ * If @p square == true, crop the result to a square
+ */
+QImage GalleryElementFunctor::generateThumbnail(const QImage& fullImage, int size, bool square) const
+{
+    QImage image = fullImage.scaled(size, size, square ? Qt::KeepAspectRatioByExpanding
+                                                       : Qt::KeepAspectRatio,
+                                    Qt::SmoothTransformation);
+
+    if (square && ((image.width() != size) || (image.height() != size)))
+    {
+        int sx = 0;
+        int sy = 0;
+
+        if (image.width() > size)
+        {
+            sx = (image.width() - size) / 2;
+        }
+        else
+        {
+            sy = (image.height() - size) / 2;
+        }
+
+        image = image.copy(sx, sy, size, size);
+    }
+
+    return image;
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin

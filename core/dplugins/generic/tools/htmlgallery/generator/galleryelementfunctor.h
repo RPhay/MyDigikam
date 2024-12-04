@@ -15,6 +15,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QImage>
+
 // Local includes
 
 #include "gallerynamehelper.h"
@@ -48,7 +52,8 @@ public:
 
 private:
 
-    void emitWarning(const QString& msg);
+    void   emitWarning(const QString& msg);
+    QImage generateThumbnail(const QImage& fullImage, int size, bool square) const;
 
 private:
 
