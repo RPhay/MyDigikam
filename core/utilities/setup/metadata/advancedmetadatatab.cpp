@@ -569,12 +569,12 @@ void AdvancedMetadataTab::setModels()
 
     for (const QString& str : std::as_const(keys))
     {
-        setModelData(d->models.at(index++), d->container.getReadMapping(str));
+        setModelData(d->models.at(index++), d->container.getReadMapping(str));      // krazy:exclude=postfixop
     }
 
     for (const QString& str : std::as_const(keys))
     {
-        setModelData(d->models.at(index++), d->container.getWriteMapping(str));
+        setModelData(d->models.at(index++), d->container.getWriteMapping(str));     // krazy:exclude=postfixop
     }
 
     d->metadataType->setCurrentIndex(0);
