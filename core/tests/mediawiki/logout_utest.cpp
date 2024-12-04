@@ -85,9 +85,9 @@ private Q_SLOTS:
         QList<FakeServer::Request> requests = m_server->getRequest();
         QCOMPARE(requests.size(), 1);
 
-        FakeServer::Request request2 = requests[0];
+        FakeServer::Request request2        = requests[0];
         QCOMPARE(request2.agent, m_mediaWiki->userAgent());
-        QCOMPARE(request2.type, QStringLiteral("GET"));
+        QCOMPARE(request2.type,  QStringLiteral("GET"));
         QCOMPARE(request2.value, QStringLiteral("/?format=xml&action=logout"));
     }
 

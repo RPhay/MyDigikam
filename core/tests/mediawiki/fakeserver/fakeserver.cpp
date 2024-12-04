@@ -71,8 +71,12 @@ void FakeServer::dataAvailable()
             FakeServer::Request request;
             request.type  = token[0];
             request.value = token[1];
+            int index     = token.indexOf(QString::fromLatin1("User-Agent:"));
 
-            int index     = token.indexOf(QLatin1String("User-Agent:"));
+            if (index < 0)
+            {
+                index = token.indexOf(QString::fromLatin1("user-agent:"));
+            }
 
             if ((index > 0) && ((index + 1) < token.size()))
             {
