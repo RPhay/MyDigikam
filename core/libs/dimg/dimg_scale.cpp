@@ -1328,6 +1328,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                     int   r = 0, g = 0, b = 0;
                     uint* pix = nullptr;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((XAP > 0) && isi->scaleSmooth)
                     {
                         int rr = 0, gg = 0, bb = 0;
@@ -1779,6 +1780,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                     llong r = 0, g = 0, b = 0;
                     ullong* pix = nullptr;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((XAP > 0) && isi->scaleSmooth)
                     {
                         llong rr = 0, gg = 0, bb = 0;
