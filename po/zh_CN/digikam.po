@@ -16563,7 +16563,7 @@ msgstr "多张图像混合工具"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr ""
+msgstr "无法复制图像到文件“%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
@@ -16911,7 +16911,7 @@ msgstr "保存图像"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPG"
-msgstr ""
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178

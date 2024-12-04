@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-03 01:49+0000\n"
-"PO-Revision-Date: 2024-12-02 18:46+0100\n"
+"PO-Revision-Date: 2024-12-03 19:01+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1976,20 +1976,20 @@ msgstr "Per data"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
-msgstr "Includi sotto-albero dell'album"
+msgstr "Includi sottoalbero dell'album"
 
 #: core/app/main/digikamapp_setup.cpp:567
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
-"Attiva questa opzione per mostrare tutti i sotto-album sotto quello attuale."
+"Attiva questa opzione per mostrare tutti i sottoalbum sotto quello attuale."
 
 #: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
-msgstr "Includi sotto-albero del tag"
+msgstr "Includi sottoalbero del tag"
 
 #: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
@@ -1998,8 +1998,8 @@ msgid ""
 "Activate this option to show all images marked by the given tag and all its "
 "sub-tags."
 msgstr ""
-"Attiva questa opzione per mostrare tutte le immagini segnate col tag dato e "
-"tutti i suoi sotto-tag."
+"Attiva questa opzione per mostrare tutte le immagini segnate col tag "
+"specificato e tutti i suoi tag secondari."
 
 #: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
@@ -22571,7 +22571,7 @@ msgstr "Riproduci la selezione"
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
 #, kde-format
 msgid "Play With Sub-Albums"
-msgstr "Riproduci con i sotto-album"
+msgstr "Riproduci con i sottoalbum"
 
 #: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:74
 #, kde-format
@@ -27820,7 +27820,7 @@ msgstr "Analizza i volti"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
-msgstr "Devono essere analizzati anche i sotto-album?"
+msgstr "Devono essere analizzati anche i sottoalbum?"
 
 #: core/libs/album/treeview/labelstreeview.cpp:93
 #, kde-format
@@ -60703,13 +60703,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Extension-based sub-albums"
-msgstr "Sotto-album basati sulle estensioni"
+msgstr "Sottoalbum basati sulle estensioni"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Date-based sub-albums"
-msgstr "Sotto-album basati sulle date"
+msgstr "Sottoalbum basati sulle date"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:101
 #, kde-format
@@ -60762,7 +60762,7 @@ msgid ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Abilita questa opzione se vuoi scaricare le immagini in sotto-album "
+"Abilita questa opzione se vuoi scaricare le immagini in sottoalbum "
 "dell'album di destinazione creati automaticamente in base all'estensione dei "
 "file. In questo modo, puoi separare i file RAW e JPEG mentre vengono "
 "scaricati della macchina fotografica."
@@ -60774,7 +60774,7 @@ msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Abilita questa opzione se vuoi scaricare le immagini in sotto-album "
+"Abilita questa opzione se vuoi scaricare le immagini in sottoalbum "
 "dell'album di destinazione creati automaticamente in base alla data di "
 "creazione."
 

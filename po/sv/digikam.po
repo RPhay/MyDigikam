@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-03 01:49+0000\n"
-"PO-Revision-Date: 2024-11-27 17:38+0100\n"
+"PO-Revision-Date: 2024-12-03 21:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -17186,10 +17186,9 @@ msgstr "Verktyg för kombinerade bilder"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
-#, fuzzy, kde-format
-#| msgid "Could not save image to file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Kunde inte spara bild i filen \"'%1'"
+msgstr "Kunde inte kopiera bild till filen '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
 #, kde-format
@@ -17537,10 +17536,9 @@ msgstr "Spara bild"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
