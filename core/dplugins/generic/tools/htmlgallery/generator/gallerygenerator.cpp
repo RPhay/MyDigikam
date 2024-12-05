@@ -27,6 +27,7 @@
 #include <QList>
 #include <QTemporaryFile>
 #include <QSharedPointer>
+#include <QEventLoop>
 
 // KDE includes
 
@@ -80,6 +81,8 @@ public:
     bool                        cancel      = false;
     DHistoryView*               pview       = nullptr;
     DProgressWdg*               pbar        = nullptr;
+
+    QEventLoop*                 waitLoop    = nullptr;
 
     QSharedPointer<const char*> params;
 
@@ -278,28 +281,29 @@ public:
 
         // Generate images
 
+        pbar->setMaximum(imageElementList.count());
         logInfo(i18nc("@info", "Generating files for \"%1\"", title));
         GalleryElementFunctor functor(that, info, destDir);
         QFuture<void> future = QtConcurrent::map(imageElementList, functor);
         QFutureWatcher<void> watcher;
-        watcher.setFuture(future);
 
         connect(&watcher, SIGNAL(progressValueChanged(int)),
                 pbar, SLOT(setValue(int)),
                 Qt::QueuedConnection);
 
-        pbar->setMaximum(imageElementList.count());
+        connect(&watcher, SIGNAL(finished()),
+                waitLoop, SLOT(quit()),
+                Qt::QueuedConnection);
 
-        while (!future.isFinished())
+        watcher.setFuture(future);
+
+        waitLoop->exec();
+
+        if (!future.isFinished() && cancel)
         {
-            qApp->processEvents();
-
-            if (cancel)
-            {
-                future.cancel();
-                future.waitForFinished();
-                return false;
-            }
+            future.cancel();
+            future.waitForFinished();
+            return false;
         }
 
         // Generate xml
@@ -580,6 +584,8 @@ GalleryGenerator::GalleryGenerator(GalleryInfo* const info)
     d->info     = info;
     d->warnings = false;
 
+    d->waitLoop = new QEventLoop(this);
+
     connect(this, SIGNAL(logWarningRequested(QString)),
             SLOT(logWarning(QString)), Qt::QueuedConnection);
 }
@@ -637,6 +643,7 @@ void GalleryGenerator::logWarning(const QString& text)
 void GalleryGenerator::slotCancel()
 {
     d->cancel = true;
+    d->waitLoop->quit();
 }
 
 void GalleryGenerator::setProgressWidgets(DHistoryView* const pView, DProgressWdg* const pBar)
