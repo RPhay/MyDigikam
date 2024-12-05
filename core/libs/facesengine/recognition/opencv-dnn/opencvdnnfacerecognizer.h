@@ -76,7 +76,7 @@ public:
      * If the identity cannot be recognized, returns -1.
      * TODO: verify workflow to economize this routine.
      */
-    int recognize(QPair<QImage*, QString> inputImage);
+    int recognize(const QPair<QImage*, QString>& inputImage);
 
     /**
      * Try to recognize a list of given images.

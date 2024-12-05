@@ -115,7 +115,7 @@ bool OpenCVDNNFaceRecognizer::remove(const QString& hash)
     return result;
 }
 
-int OpenCVDNNFaceRecognizer::recognize(QPair<QImage*, QString> inputImage)
+int OpenCVDNNFaceRecognizer::recognize(const QPair<QImage*, QString>& inputImage)
 {
     int id = -1;
 
