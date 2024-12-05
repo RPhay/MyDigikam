@@ -643,9 +643,10 @@ void GalleryGenerator::setProgressWidgets(DHistoryView* const pView, DProgressWd
 {
     d->pview = pView;
     d->pbar  = pBar;
-
+/*
     connect(d->pbar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotCancel()));
+*/
 }
 
 QString GalleryGenerator::webifyFileName(const QString& fname)
