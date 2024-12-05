@@ -285,7 +285,8 @@ public:
         watcher.setFuture(future);
 
         connect(&watcher, SIGNAL(progressValueChanged(int)),
-                pbar, SLOT(setValue(int)));
+                pbar, SLOT(setValue(int)),
+                Qt::QueuedConnection);
 
         pbar->setMaximum(imageElementList.count());
 
