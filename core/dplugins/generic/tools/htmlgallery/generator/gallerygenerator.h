@@ -64,10 +64,13 @@ Q_SIGNALS:
      */
     void logWarningRequested(const QString&);
 
+public Q_SLOTS:
+
+    void slotCancel();
+
 private Q_SLOTS:
 
     void logWarning(const QString&);
-    void slotCancel();
 
 private:
 

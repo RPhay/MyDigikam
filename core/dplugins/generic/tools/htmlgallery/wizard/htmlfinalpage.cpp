@@ -143,6 +143,9 @@ void HTMLFinalPage::slotProcess()
     GalleryGenerator generator(info);
     generator.setProgressWidgets(d->progressView, d->progressBar);
 
+    connect(this, SIGNAL(signalCancel()),
+            &generator, SLOT(slotCancel()));
+
     if (!generator.run())
     {
         return;
@@ -190,6 +193,11 @@ void HTMLFinalPage::slotProcess()
     d->complete = true;
 
     Q_EMIT completeChanged();
+}
+
+void HTMLFinalPage::cleanupPage()
+{
+    Q_EMIT signalCancel();
 }
 
 bool HTMLFinalPage::isComplete() const

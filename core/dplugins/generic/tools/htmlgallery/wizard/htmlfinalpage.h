@@ -37,7 +37,12 @@ public:
     ~HTMLFinalPage()        override;
 
     void initializePage()   override;
+    void cleanupPage()      override;
     bool isComplete() const override;
+
+Q_SIGNALS:
+
+    void signalCancel();
 
 private Q_SLOTS:
 
