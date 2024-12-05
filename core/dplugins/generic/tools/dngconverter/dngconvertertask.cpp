@@ -100,13 +100,14 @@ void DNGConverterTask::run()
             // Identify Camera model.
 
             DRawInfo info;
-            DRawDecoder::rawFileIdentify(info, d->url.toLocalFile());
-
             QString identify = i18n("Cannot identify Raw image");
 
-            if (info.isDecodable)
+            if (DRawDecoder::rawFileIdentify(info, d->url.toLocalFile()))
             {
-                identify = info.make + QLatin1String("-") + info.model;
+                if (info.isDecodable)
+                {
+                    identify = info.make + QLatin1String("-") + info.model;
+                }
             }
 
             DNGConverterActionData ad;
