@@ -299,10 +299,16 @@ public:
 
         waitLoop->exec();
 
-        if (!future.isFinished() && cancel)
+        if (!future.isFinished())
         {
             future.cancel();
             future.waitForFinished();
+
+            return false;
+        }
+
+        if (cancel)
+        {
             return false;
         }
 
