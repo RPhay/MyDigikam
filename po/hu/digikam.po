@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"POT-Creation-Date: 2024-12-05 01:50+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -11382,7 +11382,7 @@ msgstr "Földrajzi hely szerkesztése ..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr ""
@@ -11393,13 +11393,13 @@ msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr ""
@@ -16794,20 +16794,20 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Üdvözöljük a Halmozott képek eszközben"
 
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Could not load XSL file '%1'"
 msgid "Could not copy image to file '%1'"
 msgstr "Nem sikerült betölteni a(z) %1 XSL fájlt"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"

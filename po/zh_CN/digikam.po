@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"POT-Creation-Date: 2024-12-05 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -11196,7 +11196,7 @@ msgstr "编辑地理位置..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "无法读取图像“%1”"
@@ -11207,13 +11207,13 @@ msgid "Format of image '%1' is unknown"
 msgstr "图像“%1”的格式未知"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "加载图像“%1”出错"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "无法保存图像“%1”到“%2”"
@@ -16559,18 +16559,18 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "多张图像混合工具"
 
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, kde-format
 msgid "Could not copy image to file '%1'"
 msgstr "无法复制图像到文件“%1”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "无法保存图像“%1”的缩略图到“%2”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"

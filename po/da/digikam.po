@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"POT-Creation-Date: 2024-12-05 01:50+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -12158,7 +12158,7 @@ msgstr "Redigér billedtekster..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Kunne ikke læse billedet \"%1\""
@@ -12169,13 +12169,13 @@ msgid "Format of image '%1' is unknown"
 msgstr "Formatet for billedet \"%1\" er ukendt"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Fejl ved indlæsning af billedet \"%1\""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Kunne ikke gemme billedet \"%1\" som \"%2\""
@@ -18168,20 +18168,20 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Billedværktøjer"
 
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Failed to save image to %1."
 msgid "Could not copy image to file '%1'"
 msgstr "Kunne ikke gemme billede til %1."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Kan ikke oprette miniature for %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"

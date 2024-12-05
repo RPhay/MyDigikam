@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"POT-Creation-Date: 2024-12-05 01:50+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -11191,7 +11191,7 @@ msgstr "編輯地理位置..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "無法讀取影像 '%1'"
@@ -11202,13 +11202,13 @@ msgid "Format of image '%1' is unknown"
 msgstr "影像 '%1' 的格式未知"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "載入影像 '%1' 時發生錯誤"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "無法儲存影像「%1」到「%2」"
@@ -16824,20 +16824,20 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "影像工具"
 
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Could not copy image to file '%1'"
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "無法建立 %1 的縮圖"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
