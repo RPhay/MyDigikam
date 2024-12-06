@@ -119,7 +119,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         fullFileName     = baseFileName + QLatin1Char('.') + imageFormat.toLower();
         QString destPath = m_destDir + QLatin1Char('/') + fullFileName;
 
-        if (!DFileOperations::copyFile(path, destPath))
+        if (!DFileOperations::removeAndCopyFile(path, destPath))
         {
             emitWarning(i18n("Could not copy image to file '%1'", QDir::toNativeSeparators(destPath)));
 
@@ -150,7 +150,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         QString originalFileName = QLatin1String("original_") + fullFileName;
         QString destPath         = m_destDir + QLatin1Char('/') + originalFileName;
 
-        if (!DFileOperations::copyFile(path, destPath))
+        if (!DFileOperations::removeAndCopyFile(path, destPath))
         {
             emitWarning(i18n("Could not copy image to file '%1'", QDir::toNativeSeparators(destPath)));
 

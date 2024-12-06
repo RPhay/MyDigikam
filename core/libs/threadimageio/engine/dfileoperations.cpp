@@ -599,6 +599,20 @@ bool DFileOperations::copyFile(const QString& srcFile,
     return ret;
 }
 
+bool DFileOperations::removeAndCopyFile(const QString& srcFile,
+                                        const QString& dstFile)
+{
+    if (QFile::exists(dstFile))
+    {
+        if (!QFile::remove(dstFile))
+        {
+            return false;
+        }
+    }
+
+    return copyFile(srcFile, dstFile);
+}
+
 bool DFileOperations::copyModificationTime(const QString& srcFile,
                                            const QString& dstFile)
 {

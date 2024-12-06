@@ -103,6 +103,14 @@ public:
                          const bool* const cancel = nullptr);
 
     /**
+     * If the destination file already exists,
+     * it will be removed. Copy file and keep
+     * the source file modification time.
+     */
+    static bool removeAndCopyFile(const QString& srcFile,
+                                  const QString& dstFile);
+
+    /**
      * Copy file modification time from source to destination file.
      */
     static bool copyModificationTime(const QString& srcFile,
