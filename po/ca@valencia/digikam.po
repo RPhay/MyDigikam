@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-05 01:50+0000\n"
+"POT-Creation-Date: 2024-12-06 01:49+0000\n"
 "PO-Revision-Date: 2024-11-27 09:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -16650,7 +16650,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Convertidor DNG…"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "No es pot identificar la imatge RAW"
@@ -17369,235 +17369,235 @@ msgstr "No s'ha pogut guardar la miniatura de la imatge «%1» a «%2»"
 msgid "unavailable"
 msgstr "no disponible"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "No s'ha pogut trobar el tema a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:107
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Crea directoris"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "No s'ha pogut crear la carpeta «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "S'està copiant el tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "No s'ha pogut copiar el tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "Genera imatges i fitxers en XML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "No s'ha pogut crear el «gallery.xml»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:281
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "S'estan generant els fitxers per a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:316
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "S'estan generant els fitxers HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:324
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "No s'ha pogut carregar el fitxer XSL «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "No s'ha pogut carregar el fitxer en XML «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:370
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "S'ha produït un error en processar el fitxer en XML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:379
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "No s'ha pogut obrir «%1» per a escriptura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:418
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "S'estan baixant els fitxers remots per a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:435
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "No s'ha pogut obrir el fitxer temporal"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "No s'han pogut baixar «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Anterior"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Següent"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Llista d'àlbums"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Imatge original"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Ves amunt"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Fabricant"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Model"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Orientació de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Resolució X de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Resolució Y de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Unitats de la resolució de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Data i hora de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Posicionament YCBCR"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Temps d'exposició"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Nombre f"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Índex d'exposició"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Classificació de la velocitat ISO"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Valor de la velocitat de l'obturador"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Valor d'obertura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:489
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Distància focal"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:490
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "Altitud del GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:491
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "Latitud del GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:492
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -17673,23 +17673,23 @@ msgstr "%1 elements que s'han de processar"
 msgid "Output directory: %1"
 msgstr "Directori d'eixida: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "La galeria s'ha completat, però hi ha hagut algun error."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:158
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:161
 #, kde-format
 msgid "Gallery completed."
 msgstr "La galeria s'ha completat."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:170
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:173
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr ""
 "S'està obrint la galeria amb el navegador predeterminat de l'escriptori…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:179
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:182
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "S'està obrint la galeria amb el navegador intern…"

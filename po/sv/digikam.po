@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-05 01:50+0000\n"
+"POT-Creation-Date: 2024-12-06 01:49+0000\n"
 "PO-Revision-Date: 2024-12-03 21:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -16486,7 +16486,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG-konvertering..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "Kan inte identifiera obehandlad bild"
@@ -17201,235 +17201,235 @@ msgstr "Kunde inte spara miniatyrbild för bilden '%1' i '%2'"
 msgid "unavailable"
 msgstr "inte tillgänglig"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "Kunde inte hitta tema i '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:107
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Skapa kataloger"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "Kunde inte skapa katalogen '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "Kopierar tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "Kunde inte kopiera tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "Skapa bilder och XML-filer"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Kunde inte skapa gallery.xml"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:281
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Skapar filer för \"%1\""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:316
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Skapar HTML-filer"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:324
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Kunde inte läsa in XSL-filen '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Kunde inte läsa in XML-filen '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:370
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Fel vid behandling av XML-fil"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:379
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Kunde inte öppna '%1' för skrivning"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:418
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Laddar ner fjärrfiler för \"%1\""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:435
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Kunde inte öppna tillfällig fil"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Kunde inte ladda ner %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Föregående"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Nästa"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Albumlista"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Originalbild"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Gå upp"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Tillverkare"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Modell"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Bildorientering"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Bildens X-upplösning"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Bildens Y-upplösning"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Enhet för bildupplösning"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Bildens datum och tid"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "YCbCr-positionering"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Exponeringstid"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Bländartal"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Exponeringsindex"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO-känsligheter"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Slutarhastighetsvärde"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Bländarvärde"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:489
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Fokallängd"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:490
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS-höjd"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:491
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS-latitud"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:492
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -17504,22 +17504,22 @@ msgstr "%1 objekt att behandla"
 msgid "Output directory: %1"
 msgstr "Utdatakatalog: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "Galleriet är klart, men varningar uppstod."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:158
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:161
 #, kde-format
 msgid "Gallery completed."
 msgstr "Galleriet är klart."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:170
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:173
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr "Öppnar galleri med förvald skrivbordsbläddrare..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:179
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:182
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "Öppnar galleri med intern bläddrare..."

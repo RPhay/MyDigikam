@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-05 01:50+0000\n"
+"POT-Creation-Date: 2024-12-06 01:49+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -16220,7 +16220,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "محوّل فضاءات الألوان..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
 #, fuzzy, kde-format
 #| msgid "Cannot Save File"
 msgid "Cannot identify Raw image"
@@ -16907,40 +16907,40 @@ msgstr "تعذّر إنشاء مصغّرة ل‍ %1"
 msgid "unavailable"
 msgstr "غير متوفّر"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "تعذّر فتح: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:107
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgctxt "@info"
 msgid "Create directories"
 msgstr "تجاهل التّجميع"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "تعذّر إنشاء المجلد: '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "جاري التّحميل تيمات"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "تعذّر فتح: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -16948,20 +16948,20 @@ msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "عند تدوير ملفّ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
 #, fuzzy, kde-format
 #| msgid "Could not start database initializer."
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "تعذّر بدء ممهّد قاعدة البيانات."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:281
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "جاري الحذف ملفّ."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:316
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -16969,21 +16969,21 @@ msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "عند تدوير ملفّ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:324
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "تعذّر فتح: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "تعذّر فتح: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:370
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:381
 #, fuzzy, kde-format
 #| msgid "Error loading GPX file"
 #| msgid_plural "Error loading GPX files"
@@ -16991,169 +16991,169 @@ msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "لا أخطاء تحميل"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:379
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "تعذر فتح %1 للكتابة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:418
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "يجري التنزيل ملفّ."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:435
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "تعذّر فتح ملفّ مؤقّت في المجلّد ”%1“:‏ %2 ‏(%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "تعذّر فتح: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "السابق"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "التالي"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "الألبومات"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "الصورة الأصلية"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "اذهب إلى الأعلى"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "الصّانع"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "الطّراز"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "اتجاه الصورة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "منطقة من الصّورة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "منطقة من الصّورة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "منطقة من الصّورة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "تاريخ الصورة ووقتها"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "وضع YCBCR"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "زمن التعرض"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "عدد البؤرة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "تعرض فهرس"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "تقديرات سرعة ISO"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "قيمة قطر الفتحة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:489
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "طول البؤرة"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:490
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "ارتفاع GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:491
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "خط عرض GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:492
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -17230,23 +17230,23 @@ msgstr "لا عمليّات نشطة"
 msgid "Output directory: %1"
 msgstr "مجلّد الإخراج: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:158
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:161
 #, fuzzy, kde-format
 msgid "Gallery completed."
 msgstr "سرْد هو كامل."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:170
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:173
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening gallery with default desktop browser..."
 msgstr "افتح مجلّدًا"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:179
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:182
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening gallery with internal browser..."
