@@ -328,10 +328,13 @@ void QAVPlayerPrivate::terminate()
     subtitleClock.clear();
     if (dev)
         dev->abort(true);
-    loaderFuture.waitForFinished();
+    demuxer.abort();
     demuxerFuture.waitForFinished();
+    loaderFuture.waitForFinished();
     videoPlayFuture.waitForFinished();
     audioPlayFuture.waitForFinished();
+    demuxer.abort(false);
+
     pendingPosition = 0;
     pendingSeek = false;
     currPts = 0.0;
@@ -1311,6 +1314,19 @@ void QAVPlayer::setInputOptions(const QMap<QString, QString>  &opts)
     qCDebug(lcAVPlayer) << __FUNCTION__ << ":" << current << "->" << opts;
     d->demuxer.setInputOptions(opts);
     Q_EMIT inputOptionsChanged(opts);
+}
+
+
+/*!
+ * \brief Use to set log level of FFmpeg backend
+ * \param[in] level
+ * Level log to use. Please see:
+ * https://ffmpeg.org/doxygen/trunk/group__lavu__log__constants.html
+ * for value details
+ */
+void QAVPlayer::setLogsLevelBackend(int level)
+{
+    av_log_set_level(level);
 }
 
 QAVStream::Progress QAVPlayer::progress(const QAVStream &s) const
