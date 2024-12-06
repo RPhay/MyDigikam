@@ -317,9 +317,17 @@ for pdb in $PDB_FILES ; do
 #
 #    elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
 #
-#        # In debug preserve digiKam Plugins
+#        # In debug mode preserve digiKam Plugins
 #
 #        echo "   (Skip) ==> $pdb"
+
+    # Enable this condition only to hack.
+
+    elif [[ "$pdb" = *"Qt6Core.pdb"* ]] ; then
+
+        # In debug mode preserve Qt debug symbols
+
+        echo "   (Skip) ==> $pdb"
 
     else
 
