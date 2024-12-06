@@ -436,8 +436,9 @@ void BOXTalker::parseResponseAddPhoto(const QByteArray& data)
 
 void BOXTalker::parseResponseUserName(const QByteArray& data)
 {
-    QJsonDocument doc = QJsonDocument::fromJson(data);
-    QString name      = doc.object()[QLatin1String("name")].toString();
+    QJsonDocument doc     = QJsonDocument::fromJson(data);
+    const QJsonObject obj = doc.object();
+    QString name          = obj[QLatin1String("name")].toString();
 
     Q_EMIT signalBusy(false);
     Q_EMIT signalSetUserName(name);
