@@ -34,7 +34,7 @@ BUGFIXES:
 023 ==> 492813 - Appimage crashes when trying to integrate into KDE Neon 6.1 (Ubuntu 24.04 based).
 024 ==> 497037 - Error message when trying to download version 8.5.0.
 025 ==> 497058 - Installed digikam dumps core.
-026 ==>
+026 ==> 497106 - Rating from images is no longer respected.
 027 ==>
 028 ==>
 029 ==>
