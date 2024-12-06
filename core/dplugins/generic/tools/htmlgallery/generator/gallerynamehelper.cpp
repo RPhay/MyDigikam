@@ -15,14 +15,22 @@
 
 #include "gallerynamehelper.h"
 
+// Qt includes
+
+#include <QMutexLocker>
+
 namespace DigikamGenericHtmlGalleryPlugin
 {
+
+static QMutex s_nameHelperMutex;
 
 QString GalleryNameHelper::makeNameUnique(const QString& name)
 {
     QString uname    = name;
     QString nameBase = name;
     int count        = 2;
+
+    QMutexLocker locker(&s_nameHelperMutex);
 
     while (m_list.indexOf(uname) != -1)
     {
