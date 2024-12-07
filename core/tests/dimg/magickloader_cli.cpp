@@ -197,7 +197,7 @@ int main(int argc, char** argv)
     if (argc <= 1)
     {
         list = QFileDialog::getOpenFileNames(nullptr, QString::fromLatin1("Select Image Files to Load"),
-                                             QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first(),
+                                             QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).constFirst(),
                                              QLatin1String("Image Files (*.png *.jpg *.tif *.bmp *.gif *.xcf *.kra *.psd)"));
     }
     else
