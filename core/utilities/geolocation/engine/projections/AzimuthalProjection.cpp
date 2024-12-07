@@ -54,7 +54,7 @@ bool AzimuthalProjection::screenCoordinates(const GeoDataLineString& lineString,
 
     if (!viewport->resolves(lineString.latLonAltBox()))
     {
-        //      qCDebug(DIGIKAM_MARBLE_LOG) << "Object too small to be resolved";
+        //      qCDebug(DIGIKAM_GEOCORE_LOG) << "Object too small to be resolved";
         return false;
     }
 
@@ -719,7 +719,7 @@ GeoDataCoordinates AzimuthalProjectionPrivate::doFindHorizon(const GeoDataCoordi
 
         else
         {
-            //            qCDebug(DIGIKAM_MARBLE_LOG) << "Don't FollowLatitudeCircle";
+            //            qCDebug(DIGIKAM_GEOCORE_LOG) << "Don't FollowLatitudeCircle";
         }
     }
 

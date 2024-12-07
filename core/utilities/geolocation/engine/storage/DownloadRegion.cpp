@@ -170,24 +170,24 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
 
     // FIXME: remove this stuff
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "DownloadRegionDialog downloadRegion:"
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "DownloadRegionDialog downloadRegion:"
                                 << "north:" << downloadRegion.north()
                                 << "south:" << downloadRegion.south()
                                 << "east:" << downloadRegion.east()
                                 << "west:" << downloadRegion.west();
-    qCDebug(DIGIKAM_MARBLE_LOG) << "north/west (x/y):" << westX << northY;
-    qCDebug(DIGIKAM_MARBLE_LOG) << "south/east (x/y):" << eastX << southY;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "north/west (x/y):" << westX << northY;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "south/east (x/y):" << eastX << southY;
 
     int const tileWidth = tileLayer->tileSize().width();
     int const tileHeight = tileLayer->tileSize().height();
-    qCDebug(DIGIKAM_MARBLE_LOG) << "DownloadRegionDialog downloadRegion: tileSize:" << tileWidth << tileHeight;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "DownloadRegionDialog downloadRegion: tileSize:" << tileWidth << tileHeight;
 
     int const visibleLevelX1 = qMin(westX, eastX);
     int const visibleLevelY1 = qMin(northY, southY);
     int const visibleLevelX2 = qMax(westX, eastX);
     int const visibleLevelY2 = qMax(northY, southY);
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "visible level pixel coords (level/x1/y1/x2/y2):" << d->m_visibleTileLevel
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "visible level pixel coords (level/x1/y1/x2/y2):" << d->m_visibleTileLevel
                                 << visibleLevelX1 << visibleLevelY1 << visibleLevelX2 << visibleLevelY2;
 
     int bottomLevelX1, bottomLevelY1, bottomLevelX2, bottomLevelY2;
@@ -221,7 +221,7 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
         bottomLevelY2 = visibleLevelY2;
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "bottom level pixel coords (level/x1/y1/x2/y2):"
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "bottom level pixel coords (level/x1/y1/x2/y2):"
                                 << tileLevelRangeSecond
                                 << bottomLevelX1 << bottomLevelY1 << bottomLevelX2 << bottomLevelY2;
 
@@ -234,10 +234,10 @@ QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, co
      bottomLevelY1 / tileHeight,
      bottomLevelX2 / tileWidth  + (bottomLevelX2 % tileWidth  > 0 ? 1 : 0) - 1,    // -1 needed for proper counting
      bottomLevelY2 / tileHeight + (bottomLevelY2 % tileHeight > 0 ? 1 : 0) - 1);   // -1 needed for proper counting
-    qCDebug(DIGIKAM_MARBLE_LOG) << "bottom level tile coords: (x1/y1/size):" << bottomLevelTileCoords;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "bottom level tile coords: (x1/y1/size):" << bottomLevelTileCoords;
     coordsPyramid.setBottomLevelCoords(bottomLevelTileCoords);
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "tiles count:" << coordsPyramid.tilesCount();
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "tiles count:" << coordsPyramid.tilesCount();
     QVector<TileCoordsPyramid> pyramid;
     pyramid << coordsPyramid;
 

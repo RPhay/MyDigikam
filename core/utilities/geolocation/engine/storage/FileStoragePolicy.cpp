@@ -79,7 +79,7 @@ bool FileStoragePolicy::updateFile(const QString& fileName, const QByteArray& da
     if (!file.open(QIODevice::WriteOnly))
     {
         m_errorMsg = fullName + QLatin1String(": ") + file.errorString();
-        qCCritical(DIGIKAM_MARBLE_LOG) << "file.open" << m_errorMsg;
+        qCCritical(DIGIKAM_GEOCORE_LOG) << "file.open" << m_errorMsg;
         return false;
     }
 
@@ -88,7 +88,7 @@ bool FileStoragePolicy::updateFile(const QString& fileName, const QByteArray& da
     if (!file.write(data))
     {
         m_errorMsg = fullName + QLatin1String(": ") + file.errorString();
-        qCCritical(DIGIKAM_MARBLE_LOG) << "file.write" << m_errorMsg;
+        qCCritical(DIGIKAM_GEOCORE_LOG) << "file.write" << m_errorMsg;
         Q_EMIT sizeChanged(file.size() - oldSize);
         return false;
     }
@@ -101,22 +101,22 @@ bool FileStoragePolicy::updateFile(const QString& fileName, const QByteArray& da
 
 void FileStoragePolicy::clearCache()
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO;
 
     if (m_dataDirectory.isEmpty()
         || !(m_dataDirectory.endsWith(QLatin1String("data"))     // on Windows
              ||   m_dataDirectory.endsWith(QLatin1String("marble"))   // on all other OSes
             ))
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Data Directory:" << m_dataDirectory;
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Error: Refusing to erase files under unknown conditions for safety reasons!";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Data Directory:" << m_dataDirectory;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Error: Refusing to erase files under unknown conditions for safety reasons!";
         return;
     }
 
     const QString cachedMapsDirectory = m_dataDirectory + QLatin1String("/maps");
 
     QDirIterator it(cachedMapsDirectory, QDir::NoDotAndDotDot | QDir::Dirs);
-    qCDebug(DIGIKAM_MARBLE_LOG) << cachedMapsDirectory;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << cachedMapsDirectory;
 
     while (it.hasNext())
     {

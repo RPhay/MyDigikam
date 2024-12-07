@@ -201,7 +201,7 @@ void PlacemarkLayout::setShowMaria(bool show)
 
 void PlacemarkLayout::requestStyleReset()
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Style reset requested.";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Style reset requested.";
     m_styleResetRequested = true;
 }
 

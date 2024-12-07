@@ -620,7 +620,7 @@ void GeoPainter::polygonsFromLineString(const GeoDataLineString& lineString,
         ! d->m_viewport->resolves(lineString.latLonAltBox())
        )
     {
-        // qCDebug(DIGIKAM_MARBLE_LOG) << "LineString doesn't get displayed on the viewport";
+        // qCDebug(DIGIKAM_GEOCORE_LOG) << "LineString doesn't get displayed on the viewport";
         return;
     }
 
@@ -866,7 +866,7 @@ QRegion GeoPainter::regionFromPolyline(const GeoDataLineString& lineString,
         ! d->m_viewport->resolves(lineString.latLonAltBox())
        )
     {
-        // qCDebug(DIGIKAM_MARBLE_LOG) << "LineString doesn't get displayed on the viewport";
+        // qCDebug(DIGIKAM_GEOCORE_LOG) << "LineString doesn't get displayed on the viewport";
         return QRegion();
     }
 
@@ -900,7 +900,7 @@ void GeoPainter::drawPolygon(const GeoDataLinearRing& linearRing,
         ! d->m_viewport->resolves(linearRing.latLonAltBox())
        )
     {
-        // qCDebug(DIGIKAM_MARBLE_LOG) << "Polygon doesn't get displayed on the viewport";
+        // qCDebug(DIGIKAM_GEOCORE_LOG) << "Polygon doesn't get displayed on the viewport";
         return;
     }
 
@@ -974,11 +974,11 @@ void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
         ! d->m_viewport->resolves(polygon.outerBoundary().latLonAltBox())
        )
     {
-        // qCDebug(DIGIKAM_MARBLE_LOG) << "Polygon doesn't get displayed on the viewport";
+        // qCDebug(DIGIKAM_GEOCORE_LOG) << "Polygon doesn't get displayed on the viewport";
         return;
     }
 
-    // qCDebug(DIGIKAM_MARBLE_LOG) << "Drawing Polygon";
+    // qCDebug(DIGIKAM_GEOCORE_LOG) << "Drawing Polygon";
 
     QVector<QPolygonF*> outerPolygons;
     QVector<QPolygonF*> innerPolygons;

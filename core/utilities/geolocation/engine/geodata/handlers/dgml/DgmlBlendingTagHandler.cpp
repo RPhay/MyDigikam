@@ -49,7 +49,7 @@ GeoNode* DgmlBlendingTagHandler::parse(GeoParser& parser) const
 
     // Attribute name, default to ""
     const QString name = parser.attribute(dgmlAttr_name).trimmed();
-    qCDebug(DIGIKAM_MARBLE_LOG) << "DgmlBlendingTagHandler::parse" << name;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "DgmlBlendingTagHandler::parse" << name;
     parentItem.nodeAs<GeoSceneTileDataset>()->setBlending(name);
     return nullptr;
 }

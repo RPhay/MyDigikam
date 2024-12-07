@@ -59,7 +59,7 @@ public:
 
         if (!parentSize.isValid())
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid parent size";
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "Invalid parent size";
             return m_position;
         }
 

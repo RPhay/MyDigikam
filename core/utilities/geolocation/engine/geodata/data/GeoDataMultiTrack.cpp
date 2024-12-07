@@ -150,7 +150,7 @@ QVector<GeoDataTrack> GeoDataMultiTrack::vector() const
 
 GeoDataTrack& GeoDataMultiTrack::at(int pos)
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "detaching!";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "detaching!";
     detach();
 
     Q_D(GeoDataMultiTrack);

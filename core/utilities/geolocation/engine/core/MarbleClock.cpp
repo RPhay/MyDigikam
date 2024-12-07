@@ -80,7 +80,7 @@ void MarbleClockPrivate::timerTimeout()
 
     m_timer.start(sleeptime);
 
-    //qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleClock: will sleep for " << sleeptime;
+    //qCDebug(DIGIKAM_GEOCORE_LOG) << "MarbleClock: will sleep for " << sleeptime;
 }
 
 MarbleClock::MarbleClock(QObject* parent)

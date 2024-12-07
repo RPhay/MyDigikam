@@ -101,7 +101,7 @@ bool CylindricalProjection::screenCoordinates(const GeoDataLineString& lineStrin
     // Immediately return if the latLonAltBox is smaller.
     if (!viewport->resolves(lineString.latLonAltBox()))
     {
-        //    qCDebug(DIGIKAM_MARBLE_LOG) << "Object too small to be resolved";
+        //    qCDebug(DIGIKAM_GEOCORE_LOG) << "Object too small to be resolved";
         return false;
     }
 
@@ -451,7 +451,7 @@ void CylindricalProjectionPrivate::translatePolygons(const QVector<QPolygonF*>& 
                                                      QVector<QPolygonF*>& translatedPolygons,
                                                      qreal xOffset)
 {
-    // qCDebug(DIGIKAM_MARBLE_LOG) << "Translation: " << xOffset;
+    // qCDebug(DIGIKAM_GEOCORE_LOG) << "Translation: " << xOffset;
     translatedPolygons.reserve(polygons.size());
 
     QVector<QPolygonF*>::const_iterator itPolygon = polygons.constBegin();
@@ -486,7 +486,7 @@ void CylindricalProjectionPrivate::repeatPolygons(const ViewportParams* viewport
 
     if (xWest <= 0 && xEast >= viewport->width() - 1)
     {
-        // qCDebug(DIGIKAM_MARBLE_LOG) << "No repeats";
+        // qCDebug(DIGIKAM_GEOCORE_LOG) << "No repeats";
         return;
     }
 
@@ -517,7 +517,7 @@ void CylindricalProjectionPrivate::repeatPolygons(const ViewportParams* viewport
 
     polygons = repeatedPolygons;
 
-    // qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Coordinates: " << xWest << xEast
+    // qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Coordinates: " << xWest << xEast
     //          << "Repeats: " << repeatsLeft << repeatsRight;
 }
 

@@ -74,7 +74,7 @@ GeoDataVec2::Unit GeoDataVec2Private::parseUnits(const QString& value)
         return GeoDataVec2::InsetPixels;
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: Unknown units value " << value << " - falling back to default 'fraction'";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Warning: Unknown units value " << value << " - falling back to default 'fraction'";
     return GeoDataVec2::Fraction;
 }
 

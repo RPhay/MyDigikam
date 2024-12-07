@@ -46,7 +46,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
     if (!QFileInfo::exists(fileName))
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
 
         return nullptr;
     }
@@ -70,7 +70,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
     if (inputFileType.isEmpty())
     {
         error = QStringLiteral("Unsupported file extension for").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
         return nullptr;
     }
 
@@ -108,7 +108,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
         if (!document)
         {
             error = parser.errorString();
-            qCDebug(DIGIKAM_MARBLE_LOG) << error;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << error;
 
             return nullptr;
         }
@@ -121,7 +121,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
     else
     {
         error = QStringLiteral("Gpsbabel returned error code %1").arg(exitStatus);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
 
         return nullptr;
     }

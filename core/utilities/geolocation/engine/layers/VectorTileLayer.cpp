@@ -118,12 +118,12 @@ void VectorTileLayer::Private::updateLayerSettings()
         if (enabled)
         {
             m_activeTileModels.append(candidate);
-            qCDebug(DIGIKAM_MARBLE_LOG) << "enabling vector layer" << candidate->name();
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "enabling vector layer" << candidate->name();
         }
         else
         {
             candidate->clear();
-            qCDebug(DIGIKAM_MARBLE_LOG) << "disabling vector layer" << candidate->name();
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "disabling vector layer" << candidate->name();
         }
     }
 }

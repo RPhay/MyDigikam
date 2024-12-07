@@ -145,7 +145,7 @@ QByteArray HttpJob::userAgent() const
             return HttpDownloadManager::userAgent(QString::fromUtf8("BulkDownloader"), d->m_userAgent);
 
         default:
-            qCCritical(DIGIKAM_MARBLE_LOG) << "Unknown download usage value:" << d->m_downloadUsage;
+            qCCritical(DIGIKAM_GEOCORE_LOG) << "Unknown download usage value:" << d->m_downloadUsage;
 
             return HttpDownloadManager::userAgent(QString::fromUtf8("unknown"), d->m_userAgent);
     }
@@ -173,27 +173,27 @@ void HttpJob::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
     Q_UNUSED(bytesReceived);
     Q_UNUSED(bytesTotal);
 
-    //     qCDebug(DIGIKAM_MARBLE_LOG) << "downloadProgress" << destinationFileName()
+    //     qCDebug(DIGIKAM_GEOCORE_LOG) << "downloadProgress" << destinationFileName()
     //              << bytesReceived << '/' << bytesTotal;
 }
 
 void HttpJob::error(QNetworkReply::NetworkError code)
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "error" << destinationFileName() << code;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "error" << destinationFileName() << code;
 }
 
 void HttpJob::finished()
 {
     QNetworkReply::NetworkError const error = d->m_networkReply->error();
 
-    //     qCDebug(DIGIKAM_MARBLE_LOG) << "finished" << destinationFileName()
+    //     qCDebug(DIGIKAM_GEOCORE_LOG) << "finished" << destinationFileName()
     //              << "error" << error;
 
     const QVariant httpPipeliningWasUsed = d->m_networkReply->attribute(QNetworkRequest::HttpPipeliningWasUsedAttribute);
 
     if (!httpPipeliningWasUsed.isNull())
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "http pipelining used:" << httpPipeliningWasUsed.toBool();
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "http pipelining used:" << httpPipeliningWasUsed.toBool();
     }
 
     switch (error)

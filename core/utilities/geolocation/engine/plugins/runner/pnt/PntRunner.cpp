@@ -54,7 +54,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
     if (fileinfo.suffix().compare(QLatin1String("pnt"), Qt::CaseInsensitive) != 0)
     {
         errorString = QStringLiteral("File %1 does not have a pnt suffix").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << errorString;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << errorString;
         return nullptr;
     }
 
@@ -63,7 +63,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
     if (!file.exists())
     {
         errorString = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << errorString;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << errorString;
         return nullptr;
     }
 
@@ -89,14 +89,14 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         // make sure iLat is within valid range
         if (!(-5400 <= iLat && iLat <= 5400))
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid iLat =" << iLat << "(" << (iLat * INT2RAD) * RAD2DEG << ") in dataset" << count << "of file" << fileName;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid iLat =" << iLat << "(" << (iLat * INT2RAD) * RAD2DEG << ") in dataset" << count << "of file" << fileName;
             error = true;
         }
 
         // make sure iLon is within valid range
         if (!(-10800 <= iLon && iLon <= 10800))
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid iLon =" << iLon << "(" << (iLon * INT2RAD) * RAD2DEG << ") in dataset" << count << "of file" << fileName;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid iLon =" << iLon << "(" << (iLon * INT2RAD) * RAD2DEG << ") in dataset" << count << "of file" << fileName;
             error = true;
         }
 
@@ -106,7 +106,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
 
             if (polyline->size() == 1)
             {
-                qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << fileName << "contains single-point polygon at" << count << ". Aborting.";
+                qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << fileName << "contains single-point polygon at" << count << ". Aborting.";
                 error = true;
                 break;
             }
@@ -115,7 +115,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         if (header < 1)
         {
             /* invalid header */
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
             error = true;
             break;
         }
@@ -128,7 +128,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         else if (header < 1000)
         {
             /* invalid header */
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
             error = true;
             break;
         }
@@ -200,7 +200,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         else if (header < 14000)
         {
             /* invalid header */
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
             error = true;
             break;
         }
@@ -216,7 +216,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         else if (header < 19000)
         {
             /* invalid header */
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
             error = true;
             break;
         }
@@ -232,7 +232,7 @@ GeoDataDocument* PntRunner::parseFile(const QString& fileName, DocumentRole role
         else
         {
             /* invalid header */
-            qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "invalid header:" << header << "in" << fileName << "at" << count;
             error = true;
             break;
         }

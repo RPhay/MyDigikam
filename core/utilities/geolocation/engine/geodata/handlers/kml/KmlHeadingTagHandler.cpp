@@ -61,7 +61,7 @@ GeoNode* KmlheadingTagHandler::parse(GeoParser& parser) const
 
     else
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid heading value " << heading << ", must be within 0..360. Using 0 instead.";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Invalid heading value " << heading << ", must be within 0..360. Using 0 instead.";
     }
 
     return nullptr;

@@ -235,7 +235,7 @@ bool GeometryLayer::render(GeoPainter* painter, ViewportParams* viewport,
 
             if (paintLayers.isEmpty())
             {
-                qCDebug(DIGIKAM_MARBLE_LOG) << item << " provides no paint layers, so I force one onto it.";
+                qCDebug(DIGIKAM_GEOCORE_LOG) << item << " provides no paint layers, so I force one onto it.";
                 paintLayers << QString();
             }
 
@@ -274,7 +274,7 @@ bool GeometryLayer::render(GeoPainter* painter, ViewportParams* viewport,
 
                     if (!missingLayers.contains(layer))
                     {
-                        qCDebug(DIGIKAM_MARBLE_LOG) << "Missing layer " << layer << ", in render order, will render it on top";
+                        qCDebug(DIGIKAM_GEOCORE_LOG) << "Missing layer " << layer << ", in render order, will render it on top";
                         missingLayers << layer;
                     }
                 }

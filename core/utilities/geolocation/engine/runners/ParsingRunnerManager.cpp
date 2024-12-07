@@ -113,7 +113,7 @@ void ParsingRunnerManager::parseFile(const QString& fileName, DocumentRole role)
         {
             ParsingTask* task = new ParsingTask(plugin->newRunner(), this, fileName, role);
             connect(task, SIGNAL(finished()), this, SLOT(cleanupParsingTask()));
-            qCDebug(DIGIKAM_MARBLE_LOG) << "parse task " << plugin->nameId() << " " << (quintptr)task;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "parse task " << plugin->nameId() << " " << (quintptr)task;
             ++d->m_parsingTasks;
             QThreadPool::globalInstance()->start(task);
         }

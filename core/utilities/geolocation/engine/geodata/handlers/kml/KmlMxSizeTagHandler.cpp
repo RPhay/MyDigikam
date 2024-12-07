@@ -44,7 +44,7 @@ GeoNode* KmlsizeTagHandler::parse(GeoParser& parser) const
 
         if (size.isEmpty())
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid size in icon style: width=" << width << ", height=" << height;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "Invalid size in icon style: width=" << width << ", height=" << height;
         }
 
         else

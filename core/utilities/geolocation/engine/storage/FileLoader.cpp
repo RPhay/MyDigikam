@@ -155,7 +155,7 @@ void FileLoader::run()
     {
         QString defaultSourceName;
 
-        qCDebug(DIGIKAM_MARBLE_LOG) << "starting parser for" << d->m_filepath;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "starting parser for" << d->m_filepath;
 
         QFileInfo fileinfo(d->m_filepath);
         QString path = fileinfo.path();
@@ -201,7 +201,7 @@ void FileLoader::run()
 
         if (QFile::exists(defaultSourceName))
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "No recent Default Placemark Cache File available!";
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "No recent Default Placemark Cache File available!";
 
             // use runners: pnt, gpx, osm
 
@@ -212,7 +212,7 @@ void FileLoader::run()
         }
         else
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "No Default Placemark Source File for " << name;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "No Default Placemark Source File for " << name;
         }
 
         // content is not empty, we load from data
@@ -230,7 +230,7 @@ void FileLoader::run()
 
         if (!parser.read(&buffer))
         {
-            qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Could not import kml buffer!");
+            qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Could not import kml buffer!");
 
             Q_EMIT loaderFinished(this);
 
@@ -247,7 +247,7 @@ void FileLoader::run()
         d->createFilterProperties(d->m_document);
         buffer.close();
 
-        qCDebug(DIGIKAM_MARBLE_LOG) << "newGeoDataDocumentAdded" << d->m_filepath;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "newGeoDataDocumentAdded" << d->m_filepath;
 
         Q_EMIT newGeoDataDocumentAdded(d->m_document);
         Q_EMIT loaderFinished(this);
@@ -357,7 +357,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                 if (area >= 0.0)
                 {
                     hasPopularity = true;
-                    //                qCDebug(DIGIKAM_MARBLE_LOG) << placemark->name() << " " << (qint64)(area);
+                    //                qCDebug(DIGIKAM_GEOCORE_LOG) << placemark->name() << " " << (qint64)(area);
                     placemark->setPopularity((qint64)(area * 100));
                     placemark->setZoomLevel(areaPopIdx(area));
                 }
@@ -681,7 +681,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
         }
         else
         {
-            qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
+            qCWarning(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
         }
     }
 }

@@ -241,7 +241,7 @@ Planet PlanetFactory::construct(const QString& id)
 
     else if (id == QLatin1String("sun"))
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius(695000000.0);
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Sun"));
@@ -251,7 +251,7 @@ Planet PlanetFactory::construct(const QString& id)
 
     else if (id == QLatin1String("moon"))
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius(1738000.0);
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Moon"));
@@ -260,7 +260,7 @@ Planet PlanetFactory::construct(const QString& id)
 
     else if (id == QLatin1String("sky"))
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius(10000000.0);
         planet.setName(QStringLiteral("Sky"));
         planet.setHasAtmosphere(false);
@@ -268,7 +268,7 @@ Planet PlanetFactory::construct(const QString& id)
 
     else
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius(10000000.0);
         planet.setName(QStringLiteral("Unknown"));
         planet.setHasAtmosphere(false);
@@ -341,7 +341,7 @@ QString PlanetFactory::localizedName(const QString& id)
 
     else if (id.isEmpty())
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: empty id";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Warning: empty id";
         return i18nc("a planet without data", "Unknown Planet");
     }
 

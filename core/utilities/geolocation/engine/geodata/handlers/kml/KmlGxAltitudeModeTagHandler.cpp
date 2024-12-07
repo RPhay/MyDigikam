@@ -77,7 +77,7 @@ GeoNode* KmlaltitudeModeTagHandler::parse(GeoParser& parser) const
 
     else
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown altitude mode " << content << ", falling back to 'clampToGround'";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown altitude mode " << content << ", falling back to 'clampToGround'";
         mode = ClampToGround;
     }
 

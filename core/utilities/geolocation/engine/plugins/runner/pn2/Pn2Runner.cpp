@@ -140,7 +140,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
     if (fileinfo.suffix().compare(QLatin1String("pn2"), Qt::CaseInsensitive) != 0)
     {
         error = QStringLiteral("File %1 does not have a pn2 suffix").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
 
         return nullptr;
     }
@@ -150,7 +150,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
     if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
 
         return nullptr;
     }
@@ -174,7 +174,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
 
         default:
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "File can't be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "File can't be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
             break;
         }
     }

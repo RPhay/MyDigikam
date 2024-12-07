@@ -51,7 +51,7 @@ GeoNode* KmlflyToModeTagHandler::parse(GeoParser& parser) const
 
     else
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown mode " << content << ", using 'bounce' instead.";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown mode " << content << ", using 'bounce' instead.";
         mode = GeoDataFlyTo::Bounce;
     }
 

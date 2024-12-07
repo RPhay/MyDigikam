@@ -147,7 +147,7 @@ void MarbleLocale::meterToTargetUnit(qreal meters, MeasurementSystem targetSyste
 
         default:
         {
-            qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown measurement system!";
+            qCWarning(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Unknown measurement system!";
         }
     }
 }

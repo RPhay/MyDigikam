@@ -231,7 +231,7 @@ void GeoParser::raiseWarning(const QString& warning)
 {
     // TODO: Maybe introduce a strict parsing mode where we feed the warning to
     // raiseError() (which stops parsing).
-    qCDebug(DIGIKAM_MARBLE_LOG) << "[GeoParser::raiseWarning] -> " << warning;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "[GeoParser::raiseWarning] -> " << warning;
 }
 
 QString GeoParser::attribute(const char* attributeName) const

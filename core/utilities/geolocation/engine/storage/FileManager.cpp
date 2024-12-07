@@ -100,8 +100,8 @@ void FileManager::addFile(const QString& filepath, const QString& property, cons
         }
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "adding container:" << filepath;
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Starting placemark loading timer";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "adding container:" << filepath;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Starting placemark loading timer";
     d->m_timer.start();
     FileLoader* loader = new FileLoader(this, d->m_pluginManager, recenter, filepath, property, style, role, renderOrder);
     d->appendLoader(loader);
@@ -141,12 +141,12 @@ void FileManager::removeFile(const QString& key)
         d->closeFile(key);
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "could not identify " << key;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "could not identify " << key;
 }
 
 void FileManagerPrivate::closeFile(const QString& key)
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "FileManager::closeFile " << key;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "FileManager::closeFile " << key;
 
     if (m_fileItemHash.contains(key))
     {
@@ -220,7 +220,7 @@ void FileManagerPrivate::cleanupLoader(FileLoader* loader)
 
         if (!loader->error().isEmpty())
         {
-            qCWarning(DIGIKAM_MARBLE_LOG) << "Failed to parse" << loader->path() << loader->error();
+            qCWarning(DIGIKAM_GEOCORE_LOG) << "Failed to parse" << loader->path() << loader->error();
             Q_EMIT q->fileError(loader->path(), loader->error());
         }
 
@@ -229,7 +229,7 @@ void FileManagerPrivate::cleanupLoader(FileLoader* loader)
 
     if (m_loaderList.isEmpty())
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Finished loading all placemarks " << m_timer.elapsed();
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Finished loading all placemarks " << m_timer.elapsed();
 
         if (!m_latLonBox.isEmpty())
         {

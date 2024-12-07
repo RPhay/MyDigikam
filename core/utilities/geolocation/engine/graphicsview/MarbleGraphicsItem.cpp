@@ -87,7 +87,7 @@ bool MarbleGraphicsItem::paintEvent(QPainter* painter, const ViewportParams* vie
 
             else
             {
-                qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: Invalid pixmap size suggested: " << d->m_size;
+                qCDebug(DIGIKAM_GEOCORE_LOG) << "Warning: Invalid pixmap size suggested: " << d->m_size;
             }
 
             d->m_pixmap.fill(Qt::transparent);

@@ -97,7 +97,7 @@ public:
     {
         if (m_sourceImage.size().width() > 21600 || m_sourceImage.height() > 10800)
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Install map too large!");
+            qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Install map too large!");
             return QSize();
         }
 
@@ -120,7 +120,7 @@ public:
 
         if (needsScaling)
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Image Size doesn't match 2*n*TILEWIDTH x n*TILEHEIGHT geometry. Scaling ...";
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "Image Size doesn't match 2*n*TILEWIDTH x n*TILEHEIGHT geometry. Scaling ...";
         }
 
         int  stdImageWidth  = 2 * nmax * c_defaultTileSize;
@@ -134,7 +134,7 @@ public:
 
         if (stdImageWidth != imageWidth)
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) <<
+            qCDebug(DIGIKAM_GEOCORE_LOG) <<
                                         QString::fromUtf8("TileCreator::createTiles() The size of the final image will measure  %1 x %2 pixels").arg(stdImageWidth).arg(stdImageHeight);
         }
 
@@ -172,7 +172,7 @@ public:
 
         if (row.isNull())
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Read-Error! Null QImage!";
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "Read-Error! Null QImage!";
             return QImage();
         }
 
@@ -194,7 +194,7 @@ TileCreator::TileCreator(const QString& sourceDir, const QString& installMap,
       d(new TileCreatorPrivate(nullptr, dem, targetDir))
 
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Prefix: " << sourceDir
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Prefix: " << sourceDir
                                 << "installmap:" << installMap;
 
     QString sourcePath;
@@ -204,17 +204,17 @@ TileCreator::TileCreator(const QString& sourceDir, const QString& installMap,
     if (QDir::isAbsolutePath(sourceDir))
     {
         sourcePath = sourceDir + QLatin1Char('/') + installMap;
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Trying absolute path*:" << sourcePath;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Trying absolute path*:" << sourcePath;
     }
 
     else
     {
         sourcePath = MarbleDirs::path(QLatin1String("maps/") + sourceDir + QLatin1Char('/') + installMap);
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Trying relative path*:"
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Trying relative path*:"
                                     << QLatin1String("maps/") + sourceDir + QLatin1Char('/') + installMap;
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Creating tiles from*: " << sourcePath;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Creating tiles from*: " << sourcePath;
 
     d->m_source = new TileCreatorSourceImage(sourcePath);
 
@@ -246,7 +246,7 @@ void TileCreator::run()
 {
     if (d->m_resume && d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100)
     {
-        qCWarning(DIGIKAM_MARBLE_LOG) << "Resuming jpegs is only supported with tileQuality 100";
+        qCWarning(DIGIKAM_GEOCORE_LOG) << "Resuming jpegs is only supported with tileQuality 100";
         return;
     }
 
@@ -255,7 +255,7 @@ void TileCreator::run()
         d->m_targetDir += QLatin1Char('/');
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Installing tiles to: " << d->m_targetDir;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Installing tiles to: " << d->m_targetDir;
 
     QVector<QRgb> grayScalePalette;
 
@@ -268,11 +268,11 @@ void TileCreator::run()
     int  imageWidth  = fullImageSize.width();
     int  imageHeight = fullImageSize.height();
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
+    qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
 
     if (imageWidth < 1 || imageHeight < 1)
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Invalid imagemap!");
+        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Invalid imagemap!");
         return;
     }
 
@@ -293,12 +293,12 @@ void TileCreator::run()
 
     if (maxTileLevel < 0)
     {
-        qCDebug(DIGIKAM_MARBLE_LOG)
+        qCDebug(DIGIKAM_GEOCORE_LOG)
                 << QString::fromUtf8("TileCreator::createTiles(): Invalid Maximum Tile Level: %1")
                 .arg(maxTileLevel);
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Maximum Tile Level: " << maxTileLevel;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Maximum Tile Level: " << maxTileLevel;
 
 
     if (!QDir(d->m_targetDir).exists())
@@ -319,7 +319,7 @@ void TileCreator::run()
         tileLevel++;
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << totalTileCount << " tiles to be created in total.";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << totalTileCount << " tiles to be created in total.";
 
     int  mmax = TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, maxTileLevel);
     int  nmax = TileLoaderHelper::levelToRow(defaultLevelZeroRows, maxTileLevel);
@@ -355,7 +355,7 @@ void TileCreator::run()
         for (int m = 0; m < mmax; ++m)
         {
 
-            qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("** tile") << m << QString::fromUtf8("x") << n;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("** tile") << m << QString::fromUtf8("x") << n;
 
             if (d->m_cancelled)
             {
@@ -371,7 +371,7 @@ void TileCreator::run()
             if (QFile::exists(tileName) && d->m_resume)
             {
 
-                //qCDebug(DIGIKAM_MARBLE_LOG) << tileName << "exists already";
+                //qCDebug(DIGIKAM_GEOCORE_LOG) << tileName << "exists already";
 
             }
             else
@@ -381,7 +381,7 @@ void TileCreator::run()
 
                 if (tile.isNull())
                 {
-                    qCDebug(DIGIKAM_MARBLE_LOG) << "Read-Error! Null QImage!";
+                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Read-Error! Null QImage!";
                     return;
                 }
 
@@ -396,10 +396,10 @@ void TileCreator::run()
 
                 if (!ok)
                 {
-                    qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << tileName;
+                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Error while writing Tile: " << tileName;
                 }
 
-                qCDebug(DIGIKAM_MARBLE_LOG) << tileName << "size" << QFile(tileName).size();
+                qCDebug(DIGIKAM_GEOCORE_LOG) << tileName << "size" << QFile(tileName).size();
 
                 if (d->m_verify)
                 {
@@ -414,11 +414,11 @@ void TileCreator::run()
                             {
                                 unsigned int  pixel = tile.pixel(i, j);
                                 unsigned int  writtenPixel = writtenTile.pixel(i, j);
-                                qCWarning(DIGIKAM_MARBLE_LOG) << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
+                                qCWarning(DIGIKAM_GEOCORE_LOG) << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
                                 QByteArray baPixel((char*)&pixel, sizeof(unsigned int));
-                                qCWarning(DIGIKAM_MARBLE_LOG) << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
+                                qCWarning(DIGIKAM_GEOCORE_LOG) << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
                                 QByteArray baWrittenPixel((char*)&writtenPixel, sizeof(unsigned int));
-                                qCWarning(DIGIKAM_MARBLE_LOG) << "writtenPixel" << baWrittenPixel.size() << "0x" << baWrittenPixel.toHex();
+                                qCWarning(DIGIKAM_GEOCORE_LOG) << "writtenPixel" << baWrittenPixel.size() << "0x" << baWrittenPixel.toHex();
                                 Q_ASSERT(false);
                             }
                         }
@@ -431,12 +431,12 @@ void TileCreator::run()
                                      / (qreal)(totalTileCount));
             createdTilesCount++;
 
-            qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "percentCompleted" << percentCompleted;
             Q_EMIT progress(percentCompleted);
         }
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "tileLevel: " << maxTileLevel << " successfully created.";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "tileLevel: " << maxTileLevel << " successfully created.";
 
     tileLevel = maxTileLevel;
 
@@ -456,7 +456,7 @@ void TileCreator::run()
                              .arg(tileLevel)
                              .arg(n, tileDigits, 10, QLatin1Char('0')));
 
-            // qCDebug(DIGIKAM_MARBLE_LOG) << "dirName: " << dirName;
+            // qCDebug(DIGIKAM_GEOCORE_LOG) << "dirName: " << dirName;
             if (!QDir(dirName).exists())
             {
                 (QDir::root()).mkpath(dirName);
@@ -480,7 +480,7 @@ void TileCreator::run()
 
                 if (QFile::exists(newTileName) && d->m_resume)
                 {
-                    //qCDebug(DIGIKAM_MARBLE_LOG) << newTileName << "exists already";
+                    //qCDebug(DIGIKAM_GEOCORE_LOG) << newTileName << "exists already";
                 }
                 else
                 {
@@ -519,7 +519,7 @@ void TileCreator::run()
                         img_bottomleft.size() != expectedSize ||
                         img_bottomright.size() != expectedSize)
                     {
-                        qCDebug(DIGIKAM_MARBLE_LOG) << "Tile write failure. Missing write permissions?";
+                        qCDebug(DIGIKAM_GEOCORE_LOG) << "Tile write failure. Missing write permissions?";
                         Q_EMIT progress(100);
                         return;
                     }
@@ -635,7 +635,7 @@ void TileCreator::run()
                         }
                     }
 
-                    qCDebug(DIGIKAM_MARBLE_LOG) << newTileName;
+                    qCDebug(DIGIKAM_GEOCORE_LOG) << newTileName;
 
                     // Saving at 100% JPEG quality to have a high-quality
                     // version to create the remaining needed tiles from.
@@ -643,7 +643,7 @@ void TileCreator::run()
 
                     if (! ok)
                     {
-                        qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << newTileName;
+                        qCDebug(DIGIKAM_GEOCORE_LOG) << "Error while writing Tile: " << newTileName;
                     }
                 }
 
@@ -652,14 +652,14 @@ void TileCreator::run()
                 createdTilesCount++;
 
                 Q_EMIT progress(percentCompleted);
-                qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
+                qCDebug(DIGIKAM_GEOCORE_LOG) << "percentCompleted" << percentCompleted;
             }
         }
 
-        qCDebug(DIGIKAM_MARBLE_LOG) << "tileLevel: " << tileLevel << " successfully created.";
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "tileLevel: " << tileLevel << " successfully created.";
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Tile creation completed.";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Tile creation completed.";
 
     if (d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100)
     {
@@ -700,15 +700,15 @@ void TileCreator::run()
 
                     if (!ok)
                     {
-                        qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << tileName;
+                        qCDebug(DIGIKAM_GEOCORE_LOG) << "Error while writing Tile: " << tileName;
                     }
 
                     // Don't exceed 99% as this would cancel the thread unexpectedly
                     percentCompleted = 90 + (int)(9 * (qreal)(savedTilesCount)
                                                   / (qreal)(totalTileCount));
                     Q_EMIT progress(percentCompleted);
-                    qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
-                    //qCDebug(DIGIKAM_MARBLE_LOG) << "Saving Tile #" << savedTilesCount
+                    qCDebug(DIGIKAM_GEOCORE_LOG) << "percentCompleted" << percentCompleted;
+                    //qCDebug(DIGIKAM_GEOCORE_LOG) << "Saving Tile #" << savedTilesCount
                     //         << " of " << totalTileCount
                     //         << " Percent: " << percentCompleted;
                 }
@@ -721,7 +721,7 @@ void TileCreator::run()
     percentCompleted = 100;
     Q_EMIT progress(percentCompleted);
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted: " << percentCompleted;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "percentCompleted: " << percentCompleted;
 }
 
 void TileCreator::setTileFormat(const QString& format)

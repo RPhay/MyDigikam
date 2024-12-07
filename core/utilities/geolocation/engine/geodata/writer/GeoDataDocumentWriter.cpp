@@ -56,7 +56,7 @@ bool GeoDataDocumentWriter::write(QIODevice* device, const GeoDataDocument& docu
             }
         }
 
-        qCDebug(DIGIKAM_MARBLE_LOG) << "No writer registered to handle " << documentIdentifier;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "No writer registered to handle " << documentIdentifier;
         return false;
     }
 }
@@ -67,7 +67,7 @@ bool GeoDataDocumentWriter::write(const QString& filename, const GeoDataDocument
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot open" << filename << "for writing:" << file.errorString();
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "Cannot open" << filename << "for writing:" << file.errorString();
         return false;
     }
 
@@ -109,7 +109,7 @@ QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString& filena
         }
     }
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Unable to determine document from file extension " << fileExtension << ", falling back to KML document type";
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Unable to determine document from file extension " << fileExtension << ", falling back to KML document type";
     return QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 

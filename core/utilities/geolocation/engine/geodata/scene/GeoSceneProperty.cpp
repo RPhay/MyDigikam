@@ -76,7 +76,7 @@ void GeoSceneProperty::setValue(bool value)
     }
 
     m_value = value;
-    //    qCDebug(DIGIKAM_MARBLE_LOG) << "GeoSceneProperty: Setting " << m_name << "to" << m_value;
+    //    qCDebug(DIGIKAM_GEOCORE_LOG) << "GeoSceneProperty: Setting " << m_name << "to" << m_value;
     Q_EMIT valueChanged(m_name, m_value);
 }
 

@@ -51,7 +51,7 @@ GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole ro
     if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
         return nullptr;
     }
 
@@ -74,13 +74,13 @@ GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole ro
     if (version < 015)
     {
         error = QStringLiteral("Bad cache file %1: Version %2 is too old, need 15 or later").arg(fileName).arg(version);
-        qCDebug(DIGIKAM_MARBLE_LOG) << error;
+        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
         return nullptr;
     }
 
     /*
       if (version > 002) {
-      qCDebug(DIGIKAM_MARBLE_LOG) << "Bad file - too new!";
+      qCDebug(DIGIKAM_GEOCORE_LOG) << "Bad file - too new!";
       return;
       }
     */

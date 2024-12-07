@@ -81,7 +81,7 @@ void TemplateDocumentPrivate::processTemplateIncludes(QString& input)
 
 #endif
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Template Includes" << includes;
+    qCDebug(DIGIKAM_GEOCORE_LOG) << "Template Includes" << includes;
 
     for (const QString& include : std::as_const(includes))
     {
@@ -95,7 +95,7 @@ void TemplateDocumentPrivate::processTemplateIncludes(QString& input)
 
         else
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "[WARNING] Can't process template include" << include;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "[WARNING] Can't process template include" << include;
         }
     }
 }

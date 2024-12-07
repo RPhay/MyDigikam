@@ -519,7 +519,7 @@ void AbstractDataPluginModel::addItemsToList(const QList<AbstractDataPluginItem*
             continue;
         }
 
-        qCDebug(DIGIKAM_MARBLE_LOG) << "New item " << item->id();
+        qCDebug(DIGIKAM_GEOCORE_LOG) << "New item " << item->id();
 
         // This find the right position in the sorted to insert the new item
 
@@ -567,7 +567,7 @@ void AbstractDataPluginModel::addItemsToList(const QList<AbstractDataPluginItem*
 
 void AbstractDataPluginModel::getItem(const QString&)
 {
-    qCWarning(DIGIKAM_MARBLE_LOG) << "Retrieving items by identifier is not implemented by this plugin";
+    qCWarning(DIGIKAM_GEOCORE_LOG) << "Retrieving items by identifier is not implemented by this plugin";
 }
 
 void AbstractDataPluginModel::setFavoriteItems(const QStringList& list)
@@ -751,7 +751,7 @@ void AbstractDataPluginModel::processFinishedJob(const QString& relativeUrlStrin
 
         if (fileInformation.size() < 2)
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "Strange file information " << id;
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "Strange file information " << id;
             return;
         }
 

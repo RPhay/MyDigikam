@@ -165,12 +165,12 @@ void TextureLayer::Private::updateTextureLayers()
         if (enabled)
         {
             result.append(candidate);
-            qCDebug(DIGIKAM_MARBLE_LOG) << "enabling texture" << candidate->name();
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "enabling texture" << candidate->name();
         }
 
         else
         {
-            qCDebug(DIGIKAM_MARBLE_LOG) << "disabling texture" << candidate->name();
+            qCDebug(DIGIKAM_GEOCORE_LOG) << "disabling texture" << candidate->name();
         }
     }
 

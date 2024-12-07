@@ -41,7 +41,7 @@ Blending const* BlendingFactory::findBlending(QString const& name) const
 
     if (!result)
     {
-        qCWarning(DIGIKAM_MARBLE_LOG) << "Unknown blending" << name << "specified in .dgml file. Please fix the .dgml file.";
+        qCWarning(DIGIKAM_GEOCORE_LOG) << "Unknown blending" << name << "specified in .dgml file. Please fix the .dgml file.";
     }
 
     return result;
