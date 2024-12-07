@@ -117,6 +117,9 @@ bool MetaEngine::initializeExiv2()
     registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),                       // krazy:exclude=insecurenet
                          QLatin1String("excire"));
 
+    registerXmpNameSpace(QLatin1String("http://ns.useplus.org/ldf/xmp/1.0/ImageCreator/"),      // krazy:exclude=insecurenet
+                         QLatin1String("plus_1__1_"));
+
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.
      * See Bug #166424 for details.
