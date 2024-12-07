@@ -78,8 +78,8 @@ void ConvertToJPEG::slotAssignSettings2Widget()
     if (JPGBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("quality"),     settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("subsampling"), settings()[QLatin1String("subsampling")].toInt());
+        set.insert(QLatin1String("quality"),     settings().value(QLatin1String("quality")).toInt());
+        set.insert(QLatin1String("subsampling"), settings().value(QLatin1String("subsampling")).toInt());
         JPGBox->setSettings(set);
     }
 
@@ -95,8 +95,8 @@ void ConvertToJPEG::slotSettingsChanged()
         if (JPGBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),     JPGBox->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("subsampling"), JPGBox->settings()[QLatin1String("subsampling")].toInt());
+            settings.insert(QLatin1String("quality"),     JPGBox->settings().value(QLatin1String("quality")).toInt());
+            settings.insert(QLatin1String("subsampling"), JPGBox->settings().value(QLatin1String("subsampling")).toInt());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -114,9 +114,9 @@ bool ConvertToJPEG::toolOperations()
         return false;
     }
 
-    int JPEGCompression = DImgLoader::convertCompressionForLibJpeg(settings()[QLatin1String("quality")].toInt());
+    int JPEGCompression = DImgLoader::convertCompressionForLibJpeg(settings().value(QLatin1String("quality")).toInt());
     image().setAttribute(QLatin1String("quality"),     JPEGCompression);
-    image().setAttribute(QLatin1String("subsampling"), settings()[QLatin1String("subsampling")].toInt());
+    image().setAttribute(QLatin1String("subsampling"), settings().value(QLatin1String("subsampling")).toInt());
 
     return (savefromDImg());
 }

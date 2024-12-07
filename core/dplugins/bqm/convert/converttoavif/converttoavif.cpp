@@ -79,8 +79,8 @@ void ConvertToAVIF::slotAssignSettings2Widget()
     if (AVIFBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        set.insert(QLatin1String("quality"),  settings().value(QLatin1String("quality")).toInt());
+        set.insert(QLatin1String("lossless"), settings().value(QLatin1String("lossless")).toBool());
         AVIFBox->setSettings(set);
     }
 
@@ -96,8 +96,8 @@ void ConvertToAVIF::slotSettingsChanged()
         if (AVIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  AVIFBox->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("lossless"), AVIFBox->settings()[QLatin1String("lossless")].toBool());
+            settings.insert(QLatin1String("quality"),  AVIFBox->settings().value(QLatin1String("quality")).toInt());
+            settings.insert(QLatin1String("lossless"), AVIFBox->settings().value(QLatin1String("lossless")).toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -115,8 +115,8 @@ bool ConvertToAVIF::toolOperations()
         return false;
     }
 
-    bool lossless = settings()[QLatin1String("lossless")].toBool();
-    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings()[QLatin1String("quality")].toInt());
+    bool lossless = settings().value(QLatin1String("lossless")).toBool();
+    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings().value(QLatin1String("quality")).toInt());
 
     return (savefromDImg());
 }

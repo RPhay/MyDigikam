@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     if (argc <= 1)
     {
         QStringList files = DFileDialog::getOpenFileNames(nullptr, QString::fromLatin1("Select Files to Share With Media Server"),
-                                                          QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first(),
+                                                          QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).constFirst(),
                                                           QLatin1String("Image Files (*.png *.jpg *.tif *.bmp *.gif)"));
 
         for (const QString& f : std::as_const(files))
