@@ -205,7 +205,7 @@ void INatBrowserDlg::slotWebText(const QString& text)
         doc.object().contains(key)
        )
     {
-        Q_EMIT signalApiToken(doc.object()[key].toString(),
+        Q_EMIT signalApiToken(doc.object().value(key).toString(),
                               filterCookies(d->cookies.values(), false));
 
         d->apiKeyFound = true;

@@ -827,18 +827,18 @@ void TwTalker::parseResponseAddPhotoFinalize(const QByteArray& data)
 
     if (processingInfo != QJsonValue::Undefined)
     {
-        QString state = processingInfo.toObject()[QLatin1String("state")].toString();
+        const QString state = processingInfo.toObject().value(QLatin1String("state")).toString();
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "state: " << state;
 
         if (state == QLatin1String("pending"))
         {
-            QTimer::singleShot(processingInfo.toObject()[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/,
+            QTimer::singleShot(processingInfo.toObject().value(QLatin1String("check_after_secs")).toInt() * 1000 /*msec*/,
                                this, SLOT(slotCheckUploadStatus()));
         }
     }
     else
     {
-        // We haven't Q_EMIT signalAddPhotoSucceeded() here yet, since we need to update the status first
+        // We haven't emit signalAddPhotoSucceeded() here yet, since we need to update the status first
 
         createTweet(d->mediaId);
     }

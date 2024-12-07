@@ -457,8 +457,8 @@ void ODTalker::parseResponseAddPhoto(const QByteArray& data)
 
 void ODTalker::parseResponseUserName(const QByteArray& data)
 {
-    QJsonDocument doc = QJsonDocument::fromJson(data);
-    QString name      = doc.object()[QLatin1String("displayName")].toString();
+    QJsonDocument doc  = QJsonDocument::fromJson(data);
+    const QString name = doc.object().value(QLatin1String("displayName")).toString();
 
     Q_EMIT signalBusy(false);
     Q_EMIT signalSetUserName(name);
