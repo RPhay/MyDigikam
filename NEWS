@@ -39,7 +39,7 @@ BUGFIXES:
 028 ==> 470342 - digiKam dont start.
 029 ==> 497106 - Rating from images is no longer respected.
 030 ==> 472138 - Request for disabling more components at compile time.
-031 ==>
+031 ==> 496484 - (mov.) video playback distorted colors.
 032 ==>
 033 ==>
 034 ==>
