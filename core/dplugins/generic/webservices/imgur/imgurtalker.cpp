@@ -44,12 +44,13 @@ using namespace Digikam;
 namespace DigikamGenericImgUrPlugin
 {
 
-
 class Q_DECL_HIDDEN ImgurTalker::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     /// API key and secret
     const QString             client_id             = QLatin1String("bd2572bce74b73d");
@@ -169,7 +170,7 @@ void ImgurTalker::slotOauthAuthorized()
     }
 
     Q_EMIT signalAuthorized(success,
-                            d->auth.extraTokens()[QLatin1String("account_username")].toString());
+                            d->auth.extraTokens().value(QLatin1String("account_username")).toString());
 }
 
 void ImgurTalker::slotOauthRequestPin(const QUrl& url)
@@ -223,8 +224,8 @@ void ImgurTalker::slotReplyFinished()
         // Success!
 
         ImgurTalkerResult result;
-        result.action = &d->workQueue.first();
-        auto data     = response.object()[QLatin1String("data")].toObject();
+        result.action   = &d->workQueue.first();
+        const auto data = response.object().value(QLatin1String("data")).toObject();
 
         switch (result.action->type)
         {
@@ -251,7 +252,9 @@ void ImgurTalker::slotReplyFinished()
             case ImgurTalkerActionType::ACCT_INFO:
             {
                 result.account.username = data[QLatin1String("url")].toString();
+
                 // TODO: Other fields.
+
                 break;
             }
 
@@ -281,9 +284,9 @@ void ImgurTalker::slotReplyFinished()
         {
             // Failed.
 
-            auto msg = response.object()[QLatin1String("data")]
-                       .toObject()[QLatin1String("error")]
-                       .toString(QLatin1String("Could not read response."));
+            const auto msg = response.object().value(QLatin1String("data"))
+                                              .toObject().value(QLatin1String("error"))
+                                              .toString(QLatin1String("Could not read response."));
 
             Q_EMIT signalError(msg, d->workQueue.first());
         }

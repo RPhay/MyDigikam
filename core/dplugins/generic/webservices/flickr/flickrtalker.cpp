@@ -76,6 +76,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget*               parent           = nullptr;
 
     QString                serviceName;
@@ -245,8 +247,8 @@ void FlickrTalker::slotLinkingSucceeded()
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr ok";
 
-    d->username = d->o1->extraTokens()[QLatin1String("username")].toString();
-    d->userId   = d->o1->extraTokens()[QLatin1String("user_nsid")].toString();
+    d->username = d->o1->extraTokens().value(QLatin1String("username")).toString();
+    d->userId   = d->o1->extraTokens().value(QLatin1String("user_nsid")).toString();
 
     if (d->store->groupKey() == d->serviceName)
     {
