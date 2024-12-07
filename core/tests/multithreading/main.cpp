@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
         qCDebug(DIGIKAM_TESTS_LOG) << filter;
 
         QStringList files = DFileDialog::getOpenFileNames(nullptr, QString::fromLatin1("Select RAW files to process"),
-                                                         QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first(),
+                                                         QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).constFirst(),
                                                          filter);
 
         for (const QString& f : std::as_const(files))
