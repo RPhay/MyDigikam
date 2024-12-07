@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 01:49+0000\n"
-"PO-Revision-Date: 2024-10-07 01:50+0200\n"
+"POT-Creation-Date: 2024-12-07 01:50+0000\n"
+"PO-Revision-Date: 2024-12-06 12:38+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -3459,16 +3459,13 @@ msgstr ""
 "SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add spell-checking support in caption text widget using KF5::Sonnet "
-#| "component."
+#, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
 "Permitir comprobación ortográfica no trebello de texto de lenda co "
-"compoñente KF5::Sonnet."
+"compoñente Sonnet das infraestruturas de KDE."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3625,6 +3622,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Miniaturas máis compactas na vista de iconas usando unha liña horizontal "
+"sinxela en vez dun marco para renderizar as etiquetas de cores."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3634,24 +3633,20 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"Inclusión do modelo YuNet DNN para procesar a detección facial e substituír "
+"o modelo SSD anterior. Inclusión do modelo Sface DNN para procesar o "
+"recoñecemento facial e substituír o modelo OpenFace anterior. Ambos modelos "
+"son máis rápidos e requiren menos memoria en tempo de execución, ademais de "
+"dar mellores resultados de xestión facial."
 
 #: core/app/views/stack/welcomepageview.cpp:141
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 msgstr ""
-"Actualizar o motor interno de RAW á última captura de libraw, 2024-06-16."
+"Actualizar o motor interno de RAW á última captura de libraw, 2024-10-09."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-#| "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
-#| "Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-#| "ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
-#| "II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-"
-#| "HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with DNG "
-#| "format recorded."
+#, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
 "EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
@@ -3660,13 +3655,13 @@ msgid ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
-"Novas funcionalidades de imaxes en cru (RAW): Canon EOS R6 Mark II, EOS R8, "
-"EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
-"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
-"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
-"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
-"ILME-FX30, DSC-HX95, A1.Multiple DJI e drons de Skydio. Graváronse varios "
-"teléfonos intelixentes co formato DNG."
+"Compatibilidade coas imaxes en cru (RAW) de novas cámaras: Canon EOS R6 Mark "
+"II, EOS R8, EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, "
+"X-H2S.Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital "
+"OM-5.Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-"
+"S5-II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-"
+"V), ILME-FX30, DSC-HX95, A1.Multiple DJI e drons de Skydio. Graváronse "
+"varios teléfonos intelixentes co formato DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -17327,10 +17322,9 @@ msgstr "Ferramenta de imaxes superpostas"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#, fuzzy, kde-format
-#| msgid "Could not save image to file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Non foi posíbel gardar a imaxe no ficheiro «%1»"
+msgstr "Non foi posíbel copiar a imaxe no ficheiro «%1»."
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
@@ -17679,10 +17673,9 @@ msgstr "Gardar a imaxe"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -22521,7 +22514,7 @@ msgstr "Exportar a &Box…"
 msgid "Failed to upload photo"
 msgstr "Non foi posíbel enviar a foto"
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
@@ -29966,7 +29959,7 @@ msgstr "Non preguntar máis"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -32223,12 +32216,10 @@ msgstr "Cargando o fotograma"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
@@ -39559,10 +39550,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Asignar a puntuación «%1 estrela»"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Asignar a puntuación «%1 estrela»"
+msgstr "Asignar a puntuación «%1 estrela» (sen conmutador)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -42781,15 +42771,14 @@ msgstr ""
 "de caras á rede neural de OpenCV."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Mesturador de canles"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
 msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
+msgstr "Integración dos modelos SFace e YuNet DNN. Melloras de xestión facial."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
@@ -43387,12 +43376,10 @@ msgstr "Amosar a barra de estado"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:121
 #: core/libs/widgets/mainview/dzoombar.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:223
 #, kde-format
@@ -51914,23 +51901,20 @@ msgid "No address book entries found"
 msgstr "Non se atoparon entradas na axenda de enderezos."
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Modelo de selección: "
+msgstr "Modelo de recoñecemento facial"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgid "OpenFace"
-msgstr "Abrir un ficheiro"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "SFace"
-msgstr "Caras"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
@@ -51950,13 +51934,25 @@ msgid_plural ""
 "\n"
 "Are you sure you want to continue?"
 msgstr[0] ""
+"Está a piques de cambiar o modelo de recoñecemento facial. O proceso pode "
+"levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
+"velocidade do seu computador. SFace é o modelo preferido. Non use "
+"funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
+"\n"
+"Seguro que quere continuar?"
 msgstr[1] ""
+"Está a piques de cambiar o modelo de recoñecemento facial a %1. O proceso "
+"pode levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
+"velocidade do seu computador. SFace é o modelo preferido. Non use "
+"funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
+"\n"
+"Seguro que quere continuar?"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Comezar"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52165,21 +52161,13 @@ msgid "YOLOv3"
 msgstr "YOLOv3"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detection model used to find faces. YuNet is the default model.\n"
@@ -52189,15 +52177,15 @@ msgid ""
 msgstr ""
 "O modelo de detección que se usa para atopar caras. YuNet é o modelo "
 "predeterminado.\n"
-"É máis rápido e configurábel que YOLOv3.\n"
-"Nota: YuNet só está dispoñíbel se digiKam se compila con OpenCV 4.10 ou "
+"É máis rápido e configurábel que SSD e YOLOv3.\n"
+"Nota: YuNet só está dispoñíbel se digiKam se compila con OpenCV 4.6.0 ou "
 "superior."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Tamaño da cara:"
+msgstr "Tamaño das caras:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, kde-format
@@ -52247,28 +52235,33 @@ msgid ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>Ao seleccionar <b>Anano</b>, o modelo detectará caras pequenas de fondo "
+"ademais de caras medianas e grandes. Ao seleccionar <b>Pequeno</b>, "
+"axústanse os parámetros do modelo para aumentar a súa sensibilidade. Tamén "
+"aumentará a posibilidade de falsos positivos, e o tempo de detección.</"
+"p><p>Ao seleccionar <b>Grande</b> ou <b>Enorme</b>, as caras pequenas de "
+"fondo non se detectarán. É moito máis rápido e reduce o número de falsos "
+"positivos, pero non detecta caras pequenas de fondo ou caras en fotos de "
+"grupos grandes.</p><p>Se quere detectar todas as caras dunha vez, seleccione "
+"<b>Anano</b> e defina a precisión da detección como 2. Por desgraza, isto "
+"dará lugar a un número significativo de falsos positivos. Recoméndase "
+"definir unha precisión da detección entre 6 e 8 e un tamaño de caras "
+"<b>Mediano</b> ou <b>Grande</b> para uso normal.</p><p>Esta opción só afecta "
+"a YuNet.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Detección facial."
+msgstr "Configuración da detección de caras"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Precisión"
+msgstr "Precisión:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52279,38 +52272,29 @@ msgstr ""
 "Axuste a sensibilidade ou especificidade: a maior valor, maior será a "
 "precisión\n"
 "do recoñecemento de caras, pero recoñeceranse menos caras\n"
-"(só se recoñecerán as caras moi semellantes ás previamente etiquetadas)."
+"(Nota: só se recoñecerán as caras moi semellantes ás previamente "
+"etiquetadas)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modelo:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:342
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Caras"
+msgstr "SFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:343
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Abrir un ficheiro"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detection model used to find faces. YuNet is the default model.\n"
-#| "It is faster and more configurable than YOLOv3.\n"
-#| "Note: YuNet is only available if digiKam is compiled with OpenCV 4.10 or "
-#| "later."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "SFace is the default detection model. It is faster and more accurate.\n"
@@ -52318,10 +52302,9 @@ msgid ""
 "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
 "later."
 msgstr ""
-"O modelo de detección que se usa para atopar caras. YuNet é o modelo "
-"predeterminado.\n"
-"É máis rápido e configurábel que YOLOv3.\n"
-"Nota: YuNet só está dispoñíbel se digiKam se compila con OpenCV 4.10 ou "
+"SFace é o modelo predeterminado. É máis rápido e ten maior precisión.\n"
+"Pode usar OpenFace se ten bibliotecas anteriores.\n"
+"Nota: SFace só está dispoñíbel se digiKam se compila con OpenCV 4.6.0 ou "
 "superior."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:381
@@ -52344,10 +52327,9 @@ msgstr ""
 "sistema ou traballar no fondo só cun núcleo."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Recoñecemento facial"
+msgstr "Configuración de recoñecemento facial"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
 #, kde-format
@@ -56712,7 +56694,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -60950,13 +60932,7 @@ msgid "Scan for new items"
 msgstr "Examinar por novos elementos"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -60967,7 +60943,7 @@ msgstr ""
 "<qt><i>Nota: Se se activa, a base de datos principal sempre se limpa. Pode "
 "seleccionar bases de datos adicionais para limpar.<br/> Se selecciona unha "
 "das opcións de embaixo, o proceso podería levar moito tempo e pode conxelar "
-"digiKam temporalmente<br/> para asegurarse de que non se produce ningunha "
+"digiKam temporalmente para asegurarse de que non se produce ningunha "
 "corrupción de base de datos.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
@@ -61056,12 +61032,10 @@ msgid "Faces data management: "
 msgstr "Xestión dos datos dos rostros: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Limpar e reconstruír todos os datos de adestramento"
+msgstr "Reconstruír todos os datos de adestramento"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
@@ -61069,13 +61043,14 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Isto adestrará de novo o recoñecemento facial con caras etiquetadas na súa "
+"biblioteca."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Limpar todas as caras desta imaxe"
+msgstr "Restabelecer e retirar todas as caras e todo adestramento."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
@@ -61084,6 +61059,8 @@ msgid ""
 "This will clear all detected and tagged faces, and then rescan images to "
 "detect faces."
 msgstr ""
+"Isto retirará todas as caras detectadas e etiquetadas, e escaneará de novo "
+"as imaxes para detectar caras."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:222
 #, kde-format
@@ -61222,9 +61199,7 @@ msgid "Sync Metadata and Database"
 msgstr "Sincronizar os metadatos e a base de datos"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:396
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgid "Warning"
 msgstr "Aviso"
 
@@ -61235,6 +61210,9 @@ msgid ""
 "faces? You’ll need to start tagging unknown faces again before any faces can "
 "be recognized."
 msgstr ""
+"Seguro que quere eliminar todas as caras confirmadas, sen confirmar e "
+"descoñecidas? Terá que volver etiquetas caras descoñecidas para que o "
+"recoñecemento facial volva funcionar."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:406
@@ -61279,23 +61257,19 @@ msgid "Path: %1\n"
 msgstr "Ruta: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Palabras clave: "
+msgstr "Palabras clave: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de etiquetas automáticas: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de etiquetas automáticas: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61378,36 +61352,33 @@ msgid "Find new items"
 msgstr "Atopar elementos novos"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Escaneamento desde: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Álbum «%1»"
+msgstr "Álbum: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Buscáronse caras: %1\n"
+msgstr ""
+"Resultado do escaneamento:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados para catalogar: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado para catalogar: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61415,50 +61386,41 @@ msgid "Find duplicates items"
 msgstr "Atopar os elementos duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Duplicadas"
+msgstr "Duplicados de: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate"
-msgstr "Atopar as duplicadas"
+msgstr "Non hai duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate"
 msgid_plural "%1 duplicates"
-msgstr[0] "Atopar as duplicadas"
-msgstr[1] "Atopar as duplicadas"
+msgstr[0] "1 duplicado"
+msgstr[1] "%1 duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de duplicados: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de duplicados: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Duplicadas"
+msgstr "Duplicados atopados: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Duplicadas"
+msgstr "Duplicado atopado: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
 #, kde-format
@@ -61486,28 +61448,24 @@ msgid "Updating faces database"
 msgstr "Actualizando a base de datos de caras"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de caras: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de caras: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Imaxes atopadas en %1"
+msgstr "Caras procesadas: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Imaxes atopadas en %1"
+msgstr "Cara procesada: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
 #, kde-format
@@ -61545,43 +61503,34 @@ msgid "Path: %1"
 msgstr "Ruta: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de pegadas: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de pegadas: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Orde por calidade da imaxe"
+msgstr "Calidade de imaxe de: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "Etiqueta de escolla: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de calidade: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de calidade: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -61612,34 +61561,29 @@ msgstr ""
 "Quere continuar?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Sincronización de metadatos de: %1\n"
+msgstr "Borrar os metadatos de: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados para retirar caras: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado para retirar caras: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados para retirar etiquetas: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado para retirar etiquetas: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61657,34 +61601,30 @@ msgid "Metadata Sync for: %1\n"
 msgstr "Sincronización de metadatos de: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Sincronizando os metadatos da imaxe coa base de datos"
+msgstr ""
+"Elementos escaneados para sincronizar os metadatos coa base de datos: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Sincronizando os metadatos da imaxe coa base de datos"
+msgstr "Elemento escaneado para sincronizar os metadatos coa base de datos: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados para actualizar os metadatos na base de datos: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado para actualizar os metadatos na base de datos: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Miniaturas"
+msgstr "Xerar as miniaturas"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, kde-format
@@ -61692,16 +61632,14 @@ msgid "Thumbnail for: %1\n"
 msgstr "Miniatura de: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elementos escaneados en busca de miniaturas: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Buscáronse caras: %1\n"
+msgstr "Elemento escaneado en busca de miniaturas: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -63805,17 +63743,14 @@ msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr "Desmarque isto se non quere axustar as imaxes pequenas á xanela."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "A imaxe da vista previa sempre se axusta á xanela."
+msgstr "A imaxe da vista previa usa suavizado para ampliar."
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr "Desmarque isto se non quere axustar as imaxes pequenas á xanela."
+msgstr "Desmarque isto se non quere usar suavizado para ampliar."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -64866,10 +64801,9 @@ msgid "Download Required Files"
 msgstr "Descargar os ficheiros necesarios"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:158
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgid "Use Face Management feature"
-msgstr "Usar a funcionalidade de detección facial"
+msgstr "Usar a funcionalidade de xestión facial."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
@@ -64945,20 +64879,13 @@ msgid ""
 "images, digiKam requires some large binary files. You can choose which "
 "feature you want to use.</p>"
 msgstr ""
+"<p>digiKam require grandes ficheiros binarios para a xestión facial, a "
+"ferramenta de eliminación de ollos vermellos, a clasificación de imaxes por "
+"estética e a asignación automática de etiquetas a imaxes. Pode escoller as "
+"funcionalidades que quere usar.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can close this "
-#| "dialog, you will be asked again the next time you start digiKam. Without "
-#| "these files the selected features will not work.</p><p>The files will be "
-#| "downloaded to %1.</p><p><b>After the successful download you have to "
-#| "restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -64967,15 +64894,11 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>Para a detección facial, a ferramenta de eliminación de ollos vermellos, "
-"a clasificación de imaxes por estética ou a asignación automática de "
-"etiquetas a imaxes, digiKam necesita grandes ficheiros binarios. Pode "
-"escoller que funcionalidade quere usar.</p><p>Algúns destes ficheiros non se "
-"atoparon. Prema «Descargar» para iniciar a descarga dos ficheiros "
-"necesarios. Pode pechar o diálogo, preguntaráselle de novo a seguinte vez "
-"que inicie digiKam. Sen estes ficheiros a funcionalidade seleccionada non "
-"funcionará.</p><p>O ficheiros descargaranse en %1.</p><p><b>Tras a descarga "
-"ten que reiniciar digiKam.</b></p>"
+"<p>Algúns destes ficheiros non se atoparon. Prema «Descargar» para iniciar a "
+"descarga dos ficheiros necesarios. Pode pechar o diálogo, preguntaráselle de "
+"novo a seguinte vez que inicie digiKam. Sen estes ficheiros a funcionalidade "
+"seleccionada non funcionará.</p><p>O ficheiros descargaranse en «<i>%1</i>»."
+"</p><p><b>Tras a descarga ten que reiniciar digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -65830,6 +65753,9 @@ msgid ""
 "is a risk of accidentally deleting RAW images. Are you sure you want to do "
 "that?"
 msgstr ""
+"Engadiuse unha extensión de ficheiro de imaxe en cru (RAW) á lista de "
+"acompañantes compatíbeis. Isto pode causar a eliminación accidental de "
+"imaxes en cru. Seguro que quere facelo?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
 #, kde-format
@@ -66060,32 +65986,22 @@ msgid "Reading and Writing Metadata"
 msgstr "Lectura e escritura dos metadatos"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"Delegar ao motor de ExifTool todas as operacións de escritura de metadatos "
-"en ficheiros."
+msgstr "Usar o motor de ExifTool para ler metadatos de ficheiros."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Active esta opción para escribir os metadatos en ficheiros co motor de "
-"ExifTool en vez de Exiv2. Isto lentificará lixeiramente a sincronización de "
-"metadatos de ficheiros coa base de datos."
+"Active esta opción para ler os metadatos de ficheiros co motor de ExifTool "
+"en vez de Exiv2. Isto lentificará lixeiramente a sincronización de metadatos "
+"de ficheiros coa base de datos."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format
@@ -66902,16 +66818,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Usar mapas de píxeles de resolución alta de DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Forzar o uso de renderización de OpenGL mediante o soporte lóxico"
+msgstr "Usar OpenGL mediante soporte lóxico para renderizar."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Desactivar a aceleración de OpenCL mediante o soporte físico"
+msgstr "Usar a aceleración mediante o soporte físico de OpenCL."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
@@ -66919,23 +66833,23 @@ msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Esta opción é aínda experimental e require definir certas variábeis de "
+"contorno manualmente."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Desactivar a aceleración de OpenCL mediante o soporte físico"
+msgstr "Usar a aceleración de vídeo mediante o soporte físico."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Usar a conversión de texturas de vídeo."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Motor de descodificación usado para vídeo:"
+msgstr "Motor de descodificación para renderizar vídeo:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
@@ -66948,28 +66862,24 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (sistema)"
+msgstr "WMF (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (sistema)"
+msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Descargar os datos binarios necesarios…"
+msgstr "Descargar os datos binarios necesarios:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Abrindo o diálogo de descarga…"
+msgstr "Abrir o diálogo de descarga…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format

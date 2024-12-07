@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 01:49+0000\n"
+"POT-Creation-Date: 2024-12-07 01:50+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -22642,7 +22642,7 @@ msgstr "Eksportuoti"
 msgid "Failed to upload photo"
 msgstr "Nepavyko pakrauti paveikslėlio"
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475

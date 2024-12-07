@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 01:49+0000\n"
+"POT-Creation-Date: 2024-12-07 01:50+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -21445,7 +21445,7 @@ msgstr "निर्यात"
 msgid "Failed to upload photo"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475

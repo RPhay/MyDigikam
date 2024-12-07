@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 01:49+0000\n"
+"POT-Creation-Date: 2024-12-07 01:50+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -21528,7 +21528,7 @@ msgstr "निर्यात"
 msgid "Failed to upload photo"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475

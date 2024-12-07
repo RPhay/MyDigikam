@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 01:49+0000\n"
+"POT-Creation-Date: 2024-12-07 01:50+0000\n"
 "PO-Revision-Date: 2024-12-02 11:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -22617,7 +22617,7 @@ msgstr "Exporteren naar &Box..."
 msgid "Failed to upload photo"
 msgstr "Foto uploaden mislukt"
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
