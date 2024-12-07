@@ -5,6 +5,7 @@ NEW FEATURES:
 
 RawEngine:       Update internal libraw to last 20241203 upstream.
 Video:           Update internal QtAVPlayer to last 20241206 upstream (Qt5 only).
+Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 
 *****************************************************************************************************
 BUGFIXES:
