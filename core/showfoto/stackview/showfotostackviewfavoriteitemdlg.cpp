@@ -67,6 +67,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                           create           = false;
 
     DAdjustableLabel*              hierarchyLabel   = nullptr;
@@ -686,7 +688,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotDateLowButtonClicked()
 {
     setCursor(Qt::WaitCursor);
 
-    QDate lowDate = getItemDates().first();
+    QDate lowDate = getItemDates().constFirst();
 
     if (lowDate.isValid())
     {
@@ -700,7 +702,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotDateHighButtonClicked()
 {
     setCursor(Qt::WaitCursor);
 
-    QDate highDate = getItemDates().last();
+    QDate highDate = getItemDates().constLast();
 
     if (highDate.isValid())
     {

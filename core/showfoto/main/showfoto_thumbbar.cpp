@@ -58,8 +58,8 @@ void Showfoto::slotFirst()
     }
 
     d->thumbBar->toFirstIndex();
-    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().first());
-    slotOpenUrl(d->thumbBar->showfotoItemInfos().first());
+    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().constFirst());
+    slotOpenUrl(d->thumbBar->showfotoItemInfos().constFirst());
 }
 
 void Showfoto::slotLast()
@@ -70,8 +70,8 @@ void Showfoto::slotLast()
     }
 
     d->thumbBar->toLastIndex();
-    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().last());
-    slotOpenUrl(d->thumbBar->showfotoItemInfos().last());
+    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().constLast());
+    slotOpenUrl(d->thumbBar->showfotoItemInfos().constLast());
 }
 
 void Showfoto::slotForward()

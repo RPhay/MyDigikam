@@ -760,7 +760,7 @@ bool ShowfotoStackViewFavorites::readSettings()
                         {
                             if (!fitem->urls().isEmpty())
                             {
-                                curr = fitem->urls().first().toLocalFile();
+                                curr = fitem->urls().constFirst().toLocalFile();
                             }
                             else
                             {
