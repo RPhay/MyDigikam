@@ -74,14 +74,14 @@ BatchToolSettings NoiseReduction::defaultSettings()
 void NoiseReduction::slotAssignSettings2Widget()
 {
     NRContainer prm;
-    prm.thresholds[0] = settings()[QLatin1String("YThreshold")].toDouble();
-    prm.thresholds[1] = settings()[QLatin1String("CrThreshold")].toDouble();
-    prm.thresholds[2] = settings()[QLatin1String("CbThreshold")].toDouble();
-    prm.softness[0]   = settings()[QLatin1String("YSoftness")].toDouble();
-    prm.softness[1]   = settings()[QLatin1String("CrSoftness")].toDouble();
-    prm.softness[2]   = settings()[QLatin1String("CbSoftness")].toDouble();
+    prm.thresholds[0] = settings().value(QLatin1String("YThreshold")).toDouble();
+    prm.thresholds[1] = settings().value(QLatin1String("CrThreshold")).toDouble();
+    prm.thresholds[2] = settings().value(QLatin1String("CbThreshold")).toDouble();
+    prm.softness[0]   = settings().value(QLatin1String("YSoftness")).toDouble();
+    prm.softness[1]   = settings().value(QLatin1String("CrSoftness")).toDouble();
+    prm.softness[2]   = settings().value(QLatin1String("CbSoftness")).toDouble();
     m_settingsView->setSettings(prm);
-    m_settingsView->setEstimateNoise(settings()[QLatin1String("EstimateNoise")].toBool());
+    m_settingsView->setEstimateNoise(settings().value(QLatin1String("EstimateNoise")).toBool());
 }
 
 void NoiseReduction::slotSettingsChanged()
@@ -109,7 +109,7 @@ bool NoiseReduction::toolOperations()
 
     NRContainer prm;
 
-    if (settings()[QLatin1String("EstimateNoise")].toBool())
+    if (settings().value(QLatin1String("EstimateNoise")).toBool())
     {
         NREstimate nre(&image());
         nre.startFilterDirectly();
@@ -117,12 +117,12 @@ bool NoiseReduction::toolOperations()
     }
     else
     {
-        prm.thresholds[0] = settings()[QLatin1String("YThreshold")].toDouble();
-        prm.thresholds[1] = settings()[QLatin1String("CrThreshold")].toDouble();
-        prm.thresholds[2] = settings()[QLatin1String("CbThreshold")].toDouble();
-        prm.softness[0]   = settings()[QLatin1String("YSoftness")].toDouble();
-        prm.softness[1]   = settings()[QLatin1String("CrSoftness")].toDouble();
-        prm.softness[2]   = settings()[QLatin1String("CbSoftness")].toDouble();
+        prm.thresholds[0] = settings().value(QLatin1String("YThreshold")).toDouble();
+        prm.thresholds[1] = settings().value(QLatin1String("CrThreshold")).toDouble();
+        prm.thresholds[2] = settings().value(QLatin1String("CbThreshold")).toDouble();
+        prm.softness[0]   = settings().value(QLatin1String("YSoftness")).toDouble();
+        prm.softness[1]   = settings().value(QLatin1String("CrSoftness")).toDouble();
+        prm.softness[2]   = settings().value(QLatin1String("CbSoftness")).toDouble();
     }
 
     NRFilter wnr(&image(), nullptr, prm);

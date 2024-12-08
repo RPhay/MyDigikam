@@ -100,28 +100,28 @@ void Sharpen::slotAssignSettings2Widget()
 
     // sharpen method
 
-    prm.method        = settings()[QLatin1String("SharpenFilterType")].toInt();
+    prm.method        = settings().value(QLatin1String("SharpenFilterType")).toInt();
 
     // simple sharp
 
-    prm.ssRadius      = settings()[QLatin1String("SimpleSharpRadius")].toInt();
+    prm.ssRadius      = settings().value(QLatin1String("SimpleSharpRadius")).toInt();
 
     // unsharp mask
 
-    prm.umRadius      = settings()[QLatin1String("UnsharpMaskRadius")].toDouble();
-    prm.umAmount      = settings()[QLatin1String("UnsharpMaskAmount")].toDouble();
-    prm.umThreshold   = settings()[QLatin1String("UnsharpMaskThreshold")].toDouble();
-    prm.umLumaOnly    = settings()[QLatin1String("UnsharpMaskLuma")].toBool();
+    prm.umRadius      = settings().value(QLatin1String("UnsharpMaskRadius")).toDouble();
+    prm.umAmount      = settings().value(QLatin1String("UnsharpMaskAmount")).toDouble();
+    prm.umThreshold   = settings().value(QLatin1String("UnsharpMaskThreshold")).toDouble();
+    prm.umLumaOnly    = settings().value(QLatin1String("UnsharpMaskLuma")).toBool();
 
 #ifdef HAVE_EIGEN3
 
     // refocus
 
-    prm.rfRadius      = settings()[QLatin1String("RefocusRadius")].toDouble();
-    prm.rfCorrelation = settings()[QLatin1String("RefocusCorrelation")].toDouble();
-    prm.rfNoise       = settings()[QLatin1String("RefocusNoise")].toDouble();
-    prm.rfGauss       = settings()[QLatin1String("RefocusGauss")].toDouble();
-    prm.rfMatrix      = settings()[QLatin1String("RefocusMatrixSize")].toInt();
+    prm.rfRadius      = settings().value(QLatin1String("RefocusRadius")).toDouble();
+    prm.rfCorrelation = settings().value(QLatin1String("RefocusCorrelation")).toDouble();
+    prm.rfNoise       = settings().value(QLatin1String("RefocusNoise")).toDouble();
+    prm.rfGauss       = settings().value(QLatin1String("RefocusGauss")).toDouble();
+    prm.rfMatrix      = settings().value(QLatin1String("RefocusMatrixSize")).toInt();
 
 #endif // HAVE_EIGEN3
 
@@ -170,13 +170,13 @@ bool Sharpen::toolOperations()
         return false;
     }
 
-    int filterType  = settings()[QLatin1String("SharpenFilterType")].toInt();
+    int filterType  = settings().value(QLatin1String("SharpenFilterType")).toInt();
 
     switch (filterType)
     {
         case SharpContainer::SimpleSharp:
         {
-            double radius = settings()[QLatin1String("SimpleSharpRadius")].toInt() / 10.0;
+            double radius = settings().value(QLatin1String("SimpleSharpRadius")).toInt() / 10.0;
             double sigma;
 
             if (radius < 1.0)
@@ -195,10 +195,10 @@ bool Sharpen::toolOperations()
 
         case SharpContainer::UnsharpMask:
         {
-            double r  = settings()[QLatin1String("UnsharpMaskRadius")].toDouble();
-            double a  = settings()[QLatin1String("UnsharpMaskAmount")].toDouble();
-            double th = settings()[QLatin1String("UnsharpMaskThreshold")].toDouble();
-            bool    l = settings()[QLatin1String("UnsharpMaskLuma")].toBool();
+            double r  = settings().value(QLatin1String("UnsharpMaskRadius")).toDouble();
+            double a  = settings().value(QLatin1String("UnsharpMaskAmount")).toDouble();
+            double th = settings().value(QLatin1String("UnsharpMaskThreshold")).toDouble();
+            bool    l = settings().value(QLatin1String("UnsharpMaskLuma")).toBool();
 
             UnsharpMaskFilter filter(&image(), nullptr, r, a, th, l);
             applyFilter(&filter);
@@ -210,11 +210,11 @@ bool Sharpen::toolOperations()
 
 #ifdef HAVE_EIGEN3
 
-            double radius      = settings()[QLatin1String("RefocusRadius")].toDouble();
-            double correlation = settings()[QLatin1String("RefocusCorrelation")].toDouble();
-            double noise       = settings()[QLatin1String("RefocusNoise")].toDouble();
-            double gauss       = settings()[QLatin1String("RefocusGauss")].toDouble();
-            int matrixSize     = settings()[QLatin1String("RefocusMatrixSize")].toInt();
+            double radius      = settings().value(QLatin1String("RefocusRadius")).toDouble();
+            double correlation = settings().value(QLatin1String("RefocusCorrelation")).toDouble();
+            double noise       = settings().value(QLatin1String("RefocusNoise")).toDouble();
+            double gauss       = settings().value(QLatin1String("RefocusGauss")).toDouble();
+            int matrixSize     = settings().value(QLatin1String("RefocusMatrixSize")).toInt();
 
             RefocusFilter filter(&image(), nullptr, matrixSize, radius, gauss, correlation, noise);
             applyFilter(&filter);

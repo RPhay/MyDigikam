@@ -64,7 +64,7 @@ BatchToolSettings RedEyeCorrection::defaultSettings()
 void RedEyeCorrection::slotAssignSettings2Widget()
 {
     RedEyeCorrectionContainer prm;
-    prm.m_redToAvgRatio = settings()[QLatin1String("redtoavgratio")].toDouble();
+    prm.m_redToAvgRatio = settings().value(QLatin1String("redtoavgratio")).toDouble();
     m_settingsView->setSettings(prm);
 }
 
@@ -86,7 +86,7 @@ bool RedEyeCorrection::toolOperations()
     }
 
     RedEyeCorrectionContainer prm;
-    prm.m_redToAvgRatio = settings()[QLatin1String("redtoavgratio")].toDouble();
+    prm.m_redToAvgRatio = settings().value(QLatin1String("redtoavgratio")).toDouble();
 
     m_redEyeCFilter     = new RedEyeCorrectionFilter(&image(), nullptr, prm);
     applyFilter(m_redEyeCFilter);

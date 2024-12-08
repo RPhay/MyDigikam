@@ -86,7 +86,7 @@ BatchToolSettings Restoration::defaultSettings()
 
 void Restoration::slotAssignSettings2Widget()
 {
-    m_comboBox->setCurrentIndex(settings()[QLatin1String("RestorationMethod")].toInt());
+    m_comboBox->setCurrentIndex(settings().value(QLatin1String("RestorationMethod")).toInt());
 }
 
 void Restoration::slotSettingsChanged()
@@ -103,7 +103,7 @@ bool Restoration::toolOperations()
         return false;
     }
 
-    int type = settings()[QLatin1String("RestorationMethod")].toInt();
+    int type = settings().value(QLatin1String("RestorationMethod")).toInt();
 
     GreycstorationContainer settings;
     settings.setRestorationDefaultSettings();

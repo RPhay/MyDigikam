@@ -71,13 +71,13 @@ BatchToolSettings AntiVignetting::defaultSettings()
 void AntiVignetting::slotAssignSettings2Widget()
 {
     AntiVignettingContainer prm;
-    prm.addvignetting = settings()[QLatin1String("addvignetting")].toBool();
-    prm.density       = settings()[QLatin1String("density")].toDouble();
-    prm.power         = settings()[QLatin1String("power")].toDouble();
-    prm.innerradius   = settings()[QLatin1String("innerradius")].toDouble();
-    prm.outerradius   = settings()[QLatin1String("outerradius")].toDouble();
-    prm.xshift        = settings()[QLatin1String("xshift")].toDouble();
-    prm.yshift        = settings()[QLatin1String("yshift")].toDouble();
+    prm.addvignetting = settings().value(QLatin1String("addvignetting")).toBool();
+    prm.density       = settings().value(QLatin1String("density")).toDouble();
+    prm.power         = settings().value(QLatin1String("power")).toDouble();
+    prm.innerradius   = settings().value(QLatin1String("innerradius")).toDouble();
+    prm.outerradius   = settings().value(QLatin1String("outerradius")).toDouble();
+    prm.xshift        = settings().value(QLatin1String("xshift")).toDouble();
+    prm.yshift        = settings().value(QLatin1String("yshift")).toDouble();
     m_settingsView->setSettings(prm);
 }
 
@@ -105,13 +105,13 @@ bool AntiVignetting::toolOperations()
     }
 
     AntiVignettingContainer prm;
-    prm.addvignetting = settings()[QLatin1String("addvignetting")].toBool();
-    prm.density       = settings()[QLatin1String("density")].toDouble();
-    prm.power         = settings()[QLatin1String("power")].toDouble();
-    prm.innerradius   = settings()[QLatin1String("innerradius")].toDouble();
-    prm.outerradius   = settings()[QLatin1String("outerradius")].toDouble();
-    prm.xshift        = settings()[QLatin1String("xshift")].toDouble();
-    prm.yshift        = settings()[QLatin1String("yshift")].toDouble();
+    prm.addvignetting = settings().value(QLatin1String("addvignetting")).toBool();
+    prm.density       = settings().value(QLatin1String("density")).toDouble();
+    prm.power         = settings().value(QLatin1String("power")).toDouble();
+    prm.innerradius   = settings().value(QLatin1String("innerradius")).toDouble();
+    prm.outerradius   = settings().value(QLatin1String("outerradius")).toDouble();
+    prm.xshift        = settings().value(QLatin1String("xshift")).toDouble();
+    prm.yshift        = settings().value(QLatin1String("yshift")).toDouble();
 
     AntiVignettingFilter vig(&image(), nullptr, prm);
     applyFilter(&vig);

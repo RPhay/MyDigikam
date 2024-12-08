@@ -81,7 +81,7 @@ BatchToolSettings Blur::defaultSettings()
 void Blur::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
-    m_radiusInput->setValue(settings()[QLatin1String("Radius")].toInt());
+    m_radiusInput->setValue(settings().value(QLatin1String("Radius")).toInt());
     m_changeSettings = true;
 }
 
@@ -102,7 +102,7 @@ bool Blur::toolOperations()
         return false;
     }
 
-    double radius = settings()[QLatin1String("Radius")].toInt();
+    double radius = settings().value(QLatin1String("Radius")).toInt();
 
     BlurFilter blur(&image(), nullptr, radius);
     applyFilter(&blur);

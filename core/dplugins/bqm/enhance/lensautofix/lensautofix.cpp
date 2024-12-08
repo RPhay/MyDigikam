@@ -130,22 +130,22 @@ void LensAutoFix::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    d->cameraSelector->setUseMetadata(settings()[QLatin1String("UseMetadata")].toBool());
+    d->cameraSelector->setUseMetadata(settings().value(QLatin1String("UseMetadata")).toBool());
     LensFunContainer lfPrm;
 
-    lfPrm.filterCCA       = settings()[QLatin1String("filterCCA")].toBool();
-    lfPrm.filterVIG       = settings()[QLatin1String("filterVIG")].toBool();
-    lfPrm.filterDST       = settings()[QLatin1String("filterDST")].toBool();
-    lfPrm.filterGEO       = settings()[QLatin1String("filterGEO")].toBool();
+    lfPrm.filterCCA       = settings().value(QLatin1String("filterCCA")).toBool();
+    lfPrm.filterVIG       = settings().value(QLatin1String("filterVIG")).toBool();
+    lfPrm.filterDST       = settings().value(QLatin1String("filterDST")).toBool();
+    lfPrm.filterGEO       = settings().value(QLatin1String("filterGEO")).toBool();
 
-    lfPrm.cropFactor      = settings()[QLatin1String("cropFactor")].toDouble();
-    lfPrm.focalLength     = settings()[QLatin1String("focalLength")].toDouble();
-    lfPrm.aperture        = settings()[QLatin1String("aperture")].toDouble();
-    lfPrm.subjectDistance = settings()[QLatin1String("subjectDistance")].toDouble();
+    lfPrm.cropFactor      = settings().value(QLatin1String("cropFactor")).toDouble();
+    lfPrm.focalLength     = settings().value(QLatin1String("focalLength")).toDouble();
+    lfPrm.aperture        = settings().value(QLatin1String("aperture")).toDouble();
+    lfPrm.subjectDistance = settings().value(QLatin1String("subjectDistance")).toDouble();
 
-    lfPrm.cameraMake      = settings()[QLatin1String("cameraMake")].toString();
-    lfPrm.cameraModel     = settings()[QLatin1String("cameraModel")].toString();
-    lfPrm.lensModel       = settings()[QLatin1String("lensModel")].toString();
+    lfPrm.cameraMake      = settings().value(QLatin1String("cameraMake")).toString();
+    lfPrm.cameraModel     = settings().value(QLatin1String("cameraModel")).toString();
+    lfPrm.lensModel       = settings().value(QLatin1String("lensModel")).toString();
 
     d->cameraSelector->setSettings(lfPrm);
     d->settingsView->setFilterSettings(lfPrm);
@@ -196,11 +196,11 @@ bool LensAutoFix::toolOperations()
     }
 
     LensFunContainer prm;
-    prm.filterCCA = settings()[QLatin1String("filterCCA")].toBool();
-    prm.filterVIG = settings()[QLatin1String("filterVIG")].toBool();
-    prm.filterDST = settings()[QLatin1String("filterDST")].toBool();
-    prm.filterGEO = settings()[QLatin1String("filterGEO")].toBool();
-    bool useMeta  = settings()[QLatin1String("UseMetadata")].toBool();
+    prm.filterCCA = settings().value(QLatin1String("filterCCA")).toBool();
+    prm.filterVIG = settings().value(QLatin1String("filterVIG")).toBool();
+    prm.filterDST = settings().value(QLatin1String("filterDST")).toBool();
+    prm.filterGEO = settings().value(QLatin1String("filterGEO")).toBool();
+    bool useMeta  = settings().value(QLatin1String("UseMetadata")).toBool();
 
     if (useMeta)
     {
@@ -217,14 +217,14 @@ bool LensAutoFix::toolOperations()
     }
     else
     {
-        prm.cropFactor      = settings()[QLatin1String("cropFactor")].toDouble();
-        prm.focalLength     = settings()[QLatin1String("focalLength")].toDouble();
-        prm.aperture        = settings()[QLatin1String("aperture")].toDouble();
-        prm.subjectDistance = settings()[QLatin1String("subjectDistance")].toDouble();
+        prm.cropFactor      = settings().value(QLatin1String("cropFactor")).toDouble();
+        prm.focalLength     = settings().value(QLatin1String("focalLength")).toDouble();
+        prm.aperture        = settings().value(QLatin1String("aperture")).toDouble();
+        prm.subjectDistance = settings().value(QLatin1String("subjectDistance")).toDouble();
 
-        prm.cameraMake      = settings()[QLatin1String("cameraMake")].toString();
-        prm.cameraModel     = settings()[QLatin1String("cameraModel")].toString();
-        prm.lensModel       = settings()[QLatin1String("lensModel")].toString();
+        prm.cameraMake      = settings().value(QLatin1String("cameraMake")).toString();
+        prm.cameraModel     = settings().value(QLatin1String("cameraModel")).toString();
+        prm.lensModel       = settings().value(QLatin1String("lensModel")).toString();
     }
 
     LensFunFilter filter(&image(), nullptr, prm);
