@@ -145,12 +145,12 @@ void AssignLabels::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    bool setPick     = settings()[QLatin1String("SetPick")].toBool();
-    PickLabel pick   = (PickLabel)settings()[QLatin1String("PickLabel")].toInt();
-    bool setColor    = settings()[QLatin1String("SetColor")].toBool();
-    ColorLabel color = (ColorLabel)settings()[QLatin1String("ColorLabel")].toInt();
-    bool setRating   = settings()[QLatin1String("SetRating")].toBool();
-    int rating       = settings()[QLatin1String("RatingValue")].toInt();
+    bool setPick     = settings().value(QLatin1String("SetPick")).toBool();
+    PickLabel pick   = (PickLabel)settings().value(QLatin1String("PickLabel")).toInt();
+    bool setColor    = settings().value(QLatin1String("SetColor")).toBool();
+    ColorLabel color = (ColorLabel)settings().value(QLatin1String("ColorLabel")).toInt();
+    bool setRating   = settings().value(QLatin1String("SetRating")).toBool();
+    int rating       = settings().value(QLatin1String("RatingValue")).toInt();
 
     d->setPick->setChecked(setPick);
     d->pickLabelSelector->setPickLabel(pick);
@@ -196,12 +196,12 @@ bool AssignLabels::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool setPick     = settings()[QLatin1String("SetPick")].toBool();
-    PickLabel pick   = (PickLabel)settings()[QLatin1String("PickLabel")].toInt();
-    bool setColor    = settings()[QLatin1String("SetColor")].toBool();
-    ColorLabel color = (ColorLabel)settings()[QLatin1String("ColorLabel")].toInt();
-    bool setRating   = settings()[QLatin1String("SetRating")].toBool();
-    int rating       = settings()[QLatin1String("RatingValue")].toInt();
+    bool setPick     = settings().value(QLatin1String("SetPick")).toBool();
+    PickLabel pick   = (PickLabel)settings().value(QLatin1String("PickLabel")).toInt();
+    bool setColor    = settings().value(QLatin1String("SetColor")).toBool();
+    ColorLabel color = (ColorLabel)settings().value(QLatin1String("ColorLabel")).toInt();
+    bool setRating   = settings().value(QLatin1String("SetRating")).toBool();
+    int rating       = settings().value(QLatin1String("RatingValue")).toInt();
 
     if (setPick)
     {

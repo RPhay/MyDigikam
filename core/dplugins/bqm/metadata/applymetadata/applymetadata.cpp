@@ -110,7 +110,7 @@ void ApplyMetadata::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    d->fileSelector->setFileDlgPath(settings()[QLatin1String("MetadataFile")].toString());
+    d->fileSelector->setFileDlgPath(settings().value(QLatin1String("MetadataFile")).toString());
 
     d->changeSettings = true;
 }
@@ -141,7 +141,7 @@ bool ApplyMetadata::toolOperations()
         ret = savefromDImg();
     }
 
-    QFileInfo metaInfo(settings()[QLatin1String("MetadataFile")].toString());
+    QFileInfo metaInfo(settings().value(QLatin1String("MetadataFile")).toString());
 
     if (!ret || !metaInfo.exists())
     {

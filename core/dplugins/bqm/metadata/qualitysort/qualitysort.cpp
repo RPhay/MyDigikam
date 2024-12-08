@@ -140,23 +140,23 @@ void QualitySort::slotAssignSettings2Widget()
     ImageQualityContainer prm;
 
     d->qualitySelector->setSettingsSelected((ImageQualityConfSelector::SettingsType)
-                                            settings()[QLatin1String("SettingsSelected")].toInt());
+                                            settings().value(QLatin1String("SettingsSelected")).toInt());
 
-    prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool();
-    prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool();
-    prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool();
-    prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool();
-    prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool();
-    prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool();
-    prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool();
-    prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool();
-    prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt();
-    prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt();
-    prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt();
-    prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt();
-    prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt();
-    prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt();
-    prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt();
+    prm.detectBlur          = settings().value(QLatin1String("CustomSettingsDetectBlur")).toBool();
+    prm.detectNoise         = settings().value(QLatin1String("CustomSettingsDetectNoise")).toBool();
+    prm.detectCompression   = settings().value(QLatin1String("CustomSettingsDetectCompression")).toBool();
+    prm.detectExposure      = settings().value(QLatin1String("CustomSettingsDetectExposure")).toBool();
+    prm.detectAesthetic     = settings().value(QLatin1String("CustomSettingsDetectAesthetic")).toBool();
+    prm.lowQRejected        = settings().value(QLatin1String("CustomSettingsLowQRejected")).toBool();
+    prm.mediumQPending      = settings().value(QLatin1String("CustomSettingsMediumQPending")).toBool();
+    prm.highQAccepted       = settings().value(QLatin1String("CustomSettingsHighQAccepted")).toBool();
+    prm.rejectedThreshold   = settings().value(QLatin1String("CustomSettingsRejectedThreshold")).toInt();
+    prm.pendingThreshold    = settings().value(QLatin1String("CustomSettingsPendingThreshold")).toInt();
+    prm.acceptedThreshold   = settings().value(QLatin1String("CustomSettingsAcceptedThreshold")).toInt();
+    prm.blurWeight          = settings().value(QLatin1String("CustomSettingsBlurWeight")).toInt();
+    prm.noiseWeight         = settings().value(QLatin1String("CustomSettingsNoiseWeight")).toInt();
+    prm.compressionWeight   = settings().value(QLatin1String("CustomSettingsCompressionWeight")).toInt();
+    prm.exposureWeight      = settings().value(QLatin1String("CustomSettingsExposureWeight")).toInt();
 
     d->qualitySelector->setCustomSettings(prm);
 
@@ -215,7 +215,7 @@ bool QualitySort::toolOperations()
     }
 
     ImageQualityConfSelector::SettingsType type = (ImageQualityConfSelector::SettingsType)
-                                                  settings()[QLatin1String("SettingsSelected")].toInt();
+                                                  settings().value(QLatin1String("SettingsSelected")).toInt();
     ImageQualityContainer prm;
 
     if (type == ImageQualityConfSelector::GlobalSettings)
@@ -224,21 +224,21 @@ bool QualitySort::toolOperations()
     }
     else
     {
-        prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool();
-        prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool();
-        prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool();
-        prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool();
-        prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool();
-        prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool();
-        prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool();
-        prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool();
-        prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt();
-        prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt();
-        prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt();
-        prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt();
-        prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt();
-        prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt();
-        prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt();
+        prm.detectBlur          = settings().value(QLatin1String("CustomSettingsDetectBlur")).toBool();
+        prm.detectNoise         = settings().value(QLatin1String("CustomSettingsDetectNoise")).toBool();
+        prm.detectCompression   = settings().value(QLatin1String("CustomSettingsDetectCompression")).toBool();
+        prm.detectExposure      = settings().value(QLatin1String("CustomSettingsDetectExposure")).toBool();
+        prm.detectAesthetic     = settings().value(QLatin1String("CustomSettingsDetectAesthetic")).toBool();
+        prm.lowQRejected        = settings().value(QLatin1String("CustomSettingsLowQRejected")).toBool();
+        prm.mediumQPending      = settings().value(QLatin1String("CustomSettingsMediumQPending")).toBool();
+        prm.highQAccepted       = settings().value(QLatin1String("CustomSettingsHighQAccepted")).toBool();
+        prm.rejectedThreshold   = settings().value(QLatin1String("CustomSettingsRejectedThreshold")).toInt();
+        prm.pendingThreshold    = settings().value(QLatin1String("CustomSettingsPendingThreshold")).toInt();
+        prm.acceptedThreshold   = settings().value(QLatin1String("CustomSettingsAcceptedThreshold")).toInt();
+        prm.blurWeight          = settings().value(QLatin1String("CustomSettingsBlurWeight")).toInt();
+        prm.noiseWeight         = settings().value(QLatin1String("CustomSettingsNoiseWeight")).toInt();
+        prm.compressionWeight   = settings().value(QLatin1String("CustomSettingsCompressionWeight")).toInt();
+        prm.exposureWeight      = settings().value(QLatin1String("CustomSettingsExposureWeight")).toInt();
     }
 
     PickLabel pick;

@@ -68,7 +68,7 @@ BatchToolSettings AssignTemplate::defaultSettings()
 
 void AssignTemplate::slotAssignSettings2Widget()
 {
-    QString title = settings()[QLatin1String("TemplateTitle")].toString();
+    QString title = settings().value(QLatin1String("TemplateTitle")).toString();
 
     Template t;
 
@@ -113,7 +113,7 @@ bool AssignTemplate::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    QString title = settings()[QLatin1String("TemplateTitle")].toString();
+    QString title = settings().value(QLatin1String("TemplateTitle")).toString();
 
     if      (title == Template::removeTemplateTitle())
     {

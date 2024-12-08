@@ -158,11 +158,11 @@ void AssignCaptions::slotAssignSettings2Widget()
 {
     d->changeSettings             = false;
 
-    bool setTitles                = settings()[QLatin1String("SetTitles")].toBool();
-    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("TitleValues")]);
-    bool setCaptions              = settings()[QLatin1String("SetCaptions")].toBool();
-    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings()[QLatin1String("CaptionValues")]);
-    bool cleanup                  = settings()[QLatin1String("CleanUp")].toBool();
+    bool setTitles                = settings().value(QLatin1String("SetTitles")).toBool();
+    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings().value(QLatin1String("TitleValues")));
+    bool setCaptions              = settings().value(QLatin1String("SetCaptions")).toBool();
+    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings().value(QLatin1String("CaptionValues")));
+    bool cleanup                  = settings().value(QLatin1String("CleanUp")).toBool();
 
     d->setTitles->setChecked(setTitles);
     d->setCaptions->setChecked(setCaptions);
@@ -215,11 +215,11 @@ bool AssignCaptions::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool setTitles                = settings()[QLatin1String("SetTitles")].toBool();
-    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("TitleValues")]);
-    bool setCaptions              = settings()[QLatin1String("SetCaptions")].toBool();
-    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings()[QLatin1String("CaptionValues")]);
-    bool cleanup                  = settings()[QLatin1String("CleanUp")].toBool();
+    bool setTitles                = settings().value(QLatin1String("SetTitles")).toBool();
+    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings().value(QLatin1String("TitleValues")));
+    bool setCaptions              = settings().value(QLatin1String("SetCaptions")).toBool();
+    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings().value(QLatin1String("CaptionValues")));
+    bool cleanup                  = settings().value(QLatin1String("CleanUp")).toBool();
 
     if (setTitles)
     {

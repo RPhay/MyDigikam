@@ -155,12 +155,12 @@ void Translate::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    d->titleCB->setChecked(settings()[QLatin1String("Title")].toBool());
-    d->captionCB->setChecked(settings()[QLatin1String("Caption")].toBool());
-    d->copyrightsCB->setChecked(settings()[QLatin1String("Copyrights")].toBool());
-    d->usageTermsCB->setChecked(settings()[QLatin1String("UsageTerms")].toBool());
+    d->titleCB->setChecked(settings().value(QLatin1String("Title")).toBool());
+    d->captionCB->setChecked(settings().value(QLatin1String("Caption")).toBool());
+    d->copyrightsCB->setChecked(settings().value(QLatin1String("Copyrights")).toBool());
+    d->usageTermsCB->setChecked(settings().value(QLatin1String("UsageTerms")).toBool());
 
-    QStringList langs = settings()[QLatin1String("TrLangs")].toStringList();
+    QStringList langs = settings().value(QLatin1String("TrLangs")).toStringList();
 
     d->trSelectorList->clearLanguages();
 
@@ -207,11 +207,11 @@ bool Translate::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool titleStage      = settings()[QLatin1String("Title")].toBool();
-    bool captionStage    = settings()[QLatin1String("Caption")].toBool();
-    bool copyrightsStage = settings()[QLatin1String("Copyrights")].toBool();
-    bool usageTermsStage = settings()[QLatin1String("UsageTerms")].toBool();
-    QStringList langs    = settings()[QLatin1String("TrLangs")].toStringList();
+    bool titleStage      = settings().value(QLatin1String("Title")).toBool();
+    bool captionStage    = settings().value(QLatin1String("Caption")).toBool();
+    bool copyrightsStage = settings().value(QLatin1String("Copyrights")).toBool();
+    bool usageTermsStage = settings().value(QLatin1String("UsageTerms")).toBool();
+    QStringList langs    = settings().value(QLatin1String("TrLangs")).toStringList();
 
     for (const QString& trLang : std::as_const(langs))
     {

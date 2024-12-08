@@ -171,17 +171,17 @@ void RemoveMetadata::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    d->removeExif->setChecked(settings()[QLatin1String("RemoveExif")].toBool());
-    d->removeIptc->setChecked(settings()[QLatin1String("RemoveIptc")].toBool());
-    d->removeXmp->setChecked(settings()[QLatin1String("RemoveXmp")].toBool());
+    d->removeExif->setChecked(settings().value(QLatin1String("RemoveExif")).toBool());
+    d->removeIptc->setChecked(settings().value(QLatin1String("RemoveIptc")).toBool());
+    d->removeXmp->setChecked(settings().value(QLatin1String("RemoveXmp")).toBool());
 
-    int exifData = settings()[QLatin1String("ExifData")].toInt();
+    int exifData = settings().value(QLatin1String("ExifData")).toInt();
     d->exifComboBox->setCurrentIndex(d->exifComboBox->findData(exifData));
 
-    int iptcData = settings()[QLatin1String("IptcData")].toInt();
+    int iptcData = settings().value(QLatin1String("IptcData")).toInt();
     d->iptcComboBox->setCurrentIndex(d->iptcComboBox->findData(iptcData));
 
-    int xmpData  = settings()[QLatin1String("XmpData")].toInt();
+    int xmpData  = settings().value(QLatin1String("XmpData")).toInt();
     d->xmpComboBox->setCurrentIndex(d->xmpComboBox->findData(xmpData));
 
     d->exifComboBox->setEnabled(d->removeExif->isChecked());
@@ -235,13 +235,13 @@ bool RemoveMetadata::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool removeExif = settings()[QLatin1String("RemoveExif")].toBool();
-    bool removeIptc = settings()[QLatin1String("RemoveIptc")].toBool();
-    bool removeXmp  = settings()[QLatin1String("RemoveXmp")].toBool();
+    bool removeExif = settings().value(QLatin1String("RemoveExif")).toBool();
+    bool removeIptc = settings().value(QLatin1String("RemoveIptc")).toBool();
+    bool removeXmp  = settings().value(QLatin1String("RemoveXmp")).toBool();
 
-    int exifData    = settings()[QLatin1String("ExifData")].toInt();
-    int iptcData    = settings()[QLatin1String("IptcData")].toInt();
-    int xmpData     = settings()[QLatin1String("XmpData")].toInt();
+    int exifData    = settings().value(QLatin1String("ExifData")).toInt();
+    int iptcData    = settings().value(QLatin1String("IptcData")).toInt();
+    int xmpData     = settings().value(QLatin1String("XmpData")).toInt();
 
     if (removeExif)
     {

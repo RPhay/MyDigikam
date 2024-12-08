@@ -133,10 +133,10 @@ void AssignTags::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    int model         = settings()[QLatin1String("AutoTagModel")].toInt();
+    int model         = settings().value(QLatin1String("AutoTagModel")).toInt();
     d->modelSelectionMode->setCurrentIndex(model);
 
-    QStringList langs = settings()[QLatin1String("TrAutoTagsLangs")].toStringList();
+    QStringList langs = settings().value(QLatin1String("TrAutoTagsLangs")).toStringList();
 
     d->trSelectorList->clearLanguages();
 
@@ -185,8 +185,8 @@ bool AssignTags::toolOperations()
     }
 
     DImg img           = image();
-    int model         = settings()[QLatin1String("AutoTagModel")].toInt();
-    QStringList langs = settings()[QLatin1String("TrAutoTagsLangs")].toStringList();
+    int model         = settings().value(QLatin1String("AutoTagModel")).toInt();
+    QStringList langs = settings().value(QLatin1String("TrAutoTagsLangs")).toStringList();
 
     if (ret && img.isNull())
     {

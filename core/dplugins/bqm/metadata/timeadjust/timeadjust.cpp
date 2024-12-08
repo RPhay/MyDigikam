@@ -93,26 +93,26 @@ void TimeAdjust::slotAssignSettings2Widget()
 
     TimeAdjustContainer prm;
 
-    prm.customDate     = settings()[QLatin1String("Custom Date")].toDateTime();
-    prm.customTime     = settings()[QLatin1String("Custom Time")].toDateTime();
+    prm.customDate     = settings().value(QLatin1String("Custom Date")).toDateTime();
+    prm.customTime     = settings().value(QLatin1String("Custom Time")).toDateTime();
 
-    prm.adjustmentType = settings()[QLatin1String("Adjustment Type")].toInt();
-    prm.adjustmentDays = settings()[QLatin1String("Adjustment Days")].toInt();
-    prm.adjustmentTime = settings()[QLatin1String("Adjustment Time")].toDateTime();
+    prm.adjustmentType = settings().value(QLatin1String("Adjustment Type")).toInt();
+    prm.adjustmentDays = settings().value(QLatin1String("Adjustment Days")).toInt();
+    prm.adjustmentTime = settings().value(QLatin1String("Adjustment Time")).toDateTime();
 
-    prm.updIfAvailable = settings()[QLatin1String("Update Only If Available Time")].toBool();
-    prm.updFileModDate = settings()[QLatin1String("Update File Modification Time")].toBool();
-    prm.updEXIFModDate = settings()[QLatin1String("Update EXIF Modification Time")].toBool();
-    prm.updEXIFOriDate = settings()[QLatin1String("Update EXIF Original Time")].toBool();
-    prm.updEXIFDigDate = settings()[QLatin1String("Update EXIF Digitization Time")].toBool();
-    prm.updEXIFThmDate = settings()[QLatin1String("Update EXIF Thumbnail Time")].toBool();
-    prm.updIPTCDate    = settings()[QLatin1String("Update IPTC Time")].toBool();
-    prm.updXMPVideo    = settings()[QLatin1String("Update XMP Video Time")].toBool();
-    prm.updXMPDate     = settings()[QLatin1String("Update XMP Creation Time")].toBool();
+    prm.updIfAvailable = settings().value(QLatin1String("Update Only If Available Time")).toBool();
+    prm.updFileModDate = settings().value(QLatin1String("Update File Modification Time")).toBool();
+    prm.updEXIFModDate = settings().value(QLatin1String("Update EXIF Modification Time")).toBool();
+    prm.updEXIFOriDate = settings().value(QLatin1String("Update EXIF Original Time")).toBool();
+    prm.updEXIFDigDate = settings().value(QLatin1String("Update EXIF Digitization Time")).toBool();
+    prm.updEXIFThmDate = settings().value(QLatin1String("Update EXIF Thumbnail Time")).toBool();
+    prm.updIPTCDate    = settings().value(QLatin1String("Update IPTC Time")).toBool();
+    prm.updXMPVideo    = settings().value(QLatin1String("Update XMP Video Time")).toBool();
+    prm.updXMPDate     = settings().value(QLatin1String("Update XMP Creation Time")).toBool();
 
-    prm.dateSource     = settings()[QLatin1String("Use Timestamp Type")].toInt();
-    prm.metadataSource = settings()[QLatin1String("Meta Timestamp Type")].toInt();
-    prm.fileDateSource = settings()[QLatin1String("File Timestamp Type")].toInt();
+    prm.dateSource     = settings().value(QLatin1String("Use Timestamp Type")).toInt();
+    prm.metadataSource = settings().value(QLatin1String("Meta Timestamp Type")).toInt();
+    prm.fileDateSource = settings().value(QLatin1String("File Timestamp Type")).toInt();
 
     m_taWidget->setSettings(prm);
 
@@ -169,26 +169,26 @@ bool TimeAdjust::toolOperations()
 
     bool metadataChanged               = false;
 
-    prm.customDate                     = settings()[QLatin1String("Custom Date")].toDateTime();
-    prm.customTime                     = settings()[QLatin1String("Custom Time")].toDateTime();
+    prm.customDate                     = settings().value(QLatin1String("Custom Date")).toDateTime();
+    prm.customTime                     = settings().value(QLatin1String("Custom Time")).toDateTime();
 
-    prm.adjustmentType                 = settings()[QLatin1String("Adjustment Type")].toInt();
-    prm.adjustmentDays                 = settings()[QLatin1String("Adjustment Days")].toInt();
-    prm.adjustmentTime                 = settings()[QLatin1String("Adjustment Time")].toDateTime();
+    prm.adjustmentType                 = settings().value(QLatin1String("Adjustment Type")).toInt();
+    prm.adjustmentDays                 = settings().value(QLatin1String("Adjustment Days")).toInt();
+    prm.adjustmentTime                 = settings().value(QLatin1String("Adjustment Time")).toDateTime();
 
-    prm.updIfAvailable                 = settings()[QLatin1String("Update Only If Available Time")].toBool();
-    prm.updFileModDate                 = settings()[QLatin1String("Update File Modification Time")].toBool();
-    prm.updEXIFModDate                 = settings()[QLatin1String("Update EXIF Modification Time")].toBool();
-    prm.updEXIFOriDate                 = settings()[QLatin1String("Update EXIF Original Time")].toBool();
-    prm.updEXIFDigDate                 = settings()[QLatin1String("Update EXIF Digitization Time")].toBool();
-    prm.updEXIFThmDate                 = settings()[QLatin1String("Update EXIF Thumbnail Time")].toBool();
-    prm.updIPTCDate                    = settings()[QLatin1String("Update IPTC Time")].toBool();
-    prm.updXMPVideo                    = settings()[QLatin1String("Update XMP Video Time")].toBool();
-    prm.updXMPDate                     = settings()[QLatin1String("Update XMP Creation Time")].toBool();
+    prm.updIfAvailable                 = settings().value(QLatin1String("Update Only If Available Time")).toBool();
+    prm.updFileModDate                 = settings().value(QLatin1String("Update File Modification Time")).toBool();
+    prm.updEXIFModDate                 = settings().value(QLatin1String("Update EXIF Modification Time")).toBool();
+    prm.updEXIFOriDate                 = settings().value(QLatin1String("Update EXIF Original Time")).toBool();
+    prm.updEXIFDigDate                 = settings().value(QLatin1String("Update EXIF Digitization Time")).toBool();
+    prm.updEXIFThmDate                 = settings().value(QLatin1String("Update EXIF Thumbnail Time")).toBool();
+    prm.updIPTCDate                    = settings().value(QLatin1String("Update IPTC Time")).toBool();
+    prm.updXMPVideo                    = settings().value(QLatin1String("Update XMP Video Time")).toBool();
+    prm.updXMPDate                     = settings().value(QLatin1String("Update XMP Creation Time")).toBool();
 
-    prm.dateSource                     = settings()[QLatin1String("Use Timestamp Type")].toInt();
-    prm.metadataSource                 = settings()[QLatin1String("Meta Timestamp Type")].toInt();
-    prm.fileDateSource                 = settings()[QLatin1String("File Timestamp Type")].toInt();
+    prm.dateSource                     = settings().value(QLatin1String("Use Timestamp Type")).toInt();
+    prm.metadataSource                 = settings().value(QLatin1String("Meta Timestamp Type")).toInt();
+    prm.fileDateSource                 = settings().value(QLatin1String("File Timestamp Type")).toInt();
 
     QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
     QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
