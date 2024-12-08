@@ -73,9 +73,9 @@ void ConvertToDNG::slotAssignSettings2Widget()
 
     if (DNGBox)
     {
-        DNGBox->setCompressLossLess(settings()[QLatin1String("CompressLossLess")].toBool());
-        DNGBox->setPreviewMode(settings()[QLatin1String("PreviewMode")].toInt());
-        DNGBox->setBackupOriginalRawFile(settings()[QLatin1String("BackupOriginalRawFile")].toBool());
+        DNGBox->setCompressLossLess(settings().value(QLatin1String("CompressLossLess")).toBool());
+        DNGBox->setPreviewMode(settings().value(QLatin1String("PreviewMode")).toInt());
+        DNGBox->setBackupOriginalRawFile(settings().value(QLatin1String("BackupOriginalRawFile")).toBool());
     }
 
     m_changeSettings          = true;
@@ -137,9 +137,9 @@ bool ConvertToDNG::toolOperations()
     m_dngProcessor.reset();
     m_dngProcessor.setInputFile(inputUrl().toLocalFile());
     m_dngProcessor.setOutputFile(outputUrl().toLocalFile());
-    m_dngProcessor.setBackupOriginalRawFile(settings()[QLatin1String("BackupOriginalRawFile")].toBool());
-    m_dngProcessor.setCompressLossLess(settings()[QLatin1String("CompressLossLess")].toBool());
-    m_dngProcessor.setPreviewMode(settings()[QLatin1String("PreviewMode")].toInt());
+    m_dngProcessor.setBackupOriginalRawFile(settings().value(QLatin1String("BackupOriginalRawFile")).toBool());
+    m_dngProcessor.setCompressLossLess(settings().value(QLatin1String("CompressLossLess")).toBool());
+    m_dngProcessor.setPreviewMode(settings().value(QLatin1String("PreviewMode")).toInt());
 
     int ret = m_dngProcessor.convert();
 

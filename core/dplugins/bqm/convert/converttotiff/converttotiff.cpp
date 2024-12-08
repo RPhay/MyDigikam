@@ -75,7 +75,7 @@ void ConvertToTIFF::slotAssignSettings2Widget()
     if (TIFBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("compress"),  settings()[QLatin1String("compress")].toBool());
+        set.insert(QLatin1String("compress"),  settings().value(QLatin1String("compress")).toBool());
         TIFBox->setSettings(set);
     }
 
@@ -91,7 +91,7 @@ void ConvertToTIFF::slotSettingsChanged()
         if (TIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("compress"), TIFBox->settings()[QLatin1String("compress")].toBool());
+            settings.insert(QLatin1String("compress"), TIFBox->settings().value(QLatin1String("compress")).toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -109,7 +109,7 @@ bool ConvertToTIFF::toolOperations()
         return false;
     }
 
-    image().setAttribute(QLatin1String("compress"), settings()[QLatin1String("compress")].toBool());
+    image().setAttribute(QLatin1String("compress"), settings().value(QLatin1String("compress")).toBool());
 
     return (savefromDImg());
 }

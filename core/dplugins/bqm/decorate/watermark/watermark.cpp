@@ -516,33 +516,33 @@ BatchToolSettings WaterMark::defaultSettings()
 void WaterMark::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
-    d->useImageRadioButton->setChecked(settings()[QLatin1String("Use image")].toBool());
-    d->useTextRadioButton->setChecked(!settings()[QLatin1String("Use image")].toBool());
-    d->imageFileUrlRequester->setFileDlgPath(settings()[QLatin1String("Watermark image")].toString());
+    d->useImageRadioButton->setChecked(settings().value(QLatin1String("Use image")).toBool());
+    d->useTextRadioButton->setChecked(!settings().value(QLatin1String("Use image")).toBool());
+    d->imageFileUrlRequester->setFileDlgPath(settings().value(QLatin1String("Watermark image")).toString());
 
-    QString txt       = settings()[QLatin1String("Text")].toString();
+    QString txt       = settings().value(QLatin1String("Text")).toString();
 
     if (d->textEdit->text() != txt)
     {
         d->textEdit->setText(txt);
     }
 
-    d->extendedFontChooserWidget->setFont(qvariant_cast<QFont>(settings()[QLatin1String("Font")]));
-    d->fontColorButton->setColor(settings()[QLatin1String("Color")].toString());
-    d->textOpacity->setValue(settings()[QLatin1String("Text opacity")].toInt());
-    d->useBackgroundCheckBox->setChecked(settings()[QLatin1String("Use background")].toBool());
-    d->backgroundColorButton->setColor(settings()[QLatin1String("Background color")].toString());
-    d->backgroundOpacity->setValue(settings()[QLatin1String("Background opacity")].toInt());
-    d->placementPositionComboBox->setCurrentIndex(settings()[QLatin1String("PlacementType")].toInt());
-    d->denseRepetitionCheckBox->setChecked(settings()[QLatin1String("Dense Repetition")].toBool());
-    d->randomizeRotationCheckBox->setChecked(settings()[QLatin1String("Randomize Rotation")].toBool());
-    d->sparsityFactorSpinBox->setValue(settings()[QLatin1String("Sparsity Factor")].toDouble());
-    d->placementPositionComboBox->setCurrentIndex(settings()[QLatin1String("Placement")].toInt());
-    d->rotationComboBox->setCurrentIndex(settings()[QLatin1String("Rotation")].toInt());
-    d->waterMarkSizePercent->setValue(settings()[QLatin1String("Watermark size")].toInt());
-    d->xMarginInput->setValue(settings()[QLatin1String("X margin")].toInt());
-    d->yMarginInput->setValue(settings()[QLatin1String("Y margin")].toInt());
-    d->waterMarkOpacityPercent->setValue(settings()[QLatin1String("Opacity")].toInt());
+    d->extendedFontChooserWidget->setFont(qvariant_cast<QFont>(settings().value(QLatin1String("Font"))));
+    d->fontColorButton->setColor(settings().value(QLatin1String("Color")).toString());
+    d->textOpacity->setValue(settings().value(QLatin1String("Text opacity")).toInt());
+    d->useBackgroundCheckBox->setChecked(settings().value(QLatin1String("Use background")).toBool());
+    d->backgroundColorButton->setColor(settings().value(QLatin1String("Background color")).toString());
+    d->backgroundOpacity->setValue(settings().value(QLatin1String("Background opacity")).toInt());
+    d->placementPositionComboBox->setCurrentIndex(settings().value(QLatin1String("PlacementType")).toInt());
+    d->denseRepetitionCheckBox->setChecked(settings().value(QLatin1String("Dense Repetition")).toBool());
+    d->randomizeRotationCheckBox->setChecked(settings().value(QLatin1String("Randomize Rotation")).toBool());
+    d->sparsityFactorSpinBox->setValue(settings().value(QLatin1String("Sparsity Factor")).toDouble());
+    d->placementPositionComboBox->setCurrentIndex(settings().value(QLatin1String("Placement")).toInt());
+    d->rotationComboBox->setCurrentIndex(settings().value(QLatin1String("Rotation")).toInt());
+    d->waterMarkSizePercent->setValue(settings().value(QLatin1String("Watermark size")).toInt());
+    d->xMarginInput->setValue(settings().value(QLatin1String("X margin")).toInt());
+    d->yMarginInput->setValue(settings().value(QLatin1String("Y margin")).toInt());
+    d->waterMarkOpacityPercent->setValue(settings().value(QLatin1String("Opacity")).toInt());
     d->changeSettings = true;
 }
 
@@ -604,35 +604,35 @@ bool WaterMark::toolOperations()
         return false;
     }
 
-    QString fileName                             = settings()[QLatin1String("Watermark image")].toString();
-    int placementPosition                        = settings()[QLatin1String("Placement")].toInt();
-    int placementType                            = settings()[QLatin1String("PlacementType")].toInt();
-    bool denseRepetition                         = settings()[QLatin1String("Dense Repetition")].toBool();
-    bool randomizeRotation                       = settings()[QLatin1String("Randomize Rotation")].toBool();
-    double userSparsityFactor                    = settings()[QLatin1String("Sparsity Factor")].toDouble();
-    int size                                     = settings()[QLatin1String("Watermark size")].toInt();
-    int xMargin                                  = settings()[QLatin1String("X margin")].toInt();
-    int yMargin                                  = settings()[QLatin1String("Y margin")].toInt();
-    bool useImage                                = settings()[QLatin1String("Use image")].toBool();
-    QString text                                 = settings()[QLatin1String("Text")].toString();
-    QFont font                                   = qvariant_cast<QFont>(settings()[QLatin1String("Font")]);
+    QString fileName                             = settings().value(QLatin1String("Watermark image")).toString();
+    int placementPosition                        = settings().value(QLatin1String("Placement")).toInt();
+    int placementType                            = settings().value(QLatin1String("PlacementType")).toInt();
+    bool denseRepetition                         = settings().value(QLatin1String("Dense Repetition")).toBool();
+    bool randomizeRotation                       = settings().value(QLatin1String("Randomize Rotation")).toBool();
+    double userSparsityFactor                    = settings().value(QLatin1String("Sparsity Factor")).toDouble();
+    int size                                     = settings().value(QLatin1String("Watermark size")).toInt();
+    int xMargin                                  = settings().value(QLatin1String("X margin")).toInt();
+    int yMargin                                  = settings().value(QLatin1String("Y margin")).toInt();
+    bool useImage                                = settings().value(QLatin1String("Use image")).toBool();
+    QString text                                 = settings().value(QLatin1String("Text")).toString();
+    QFont font                                   = qvariant_cast<QFont>(settings().value(QLatin1String("Font")));
 
-    QColor fontColor                             = settings()[QLatin1String("Color")].toString();
-    int textOpacity                              = settings()[QLatin1String("Text opacity")].toInt();
-    bool useBackground                           = settings()[QLatin1String("Use background")].toBool();
-    QColor backgroundColor                       = settings()[QLatin1String("Background color")].toString();
-    int backgroundOpacity                        = settings()[QLatin1String("Background opacity")].toInt();
-    Qt::AspectRatioMode watermarkAspectRatioMode = settings()[QLatin1String("Ignore Watermark Aspect Ratio")].toBool() ?
+    QColor fontColor                             = settings().value(QLatin1String("Color")).toString();
+    int textOpacity                              = settings().value(QLatin1String("Text opacity")).toInt();
+    bool useBackground                           = settings().value(QLatin1String("Use background")).toBool();
+    QColor backgroundColor                       = settings().value(QLatin1String("Background color")).toString();
+    int backgroundOpacity                        = settings().value(QLatin1String("Background opacity")).toInt();
+    Qt::AspectRatioMode watermarkAspectRatioMode = settings().value(QLatin1String("Ignore Watermark Aspect Ratio")).toBool() ?
                                                               Qt::IgnoreAspectRatio : Qt::KeepAspectRatio;
-    bool useAbsoluteSize                         = settings()[QLatin1String("Use Absolute Size")].toBool();
+    bool useAbsoluteSize                         = settings().value(QLatin1String("Use Absolute Size")).toBool();
 
     DImg watermarkImage;
     DColorComposer* const composer               = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
     int marginW                                  = lround(image().width()  * (xMargin / 100.0));
     int marginH                                  = lround(image().height() * (yMargin / 100.0));
-    int rotationIndex = settings()[QLatin1String("Rotation")].toInt();
-    double opacity                               = settings()[QLatin1String("Opacity")].toInt()/100.0;
-    bool addTransparency                         = settings()[QLatin1String("Add transparency")].toBool();
+    int rotationIndex = settings().value(QLatin1String("Rotation")).toInt();
+    double opacity                               = settings().value(QLatin1String("Opacity")).toInt()/100.0;
+    bool addTransparency                         = settings().value(QLatin1String("Add transparency")).toBool();
 
     DImg::ANGLE rotationAngle = (rotationIndex == 1) ? DImg::ANGLE::ROT90  :
                                 (rotationIndex == 2) ? DImg::ANGLE::ROT180 :

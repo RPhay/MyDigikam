@@ -76,8 +76,8 @@ void ConvertToJP2::slotAssignSettings2Widget()
     if (JP2Box)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        set.insert(QLatin1String("quality"),  settings().value(QLatin1String("quality")).toInt());
+        set.insert(QLatin1String("lossless"), settings().value(QLatin1String("lossless")).toBool());
         JP2Box->setSettings(set);
     }
 
@@ -93,8 +93,8 @@ void ConvertToJP2::slotSettingsChanged()
 
         if (JP2Box)
         {
-            settings.insert(QLatin1String("quality"),  JP2Box->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("lossless"), JP2Box->settings()[QLatin1String("lossless")].toBool());
+            settings.insert(QLatin1String("quality"),  JP2Box->settings().value(QLatin1String("quality")).toInt());
+            settings.insert(QLatin1String("lossless"), JP2Box->settings().value(QLatin1String("lossless")).toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -112,8 +112,8 @@ bool ConvertToJP2::toolOperations()
         return false;
     }
 
-    bool lossless = settings()[QLatin1String("lossless")].toBool();
-    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings()[QLatin1String("quality")].toInt());
+    bool lossless = settings().value(QLatin1String("lossless")).toBool();
+    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings().value(QLatin1String("quality")).toInt());
 
     return (savefromDImg());
 }

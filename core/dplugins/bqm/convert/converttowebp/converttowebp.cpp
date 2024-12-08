@@ -79,12 +79,12 @@ void ConvertToWEBP::slotAssignSettings2Widget()
     if (WEBPBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        set.insert(QLatin1String("quality"),  settings().value(QLatin1String("quality")).toInt());
+        set.insert(QLatin1String("lossless"), settings().value(QLatin1String("lossless")).toBool());
         WEBPBox->setSettings(set);
     }
 
-    m_changeSettings                 = true;
+    m_changeSettings                  = true;
 }
 
 void ConvertToWEBP::slotSettingsChanged()
@@ -96,8 +96,8 @@ void ConvertToWEBP::slotSettingsChanged()
         if (WEBPBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  WEBPBox->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("lossless"), WEBPBox->settings()[QLatin1String("lossless")].toBool());
+            settings.insert(QLatin1String("quality"),  WEBPBox->settings().value(QLatin1String("quality")).toInt());
+            settings.insert(QLatin1String("lossless"), WEBPBox->settings().value(QLatin1String("lossless")).toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -115,8 +115,8 @@ bool ConvertToWEBP::toolOperations()
         return false;
     }
 
-    bool lossless = settings()[QLatin1String("lossless")].toBool();
-    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings()[QLatin1String("quality")].toInt());
+    bool lossless = settings().value(QLatin1String("lossless")).toBool();
+    image().setAttribute(QLatin1String("quality"), lossless ? 100 : settings().value(QLatin1String("quality")).toInt());
 
     return (savefromDImg());
 }

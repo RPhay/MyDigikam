@@ -77,8 +77,8 @@ void ConvertToHEIF::slotAssignSettings2Widget()
     if (HEIFBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        set.insert(QLatin1String("quality"),  settings().value(QLatin1String("quality")).toInt());
+        set.insert(QLatin1String("lossless"), settings().value(QLatin1String("lossless")).toBool());
         HEIFBox->setSettings(set);
     }
 
@@ -94,8 +94,8 @@ void ConvertToHEIF::slotSettingsChanged()
         if (HEIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  HEIFBox->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("lossless"), HEIFBox->settings()[QLatin1String("lossless")].toBool());
+            settings.insert(QLatin1String("quality"),  HEIFBox->settings().value(QLatin1String("quality")).toInt());
+            settings.insert(QLatin1String("lossless"), HEIFBox->settings().value(QLatin1String("lossless")).toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -113,8 +113,8 @@ bool ConvertToHEIF::toolOperations()
         return false;
     }
 
-    bool lossless = settings()[QLatin1String("lossless")].toBool();
-    image().setAttribute(QLatin1String("quality"), lossless ? 0 : settings()[QLatin1String("quality")].toInt());
+    bool lossless = settings().value(QLatin1String("lossless")).toBool();
+    image().setAttribute(QLatin1String("quality"), lossless ? 0 : settings().value(QLatin1String("quality")).toInt());
 
     return (savefromDImg());
 }

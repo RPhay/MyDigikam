@@ -142,9 +142,9 @@ BatchToolSettings UserScript::defaultSettings()
 void UserScript::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
-    d->comboBox->setCurrentIndex(settings()[QLatin1String("Output filetype")].toInt());
+    d->comboBox->setCurrentIndex(settings().value(QLatin1String("Output filetype")).toInt());
 
-    QString txt       = settings()[QLatin1String("Script")].toString();
+    QString txt       = settings().value(QLatin1String("Script")).toString();
 
     if (d->textEdit->toPlainText() != txt)
     {
@@ -167,7 +167,7 @@ void UserScript::slotSettingsChanged()
 
 QString UserScript::outputSuffix () const
 {
-    int filetype = settings()[QLatin1String("Output filetype")].toInt();
+    int filetype = settings().value(QLatin1String("Output filetype")).toInt();
 
     switch (filetype)
     {
@@ -224,7 +224,7 @@ QString UserScript::outputSuffix () const
 
 bool UserScript::toolOperations()
 {
-    QString script = settings()[QLatin1String("Script")].toString();
+    QString script = settings().value(QLatin1String("Script")).toString();
 
     if (script.isEmpty())
     {
