@@ -110,7 +110,7 @@ MainWindow::MainWindow(QWidget* const parent)
     d->ui->accuracySlider->setValue(80);
     d->ui->sensitivitySlider->setValue(80);
 
-    d->lastFileOpenPath       = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first();
+    d->lastFileOpenPath       = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).constFirst();
 }
 
 MainWindow::~MainWindow()

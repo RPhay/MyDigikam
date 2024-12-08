@@ -197,7 +197,7 @@ int main(int argc, char** argv)
             }
         }
 
-        if (!QFileInfo::exists(trainingImages.value(1).first()))
+        if (!QFileInfo::exists(trainingImages.value(1).constFirst()))
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Could not find files of ORL database";
 
