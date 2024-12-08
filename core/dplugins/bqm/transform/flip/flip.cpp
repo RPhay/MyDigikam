@@ -76,7 +76,7 @@ BatchToolSettings Flip::defaultSettings()
 
 void Flip::slotAssignSettings2Widget()
 {
-    m_comboBox->setCurrentIndex(settings()[QLatin1String("Flip")].toInt());
+    m_comboBox->setCurrentIndex(settings().value(QLatin1String("Flip")).toInt());
 }
 
 void Flip::slotSettingsChanged()
@@ -88,7 +88,7 @@ void Flip::slotSettingsChanged()
 
 bool Flip::toolOperations()
 {
-    DImg::FLIP flip = (DImg::FLIP)(settings()[QLatin1String("Flip")].toInt());
+    DImg::FLIP flip = (DImg::FLIP)(settings().value(QLatin1String("Flip")).toInt());
 
     if (JPEGUtils::isJpegImage(inputUrl().toLocalFile()) && image().isNull())
     {

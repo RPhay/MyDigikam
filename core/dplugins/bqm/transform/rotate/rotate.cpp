@@ -127,13 +127,13 @@ BatchToolSettings Rotate::defaultSettings()
 
 void Rotate::slotAssignSettings2Widget()
 {
-    d->useExif->setChecked(settings()[QLatin1String("useExif")].toBool());
-    d->comboBox->setCurrentIndex(settings()[QLatin1String("rotation")].toInt());
+    d->useExif->setChecked(settings().value(QLatin1String("useExif")).toBool());
+    d->comboBox->setCurrentIndex(settings().value(QLatin1String("rotation")).toInt());
     FreeRotationContainer prm;
-    prm.angle           = settings()[QLatin1String("angle")].toDouble();
-    prm.antiAlias       = settings()[QLatin1String("antiAlias")].toBool();
-    prm.autoCrop        = settings()[QLatin1String("autoCrop")].toInt();
-    prm.backgroundColor = settings()[QLatin1String("backgroundColor")].value<QColor>();
+    prm.angle           = settings().value(QLatin1String("angle")).toDouble();
+    prm.antiAlias       = settings().value(QLatin1String("antiAlias")).toBool();
+    prm.autoCrop        = settings().value(QLatin1String("autoCrop")).toInt();
+    prm.backgroundColor = settings().value(QLatin1String("backgroundColor")).value<QColor>();
     d->frSettings->setSettings(prm);
 }
 
@@ -159,12 +159,12 @@ void Rotate::slotSettingsChanged()
 bool Rotate::toolOperations()
 {
     FreeRotationContainer prm;
-    bool useExif        = settings()[QLatin1String("useExif")].toBool();
-    int rotation        = settings()[QLatin1String("rotation")].toInt();
-    prm.angle           = settings()[QLatin1String("angle")].toDouble();
-    prm.antiAlias       = settings()[QLatin1String("antiAlias")].toBool();
-    prm.autoCrop        = settings()[QLatin1String("autoCrop")].toInt();
-    prm.backgroundColor = settings()[QLatin1String("backgroundColor")].value<QColor>();
+    bool useExif        = settings().value(QLatin1String("useExif")).toBool();
+    int rotation        = settings().value(QLatin1String("rotation")).toInt();
+    prm.angle           = settings().value(QLatin1String("angle")).toDouble();
+    prm.antiAlias       = settings().value(QLatin1String("antiAlias")).toBool();
+    prm.autoCrop        = settings().value(QLatin1String("autoCrop")).toInt();
+    prm.backgroundColor = settings().value(QLatin1String("backgroundColor")).value<QColor>();
 
     // JPEG image : lossless method if non-custom rotation angle.
 

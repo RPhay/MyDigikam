@@ -193,11 +193,11 @@ BatchToolSettings Resize::defaultSettings()
 void Resize::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
-    d->scaleDown->setChecked(settings()[QLatin1String("ScaleDown")].toBool());
-    d->useCustom->setChecked(settings()[QLatin1String("UseCustom")].toBool());
-    d->usePercent->setChecked(settings()[QLatin1String("UsePercent")].toBool());
-    d->customLength->setValue(settings()[QLatin1String("LengthCustom")].toInt());
-    d->presetCBox->setCurrentIndex(settings()[QLatin1String("LengthPreset")].toInt());
+    d->scaleDown->setChecked(settings().value(QLatin1String("ScaleDown")).toBool());
+    d->useCustom->setChecked(settings().value(QLatin1String("UseCustom")).toBool());
+    d->usePercent->setChecked(settings().value(QLatin1String("UsePercent")).toBool());
+    d->customLength->setValue(settings().value(QLatin1String("LengthCustom")).toInt());
+    d->presetCBox->setCurrentIndex(settings().value(QLatin1String("LengthPreset")).toInt());
     d->changeSettings = true;
 }
 
@@ -242,11 +242,11 @@ void Resize::slotPercentChanged()
 
 bool Resize::toolOperations()
 {
-    bool scaleDown              = settings()[QLatin1String("ScaleDown")].toBool();
-    bool useCustom              = settings()[QLatin1String("UseCustom")].toBool();
-    bool usePercent             = settings()[QLatin1String("UsePercent")].toBool();
-    int length                  = settings()[QLatin1String("LengthCustom")].toInt();
-    Private::WidthPreset preset = (Private::WidthPreset)(settings()[QLatin1String("LengthPreset")].toInt());
+    bool scaleDown              = settings().value(QLatin1String("ScaleDown")).toBool();
+    bool useCustom              = settings().value(QLatin1String("UseCustom")).toBool();
+    bool usePercent             = settings().value(QLatin1String("UsePercent")).toBool();
+    int length                  = settings().value(QLatin1String("LengthCustom")).toInt();
+    Private::WidthPreset preset = (Private::WidthPreset)(settings().value(QLatin1String("LengthPreset")).toInt());
 
     if (!loadToDImg())
     {
