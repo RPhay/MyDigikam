@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-07 01:50+0000\n"
+"POT-Creation-Date: 2024-12-08 01:47+0000\n"
 "PO-Revision-Date: 2024-12-02 08:54+0200\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -11725,9 +11725,9 @@ msgstr "Збереження змін —"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:831
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
@@ -22690,7 +22690,7 @@ msgstr "Експортуват&и до Box…"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1195
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1197
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -23555,116 +23555,116 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "Експортувати до &Flickr…"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:324
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "Отримання максимального дозволеного розміру файла."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:616
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:618
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "Розмір файла перевищує максимальний дозволений."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:703
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:705
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
 #, kde-format
 msgid "No photo specified"
 msgstr "Не вказано фотографій"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:709
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:711
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:496
 #, kde-format
 msgid "General upload failure"
 msgstr "Загальна відмова вивантаження"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:715
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:717
 #, kde-format
 msgid "Filesize was zero"
 msgstr "Нульовий розмір файла"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:721
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:723
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "Не вдалося визначити тип файла"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:727
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:729
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Користувачем перевищено обмеження на вивантаження"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:735
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
 msgstr "Некоректний підпис"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:741
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
 msgstr "Відсутній підпис"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Невдала спроба входу або некоректний розпізнавальний знак"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:753
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Некоректний ключ API"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Зараз сервер недоступний"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:765
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:550
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Некоректний значок"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Формат «xxx» не знайдено"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:777
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Метод «xxx» не знайдено"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Некоректна обгортка SOAP"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:789
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Некоректний виклик методу XML-RPC"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "Тепер слід використовувати метод POST для всіх механізмів"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:801
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, kde-format
 msgid "Unknown error"
 msgstr "Невідома помилка"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:806
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:808
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -23673,17 +23673,17 @@ msgstr ""
 "Сталася помилка: %1\n"
 " Продовження роботи неможливе."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "Спроба створення серії фоторобіт завершилася невдало:"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1112
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr "Спроба обробки списку фоторобіт зазнала невдачі."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1256
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1258
 #, kde-format
 msgid "Failed to query photo information"
 msgstr "Спроба отримання інформації про зображення зазнала невдачі"
@@ -24512,12 +24512,12 @@ msgctxt "@action"
 msgid "Export to &Imgur..."
 msgstr "Експортувати до &Imgur…"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:185
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:186
 #, kde-format
 msgid "Could not authorize"
 msgstr "Не вдалося пройти розпізнавання"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:390
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"
@@ -28085,7 +28085,7 @@ msgid "Album &date:"
 msgstr "&Дата альбому:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -28099,7 +28099,7 @@ msgstr ""
 "Натисніть цю кнопку, щоб вибрати дату найдавнішого зображення з альбому."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -28114,7 +28114,7 @@ msgstr ""
 "зображень з альбому."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -38438,7 +38438,7 @@ msgid "Map"
 msgstr "Карта"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -49696,14 +49696,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr "Заголовок закладки, який має бути неповторним і непорожнім"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "П&іктограма:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -50826,31 +50826,31 @@ msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "Опис:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:125
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "&Назва:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "Тут введіть вашу назву запису улюбленого…"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr "Назва улюбленого запису, яка має бути неповторною і непорожньою"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:136
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "Ієрархія:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
@@ -50858,25 +50858,25 @@ msgstr ""
 "Назва запису ієрархії улюблених записів, яка має бути неповторною у межах "
 "панелі ієрархії"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:144
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Тип:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "Тека улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "Запис улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50888,25 +50888,25 @@ msgstr ""
 "зокрема дату, піктограму, опис та список зображень. «Тека улюбленого» — "
 "простий запис в ієрархії без додаткових властивостей."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "&Опис:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "Тут введіть опис улюбленого запису…"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:168
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "С&творено:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50915,14 +50915,14 @@ msgstr ""
 "Виберіть дату для запису улюбленого. Типово, із ним буде пов'язано дату "
 "створення запису."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
 msgstr ""
 "Натисніть цю кнопку, щоб вибрати дату найдавнішого зображення зі списку."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
@@ -50930,14 +50930,14 @@ msgstr ""
 "Натисніть цю кнопку, щоб наказати програмі обчислити середню дату для "
 "зображень зі списку."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
 msgstr ""
 "Натисніть цю кнопку, щоб вибрати дату найновішого зображення зі списку."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
@@ -50945,49 +50945,49 @@ msgstr ""
 "Тут ви можете вибрати піктограму, яку буде використано для запису улюбленого "
 "на панелі ієрархії."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr "Пов'язати із записом улюбленого в ієрархії типову піктограму."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:212
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "З&аписи:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "Назва"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Розмір"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Тип"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:229
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Дата"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Шлях"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51000,37 +51000,37 @@ msgstr ""
 "буде відкрито улюблений запис. Якщо не позначено жодного запису, буде "
 "показано перший зі списку."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:348
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Зауваження: запис улюбленого має бути непорожнім!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:352
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Зауваження: список файлів запису улюбленого має бути непорожнім!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:356
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Зауваження: запис улюбленого з такою назвою вже є у ієрархії!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Зауваження: назва теки улюбленого має бути непорожньою!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:390
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Зауваження: в ієрархії вже є тека улюбленого з такою назвою!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51040,37 +51040,37 @@ msgstr[1] "%1 файли"
 msgstr[2] "%1 файлів"
 msgstr[3] "%1 файл"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Новий запис улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Редагування запису улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Нова тека улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Редагування теки улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Не вдалося обчислити середнє"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-07 01:50+0000\n"
+"POT-Creation-Date: 2024-12-08 01:47+0000\n"
 "PO-Revision-Date: 2024-12-06 13:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -11645,9 +11645,9 @@ msgstr "Es desen els canvis -"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:831
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
@@ -22588,7 +22588,7 @@ msgstr "Exporta a &Box..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1195
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1197
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -23451,116 +23451,116 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "Exporta a &Flickr..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:324
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "S'està obtenint la mida màxima permesa del fitxer."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:616
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:618
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "La mida del fitxer excedeix la mida màxima permesa del fitxer."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:703
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:705
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
 #, kde-format
 msgid "No photo specified"
 msgstr "No s'ha especificat cap fotografia"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:709
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:711
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:496
 #, kde-format
 msgid "General upload failure"
 msgstr "Error general durant la pujada"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:715
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:717
 #, kde-format
 msgid "Filesize was zero"
 msgstr "La mida del fitxer era zero"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:721
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:723
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "No s'ha reconegut el tipus de fitxer"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:727
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:729
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "L'usuari ha excedit el límit de pujada"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:735
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
 msgstr "Signatura no vàlida"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:741
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
 msgstr "Manca la signatura"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Ha fallat l'inici de la sessió / Testimoni d'autorització no vàlid"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:753
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Clau de l'API no vàlida"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Servei no disponible actualment"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:765
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:550
 #, kde-format
 msgid "Invalid Frob"
 msgstr "«Frob» no vàlid"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "No s'ha trobat el format «xxx»"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:777
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "No s'ha trobat el mètode «xxx»"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Embolcall SOAP no vàlid"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:789
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Crida no vàlida al mètode XML-RPC"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "Ara es requereix el mètode POST per a tots els dissenys"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:801
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, kde-format
 msgid "Unknown error"
 msgstr "Error desconegut"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:806
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:808
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -23569,17 +23569,17 @@ msgstr ""
 "Hi ha hagut un error: %1\n"
 "No es pot continuar."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "Ha fallat la creació del conjunt de fotografies: "
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1112
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr "Ha fallat en recuperar la llista dels conjunts de fotografies."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1256
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1258
 #, kde-format
 msgid "Failed to query photo information"
 msgstr "Ha fallat en consultar la informació de la fotografia"
@@ -24403,12 +24403,12 @@ msgctxt "@action"
 msgid "Export to &Imgur..."
 msgstr "Exporta a &Imgur..."
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:185
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:186
 #, kde-format
 msgid "Could not authorize"
 msgstr "No s'ha pogut autoritzar"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:390
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"
@@ -27964,7 +27964,7 @@ msgid "Album &date:"
 msgstr "&Data de l'àlbum:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -27979,7 +27979,7 @@ msgstr ""
 "l'àlbum."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -27994,7 +27994,7 @@ msgstr ""
 "l'àlbum."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -38292,7 +38292,7 @@ msgid "Map"
 msgstr "Mapa"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -49553,14 +49553,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr "El títol del punt d'interès ha de ser únic i no estar buit"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Icona:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -50680,56 +50680,56 @@ msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "Descripció:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:125
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "&Nom:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "Introduïu aquí el nom de l'entrada preferida..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr "El nom de l'element preferit ha de ser únic i no estar buit"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:136
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "Jerarquia:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr ""
 "La jerarquia de l'entrada preferida ha de ser única en una vista en arbre"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:144
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Tipus:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "Carpeta preferida"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "Element preferit"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50742,25 +50742,25 @@ msgstr ""
 "Una «Carpeta preferida» és una entrada senzilla en la jerarquia sense "
 "propietats addicionals."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "&Descripció:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "Introduïu aquí la descripció de l'element preferit..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:168
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "&Creat:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50769,7 +50769,7 @@ msgstr ""
 "Seleccioneu la data de l'element preferit. De manera predeterminada "
 "s'assigna el dia de la creació de l'element."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
@@ -50777,7 +50777,7 @@ msgstr ""
 "Useu aquest botó per a seleccionar la data de la imatge més antiga de la "
 "llista."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
@@ -50785,7 +50785,7 @@ msgstr ""
 "Useu aquest botó per a calcular la data mitjana de totes les imatges a la "
 "llista."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
@@ -50793,7 +50793,7 @@ msgstr ""
 "Useu aquest botó per a seleccionar la data de la imatge més nova de la "
 "llista."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
@@ -50801,50 +50801,50 @@ msgstr ""
 "Seleccioneu aquí la icona a emprar per a aquest element preferit a la vista "
 "en arbre."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr ""
 "Assigna la icona de l'element preferit a predeterminada en la vista en arbre."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:212
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "&Elements:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Mida"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Tipus"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:229
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Camí"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50857,37 +50857,37 @@ msgstr ""
 "l'editor quan el preferit estigui obert. Si no se'n selecciona cap, es "
 "mostrarà el primer de la llista."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:348
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Nota: El nom d'element preferit no pot estar buit!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:352
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Nota: La llista de fitxers d'elements preferits no pot estar buida!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:356
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Nota: El nom d'element preferit ja existeix a la jerarquia!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Nota: El nom de carpeta preferida no pot estar buit!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:390
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Nota: El nom de carpeta preferida ja existeix a la jerarquia!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -50895,37 +50895,37 @@ msgid_plural "%1 files"
 msgstr[0] "%1 fitxer"
 msgstr[1] "%1 fitxers"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Element preferit nou"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Edició d'element preferit"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Carpeta preferida nova"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Edició de carpeta preferida"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "No s'ha pogut calcular la mitjana"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
