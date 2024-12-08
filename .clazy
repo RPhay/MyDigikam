@@ -32,7 +32,6 @@ export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
 
 export CLAZY_CHECKS="\
 level2,\
-no-fully-qualified-moc-types,\
 no-qproperty-without-notify,\
 no-old-style-connect,\
 no-rule-of-three,\
