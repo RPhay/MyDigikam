@@ -66,9 +66,9 @@ BatchToolSettings BCGCorrection::defaultSettings()
 void BCGCorrection::slotAssignSettings2Widget()
 {
     BCGContainer prm;
-    prm.brightness = settings()[QLatin1String("Brightness")].toDouble();
-    prm.contrast   = settings()[QLatin1String("Contrast")].toDouble();
-    prm.gamma      = settings()[QLatin1String("Gamma")].toDouble();
+    prm.brightness = settings().value(QLatin1String("Brightness")).toDouble();
+    prm.contrast   = settings().value(QLatin1String("Contrast")).toDouble();
+    prm.gamma      = settings().value(QLatin1String("Gamma")).toDouble();
     m_settingsView->setSettings(prm);
 }
 
@@ -92,9 +92,9 @@ bool BCGCorrection::toolOperations()
     }
 
     BCGContainer prm;
-    prm.brightness = settings()[QLatin1String("Brightness")].toDouble();
-    prm.contrast   = settings()[QLatin1String("Contrast")].toDouble();
-    prm.gamma      = settings()[QLatin1String("Gamma")].toDouble();
+    prm.brightness = settings().value(QLatin1String("Brightness")).toDouble();
+    prm.contrast   = settings().value(QLatin1String("Contrast")).toDouble();
+    prm.gamma      = settings().value(QLatin1String("Gamma")).toDouble();
 
     BCGFilter bcg(&image(), nullptr, prm);
     applyFilter(&bcg);

@@ -71,9 +71,9 @@ BatchToolSettings ColorBalance::defaultSettings()
 void ColorBalance::slotAssignSettings2Widget()
 {
     CBContainer prm;
-    prm.red   = settings()[QLatin1String("Red")].toDouble();
-    prm.green = settings()[QLatin1String("Green")].toDouble();
-    prm.blue  = settings()[QLatin1String("Blue")].toDouble();
+    prm.red   = settings().value(QLatin1String("Red")).toDouble();
+    prm.green = settings().value(QLatin1String("Green")).toDouble();
+    prm.blue  = settings().value(QLatin1String("Blue")).toDouble();
     m_settingsView->setSettings(prm);
 }
 
@@ -97,9 +97,9 @@ bool ColorBalance::toolOperations()
     }
 
     CBContainer prm;
-    prm.red   = settings()[QLatin1String("Red")].toDouble();
-    prm.green = settings()[QLatin1String("Green")].toDouble();
-    prm.blue  = settings()[QLatin1String("Blue")].toDouble();
+    prm.red   = settings().value(QLatin1String("Red")).toDouble();
+    prm.green = settings().value(QLatin1String("Green")).toDouble();
+    prm.blue  = settings().value(QLatin1String("Blue")).toDouble();
 
     CBFilter cb(&image(), nullptr, prm);
     applyFilter(&cb);

@@ -67,10 +67,10 @@ BatchToolSettings HSLCorrection::defaultSettings()
 void HSLCorrection::slotAssignSettings2Widget()
 {
     HSLContainer prm;
-    prm.hue        = settings()[QLatin1String("Hue")].toDouble();
-    prm.saturation = settings()[QLatin1String("Saturation")].toDouble();
-    prm.lightness  = settings()[QLatin1String("Lightness")].toDouble();
-    prm.vibrance   = settings()[QLatin1String("Vibrance")].toDouble();
+    prm.hue        = settings().value(QLatin1String("Hue")).toDouble();
+    prm.saturation = settings().value(QLatin1String("Saturation")).toDouble();
+    prm.lightness  = settings().value(QLatin1String("Lightness")).toDouble();
+    prm.vibrance   = settings().value(QLatin1String("Vibrance")).toDouble();
     m_settingsView->setSettings(prm);
 }
 
@@ -95,10 +95,10 @@ bool HSLCorrection::toolOperations()
     }
 
     HSLContainer prm;
-    prm.hue        = settings()[QLatin1String("Hue")].toDouble();
-    prm.saturation = settings()[QLatin1String("Saturation")].toDouble();
-    prm.lightness  = settings()[QLatin1String("Lightness")].toDouble();
-    prm.vibrance   = settings()[QLatin1String("Vibrance")].toDouble();
+    prm.hue        = settings().value(QLatin1String("Hue")).toDouble();
+    prm.saturation = settings().value(QLatin1String("Saturation")).toDouble();
+    prm.lightness  = settings().value(QLatin1String("Lightness")).toDouble();
+    prm.vibrance   = settings().value(QLatin1String("Vibrance")).toDouble();
 
     HSLFilter hsl(&image(), nullptr, prm);
     applyFilter(&hsl);

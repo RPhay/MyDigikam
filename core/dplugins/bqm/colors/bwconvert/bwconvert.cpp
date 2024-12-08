@@ -66,11 +66,11 @@ BatchToolSettings BWConvert::defaultSettings()
     BatchToolSettings prm;
     BWSepiaContainer defaultPrm = m_settingsView->defaultSettings();
 
-    prm.insert(QLatin1String("filmType"), (int)defaultPrm.filmType);
+    prm.insert(QLatin1String("filmType"),   (int)defaultPrm.filmType);
     prm.insert(QLatin1String("filterType"), (int)defaultPrm.filterType);
-    prm.insert(QLatin1String("toneType"), (int)defaultPrm.toneType);
-    prm.insert(QLatin1String("contrast"), (double)defaultPrm.bcgPrm.contrast);
-    prm.insert(QLatin1String("strength"), (double)defaultPrm.strength);
+    prm.insert(QLatin1String("toneType"),   (int)defaultPrm.toneType);
+    prm.insert(QLatin1String("contrast"),   (double)defaultPrm.bcgPrm.contrast);
+    prm.insert(QLatin1String("strength"),   (double)defaultPrm.strength);
     prm.insert(QLatin1String("curvesType"), defaultPrm.curvesPrm.curvesType);
     prm.insert(QLatin1String("curves"),     defaultPrm.curvesPrm.values[LuminosityChannel]);
 
@@ -81,13 +81,13 @@ void BWConvert::slotAssignSettings2Widget()
 {
     BWSepiaContainer prm;
 
-    prm.filmType                            = settings()[QLatin1String("filmType")].toInt();
-    prm.filterType                          = settings()[QLatin1String("filterType")].toInt();
-    prm.toneType                            = settings()[QLatin1String("toneType")].toInt();
-    prm.bcgPrm.contrast                     = settings()[QLatin1String("contrast")].toDouble();
-    prm.strength                            = settings()[QLatin1String("strength")].toDouble();
-    prm.curvesPrm.curvesType                = (ImageCurves::CurveType)settings()[QLatin1String("curvesType")].toInt();
-    prm.curvesPrm.values[LuminosityChannel] = settings()[QLatin1String("curves")].value<QPolygon>();
+    prm.filmType                            = settings().value(QLatin1String("filmType")).toInt();
+    prm.filterType                          = settings().value(QLatin1String("filterType")).toInt();
+    prm.toneType                            = settings().value(QLatin1String("toneType")).toInt();
+    prm.bcgPrm.contrast                     = settings().value(QLatin1String("contrast")).toDouble();
+    prm.strength                            = settings().value(QLatin1String("strength")).toDouble();
+    prm.curvesPrm.curvesType                = (ImageCurves::CurveType)settings().value(QLatin1String("curvesType")).toInt();
+    prm.curvesPrm.values[LuminosityChannel] = settings().value(QLatin1String("curves")).value<QPolygon>();
 
     m_settingsView->setSettings(prm);
 }
@@ -117,15 +117,15 @@ bool BWConvert::toolOperations()
 
     BWSepiaContainer prm;
 
-    prm.filmType                     = settings()[QLatin1String("filmType")].toInt();
-    prm.filterType                   = settings()[QLatin1String("filterType")].toInt();
-    prm.toneType                     = settings()[QLatin1String("toneType")].toInt();
-    prm.bcgPrm.contrast              = settings()[QLatin1String("contrast")].toDouble();
-    prm.strength                     = settings()[QLatin1String("strength")].toDouble();
+    prm.filmType                     = settings().value(QLatin1String("filmType")).toInt();
+    prm.filterType                   = settings().value(QLatin1String("filterType")).toInt();
+    prm.toneType                     = settings().value(QLatin1String("toneType")).toInt();
+    prm.bcgPrm.contrast              = settings().value(QLatin1String("contrast")).toDouble();
+    prm.strength                     = settings().value(QLatin1String("strength")).toDouble();
 
-    CurvesContainer curves((ImageCurves::CurveType)settings()[QLatin1String("curvesType")].toInt(), true);
+    CurvesContainer curves((ImageCurves::CurveType)settings().value(QLatin1String("curvesType")).toInt(), true);
     curves.initialize();
-    curves.values[LuminosityChannel] = settings()[QLatin1String("curves")].value<QPolygon>();
+    curves.values[LuminosityChannel] = settings().value(QLatin1String("curves")).value<QPolygon>();
     prm.curvesPrm                    = curves;
 
     BWSepiaFilter bw(&image(), nullptr, prm);

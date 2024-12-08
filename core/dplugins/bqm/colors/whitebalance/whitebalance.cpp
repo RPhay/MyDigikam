@@ -73,14 +73,14 @@ void WhiteBalance::slotAssignSettings2Widget()
 {
     WBContainer prm;
 
-    prm.black          = settings()[QLatin1String("black")].toDouble();
-    prm.temperature    = settings()[QLatin1String("temperature")].toDouble();
-    prm.green          = settings()[QLatin1String("green")].toDouble();
-    prm.dark           = settings()[QLatin1String("dark")].toDouble();
-    prm.gamma          = settings()[QLatin1String("gamma")].toDouble();
-    prm.saturation     = settings()[QLatin1String("saturation")].toDouble();
-    prm.expositionMain = settings()[QLatin1String("expositionMain")].toDouble();
-    prm.expositionFine = settings()[QLatin1String("expositionFine")].toDouble();
+    prm.black          = settings().value(QLatin1String("black")).toDouble();
+    prm.temperature    = settings().value(QLatin1String("temperature")).toDouble();
+    prm.green          = settings().value(QLatin1String("green")).toDouble();
+    prm.dark           = settings().value(QLatin1String("dark")).toDouble();
+    prm.gamma          = settings().value(QLatin1String("gamma")).toDouble();
+    prm.saturation     = settings().value(QLatin1String("saturation")).toDouble();
+    prm.expositionMain = settings().value(QLatin1String("expositionMain")).toDouble();
+    prm.expositionFine = settings().value(QLatin1String("expositionFine")).toDouble();
 
     m_settingsView->setSettings(prm);
 }
@@ -111,14 +111,14 @@ bool WhiteBalance::toolOperations()
 
     WBContainer prm;
 
-    prm.black          = settings()[QLatin1String("black")].toDouble();
-    prm.temperature    = settings()[QLatin1String("temperature")].toDouble();
-    prm.green          = settings()[QLatin1String("green")].toDouble();
-    prm.dark           = settings()[QLatin1String("dark")].toDouble();
-    prm.gamma          = settings()[QLatin1String("gamma")].toDouble();
-    prm.saturation     = settings()[QLatin1String("saturation")].toDouble();
-    prm.expositionMain = settings()[QLatin1String("expositionMain")].toDouble();
-    prm.expositionFine = settings()[QLatin1String("expositionFine")].toDouble();
+    prm.black          = settings().value(QLatin1String("black")).toDouble();
+    prm.temperature    = settings().value(QLatin1String("temperature")).toDouble();
+    prm.green          = settings().value(QLatin1String("green")).toDouble();
+    prm.dark           = settings().value(QLatin1String("dark")).toDouble();
+    prm.gamma          = settings().value(QLatin1String("gamma")).toDouble();
+    prm.saturation     = settings().value(QLatin1String("saturation")).toDouble();
+    prm.expositionMain = settings().value(QLatin1String("expositionMain")).toDouble();
+    prm.expositionFine = settings().value(QLatin1String("expositionFine")).toDouble();
 
     WBFilter wb(&image(), nullptr, prm);
     applyFilter(&wb);

@@ -72,7 +72,7 @@ BatchToolSettings IccConvert::defaultSettings()
 
 void IccConvert::slotAssignSettings2Widget()
 {
-    QString profPath = settings()[QLatin1String("ProfilePath")].toString();
+    QString profPath = settings().value(QLatin1String("ProfilePath")).toString();
     m_settingsView->setCurrentProfile(IccProfile(profPath));
 }
 
@@ -93,7 +93,7 @@ bool IccConvert::toolOperations()
         return false;
     }
 
-    QString              profPath = settings()[QLatin1String("ProfilePath")].toString();
+    QString              profPath = settings().value(QLatin1String("ProfilePath")).toString();
     IccProfile           in       = image().getIccProfile();
     IccProfile           out(profPath);
     ICCSettingsContainer settings = IccSettings::instance()->settings();

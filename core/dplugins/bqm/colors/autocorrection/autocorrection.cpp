@@ -78,7 +78,7 @@ BatchToolSettings AutoCorrection::defaultSettings()
 
 void AutoCorrection::slotAssignSettings2Widget()
 {
-    m_comboBox->setCurrentIndex(settings()[QLatin1String("AutoCorrectionFilter")].toInt());
+    m_comboBox->setCurrentIndex(settings().value(QLatin1String("AutoCorrectionFilter")).toInt());
 }
 
 void AutoCorrection::slotSettingsChanged()
@@ -95,7 +95,7 @@ bool AutoCorrection::toolOperations()
         return false;
     }
 
-    int type = settings()[QLatin1String("AutoCorrectionFilter")].toInt();
+    int type = settings().value(QLatin1String("AutoCorrectionFilter")).toInt();
 
     switch (type)
     {
