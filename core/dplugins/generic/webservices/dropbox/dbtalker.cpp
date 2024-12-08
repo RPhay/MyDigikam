@@ -437,10 +437,9 @@ void DBTalker::parseResponseAddPhoto(const QByteArray& data)
 
 void DBTalker::parseResponseUserName(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object()[QLatin1String("name")].toObject();
-
-    QString name           = jsonObject[QLatin1String("display_name")].toString();
+    QJsonDocument doc            = QJsonDocument::fromJson(data);
+    const QJsonObject jsonObject = doc.object().value(QLatin1String("name")).toObject();
+    const QString name           = jsonObject.value(QLatin1String("display_name")).toString();
 
     Q_EMIT signalBusy(false);
     Q_EMIT signalSetUserName(name);

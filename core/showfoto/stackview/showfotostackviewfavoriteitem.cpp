@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     int         favoriteType = ShowfotoStackViewFavoriteItem::FavoriteRoot;
     QString     hierarchy;
     QList<QUrl> urls;
@@ -190,7 +192,7 @@ QUrl ShowfotoStackViewFavoriteItem::currentUrl() const
 {
     if (!d->current.isValid() && !urls().isEmpty())
     {
-        return urls().first();
+        return urls().constFirst();
     }
 
     return d->current;
