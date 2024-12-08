@@ -68,8 +68,8 @@ void Texture::slotAssignSettings2Widget()
 {
     TextureContainer prm;
 
-    prm.blendGain   = settings()[QLatin1String("blendGain")].toInt();
-    prm.textureType = settings()[QLatin1String("textureType")].toInt();
+    prm.blendGain   = settings().value(QLatin1String("blendGain")).toInt();
+    prm.textureType = settings().value(QLatin1String("textureType")).toInt();
 
     m_settingsView->setSettings(prm);
 }
@@ -93,8 +93,8 @@ bool Texture::toolOperations()
     }
 
     TextureContainer prm;
-    prm.blendGain   = settings()[QLatin1String("blendGain")].toInt();
-    prm.textureType = settings()[QLatin1String("textureType")].toInt();
+    prm.blendGain   = settings().value(QLatin1String("blendGain")).toInt();
+    prm.textureType = settings().value(QLatin1String("textureType")).toInt();
 
     TextureFilter bd(&image(), nullptr, prm);
     applyFilter(&bd);

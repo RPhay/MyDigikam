@@ -64,11 +64,11 @@ void ColorFX::slotAssignSettings2Widget()
 {
     ColorFXContainer prm;
 
-    prm.colorFXType = settings()[QLatin1String("colorFXType")].toInt();
-    prm.level       = settings()[QLatin1String("level")].toInt();
-    prm.iterations  = settings()[QLatin1String("iterations")].toInt();
-    prm.intensity   = settings()[QLatin1String("intensity")].toInt();
-    prm.path        = settings()[QLatin1String("path")].toString();
+    prm.colorFXType = settings().value(QLatin1String("colorFXType")).toInt();
+    prm.level       = settings().value(QLatin1String("level")).toInt();
+    prm.iterations  = settings().value(QLatin1String("iterations")).toInt();
+    prm.intensity   = settings().value(QLatin1String("intensity")).toInt();
+    prm.path        = settings().value(QLatin1String("path")).toString();
 
     m_settingsView->setSettings(prm);
 }
@@ -95,11 +95,11 @@ bool ColorFX::toolOperations()
     }
 
     ColorFXContainer prm;
-    prm.colorFXType = settings()[QLatin1String("colorFXType")].toInt();
-    prm.level       = settings()[QLatin1String("level")].toInt();
-    prm.iterations  = settings()[QLatin1String("iterations")].toInt();
-    prm.intensity   = settings()[QLatin1String("intensity")].toInt();
-    prm.path        = settings()[QLatin1String("path")].toString();
+    prm.colorFXType = settings().value(QLatin1String("colorFXType")).toInt();
+    prm.level       = settings().value(QLatin1String("level")).toInt();
+    prm.iterations  = settings().value(QLatin1String("iterations")).toInt();
+    prm.intensity   = settings().value(QLatin1String("intensity")).toInt();
+    prm.path        = settings().value(QLatin1String("path")).toString();
 
     ColorFXFilter fg(&image(), nullptr, prm);
     applyFilter(&fg);

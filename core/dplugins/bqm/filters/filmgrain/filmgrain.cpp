@@ -83,23 +83,23 @@ BatchToolSettings FilmGrain::defaultSettings()
 void FilmGrain::slotAssignSettings2Widget()
 {
     FilmGrainContainer prm;
-    prm.grainSize               = settings()[QLatin1String("grainSize")].toInt();
-    prm.photoDistribution       = settings()[QLatin1String("photoDistribution")].toBool();
-    prm.addLuminanceNoise       = settings()[QLatin1String("addLuminanceNoise")].toBool();
-    prm.lumaIntensity           = settings()[QLatin1String("lumaIntensity")].toInt();
-    prm.lumaShadows             = settings()[QLatin1String("lumaShadows")].toInt();
-    prm.lumaMidtones            = settings()[QLatin1String("lumaMidtones")].toInt();
-    prm.lumaHighlights          = settings()[QLatin1String("lumaHighlights")].toInt();
-    prm.addChrominanceBlueNoise = settings()[QLatin1String("addChrominanceBlueNoise")].toBool();
-    prm.chromaBlueIntensity     = settings()[QLatin1String("chromaBlueIntensity")].toInt();
-    prm.chromaBlueShadows       = settings()[QLatin1String("chromaBlueShadows")].toInt();
-    prm.chromaBlueMidtones      = settings()[QLatin1String("chromaBlueMidtones")].toInt();
-    prm.chromaBlueHighlights    = settings()[QLatin1String("chromaBlueHighlights")].toInt();
-    prm.addChrominanceRedNoise  = settings()[QLatin1String("addChrominanceRedNoise")].toBool();
-    prm.chromaRedIntensity      = settings()[QLatin1String("chromaRedIntensity")].toInt();
-    prm.chromaRedShadows        = settings()[QLatin1String("chromaRedShadows")].toInt();
-    prm.chromaRedMidtones       = settings()[QLatin1String("chromaRedMidtones")].toInt();
-    prm.chromaRedHighlights     = settings()[QLatin1String("chromaRedHighlights")].toInt();
+    prm.grainSize               = settings().value(QLatin1String("grainSize")).toInt();
+    prm.photoDistribution       = settings().value(QLatin1String("photoDistribution")).toBool();
+    prm.addLuminanceNoise       = settings().value(QLatin1String("addLuminanceNoise")).toBool();
+    prm.lumaIntensity           = settings().value(QLatin1String("lumaIntensity")).toInt();
+    prm.lumaShadows             = settings().value(QLatin1String("lumaShadows")).toInt();
+    prm.lumaMidtones            = settings().value(QLatin1String("lumaMidtones")).toInt();
+    prm.lumaHighlights          = settings().value(QLatin1String("lumaHighlights")).toInt();
+    prm.addChrominanceBlueNoise = settings().value(QLatin1String("addChrominanceBlueNoise")).toBool();
+    prm.chromaBlueIntensity     = settings().value(QLatin1String("chromaBlueIntensity")).toInt();
+    prm.chromaBlueShadows       = settings().value(QLatin1String("chromaBlueShadows")).toInt();
+    prm.chromaBlueMidtones      = settings().value(QLatin1String("chromaBlueMidtones")).toInt();
+    prm.chromaBlueHighlights    = settings().value(QLatin1String("chromaBlueHighlights")).toInt();
+    prm.addChrominanceRedNoise  = settings().value(QLatin1String("addChrominanceRedNoise")).toBool();
+    prm.chromaRedIntensity      = settings().value(QLatin1String("chromaRedIntensity")).toInt();
+    prm.chromaRedShadows        = settings().value(QLatin1String("chromaRedShadows")).toInt();
+    prm.chromaRedMidtones       = settings().value(QLatin1String("chromaRedMidtones")).toInt();
+    prm.chromaRedHighlights     = settings().value(QLatin1String("chromaRedHighlights")).toInt();
     m_settingsView->setSettings(prm);
 }
 
@@ -137,23 +137,23 @@ bool FilmGrain::toolOperations()
     }
 
     FilmGrainContainer prm;
-    prm.grainSize               = settings()[QLatin1String("grainSize")].toInt();
-    prm.photoDistribution       = settings()[QLatin1String("photoDistribution")].toBool();
-    prm.addLuminanceNoise       = settings()[QLatin1String("addLuminanceNoise")].toBool();
-    prm.lumaIntensity           = settings()[QLatin1String("lumaIntensity")].toInt();
-    prm.lumaShadows             = settings()[QLatin1String("lumaShadows")].toInt();
-    prm.lumaMidtones            = settings()[QLatin1String("lumaMidtones")].toInt();
-    prm.lumaHighlights          = settings()[QLatin1String("lumaHighlights")].toInt();
-    prm.addChrominanceBlueNoise = settings()[QLatin1String("addChrominanceBlueNoise")].toBool();
-    prm.chromaBlueIntensity     = settings()[QLatin1String("chromaBlueIntensity")].toInt();
-    prm.chromaBlueShadows       = settings()[QLatin1String("chromaBlueShadows")].toInt();
-    prm.chromaBlueMidtones      = settings()[QLatin1String("chromaBlueMidtones")].toInt();
-    prm.chromaBlueHighlights    = settings()[QLatin1String("chromaBlueHighlights")].toInt();
-    prm.addChrominanceRedNoise  = settings()[QLatin1String("addChrominanceRedNoise")].toBool();
-    prm.chromaRedIntensity      = settings()[QLatin1String("chromaRedIntensity")].toInt();
-    prm.chromaRedShadows        = settings()[QLatin1String("chromaRedShadows")].toInt();
-    prm.chromaRedMidtones       = settings()[QLatin1String("chromaRedMidtones")].toInt();
-    prm.chromaRedHighlights     = settings()[QLatin1String("chromaRedHighlights")].toInt();
+    prm.grainSize               = settings().value(QLatin1String("grainSize")).toInt();
+    prm.photoDistribution       = settings().value(QLatin1String("photoDistribution")).toBool();
+    prm.addLuminanceNoise       = settings().value(QLatin1String("addLuminanceNoise")).toBool();
+    prm.lumaIntensity           = settings().value(QLatin1String("lumaIntensity")).toInt();
+    prm.lumaShadows             = settings().value(QLatin1String("lumaShadows")).toInt();
+    prm.lumaMidtones            = settings().value(QLatin1String("lumaMidtones")).toInt();
+    prm.lumaHighlights          = settings().value(QLatin1String("lumaHighlights")).toInt();
+    prm.addChrominanceBlueNoise = settings().value(QLatin1String("addChrominanceBlueNoise")).toBool();
+    prm.chromaBlueIntensity     = settings().value(QLatin1String("chromaBlueIntensity")).toInt();
+    prm.chromaBlueShadows       = settings().value(QLatin1String("chromaBlueShadows")).toInt();
+    prm.chromaBlueMidtones      = settings().value(QLatin1String("chromaBlueMidtones")).toInt();
+    prm.chromaBlueHighlights    = settings().value(QLatin1String("chromaBlueHighlights")).toInt();
+    prm.addChrominanceRedNoise  = settings().value(QLatin1String("addChrominanceRedNoise")).toBool();
+    prm.chromaRedIntensity      = settings().value(QLatin1String("chromaRedIntensity")).toInt();
+    prm.chromaRedShadows        = settings().value(QLatin1String("chromaRedShadows")).toInt();
+    prm.chromaRedMidtones       = settings().value(QLatin1String("chromaRedMidtones")).toInt();
+    prm.chromaRedHighlights     = settings().value(QLatin1String("chromaRedHighlights")).toInt();
 
     FilmGrainFilter fg(&image(), nullptr, prm);
     applyFilter(&fg);
