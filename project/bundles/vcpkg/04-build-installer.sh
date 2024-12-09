@@ -323,7 +323,7 @@ for pdb in $PDB_FILES ; do
 
     # Enable this condition only to hack.
 
-    elif [[ "$pdb" = *"Qt6Core.pdb"* ]] ; then
+    elif [[ "$pdb" = *"Qt$DK_QTVERSIONCore.pdb"* ]] ; then
 
         # In debug mode preserve Qt debug symbols
 
@@ -346,7 +346,7 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
     # digikam libs
     cp -rv "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
-    cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt6Core.pdb                         $BUNDLEDIR/                           2>/dev/null
+    cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt$DK_QTVERSIONCore.pdb             $BUNDLEDIR/                           2>/dev/null
 
 fi
 
