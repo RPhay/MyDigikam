@@ -41,6 +41,7 @@
 #include "albumtreeview.h"
 #include "tagtreeview.h"
 #include "searchutilities.h"
+#include "thememanager.h"
 
 namespace Digikam
 {
@@ -53,12 +54,25 @@ public:
 
     explicit ModelClearButton(AbstractCheckableAlbumModel* const model)
     {
-        setPixmap(QIcon::fromTheme(qApp->isLeftToRight() ? QLatin1String("edit-clear-locationbar-rtl")
-                                                         : QLatin1String("edit-clear-locationbar-ltr")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
+        setClearButton();
         stayVisibleWhenAnimatedOut(true);
 
         connect(this, SIGNAL(clicked()),
                 model, SLOT(resetAllCheckedAlbums()));
+
+        connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
+                this, [this]()
+            {
+                setClearButton();
+            }
+        );
+    }
+
+    void setClearButton()
+    {
+        setPixmap(QIcon::fromTheme(qApp->isLeftToRight() ? QLatin1String("edit-clear-locationbar-rtl")
+                                                         : QLatin1String("edit-clear-locationbar-ltr"))
+                                                               .pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
     }
 };
 
