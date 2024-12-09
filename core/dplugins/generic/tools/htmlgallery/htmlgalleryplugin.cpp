@@ -34,6 +34,11 @@ HtmlGalleryPlugin::HtmlGalleryPlugin(QObject* const parent)
 {
 }
 
+void HtmlGalleryPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString HtmlGalleryPlugin::name() const
 {
     return i18n("Html Gallery");
@@ -105,9 +110,13 @@ void HtmlGalleryPlugin::setup(QObject* const parent)
 
 void HtmlGalleryPlugin::slotHtmlGallery()
 {
-    QPointer<HTMLWizard> wzrd = new HTMLWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->show();
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new HTMLWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin

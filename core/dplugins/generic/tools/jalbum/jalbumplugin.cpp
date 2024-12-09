@@ -34,6 +34,11 @@ JAlbumPlugin::JAlbumPlugin(QObject* const parent)
 {
 }
 
+void JAlbumPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString JAlbumPlugin::name() const
 {
     return i18n("jAlbum Export");
@@ -97,10 +102,13 @@ void JAlbumPlugin::setup(QObject* const parent)
 
 void JAlbumPlugin::slotJAlbum()
 {
-    QPointer<JAlbumWizard> wzrd = new JAlbumWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new JAlbumWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericJAlbumPlugin

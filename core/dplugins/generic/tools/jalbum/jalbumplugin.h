@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericJAlbumPlugin
 {
 
+class JAlbumWizard;
+
 class JAlbumPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotJAlbum();
+
+private:
+
+    QPointer<JAlbumWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericJAlbumPlugin

@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
+class HTMLWizard;
+
 class HtmlGalleryPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotHtmlGallery();
+
+private:
+
+    QPointer<HTMLWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
