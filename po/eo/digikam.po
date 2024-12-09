@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-08 01:47+0000\n"
+"POT-Creation-Date: 2024-12-09 01:57+0000\n"
 "PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -22311,7 +22311,7 @@ msgid "Failed to upload photo"
 msgstr "Malsukcesis alŝuti foton"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -49980,61 +49980,61 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la agordojn de la blankbalanco de fotiloj "
 "uzataj por preni la bildon."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr "Miaj Favoritoj"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Plej ŝatataj Dosierujoj"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Nomo:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hierarkio:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Plej ŝatataj Item Propraĵoj"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Nomo:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Kreita:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hierarkio:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Eroj:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"

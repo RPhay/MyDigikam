@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-08 01:47+0000\n"
+"POT-Creation-Date: 2024-12-09 01:57+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -22483,7 +22483,7 @@ msgstr ""
 "\"%1\""
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -51376,20 +51376,20 @@ msgid ""
 "the image."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการแสดงค่าสมดุลสีขาวของกล้องขณะที่ใช้ถ่ายภาพ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "คุณสมบัติของแฟ้ม"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -51397,21 +51397,21 @@ msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "ชื่อ:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "ค้นหา:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "คุณสมบัติของแฟ้ม"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -51419,7 +51419,7 @@ msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "ชื่อ:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
@@ -51427,21 +51427,21 @@ msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "สร้างเมื่อ:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "ค้นหา:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, fuzzy, kde-format
 #| msgid "Items:"
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "จำนวนรายการ:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, fuzzy, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"

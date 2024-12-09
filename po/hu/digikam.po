@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-08 01:47+0000\n"
+"POT-Creation-Date: 2024-12-09 01:57+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -21731,7 +21731,7 @@ msgid "Failed to upload photo"
 msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -49576,20 +49576,20 @@ msgid ""
 "the image."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Fájl tulajdonságok"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -49597,7 +49597,7 @@ msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Név:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, fuzzy, kde-format
 #| msgctxt "@label: quick search properties"
 #| msgid "Search:"
@@ -49605,14 +49605,14 @@ msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Keresés:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Fájl tulajdonságok"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -49620,7 +49620,7 @@ msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Név:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
@@ -49628,7 +49628,7 @@ msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Létrehozva:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, fuzzy, kde-format
 #| msgctxt "@label: quick search properties"
 #| msgid "Search:"
@@ -49636,14 +49636,14 @@ msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Keresés:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, fuzzy, kde-format
 #| msgid "Items:"
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Elemek:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "@info: favorite item caption property"

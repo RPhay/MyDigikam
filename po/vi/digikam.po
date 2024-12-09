@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-08 01:47+0000\n"
+"POT-Creation-Date: 2024-12-09 01:57+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -21664,7 +21664,7 @@ msgid "Failed to upload photo"
 msgstr "Lỗi nạp ảnh « %1 »"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -49134,65 +49134,65 @@ msgstr ""
 "<p>Bật tuỳ chọn này để hiển thị thiết lập cán cân màu trắng của máy ảnh chụp "
 "ảnh."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Thuộc tính tệp"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, fuzzy, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Tên:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Tìm kiếm:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Thuộc tính tệp"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, fuzzy, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Tên:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, fuzzy, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Tạo :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Tìm kiếm:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "16 bit"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, fuzzy, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"

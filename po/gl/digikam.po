@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-08 01:47+0000\n"
-"PO-Revision-Date: 2024-12-06 12:38+0100\n"
+"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"PO-Revision-Date: 2024-12-08 20:33+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2797,7 +2797,7 @@ msgstr "Ficheiro de gráficos progresivos (*.pgf)"
 #: core/app/utils/digikam_globals.cpp:142
 #, kde-format
 msgid "High Efficiency Image Coding (*.heic *.heif)"
-msgstr "Codificación de imaxe de gran eficiencia (*.heic *.heif)"
+msgstr "Codificación de imaxe de grande eficiencia (*.heic *.heif)"
 
 #: core/app/utils/digikam_globals.cpp:149
 #, kde-format
@@ -3635,9 +3635,9 @@ msgid ""
 msgstr ""
 "Inclusión do modelo YuNet DNN para procesar a detección facial e substituír "
 "o modelo SSD anterior. Inclusión do modelo Sface DNN para procesar o "
-"recoñecemento facial e substituír o modelo OpenFace anterior. Ambos modelos "
-"son máis rápidos e requiren menos memoria en tempo de execución, ademais de "
-"dar mellores resultados de xestión facial."
+"recoñecemento facial e substituír o modelo OpenFace anterior. Ambos os "
+"modelos son máis rápidos e requiren menos memoria en tempo de execución, "
+"ademais de dar mellores resultados de xestión facial."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -5018,8 +5018,8 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 "<para>Esta ferramenta de xestor da fila do lote pode converter datos de "
-"imaxes ao formato HEIF.</para><para>O formato de Ficheiro de Imaxe de Gran "
-"Eficiencia (HEIF), tamén coñecido como Codificación de Imaxe de Gran "
+"imaxes ao formato HEIF.</para><para>O formato de Ficheiro de Imaxe de Grande "
+"Eficiencia (HEIF), tamén coñecido como Codificación de Imaxe de Grande "
 "Eficiencia (HEIC), é un formato de ficheiro para imaxes individuais e "
 "secuencias de imaxes. Desenvolveuno o Grupo de Expertos en Imaxes en "
 "Movemento (MPEG) e aseguran que se pode almacenar o dobre de información "
@@ -5027,7 +5027,7 @@ msgstr ""
 "de mellor calidade. HEIF tamén permite animacións, e pode almacenar máis "
 "información que un GIF animado cunha fracción do seu tamaño.</"
 "para><para>Consulte <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>Formato de ficheiro de imaxe de gran "
+"High_Efficiency_Image_File_Format'>Formato de ficheiro de imaxe de grande "
 "eficiencia</a> para máis información.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
@@ -7039,8 +7039,8 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 "<para>Este complemento permite ás persoas usuarias cargar e gardar imaxes "
-"usando o códec Libheif.</para><para>O formato de Ficheiro de Imaxe de Gran "
-"Eficiencia (HEIF), tamén coñecido como Codificación de Imaxe de Gran "
+"usando o códec Libheif.</para><para>O formato de Ficheiro de Imaxe de Grande "
+"Eficiencia (HEIF), tamén coñecido como Codificación de Imaxe de Grande "
 "Eficiencia (HEIC), é un formato de ficheiro para imaxes individuais e "
 "secuencias de imaxes. Desenvolveuno o Grupo de Expertos en Imaxes en "
 "Movemento (MPEG) e aseguran que se pode almacenar o dobre de información "
@@ -7049,7 +7049,7 @@ msgstr ""
 "información que un GIF animado cunha fracción do seu tamaño.</"
 "para><para>Codificar HEIC é relevante para o códec libde265 opcional. %1</"
 "para><para>Consulte <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>Formato de ficheiro de imaxe de gran "
+"High_Efficiency_Image_File_Format'>Formato de ficheiro de imaxe de grande "
 "eficiencia</a> para máis información.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
@@ -7057,7 +7057,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
-msgstr "Codificación de imaxe de gran eficiencia"
+msgstr "Codificación de imaxe de grande eficiencia"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
@@ -7351,7 +7351,7 @@ msgid ""
 msgstr ""
 "<para>Este complemento permite ás persoas usuarias cargar e gardar imaxes "
 "usando os codificadores de ImageMagick.</para><para>ImageMagick é unha "
-"colección de software libre para converter ficheiros de imaxe raster e "
+"colección de programas libres para converter ficheiros de imaxe raster e "
 "vectoriais. Pode ler e escribir máis de 200 formatos de ficheiro de imaxe.</"
 "para><para>Consulte a <a href='https://en.wikipedia.org/wiki/"
 "ImageMagick'>documentación de ImageMagick</a> (en inglés) para máis "
@@ -7487,7 +7487,7 @@ msgstr ""
 "<para>Este complemento permite ás persoas usuarias cargar e gardar imaxes "
 "usando o códec Libpng.</para><para>Portable Network Graphics (PNG) é un "
 "formato de ficheiro de gráficos raster que permite compresión de datos sen "
-"perda. PNG desenvolveuse a modo de substituto mellorado e sen patentes de "
+"perda. PNG desenvolveuse como substituto mellorado e sen patentes de "
 "Graphics Interchange Format.</para><para>Consulte a <a href='https://gl."
 "wikipedia.org/wiki/Portable_Network_Graphics'>documentación de Portable "
 "Network Graphics</a> para máis información.</para>"
@@ -16754,7 +16754,7 @@ msgid ""
 "low number trades off quality of results for faster execution time and lower "
 "memory usage."
 msgstr ""
-"Indique o número de niveis para a fusión piramidal. Equilibra cara "
+"Indique o número de niveis para a fusión piramidal. Equilibra cara a "
 "características locais (número baixo) ou globais (número alto). Un número "
 "baixo compromete a calidade dos resultados en beneficio dun tempo de "
 "execución máis rápido e un uso da memoria menor."
@@ -22515,7 +22515,7 @@ msgid "Failed to upload photo"
 msgstr "Non foi posíbel enviar a foto"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -29580,7 +29580,7 @@ msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
-"O configuración do nome da base de datos non é correcta. O erro é:<br/> <p>"
+"A configuración de nomes da base de datos non é correcta. O erro é:<br/><p>"
 "%1</p><br/> Revise a configuración."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
@@ -32628,7 +32628,7 @@ msgid ""
 "the inner circle of the filter to the outer circle."
 msgstr ""
 "Este valor é usado como expoñente para controlar o decaemento de densidade "
-"desde o círculo interior do filtro cara o círculo exterior."
+"desde o círculo interior do filtro cara ao círculo exterior."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
 #, kde-format
@@ -32912,7 +32912,7 @@ msgid ""
 "distortions."
 msgstr ""
 "O efecto de distorsión refírese a unha deformación da imaxe, máis "
-"pronunciado cara o contorno. Estas aberracións de Seidel son coñecidas como "
+"pronunciado cara ao contorno. Estas aberracións de Seidel son coñecidas como "
 "distorsións en coxín e en bocoi."
 
 #: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
@@ -34905,7 +34905,7 @@ msgstr ""
 "filtros activos.\n"
 "Prema o botón Reiniciar da parte dereita para limpar todas as opcións de "
 "filtrado.\n"
-" Prema o opción Preferencias da parte dereita para abrir o panel dos filtros."
+" Prema a opción Preferencias da parte dereita para abrir o panel dos filtros."
 
 #: core/libs/filters/filterstatusbar.cpp:82
 #, kde-format
@@ -39237,7 +39237,7 @@ msgstr "Formato de imaxe en cru de cámaras dixitais de Hasselblad"
 #: core/libs/rawengine/drawfiles.cpp:114 core/libs/rawengine/drawfiles.cpp:156
 #, kde-format
 msgid "Phantom Software Raw Image File"
-msgstr "Ficheiro de imaxe en cru de Phantom Software"
+msgstr "Ficheiro de imaxe en cru do programa Phantom"
 
 #: core/libs/rawengine/drawfiles.cpp:115
 #, kde-format
@@ -42694,7 +42694,7 @@ msgid ""
 "font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Xestión</b> de fotos <b>profesional</b> co "
-"poder do <b>software libre</b></font><font color=\"gray\"><br/><i>%1</i></"
+"poder dos <b>programas libres</b></font><font color=\"gray\"><br/><i>%1</i></"
 "font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:54
@@ -45180,7 +45180,7 @@ msgstr "Inglés (Estados Unidos)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
-msgstr "Inglés (Santo Vicente e as Granadinas)"
+msgstr "Inglés (San Vicente e as Granadinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
 msgctxt "@info: country code"
@@ -47414,7 +47414,7 @@ msgstr "Saint-Pierre-et-Miquelon"
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Vincent and the Grenadines"
-msgstr "Santo Vicente e as Granadinas"
+msgstr "San Vicente e as Granadinas"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:231
 #, kde-format
@@ -47432,7 +47432,7 @@ msgstr "San Marino"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
-msgstr "Santo Tomé e Príncipe"
+msgstr "San Tomé e Príncipe"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:234
 #, kde-format
@@ -50347,61 +50347,61 @@ msgstr ""
 "Escolla esta opción para amosar a configuración do balance de brancos da "
 "cámara usado para tirar a imaxe."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr "Favoritas"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Propiedades de cartafoles favoritas"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Nome:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Xerarquía:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Propiedades de elementos favoritas"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Nome:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Creación:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Xerarquía:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Elementos:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -54062,7 +54062,7 @@ msgstr "Peixaría"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
 #, kde-format
 msgid "Department Store"
-msgstr "Gran almacén"
+msgstr "Grande almacén"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
@@ -56069,7 +56069,7 @@ msgid ""
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
 "<p><b>Proxección equirectangular</b> (\"Plate carrée\")</p> <p>Aplicacións: "
-"estándar de facto para grupos de datos de texturas globais para software de "
+"estándar de facto para grupos de datos de texturas globais para programas de "
 "computador.</p>"
 
 #: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:78
@@ -56221,7 +56221,7 @@ msgid ""
 msgstr ""
 "Especifica a notación dos ángulos en coordenadas.\n"
 "De maneira predeterminada úsase a notación grao-minuto-segundo (p. ex. "
-"54°30'00\").\n"
+"54° 30′ 00″).\n"
 "Como alternativa, pódense escoller graos decimais (p. ex. 54,5°)."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:134
@@ -56341,8 +56341,8 @@ msgstr ""
 "Aumentar este valor fai que a aplicación responda mellor.\n"
 "A «memoria no disco duro», que se usa para descargar datos de mapa de "
 "Internet.\n"
-"Diminúa este valor se quere aforrar espazo no disco duro e se un gran uso de "
-"Internet non é\n"
+"Diminúa este valor se quere aforrar espazo no disco duro e se un grande uso "
+"de Internet non é\n"
 "un problema."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:184
@@ -60068,13 +60068,14 @@ msgid ""
 "\n"
 "Try Anyway?"
 msgstr ""
-"Non hai espazo libre dabondo no disco do álbum seleccionado para descargar e "
+"Non hai espazo libre dabondo no disco do álbum seleccionado para descargar "
+"e\n"
 "procesar as imaxes seleccionadas da cámara.\n"
 "\n"
 "Espazo requirido calculado: %1\n"
 "Espazo libre dispoñíbel: %2\n"
 "\n"
-"Quere intentalo de todos xeitos?"
+"Quere intentalo de todos os xeitos?"
 
 #: core/utilities/import/main/importui.cpp:2311
 #: core/utilities/import/main/importui.cpp:2337
@@ -65371,7 +65372,7 @@ msgid ""
 msgstr ""
 "<item><emphasis strong='true'>JPEG 2000</emphasis>: JPEG 2000 é semellante "
 "ao PGF. A carga e o gardado son máis lentos, a taxa de compresión é mellor e "
-"o formato máis aceptado, aínda que aínda non é comparábel aos formatos "
+"o formato máis aceptado, pero aínda non é comparábel aos formatos "
 "tradicionais JPEG, PNG ou TIFF.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:504
@@ -66209,7 +66210,7 @@ msgstr ""
 "se pode colocar unha bandeira que indique que hai que rotar o ficheiro antes "
 "de amosalo.</para> <para>Escolla esta opción se quere que sempre se coloque "
 "só unha bandeira. Isto é menos intrusivo, pero require compatibilidade para "
-"que se poida acceder ao ficheiro usando outro software. Asegúrese de que se "
+"que se poida acceder ao ficheiro usando outro programa. Asegúrese de que se "
 "coloca a bandeira nos metadatos se quere compartir os ficheiros desde fóra "
 "de digiKam.</para>"
 
@@ -67052,7 +67053,7 @@ msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"Configuración de orde de calidade de imaxes\n"
+"Configuración de ordenación de calidade de imaxes\n"
 "Personalizar a configuración predeterminada para organizar as imaxes por "
 "calidade"
 
