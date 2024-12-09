@@ -159,8 +159,8 @@ void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget             = new QWidget(this);
     d->wholeAlbums             = new QCheckBox(i18nc("@option", "All albums"), d->albumWidget);
-    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive"), d->albumWidget);
-    d->recursiveSelectionAlbum->setToolTip(i18nc("@info:tooltip", "Recursive selection."));
+    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive selection"), d->albumWidget);
+    d->recursiveSelectionAlbum->setToolTip(i18nc("@info:tooltip", "Recursive album selection."));
     d->recursiveSelectionAlbum->setChecked(true);
 
     if (!d->allowRecursive)
@@ -184,8 +184,9 @@ void AlbumSelectors::initAlbumWidget()
 
     QHBoxLayout* l      = new QHBoxLayout;
     l->addWidget(d->wholeAlbums);
+    l->addStretch(10);
     l->addWidget(d->recursiveSelectionAlbum);
-    l->addItem(new QSpacerItem(0, 0, QSizePolicy::Policy::Expanding));
+    l->addStretch(5);
 
     QGridLayout* const pAlbumsGrid = new QGridLayout(d->albumWidget);
     pAlbumsGrid->addLayout(l,                   0, 0, 1, 2);
@@ -219,8 +220,8 @@ void AlbumSelectors::initTagWidget()
 {
     d->tagWidget              = new QWidget(this);
     d->wholeTags              = new QCheckBox(i18nc("@option", "All tags"), d->tagWidget);
-    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive"), d->albumWidget);
-    d->recursiveSelectionTags->setToolTip(i18nc("@info:tooltip", "Recursive selection."));
+    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive selection"), d->albumWidget);
+    d->recursiveSelectionTags->setToolTip(i18nc("@info:tooltip", "Recursive tags selection."));
     d->recursiveSelectionTags->setChecked(true);
 
     if (!d->allowRecursive)
@@ -241,8 +242,9 @@ void AlbumSelectors::initTagWidget()
 
     QHBoxLayout* l    = new QHBoxLayout;
     l->addWidget(d->wholeTags);
+    l->addStretch(10);
     l->addWidget(d->recursiveSelectionTags);
-    l->addItem(new QSpacerItem(0, 0, QSizePolicy::Policy::Expanding));
+    l->addStretch(5);
 
     QGridLayout* const tAlbumsGrid = new QGridLayout(d->tagWidget);
     tAlbumsGrid->addLayout(l,                 0, 0, 1, 2);
