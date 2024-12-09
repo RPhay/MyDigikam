@@ -47,7 +47,10 @@ public:
         Medium,
         Big,
         Large,
-        Huge
+        Huge,
+        QXGA,
+        QHD,
+        UHD
     };
 
 public:
@@ -107,9 +110,27 @@ int Resize::Private::presetLengthValue(WidthPreset preset)
             break;
         }
 
-        default:   // Private::Huge
+        case Private::Huge:
         {
             length = 1600;
+            break;
+        }
+
+        case Private::QXGA:
+        {
+            length = 2048;
+            break;
+        }
+
+        case Private::QHD:
+        {
+            length = 2560;
+            break;
+        }
+
+        default:   // Private::UHD
+        {
+            length = 3840;
             break;
         }
     }
@@ -146,10 +167,13 @@ void Resize::registerSettingsWidget()
     d->presetCBox->insertItem(Private::Big,    i18np("Big (1 pixel)",    "Big (%1 pixels)",    d->presetLengthValue(Private::Big)));
     d->presetCBox->insertItem(Private::Large,  i18np("Large (1 pixel)",  "Large (%1 pixels)",  d->presetLengthValue(Private::Large)));
     d->presetCBox->insertItem(Private::Huge,   i18np("Huge (1 pixel)",   "Huge (%1 pixels)",   d->presetLengthValue(Private::Huge)));
+    d->presetCBox->insertItem(Private::QXGA,   i18np("QXGA (1 pixel)",   "QXGA (%1 pixels)",   d->presetLengthValue(Private::QXGA)));
+    d->presetCBox->insertItem(Private::QHD,    i18np("QHD (1 pixel)",    "QHD (%1 pixels)",    d->presetLengthValue(Private::QHD)));
+    d->presetCBox->insertItem(Private::UHD,    i18np("UHD (1 pixel)",    "UHD (%1 pixels)",    d->presetLengthValue(Private::UHD)));
 
-    d->scaleDown        = new QCheckBox(i18n("Not enlarge small images"), vbox);
-    d->useCustom        = new QCheckBox(i18n("Use Custom Length"),        vbox);
-    d->usePercent       = new QCheckBox(i18n("Use Percentage"),           vbox);
+    d->scaleDown        = new QCheckBox(i18n("Do Not Enlarge Small Images"), vbox);
+    d->useCustom        = new QCheckBox(i18n("Use Custom Length"),           vbox);
+    d->usePercent       = new QCheckBox(i18n("Use Percentage"),              vbox);
     d->customLength     = new DIntNumInput(vbox);
     d->customLength->setSuffix(i18n(" Pixels"));
     d->customLength->setRange(10, 10000, 1);

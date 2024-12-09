@@ -43,7 +43,7 @@ BUGFIXES:
 031 ==> 496484 - (mov.) video playback distorted colors.
 032 ==> 485468 - digiKam crash with no attention when preview webm.
 033 ==> 497147 - Launching of v8.5 creates wrong initial screen: a copy of the desktop.
-034 ==>
+034 ==> 497217 - Expand Batch Queue Manager Resize to include larger preset lengths and revise text.
 035 ==>
 036 ==>
 037 ==>
