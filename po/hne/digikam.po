@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"POT-Creation-Date: 2024-12-10 01:54+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -6613,71 +6613,92 @@ msgid ""
 "stage.</para>"
 msgstr "रंग जगह"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, fuzzy, kde-format
 msgid "Preset Length:"
 msgstr "प्रीसेट:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, fuzzy, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, fuzzy, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, fuzzy, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, fuzzy, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, fuzzy, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, fuzzy, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "चौड़ाई ( पिक्सेल्स):"
 msgstr[1] "चौड़ाई ( पिक्सेल्स):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
+#, fuzzy, kde-format
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] "चौड़ाई ( पिक्सेल्स):"
+msgstr[1] "चौड़ाई ( पिक्सेल्स):"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, fuzzy, kde-format
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] "चौड़ाई ( पिक्सेल्स):"
+msgstr[1] "चौड़ाई ( पिक्सेल्स):"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, fuzzy, kde-format
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] "चौड़ाई ( पिक्सेल्स):"
+msgstr[1] "चौड़ाई ( पिक्सेल्स):"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
 #, kde-format
-msgid "Not enlarge small images"
+msgid "Do Not Enlarge Small Images"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, fuzzy, kde-format
 #| msgid "Percent:"
 msgid "Use Percentage"
 msgstr "प्रतिसत:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, fuzzy, kde-format
 #| msgid "Pixels:"
 msgid " Pixels"
@@ -8838,7 +8859,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, fuzzy, kde-format
 msgid "Image Settings"
 msgstr "कैमरा सेटिंग"
@@ -15588,7 +15609,7 @@ msgid "Former Author"
 msgstr "लेखक"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -16447,7 +16468,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -16968,17 +16989,17 @@ msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "देसान्तर"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, fuzzy, kde-format
 msgid "Html Gallery"
 msgstr "फोटू कैप्चर करव..."
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -16987,13 +17008,13 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Author and maintainer"
 msgid "Former Author and Maintainer"
 msgstr "लेखक अउ मेंटेनर"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17217,43 +17238,43 @@ msgstr "कोई विकल्प नइ मिलत हे."
 msgid "Author: %1<br/><br/>"
 msgstr "लेखकः"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, fuzzy, kde-format
 #| msgid "Created tables"
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "टेबल बनाइस"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
 msgstr "चयन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Theme Selection"
 msgstr "चयन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, fuzzy, kde-format
 msgid "Theme Parameters"
 msgstr "पैरेन्ट्स"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "सामान्य सेटिंग"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgid "Generating Gallery"
@@ -17289,18 +17310,18 @@ msgstr "%1 मं फाइल सूची बनाना फेल"
 msgid "Launch jAlbum with new project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "jAlbum Export"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -17309,7 +17330,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -27050,99 +27071,105 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "एलबम चुनव"
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "टैग्स:"
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive"
+msgid "Recursive selection"
 msgstr "चयन"
 
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive album selection."
 msgstr "चयन"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "%1 एलबम चुने गे"
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "चुने गे अलबमों ल मेटाय जाही"
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "सब्बो टैग"
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr "चयन"
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "%1 टैग चुने गे"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "विसय सूची रीसेट करव"
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "टैग्स:"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -66601,6 +66628,12 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "फोटू छांटव (&S)"
+
+#, fuzzy
+#~| msgid "Selection"
+#~ msgctxt "@option"
+#~ msgid "Recursive"
+#~ msgstr "चयन"
 
 #, fuzzy
 #~ msgid "Error loading RAW image '%1'"

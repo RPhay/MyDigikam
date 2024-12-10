@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"POT-Creation-Date: 2024-12-10 01:54+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -6651,12 +6651,12 @@ msgid ""
 "stage.</para>"
 msgstr "Rīks attēlu pārveidošanai uz PGF formātu."
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, kde-format
 msgid "Preset Length:"
 msgstr "Iepriekšnoteikts garums:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
@@ -6664,7 +6664,7 @@ msgstr[0] "Niecīgs (%1 pikselis)"
 msgstr[1] "Niecīgs (%1 pikseļi)"
 msgstr[2] "Niecīgs (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
@@ -6672,7 +6672,7 @@ msgstr[0] "Mazs (%1 pikselis)"
 msgstr[1] "Mazs (%1 pikseļi)"
 msgstr[2] "Mazs (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
@@ -6680,7 +6680,7 @@ msgstr[0] "Vidējs (%1 pikselis)"
 msgstr[1] "Vidējs (%1 pikseļi)"
 msgstr[2] "Vidējs (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
@@ -6688,7 +6688,7 @@ msgstr[0] "Liels (%1 pikselis)"
 msgstr[1] "Liels (%1 pikseļi)"
 msgstr[2] "Liels (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
@@ -6696,7 +6696,7 @@ msgstr[0] "Ļoti liels (%1 pikselis)"
 msgstr[1] "Ļoti liels (%1 pikseļi)"
 msgstr[2] "Ļoti liels (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
@@ -6704,25 +6704,55 @@ msgstr[0] "Milzīgs (%1 pikselis)"
 msgstr[1] "Milzīgs (%1 pikseļi)"
 msgstr[2] "Milzīgs (%1 pikseļi)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
+#, fuzzy, kde-format
+#| msgid "Big (1 pixel)"
+#| msgid_plural "Big (%1 pixels)"
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] "Liels (%1 pikselis)"
+msgstr[1] "Liels (%1 pikseļi)"
+msgstr[2] "Liels (%1 pikseļi)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] "Milzīgs (%1 pikselis)"
+msgstr[1] "Milzīgs (%1 pikseļi)"
+msgstr[2] "Milzīgs (%1 pikseļi)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] "Milzīgs (%1 pikselis)"
+msgstr[1] "Milzīgs (%1 pikseļi)"
+msgstr[2] "Milzīgs (%1 pikseļi)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
 #, fuzzy, kde-format
 #| msgid "Enlarge smaller images"
-msgid "Not enlarge small images"
+msgid "Do Not Enlarge Small Images"
 msgstr "Palielināt mazākus attēlus"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Lietot pielāgotu garumu"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, fuzzy, kde-format
 #| msgid "Percent:"
 msgid "Use Percentage"
 msgstr "Procenti:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, kde-format
 msgid " Pixels"
 msgstr " Pikseļi"
@@ -9043,7 +9073,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Attēla iestatījumi"
@@ -15739,7 +15769,7 @@ msgid "Former Author"
 msgstr "Autors"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -16599,7 +16629,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -17123,17 +17153,17 @@ msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "Garums"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, kde-format
 msgid "Html Gallery"
 msgstr "HTML galerija"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -17142,12 +17172,12 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17365,44 +17395,44 @@ msgstr "Nav opciju"
 msgid "Author: %1<br/><br/>"
 msgstr "Autors: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, fuzzy, kde-format
 #| msgid "Create HTML Gallery"
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Izveidot HTML galeriju"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
 msgstr "Iezīmētais"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Theme Selection"
 msgstr "Iezīmētais"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, fuzzy, kde-format
 msgid "Theme Parameters"
 msgstr "Vecāki"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 #| msgid "Queue Settings"
 msgid "Output Settings"
 msgstr "Rindu iestatījumi"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgid "Generating Gallery"
@@ -17438,18 +17468,18 @@ msgstr "Neizdevās saglabāt attēlu..."
 msgid "Launch jAlbum with new project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "jAlbum Export"
 msgstr "Eksportēt"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -17458,7 +17488,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -27406,20 +27436,20 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Izvēlieties albumu"
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albumi (visi)"
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Tagi (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
@@ -27427,41 +27457,40 @@ msgctxt "@option"
 msgid "All albums"
 msgstr "Visi albumi"
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
-msgid "Recursive"
+msgid "Recursive selection"
 msgstr "Iezīmētais"
 
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive album selection."
 msgstr "Iezīmētais"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Izvēlieties visus albumus, kuri būtu jāiekļauj meklējamo sarakstā."
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nav izvēlēts neviens albums"
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Atiestatīt albumu atlasi"
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Tags"
@@ -27469,37 +27498,44 @@ msgctxt "@option"
 msgid "All tags"
 msgstr "Visi tagi"
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr "Iezīmētais"
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Izvēlieties visus tagus, kuri būtu jāiekļauj meklējamo sarakstā."
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nav izvēlēts neviens tags"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Atstatīt saturu"
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumi (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Tagi (visi)"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -68073,6 +68109,12 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgid "Selection"
+#~ msgctxt "@option"
+#~ msgid "Recursive"
+#~ msgstr "Iezīmētais"
 
 #, fuzzy
 #~ msgid "Error loading RAW image '%1'"

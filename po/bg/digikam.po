@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"POT-Creation-Date: 2024-12-10 01:54+0000\n"
 "PO-Revision-Date: 2024-11-28 20:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -6774,70 +6774,98 @@ msgstr ""
 "<para>Този инструмент на мениджъра за пакетна обработка може да  изпълнява "
 "потребителски скриптове като етап на работния процес.</para>"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, kde-format
 msgid "Preset Length:"
 msgstr "Предварително зададена дължина:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "Много малка (1 пиксел)"
 msgstr[1] "Много малка (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "Малка (1 пиксел)"
 msgstr[1] "Малка (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "Средна (1 пиксел)"
 msgstr[1] "Средна (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "Голям (1 пиксел)"
 msgstr[1] "Големи (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "Голяма (1 пиксел)"
 msgstr[1] "Голяма (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "Много голяма (1 пиксел)"
 msgstr[1] "Много голяма (%1 пиксела)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
-#, kde-format
-msgid "Not enlarge small images"
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
+#, fuzzy, kde-format
+#| msgid "Big (1 pixel)"
+#| msgid_plural "Big (%1 pixels)"
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] "Голям (1 пиксел)"
+msgstr[1] "Големи (%1 пиксела)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] "Много голяма (1 пиксел)"
+msgstr[1] "Много голяма (%1 пиксела)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] "Много голяма (1 пиксел)"
+msgstr[1] "Много голяма (%1 пиксела)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
+#, fuzzy, kde-format
+#| msgid "Not enlarge small images"
+msgid "Do Not Enlarge Small Images"
 msgstr "Да не се уголемяват малки изображения"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Използвайте потребителска дължина"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, kde-format
 msgid "Use Percentage"
 msgstr "Използване на проценти"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, kde-format
 msgid " Pixels"
 msgstr " Пиксели"
@@ -9263,7 +9291,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Изображение"
@@ -16219,7 +16247,7 @@ msgid "Former Author"
 msgstr "Предишен автор"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -17123,7 +17151,7 @@ msgstr ""
 "добре адаптирани за сливане на пиксел с пиксел.</p>"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -17645,17 +17673,17 @@ msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "GPS дължина"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, kde-format
 msgid "Html Gallery"
 msgstr "Html галерия"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr "Инструмент за генериране на HTML галерия от изображения"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -17669,12 +17697,12 @@ msgstr ""
 "група от избрани албуми. </p><p>Тематичен HTML шаблон с различно оформление "
 "може да се използва за сглобяване на файловете в галерия.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Бивш автор и поддържащ"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17892,40 +17920,40 @@ msgstr "няма налично персонализиране"
 msgid "Author: %1<br/><br/>"
 msgstr "Автор: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Създаване на HTML галерия"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Добре дошли в инструмент за създаване на HTML галерия"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr "Избор на елементи"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "Избор на тема"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Параметри на темата"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Изходни настройки"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Генериране на галерия"
@@ -17960,18 +17988,18 @@ msgstr "Неуспешно създаване на файловете за на�
 msgid "Launch jAlbum with new project files"
 msgstr "Стартиране на jAlbum с нови файлове на проекта"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, kde-format
 msgid "jAlbum Export"
 msgstr "Експорт на jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 "Инструмент за експортиране на изображения в генератор на галерии jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -17985,7 +18013,7 @@ msgstr ""
 "p><p>jAlbum може да се използва с различни шаблони и оформление. Вижте "
 "уебсайта на jAlbum за подробности: https://jalbum.net/.</p>"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -28118,94 +28146,105 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Избор на албум"
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Албуми (Всички)"
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Тагове (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Всички албуми"
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
 msgctxt "@option"
-msgid "Recursive"
-msgstr "Рекурсивно"
-
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive selection"
 msgstr "Рекурсивна селекция."
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:177
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
+msgctxt "@info:tooltip"
+msgid "Recursive album selection."
+msgstr "Рекурсивна селекция."
+
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Изберете всички албуми, които трябва да бъдат обработени."
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Не е избран албум"
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Нулиране на избрани албуми"
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Всички етикети"
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr "Рекурсивна селекция."
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Изберете всички тагове, които трябва да бъдат обработени."
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Не е избран таг"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Възстановяване на избраните тагове"
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Албуми (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Тагове(всички)"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -68455,6 +68494,10 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@option"
+#~ msgid "Recursive"
+#~ msgstr "Рекурсивно"
 
 #~ msgid "Error loading RAW image '%1'"
 #~ msgstr "Грешка при зареждане на RAW изображение \"%1\""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"POT-Creation-Date: 2024-12-10 01:54+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -6437,12 +6437,12 @@ msgid ""
 "stage.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, kde-format
 msgid "Preset Length:"
 msgstr "Přednastavená délka:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
@@ -6450,7 +6450,7 @@ msgstr[0] "Drobný (1 pixel)"
 msgstr[1] "Drobný (%1 pixely)"
 msgstr[2] "Drobný (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
@@ -6458,7 +6458,7 @@ msgstr[0] "Malý (1 pixel)"
 msgstr[1] "Malý (%1 pixely)"
 msgstr[2] "Malý (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
@@ -6466,7 +6466,7 @@ msgstr[0] "Střední (1pixel)"
 msgstr[1] "Střední (%1 pixely)"
 msgstr[2] "Střední (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
@@ -6474,7 +6474,7 @@ msgstr[0] "Velký (1 pixel)"
 msgstr[1] "Velký (%1 pixely)"
 msgstr[2] "Velký (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
@@ -6482,7 +6482,7 @@ msgstr[0] "Velmi velký (1 pixel)"
 msgstr[1] "Velmi velký (%1 pixely)"
 msgstr[2] "Velmi velký (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
@@ -6490,23 +6490,54 @@ msgstr[0] "Obrovský (1 pixel)"
 msgstr[1] "Obrovský (%1 pixely)"
 msgstr[2] "Obrovský (%1 pixelů)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
-#, kde-format
-msgid "Not enlarge small images"
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
+#, fuzzy, kde-format
+#| msgid "Big (1 pixel)"
+#| msgid_plural "Big (%1 pixels)"
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] "Velký (1 pixel)"
+msgstr[1] "Velký (%1 pixely)"
+msgstr[2] "Velký (%1 pixelů)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] "Obrovský (1 pixel)"
+msgstr[1] "Obrovský (%1 pixely)"
+msgstr[2] "Obrovský (%1 pixelů)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] "Obrovský (1 pixel)"
+msgstr[1] "Obrovský (%1 pixely)"
+msgstr[2] "Obrovský (%1 pixelů)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
+#, fuzzy, kde-format
+#| msgid "Not enlarge small images"
+msgid "Do Not Enlarge Small Images"
 msgstr "Nezvětšovat malé obrázky"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Použít vlastní délku"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, kde-format
 msgid "Use Percentage"
 msgstr "Použít procentní podíl"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, kde-format
 msgid " Pixels"
 msgstr " Pixely"
@@ -8700,7 +8731,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Nastavení obrázku"
@@ -15436,7 +15467,7 @@ msgid "Former Author"
 msgstr "Bývalý autor"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -16290,7 +16321,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -16790,17 +16821,17 @@ msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "Zem. délka GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, kde-format
 msgid "Html Gallery"
 msgstr "HTML galerie"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -16809,12 +16840,12 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Bývalý autor a správce"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17026,40 +17057,40 @@ msgstr "nejsou k dispozici žádné úpravy"
 msgid "Author: %1<br/><br/>"
 msgstr "Autor: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Vytvořit galerii HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Vítejte v nástroji pro galerie HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr "Výběr položek"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "Výběr motivu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Parametry motivu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Nastavení výstupu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Vytváří se galerie"
@@ -17094,17 +17125,17 @@ msgstr ""
 msgid "Launch jAlbum with new project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, kde-format
 msgid "jAlbum Export"
 msgstr "Export do jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -17113,7 +17144,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -26739,94 +26770,105 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Vybrat album"
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Značky (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Všechna alba"
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
-#, kde-format
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
 msgctxt "@option"
-msgid "Recursive"
-msgstr "Rekurzivně"
-
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive selection"
 msgstr "Rekurzivní výběr."
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:177
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
+msgctxt "@info:tooltip"
+msgid "Recursive album selection."
+msgstr "Rekurzivní výběr."
+
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Vyberte všechna alba, která by měla být zpracována."
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Žádné album nebylo vybráno"
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Obnovit vybraná alba"
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Všechny značky"
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive selection."
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr "Rekurzivní výběr."
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Vyberte všechny značky, které by měly být zpracovány."
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Žádná značka nebyla vybrána"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Obnovit vybrané značky"
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Alba (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Značky (Všechny)"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -65958,6 +66000,10 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
+
+#~ msgctxt "@option"
+#~ msgid "Recursive"
+#~ msgstr "Rekurzivně"
 
 #~ msgid "Error loading RAW image '%1'"
 #~ msgstr "Nelze načíst obrázek RAW '%1'"

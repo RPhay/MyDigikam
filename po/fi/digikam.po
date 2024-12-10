@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 01:57+0000\n"
+"POT-Creation-Date: 2024-12-10 01:54+0000\n"
 "PO-Revision-Date: 2024-10-29 20:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -6946,71 +6946,99 @@ msgstr ""
 "<para>Tällä eräajotyökalulla voi työnkulun vaiheena suorittaa käyttäjän "
 "komentotulkkiskriptejä.</para>"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, kde-format
 msgid "Preset Length:"
 msgstr "Esiasetuksen leveys:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "Pikkuruinen (yksi kuvapiste)"
 msgstr[1] "Pikkuruinen (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "Pieni (yksi kuvapiste)"
 msgstr[1] "Pieni (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "Keskikokoinen (yksi kuvapiste)"
 msgstr[1] "Keskikokoinen (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "Suuri (yksi kuvapiste)"
 msgstr[1] "Suuri (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "Erittäin suuri (yksi kuvapiste)"
 msgstr[1] "Erittäin suuri (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "Valtava (yksi kuvapiste)"
 msgstr[1] "Valtava (%1 kuvapistettä)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
-#, kde-format
-msgid "Not enlarge small images"
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
+#, fuzzy, kde-format
+#| msgid "Big (1 pixel)"
+#| msgid_plural "Big (%1 pixels)"
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] "Suuri (yksi kuvapiste)"
+msgstr[1] "Suuri (%1 kuvapistettä)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] "Valtava (yksi kuvapiste)"
+msgstr[1] "Valtava (%1 kuvapistettä)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, fuzzy, kde-format
+#| msgid "Huge (1 pixel)"
+#| msgid_plural "Huge (%1 pixels)"
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] "Valtava (yksi kuvapiste)"
+msgstr[1] "Valtava (%1 kuvapistettä)"
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
+#, fuzzy, kde-format
+#| msgid "Not enlarge small images"
+msgid "Do Not Enlarge Small Images"
 msgstr "Älä suurenna pieniä kuvia"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Määritä"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, fuzzy, kde-format
 #| msgid "Percent:"
 msgid "Use Percentage"
 msgstr "Prosenttia:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, kde-format
 msgid " Pixels"
 msgstr " kuvapistettä"
@@ -9437,7 +9465,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Kuvan asetukset"
@@ -16399,7 +16427,7 @@ msgid "Former Author"
 msgstr "Aiempi tekijä"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -17292,7 +17320,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -17806,17 +17834,17 @@ msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "GPS-pituusastetieto"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, kde-format
 msgid "Html Gallery"
 msgstr "HTML-galleria"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr "Työkalu HTML-kuvagallerian luomiseksi kuvista"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to share items on the local network through a DLNA "
@@ -17834,12 +17862,12 @@ msgstr ""
 "albumivalinnan kautta.</p> <p>Monet laitteet kuten tabletit, matkapuhelimet, "
 "TV:t jne. tukevat DLNA:ta.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Aiempi tekijä ja ylläpitäjä"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -18056,40 +18084,40 @@ msgstr "mukautus ei käytettävissä"
 msgid "Author: %1<br/><br/>"
 msgstr "Tekijä: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Luo HTML-galleria"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Tervetuloa HTML-kuvagalleriatyökaluun"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr "Kohteiden valinta"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "Teeman valinta"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Teeman parametrit"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Ulostuloasetukset"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Luodaan galleriaa"
@@ -18124,17 +18152,17 @@ msgstr "Asetustiedoston luominen epäonnistui"
 msgid "Launch jAlbum with new project files"
 msgstr "Käynnistä jAlbum uusilla projektitiedostoilla"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, kde-format
 msgid "jAlbum Export"
 msgstr "jAlbum-vienti"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr "Työkalu kuvien viemiseksi jAlbum-kuvagallerialuontiin"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to share items on the local network through a DLNA "
@@ -18152,7 +18180,7 @@ msgstr ""
 "albumivalinnan kautta.</p> <p>Monet laitteet kuten tabletit, matkapuhelimet, "
 "TV:t jne. tukevat DLNA:ta.</p>"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -28193,20 +28221,20 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Valitse albumi"
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albumit (kaikki)"
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Luokitukset (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
@@ -28214,43 +28242,42 @@ msgctxt "@option"
 msgid "All albums"
 msgstr "Kaikki albumit"
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Recursive Selection"
 msgctxt "@option"
-msgid "Recursive"
+msgid "Recursive selection"
 msgstr "Rekursiivinen valinta"
 
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Recursive Selection"
 msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive album selection."
 msgstr "Rekursiivinen valinta"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Valitse kaikki käsiteltävät albumit."
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Ei valittuja albumeja"
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Nollaa valitut albumit"
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Tags"
@@ -28258,37 +28285,45 @@ msgctxt "@option"
 msgid "All tags"
 msgstr "Kaikki luokitukset"
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Recursive Selection"
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr "Rekursiivinen valinta"
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Valitse kaikki käsiteltävät luokitukset."
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Ei valittuja luokituksia"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Tyhjennä luokitusten valinta"
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumit (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Luokitukset (kaikki)"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -67881,6 +67916,13 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#, fuzzy
+#~| msgctxt "@option"
+#~| msgid "Recursive Selection"
+#~ msgctxt "@option"
+#~ msgid "Recursive"
+#~ msgstr "Rekursiivinen valinta"
 
 #~ msgid "Error loading RAW image '%1'"
 #~ msgstr "Virhe ladattaessa RAW-kuvaa ”%1”"
