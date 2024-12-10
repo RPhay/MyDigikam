@@ -36,6 +36,7 @@ no-qproperty-without-notify,\
 no-old-style-connect,\
 no-qstring-allocations,\
 no-qstring-arg,\
+no-qstring-ref,\
 no-qstring-insensitive-allocation,\
 no-function-args-by-value,\
 no-fully-qualified-moc-types,\
