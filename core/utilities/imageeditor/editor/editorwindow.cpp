@@ -2623,7 +2623,7 @@ void EditorWindow::setupSelectToolsAction()
 
         for (DPluginAction* const ac : acs)
         {
-            actionModel->addAction(ac, effectsCategory);
+            actionModel->addAction(ac, colorsCategory);
         }
     }
 
@@ -2634,7 +2634,7 @@ void EditorWindow::setupSelectToolsAction()
 
         for (DPluginAction* const ac : acs)
         {
-            actionModel->addAction(ac, effectsCategory);
+            actionModel->addAction(ac, enhanceCategory);
         }
     }
 
