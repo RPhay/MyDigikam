@@ -9,7 +9,7 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "0300" || $DATE == "0900" || $DATE == "1500" || $DATE == "2100"  ]] ; then
+    if [[ $DATE == "0700" || $DATE == "1100" || $DATE == "1500" || $DATE == "1900"  ]] ; then
 
         echo "Windows bundle started at $(date)"
         git pull

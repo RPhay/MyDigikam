@@ -9,7 +9,7 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "0000" || $DATE == "0600" || $DATE == "1200" || $DATE == "1800" ]] ; then
+    if [[ $DATE == "0800" || $DATE == "1200" || $DATE == "1600" || $DATE == "2000"  ]] ; then
 
         echo "Linux bundle started at $(date)"
         git pull
