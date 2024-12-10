@@ -34,13 +34,10 @@ export CLAZY_CHECKS="\
 level2,\
 no-qproperty-without-notify,\
 no-old-style-connect,\
-no-rule-of-three,\
 no-qstring-allocations,\
 no-qstring-arg,\
 no-qstring-insensitive-allocation,\
-no-qstring-ref,\
 no-function-args-by-value,\
-no-qproperty-without-notify,\
 no-fully-qualified-moc-types,\
 qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
@@ -51,5 +48,6 @@ signal-with-return-value,\
 raw-environment-function,\
 qt-keywords,\
 missing-qobject-macro,\
-range-loop-detach\
+range-loop-detach,\
+range-loop-reference\
 "
