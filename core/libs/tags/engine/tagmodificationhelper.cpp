@@ -412,21 +412,21 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
 
     if (result == QMessageBox::Yes)
     {
-        QMultiMap<int, TAlbum*>::iterator it;
+        const QList<TAlbum*>& sortedTagsList = sortedTags.values();
+        QList<TAlbum*>::const_reverse_iterator it;
         QList<qlonglong> imageIds;
 
         /**
-         * QMultimap doesn't provide reverse iterator, -1 is required
-         * because end() points after the last element
+         * QMultimap doesn't provide reverse iterator, use QList.
          */
 
-        for (it = std::prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
+        for (it = sortedTagsList.rbegin() ; it != sortedTagsList.rend() ; ++it)
         {
-            Q_EMIT aboutToDeleteTag(it.value());
+            Q_EMIT aboutToDeleteTag(*it);
 
             QString errMsg;
 
-            if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg, &imageIds))
+            if (!AlbumManager::instance()->deleteTAlbum(*it, errMsg, &imageIds))
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
             }
