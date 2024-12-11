@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-02 07:15+0100\n"
+"PO-Revision-Date: 2024-12-10 07:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -6837,41 +6837,34 @@ msgstr[2] "Ogromno (%1 slikovni točki)"
 msgstr[3] "Ogromno (%1 slikovne točke)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Veliko (%1 slikovnih točk)"
-msgstr[1] "Veliko (%1 slikovna točka)"
-msgstr[2] "Veliko (%1 slikovni točki)"
-msgstr[3] "Veliko (%1 slikovne točke)"
+msgstr[0] "QXGA (%1 slikovnih točk)"
+msgstr[1] "QXGA (%1 slikovna točka)"
+msgstr[2] "QXGA (%1 slikovni točki)"
+msgstr[3] "QXGA (%1 slikovne točke)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Ogromno (%1 slikovnih točk)"
-msgstr[1] "Ogromno (%1 slikovna točka)"
-msgstr[2] "Ogromno (%1 slikovni točki)"
-msgstr[3] "Ogromno (%1 slikovne točke)"
+msgstr[0] "QHD (%1 slikovnih točk)"
+msgstr[1] "QHD (%1 slikovna točka)"
+msgstr[2] "QHD (%1 slikovni točki)"
+msgstr[3] "QHD (%1 slikovne točke)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Ogromno (%1 slikovnih točk)"
-msgstr[1] "Ogromno (%1 slikovna točka)"
-msgstr[2] "Ogromno (%1 slikovni točki)"
-msgstr[3] "Ogromno (%1 slikovne točke)"
+msgstr[0] "UHD (%1 slikovnih točk)"
+msgstr[1] "UHD (%1 slikovna točka)"
+msgstr[2] "UHD (%1 slikovni točki)"
+msgstr[3] "UHD (%1 slikovne točke)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Ne povečuj majhnih slik"
 
@@ -27877,20 +27870,16 @@ msgstr "Vsi albumi"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Rekurzivna izbira."
+msgstr "Rekurzivna izbira"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Rekurzivna izbira."
+msgstr "Rekurzivna izbira albuma."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -27917,12 +27906,10 @@ msgid "All tags"
 msgstr "Vse značke"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Rekurzivna izbira."
+msgstr "Rekurzivna izbira značke."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-06 13:04+0100\n"
+"PO-Revision-Date: 2024-12-10 13:41+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6821,35 +6821,28 @@ msgstr[0] "Gegant (1 píxel)"
 msgstr[1] "Gegant (%1 píxels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Gran (1 píxel)"
-msgstr[1] "Gran (%1 píxels)"
+msgstr[0] "QXGA (1 píxel)"
+msgstr[1] "QXGA (%1 píxels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Gegant (1 píxel)"
-msgstr[1] "Gegant (%1 píxels)"
+msgstr[0] "QHD (1 píxel)"
+msgstr[1] "QHD (%1 píxels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Gegant (1 píxel)"
-msgstr[1] "Gegant (%1 píxels)"
+msgstr[0] "UHD (1 píxel)"
+msgstr[1] "UHD (%1 píxels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "No facis més gran les imatges petites"
 
@@ -28147,20 +28140,16 @@ msgstr "Tots els àlbums"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Selecció recursiva."
+msgstr "Selecció recursiva"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Selecció recursiva."
+msgstr "Selecció recursiva d'àlbum."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -28187,12 +28176,10 @@ msgid "All tags"
 msgstr "Totes les etiquetes"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Selecció recursiva."
+msgstr "Selecció recursiva d'etiquetes."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
