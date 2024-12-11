@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-02 08:54+0200\n"
-"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"PO-Revision-Date: 2024-12-10 09:27+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6873,41 +6873,34 @@ msgstr[2] "Величезна (%1 пікселів)"
 msgstr[3] "Величезна (1 піксель)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Велика (%1 піксель)"
-msgstr[1] "Велика (%1 пікселі)"
-msgstr[2] "Велика (%1 пікселів)"
-msgstr[3] "Велика (1 піксель)"
+msgstr[0] "QXGA (%1 піксель)"
+msgstr[1] "QXGA (%1 пікселі)"
+msgstr[2] "QXGA (%1 пікселів)"
+msgstr[3] "QXGA (%1 піксель)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Величезна (%1 піксель)"
-msgstr[1] "Величезна (%1 пікселі)"
-msgstr[2] "Величезна (%1 пікселів)"
-msgstr[3] "Величезна (1 піксель)"
+msgstr[0] "QHD (%1 піксель)"
+msgstr[1] "QHD (%1 пікселі)"
+msgstr[2] "QHD (%1 пікселів)"
+msgstr[3] "QHD (1 піксель)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Величезна (%1 піксель)"
-msgstr[1] "Величезна (%1 пікселі)"
-msgstr[2] "Величезна (%1 пікселів)"
-msgstr[3] "Величезна (1 піксель)"
+msgstr[0] "UHD (%1 піксель)"
+msgstr[1] "UHD (%1 пікселі)"
+msgstr[2] "UHD (%1 пікселів)"
+msgstr[3] "UHD (1 піксель)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Не збільшувати малі зображення"
 
@@ -28281,20 +28274,16 @@ msgstr "Всі альбоми"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Рекурсивний вибір."
+msgstr "Рекурсивний вибір"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Рекурсивний вибір."
+msgstr "Рекурсивний вибір альбомів."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -28321,12 +28310,10 @@ msgid "All tags"
 msgstr "Всі мітки"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Рекурсивний вибір."
+msgstr "Рекурсивний вибір міток."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format

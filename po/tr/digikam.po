@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-02 19:38+0300\n"
+"PO-Revision-Date: 2024-12-10 13:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -6788,37 +6788,30 @@ msgstr[0] "Devasa (1 piksel)"
 msgstr[1] "Devasa (%1 piksel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Büyük (1 piksel)"
-msgstr[1] "Büyük (%1 piksel)"
+msgstr[0] "QXGA (1 piksel)"
+msgstr[1] "QXGA (%1 piksel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Devasa (1 piksel)"
-msgstr[1] "Devasa (%1 piksel)"
+msgstr[0] "QHD (1 piksel)"
+msgstr[1] "QHD (%1 piksel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Devasa (1 piksel)"
-msgstr[1] "Devasa (%1 piksel)"
+msgstr[0] "UHD (1 piksel)"
+msgstr[1] "UHD (%1 piksel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
-msgstr "Küçük görselleri büyütme"
+msgstr "Küçük Görselleri Büyütme"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
@@ -27908,20 +27901,16 @@ msgstr "Tüm albümler"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Özyineli seçim."
+msgstr "Özyineli seçim"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Özyineli seçim."
+msgstr "Özyineli albüm seçimi"
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -27948,12 +27937,10 @@ msgid "All tags"
 msgstr "Tüm künyeler"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Özyineli seçim."
+msgstr "Özyineli künye seçimi"
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
