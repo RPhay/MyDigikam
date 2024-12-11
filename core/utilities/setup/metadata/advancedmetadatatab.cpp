@@ -368,7 +368,7 @@ void AdvancedMetadataTab::setModelData(QStandardItemModel* const model,
 {
     QStandardItem* const root = model->invisibleRootItem();
 
-    for (NamespaceEntry e : container)
+    for (const NamespaceEntry& e : container)
     {
         QStandardItem* const item = new QStandardItem(e.namespaceName);
 

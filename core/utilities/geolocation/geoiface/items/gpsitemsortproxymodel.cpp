@@ -366,12 +366,12 @@ public:
  */
 void GPSModelIndexProxyMapperPrivate::createProxyChain()
 {
-    for (auto p : std::as_const(m_proxyChainUp))
+    for (const auto& p : std::as_const(m_proxyChainUp))
     {
         p->disconnect(q_ptr);
     }
 
-    for (auto p : std::as_const(m_proxyChainDown))
+    for (const auto& p : std::as_const(m_proxyChainDown))
     {
         p->disconnect(q_ptr);
     }

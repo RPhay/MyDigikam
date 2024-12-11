@@ -291,7 +291,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         const Image& image = images[id];
 
-        for (Optimization optim : std::as_const(image.optimizationParameters))
+        for (const Optimization& optim : std::as_const(image.optimizationParameters))
         {
             if (optim.previousComments.size() > 0)
             {
@@ -461,7 +461,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         const Image& image = images[id];
 
-        for (Mask mask : std::as_const(image.masks))
+        for (const Mask& mask : std::as_const(image.masks))
         {
             if (mask.previousComments.size() > 0)
             {

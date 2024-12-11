@@ -72,7 +72,7 @@ QList<QList<QString> > DNNBaseDetectorModel::generateObjects(const std::vector<c
     QList<QHash<QString, QVector<QRect> > > results = detectObjects(inputBatchImages);
     QList<QList<QString> > objectNamesList;
 
-    for (auto detectedBoxes : std::as_const(results))
+    for (const auto& detectedBoxes : std::as_const(results))
     {
         QList<QString> objectNames;
 

@@ -87,7 +87,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
 
     std::sort(profiles.begin(), profiles.end(), iccProfileLessThan);
 
-    for (IccProfile profile : std::as_const(profiles))
+    for (const IccProfile& profile : std::as_const(profiles))
     {
         QString description = profileUserString(profile);
 
