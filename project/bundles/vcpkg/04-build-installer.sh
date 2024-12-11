@@ -346,7 +346,12 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
     # digikam libs
     cp -rv "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
-    cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb             $BUNDLEDIR/                           2>/dev/null
+
+    if [ -f "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb ] ; then
+
+        cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb       $BUNDLEDIR/                           2>/dev/null
+
+    fi
 
 fi
 
