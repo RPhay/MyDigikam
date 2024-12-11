@@ -373,7 +373,6 @@ void TagsManager::slotDeleteAction()
         /**
          * QMultimap doesn't provide reverse iterator, use QList.
          */
-
         for (it = sortedTagsList.crbegin() ; it != sortedTagsList.crend() ; ++it)
         {
             QString errMsg;

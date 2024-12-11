@@ -419,7 +419,6 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
         /**
          * QMultimap doesn't provide reverse iterator, use QList.
          */
-
         for (it = sortedTagsList.crbegin() ; it != sortedTagsList.crend() ; ++it)
         {
             Q_EMIT aboutToDeleteTag(*it);
