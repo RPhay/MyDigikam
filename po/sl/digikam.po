@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2024-12-10 07:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -39390,7 +39390,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Izbrišem '%1' značk?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39417,7 +39417,7 @@ msgstr[3] ""
 "izbrisalo tudi vse njihove podrejene oznake.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39433,7 +39433,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Oznake obrazov '%2' so dodeljene vsaj enemu predmetu. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -39442,7 +39442,7 @@ msgstr[1] "Odstrani oznaki obraza?"
 msgstr[2] "Odstrani oznake obraza?"
 msgstr[3] "Odstrani oznake obraza?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

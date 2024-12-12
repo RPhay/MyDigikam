@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -41736,7 +41736,7 @@ msgstr "Silt '%1' on omistatud vähemalt ühele elemendile. Kas tõesti jätkata
 msgid "Delete '%1' tag(s)?"
 msgstr "Kas kustutada silt '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, fuzzy, kde-format
 #| msgid ""
 #| "Face tag '%2' has at least one face tag child. Deleting it will also "
@@ -41763,7 +41763,7 @@ msgstr[1] ""
 "alamsildid.\n"
 "Kas tõesti jätkata?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -41774,14 +41774,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Näosildid '%2' on omistatud vähemalt ühele elemendile. Kas tõesti jätkata?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Kas eemaldada näosilt?"
 msgstr[1] "Kas eemaldada näosildid"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-08 20:33+0100\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
+"PO-Revision-Date: 2024-12-11 20:16+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -6852,35 +6852,28 @@ msgstr[0] "Enorme (1 píxel)"
 msgstr[1] "Enorme (%1 píxeles)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Grande (1 píxel)"
-msgstr[1] "Grande (%1 píxeles)"
+msgstr[0] "QXGA (1 píxel)"
+msgstr[1] "QXGA (%1 píxeles)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Enorme (1 píxel)"
-msgstr[1] "Enorme (%1 píxeles)"
+msgstr[0] "QHD (1 píxel)"
+msgstr[1] "QHD (%1 píxeles)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Enorme (1 píxel)"
-msgstr[1] "Enorme (%1 píxeles)"
+msgstr[0] "UHD (1 píxel)"
+msgstr[1] "UHD (%1 píxeles)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Non ampliar imaxes pequenas"
 
@@ -28020,20 +28013,16 @@ msgstr "Todos os álbums"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
 msgstr "Selección recursiva."
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Selección recursiva."
+msgstr "Selección recursiva de álbums."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -28060,12 +28049,10 @@ msgid "All tags"
 msgstr "Todas as etiquetas"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Selección recursiva."
+msgstr "Selección recursiva de etiquetas."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -39534,7 +39521,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Desexa eliminar a(s) etiqueta(s) «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39553,7 +39540,7 @@ msgstr[1] ""
 "cara. Retiralas tamén retirará as subordinadas.\n"
 "Quere continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39566,14 +39553,14 @@ msgstr[1] ""
 "As etiquetas de cara «%2» están asignada polo menos a un elemento. Quere "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Retirar a etiqueta de cara?"
 msgstr[1] "Retirar as etiquetas de cara?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

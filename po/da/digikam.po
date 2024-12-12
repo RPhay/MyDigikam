@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -41438,7 +41438,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Vil du slette mærkerne \"%1\"?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -41455,7 +41455,7 @@ msgstr[1] ""
 "Mærket \"%2\" har %1 undermærker. At slette dette vil også slette "
 "undermærkerne. Vil du fortsætte?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -41466,7 +41466,7 @@ msgid_plural ""
 msgstr[0] "Mærket \"%2\" er anvendt til et element. Vil du fortsætte?"
 msgstr[1] "Mærket \"%2\" er anvendt til %1 elementer. Vil du fortsætte?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove face tag?"
@@ -41474,7 +41474,7 @@ msgid_plural "Remove face tags?"
 msgstr[0] "Fjern markeret mærke"
 msgstr[1] "Fjern markeret mærke"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"

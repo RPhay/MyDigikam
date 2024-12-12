@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-05 14:19+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
+"PO-Revision-Date: 2024-12-11 09:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -6763,35 +6763,28 @@ msgstr[0] "Risa (1 díll)"
 msgstr[1] "Risa (%1 dílar)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Stór (1 díll)"
-msgstr[1] "Stór (%1 dílar)"
+msgstr[0] "QXGA (1 díll)"
+msgstr[1] "QXGA (%1 dílar)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Risa (1 díll)"
-msgstr[1] "Risa (%1 dílar)"
+msgstr[0] "QHD (1 díll)"
+msgstr[1] "QHD (%1 dílar)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Risa (1 díll)"
-msgstr[1] "Risa (%1 dílar)"
+msgstr[0] "UHD (1 díll)"
+msgstr[1] "UHD (%1 dílar)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Ekki stækka smáar myndir"
 
@@ -27779,20 +27772,16 @@ msgstr "Öll albúm"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Endurkvæmt val."
+msgstr "Velja undiratriði"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Endurkvæmt val."
+msgstr "Velja líka undirmöppur."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -27819,12 +27808,10 @@ msgid "All tags"
 msgstr "Öll merki"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Endurkvæmt val."
+msgstr "Velja líka undirmerki."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -39225,7 +39212,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Eyða '%1' merki/merkjum?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39244,7 +39231,7 @@ msgstr[1] ""
 "líka undirmerkjum.\n"
 "Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39257,14 +39244,14 @@ msgstr[1] ""
 "Andlitsmerkjunum '%2' er úthlutað á a.m.k. eitt atriði.  Ertu viss um að þú "
 "viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Fjarlægja andlitsmerki?"
 msgstr[1] "Fjarlægja valið merki"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
