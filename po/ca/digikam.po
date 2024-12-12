@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
-"PO-Revision-Date: 2024-12-10 13:41+0100\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
+"PO-Revision-Date: 2024-12-11 22:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -4730,7 +4730,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
-msgstr "Ajustament de les corbes"
+msgstr "Ajust de les corbes"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:42
 #, kde-format
@@ -39735,7 +39735,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Voleu suprimir «%1» etiqueta/es?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39754,7 +39754,7 @@ msgstr[1] ""
 "Eliminar-les també eliminarà les filles.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39767,14 +39767,14 @@ msgstr[1] ""
 "Les etiquetes de cara «%2» estan assignades a un element com a mínim. Voleu "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Elimino l'etiqueta de cara?"
 msgstr[1] "Elimino les etiquetes de cara?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -39218,7 +39218,7 @@ msgstr "Eticheta „%2” este atribuită unui element. Doriți să continuați?
 msgid "Delete '%1' tag(s)?"
 msgstr "Ștergeți marcajele „%1”?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39238,7 +39238,7 @@ msgstr[2] ""
 "Eticheta „%2” are %1 de sub-etichete. Veți șterge și sub-etichetele odată cu "
 "ștergerea ei. Doriți să continuați?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39251,7 +39251,7 @@ msgstr[1] "Eticheta „%2” este atribuită la %1 elemente. Doriți să continu
 msgstr[2] ""
 "Eticheta „%2” este atribuită la %1 de elemente. Doriți să continuați?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove face tag?"
@@ -39260,7 +39260,7 @@ msgstr[0] "Înlătură etichetă"
 msgstr[1] "Înlătură etichetă"
 msgstr[2] "Înlătură etichetă"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, fuzzy, kde-format
 #| msgid "Select the sharpening method to apply to the image."
 msgid "Remove the tag corresponding to this face tag from the images?"

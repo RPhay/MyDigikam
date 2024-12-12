@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-10 01:54+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -40459,7 +40459,7 @@ msgstr "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 msgid "Delete '%1' tag(s)?"
 msgstr "Ezabatu \"%1\" etiketa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40476,7 +40476,7 @@ msgstr[1] ""
 "\"%1\" etiketak %2 azpi-etiketa ditu. Hau ezabatzean azpi-etiketak ere "
 "ezabatuko dituzu. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -40487,7 +40487,7 @@ msgid_plural ""
 msgstr[0] "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 msgstr[1] "\"%2\" etiketa %1 elementutara esleituta dago. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove face tag?"
@@ -40495,7 +40495,7 @@ msgid_plural "Remove face tags?"
 msgstr[0] "Kendu etiketa"
 msgstr[1] "Kendu etiketa"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
