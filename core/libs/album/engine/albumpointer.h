@@ -112,7 +112,8 @@ class AlbumPointerList : public QList<AlbumPointer<T> >
 {
 public:
 
-    AlbumPointerList() = default;
+    AlbumPointerList()  = default;
+    ~AlbumPointerList() = default;
 
     explicit AlbumPointerList(const AlbumPointerList<T>& list)
         : QList<AlbumPointer<T> >(list)
