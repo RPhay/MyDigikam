@@ -157,7 +157,7 @@ TextureColorizer::TextureColorizer(const QString& seafile,
     shadingPainter.end();  // Need to explicitly tell painter lifetime to avoid crash
     gradientPainter.end(); // on some systems.
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
 void TextureColorizer::addSeaDocument(const GeoDataDocument* seaDocument)

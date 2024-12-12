@@ -152,7 +152,7 @@ void ClipPainter::drawPolygon(const QPolygonF& polygon,
         {
             if (clippedPolyObject.size() > 2)
             {
-                // qCDebug(DIGIKAM_GEOCORE_LOG) << "Size: " << clippedPolyObject.size();
+                // qCDebug(DIGIKAM_GEOENGINE_LOG) << "Size: " << clippedPolyObject.size();
                 if (d->m_debugPolygonsLevel)
                 {
                     QBrush brush = QPainter::brush();
@@ -336,7 +336,7 @@ void ClipPainter::setPen(const QColor& color)
 {
     if (d->m_debugBatchRender)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO;
     }
 
     setPen(QPen(color));
@@ -346,7 +346,7 @@ void ClipPainter::setPen(Qt::PenStyle style)
 {
     if (d->m_debugBatchRender)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO;
     }
 
     setPen(QPen(style));
@@ -356,11 +356,11 @@ void ClipPainter::setPen(const QPen& pen)
 {
     if (d->m_debugBatchRender)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO;
 
         if (pen != QPainter::pen())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "--" << pen.color()  << QPainter::pen().color() ;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "--" << pen.color()  << QPainter::pen().color() ;
             QPen newPen = pen;
             newPen.setColor((Qt::GlobalColor)(d->m_debugPenBatchColor + 4));
             QPainter::setPen(newPen);
@@ -370,7 +370,7 @@ void ClipPainter::setPen(const QPen& pen)
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "++";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "++";
             QPainter::setPen(pen);
         }
     }
@@ -385,11 +385,11 @@ void ClipPainter::setBrush(const QBrush& brush)
 {
     if (d->m_debugBatchRender)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO;
 
         if (brush != QPainter::brush())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "--" << brush.color()  << QPainter::brush().color() ;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "--" << brush.color()  << QPainter::brush().color() ;
             QBrush batchColor(QColor((Qt::GlobalColor)(d->m_debugBrushBatchColor)));
             QPainter::setBrush(batchColor);
             d->m_debugBrushBatchColor++;
@@ -398,7 +398,7 @@ void ClipPainter::setBrush(const QBrush& brush)
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "++";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "++";
             QPainter::setBrush(brush);
         }
     }
@@ -536,7 +536,7 @@ QPointF ClipPainterPrivate::interpolateLabelPoint(const QPointF& previousPoint,
                        q->viewport().height() - m_labelAreaMargin);
     }
 
-    //    qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Previous and current node position are allowed!";
+    //    qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Previous and current node position are allowed!";
 
     return QPointF(-1.0, -1.0);
 }
@@ -654,7 +654,7 @@ void ClipPainterPrivate::clipPolyObject(const QPolygonF& polygon,
                                         QVector<QPolygonF>& clippedPolyObjects,
                                         bool isClosed)
 {
-    //  qCDebug(DIGIKAM_GEOCORE_LOG) << "ClipPainter enabled." ;
+    //  qCDebug(DIGIKAM_GEOENGINE_LOG) << "ClipPainter enabled." ;
 
     // Only create a new polyObject as soon as we know for sure that
     // the current point is on the screen.
@@ -673,7 +673,7 @@ void ClipPainterPrivate::clipPolyObject(const QPolygonF& polygon,
     while (itPoint != itEndPoint)
     {
         m_currentPoint = (*itPoint);
-        // qCDebug(DIGIKAM_GEOCORE_LOG) << "m_currentPoint.x()" << m_currentPoint.x() << "m_currentPOint.y()" << m_currentPoint.y();
+        // qCDebug(DIGIKAM_GEOENGINE_LOG) << "m_currentPoint.x()" << m_currentPoint.x() << "m_currentPOint.y()" << m_currentPoint.y();
 
         // Figure out the sector of the current point.
         m_currentSector = sector(m_currentPoint);

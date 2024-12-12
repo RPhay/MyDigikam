@@ -159,7 +159,7 @@ const StackedTile* StackedTileLoader::loadTile(TileId const& stackedTileId)
     // tile (valid) has not been found in hash or cache, so load it from disk
     // and place it in the hash from where it will get transferred to the cache
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "load tile from disk:" << stackedTileId;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "load tile from disk:" << stackedTileId;
 
     stackedTile = d->m_layerDecorator->loadTile(stackedTileId);
     Q_ASSERT(stackedTile);
@@ -190,7 +190,7 @@ int StackedTileLoader::tileCount() const
 
 void StackedTileLoader::setVolatileCacheLimit(quint64 kiloBytes)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg(kiloBytes);
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg(kiloBytes);
     d->m_tileCache.setMaxCost(kiloBytes * 1024);
 }
 

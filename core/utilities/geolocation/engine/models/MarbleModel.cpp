@@ -187,7 +187,7 @@ MarbleModel::~MarbleModel()
 {
     delete d;
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Model deleted:" << this;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Model deleted:" << this;
 }
 
 QString MarbleModel::mapThemeId() const
@@ -241,20 +241,20 @@ void MarbleModel::setMapTheme(GeoSceneDocument* document)
         // Check whether the previous theme works
         if (d->m_mapTheme)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "Selected theme doesn't work, so we stick to the previous one";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "Selected theme doesn't work, so we stick to the previous one";
             return;
         }
 
         // Fall back to default theme
         QString defaultTheme = QString::fromUtf8("earth/srtm/srtm.dgml");
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Falling back to default theme:" << defaultTheme;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Falling back to default theme:" << defaultTheme;
         mapTheme = MapThemeManager::loadMapTheme(defaultTheme);
     }
 
     // If this last resort doesn't work either shed a tear and exit
     if (!mapTheme)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Couldn't find a valid DGML map.";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Couldn't find a valid DGML map.";
         return;
     }
 
@@ -287,28 +287,28 @@ void MarbleModel::setMapTheme(GeoSceneDocument* document)
     addDownloadPolicies(d->m_mapTheme);
 
     // Some output to show how to use this stuff ...
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "DGML2 Name       : " << d->m_mapTheme->head()->name();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "DGML2 Name       : " << d->m_mapTheme->head()->name();
     /*
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "DGML2 Description: " << d->m_mapTheme->head()->description();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "DGML2 Description: " << d->m_mapTheme->head()->description();
 
         if ( d->m_mapTheme->map()->hasTextureLayers() )
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Contains texture layers! ";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Contains texture layers! ";
         else
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Does not contain any texture layers! ";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Does not contain any texture layers! ";
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
 
         if ( d->m_mapTheme->map()->hasVectorLayers() )
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Contains vector layers! ";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Contains vector layers! ";
         else
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Does not contain any vector layers! ";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Does not contain any vector layers! ";
     */
     //Don't change the planet unless we have to...
     qreal const radiusAttributeValue = d->m_mapTheme->head()->radius();
 
     if (d->m_mapTheme->head()->target().toLower() != d->m_planet.id() || radiusAttributeValue != d->m_planet.radius())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Changing Planet";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Changing Planet";
         d->m_planet = PlanetFactory::construct(d->m_mapTheme->head()->target().toLower());
 
         if (radiusAttributeValue > 0.0)
@@ -421,7 +421,7 @@ void MarbleModel::setMapTheme(GeoSceneDocument* document)
         d->m_fileManager.addFile(fileList.at(i), propertyList.at(i), styleList.at(i), MapDocument, renderOrderList.at(i));
     }
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "THEME CHANGED: ***" << mapTheme->head()->mapThemeId();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "THEME CHANGED: ***" << mapTheme->head()->mapThemeId();
     Q_EMIT themeChanged(mapTheme->head()->mapThemeId());
 }
 
@@ -601,7 +601,7 @@ void MarbleModel::clearPersistentTileCache()
         if (!TileLoader::baseTilesAvailable(*texture)
             && !installMap.isEmpty())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Base tiles not available. Creating Tiles ... \n"
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Base tiles not available. Creating Tiles ... \n"
                                         << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
             MarbleDirs::debug();
 
@@ -615,7 +615,7 @@ void MarbleModel::clearPersistentTileCache()
             tileCreatorDlg->setSummary(d->m_mapTheme->head()->name(),
                                        d->m_mapTheme->head()->description());
             tileCreatorDlg->exec();
-            qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Tile creation completed");
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Tile creation completed");
             delete tileCreatorDlg;
         }
     }

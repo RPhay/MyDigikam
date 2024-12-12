@@ -374,7 +374,7 @@ bool GeoDataLatLonBox::containsPole(Pole pole) const
                     || 2 * south() == -M_PI);
     }
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Invalid pole";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Invalid pole";
     return false;
 }
 

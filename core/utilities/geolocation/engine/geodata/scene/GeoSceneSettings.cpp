@@ -95,7 +95,7 @@ bool GeoSceneSettings::propertyAvailable(const QString& name, bool& available) c
 
 bool GeoSceneSettings::setPropertyValue(const QString& name, bool value)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "GeoSceneSettings: Property " << name << "to" << value;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "GeoSceneSettings: Property " << name << "to" << value;
 
     QVector<GeoSceneProperty*>::const_iterator it      = d->m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator propEnd = d->m_properties.constEnd();

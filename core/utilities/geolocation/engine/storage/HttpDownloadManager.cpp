@@ -122,7 +122,7 @@ DownloadQueueSet* HttpDownloadManager::Private::findQueues(const QString& hostNa
 
     if (!result)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "No download policy found for" << hostName << usage
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "No download policy found for" << hostName << usage
                                     << ", using default policy.";
         result = m_defaultQueueSets[ usage ];
     }
@@ -181,7 +181,7 @@ void HttpDownloadManager::addJob(const QUrl& sourceUrl, const QString& destFileN
 {
     if (!d->m_acceptJobs)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Working offline, not adding job";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Working offline, not adding job";
         return;
     }
 
@@ -192,7 +192,7 @@ void HttpDownloadManager::addJob(const QUrl& sourceUrl, const QString& destFileN
         HttpJob* const job = new HttpJob(sourceUrl, destFileName, id, &d->m_networkAccessManager);
         job->setUserAgentPluginId(QString::fromUtf8("QNamNetworkPlugin"));
         job->setDownloadUsage(usage);
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "adding job " << sourceUrl;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "adding job " << sourceUrl;
         queueSet->addJob(job);
     }
 }
@@ -200,7 +200,7 @@ void HttpDownloadManager::addJob(const QUrl& sourceUrl, const QString& destFileN
 void HttpDownloadManager::Private::finishJob(const QByteArray& data, const QString& destinationFileName,
                                              const QString& id)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Emitting downloadComplete( QByteArray, " << id << ")";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Emitting downloadComplete( QByteArray, " << id << ")";
 
     Q_EMIT m_downloadManager->downloadComplete(data, id);
 
@@ -210,13 +210,13 @@ void HttpDownloadManager::Private::finishJob(const QByteArray& data, const QStri
 
         if (saved)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Emitting downloadComplete( " << destinationFileName << ", " << id << ")";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Emitting downloadComplete( " << destinationFileName << ", " << id << ")";
 
             Q_EMIT m_downloadManager->downloadComplete(destinationFileName, id);
         }
         else
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "Could not save:" << destinationFileName;
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "Could not save:" << destinationFileName;
         }
     }
 }

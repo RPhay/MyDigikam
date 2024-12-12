@@ -244,7 +244,7 @@ void BuildingGraphicsItem::paint(GeoPainter* painter, const ViewportParams* view
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Didn't expect to have to paint layer " << layer << ", ignoring it.";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Didn't expect to have to paint layer " << layer << ", ignoring it.";
     }
 }
 

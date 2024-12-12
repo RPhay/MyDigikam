@@ -47,7 +47,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse(GeoParser& parser) const
 
     if (!parentItem.represents(dgmlTag_Texture) && !parentItem.represents(dgmlTag_Vectortile))
     {
-        qCCritical(DIGIKAM_GEOCORE_LOG) << "Parse error: parent element is not 'texture' or 'vectortile'";
+        qCCritical(DIGIKAM_GEOENGINE_LOG) << "Parse error: parent element is not 'texture' or 'vectortile'";
         return nullptr;
     }
 
@@ -67,7 +67,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse(GeoParser& parser) const
 
     else
     {
-        qCCritical(DIGIKAM_GEOCORE_LOG) << "Parse error: invalid attribute downloadPolicy/@usage";
+        qCCritical(DIGIKAM_GEOENGINE_LOG) << "Parse error: invalid attribute downloadPolicy/@usage";
         return nullptr;
     }
 
@@ -78,7 +78,7 @@ GeoNode* DgmlDownloadPolicyTagHandler::parse(GeoParser& parser) const
 
     if (!ok)
     {
-        qCCritical(DIGIKAM_GEOCORE_LOG) << "Parse error: invalid attribute downloadPolicy/@maximumConnections";
+        qCCritical(DIGIKAM_GEOENGINE_LOG) << "Parse error: invalid attribute downloadPolicy/@maximumConnections";
         return nullptr;
     }
 

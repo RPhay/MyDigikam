@@ -2301,7 +2301,7 @@ void StyleBuilder::Private::initializeMinimumZoomLevels()
     {
         if (s_defaultMinZoomLevels[i] < 0)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Missing default min zoom level for GeoDataPlacemark::GeoDataVisualCategory " << i;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Missing default min zoom level for GeoDataPlacemark::GeoDataVisualCategory " << i;
             Q_ASSERT(false && "StyleBuilder::Private::initializeMinimumZoomLevels is incomplete");
             s_defaultMinZoomLevels[i] = 15;
         }

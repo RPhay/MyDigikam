@@ -51,7 +51,7 @@ GeoDataPolygon::~GeoDataPolygon()
 
 #ifdef DEBUG_GEODATA
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "delete polygon";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "delete polygon";
 
 #endif
 
@@ -234,7 +234,7 @@ void GeoDataPolygon::pack(QDataStream& stream) const
          iterator != d->inner.constEnd();
          ++iterator)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "innerRing: size" << d->inner.size();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "innerRing: size" << d->inner.size();
         GeoDataLinearRing linearRing = (*iterator);
         linearRing.pack(stream);
     }

@@ -111,7 +111,7 @@ void ReverseGeocodingRunnerManager::Private::addReverseGeocodingResult(const Geo
 void ReverseGeocodingRunnerManager::Private::cleanupReverseGeocodingTask(ReverseGeocodingTask* task)
 {
     m_reverseTasks.removeAll(task);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "removing task " << m_reverseTasks.size() << " " << (quintptr)task;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "removing task " << m_reverseTasks.size() << " " << (quintptr)task;
 
     if (m_reverseTasks.isEmpty())
     {
@@ -146,7 +146,7 @@ void ReverseGeocodingRunnerManager::reverseGeocoding(const GeoDataCoordinates& c
     {
         ReverseGeocodingTask* task = new ReverseGeocodingTask(plugin->newRunner(), this, d->m_marbleModel, coordinates);
         connect(task, SIGNAL(finished(ReverseGeocodingTask*)), this, SLOT(cleanupReverseGeocodingTask(ReverseGeocodingTask*)));
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "reverse task " << plugin->nameId() << " " << (quintptr)task;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "reverse task " << plugin->nameId() << " " << (quintptr)task;
         d->m_reverseTasks << task;
     }
 

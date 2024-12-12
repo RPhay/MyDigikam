@@ -116,7 +116,7 @@ QStringList MarbleDirs::pluginEntryList(const QString& relativePath, QDir::Filte
     }
     else
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "DK_PLUGIN_PATH env.variable detected. "
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "DK_PLUGIN_PATH env.variable detected. "
                                          "We will use it to load Geolocation plugin...";
 
         const auto pathList = QString::fromUtf8(dkenv).split(QLatin1Char(';'),
@@ -192,12 +192,12 @@ QString MarbleDirs::pluginSystemPath()
 
 void MarbleDirs::debug()
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "=== MarbleDirs: ===";
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Local Path        :" << localPath();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Plugin Local Path :" << pluginLocalPath();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "System Path       :" << systemPath();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Plugin System Path:" << pluginSystemPath();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "===================";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "=== MarbleDirs: ===";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Local Path        :" << localPath();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Plugin Local Path :" << pluginLocalPath();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "System Path       :" << systemPath();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Plugin System Path:" << pluginSystemPath();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "===================";
 }
 
 } // namespace Marble

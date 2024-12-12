@@ -64,7 +64,7 @@ GeoNode* KmllistItemTypeTagHandler::parse(GeoParser& parser) const
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "listItemType value is invalid"
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "listItemType value is invalid"
                                         << "falling back to default - check";
         }
 

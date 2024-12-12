@@ -111,7 +111,7 @@ void OsmNominatimRunner::handleResult(QNetworkReply* reply)
 
     if (!xml.setContent(reply->readAll()))
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Cannot parse osm nominatim result " << xml.toString();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Cannot parse osm nominatim result " << xml.toString();
         returnNoReverseGeocodingResult();
 
         return;

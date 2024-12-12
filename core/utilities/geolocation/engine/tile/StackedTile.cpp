@@ -97,7 +97,7 @@ StackedTile::StackedTile(const TileId& id, const QImage& resultImage, QVector<QS
 
     if (jumpTable32 == nullptr && jumpTable8 == nullptr)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Color depth" << m_depth << " is not supported.";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Color depth" << m_depth << " is not supported.";
     }
 }
 

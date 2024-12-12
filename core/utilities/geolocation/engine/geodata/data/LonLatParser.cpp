@@ -323,16 +323,16 @@ bool LonLatParser::tryMatchFromD(const QString& input, DirPosition dirPosition)
 
     const QString numberCapExp = expTemplate.arg(m_decimalPointExp, m_dirCapExp, m_degreeExp);
     const QRegularExpression regex(numberCapExp);
-    // qCWarning(DIGIKAM_GEOCORE_LOG) << regex.isValid() << regex.errorString() << regex.pattern();
+    // qCWarning(DIGIKAM_GEOENGINE_LOG) << regex.isValid() << regex.errorString() << regex.pattern();
     QRegularExpressionMatch match = regex.match(input);
 
     if (!match.hasMatch())
     {
-        //         qCWarning(DIGIKAM_GEOCORE_LOG) << "LonLatParser::tryMatchFromD -> no match";
+        //         qCWarning(DIGIKAM_GEOENGINE_LOG) << "LonLatParser::tryMatchFromD -> no match";
         return false;
     }
 
-    //     qCWarning(DIGIKAM_GEOCORE_LOG) << "LonLatParser::tryMatchFromD -> match" << match;
+    //     qCWarning(DIGIKAM_GEOENGINE_LOG) << "LonLatParser::tryMatchFromD -> match" << match;
 
     bool isDir1LonDir;
     bool isLonDirPosHemisphere;

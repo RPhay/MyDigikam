@@ -59,7 +59,7 @@ GeoNode* KmlrefreshModeTagHandler::parse(GeoParser& parser) const
         else
         {
             mode = GeoDataLink::OnChange;
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Value " << content << "set in kml file is invalid."
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Value " << content << "set in kml file is invalid."
                                         << "Value of <refreshMode> has been reset to onChange" ;
         }
 

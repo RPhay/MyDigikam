@@ -195,8 +195,8 @@ bool GeoDataLatLonAltBox::contains(const GeoDataLatLonAltBox& other) const
 {
     // check the contain criterion for the altitude first as this is trivial:
 
-    // qCDebug(DIGIKAM_GEOCORE_LOG) << "this " << this->toString(GeoDataCoordinates::Degree);
-    // qCDebug(DIGIKAM_GEOCORE_LOG) << "other" << other.toString(GeoDataCoordinates::Degree);
+    // qCDebug(DIGIKAM_GEOENGINE_LOG) << "this " << this->toString(GeoDataCoordinates::Degree);
+    // qCDebug(DIGIKAM_GEOENGINE_LOG) << "other" << other.toString(GeoDataCoordinates::Degree);
 
     if (d->m_maxAltitude >= other.maxAltitude() && d->m_minAltitude <= other.minAltitude())
     {

@@ -743,7 +743,7 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
 
     if (action == nullptr)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Warning: slotInfoDialog should be called by a QAction signal";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Warning: slotInfoDialog should be called by a QAction signal";
         return;
     }
 

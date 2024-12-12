@@ -172,7 +172,7 @@ void GeoSceneTileDataset::setTileLevels(const QString& tileLevels)
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Cannot parse tile level part " << value << " in " << tileLevels << ", ignoring it.";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Cannot parse tile level part " << value << " in " << tileLevels << ", ignoring it.";
         }
     }
 
@@ -207,8 +207,8 @@ const QSize GeoSceneTileDataset::tileSize() const
 
         if (testTile.isNull())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Tile size is missing in dgml and no base tile found in " << themeStr();
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Using default tile size " << c_defaultTileSize;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Tile size is missing in dgml and no base tile found in " << themeStr();
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Using default tile size " << c_defaultTileSize;
             m_tileSize = QSize(c_defaultTileSize, c_defaultTileSize);
         }
 
@@ -219,7 +219,7 @@ const QSize GeoSceneTileDataset::tileSize() const
 
         if (m_tileSize.isEmpty())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Tile width or height cannot be 0. Falling back to default tile size.";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Tile width or height cannot be 0. Falling back to default tile size.";
             m_tileSize = QSize(c_defaultTileSize, c_defaultTileSize);
         }
     }
@@ -242,7 +242,7 @@ void GeoSceneTileDataset::setTileSize(const QSize& tileSize)
 {
     if (tileSize.isEmpty())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid tile size " << tileSize;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid tile size " << tileSize;
     }
 
     else
@@ -292,7 +292,7 @@ QUrl GeoSceneTileDataset::downloadUrl(const TileId& id) const
     if (m_downloadUrls.empty())
     {
         QUrl const defaultUrl = QUrl(QLatin1String("https://maps.kde.org/") + m_serverLayout->sourceDir());
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "No download URL specified for tiles stored in "
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "No download URL specified for tiles stored in "
                                     << m_sourceDir << ", falling back to " << defaultUrl.toString();
         return m_serverLayout->downloadUrl(defaultUrl, id);
     }
@@ -377,7 +377,7 @@ void GeoSceneTileDataset::addDownloadPolicy(const DownloadUsage usage, const int
     DownloadPolicy* const policy = new DownloadPolicy(DownloadPolicyKey(hostNames(), usage));
     policy->setMaximumConnections(maximumConnections);
     m_downloadPolicies.append(policy);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "added download policy" << hostNames() << usage << maximumConnections;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "added download policy" << hostNames() << usage << maximumConnections;
 }
 
 QStringList GeoSceneTileDataset::hostNames() const

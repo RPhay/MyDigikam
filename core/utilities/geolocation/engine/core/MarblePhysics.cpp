@@ -95,7 +95,7 @@ public:
 
         else
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Unhandled FlyTo mode, no camera distance interpolation.");
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Unhandled FlyTo mode, no camera distance interpolation.");
             return m_target.range();
         }
     }

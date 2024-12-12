@@ -32,7 +32,7 @@ int TileLoaderHelper::levelToRow(int levelZeroRows, int level)
 {
     if (level < 0)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("TileLoaderHelper::levelToRow(): Invalid level: %1")
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileLoaderHelper::levelToRow(): Invalid level: %1")
                                     .arg(level);
         return 0;
     }
@@ -44,7 +44,7 @@ int TileLoaderHelper::levelToColumn(int levelZeroColumns, int level)
 {
     if (level < 0)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("TileLoaderHelper::levelToColumn(): Invalid level: %1")
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileLoaderHelper::levelToColumn(): Invalid level: %1")
                                     .arg(level);
         return 0;
     }
@@ -56,7 +56,7 @@ int TileLoaderHelper::rowToLevel(int levelZeroRows, int row)
 {
     if (row < levelZeroRows)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("TileLoaderHelper::rowToLevel(): Invalid number of rows: %1")
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileLoaderHelper::rowToLevel(): Invalid number of rows: %1")
                                     .arg(row);
         return 0;
     }
@@ -68,7 +68,7 @@ int TileLoaderHelper::columnToLevel(int levelZeroColumns, int column)
 {
     if (column < levelZeroColumns)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("TileLoaderHelper::columnToLevel(): Invalid number of columns: %1")
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileLoaderHelper::columnToLevel(): Invalid number of columns: %1")
                                     .arg(column);
         return 0;
     }

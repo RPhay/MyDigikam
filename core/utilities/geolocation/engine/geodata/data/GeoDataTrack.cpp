@@ -222,13 +222,13 @@ GeoDataCoordinates GeoDataTrack::coordinatesAt(const QDateTime& when) const
     // No tracked point happened before "when"
     if (nextEntry == pointMap.constBegin())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "No tracked point before " << when;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "No tracked point before " << when;
         return GeoDataCoordinates();
     }
 
     if (nextEntry == pointMap.constEnd())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "No track point after" << when;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "No track point after" << when;
         return GeoDataCoordinates();
     }
 

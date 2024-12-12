@@ -78,7 +78,7 @@ GeoNode* KmlstateTagHandler::parse(GeoParser& parser) const
 
             else
             {
-                qCDebug(DIGIKAM_GEOCORE_LOG) << "Cannot parse state value" << value;
+                qCDebug(DIGIKAM_GEOENGINE_LOG) << "Cannot parse state value" << value;
             }
         }
 

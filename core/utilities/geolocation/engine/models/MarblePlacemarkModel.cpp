@@ -304,7 +304,7 @@ void MarblePlacemarkModel::addPlacemarks(int start,
     beginResetModel();
     endResetModel();
     Q_EMIT countChanged();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "addPlacemarks: Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "addPlacemarks: Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
 }
 
 void  MarblePlacemarkModel::removePlacemarks(const QString& containerName,
@@ -320,7 +320,7 @@ void  MarblePlacemarkModel::removePlacemarks(const QString& containerName,
         endRemoveRows();
         Q_EMIT layoutChanged();
         Q_EMIT countChanged();
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "removePlacemarks(" << containerName << "): Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "removePlacemarks(" << containerName << "): Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
     }
 }
 

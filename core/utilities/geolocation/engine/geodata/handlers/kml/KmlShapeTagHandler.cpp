@@ -59,7 +59,7 @@ GeoNode* KmlshapeTagHandler::parse(GeoParser& parser) const
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown shape attribute" << shapeText << ", falling back to default value 'rectangle'";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Unknown shape attribute" << shapeText << ", falling back to default value 'rectangle'";
             shape = GeoDataPhotoOverlay::Rectangle;
         }
 

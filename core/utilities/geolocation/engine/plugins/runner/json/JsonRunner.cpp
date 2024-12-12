@@ -46,7 +46,7 @@ GeoDataDocument* JsonRunner::parseFile(const QString& fileName, DocumentRole rol
     if (! file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 
@@ -60,7 +60,7 @@ GeoDataDocument* JsonRunner::parseFile(const QString& fileName, DocumentRole rol
     if (! parser.read(&file))
     {
         error = QStringLiteral("Could not parse GeoJSON from %1").arg(fileName);
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 

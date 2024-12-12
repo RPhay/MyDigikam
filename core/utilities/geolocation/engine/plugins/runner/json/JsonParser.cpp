@@ -126,13 +126,13 @@ bool JsonParser::read(QIODevice* device)
 
     if (jsonDoc.isNull())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Error parsing GeoJSON:" << error.errorString();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Error parsing GeoJSON:" << error.errorString();
         return false;
     }
 
     else if (! jsonDoc.isObject())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Invalid file, does not contain a GeoJSON object";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Invalid file, does not contain a GeoJSON object";
         return false;
     }
 
@@ -258,7 +258,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
             if (iter.value().isObject() || iter.value().isArray())
             {
-                qCDebug(DIGIKAM_GEOCORE_LOG) << "Skipping unsupported JSON property containing an object or array:" << propertyKey;
+                qCDebug(DIGIKAM_GEOENGINE_LOG) << "Skipping unsupported JSON property containing an object or array:" << propertyKey;
                 continue;
             }
 
@@ -298,7 +298,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    //qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring unimplemented marker-size property:" << propertyValue;
+                    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring unimplemented marker-size property:" << propertyValue;
                 }
 
             }
@@ -313,7 +313,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    //qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring unimplemented marker-symbol property:" << propertyValue;
+                    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring unimplemented marker-symbol property:" << propertyValue;
                 }
 
             }
@@ -331,7 +331,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid marker-color property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid marker-color property:" << propertyValue;
                 }
 
             }
@@ -348,7 +348,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid stroke property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid stroke property:" << propertyValue;
                 }
 
             }
@@ -367,7 +367,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid stroke-opacity property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid stroke-opacity property:" << propertyValue;
                 }
 
             }
@@ -384,7 +384,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid stroke-width property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid stroke-width property:" << propertyValue;
                 }
 
             }
@@ -401,7 +401,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid fill property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid fill property:" << propertyValue;
                 }
 
             }
@@ -420,7 +420,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
                 else
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring invalid fill-opacity property:" << propertyValue;
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring invalid fill-opacity property:" << propertyValue;
                 }
 
             }
@@ -456,7 +456,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Missing FeatureCollection or Feature object in GeoJSON file";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Missing FeatureCollection or Feature object in GeoJSON file";
         return false;
     }
 }
@@ -471,7 +471,7 @@ bool JsonParser::parseGeoJsonSubLevel(const QJsonObject& jsonObject,
         || jsonObjectType == QStringLiteral("Feature"))
     {
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Cannot have FeatureCollection or Feature objects at this level of the GeoJSON file";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Cannot have FeatureCollection or Feature objects at this level of the GeoJSON file";
         return false;
 
     }
@@ -685,7 +685,7 @@ bool JsonParser::parseGeoJsonSubLevel(const QJsonObject& jsonObject,
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown GeoJSON object type" << jsonObjectType;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Unknown GeoJSON object type" << jsonObjectType;
         return false;
     }
 }

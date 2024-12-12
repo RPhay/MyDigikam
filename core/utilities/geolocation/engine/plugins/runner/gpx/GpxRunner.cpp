@@ -45,7 +45,7 @@ GeoDataDocument* GpxRunner::parseFile(const QString& fileName, DocumentRole role
     if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 
@@ -57,7 +57,7 @@ GeoDataDocument* GpxRunner::parseFile(const QString& fileName, DocumentRole role
     if (!parser.read(&file))
     {
         error = parser.errorString();
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 

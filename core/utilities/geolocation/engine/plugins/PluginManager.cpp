@@ -196,7 +196,7 @@ bool appendPlugin(QObject* const obj, const QPluginLoader* const loader, QList<P
     {
         Q_ASSERT(obj->metaObject()->superClass());   // all our plugins have a super class
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) <<  obj->metaObject()->superClass()->className()
+        qCDebug(DIGIKAM_GEOENGINE_LOG) <<  obj->metaObject()->superClass()->className()
                                     << "plugin loaded from"
                                     << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
 
@@ -226,10 +226,10 @@ bool PluginManagerPrivate::addPlugin(QObject* const obj, const QPluginLoader* co
 
     if (!isPlugin)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Ignoring the following plugin since it couldn't be loaded:"
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Ignoring the following plugin since it couldn't be loaded:"
                                       << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Plugin failure:"
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Plugin failure:"
                                     << (loader ? loader->fileName() : QString::fromUtf8("<static>"))
                                     << "is a plugin, but it does not implement the "
                                     << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
@@ -247,7 +247,7 @@ void PluginManagerPrivate::loadPlugins()
 
     QElapsedTimer t;
     t.start();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Starting to load Plugins.";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Starting to load Plugins.";
 
     QStringList pluginFileNameList = MarbleDirs::pluginEntryList(QString::fromUtf8(""), QDir::Files);
 
@@ -280,19 +280,19 @@ void PluginManagerPrivate::loadPlugins()
 
         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName))
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
 
             continue;
         }
 
         if (m_blacklist.contains(baseName) || m_blacklist.contains(libBaseName))
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring blacklisted plugin " << fileName;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring blacklisted plugin " << fileName;
 
             continue;
         }
 
-        // qCDebug(DIGIKAM_GEOCORE_LOG) << fileName << " - " << MarbleDirs::pluginPath( fileName );
+        // qCDebug(DIGIKAM_GEOENGINE_LOG) << fileName << " - " << MarbleDirs::pluginPath( fileName );
 
         QString const path = MarbleDirs::pluginPath(fileName);
 
@@ -303,7 +303,7 @@ void PluginManagerPrivate::loadPlugins()
         if (!m_pluginPaths.contains(targetFile.canonicalFilePath()))
         {
             // @todo Delete the file here?
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring file " << path
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring file " << path
                                         << " which is not among the currently installed plugins";
 
             continue;
@@ -331,7 +331,7 @@ void PluginManagerPrivate::loadPlugins()
 
         else
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "Ignoring to load the following file since it doesn't look like a valid Marble plugin:"
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "Ignoring to load the following file since it doesn't look like a valid Marble plugin:"
                                           << path << Qt::endl
                                           << "Reason:" << loader->errorString();
             delete loader;
@@ -350,13 +350,13 @@ void PluginManagerPrivate::loadPlugins()
 
     if (!foundPlugin)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "No plugins loaded. Please check if the plugins were installed in the correct path,"
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "No plugins loaded. Please check if the plugins were installed in the correct path,"
                                       << "or if any errors occurred while loading plugins.";
     }
 
     m_pluginsLoaded = true;
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
 #ifdef Q_OS_ANDROID

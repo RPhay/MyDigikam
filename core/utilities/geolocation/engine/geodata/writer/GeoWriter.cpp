@@ -53,7 +53,7 @@ bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "There is no GeoWriter registered for: " << name;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "There is no GeoWriter registered for: " << name;
         return false;
     }
 
@@ -78,7 +78,7 @@ bool GeoWriter::writeElement(const GeoNode* object)
     {
         if (! writer->write(object, *this))
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "An error has been reported by the GeoWriter for: "
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "An error has been reported by the GeoWriter for: "
                                         << name;
             return false;
         }
@@ -86,7 +86,7 @@ bool GeoWriter::writeElement(const GeoNode* object)
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "There is no GeoWriter registered for: " << name;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "There is no GeoWriter registered for: " << name;
         return true;
     }
 

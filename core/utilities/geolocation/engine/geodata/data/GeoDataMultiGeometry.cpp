@@ -125,7 +125,7 @@ QVector<GeoDataGeometry*> GeoDataMultiGeometry::vector()
 
 GeoDataGeometry& GeoDataMultiGeometry::at(int pos)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "detaching!";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "detaching!";
     detach();
 
     Q_D(GeoDataMultiGeometry);

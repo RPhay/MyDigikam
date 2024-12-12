@@ -162,7 +162,7 @@ void OsmPbfParser::parsePrimitiveBlock(const uint8_t* data, std::size_t len)
 
         if (group.nodes_size())
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8() << "non-dense nodes - not implemented yet!";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8() << "non-dense nodes - not implemented yet!";
         }
 
         else if (group.has_dense())

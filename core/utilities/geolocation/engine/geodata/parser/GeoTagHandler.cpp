@@ -59,7 +59,7 @@ void GeoTagHandler::registerHandler(const GeoParser::QualifiedName& qName, const
     Q_ASSERT(hash->contains(qName));
 
 #if DUMP_TAG_HANDLER_REGISTRATION > 0
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "[GeoTagHandler] -> Recognizing" << qName.first << "tag with namespace" << qName.second;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "[GeoTagHandler] -> Recognizing" << qName.first << "tag with namespace" << qName.second;
 #endif
 }
 

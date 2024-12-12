@@ -127,7 +127,7 @@ GeoNode* DgmlStorageLayoutTagHandler::parse(GeoParser& parser) const
 
             if (!modeStr.isEmpty())
             {
-                qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown storage layout mode " << modeStr << ", falling back to default.";
+                qCDebug(DIGIKAM_GEOENGINE_LOG) << "Unknown storage layout mode " << modeStr << ", falling back to default.";
             }
         }
 

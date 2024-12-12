@@ -67,7 +67,7 @@ void OsmRelationManagerWidgetPrivate::populateRelationsList()
 
             if (!m_allRelations->contains(it.key().id))
             {
-                qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Relation %1 is not loaded in the Annotate Plugin").arg(it.key().id);
+                qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Relation %1 is not loaded in the Annotate Plugin").arg(it.key().id);
                 continue;
             }
 

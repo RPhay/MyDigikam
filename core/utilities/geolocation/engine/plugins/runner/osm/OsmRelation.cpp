@@ -318,7 +318,7 @@ OsmRelation::OsmRings OsmRelation::rings(const QStringList& roles, const OsmWays
 
     if (!unclosedWays.isEmpty())
     {
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << "Trying to merge non-trivial polygon boundary in relation " << m_osmData.id();
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Trying to merge non-trivial polygon boundary in relation " << m_osmData.id();
         while (unclosedWays.length() > 0)
         {
             GeoDataLinearRing ring;

@@ -48,7 +48,7 @@ GeoDataDocument* KmlRunner::parseFile(const QString& fileName, DocumentRole role
     if (!file.open(QFile::ReadOnly))
     {
         error = QStringLiteral("Cannot open file %1").arg(fileName);
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 
@@ -72,13 +72,13 @@ GeoDataDocument* KmlRunner::parseFile(const QString& fileName, DocumentRole role
         if (kmlFiles.empty())
         {
             error = QStringLiteral("File %1 does not contain any KML files").arg(fileName);
-            qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
             return nullptr;
         }
 
         else if (kmlFiles.size() > 1)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << QStringLiteral("File %1 contains multiple KML files").arg(fileName);
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << QStringLiteral("File %1 contains multiple KML files").arg(fileName);
         }
 
         QByteArray const data = zipReader.fileData(kmlFiles[0]);
@@ -97,7 +97,7 @@ GeoDataDocument* KmlRunner::parseFile(const QString& fileName, DocumentRole role
     if (!parser.read(device))
     {
         error = parser.errorString();
-        qCDebug(DIGIKAM_GEOCORE_LOG) << error;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
         return nullptr;
     }
 

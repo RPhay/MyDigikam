@@ -600,7 +600,7 @@ void MarbleAbstractPresenter::setDistance(qreal newDistance)
 
     if (newDistance <= minDistance)
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Invalid distance: 0 m";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Invalid distance: 0 m";
         newDistance = minDistance;
     }
 
@@ -612,7 +612,7 @@ void MarbleAbstractPresenter::setSelection(const QRect& region)
 {
     QPoint tl = region.topLeft();
     QPoint br = region.bottomRight();
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Selection region: (" << tl.x() << ", " <<  tl.y() << ") ("
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Selection region: (" << tl.x() << ", " <<  tl.y() << ") ("
                                 << br.x() << ", " << br.y() << ")" << Qt::endl;
 
     const GeoDataLatLonAltBox box = viewport()->latLonAltBox(region);

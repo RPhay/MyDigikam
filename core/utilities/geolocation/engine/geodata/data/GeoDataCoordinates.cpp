@@ -84,7 +84,7 @@ GeoDataCoordinates::~GeoDataCoordinates()
     }
 
 #ifdef DEBUG_GEODATA
-    //    qCDebug(DIGIKAM_GEOCORE_LOG) << "delete coordinates";
+    //    qCDebug(DIGIKAM_GEOENGINE_LOG) << "delete coordinates";
 #endif
 }
 
@@ -1072,7 +1072,7 @@ bool GeoDataCoordinates::isPole(Pole pole) const
             // FIXME: Should we just normalize latitude and longitude and be done?
             //        While this might work well for persistent data it would create some
             //        possible overhead for temporary data, so this needs careful thinking.
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "GeoDataCoordinates not normalized!";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "GeoDataCoordinates not normalized!";
 
             // Only as a last resort we cover the unlikely case where
             // the latitude is not normalized to the range of

@@ -167,7 +167,7 @@ void VisiblePlacemark::setSymbolPixmap()
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Style pointer is Null";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Style pointer is Null";
     }
 }
 

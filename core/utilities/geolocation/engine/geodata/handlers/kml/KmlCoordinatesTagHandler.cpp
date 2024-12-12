@@ -215,7 +215,7 @@ GeoNode* KmlcoordinatesTagHandler::parse(GeoParser& parser) const
                             break;
 
                         case 4:
-                            qCDebug(DIGIKAM_GEOCORE_LOG) << "Ignoring excessive coordinates in LatLonQuad (must not have more than 4 pairs)";
+                            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring excessive coordinates in LatLonQuad (must not have more than 4 pairs)";
                             break;
 
                         default:

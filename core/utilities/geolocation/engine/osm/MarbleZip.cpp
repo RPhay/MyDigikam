@@ -626,7 +626,7 @@ void MarbleZipReaderPrivate::scanFiles()
 
     if (readUInt(tmp) != 0x04034b50)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: not a zip file!";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: not a zip file!";
         return;
     }
 
@@ -643,7 +643,7 @@ void MarbleZipReaderPrivate::scanFiles()
 
         if (pos < 0 || i > 65535)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: EndOfDirectory not found";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: EndOfDirectory not found";
             return;
         }
 
@@ -662,12 +662,12 @@ void MarbleZipReaderPrivate::scanFiles()
 
     start_of_directory = readUInt(eod.dir_start_offset);
     num_dir_entries = readUShort(eod.num_dir_entries);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
     int comment_length = readUShort(eod.comment_length);
 
     if (comment_length != i)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: failed to parse zip file.";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: failed to parse zip file.";
     }
 
     comment = device->read(qMin(comment_length, i));
@@ -682,13 +682,13 @@ void MarbleZipReaderPrivate::scanFiles()
 
         if (read < (int)sizeof(CentralFileHeader))
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: Failed to read complete header, index may be incomplete";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Failed to read complete header, index may be incomplete";
             break;
         }
 
         if (readUInt(header.h.signature) != 0x02014b50)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: invalid header signature, index may be incomplete";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: invalid header signature, index may be incomplete";
             break;
         }
 
@@ -697,7 +697,7 @@ void MarbleZipReaderPrivate::scanFiles()
 
         if (header.file_name.length() != l)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: Failed to read filename from zip index, index may be incomplete";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Failed to read filename from zip index, index may be incomplete";
             break;
         }
 
@@ -706,7 +706,7 @@ void MarbleZipReaderPrivate::scanFiles()
 
         if (header.extra_field.length() != l)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: Failed to read extra field in zip file, skipping file, index may be incomplete";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Failed to read extra field in zip file, skipping file, index may be incomplete";
             break;
         }
 
@@ -715,11 +715,11 @@ void MarbleZipReaderPrivate::scanFiles()
 
         if (header.file_comment.length() != l)
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: Failed to read file comment, index may be incomplete";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Failed to read file comment, index may be incomplete";
             break;
         }
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::asprintf("found file '%s'", header.file_name.data());
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::asprintf("found file '%s'", header.file_name.data());
         fileHeaders.append(header);
     }
 }
@@ -736,7 +736,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
         "symlink  "
     };
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "adding" << entryTypes[type] << ":" << fileName.toUtf8().data() << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "adding" << entryTypes[type] << ":" << fileName.toUtf8().data() << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
 
 #endif
 
@@ -796,7 +796,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
                     break;
 
                 case Z_MEM_ERROR:
-                    qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory to compress file, skipping");
+                    qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory to compress file, skipping");
                     data.resize(0);
                     break;
 
@@ -819,7 +819,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 
     if (header.file_name.size() > 0xffff)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("QZip: Filename too long, chopping it to 65535 characters");
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Filename too long, chopping it to 65535 characters");
         header.file_name = header.file_name.left(0xffff);
     }
 
@@ -1096,7 +1096,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     int uncompressed_size = readUInt(header.h.uncompressed_size);
     int start = readUInt(header.h.offset_local_header);
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
 
     d->device->seek(start);
     LocalFileHeader lh;
@@ -1106,9 +1106,9 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
 
     int compression_method = readUShort(lh.compression_method);
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("file=%s: compressed_size=%d, uncompressed_size=%d", fileName.toLocal8Bit().data(), compressed_size, uncompressed_size);
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("file=%s: compressed_size=%d, uncompressed_size=%d", fileName.toLocal8Bit().data(), compressed_size, uncompressed_size);
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("file at %lld", d->device->pos());
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("file at %lld", d->device->pos());
 
     QByteArray compressed = d->device->read(compressed_size);
 
@@ -1124,7 +1124,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     else if (compression_method == 8)
     {
         // Deflate
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("compressed=%d", compressed.size());
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("compressed=%d", compressed.size());
 
         compressed.truncate(compressed_size);
         QByteArray baunzip;
@@ -1148,7 +1148,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
                     break;
 
                 case Z_MEM_ERROR:
-                    qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory");
+                    qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory");
                     break;
 
                 case Z_BUF_ERROR:
@@ -1156,7 +1156,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
                     break;
 
                 case Z_DATA_ERROR:
-                    qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("QZip: Z_DATA_ERROR: Input data is corrupted");
+                    qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_DATA_ERROR: Input data is corrupted");
                     break;
             }
         }
@@ -1165,7 +1165,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
         return baunzip;
     }
 
-    qCWarning(DIGIKAM_GEOCORE_LOG) << "QZip: Unknown compression method";
+    qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Unknown compression method";
     return QByteArray();
 }
 
@@ -1565,7 +1565,7 @@ void MarbleZipWriter::close()
         return;
     }
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("QZip::close writing directory, %d entries", d->fileHeaders.size());
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip::close writing directory, %d entries", d->fileHeaders.size());
 
     d->device->seek(d->start_of_directory);
 

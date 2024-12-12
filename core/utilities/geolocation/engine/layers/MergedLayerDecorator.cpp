@@ -187,7 +187,7 @@ StackedTile* MergedLayerDecorator::Private::createTile(const QVector<QSharedPoin
         if (blending)
         {
 
-            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "blending";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "blending";
 
             if (resultImage.isNull())
             {
@@ -199,7 +199,7 @@ StackedTile* MergedLayerDecorator::Private::createTile(const QVector<QSharedPoin
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "no blending defined => copying top over bottom image";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "no blending defined => copying top over bottom image";
 
             if (withConversion)
             {
@@ -336,14 +336,14 @@ StackedTile* MergedLayerDecorator::loadTile(const TileId& stackedTileId)
         const TileId tileId(layer->sourceDir(), stackedTileId.zoomLevel(),
                             stackedTileId.x(), stackedTileId.y());
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << layer->sourceDir() << tileId << layer->tileSize() << layer->fileFormat();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << layer->sourceDir() << tileId << layer->tileSize() << layer->fileFormat();
 
         // Blending (how to merge the images into an only image)
         const Blending* blending = d->m_blendingFactory.findBlending(layer->blending());
 
         if (blending == nullptr && !layer->blending().isEmpty())
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "could not find blending" << layer->blending();
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "could not find blending" << layer->blending();
         }
 
         const GeoSceneTextureTileDataset* const textureLayer = static_cast<const GeoSceneTextureTileDataset*>(layer);

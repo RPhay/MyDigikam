@@ -245,7 +245,7 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile(const QString& mapT
 
     if (!file.exists())
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Map theme file does not exist:" << dgmlPath;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Map theme file does not exist:" << dgmlPath;
         return nullptr;
     }
 
@@ -254,7 +254,7 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile(const QString& mapT
 
     if (!fileReadable)
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Map theme file not readable:" << dgmlPath;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Map theme file not readable:" << dgmlPath;
         return nullptr;
     }
 
@@ -262,11 +262,11 @@ GeoSceneDocument* MapThemeManager::Private::loadMapThemeFile(const QString& mapT
 
     if (!parser.read(&file))
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Map theme file not well-formed:" << dgmlPath;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Map theme file not well-formed:" << dgmlPath;
         return nullptr;
     }
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Map theme file successfully loaded:" << dgmlPath;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Map theme file successfully loaded:" << dgmlPath;
 
     // Get result document
     GeoSceneDocument* document = static_cast<GeoSceneDocument*>(parser.releaseDocument());
@@ -422,7 +422,7 @@ QList<QStandardItem*> MapThemeManager::Private::createMapThemeRow(QString const&
 
         if (themeIconPixmap.size() != maxIconSize)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Smooth scaling theme icon";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Smooth scaling theme icon";
             themeIconPixmap = themeIconPixmap.scaled(maxIconSize,
                                                      Qt::KeepAspectRatio,
                                                      Qt::SmoothTransformation);
@@ -449,7 +449,7 @@ QList<QStandardItem*> MapThemeManager::Private::createMapThemeRow(QString const&
 
 void MapThemeManager::Private::updateMapThemeModel()
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "updateMapThemeModel";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "updateMapThemeModel";
     m_mapThemeModel.clear();
 
     m_mapThemeModel.setHeaderData(0, Qt::Horizontal, i18n("Name"));
@@ -504,17 +504,17 @@ void MapThemeManager::Private::watchPaths()
 
 void MapThemeManager::Private::directoryChanged(const QString& path)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "directoryChanged:" << path;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "directoryChanged:" << path;
     watchPaths();
 
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "Emitting themesChanged()";
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "Emitting themesChanged()";
     updateMapThemeModel();
     Q_EMIT q->themesChanged();
 }
 
 void MapThemeManager::Private::fileChanged(const QString& path)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "fileChanged:" << path;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "fileChanged:" << path;
 
     // 1. if the file does not (anymore) exist, it got deleted and we
     //    have to delete the corresponding item from the model
@@ -522,12 +522,12 @@ void MapThemeManager::Private::fileChanged(const QString& path)
     //    the item with a new one.
 
     const QString mapThemeId = path.section(QLatin1Char('/'), -3);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "mapThemeId:" << mapThemeId;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "mapThemeId:" << mapThemeId;
     QList<QStandardItem*> matchingItems = m_mapThemeModel.findItems(mapThemeId,
                                                                     Qt::MatchFixedString
                                                                     | Qt::MatchCaseSensitive,
                                                                     columnRelativePath);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "matchingItems:" << matchingItems.size();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "matchingItems:" << matchingItems.size();
     Q_ASSERT(matchingItems.size() <= 1);
     int insertAtRow = 0;
 

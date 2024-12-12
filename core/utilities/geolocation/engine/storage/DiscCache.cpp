@@ -59,7 +59,7 @@ DiscCache::DiscCache(const QString& cacheDirectory)
 
         else
         {
-            qCWarning(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Unable to open cache directory %s").arg(m_CacheDirectory);
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Unable to open cache directory %s").arg(m_CacheDirectory);
         }
     }
 }

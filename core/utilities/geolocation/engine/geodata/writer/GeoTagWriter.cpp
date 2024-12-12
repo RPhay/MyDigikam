@@ -45,7 +45,7 @@ void GeoTagWriter::registerWriter(const QualifiedName& name,
 
     if (tagHash->contains(name))
     {
-        qCWarning(DIGIKAM_GEOCORE_LOG) << "Warning: The tag" << name << "is already registered. Often this indicates that multiple versions of the marblewidget library are loaded at the same time. This will likely lead to problems. Please check your installation, especially internal Marble plugins and external applications that install Marble plugins.";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "Warning: The tag" << name << "is already registered. Often this indicates that multiple versions of the marblewidget library are loaded at the same time. This will likely lead to problems. Please check your installation, especially internal Marble plugins and external applications that install Marble plugins.";
     }
 
     else

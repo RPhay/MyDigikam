@@ -57,7 +57,7 @@ public:
 
         if (!m_srtmTheme)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Failed to load map theme earth/srtm2/srtm2.dgml. Check your installation. No elevation will be returned.";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Failed to load map theme earth/srtm2/srtm2.dgml. Check your installation. No elevation will be returned.";
             return;
         }
 
@@ -73,7 +73,7 @@ public:
 
         if (!sceneLayer)
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Failed to instantiate elevation map. No elevation will be returned.";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Failed to instantiate elevation map. No elevation will be returned.";
             return;
         }
 
@@ -154,12 +154,12 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
         const int x = static_cast<int>(textureX + (i % 2));
         const int y = static_cast<int>(textureY + (i / 2));
 
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << "x" << x << ( x / width );
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << "y" << y << ( y / height );
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "x" << x << ( x / width );
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "y" << y << ( y / height );
 
         const TileId id(0, tileZoomLevel, (x % (numTilesX * width)) / width, (y % (numTilesY * height)) / height);
 
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << "LAT" << lat << "LON" << lon << "tile" << ( x % ( numTilesX * width ) ) / width << ( y % ( numTilesY * height ) ) / height;
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "LAT" << lat << "LON" << lon << "tile" << ( x % ( numTilesX * width ) ) / width << ( y % ( numTilesY * height ) ) / height;
 
         const QImage* image = d->m_cache[id];
 
@@ -183,18 +183,18 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
         unsigned int pixel = image->pixel(x % width, y % height) & 0xffff;   // 16 valid bits
         short int elevation = (short int) pixel; // and signed type, so just cast it
 
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << "(1-dx)" << (1-dx) << "(1-dy)" << (1-dy);
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "(1-dx)" << (1-dx) << "(1-dy)" << (1-dy);
 
         if (pixel != invalidElevationData)     //no data?
         {
-            //qCDebug(DIGIKAM_GEOCORE_LOG) << "got at x" << x % width << "y" << y % height << "a height of" << pixel << "** RGB" << qRed(pixel) << qGreen(pixel) << qBlue(pixel);
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "got at x" << x % width << "y" << y % height << "a height of" << pixel << "** RGB" << qRed(pixel) << qGreen(pixel) << qBlue(pixel);
 
             ret += (qreal)elevation * (1 - dx) * (1 - dy);
             hasHeight = true;
         }
         else
         {
-            //qCDebug(DIGIKAM_GEOCORE_LOG) << "no data at" <<  x % width << "y" << y % height;
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "no data at" <<  x % width << "y" << y % height;
 
             noData += (1 - dx) * (1 - dy);
         }
@@ -208,13 +208,13 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
     {
         if (noData)
         {
-            //qCDebug(DIGIKAM_GEOCORE_LOG) << "NO DATA" << noData;
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "NO DATA" << noData;
 
             ret += (ret / (1 - noData)) * noData;
         }
     }
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << ">>>" << lat << lon << "returning an elevation of" << ret;
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << ">>>" << lat << lon << "returning an elevation of" << ret;
 
     return ret;
 }
@@ -231,7 +231,7 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
     const int numTilesX     = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
     qreal distPerPixel      = (qreal)360 / (width * numTilesX);
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << "heightProfile" << fromLat << fromLon << toLat << toLon << "distPerPixel" << distPerPixel;
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "heightProfile" << fromLat << fromLon << toLat << toLon << "distPerPixel" << distPerPixel;
 
     qreal lat   = fromLat;
     qreal lon   = fromLon;
@@ -239,15 +239,15 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
     char dirLon = fromLon < toLon ? 1 : -1;
     qreal k     = qAbs((fromLat - toLat) / (fromLon - toLon));
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << "fromLon" << fromLon << "fromLat" << fromLat;
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << "diff lon" << ( fromLon - toLon ) << "diff lat" << ( fromLat - toLat );
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << "dirLon" << QString::number(dirLon) << "dirLat" << QString::number(dirLat) << "k" << k;
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "fromLon" << fromLon << "fromLat" << fromLat;
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "diff lon" << ( fromLon - toLon ) << "diff lat" << ( fromLat - toLat );
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << "dirLon" << QString::number(dirLon) << "dirLat" << QString::number(dirLat) << "k" << k;
 
     QVector<GeoDataCoordinates> ret;
 
     while (lat * dirLat <= toLat * dirLat && lon * dirLon <= toLon * dirLon)
     {
-        //qCDebug(DIGIKAM_GEOCORE_LOG) << lat << lon;
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << lat << lon;
 
         qreal h = height(lon, lat);
 
@@ -258,21 +258,21 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
 
         if (k < 0.5)
         {
-            //qCDebug(DIGIKAM_GEOCORE_LOG) << "lon(x) += distPerPixel";
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "lon(x) += distPerPixel";
 
             lat += distPerPixel * k * dirLat;
             lon += distPerPixel * dirLon;
         }
         else
         {
-            //qCDebug(DIGIKAM_GEOCORE_LOG) << "lat(y) += distPerPixel";
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "lat(y) += distPerPixel";
 
             lat += distPerPixel * dirLat;
             lon += distPerPixel / k * dirLon;
         }
     }
 
-    //qCDebug(DIGIKAM_GEOCORE_LOG) << ret;
+    //qCDebug(DIGIKAM_GEOENGINE_LOG) << ret;
 
     return ret;
 }

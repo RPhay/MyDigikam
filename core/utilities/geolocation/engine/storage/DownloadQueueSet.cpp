@@ -55,28 +55,28 @@ bool DownloadQueueSet::canAcceptJob(const QUrl& sourceUrl,
 {
     if (jobIsQueued(destinationFileName))
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Download rejected: It's in the queue already:"
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: It's in the queue already:"
                                     << destinationFileName;
         return false;
     }
 
     if (jobIsWaitingForRetry(destinationFileName))
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Download rejected: Will try to download again in some time:"
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: Will try to download again in some time:"
                                     << destinationFileName;
         return false;
     }
 
     if (jobIsActive(destinationFileName))
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Download rejected: It's being downloaded already:"
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: It's being downloaded already:"
                                     << destinationFileName;
         return false;
     }
 
     if (jobIsBlackListed(sourceUrl))
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Download rejected: Blacklisted.";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: Blacklisted.";
         return false;
     }
 
@@ -86,7 +86,7 @@ bool DownloadQueueSet::canAcceptJob(const QUrl& sourceUrl,
 void DownloadQueueSet::addJob(HttpJob* const job)
 {
     m_jobs.push(job);
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "addJob: new job queue size:" << m_jobs.count();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "addJob: new job queue size:" << m_jobs.count();
 
     Q_EMIT jobAdded();
     Q_EMIT progressChanged(m_activeJobs.size(), m_jobs.count());
@@ -109,7 +109,7 @@ void DownloadQueueSet::retryJobs()
     while (!m_retryQueue.isEmpty())
     {
         HttpJob* const job = m_retryQueue.dequeue();
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Requeuing" << job->destinationFileName();
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Requeuing" << job->destinationFileName();
 
         // FIXME: addJob calls activateJobs every time
 
@@ -144,7 +144,7 @@ void DownloadQueueSet::purgeJobs()
 
 void DownloadQueueSet::finishJob(HttpJob* job, const QByteArray& data)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "finishJob: " << job->sourceUrl() << job->destinationFileName();
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "finishJob: " << job->sourceUrl() << job->destinationFileName();
 
     deactivateJob(job);
 
@@ -157,7 +157,7 @@ void DownloadQueueSet::finishJob(HttpJob* job, const QByteArray& data)
 
 void DownloadQueueSet::redirectJob(HttpJob* job, const QUrl& newSourceUrl)
 {
-    qCDebug(DIGIKAM_GEOCORE_LOG) << "jobRedirected:" << job->sourceUrl() << " -> " << newSourceUrl;
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "jobRedirected:" << job->sourceUrl() << " -> " << newSourceUrl;
 
     deactivateJob(job);
 
@@ -179,7 +179,7 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
 
     if (job->tryAgain())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Download of %1 to %2 failed, but trying again soon")
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Download of %1 to %2 failed, but trying again soon")
                                     .arg(job->sourceUrl().toString(), job->destinationFileName());
         m_retryQueue.enqueue(job);
 
@@ -188,11 +188,11 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
 
     else
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "JOB-address: " << job
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "JOB-address: " << job
                                     << "Blacklist-size:" << m_jobBlackList.size()
                                     << "err:" << errorCode;
         m_jobBlackList.insert(job->sourceUrl().toString());
-        qCDebug(DIGIKAM_GEOCORE_LOG) << QString::fromUtf8("Download of %1 Blacklisted. "
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Download of %1 Blacklisted. "
                                                          "Number of blacklist items: %2")
                                     .arg(job->destinationFileName())
                                     .arg(m_jobBlackList.size());

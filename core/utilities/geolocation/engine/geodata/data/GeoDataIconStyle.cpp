@@ -102,7 +102,7 @@ public:
 
                 if (icon.isNull())
                 {
-                    qCDebug(DIGIKAM_GEOCORE_LOG) << "GeoDataIconStyle: Failed to read image " << path << ": " << imageReader.errorString();
+                    qCDebug(DIGIKAM_GEOENGINE_LOG) << "GeoDataIconStyle: Failed to read image " << path << ": " << imageReader.errorString();
                 }
 
                 return icon;
@@ -123,7 +123,7 @@ public:
             return remoteIconLoader()->load(QUrl(m_iconPath));
         }
 
-        qCDebug(DIGIKAM_GEOCORE_LOG) << "Unable to open style icon at: " << path;
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << "Unable to open style icon at: " << path;
         return QImage();
     }
 

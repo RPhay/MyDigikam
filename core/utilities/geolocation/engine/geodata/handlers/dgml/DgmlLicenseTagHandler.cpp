@@ -66,7 +66,7 @@ GeoNode* DgmlLicenseTagHandler::parse(GeoParser& parser) const
 
         else
         {
-            qCDebug(DIGIKAM_GEOCORE_LOG) << "Unknown license attribution value " << attribution << ", falling back to 'opt-out'.";
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Unknown license attribution value " << attribution << ", falling back to 'opt-out'.";
             parentItem.nodeAs<GeoSceneHead>()->license()->setAttribution(GeoSceneLicense::OptOut);
         }
 

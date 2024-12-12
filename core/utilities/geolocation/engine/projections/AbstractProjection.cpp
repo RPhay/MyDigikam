@@ -168,7 +168,7 @@ void AbstractProjection::setMaxLat(qreal maxLat)
 {
     if (maxLat < maxValidLat())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO
                                     << "Trying to set maxLat to a value "
                                        "that is out of the valid range.";
         return;
@@ -193,7 +193,7 @@ void AbstractProjection::setMinLat(qreal minLat)
 {
     if (minLat < minValidLat())
     {
-        qCDebug(DIGIKAM_GEOCORE_LOG) << Q_FUNC_INFO << "Trying to set minLat to a value that is out of the valid range.";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Trying to set minLat to a value that is out of the valid range.";
         return;
     }
 
