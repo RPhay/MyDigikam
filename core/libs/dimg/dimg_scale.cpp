@@ -72,6 +72,12 @@ public:
     int      xup_yup     = 0;
 
     bool     scaleSmooth = true;
+
+private:
+
+    // Disable
+    DImgScaleInfo(const DImgScaleInfo&)            = delete;
+    DImgScaleInfo& operator=(const DImgScaleInfo&) = delete;
 };
 
 uint**   dimgCalcYPoints(uint* const src, int sw, int sh, int dh);

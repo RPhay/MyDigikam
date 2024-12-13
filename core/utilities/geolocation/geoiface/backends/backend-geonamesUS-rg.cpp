@@ -38,10 +38,11 @@ namespace Digikam
  */
 class Q_DECL_HIDDEN GeonamesUSInternalJobs
 {
-
 public:
 
-    GeonamesUSInternalJobs() = default;
+    GeonamesUSInternalJobs()                                         = default;
+    GeonamesUSInternalJobs(const GeonamesUSInternalJobs&)            = default;
+    GeonamesUSInternalJobs& operator=(const GeonamesUSInternalJobs&) = default;
 
     ~GeonamesUSInternalJobs()
     {

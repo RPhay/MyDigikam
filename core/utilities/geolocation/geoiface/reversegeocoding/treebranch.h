@@ -48,6 +48,12 @@ public:
     QList<TreeBranch*>    oldChildren;
     QList<TreeBranch*>    spacerChildren;
     QList<TreeBranch*>    newChildren;
+
+private:
+
+    // Disable
+    TreeBranch(const TreeBranch&)            = delete;
+    TreeBranch& operator=(const TreeBranch&) = delete;
 };
 
 } // namespace Digikam

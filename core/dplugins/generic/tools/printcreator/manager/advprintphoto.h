@@ -154,6 +154,12 @@ private:
 
     DImg*                   m_thumbnail             = nullptr;
     QSize*                  m_size                  = nullptr;
+
+private:
+
+    // Disable
+    AdvPrintPhoto(const AdvPrintPhoto&)            = delete;
+    AdvPrintPhoto& operator=(const AdvPrintPhoto&) = delete;
 };
 
 } // Namespace DigikamGenericPrintCreatorPlugin

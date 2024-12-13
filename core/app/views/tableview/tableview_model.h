@@ -75,6 +75,12 @@ public:
         qlonglong    imageId    = 0;
         Item*        parent     = nullptr;
         QList<Item*> children;
+
+    private:
+
+        // Disable
+        Item(const Item&)            = delete;
+        Item& operator=(const Item&) = delete;
     };
 
 public:

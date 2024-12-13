@@ -53,6 +53,12 @@ public:
         Item*                       parent  = nullptr;
         QList<Item*>                children;
 
+    private:
+
+        // Disable
+        Item(const Item&)            = delete;
+        Item& operator=(const Item&) = delete;
+
         friend class SimpleTreeModel;
     };
 
@@ -74,6 +80,7 @@ public:
     Item* indexToItem(const QModelIndex& itemIndex)                                                 const;
     Item* rootItem()                                                                                const;
     QModelIndex itemToIndex(const Item* const item)                                                 const;
+
 
 private:
 

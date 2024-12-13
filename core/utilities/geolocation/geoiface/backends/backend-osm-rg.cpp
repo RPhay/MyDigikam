@@ -35,7 +35,9 @@ class Q_DECL_HIDDEN OsmInternalJobs
 {
 public:
 
-    OsmInternalJobs() = default;
+    OsmInternalJobs()                                  = default;
+    OsmInternalJobs& operator=(const OsmInternalJobs&) = default;
+    OsmInternalJobs(const OsmInternalJobs&)            = default;
 
     ~OsmInternalJobs()
     {

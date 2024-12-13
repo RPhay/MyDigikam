@@ -158,6 +158,11 @@ public:
 
 #endif // HAVE_GPHOTO2
 
+private:
+
+    // Disable
+    GPStatus(const GPStatus&)            = delete;
+    GPStatus& operator=(const GPStatus&) = delete;
 };
 
 bool GPStatus::cancel = false;

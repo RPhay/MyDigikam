@@ -154,6 +154,12 @@ public:
     AdvPrintPhotoSize*                outputLayouts      = nullptr;
     QPrinter*                         outputPrinter      = nullptr;
     QString                           outputPath;
+
+private:
+
+    // Disable
+    AdvPrintSettings(const AdvPrintSettings&)            = delete;
+    AdvPrintSettings& operator=(const AdvPrintSettings&) = delete;
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin

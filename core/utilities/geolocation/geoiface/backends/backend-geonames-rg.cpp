@@ -41,7 +41,9 @@ class Q_DECL_HIDDEN GeonamesInternalJobs
 {
 public:
 
-    GeonamesInternalJobs() = default;
+    GeonamesInternalJobs()                                       = default;
+    GeonamesInternalJobs(const GeonamesInternalJobs&)            = default;
+    GeonamesInternalJobs& operator=(const GeonamesInternalJobs&) = default;
 
     ~GeonamesInternalJobs()
     {
