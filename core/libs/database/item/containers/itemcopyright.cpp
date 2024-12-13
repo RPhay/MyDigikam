@@ -34,14 +34,15 @@ class Q_DECL_HIDDEN ItemCopyrightCache
 public:
 
     explicit ItemCopyrightCache(ItemCopyright* const obj)
-        : // read all properties
-
-          infos (CoreDbAccess().db()->getItemCopyright(obj->m_id, QString())),
-          object(obj)
+        : object(obj)
     {
           // set this as cache
 
           object->m_cache = this;
+
+          // read all properties
+
+          infos = CoreDbAccess().db()->getItemCopyright(obj->m_id, QString());
     }
 
     ~ItemCopyrightCache()
