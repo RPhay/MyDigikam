@@ -187,6 +187,12 @@ public:
      */
     LcmsLock();
     ~LcmsLock();
+
+private:
+
+    // Disable
+    LcmsLock(const LcmsLock&)            = delete;
+    LcmsLock& operator=(const LcmsLock&) = delete;
 };
 
 } // namespace Digikam

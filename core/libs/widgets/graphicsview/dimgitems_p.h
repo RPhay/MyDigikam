@@ -59,6 +59,12 @@ protected:
 
     int                     maxCount = 2;
     QQueue<CachedPixmapKey> keys;
+
+private:
+
+    // Disable
+    CachedPixmaps(const CachedPixmaps&)            = delete;
+    CachedPixmaps& operator=(const CachedPixmaps&) = delete;
 };
 
 // -------------------------------------------------------------------------------

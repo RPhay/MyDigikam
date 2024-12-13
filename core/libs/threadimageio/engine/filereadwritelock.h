@@ -81,6 +81,10 @@ public:
 
 private:
 
+    // Disable
+    FileWriteLocker(const FileWriteLocker&)            = delete;
+    FileWriteLocker& operator=(const FileWriteLocker&) = delete;
+
     FileReadWriteLockPriv* d = nullptr;
 };
 

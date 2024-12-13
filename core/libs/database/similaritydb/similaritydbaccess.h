@@ -97,6 +97,10 @@ private:
      */
     explicit SimilarityDbAccess(bool);
 
+    // Disable
+    SimilarityDbAccess(const SimilarityDbAccess&)            = delete;
+    SimilarityDbAccess& operator=(const SimilarityDbAccess&) = delete;
+
     static SimilarityDbAccessStaticPriv* d;
 };
 

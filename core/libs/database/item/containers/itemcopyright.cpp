@@ -50,13 +50,19 @@ public:
         object->m_cache = nullptr;
     }
 
+public:
+
+    QList<CopyrightInfo> infos;
+
 private:
 
     ItemCopyright*       object = nullptr;
 
-public:
+private:
 
-    QList<CopyrightInfo> infos;
+    // Disable
+    ItemCopyrightCache(const ItemCopyrightCache&)            = delete;
+    ItemCopyrightCache& operator=(const ItemCopyrightCache&) = delete;
 };
 
 // -------------------------------------------------------------------------------------------

@@ -77,6 +77,12 @@ private:
     int   m_tileMaxX[LensDistortionPixelAccessRegions]  = { 0 };
     int   m_tileMinY[LensDistortionPixelAccessRegions]  = { 0 };
     int   m_tileMaxY[LensDistortionPixelAccessRegions]  = { 0 };
+
+private:
+
+    // Disable
+    LensDistortionPixelAccess(const LensDistortionPixelAccess&)            = delete;
+    LensDistortionPixelAccess& operator=(const LensDistortionPixelAccess&) = delete;
 };
 
 } // namespace Digikam

@@ -65,9 +65,15 @@ public:
 
 private:
 
-    DConfigDlgWdgItem* mPageWidgetItem;
+    DConfigDlgWdgItem* mPageWidgetItem = nullptr;
     QList<PageItem*>   mChildItems;
-    PageItem*          mParentItem = nullptr;
+    PageItem*          mParentItem     = nullptr;
+
+private:
+
+    // Disable
+    PageItem(const PageItem&)            = delete;
+    PageItem& operator=(const PageItem&) = delete;
 };
 
 // ----------------------------------------------------------------------------

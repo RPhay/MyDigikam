@@ -43,7 +43,9 @@ public:
 
 private:
 
-    Q_DISABLE_COPY(ItemQueryPostHook)
+    // Disable
+    ItemQueryPostHook(const ItemQueryPostHook&)            = delete;
+    ItemQueryPostHook& operator=(const ItemQueryPostHook&) = delete;
 };
 
 // --------------------------------------------------------------------
