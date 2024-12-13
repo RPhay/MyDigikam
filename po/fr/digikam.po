@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-12 01:49+0000\n"
-"PO-Revision-Date: 2024-12-03 10:23+0100\n"
+"PO-Revision-Date: 2024-12-11 08:59+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -6937,35 +6937,28 @@ msgstr[0] "Énorme (un pixel)"
 msgstr[1] "Énorme (%1 pixels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Importante (un pixel)"
-msgstr[1] "Importante (%1 pixels)"
+msgstr[0] "QXGA (1 pixel)"
+msgstr[1] "QXGA (%1 pixels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Énorme (un pixel)"
-msgstr[1] "Énorme (%1 pixels)"
+msgstr[0] "QHD (1 pixel)"
+msgstr[1] "QHD (%1 pixels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Énorme (un pixel)"
-msgstr[1] "Énorme (%1 pixels)"
+msgstr[0] "UHD (1 pixel)"
+msgstr[1] "UHD (%1 pixels)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Ne pas agrandir les petites images"
 
@@ -28371,20 +28364,16 @@ msgstr "Tous les albums"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Sélection récursive."
+msgstr "Sélection récursive"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Sélection récursive."
+msgstr "Sélection récursive d'albums"
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -28411,12 +28400,10 @@ msgid "All tags"
 msgstr "Toutes les étiquettes"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Sélection récursive."
+msgstr "Sélection récursive d'étiquettes"
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format

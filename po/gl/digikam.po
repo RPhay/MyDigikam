@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-12 01:49+0000\n"
-"PO-Revision-Date: 2024-12-11 20:16+0100\n"
+"PO-Revision-Date: 2024-12-12 19:56+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -18752,8 +18752,8 @@ msgid ""
 "Tesseract program or language modules\n"
 "are not installed on your system."
 msgstr ""
-"Non se atoparon o programa Tesseract\n"
-"ou módulos de idioma instalados no sistema."
+"Ou o programa Tesseract ou os módulos de\n"
+"idioma non están instalados no sistema."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:734
 #, kde-format
@@ -47974,7 +47974,7 @@ msgstr "O URL de %1 non pode quedar baleiro."
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr "Erro: non se poden usar as credenciais de Bing na versión web."
+msgstr "Erro: non se poden atopar as credenciais de Bing na versión web."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
@@ -48807,7 +48807,7 @@ msgstr "A emoción seleccionada, %1, non é compatíbel con %2."
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr "Erro: non se pode usar o SID de Yandex na versión web."
+msgstr "Erro: non se pode atopar o SID de Yandex na versión web."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format

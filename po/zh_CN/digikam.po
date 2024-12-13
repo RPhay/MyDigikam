@@ -6527,24 +6527,24 @@ msgstr[0] "超大 (%1 像素)"
 #, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] ""
+msgstr[0] "QXGA (%1 像素)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
 #, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] ""
+msgstr[0] "QHD (%1 像素)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
 #, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] ""
+msgstr[0] "UHD (%1 像素)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
 #, kde-format
 msgid "Do Not Enlarge Small Images"
-msgstr ""
+msgstr "不放大较小图像"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
@@ -26950,13 +26950,13 @@ msgstr "所有相册"
 #, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr ""
+msgstr "递归式选择"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr ""
+msgstr "递归式相册选择"
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -26986,7 +26986,7 @@ msgstr "所有标签"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr ""
+msgstr "递归式标签选择"
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
