@@ -158,7 +158,6 @@ private:
 private:
 
     // Disable
-    AdvPrintPhoto(const AdvPrintPhoto&)            = delete;
     AdvPrintPhoto& operator=(const AdvPrintPhoto&) = delete;
 };
 
