@@ -135,6 +135,8 @@ private:
 
     // Disable
     explicit CoreDbAccess(bool);
+    CoreDbAccess(const CoreDbAccess&)            = delete;
+    CoreDbAccess& operator=(const CoreDbAccess&) = delete;
 
     friend class CoreDbAccessUnlock;
     static CoreDbAccessStaticPriv* d;
@@ -159,6 +161,10 @@ public:
     ~CoreDbAccessUnlock();
 
 private:
+
+    // Disable
+    CoreDbAccessUnlock(const CoreDbAccessUnlock&)            = delete;
+    CoreDbAccessUnlock& operator=(const CoreDbAccessUnlock&) = delete;
 
     int count = 0;
 };

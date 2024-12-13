@@ -49,6 +49,12 @@ public:
     int       transactionCount  = 0;
     QString   connectionName;
     QSqlError lastError;
+
+private:
+
+    // Disable
+    DbEngineThreadData(const DbEngineThreadData&)            = delete;
+    DbEngineThreadData& operator=(const DbEngineThreadData&) = delete;
 };
 
 // ------------------------------------------------------------------------

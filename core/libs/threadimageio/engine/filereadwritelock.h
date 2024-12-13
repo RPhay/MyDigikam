@@ -45,6 +45,10 @@ public:
 
 private:
 
+    // Disable
+    FileReadWriteLockKey(const FileReadWriteLockKey&)            = delete;
+    FileReadWriteLockKey& operator=(const FileReadWriteLockKey&) = delete;
+
     FileReadWriteLockPriv* d = nullptr;
 };
 
@@ -58,6 +62,10 @@ public:
     ~FileReadLocker();
 
 private:
+
+    // Disable
+    FileReadLocker(const FileReadLocker&)            = delete;
+    FileReadLocker& operator=(const FileReadLocker&) = delete;
 
     FileReadWriteLockPriv* d = nullptr;
 };

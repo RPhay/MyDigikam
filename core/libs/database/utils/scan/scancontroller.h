@@ -75,6 +75,12 @@ public:
 
         ItemInfo m_info;
         bool     m_changed = false;
+
+    private:
+
+        // Disable
+        FileMetadataWrite(const FileMetadataWrite&)            = delete;
+        FileMetadataWrite& operator=(const FileMetadataWrite&) = delete;
     };
 
 public:

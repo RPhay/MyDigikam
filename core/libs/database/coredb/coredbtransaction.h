@@ -45,6 +45,10 @@ public:
 
 private:
 
+    // Disable
+    CoreDbTransaction(const CoreDbTransaction&)            = delete;
+    CoreDbTransaction& operator=(const CoreDbTransaction&) = delete;
+
     CoreDbAccess* m_access = nullptr;
 };
 

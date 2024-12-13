@@ -64,6 +64,10 @@ private:
 
     explicit ThumbsDbAccess(bool);
 
+    // Disable
+    ThumbsDbAccess(const ThumbsDbAccess&)            = delete;
+    ThumbsDbAccess& operator=(const ThumbsDbAccess&) = delete;
+
     static ThumbsDbAccessStaticPriv* d;
 };
 

@@ -76,6 +76,10 @@ public:
 
 public:
 
+    // Disable
+    ThumbnailLoadThreadStaticPriv(const ThumbnailLoadThreadStaticPriv&)            = delete;
+    ThumbnailLoadThreadStaticPriv& operator=(const ThumbnailLoadThreadStaticPriv&) = delete;
+
     bool                            firstThreadCreated  = false;
 
     ThumbnailCreator::StorageMethod storageMethod       = ThumbnailCreator::FreeDesktopStandard;

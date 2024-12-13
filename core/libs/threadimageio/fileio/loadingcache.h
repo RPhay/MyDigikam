@@ -133,6 +133,10 @@ public:
 
     private:
 
+        // Disable
+        CacheLock(const CacheLock&)            = delete;
+        CacheLock& operator=(const CacheLock&) = delete;
+
         LoadingCache* m_cache = nullptr;
     };
 
