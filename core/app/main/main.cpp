@@ -267,7 +267,11 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
+#if !defined(Q_OS_MACOS)
+
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("digikam"), app.windowIcon()));
+
+#endif
 
     // Check if Qt database plugins are available.
 

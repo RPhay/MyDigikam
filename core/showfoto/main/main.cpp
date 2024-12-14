@@ -237,7 +237,11 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
+#if !defined(Q_OS_MACOS)
+
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("showfoto"), app.windowIcon()));
+
+#endif
 
     QList<QUrl> urlList;
     QStringList urls = parser.positionalArguments();
