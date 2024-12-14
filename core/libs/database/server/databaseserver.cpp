@@ -676,7 +676,6 @@ DatabaseServerError DatabaseServer::initMysqlDatabase(bool useDatabase) const
 
         if (!opened)
         {
-            QString firstLine;
             QString errorMsg;
 
             if (exited)

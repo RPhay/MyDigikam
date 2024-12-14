@@ -184,13 +184,18 @@ void DImgThreadedFilter::startFilterDirectly()
 
         try
         {
+/*
             QDateTime now = QDateTime::currentDateTime();
+*/
             filterImage();
-            //qCDebug(DIGIKAM_DIMG_LOG) << m_name << ":: execution time : " << now.msecsTo(QDateTime::currentDateTime()) << " ms";
+/*
+            qCDebug(DIGIKAM_DIMG_LOG) << m_name << ":: execution time : " << now.msecsTo(QDateTime::currentDateTime()) << " ms";
+*/
         }
         catch (std::bad_alloc& ex)
         {
             // TODO: User notification
+
             qCCritical(DIGIKAM_DIMG_LOG) << "Caught out-of-memory exception! Aborting operation" << ex.what();
 
             Q_EMIT finished(false);

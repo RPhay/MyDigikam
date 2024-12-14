@@ -188,7 +188,6 @@ void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadata
             return;
         }
 
-        QDateTime date                   = it.value();
         metadataAboutToAdjustHints.erase(it);
 
         metadataAdjustedHints[hint.id()] = hint.modificationDate();
@@ -197,6 +196,7 @@ void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadata
     {
          QWriteLocker locker(&lock);
          QDateTime formerDate = metadataAboutToAdjustHints.take(hint.id());
+         Q_UNUSED(formerDate);
     }
 }
 
