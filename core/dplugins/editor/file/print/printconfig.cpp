@@ -35,6 +35,12 @@ public:
     }
 
     PrintConfig* q = nullptr;
+
+private:
+
+    // Disable
+    PrintConfigHelper(const PrintConfigHelper&)            = delete;
+    PrintConfigHelper& operator=(const PrintConfigHelper&) = delete;
 };
 
 Q_GLOBAL_STATIC(PrintConfigHelper, s_globalPrintConfig)

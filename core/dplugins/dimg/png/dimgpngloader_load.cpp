@@ -237,6 +237,13 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         QSize  size;
         int    cmod     = 0;
+
+
+    private:
+
+        // Disable
+        CleanupData(const CleanupData&)            = delete;
+        CleanupData& operator=(const CleanupData&) = delete;
     };
 
     CleanupData* const cleanupData = new CleanupData;

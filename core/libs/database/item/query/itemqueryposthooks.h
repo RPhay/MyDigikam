@@ -71,6 +71,12 @@ public:
 protected:
 
     QList<ItemQueryPostHook*> m_postHooks;
+
+private:
+
+    // Disable
+    ItemQueryPostHooks(const ItemQueryPostHooks&)            = delete;
+    ItemQueryPostHooks& operator=(const ItemQueryPostHooks&) = delete;
 };
 
 } // namespace Digikam

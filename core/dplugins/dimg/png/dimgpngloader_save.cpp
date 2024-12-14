@@ -162,6 +162,12 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         uchar* data = nullptr;
         FILE*  f    = nullptr;
+
+    private:
+
+        // Disable
+        CleanupData(const CleanupData&)            = delete;
+        CleanupData& operator=(const CleanupData&) = delete;
     };
 
     CleanupData* const cleanupData = new CleanupData;
