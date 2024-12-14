@@ -474,7 +474,7 @@ void SlideOSD::setLoadingReady(bool b)
 
 void SlideOSD::showVideoIndicator(bool b)
 {
-    d->videoIndicator->setVisible(b);
+    d->videoIndicator->setVisible(d->video && b);
 }
 
 } // namespace DigikamGenericSlideShowPlugin
