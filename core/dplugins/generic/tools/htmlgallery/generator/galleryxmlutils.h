@@ -73,6 +73,12 @@ public:
 private:
 
     Ptr m_ptr = nullptr;
+
+private:
+
+    // Disable
+    CWrapper(const CWrapper&)            = delete;
+    CWrapper& operator=(const CWrapper&) = delete;
 };
 
 // --------------------------------------------------------------------------
@@ -132,6 +138,13 @@ public:
 private:
 
     XMLWriter& m_writer;
+
+private:
+
+    // Disable
+    XMLElement(const XMLElement&)            = delete;
+    XMLElement& operator=(const XMLElement&) = delete;
+
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin

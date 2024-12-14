@@ -115,6 +115,12 @@ public:
 
     QWidget*                 display                        = nullptr;
     DInfoInterface*          iface                          = nullptr;
+
+private:
+
+    // Disable
+    PresentationContainer(const PresentationContainer&)            = delete;
+    PresentationContainer& operator=(const PresentationContainer&) = delete;
 };
 
 } // namespace DigikamGenericPresentationPlugin

@@ -98,6 +98,12 @@ public:
     float           m_opacity   = 0.0F;
     bool            m_paint     = false;
     QOpenGLTexture* m_texture   = nullptr;
+
+private:
+
+    // Disable
+    KBImage(const KBImage&)            = delete;
+    KBImage& operator=(const KBImage&) = delete;
 };
 
 // -------------------------------------------------------------------------
