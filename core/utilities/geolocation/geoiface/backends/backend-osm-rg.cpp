@@ -36,8 +36,24 @@ class Q_DECL_HIDDEN OsmInternalJobs
 public:
 
     OsmInternalJobs()                                  = default;
-    OsmInternalJobs& operator=(const OsmInternalJobs&) = default;
-    OsmInternalJobs(const OsmInternalJobs&)            = default;
+
+    OsmInternalJobs(const OsmInternalJobs& other)
+        : language(other.language),
+          request (other.request),
+          data    (other.data),
+          netReply(other.netReply)
+    {
+    }
+
+    OsmInternalJobs& operator=(const OsmInternalJobs& other)
+    {
+        language = other.language;
+        request  = other.request;
+        data     = other.data;
+        netReply = other.netReply;
+
+        return *this;
+    }
 
     ~OsmInternalJobs()
     {

@@ -42,8 +42,24 @@ class Q_DECL_HIDDEN GeonamesInternalJobs
 public:
 
     GeonamesInternalJobs()                                       = default;
-    GeonamesInternalJobs(const GeonamesInternalJobs&)            = default;
-    GeonamesInternalJobs& operator=(const GeonamesInternalJobs&) = default;
+
+    GeonamesInternalJobs(const GeonamesInternalJobs& other)
+        : language(other.language),
+          request (other.request),
+          data    (other.data),
+          netReply(other.netReply)
+    {
+    }
+
+    GeonamesInternalJobs& operator=(const GeonamesInternalJobs& other)
+    {
+        language = other.language;
+        request  = other.request;
+        data     = other.data;
+        netReply = other.netReply;
+
+        return *this;
+    }
 
     ~GeonamesInternalJobs()
     {
