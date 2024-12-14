@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-12 01:49+0000\n"
+"POT-Creation-Date: 2024-12-14 02:38+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -61729,7 +61729,7 @@ msgstr "Huts egin du \"%1\" fitxategiaren blokeoa txandakatzean."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1612
+#: core/utilities/import/backend/gpcamera.cpp:1617
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -61740,7 +61740,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1619
+#: core/utilities/import/backend/gpcamera.cpp:1624
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -61760,24 +61760,24 @@ msgstr ""
 "Direktorioak ezabatzea: «%6»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "bai"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"

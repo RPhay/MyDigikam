@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-12 01:49+0000\n"
+"POT-Creation-Date: 2024-12-14 02:38+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -58552,7 +58552,7 @@ msgstr ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
 
-#: core/utilities/import/backend/gpcamera.cpp:1612
+#: core/utilities/import/backend/gpcamera.cpp:1617
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -58563,7 +58563,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1619
+#: core/utilities/import/backend/gpcamera.cpp:1624
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -58587,24 +58587,24 @@ msgstr ""
 "پشتیبان حذف فهرست راهنما: %9\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "بله"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"

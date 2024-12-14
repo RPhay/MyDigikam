@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-03 01:49+0000\n"
+"POT-Creation-Date: 2024-12-12 01:49+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -6329,70 +6329,91 @@ msgid ""
 "stage.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:141
+#: core/dplugins/bqm/transform/resize/resize.cpp:162
 #, kde-format
 msgid "Preset Length:"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:143
+#: core/dplugins/bqm/transform/resize/resize.cpp:164
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:144
+#: core/dplugins/bqm/transform/resize/resize.cpp:165
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:145
+#: core/dplugins/bqm/transform/resize/resize.cpp:166
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:146
+#: core/dplugins/bqm/transform/resize/resize.cpp:167
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:147
+#: core/dplugins/bqm/transform/resize/resize.cpp:168
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:148
+#: core/dplugins/bqm/transform/resize/resize.cpp:169
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:170
 #, kde-format
-msgid "Not enlarge small images"
+msgid "QXGA (1 pixel)"
+msgid_plural "QXGA (%1 pixels)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:171
+#, kde-format
+msgid "QHD (1 pixel)"
+msgid_plural "QHD (%1 pixels)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:172
+#, kde-format
+msgid "UHD (1 pixel)"
+msgid_plural "UHD (%1 pixels)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/dplugins/bqm/transform/resize/resize.cpp:174
+#, kde-format
+msgid "Do Not Enlarge Small Images"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:151
+#: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
 msgid "Use Custom Length"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, kde-format
 msgid "Use Percentage"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
-#: core/dplugins/bqm/transform/resize/resize.cpp:234
+#: core/dplugins/bqm/transform/resize/resize.cpp:178
+#: core/dplugins/bqm/transform/resize/resize.cpp:258
 #, kde-format
 msgid " Pixels"
 msgstr ""
@@ -8467,7 +8488,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr ""
@@ -10658,9 +10679,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:831
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
@@ -10798,7 +10819,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr ""
@@ -10809,13 +10830,13 @@ msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:167
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr ""
@@ -14970,7 +14991,7 @@ msgid "Former Author"
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
@@ -15396,7 +15417,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr ""
@@ -15790,7 +15811,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
@@ -16035,268 +16056,268 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr ""
 
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:186
 #, kde-format
 msgid "Could not copy image to file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:203
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:215
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:107
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:111
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:281
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:316
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:324
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:370
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:379
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:418
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:435
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:489
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:490
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:491
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:492
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:44
 #, kde-format
 msgid "Html Gallery"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -16305,12 +16326,12 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:85
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -16350,22 +16371,22 @@ msgstr ""
 msgid "Output directory: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:158
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:161
 #, kde-format
 msgid "Gallery completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:170
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:173
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:179
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:182
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr ""
@@ -16519,40 +16540,40 @@ msgstr ""
 msgid "Author: %1<br/><br/>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, kde-format
 msgid "Items Selection"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr ""
@@ -16587,17 +16608,17 @@ msgstr ""
 msgid "Launch jAlbum with new project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
 #, kde-format
 msgid "jAlbum Export"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -16606,7 +16627,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -20821,7 +20842,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1195
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1197
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -20835,8 +20856,8 @@ msgstr ""
 msgid "Failed to upload photo"
 msgstr ""
 
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:454
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:457
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:455
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
@@ -21606,133 +21627,133 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:324
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:616
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:618
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:703
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:705
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
 #, kde-format
 msgid "No photo specified"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:709
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:711
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:496
 #, kde-format
 msgid "General upload failure"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:715
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:717
 #, kde-format
 msgid "Filesize was zero"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:721
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:723
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:727
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:729
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:735
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:741
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:753
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid "Service currently unavailable"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:765
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:550
 #, kde-format
 msgid "Invalid Frob"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:777
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:789
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:801
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #, kde-format
 msgid "Unknown error"
 msgstr "Amas meattáhus"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:806
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:808
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
 "Cannot proceed any further."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1112
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1256
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1258
 #, kde-format
 msgid "Failed to query photo information"
 msgstr ""
@@ -22506,12 +22527,12 @@ msgctxt "@action"
 msgid "Export to &Imgur..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:185
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:186
 #, kde-format
 msgid "Could not authorize"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:390
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"
@@ -25851,7 +25872,7 @@ msgid "Album &date:"
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -25864,7 +25885,7 @@ msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -25877,7 +25898,7 @@ msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -25977,94 +25998,99 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:126
-#: core/libs/album/widgets/albumselectors.cpp:534
+#: core/libs/album/widgets/albumselectors.cpp:140
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:129
+#: core/libs/album/widgets/albumselectors.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:161
+#: core/libs/album/widgets/albumselectors.cpp:175
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:162
-#: core/libs/album/widgets/albumselectors.cpp:222
+#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@option"
-msgid "Recursive"
+msgid "Recursive selection"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:163
-#: core/libs/album/widgets/albumselectors.cpp:223
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Recursive selection."
+msgid "Recursive album selection."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:176
+#: core/libs/album/widgets/albumselectors.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:183
+#: core/libs/album/widgets/albumselectors.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:221
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:233
+#: core/libs/album/widgets/albumselectors.cpp:238
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Recursive tags selection."
+msgstr ""
+
+#: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:535
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -35342,7 +35368,7 @@ msgid "Map"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:577
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -36591,7 +36617,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:572
+#: core/libs/tags/engine/tagmodificationhelper.cpp:571
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -36604,7 +36630,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:594
+#: core/libs/tags/engine/tagmodificationhelper.cpp:593
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -36613,14 +36639,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:602
+#: core/libs/tags/engine/tagmodificationhelper.cpp:601
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:613
+#: core/libs/tags/engine/tagmodificationhelper.cpp:612
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -46101,14 +46127,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -47073,115 +47099,115 @@ msgid ""
 "the image."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:125
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:136
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:144
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -47190,98 +47216,98 @@ msgid ""
 "entry in the hierarchy without extra property."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:168
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Select favorite item date. By default, day of item creation is assigned."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:212
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:229
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -47290,37 +47316,37 @@ msgid ""
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:346
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:348
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:350
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:352
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:356
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:384
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:388
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:390
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:404
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -47328,37 +47354,37 @@ msgid_plural "%1 files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:663
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:667
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:674
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:678
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:735
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

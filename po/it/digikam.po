@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-12 01:49+0000\n"
-"PO-Revision-Date: 2024-12-03 19:01+0100\n"
+"POT-Creation-Date: 2024-12-14 02:38+0000\n"
+"PO-Revision-Date: 2024-12-10 19:35+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -6847,35 +6847,28 @@ msgstr[0] "Grosso (un pixel):"
 msgstr[1] "Grosso (%1 pixel):"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Grande (un pixel):"
-msgstr[1] "Grande (%1 pixel):"
+msgstr[0] "QXGA (un pixel):"
+msgstr[1] "QXGA (%1 pixel):"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Grosso (un pixel):"
-msgstr[1] "Grosso (%1 pixel):"
+msgstr[0] "QHD (un pixel):"
+msgstr[1] "QHD (%1 pixel):"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Grosso (un pixel):"
-msgstr[1] "Grosso (%1 pixel):"
+msgstr[0] "UHD (un pixel):"
+msgstr[1] "UHD (%1 pixel):"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Non ingrandire le immagini piccole"
 
@@ -28184,20 +28177,16 @@ msgstr "Tutti gli album"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Selezione ricorsiva."
+msgstr "Selezione ricorsiva"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Selezione ricorsiva."
+msgstr "Selezione ricorsiva degli album."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -28224,12 +28213,10 @@ msgid "All tags"
 msgstr "Tutti i tag"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Selezione ricorsiva."
+msgstr "Selezione ricorsiva dei tag."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -59626,7 +59613,7 @@ msgstr "Impossibile commutare il blocco del file <b>%1</b>."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Impossibile commutare il blocco del file <b>%1</b>. Vuoi continuare?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1612
+#: core/utilities/import/backend/gpcamera.cpp:1617
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59642,7 +59629,7 @@ msgstr ""
 "Percorso: «%4»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1619
+#: core/utilities/import/backend/gpcamera.cpp:1624
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59662,23 +59649,23 @@ msgstr ""
 "Elimina cartelle: «%6»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "sì"
 
-#: core/utilities/import/backend/gpcamera.cpp:1625
-#: core/utilities/import/backend/gpcamera.cpp:1626
-#: core/utilities/import/backend/gpcamera.cpp:1627
-#: core/utilities/import/backend/gpcamera.cpp:1628
-#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
+#: core/utilities/import/backend/gpcamera.cpp:1634
+#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -62352,7 +62339,7 @@ msgstr "Originale"
 #, kde-format
 msgctxt "@title: target item name"
 msgid "Target"
-msgstr "Risultante"
+msgstr "Destinazione"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:432
 #, kde-format
@@ -62394,7 +62381,7 @@ msgstr "Usa album originale"
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:132
 #, kde-format
 msgid "Target"
-msgstr "Risultante"
+msgstr "Destinazione"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:142
 #, kde-format
