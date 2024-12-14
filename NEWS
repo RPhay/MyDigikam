@@ -45,7 +45,7 @@ BUGFIXES:
 033 ==> 497147 - Launching of v8.5 creates wrong initial screen: a copy of the desktop.
 034 ==> 497217 - Expand Batch Queue Manager Resize to include larger preset lengths and revise text.
 035 ==> 497264 - digiKam dock icon changes and becomes pixelated after running app.
-036 ==>
+036 ==> 497446 - Video seek timeline/scrubber is unusable in slideshow mode.
 037 ==>
 038 ==>
 039 ==>

@@ -17,12 +17,9 @@
 // Qt includes
 
 #include <QApplication>
-#include <QProxyStyle>
-#include <QGridLayout>
+#include <QVBoxLayout>
 #include <QString>
-#include <QSlider>
 #include <QStyle>
-#include <QLabel>
 #include <QTimer>
 
 // KDE includes
@@ -40,28 +37,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
-{
-    Q_OBJECT
-
-public:
-
-    using QProxyStyle::QProxyStyle;
-
-    int styleHint(QStyle::StyleHint hint,
-                  const QStyleOption* option = nullptr,
-                  const QWidget* widget = nullptr,
-                  QStyleHintReturn* returnData = nullptr) const override
-    {
-        if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
-        {
-            return (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton);
-        }
-
-        return QProxyStyle::styleHint(hint, option, widget, returnData);
-    }
-};
-
 class Q_DECL_HIDDEN SlideVideo::Private
 {
 public:
@@ -71,12 +46,6 @@ public:
     DInfoInterface*      iface            = nullptr;
 
     DVideoWidget*        videoWidget      = nullptr;
-
-    QSlider*             slider           = nullptr;
-    QSlider*             volume           = nullptr;
-    QLabel*              tlabel           = nullptr;
-
-    DHBox*               indicator        = nullptr;
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
@@ -85,59 +54,30 @@ SlideVideo::SlideVideo(QWidget* const parent)
 {
     setMouseTracking(true);
 
-    d->videoWidget    = new DVideoWidget(this);
+    d->videoWidget          = new DVideoWidget(this);
 
-    d->indicator      = new DHBox(this);
-    d->slider         = new QSlider(Qt::Horizontal, d->indicator);
-    d->slider->setStyle(new SlideVideoStyle());
-    d->slider->setRange(0, 0);
-    d->slider->setAutoFillBackground(true);
-    d->tlabel         = new QLabel(d->indicator);
-    d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->tlabel->setAutoFillBackground(true);
-    QLabel* const spk = new QLabel(d->indicator);
-    spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
-    d->volume         = new QSlider(Qt::Horizontal, d->indicator);
-    d->volume->setRange(0, 100);
-    d->volume->setValue(50);
-    d->indicator->setStretchFactor(d->slider, 10);
-    d->indicator->setAutoFillBackground(true);
-    d->indicator->setSpacing(4);
-
-    QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->videoWidget, 0, 0, 2, 1);
-    grid->addWidget(d->indicator,   0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
-    grid->setRowStretch(0, 1);
-    grid->setRowStretch(1, 100);
-    grid->setContentsMargins(QMargins());
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(d->videoWidget, 100);
+    vlay->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
     d->videoWidget->audioOutput()->setVolume(volume);
-    d->volume->setValue(volume);
+    Q_EMIT signalVideoVolume(volume);
 
     // --------------------------------------------------------------------------
-
-    connect(d->slider, SIGNAL(sliderMoved(int)),
-            this, SLOT(slotPosition(int)));
-
-    connect(d->slider, SIGNAL(valueChanged(int)),
-            this, SLOT(slotPosition(int)));
-
-    connect(d->volume, SIGNAL(valueChanged(int)),
-            this, SLOT(slotVolumeChanged(int)));
 
     connect(d->videoWidget->player(), SIGNAL(stateChanged(QAVPlayer::State)),
             this, SLOT(slotPlayerStateChanged(QAVPlayer::State)));
 
     connect(d->videoWidget->player(), SIGNAL(seeked(qint64)),
-            this, SLOT(slotPositionChanged(qint64)),
+            this, SIGNAL(signalVideoPosition(qint64)),
             Qt::QueuedConnection);
 
     connect(d->videoWidget->player(), SIGNAL(durationChanged(qint64)),
-            this, SLOT(slotDurationChanged(qint64)));
+            this, SIGNAL(signalVideoDuration(qint64)));
 
     connect(d->videoWidget->player(), SIGNAL(errorOccurred(QAVPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QAVPlayer::Error,QString)));
@@ -149,7 +89,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     layout()->activate();
     resize(sizeHint());
-    show();
 }
 
 SlideVideo::~SlideVideo()
@@ -207,13 +146,6 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 
     d->videoWidget->player()->setSource(url.toLocalFile());
     d->videoWidget->player()->play();
-
-    showIndicator(false);
-}
-
-void SlideVideo::showIndicator(bool b)
-{
-    d->indicator->setVisible(b);
 }
 
 void SlideVideo::slotPlayerStateChanged(QAVPlayer::State newState)
@@ -280,36 +212,12 @@ void SlideVideo::stop()
     d->videoWidget->player()->setSource(QString());
 }
 
-void SlideVideo::slotPositionChanged(qint64 position)
-{
-    if (!d->slider->isSliderDown())
-    {
-        d->slider->blockSignals(true);
-        d->slider->setValue(position);
-        d->slider->blockSignals(false);
-    }
-
-    d->tlabel->setText(QString::fromLatin1("%1 / %2")
-                       .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
-                       .arg(QTime(0, 0, 0).addMSecs(d->slider->maximum()).toString(QLatin1String("HH:mm:ss"))));
-
-    Q_EMIT signalVideoPosition(position);
-}
-
 void SlideVideo::slotVolumeChanged(int volume)
 {
     d->videoWidget->audioOutput()->setVolume((qreal)volume / 100.0);
 }
 
-void SlideVideo::slotDurationChanged(qint64 duration)
-{
-    qint64 max = qMax((qint64)1, duration);
-    d->slider->setRange(0, max);
-
-    Q_EMIT signalVideoDuration(duration);
-}
-
-void SlideVideo::slotPosition(int position)
+void SlideVideo::slotPositionChanged(int position)
 {
     if (d->videoWidget->player()->isSeekable())
     {
@@ -340,7 +248,5 @@ void SlideVideo::slotPlayingStateChanged()
 }
 
 } // namespace Digikam
-
-#include "slidevideo.moc"
 
 #include "moc_slidevideo.cpp"
