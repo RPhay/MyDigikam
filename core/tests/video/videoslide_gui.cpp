@@ -38,7 +38,6 @@ int main(int argc, char* argv[])
 
     SlideVideo player(nullptr);
     player.setCurrentUrl(QUrl::fromLocalFile(QString::fromUtf8(argv[1])));
-    player.showIndicator(true);
     player.show();
     player.resize(800, 600);
 
