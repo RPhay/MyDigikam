@@ -165,8 +165,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
-    Q_EMIT signalVideoVolume(volume);
-    d->audio->setVolume(volume / 100.0F);
+    d->audio->setVolume(volume / 100.0);
 
     // --------------------------------------------------------------------------
 
@@ -246,6 +245,8 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
             break;
         }
     }
+
+    Q_EMIT signalVideoVolume(d->audio->volume() * 100.0);
 
     d->player->setSource(url);
     d->player->play();

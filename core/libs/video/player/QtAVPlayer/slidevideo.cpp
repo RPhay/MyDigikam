@@ -65,7 +65,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     int volume                = group.readEntry("Volume", 50);
 
     d->videoWidget->audioOutput()->setVolume(volume);
-    Q_EMIT signalVideoVolume(volume);
 
     // --------------------------------------------------------------------------
 
@@ -143,6 +142,8 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
             break;
         }
     }
+
+    Q_EMIT signalVideoVolume(d->videoWidget->audioOutput()->volume() * 100.0);
 
     d->videoWidget->player()->setSource(url.toLocalFile());
     d->videoWidget->player()->play();
