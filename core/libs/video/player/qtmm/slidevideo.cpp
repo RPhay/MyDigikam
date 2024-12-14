@@ -24,8 +24,6 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QGraphicsVideoItem>
-#include <QVideoSink>
-#include <QVideoFrame>
 #include <QAudioOutput>
 #include <QMediaMetaData>
 
