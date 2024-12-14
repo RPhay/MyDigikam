@@ -49,10 +49,22 @@ public:
     bool isPaused()                 const;
     bool isUnderMouse()             const;
     void setLoadingReady(bool b);
-
+    void showVideoIndicator(bool b);
 
     SlideToolBar* toolBar()         const;
     QSize slideShowSize()           const;
+
+
+Q_SIGNALS:
+
+    void signalVideoPosition(int position);
+    void signalVideoVolume(int volume);
+
+public Q_SLOTS:
+
+    void slotPositionChanged(qint64 position);
+    void slotDurationChanged(qint64 duration);
+    void slotVolumeChanged(int volume);
 
 protected:
 

@@ -17,12 +17,9 @@
 // Qt includes
 
 #include <QApplication>
-#include <QProxyStyle>
-#include <QGridLayout>
+#include <QVBoxLayout>
 #include <QString>
-#include <QSlider>
 #include <QStyle>
-#include <QLabel>
 #include <QTransform>
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -47,28 +44,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
-{
-    Q_OBJECT
-
-public:
-
-    using QProxyStyle::QProxyStyle;
-
-    int styleHint(QStyle::StyleHint hint,
-                  const QStyleOption* option = nullptr,
-                  const QWidget* widget = nullptr,
-                  QStyleHintReturn* returnData = nullptr) const override
-    {
-        if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
-        {
-            return (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton);
-        }
-
-        return QProxyStyle::styleHint(hint, option, widget, returnData);
-    }
-};
-
 class Q_DECL_HIDDEN SlideVideo::Private
 {
 public:
@@ -82,12 +57,6 @@ public:
     QGraphicsVideoItem*  videoItem        = nullptr;
     QMediaPlayer*        player           = nullptr;
     QAudioOutput*        audio            = nullptr;
-
-    QSlider*             slider           = nullptr;
-    QSlider*             volume           = nullptr;
-    QLabel*              tlabel           = nullptr;
-
-    DHBox*               indicator        = nullptr;
 
     int                  videoOrientation = 0;
 
@@ -188,47 +157,18 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
     d->videoView->setMouseTracking(true);
 
-    d->indicator      = new DHBox;
-    d->slider         = new QSlider(Qt::Horizontal, d->indicator);
-    d->slider->setStyle(new SlideVideoStyle());
-    d->slider->setRange(0, 0);
-    d->slider->setAutoFillBackground(true);
-    d->tlabel         = new QLabel(d->indicator);
-    d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->tlabel->setAutoFillBackground(true);
-    QLabel* const spk = new QLabel(d->indicator);
-    spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
-    d->volume         = new QSlider(Qt::Horizontal, d->indicator);
-    d->volume->setRange(0, 100);
-    d->volume->setValue(50);
-    d->indicator->setStretchFactor(d->slider, 10);
-    d->indicator->setAutoFillBackground(true);
-    d->indicator->setSpacing(4);
-
-    QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->videoView, 0, 0, 10, 1);
-    grid->addWidget(d->indicator, 0, 0, 1,  1); // Widget will be over player to not change layout when visibility is changed.
-    grid->setRowStretch(0, 1);
-    grid->setRowStretch(1, 100);
-    grid->setContentsMargins(QMargins());
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(d->videoView, 100);
+    vlay->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
-    d->volume->setValue(volume);
+    Q_EMIT signalVideoVolume(volume);
     d->audio->setVolume(volume / 100.0F);
 
     // --------------------------------------------------------------------------
-
-    connect(d->slider, SIGNAL(sliderMoved(int)),
-            this, SLOT(slotPosition(int)));
-
-    connect(d->slider, SIGNAL(valueChanged(int)),
-            this, SLOT(slotPosition(int)));
-
-    connect(d->volume, SIGNAL(valueChanged(int)),
-            this, SLOT(slotVolumeChanged(int)));
 
     connect(d->player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
             this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
@@ -237,10 +177,10 @@ SlideVideo::SlideVideo(QWidget* const parent)
             this, SLOT(slotMediaStatusChanged(QMediaPlayer::MediaStatus)));
 
     connect(d->player, SIGNAL(positionChanged(qint64)),
-            this, SLOT(slotPositionChanged(qint64)));
+            this, SIGNAL(signalVideoPosition(qint64)));
 
     connect(d->player, SIGNAL(durationChanged(qint64)),
-            this, SLOT(slotDurationChanged(qint64)));
+            this, SIGNAL(signalVideoDuration(qint64)));
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
@@ -252,7 +192,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     layout()->activate();
     resize(sizeHint());
-    show();
 }
 
 SlideVideo::~SlideVideo()
@@ -312,14 +251,6 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     d->player->play();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia started:" << d->player->source();
-
-    showIndicator(false);
-}
-
-void SlideVideo::showIndicator(bool b)
-{
-    d->indicator->setVisible(b);
-    d->indicator->raise();
 }
 
 void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
@@ -393,36 +324,12 @@ void SlideVideo::stop()
     d->player->setSource(QUrl());
 }
 
-void SlideVideo::slotPositionChanged(qint64 position)
-{
-    if (!d->slider->isSliderDown())
-    {
-        d->slider->blockSignals(true);
-        d->slider->setValue(position);
-        d->slider->blockSignals(false);
-    }
-
-    d->tlabel->setText(QString::fromLatin1("%1 / %2")
-                       .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
-                       .arg(QTime(0, 0, 0).addMSecs(d->slider->maximum()).toString(QLatin1String("HH:mm:ss"))));
-
-    Q_EMIT signalVideoPosition(position);
-}
-
 void SlideVideo::slotVolumeChanged(int volume)
 {
     d->audio->setVolume(volume / 100.0F);
 }
 
-void SlideVideo::slotDurationChanged(qint64 duration)
-{
-    qint64 max = qMax((qint64)1, duration);
-    d->slider->setRange(0, max);
-
-    Q_EMIT signalVideoDuration(duration);
-}
-
-void SlideVideo::slotPosition(int position)
+void SlideVideo::slotPositionChanged(int position)
 {
     if (d->player->isSeekable())
     {
@@ -447,7 +354,5 @@ void SlideVideo::resizeEvent(QResizeEvent* e)
 }
 
 } // namespace Digikam
-
-#include "slidevideo.moc"
 
 #include "moc_slidevideo.cpp"

@@ -126,12 +126,6 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     d->videoView = new SlideVideo(this);
     d->videoView->setInfoInterface(d->settings->iface);
 
-    connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
-            this, SLOT(slotVideoLoaded(bool)));
-
-    connect(d->videoView, SIGNAL(signalVideoFinished()),
-            this, SLOT(slotVideoFinished()));
-
     insertWidget(VideoView, d->videoView);
 
 #endif
@@ -165,6 +159,27 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 #ifdef HAVE_MEDIAPLAYER
 
     d->videoView->installEventFilter(this);
+
+    connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
+            this, SLOT(slotVideoLoaded(bool)));
+
+    connect(d->videoView, SIGNAL(signalVideoFinished()),
+            this, SLOT(slotVideoFinished()));
+
+    connect(d->videoView, SIGNAL(signalVideoPosition(qint64)),
+            d->osd, SLOT(slotPositionChanged(qint64)));
+
+    connect(d->videoView, SIGNAL(signalVideoDuration(qint64)),
+            d->osd, SLOT(slotDurationChanged(qint64)));
+
+    connect(d->videoView, SIGNAL(signalVideoVolume(int)),
+            d->osd, SLOT(slotVolumeChanged(int)));
+
+    connect(d->osd, SIGNAL(signalVideoPosition(int)),
+            d->videoView, SLOT(slotPositionChanged(int)));
+
+    connect(d->osd, SIGNAL(signalVideoVolume(int)),
+            d->videoView, SLOT(slotVolumeChanged(int)));
 
 #endif
 
@@ -597,7 +612,7 @@ bool SlideShowLoader::eventFilter(QObject* obj, QEvent* ev)
 
 #ifdef HAVE_MEDIAPLAYER
 
-        d->videoView->showIndicator(true);
+        d->osd->showVideoIndicator(true);
 
 #endif
 
@@ -616,13 +631,14 @@ void SlideShowLoader::slotMouseMoveTimeOut()
     if (!d->osd->isUnderMouse())
     {
         setCursor(QCursor(Qt::BlankCursor));
-    }
 
 #ifdef HAVE_MEDIAPLAYER
 
-    d->videoView->showIndicator(false);
+        d->osd->showVideoIndicator(false);
 
 #endif
+
+    }
 
 }
 

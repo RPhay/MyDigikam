@@ -40,7 +40,6 @@ public:
 
     void setInfoInterface(DInfoInterface* const iface);
     void setCurrentUrl(const QUrl& url);
-    void showIndicator(bool);
     void pause(bool);
     void stop();
 
@@ -51,6 +50,12 @@ Q_SIGNALS:
 
     void signalVideoPosition(qint64);
     void signalVideoDuration(qint64);
+    void signalVideoVolume(int);
+
+public Q_SLOTS:
+
+    void slotPositionChanged(int position);
+    void slotVolumeChanged(int volume);
 
 private Q_SLOTS:
 
@@ -58,11 +63,6 @@ private Q_SLOTS:
     void slotMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
     void slotNativeSizeChanged();
-
-    void slotPositionChanged(qint64 position);
-    void slotDurationChanged(qint64 duration);
-    void slotVolumeChanged(int volume);
-    void slotPosition(int position);
 
 private:
 

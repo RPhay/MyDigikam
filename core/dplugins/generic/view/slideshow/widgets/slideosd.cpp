@@ -20,7 +20,10 @@
 
 #include <QApplication>
 #include <QProgressBar>
+#include <QProxyStyle>
 #include <QLayout>
+#include <QSlider>
+#include <QLabel>
 #include <QTimer>
 #include <QEvent>
 #include <QStyle>
@@ -41,6 +44,28 @@ using namespace Digikam;
 namespace DigikamGenericSlideShowPlugin
 {
 
+class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
+{
+    Q_OBJECT
+
+public:
+
+    using QProxyStyle::QProxyStyle;
+
+    int styleHint(QStyle::StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const override
+    {
+        if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
+        {
+            return (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton);
+        }
+
+        return QProxyStyle::styleHint(hint, option, widget, returnData);
+    }
+};
+
 class Q_DECL_HIDDEN SlideOSD::Private
 {
 public:
@@ -59,6 +84,12 @@ public:
 
     DHBox*              labelsBox       = nullptr;
     DHBox*              progressBox     = nullptr;
+
+    DHBox*              videoIndicator  = nullptr;
+
+    QSlider*            videoSlider     = nullptr;
+    QSlider*            videoVolume     = nullptr;
+    QLabel*             videoLabel      = nullptr;
 
     SlideShowLoader*    parent          = nullptr;
     SlideProperties*    slideProps      = nullptr;
@@ -82,24 +113,44 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     setAttribute(Qt::WA_ShowWithoutActivating, true);
     setMouseTracking(true);
 
-    d->parent       = parent;
-    d->settings     = settings;
+    d->parent         = parent;
+    d->settings       = settings;
 
-    d->slideProps   = new SlideProperties(d->settings, this);
+    d->slideProps     = new SlideProperties(d->settings, this);
 
     // ---------------------------------------------------------------
 
-    d->labelsBox    = new DHBox(this);
+    d->videoIndicator = new DHBox(this);
+    d->videoSlider    = new QSlider(Qt::Horizontal, d->videoIndicator);
+    d->videoSlider->setStyle(new SlideVideoStyle());
+    d->videoSlider->setRange(0, 0);
+    d->videoSlider->setAutoFillBackground(true);
+    d->videoLabel     = new QLabel(d->videoIndicator);
+    d->videoLabel->setText(QLatin1String("00:00:00 / 00:00:00"));
+    d->videoLabel->setAutoFillBackground(true);
+    QLabel* const spk = new QLabel(d->videoIndicator);
+    spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
+    d->videoVolume    = new QSlider(Qt::Horizontal, d->videoIndicator);
+    d->videoVolume->setRange(0, 100);
+    d->videoVolume->setValue(50);
+    d->videoIndicator->setStretchFactor(d->videoSlider, 10);
+    d->videoIndicator->setAutoFillBackground(true);
+    d->videoIndicator->setSpacing(4);
+    d->videoIndicator->hide();
 
-    d->clWidget     = new ColorLabelSelector(d->labelsBox);
+    // ---------------------------------------------------------------
+
+    d->labelsBox      = new DHBox(this);
+
+    d->clWidget       = new ColorLabelSelector(d->labelsBox);
     d->clWidget->setFocusPolicy(Qt::NoFocus);
     d->clWidget->setMouseTracking(true);
 
-    d->plWidget     = new PickLabelSelector(d->labelsBox);
+    d->plWidget       = new PickLabelSelector(d->labelsBox);
     d->plWidget->setFocusPolicy(Qt::NoFocus);
     d->plWidget->setMouseTracking(true);
 
-    d->ratingWidget = new RatingWidget(d->labelsBox);
+    d->ratingWidget   = new RatingWidget(d->labelsBox);
     d->ratingWidget->setTracking(false);
     d->ratingWidget->setFading(false);
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
@@ -180,17 +231,26 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalScreenSelected(int)),
             d->parent, SLOT(slotScreenSelected(int)));
 
+    connect(d->videoSlider, SIGNAL(sliderMoved(int)),
+            this, SIGNAL(signalVideoPosition(int)));
+
+    connect(d->videoSlider, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalVideoPosition(int)));
+
+    connect(d->videoVolume, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalVideoVolume(int)));
+
     // ---------------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->slideProps,  0, 0, 1, 2);
-    grid->addWidget(d->labelsBox,   1, 0, 1, 1);
-    grid->addWidget(d->progressBox, 2, 0, 1, 1);
-    grid->setRowStretch(0, 10);
+    grid->addWidget(d->videoIndicator, 0, 0, 1, 2);
+    grid->addWidget(d->slideProps,     1, 0, 1, 2);
+    grid->addWidget(d->labelsBox,      2, 0, 1, 1);
+    grid->addWidget(d->progressBox,    3, 0, 1, 1);
+    grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(layoutSpacing());
-
 
     // ---------------------------------------------------------------
 
@@ -350,6 +410,31 @@ void SlideOSD::slotProgressTimer()
     }
 }
 
+void SlideOSD::slotPositionChanged(qint64 position)
+{
+    if (!d->videoSlider->isSliderDown())
+    {
+        d->videoSlider->blockSignals(true);
+        d->videoSlider->setValue(position);
+        d->videoSlider->blockSignals(false);
+    }
+
+    d->videoLabel->setText(QString::fromLatin1("%1 / %2")
+                       .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
+                       .arg(QTime(0, 0, 0).addMSecs(d->videoSlider->maximum()).toString(QLatin1String("HH:mm:ss"))));
+}
+
+void SlideOSD::slotDurationChanged(qint64 duration)
+{
+    qint64 max = qMax((qint64)1, duration);
+    d->videoSlider->setRange(0, max);
+}
+
+void SlideOSD::slotVolumeChanged(int volume)
+{
+    d->videoVolume->setValue(volume);
+}
+
 void SlideOSD::pause(bool b)
 {
     d->toolBar->pause(b);
@@ -373,10 +458,11 @@ bool SlideOSD::isPaused() const
 bool SlideOSD::isUnderMouse() const
 {
     return (
-            d->ratingWidget->underMouse() ||
-            d->progressBar->underMouse()  ||
-            d->clWidget->underMouse()     ||
-            d->plWidget->underMouse()     ||
+            d->videoIndicator->underMouse() ||
+            d->ratingWidget->underMouse()   ||
+            d->progressBar->underMouse()    ||
+            d->clWidget->underMouse()       ||
+            d->plWidget->underMouse()       ||
             d->toolBar->underMouse()
            );
 }
@@ -386,6 +472,13 @@ void SlideOSD::setLoadingReady(bool b)
     d->ready = b;
 }
 
+void SlideOSD::showVideoIndicator(bool b)
+{
+    d->videoIndicator->setVisible(b);
+}
+
 } // namespace DigikamGenericSlideShowPlugin
+
+#include "slideosd.moc"
 
 #include "moc_slideosd.cpp"
