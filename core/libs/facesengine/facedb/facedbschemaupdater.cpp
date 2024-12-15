@@ -256,10 +256,7 @@ bool FaceDbSchemaUpdater::createTables()
 
 bool FaceDbSchemaUpdater::createIndices()
 {
-    return (
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceIndices"))) &&
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("IndexFaceDBFaceMatrices_removeHash_V5")))
-           );
+    return d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceIndices")));
 }
 
 bool FaceDbSchemaUpdater::createTriggers()
@@ -300,7 +297,7 @@ bool FaceDbSchemaUpdater::updateV2ToV5()
         return false;
     }
 
-   if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("IndexFaceDBFaceMatrices_removeHash_V5")))))
+   if (!createIndices())
    {
         qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create FaceMatrices index";
 
@@ -308,7 +305,7 @@ bool FaceDbSchemaUpdater::updateV2ToV5()
     }
 
     d->currentVersion         = 5;
-    d->currentRequiredVersion = 5;
+    d->currentRequiredVersion = 4;
 
     // TODO: retrain recognized identities.
 
@@ -329,7 +326,7 @@ bool FaceDbSchemaUpdater::updateV4ToV5()
         return false;
     }
 
-    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("IndexFaceDBFaceMatrices_removeHash_V5")))))
+    if (!createIndices())
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create FaceMatrices index";
 
@@ -337,7 +334,7 @@ bool FaceDbSchemaUpdater::updateV4ToV5()
     }
 
     d->currentVersion         = 5;
-    d->currentRequiredVersion = 5;
+    d->currentRequiredVersion = 4;
 
     // TODO: retrain recognized identities.
 

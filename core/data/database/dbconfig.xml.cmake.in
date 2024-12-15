@@ -598,16 +598,11 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="IndexFaceDBFaceMatrices_removeHash_V5" mode="transaction">
-                <statement mode="plain">CREATE INDEX idx_FaceMatricesHash 
-                                        ON FaceMatrices(removeHash);
-                </statement>
-            </dbaction>
-
             <!-- SQlite Face Indexes -->
 
             <dbaction name="CreateFaceIndices" mode="transaction">
-                <statement mode="plain">CREATE INDEX attribute_index  ON IdentityAttributes (id);</statement>
+                <statement mode="plain">CREATE INDEX attribute_index ON IdentityAttributes (id);</statement>
+                <statement mode="plain">CREATE INDEX idx_FaceMatricesHash ON FaceMatrices (removeHash);</statement>
             </dbaction>
 
             <!-- SQlite Face Triggers -->
@@ -1743,12 +1738,6 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="IndexFaceDBFaceMatrices_removeHash_V5" mode="transaction">
-                <statement mode="plain">CREATE INDEX idx_FaceMatricesHash 
-                                        ON FaceMatrices(removeHash);
-                </statement>
-            </dbaction>
-
             <!-- Mysql face Indexes -->
 
             <dbaction name="CreateFaceIndices" mode="transaction">
@@ -1784,6 +1773,7 @@
                     END;
                 </statement>
                 <statement mode="plain">CALL create_index_if_not_exists('IdentityAttributes','identityattributes_index','id');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('FaceMatrices','idx_FaceMatricesHash','removeHash');</statement>
             </dbaction>
 
             <!-- Mysql Face Triggers -->
