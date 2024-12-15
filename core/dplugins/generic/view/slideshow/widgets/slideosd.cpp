@@ -427,12 +427,16 @@ void SlideOSD::slotPositionChanged(qint64 position)
 void SlideOSD::slotDurationChanged(qint64 duration)
 {
     qint64 max = qMax((qint64)1, duration);
+    d->videoSlider->blockSignals(true);
     d->videoSlider->setRange(0, max);
+    d->videoSlider->blockSignals(false);
 }
 
 void SlideOSD::slotVolumeChanged(int volume)
 {
+    d->videoVolume-blockSignals(true);
     d->videoVolume->setValue(volume);
+    d->videoVolume->blockSignals(false);
 }
 
 void SlideOSD::pause(bool b)
