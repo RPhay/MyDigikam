@@ -79,7 +79,6 @@ public:
     QAction*                        m_infoDialogAction      = nullptr;
 
     QAction* const                  m_copyCoordinateAction  = nullptr;
-    QAction* const                  m_copyGeoAction         = nullptr;
 
     QAction*                        m_rmbExtensionPoint     = nullptr;
 
@@ -115,7 +114,6 @@ MarbleWidgetPopupMenu::Private::Private(MarbleWidget* widget, const MarbleModel*
       m_lmbMenu(m_widget),
       m_rmbMenu(m_widget),
       m_copyCoordinateAction(new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Coordinates"), parent)),
-      m_copyGeoAction(new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy geo: URL"), parent)),
       m_rmbExtensionPoint(nullptr),
       m_runnerManager(model)
 {
@@ -130,7 +128,6 @@ MarbleWidgetPopupMenu::Private::Private(MarbleWidget* widget, const MarbleModel*
 
     m_rmbMenu.addSeparator();
     m_rmbMenu.addAction(m_copyCoordinateAction);
-    m_rmbMenu.addAction(m_copyGeoAction);
 
     m_rmbMenu.addAction(QIcon::fromTheme(QStringLiteral("addressbook-details")), i18n("&Address Details"),
                         parent, SLOT(startReverseGeocoding()));
@@ -143,9 +140,6 @@ MarbleWidgetPopupMenu::Private::Private(MarbleWidget* widget, const MarbleModel*
 
     parent->connect(m_copyCoordinateAction, SIGNAL(triggered()),
                     SLOT(slotCopyCoordinates()));
-
-    parent->connect(m_copyGeoAction, SIGNAL(triggered()),
-                    SLOT(slotCopyGeo()));
 
     parent->connect(m_infoDialogAction, SIGNAL(triggered()),
                     SLOT(slotInfoDialog()));
@@ -727,7 +721,6 @@ void MarbleWidgetPopupMenu::showRmbMenu(int xpos, int ypos)
 
     QPoint curpos = QPoint(xpos, ypos);
     d->m_copyCoordinateAction->setData(curpos);
-    d->m_copyGeoAction->setData(curpos);
 
     d->m_rmbMenu.popup(d->m_widget->mapToGlobal(curpos));
 }
@@ -915,23 +908,6 @@ void MarbleWidgetPopupMenu::slotCopyCoordinates()
         myMimeData->setData(QLatin1String("application/vnd.google-earth.kml+xml"), kmlRepresentation.toUtf8());
         myMimeData->setData(QLatin1String("application/gpx+xml"), gpxRepresentation.toUtf8());
 
-        QClipboard* const clipboard = QApplication::clipboard();
-        clipboard->setMimeData(myMimeData);
-    }
-}
-
-void MarbleWidgetPopupMenu::slotCopyGeo()
-{
-    const GeoDataCoordinates coordinates = d->mouseCoordinates(d->m_copyCoordinateAction);
-
-    if (coordinates.isValid())
-    {
-        const qreal latitude_degrees  = coordinates.latitude(GeoDataCoordinates::Degree);
-        const qreal longitude_degrees = coordinates.longitude(GeoDataCoordinates::Degree);
-
-        QMimeData* const myMimeData = new QMimeData();
-        QList<QUrl> urls = { QUrl(QString::fromUtf8("geo:%1,%2").arg(latitude_degrees, 0, 'f', 10).arg(longitude_degrees, 0, 'f', 10)) };
-        myMimeData->setUrls(urls);
         QClipboard* const clipboard = QApplication::clipboard();
         clipboard->setMimeData(myMimeData);
     }

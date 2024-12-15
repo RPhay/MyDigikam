@@ -69,7 +69,6 @@ private Q_SLOTS:
     void resetMenu();
     void slotInfoDialog();
     void slotCopyCoordinates();
-    void slotCopyGeo();
 
 private Q_SLOTS:
 
