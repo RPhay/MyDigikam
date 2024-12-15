@@ -99,12 +99,14 @@ void MetadataPage::saveSettings()
 {
     MetaEngineSettingsContainer settings;
     settings.saveTags       = d->storeInFiles->isChecked();
+    settings.saveFaceTags   = d->storeInFiles->isChecked();
     settings.saveComments   = d->storeInFiles->isChecked();
     settings.saveDateTime   = d->storeInFiles->isChecked();
     settings.saveRating     = d->storeInFiles->isChecked();
     settings.savePickLabel  = d->storeInFiles->isChecked();
     settings.saveColorLabel = d->storeInFiles->isChecked();
     settings.saveTemplate   = d->storeInFiles->isChecked();
+    settings.savePosition   = d->storeInFiles->isChecked();
     MetaEngineSettings::instance()->setSettings(settings);
 }
 

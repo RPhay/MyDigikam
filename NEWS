@@ -46,7 +46,7 @@ BUGFIXES:
 034 ==> 497217 - Expand Batch Queue Manager Resize to include larger preset lengths and revise text.
 035 ==> 497264 - digiKam dock icon changes and becomes pixelated after running app.
 036 ==> 497446 - Video seek timeline/scrubber is unusable in slideshow mode.
-037 ==>
+037 ==> 497508 - Data loss: metadata not saved despite enabling in 1st launch wizard.
 038 ==>
 039 ==>
 040 ==>
