@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 02:38+0000\n"
+"POT-Creation-Date: 2024-12-15 02:32+0000\n"
 "PO-Revision-Date: 2024-11-28 20:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2707,7 +2707,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Стартиране на digikam с конфигурационния файл \"config\""
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:287
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2718,7 +2718,7 @@ msgstr ""
 "го.\n"
 "На вашия компютър няма инсталирана приставка за база данни."
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:296
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2728,7 +2728,7 @@ msgstr ""
 "Не е наличен плъгин за бази данни Qt SQLite или MySQL, моля, инсталирайте го."
 "Плъгините за бази данни, инсталирани на вашия компютър, са изброени по-долу."
 
-#: core/app/main/main.cpp:336
+#: core/app/main/main.cpp:340
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -22217,7 +22217,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28969,21 +28969,21 @@ msgstr ""
 "Невалиден обект на базата данни по време на стартирането на сървъра за бази "
 "данни"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:684
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "Процесът на базата данни е излязъл неочаквано по време на първоначалното "
 "свързване."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:690
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Не можа да се свърже с базата данни, след като опита в продължение на 60 "
 "секунди."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:723
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28991,17 +28991,17 @@ msgstr ""
 "Неуспешно създаване на базата от данни<p>Грешка на заявката: %1</p><p>Грешка "
 "на базата от данни: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:747
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Актуализация на базата данни на MySQL е в ход, моля, изчакайте."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:791
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Не можа да се актуализира базата данни."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:827
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

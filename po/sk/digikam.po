@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 02:38+0000\n"
+"POT-Creation-Date: 2024-12-15 02:32+0000\n"
 "PO-Revision-Date: 2024-10-03 22:47+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2706,7 +2706,7 @@ msgstr "Spustiť digiKam s databázovým súborom SQLite v adresári \"dir\""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Spustiť digiKam so súborom databázy z adresára \"config\""
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:287
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2717,7 +2717,7 @@ msgstr ""
 "nainštalujte ho.\n"
 "Na vašom počítači nemáte nainštalovaný žiaden zásuvný modul databáz."
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:296
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2728,7 +2728,7 @@ msgstr ""
 "nainštalujte ho.\n"
 "Tieto zásuvné moduly databáz máte nainštalované na vašom počítači:"
 
-#: core/app/main/main.cpp:336
+#: core/app/main/main.cpp:340
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -21830,7 +21830,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Premietanie"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28551,17 +28551,17 @@ msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:684
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databázový proces neočakávane skončil počas nadväzovania spojenia."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:690
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ani po 60 sekundách sa nepodarilo pripojiť k databáze."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:723
 #, fuzzy, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28569,17 +28569,17 @@ msgstr ""
 "Nepodarilo sa vytvoriť tabuľky v databáze.\n"
 " "
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:747
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Prebieha odpojenie od fotoaparátu, čakajte prosím..."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:791
 #, fuzzy, kde-format
 msgid "Could not upgrade database."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:827
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

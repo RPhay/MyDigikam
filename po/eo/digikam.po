@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 02:38+0000\n"
+"POT-Creation-Date: 2024-12-15 02:32+0000\n"
 "PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -2689,7 +2689,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Komenci digikam per la agorda dosiero \"config\""
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:287
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2700,7 +2700,7 @@ msgstr ""
 "ĝin.\n"
 "Ne estas datumbaza kromaĵo instalita en via komputilo."
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:296
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2711,7 +2711,7 @@ msgstr ""
 "ĝin.\n"
 "Datumbazaj aldonaĵoj instalitaj sur via komputilo estas listigitaj malsupre."
 
-#: core/app/main/main.cpp:336
+#: core/app/main/main.cpp:340
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -21897,7 +21897,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Bildoprezento"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28564,34 +28564,34 @@ msgstr "Ne eblis lanĉi datumbazan servilon."
 msgid "Invalid database object during database server startup"
 msgstr "Nevalida datumbaza objekto dum datumbaza servilo ekfunkciigas"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:684
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Datumbaza procezo eliris neatendite dum komenca konekto."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:690
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ne eblis konektiĝi al datumbazo post provado dum 60 sekundoj."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:723
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Malsukcesis krei datumbazon<p>Demanda eraro: %1</p><p>Datumbaza eraro: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:747
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "MySQL-datumbaza eldonpromocio estas en progreso, bonvolu atendi."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:791
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Ne eblis ĝisdatigi datumbazon."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:827
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

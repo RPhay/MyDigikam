@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 02:38+0000\n"
+"POT-Creation-Date: 2024-12-15 02:32+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2648,7 +2648,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "\"config\" 설정 파일을 사용하여 digiKam 시작"
 
-#: core/app/main/main.cpp:283
+#: core/app/main/main.cpp:287
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2659,7 +2659,7 @@ msgstr ""
 "해 주십시오.\n"
 "컴퓨터에 설치된 데이터베이스 플러그인이 없습니다."
 
-#: core/app/main/main.cpp:292
+#: core/app/main/main.cpp:296
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2670,7 +2670,7 @@ msgstr ""
 "해 주십시오.\n"
 "다음 데이터베이스 플러그인이 설치되어 있습니다."
 
-#: core/app/main/main.cpp:336
+#: core/app/main/main.cpp:340
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -22405,7 +22405,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:648
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -29085,34 +29085,34 @@ msgstr "데이터베이스 서버를 시작할 수 없습니다."
 msgid "Invalid database object during database server startup"
 msgstr "데이터베이스 서버 시작 중 잘못된 데이터베이스 객체"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:684
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:690
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:723
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:747
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:791
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "데이터베이스 서버를 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:827
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
