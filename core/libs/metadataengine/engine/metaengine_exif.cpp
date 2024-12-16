@@ -1501,7 +1501,6 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
         Exiv2::ExifData exifData = d->exifMetadata();
         exifData.sortByKey();
 
-        QString            ifDItemName;
         MetaDataMap        metaDataMap;
         std::ostringstream os;
         QString            key;

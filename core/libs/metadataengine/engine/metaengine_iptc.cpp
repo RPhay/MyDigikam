@@ -171,7 +171,6 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
         Exiv2::IptcData iptcData = d->iptcMetadata();
         iptcData.sortByKey();
 
-        QString     ifDItemName;
         MetaDataMap metaDataMap;
 
         for (Exiv2::IptcData::const_iterator md = iptcData.begin() ; md != iptcData.end() ; ++md)
@@ -420,7 +419,6 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
         Exiv2::IptcKey  iptcKey(iptcTagName);
         Exiv2::IptcData iptcData(d->iptcMetadata());
         Exiv2::IptcData::const_iterator it = iptcData.findKey(iptcKey);
-        QString charSet                    = QLatin1String(iptcData.detectCharset());
 
         if (it != iptcData.end())
         {
@@ -637,7 +635,6 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
     try
     {
-        QStringList oldkeys = oldKeywords;
         QStringList newkeys = newKeywords;
 
         qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> New Iptc Keywords: " << newkeys;
@@ -714,8 +711,7 @@ QStringList MetaEngine::getIptcSubjects() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
-                QString tagValue = d->extractIptcTagString(iptcData, *it);
-                QString key      = QString::fromStdString(it->key());
+                QString key = QString::fromStdString(it->key());
 
                 if (key == QLatin1String("Iptc.Application2.Subject"))
                 {
@@ -845,8 +841,7 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
     try
     {
-        QStringList oldkeys           = oldSubCategories;
-        QStringList newkeys           = newSubCategories;
+        QStringList newkeys = newSubCategories;
 
         // Remove all old Sub Categories.
 

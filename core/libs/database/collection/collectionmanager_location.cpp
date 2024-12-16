@@ -525,7 +525,6 @@ void CollectionManager::removeLocation(const CollectionLocation& location)
 QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
 {
     QList<CollectionLocation> disappearedLocations;
-    QList<SolidVolumeInfo> volumes = d->listVolumes();
 
     QReadLocker readLocker(&d->lock);
 
