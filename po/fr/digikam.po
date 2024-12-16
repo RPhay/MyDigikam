@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
 "PO-Revision-Date: 2024-12-11 08:59+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -53951,27 +53951,22 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Copier les coordonnées"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr "Copier une géolocalisation : URL"
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, kde-format
 msgid "&Address Details"
 msgstr "Détails de l'&adresse"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, kde-format
 msgid "No description available."
 msgstr "Aucune description disponible."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -53979,7 +53974,7 @@ msgstr "Aucune description disponible."
 msgid "National Capital"
 msgstr "Capitale nationale"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -53990,7 +53985,7 @@ msgstr "Capitale nationale"
 msgid "City"
 msgstr "Ville"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -53999,7 +53994,7 @@ msgstr "Ville"
 msgid "State Capital"
 msgstr "Capitale de l'État"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -54008,23 +54003,23 @@ msgstr "Capitale de l'État"
 msgid "County Capital"
 msgstr "Capitale de comté"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr "Capitale"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Village"
 msgstr "Village"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr "Boîtes d'&informations"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, kde-format
 msgid "Address Details"
 msgstr "Détails de l'adresse"
@@ -68987,6 +68982,9 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgid "Copy geo: URL"
+#~ msgstr "Copier une géolocalisation : URL"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
 "PO-Revision-Date: 2024-12-10 09:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -53793,27 +53793,22 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr "мор. миля"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Копіювати координати"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr "Копіювати геодані: адреса"
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, kde-format
 msgid "&Address Details"
 msgstr "П&араметри адреси"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, kde-format
 msgid "No description available."
 msgstr "Немає опису."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -53821,7 +53816,7 @@ msgstr "Немає опису."
 msgid "National Capital"
 msgstr "Столиця країни"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -53832,7 +53827,7 @@ msgstr "Столиця країни"
 msgid "City"
 msgstr "Місто"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -53841,7 +53836,7 @@ msgstr "Місто"
 msgid "State Capital"
 msgstr "Адміністративний центр регіону"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -53850,23 +53845,23 @@ msgstr "Адміністративний центр регіону"
 msgid "County Capital"
 msgstr "Адміністративний центр округу"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr "Адміністративний центр"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Village"
 msgstr "Село"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Інформаційні панелі"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, kde-format
 msgid "Address Details"
 msgstr "Параметри адреси"
@@ -68729,6 +68724,9 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Copy geo: URL"
+#~ msgstr "Копіювати геодані: адреса"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive"

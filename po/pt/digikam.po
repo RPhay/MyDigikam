@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -53663,31 +53663,26 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy Coordinates"
 msgstr "Copiar as coordenadas"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr ""
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@item: map tool"
 #| msgid "Details"
 msgid "&Address Details"
 msgstr "Detalhes"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No description available."
 msgstr "A descrição não está disponível"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -53695,7 +53690,7 @@ msgstr "A descrição não está disponível"
 msgid "National Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -53706,7 +53701,7 @@ msgstr ""
 msgid "City"
 msgstr "Cidade"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -53715,7 +53710,7 @@ msgstr "Cidade"
 msgid "State Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -53724,24 +53719,24 @@ msgstr ""
 msgid "County Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, fuzzy, kde-format
 #| msgid "{Village}"
 msgid "Village"
 msgstr "{Aldeia}"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, fuzzy, kde-format
 #| msgctxt "@item: map tool"
 #| msgid "Details"

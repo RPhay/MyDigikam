@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -57144,30 +57144,25 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy Coordinates"
 msgstr "Kopiraj koordinate"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr ""
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "&Address Details"
 msgstr "Adresa:"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No description available."
 msgstr "Opis nije dostupan"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -57175,7 +57170,7 @@ msgstr "Opis nije dostupan"
 msgid "National Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -57187,7 +57182,7 @@ msgstr ""
 msgid "City"
 msgstr "Grad:"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -57196,7 +57191,7 @@ msgstr "Grad:"
 msgid "State Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -57206,24 +57201,24 @@ msgstr ""
 msgid "County Capital"
 msgstr "Država:"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, fuzzy, kde-format
 #| msgid "{Village}"
 msgid "Village"
 msgstr "{Selo}"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"

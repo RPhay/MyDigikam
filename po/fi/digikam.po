@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
 "PO-Revision-Date: 2024-10-29 20:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -53250,30 +53250,25 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr "M"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy Coordinates"
 msgstr "Kopioi koordinaatit"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr ""
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "&Address Details"
 msgstr "Osoite:"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No description available."
 msgstr "Ei kuvausta saatavilla"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -53281,7 +53276,7 @@ msgstr "Ei kuvausta saatavilla"
 msgid "National Capital"
 msgstr "Maan pääkaupunki"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -53292,7 +53287,7 @@ msgstr "Maan pääkaupunki"
 msgid "City"
 msgstr "Kaupunki"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -53301,7 +53296,7 @@ msgstr "Kaupunki"
 msgid "State Capital"
 msgstr "Osavaltion pääkaupunki"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -53311,24 +53306,24 @@ msgstr "Osavaltion pääkaupunki"
 msgid "County Capital"
 msgstr "Valtio:"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr "Pääkaupunki"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, fuzzy, kde-format
 #| msgid "{Village}"
 msgid "Village"
 msgstr "{Kylä}"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr "Ti&etokentät"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgid "Address Details"
