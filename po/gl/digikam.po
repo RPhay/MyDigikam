@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 02:32+0000\n"
-"PO-Revision-Date: 2024-12-14 10:34+0100\n"
+"POT-Creation-Date: 2024-12-16 02:34+0000\n"
+"PO-Revision-Date: 2024-12-16 00:42+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -6716,8 +6716,8 @@ msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
 "borders."
 msgstr ""
-"Determinar automaticamente a configuración da zona de recorte a partir dos "
-"espazos baleiros das beiras da imaxe."
+"Determinar automaticamente a configuración da zona de recorte a partir das "
+"beiras da imaxe de burato negro."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
@@ -7735,6 +7735,7 @@ msgctxt "@info"
 msgid "An image loader based on Libtiff codec"
 msgstr "Un cargador de imaxes baseado no códec Libtiff."
 
+# skip-rule: trasno-edit_reverse
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
@@ -9476,7 +9477,7 @@ msgid ""
 "pixel value.</p>"
 msgstr ""
 "<p>Escolla o efecto de desenfoque que aplicar á imaxe.</p><p><b>Desenfoque "
-"por ampliación</b>: borra a imaxe ao longo de liñas radiais partindo dun "
+"por ampliación</b>: desenfoca a imaxe ao longo de liñas radiais partindo dun "
 "determinado punto central. Simula o desenfoque dunha cámara en ampliación.</"
 "p><p><b>Desenfoque radial</b>: desenfoca a imaxe, rotando os píxeles en "
 "torno do punto central indicado. Simula o desenfoque dunha cámara en "
@@ -9493,8 +9494,8 @@ msgstr ""
 "en movemento arbitrario.</p><p><b>Desenfoque por focalización</b>: desenfoca "
 "os cantos da imaxe para reproducir a distorsión por astigmatismo dunha lente."
 "</p><p><b>Desenfoque intelixente</b>: atopa os contornos de cor na imaxe e "
-"desenfócaos sen estragar o resto da imaxe.</p><p><b>Vidro xeado</b>: borra a "
-"imaxe, simulando a dispersión da luz a través dun vidro xeado.</"
+"desenfócaos sen estragar o resto da imaxe.</p><p><b>Vidro xeado</b>: "
+"desenfoca a imaxe, simulando a dispersión da luz a través dun vidro xeado.</"
 "p><p><b>Mosaico</b>: divide a fotografía en celas rectangulares e despois "
 "volve creala, enchendo esas celas co valor medio do píxel.</p>"
 
@@ -22887,10 +22888,10 @@ msgid ""
 "here: <a href='https://bugs.kde.org/show_bug.cgi?id=182838'>KDE Bugtracking "
 "System</a></p>"
 msgstr ""
-"<p>Actualmente, como proxecto de software libre, non podemos cumprir cos "
-"requisitos de Facebook para activar de novo este complemento.</p><p>Para "
-"máis información, consulte: <a href='https://bugs.kde.org/show_bug.cgi?"
-"id=182838'>Sistema de seguimento de incidencias de KDE</a></p>"
+"<p>Actualmente, como proxecto libre, non podemos cumprir cos requisitos de "
+"Facebook para reactivar o complemento.</p><p>Para máis información, consulte "
+"o <a href='https://bugs.kde.org/show_bug.cgi?id=182838'>sistema de "
+"seguimento de incidencias de KDE</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
@@ -53326,27 +53327,22 @@ msgctxt "means nautical miles"
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Copiar as coordenadas"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
-#, kde-format
-msgid "Copy geo: URL"
-msgstr "Copiar o URL de xeolocalización:"
-
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
 #, kde-format
 msgid "&Address Details"
 msgstr "Det&alles do enderezo"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
 #, kde-format
 msgid "No description available."
 msgstr "Non hai ningunha descrición dispoñíbel."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
@@ -53354,7 +53350,7 @@ msgstr "Non hai ningunha descrición dispoñíbel."
 msgid "National Capital"
 msgstr "Capital nacional"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
@@ -53365,7 +53361,7 @@ msgstr "Capital nacional"
 msgid "City"
 msgstr "Cidade"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:449
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
@@ -53374,7 +53370,7 @@ msgstr "Cidade"
 msgid "State Capital"
 msgstr "Capital do estado"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
@@ -53383,23 +53379,23 @@ msgstr "Capital do estado"
 msgid "County Capital"
 msgstr "Capital do condado"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
 msgstr "Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
 msgid "Village"
 msgstr "Vila"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
 msgstr "Caixas &informativas"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:997
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, kde-format
 msgid "Address Details"
 msgstr "Detalles do enderezo"
@@ -68132,6 +68128,9 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgid "Copy geo: URL"
+#~ msgstr "Copiar o URL de xeolocalización:"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive"
