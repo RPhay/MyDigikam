@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-16 02:34+0000\n"
+"POT-Creation-Date: 2024-12-17 02:05+0000\n"
 "PO-Revision-Date: 2024-12-11 08:59+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -37181,7 +37181,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Colorer une étiquette"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1592
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1591
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
