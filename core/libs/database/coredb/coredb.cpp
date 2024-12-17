@@ -1392,8 +1392,6 @@ ItemShortInfo CoreDB::getItemShortInfo(int albumRootId, const QString& relativeP
 
 bool CoreDB::hasTags(const QList<qlonglong>& imageIDList) const
 {
-    QList<int> ids;
-
     if (imageIDList.isEmpty())
     {
         return false;
@@ -4730,6 +4728,9 @@ bool CoreDB::integrityCheck() const
                 ++it;
                 QString messageText = (*it).toString();
                 ++it;
+
+                Q_UNUSED(operation);
+                Q_UNUSED(messageType);
 
                 if (messageText.toLower().compare(QLatin1String("ok")) != 0)
                 {

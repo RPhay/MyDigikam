@@ -686,6 +686,10 @@ bool CoreDbSchemaUpdater::performUpdateToVersion(const QString& actionName, int 
         QString errorMsg = i18n("The database update action cannot be found. Please ensure that "
                                 "the dbconfig.xml file of the current version of digiKam is installed "
                                 "at the correct place. ");
+
+        qCDebug(DIGIKAM_COREDB_LOG) << errorMsg;
+
+        // TODO: dispatch this error message to the GUI.
     }
 
     if (!d->backend->execDBAction(updateAction))
