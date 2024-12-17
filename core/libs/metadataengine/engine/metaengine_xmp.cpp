@@ -203,7 +203,6 @@ MetaEngine::MetaDataMap MetaEngine::getXmpTagsDataList(const QStringList& xmpKey
         Exiv2::XmpData xmpData = d->xmpMetadata();
         xmpData.sortByKey();
 
-        QString     ifDItemName;
         MetaDataMap metaDataMap;
 
         for (Exiv2::XmpData::const_iterator md = xmpData.begin() ; md != xmpData.end() ; ++md)
