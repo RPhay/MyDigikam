@@ -78,7 +78,7 @@ AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
                                        "<p><b>d</b>: The day as a number without a leading zero (1 to 31)</p>"
                                        "<p><b>dd</b>: The day as a number with a leading zero (01 to 31)</p>"
                                        "<p><b>ddd</b>: The abbreviated localized day name (e.g. 'Mon' to 'Sun')</p>"
-                                       "<p><b>dddd</b>: The long localized day name (e.g. 'Monday' to 'Sunday').</p>"
+                                       "<p><b>dddd</b>: The long localized day name (e.g. 'Monday' to 'Sunday')</p>"
                                        "<p><b>M</b>: The month as a number without a leading zero (1 to 12)</p>"
                                        "<p><b>MM</b>: The month as a number with a leading zero (01 to 12)</p>"
                                        "<p><b>MMM</b>: The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p>"
