@@ -338,6 +338,7 @@ void TimeAdjustDialog::slotUpdateTimestamps()
         d->thread->cancel();
         d->thread->wait();
     }
+
     d->isProcessed = true;
     d->updateTimer->start();
 }
@@ -347,10 +348,11 @@ void TimeAdjustDialog::slotOkExitTimestamps()
     if (d->isProcessed)
     {
         accept();
+
+        return;
     }
 
     d->exitAfterOk = true;
-
     slotUpdateTimestamps();
 }
 

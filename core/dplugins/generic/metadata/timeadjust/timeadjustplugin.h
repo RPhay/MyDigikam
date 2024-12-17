@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericTimeAdjustPlugin
 {
 
+class TimeAdjustDialog;
+
 class TimeAdjustPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -45,11 +47,17 @@ public:
     QString handbookSection()      const override;
     QString handbookChapter()      const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotTimeAdjust();
+
+private:
+
+    QPointer<TimeAdjustDialog> m_toolDlg;
+
 };
 
 } // namespace DigikamGenericTimeAdjustPlugin
