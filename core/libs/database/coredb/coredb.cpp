@@ -240,8 +240,6 @@ AlbumInfo::List CoreDB::scanAlbums() const
                                      "FROM Albums WHERE albumRoot != 0;"), // exclude stale albums
                    &values);
 
-    QString iconAlbumUrl, iconName;
-
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         AlbumInfo info;
