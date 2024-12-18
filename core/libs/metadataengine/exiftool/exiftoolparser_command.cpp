@@ -173,8 +173,7 @@ bool ExifToolParser::applyChanges(const QString& path,
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-m");
 
-    QString suffix = fileInfo.suffix().toUpper();
-    bool isVideo   = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
+    bool isVideo = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
 
     if (isVideo)
     {

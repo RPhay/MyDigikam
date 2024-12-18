@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<HotPixelProps> hotPixels;
 
     QUrl                 blackFrameUrl;
@@ -156,7 +158,6 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
 
     // Descriptions as tooltip (file name, camera model, and hot pixels list)
 
-    QString value;
     QString header = i18n("Black Frame");
 
     QScopedPointer<DMetadata> meta(new DMetadata(d->blackFrameUrl.toLocalFile()));
@@ -165,7 +166,7 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
     d->toolTipStr.clear();
 
     DToolTipStyleSheet cnt;
-    QString tip    = cnt.tipHeader;
+    d->toolTipStr  = cnt.tipHeader;
 
     d->toolTipStr += cnt.headBeg + header + cnt.headEnd;
 

@@ -104,6 +104,9 @@ bool FaceDb::integrityCheck()
                 QString messageText = (*it).toString();
                 ++it;
 
+                Q_UNUSED(operation);
+                Q_UNUSED(messageType);
+
                 if (messageText.toLower().compare(QLatin1String("ok")) != 0)
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "

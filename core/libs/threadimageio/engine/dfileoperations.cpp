@@ -290,6 +290,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     }
 
     QString path = fileUrls.first().toLocalFile();
+    Q_UNUSED(path);
 
 #ifdef Q_OS_WIN
 

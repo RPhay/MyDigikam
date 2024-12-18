@@ -890,7 +890,6 @@ QMap<QString, QString> TagsCache::properties(int tagId) const
     QReadLocker locker(&d->lock);
     QMap<QString, QString> map;
     TagPropertiesRange range = d->findProperties(tagId);
-    QStringList values;
 
     for (TagPropertiesConstIterator it = range.first ; it != range.second ; ++it)
     {

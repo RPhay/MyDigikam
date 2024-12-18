@@ -93,7 +93,6 @@ QString ItemGPS::saveChanges()
 
     if (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
     {
-        QMap<QString, QVariant> attributes;
         IptcCoreLocationInfo locationInfo;
         QStringList tagsPath;
 
