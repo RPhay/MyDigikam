@@ -624,7 +624,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>7.5.0</string>
+				<string>8.6.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -867,6 +867,14 @@
 		</dict>
 		<key>PROJECT_SETTINGS</key>
 		<dict>
+			<key>ADVANCED_OPTIONS</key>
+			<dict>
+				<key>installer-script.options:hostArchitectures</key>
+				<array>
+					<string>i386</string>
+					<string>arm64</string>
+				</array>
+			</dict>
 			<key>BUILD_FORMAT</key>
 			<integer>0</integer>
 			<key>BUILD_PATH</key>
