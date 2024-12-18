@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 02:05+0000\n"
+"POT-Creation-Date: 2024-12-18 01:56+0000\n"
 "PO-Revision-Date: 2024-12-11 22:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3132,7 +3132,7 @@ msgid "Map Search"
 msgstr "Cerca per mapa"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
 msgstr "Última cerca"
@@ -6592,7 +6592,7 @@ msgstr ""
 "Exif, IPTC o XMP de les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -16076,13 +16076,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Escriu la data i hora corregides de cada imatge"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Ajusta la data i l'hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
@@ -16090,21 +16090,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Cancel·la l'operació actual"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Tanca"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -16163,13 +16163,13 @@ msgstr "no vàlid"
 msgid "Please wait ..."
 msgstr "Espereu un moment..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Una eina per a ajustar els elements de data i hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16190,7 +16190,7 @@ msgstr ""
 "Es poden ajustar moltes metadades de marques de temps o deixar-les sense "
 "modificar. L'ajust pot ser un desplaçament o una data específica."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -28549,12 +28549,12 @@ msgstr ""
 "que el fitxer dbconfig.xml de la versió actual del digiKam estigui "
 "instal·lat en el lloc correcte."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:707
+#: core/libs/database/coredb/coredbschemaupdater.cpp:711
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "L'esquema s'ha actualitzat a la versió %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:855
+#: core/libs/database/coredb/coredbschemaupdater.cpp:859
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28565,12 +28565,12 @@ msgstr ""
 "nova ubicació («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
 "pugui copiar o suprimir."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:877
+#: core/libs/database/coredb/coredbschemaupdater.cpp:881
 #, kde-format
 msgid "Copied database file"
 msgstr "S'ha copiat el fitxer de la base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:882
+#: core/libs/database/coredb/coredbschemaupdater.cpp:886
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28581,22 +28581,22 @@ msgstr ""
 "(«%2») però no es pot obrir. Suprimiu els dos fitxers i torneu-ho a provar, "
 "iniciant amb una base de dades buida. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:903
+#: core/libs/database/coredb/coredbschemaupdater.cpp:907
 #, kde-format
 msgid "Opened new database file"
 msgstr "S'ha obert un fitxer nou de base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
 #, kde-format
 msgid "Prepared table creation"
 msgstr "S'ha preparat la creació de la taula"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid "Created tables"
 msgstr "S'han creat les taules"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28607,7 +28607,7 @@ msgstr ""
 "configuració. S'ha renunciat al procés d'actualització de l'esquema. Si us "
 "plau, intenteu-ho amb una base de dades buida o repareu la configuració."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28627,52 +28627,52 @@ msgstr ""
 "dades ara s'interromprà perquè no es vol crear una base de dades nova basada "
 "en premisses falses a partir d'una instal·lació defectuosa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
 #, kde-format
 msgid "Configured one album root"
 msgstr "S'ha configurat un àlbum arrel"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
 #, kde-format
 msgid "Imported albums"
 msgstr "Els àlbums s'han importat"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
 #, kde-format
 msgid "Imported images information"
 msgstr "S'ha importat la informació de les imatges"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Última cerca (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "S'ha inicialitzat i importat el fitxer de filtres de sufixos"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "S'ha efectuat l'exploració inicial completa"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
 #, kde-format
 msgid "Imported creation dates"
 msgstr "S'han importat les dates de creació"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
 #, kde-format
 msgid "Imported comments"
 msgstr "S'han importat els comentaris"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Imported ratings"
 msgstr "S'han importat les valoracions"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "S'han suprimit les taules v3"
@@ -60685,14 +60685,32 @@ msgstr ""
 
 # skip-rule: t-apo_fin
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
+#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
+#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
+#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
+#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
+#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
+#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
+#| "b>: The long localized month name (e.g. 'January' to 'December')</"
+#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
+#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
+#| "other input characters will be treated as text. Any sequence of "
+#| "characters that are enclosed in singlequotes will be treated as text and "
+#| "not be used as an expression. Examples, if date is 20 July 1969:</"
+#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
+#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
 "The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
 "day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
 "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
-"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday')</p><p><b>M</b>: The "
 "month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
 "month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
 "abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "

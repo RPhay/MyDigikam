@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 02:05+0000\n"
+"POT-Creation-Date: 2024-12-18 01:56+0000\n"
 "PO-Revision-Date: 2024-12-15 23:41+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3181,7 +3181,7 @@ msgid "Map Search"
 msgstr "Iskanje po zemljevidu"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
 msgstr "Zadnje iskanje"
@@ -6598,7 +6598,7 @@ msgstr ""
 "kot so Exif, IPTC ali XMP iz slik.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -15928,13 +15928,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Za vsako sliko napiši popravljen datum in čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Prilagodi čas in datum"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
@@ -15942,21 +15942,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Prekliči trenutno opravilo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Zapri"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -16015,13 +16015,13 @@ msgstr "ni veljaven"
 msgid "Please wait ..."
 msgstr "Prosim počakajte ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Orodje za prilagoditev datuma in časa predmetov"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16041,7 +16041,7 @@ msgstr ""
 "Več časovnih žigov metapodatkov lahko prilagodite ali pustite nedotaknjene. "
 "Prilagoditev je lahko odmik časa ali določenega datuma."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -28271,12 +28271,12 @@ msgstr ""
 "da je datoteka dbconfig.xml trenutne različice digiKam nameščena na pravem "
 "mestu.  "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:707
+#: core/libs/database/coredb/coredbschemaupdater.cpp:711
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Shema posodobljena na različico %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:855
+#: core/libs/database/coredb/coredbschemaupdater.cpp:859
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28287,12 +28287,12 @@ msgstr ""
 "mesto (\"%2\"). Sporočilo napake: \"%3\". Prepričajte se, da je datoteko "
 "mogoče kopirati ali pa jo izbrišite."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:877
+#: core/libs/database/coredb/coredbschemaupdater.cpp:881
 #, kde-format
 msgid "Copied database file"
 msgstr "Datoteka s podatkovno zbirko je bila kopirana"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:882
+#: core/libs/database/coredb/coredbschemaupdater.cpp:886
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28303,22 +28303,22 @@ msgstr ""
 "(\"%2\"), ampak je ni mogoče odpreti. Izbrišite obe datoteki in poskusite "
 "znova s prazno podatkovno zbirko. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:903
+#: core/libs/database/coredb/coredbschemaupdater.cpp:907
 #, kde-format
 msgid "Opened new database file"
 msgstr "Odprta nova datoteka s podatkovno zbirko"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Ustvarjanje razpredelnic je pripravljeno"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid "Created tables"
 msgstr "Razpredelnice so bile ustvarjene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28329,7 +28329,7 @@ msgstr ""
 "posodabljanja sheme bo prekinjeno. Poskusite s prazno podatkovno zbirko ali "
 "pa popravite vaše nastavitve."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28348,52 +28348,52 @@ msgstr ""
 "saj ne želimo ustvariti podatkovne zbirke iz napačnih predpostavk, dobljenih "
 "iz pokvarjene namestitve."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
 #, kde-format
 msgid "Configured one album root"
 msgstr "Koren enega albuma je bil nastavljen"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
 #, kde-format
 msgid "Imported albums"
 msgstr "Albumi so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
 #, kde-format
 msgid "Imported images information"
 msgstr "Podatki o slikah so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Zadnje iskanje (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Filter pripon datotek je bil začet in uvožen"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Začetno preiskovanje je bilo opravljeno"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Datumi ustvarjenja so bili uvoženi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
 #, kde-format
 msgid "Imported comments"
 msgstr "Opombe so bile uvožene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Imported ratings"
 msgstr "Ocene so bile uvožene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Razpredelnice r3 so bile opuščene"
@@ -60217,14 +60217,32 @@ msgstr ""
 "podporo metapodatkov.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
+#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
+#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
+#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
+#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
+#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
+#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
+#| "b>: The long localized month name (e.g. 'January' to 'December')</"
+#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
+#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
+#| "other input characters will be treated as text. Any sequence of "
+#| "characters that are enclosed in singlequotes will be treated as text and "
+#| "not be used as an expression. Examples, if date is 20 July 1969:</"
+#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
+#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
 "The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
 "day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
 "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
-"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday')</p><p><b>M</b>: The "
 "month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
 "month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
 "abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "

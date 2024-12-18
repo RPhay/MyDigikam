@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 02:05+0000\n"
+"POT-Creation-Date: 2024-12-18 01:56+0000\n"
 "PO-Revision-Date: 2024-12-10 13:15+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3178,7 +3178,7 @@ msgid "Map Search"
 msgstr "Zoekopdracht naar mappen"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
 msgstr "Laatste zoekopdracht"
@@ -6625,7 +6625,7 @@ msgstr ""
 "of Xmp uit afbeeldingen verwijderen.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -16084,13 +16084,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "De gecorrigeerde datum en tijd voor elke afbeelding wegschrijven"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Tijd en datum aanpassen"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
@@ -16098,21 +16098,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Huidige operatie annuleren"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Sluiten"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -16171,13 +16171,13 @@ msgstr "ongeldig"
 msgid "Please wait ..."
 msgstr "Een ogenblik geduld ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Een hulpmiddel om items datum-tijd te bewerken"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16199,7 +16199,7 @@ msgstr ""
 "gelaten. De aanpassing kan een offset van de tijd zijn of een specifieke "
 "datum."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -28559,12 +28559,12 @@ msgstr ""
 "dbconfig.xml van de huidige versie van digiKam is geïnstalleerd op de juiste "
 "plaats. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:707
+#: core/libs/database/coredb/coredbschemaupdater.cpp:711
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Schema bijgewerkt tot versie %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:855
+#: core/libs/database/coredb/coredbschemaupdater.cpp:859
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28575,12 +28575,12 @@ msgstr ""
 "(\"%2\"). Foutbericht: \"%3\". Zorg ervoor dat het bestand kan worden "
 "gekopieerd, of verwijder het."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:877
+#: core/libs/database/coredb/coredbschemaupdater.cpp:881
 #, kde-format
 msgid "Copied database file"
 msgstr "Databasebestand gekopieerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:882
+#: core/libs/database/coredb/coredbschemaupdater.cpp:886
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28591,22 +28591,22 @@ msgstr ""
 "(\"%2\"), maar kan niet worden geopend. Verwijder beide bestanden en probeer "
 "het opnieuw, beginnend met een lege database. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:903
+#: core/libs/database/coredb/coredbschemaupdater.cpp:907
 #, kde-format
 msgid "Opened new database file"
 msgstr "Nieuw databasebestand geopend"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tabelaanmaak voorbereid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid "Created tables"
 msgstr "Tabellen aangemaakt"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28617,7 +28617,7 @@ msgstr ""
 "configuratiebestand. Het bijwerken van de schema's is opgegeven. Probeer het "
 "opnieuw met een lege database of repareer uw configuratie."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28637,52 +28637,52 @@ msgstr ""
 "willen aanmaken die is gebaseerd op een verkeerde aanname van een gebroken "
 "installatie."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
 #, kde-format
 msgid "Configured one album root"
 msgstr "Eén hoofdalbum ingesteld"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
 #, kde-format
 msgid "Imported albums"
 msgstr "Albums geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
 #, kde-format
 msgid "Imported images information"
 msgstr "Afbeeldingsinformatie geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Laatste zoekopdracht (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Bestandsachtervoegselfilter geïnitialiseerd en geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Eerste volledige scan uitgevoerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Aanmaakdatums geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
 #, kde-format
 msgid "Imported comments"
 msgstr "Commentaren geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Imported ratings"
 msgstr "Waarderingen geïmporteerd"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3-tabellen verwijderd"
@@ -60584,14 +60584,32 @@ msgstr ""
 "van metagegevens.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
+#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
+#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
+#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
+#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
+#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
+#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
+#| "b>: The long localized month name (e.g. 'January' to 'December')</"
+#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
+#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
+#| "other input characters will be treated as text. Any sequence of "
+#| "characters that are enclosed in singlequotes will be treated as text and "
+#| "not be used as an expression. Examples, if date is 20 July 1969:</"
+#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
+#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
 "The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
 "day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
 "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
-"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday')</p><p><b>M</b>: The "
 "month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
 "month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
 "abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "

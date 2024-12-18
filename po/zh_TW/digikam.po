@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 02:05+0000\n"
+"POT-Creation-Date: 2024-12-18 01:56+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3095,7 +3095,7 @@ msgid "Map Search"
 msgstr "地圖搜尋"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
 msgstr "上次搜尋"
@@ -6279,7 +6279,7 @@ msgid ""
 msgstr "這張影像不能套用色彩管理。"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -15585,13 +15585,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "將校正後的日期與時間寫入各個影像"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "調整時間與日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
@@ -15599,21 +15599,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消目前動作"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "關閉"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -15678,14 +15678,14 @@ msgstr "無效"
 msgid "Please wait ..."
 msgstr "請稍候 ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "Adjust White Balance."
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "調整白平衡。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15698,7 +15698,7 @@ msgid ""
 "can be an offset of time or a specific date."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -27911,12 +27911,12 @@ msgstr ""
 "找不到資料庫更新動作。請確定目前板的 digiKam 裡的 dbconfig.xml 檔已安裝在正確"
 "的位置。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:707
+#: core/libs/database/coredb/coredbschemaupdater.cpp:711
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "更新綱要到版本 %1。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:855
+#: core/libs/database/coredb/coredbschemaupdater.cpp:859
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27926,12 +27926,12 @@ msgstr ""
 "將舊的資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") 失敗。錯誤訊息：「%3」。請"
 "確認檔案已經複製或者刪除它。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:877
+#: core/libs/database/coredb/coredbschemaupdater.cpp:881
 #, kde-format
 msgid "Copied database file"
 msgstr "已複製資料庫檔案"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:882
+#: core/libs/database/coredb/coredbschemaupdater.cpp:886
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27941,22 +27941,22 @@ msgstr ""
 "已經將舊的資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") ，但是無法開啟。請將檔"
 "案都刪除並重試一次，以空白資料庫啟動。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:903
+#: core/libs/database/coredb/coredbschemaupdater.cpp:907
 #, kde-format
 msgid "Opened new database file"
 msgstr "開啟的新資料庫檔案"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
 #, kde-format
 msgid "Prepared table creation"
 msgstr "已準備資料表建立"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid "Created tables"
 msgstr "已建立資料表"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27966,7 +27966,7 @@ msgstr ""
 "在組態設定檔中沒有找到相簿櫃路徑。放棄綱要更新處理。請用空白資料庫重試一次，"
 "或者修復您的組態設定。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -27990,52 +27990,52 @@ msgstr ""
 "至 digikam-devel@kde.or 郵件論壇尋求意見。此資料庫更新動作會立刻中止，因為我"
 "們不希望從毀損的安裝作出錯誤之假設來建立一個新的資料庫。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
 #, kde-format
 msgid "Configured one album root"
 msgstr "已設定一個相簿的根"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
 #, kde-format
 msgid "Imported albums"
 msgstr "匯入的相簿"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
 #, kde-format
 msgid "Imported images information"
 msgstr "匯入的影像資訊"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "上次搜尋 (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "已初始化且匯入的檔案字根過濾器"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "已執行過最初的完整掃描"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
 #, kde-format
 msgid "Imported creation dates"
 msgstr "匯入的建立日期"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
 #, kde-format
 msgid "Imported comments"
 msgstr "匯入的註解"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Imported ratings"
 msgstr "匯入的評等"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "已刪除 v3 資料表"
@@ -59570,7 +59570,7 @@ msgid ""
 "The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
 "day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
 "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
-"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday')</p><p><b>M</b>: The "
 "month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
 "month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
 "abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "

@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 02:05+0000\n"
-"PO-Revision-Date: 2024-12-16 00:42+0100\n"
+"POT-Creation-Date: 2024-12-18 01:56+0000\n"
+"PO-Revision-Date: 2024-12-17 23:05+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3176,7 +3176,7 @@ msgid "Map Search"
 msgstr "Busca en mapas"
 
 #: core/app/views/stack/itemiconview_p.h:141
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1174
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
 msgstr "Última busca"
@@ -5140,6 +5140,7 @@ msgctxt "@info"
 msgid "A tool to convert images to PGF format"
 msgstr "Unha ferramenta para converter imaxes ao formato PGF"
 
+# skip-rule: trasno-file
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
@@ -6627,7 +6628,7 @@ msgstr ""
 "como Exif, Iptc ou Xmp das imaxes.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -16032,13 +16033,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Gardar a data e hora corrixidas en cada imaxe."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Axustar a data e a hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:569
 #, kde-format
@@ -16046,21 +16047,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Cancelar esta operación"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Pechar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -16119,13 +16120,13 @@ msgstr "non válido"
 msgid "Please wait ..."
 msgstr "Agarde…"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Unha ferramenta para axustar a data e hora dos elementos."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16146,7 +16147,7 @@ msgstr ""
 "Moitas marcas temporais poden axustarse ou deixar sen tocar. O axuste pode "
 "ser un desprazamento de tempo ou unha data concreta."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -28424,12 +28425,12 @@ msgstr ""
 "de que está instalado o ficheiro dbconfig.xml da versión actual de digiKam "
 "onde ten que estar."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:707
+#: core/libs/database/coredb/coredbschemaupdater.cpp:711
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Actualizouse o esquema á versión %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:855
+#: core/libs/database/coredb/coredbschemaupdater.cpp:859
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28440,12 +28441,12 @@ msgstr ""
 "lugar («%2»). Mensaxe de erro: «%3». Asegúrese de que o ficheiro pode "
 "copiarse ou elimíneo."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:877
+#: core/libs/database/coredb/coredbschemaupdater.cpp:881
 #, kde-format
 msgid "Copied database file"
 msgstr "Copiouse o ficheiro da base de datos"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:882
+#: core/libs/database/coredb/coredbschemaupdater.cpp:886
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28456,22 +28457,22 @@ msgstr ""
 "pero non se pode abrir. Elimine ambos os dous ficheiros e probe de novo a "
 "partir dunha base de datos baleira. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:903
+#: core/libs/database/coredb/coredbschemaupdater.cpp:907
 #, kde-format
 msgid "Opened new database file"
 msgstr "Abriuse un ficheiro novo de base de datos"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1002
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Preparouse a creación das táboas"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
 #, kde-format
 msgid "Created tables"
 msgstr "Creáronse as táboas"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1034
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28482,7 +28483,7 @@ msgstr ""
 "configuración. Cancélase o proceso de actualización da base de datos. "
 "Inténteo de novo cunha base de datos baleira ou arranxe a configuración."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1056
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28502,52 +28503,52 @@ msgstr ""
 "queremos crear a base de datos nova baseándonos en asuncións falsas debidas "
 "a unha instalación rota."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1083
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
 #, kde-format
 msgid "Configured one album root"
 msgstr "Configurouse un álbum raíz"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1109
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
 #, kde-format
 msgid "Imported albums"
 msgstr "Importáronse os álbums"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1146
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
 #, kde-format
 msgid "Imported images information"
 msgstr "Información sobre as imaxes importadas"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1176
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Última busca (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1237
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Inicializouse e importouse o filtro de sufixos de ficheiro"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1259
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Fíxose o exame completo inicial"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1283
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Importáronse as datas de creación"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1314
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
 #, kde-format
 msgid "Imported comments"
 msgstr "Importáronse os comentarios"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1341
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Imported ratings"
 msgstr "Importáronse as puntuacións"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1352
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Elimináronse as táboas da v3"
@@ -34016,7 +34017,7 @@ msgstr "Cor"
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Enhance"
-msgstr "Realzar"
+msgstr "Mellorar"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:136
 #, kde-format
@@ -49630,7 +49631,7 @@ msgstr "&Cor"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:69
 #, kde-format
 msgid "Enh&ance"
-msgstr "Re&alzar"
+msgstr "Mellor&ar"
 
 #. i18n: ectx: Menu (Transform)
 #: core/showfoto/main/showfotoui5.rc:74
@@ -49879,7 +49880,7 @@ msgid ""
 "size on disk."
 msgstr ""
 "Escolla aquí se as imaxes que acaba de cargar deben ordenarse segundo a "
-"data, o nome ou o tamaño do ficheiro no disco."
+"data, o nome ou o tamaño no disco."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
@@ -52507,6 +52508,7 @@ msgstr ""
 msgid "Migration from digiKam 4"
 msgstr "Migración desde digiKam 4"
 
+# skip-rule: trasno-provide_reverse
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:70
 #, kde-format
 msgid ""
@@ -60377,14 +60379,32 @@ msgstr ""
 "nun contedor sen perda que permita metadatos.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
+#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
+#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
+#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
+#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
+#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
+#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
+#| "b>: The long localized month name (e.g. 'January' to 'December')</"
+#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
+#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
+#| "other input characters will be treated as text. Any sequence of "
+#| "characters that are enclosed in singlequotes will be treated as text and "
+#| "not be used as an expression. Examples, if date is 20 July 1969:</"
+#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
+#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
 "The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
 "day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
 "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
-"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday')</p><p><b>M</b>: The "
 "month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
 "month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
 "abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "
@@ -61954,7 +61974,7 @@ msgstr "Cores"
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
-msgstr "Realzar"
+msgstr "Mellorar"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, kde-format
@@ -62158,7 +62178,7 @@ msgstr "Cor"
 #, kde-format
 msgctxt "@title: enhance tools category"
 msgid "Enhance"
-msgstr "Realzar"
+msgstr "Mellorar"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:67
 #, kde-format
@@ -62520,7 +62540,7 @@ msgstr "Devolver elementos dun mes ou dun día do mes"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Return items with labels"
-msgstr "Devolver as imaxes con etiquetas"
+msgstr "Devolver os elementos con etiquetas"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -63408,8 +63428,8 @@ msgstr "Amosar a &data de creación segundo a cámara"
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr ""
-"Escolla esta opción para amosar a data de creación do ficheiro na cámara "
-"baixo a miniatura."
+"Escolla esta opción para amosar a data de creación da cámara baixo a "
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:129
 #, kde-format
@@ -67578,6 +67598,7 @@ msgstr ""
 "li><li>%2/Windows/Color/</li></ul>Neste sistema existen (e polo tanto "
 "examínanse) as seguintes rutas:<ul><li>%3</li></ul>"
 
+# skip-rule: trasno-library
 #: core/utilities/setup/setupicc.cpp:874
 #, kde-format
 msgid ""
