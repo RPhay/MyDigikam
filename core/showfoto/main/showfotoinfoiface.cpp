@@ -42,10 +42,13 @@ void ShowfotoInfoIface::openSetupPage(SetupPage page)
             {
                 Q_EMIT signalSetupChanged();
             }
+
+            break;
         }
 
         default:
         {
+            break;
         }
     }
 }
