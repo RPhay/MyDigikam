@@ -48,7 +48,7 @@ BUGFIXES:
 036 ==> 497446 - Video seek timeline/scrubber is unusable in slideshow mode.
 037 ==> 497508 - Data loss: metadata not saved despite enabling in 1st launch wizard.
 038 ==> 497640 - digiKam ARM64 pkg requires Rosetta to run the Installer.
-039 ==>
+039 ==> 497476 - Create Tag from Address Book not functioning in Tags Manager on macOS.
 040 ==>
 041 ==>
 042 ==>

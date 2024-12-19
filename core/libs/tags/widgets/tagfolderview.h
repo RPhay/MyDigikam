@@ -125,7 +125,7 @@ protected:
 
     void keyPressEvent(QKeyEvent* event)                                                    override;
 
-private Q_SLOTS:
+public Q_SLOTS:
 
     void slotTagNewFromABCMenu(const QString& personName);
 

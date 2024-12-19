@@ -62,6 +62,10 @@
 #include "fileactionmngr.h"
 #include "metaenginesettings.h"
 
+#ifdef HAVE_AKONADICONTACT
+#   include "akonadiiface.h"
+#endif
+
 namespace
 {
 
@@ -85,10 +89,11 @@ public:
 
     Private() = default;
 
+public:
+
     TagMngrTreeView* tagMngrView        = nullptr;
     QLabel*          tagPixmap          = nullptr;
     SearchTextBarDb* searchBar          = nullptr;
-
 
     QSplitter*       splitter           = nullptr;
     QWidget*         treeWindow         = nullptr;
@@ -430,6 +435,18 @@ void TagsManager::slotResetTagIcon()
 
 void TagsManager::slotCreateTagAddr()
 {
+
+#ifdef HAVE_AKONADICONTACT
+
+    AkonadiIface* const abc = new AkonadiIface(d->parent);
+
+    connect(abc, SIGNAL(signalContactTriggered(QString)),
+            d->tagMngrView, SLOT(slotTagNewFromABCMenu(QString)));
+
+    // AkonadiIface instance will be deleted with d->parent.
+
+#endif
+
 }
 
 void TagsManager::slotInvertSel()
@@ -713,8 +730,17 @@ void TagsManager::setupActions()
     QAction* const resetIcon     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
                                                i18n("Reset Tag Icon"), this);
 
+#ifdef HAVE_AKONADICONTACT
+
     QAction* const createTagAddr = new QAction(QIcon::fromTheme(QLatin1String("tag-addressbook")),
                                                i18n("Create Tag from Address Book"), this);
+
+    connect(createTagAddr, SIGNAL(triggered()),
+            this, SLOT(slotCreateTagAddr()));
+
+    organizeMenu->addAction(createTagAddr);
+
+#endif
 
     QAction* const markUnused    = new QAction(QIcon::fromTheme(QLatin1String("edit-select")),
                                                i18n("Mark Unassigned Tags"), this);
@@ -769,9 +795,6 @@ void TagsManager::setupActions()
     connect(resetIcon, SIGNAL(triggered()),
             this, SLOT(slotResetTagIcon()));
 
-    connect(createTagAddr, SIGNAL(triggered()),
-            this, SLOT(slotCreateTagAddr()));
-
     connect(invSel, SIGNAL(triggered()),
             this, SLOT(slotInvertSel()));
 
@@ -792,7 +815,6 @@ void TagsManager::setupActions()
 
     organizeMenu->addAction(d->titleEdit);
     organizeMenu->addAction(resetIcon);
-    organizeMenu->addAction(createTagAddr);
     organizeMenu->addAction(markUnused);
     organizeMenu->addAction(invSel);
     organizeMenu->addAction(expandSel);
