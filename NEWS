@@ -47,7 +47,7 @@ BUGFIXES:
 035 ==> 497264 - digiKam dock icon changes and becomes pixelated after running app.
 036 ==> 497446 - Video seek timeline/scrubber is unusable in slideshow mode.
 037 ==> 497508 - Data loss: metadata not saved despite enabling in 1st launch wizard.
-038 ==>
+038 ==> 497640 - digiKam ARM64 pkg requires Rosetta to run the Installer.
 039 ==>
 040 ==>
 041 ==>
