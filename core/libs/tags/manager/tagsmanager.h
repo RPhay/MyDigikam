@@ -91,12 +91,6 @@ private Q_SLOTS:
      void slotTitleEditReady();
 
     /**
-     * @brief slotCreateTagAddr - connected to createTagAddr action and
-     *                            will create tags from Addressbook
-     */
-    void slotCreateTagAddr();
-
-    /**
      * @brief slotInvertSel     - connected to invSel action and will
      *                            invert selection of current items
      */
