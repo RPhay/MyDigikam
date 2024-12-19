@@ -51,4 +51,5 @@ qt-keywords,\
 missing-qobject-macro,\
 range-loop-detach,\
 range-loop-reference\
+use-static-qregularexpression\
 "
