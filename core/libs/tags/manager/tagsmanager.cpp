@@ -438,12 +438,12 @@ void TagsManager::slotCreateTagAddr()
 
 #ifdef HAVE_AKONADICONTACT
 
-    AkonadiIface* const abc = new AkonadiIface(this);
+    AkonadiIface* const abc = new AkonadiIface(d->organizeButton->menu());
 
     connect(abc, SIGNAL(signalContactTriggered(QString)),
             d->tagMngrView, SLOT(slotTagNewFromABCMenu(QString)));
 
-    // AkonadiIface instance will be deleted with this.
+    // AkonadiIface instance will be deleted with d->organizeButton->menu().
 
 #endif
 
