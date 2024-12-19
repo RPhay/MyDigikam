@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 01:56+0000\n"
-"PO-Revision-Date: 2024-12-15 23:41+0100\n"
+"POT-Creation-Date: 2024-12-19 01:50+0000\n"
+"PO-Revision-Date: 2024-12-18 06:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1130,7 +1130,7 @@ msgid "Photograph Properties"
 msgstr "Lastnosti fotografije"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -32073,40 +32073,40 @@ msgstr "Odstrani črni okvir"
 msgid "Clear List"
 msgstr "Počisti seznam"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:96
 #, kde-format
 msgid "Loading Frame"
 msgstr "Nalagam okvir"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
 #, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1%"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, kde-format
 msgid "Black Frame"
 msgstr "Črni okvir"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:173
 #, kde-format
 msgid "File Name:"
 msgstr "Ime datoteke:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:183
 #, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "Ustvarjeno:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:186
 #, kde-format
 msgid "Serial Number:"
 msgstr "Serijska številka:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:197
 #, kde-format
 msgid "Hot Pixels:"
 msgstr "Vroče slikovne točke:"
@@ -60217,25 +60217,7 @@ msgstr ""
 "podporo metapodatkov.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -60261,15 +60243,15 @@ msgstr ""
 "krajevno ime dneva ('Pon' do 'Ned')</p><p><b>dddd</b>: dolgo krajevno ime "
 "dneva ('ponedeljek' do 'nedelja').</p><p><b>M</b>: mesec kot število brez "
 "vodilne ničle (1 do 12)</p><p><b>MM</b>: mesec kot število z vodilno ničlo "
-"(01 do 12)</p><p><b>MMM</b>:  okrajšano krajevno ime meseca ('Jan' do "
-"'Dec')</p><p><b>MMMM</b>: dolgo krajevno ime meseca ('januar' do "
-"'december')</p><p><b>yy</b>: leto kot število z dvema števkama (00 do 99)</"
-"p><p><b>yyyy</b>: leto kot število s štirimi števkami (2012)</p><p>Vsi drugi "
-"vnosni znaki bodo obravnavani kot besedilo. Katerokoli zaporedje znakov, ki "
-"bo obdano z enojnimi narekovaji bo upoštevano kot besedilo in ne kot izraz. "
-"Primer, če je datum 20 julij 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</"
-"p><p><b>ddd d MMMM yy</b> : Ned 20 julij 1969</p><p><b>'Zajem fotografije "
-"'dddd</b> : Zajem fotografije nedelja</p>"
+"(01 do 12)</p><p><b>MMM</b>: okrajšano krajevno ime meseca ('Jan' do 'Dec')</"
+"p><p><b>MMMM</b>: dolgo krajevno ime meseca ('januar' do 'december')</"
+"p><p><b>yy</b>: leto kot število z dvema števkama (00 do 99)</p><p><b>yyyy</"
+"b>: leto kot število s štirimi števkami (2012)</p><p>Vsi drugi vnosni znaki "
+"bodo obravnavani kot besedilo. Katerokoli zaporedje znakov, ki bo obdano z "
+"enojnimi narekovaji bo upoštevano kot besedilo in ne kot izraz. Primer, če "
+"je datum 20 julij 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd d "
+"MMMM yy</b> : Ned 20 julij 1969</p><p><b>'Zajem fotografije ' dddd</b> : "
+"Zajem fotografije nedelja</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format

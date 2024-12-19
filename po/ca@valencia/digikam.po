@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 01:56+0000\n"
+"POT-Creation-Date: 2024-12-19 01:50+0000\n"
 "PO-Revision-Date: 2024-12-11 22:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1085,7 +1085,7 @@ msgid "Photograph Properties"
 msgstr "Propietats de la fotografia"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -32389,40 +32389,40 @@ msgstr "Elimina el marc negre"
 msgid "Clear List"
 msgstr "Neteja la llista"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:96
 #, kde-format
 msgid "Loading Frame"
 msgstr "S'està carregant el fotograma"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
 #, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1%"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, kde-format
 msgid "Black Frame"
 msgstr "Marc negre"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:173
 #, kde-format
 msgid "File Name:"
 msgstr "Nom del fitxer:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:183
 #, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "Creat:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:186
 #, kde-format
 msgid "Serial Number:"
 msgstr "Número de sèrie:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:197
 #, kde-format
 msgid "Hot Pixels:"
 msgstr "Píxels cremats:"

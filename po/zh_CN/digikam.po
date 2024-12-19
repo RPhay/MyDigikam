@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 01:56+0000\n"
+"POT-Creation-Date: 2024-12-19 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1061,7 +1061,7 @@ msgid "Photograph Properties"
 msgstr "照片属性"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -30962,40 +30962,40 @@ msgstr "移除黑帧"
 msgid "Clear List"
 msgstr "清空列表"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:96
 #, kde-format
 msgid "Loading Frame"
 msgstr "正在加载黑帧"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
 #, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1%"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, kde-format
 msgid "Black Frame"
 msgstr "黑帧"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:173
 #, kde-format
 msgid "File Name:"
 msgstr "文件名："
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:183
 #, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "创建日期："
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:186
 #, kde-format
 msgid "Serial Number:"
 msgstr "序列号："
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:197
 #, kde-format
 msgid "Hot Pixels:"
 msgstr "热像素："
@@ -58371,25 +58371,7 @@ msgstr ""
 "无损容器文件格式。</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -58409,19 +58391,6 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"<p>下列表达式可以用于自定义日期格式：</p><p><b>d</b>：数字日期，一位数字前不"
-"加 0 (1 到 31)</p><p><b>dd</b>：数字日期，一位数字前加 0 (01 到 31)</"
-"p><p><b>ddd</b>：语言化日期，星期几，英文为缩写 (星期一到星期日，Mon 到 "
-"Sun)</p><p><b>dddd</b>：语言化日期，星期几，英文为全称 (星期一到星期日，"
-"Monday 到 Sunday)。</p><p><b>M</b>：数字月份，一位数字前不加 0 (1 到 12)</"
-"p><p><b>MM</b>：数字月份，一位数字前加 0 (01 到 12)</p><p><b>MMM</b>：语言化"
-"月份，中文为某月，英文为缩写 (一月到十二月，Jan 到 Dec)</p><p><b>MMMM</b>：语"
-"言化月份，中文为某月，英文为全称 (一月到十二月，January 到 December)</"
-"p><p><b>yy</b>：两位数字年份 (00 到 99)</p><p><b>yyyy</b>：四位数字年份 "
-"(2012)</p><p>所有其他字符都将被视作文字，任意字符只要被单引号包围也将被视作文"
-"字，它们将不被用作表达式的一部分。例如： 2021 年 01 月 01 日的表达式显示效"
-"果：</p><p><b>yyyy-MM-dd</b>：2021-01-01</p><p><b>yy 年 MMMM d 日 (ddd)</b>："
-"21 年 七月 1 日 (星期五)</p><p><b>'拍摄于'dddd</b>：拍摄于星期五</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 01:56+0000\n"
+"POT-Creation-Date: 2024-12-19 01:50+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1182,7 +1182,7 @@ msgid "Photograph Properties"
 msgstr "ਫੋਟੋਗਰਾਫ਼ ਵਿਸ਼ੇਸ਼ਤਾ"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -31824,13 +31824,13 @@ msgstr "ਕਾਲਾ ਫਰੇਮ..."
 msgid "Clear List"
 msgstr "ਲਿਸਟ ਸਾਫ਼ ਕਰੋ"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:96
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgid "Loading Frame"
 msgstr "ਲੋਡ ਕੀਤਾ ਜਾਂਦਾ ਹੈ: "
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:95
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
@@ -31839,19 +31839,19 @@ msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1 %2"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Black Frame"
 msgstr "ਕਾਲਾ ਫਰੇਮ..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:173
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgid "File Name:"
 msgstr "ਫਾਇਲ ਨਾਂ"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
@@ -31859,13 +31859,13 @@ msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "ਬਣਾਇਆ:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:186
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Serial Number:"
 msgstr "ਨੰਬਰ:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:197
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgid "Hot Pixels:"
