@@ -61,6 +61,11 @@ QList<QUrl> DInfoInterface::allAlbumItems() const
     return QList<QUrl>();
 }
 
+QUrl DInfoInterface::currentActiveItem() const
+{
+    return QUrl();
+}
+
 DInfoInterface::DInfoMap DInfoInterface::itemInfo(const QUrl&) const
 {
     return DInfoMap();

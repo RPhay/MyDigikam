@@ -312,7 +312,9 @@ void Showfoto::slotUpdateItemInfo()
 
 DInfoInterface* Showfoto::infoIface(DPluginAction* const)
 {
-    ShowfotoInfoIface* const iface = new ShowfotoInfoIface(this, d->thumbBar->urls());
+    ShowfotoInfoIface* const iface = new ShowfotoInfoIface(this,
+                                                           d->thumbBar->urls(),
+                                                           d->thumbBar->currentUrl());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Showfoto::infoIface: nb of file" << d->thumbBar->urls().size();
 

@@ -47,13 +47,17 @@ public:
 
     DFileSelector* dirSelector = nullptr;
     QList<QUrl>    urls;
+    QUrl           caUrl;
 };
 
-DMetaInfoIface::DMetaInfoIface(QObject* const parent, const QList<QUrl>& lst)
+DMetaInfoIface::DMetaInfoIface(QObject* const parent,
+                               const QList<QUrl>& lst,
+                               const QUrl& currentActive)
     : DInfoInterface(parent),
       d             (new Private)
 {
-    d->urls = lst;
+    d->urls  = lst;
+    d->caUrl = currentActive;
 }
 
 DMetaInfoIface::~DMetaInfoIface()
@@ -74,6 +78,11 @@ void DMetaInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 void DMetaInfoIface::parseAlbumItemsRecursive()
 {
     Q_EMIT signalAlbumItemsRecursiveCompleted(d->urls);
+}
+
+QUrl DMetaInfoIface::currentActiveItem() const
+{
+    return d->caUrl;
 }
 
 QList<QUrl> DMetaInfoIface::currentAlbumItems() const

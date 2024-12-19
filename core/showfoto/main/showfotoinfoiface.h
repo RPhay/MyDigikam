@@ -31,7 +31,8 @@ class ShowfotoInfoIface : public DMetaInfoIface
 public:
 
     explicit ShowfotoInfoIface(QObject* const parent,
-                               const QList<QUrl>& lst);
+                               const QList<QUrl>& lst,
+                               const QUrl& currentActive);
     ~ShowfotoInfoIface()               override = default;
 
     void openSetupPage(SetupPage page) override;

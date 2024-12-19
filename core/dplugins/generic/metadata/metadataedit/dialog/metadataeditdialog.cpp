@@ -89,6 +89,21 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
 
     d->urls     = d->iface->currentSelectedItems();
     d->currItem = d->urls.begin();
+
+    if (!d->iface->currentActiveItem().isEmpty())
+    {
+        QList<QUrl>::iterator it = d->currItem;
+
+        for ( ; it != d->urls.end() ; ++it)
+        {
+            if (*it == d->iface->currentActiveItem())
+            {
+                d->currItem = it;
+                break;
+            }
+        }
+    }
+
     updatePreview();
 
     QDialogButtonBox::StandardButtons btns = QDialogButtonBox::Ok    |

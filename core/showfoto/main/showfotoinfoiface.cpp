@@ -27,8 +27,10 @@
 namespace ShowFoto
 {
 
-ShowfotoInfoIface::ShowfotoInfoIface(QObject* const parent, const QList<QUrl>& lst)
-    : DMetaInfoIface(parent, lst)
+ShowfotoInfoIface::ShowfotoInfoIface(QObject* const parent,
+                                     const QList<QUrl>& lst,
+                                     const QUrl& currentActive)
+    : DMetaInfoIface(parent, lst, currentActive)
 {
 }
 

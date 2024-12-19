@@ -79,6 +79,7 @@ public:
 
     virtual QList<QUrl> currentSelectedItems()                                      const;
     virtual QList<QUrl> currentAlbumItems()                                         const;
+    virtual QUrl        currentActiveItem()                                         const;
     virtual void        parseAlbumItemsRecursive();
 
     virtual QList<QUrl> albumItems(int)                                             const;

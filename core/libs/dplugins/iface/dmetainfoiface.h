@@ -31,7 +31,9 @@ class DIGIKAM_EXPORT DMetaInfoIface : public DInfoInterface
 
 public:
 
-    explicit DMetaInfoIface(QObject* const, const QList<QUrl>&);
+    explicit DMetaInfoIface(QObject* const parent,
+                            const QList<QUrl>& lst,
+                            const QUrl& currentActive);
     ~DMetaInfoIface()                                             override;
 
     Q_SLOT void slotDateTimeForUrl(const QUrl& url,
@@ -46,6 +48,7 @@ public:
 
     QList<QUrl> currentSelectedItems()                      const override;
     QList<QUrl> currentAlbumItems()                         const override;
+    QUrl        currentActiveItem()                         const override;
     QList<QUrl> allAlbumItems()                             const override;
     void        parseAlbumItemsRecursive()                        override;
 

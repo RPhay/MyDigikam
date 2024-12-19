@@ -49,7 +49,7 @@ BUGFIXES:
 037 ==> 497508 - Data loss: metadata not saved despite enabling in 1st launch wizard.
 038 ==> 497640 - digiKam ARM64 pkg requires Rosetta to run the Installer.
 039 ==> 497476 - Create Tag from Address Book not functioning in Tags Manager on macOS.
-040 ==>
+040 ==> 497642 - Edit metadata plugin don't allow you to edit metadata of the selected image from Showfoto.
 041 ==>
 042 ==>
 043 ==>
