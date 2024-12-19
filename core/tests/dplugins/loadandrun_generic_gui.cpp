@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
         urlList.append(QUrl::fromLocalFile(arg));
     }
 
-    DMetaInfoIface iface(qApp, urlList);
+    DMetaInfoIface iface(qApp, urlList, QUrl());
     DPluginLoader* const dpl = DPluginLoader::instance();
     dpl->init();
     dpl->registerGenericPlugins(&iface);
