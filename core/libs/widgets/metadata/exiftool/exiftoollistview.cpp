@@ -35,10 +35,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ExifToolListView::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QString                      lastError;
     QString                      selectedItemKey;
@@ -161,8 +162,10 @@ void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
 
         if (item)
         {
-            if (item->text(0).contains(search, settings.caseSensitive) ||
-                item->text(1).contains(search, settings.caseSensitive))
+            if (
+                item->text(0).contains(search, settings.caseSensitive) ||
+                item->text(1).contains(search, settings.caseSensitive)
+               )
             {
                 query = true;
                 item->setHidden(false);
@@ -253,7 +256,6 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
     QString simplifiedTag;
 
     QStringList filters = tagsFilter;
-    QString groupItemName;
 
 #ifndef __clang_analyzer__
 
@@ -347,9 +349,11 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
 
     d->simplifiedTagsList.clear();
 
-    if (!filters.isEmpty()                       &&
+    if (
+        !filters.isEmpty()                       &&
         (filters.at(0) != QLatin1String("FULL")) &&
-        filters.at(0).contains(QLatin1Char('.')))
+        filters.at(0).contains(QLatin1Char('.'))
+       )
     {
         for (const QString& key : std::as_const(filters))
         {

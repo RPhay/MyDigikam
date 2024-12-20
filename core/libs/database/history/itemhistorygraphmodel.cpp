@@ -503,8 +503,6 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 
         item                                = createVertexItem(v);
 
-        QList<HistoryGraph::Vertex> vertices;       // clazy:exclude=missing-typeinfo
-
         // Any extra sources?
 
         QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);    // clazy:exclude=missing-typeinfo

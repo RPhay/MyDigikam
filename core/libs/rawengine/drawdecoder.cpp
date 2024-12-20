@@ -111,7 +111,6 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
 
 bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QBuffer& buffer)
 {
-    QString rawFilesExt = rawFiles();
     LibRaw* const raw   = new LibRaw;
     QByteArray inData   = buffer.data();
     int ret             = raw->open_buffer((void*) inData.data(), (size_t) inData.size());
@@ -229,7 +228,6 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
 
 bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer)
 {
-    QString rawFilesExt = rawFiles();
     LibRaw* const raw   = new LibRaw;
     QByteArray inData   = inBuffer.data();
     int ret             = raw->open_buffer((void*) inData.data(), (size_t) inData.size());

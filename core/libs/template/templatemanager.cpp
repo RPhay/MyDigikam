@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool            modified    = false;
 
     QList<Template> pList;
@@ -519,8 +521,6 @@ void TemplateManager::removePrivate(const Template& t)
 
 void TemplateManager::clear()
 {
-    QList<Template> oldTemplates = d->pList;
-
     {
         QMutexLocker lock(&d->mutex);
         d->pList.clear();

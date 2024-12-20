@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     const int                arrowsize  = 5;
     bool                     m_indent   = true;
     QStyle::PrimitiveElement arrowPE    = QStyle::PE_IndicatorArrowLeft;
@@ -123,8 +125,6 @@ void DSelector::paintEvent(QPaintEvent*)
     painter.begin(this);
 
     drawContents(&painter);
-
-    QBrush brush;
 
     QPoint pos = calcArrowPos(value());
     drawArrow(&painter, pos);

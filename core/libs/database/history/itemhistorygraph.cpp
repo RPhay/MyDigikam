@@ -733,7 +733,6 @@ void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 {
     // Remove nodes which could not be resolved into image infos.
 
-    QList<HistoryGraph::Vertex> toRemove;   // clazy:exclude=missing-typeinfo
     const auto verts = d->vertices();
 
     for (const HistoryGraph::Vertex& v : verts)
@@ -860,7 +859,6 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
 static QString toString(const HistoryVertexProperties& props)
 {
-    QString s = QLatin1String("Ids: ");
     QStringList ids;
 
     for (const ItemInfo& info : std::as_const(props.infos))
