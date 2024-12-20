@@ -145,6 +145,7 @@ parts:
       - libopencv-imgcodecs4.5d
       - libopencv-dnn4.5d
       - libopencv-core4.5d
+      - libopencv-objdetect4.5d
       - libodbcinst2
       - libnetcdf19
       - libkmlengine1
