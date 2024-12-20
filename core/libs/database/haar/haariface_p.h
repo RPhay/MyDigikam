@@ -50,7 +50,6 @@
 #include "dbenginesqlquery.h"
 #include "similaritydb.h"
 #include "similaritydbaccess.h"
-#include "previewloadthread.h"
 
 using namespace std;
 

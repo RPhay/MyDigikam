@@ -159,9 +159,9 @@ void DuplicatesFinder::slotStart()
 }
 
 void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& inf,
-                                              const QImage& img, int duplicates)
+                                              const QImage& /*img*/, int duplicates)
 {
-    setThumbnail(QIcon(QPixmap::fromImage(img)));
+    setThumbnail(QIcon::fromTheme(QLatin1String("search")));
 
     QString lbl = i18n("Duplicates for: %1\n", inf.name());
     lbl.append(i18n("Path: %1\n", inf.relativePath()));
