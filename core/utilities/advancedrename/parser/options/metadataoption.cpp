@@ -99,7 +99,6 @@ MetadataOption::MetadataOption()
              i18n("Add metadata information"))
 {
     QString iconName(QLatin1String("format-text-code"));
-    QPixmap icon = QIcon::fromTheme(iconName).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize));
     setIcon(iconName);
 
     // --------------------------------------------------------

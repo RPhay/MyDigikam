@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("LightTable Settings");
     const QString configAutoSyncPreviewEntry    = QLatin1String("Auto Sync Preview");
     const QString configAutoLoadRightPanelEntry = QLatin1String("Auto Load Right Panel");
@@ -124,8 +126,6 @@ void SetupLightTable::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
-    QColor Black(Qt::black);
-    QColor White(Qt::white);
 
     d->fullScreenSettings->readSettings(group);
     d->autoSyncPreview->setChecked(group.readEntry(d->configAutoSyncPreviewEntry,         true));

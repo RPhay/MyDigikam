@@ -299,8 +299,8 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
 
         QRect tRect(d->iconPix.height() + 3, 2, width() - 3 - d->iconPix.width() - 2, height() - 5);
         QString text        = i18nc("%1 is the percent value, % is the percent sign", "%1%", peUsed);
-        QFontMetrics fontMt = p.fontMetrics();
 /*
+        QFontMetrics fontMt = p.fontMetrics();
         QRect fontRect      = fontMt.boundingRect(tRect.x(), tRect.y(),
                                                   tRect.width(), tRect.height(), 0, text);
 */
@@ -313,7 +313,6 @@ void FreeSpaceWidget::updateToolTip()
 {
     if (isValid())
     {
-        QString value;
         QString header = i18nc("@title", "Camera Media");
 
         if (d->mode == FreeSpaceWidget::AlbumLibrary)

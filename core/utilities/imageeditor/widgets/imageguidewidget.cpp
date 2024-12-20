@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool        sixteenBit                = false;
     bool        focus                     = false;
     bool        spotVisible               = false;
@@ -264,7 +266,6 @@ void ImageGuideWidget::updatePixmap()
     p.setRenderHint(QPainter::Antialiasing, true);
     p.setBackgroundMode(Qt::TransparentMode);
 
-    QString text;
     p.setPen(QPen(Qt::red, 1));
 
     d->pixmap->fill(d->bgColor);
