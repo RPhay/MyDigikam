@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 01:50+0000\n"
-"PO-Revision-Date: 2024-12-17 23:05+0100\n"
+"POT-Creation-Date: 2024-12-20 01:57+0000\n"
+"PO-Revision-Date: 2024-12-19 23:13+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1947,7 +1947,7 @@ msgid "Find similar images using selected item as reference."
 msgstr ""
 "Atopar imaxes similares usando o elemento seleccionado como referencia."
 
-# skip-rule: trasno-change
+# skip-rule: trasno-change, trasno-rename_reverse
 #: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@info: setup"
@@ -3214,7 +3214,7 @@ msgid "Tools"
 msgstr "Ferramentas"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:850
 #, kde-format
 msgid "Help"
 msgstr "Axuda"
@@ -3441,12 +3441,12 @@ msgstr ""
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
-"Renomear avanzado: engadir busca de elementos por número de zonas faciais."
+"Busca avanzada: engadir busca de elementos por número de zonas faciais."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Renomear avanzado: engadir busca de elementos sen zonas faciais."
+msgstr "Busca avanzada: engadir busca de elementos sen zonas faciais."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
@@ -8251,7 +8251,7 @@ msgid ""
 "you want to apply color balance yourself."
 msgstr ""
 "Marque para aplicar o balanza de cores incorporado do perfil da película. "
-"Retire a selección se quere aplicar o balance de cores vostede mesmo."
+"Desmarque se quere aplicar o balance de cores vostede mesmo."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:204
 #, kde-format
@@ -12334,37 +12334,37 @@ msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Editor de metadatos"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "Seguinte"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "Anterior"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:133
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "Editar o EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:134
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "Editar o IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "Editar o XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:324
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
@@ -17785,7 +17785,7 @@ msgstr "Cartafol de destino:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -20212,7 +20212,7 @@ msgstr "Cartafol de destino:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Ruta de destino de saída"
@@ -27638,7 +27638,7 @@ msgstr "Etiqueta o álbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -38726,6 +38726,7 @@ msgctxt "@item:inlistbox"
 msgid "Solid white"
 msgstr "Branco sólido"
 
+# skip-rule: trasno-remove_reverse
 #: core/libs/rawengine/drawdecoderwidget.cpp:369
 #, kde-format
 msgctxt "@item:inlistbox"
@@ -38744,6 +38745,7 @@ msgctxt "@item:inlistbox"
 msgid "Rebuild"
 msgstr "Reconstruír"
 
+# skip-rule: trasno-remove_reverse
 #: core/libs/rawengine/drawdecoderwidget.cpp:373
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
@@ -39356,7 +39358,7 @@ msgstr "Xestor da fila do lote"
 #: core/libs/settings/applicationsettings_miscs.cpp:493
 #, kde-format
 msgid "Renaming"
-msgstr "Cambiando de nome"
+msgstr "Renomeamento"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:498
 #, kde-format
@@ -39396,7 +39398,7 @@ msgstr "Abrir elementos na presentación"
 #: core/libs/settings/applicationsettings_miscs.cpp:540
 #, kde-format
 msgid "Renaming items"
-msgstr "Cambiar elementos de nome"
+msgstr "Renomeamento de elementos"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:545
 #, kde-format
@@ -39643,38 +39645,38 @@ msgid "Delete Tags"
 msgstr "Eliminar as etiquetas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Editar o título da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Restaurar a icona da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverter a selección"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Expandir a árbore da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Pregar a árbore da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Retirar a etiqueta das imaxes"
@@ -39748,13 +39750,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Cambiáronse as etiquetas anteriores. Quere gardar os cambios?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:166
+#: core/libs/tags/manager/tagsmanager.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Xestión de etiquetas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:325
+#: core/libs/tags/manager/tagsmanager.cpp:330
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39770,7 +39772,7 @@ msgstr[1] ""
 "As etiquetas %2 teñen unha ou máis subetiquetas. Se as elimina tamén se "
 "eliminarán as súas subetiquetas. Quere continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:348
+#: core/libs/tags/manager/tagsmanager.cpp:353
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39781,7 +39783,7 @@ msgstr[0] ""
 msgstr[1] ""
 "As etiquetas %2 están asignadas a un ou máis elementos. Quere eliminalas?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:358
+#: core/libs/tags/manager/tagsmanager.cpp:363
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39789,7 +39791,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Quere eliminar a etiqueta %2?"
 msgstr[1] "Quere eliminar as etiquetas %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39797,7 +39799,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Eliminar a etiqueta"
 msgstr[1] "Eliminar as etiquetas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:490
+#: core/libs/tags/manager/tagsmanager.cpp:491
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39808,8 +39810,8 @@ msgstr ""
 "base de datos.<br/> Pode que <b>perda etiquetas</b> se non leu etiquetas "
 "nunca antes (usando «Ler as etiquetas da imaxe»).<br/> Quere continuar?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:502
-#: core/libs/tags/manager/tagsmanager.cpp:521
+#: core/libs/tags/manager/tagsmanager.cpp:503
+#: core/libs/tags/manager/tagsmanager.cpp:522
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39819,7 +39821,7 @@ msgstr ""
 "realmente continuar?"
 
 # skip-rule: trasno-delete_reverse
-#: core/libs/tags/manager/tagsmanager.cpp:541
+#: core/libs/tags/manager/tagsmanager.cpp:542
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39831,7 +39833,7 @@ msgstr ""
 "metadatos no ficheiro máis tarde.\n"
 "Quere continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:605
+#: core/libs/tags/manager/tagsmanager.cpp:606
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39840,35 +39842,30 @@ msgstr[0] ""
 msgstr[1] ""
 "Seguro que quere retirar as etiquetas seleccionadas de todas as imaxes?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organizar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:701
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronizar a &exportación"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
-#, kde-format
-msgid "Create Tag from Address Book"
-msgstr "Crear unha etiqueta a partir da axenda de enderezos"
-
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marcar as etiquetas sen asignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Engadir unha nova etiqueta á actual. A actual é a última na que premese."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39877,79 +39874,79 @@ msgstr ""
 "Eliminar os elementos escollidos; tamén funciona con varios elementos, pero "
 "non ha eliminar a etiqueta raíz."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Editar o título da etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Restabelecer a icona coas etiquetas escollidas. Funciona con seleccións "
 "múltiplas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marcar todas as etiquetas que non estean asignadas a imaxes."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverter a selección. Só se han escoller os elementos visíbeis"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:766
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Os elementos escollidos hanse expandir"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:768
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Expandir a árbore de etiquetas completamente"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:770
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Pregar a árbore de etiquetas completamente"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:772
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Eliminar das imaxes as etiquetas escollidas. Funciona con seleccións "
 "múltiplas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escribir as etiquetas da base de datos na imaxe "
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ler as etiquetas da imaxe"
 
 # skip-rule: trasno-delete_reverse
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:822
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Eliminar todas as etiquetas só da base de datos."
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escribir na imaxe os metadatos das etiquetas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:826
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Insire as etiquetas das imaxes na base de datos. As xa existentes non se han "
 "modificar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:829
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39958,7 +39955,7 @@ msgstr ""
 "Eliminar todas as etiquetas só da base de datos. Non se sincronizará cos "
 "ficheiros. Proceda con precaución."
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -49401,6 +49398,7 @@ msgctxt "@info"
 msgid "Add new bookmark to the list"
 msgstr "Engadir un novo marcador á lista."
 
+# skip-rule: trasno-remove_reverse
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
 #, kde-format
 msgctxt "@action"
@@ -50995,7 +50993,7 @@ msgstr "Substituír"
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
-msgstr "<b>Cambiando o nome das imaxes. Erros: %1</b>"
+msgstr "<b>Renomeando as imaxes. Erros: %1</b>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:331
 #, kde-format
@@ -60379,25 +60377,7 @@ msgstr ""
 "nun contedor sen perda que permita metadatos.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -60418,17 +60398,17 @@ msgid ""
 "b> : Photo shot on Sunday</p>"
 msgstr ""
 "<p>Pódense usar estas expresións para personalizar o formato da data:</"
-"p><p><b>d</b>: O día como número sen cero precedéndoo (1 a 31)</p><p><b>dd</"
-"b>: O día como número cun cero precedéndoo (01 a 31)</p><p><b>ddd</b>: O "
-"nome do día localizado abreviado (p.ex. «Lun» a «Dom»)</p><p><b>dddd</b>: O "
-"nome do día localizado (p.ex. «Luns» a «Domingo».</p><p><b>M</b>: O mes como "
-"número sen cero precedéndoo 81 a 12)</p><p><b>MM</b>: O mes como número con "
-"cero precedéndoo (01 a 12)</p><p><b>MMM</b>: O nome do mes localizado "
-"abreviado (p.ex. «Xan» a «Dec»)</p><p><b>MMMM</b>: O nome do mes localizado "
-"(p.ex. «Xaneiro» a «Decembro»)</p><p><b>yy</b>: O ano como número de dous "
-"díxitos (p.ex. 00 a 99)</p><p><b>yyyy</b>: O ano como número de catro "
-"díxitos (p.ex. 2012)</p><p>O resto dos caracteres trátanse como texto. "
-"Calquera secuencia de caracteres que se escriba entre comiñas simples "
+"p><p><b>d</b>: O día como número sen cero precedéndoo (1 a 31).</p><p><b>dd</"
+"b>: O día como número cun cero precedéndoo (01 a 31).</p><p><b>ddd</b>: O "
+"nome do día localizado abreviado (p.ex. «Lun» a «Dom»).</p><p><b>dddd</b>: O "
+"nome do día localizado (p.ex. «Luns» a «Domingo»).</p><p><b>M</b>: O mes "
+"como número sen cero precedéndoo 81 a 12).</p><p><b>MM</b>: O mes como "
+"número con cero precedéndoo (01 a 12).</p><p><b>MMM</b>: O nome do mes "
+"localizado abreviado (p.ex. «Xan» a «Dec»).</p><p><b>MMMM</b>: O nome do mes "
+"localizado (p.ex. «Xaneiro» a «Decembro»).</p><p><b>yy</b>: O ano como "
+"número de dous díxitos (p.ex. 00 a 99).</p><p><b>yyyy</b>: O ano como número "
+"de catro díxitos (p.ex. 2012).</p><p>O resto dos caracteres trátanse como "
+"texto. Calquera secuencia de caracteres que se escriba entre comiñas simples "
 "trátase como texto e non se usa como expresión. Exemplos: se a data é o 20 "
 "de xullo de 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d "
 "yy</b> : Dom Xul 20 69</p><p><b>'Foto tirada' dddd</b> : Foto tirada "
@@ -66472,8 +66452,8 @@ msgstr ""
 "digiKam escribe (opcionalmente) metadatos en ficheiros acompañantes *.xmp. "
 "Outros programas poderían usar tipos distintos, que poden indicarse embaixo. "
 "digiKam non os amosará, nin os lerá nin escribirá neles. Pero cada vez que "
-"se cambia de nome, move, copia ou elimina un elemento (p. ex. «imaxe.dng» "
-"para «imaxe.dng.pp3») a mesma operación realizarase neses ficheiros "
+"se renomea, move, copia ou elimina un elemento (p. ex. «imaxe.dng» para "
+"«imaxe.dng.pp3») a mesma operación realizarase neses ficheiros "
 "acompañantes.\n"
 "Distintas extensións deben separarse cun punto e coma (;) ou un espazo."
 
@@ -68149,6 +68129,9 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgid "Create Tag from Address Book"
+#~ msgstr "Crear unha etiqueta a partir da axenda de enderezos"
 
 #~ msgid "Copy geo: URL"
 #~ msgstr "Copiar o URL de xeolocalización:"

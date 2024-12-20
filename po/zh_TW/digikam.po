@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 01:50+0000\n"
+"POT-Creation-Date: 2024-12-20 01:57+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3131,7 +3131,7 @@ msgid "Tools"
 msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:850
 #, kde-format
 msgid "Help"
 msgstr "說明"
@@ -11730,37 +11730,37 @@ msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "中繼資料編輯器"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "下一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "上一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:133
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "編輯 EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:134
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "編輯 IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "編輯 XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:324
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
@@ -17296,7 +17296,7 @@ msgstr "目的地："
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -19709,7 +19709,7 @@ msgstr "目的地資料夾："
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
 #, kde-format
 msgid "Output Destination Path"
 msgstr "輸出目的地路徑"
@@ -27129,7 +27129,7 @@ msgstr "旗標相簿"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -38879,38 +38879,38 @@ msgid "Delete Tags"
 msgstr "刪除標籤"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "編輯標籤標題"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重設標籤圖示"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Invert Selection"
 msgstr "反相選擇"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展開標籤樹狀圖"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "折疊標籤樹狀圖"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "從影像移除標籤"
@@ -38982,13 +38982,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "先前的標籤已變更。要儲存變更嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:166
+#: core/libs/tags/manager/tagsmanager.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "標籤管理員"
 
-#: core/libs/tags/manager/tagsmanager.cpp:325
+#: core/libs/tags/manager/tagsmanager.cpp:330
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39000,7 +39000,7 @@ msgid_plural ""
 msgstr[0] ""
 "標籤 %2 有一個以上的子標籤。刪除這些標籤也會刪除子標籤們。您確定要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:348
+#: core/libs/tags/manager/tagsmanager.cpp:353
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39008,21 +39008,21 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "標籤 '%2' 已指定到一個以上的項目。您確定要刪除它們嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:358
+#: core/libs/tags/manager/tagsmanager.cpp:363
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "刪除標籤 %2？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "刪除標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:490
+#: core/libs/tags/manager/tagsmanager.cpp:491
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39033,15 +39033,15 @@ msgstr ""
 "「從影像讀取標籤」讀取過標籤的話您可能會<b>喪失標籤資訊</b>。<br/>您確定要繼"
 "續嗎？</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:502
-#: core/libs/tags/manager/tagsmanager.cpp:521
+#: core/libs/tags/manager/tagsmanager.cpp:503
+#: core/libs/tags/manager/tagsmanager.cpp:522
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "這項操作依照收藏的大小，可能會花很長的時間。您確定要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:541
+#: core/libs/tags/manager/tagsmanager.cpp:542
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39052,119 +39052,114 @@ msgstr ""
 "要套用變更到檔案，您必須稍後選擇將中繼資料寫入檔案。\n"
 "您要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:605
+#: core/libs/tags/manager/tagsmanager.cpp:606
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您確定要將所選的標籤從所有影像上移除嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "管理"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:701
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "同步匯出(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
-#, kde-format
-msgid "Create Tag from Address Book"
-msgstr "從通訊錄建立標籤"
-
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "標記未指定的標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "將標籤新增到上次點擊的標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr "刪除選取的項目。也可以刪除多個項目，但不會刪除根標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "編輯所選標籤的標題。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重設選取的標籤圖示。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "標記所有未被指定到任何影像上的標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "轉換選取的項目。只有可見的項目會被選取。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:766
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "選取的項目會被展開"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:768
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "完全展開標籤樹狀圖"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:770
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "完全折疊標籤樹狀圖"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:772
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "從影像刪除選取的標籤。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "將標籤從資料庫寫入到影像"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "從影像讀取標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:822
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "只抹除資料庫中的所有標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "將標籤中繼資料寫入影像。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:826
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "從影像讀取標籤再寫入資料庫。現有的標籤不會受到影響"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:829
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -67092,6 +67087,9 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#~ msgid "Create Tag from Address Book"
+#~ msgstr "從通訊錄建立標籤"
 
 #~ msgid "Copy geo: URL"
 #~ msgstr "複製 geo: 網址"
