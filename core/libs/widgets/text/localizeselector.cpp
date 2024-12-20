@@ -136,6 +136,7 @@ void LocalizeSelector::populateTranslationEntries()
     d->translateAction->m_list->clear();
 
     QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
+    Q_UNUSED(allRFC3066);
     LocalizeContainer set   = LocalizeSettings::instance()->settings();
 
     for (const QString& lg : std::as_const(set.translatorLang))

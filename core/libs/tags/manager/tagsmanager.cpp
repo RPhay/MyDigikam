@@ -252,6 +252,7 @@ void TagsManager::slotAddAction()
 
     QMap<QString, QString> errMap;
     AlbumList tList = TagEditDlg::createTAlbum(parent, title, icon, ks, errMap);
+    Q_UNUSED(tList);
     TagEditDlg::showtagsListCreationError(qApp->activeWindow(), errMap);
 }
 

@@ -210,13 +210,13 @@ QString DNGWriter::Private::dngBayerPatternToString(int pattern) const
 int DNGWriter::Private::debugExtractedRAWData(const QByteArray& rawData)
 {
     QString   rawdataFilePath(inputInfo.completeBaseName() + QLatin1String(".dat"));
-    QFileInfo rawdataInfo(rawdataFilePath);
 
     QFile rawdataFile(rawdataFilePath);
 
     if (!rawdataFile.open(QIODevice::WriteOnly))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open file to write RAW data. Aborted..." ;
+
         return PROCESS_FAILED;
     }
 

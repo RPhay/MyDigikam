@@ -156,6 +156,7 @@ void Highlighter::highlightBlock(const QString& text)
         while (index >= 0)
         {
             QString fullmatched = match.captured(0);
+            Q_UNUSED(fullmatched);
             int qlength         = match.capturedLength();
             setFormat(index, qlength, d->quotationFormat);
             index               = text.indexOf(expression, index + qlength, &match);

@@ -157,16 +157,15 @@ int TransitionMngr::Private::transitionCubism(bool aInit)
         return -1;
     }
 
-    QPainterPath painterPath;
     QPainter bufferPainter(&eff_curFrame);
 
     eff_x   = randomGenerator->bounded(eff_w);
     eff_y   = randomGenerator->bounded(eff_h);
     int r   = randomGenerator->bounded(100, 200);
-    eff_px   = eff_x - r;
-    eff_py   = eff_y - r;
-    eff_psx  = r;
-    eff_psy  = r;
+    eff_px  = eff_x - r;
+    eff_py  = eff_y - r;
+    eff_psx = r;
+    eff_psy = r;
 
     QTransform transform;
     transform.rotate(randomGenerator->bounded(-10, 10));

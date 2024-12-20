@@ -1394,8 +1394,7 @@ bool GPCamera::deleteAllItems(const QString& folder)
 
 #ifdef HAVE_GPHOTO2
 
-    int         errorCode;
-    QStringList folderList;
+    int errorCode;
 
     d->status->cancel = false;
     errorCode         = gp_camera_folder_delete_all(d->camera, QFile::encodeName(folder).constData(),

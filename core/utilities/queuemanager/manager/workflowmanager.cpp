@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool            modified    = false;
 
     QList<Workflow> qList;
@@ -161,8 +163,6 @@ Workflow WorkflowManager::findByTitle(const QString& title) const
 
 void WorkflowManager::clear()
 {
-    QList<Workflow> oldQueues = d->qList;
-
     {
         QMutexLocker lock(&d->mutex);
         d->qList.clear();

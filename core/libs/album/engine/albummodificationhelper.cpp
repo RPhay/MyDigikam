@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget* dialogParent = nullptr;
 };
 
@@ -367,8 +369,6 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
     QString     oldComments(album->caption());
     QString     oldCategory(album->category());
     QDate       oldDate(album->date());
-    QStringList oldAlbumCategories(ApplicationSettings::instance()->getAlbumCategoryNames());
-
     QString     title, comments, category;
     QDate       date;
     QStringList albumCategories;
