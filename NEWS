@@ -51,7 +51,7 @@ BUGFIXES:
 039 ==> 497476 - Create Tag from Address Book not functioning in Tags Manager on macOS.
 040 ==> 497642 - Edit metadata plugin don't allow you to edit metadata of the selected image from Showfoto.
 041 ==> 496691 - Duplicate search has become much slower on the release version of digiKam 8.5.
-042 ==>
+042 ==> 493988 - digiKam crashes when trying to review some .mov files.
 043 ==>
 044 ==>
 045 ==>
