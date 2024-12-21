@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 01:57+0000\n"
+"POT-Creation-Date: 2024-12-21 02:13+0000\n"
 "PO-Revision-Date: 2024-12-18 12:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3184,7 +3184,7 @@ msgid "Tools"
 msgstr "Araçlar"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:850
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Yardım"
@@ -26818,7 +26818,7 @@ msgstr "Geçerli Arama"
 msgid "Current Duplicates Search"
 msgstr "Geçerli Yinelenenler Araması"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:238
+#: core/libs/album/engine/albummodificationhelper.cpp:240
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
@@ -26827,7 +26827,7 @@ msgstr ""
 "<p>Silmek istediğiniz albüm, digiKam’de görüntülenmeyen dosyalar (%1) "
 "içeriyor.</p><p>Sürdürmek istiyor musunuz?</p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:251
+#: core/libs/album/engine/albummodificationhelper.cpp:253
 #, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
@@ -26835,20 +26835,20 @@ msgid ""
 msgstr ""
 "<p>Silmek istediğiniz albüm boş değil.</p><p>Sürdürmek istiyor musunuz?</p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Albümü Yeniden Adlandır (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:287
+#: core/libs/album/engine/albummodificationhelper.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "Albüm Kökünü Yeniden Adlandır (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:292
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
@@ -27515,7 +27515,7 @@ msgstr "Etiketler Albümü"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28524,31 +28524,31 @@ msgctxt "@title"
 msgid "Image History"
 msgstr "Görsel Geçmişi"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:566
+#: core/libs/database/history/itemhistorygraphmodel.cpp:564
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Türetilen Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:576
+#: core/libs/database/history/itemhistorygraphmodel.cpp:574
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "İlgili Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:583
+#: core/libs/database/history/itemhistorygraphmodel.cpp:581
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Özdeş Görseller"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:639
+#: core/libs/database/history/itemhistorygraphmodel.cpp:637
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Ara Adımlar:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:853
+#: core/libs/database/history/itemhistorygraphmodel.cpp:851
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28558,7 +28558,7 @@ msgstr ""
 "%1\n"
 "(Özgün Görsel)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:858
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -39436,38 +39436,38 @@ msgid "Delete Tags"
 msgstr "Künyeleri Sil"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Künye Başlığını Düzenle"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Künye Simgesini Sıfırla"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Seçimi Tersine Çevir"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Künye Ağacını Genişlet"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Künye Ağacını Daralt"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Görsellerden Künyeleri Kaldır"
@@ -39546,7 +39546,7 @@ msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Künyeler Yöneticisi"
 
-#: core/libs/tags/manager/tagsmanager.cpp:330
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39562,7 +39562,7 @@ msgstr[1] ""
 "“%2” küryelerinin bir veya daha çok alt künyesi var. Bunların silinmesi alt "
 "künyeleri de silecektir. Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:353
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39574,7 +39574,7 @@ msgstr[1] ""
 "“%2” künyeleri bir veya daha çok ögeye atanmış. Onları silmek istiyor "
 "musunuz?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39582,7 +39582,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "%2 künyesi silinsin mi?"
 msgstr[1] "%2 künyeleri silinsin mi?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39590,7 +39590,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Künyeyi Sil"
 msgstr[1] "Künyeleri Sil"
 
-#: core/libs/tags/manager/tagsmanager.cpp:491
+#: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39602,8 +39602,8 @@ msgstr ""
 "Künyeleri Oku’yu çağırarak) künyeleri <b>kaybedebilirsiniz</b>.<br/"
 ">Sürdürmek istiyor musunuz?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:503
-#: core/libs/tags/manager/tagsmanager.cpp:522
+#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:523
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39612,7 +39612,7 @@ msgstr ""
 "Bu işlem koleksiyonun boyutuna bağlı olarak uzun zaman alabilir.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:542
+#: core/libs/tags/manager/tagsmanager.cpp:543
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39624,7 +39624,7 @@ msgstr ""
 "yazmayı seçmelisiniz.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:606
+#: core/libs/tags/manager/tagsmanager.cpp:607
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39633,30 +39633,30 @@ msgstr[0] ""
 msgstr[1] ""
 "Seçili künyeleri tüm görsellerden kaldırmayı gerçekten istiyor musunuz?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Düzenle"
 
-#: core/libs/tags/manager/tagsmanager.cpp:701
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Eşzamanla"
 
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Atanmamış Künyeleri İmle"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:750
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Geçerli künyeye yeni künye ekleyin. Geçerli künye, son tıklanan künyedir."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39665,73 +39665,73 @@ msgstr ""
 "Seçili ögeleri silin. Ayrıca birden fazla ögeyle çalışır; ancak kök künye "
 "silinmez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Seçili künyedeki başlığı düzenleyin."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Simgeyi seçili künyelere sıfırlayın. Çoklu seçim ile çalışır."
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Görsellere atanmamış tüm künyeleri imleyin."
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:764
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Seçimi tersine çevirin. Yalnızca görünür ögeler seçilir"
 
-#: core/libs/tags/manager/tagsmanager.cpp:766
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Seçili ögeler genişletilir"
 
-#: core/libs/tags/manager/tagsmanager.cpp:768
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Künye ağacını tümüyle genişlet"
 
-#: core/libs/tags/manager/tagsmanager.cpp:770
+#: core/libs/tags/manager/tagsmanager.cpp:771
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Künye ağacını tümüyle daralt"
 
-#: core/libs/tags/manager/tagsmanager.cpp:772
+#: core/libs/tags/manager/tagsmanager.cpp:773
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Görsellerden seçili künye(ler)i silin. Çoklu seçim ile çalışır."
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Künyeleri Veritabanından Görsellere Yaz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Görselden Künyeleri Oku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:822
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Tüm Künyeleri Yalnızca Veritabanından Sil"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Künyeler Üst Verisini Görsele Yaz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:826
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Künyeleri görsellerden veritabanına okuyun. Var olan künyeler etkilenmez"
 
-#: core/libs/tags/manager/tagsmanager.cpp:829
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39740,7 +39740,7 @@ msgstr ""
 "Tüm künyeleri yalnızca veritabanından silin. Dosyalarla eşzamanlanmaz. "
 "Dikkatli yapın."
 
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -43381,7 +43381,7 @@ msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Kurulum İletişim Kutusunu Aç…"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
 #, kde-format
 msgid ""
@@ -48661,25 +48661,25 @@ msgctxt "@info"
 msgid "Open localize setup"
 msgstr "Yerel ayarları aç"
 
-#: core/libs/widgets/text/localizeselector.cpp:145
+#: core/libs/widgets/text/localizeselector.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "%1 diline çevir"
 
-#: core/libs/widgets/text/localizeselector.cpp:158
+#: core/libs/widgets/text/localizeselector.cpp:159
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "%1 ile çevrilecek dili seçin"
 
-#: core/libs/widgets/text/localizeselector.cpp:258
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Bu Girdiyi Kaldır"
 
-#: core/libs/widgets/text/localizeselector.cpp:259
+#: core/libs/widgets/text/localizeselector.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -59037,7 +59037,7 @@ msgstr "<b>%1</b> kilit dosyası devreye alınamadı."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> kilit dosyası devreye alınamadı. Sürdürmek istiyor musunuz?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1617
+#: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59053,7 +59053,7 @@ msgstr ""
 "Yol: “%4”\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1624
+#: core/utilities/import/backend/gpcamera.cpp:1623
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59073,23 +59073,23 @@ msgstr ""
 "Dizinleri sil: “%6”\n"
 "\n"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "evet"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"

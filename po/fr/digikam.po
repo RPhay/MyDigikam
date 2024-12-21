@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 01:57+0000\n"
-"PO-Revision-Date: 2024-12-11 08:59+0100\n"
+"POT-Creation-Date: 2024-12-21 02:13+0000\n"
+"PO-Revision-Date: 2024-12-19 09:31+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.11.90\n"
+"X-Generator: Lokalize 24.12.0\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -3256,7 +3256,7 @@ msgid "Tools"
 msgstr "Outils"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:850
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Aide"
@@ -27262,7 +27262,7 @@ msgstr "Recherche actuelle"
 msgid "Current Duplicates Search"
 msgstr "Recherche actuelle de doublons"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:238
+#: core/libs/album/engine/albummodificationhelper.cpp:240
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
@@ -27271,7 +27271,7 @@ msgstr ""
 "<p>Le dossier que voulez supprimer contient des fichiers (%1), non affichés "
 "dans DigiKam.</p><p>Voulez-vous vraiment continuer ? </p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:251
+#: core/libs/album/engine/albummodificationhelper.cpp:253
 #, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
@@ -27280,20 +27280,20 @@ msgstr ""
 "<p>Le dossier que voulez supprimer n'est pas vide.</p><p>Voulez-vous "
 "vraiment continuer ? </p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Renommer un album (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:287
+#: core/libs/album/engine/albummodificationhelper.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "Renommer la racine de l'album (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:292
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
@@ -27975,7 +27975,7 @@ msgstr "Album d'étiquettes"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29013,31 +29013,31 @@ msgctxt "@title"
 msgid "Image History"
 msgstr "Historique des images"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:566
+#: core/libs/database/history/itemhistorygraphmodel.cpp:564
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Images dérivées"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:576
+#: core/libs/database/history/itemhistorygraphmodel.cpp:574
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Images connexes"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:583
+#: core/libs/database/history/itemhistorygraphmodel.cpp:581
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Images identiques"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:639
+#: core/libs/database/history/itemhistorygraphmodel.cpp:637
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Pas intermédiaires :"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:853
+#: core/libs/database/history/itemhistorygraphmodel.cpp:851
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29047,7 +29047,7 @@ msgstr ""
 "%1\n"
 "(image originale)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:858
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -40128,38 +40128,38 @@ msgid "Delete Tags"
 msgstr "Supprimer des étiquettes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Modifier le titre de l'étiquette"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Réinitialiser l'icône de l'étiquette"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverser la sélection"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Développer l'arborescence de l'étiquette"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Réduire l'arborescence d'étiquettes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Supprimer l'étiquette des images"
@@ -40239,7 +40239,7 @@ msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestionnaire d'étiquettes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:330
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40256,7 +40256,7 @@ msgstr[1] ""
 "suppression de celles-ci supprimera également les sous-étiquettes. Voulez-"
 "vous continuer ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:353
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40269,7 +40269,7 @@ msgstr[1] ""
 "Les étiquettes %2 sont attribuées à un ou plusieurs éléments. Voulez-vous "
 "vraiment les supprimer ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40277,7 +40277,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Supprimer l'étiquette %2 ?"
 msgstr[1] "Supprimer les étiquettes %2 ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -40285,7 +40285,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Supprimer une étiquette"
 msgstr[1] "Supprimer les étiquettes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:491
+#: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -40297,8 +40297,8 @@ msgstr ""
 "si vous n'aviez pas lu les étiquettes auparavant (en appelant « Lire les "
 "étiquettes de l'image »).<br/> Voulez-vous continuer ?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:503
-#: core/libs/tags/manager/tagsmanager.cpp:522
+#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:523
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40308,7 +40308,7 @@ msgstr ""
 "collection.\n"
 "Voulez-vous continuer ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:542
+#: core/libs/tags/manager/tagsmanager.cpp:543
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40321,7 +40321,7 @@ msgstr ""
 "d'écrire les métadonnées dans les images.\n"
 "Voulez-vous continuer ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:606
+#: core/libs/tags/manager/tagsmanager.cpp:607
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40332,31 +40332,31 @@ msgstr[1] ""
 "Voulez-vous vraiment supprimer les étiquettes sélectionnées dans toutes les "
 "images ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiser"
 
-#: core/libs/tags/manager/tagsmanager.cpp:701
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Synchroniser / &Exporter"
 
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marquer les étiquettes non attribuées"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:750
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Ajouter une nouvelle étiquette à l'étiquette courante. L'étiquette courante "
 "est la dernière étiquette sélectionnée par un clic."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40365,80 +40365,80 @@ msgstr ""
 "Supprimer les éléments sélectionnés. Ceci fonctionne aussi avec plusieurs "
 "éléments, mais ne supprimera pas l'étiquette racine."
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Éditer le titre à partir de l'étiquette sélectionnée."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Réinitialiser l'icône des étiquettes sélectionnées. Ceci fonctionne avec une "
 "sélection multiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marquer toutes les étiquettes qui ne sont pas assignées à des images."
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:764
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 "Inverser la sélection. Visible uniquement quand des éléments sont "
 "sélectionnés."
 
-#: core/libs/tags/manager/tagsmanager.cpp:766
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Les éléments sélectionnés seront développés"
 
-#: core/libs/tags/manager/tagsmanager.cpp:768
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Développer la totalité de l'arborescence d'étiquettes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:770
+#: core/libs/tags/manager/tagsmanager.cpp:771
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Réduire la totalité de l'arborescence d'étiquettes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:772
+#: core/libs/tags/manager/tagsmanager.cpp:773
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Supprimer l(es) étiquette(s) sélectionnée(s). Ceci fonctionne avec une "
 "sélection multiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Écrire les étiquettes de la base de données dans l'image"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Lire les étiquettes à partir de l'image"
 
-#: core/libs/tags/manager/tagsmanager.cpp:822
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Effacer toutes les étiquettes de la base de donnée uniquement"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Écrire les métadonnées d'étiquettes dans l'image"
 
-#: core/libs/tags/manager/tagsmanager.cpp:826
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Lire les étiquettes à partir de l'image dans la base de données. Les "
 "étiquettes existantes ne seront pas modifiées."
 
-#: core/libs/tags/manager/tagsmanager.cpp:829
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40447,7 +40447,7 @@ msgstr ""
 "Effacer toutes les étiquettes de la base de donnée uniquement. Ceci ne sera "
 "pas synchronisé avec les fichiers. Procédez avec prudence."
 
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -44151,7 +44151,7 @@ msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Ouvrir la boîte de dialogue de configuration…"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
 #, kde-format
 msgid ""
@@ -49449,25 +49449,25 @@ msgctxt "@info"
 msgid "Open localize setup"
 msgstr "Ouvrir les paramètres d'internationalisation"
 
-#: core/libs/widgets/text/localizeselector.cpp:145
+#: core/libs/widgets/text/localizeselector.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "Traduire vers %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:158
+#: core/libs/widgets/text/localizeselector.cpp:159
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Sélectionnez la langue à traduire avec %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:258
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Supprimer cette entrée"
 
-#: core/libs/widgets/text/localizeselector.cpp:259
+#: core/libs/widgets/text/localizeselector.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -59977,7 +59977,7 @@ msgstr ""
 "Impossible de commuter le fichier de verrouillage <b>%1</b>. Voulez-vous "
 "continuer ?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1617
+#: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59993,7 +59993,7 @@ msgstr ""
 "Emplacement : « %4 »\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1624
+#: core/utilities/import/backend/gpcamera.cpp:1623
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -60013,23 +60013,23 @@ msgstr ""
 "Supprimer des dossiers : « %6 »\n"
 "\n"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "oui"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -61064,25 +61064,7 @@ msgstr ""
 "para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -61103,25 +61085,25 @@ msgid ""
 "b> : Photo shot on Sunday</p>"
 msgstr ""
 "<p>Ces expressions peuvent être utilisées pour personnaliser le format de la "
-"date : </p><p><b> « d » :</b> le jour sous la forme d'un nombre sans zéro de "
+"date : </p><p><b> «d » :</b> le jour sous la forme d'un nombre sans zéro de "
 "début (1 à 31), </p><p><b> « dd » :</b> le jour sous la forme d'un nombre, "
 "avec un zéro de début (01 à 31), </p><p><b> « ddd » :</b> le nom du jour "
-"localisé abrégé (ex. « lun » à « dim »), </p><p><b> « jjjj » :</b> le nom du "
-"jour localisé dans sa forme longue (ex. « lundi » à « dimanche »), </"
-"p><p><b> « M » :</b> le mois sous la forme d'un nombre, avec un zéro de "
-"début (01 à 12), </p><p><b> « MM » :</b> le mois sous la forme d'un nombre, "
-"avec un zéro de début (01 à 12), </p><p><b> « MMM » :</b> le nom de mois "
-"localisé abrégé (exemple, « Jan » à « Déc »), </p><p><b> « MMMM » :</b> le "
-"nom de mois localisé dans sa forme longue (Par exemple, « Janvier » à "
-"« Décembre »), </p><p><b> « yy » :</b> l'année sous la forme d'un nombre à "
-"deux chiffres (Par exemple de 00 à 99), </p><p><b> « yyyy » :</b> l'année "
-"sous la forme d'un nombre à quatre chiffres (Par exemple, 2012).</p><p>Tous "
-"les autres caractères d'entrée seront considérés comme du texte. Toute "
-"séquence de caractères entourés de simples quotes sera considérée comme du "
-"texte et non utilisée comme une expression. Par exemple, si la date est le "
-"20 Juillet 1969 : </p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d "
-"yy</b> : Dim Juillet 20 69</p><p><b> « Photo prise le  » jjjj</b> : Photo "
-"prise Dimanche</p>"
+"localisé abrégé (Par exemple, « Lun » à « Dim »), </p><p><b> « dddd » :</b> "
+"le nom du jour localisé dans sa forme longue (Par exemple, « Lundi » à "
+"« Dimanche »), </p><p><b> « M » :</b> le mois sous la forme d'un nombre, "
+"avec un zéro au début (01 à 12), </p><p><b> « MM » :</b> le mois sous la "
+"forme d'un nombre, avec un zéro au début (01 à 12), </p><p><b> « MMM » :</b> "
+"le nom de mois localisé abrégé (Par exemple, « Jan » à « Déc »), </p><p><b> "
+"« MMMM » :</b> le nom de mois localisé dans sa forme longue (Par exemple, "
+"« Janvier » à « Décembre »), </p><p><b> « yy » :</b> l'année sous la forme "
+"d'un nombre à deux chiffres (Par exemple de 00 à 99), </p><p><b> « yyyy » :</"
+"b> l'année sous la forme d'un nombre à quatre chiffres (Par exemple, 2012).</"
+"p><p>Tous les autres caractères d'entrée seront considérés comme du texte. "
+"Toute séquence de caractères entourés de simples quotes sera considérée "
+"comme du texte et non utilisée comme une expression. Par exemple, si la date "
+"est le 20 Juillet 1969 : </p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd "
+"MMMM d yy</b> : Dim Juillet 20 69</p><p><b> « Photo prise le  » jjjj</b> : "
+"Photo prise le Dimanche</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format

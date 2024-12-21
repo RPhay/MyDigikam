@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 01:57+0000\n"
+"POT-Creation-Date: 2024-12-21 02:13+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3240,7 +3240,7 @@ msgid "Tools"
 msgstr "Rīki"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:850
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Help"
@@ -26329,21 +26329,21 @@ msgstr "Aktīvā meklēšana"
 msgid "Current Duplicates Search"
 msgstr "Aktīvā kartes meklēšana"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:238
+#: core/libs/album/engine/albummodificationhelper.cpp:240
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:251
+#: core/libs/album/engine/albummodificationhelper.cpp:253
 #, fuzzy, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr "Šī kolekcija šobrīd nav pieejama."
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -26351,14 +26351,14 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Pārdēvēt albumu (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:287
+#: core/libs/album/engine/albummodificationhelper.cpp:289
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "Pārdēvēt albumu (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:292
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
@@ -27048,7 +27048,7 @@ msgstr "Iezīmjalbums"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28082,31 +28082,31 @@ msgctxt "@title"
 msgid "Image History"
 msgstr "Attēlu redaktors"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:566
+#: core/libs/database/history/itemhistorygraphmodel.cpp:564
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Attēlu saglabāšana"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:576
+#: core/libs/database/history/itemhistorygraphmodel.cpp:574
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Izvēlieties attēlus"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:583
+#: core/libs/database/history/itemhistorygraphmodel.cpp:581
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Izvēlieties attēlus"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:639
+#: core/libs/database/history/itemhistorygraphmodel.cpp:637
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Integrāļa solis:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:853
+#: core/libs/database/history/itemhistorygraphmodel.cpp:851
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28114,7 +28114,7 @@ msgid ""
 "(Original Image)"
 msgstr "Orģinālais attēls:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:858
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -38908,38 +38908,38 @@ msgid "Delete Tags"
 msgstr "Dzēst tagus"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "Attēlu faili"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Nomest taga ikonu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Atlasīt pretēji"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Izvērst tagu koku"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Savērst tagu koku"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Noņemt tagu no attēliem"
@@ -39018,7 +39018,7 @@ msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Tagu pārvaldnieks"
 
-#: core/libs/tags/manager/tagsmanager.cpp:330
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39037,7 +39037,7 @@ msgstr[2] ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:353
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39047,7 +39047,7 @@ msgstr[0] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[1] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[2] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39056,7 +39056,7 @@ msgstr[0] "Dzēst tagu"
 msgstr[1] "Dzēst tagu"
 msgstr[2] "Dzēst tagu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39065,7 +39065,7 @@ msgstr[0] "Dzēst tagu"
 msgstr[1] "Dzēst tagu"
 msgstr[2] "Dzēst tagu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:491
+#: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39073,15 +39073,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:503
-#: core/libs/tags/manager/tagsmanager.cpp:522
+#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:523
 #, fuzzy, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "Šī darbība samazinās attēla krāsu kvalitāti. Vai vēlaties turpināt?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:542
+#: core/libs/tags/manager/tagsmanager.cpp:543
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39089,7 +39089,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:606
+#: core/libs/tags/manager/tagsmanager.cpp:607
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39097,108 +39097,108 @@ msgstr[0] "Vai vēlaties izņemt kolekciju \"%1\" no jūsu kolekciju saraksta?"
 msgstr[1] "Vai vēlaties izņemt kolekciju \"%1\" no jūsu kolekciju saraksta?"
 msgstr[2] "Vai vēlaties izņemt kolekciju \"%1\" no jūsu kolekciju saraksta?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:701
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "&Eksportēt"
 
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Nav nesen piešķirtu tagu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:750
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "Izlīdzināt tekstu pie kreisās malas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:764
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Atlasīt pretēji. Tiks atlasīti tikai redzami attēli"
 
-#: core/libs/tags/manager/tagsmanager.cpp:766
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:768
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Pilnīgi izvērst tagu koku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:770
+#: core/libs/tags/manager/tagsmanager.cpp:771
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Pilnīgi savērst tagu koku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:772
+#: core/libs/tags/manager/tagsmanager.cpp:773
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Ierakstīt metadatus attēlā"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "Pārielasīt metadatus no attēla"
 
-#: core/libs/tags/manager/tagsmanager.cpp:822
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Ierakstīt metadatus attēlā"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Ierakstīt metadatus attēlā"
 
-#: core/libs/tags/manager/tagsmanager.cpp:826
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:829
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -42885,7 +42885,7 @@ msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Atver ielādes logu"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
 #, kde-format
 msgid ""
@@ -49143,26 +49143,26 @@ msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:145
+#: core/libs/widgets/text/localizeselector.cpp:146
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "Vērtējums vienāds ar %1."
 
-#: core/libs/widgets/text/localizeselector.cpp:158
+#: core/libs/widgets/text/localizeselector.cpp:159
 #, fuzzy, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Šeit norādiet krāsu piesātinājuma korekciju."
 
-#: core/libs/widgets/text/localizeselector.cpp:258
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:259
+#: core/libs/widgets/text/localizeselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgctxt "@action"
@@ -59628,7 +59628,7 @@ msgstr "Neizdevās pārslēgt slēgu failam \"%1\"."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1617
+#: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59639,7 +59639,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1624
+#: core/utilities/import/backend/gpcamera.cpp:1623
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59659,23 +59659,23 @@ msgstr ""
 "Dzēst mapes: \"%6\"\n"
 "\n"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "jā"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"

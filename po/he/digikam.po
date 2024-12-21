@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 01:57+0000\n"
+"POT-Creation-Date: 2024-12-21 02:13+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3193,7 +3193,7 @@ msgid "Tools"
 msgstr "&כלים"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:850
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -25503,21 +25503,21 @@ msgstr "חיפוש נוכחי"
 msgid "Current Duplicates Search"
 msgstr "מחיקת חיפוש"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:238
+#: core/libs/album/engine/albummodificationhelper.cpp:240
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:251
+#: core/libs/album/engine/albummodificationhelper.cpp:253
 #, fuzzy, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -25525,14 +25525,14 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "שינוי שם אלבום (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:287
+#: core/libs/album/engine/albummodificationhelper.cpp:289
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "שינוי שם אלבום (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:292
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
@@ -26153,7 +26153,7 @@ msgstr "אוסף-תמונות חדש"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -27088,31 +27088,31 @@ msgctxt "@title"
 msgid "Image History"
 msgstr "עורך תמונה"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:566
+#: core/libs/database/history/itemhistorygraphmodel.cpp:564
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "שמירת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:576
+#: core/libs/database/history/itemhistorygraphmodel.cpp:574
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "בחירת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:583
+#: core/libs/database/history/itemhistorygraphmodel.cpp:581
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "פתיחת תמונות"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:639
+#: core/libs/database/history/itemhistorygraphmodel.cpp:637
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "צעד אינטגרלי:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:853
+#: core/libs/database/history/itemhistorygraphmodel.cpp:851
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27120,7 +27120,7 @@ msgid ""
 "(Original Image)"
 msgstr "תמונה מקורית:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:858
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -37606,38 +37606,38 @@ msgid "Delete Tags"
 msgstr "מחיקת תווית"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "קובצי תמונת"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "מחיקת צלמית התווית"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "היפוך בחירה"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, fuzzy, kde-format
 msgid "Collapse Tag Tree"
 msgstr "אוספי-התמונות שלי"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
@@ -37718,7 +37718,7 @@ msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "ניהול זכויות יוצרים"
 
-#: core/libs/tags/manager/tagsmanager.cpp:330
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -37734,7 +37734,7 @@ msgstr[1] ""
 "בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
 "האם להמשיך?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:353
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -37747,7 +37747,7 @@ msgstr[1] ""
 "בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
 "האם להמשיך?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -37755,7 +37755,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "מחיקת תווית"
 msgstr[1] "מחיקת תווית"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -37763,7 +37763,7 @@ msgid_plural "Delete tags"
 msgstr[0] "מחיקת תווית"
 msgstr[1] "מחיקת תווית"
 
-#: core/libs/tags/manager/tagsmanager.cpp:491
+#: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -37771,15 +37771,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:503
-#: core/libs/tags/manager/tagsmanager.cpp:522
+#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:523
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:542
+#: core/libs/tags/manager/tagsmanager.cpp:543
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -37787,115 +37787,115 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:606
+#: core/libs/tags/manager/tagsmanager.cpp:607
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
 msgstr[1] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:701
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "ייצא"
 
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "לא קיימות תוויות ששויכו לאחרונה"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:750
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "אתחול התוכן"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:764
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:766
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:768
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "מצגת-שקפים"
 
-#: core/libs/tags/manager/tagsmanager.cpp:770
+#: core/libs/tags/manager/tagsmanager.cpp:771
 #, fuzzy, kde-format
 msgid "Collapse tag tree completely"
 msgstr "מצגת-שקפים"
 
-#: core/libs/tags/manager/tagsmanager.cpp:772
+#: core/libs/tags/manager/tagsmanager.cpp:773
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
 
-#: core/libs/tags/manager/tagsmanager.cpp:822
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:826
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:829
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -41433,7 +41433,7 @@ msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "פתיחת חלון העתקת תמונות מהמצלמה"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
 #, kde-format
 msgid ""
@@ -46956,26 +46956,26 @@ msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:145
+#: core/libs/widgets/text/localizeselector.cpp:146
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "שינוי שם פריט (%1)"
 
-#: core/libs/widgets/text/localizeselector.cpp:158
+#: core/libs/widgets/text/localizeselector.cpp:159
 #, fuzzy, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
-#: core/libs/widgets/text/localizeselector.cpp:258
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "הסרת תוויות זו"
 
-#: core/libs/widgets/text/localizeselector.cpp:259
+#: core/libs/widgets/text/localizeselector.cpp:260
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -57042,7 +57042,7 @@ msgstr ""
 "בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
 "האם להמשיך?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1617
+#: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57053,7 +57053,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1624
+#: core/utilities/import/backend/gpcamera.cpp:1623
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57069,24 +57069,24 @@ msgstr ""
 "b><br/>פריטים שהועתקו למצלמה: <b>%4</b><br/>תיקיות שנוצרו: <b>%5</b><br/"
 ">תיקיות שנמחקו: <b>%6</b><br/><br/>"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "כן"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"

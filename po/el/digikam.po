@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 01:57+0000\n"
+"POT-Creation-Date: 2024-12-21 02:13+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3237,7 +3237,7 @@ msgid "Tools"
 msgstr "Εργαλεία"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:850
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Βοήθεια"
@@ -28195,14 +28195,14 @@ msgstr "Τρέχουσα αναζήτηση"
 msgid "Current Duplicates Search"
 msgstr "Τρέχουσα αναζήτηση αντιγράφων"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:238
+#: core/libs/album/engine/albummodificationhelper.cpp:240
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:251
+#: core/libs/album/engine/albummodificationhelper.cpp:253
 #, fuzzy, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
@@ -28211,7 +28211,7 @@ msgstr ""
 "Το αρχικό αρχείο (<filename>%1</filename>) δεν είναι αυτήν τη στιγμή "
 "διαθέσιμο"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -28219,14 +28219,14 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Μετονομασία λευκώματος (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:287
+#: core/libs/album/engine/albummodificationhelper.cpp:289
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "Μετονομασία λευκώματος (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:292
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
@@ -28968,7 +28968,7 @@ msgstr "Τίτλοι λευκώματος"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -30084,31 +30084,31 @@ msgctxt "@title"
 msgid "Image History"
 msgstr "Ιστορικό εικόνων"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:566
+#: core/libs/database/history/itemhistorygraphmodel.cpp:564
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Παράγωγες εικόνες"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:576
+#: core/libs/database/history/itemhistorygraphmodel.cpp:574
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Συναφείς εικόνες"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:583
+#: core/libs/database/history/itemhistorygraphmodel.cpp:581
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Ταυτόσημες εικόνες"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:639
+#: core/libs/database/history/itemhistorygraphmodel.cpp:637
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Ενδιάμεσα βήματα:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:853
+#: core/libs/database/history/itemhistorygraphmodel.cpp:851
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -30118,7 +30118,7 @@ msgstr ""
 "%1\n"
 "(Αρχική εικόνα)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:858
+#: core/libs/database/history/itemhistorygraphmodel.cpp:856
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -41731,39 +41731,39 @@ msgid "Delete Tags"
 msgstr "Διαγραφή ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Επεξεργασία τίτλου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Επαναφορά εικονιδίου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Επέκταση δέντρου ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse Tag Tree"
 msgstr "Αντιγραφή λευκωμάτων..."
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Διαγραφή ετικέτας από τις εικόνες"
@@ -41856,7 +41856,7 @@ msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Διαχειριστής ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:330
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -41872,7 +41872,7 @@ msgstr[1] ""
 "Οι ετικέτες %2 έχουν μία ή περισσότερες υποετικέτες. Με τη διαγραφή των "
 "ετικετών θα διαγραφούν και οι υποετικέτες. Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:353
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -41885,7 +41885,7 @@ msgstr[1] ""
 "Οι ετικέτες %2 έχουν οριστεί σε ένα ή περισσότερα αντικείμενα. Θέλετε να τις "
 "διαγράψετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -41893,7 +41893,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Να διαγραφεί η ετικέτα %2;"
 msgstr[1] "Να διαγραφούν οι ετικέτες %2;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -41903,7 +41903,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Διαγραφή ετικέτας"
 msgstr[1] "Διαγραφή ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:491
+#: core/libs/tags/manager/tagsmanager.cpp:492
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -41919,8 +41919,8 @@ msgstr ""
 "τις αναγνώσατε προηγουμένως (καλώντας το Ανάγνωση ετικετών από εικόνα).<br> "
 "Θέλετε να συνεχίσετε;<qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:503
-#: core/libs/tags/manager/tagsmanager.cpp:522
+#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:523
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -41930,7 +41930,7 @@ msgstr ""
 "συλλογής.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:542
+#: core/libs/tags/manager/tagsmanager.cpp:543
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -41942,7 +41942,7 @@ msgstr ""
 "ετεροχρονισμένα η εγγραφή μεταδεδομένων στο αρχείο.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:606
+#: core/libs/tags/manager/tagsmanager.cpp:607
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -41951,7 +41951,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Επιθυμείτε την αφαίρεση των επιλεγμένων ετικετών από όλες τις εικόνες;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -41959,27 +41959,27 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Οργάνωση"
 
-#: core/libs/tags/manager/tagsmanager.cpp:701
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Συγχρονισμένη &εξαγωγή"
 
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, fuzzy, kde-format
 #| msgid "Delete Unassigned Tags"
 msgid "Mark Unassigned Tags"
 msgstr "Δισγρσφή μη αντιστοιχισμένων ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:750
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Προσθήκη νέας ετικέτας στην τρέχουσα. Η τρέχουσα είναι εκείνη στην οποία "
 "έγινε κλικ πιο πρόσφατα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -41991,19 +41991,19 @@ msgstr ""
 "Διαγραφή επιλεγμένων αντικειμένων. Λειτουργεί και με πολλαπλά αντικείμενα, "
 "αλλά δεν θα διαγράψει τη ριζική ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Επεξεργασία τίτλου από επιλεγμένη ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Επαναφορά εικονιδίου στις επιλεγμένες ετικέτες. Λειτουργεί με πολλαπλή "
 "επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, fuzzy, kde-format
 #| msgid "Delete all tags that are not assigned to images. Use with caution."
 msgid "Mark all tags that are not assigned to images."
@@ -42011,55 +42011,55 @@ msgstr ""
 "Διαγραφή όλων των ετικετών που δεν αντιστοιχούν σε εικόνες. Χρησιμοποιήστε "
 "το με προσοχή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:764
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Αντιστροφή επιλογής. Μόνο ορατά αντικείμενα θα επιλεγούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:766
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Τα επιλεγμένα αντικείμενα θα επεκταθούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:768
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Επέκταση του δέντρου ετικετών κατά ένα επίπεδο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:770
+#: core/libs/tags/manager/tagsmanager.cpp:771
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "Η λήψη ολοκληρώθηκε..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:772
+#: core/libs/tags/manager/tagsmanager.cpp:773
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Διαγραφή επιλεγμένων ετικετών από εικόνες. Λειτουργεί με πολλαπλή επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Εγγραφή ετικετών από τη βάση δεδομένων σε εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ανάγνωση ετικετών από εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:822
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Καθαρισμός όλων των ετικετών από τη βάση δεδομένων μόνο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Εγγραφή μεταδεδομένων ετικετών σε εικόνα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:826
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -42067,7 +42067,7 @@ msgstr ""
 "Ανάγνωση ετικετών από εικόνες στη βάση δεδομένων. Οι υπάρχουσες ετικέτες δεν "
 "θα επηρεαστούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:829
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -42076,7 +42076,7 @@ msgstr ""
 "Διαγραφή όλων των ετικετών από τη βάση δεδομένων μόνο. Δεν θα γίνει "
 "συγχρονισμός με αρχεία. Προχωρήστε με προσοχή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -45985,7 +45985,7 @@ msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Άνοιγμα του διαλόγου λήψης αρχείων..."
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
 #, kde-format
 msgid ""
@@ -52246,28 +52246,28 @@ msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:145
+#: core/libs/widgets/text/localizeselector.cpp:146
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "Πλοήγηση στο %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:158
+#: core/libs/widgets/text/localizeselector.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Επιλέξτε εδώ τη γλώσσα του περιεχομένου."
 
-#: core/libs/widgets/text/localizeselector.cpp:258
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Αφαίρεση αυτής της ετικέτας"
 
-#: core/libs/widgets/text/localizeselector.cpp:259
+#: core/libs/widgets/text/localizeselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgctxt "@action"
@@ -63372,7 +63372,7 @@ msgstr "Αποτυχία εναλλαγής κλειδώματος του αρχ
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/gpcamera.cpp:1617
+#: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -63383,7 +63383,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1624
+#: core/utilities/import/backend/gpcamera.cpp:1623
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -63399,24 +63399,24 @@ msgstr ""
 "αντικειμένων: <b>%3</b><br/>Αποστολή αντικειμένων: <b>%4</b><br/>Δημιουργία "
 "καταλόγων: <b>%5</b><br/>Διαγραφή καταλόγων: <b>%6</b><br/><br/>"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "ναι"
 
+#: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
 #: core/utilities/import/backend/gpcamera.cpp:1631
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#: core/utilities/import/backend/gpcamera.cpp:1635
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"
