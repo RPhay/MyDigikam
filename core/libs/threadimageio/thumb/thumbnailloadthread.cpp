@@ -131,13 +131,27 @@ void ThumbnailLoadThread::cleanUp()
     defaultThread()->wait();
 }
 
-void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& params, ThumbnailInfoProvider* const provider)
+void ThumbnailLoadThread::initializeNoThumbnailStorage()
+{
+    if (static_d->firstThreadCreated)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Call initializeNoThumbnailStorage at application start. "
+                                        "There are already thumbnail loading threads created, "
+                                        "and these will not be switched to disable storage.";
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "No storage of thumbnails in the disk cache";
+    static_d->storageMethod = ThumbnailCreator::NoThumbnailStorage;
+}
+
+void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& params,
+                                                      ThumbnailInfoProvider* const provider)
 {
     if (static_d->firstThreadCreated)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Call initializeThumbnailDatabase at application start. "
                                         "There are already thumbnail loading threads created, "
-                                        "and these will not be switched to use the database. ";
+                                        "and these will not be switched to use the database.";
     }
 
     ThumbsDbAccess::setParameters(params);
@@ -150,7 +164,9 @@ void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& 
     }
     else
     {
-        QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "Failed to Initialize Thumbnails Database"),
+        QMessageBox::information(qApp->activeWindow(),
+                                 i18nc("@title:window",
+                                       "Failed to Initialize Thumbnails Database"),
                                  i18n("Error message: %1", ThumbsDbAccess().lastError()));
     }
 }

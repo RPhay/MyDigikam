@@ -241,6 +241,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier,
                 break;
             }
 
+            case NoThumbnailStorage:
             case FreeDesktopStandard:
             {
                 image = loadFreedesktop(info);
@@ -283,6 +284,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier,
                 break;
             }
 
+            case NoThumbnailStorage:
             case FreeDesktopStandard:
             {
                 image = createThumbnail(info, rect);
@@ -296,7 +298,10 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier,
                         image.qimage = exifRotate(image.qimage, image.exifOrientation);
                     }
 
-                    storeFreedesktop(info, image);
+                    if (d->thumbnailStorage == FreeDesktopStandard)
+                    {
+                        storeFreedesktop(info, image);
+                    }
                 }
 
                 break;
@@ -437,7 +442,7 @@ void ThumbnailCreator::storeDetailThumbnail(const QString& path, const QRect& de
 
 void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& rect) const
 {
-    if (i.isNull())
+    if (i.isNull() || (d->thumbnailStorage == NoThumbnailStorage))
     {
         return;
     }
@@ -464,6 +469,11 @@ void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& 
         case FreeDesktopStandard:
         {
             storeFreedesktop(info, image);
+            break;
+        }
+
+        default:
+        {
             break;
         }
     }
@@ -493,6 +503,11 @@ void ThumbnailCreator::deleteThumbnailsFromDisk(const QString& filePath) const
             }
 
             deleteFromDatabase(info);
+            break;
+        }
+
+        default:
+        {
             break;
         }
     }

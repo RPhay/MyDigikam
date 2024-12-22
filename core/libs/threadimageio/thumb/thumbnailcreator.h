@@ -43,6 +43,7 @@ public:
 
     enum StorageMethod
     {
+        NoThumbnailStorage,
         FreeDesktopStandard,
         ThumbnailDatabase
     };

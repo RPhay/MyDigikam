@@ -51,6 +51,13 @@ public:
 
     static void cleanUp();
 
+   /**
+     * Disable storing thumbnails in the disk cache.
+     * This shall be called once at application startup.
+     * This need not be called, then the FreeDesktop standard is used.
+     */
+    static void initializeNoThumbnailStorage();
+
     /**
      * Enable loading of thumbnails from a thumbnail database.
      * This shall be called once at application startup.

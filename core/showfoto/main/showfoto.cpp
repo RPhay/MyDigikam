@@ -33,17 +33,10 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // Show splash-screen at start up.
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(configGroupName());
-    KConfigGroup sgroup       = config->group(QLatin1String("ImageViewer Settings"));
-    QString iconTheme         = sgroup.readEntry(QLatin1String("Icon Theme"), QString());
-
-    if (!iconTheme.isEmpty())
-    {
-        QIcon::setThemeName(iconTheme);
-    }
-
-    if (group.readEntry(QLatin1String("ShowSplash"), true) && !qApp->isSessionRestored())
+    if (
+        ShowfotoSettings::instance()->getShowSplash() &&
+        !qApp->isSessionRestored()
+       )
     {
         d->splash = new Digikam::DSplashScreen();
         d->splash->show();
@@ -54,10 +47,6 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     setStateConfigGroup(configGroupName());
 
 #endif
-
-    // We need here QCoreApplication::processEvents() ?
-
-    qApp->processEvents();
 
     // Setup loading cache and thumbnails interface.
 
@@ -86,6 +75,11 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     ExifToolThread* const exifToolThread = new ExifToolThread(this);
     exifToolThread->start();
+
+    if (!ShowfotoSettings::instance()->getCacheThumbs())
+    {
+        ThumbnailLoadThread::initializeNoThumbnailStorage();
+    }
 
     d->thumbLoadThread = new Digikam::ThumbnailLoadThread();
     d->thumbLoadThread->setThumbnailSize(Digikam::ThumbnailSize::Huge);
