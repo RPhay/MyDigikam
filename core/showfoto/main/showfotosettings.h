@@ -79,6 +79,9 @@ public:
     bool getItemCenter() const;
     void setItemCenter(bool item);
 
+    bool getCacheThumbs() const;
+    void setCacheThumbs(bool item);
+
     int  getSortRole() const;
     void setSortRole(int order);
 

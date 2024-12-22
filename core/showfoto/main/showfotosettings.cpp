@@ -49,6 +49,7 @@ public:
     bool             showSplash                 = true;
     bool             nativeFileDialog           = false;
     bool             itemCenter                 = false;
+    bool             cacheThumbs                = true;
     bool             reverseSort                = false;
 
     bool             showToolTip                = true;
@@ -102,6 +103,7 @@ public:
     const QString configShowSplash              = QLatin1String("ShowSplash");
     const QString configNativeFileDialog        = QLatin1String("Use Native File Dialog");
     const QString configItemCenter              = QLatin1String("Item To Center");
+    const QString configCacheThumbs             = QLatin1String("Cache Thumbs On Disk");
     const QString configSortOrder               = QLatin1String("SortOrder");
     const QString configReverseSort             = QLatin1String("ReverseSort");
 
@@ -214,6 +216,7 @@ void ShowfotoSettings::readSettings()
 #endif
 
     d->itemCenter              = group.readEntry(d->configItemCenter,              false);
+    d->cacheThumbs             = group.readEntry(d->configCacheThumbs,             true);
     d->sortOrder               = group.readEntry(d->configSortOrder,               0);
     d->reverseSort             = group.readEntry(d->configReverseSort,             false);
     d->showFormatOverThumbnail = group.readEntry(d->configShowFormatOverThumbnail, false);
@@ -307,6 +310,11 @@ bool ShowfotoSettings::getNativeFileDialog() const
 bool ShowfotoSettings::getItemCenter() const
 {
     return d->itemCenter;
+}
+
+bool ShowfotoSettings::getCacheThumbs() const
+{
+    return d->cacheThumbs;
 }
 
 int ShowfotoSettings::getSortRole() const
@@ -550,6 +558,11 @@ void ShowfotoSettings::setNativeFileDialog(bool item)
 void ShowfotoSettings::setItemCenter(bool item)
 {
     d->group.writeEntry(d->configItemCenter, item);
+}
+
+void ShowfotoSettings::setCacheThumbs(bool item)
+{
+    d->group.writeEntry(d->configCacheThumbs, item);
 }
 
 void ShowfotoSettings::setSortRole(int order)

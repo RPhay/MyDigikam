@@ -74,6 +74,7 @@ public:
     QCheckBox*            showSplash            = nullptr;
     QCheckBox*            nativeFileDialog      = nullptr;
     QCheckBox*            itemCenter            = nullptr;
+    QCheckBox*            cacheThumbs           = nullptr;
     QCheckBox*            showMimeOverImage     = nullptr;
     QCheckBox*            showCoordinates       = nullptr;
     QCheckBox*            sortReverse           = nullptr;
@@ -148,10 +149,13 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     d->showCoordinates   = new QCheckBox(i18n("&Show Geolocation Indicator"), thOptionsGroup);
     d->showCoordinates->setWhatsThis(i18n("Set this option to indicate if image has geolocation information."));
     d->itemCenter        = new QCheckBox(i18n("Scroll current item to center of thumbbar"), thOptionsGroup);
+    d->cacheThumbs       = new QCheckBox(i18n("Store thumbnails in the disk cache for faster reuse"), thOptionsGroup);
+    d->cacheThumbs->setWhatsThis(i18n("Disable this option if you do not want thumbnails to be cached on the disk."));
 
     gLayout3->addWidget(d->showMimeOverImage);
     gLayout3->addWidget(d->showCoordinates);
     gLayout3->addWidget(d->itemCenter);
+    gLayout3->addWidget(d->cacheThumbs);
     thOptionsGroup->setLayout(gLayout3);
 
     // Update Options ----------------------------------------
@@ -385,6 +389,7 @@ void ShowfotoSetupMisc::readSettings()
     d->showSplash->setChecked(d->settings->getShowSplash());
     d->nativeFileDialog->setChecked(d->settings->getNativeFileDialog());
     d->itemCenter->setChecked(d->settings->getItemCenter());
+    d->cacheThumbs->setChecked(d->settings->getCacheThumbs());
     d->showMimeOverImage->setChecked(d->settings->getShowFormatOverThumbnail());
     d->showCoordinates->setChecked(d->settings->getShowCoordinates());
     d->sidebarType->setCurrentIndex(d->settings->getRightSideBarStyle());
@@ -412,6 +417,7 @@ void ShowfotoSetupMisc::applySettings()
     d->settings->setShowSplash(d->showSplash->isChecked());
     d->settings->setNativeFileDialog(d->nativeFileDialog->isChecked());
     d->settings->setItemCenter(d->itemCenter->isChecked());
+    d->settings->setCacheThumbs(d->cacheThumbs->isChecked());
     d->settings->setShowFormatOverThumbnail(d->showMimeOverImage->isChecked());
     d->settings->setShowCoordinates(d->showCoordinates->isChecked());
     d->settings->setRightSideBarStyle(d->sidebarType->currentIndex());
