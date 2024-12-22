@@ -149,8 +149,8 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     d->showCoordinates   = new QCheckBox(i18n("&Show Geolocation Indicator"), thOptionsGroup);
     d->showCoordinates->setWhatsThis(i18n("Set this option to indicate if image has geolocation information."));
     d->itemCenter        = new QCheckBox(i18n("Scroll current item to center of thumbbar"), thOptionsGroup);
-    d->cacheThumbs       = new QCheckBox(i18n("Store thumbnails in the disk cache for faster reuse"), thOptionsGroup);
-    d->cacheThumbs->setWhatsThis(i18n("Disable this option if you do not want thumbnails to be cached on the disk."));
+    d->cacheThumbs       = new QCheckBox(i18n("Store thumbnails on disk for faster reuse"), thOptionsGroup);
+    d->cacheThumbs->setWhatsThis(i18n("Disable this option if you do not want thumbnails to be cached on disk."));
 
     gLayout3->addWidget(d->showMimeOverImage);
     gLayout3->addWidget(d->showCoordinates);
