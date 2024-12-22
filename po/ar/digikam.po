@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 02:13+0000\n"
+"POT-Creation-Date: 2024-12-22 01:52+0000\n"
 "PO-Revision-Date: 2024-10-14 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -58972,13 +58972,13 @@ msgid ""
 "\"%1\""
 msgstr ""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "قبل"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -60487,34 +60487,34 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "فعّل هذا الخيار لتحويل صور RAW إلى حاويات DNG آليًّا."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:317
+#: core/utilities/import/widgets/freespacewidget.cpp:316
 #, fuzzy, kde-format
 #| msgid "Camera date"
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "تاريخ الكمرة"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:321
+#: core/utilities/import/widgets/freespacewidget.cpp:320
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "الألبوم المكتبة المسار"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
-#: core/utilities/import/widgets/freespacewidget.cpp:342
+#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:341
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "السّعة:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
-#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:333
+#: core/utilities/import/widgets/freespacewidget.cpp:344
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "المتوفّر:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:337
+#: core/utilities/import/widgets/freespacewidget.cpp:336
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -64876,7 +64876,7 @@ msgid "Save Settings"
 msgstr "إعدادات الحفظ"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:102
-#: core/utilities/setup/setuplighttable.cpp:76
+#: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "خيارات الواجهة"
@@ -67298,36 +67298,36 @@ msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "رتّب صور"
 
-#: core/utilities/setup/setuplighttable.cpp:79
+#: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:80
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:84
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:86
+#: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:89
+#: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "امسح ما على الطّاولة الضّوئيّة إن أُغلقت"
 
-#: core/utilities/setup/setuplighttable.cpp:90
+#: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "

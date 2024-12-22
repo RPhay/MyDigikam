@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 02:13+0000\n"
+"POT-Creation-Date: 2024-12-22 01:52+0000\n"
 "PO-Revision-Date: 2024-11-28 20:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -59297,13 +59297,13 @@ msgstr ""
 "Неуспешно зареждане на изображение\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Преди"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -60871,33 +60871,33 @@ msgstr ""
 "Разрешете тази опция, за да конвертирате автоматично RAW изображенията в DNG "
 "контейнер."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:317
+#: core/utilities/import/widgets/freespacewidget.cpp:316
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Медиа на камера"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:321
+#: core/utilities/import/widgets/freespacewidget.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Библиотека с албуми"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
-#: core/utilities/import/widgets/freespacewidget.cpp:342
+#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:341
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Размер:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
-#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:333
+#: core/utilities/import/widgets/freespacewidget.cpp:344
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Свободни:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:337
+#: core/utilities/import/widgets/freespacewidget.cpp:336
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -65305,7 +65305,7 @@ msgid "Save Settings"
 msgstr "Запазване на настройките"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:102
-#: core/utilities/setup/setuplighttable.cpp:76
+#: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "Настройки на интерфейса"
@@ -68009,12 +68009,12 @@ msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "естетическо качество на изображението"
 
-#: core/utilities/setup/setuplighttable.cpp:79
+#: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "Синхронизиране на панелите автоматично"
 
-#: core/utilities/setup/setuplighttable.cpp:80
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
@@ -68023,12 +68023,12 @@ msgstr ""
 "Задайте тази опция, за да синхронизирате автоматично мащабирането и "
 "панорамата между левия и десния панел, ако изображенията са с еднакъв размер."
 
-#: core/utilities/setup/setuplighttable.cpp:84
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "Избирането на елемент с палче зарежда изображението в десния панел"
 
-#: core/utilities/setup/setuplighttable.cpp:86
+#: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
@@ -68037,12 +68037,12 @@ msgstr ""
 "Задайте тази опция, за да зареждате автоматично изображение в десния панел, "
 "когато съответният елемент е избран на лентата с палци."
 
-#: core/utilities/setup/setuplighttable.cpp:89
+#: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "Изчистване на светлинната маса при затваряне"
 
-#: core/utilities/setup/setuplighttable.cpp:90
+#: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "

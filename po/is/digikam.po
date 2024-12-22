@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 02:13+0000\n"
+"POT-Creation-Date: 2024-12-22 01:52+0000\n"
 "PO-Revision-Date: 2024-12-18 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -58633,13 +58633,13 @@ msgstr ""
 "Gat ekki hlaðið inn myndinni\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Fyrir"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -60172,33 +60172,33 @@ msgstr ""
 "Virkjaðu þennan valkost til að breyta RAW ljósmyndum sjálfkrafa í DNG "
 "gagnagám."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:317
+#: core/utilities/import/widgets/freespacewidget.cpp:316
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Geymslumiðlar myndavélar"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:321
+#: core/utilities/import/widgets/freespacewidget.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Albúmasafn"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
-#: core/utilities/import/widgets/freespacewidget.cpp:342
+#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:341
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Rýmd:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
-#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:333
+#: core/utilities/import/widgets/freespacewidget.cpp:344
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Tiltækt:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:337
+#: core/utilities/import/widgets/freespacewidget.cpp:336
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -64541,7 +64541,7 @@ msgid "Save Settings"
 msgstr "Stillingar vistunar"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:102
-#: core/utilities/setup/setuplighttable.cpp:76
+#: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "Viðmótsstillingar"
@@ -67181,12 +67181,12 @@ msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "fagurfræðileg gæði myndar"
 
-#: core/utilities/setup/setuplighttable.cpp:79
+#: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "Samræma skjáina sjálfvirkt"
 
-#: core/utilities/setup/setuplighttable.cpp:80
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
@@ -67195,12 +67195,12 @@ msgstr ""
 "Veldu þennan möguleika til að samræma sjálfvirkt aðdrátt og hliðrun á milli "
 "hægri og vinsti skjánna ef myndirnar eru í sömu stærð."
 
-#: core/utilities/setup/setuplighttable.cpp:84
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "Að velja atriði á smámyndastiku hleður myndinni í hægri skjáinn"
 
-#: core/utilities/setup/setuplighttable.cpp:86
+#: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
@@ -67209,12 +67209,12 @@ msgstr ""
 "Veldu þetta til að hlaða mynd sjálfvirkt inn í hægri skjáinn þegar "
 "samsvarandi atriði er valið á smámyndastiku."
 
-#: core/utilities/setup/setuplighttable.cpp:89
+#: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "Hreinsa ljósaborð við lokun"
 
-#: core/utilities/setup/setuplighttable.cpp:90
+#: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "

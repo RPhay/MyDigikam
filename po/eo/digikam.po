@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 02:13+0000\n"
+"POT-Creation-Date: 2024-12-22 01:52+0000\n"
 "PO-Revision-Date: 2024-09-21 22:27+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -58619,13 +58619,13 @@ msgstr ""
 "Malsukcesis ŝargi bildon\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Antaŭ"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -60172,33 +60172,33 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "Ebligu ĉi tiun opcion por konverti RAW-bildojn al DNG-ujo aŭtomate."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:317
+#: core/utilities/import/widgets/freespacewidget.cpp:316
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Fotilo Media"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:321
+#: core/utilities/import/widgets/freespacewidget.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Albumbiblioteko"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
-#: core/utilities/import/widgets/freespacewidget.cpp:342
+#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:341
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Kapacito:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
-#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:333
+#: core/utilities/import/widgets/freespacewidget.cpp:344
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Disponebla:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:337
+#: core/utilities/import/widgets/freespacewidget.cpp:336
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -64614,7 +64614,7 @@ msgid "Save Settings"
 msgstr "Konservi Agordojn"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:102
-#: core/utilities/setup/setuplighttable.cpp:76
+#: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "Interfac-Opcioj"
@@ -67268,12 +67268,12 @@ msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "estetika bildkvalito"
 
-#: core/utilities/setup/setuplighttable.cpp:79
+#: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "Sinkronigi panelojn aŭtomate"
 
-#: core/utilities/setup/setuplighttable.cpp:80
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
@@ -67282,12 +67282,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por aŭtomate sinkronigi zomi kaj panoramo inter "
 "maldekstraj kaj dekstraj paneloj se la bildoj havas la saman grandecon."
 
-#: core/utilities/setup/setuplighttable.cpp:84
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "Elektante bildeton ŝargas la bildon al la dekstra panelo"
 
-#: core/utilities/setup/setuplighttable.cpp:86
+#: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
@@ -67296,12 +67296,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por aŭtomate ŝargi bildon en la dekstran panelon kiam "
 "la responda ero estas elektita sur la bildeto."
 
-#: core/utilities/setup/setuplighttable.cpp:89
+#: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "Malplenigi la lumtablon ĉe fermo"
 
-#: core/utilities/setup/setuplighttable.cpp:90
+#: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "
