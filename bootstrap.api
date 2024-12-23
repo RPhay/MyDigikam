@@ -44,13 +44,13 @@ fi
 command -v $QTPATHS >/dev/null 2>&1 || { echo >&2 "This script require $QTPATHS CLI tool from Qt project but it's not installed. Aborting."; exit 1; }
 
 MAKEFILES_TYPE='Unix Makefiles'
-BUILDDIR=$PWD"/build.api"
-API_DIR=$PWD"/html"
+CURRENT_DIR=$PWD
+BUILDDIR=$CURRENT_DIR"/build.api"
 LIBPATH="lib64"
 CMAKE_BINARY="cmake"
 CURRENT_DATE=`date +"%Y-%m-%d"`
 TARBALL_FILE="digiKam-apidoc-$CURRENT_DATE.tar.xz"
-TARBALL_PATH="$PWD/$TARBALL_FILE"
+TARBALL_PATH="$CURRENT_DIR/$TARBALL_FILE"
 
 QT_INSTALL_PREFIX=`$QTPATHS --install-prefix`
 QT_PLUGIN_INSTALL_DIR=`$QTPATHS --plugin-dir`
@@ -94,7 +94,7 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
 
 make -j4 doc
 
-XZ_OPT=-9 tar cJf $TARBALL_PATH $API_DIR
+XZ_OPT=-9 tar cJf $TARBALL_PATH -C $CURRENT_DIR ./html
 
 rm -fr $BUILDDIR
-rm -fr $API_DIR
+rm -fr $CURRENT_DIR/html
