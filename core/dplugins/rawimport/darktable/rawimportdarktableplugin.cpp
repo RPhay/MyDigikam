@@ -227,7 +227,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
                                              << QString::fromUtf8("dofile('%1')")
                                                 .arg(d->luaTempFile->safeFilePath())                       // LUA script to run in DarkTable
                                              << QLatin1String("--conf")
-                                             << QLatin1String("plugins/lighttable/export/icctype=3")       // Output color-space
+                                             << QLatin1String("plugins/lighttable/export/icctype=-1")      // Output color-space
                                              << QLatin1String("--conf")
                                              << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
                                                 .arg(d->tempName)                                          // Output file
