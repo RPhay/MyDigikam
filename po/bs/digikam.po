@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 01:52+0000\n"
+"POT-Creation-Date: 2024-12-23 01:51+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1465,13 +1465,13 @@ msgstr "<i>Binarni podaci</i>"
 msgid "Initializing..."
 msgstr "Inicijalizacija..."
 
-#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:110
 #, fuzzy, kde-format
 #| msgid "Loading KIPI Plugins..."
 msgid "Load Plugins..."
 msgstr "Učitavanje KIPI Plugins..."
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Provjeravanje ICC spremnika..."
@@ -42931,7 +42931,7 @@ msgstr "Upotrebe:"
 msgid "No or invalid size specified"
 msgstr "Određena je nepostojeća ili nepravilna veličina"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Umanjena slika je prazna"
@@ -42947,14 +42947,14 @@ msgstr "Selektovani folder ne postoji ili se ne može učitati."
 msgid "Cannot create thumbnail for %1"
 msgstr "Ne mogu da napravim umanjeni prikaz za %1"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:169
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Neuspješna inicijalizacija baze podataka o umanjenim prikazima"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:170
 #, kde-format
 msgid "Error message: %1"
 msgstr "Poruka greške: %1"
@@ -45141,7 +45141,7 @@ msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:273
+#: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -53109,12 +53109,12 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Datoteke ili direktoriji za otvaranje"
 
-#: core/showfoto/main/showfoto.cpp:107
+#: core/showfoto/main/showfoto.cpp:101
 #, kde-format
 msgid "Loading themes..."
 msgstr "Učitavanje tema..."
 
-#: core/showfoto/main/showfoto.cpp:232
+#: core/showfoto/main/showfoto.cpp:226
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -53125,13 +53125,13 @@ msgstr ""
 "\"Da\", a u protivnom \"Ne\". U ovom slučaju, opcija \"Upravljanje bojama\" "
 "će biti onemogućena dok ovaj problem ne bude riješen</p>"
 
-#: core/showfoto/main/showfoto.cpp:272
+#: core/showfoto/main/showfoto.cpp:266
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/showfoto/main/showfoto.cpp:297
+#: core/showfoto/main/showfoto.cpp:291
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -53487,35 +53487,35 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "Alati"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:121
+#: core/showfoto/setup/showfotosetupmisc.cpp:122
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:125
+#: core/showfoto/setup/showfotosetupmisc.cpp:126
 #, kde-format
 msgid "Sort images by:"
 msgstr "Soprtiraj slike po:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:127
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Datum"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Naziv"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:129
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Veličina datoteke"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:131
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -53524,12 +53524,12 @@ msgstr ""
 "Ovdje,postavite da li će se novoučitane slike sortirati po njihovom datumu,"
 "imenu ili veličini na disku."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Obrnuti redosljed"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:134
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -53538,43 +53538,56 @@ msgstr ""
 "Ako je ova opcija uključena,novoučitane slike će biti sortirane u opadajućem "
 "poretku."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
 msgid "Thumbbar Items"
 msgstr "&Sort stavke"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #, kde-format
 msgid "&Show image Format"
 msgstr "&Prikaži format slike"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:147
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Postavite ovu opciju za prikaz formata slike preko sličice."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:148
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "&Prikaži indikator geolokacije"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/camera/setupcamera.cpp:440
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
 "Postavite ovu opciju da ukaže da li slika ima geolokacijske informacije."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#, kde-format
+msgid "Store thumbnails on disk for faster reuse"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to see icons and text in the image "
+#| "preview."
+msgid "Disable this option if you do not want thumbnails to be cached on disk."
+msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
@@ -53582,7 +53595,7 @@ msgstr ""
 msgid "Updates"
 msgstr "Nadogradnje"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, fuzzy, kde-format
 #| msgctxt ""
@@ -53592,14 +53605,14 @@ msgstr "Nadogradnje"
 msgid "Check for new version:"
 msgstr "Sačuvajte novu verziju kao..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:169
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, fuzzy, kde-format
 #| msgid "Only For Active Tab"
 msgid "Only For Stable Releases"
 msgstr "Samo za aktivni tab"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:166
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, fuzzy, kde-format
 #| msgctxt "Content type"
@@ -53607,7 +53620,7 @@ msgstr "Samo za aktivni tab"
 msgid "Weekly Pre-Releases"
 msgstr "Objava"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:167
+#: core/showfoto/setup/showfotosetupmisc.cpp:171
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid ""
@@ -53618,13 +53631,13 @@ msgid ""
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid ""
@@ -53634,13 +53647,13 @@ msgid ""
 "debugger."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:182
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, fuzzy, kde-format
 #| msgctxt ""
@@ -53650,7 +53663,7 @@ msgstr ""
 msgid "Check now..."
 msgstr "Sačuvajte novu verziju kao..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:207
+#: core/showfoto/setup/showfotosetupmisc.cpp:211
 #: core/utilities/setup/misc/setupmisc.cpp:191
 #, fuzzy, kde-format
 #| msgid "Behavior"
@@ -53658,69 +53671,69 @@ msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Ponašanje"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:214
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:198
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Prikaži &početni ekran pri pokretanju"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:215
+#: core/showfoto/setup/showfotosetupmisc.cpp:219
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Use native file dialogs from the system"
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:218
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #: core/utilities/setup/misc/setupmisc.cpp:203
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Naziv kartice bočne trake :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:224
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Samo za aktivni tab"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "For All Tabs"
 msgstr "Za sve tabove"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:222
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Postavite ovu opciju za konfiguraciju vidljivosti naziva kartice bočnih "
 "traka."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:225
+#: core/showfoto/setup/showfotosetupmisc.cpp:229
 #: core/utilities/setup/misc/setupmisc.cpp:211
 #, kde-format
 msgid "Widget style:"
 msgstr "Stil grafičke kontrole:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
 #: core/utilities/setup/misc/setupmisc.cpp:213
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Postavite ovu opciju da izaberete zadanu dekoraciju i izgled prozora."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:253
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 #| msgid "Set this option to choose the default window decoration and looks."
 msgid "Set this option to choose the default icon theme."
 msgstr "Postavite ovu opciju da izaberete zadanu dekoraciju i izgled prozora."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, fuzzy, kde-format
 #| msgid "Kuwait"
@@ -53728,28 +53741,28 @@ msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Kuvajt"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:258
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/showfoto/setup/showfotosetupmisc.cpp:264
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/showfoto/setup/showfotosetupmisc.cpp:265
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, fuzzy, kde-format
 #| msgid "Luminance"
@@ -53757,34 +53770,34 @@ msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Osvjetljenje"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:295
+#: core/showfoto/setup/showfotosetupmisc.cpp:299
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 #| msgid "Supplication:"
 msgid "Application font:"
 msgstr "Preklinjanje:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:296
+#: core/showfoto/setup/showfotosetupmisc.cpp:300
 #: core/utilities/setup/misc/setupmisc.cpp:280
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
@@ -53792,7 +53805,7 @@ msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Ovdje postavite veličinu koja će se koristiti za prikaz teksta u savjetima."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, fuzzy, kde-format
 #| msgid "Reference:"
@@ -53800,14 +53813,14 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Referenca:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
 #: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:328
 #: core/utilities/setup/misc/setupmisc.cpp:368
 #, fuzzy, kde-format
 #| msgid "Normalize"
@@ -53815,7 +53828,7 @@ msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Normalizuj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:334
 #: core/utilities/setup/misc/setupmisc.cpp:374
 #, fuzzy, kde-format
 #| msgid "System Font"
@@ -53823,7 +53836,7 @@ msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistemski font"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:364
+#: core/showfoto/setup/showfotosetupmisc.cpp:368
 #: core/utilities/setup/misc/setupmisc.cpp:407
 #, kde-format
 msgid ""

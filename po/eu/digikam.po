@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 01:52+0000\n"
+"POT-Creation-Date: 2024-12-23 01:51+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1347,12 +1347,12 @@ msgstr "<i>Datu bitarrak</i>"
 msgid "Initializing..."
 msgstr "Hasieratzen..."
 
-#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Zamatu pluginak..."
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "ICC gordetegia egiaztatzen..."
@@ -41627,7 +41627,7 @@ msgstr "Erabilerak:"
 msgid "No or invalid size specified"
 msgstr "Ez da tamainarik zehaztu, edo baliogabea da"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Koadro txikia hutsik dago"
@@ -41643,13 +41643,13 @@ msgstr "Hautatutako karpeta ez da existitzen edo ez da irakurgarria"
 msgid "Cannot create thumbnail for %1"
 msgstr "Ezin da %1(r)en koadro txikia sortu"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:169
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Huts egin du etiketa datu-baseari gehitzean"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:170
 #, fuzzy, kde-format
 msgid "Error message: %1"
 msgstr "Errore-mezua: %1"
@@ -43825,7 +43825,7 @@ msgid "Mod.: %1"
 msgstr "Eredua"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:273
+#: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -51512,12 +51512,12 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Ireki beharreko fitxategia(k) edo karpeta(k)"
 
-#: core/showfoto/main/showfoto.cpp:107
+#: core/showfoto/main/showfoto.cpp:101
 #, kde-format
 msgid "Loading themes..."
 msgstr "Gaiak zamatzen..."
 
-#: core/showfoto/main/showfoto.cpp:232
+#: core/showfoto/main/showfoto.cpp:226
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -51528,13 +51528,13 @@ msgstr ""
 "nahi baduzu, aukeratu \"Bai\" hemen, bestela aukeratu \"Ez\" eta \"Koloreen "
 "kudeaketa\" eginbidea desgaitu egingo da arazo hau ebatzi arte.</p>"
 
-#: core/showfoto/main/showfoto.cpp:272
+#: core/showfoto/main/showfoto.cpp:266
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/showfoto/main/showfoto.cpp:297
+#: core/showfoto/main/showfoto.cpp:291
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -51883,35 +51883,35 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "Tresnak"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:121
+#: core/showfoto/setup/showfotosetupmisc.cpp:122
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:125
+#: core/showfoto/setup/showfotosetupmisc.cpp:126
 #, kde-format
 msgid "Sort images by:"
 msgstr "Ordenatu irudiak honen arabera:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:127
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Izena"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:129
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Fitxategi-tamaina"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:131
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -51920,12 +51920,12 @@ msgstr ""
 "Hautatu berriki kargatutako irudiak haien daten, izenen edo diskoan duten "
 "tamainen arabera ordenatuko diren."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Alderantzizko ordenan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:134
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -51934,66 +51934,76 @@ msgstr ""
 "Aukera hau gaitzen bada, berriki kargatutako irudiak beherantz ordenatuko "
 "dira."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:144
 #, fuzzy, kde-format
 msgid "Thumbbar Items"
 msgstr "&Ordenatu irudiak"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #, fuzzy, kde-format
 msgid "&Show image Format"
 msgstr "Erakutsi irudien puntuazioak"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:147
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, fuzzy, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr ""
 "Gaitu aukera hau fitxategi-izenak irudien koadro txikien azpian erakusteko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:148
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #, fuzzy, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "Iragazki berdea"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/camera/setupcamera.cpp:440
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "Gaitu aukera hau irudien epigrafeak bistaratzeko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#, kde-format
+msgid "Store thumbnails on disk for faster reuse"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#, kde-format
+msgid "Disable this option if you do not want thumbnails to be cached on disk."
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
 #, fuzzy, kde-format
 msgid "Updates"
 msgstr "Eguneratzeak"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, fuzzy, kde-format
 msgid "Check for new version:"
 msgstr "Gorde &honela..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:169
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, fuzzy, kde-format
 #| msgid "Only For Active Tab"
 msgid "Only For Stable Releases"
 msgstr "Soilik fitxa aktiboan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:166
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, fuzzy, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Publication de presse"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:167
+#: core/showfoto/setup/showfotosetupmisc.cpp:171
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid ""
@@ -52004,13 +52014,13 @@ msgid ""
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid ""
@@ -52020,19 +52030,19 @@ msgid ""
 "debugger."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:182
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, fuzzy, kde-format
 msgid "Last check: %1"
 msgstr "<html>Azken ikuskatzea: %1<br>%2</html>"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, fuzzy, kde-format
 msgid "Check now..."
 msgstr "Egiaztatu Orain"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:207
+#: core/showfoto/setup/showfotosetupmisc.cpp:211
 #: core/utilities/setup/misc/setupmisc.cpp:191
 #, fuzzy, kde-format
 #| msgid "Behavior"
@@ -52040,68 +52050,68 @@ msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Portaera"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:214
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:198
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Erakut&si plasta pantaila abioan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:215
+#: core/showfoto/setup/showfotosetupmisc.cpp:219
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Use native file dialogs from the system"
 msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:218
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #: core/utilities/setup/misc/setupmisc.cpp:203
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Alboko barrako fitxen izena:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:224
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Soilik fitxa aktiboan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "For All Tabs"
 msgstr "Fitxa guztietan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:222
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Gaitu aukera hau alboko barrako fitxen tituluak ikusgai nola egongo diren "
 "konfiguratzeko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:225
+#: core/showfoto/setup/showfotosetupmisc.cpp:229
 #: core/utilities/setup/misc/setupmisc.cpp:211
 #, fuzzy, kde-format
 msgid "Widget style:"
 msgstr "Trepetaren estiloa"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
 #: core/utilities/setup/misc/setupmisc.cpp:213
 #, fuzzy, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Gaitu aukera hau albumaren bilduma bistaratzeko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:253
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Gaitu aukera hau albumaren bilduma bistaratzeko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, fuzzy, kde-format
 #| msgid "Kuwait"
@@ -52109,28 +52119,28 @@ msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Koweit"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:258
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, fuzzy, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, fuzzy, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze iluna"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/showfoto/setup/showfotosetupmisc.cpp:264
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/showfoto/setup/showfotosetupmisc.cpp:265
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, fuzzy, kde-format
 #| msgid "Luminance"
@@ -52138,41 +52148,41 @@ msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Luminantzia"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, fuzzy, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:295
+#: core/showfoto/setup/showfotosetupmisc.cpp:299
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Application font:"
 msgstr "Azpikokalekua:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:296
+#: core/showfoto/setup/showfotosetupmisc.cpp:300
 #: core/utilities/setup/misc/setupmisc.cpp:280
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgid "Select here the font used to display text in whole application."
 msgstr "Hautatu erabiliko den letra-tipoa testua argibideetan bistaratzeko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, fuzzy, kde-format
 #| msgid "Reference:"
@@ -52180,14 +52190,14 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Itxura"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
 #: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:328
 #: core/utilities/setup/misc/setupmisc.cpp:368
 #, fuzzy, kde-format
 #| msgid "Normalize"
@@ -52195,7 +52205,7 @@ msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Normalizatu"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:334
 #: core/utilities/setup/misc/setupmisc.cpp:374
 #, fuzzy, kde-format
 #| msgid "System Font"
@@ -52203,7 +52213,7 @@ msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistema"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:364
+#: core/showfoto/setup/showfotosetupmisc.cpp:368
 #: core/utilities/setup/misc/setupmisc.cpp:407
 #, kde-format
 msgid ""

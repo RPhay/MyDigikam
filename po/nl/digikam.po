@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 01:52+0000\n"
+"POT-Creation-Date: 2024-12-23 01:51+0000\n"
 "PO-Revision-Date: 2024-12-21 14:42+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1371,12 +1371,12 @@ msgstr "<i>Binaire gegevens</i>"
 msgid "Initializing..."
 msgstr "Initialiseren..."
 
-#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:116
+#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Plug-ins laden..."
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Controleert de ICC-opslag..."
@@ -40807,7 +40807,7 @@ msgstr "Gebruik:"
 msgid "No or invalid size specified"
 msgstr "Geen of een ongeldige grootte opgegeven"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Miniatuur is null"
@@ -40822,13 +40822,13 @@ msgstr "Bestand bestaat niet of is geen bestand"
 msgid "Cannot create thumbnail for %1"
 msgstr "Er kon geen miniatuur voor %1 worden aangemaakt"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:169
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Initialiseren van database met miniaturen is mislukt"
 
-#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
+#: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:170
 #, kde-format
 msgid "Error message: %1"
 msgstr "Foutbericht: %1"
@@ -42850,7 +42850,7 @@ msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:273
+#: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -49653,12 +49653,12 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Bestand(en) of map(pen) om te openen"
 
-#: core/showfoto/main/showfoto.cpp:107
+#: core/showfoto/main/showfoto.cpp:101
 #, kde-format
 msgid "Loading themes..."
 msgstr "Thema's laden..."
 
-#: core/showfoto/main/showfoto.cpp:232
+#: core/showfoto/main/showfoto.cpp:226
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49669,13 +49669,13 @@ msgstr ""
 "kies \"Ja\", anders \"Nee\". Bij \"Nee\", zal \"Kleurbeheer\" uitgezet "
 "worden totdat dit is opgelost</p>"
 
-#: core/showfoto/main/showfoto.cpp:272
+#: core/showfoto/main/showfoto.cpp:266
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/showfoto/main/showfoto.cpp:297
+#: core/showfoto/main/showfoto.cpp:291
 #: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49993,37 +49993,37 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:121
+#: core/showfoto/setup/showfotosetupmisc.cpp:122
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 "Miniaturenbalkbar, Mapweergave en Soorteervolgorde van items in "
 "stapelweergave"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:125
+#: core/showfoto/setup/showfotosetupmisc.cpp:126
 #, kde-format
 msgid "Sort images by:"
 msgstr "Afbeeldingen sorteren op:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:127
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Datum"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Naam"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:129
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Bestandsgrootte"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:131
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -50032,12 +50032,12 @@ msgstr ""
 "Selecteer hier of nieuw geladen afbeeldingen gesorteerd worden op datum, "
 "naam of grootte op de schijf."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Omgekeerde sortering"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:134
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -50046,17 +50046,17 @@ msgstr ""
 "Als deze optie is geactiveerd zullen de nieuw geladen afbeeldingen "
 "gesorteerd worden in aflopende volgorde."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:144
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Items in miniaturenbalk"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #, kde-format
 msgid "&Show image Format"
 msgstr "Afbeeldingsformaat &tonen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:147
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
@@ -50064,12 +50064,12 @@ msgstr ""
 "Activeer deze optie om het afbeeldingsformaat boven de miniatuurafbeelding "
 "te tonen."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:148
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "Geo-locatie-aanduiding &tonen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/camera/setupcamera.cpp:440
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -50077,37 +50077,48 @@ msgstr ""
 "Schakel deze optie in om aan te geven dat de afbeelding geo-locatie-"
 "informatie bevat."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Schuif het huidige item naar het centrum van de miniaturenbalk"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#, kde-format
+msgid "Store thumbnails on disk for faster reuse"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#, fuzzy, kde-format
+#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Disable this option if you do not want thumbnails to be cached on disk."
+msgstr "Dit deactiveren als u geen anti-aliasing wilt bij opschalen."
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
 #, kde-format
 msgid "Updates"
 msgstr "Elementen voor bijwerken"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, kde-format
 msgid "Check for new version:"
 msgstr "Op nieuwe versie controleren:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:169
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Alleen voor stabiele uitgaven"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:166
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Wekelijkse voor-uitgaven"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:167
+#: core/showfoto/setup/showfotosetupmisc.cpp:171
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid ""
@@ -50126,13 +50137,13 @@ msgstr ""
 "en worden niet aanbevolen om in productie gebruikt te worden omdat er bugs "
 "in kunnen blijven."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Version met debug-symbolen gebruiken"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid ""
@@ -50146,67 +50157,67 @@ msgstr ""
 "Deze versie is zwaarder maar kan ontwikkelaars helpen om verkeerde functies "
 "in de debugger te volgen."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:182
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
 msgstr "Laatste controle: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Check now..."
 msgstr "Nu controleren..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:207
+#: core/showfoto/setup/showfotosetupmisc.cpp:211
 #: core/utilities/setup/misc/setupmisc.cpp:191
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Gedrag"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:214
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:198
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Op&startscherm tonen bij programmastart"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:215
+#: core/showfoto/setup/showfotosetupmisc.cpp:219
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Bestandsdialogen van het inheemse systeem gebruiken"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:218
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #: core/utilities/setup/misc/setupmisc.cpp:203
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Tabtitel van zijbalk:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:224
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Alleen voor de actieve tab"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "For All Tabs"
 msgstr "Voor alle tabs"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:222
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Activeer deze optie om in te stellen hoe titels van zijbalken zichtbaar zijn."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:225
+#: core/showfoto/setup/showfotosetupmisc.cpp:229
 #: core/utilities/setup/misc/setupmisc.cpp:211
 #, kde-format
 msgid "Widget style:"
 msgstr "Widget-stijl:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
 #: core/utilities/setup/misc/setupmisc.cpp:213
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
@@ -50214,115 +50225,115 @@ msgstr ""
 "Activeer deze optie om de de standaard decoratie en uiterlijk van het "
 "venster te kiezen."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Pictogramthema (wijzigt na opnieuw opstarten):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:253
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Activeer deze optie om het standaard pictogramthema te kiezen."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:258
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Dark"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/showfoto/setup/showfotosetupmisc.cpp:264
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/showfoto/setup/showfotosetupmisc.cpp:265
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Mensheid"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Pictogramthema van systeem gebruiken"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:295
+#: core/showfoto/setup/showfotosetupmisc.cpp:299
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Application font:"
 msgstr "Lettertype van toepassing:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:296
+#: core/showfoto/setup/showfotosetupmisc.cpp:300
 #: core/utilities/setup/misc/setupmisc.cpp:280
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Stel hier het lettertype in dat u wilt gebruiken in de gehele toepassing."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Uiterlijk"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
 #: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Spellingcontrole"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:328
 #: core/utilities/setup/misc/setupmisc.cpp:368
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Localize"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:334
 #: core/utilities/setup/misc/setupmisc.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Systeem"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:364
+#: core/showfoto/setup/showfotosetupmisc.cpp:368
 #: core/utilities/setup/misc/setupmisc.cpp:407
 #, kde-format
 msgid ""
