@@ -120,11 +120,12 @@ public:
 
     Private() = default;
 
+public:
+
     ContentAwareContainer settings;
 
     LqrCarver*            carver    = nullptr;
     LqrProgress*          progress  = nullptr;
-
 };
 
 ContentAwareFilter::ContentAwareFilter(QObject* const parent)
