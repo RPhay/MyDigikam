@@ -67,9 +67,10 @@ echo "Build Directory      : $BUILDDIR"
 echo "Build for Qt6        : $BUILD_WITH_QT6"
 echo "ECM min version      : $ECM_MIN_VERSION"
 
-mkdir -p $DIGIKAM_INSTALL_PREFIX
 mkdir -p $BUILDDIR
 cd $BUILDDIR
+
+# Build API DOC section
 
 $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DCMAKE_BUILD_TYPE=Debug \
@@ -98,3 +99,20 @@ XZ_OPT=-9 tar cJf $TARBALL_PATH -C $CURRENT_DIR ./html
 
 rm -fr $BUILDDIR
 rm -fr $CURRENT_DIR/html
+
+# Upload section
+
+cd $CURRENT_DIR
+
+API_UPLOADURL="digikam@tinami.kde.org:/srv/archives/files/digikam/api/"
+
+echo -e "---------- Cleanup older API DOC tarball files from files.kde.org repository \n"
+
+sftp -q $API_UPLOADURL <<< "rm digiKam-apidoc-*.tar.xz"
+
+echo -e "---------- Upload $TARBALL_PATH tarball files"
+echo -e "---------- to $API_UPLOADURL \n"
+
+rsync -r -v --progress -e ssh $TARBALL_PATH $API_UPLOADURL
+
+rm -fr $TARBALL_PATH
