@@ -294,7 +294,7 @@ rm -fr $BUNDLEDIR/plugins/imageformats/qjp2.pdb
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
-# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
+# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is generated.
 # Only the digiKam shared libraries debug symbols are preserved. All digiKam plugins are not present.
 
 # First drop all existing pdb files from the bundles if any.
@@ -347,11 +347,11 @@ if [ "$DK_DEBUG" = 1 ] ; then
     # digikam libs
     cp -rv "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
 
-    if [ -f "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb ] ; then
-
-        cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb       $BUNDLEDIR/                           2>/dev/null
-
-    fi
+#    if [ -f "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb ] ; then
+#
+#        cp -rv "$VCPKG_INSTALL_PREFIX"/bin/Qt${DK_QTVERSION}Core.pdb       $BUNDLEDIR/                           2>/dev/null
+#
+#    fi
 
 fi
 
