@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -32128,7 +32128,7 @@ msgstr "Nelze uložit nastavení doostření fotografie do souboru."
 msgid "Unsharp Mask Tool"
 msgstr "Nástroj pro maskování neostrosti"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filtr Content-Aware"

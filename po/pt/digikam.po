@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -33779,7 +33779,7 @@ msgstr ""
 msgid "Unsharp Mask Tool"
 msgstr "Ferramenta de Máscara Não-Afiada"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filtro Ciente do Conteúdo"

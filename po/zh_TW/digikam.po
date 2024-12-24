@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -32841,7 +32841,7 @@ msgstr "無法將設定值儲存到相片對焦純文字檔。"
 msgid "Unsharp Mask Tool"
 msgstr "遮罩取消銳利化工具"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "內容感知濾鏡"

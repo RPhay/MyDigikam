@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -31991,7 +31991,7 @@ msgstr ""
 msgid "Unsharp Mask Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr ""

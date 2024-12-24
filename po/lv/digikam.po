@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -32753,7 +32753,7 @@ msgstr "Neizdevās saglabāt failā fotogrāfiju pārfokusēšanas iestatījumus
 msgid "Unsharp Mask Tool"
 msgstr "Neasās maskas rīks"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, fuzzy, kde-format
 msgid "Content-Aware Filter"
 msgstr "Saturu saglabājošās mērogošanas procenti"

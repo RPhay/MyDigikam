@@ -3,18 +3,17 @@
 # This file is distributed under the same license as the digikam package.
 #
 # SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
-# Josep M. Ferrer <txemaq@gmail.com>, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
-"PO-Revision-Date: 2024-12-20 13:54+0100\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
+"PO-Revision-Date: 2024-12-23 20:20+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -33667,7 +33666,7 @@ msgstr ""
 msgid "Unsharp Mask Tool"
 msgstr "Eina per a la màscara de desenfocament"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filtre segons el contingut"
@@ -50176,14 +50175,14 @@ msgstr "Desplaça l'element actual al centre de la barra de miniatures"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Emmagatzema les miniatures al disc per a una reutilització més ràpida"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Desmarqueu això si no voleu fer servir antialiàsing en augmentar d'escala."
+"Desactiveu aquesta opció si no voleu que les miniatures estiguin a la "
+"memòria cau del disc."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -52965,7 +52964,7 @@ msgstr ""
 "vegada que l'inicieu, el digiKam només comprovarà la col·lecció per a veure "
 "si hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu forçar al "
 "digiKam a explorar elements nous manualment usant l'entrada de menú <b>Eines "
-"-> Manteniment -> Explora per a elements nous</b>.</p></qt>"
+"-> Manteniment -> Explora cercant elements nous</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:52
 #, kde-format
@@ -61288,7 +61287,7 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:75
 #, kde-format
 msgid "Scan for new items"
-msgstr "Explora per a elements nous"
+msgstr "Explora cercant elements nous"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
 #, kde-format
@@ -61343,7 +61342,7 @@ msgstr "Realitza la neteja de la base de dades"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:125
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
-msgstr "Explora per a elements modificats o sense catalogar (més ràpid)"
+msgstr "Explora els elements modificats o sense catalogar (més ràpid)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #, kde-format
@@ -61587,7 +61586,7 @@ msgstr ""
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:407
 #, kde-format
 msgid "digiKam Maintenance"
-msgstr "Manteniment de digiKam"
+msgstr "Manteniment del digiKam"
 
 #: core/utilities/maintenance/manager/maintenancetool.cpp:107
 #, kde-format
@@ -67042,7 +67041,7 @@ msgstr "No confirmis en aplicar canvis des de la barra lateral d&reta"
 #: core/utilities/setup/misc/setupmisc.cpp:66
 #, kde-format
 msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "&Explora per a elements nous en iniciar (alenteix la inicialització)"
+msgstr "&Explora cercant elements nous en iniciar (alenteix la inicialització)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:67
 #, kde-format

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
-"PO-Revision-Date: 2024-12-18 12:22+0300\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
+"PO-Revision-Date: 2024-12-23 14:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -33307,7 +33307,7 @@ msgstr "Ayarlar fotoğrafa yeniden odaklanma metin dosyasına kaydedilemiyor."
 msgid "Unsharp Mask Tool"
 msgstr "Yumuşatma Maskesi Aracı"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "İçeriğe Uygun Süzgeç"
@@ -49689,14 +49689,13 @@ msgstr "Geçerli ögeyi küçük görsel çubuğunun merkezine sardır"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Daha hızlı yeniden kullanım için küçük görselleri diskte depola"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Görseller büyütülürken kenar yumuşatması kullanmak istemiyorsanız bu "
+"Küçük görsellerin diskte önbelleğinin tutulmasını istemiyorsanız bu "
 "seçeneğin işaretini kaldırın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163

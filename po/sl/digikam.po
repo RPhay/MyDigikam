@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
-"PO-Revision-Date: 2024-12-18 06:59+0100\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
+"PO-Revision-Date: 2024-12-23 06:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -33314,7 +33314,7 @@ msgstr ""
 msgid "Unsharp Mask Tool"
 msgstr "Orodje maske odstranitve ostrine"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filter, ki se zaveda vsebine"
@@ -49769,13 +49769,14 @@ msgstr "Premakni trenutni predmet v središče vrstice s sličicami"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Shrani predogledne sličice na disk za hitrejšo ponovno uporabo"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
-msgstr "Počistite to polje, če ne želite uporabiti Anti-aliasing za povečanje."
+msgstr ""
+"Onemogočite to možnost, če ne želite, da se predogledne sličice predpomnijo "
+"na disku."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115

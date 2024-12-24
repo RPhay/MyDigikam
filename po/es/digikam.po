@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 01:51+0000\n"
-"PO-Revision-Date: 2024-12-19 01:58+0100\n"
+"POT-Creation-Date: 2024-12-24 01:51+0000\n"
+"PO-Revision-Date: 2024-12-23 20:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -33687,7 +33687,7 @@ msgstr ""
 msgid "Unsharp Mask Tool"
 msgstr "Herramienta de máscara de desenfoque"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filtro en función del contenido"
@@ -50199,14 +50199,13 @@ msgstr "Desplazar el elemento actual al centro de la barra de miniaturas"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Guardar miniaturas en disco para reutilizarlas más rápidamente"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Desmarque esto si no desea usar suavizado de bordes para escalar imágenes."
+"Desmarque esta opción si no desea usar la caché de miniaturas en disco."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
