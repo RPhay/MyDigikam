@@ -84,13 +84,13 @@ IdentityProvider::IdentityProvider()
         }
         d->removeThreadPool = new QThreadPool();
 
-    #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         // Priority should be equal or greater than trainer or recognizer threads.
 
         d->removeThreadPool->setThreadPriority(QThread::NormalPriority);
 
-    #endif
+#endif
 
         // We only need 1 thread for the training remover.
 
