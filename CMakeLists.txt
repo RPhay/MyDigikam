@@ -215,3 +215,8 @@ if(BUILD_TESTING)
     add_custom_target(test-data ALL DEPENDS ${CMAKE_SOURCE_DIR}/test-data)
 
 endif()
+
+######################################################################################################################
+# API documentation generation
+
+include(RulesDoxygen)
