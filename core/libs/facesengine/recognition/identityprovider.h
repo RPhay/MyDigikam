@@ -15,10 +15,7 @@
 
 #pragma once
 
-// other includes
-
-
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 #include "digikam_opencv.h"
@@ -27,9 +24,10 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT IdentityProvider
+class DIGIKAM_GUI_EXPORT IdentityProvider
 {
 public:
+
     static IdentityProvider* instance();
 
     /**
@@ -150,7 +148,9 @@ private:
     class Private;
     static Private* d;
 
-    // hide
+private:
+
+    // Hide
 
     IdentityProvider(IdentityProvider&)                     = delete;
 
@@ -159,4 +159,4 @@ private:
     friend class FaceClassifier;
 };
 
-}
+} // namespace Digikam

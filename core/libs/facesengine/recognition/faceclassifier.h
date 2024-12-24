@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FaceClassifier : public FaceClassifierBase
+class DIGIKAM_GUI_EXPORT FaceClassifier : public FaceClassifierBase
 {
 public:
     static FaceClassifier* instance();

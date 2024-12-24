@@ -49,19 +49,20 @@ IdentityProvider::Private* IdentityProvider::d = nullptr;
 class Q_DECL_HIDDEN IdentityProvider::Private
 {
 public:
+
     int                             ref                     = 1;
     bool                            dbAvailable             = false;
     int                             seedMax                 = 0;
 
     QHash<int, Identity>            identityCache;
 
-    // Qt variables
-
     QReadWriteLock                  trainingLock;
-    // QMutex                      trainingMutex;
+/*
+    QMutex                          trainingMutex;
+*/
     RecognitionTrainingUpdateQueue  removeQueue;
-    QThreadPool*                            removeThreadPool        = nullptr;
-    QFuture<bool>                           removeThreadResult;
+    QThreadPool*                    removeThreadPool        = nullptr;
+    QFuture<bool>                   removeThreadResult;
 };
 
 class Q_DECL_HIDDEN IdentityProviderCreator
@@ -78,10 +79,12 @@ IdentityProvider::IdentityProvider()
     if (!d)
     {
         d = new Private;
+
         if (!initialize())
         {
             QException().raise();
         }
+
         d->removeThreadPool = new QThreadPool();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -98,15 +101,17 @@ IdentityProvider::IdentityProvider()
 
         // Run the remove queue listener thread.
 
-        d->removeThreadResult = QtConcurrent::run(d->removeThreadPool, 
+        d->removeThreadResult = QtConcurrent::run(d->removeThreadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &IdentityProvider::trainingRemoveConcurrent, this
+                                                  &IdentityProvider::trainingRemoveConcurrent,
+                                                  this
 
 #else
 
-            this, &IdentityProvider::trainingRemoveConcurrent
+                                                  this,
+                                                  &IdentityProvider::trainingRemoveConcurrent
 
 #endif
             );
@@ -125,11 +130,12 @@ IdentityProvider::~IdentityProvider()
     if (d->ref == 0)
     {
         d->removeQueue.push(d->removeQueue.endSignal());
+
         while (d->removeThreadResult.isRunning())
         {
             QThread::msleep(10);
         }
-        
+
         delete d;
         d = nullptr;
     }
@@ -152,26 +158,28 @@ bool IdentityProvider::initialize()
     {
         return false;
     }
+/*
+    // check for seed identities
 
-    // // check for seed identities
-    // Identity id = FaceDbAccess().db()->identity(1);
-    // if (id.attributesMap().isEmpty())
-    // {
-    //     addSeedTraining();
-    // }
+    Identity id = FaceDbAccess().db()->identity(1);
 
+    if (id.attributesMap().isEmpty())
+    {
+        addSeedTraining();
+    }
+*/
     const auto ids = FaceDbAccess().db()->identities();
 
     for (const Identity& identity : ids)
     {
         d->identityCache[identity.id()] = identity;
     }
-
-    // QMultiMap<QString, QString> attributes;
-    // attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
-    // id = findIdentity(attributes);
-    // d->seedMax = id.id();
-
+/*
+    QMultiMap<QString, QString> attributes;
+    attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
+    id = findIdentity(attributes);
+    d->seedMax = id.id();
+*/
     return true;
 }
 
@@ -412,7 +420,7 @@ cv::Ptr<cv::ml::TrainData> IdentityProvider::getTrainingData() const
     }
 
     d->trainingLock.lockForRead();
-    
+
     trainData = FaceDbAccess().db()->trainData();
 
     d->trainingLock.unlock();
@@ -487,7 +495,9 @@ int IdentityProvider::addTraining(const Identity& identity, const QString& hash,
 
 bool IdentityProvider::isValidId(int label) const
 {
-    // return ((label > d->seedMax) && d->identityCache.contains(label));
+/*
+    return ((label > d->seedMax) && d->identityCache.contains(label));
+*/
     return (d->identityCache.contains(label));
 }
 
@@ -499,8 +509,8 @@ bool IdentityProvider::isValidId(int label) const
  * NOTE: Takes care that there may be multiple values of attribute in identity's attributes.
  */
 bool IdentityProvider::identityContains(const Identity& identity,
-                                                         const QString&  attribute,
-                                                         const QString&  value) const
+                                        const QString&  attribute,
+                                        const QString&  value) const
 {
     d->trainingLock.lockForRead();
 
@@ -575,7 +585,9 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
     while (true)
     {
-        // hash = self->removeQueue.front();
+/*
+        hash = self->removeQueue.front();
+*/
         hash = d->removeQueue.pop_front();
 
         if (d->removeQueue.endSignal() != hash)
@@ -596,6 +608,6 @@ bool IdentityProvider::trainingRemoveConcurrent()
     return true;
 }
 
-}
+} // namespace Digikam
 
 #include "moc_identityprovider.cpp"

@@ -73,9 +73,9 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS 
-                                  # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
-                                  # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
+set(facesengine_database_LIB_SRCS
+                                # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
+                                # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/identityprovider.cpp
@@ -94,6 +94,7 @@ set(facesengine_database_LIB_SRCS
                                 #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodeopenface.cpp
                                 #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodesface.cpp
                                 #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractorbase.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnopenfaceextractor.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnsfaceextractor.cpp
@@ -105,7 +106,9 @@ set(facesengine_database_LIB_SRCS
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
+
                                 #   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
+
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facescansettings.cpp
 )
 
