@@ -15,11 +15,11 @@
 
 #pragma once
 
-// other includes
+// OpenCV includes
 
 // #include <opencv2/ml.hpp>
 
-// local includes
+// Local includes
 
 #include "faceclassifierbase.h"
 #include "facescansettings.h"
@@ -30,6 +30,7 @@ namespace Digikam
 class DIGIKAM_GUI_EXPORT FaceClassifier : public FaceClassifierBase
 {
 public:
+
     static FaceClassifier* instance();
 
     /* Tunes backend parameters.
@@ -42,7 +43,7 @@ public:
     void        setParameters(const FaceScanSettings& parameters);
 
     bool ready()                                        const;
- 
+
     int predict(const cv::Mat& target)                  const;
     int predict(const cv::UMat& target)                 const;
 
@@ -69,14 +70,16 @@ private:
     bool                        validateKNNSVMResult(const cv::Mat& target, int label) const;
     bool                        featureSFaceCompare(const cv::Mat& target, const cv::Mat& sample, float& distance) const;
 
-    // hide
+private:
+
+    // Hide
+
     FaceClassifier();
     ~FaceClassifier();
 
     FaceClassifier(FaceClassifier&)                     = delete;
 
     friend class FaceClassifierCreator;
-
 };
 
-}
+} // namespace Digikam
