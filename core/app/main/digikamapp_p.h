@@ -145,11 +145,14 @@
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
 #include "exiftoolthread.h"
-#include "facesdetector.h"
+// #include "facesdetector.h"
 #include "localizesettings.h"
 #include "networkmanager.h"
 #include "dnotificationwidget.h"
 #include "dnnmodelmanager.h"
+#include "faceclassifier.h"
+#include "facesengine.h"
+#include "identityprovider.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"

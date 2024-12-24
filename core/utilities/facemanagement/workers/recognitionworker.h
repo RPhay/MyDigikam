@@ -20,6 +20,7 @@
 
 #include "facepipeline_p.h"
 #include "faceitemretriever.h"
+#include "facialrecognition_wrapper.h"
 
 namespace Digikam
 {

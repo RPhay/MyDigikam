@@ -24,7 +24,7 @@
 
 #include "statesavingobject.h"
 #include "facescansettings.h"
-#include "facesdetector.h"
+// #include "facesdetector.h"
 
 namespace Digikam
 {

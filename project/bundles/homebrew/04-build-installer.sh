@@ -230,7 +230,7 @@ share/mime \
 Library/Application/ \
 share/applications \
 share/lensfun \
-share/QtCurve/Breeze.qtcurve \
+share/QtCurve \
 "
 #share/locale \
 

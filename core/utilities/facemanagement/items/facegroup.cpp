@@ -36,9 +36,9 @@ FaceGroup::FaceGroup(GraphicsDImgView* const view)
     connect(view->previewItem(), SIGNAL(stateChanged(int)),
             this, SLOT(itemStateChanged(int)));
 
-    d->editPipeline.plugDatabaseEditor();
-    d->editPipeline.plugTrainer();
-    d->editPipeline.construct();
+    // d->editPipeline.plugDatabaseEditor();
+    // d->editPipeline.plugTrainer();
+    // d->editPipeline.construct();
 }
 
 FaceGroup::~FaceGroup()
@@ -367,10 +367,15 @@ void FaceGroup::markAllAsIgnored()
             item->face().isUnconfirmedName()
            )
         {
-            FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
-                                                         FaceTags::ignoredPersonTagId());
+            // FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
+            //                                              FaceTags::ignoredPersonTagId());
 
+            // item->setFace(face);
+
+            FaceTagsIface face = d->newEditPipeline->editTag(d->info, item->face(),
+                                        FaceTags::ignoredPersonTagId());
             item->setFace(face);
+
             item->switchMode(AssignNameWidget::IgnoredMode);
         }
     }
@@ -466,9 +471,13 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             return;
         }
 
-        face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
+        // face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
 
+        // item->setFace(face);
+
+        face = d->newEditPipeline->confirmFace(d->info, face, tagId, true);
         item->setFace(face);
+
         item->switchMode(AssignNameWidget::ConfirmedMode);
 
         QTimer::singleShot(250, this, SLOT(slotFocusRandomFace()));
@@ -498,7 +507,8 @@ void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
     if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
-        d->editPipeline.remove(d->info, item->face());
+        // d->editPipeline.remove(d->info, item->face());
+        d->newEditPipeline->removeFace(d->info, item->face());
 
         item->setFace(FaceTagsIface());
         d->visibilityController->hideAndRemoveItem(item);
@@ -535,13 +545,18 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
                 preview.rotateAndFlip(d->info.orientation());
             }
 
-            face = d->editPipeline.editRegion(d->info, preview,
-                                              face, currentRegion);
+            // face = d->editPipeline.editRegion(d->info, preview,
+            //                                   face, currentRegion);
+            face = d->newEditPipeline->editRegion(d->info, face, currentRegion, preview, false);
         }
 
-        face = d->editPipeline.editTag(d->info, face,
-                                       FaceTags::ignoredPersonTagId());
+        // face = d->editPipeline.editTag(d->info, face,
+        //                                FaceTags::ignoredPersonTagId());
 
+        // item->setFace(face);
+
+        face = d->newEditPipeline->editTag(d->info, face,
+                                       FaceTags::ignoredPersonTagId());
         item->setFace(face);
         item->switchMode(AssignNameWidget::IgnoredMode);
 
@@ -637,9 +652,13 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
         }
 
         TagRegion addRegion(faceRect);
-        FaceTagsIface face   = d->editPipeline.addManually(d->info,
+        // FaceTagsIface face   = d->editPipeline.addManually(d->info,
+        //                                                    preview,
+        //                                                    addRegion);
+        FaceTagsIface face   = d->newEditPipeline->addManually(d->info,
                                                            preview,
-                                                           addRegion);
+                                                           addRegion,
+                                                           false);
         FaceItem* const item = d->addItem(face);
         d->visibilityController->setItemDirectlyVisible(item, true);
         item->switchMode(AssignNameWidget::UnconfirmedEditMode);
@@ -696,10 +715,15 @@ void FaceGroup::applyItemGeometryChanges()
 
         if (item->face().region() != currentRegion)
         {
-            d->editPipeline.editRegion(d->info,
-                                       preview,
+            // d->editPipeline.editRegion(d->info,
+            //                            preview,
+            //                            item->face(),
+            //                            currentRegion);
+            d->newEditPipeline->editRegion(d->info,
                                        item->face(),
-                                       currentRegion);
+                                       currentRegion,
+                                       preview,
+                                       false);
         }
     }
 }

@@ -199,9 +199,12 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space3  = new QWidget(hbox3);
     hbox3->setStretchFactor(space3, 10);
     d->faceScannedHandling = new QComboBox(hbox3);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
+    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
+    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
 /*
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
 */
@@ -213,7 +216,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->resetFaceDb         = new QCheckBox(d->vbox4);
     d->resetFaceDb->setText(i18nc("@option:check", "Reset and clear all faces and training"));
     d->resetFaceDb->setToolTip(i18nc("@info:tooltip",
-                                         "This will clear all detected and tagged faces, and then rescan images to detect faces."));
+                                         "This will clear all detected and tagged faces."));
 
     d->expanderBox->insertItem(
                                Private::FaceManagement,
@@ -395,7 +398,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                                            QMessageBox::Warning,
                                            i18n("Warning"),
                                            i18n("Are you sure you want to delete all confirmed, unconfirmed, and unknown faces? "
-                                                "You’ll need to start tagging unknown faces again before any faces can be recognized."),
+                                                "You’ll need to rescan images and start tagging unknown faces again before any faces can be recognized."),
                                            QMessageBox::Ok | QMessageBox::Cancel,
                                            this
                                            ).exec();

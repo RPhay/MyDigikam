@@ -30,7 +30,6 @@
 #include "facetags.h"
 #include "recognitiontrainingupdatequeue.h"
 
-
 namespace Digikam
 {
 

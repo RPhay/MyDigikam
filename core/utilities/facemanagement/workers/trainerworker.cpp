@@ -102,7 +102,8 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 
-            Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
+            // Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
+            Identity identity    = utils.identityForTag(dbFace.tagId());
 
             identities << identity.id();
 

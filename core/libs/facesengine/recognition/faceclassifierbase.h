@@ -1,0 +1,47 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : base face classifier. Thin wrapper to allow for easy replacement in the future
+ *
+ * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// other includes
+
+
+// local includes
+
+#include "mlclassifierfoundation.h"
+
+namespace Digikam
+{
+
+class DIGIKAM_EXPORT FaceClassifierBase : public MLClassifierFoundation
+{
+public:
+    FaceClassifierBase()                                        = default;
+    ~FaceClassifierBase()                                       = default;
+
+    void setThreshold(float _threshold)                         { threshold = _threshold; }
+
+protected:
+    float   threshold = 0.0f;
+
+private:
+
+    // hide
+
+    FaceClassifierBase(FaceClassifierBase&)                     = delete;
+
+};
+
+}

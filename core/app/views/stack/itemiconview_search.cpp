@@ -20,6 +20,7 @@
 
 #include "itemiconview_p.h"
 #include "progressmanager.h"
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -84,7 +85,7 @@ void ItemIconView::slotImageScanForFaces()
     settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
     settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
     settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
-    settings.task                   = FaceScanSettings::Detect;
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
 
     // Remove possible duplicate ItemInfos.
@@ -99,7 +100,8 @@ void ItemIconView::slotImageScanForFaces()
         }
     }
 
-    FacesDetector* const tool = new FacesDetector(settings);
+    // FacesDetector* const tool = new FacesDetector(settings);
+    FacesEngine* const tool = new FacesEngine(settings);
 
     connect(tool, SIGNAL(signalComplete()),
             this, SLOT(slotRefreshImagePreview()));
@@ -144,7 +146,8 @@ void ItemIconView::slotImageRecognizeFaces()
         }
     }
 
-    FacesDetector* const tool = new FacesDetector(settings);
+    // FacesDetector* const tool = new FacesDetector(settings);
+    FacesEngine* const tool = new FacesEngine(settings);
 
     connect(tool, SIGNAL(signalComplete()),
             this, SLOT(slotRefreshImagePreview()));

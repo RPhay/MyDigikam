@@ -41,8 +41,9 @@
 #include "metadatasynchronizer.h"
 #include "dnotificationwrapper.h"
 #include "progressmanager.h"
-#include "facesdetector.h"
+// #include "facesdetector.h"
 #include "dbcleaner.h"
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -68,7 +69,8 @@ public:
     MetadataSynchronizer*  metadataSynchronizer  = nullptr;
     AutotagsAssignment*    autotagsAssignment    = nullptr;
     ImageQualitySorter*    imageQualitySorter    = nullptr;
-    FacesDetector*         facesDetector         = nullptr;
+    // FacesDetector*         facesDetector         = nullptr;
+    FacesEngine*         facesDetector         = nullptr;
     DbCleaner*             databaseCleaner       = nullptr;
 };
 
@@ -318,7 +320,8 @@ void MaintenanceMngr::stage6()
         d->settings.faceSettings.detectAccuracy     = ApplicationSettings::instance()->getFaceDetectionAccuracy();
         d->settings.faceSettings.recognizeModel     = ApplicationSettings::instance()->getFaceRecognitionModel();
         d->settings.faceSettings.recognizeAccuracy  = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-        d->facesDetector                            = new FacesDetector(d->settings.faceSettings);
+        // d->facesDetector                            = new FacesDetector(d->settings.faceSettings);
+        d->facesDetector                            = new FacesEngine(d->settings.faceSettings);
         d->facesDetector->setNotificationEnabled(false);
         d->facesDetector->start();
     }

@@ -73,6 +73,24 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     int backend_id       = cv::dnn::DNN_BACKEND_DEFAULT;
     int target_id        = cv::dnn::DNN_TARGET_CPU;
 
+    // query OpenCV for capabilities. Return best match.
+
+    if (cv::ocl::haveOpenCL() && cv::ocl::useOpenCL())
+    {
+        // use OpenCL if available
+
+        backend_id       = cv::dnn::DNN_BACKEND_OPENCV;
+        target_id        = cv::dnn::DNN_TARGET_OPENCL;
+
+        qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Using OpenCV backend and OpenCL target";
+    }
+    else
+    {
+        // use CPU if OpenCL is not available
+
+        qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Using default backend and CPU target";
+    }
+
     const std::map<std::string, int> str2backend
     {
         { "default", cv::dnn::DNN_BACKEND_DEFAULT          },
@@ -123,11 +141,6 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
             qCWarning(DIGIKAM_DNNMODELMNGR_LOG) << "Invalid OpenCV target:" << cvTarget;
         }
     }
-
-    // TODO: query OpenCV for capabilities. Return best match.
-    //
-    //
-    //
 
     // Return the result.
 

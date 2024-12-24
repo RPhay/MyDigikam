@@ -93,8 +93,8 @@ class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    EmptyImageListProvider()                                = default;
-    ~EmptyImageListProvider()                               = default;
+    EmptyImageListProvider()                                            = default;
+    ~EmptyImageListProvider()                               override    = default;
 
     int     size()  const                                   override;
     bool    atEnd() const                                   override;

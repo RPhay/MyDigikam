@@ -44,17 +44,20 @@ public:
 
     virtual void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize faceSize) override;
 
-private:
+protected:
 
     std::vector<cv::String> getOutputsNames() const;
 
     cv::Mat callModel(const cv::Mat& inputImage);
+    cv::UMat callModel(const cv::UMat& inputImage);
 
 private:
 
     // Disable
     DNNFaceDetectorYuNet(const DNNFaceDetectorYuNet&)            = delete;
     DNNFaceDetectorYuNet& operator=(const DNNFaceDetectorYuNet&) = delete;
+
+    friend class FacePipelineDetectRecognize;
 };
 
 } // namespace Digikam

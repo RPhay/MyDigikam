@@ -60,6 +60,8 @@
 #include "addtagslineedit.h"
 #include "facerejectionoverlay.h"
 #include "facetagsiface.h"
+#include "faceutils.h"
+#include "identityprovider.h"
 
 namespace Digikam
 {
@@ -70,12 +72,15 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 {
     installDefaultModels();
 
-    d->editPipeline.plugDatabaseEditor();
-    d->editPipeline.plugTrainer();
-    d->editPipeline.construct();
+    d->newEditPipeline = FacePipelineEdit::instance();
+    d->newEditPipeline->start();
 
-    connect(&d->editPipeline, SIGNAL(scheduled()),
-            this, SLOT(slotInitProgressIndicator()));
+    // d->editPipeline.plugDatabaseEditor();
+    // d->editPipeline.plugTrainer();
+    // d->editPipeline.construct();
+
+    // connect(&d->editPipeline, SIGNAL(scheduled()),
+    //         this, SLOT(slotInitProgressIndicator()));
 
     d->normalDelegate = new DigikamItemDelegate(this);
     d->faceDelegate   = new ItemFaceDelegate(this);
@@ -168,6 +173,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
 DigikamItemView::~DigikamItemView()
 {
+    d->newEditPipeline->cancel();
+    while (!d->newEditPipeline->hasFinished())
+    {
+        QThread::msleep(10);
+    }
     delete d;
 }
 
@@ -436,7 +446,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        d->editPipeline.confirm(infos[i], faces[i], tagId);
+        // d->editPipeline.confirm(infos[i], faces[i], tagId);
+        d->newEditPipeline->confirmFace(infos[i], faces[i], tagId, i == (infos.size()-1));
     }
 
     imageAlbumModel()->removeIndexes(sourceIndexes);
@@ -462,7 +473,8 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        d->editPipeline.remove(infos[i], faces[i]);
+        // d->editPipeline.remove(infos[i], faces[i]);
+        d->newEditPipeline->removeFace(infos[i], faces[i]);
     }
 
     imageAlbumModel()->removeIndexes(sourceIndexes);
@@ -488,7 +500,9 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        d->editPipeline.editTag(infos[i], faces[i],
+        // d->editPipeline.editTag(infos[i], faces[i],
+        //                         FaceTags::unknownPersonTagId());
+        d->newEditPipeline->editTag(infos[i], faces[i],
                                 FaceTags::unknownPersonTagId());
     }
 
@@ -519,19 +533,22 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         {
             // Reject signal was sent from an Unknown Face. Mark as Ignored.
 
-            d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+            // d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+            d->newEditPipeline->editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
         }
         else if (FaceTags::isTheIgnoredPerson(faces[i].tagId()))
         {
             // Reject signal was sent from an Ignored Face. Remove face.
 
-            d->editPipeline.remove(infos[i], faces[i]);
+            // d->editPipeline.remove(infos[i], faces[i]);
+            d->newEditPipeline->removeFace(infos[i], faces[i]);
         }
         else
         {
             // Reject face suggestion. Mark as Unknown.
 
-            d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
+            // d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
+            d->newEditPipeline->editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
     }
 
@@ -558,7 +575,9 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        d->editPipeline.editTag(infos[i], faces[i],
+        // d->editPipeline.editTag(infos[i], faces[i],
+        //                         FaceTags::ignoredPersonTagId());
+        d->newEditPipeline->editTag(infos[i], faces[i],
                                 FaceTags::ignoredPersonTagId());
     }
 
@@ -774,14 +793,14 @@ void DigikamItemView::slotInitProgressIndicator()
     {
         FileActionProgress* const item = new FileActionProgress(QLatin1String("FaceActionProgress"));
 
-        connect(&d->editPipeline, SIGNAL(started(QString)),
-                item, SLOT(slotProgressStatus(QString)));
+        // connect(&d->editPipeline, SIGNAL(started(QString)),
+        //         item, SLOT(slotProgressStatus(QString)));
 
-        connect(&d->editPipeline, SIGNAL(progressValueChanged(float)),
-                item, SLOT(slotProgressValue(float)));
+        // connect(&d->editPipeline, SIGNAL(progressValueChanged(float)),
+        //         item, SLOT(slotProgressValue(float)));
 
-        connect(&d->editPipeline, SIGNAL(finished()),
-                item, SLOT(slotCompleted()));
+        // connect(&d->editPipeline, SIGNAL(finished()),
+        //         item, SLOT(slotCompleted()));
     }
 }
 

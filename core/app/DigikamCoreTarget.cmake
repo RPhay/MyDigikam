@@ -29,6 +29,8 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_dpluginsinterface_obj>
             $<TARGET_OBJECTS:core_libwso2_obj>
             $<TARGET_OBJECTS:core_dnnmodelmanager_obj>
+            $<TARGET_OBJECTS:core_mlpipeline_obj>
+            $<TARGET_OBJECTS:core_qtopencvimg_obj>
 
             # widgets
             $<TARGET_OBJECTS:core_digikamwidgets_obj>

@@ -41,9 +41,10 @@
 #include "tooltipfiller.h"
 #include "thumbsgenerator.h"
 #include "newitemsfinder.h"
-#include "facesdetector.h"
+// #include "facesdetector.h"
 #include "coredbaccess.h"
 #include "coredb.h"
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -302,30 +303,33 @@ void AlbumSelectionTreeView::slotScanForFaces()
     settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
     settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
     settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
-    settings.task                   = FaceScanSettings::Detect;
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;
 
-    FacesDetector* const tool       = new FacesDetector(settings);
+    // FacesDetector* const tool       = new FacesDetector(settings);
+    FacesEngine* const tool       = new FacesEngine(settings);
 
-    connect(tool, &FacesDetector::signalComplete,
-            this, [this, albums]()
-        {
-            FaceScanSettings settings;
+    // connect(tool, &FacesDetector::signalComplete,
+    // connect(tool, &FacesEngine::signalComplete,
+    //         this, [this, albums]()
+    //     {
+    //         FaceScanSettings settings;
 
-            settings.detectAccuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-            settings.detectModel       = ApplicationSettings::instance()->getFaceDetectionModel();
-            settings.detectSize        = ApplicationSettings::instance()->getFaceDetectionSize();
-            settings.recognizeAccuracy = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-            settings.recognizeModel    = ApplicationSettings::instance()->getFaceRecognitionModel();
-            settings.task              = FaceScanSettings::RecognizeMarkedFaces;
-            settings.albums            = albums;
+    //         settings.detectAccuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    //         settings.detectModel       = ApplicationSettings::instance()->getFaceDetectionModel();
+    //         settings.detectSize        = ApplicationSettings::instance()->getFaceDetectionSize();
+    //         settings.recognizeAccuracy = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+    //         settings.recognizeModel    = ApplicationSettings::instance()->getFaceRecognitionModel();
+    //         settings.task              = FaceScanSettings::RecognizeMarkedFaces;
+    //         settings.albums            = albums;
 
-            FacesDetector* const tool  = new FacesDetector(settings);
+    //         // FacesDetector* const tool  = new FacesDetector(settings);
+    //         FacesEngine* const tool  = new FacesEngine(settings);
 
-            tool->start();
-        }
-    );
+    //         tool->start();
+    //     }
+    // );
 
     tool->start();
 }

@@ -123,6 +123,16 @@ bool DNNOpenFaceExtractor::loadModels()
     return true;
 }
 
+float DNNOpenFaceExtractor::getThreshold(int uiThreshold) const
+{
+    if (d->model)
+    {
+        return d->model->getThreshold(uiThreshold);
+    }
+
+    return 0.0f;
+}
+
 cv::Mat DNNOpenFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
     return d->preprocessor->preprocess(inputImage);

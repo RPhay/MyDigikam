@@ -603,6 +603,15 @@ public:
                                  DatabaseItem::Status status)                                                       const;
 
     /**
+     * Get the imageId fitting to the information given for the item
+     * @param albumID the albumID of the item (-1 means NULL)
+     * @param status the status of the item
+     * @param scanned return scanned/unscanned items
+     * @return the ImageIds for the item, or an empty list if there are no matching entries.
+     */
+    QList<qlonglong> getImageIds(int albumID, DatabaseItem::Status status, bool scanned = true)                     const;
+
+    /**
      * Returns all image ids with the given status.
      * @param status The status.
      * @return The ids of the images that have the given status.

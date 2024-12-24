@@ -74,6 +74,26 @@ void FaceDb::clearIdentities()
     d->db->execSql(QLatin1String("DELETE FROM Identities;"));
 }
 
+Identity FaceDb::identity(int id) const
+{
+    QList<QVariant> values;
+    Identity p;
+    p.setId(id);
+    d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"),
+                    p.id(), &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+    {
+        QString attribute = it->toString();
+        ++it;
+        QString value     = it->toString();
+        ++it;
+
+        p.setAttribute(attribute, value);
+    }
+    return p;
+}
+
 QList<Identity> FaceDb::identities() const
 {
     QList<QVariant> ids;

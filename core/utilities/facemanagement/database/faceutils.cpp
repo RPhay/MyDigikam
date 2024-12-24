@@ -35,6 +35,7 @@
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
 #include "albummanager.h"
+#include "identityprovider.h"
 
 namespace Digikam
 {
@@ -276,10 +277,11 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
     return newFaces;
 }
 
-Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
+// Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
+Identity FaceUtils::identityForTag(int tagId) const
 {
     QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
-    Identity identity                      = recognizer.findIdentity(attributes);
+    Identity identity                      = IdentityProvider::instance()->findIdentity(attributes);
 
     if (!identity.isNull())
     {
@@ -288,19 +290,11 @@ Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recogniz
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Adding new FacesEngine identity with attributes" << attributes;
-    identity                               = recognizer.addIdentity(attributes);
+    identity                               = IdentityProvider::instance()->addIdentity(attributes);
 
     FaceTags::applyTagIdentityMapping(tagId, identity.attributesMap());
 
     return identity;
-}
-
-Identity FaceUtils::identityForUuid(const QString& uuid, const FacialRecognitionWrapper& recognizer) const
-{
-    QMultiMap<QString, QString> attributes;
-    attributes.insert(QLatin1String("uuid"), uuid);
-
-    return recognizer.findIdentity(attributes);
 }
 
 int FaceUtils::tagForIdentity(const Identity& identity) const

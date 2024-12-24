@@ -71,6 +71,7 @@ public:
     void deleteIdentity(const QString& uuid);
     void clearIdentities();
 
+    Identity        identity(int id)                                            const;
     QList<Identity> identities()                                                const;
     QList<int>      identityIds()                                               const;
 
@@ -82,11 +83,12 @@ public:
      * @brief insertFaceVector: insert a new face embedding to database.
      * @param faceEmbedding
      * @param label
+     * @param hash
      * @return id of newly inserted entry.
      */
     int insertFaceVector(const cv::Mat& faceEmbedding,
                          const int label,
-                         const QString& context)                                const;
+                         const QString& hash)                                const;
 
     /**
      * @brief removeFaceVector: remove a face embedding from the database.
@@ -106,7 +108,7 @@ public:
      * @brief reconstructTree: reconstruct KD-Tree from data in the database.
      * @return the KD-Tree instance.
      */
-    KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
+    // KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
 
     /**
      * @brief trainData: extract train data from database.
@@ -121,8 +123,8 @@ public:
      * @param faceEmbedding
      * @return true if successed.
      */
-    bool insertToTreeDb(const int nodeID,
-                        const cv::Mat& faceEmbedding)                           const;
+    // bool insertToTreeDb(const int nodeID,
+    //                     const cv::Mat& faceEmbedding)                           const;
 
     /**
      * @brief getClosestNeighborsTreeDb: return a list of closest neighbor, limited by maxNbNeighbors and sqRange.
@@ -135,15 +137,15 @@ public:
      *
      * @return the map of data.
      */
-    QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
-                                                          float sqRange,
-                                                          float cosThreshold,
-                                                          int maxNbNeighbors)   const;
+    // QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
+    //                                                       float sqRange,
+    //                                                       float cosThreshold,
+    //                                                       int maxNbNeighbors)   const;
 
     /**
      * @brief clearTreeDb: clear the KD-Tree from data in the database.
      */
-    void clearTreeDb()                                                          const;
+    // void clearTreeDb()                                                          const;
 
     /**
      * @brief clearDNNTraining: clear all trained data in the database.
@@ -153,15 +155,15 @@ public:
 
 private:
 
-    void updateRangeTreeDb(int nodeId,
-                           cv::Mat& minRange,
-                           cv::Mat& maxRange,
-                           const cv::Mat& position)                             const;
-    int findParentTreeDb(const cv::Mat& nodePos,
-                         bool& leftChild,
-                         int& parentSplitAxis)                                  const;
+    // void updateRangeTreeDb(int nodeId,
+    //                        cv::Mat& minRange,
+    //                        cv::Mat& maxRange,
+    //                        const cv::Mat& position)                             const;
+    // int findParentTreeDb(const cv::Mat& nodePos,
+    //                      bool& leftChild,
+    //                      int& parentSplitAxis)                                  const;
 
-    class DataNode;
+    // class DataNode;
 
     /**
      * @brief getClosestNeighborsTreeDb: return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange.
@@ -173,12 +175,12 @@ private:
      * @param maxNbNeighbors
      * @return double
      */
-    double getClosestNeighborsTreeDb(const DataNode& subTree,
-                                     QMap<double, QVector<int> >& neighborList,
-                                     const cv::Mat& position,
-                                     float sqRange,
-                                     float cosThreshold,
-                                     int maxNbNeighbors)                        const;
+    // double getClosestNeighborsTreeDb(const DataNode& subTree,
+    //                                  QMap<double, QVector<int> >& neighborList,
+    //                                  const cv::Mat& position,
+    //                                  float sqRange,
+    //                                  float cosThreshold,
+    //                                  int maxNbNeighbors)                        const;
 
 private:
 

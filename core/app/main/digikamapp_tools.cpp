@@ -176,7 +176,8 @@ void DigikamApp::slotDetectFaces()
     settings.alreadyScannedHandling = FaceScanSettings::Skip;
     settings.infos                  = newImages;
 
-    FacesDetector* const tool       = new FacesDetector(settings);
+    // FacesDetector* const tool       = new FacesDetector(settings);
+    FacesEngine* const tool       = new FacesEngine(settings);
     tool->start();
 }
 

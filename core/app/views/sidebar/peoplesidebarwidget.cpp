@@ -43,9 +43,11 @@
 #include "tagfolderview.h"
 #include "timelinewidget.h"
 #include "facescanwidget.h"
-#include "facesdetector.h"
+// #include "facesdetector.h"
 #include "dnotificationwidget.h"
 #include "applicationsettings.h"
+
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -237,8 +239,11 @@ const QString PeopleSideBarWidget::getCaption()
 
 void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 {
-    FacesDetector* const facesDetector = new FacesDetector(faceScanSettings);
+    FacesEngine* const facesDetector = new FacesEngine(faceScanSettings);
     facesDetector->start();
+
+    // FacesDetector* const facesDetector = new FacesDetector(faceScanSettings);
+    // facesDetector->start();
 
     connect(facesDetector, SIGNAL(signalComplete()),
             d->parentInstance, SLOT(slotScanComplete()));

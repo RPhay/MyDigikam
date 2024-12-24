@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT DNNModelManager : public QObject
 public:
 
     /**
-     * Global instance of internal network manager.
+     * Global instance of internal model manager.
      * All accessor methods are thread-safe.
      */
     static DNNModelManager* instance();

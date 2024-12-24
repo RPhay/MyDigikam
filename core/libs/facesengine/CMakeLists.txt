@@ -73,23 +73,27 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
+set(facesengine_database_LIB_SRCS 
+                                  # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
+                                  # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
 
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_training.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/identityprovider.cpp
 
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treebase.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treeopenface.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treesface.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodebase.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodeopenface.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodesface.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_training.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
+
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treebase.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treeopenface.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treesface.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodebase.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodeopenface.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodesface.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractorbase.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnopenfaceextractor.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnsfaceextractor.cpp
@@ -101,7 +105,7 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
+                                #   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facescansettings.cpp
 )
 

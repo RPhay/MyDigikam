@@ -1,0 +1,66 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : Performs face detection and recognition
+ *
+ * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// Qt includes
+
+// #include <QThread>
+
+// local includes
+
+#include "facepipelinebase.h"
+#include "facetagsiface.h"
+#include "facedetector.h"
+#include "faceclassifier.h"
+
+namespace Digikam
+{
+
+class FacePipelineEdit : public FacePipelineBase
+{
+public:
+    explicit FacePipelineEdit();
+    ~FacePipelineEdit()                                         override;
+
+    static FacePipelineEdit* instance();
+
+    bool start()                                                override;
+    void cancel()                                               override;
+
+    FaceTagsIface confirmFace(const ItemInfo& info, const FaceTagsIface& face, int tagId, bool retrain = true);
+    void removeFace(const ItemInfo& info, const FaceTagsIface& face);
+    FaceTagsIface editTag(const ItemInfo& info, const FaceTagsIface& face, int newTagId);
+    FaceTagsIface editRegion(const ItemInfo& info, const FaceTagsIface& face, TagRegion& region, const DImg& image, bool retrain = true);
+    FaceTagsIface addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain = true);
+
+protected:
+    bool finder()                                               override    { return false; }
+    bool loader()                                               override;
+    bool extractor()                                            override;
+    bool classifier()                                           override    { return false; }
+    bool trainer()                                              override    { return false; }
+    bool writer()                                               override;
+
+    void addMoreWorkers()                                       override;
+
+
+private:
+    bool started = false;
+
+    FacePipelineEdit(FacePipelineEdit&)                         = delete;
+};
+
+}

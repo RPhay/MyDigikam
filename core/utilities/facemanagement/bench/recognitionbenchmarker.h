@@ -18,6 +18,7 @@
 // Local includes
 
 #include "facepipeline_p.h"
+#include "facialrecognition_wrapper.h"
 
 namespace Digikam
 {

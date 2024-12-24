@@ -48,8 +48,18 @@ public:
      * Read pretrained neural network for face recognition.
      */
     virtual bool loadModels()                                   = 0;
+
+    /**
+     * covert the UI threshold to a float using the conversion
+     * factor built into the model
+     */
+    virtual float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const = 0;
+
     virtual cv::Mat alignFace(const cv::Mat& inputImage) const  = 0;
     virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)  = 0;
+    // UMat versions
+    virtual cv::UMat alignFace(const cv::UMat& inputImage) const  = 0;
+    virtual cv::UMat getFaceEmbedding(const cv::UMat& faceImage)  = 0;
 
     /**
      * Calculate different between 2 vectors.

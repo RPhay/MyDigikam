@@ -15,93 +15,10 @@
 #include "recognitiontrainingupdatequeue.h"
 
 #include "digikam_debug.h"
+#include "sharedqueue.h"
 
 namespace Digikam
 {
-
-template <typename T>
-class SharedQueue
-{
-public:
-
-    SharedQueue();
-    ~SharedQueue();
-
-    T&   front();
-    void pop_front();
-
-    void push_back(T& item);
-    void push_back(T&& item);
-
-    int  size();
-    bool empty();
-
-private:
-
-    std::deque<T>           queue_;
-    std::mutex              mutex_;
-    std::condition_variable cond_;
-};
-
-template <typename T>
-SharedQueue<T>::SharedQueue()  {}
-
-template <typename T>
-SharedQueue<T>::~SharedQueue() {}
-
-template <typename T>
-T& SharedQueue<T>::front()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-
-    while (queue_.empty())
-    {
-        cond_.wait(mlock);
-    }
-
-    return queue_.front();
-}
-
-template <typename T>
-void SharedQueue<T>::pop_front()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-
-    while (queue_.empty())
-    {
-        cond_.wait(mlock);
-    }
-
-    queue_.pop_front();
-}
-
-template <typename T>
-void SharedQueue<T>::push_back(T& item)
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    queue_.push_back(item);
-    mlock.unlock();         // Unlock before notificiation to minimize mutex con.
-    cond_.notify_one();     // Notify one waiting thread.
-}
-
-template <typename T>
-void SharedQueue<T>::push_back(T&& item)
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    queue_.push_back(std::move(item));
-    mlock.unlock();         // Unlock before notificiation to minimize mutex con.
-    cond_.notify_one();     // Notify one waiting thread?
-}
-
-template <typename T>
-int SharedQueue<T>::size()
-{
-    std::unique_lock<std::mutex> mlock(mutex_);
-    int size = queue_.size();
-    mlock.unlock();
-
-    return size;
-}
 
 SharedQueue<QString>  RecognitionTrainingUpdateQueue::queue;
 QList<const QThread*> RecognitionTrainingUpdateQueue::readers;
@@ -118,10 +35,9 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
 
     if (0 == ref)
     {
-        // queue.push_back(endSignal());
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue destroyed";
     }
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue destroyed";
 }
 
 void RecognitionTrainingUpdateQueue::push(const QString& hash)
@@ -129,9 +45,11 @@ void RecognitionTrainingUpdateQueue::push(const QString& hash)
     QString val = hash; queue.push_back(val);
 }
 
-void RecognitionTrainingUpdateQueue::pop()
+QString RecognitionTrainingUpdateQueue::pop_front()
 {
+    QString result(queue.front());
     queue.pop_front();
+    return result;
 }
 
 QString RecognitionTrainingUpdateQueue::front()

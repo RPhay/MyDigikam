@@ -28,11 +28,13 @@
 #include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>
+#include <QUnhandledException>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dnnmodelmanager.h"
 #include "dnnmodelyunet.h"
 
 namespace Digikam
@@ -54,7 +56,13 @@ DNNFaceDetectorYuNet::DNNFaceDetectorYuNet()
 {
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Creating new instance of DNNFaceDetectorYuNet";
 
-    loadModels();
+    if (!loadModels())
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Failed to load YuNet model";
+        std::runtime_error e("Failed to load YuNet model");
+        std::exception_ptr p = std::make_exception_ptr(e);
+        QUnhandledException(p).raise();
+    }
 }
 
 DNNFaceDetectorYuNet::~DNNFaceDetectorYuNet()
@@ -104,8 +112,59 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
     QElapsedTimer timer;
     cv::Mat faces;
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "starting YuNet face detection";
+    if (model && model->modelLoaded)
+    {
+        const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
 
+        // Lock the model for single threading.
+
+        QMutexLocker lock(&(model->mutex));
+
+        try
+        {
+
+            // Start the timer so we know how long we're locking for.
+
+            timer.start();
+
+            // Set up the detector with new params.
+
+            static_cast<DNNModelYuNet*>(model)->getNet()->setInputSize(inputImage.size());
+            static_cast<DNNModelYuNet*>(model)->getNet()->setScoreThreshold(confidenceThreshold);
+            static_cast<DNNModelYuNet*>(model)->getNet()->setNMSThreshold(nmsThreshold);
+
+            // Detect faces.
+
+            static_cast<DNNModelYuNet*>(model)->getNet()->detect(inputImage, faces);
+
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
+        }
+        catch (const std::exception& ex)
+        {
+            // ...
+        }
+        catch (const std::string& ex)
+        {
+            // ...
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Face detection encountered a critical error. Reloading model...";
+            loadModels();
+        }
+    }
+    else
+    {
+        qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded. Processed 0 images.";
+    }
+
+    return faces;
+}
+
+cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
+{
+    QElapsedTimer timer;
+    cv::UMat faces;
 
     if (model && model->modelLoaded)
     {

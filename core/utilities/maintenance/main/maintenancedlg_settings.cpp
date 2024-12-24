@@ -50,7 +50,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
 
     if (d->resetFaceDb->isChecked())
     {
-        prm.faceSettings.task               = FaceScanSettings::DetectAndRecognize;
+        prm.faceSettings.task               = FaceScanSettings::Reset;
         prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::ClearAll;
     }
 

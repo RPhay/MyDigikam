@@ -56,6 +56,8 @@ add_subdirectory(transitionmngr)
 add_subdirectory(timeadjust)
 add_subdirectory(video)
 add_subdirectory(dnnmodelmanager)
+add_subdirectory(mlfoundation)
+add_subdirectory(qtopencvimg)
 
 if(JXL_FOUND)
 

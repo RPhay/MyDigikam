@@ -6,11 +6,12 @@
 
 APPLY_COMMON_POLICIES()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 
-add_subdirectory(alignment)
-add_subdirectory(preprocess)
-add_subdirectory(detection)
-add_subdirectory(recognition)
-add_subdirectory(demo)
-add_subdirectory(helper)
+# add_subdirectory(alignment)
+# add_subdirectory(preprocess)
+# add_subdirectory(detection)
+# add_subdirectory(recognition)
+# add_subdirectory(demo)
+# add_subdirectory(helper)
+add_subdirectory(unittests)

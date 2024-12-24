@@ -58,6 +58,7 @@
 #include "dexpanderbox.h"
 #include "facedbaccess.h"
 #include "facedb.h"
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -110,7 +111,8 @@ public:
     const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
-    FacesDetector*    facesDetector                     = nullptr;
+    // FacesDetector*    facesDetector                     = nullptr;
+    FacesEngine*    facesDetector                     = nullptr;
 };
 
 } // namespace Digikam

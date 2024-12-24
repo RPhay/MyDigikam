@@ -31,7 +31,7 @@
 #include "albumfiltermodel.h"
 #include "assignnamewidget.h"
 #include "facetagsiface.h"
-#include "facepipeline.h"
+// #include "facepipeline.h"
 #include "facetags.h"
 #include "itemdelegate.h"
 #include "itemmodel.h"

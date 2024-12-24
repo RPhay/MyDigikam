@@ -24,6 +24,7 @@
 #include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>
+#include <QUnhandledException>
 
 // Local includes
 
@@ -60,7 +61,13 @@ DNNSFaceExtractor::DNNSFaceExtractor()
 {
     // Virtual call in contructor: use dynamic binding.
 
-    this->loadModels();
+    if (!this->loadModels())
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Failed to load SFace model";
+        std::runtime_error e("Failed to load SFace model");
+        std::exception_ptr p = std::make_exception_ptr(e);
+        QUnhandledException(p).raise();
+    }
 }
 
 DNNSFaceExtractor::~DNNSFaceExtractor()
@@ -125,6 +132,16 @@ bool DNNSFaceExtractor::loadModels()
     return true;
 }
 
+float DNNSFaceExtractor::getThreshold(int uiThreshold) const
+{
+    if (d->model)
+    {
+        return d->model->getThreshold(uiThreshold);
+    }
+
+    return 0.0f;
+}
+
 cv::Mat DNNSFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
     cv::Mat alignedFace;
@@ -133,9 +150,18 @@ cv::Mat DNNSFaceExtractor::alignFace(const cv::Mat& inputImage) const
     return alignedFace;
 }
 
+cv::UMat DNNSFaceExtractor::alignFace(const cv::UMat& inputImage) const
+{
+    cv::UMat alignedFace;
+    static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(inputImage, inputImage, alignedFace);
+
+    return alignedFace;
+}
+
 cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     cv::Mat face_descriptors;
+    cv::Mat normalized_descriptors;
     cv::Mat paddedFace;
     cv::Mat alignedFace;
 
@@ -166,8 +192,9 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     }
 
     // Add a border so there is room to rotate the image during alignment.
-
-    cv::copyMakeBorder(paddedFace, paddedFace,
+    
+    cv::Mat borderFace;
+    cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
                        60, 60,
                        cv::BORDER_CONSTANT,
@@ -188,9 +215,9 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
             cv::Mat faceLandmark;
 
-            d->detectorModel->getNet()->setInputSize(paddedFace.size());
-            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold());
-            d->detectorModel->getNet()->detect(paddedFace, faceLandmark);
+            d->detectorModel->getNet()->setInputSize(borderFace.size());
+            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold(1));
+            d->detectorModel->getNet()->detect(borderFace, faceLandmark);
 
             detectorLock.unlock();
 
@@ -200,7 +227,107 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
                 // Align and crop the face to standard size.
 
-                static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(paddedFace, faceLandmark, alignedFace);
+                static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
+
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+
+                timer.start();
+
+                static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
+
+                normalize(face_descriptors, normalized_descriptors);
+            }
+            else
+            {
+                qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
+            }
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception: unknown error";
+    }
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
+                                << timer.elapsed() << " ms";
+
+    return normalized_descriptors;
+}
+
+cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
+{
+    cv::UMat face_descriptors;
+    cv::UMat paddedFace;
+    cv::UMat alignedFace;
+
+    QElapsedTimer timer;
+
+    // Start the timer for profiling.
+
+    timer.start();
+
+    // Resize the thumbnail if necessary to match SFace detection.
+    // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
+
+    if (std::min(faceImage.cols, faceImage.rows) > 112)
+    {
+        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
+        // So we just need to make sure no one bound exceeds the max. No padding needed.
+
+        float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
+                                           static_cast<float>(112) / static_cast<float>(faceImage.rows));
+
+        int newWidth            = (int)(resizeFactor * faceImage.cols);
+        int newHeight           = (int)(resizeFactor * faceImage.rows);
+        cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
+    }
+    else
+    {
+        paddedFace = faceImage.clone();
+    }
+
+    // Add a border so there is room to rotate the image during alignment.
+
+    cv::UMat borderFace;
+    cv::copyMakeBorder(paddedFace, borderFace,
+                       60, 60,
+                       60, 60,
+                       cv::BORDER_CONSTANT,
+                       cv::Scalar(0, 0, 0));
+    
+    try
+    {
+        if (
+            d->model                        &&
+            d->model->modelLoaded           &&
+            d->detectorModel                &&
+            d->detectorModel->modelLoaded
+           )
+        {
+            QMutexLocker detectorLock(&d->detectorModel->mutex);
+
+            // Redetect face using YuNet to get landmarks.
+
+            cv::UMat faceLandmark;
+
+            d->detectorModel->getNet()->setInputSize(borderFace.size());
+            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold());
+            d->detectorModel->getNet()->detect(borderFace, faceLandmark);
+
+            detectorLock.unlock();
+
+            if (0 < faceLandmark.rows)
+            {
+                QMutexLocker lock(&d->model->mutex);
+
+                // Align and crop the face to standard size.
+
+                static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
 
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";

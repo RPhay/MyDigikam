@@ -1,0 +1,101 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : Foundation for all ML classifiers
+ *
+ * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// Qt includes
+
+#include <QObject>
+#include <QReadWriteLock>
+#include <QMap>
+
+// local includes
+
+#include "digikam_export.h"
+#include "digikam_opencv.h"
+
+namespace Digikam
+{
+
+class DIGIKAM_EXPORT MLClassifierFoundation// : public QObject
+{
+    // Q_OBJECT
+
+public:
+    MLClassifierFoundation()                                            = default;
+    virtual ~MLClassifierFoundation()                                   = default;
+
+    virtual int predict(const cv::Mat& target)      const               = 0;
+    virtual int predict(const cv::UMat& target)     const               = 0;
+
+    virtual bool retrain()                                              = 0;
+
+// Q_SIGNALS:
+
+//     void signalTrainingComplete();
+
+protected:
+
+    class VotingGroups
+    {
+    public:
+        enum _WinnerType
+        {
+            VotesLowScore,
+            VotesHighScore,
+            LowScore,
+            HighScore
+        }
+        typedef WinnerType;
+
+        struct VoteTally
+        {
+            int     label;
+            int     votes;
+            float   score;
+        };
+
+        struct WinnerVotesLowScore;
+        struct WinnerVotesHighScore;
+        struct WinnerLowScore;
+        struct WinnerHighScore;
+
+        VotingGroups()                  = default;
+        ~VotingGroups()                 = default;
+
+        void    addVote(int label, float score);
+        int     winner(WinnerType winnerType);
+    
+    private:
+        QMap<int, QPair<int, float> >      votes;
+
+    };
+
+    QReadWriteLock  lock;
+
+    virtual bool loadTrainingData()                                     = 0;
+
+// protected Q_SLOTS:
+
+//     virtual void slotTrainingComplete()                                 = 0;
+
+private:
+
+    // hide
+
+    MLClassifierFoundation(MLClassifierFoundation&)                     = delete;
+};
+
+}

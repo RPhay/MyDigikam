@@ -32,7 +32,7 @@
 #include "albummanager.h"
 #include "clickdragreleaseitem.h"
 #include "dimgpreviewitem.h"
-#include "facepipeline.h"
+// #include "facepipeline.h"
 #include "faceitem.h"
 #include "facetags.h"
 #include "faceutils.h"
@@ -42,6 +42,7 @@
 #include "taggingaction.h"
 #include "metaenginesettings.h"
 #include "itemvisibilitycontroller.h"
+#include "facepipelineedit.h"
 
 namespace Digikam
 {
@@ -102,7 +103,8 @@ public:
     CheckableAlbumFilterModel* filterModel              = nullptr;
     TagPropertiesFilterModel*  filteredModel            = nullptr;
 
-    FacePipeline               editPipeline;
+    // FacePipeline               editPipeline;
+    FacePipelineEdit*          newEditPipeline          = nullptr;
 
     FaceGroup* const           q                        = nullptr;
 };

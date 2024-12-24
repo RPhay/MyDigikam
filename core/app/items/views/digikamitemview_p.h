@@ -28,7 +28,8 @@
 #include "itemrotationoverlay.h"
 #include "itemfullscreenoverlay.h"
 #include "applicationsettings.h"
-#include "facepipeline.h"
+// #include "facepipeline.h"
+#include "facepipelineedit.h"
 
 namespace Digikam
 {
@@ -53,7 +54,8 @@ public:
 
     ItemViewUtilities*       utilities          = nullptr;
 
-    FacePipeline             editPipeline;
+    // FacePipeline             editPipeline;
+    FacePipelineEdit*        newEditPipeline       = nullptr;
 
     DigikamItemDelegate*     normalDelegate     = nullptr;
     ItemFaceDelegate*        faceDelegate       = nullptr;

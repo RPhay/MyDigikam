@@ -96,14 +96,14 @@ FacialRecognitionWrapper::Private::Private()
 
     // Run the remove queue listener thread.
 
-    removeThreadResult = QtConcurrent::run(removeThreadPool, &trainingRemoveConcurrent, this);
+    // removeThreadResult = QtConcurrent::run(removeThreadPool, &trainingRemoveConcurrent, this);
 }
 
 FacialRecognitionWrapper::Private::~Private()
 {
     // Send the end signal to the queue.
 
-    removeQueue.push(removeQueue.endSignal());
+    // removeQueue.push(removeQueue.endSignal());
 
     // Clean up dynamic objects.
 
@@ -111,29 +111,28 @@ FacialRecognitionWrapper::Private::~Private()
     delete removeThreadPool;
 }
 
-bool FacialRecognitionWrapper::Private::trainingRemoveConcurrent(FacialRecognitionWrapper::Private* self)
-{
-    QString hash;
+// bool FacialRecognitionWrapper::Private::trainingRemoveConcurrent(FacialRecognitionWrapper::Private* self)
+// {
+//     QString hash;
 
-    while (true)
-    {
-        hash = self->removeQueue.front();
-        self->removeQueue.pop();
+//     // while (true)
+//     // {
+//     //     hash = self->removeQueue.pop_front();
 
-        if (self->removeQueue.endSignal() != hash)
-        {
-            self->clear(hash);
-            hash.clear();
-        }
-        else
-        {
-            break;
-        }
-    }
+//     //     if (self->removeQueue.endSignal() != hash)
+//     //     {
+//     //         self->clear(hash);
+//     //         hash.clear();
+//     //     }
+//     //     else
+//     //     {
+//     //         break;
+//     //     }
+//     // }
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue thread terminated";
+//     qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue thread terminated";
 
-    return true;
-}
+//     return true;
+// }
 
 } // namespace Digikam

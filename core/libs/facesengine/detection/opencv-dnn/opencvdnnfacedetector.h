@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT OpenCVDNNFaceDetector
 
 public:
 
-    explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::DNNDetectorSSD);
+    explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::DNNDetectorYuNet);
     ~OpenCVDNNFaceDetector();
 
     cv::Mat prepareForDetection(const DImg& inputImage, cv::Size& paddedSize)           const;

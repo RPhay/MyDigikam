@@ -36,7 +36,8 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/thumbs/thumbsgenerator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/thumbs/thumbstask.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/facesmanagement/facesdetector.cpp
+    # ${CMAKE_CURRENT_SOURCE_DIR}/tools/facesmanagement/facesdetector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/facesmanagement/facesengine.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/fingerprints/fingerprintsgenerator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/fingerprints/fingerprintstask.cpp

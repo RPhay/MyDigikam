@@ -37,12 +37,13 @@ public:
      */
     enum ScanTask
     {
-        Detect,                 ///< Detect faces only.
+        // Detect,                 ///< Detect faces only.
         DetectAndRecognize,     ///< Detect and recognize faces only.
         RecognizeMarkedFaces,   ///< Recognize already marked faces only.
         RetrainAll,             ///< Retrain faces only.
-        BenchmarkDetection,     ///< Bench performances of detect faces.
-        BenchmarkRecognition    ///< Bench performance of recognize faces.
+        Reset
+        // BenchmarkDetection,     ///< Bench performances of detect faces.
+        // BenchmarkRecognition    ///< Bench performance of recognize faces.
     };
     Q_ENUM(ScanTask)
 
@@ -52,9 +53,10 @@ public:
     enum AlreadyScannedHandling
     {
         Skip,                   ///< Skip faces from images already scanned.
-        Merge,                  ///< Merge faces from images already scanned.
+        // Merge,                  ///< Merge faces from images already scanned.
         Rescan,                 ///< Rescan faces from images already scanned.
-        ClearAll                ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
+        ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
+        RecognizeOnly           ///< Recognize faces from images already scanned.
     };
     Q_ENUM(AlreadyScannedHandling)
 
@@ -126,7 +128,7 @@ public:
     /// Image infos to scan.
     ItemInfoList                            infos;
 
-    ScanTask                                task                        = Detect;
+    ScanTask                                task                        = DetectAndRecognize;
 
     AlreadyScannedHandling                  alreadyScannedHandling      = Skip;
 };

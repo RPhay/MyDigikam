@@ -89,6 +89,8 @@ DigikamApp::DigikamApp()
     DIO::instance();
     LocalizeSettings::instance();
     NetworkManager::instance();
+    IdentityProvider::instance();
+    FaceClassifier::instance();
 
 #ifdef HAVE_GEOLOCATION
 

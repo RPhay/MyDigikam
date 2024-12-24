@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -23,7 +24,7 @@
 // Local includes
 
 #include "identity.h"
-#include "facialrecognition_wrapper.h"
+// #include "facialrecognition_wrapper.h"
 #include "iteminfo.h"
 #include "facetagseditor.h"
 #include "digikam_export.h"
@@ -122,8 +123,8 @@ public:
 
     // TODO: investigate this method.
 
-    Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)                  const;
-    Identity identityForUuid(const QString& uuid, const FacialRecognitionWrapper& recognizer) const;
+    // Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)                  const;
+    Identity identityForTag(int tagId)                  const;
     int      tagForIdentity(const Identity& identity)                                         const;
 
 protected:

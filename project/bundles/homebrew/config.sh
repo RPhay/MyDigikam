@@ -87,23 +87,17 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
 
-# KDE Plasma version.
-# See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="v6.2.0"
-
-# KDE Application version.
-# See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="v24.08.1"
-
 # Qt version to use in bundle and provided by Homebrew.
+#DK_QTVERSION="5"
 DK_QTVERSION="6"
+
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
-#DK_VERSION=v7.2.0-beta1
-DK_VERSION=master
-#DK_VERSION="work/michmill/delete-face-matrix"
+#DK_VERSION=v8.4.0
+#DK_VERSION=master
+DK_VERSION="work/michmill/faces-pipeline-refactor"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
@@ -129,12 +123,34 @@ DK_UPLOADURL="digikam@tinami.kde.org"
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
-    DK_KDE_VERSION="5.113"
-    DK_UPLOADDIR="/srv/archives/files/digikam/"
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KDE_VERSION="5.116"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KP_VERSION="5.27.11"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KA_VERSION="24.05.1"
+    
+    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"
 
 else
 
-    DK_KDE_VERSION="v6.6.0"                                 # Qt6 version use master code for the moment.
-    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KP_VERSION="v6.2.1"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KA_VERSION="v24.08.2"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KDE_VERSION="v6.7.0"
+
+    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"
 
 fi

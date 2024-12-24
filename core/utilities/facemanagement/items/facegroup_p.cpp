@@ -22,6 +22,7 @@ namespace Digikam
 FaceGroup::Private::Private(FaceGroup* const qq)
     : q(qq)
 {
+    newEditPipeline = FacePipelineEdit::instance();
 }
 
 QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)

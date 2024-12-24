@@ -94,7 +94,7 @@ public:
     OpenCVDNNFaceRecognizer*                recognizer              = nullptr;
     FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
 
-    RecognitionTrainingUpdateQueue          removeQueue;
+    // RecognitionTrainingUpdateQueue          removeQueue;
     QThreadPool*                            removeThreadPool        = nullptr;
     QFuture<bool>                           removeThreadResult;
 
