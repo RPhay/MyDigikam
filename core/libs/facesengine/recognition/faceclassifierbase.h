@@ -15,33 +15,31 @@
 
 #pragma once
 
-// other includes
-
-
-// local includes
+// Local includes
 
 #include "mlclassifierfoundation.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FaceClassifierBase : public MLClassifierFoundation
+class DIGIKAM_GUI_EXPORT FaceClassifierBase : public MLClassifierFoundation
 {
 public:
+
     FaceClassifierBase()                                        = default;
     ~FaceClassifierBase()                                       = default;
 
     void setThreshold(float _threshold)                         { threshold = _threshold; }
 
 protected:
-    float   threshold = 0.0f;
+
+    float   threshold = 0.0F;
 
 private:
 
-    // hide
+    // Hide
 
     FaceClassifierBase(FaceClassifierBase&)                     = delete;
-
 };
 
-}
+} // namespace Digikam
