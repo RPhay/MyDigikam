@@ -1,3 +1,17 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : Foundation for all ML classifiers
+ *
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
 #pragma once
 
 // C++ includes
@@ -33,7 +47,6 @@ public:
         return queue_.front();
     }
 
-
     T&   pop_front()
     {
         std::unique_lock<std::mutex> mlock(mutex_);
@@ -59,7 +72,7 @@ public:
         }
 
         queue_.push_back(item);
-        mlock.unlock();         // Unlock before notificiation to minimize mutex con.
+        mlock.unlock();          // Unlock before notificiation to minimize mutex con.
         front_.notify_one();     // Notify one waiting thread.
     }
 
@@ -73,7 +86,7 @@ public:
         }
 
         queue_.push_back(std::move(item));
-        mlock.unlock();         // Unlock before notificiation to minimize mutex con.
+        mlock.unlock();          // Unlock before notificiation to minimize mutex con.
         front_.notify_one();     // Notify one waiting thread?
     }
 
@@ -106,6 +119,7 @@ public:
     {
         return maxDepth_;
     }
+
     void maxDepth(int depth)
     {
         maxDepth_ = depth;
@@ -220,4 +234,4 @@ private:
 //     maxDepth_ = depth;
 // }
 
-}
+} // namespace Digikam
