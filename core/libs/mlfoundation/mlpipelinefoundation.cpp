@@ -595,9 +595,12 @@ void MLPipelineFoundation::showPipelinePerformance() const
 
 #endif
 
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
-                                         << " Max Queue:" << profile.maxQueueCount << " Elapsed:" << profile.elapsedTime
-                                         << " Max Elapsed:" << profile.maxElapsedTime << " Average:" << profile.elapsedTime / profile.itemCount;
+        if (profile.itemCount > 0)
+        {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
+                                            << " Max Queue:" << profile.maxQueueCount << " Elapsed:" << profile.elapsedTime
+                                            << " Max Elapsed:" << profile.maxElapsedTime << " Average:" << profile.elapsedTime / profile.itemCount;
+        }
     }
 }
 
