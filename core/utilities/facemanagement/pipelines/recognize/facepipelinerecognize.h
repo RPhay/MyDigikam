@@ -15,10 +15,6 @@
 
 #pragma once
 
-// Qt includes
-
-// #include <QThread>
-
 // Local includes
 
 #include "facepipelinebase.h"
@@ -31,6 +27,7 @@ namespace Digikam
 class FacePipelineRecognize : public FacePipelineBase
 {
 public:
+
     explicit FacePipelineRecognize(const FaceScanSettings& _settings);
     ~FacePipelineRecognize()                                    override;
 
@@ -42,10 +39,12 @@ protected:
     bool loader()                                               override;
     bool extractor()                                            override;
     bool classifier()                                           override;
+
     bool trainer()                                              override
     {
         return false;
     }
+
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;
@@ -60,4 +59,4 @@ private:
     FacePipelineRecognize(FacePipelineRecognize&)               = delete;
 };
 
-}
+} // namespace Digikam

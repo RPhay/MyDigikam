@@ -87,9 +87,11 @@ void FacePipelineRecognize::cancel()
 bool FacePipelineRecognize::finder()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -119,13 +121,12 @@ bool FacePipelineRecognize::finder()
 
             // quick check if we should add threads.
 
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
+            if (!moreCpu && settings.useFullCpu && ((totalItemCount + imageIds.size()) > 25) && (QThread::idealThreadCount() > 4))
             {
-                moreCpu = true;
-
+                moreCpu          = true;
                 int newInstances = (QThread::idealThreadCount() / 4) - 1;
 
-                for (int i = 0; i < newInstances; ++i)
+                for (int i = 0 ; i < newInstances ; ++i)
                 {
                     Q_EMIT signalAddMoreWorkers();
                 }
@@ -182,11 +183,12 @@ bool FacePipelineRecognize::finder()
     // end pipeline stage specific code
     //////////////////////////////////////////////////////////////////////////////////////////////
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
+    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
 
     return true;
@@ -213,7 +215,7 @@ bool FacePipelineRecognize::classifier()
 
     //--------------------------------------------------------------------------------
 
-    FaceClassifier* classifier = FaceClassifier::instance();
+    FaceClassifier* const classifier = FaceClassifier::instance();
     classifier->setParameters(settings);
 
     while (!cancelled)
@@ -255,7 +257,6 @@ bool FacePipelineRecognize::classifier()
             {
                 enqueue(nextQueue, package);
             }
-
             else
             {
                 // no suggested match found, so notify the user
@@ -306,14 +307,16 @@ bool FacePipelineRecognize::classifier()
 bool FacePipelineRecognize::writer()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
-    IdentityProvider* idProvider = IdentityProvider::instance();
+    IdentityProvider* const idProvider = IdentityProvider::instance();
 
     while (!cancelled)
     {
@@ -341,7 +344,7 @@ bool FacePipelineRecognize::writer()
             if (-1 != package->label)
             {
                 Identity identity = idProvider->identity(package->label);
-                int tagId = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
+                int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
                 utils.changeSuggestedName(package->face, tagId);
             }
 
@@ -383,6 +386,7 @@ bool FacePipelineRecognize::writer()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;

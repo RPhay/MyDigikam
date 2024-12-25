@@ -43,8 +43,8 @@
 namespace Digikam
 {
 
-FacePipelineRetrain::FacePipelineRetrain(const FaceScanSettings& _settings) :
-    FacePipelineBase(_settings)
+FacePipelineRetrain::FacePipelineRetrain(const FaceScanSettings& _settings)
+    : FacePipelineBase(_settings)
 {
 }
 
@@ -87,9 +87,11 @@ void FacePipelineRetrain::cancel()
 bool FacePipelineRetrain::finder()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
@@ -112,10 +114,9 @@ bool FacePipelineRetrain::finder()
         {
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
 
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
+            if (!moreCpu && settings.useFullCpu && ((totalItemCount + imageIds.size()) > 25) && (QThread::idealThreadCount() > 4))
             {
-                moreCpu = true;
-
+                moreCpu          = true;
                 int newInstances = (QThread::idealThreadCount() / 4) - 1;
 
                 for (int i = 0 ; i < newInstances ; ++i)
@@ -145,7 +146,7 @@ bool FacePipelineRetrain::finder()
 
     Q_EMIT signalUpdateItemCount(totalItemCount);
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
+    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
 
     //--------------------------------------------------------------------------------
@@ -174,14 +175,16 @@ bool FacePipelineRetrain::classifier()
 bool FacePipelineRetrain::writer()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
-    IdentityProvider* idProvider = IdentityProvider::instance();
+    IdentityProvider* const idProvider = IdentityProvider::instance();
 
     // clear all identites and training from recognition DB before
     // we start looping through the results from the pipeline
@@ -213,12 +216,10 @@ bool FacePipelineRetrain::writer()
                 Identity identity = utils.identityForTag(package->face.tagId());
                 idProvider->addTraining(identity, package->face.hash(), package->features);
             }
-
             else
             {
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
             }
-
 
             // send a notification that the image was processed
 
@@ -247,10 +248,12 @@ bool FacePipelineRetrain::writer()
     }
 
     // retrain the classifier after all results have been processed
+
     FaceClassifier::instance()->retrain();
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;
@@ -263,6 +266,6 @@ void FacePipelineRetrain::addMoreWorkers()
     addWorker(Extractor);
 }
 
-}
+} // namespace Digikam
 
 #include "moc_facepipelineretrain.cpp"
