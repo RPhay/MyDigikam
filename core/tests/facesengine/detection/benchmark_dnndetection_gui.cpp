@@ -71,7 +71,7 @@ private:
     QListWidget*           m_croppedfaceList    = nullptr;
 };
 
-MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
+MainWindow::MainWindow(const QDir& directory, QWidget* const parent)
     : QMainWindow(parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
@@ -144,7 +144,7 @@ QPixmap MainWindow::showCVMat(const cv::Mat& cvimage) const
     {
         cv::Mat rgb;
         QPixmap p;
-        cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
+        cv::cvtColor(cvimage, rgb, (-2 * cvimage.channels() + 10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
 
         return p;
@@ -156,15 +156,15 @@ QPixmap MainWindow::showCVMat(const cv::Mat& cvimage) const
 QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 {
     QImage img(imagePath);
-/*
-    cv::Mat img;
-    img = cv::imread(imagePath.toStdString());
+    /*
+        cv::Mat img;
+        img = cv::imread(imagePath.toStdString());
 
-    if (!img.data )
-    {
-        qCDebug(DIGIKAM_TESTS_LOG) <<  "Open cv Could not open or find the image";
-    }
-*/
+        if (!img.data )
+        {
+            qCDebug(DIGIKAM_TESTS_LOG) <<  "Open cv Could not open or find the image";
+        }
+    */
     QList<QRectF> faces;
 
     try
@@ -180,8 +180,8 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
-                                                              QSize(cvImage.cols - 2*paddedSize.width,
-                                                              cvImage.rows - 2*paddedSize.height));
+                                                              QSize(cvImage.cols - 2 * paddedSize.width,
+                                                                    cvImage.rows - 2 * paddedSize.height));
         elapsedDetection      = timer.elapsed();
 
         // Debug padded image.
@@ -190,10 +190,12 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 
         qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
+
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "cv::Exception:" << e.what();
     }
+
     catch (...)
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Default exception from OpenCV";
@@ -285,10 +287,10 @@ QWidget* MainWindow::setupCroppedFaceArea()
     m_croppedfaceList->setWrapping(false);
     m_croppedfaceList->setDragEnabled(false);
 
-/*
-    connect(m_croppedfaceList, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
-*/
+    /*
+        connect(m_croppedfaceList, &QListWidget::currentItemChanged,
+                this,            &MainWindow::slotDetectFaces);
+    */
 
     facesArea->setWidget(m_croppedfaceList);
 
@@ -319,8 +321,8 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     QStringList subjects         = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
 
     for (QStringList::const_iterator iter  = subjects.cbegin();
-                                     iter != subjects.cend();
-                                     ++iter)
+         iter != subjects.cend();
+         ++iter)
     {
         QString filePath            = directory.filePath(*iter);
         QListWidgetItem* const item = new QListWidgetItem(QIcon(filePath), filePath);

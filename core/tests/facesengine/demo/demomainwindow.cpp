@@ -64,7 +64,7 @@ public:
 
 MainWindow::MainWindow(QWidget* const parent)
     : QMainWindow(parent),
-      d          (new Private)
+      d(new Private)
 {
     d->ui = new Ui::MainWindow;
     d->ui->setupUi(this);
@@ -172,10 +172,11 @@ void MainWindow::slotOpenImage()
     if (
         (1.0 * d->ui->widget->width()  / d->currentPhoto.width()) <
         (1.0 * d->ui->widget->height() / d->currentPhoto.height())
-       )
+    )
     {
         d->scale = 1.0 * d->ui->widget->width() / d->currentPhoto.width();
     }
+
     else
     {
         d->scale = 1.0 * d->ui->widget->height() / d->currentPhoto.height();
@@ -224,7 +225,7 @@ void MainWindow::slotDetectFaces()
 void MainWindow::slotUpdateAccuracy()
 {
     int value = d->ui->accuracySlider->value();
-    d->detector->setParameter(QString::fromLatin1("accuracy"), value/100.0);
+    d->detector->setParameter(QString::fromLatin1("accuracy"), value / 100.0);
 }
 
 void MainWindow::slotUpdateSensitivity()
@@ -250,19 +251,20 @@ void MainWindow::slotRecognise()
         Identity identity = d->database.recognizeFace(face);
         int elapsed       = timer.elapsed();
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took " << elapsed << " for Face #" << i+1;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took " << elapsed << " for Face #" << i + 1;
 
         if (!identity.isNull())
         {
             item->suggest(identity.attribute(QString::fromLatin1("name")));
 
-            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i + 1
                                        << " is closest to the person with ID " << identity.id()
-                                       << " and name "<< identity.attribute(QString::fromLatin1("name"));
+                                       << " and name " << identity.attribute(QString::fromLatin1("name"));
         }
+
         else
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << " : no Identity match from database.";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i + 1 << " : no Identity match from database.";
         }
 
         i++;
@@ -285,7 +287,7 @@ void MainWindow::slotUpdateDatabase()
             timer.start();
 
             QString name = item->text();
-            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << ": training name '" << name << "'";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i + 1 << ": training name '" << name << "'";
 
             Identity identity = d->database.findIdentity(QString::fromLatin1("name"), name);
 
@@ -297,6 +299,7 @@ void MainWindow::slotUpdateDatabase()
                 qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity ID " << identity.id()
                                            << " to database for name " << name;
             }
+
             else
             {
                 qCDebug(DIGIKAM_TESTS_LOG) << "Found existing identity ID " << identity.id()
@@ -310,7 +313,7 @@ void MainWindow::slotUpdateDatabase()
 
             int elapsed        = timer.elapsed();
 
-            qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for Face #" << i+1;
+            qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for Face #" << i + 1;
         }
 
         ++i;

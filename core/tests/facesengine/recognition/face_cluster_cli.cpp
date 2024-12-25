@@ -128,8 +128,8 @@ int prepareForTrain(QString datasetPath,
     for (int i = 1 ; i <= nbOfClusters ; ++i)
     {
         QString subjectPath               = QString::fromLatin1("%1%2")
-                                                     .arg(datasetPath)
-                                                     .arg(subjects.takeFirst());
+                                            .arg(datasetPath)
+                                            .arg(subjects.takeFirst());
         QDir subjectDir(subjectPath);
 
         QStringList files                 = subjectDir.entryList(QDir::Files);
@@ -138,7 +138,7 @@ int prepareForTrain(QString datasetPath,
         for (unsigned j = 1 ; j <= nbOfFacesPerClusters ; ++j)
         {
             QString path = QString::fromLatin1("%1/%2").arg(subjectPath)
-                                                       .arg(files.takeFirst());
+                           .arg(files.takeFirst());
 
             testClusteredIndices.push_back(i - 1);
             images << path;
@@ -247,7 +247,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             std::set_symmetric_difference(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(),
                                           std::inserter(newVisitSet, newVisitSet.begin()));
 
-            for (int elm: lastVisitSet)
+            for (int elm : lastVisitSet)
             {
                 falsePositivePoints.erase(elm);
             }
@@ -255,6 +255,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             lastVisit[indice] = newVisitSet;
             falsePositivePoints.insert(newVisitSet.begin(), newVisitSet.end());
         }
+
         else
         {
             std::set_intersection(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(),
@@ -279,8 +280,8 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption(QLatin1String("db"),
-                     QLatin1String("Faces database"),
-                     QLatin1String("path to db folder")));
+                                        QLatin1String("Faces database"),
+                                        QLatin1String("path to db folder")));
     parser.addHelpOption();
     parser.process(app);
 
@@ -288,11 +289,12 @@ int main(int argc, char* argv[])
 
     bool optionErrors = false;
 
-    if      (parser.optionNames().empty())
+    if (parser.optionNames().empty())
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "No options!!!";
         optionErrors = true;
     }
+
     else if (!parser.isSet(QLatin1String("db")))
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Missing database for test!!!";
@@ -312,9 +314,9 @@ int main(int argc, char* argv[])
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     FacialRecognitionWrapper recognizer;
-/*
-    db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering.
-*/
+    /*
+        db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering.
+    */
     // Construct test set, data set.
 
     QStringList dataset;
@@ -349,6 +351,7 @@ int main(int argc, char* argv[])
 
             ++totalClustered;
         }
+
         else
         {
             undetectedFaces << imagePath;
@@ -361,10 +364,10 @@ int main(int argc, char* argv[])
     QElapsedTimer timer;
 
     timer.start();
-/*
-    TODO: port to new API.
-    db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);
-*/
+    /*
+        TODO: port to new API.
+        db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);
+    */
     elapsedClustering  += timer.elapsed();
 
     // Verify clustering.
@@ -389,7 +392,7 @@ int main(int argc, char* argv[])
 
     qCDebug(DIGIKAM_TESTS_LOG) << "\nFalse positive cases";
     qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbOfFalsePositiveCases << "/" << dataset.size()
-                               << "(" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
+                               << "(" << float(nbOfFalsePositiveCases * 100) / dataset.size() << "%)"
                                << "faces were wrongly clustered";
 
     for (const QString& imagePath : std::as_const(falsePositiveCases))

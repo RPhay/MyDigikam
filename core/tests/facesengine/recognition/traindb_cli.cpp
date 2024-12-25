@@ -40,7 +40,7 @@ public:
 
     Runnable(int number, const FacialRecognitionWrapper& db)
         : number(number),
-          db    (db)
+          db(db)
     {
     }
 
@@ -76,6 +76,7 @@ public:
             {
                 qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << name << " is present in DB";
             }
+
             else
             {
                 qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << name << " is absent in DB";
@@ -125,6 +126,7 @@ int main(int argc, char** argv)
             qCDebug(DIGIKAM_TESTS_LOG) << "Identity" << id.attribute(QString::fromLatin1("name")) << "recognized";
         }
     }
+
     else
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "No Identity recognized from DB";

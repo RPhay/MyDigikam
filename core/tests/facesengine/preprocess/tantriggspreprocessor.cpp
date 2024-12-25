@@ -22,9 +22,9 @@ namespace Digikam
 {
 
 TanTriggsPreprocessor::TanTriggsPreprocessor()
-    : alpha (0.1f),
-      tau   (10.0f),
-      gamma (0.2f),
+    : alpha(0.1f),
+      tau(10.0f),
+      gamma(0.2f),
       sigma0(1),
       sigma1(2)
 {
@@ -65,15 +65,15 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
 
         // Kernel Size.
 
-        int kernel_sz0 = (int)(3*sigma0);
-        int kernel_sz1 = (int)(3*sigma1);
+        int kernel_sz0 = (int)(3 * sigma0);
+        int kernel_sz1 = (int)(3 * sigma1);
 
         // Make them odd for OpenCV.
 
         kernel_sz0    += ((kernel_sz0 % 2) == 0) ? 1 : 0;
         kernel_sz1    += ((kernel_sz1 % 2) == 0) ? 1 : 0;
-        cv::GaussianBlur(I, gaussian0, cv::Size(kernel_sz0,kernel_sz0), sigma0, sigma0, cv::BORDER_CONSTANT);
-        cv::GaussianBlur(I, gaussian1, cv::Size(kernel_sz1,kernel_sz1), sigma1, sigma1, cv::BORDER_CONSTANT);
+        cv::GaussianBlur(I, gaussian0, cv::Size(kernel_sz0, kernel_sz0), sigma0, sigma0, cv::BORDER_CONSTANT);
+        cv::GaussianBlur(I, gaussian1, cv::Size(kernel_sz1, kernel_sz1), sigma1, sigma1, cv::BORDER_CONSTANT);
         cv::subtract(gaussian0, gaussian1, I);
     }
 
@@ -86,7 +86,7 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
             meanI = cv::mean(tmp).val[0];
         }
 
-        I = I / cv::pow(meanI, 1.0/alpha);
+        I = I / cv::pow(meanI, 1.0 / alpha);
     }
 
     {
@@ -98,7 +98,7 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
             meanI = cv::mean(tmp).val[0];
         }
 
-        I = I / cv::pow(meanI, 1.0/alpha);
+        I = I / cv::pow(meanI, 1.0 / alpha);
     }
 
     // Squash into the tanh.

@@ -55,6 +55,7 @@ void FancyRect::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
         painter->setPen(selectedPen);
         painter->drawRect(rect());
     }
+
     else
     {
         QGraphicsRectItem::paint(painter, option, widget);

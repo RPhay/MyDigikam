@@ -41,24 +41,24 @@ class Q_DECL_HIDDEN FaceItem::Private
 public:
 
     explicit Private()
-      : suggestionMode        (false),
-        sceneWidth            (0),
-        sceneHeight           (0),
-        x1                    (0),
-        x2                    (0),
-        y1                    (0),
-        y2                    (0),
-        name                  (),
-        faceMarquee           (nullptr),
-        faceName              (nullptr),
-        nameRect              (nullptr),
-        origRect              (),
-        origScale             (0.0),
-        scale                 (0.0),
-        rejectButton          (nullptr),
-        acceptButton          (nullptr),
-        suggestionRejectButton(nullptr),
-        suggestionAcceptButton(nullptr)
+        : suggestionMode(false),
+          sceneWidth(0),
+          sceneHeight(0),
+          x1(0),
+          x2(0),
+          y1(0),
+          y2(0),
+          name(),
+          faceMarquee(nullptr),
+          faceName(nullptr),
+          nameRect(nullptr),
+          origRect(),
+          origScale(0.0),
+          scale(0.0),
+          rejectButton(nullptr),
+          acceptButton(nullptr),
+          suggestionRejectButton(nullptr),
+          suggestionAcceptButton(nullptr)
     {
     }
 
@@ -90,8 +90,8 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
                    double scale,
                    const QString& name,
                    double originalscale)
-        : QGraphicsObject(parent),
-          d              (new Private)
+    : QGraphicsObject(parent),
+      d(new Private)
 {
     setAcceptHoverEvents(true);
 
@@ -160,26 +160,26 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     //---------------------
 
     QPixmap rejectPix  = QIcon::fromTheme(QLatin1String("window-close")).pixmap(16, 16);
-    d->rejectButton    = new Button( rejectPix, rejectPix);
+    d->rejectButton    = new Button(rejectPix, rejectPix);
     scene->addItem(d->rejectButton);
     d->rejectButton->show();
 
     QPixmap acceptPix  = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16);
-    d->acceptButton    = new Button( acceptPix, acceptPix);
+    d->acceptButton    = new Button(acceptPix, acceptPix);
     scene->addItem(d->acceptButton);
-/*
-    d->acceptButton->show();
-*/
+    /*
+        d->acceptButton->show();
+    */
     d->suggestionRejectButton = new Button(rejectPix, rejectPix);
     scene->addItem(d->suggestionRejectButton);
-/*
-    d->suggestionAcceptButton->hide();
-*/
+    /*
+        d->suggestionAcceptButton->hide();
+    */
     d->suggestionAcceptButton = new Button(acceptPix, acceptPix);
     scene->addItem(d->suggestionAcceptButton);
-/*
-    d->suggestionRejectButton->hide();
-*/
+    /*
+        d->suggestionRejectButton->hide();
+    */
     update();
 
     switchToEditMode();
@@ -216,8 +216,8 @@ QRectF FaceItem::boundingRect() const
 
     return QRectF(-18 - adjust,
                   -22 - adjust,
-                   36 + adjust,
-                   60 + adjust);
+                  36 + adjust,
+                  60 + adjust);
 }
 
 void FaceItem::setText(const QString& newName)
@@ -239,6 +239,7 @@ void FaceItem::update()
         d->acceptButton->hide();
         d->name.clear();
     }
+
     else
     {
         d->nameRect->setPen(QPen(QColor("yellow")));
@@ -269,13 +270,13 @@ void FaceItem::update()
     QSize s(newRect.size());
     s.scale(newRect.width() * qSqrt(d->origScale), newRect.height() * qSqrt(d->origScale), Qt::KeepAspectRatio);
     newRect.setSize(s);
-/*
-    newRect.setRect(x,y,w,h);
-*/
+    /*
+        newRect.setRect(x,y,w,h);
+    */
     qCDebug(DIGIKAM_TESTS_LOG) << "Orig before" << d->origRect;
-/*
-    d->origRect = newRect;
-*/
+    /*
+        d->origRect = newRect;
+    */
     qCDebug(DIGIKAM_TESTS_LOG) << "Orig after" << d->origRect;
 }
 
@@ -295,6 +296,7 @@ void FaceItem::setControlsVisible(bool visible)
         d->suggestionAcceptButton->setVisible(visible);
         d->suggestionRejectButton->setVisible(visible);
     }
+
     else
     {
         d->rejectButton->setVisible(visible);

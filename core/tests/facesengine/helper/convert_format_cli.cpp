@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     if (
         !parser->isSet(QLatin1String("source")) &&
         !parser->isSet(QLatin1String("destination"))
-       )
+    )
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Folders are not set !!!";
 

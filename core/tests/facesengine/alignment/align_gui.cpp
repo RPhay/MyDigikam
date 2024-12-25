@@ -61,8 +61,8 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 public:
 
     explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
-        : bigImage  (cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
-          uiSize    (uiSize),
+        : bigImage(cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
+          uiSize(uiSize),
           currentRow(0)
     {
     }
@@ -142,7 +142,7 @@ int main(int argc, char** argv)
 
     int elapsed = timer.elapsed();
     qCDebug(DIGIKAM_TESTS_LOG) << "Alignment took " << elapsed << " for " << images.size() << " , "
-             << ((float)elapsed/images.size()) << " per image";
+                               << ((float)elapsed / images.size()) << " per image";
 
     display.show();
     app.exec();

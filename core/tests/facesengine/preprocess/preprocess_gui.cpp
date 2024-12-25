@@ -53,15 +53,15 @@ QList<cv::Mat> toImages(const QStringList& paths)
 
 #if OPENCV_TEST_VERSION(3,99,0)
 
-            CV_LOAD_IMAGE_GRAYSCALE
+                             CV_LOAD_IMAGE_GRAYSCALE
 
 #else
 
-            cv::IMREAD_GRAYSCALE
+                             cv::IMREAD_GRAYSCALE
 
 #endif
 
-        );
+                            );
     }
 
     return images;
@@ -75,7 +75,7 @@ public:
 
     explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
         : bigImage(cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
-          uiSize  (uiSize)
+          uiSize(uiSize)
     {
     }
 
@@ -154,7 +154,7 @@ int main(int argc, char** argv)
     int elapsed = timer.elapsed();
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Preprocessing took" << elapsed << "for" << images.size() << ","
-                               << ((float)elapsed/images.size()) << "per image";
+                               << ((float)elapsed / images.size()) << "per image";
 
     display.show();
     app.exec();

@@ -66,7 +66,7 @@ int main(int argc, char** argv)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0]
                                    << "identify <image1> <image2> ... | train name <image1> <image2> ..."
-                                      "| ORL <path to orl_faces>";
+                                   "| ORL <path to orl_faces>";
         return 0;
     }
 
@@ -76,7 +76,7 @@ int main(int argc, char** argv)
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     FacialRecognitionWrapper recognizer;
 
-    if      (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
+    if (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
     {
         QStringList paths     = toPaths(argv, 2, argc);
         QList<QImage*> images = toImages(paths);
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took" << elapsed
                                    << " for " << images.size() << ", "
-                                   << ((float)elapsed/images.size()) << " per image";
+                                   << ((float)elapsed / images.size()) << " per image";
 
         for (int i = 0 ; i < paths.size() ; ++i)
         {
@@ -96,6 +96,7 @@ int main(int argc, char** argv)
                                        << " in " << paths[i];
         }
     }
+
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("train"))
     {
         QString name = QString::fromLocal8Bit(argv[2]);
@@ -132,6 +133,7 @@ int main(int argc, char** argv)
                                    << images.size() << ","
                                    << ((float)elapsed / images.size()) << "per image";
     }
+
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("orl"))
     {
         QString orlPath = QString::fromLocal8Bit(argv[2]);
@@ -169,6 +171,7 @@ int main(int argc, char** argv)
                 idMap[i]           = identity2;
                 qCDebug(DIGIKAM_TESTS_LOG) << "Created identity" << identity2.id() << "for ORL directory" << i;
             }
+
             else
             {
                 qCDebug(DIGIKAM_TESTS_LOG) << "Already have identity for ORL directory" << i << ", clearing training data";
@@ -190,6 +193,7 @@ int main(int argc, char** argv)
                 {
                     trainingImages[i] << path;
                 }
+
                 else
                 {
                     recognitionImages[i] << path;
@@ -244,7 +248,7 @@ int main(int argc, char** argv)
         if (totalTrained)
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Training 5/10 or ORL took" << elapsed
-                                       << "ms," << ((float)elapsed/totalTrained)
+                                       << "ms," << ((float)elapsed / totalTrained)
                                        << "ms per image";
         }
 
@@ -264,10 +268,12 @@ int main(int argc, char** argv)
                 {
                     notRecognized++;
                 }
+
                 else if (foundId == identity)
                 {
                     correct++;
                 }
+
                 else
                 {
                     falsePositive++;
@@ -281,11 +287,12 @@ int main(int argc, char** argv)
 
         if (totalRecognized)
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << "Recognition of 5/10 or ORL took" << elapsed << "ms," << ((float)elapsed/totalRecognized) << "ms per image";
-            qCDebug(DIGIKAM_TESTS_LOG) << correct       << "of 200 (" << (float(correct)       / totalRecognized*100) << "%) were correctly recognized";
-            qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << "of 200 (" << (float(falsePositive) / totalRecognized*100) << "%) were falsely assigned to an identity";
-            qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << "of 200 (" << (float(notRecognized) / totalRecognized*100) << "%) were not recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Recognition of 5/10 or ORL took" << elapsed << "ms," << ((float)elapsed / totalRecognized) << "ms per image";
+            qCDebug(DIGIKAM_TESTS_LOG) << correct       << "of 200 (" << (float(correct)       / totalRecognized * 100) << "%) were correctly recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << falsePositive << "of 200 (" << (float(falsePositive) / totalRecognized * 100) << "%) were falsely assigned to an identity";
+            qCDebug(DIGIKAM_TESTS_LOG) << notRecognized << "of 200 (" << (float(notRecognized) / totalRecognized * 100) << "%) were not recognized";
         }
+
         else
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "No face recognized";

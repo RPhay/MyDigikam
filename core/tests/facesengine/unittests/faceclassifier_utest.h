@@ -24,7 +24,7 @@
 
 namespace Digikam
 {
-    class IdentityProvider;
+class IdentityProvider;
 }
 
 class FaceClassifierTest : public QObject

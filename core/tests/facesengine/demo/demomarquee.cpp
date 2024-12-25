@@ -48,16 +48,16 @@ public:
 public:
 
     explicit Private()
-      : handleSize  (10),
-        htl         (nullptr),
-        htr         (nullptr),
-        hbr         (nullptr),
-        hbl         (nullptr),
-        rect        (nullptr),
-        label       (nullptr),
-        moving      (false),
-        resizing    (false),
-        resizeType  (0)
+        : handleSize(10),
+          htl(nullptr),
+          htr(nullptr),
+          hbr(nullptr),
+          hbl(nullptr),
+          rect(nullptr),
+          label(nullptr),
+          moving(false),
+          resizing(false),
+          resizeType(0)
     {
     }
 
@@ -83,9 +83,9 @@ public:
 };
 
 Marquee::Marquee(FancyRect* const rect, QGraphicsItem* const parent)
-    : QObject           (nullptr),
+    : QObject(nullptr),
       QGraphicsItemGroup(parent),
-      d                 (new Private)
+      d(new Private)
 {
     d->rect    = rect;
     d->rectPen.setColor(Qt::red);
@@ -159,9 +159,9 @@ void Marquee::placeHandles()
     qreal hs = d->hbr->boundingRect().width();
 
     d->htl->setPos(ox,         oy);
-    d->htr->setPos(ox+rw-hs+2, oy);
-    d->hbl->setPos(ox,         oy+rh-hs+2);
-    d->hbr->setPos(ox+rw-hs+2, oy+rh-hs+2);
+    d->htr->setPos(ox + rw - hs + 2, oy);
+    d->hbl->setPos(ox,         oy + rh - hs + 2);
+    d->hbr->setPos(ox + rw - hs + 2, oy + rh - hs + 2);
 }
 
 void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
@@ -245,7 +245,7 @@ void Marquee::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
             }
         }
 
-        if ((r.width() < 2*d->handleSize) || (r.height() < 2*d->handleSize))
+        if ((r.width() < 2 * d->handleSize) || (r.height() < 2 * d->handleSize))
         {
             return;
         }

@@ -30,7 +30,7 @@ namespace FaceEngineDemo
 class FancyRect;
 
 class Marquee : public QObject,
-                public QGraphicsItemGroup
+    public QGraphicsItemGroup
 {
     Q_OBJECT
 

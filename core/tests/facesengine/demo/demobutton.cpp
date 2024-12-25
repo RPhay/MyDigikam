@@ -37,20 +37,20 @@ public:
 
 Button::Button(QGraphicsItem* const parent)
     : QGraphicsItem(parent),
-      d            (new Private)
+      d(new Private)
 {
 }
 
 Button::Button(const QString& normal, const QString& pressed, QGraphicsItem* const parent)
     : QGraphicsItem(parent),
-      d            (new Private)
+      d(new Private)
 {
     setPixmap(normal, pressed);
 }
 
 Button::Button(const QPixmap& normal, const QPixmap& pressed, QGraphicsItem* const parent)
-   : QGraphicsItem(parent),
-     d            (new Private)
+    : QGraphicsItem(parent),
+      d(new Private)
 {
     setPixmap(normal, pressed);
 }
@@ -74,6 +74,7 @@ void Button::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QW
     {
         painter->drawPixmap(0, 0, d->pressed);
     }
+
     else
     {
         painter->drawPixmap(0, 0, d->normal);
@@ -119,6 +120,7 @@ void Button::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         {
             d->isPressed = true;
         }
+
         else
         {
             d->isPressed = false;

@@ -26,7 +26,7 @@ namespace FaceEngineDemo
 {
 
 class Button : public QObject,
-               public QGraphicsItem
+    public QGraphicsItem
 {
     Q_OBJECT
     Q_INTERFACES(QGraphicsItem)

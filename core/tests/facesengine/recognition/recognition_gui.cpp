@@ -51,7 +51,7 @@ using namespace Digikam;
 
 // TODO: Recognition is incorrect where human are wearing glasses.
 
-static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio ,
+static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio,
                                            QHash<QString, QVector<QImage> >& trainSet,
                                            QHash<QString, QVector<QImage> >& testSet)
 {
@@ -98,6 +98,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
                 }
             }
+
             else
             {
                 if (!img.isNull())
@@ -154,9 +155,9 @@ private:
     QLabel*                   m_fullImage           = nullptr;
     QListWidget*              m_imageListView       = nullptr;
     QListWidget*              m_croppedfaceList     = nullptr;
-/*
-    QVBoxLayout*              m_preprocessedList    = nullptr;
-*/
+    /*
+        QVBoxLayout*              m_preprocessedList    = nullptr;
+    */
     QListWidget*              m_preprocessedList    = nullptr;
     QListWidget*              m_alignedList         = nullptr;
 
@@ -168,7 +169,7 @@ private:
     QPushButton*              m_applyButton         = nullptr;
 };
 
-MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
+MainWindow::MainWindow(const QDir& directory, QWidget* const parent)
     : QMainWindow(parent)
 {
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
@@ -272,11 +273,11 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
 QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
 {
-    if (cvimage.cols*cvimage.rows != 0)
+    if (cvimage.cols * cvimage.rows != 0)
     {
         cv::Mat rgb;
         QPixmap p;
-        cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
+        cv::cvtColor(cvimage, rgb, (-2 * cvimage.channels() + 10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
 
         return p;
@@ -304,17 +305,19 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
-                                                              QSize(cvImage.cols - 2*paddedSize.width,
-                                                              cvImage.rows - 2*paddedSize.height));
+                                                              QSize(cvImage.cols - 2 * paddedSize.width,
+                                                                    cvImage.rows - 2 * paddedSize.height));
         elapsedDetection = timer.elapsed();
 
         qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found" << absRects.size()
                                    << "faces, in" << elapsedDetection << "ms";
     }
+
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "cv::Exception:" << e.what();
     }
+
     catch (...)
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Default exception from OpenCV";
@@ -540,14 +543,15 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
 void MainWindow::slotIdentify(int /*index*/)
 {
-/*
-    // TODO: fix this.
-    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
-*/
+    /*
+        // TODO: fix this.
+        m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
+    */
     if (m_currentIdenity.isNull())
     {
         m_recognizationInfo->setText(QLatin1String("Cannot recognized"));
     }
+
     else
     {
         m_recognizationInfo->setText(QLatin1String("Recognized"));
@@ -559,9 +563,9 @@ void MainWindow::slotSaveIdentity()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "assign identity" << m_imageLabel->text();
     m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
-/*
-    m_recognizer->saveIdentity(m_currentIdenity, false);
-*/
+    /*
+        m_recognizer->saveIdentity(m_currentIdenity, false);
+    */
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
