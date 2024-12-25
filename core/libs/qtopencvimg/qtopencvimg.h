@@ -34,9 +34,11 @@
 #include "digikam_opencv.h"
 #include "dimg.h"
 
-namespace Digikam {
+namespace Digikam
+{
 
-enum MatColorOrder {
+enum MatColorOrder
+{
     MCO_BGR,
     MCO_RGB,
     MCO_BGRA = MCO_BGR,
@@ -60,8 +62,8 @@ enum MatColorOrder {
  * - QImage
  *   - All of the formats of QImage are supported.
  */
-cv::Mat image2Mat(const QImage &img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder=MCO_BGR);
-QImage mat2Image(const cv::Mat &mat, MatColorOrder order=MCO_BGR, QImage::Format formatHint = QImage::Format_Invalid);
+cv::Mat image2Mat(const QImage& img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder = MCO_BGR);
+QImage mat2Image(const cv::Mat& mat, MatColorOrder order = MCO_BGR, QImage::Format formatHint = QImage::Format_Invalid);
 
 /* Convert QImage to/from cv::Mat without data copy
  *
@@ -85,8 +87,8 @@ QImage mat2Image(const cv::Mat &mat, MatColorOrder order=MCO_BGR, QImage::Format
  * - User must make sure that the color channels order is the same as
  *   the color channels order requried by QImage.
  */
-cv::Mat image2Mat_shared(const QImage &img, MatColorOrder *order=0);
-QImage mat2Image_shared(const cv::Mat &mat, QImage::Format formatHint = QImage::Format_Invalid);
+cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* order = 0);
+QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint = QImage::Format_Invalid);
 
 } //namespace QtOcv
 
