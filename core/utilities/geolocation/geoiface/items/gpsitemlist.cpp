@@ -167,7 +167,7 @@ void GPSItemList::wheelEvent(QWheelEvent* we)
     if ((we->modifiers() & Qt::ControlModifier) == 0)
     {
         QTreeView::wheelEvent(we);
- 
+
         return;
     }
 

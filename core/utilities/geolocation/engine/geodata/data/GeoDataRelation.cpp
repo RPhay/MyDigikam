@@ -67,7 +67,7 @@ GeoDataRelation::GeoDataRelation(const GeoDataRelation& other) :
     d->m_relationTypeDirty  = other.d_func()->m_relationTypeDirty;
 }
 
-// passed by value 
+// passed by value
 GeoDataRelation& GeoDataRelation::operator=(GeoDataRelation other)  // clazy:exclude=function-args-by-ref
 {
     GeoDataFeature::operator=(other);

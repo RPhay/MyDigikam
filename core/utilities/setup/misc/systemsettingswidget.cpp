@@ -166,7 +166,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(d->enableHWVideoCheck,     row++, 0, 1, 2);
     layout->addWidget(d->enableHWTConvCheck,     row++, 0, 1, 2);
     layout->addWidget(videoLabel,                row,   0, 1, 1);
-    layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1); 
+    layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1);
 
 #endif
 
