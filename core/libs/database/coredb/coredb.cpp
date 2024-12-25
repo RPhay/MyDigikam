@@ -1094,7 +1094,7 @@ QList<qlonglong> CoreDB::getImageIds(int albumID, const QString& name, DatabaseI
 
 QList<qlonglong> CoreDB::getImageIds(int albumID, DatabaseItem::Status status, bool scanned) const
 {
-    QList<QVariant> values;    
+    QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT id FROM Tags "
                                         "WHERE name=?"),
@@ -1107,7 +1107,7 @@ QList<qlonglong> CoreDB::getImageIds(int albumID, DatabaseItem::Status status, b
         int scannedTagId = values[0].toInt();
 
         d->db->execSql(QString::fromUtf8("SELECT DISTINCT id FROM Images "
-                                         "LEFT OUTER JOIN ImageTags on ImageTags.imageid = Images.id AND ImageTags.tagid = ? " 
+                                         "LEFT OUTER JOIN ImageTags on ImageTags.imageid = Images.id AND ImageTags.tagid = ? "
                                          "WHERE Images.album=? "
                                          "AND Images.status=? "
                                          "AND ImageTags.imageid IS NULL;"),
