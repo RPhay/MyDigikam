@@ -489,7 +489,7 @@ void setMacOSEnvironment()
 void setWindowsEnvironment(QApplication& app)
 {
 
-    // michmill - should probably remove QApplication app from function signature and use 
+    // michmill - should probably remove QApplication app from function signature and use
     // QCoreApplication::applicationDirPath() below but I don't have a Windows
     // machine to test with
 
