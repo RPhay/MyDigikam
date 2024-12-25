@@ -37,7 +37,7 @@ enum MatColorOrder
     MCO_ARGB
 };
 
-/* Convert QImage to/from cv::Mat
+/** Convert QImage to/from cv::Mat
  *
  * - cv::Mat
  *   - Supported channels
@@ -55,7 +55,7 @@ enum MatColorOrder
 cv::Mat image2Mat(const QImage& img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder = MCO_BGR);
 QImage mat2Image(const cv::Mat& mat, MatColorOrder order = MCO_BGR, QImage::Format formatHint = QImage::Format_Invalid);
 
-/* Convert QImage to/from cv::Mat without data copy
+/** Convert QImage to/from cv::Mat without data copy
  *
  * - Supported QImage formats and cv::Mat types are:
  *   - QImage::Format_Indexed8               <==> CV_8UC1

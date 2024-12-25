@@ -61,7 +61,6 @@ cv::Mat adjustChannelsOrder(const cv::Mat& srcMat, MatColorOrder srcOrder, MatCo
 
         desMat = argb2bgra(srcMat);
     }
-
     else if (srcOrder == MCO_ARGB && targetOrder == MCO_RGBA)
     {
         // ARGB ==> RGBA
@@ -70,7 +69,6 @@ cv::Mat adjustChannelsOrder(const cv::Mat& srcMat, MatColorOrder srcOrder, MatCo
         int from_to[] = { 0, 3, 1, 0, 2, 1, 3, 2 };
         cv::mixChannels(&srcMat, 1, &desMat, 1, from_to, 4);
     }
-
     else if (srcOrder == MCO_RGBA && targetOrder == MCO_ARGB)
     {
         // RGBA ==> ARGB
