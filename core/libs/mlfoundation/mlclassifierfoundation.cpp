@@ -15,11 +15,6 @@
 
 #include "mlclassifierfoundation.h"
 
-// std includes
-
-
-// Qt includes
-
 namespace Digikam
 {
 
@@ -35,7 +30,7 @@ void MLClassifierFoundation::VotingGroups::addVote(int label, float score)
 
 // template <typename T>
 struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore // public std::binary_function<bool, const T*, const T*>
-{     
+{
   bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const     
   {
     if (a.votes == b.votes)
@@ -48,7 +43,7 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore // public std::
 
 // template <typename T>
 struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore // public std::binary_function<bool, const T*, const T*>
-{     
+{
   bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const     
   {
     // may want to check that the pointers aren't zero...
@@ -57,27 +52,28 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore // public std:
         return a.score > b.score;
     }
     return a.votes > b.votes;
-  }  
+  }
 };
 
 // template <typename T>
 struct MLClassifierFoundation::VotingGroups::WinnerLowScore // public std::binary_function<bool, const T*, const T*>
-{     
+{
   bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const     
   {
     // may want to check that the pointers aren't zero...
     return a.score < b.score;
-  } 
+  }
 };
 
 // template <typename T>
 struct MLClassifierFoundation::VotingGroups::WinnerHighScore // public std::binary_function<bool, const T*, const T*>
-{     
+{
   bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const     
   {
     // may want to check that the pointers aren't zero...
-    return a.score > b.score;
-  } 
+
+    return (a.score > b.score);
+  }
 };
 
 int MLClassifierFoundation::VotingGroups::winner(WinnerType winnerType)
@@ -88,8 +84,20 @@ int MLClassifierFoundation::VotingGroups::winner(WinnerType winnerType)
     }
 
     QList<VoteTally> voteTally;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     for (auto [key, value] : votes.asKeyValueRange())
     {
+
+#else
+
+    for (const auto& key : votes.keys())
+    {
+        const auto& value = votes[key];
+
+#endif
+
         VoteTally t;
         t.label = key;
         t.votes = value.first;
@@ -120,6 +128,7 @@ int MLClassifierFoundation::VotingGroups::winner(WinnerType winnerType)
             break;
         }
     }
+
     return voteTally.value(0).label;
 }
 

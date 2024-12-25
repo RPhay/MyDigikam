@@ -22,10 +22,10 @@
 #include <QIcon>
 
 // KDE includes
+
 #include <kmemoryinfo.h>
 
-
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "sharedqueue.h"
@@ -69,7 +69,7 @@ bool MLPipelineFoundation::start()
     if (!memInfo.isNull())
     {
         quint64 available = memInfo.totalPhysical();
-        maxBufferSize = available / 4;
+        maxBufferSize     = available / 4;
     }
 
     return true;
@@ -87,9 +87,10 @@ void MLPipelineFoundation::cancel()
      */
 
     // set the cancel flag (case 2 above)
+
     cancelled = true;
 
-    for(auto queue : queues)
+    for (auto queue : queues)
     {
         // udate the max queue size to something big
 
@@ -103,7 +104,8 @@ void MLPipelineFoundation::cancel()
 
         if (1 < queue->size())
         {
-            MLPipelinePackageFoundation* package = queue->pop_front();
+            MLPipelinePackageFoundation* const package = queue->pop_front();
+
             if (queueEndSignal() != package)
             {
                 delete package;
@@ -148,146 +150,198 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
         {
             // always 1 finder thread, no incomming queue
             // start a new thread
+
             QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+            watcher->setFuture(QtConcurrent::run(threadPool,
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::finder, this
+            &MLPipelineFoundation::finder,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::finder
+            this,
+            &MLPipelineFoundation::finder
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::Loader:
         {
             // create a queue if one doesn't exist
+
             if (!queues.contains(MLPipelineStage::Loader))
             {
                 queues.insert(MLPipelineStage::Loader, new MLPipelineQueue());
             }
+
             // start a new thread
-            QFutureWatcher<bool>* watcher = watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+
+            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            watcher->setFuture(QtConcurrent::run(threadPool,
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::loader, this
+            &MLPipelineFoundation::loader,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::loader
+            this,
+            &MLPipelineFoundation::loader
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::Extractor:
         {
             // create a queue if one doesn't exist
+
             if (!queues.contains(MLPipelineStage::Extractor))
             {
                 queues.insert(MLPipelineStage::Extractor, new MLPipelineQueue());
             }
+
             // start a new thread
-            QFutureWatcher<bool>* watcher = watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+
+            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            watcher->setFuture(QtConcurrent::run(threadPool,
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::extractor, this
+            &MLPipelineFoundation::extractor,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::extractor
+            this,
+            &MLPipelineFoundation::extractor
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::Classifier:
         {
             // create a queue if one doesn't exist
+
             if (!queues.contains(MLPipelineStage::Classifier))
             {
                 queues.insert(MLPipelineStage::Classifier, new MLPipelineQueue());
             }
+
             // start a new thread
-            QFutureWatcher<bool>* watcher = watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+
+            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            watcher->setFuture(QtConcurrent::run(threadPool,
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::classifier, this
+            &MLPipelineFoundation::classifier,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::classifier
+            this,
+            &MLPipelineFoundation::classifier
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::Trainer:
         {
             // create a queue if one doesn't exist
+
             if (!queues.contains(MLPipelineStage::Trainer))
             {
                 queues.insert(MLPipelineStage::Trainer, new MLPipelineQueue());
             }
+
             // start a new thread
-            QFutureWatcher<bool>* watcher = watcher = new QFutureWatcher<bool>(this);
+
+            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool, 
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::trainer, this
+            &MLPipelineFoundation::trainer,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::trainer
+            this,
+            &MLPipelineFoundation::trainer
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::Writer:
         {
             // create a queue if one doesn't exist
+
             if (!queues.contains(MLPipelineStage::Writer))
             {
                 queues.insert(MLPipelineStage::Writer, new MLPipelineQueue());
             }
+
             // start a new thread
-            QFutureWatcher<bool>* watcher = watcher = new QFutureWatcher<bool>(this);
+
+            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool, 
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::writer, this
+            &MLPipelineFoundation::writer,
+            this
 
 #else
 
-            this, &MLPipelineFoundation::writer
+            this,
+            &MLPipelineFoundation::writer
 
 #endif
             ));
+
             watchList.append(watcher);
+
             connect(watcher, &QFutureWatcher<bool>::finished,
                     this, &MLPipelineFoundation::slotFinished);
+
             break;
         }
         case MLPipelineStage::None:
@@ -317,7 +371,8 @@ void MLPipelineFoundation::clearQueue(MLPipelineQueue* thisQueue)
 {
     while (!thisQueue->empty())
     {
-        MLPipelinePackageFoundation* package = thisQueue->pop_front();
+        MLPipelinePackageFoundation* const package = thisQueue->pop_front();
+
         if (queueEndSignal() != package)
         {
             delete package;
@@ -327,7 +382,7 @@ void MLPipelineFoundation::clearQueue(MLPipelineQueue* thisQueue)
 
 void MLPipelineFoundation::clearAllQueues()
 {
-    for(MLPipelineQueue* queue : std::as_const(queues))
+    for(MLPipelineQueue* const queue : std::as_const(queues))
     {
         // udate the max queue size to something big
 
@@ -336,7 +391,7 @@ void MLPipelineFoundation::clearAllQueues()
         // tell the threads to exit
 
         queue->push_back(queueEndSignal());
-        
+
         // remove any incomming items
 
         clearQueue(queue);
@@ -345,20 +400,20 @@ void MLPipelineFoundation::clearAllQueues()
 
 bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)
 {
-    if (!cancelled && queueEndSignal() != package)
+    if (!cancelled && (queueEndSignal() != package))
     {
         // check if buffer memory is full
 
-        if (package->size + usedBufferSize > maxBufferSize)
+        if ((package->size + usedBufferSize) > maxBufferSize)
         {
             // slow things down
 
             thisQueue->maxDepth(1);
         }
-        
+
         // check for 50% free buffer space
 
-        if (1 == thisQueue->maxDepth() && package->size + usedBufferSize < maxBufferSize / 2)
+        if (1 == thisQueue->maxDepth() && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
         {
             // speed things up
 
@@ -371,6 +426,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
         // }
 
         // add the package to the queue
+
         usedBufferSize += package->size;
         thisQueue->push_back(package);
 
@@ -382,9 +438,9 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
         {
             delete package;
         }
+
         return false;
     }
-
 }
 
 MLPipelinePackageFoundation* MLPipelineFoundation::dequeue(MLPipelineQueue* thisQueue)
@@ -394,6 +450,7 @@ MLPipelinePackageFoundation* MLPipelineFoundation::dequeue(MLPipelineQueue* this
     if (!cancelled)
     {
         package = thisQueue->pop_front();
+
         if (queueEndSignal() != package)
         {
             usedBufferSize -= package->size;
@@ -427,7 +484,7 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority, MLPipeli
     waitForStart();
     QThread::currentThread()->setPriority(threadPriority);
 
-    if (MLPipelineStage::None != thisStage && MLPipelineStage::Finder != thisStage)
+    if ((MLPipelineStage::None != thisStage) && (MLPipelineStage::Finder != thisStage))
     {
         thisQueue = queues.value(thisStage);
 
@@ -460,7 +517,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     // last one out turns off the lights
 
-    if (queues.contains(nextStage) && performanceProfileList[thisStage].currentThreadCount == 0)
+    if (queues.contains(nextStage) && (performanceProfileList[thisStage].currentThreadCount == 0))
     {
         queues[nextStage]->maxDepth(1000000);
         queues[nextStage]->push_back(queueEndSignal());
@@ -513,14 +570,26 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
 
 void MLPipelineFoundation::showPipelinePerformance() const
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     for (auto [stage, profile] : performanceProfileList.asKeyValueRange())
     {
+
+#else
+
+    for (const auto& stage : performanceProfileList.keys())
+    {
+
+        const auto& profile = performanceProfileList[stage];
+
+#endif
+
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
                                          << " Max Queue:" << profile.maxQueueCount << " Elapsed:" << profile.elapsedTime
                                          << " Max Elapsed:" << profile.maxElapsedTime << " Average:" << profile.elapsedTime / profile.itemCount;
     }
 }
-    
+
 } // namespace Digikam
 
 #include "moc_mlpipelinefoundation.cpp"
