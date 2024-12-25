@@ -50,7 +50,7 @@ bool FacePipelineBase::start()
 
 void FacePipelineBase::cancel()
 {
-    return MLPipelineFoundation::cancel();
+    MLPipelineFoundation::cancel();
 }
 
 bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
