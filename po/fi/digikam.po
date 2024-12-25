@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 01:51+0000\n"
+"POT-Creation-Date: 2024-12-25 02:19+0000\n"
 "PO-Revision-Date: 2024-10-29 20:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1386,29 +1386,29 @@ msgstr "<i>Binaaridataa</i>"
 msgid "Initializing..."
 msgstr "Alustetaan…"
 
-#: core/app/main/digikamapp.cpp:155 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:157 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Ladataan liitännäisiä…"
 
-#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:181 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Tarkistetaan ICC-kantaa…"
 
-#: core/app/main/digikamapp.cpp:193
+#: core/app/main/digikamapp.cpp:195
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Luetaan tietokantaa…"
 
-#: core/app/main/digikamapp.cpp:215
+#: core/app/main/digikamapp.cpp:217
 #, fuzzy, kde-format
 #| msgid "Loading albums %v%"
 msgid "Loading albums..."
 msgstr "Luetaan albumeja %v %"
 
-#: core/app/main/digikamapp.cpp:362
+#: core/app/main/digikamapp.cpp:364
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1419,7 +1419,7 @@ msgstr ""
 "valitse ”Kyllä”, muuten valitse ”Ei”. Värinhallinta -ominaisuus on poissa "
 "käytöstä kunnes tämä ongelma on ratkaistu.</p>"
 
-#: core/app/main/digikamapp.cpp:418
+#: core/app/main/digikamapp.cpp:420
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1432,21 +1432,21 @@ msgstr ""
 "ohjelmatiedosto käytettävissä.\n"
 "Virheviesti: %1"
 
-#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:706 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ei valittua kohdetta (%1 kohde)"
 msgstr[1] "Ei valittua kohdetta (%1 kohdetta)"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ei valittuja kohteita (%1 [%2] kohde)"
 msgstr[1] "Ei valittuja kohteita (%1 [%2] kohdetta)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1455,71 +1455,71 @@ msgstr[0] ""
 msgstr[1] ""
 "Ei valittuja kohteita (%1 kohdetta. Ryhmiteltyjen kohteiden kanssa: %2)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:728
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 kohde valittu (%3/%4)"
 msgstr[1] "%1/%2 kohdetta valittu (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] kohde valittu (%4/%5)"
 msgstr[1] "%1/%2 [%3] kohdetta valittu (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:749
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:757
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] kohde valittu (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] kohdetta valittu (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:766
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:797
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 / %2)"
 
-#: core/app/main/digikamapp.cpp:809
+#: core/app/main/digikamapp.cpp:811
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "(%1/%2 [%3])"
 
-#: core/app/main/digikamapp.cpp:813
+#: core/app/main/digikamapp.cpp:815
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1/%2. Ryhmiteltyjen kohteiden kanssa yhteensä: %3)"
 
-#: core/app/main/digikamapp.cpp:824
+#: core/app/main/digikamapp.cpp:826
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Yksi piilotettu kohde"
 msgstr[1] "%1 piilotettua kohdetta"
 
-#: core/app/main/digikamapp.cpp:876
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Kirjoita metatiedot tiedostoon"
 msgstr[1] "Kirjoita metatiedot valittuihin tiedostoihin"
 
-#: core/app/main/digikamapp.cpp:878
+#: core/app/main/digikamapp.cpp:880
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2955,7 +2955,7 @@ msgstr "Näytä koko näytöllä"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2991,12 +2991,12 @@ msgstr "Kartta"
 msgid "Labels"
 msgstr "Merkit"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:121
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Hae kasvoja kokoelmasta"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to scan the selected albums for duplicate items."
@@ -3004,7 +3004,7 @@ msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Etsi tällä painikkeella valituista albumeista kaksoiskappaleita."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:166
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3013,7 +3013,7 @@ msgstr ""
 "Tervetuloa digiKamin kasvojenhallintaan. Jos käytät ominaisuutta ensi "
 "kertaa, harkitse ohjekentän käyttöä paneelista alavasemmalta."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:212
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3023,7 +3023,7 @@ msgstr ""
 "Lisää uusia henkilöitä.Kasvontunnistus on keskeytetty, koska tunnistettavia "
 "henkilöitä ei ole. Lisää uusia henkilöitä."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:232
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3228,15 +3228,15 @@ msgstr "Karttahaku"
 msgid "Last Search"
 msgstr "Viimeisin haku"
 
-#: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:112
+#: core/app/views/stack/itemiconview_search.cpp:67
+#: core/app/views/stack/itemiconview_search.cpp:114
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "FacesDetector"
 msgstr "Kasvontunnistus"
 
-#: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:114
+#: core/app/views/stack/itemiconview_search.cpp:69
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -6444,7 +6444,7 @@ msgstr ""
 "tietokantaan.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/main/maintenancedlg.cpp:258
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
@@ -6452,19 +6452,19 @@ msgid "Selection model: "
 msgstr "Kohdekansio:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
-#: core/utilities/maintenance/main/maintenancedlg.cpp:260
+#: core/utilities/maintenance/main/maintenancedlg.cpp:263
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:261
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
@@ -6494,7 +6494,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
@@ -9449,7 +9449,7 @@ msgstr "Käytä värinhallintaa tulostettaessa"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:329
+#: core/utilities/maintenance/main/maintenancedlg.cpp:332
 #, kde-format
 msgid "Settings..."
 msgstr "Asetukset…"
@@ -27853,7 +27853,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Uusi albumi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27861,51 +27861,51 @@ msgstr "Uusi albumi"
 msgid "Expand Selected Nodes"
 msgstr "Laajenna valitut solmut"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Laajenna kaikki albumit"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Ei valittua albumia"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Supista kaikki albumit"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Etsi kaksoiskappaleita…"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Etsi kasvoja"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Korjaa piilotetut kohteet"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "Päivitä"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Etsi kasvoja"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Etsitäänkö alikansioistakin?"
@@ -42934,7 +42934,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:307
+#: core/utilities/maintenance/main/maintenancedlg.cpp:310
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -51998,97 +51998,60 @@ msgstr ""
 "Tunnistettuaan tuttavasi joukosta kuvia se osaa\n"
 "tunnistaa kasvot myös muista kuvistasi."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
-#: core/utilities/maintenance/main/maintenancedlg.cpp:202
-#, kde-format
+#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
+#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
+#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
+#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#, fuzzy, kde-format
+#| msgid "Scan Images"
 msgctxt "@label:listbox"
-msgid "Skip images already scanned"
-msgstr "Ohita jo etsityt kuvat"
+msgid "Scan new images"
+msgstr "Lue kuvia"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
-#: core/utilities/maintenance/main/maintenancedlg.cpp:203
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/maintenance/main/maintenancedlg.cpp:206
+#, fuzzy, kde-format
+#| msgid "Scan Images"
 msgctxt "@label:listbox"
-msgid "Scan again and merge results"
-msgstr "Etsi uudestaan ja yhdistä tulokset"
+msgid "Scan all images"
+msgstr "Lue kuvia"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
-#: core/utilities/maintenance/main/maintenancedlg.cpp:204
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Recognize faces"
 msgctxt "@label:listbox"
-msgid "Clear unconfirmed results and rescan"
-msgstr "Tyhjennä varmistamattomat tulokset ja etsi uudelleen"
+msgid "Recognize faces only"
+msgstr "Tunnista kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:162
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ohje"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:178
-#, kde-format
-msgctxt "@option:radio"
-msgid "Detect faces"
-msgstr "Tunnista kasvot"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:179
-#, kde-format
-msgctxt "@info"
-msgid "Find all faces in your photos"
-msgstr "Etsi kaikki kasvot valokuvista"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:183
-#, kde-format
-msgctxt "@option:radio"
-msgid "Detect and recognize faces"
-msgstr "Etsi ja tunnista kasvot"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:184
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Find all faces in your photos and\n"
-"try to recognize which person is depicted"
-msgstr ""
-"Etsi kuvista kaikki kasvot ja yritä\n"
-"tunnistaa, kuka kuvassa on"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:188
-#, kde-format
-msgctxt "@option:radio"
-msgid "Recognize faces"
-msgstr "Tunnista kasvot"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:189
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Try again to recognize the people depicted\n"
-"on marked but yet unconfirmed faces."
-msgstr ""
-"Yritä uudestaan tunnistaa kasvot merkityistä\n"
-"mutta vielä vahvistamattomista kuvista."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:213
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Työnkulku"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:222
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Etsi"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Tarkkuus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52097,7 +52060,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52105,19 +52068,19 @@ msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Malli:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:253
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:254
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "@title: On Screen Display"
 #| msgid "OSD"
@@ -52125,7 +52088,7 @@ msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "Ruutunäyttö"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52135,27 +52098,27 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Tiedoston koko"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Small"
 msgstr "Lisätunnisteet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Small"
 msgstr "Pieni"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -52163,21 +52126,21 @@ msgctxt "@label:listbox"
 msgid "Medium"
 msgstr "Keskitaso"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label:listbox"
 msgid "Large"
 msgstr "Käsitelty"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label:listbox"
 msgid "Extra Large"
 msgstr "Lisätunnisteet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52196,20 +52159,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:320
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Kasvontunnistus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:326
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:329
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Tarkkuus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:333
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52219,7 +52182,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:338
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "camera model"
 #| msgid "Model:"
@@ -52227,14 +52190,14 @@ msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Malli:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:342
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:345
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "Kasvot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:343
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Open File"
@@ -52242,7 +52205,7 @@ msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "Avaa tiedosto"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52252,14 +52215,14 @@ msgid ""
 "later."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:381
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Käytä kaikkia suoritinytimiä"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:383
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52271,13 +52234,13 @@ msgstr ""
 "Voit valita, haluatko hyödyntää kaikki järjestelmän\n"
 "suoritinytimiä vai vain yhtä ydintä taustalla."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "Kasvontunnistus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:395
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:398
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -61107,41 +61070,39 @@ msgstr "Etsi kaksoiskappaleet"
 msgid "Faces data management: "
 msgstr "Kasvotietojen hallinta:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:210
+#: core/utilities/maintenance/main/maintenancedlg.cpp:213
 #, fuzzy, kde-format
 #| msgid "Rebuild All Fingerprints"
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Lasketaan sormenjälkiä"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:214
+#: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Poista kaikki kuvan kasvotunnisteet"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:216
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
-msgid ""
-"This will clear all detected and tagged faces, and then rescan images to "
-"detect faces."
+msgid "This will clear all detected and tagged faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:222
+#: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Etsi ja tunnista kasvot"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:234
+#: core/utilities/maintenance/main/maintenancedlg.cpp:237
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -61153,25 +61114,25 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:243
+#: core/utilities/maintenance/main/maintenancedlg.cpp:246
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mittaustapa:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:248
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
 #, fuzzy, kde-format
 #| msgid "Clean all and re-scan"
 msgid "Clean all and re-assign"
 msgstr "Puhdista kaikki ja etsi uudestaan"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:249
-#: core/utilities/maintenance/main/maintenancedlg.cpp:299
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Hae vain merkitsemättömistä"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/utilities/maintenance/main/maintenancedlg.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61180,7 +61141,7 @@ msgid ""
 "the items with no assigned tag.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
+#: core/utilities/maintenance/main/maintenancedlg.cpp:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61204,64 +61165,64 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:282
+#: core/utilities/maintenance/main/maintenancedlg.cpp:285
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Automaattinen asetus"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:293
+#: core/utilities/maintenance/main/maintenancedlg.cpp:296
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Etsintätila:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:298
+#: core/utilities/maintenance/main/maintenancedlg.cpp:301
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Puhdista kaikki ja etsi uudestaan"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:321
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Synkronointisuunta: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:322
+#: core/utilities/maintenance/main/maintenancedlg.cpp:325
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Tietokannasta kuvien metatietoihin"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:323
+#: core/utilities/maintenance/main/maintenancedlg.cpp:326
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Kuvien metatiedoista tietokantaan"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:326
+#: core/utilities/maintenance/main/maintenancedlg.cpp:329
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Katso yksityiskohdat metatietoasetuksista: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:335
+#: core/utilities/maintenance/main/maintenancedlg.cpp:338
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synkronoi metatiedot ja tietokanta"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:396
+#: core/utilities/maintenance/main/maintenancedlg.cpp:399
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
 msgid "Warning"
 msgstr "Varoitus"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:397
+#: core/utilities/maintenance/main/maintenancedlg.cpp:400
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-"faces? You’ll need to start tagging unknown faces again before any faces can "
-"be recognized."
+"faces? You’ll need to rescan images and start tagging unknown faces again "
+"before any faces can be recognized."
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61270,7 +61231,7 @@ msgstr ""
 "Kaikki operaatiot suoritettu.\n"
 "Kesto: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:410
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam-ylläpito"
@@ -61298,6 +61259,7 @@ msgstr "Automaattiset luokitukset kohteelle: %1\n"
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:481
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -61482,6 +61444,7 @@ msgid "Duplicate found: %1"
 msgstr "Kaksoiskappaleet"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -61489,6 +61452,7 @@ msgid "Scan for faces in album: %1"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -61496,23 +61460,27 @@ msgid "Scan for faces in %1 albums"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:224
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "Etsi uusia kuvia"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "Etsi uusia kuvia"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
 #, kde-format
 msgid "Updating faces database"
 msgstr "Päivitetään kasvotietokantaa"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -61520,6 +61488,7 @@ msgid "Items scanned for faces: %1\n"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -61539,6 +61508,7 @@ msgid "Face processed: %1"
 msgstr "Kuvia löytyi %1:sta"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:480
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -61546,16 +61516,37 @@ msgid "Scanned for faces: %1\n"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:485
 #, kde-format
 msgid "No face"
 msgstr "Ei kasvoja"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
 msgstr[0] "Yhdet kasvot"
 msgstr[1] "%1 kasvot"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#, kde-format
+msgid "Error starting face detection."
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Faces found: %1"
+msgstr "Kuvia löytyi %1:sta"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "Face found: %1"
+msgstr "Kuvia löytyi %1:sta"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -67917,6 +67908,46 @@ msgstr "Albumit"
 msgid "Import Items"
 msgstr "Tuo kohteet"
 
+#~ msgctxt "@label:listbox"
+#~ msgid "Skip images already scanned"
+#~ msgstr "Ohita jo etsityt kuvat"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Scan again and merge results"
+#~ msgstr "Etsi uudestaan ja yhdistä tulokset"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Clear unconfirmed results and rescan"
+#~ msgstr "Tyhjennä varmistamattomat tulokset ja etsi uudelleen"
+
+#~ msgctxt "@option:radio"
+#~ msgid "Detect faces"
+#~ msgstr "Tunnista kasvot"
+
+#~ msgctxt "@info"
+#~ msgid "Find all faces in your photos"
+#~ msgstr "Etsi kaikki kasvot valokuvista"
+
+#~ msgctxt "@option:radio"
+#~ msgid "Detect and recognize faces"
+#~ msgstr "Etsi ja tunnista kasvot"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Find all faces in your photos and\n"
+#~ "try to recognize which person is depicted"
+#~ msgstr ""
+#~ "Etsi kuvista kaikki kasvot ja yritä\n"
+#~ "tunnistaa, kuka kuvassa on"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Try again to recognize the people depicted\n"
+#~ "on marked but yet unconfirmed faces."
+#~ msgstr ""
+#~ "Yritä uudestaan tunnistaa kasvot merkityistä\n"
+#~ "mutta vielä vahvistamattomista kuvista."
+
 #~ msgid "Create Tag from Address Book"
 #~ msgstr "Luo tunniste osoitekirjasta"
 
@@ -69517,11 +69548,6 @@ msgstr "Tuo kohteet"
 #~| msgid "No plugin found"
 #~ msgid "No route found"
 #~ msgstr "Liitännäistä ei löytynyt"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "routes found: %1"
-#~ msgstr "Kuvia löytyi %1:sta"
 
 #, fuzzy
 #~| msgid "Loading themes..."
