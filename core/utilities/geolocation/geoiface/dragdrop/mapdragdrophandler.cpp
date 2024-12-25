@@ -19,7 +19,7 @@
 
 #include <QDropEvent>
 
-// local includes
+// Local includes
 
 #include "gpsgeoifacemodelhelper.h"
 

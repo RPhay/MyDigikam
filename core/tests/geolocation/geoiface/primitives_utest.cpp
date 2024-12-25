@@ -14,7 +14,7 @@
 
 #include "primitives_utest.h"
 
-// local includes
+// Local includes
 
 #include "geoifacetypes.h"
 #include "geoifacecommon.h"

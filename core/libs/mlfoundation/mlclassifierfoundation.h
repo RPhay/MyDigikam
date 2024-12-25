@@ -21,7 +21,7 @@
 #include <QReadWriteLock>
 #include <QMap>
 
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 #include "digikam_opencv.h"
@@ -34,6 +34,7 @@ class DIGIKAM_EXPORT MLClassifierFoundation// : public QObject
     // Q_OBJECT
 
 public:
+
     MLClassifierFoundation()                                            = default;
     virtual ~MLClassifierFoundation()                                   = default;
 
@@ -51,6 +52,7 @@ protected:
     class VotingGroups
     {
     public:
+
         enum _WinnerType
         {
             VotesLowScore,
@@ -72,15 +74,19 @@ protected:
         struct WinnerLowScore;
         struct WinnerHighScore;
 
+    public:
+
         VotingGroups()                  = default;
         ~VotingGroups()                 = default;
 
-        void    addVote(int label, float score);
-        int     winner(WinnerType winnerType);
+    public:
+
+        void addVote(int label, float score);
+        int  winner(WinnerType winnerType);
 
     private:
-        QMap<int, QPair<int, float> >      votes;
 
+        QMap<int, QPair<int, float> > votes;
     };
 
     QReadWriteLock  lock;
@@ -98,4 +104,4 @@ private:
     MLClassifierFoundation(MLClassifierFoundation&)                     = delete;
 };
 
-}
+} // namespace Digikam

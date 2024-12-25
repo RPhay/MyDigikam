@@ -16,7 +16,7 @@
 
 #pragma once
 
-// local includes
+// Local includes
 
 #include "gpsitemcontainer.h"
 #include "digikam_export.h"

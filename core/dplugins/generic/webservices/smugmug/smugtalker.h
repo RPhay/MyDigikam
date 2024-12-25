@@ -22,7 +22,7 @@
 #include <QString>
 #include <QObject>
 
-// local includes
+// Local includes
 
 #include "smugitem.h"
 #include "dinfointerface.h"

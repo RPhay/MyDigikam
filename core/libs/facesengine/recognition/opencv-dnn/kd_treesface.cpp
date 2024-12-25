@@ -21,7 +21,7 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "kd_nodesface.h"

@@ -18,7 +18,7 @@
 
 #include <QMimeData>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 

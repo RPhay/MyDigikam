@@ -19,7 +19,7 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "mainwindow.h"

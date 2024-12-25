@@ -26,7 +26,7 @@
 #include <QFuture>
 #include <QFutureWatcher>
 
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 #include "digikam_opencv.h"
@@ -36,7 +36,6 @@
 namespace Digikam
 {
 
-// class DImg;
 class MLPipelinePackage;
 
 template <typename T>

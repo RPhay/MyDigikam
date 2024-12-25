@@ -21,7 +21,7 @@
 #include <QFuture>
 #include <QFutureWatcher>
 
-// local includes
+// Local includes
 
 #include "trackreader.h"
 

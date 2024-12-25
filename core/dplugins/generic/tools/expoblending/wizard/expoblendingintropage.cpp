@@ -28,7 +28,7 @@
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
 #include "digikam_globals.h"
 #include "digikam_config.h"

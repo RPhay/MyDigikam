@@ -18,7 +18,7 @@
 
 #include <QTest>
 
-// local includes
+// Local includes
 
 class TestGPSItemContainer : public QObject
 {

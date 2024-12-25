@@ -21,7 +21,7 @@
 #include <QSet>
 #include <QDebug>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "metaengine.h"

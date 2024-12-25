@@ -22,7 +22,7 @@
 #include <QAction>
 #include <QStandardPaths>
 
-// local includes
+// Local includes
 
 #include "gpscommon.h"
 #include "gpsundocommand.h"

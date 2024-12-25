@@ -18,7 +18,7 @@
 
 #include <cmath>
 
-// local includes
+// Local includes
 
 #include "tileindex.h"
 

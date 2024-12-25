@@ -21,7 +21,7 @@
 #include <QDateTime>
 #include <QUrl>
 
-// local includes
+// Local includes
 
 #include "geoifacetypes.h"
 #include "geocoordinates.h"

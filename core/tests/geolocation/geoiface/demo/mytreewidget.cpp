@@ -24,7 +24,7 @@
 
 #include "geoifacetypes.h"
 
-// local includes
+// Local includes
 
 #include "mydragdrophandler.h"
 

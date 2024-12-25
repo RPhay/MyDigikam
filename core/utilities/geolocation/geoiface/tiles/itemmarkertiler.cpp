@@ -15,7 +15,7 @@
 
 #include "itemmarkertiler.h"
 
-// local includes
+// Local includes
 
 #include "geomodelhelper.h"
 #include "digikam_debug.h"

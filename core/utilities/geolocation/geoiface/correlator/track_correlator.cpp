@@ -15,7 +15,7 @@
 
 #include "track_correlator.h"
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "track_correlator_thread.h"

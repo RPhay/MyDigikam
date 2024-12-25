@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-// local includes
+// Local includes
 
 #include "twittermpform.h"
 

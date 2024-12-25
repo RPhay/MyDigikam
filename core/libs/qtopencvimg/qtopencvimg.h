@@ -29,7 +29,7 @@
 // Qt includes
 #include <QImage>
 
-// local includes
+// Local includes
 
 #include "digikam_opencv.h"
 #include "dimg.h"

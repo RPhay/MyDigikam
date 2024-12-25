@@ -19,7 +19,7 @@
 #include <QTreeWidget>
 #include <QPersistentModelIndex>
 
-// local includes
+// Local includes
 
 #include "myimageitem.h"
 

@@ -26,7 +26,7 @@
 #include <QFuture>
 #include <QFutureWatcher>
 
-// local includes
+// Local includes
 
 #include "mlpipelinefoundation.h"
 #include "facescansettings.h"

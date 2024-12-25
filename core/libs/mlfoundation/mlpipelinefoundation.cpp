@@ -390,7 +390,7 @@ void MLPipelineFoundation::clearAllQueues()
 {
     for (MLPipelineQueue* const queue : std::as_const(queues))
     {
-        // udate the max queue size to something big
+        // update the max queue size to something big
 
         queue->maxDepth(1000000);
 

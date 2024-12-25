@@ -20,7 +20,7 @@
 #include <QDateTime>
 #include <QUrl>
 
-// local includes
+// Local includes
 
 #include "backend-rg.h"
 #include "parsetagstring.h"

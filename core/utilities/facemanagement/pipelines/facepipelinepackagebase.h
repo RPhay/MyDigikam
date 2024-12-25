@@ -19,7 +19,7 @@
 #include <QImage>
 #include <QRectF>
 
-// local includes
+// Local includes
 
 #include "digikam_opencv.h"
 #include "mlpipelinepackagefoundation.h"

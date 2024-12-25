@@ -22,7 +22,7 @@
 #include <QElapsedTimer>
 #include <QRectF>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "digikam_opencv.h"

@@ -40,7 +40,7 @@
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
 #include "dlayoutbox.h"
 #include "gpsundocommand.h"

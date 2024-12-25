@@ -23,7 +23,7 @@
 
 #include <cmath>
 
-// local includes
+// Local includes
 
 #include "abstractmarkertiler.h"
 #include "mapbackend.h"

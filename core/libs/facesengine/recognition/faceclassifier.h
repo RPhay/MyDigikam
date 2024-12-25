@@ -40,7 +40,7 @@ public:
      *
      * "recognizeModel" : sets the recognizer model used to instantiate the correct recognizer
      */
-    void        setParameters(const FaceScanSettings& parameters);
+    void setParameters(const FaceScanSettings& parameters);
 
     bool ready()                                        const;
 
@@ -57,18 +57,20 @@ protected:
 
 private:
 
+    cv::Ptr<cv::ml::KNearest> createKNearest();
+    cv::Ptr<cv::ml::SVM>      createSVM();
+
+    int                       predictFullSearch(const cv::Mat& target)                                              const;
+    int                       predictClassifier(const cv::Mat& target)                                              const;
+    int                       listSearch(const cv::Mat& target, const QMap<int, QList<cv::Mat> >& identityFeatures) const;
+
+    bool                      validateKNNSVMResult(const cv::Mat& target, int label)                                const;
+    bool                      featureSFaceCompare(const cv::Mat& target, const cv::Mat& sample, float& distance)    const;
+
+private:
+
     class Private;
     static Private* d;
-
-    cv::Ptr<cv::ml::KNearest>   createKNearest();
-    cv::Ptr<cv::ml::SVM>        createSVM();
-
-    int                         predictFullSearch(const cv::Mat& target)    const;
-    int                         predictClassifier(const cv::Mat& target)    const;
-    int                         listSearch(const cv::Mat& target, const QMap<int, QList<cv::Mat> >& identityFeatures) const;
-
-    bool                        validateKNNSVMResult(const cv::Mat& target, int label) const;
-    bool                        featureSFaceCompare(const cv::Mat& target, const cv::Mat& sample, float& distance) const;
 
 private:
 

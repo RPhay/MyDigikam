@@ -19,7 +19,7 @@
 
 // #include <QThread>
 
-// local includes
+// Local includes
 
 #include "facepipelinebase.h"
 #include "facedetector.h"

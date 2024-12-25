@@ -22,7 +22,7 @@
 #include <QProcess>
 #include <QFileInfo>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"

@@ -22,7 +22,7 @@
 #include <QWidget>
 #include <QItemSelectionModel>
 
-// local includes
+// Local includes
 
 #include "track_correlator.h"
 #include "digikam_export.h"

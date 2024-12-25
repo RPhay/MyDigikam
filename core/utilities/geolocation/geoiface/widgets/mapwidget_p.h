@@ -54,7 +54,7 @@
 
 #endif
 
-// local includes
+// Local includes
 
 #include "geoifacecommon.h"
 #include "geodragdrophandler.h"

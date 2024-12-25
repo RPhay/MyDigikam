@@ -18,7 +18,7 @@
 
 #include <QTest>
 
-// local includes
+// Local includes
 
 #include "dimg.h"
 #include "dimgfiltermanager.h"

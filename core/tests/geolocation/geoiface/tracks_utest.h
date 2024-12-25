@@ -18,7 +18,7 @@
 
 #include <QTest>
 
-// local includes
+// Local includes
 
 class TestTracks : public QObject
 {

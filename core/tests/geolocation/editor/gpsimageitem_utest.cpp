@@ -20,7 +20,7 @@
 #include <QScopedPointer>
 #include <QUrl>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "dmetadata.h"

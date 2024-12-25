@@ -35,10 +35,10 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore // public std::
     {
         if (a.votes == b.votes)
         {
-            return a.score < b.score;
+            return (a.score < b.score);
         }
 
-        return a.votes > b.votes;
+        return (a.votes > b.votes);
     }
 };
 
@@ -47,13 +47,14 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore // public std:
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
-        // may want to check that the pointers aren't zero...
+        // May want to check that the pointers aren't zero...
+
         if (a.votes == b.votes)
         {
-            return a.score > b.score;
+            return (a.score > b.score);
         }
 
-        return a.votes > b.votes;
+        return (a.votes > b.votes);
     }
 };
 
@@ -62,8 +63,9 @@ struct MLClassifierFoundation::VotingGroups::WinnerLowScore // public std::binar
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
-        // may want to check that the pointers aren't zero...
-        return a.score < b.score;
+        // May want to check that the pointers aren't zero...
+
+        return (a.score < b.score);
     }
 };
 
@@ -72,7 +74,7 @@ struct MLClassifierFoundation::VotingGroups::WinnerHighScore // public std::bina
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
-        // may want to check that the pointers aren't zero...
+        // May want to check that the pointers aren't zero...
 
         return (a.score > b.score);
     }
@@ -137,6 +139,4 @@ int MLClassifierFoundation::VotingGroups::winner(WinnerType winnerType)
     return voteTally.value(0).label;
 }
 
-}
-
-#include "moc_mlclassifierfoundation.cpp"
+} // namespace Digikam

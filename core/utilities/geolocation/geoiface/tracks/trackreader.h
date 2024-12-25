@@ -19,7 +19,7 @@
 
 #include <QXmlStreamReader>
 
-// local includes
+// Local includes
 
 #include "trackmanager.h"
 #include "digikam_export.h"
