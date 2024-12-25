@@ -90,9 +90,9 @@ void MLPipelineFoundation::cancel()
 
     cancelled = true;
 
-    for (auto queue : queues)
+    for (auto queue : std::as_const(queues))
     {
-        // udate the max queue size to something big
+        // update the max queue size to something big
 
         queue->maxDepth(1000000);
 
@@ -551,7 +551,6 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     {
         notify(notification, _name, _path, _processed, QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
     }
-
     else
     {
         notify(notification, _name, _path, _processed, QIcon());
@@ -581,6 +580,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
 
 void MLPipelineFoundation::showPipelinePerformance() const
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     for (auto [stage, profile] : performanceProfileList.asKeyValueRange())
