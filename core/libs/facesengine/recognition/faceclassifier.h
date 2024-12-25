@@ -15,10 +15,6 @@
 
 #pragma once
 
-// OpenCV includes
-
-// #include <opencv2/ml.hpp>
-
 // Local includes
 
 #include "faceclassifierbase.h"

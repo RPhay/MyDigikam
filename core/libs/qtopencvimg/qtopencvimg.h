@@ -1,32 +1,23 @@
-/****************************************************************************
-** Copyright (c) 2012-2015 Debao Zhang <hello@debao.me>
-** All right reserved.
-**
-** Permission is hereby granted, free of charge, to any person obtaining
-** a copy of this software and associated documentation files (the
-** "Software"), to deal in the Software without restriction, including
-** without limitation the rights to use, copy, modify, merge, publish,
-** distribute, sublicense, and/or sell copies of the Software, and to
-** permit persons to whom the Software is furnished to do so, subject to
-** the following conditions:
-**
-** The above copyright notice and this permission notice shall be
-** included in all copies or substantial portions of the Software.
-**
-** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-** EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-** MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-** NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-** LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-** OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-** WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-**
-****************************************************************************/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-12-23
+ * Description : Helper methods to convert OpenCV image to Qt containers and vis-versa.
+ *
+ * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2012-2015 by Debao Zhang    <hello at debao dot me>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
 
-#ifndef CVMATANDQIMAGE_H
-#define CVMATANDQIMAGE_H
+#pragma once
 
 // Qt includes
+
 #include <QImage>
 
 // Local includes
@@ -45,7 +36,6 @@ enum MatColorOrder
     MCO_RGBA = MCO_RGB,
     MCO_ARGB
 };
-
 
 /* Convert QImage to/from cv::Mat
  *
@@ -87,9 +77,7 @@ QImage mat2Image(const cv::Mat& mat, MatColorOrder order = MCO_BGR, QImage::Form
  * - User must make sure that the color channels order is the same as
  *   the color channels order requried by QImage.
  */
-cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* order = 0);
+cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* order = nullptr);
 QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint = QImage::Format_Invalid);
 
-} //namespace QtOcv
-
-#endif // CVMATANDQIMAGE_H
+} // namespace Digikam

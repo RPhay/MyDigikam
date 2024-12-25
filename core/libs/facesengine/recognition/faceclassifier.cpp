@@ -58,12 +58,12 @@ public:
     QMutex                                  trainingMutex;
     QMap<int, QList<cv::Mat> >              identityFeatures;
 
-    // openCV variables
+    // OpenCV variables
 
     cv::Ptr<cv::ml::KNearest>               knnClassifier;
     cv::Ptr<cv::ml::SVM>                    svmClassifier;
 
-    // classifier hyperparameters
+    // Classifier hyperparameters
 
     // KNN hyperparameters
     int                                     knn_defaultK            = 8;
