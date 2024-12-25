@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-class RecognitionPreprocessor::Private
+class Q_DECL_HIDDEN RecognitionPreprocessor::Private
 {
 
 public:
