@@ -848,7 +848,7 @@ void DExpanderBox::insertItem(int index, QWidget* const w, const QIcon& icon, co
 void DExpanderBox::slotItemExpanded(bool b)
 {
     DLabelExpander* const exp = dynamic_cast<DLabelExpander*>(sender());
- 
+
     if (exp)
     {
         int index = indexOf(exp);

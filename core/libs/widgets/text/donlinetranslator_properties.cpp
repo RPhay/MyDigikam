@@ -67,7 +67,7 @@ void DOnlineTranslator::setEngineUrl(Engine engine, const QString& url)
             d->libreUrl  = url;
             break;
         }
- 
+
         case Lingva:
         {
             d->lingvaUrl = url;

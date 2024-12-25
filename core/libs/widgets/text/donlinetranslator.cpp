@@ -50,7 +50,7 @@ void DOnlineTranslator::translate(const QString& text,
     d->uiLang             = (uiLang == Auto)          ? language(QLocale()) : uiLang;
 
     // Check if the selected languages are supported by the engine
- 
+
    if (!isSupportTranslation(engine, d->sourceLang))
     {
         resetData(ParametersError,
