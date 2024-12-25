@@ -143,7 +143,7 @@ bool FacePipelineRecognize::finder()
                 {
                     QList<FaceTagsIface> faces = utils.unconfirmedFaceTagsIfaces(imageId);
 
-                    for (FaceTagsIface face : std::as_const(faces))
+                    for (const FaceTagsIface& face : std::as_const(faces))
                     {
                         ++totalItemCount;
                         filter << imageId;
@@ -166,7 +166,7 @@ bool FacePipelineRecognize::finder()
         {
             QList<FaceTagsIface> faces = utils.unconfirmedFaceTagsIfaces(imageId);
 
-            for (FaceTagsIface face : std::as_const(faces))
+            for (const FaceTagsIface& face : std::as_const(faces))
             {
                 ++totalItemCount;
                 filter << imageId;
@@ -297,6 +297,7 @@ bool FacePipelineRecognize::classifier()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 
     return true;

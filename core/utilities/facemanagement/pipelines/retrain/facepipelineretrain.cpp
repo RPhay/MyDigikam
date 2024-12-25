@@ -118,7 +118,7 @@ bool FacePipelineRetrain::finder()
 
                 int newInstances = (QThread::idealThreadCount() / 4) - 1;
 
-                for (int i = 0; i < newInstances; ++i)
+                for (int i = 0 ; i < newInstances ; ++i)
                 {
                     Q_EMIT signalAddMoreWorkers();
                 }
@@ -132,7 +132,7 @@ bool FacePipelineRetrain::finder()
                 {
                     QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(imageId);
 
-                    for (FaceTagsIface face : std::as_const(faces))
+                    for (const FaceTagsIface& face : std::as_const(faces))
                     {
                         ++totalItemCount;
 
@@ -150,6 +150,7 @@ bool FacePipelineRetrain::finder()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
 
     return true;
