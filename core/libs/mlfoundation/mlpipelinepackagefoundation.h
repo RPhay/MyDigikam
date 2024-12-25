@@ -16,9 +16,10 @@
 #pragma once
 
 // Qt includes
+
 #include <QIcon>
 
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 
@@ -32,13 +33,14 @@ public:
     MLPipelinePackageFoundation()                           = default;
     virtual ~MLPipelinePackageFoundation()                  = default;
 
+public:
+
     quint64 size            = 0;
     QIcon   thumbnailIcon;
 
 private:
 
     MLPipelinePackageFoundation(MLPipelinePackageFoundation&) = delete;
-
 };
 
-}
+} // namespace Digikam

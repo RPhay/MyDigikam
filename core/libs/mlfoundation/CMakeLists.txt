@@ -10,7 +10,6 @@ APPLY_COMMON_POLICIES()
 
 set(libmlpipeline_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mlpipelinefoundation.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/mlpipelinepackagefoundation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mlpipelinepackagenotify.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mlclassifierfoundation.cpp
 )
