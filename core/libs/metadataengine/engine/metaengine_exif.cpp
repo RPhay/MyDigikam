@@ -1566,7 +1566,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 tagValue = QString::number(md->value().size());
             }
             else if (
-                     (key           == QLatin1String("Exif.CanonCs.LensType")) && 
+                     (key           == QLatin1String("Exif.CanonCs.LensType")) &&
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
