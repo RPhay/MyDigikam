@@ -153,10 +153,12 @@ protected:
     virtual void addMoreWorkers()                               = 0;
 
     // queue helper functions
+
     MLPipelinePackageFoundation* queueEndSignal() const
     {
         return nullptr;
     }
+
     void clearQueue(MLPipelineQueue* thisQueue);
     void clearAllQueues();
 
@@ -164,10 +166,12 @@ protected:
     virtual MLPipelinePackageFoundation* dequeue(MLPipelineQueue* thisQueue);
 
     bool addWorker(const MLPipelineStage& stage);
+
     void waitForStart()
     {
         QMutexLocker lock(&mutex);
     }
+
     void stageStart(QThread::Priority threadPriority, MLPipelineStage thisStage, MLPipelineStage nextStage, MLPipelineQueue*& thisQueue, MLPipelineQueue*& nextQueue);
     void stageEnd(MLPipelineStage thisStage, MLPipelineStage nextStage);
 
@@ -180,7 +184,6 @@ protected:
 private:
 
     MLPipelineFoundation(MLPipelineFoundation&)                 = delete;
-
 };
 
-}
+} // namespace Digikam

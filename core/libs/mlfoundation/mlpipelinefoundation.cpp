@@ -36,7 +36,6 @@ namespace Digikam
 MLPipelineFoundation::MLPipelineFoundation()
 {
     totalItemCount  = 0;
-
     threadPool      = new QThreadPool();
 
     // #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -47,7 +46,6 @@ MLPipelineFoundation::MLPipelineFoundation()
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
-
 }
 
 MLPipelineFoundation::~MLPipelineFoundation()
@@ -353,6 +351,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
         case MLPipelineStage::None:
         {
             // do nothing
+
             break;
         }
     }
@@ -438,7 +437,6 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
         return true;
     }
-
     else
     {
         if (queueEndSignal() != package)
@@ -482,7 +480,6 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority, MLPipeli
         profile.maxThreadCount      = 1;
         performanceProfileList.insert(thisStage, profile);
     }
-
     else
     {
         performanceProfileList[thisStage].currentThreadCount++;
@@ -538,7 +535,6 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     {
         notify(notification, _name, _path, _processed, DImg(_thumbnail));
     }
-
     else
     {
         notify(notification, _name, _path, _processed, QIcon());
