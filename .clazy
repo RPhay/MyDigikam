@@ -50,6 +50,6 @@ raw-environment-function,\
 qt-keywords,\
 missing-qobject-macro,\
 range-loop-detach,\
-range-loop-reference\
+range-loop-reference,\
 use-static-qregularexpression\
 "
