@@ -118,7 +118,7 @@ public:
 
 FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("FacesEngine"), parent),
-      d              (new Private)
+      d(new Private)
 {
     switch (settings.task)
     {
@@ -127,16 +127,19 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
             d->newPipeline = new FacePipelineDetectRecognize(settings);
             break;
         }
+
         case FaceScanSettings::RecognizeMarkedFaces:
         {
             d->newPipeline = new FacePipelineRecognize(settings);
             break;
         }
+
         case FaceScanSettings::RetrainAll:
         {
             d->newPipeline = new FacePipelineRetrain(settings);
             break;
         }
+
         case FaceScanSettings::Reset:
         {
             d->newPipeline = new FacePipelineReset(settings);
@@ -159,32 +162,36 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
     connect(d->newPipeline, SIGNAL(signalUpdateItemCount(const qlonglong)),
             this, SLOT(slotUpdateItemCount(const qlonglong)));
 
-    if      (
-             settings.wholeAlbums &&
-             (settings.task == FaceScanSettings::RecognizeMarkedFaces)
-            )
+    if (
+        settings.wholeAlbums &&
+        (settings.task == FaceScanSettings::RecognizeMarkedFaces)
+    )
     {
         d->idsTodoList   = CoreDbAccess().db()->getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
                                                                               ImageTagPropertyName::autodetectedFace());
 
         d->source        = FacesEngine::Ids;
     }
+
     else if (settings.task == FaceScanSettings::RetrainAll)
     {
         d->idsTodoList   = CoreDbAccess().db()->getImagesWithProperty(ImageTagPropertyName::tagRegion());
 
         d->source        = FacesEngine::Ids;
     }
+
     else if (settings.albums.isEmpty() && settings.infos.isEmpty())
     {
         d->albumTodoList = AlbumManager::instance()->allPAlbums();
         d->source        = FacesEngine::Albums;
     }
+
     else if (!settings.albums.isEmpty())
     {
         d->albumTodoList = settings.albums;
         d->source        = FacesEngine::Albums;
     }
+
     else
     {
         d->infoTodoList  = settings.infos;
@@ -206,28 +213,32 @@ void FacesEngine::slotStart()
 
     // Set label depending on settings.
 
-    if      (d->albumTodoList.size() > 0)
+    if (d->albumTodoList.size() > 0)
     {
         if (d->albumTodoList.size() == 1)
         {
             setLabel(i18n("Scan for faces in album: %1", d->albumTodoList.first()->title()));
         }
+
         else
         {
             setLabel(i18n("Scan for faces in %1 albums", d->albumTodoList.size()));
         }
     }
+
     else if (d->infoTodoList.size() > 0)
     {
         if (d->infoTodoList.size() == 1)
         {
             setLabel(i18n("Scan for faces in image: %1", d->infoTodoList.first().name()));
         }
+
         else
         {
             setLabel(i18n("Scan for faces in %1 images", d->infoTodoList.size()));
         }
     }
+
     else
     {
         setLabel(i18n("Updating faces database"));
@@ -235,7 +246,7 @@ void FacesEngine::slotStart()
 
     ProgressManager::addProgressItem(this);
 
-    if      (d->source == FacesEngine::Infos)
+    if (d->source == FacesEngine::Infos)
     {
         int total = d->infoTodoList.count();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
@@ -257,11 +268,12 @@ void FacesEngine::slotStart()
 
             slotDone();
 
-            return;       
+            return;
         }
-        
+
         return;
     }
+
     else if (d->source == FacesEngine::Ids)
     {
         ItemInfoList itemInfos(d->idsTodoList);
@@ -284,7 +296,7 @@ void FacesEngine::slotStart()
         {
             Q_EMIT signalScanNotification(QString(i18n("Error starting face detection.")), DNotificationWidget::Error);
         }
-        
+
         return;
     }
 
@@ -303,6 +315,7 @@ void FacesEngine::slotStart()
         {
             hasPAlbums = true;
         }
+
         else
         {
             hasTAlbums = true;
@@ -336,6 +349,7 @@ void FacesEngine::slotStart()
         {
             progressValueMap[album] = palbumCounts.value(album->id());
         }
+
         else
         {
             // This is possibly broken of course because we do not know if images have multiple tags,
@@ -430,6 +444,7 @@ void FacesEngine::slotDone()
     {
         lbl.append(i18n("Items scanned for faces: %1\n", totalItems()));
     }
+
     else
     {
         lbl.append(i18n("Item scanned for faces: %1\n", totalItems()));
@@ -439,6 +454,7 @@ void FacesEngine::slotDone()
     {
         lbl.append(i18n("Faces found: %1", d->totalFacesFound));
     }
+
     else
     {
         lbl.append(i18n("Face found: %1", d->totalFacesFound));
@@ -453,7 +469,7 @@ void FacesEngine::slotDone()
     // Switch on scanned for faces flag on digiKam config file.
 
     KSharedConfig::openConfig()->group(QLatin1String("General Settings"))
-                                       .writeEntry("Face Scanner First Run", true);
+    .writeEntry("Face Scanner First Run", true);
 
     MaintenanceTool::slotDone();
 }
@@ -484,6 +500,7 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
     {
         lbl.append(i18n("No face"));
     }
+
     else
     {
         lbl.append(i18np("1 face", "%1 faces", package->processed));

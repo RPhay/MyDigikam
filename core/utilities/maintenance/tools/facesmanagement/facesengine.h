@@ -53,7 +53,7 @@ public:
 public:
 
     explicit FacesEngine(const FaceScanSettings& settings,
-                           ProgressItem* const parent = nullptr);
+                         ProgressItem* const parent = nullptr);
     ~FacesEngine()                                                override;
 
 Q_SIGNALS:
