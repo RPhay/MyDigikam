@@ -26,9 +26,9 @@ namespace Digikam
 {
 
 FaceScanWidget::FaceScanWidget(QWidget* const parent)
-    : QTabWidget       (parent),
+    : QTabWidget(parent),
       StateSavingObject(this),
-      d                (new Private)
+      d(new Private)
 {
     setObjectName(d->configName);
     setupUi();
@@ -46,28 +46,28 @@ void FaceScanWidget::doLoadState()
     QString mainTask   = group.readEntry(entryName(d->configMainTask),
                                          d->configValueDetect);
 
-//     if      (mainTask == d->configValueRecognizedMarkedFaces)
-//     {
-//         d->reRecognizeButton->setChecked(true);
-//     }
-//     else if (mainTask == d->configValueDetectAndRecognize)
-//     {
+    //     if      (mainTask == d->configValueRecognizedMarkedFaces)
+    //     {
+    //         d->reRecognizeButton->setChecked(true);
+    //     }
+    //     else if (mainTask == d->configValueDetectAndRecognize)
+    //     {
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//         d->detectAndRecognizeButton->setChecked(true);
+    //         d->detectAndRecognizeButton->setChecked(true);
 
-// #else
+    // #else
 
-//         d->detectButton->setChecked(true);
+    //         d->detectButton->setChecked(true);
 
-// #endif
+    // #endif
 
-//     }
-//     else
-//     {
-//         d->detectButton->setChecked(true);
-//     }
+    //     }
+    //     else
+    //     {
+    //         d->detectButton->setChecked(true);
+    //     }
 
     FaceScanSettings::AlreadyScannedHandling handling;
     handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
@@ -102,28 +102,28 @@ void FaceScanWidget::doSaveState()
 
     QString mainTask;
 
-//     if (d->detectButton->isChecked())
-//     {
-//         mainTask = d->configValueDetect;
-//     }
+    //     if (d->detectButton->isChecked())
+    //     {
+    //         mainTask = d->configValueDetect;
+    //     }
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//     else if (d->detectAndRecognizeButton->isChecked())
-//     {
-//         mainTask = d->configValueDetectAndRecognize;
-//     }
+    //     else if (d->detectAndRecognizeButton->isChecked())
+    //     {
+    //         mainTask = d->configValueDetectAndRecognize;
+    //     }
 
-// #endif
+    // #endif
 
-//     else // d->reRecognizeButton
-//     {
-//         mainTask = d->configValueRecognizedMarkedFaces;
-//     }
+    //     else // d->reRecognizeButton
+    //     {
+    //         mainTask = d->configValueRecognizedMarkedFaces;
+    //     }
 
-//     group.writeEntry(entryName(d->configMainTask), mainTask);
+    //     group.writeEntry(entryName(d->configMainTask), mainTask);
     group.writeEntry(entryName(d->configAlreadyScannedHandling),
-                               d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+                     d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
 
     d->albumSelectors->saveState();
 
@@ -156,9 +156,9 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-/*
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
-*/
+    /*
+        d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+    */
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
@@ -166,10 +166,10 @@ void FaceScanWidget::setupUi()
 
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
-        {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
-        }
-    );
+    {
+        openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
+    }
+           );
 
     scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
     scanOptionLayout->addWidget(d->helpButton,        1);
@@ -181,36 +181,36 @@ void FaceScanWidget::setupUi()
     // d->detectButton                     = new QRadioButton(i18nc("@option:radio", "Detect faces"));
     // d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//     d->detectAndRecognizeButton         = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
-//     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and\n"
-//                                                            "try to recognize which person is depicted"));
-// #endif
+    //     d->detectAndRecognizeButton         = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
+    //     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and\n"
+    //                                                            "try to recognize which person is depicted"));
+    // #endif
 
-//     d->reRecognizeButton                = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
-//     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted\n"
-//                                                     "on marked but yet unconfirmed faces."));
+    //     d->reRecognizeButton                = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
+    //     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted\n"
+    //                                                     "on marked but yet unconfirmed faces."));
 
-//     optionLayout->addWidget(d->detectButton);
+    //     optionLayout->addWidget(d->detectButton);
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//     optionLayout->addWidget(d->detectAndRecognizeButton);
+    //     optionLayout->addWidget(d->detectAndRecognizeButton);
 
-// #endif
+    // #endif
 
-//     optionLayout->addWidget(d->reRecognizeButton);
-//     optionLayout->addStretch();
+    //     optionLayout->addWidget(d->reRecognizeButton);
+    //     optionLayout->addStretch();
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//     QStyleOptionButton buttonOption;
-//     buttonOption.initFrom(d->detectAndRecognizeButton);
-//     int indent = style()->subElementRect(QStyle::SE_RadioButtonIndicator, &buttonOption, d->detectAndRecognizeButton).width();
-//     optionLayout->setColumnMinimumWidth(0, indent);
+    //     QStyleOptionButton buttonOption;
+    //     buttonOption.initFrom(d->detectAndRecognizeButton);
+    //     int indent = style()->subElementRect(QStyle::SE_RadioButtonIndicator, &buttonOption, d->detectAndRecognizeButton).width();
+    //     optionLayout->setColumnMinimumWidth(0, indent);
 
-// #endif
+    // #endif
 
     d->workflowWidget->setLayout(optionLayout);
     addTab(d->workflowWidget, i18nc("@title:tab", "Workflow"));
@@ -307,16 +307,16 @@ void FaceScanWidget::setupUi()
     detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
     detectGrid->addWidget(detectSizeLabel,          2, 0, 1, 1);
     detectGrid->addWidget(d->detectSizeBox,         2, 2, 1, 1);
-/*
-    // old layout for easy revert
+    /*
+        // old layout for easy revert
 
-    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
-    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
-    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
-    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
-    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
-    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
-*/
+        detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
+        detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
+        detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
+        detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
+        detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
+        detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
+    */
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
 
@@ -370,14 +370,14 @@ void FaceScanWidget::setupUi()
     recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
 
-/*
-    // old layout for easy revert
+    /*
+        // old layout for easy revert
 
-    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
-    recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
-    recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
-    recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
-*/
+        recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
+        recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
+        recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
+        recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+    */
     // ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
@@ -400,10 +400,10 @@ void FaceScanWidget::setupUi()
 
 void FaceScanWidget::setupConnections()
 {
-/*
-     connect(d->detectButton, SIGNAL(toggled(bool)),
-             d->alreadyScannedBox, SLOT(setEnabled(bool)));
-*/
+    /*
+         connect(d->detectButton, SIGNAL(toggled(bool)),
+                 d->alreadyScannedBox, SLOT(setEnabled(bool)));
+    */
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
@@ -453,6 +453,7 @@ void FaceScanWidget::slotDetectModelChanged()
     {
         d->detectSizeBox->setEnabled(true);
     }
+
     else
     {
         d->detectSizeBox->setEnabled(false);
@@ -502,12 +503,13 @@ void FaceScanWidget::slotRecognizeModelChanged()
 
         PeopleSideBarWidget::doFaceScan(settings);
     }
+
     else
     {
         // Disconnect so we don't get multiple dialogs.
 
         disconnect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-                                                            this, &FaceScanWidget::slotRecognizeModelChanged);
+                   this, &FaceScanWidget::slotRecognizeModelChanged);
 
         // Reselect the old model value in the drop-down.
 
@@ -516,7 +518,7 @@ void FaceScanWidget::slotRecognizeModelChanged()
         // Reconnect for future notifications.
 
         connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-                                                         this, &FaceScanWidget::slotRecognizeModelChanged);
+                this, &FaceScanWidget::slotRecognizeModelChanged);
     }
 
     // Clean up the dialog.
@@ -540,43 +542,44 @@ FaceScanSettings FaceScanWidget::settings() const
 
     d->settingsConflicted = false;
 
-//     if (d->detectButton->isChecked())
-//     {
-//         settings.task = FaceScanSettings::Detect;
-//     }
-//     else
-//     {
+    //     if (d->detectButton->isChecked())
+    //     {
+    //         settings.task = FaceScanSettings::Detect;
+    //     }
+    //     else
+    //     {
 
-// #ifdef ENABLE_DETECT_AND_RECOGNIZE
+    // #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
-//         if (d->detectAndRecognizeButton->isChecked())
-//         {
-//             settings.task = FaceScanSettings::DetectAndRecognize;
-//         }
-//         else // Recognize only.
+    //         if (d->detectAndRecognizeButton->isChecked())
+    //         {
+    //             settings.task = FaceScanSettings::DetectAndRecognize;
+    //         }
+    //         else // Recognize only.
 
-// #endif
+    // #endif
 
-//         {
-//             settings.task = FaceScanSettings::RecognizeMarkedFaces;
+    //         {
+    //             settings.task = FaceScanSettings::RecognizeMarkedFaces;
 
-//             // Preset settingsConflicted as True, since by default there are no tags to recognize.
+    //             // Preset settingsConflicted as True, since by default there are no tags to recognize.
 
-//             d->settingsConflicted = true;
-//         }
-//     }
+    //             d->settingsConflicted = true;
+    //         }
+    //     }
 
     if (FaceScanSettings::RecognizeOnly == d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt())
     {
         settings.task = FaceScanSettings::RecognizeMarkedFaces;
         settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
-                                        
+
     }
+
     else
     {
         settings.task = FaceScanSettings::DetectAndRecognize;
         settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
-                                        d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
+                                          d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
     }
 
     // settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)

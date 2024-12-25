@@ -25,7 +25,7 @@ namespace Digikam
 
 RecognitionWorker::RecognitionWorker(FacePipeline::Private* const dd)
     : imageRetriever(dd),
-      d             (dd)
+      d(dd)
 {
 }
 
@@ -42,13 +42,14 @@ void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     FaceUtils      utils;
     QList<QImage*> images;
 
-    if      (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+    if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
         // Assume we have an image.
 
         images = imageRetriever.getDetails(package->image,
                                            package->detectedFaces);
     }
+
     else if (!package->databaseFaces.isEmpty())
     {
         images = imageRetriever.getThumbnails(package->filePath,
@@ -93,15 +94,15 @@ void RecognitionWorker::setAccuracyAndModel(int detectAccuracy,
     params[QLatin1String("recognizeAccuracy")]    = recognizeAccuracy;
     params[QLatin1String("recognizeModel")]       = recognizeModel;
     recognizer.setParameters(params);
-/*
-    recognizer.setParameter(QLatin1String("detectAccuracy"), detectAccuracy);
-    recognizer.setParameter(QLatin1String("detectModel"), detectModel);
-    recognizer.setParameter(QLatin1String("detectSize"), detectSize);
-    recognizer.setParameter(QLatin1String("recognizeAccuracy"), recognizeAccuracy);
-    recognizer.setParameter(QLatin1String("recognizeModel"), recognizeModel);
+    /*
+        recognizer.setParameter(QLatin1String("detectAccuracy"), detectAccuracy);
+        recognizer.setParameter(QLatin1String("detectModel"), detectModel);
+        recognizer.setParameter(QLatin1String("detectSize"), detectSize);
+        recognizer.setParameter(QLatin1String("recognizeAccuracy"), recognizeAccuracy);
+        recognizer.setParameter(QLatin1String("recognizeModel"), recognizeModel);
 
-    Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
-*/
+        Q_EMIT d->accuracyAndModel(detectAccuracy, detectModel, detectSize, recognizeAccuracy, recognizeModel);
+    */
 }
 
 } // namespace Digikam

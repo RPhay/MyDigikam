@@ -21,7 +21,7 @@ namespace Digikam
 
 AssignNameWidget::AssignNameWidget(QWidget* const parent)
     : QFrame(parent),
-      d     (new Private(this))
+      d(new Private(this))
 {
     setObjectName(QLatin1String("assignNameWidget"));
     setVisualStyle(StyledFrame);
@@ -45,7 +45,7 @@ void AssignNameWidget::setAlbumModels(TagModel* const model,
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    if      (settings)
+    if (settings)
     {
         if (filteredModel && settings->showOnlyPersonTagsInPeopleSidebar())
         {
@@ -53,10 +53,11 @@ void AssignNameWidget::setAlbumModels(TagModel* const model,
         }
     }
 
-    if      (d->comboBox)
+    if (d->comboBox)
     {
         d->comboBox->setAlbumModels(model, filteredModel, filterModel);
     }
+
     else if (d->lineEdit)
     {
         d->lineEdit->setAlbumModels(model, filteredModel, filterModel);
@@ -77,10 +78,11 @@ void AssignNameWidget::setParentTag(TAlbum* album)
 {
     d->parentTag = album;
 
-    if      (d->comboBox)
+    if (d->comboBox)
     {
         d->comboBox->setParentTag(album);
     }
+
     else if (d->lineEdit)
     {
         d->lineEdit->setParentTag(album);
@@ -107,7 +109,7 @@ void AssignNameWidget::setMode(Mode mode)
     if (
         (d->layoutMode == Compact)                    &&
         (mode == AssignNameWidget::UnconfirmedEditMode)
-       )
+    )
     {
         d->updateRejectButton();
     }
@@ -188,14 +190,16 @@ void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIde
      * Ignored faces are drawn over with a different
      * overlay, as Reject button should be disabled.
      */
-    if      (face.type() == FaceTagsIface::ConfirmedName)
+    if (face.type() == FaceTagsIface::ConfirmedName)
     {
         setMode(AssignNameWidget::ConfirmedMode);
     }
+
     else if (face.type() == FaceTagsIface::IgnoredName)
     {
         setMode(AssignNameWidget::IgnoredMode);
     }
+
     else
     {
         setMode(AssignNameWidget::UnconfirmedEditMode);
@@ -236,7 +240,7 @@ void AssignNameWidget::setCurrentTag(TAlbum* album)
         if (d->clickLabel && (d->mode != IgnoredMode))
         {
             d->clickLabel->setText(d->currentTag ? d->currentTag->title()
-                                                 : QString());
+                                   : QString());
         }
 
         return;
@@ -248,10 +252,11 @@ void AssignNameWidget::setCurrentTag(TAlbum* album)
 
 void AssignNameWidget::slotConfirm()
 {
-    if      (d->comboBox)
+    if (d->comboBox)
     {
         Q_EMIT assigned(d->comboBox->currentTaggingAction(), d->info, d->faceIdentifier);
     }
+
     else if (d->lineEdit)
     {
         Q_EMIT assigned(d->lineEdit->currentTaggingAction(), d->info, d->faceIdentifier);
@@ -311,7 +316,7 @@ void AssignNameWidget::showEvent(QShowEvent* e)
 {
     if ((d->mode == UnconfirmedEditMode) || (d->mode == ConfirmedEditMode))
     {
-        if      (d->comboBox)
+        if (d->comboBox)
         {
             d->comboBox->setMinimumWidth(qMax(250, size().width() - 4));
 
@@ -325,6 +330,7 @@ void AssignNameWidget::showEvent(QShowEvent* e)
             d->comboBox->lineEdit()->selectAll();
             d->comboBox->lineEdit()->setFocus();
         }
+
         else if (d->lineEdit)
         {
             if (d->currentTag)

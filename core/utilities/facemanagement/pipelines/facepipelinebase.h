@@ -78,33 +78,33 @@ public:
     virtual bool start()    override;
     virtual void cancel()   override;
 
-// Q_SIGNALS:
+    // Q_SIGNALS:
 
-//     /// Emitted when processing is scheduled.
-//     void scheduled();
+    //     /// Emitted when processing is scheduled.
+    //     void scheduled();
 
-//     /// Emitted when processing has started.
-//     void started(const QString& message);
+    //     /// Emitted when processing has started.
+    //     void started(const QString& message);
 
-//     /// Emitted when one package begins processing.
-//     void processing(const FacePipelinePackageNotify::Ptr& package);
+    //     /// Emitted when one package begins processing.
+    //     void processing(const FacePipelinePackageNotify::Ptr& package);
 
-//     /// Emitted when one package has finished processing.
-//     void processed(const FacePipelinePackageNotify::Ptr& package);
-//     void progressValueChanged(float progress);
+    //     /// Emitted when one package has finished processing.
+    //     void processed(const FacePipelinePackageNotify::Ptr& package);
+    //     void progressValueChanged(float progress);
 
-//     /// Emitted when the last package has finished processing.
-//     void finished();
+    //     /// Emitted when the last package has finished processing.
+    //     void finished();
 
-//     /// Emitted when one or several packages were skipped, usually because they have already been scanned.
-//     void skipped(const FacePipelinePackageNotify::Ptr& package);
+    //     /// Emitted when one or several packages were skipped, usually because they have already been scanned.
+    //     void skipped(const FacePipelinePackageNotify::Ptr& package);
 
-//     void signalAddMoreWorkers();
+    //     void signalAddMoreWorkers();
 
-// private Q_SLOTS:
+    // private Q_SLOTS:
 
-//     void slotFinished();
-//     void slotAddMoreWorkers();
+    //     void slotFinished();
+    //     void slotAddMoreWorkers();
 
 protected:
 

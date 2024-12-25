@@ -73,6 +73,7 @@ void FaceUtils::markAsScanned(const ItemInfo& info, bool hasBeenScanned) const
     {
         ItemInfo(info).setTag(FaceTags::scannedForFacesTagId());
     }
+
     else
     {
         ItemInfo(info).removeTag(FaceTags::scannedForFacesTagId());
@@ -109,9 +110,10 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
             faces << FaceTagsIface();
             continue;
         }
-/*
-        qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
-*/
+
+        /*
+                qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
+        */
         faces << FaceTagsIface(type, imageid, tagId, TagRegion(fullSizeRect));
     }
 
@@ -208,6 +210,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                     }
                 }
             }
+
             else
             {
                 // We have a name in the new face. Do we have names in overlapping faces?
@@ -216,7 +219,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                 {
                     const FaceTagsIface& oldFace = overlappingEntries[j];
 
-                    if      (oldFace.isUnknownName())
+                    if (oldFace.isUnknownName())
                     {
                         // Remove old face.
                     }
@@ -234,6 +237,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
                             // Else remove old face.
                         }
+
                         else
                         {
                             // Assume new recognition is more trained, remove older face.
@@ -321,7 +325,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
         !FaceTags::isTheIgnoredPerson(tagId)  &&
         !FaceTags::isTheUnknownPerson(tagId)  &&
         !FaceTags::isTheUnconfirmedPerson(tagId)
-       )
+    )
     {
         qlonglong faceItemId = CoreDbAccess().db()->getFirstItemWithFaceTag(tagId);
 

@@ -87,7 +87,7 @@ void FacePipelineRecognize::cancel()
 bool FacePipelineRecognize::finder()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
     //--------------------------------------------------------------------------------
@@ -119,7 +119,7 @@ bool FacePipelineRecognize::finder()
 
             // quick check if we should add threads.
 
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size())>25 && QThread::idealThreadCount()>4)
+            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
             {
                 moreCpu = true;
 
@@ -205,7 +205,7 @@ bool FacePipelineRecognize::extractor()
 bool FacePipelineRecognize::classifier()
 {
     // All threads start with the same basic functions
- 
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
@@ -255,6 +255,7 @@ bool FacePipelineRecognize::classifier()
             {
                 enqueue(nextQueue, package);
             }
+
             else
             {
                 // no suggested match found, so notify the user
@@ -272,17 +273,21 @@ bool FacePipelineRecognize::classifier()
             performanceProfileList[MLPipelineStage::Classifier].elapsedTime   += timer.elapsed();
             performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. " << e.what() << "    Restarting...";
+
             if (package)
             {
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;
@@ -300,7 +305,7 @@ bool FacePipelineRecognize::classifier()
 bool FacePipelineRecognize::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
@@ -316,12 +321,14 @@ bool FacePipelineRecognize::writer()
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
@@ -351,7 +358,8 @@ bool FacePipelineRecognize::writer()
             performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
             performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. " << e.what() << "  Restarting...";
 
@@ -360,7 +368,8 @@ bool FacePipelineRecognize::writer()
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error.  Restarting...";
 

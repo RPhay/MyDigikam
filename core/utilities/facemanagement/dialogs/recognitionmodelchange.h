@@ -35,7 +35,7 @@ class ChangeFaceRecognitionModelDlg : public QDialog
 public:
 
     explicit ChangeFaceRecognitionModelDlg(QWidget* const parent,
-                                  FaceScanSettings::FaceRecognitionModel newModel);
+                                           FaceScanSettings::FaceRecognitionModel newModel);
 
     ~ChangeFaceRecognitionModelDlg()       override;
 

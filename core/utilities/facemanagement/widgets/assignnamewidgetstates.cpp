@@ -43,11 +43,11 @@ void AssignNameWidgetStates::slotStateChanged()
     // Show resize handles etc. only in edit modes.
 
     item->setEditable(
-                      !(
-                        (item->widget()->mode() == AssignNameWidget::IgnoredMode)  ||
-                        (item->widget()->mode() == AssignNameWidget::ConfirmedMode)
-                       )
-                     );
+        !(
+            (item->widget()->mode() == AssignNameWidget::IgnoredMode)  ||
+            (item->widget()->mode() == AssignNameWidget::ConfirmedMode)
+        )
+    );
 }
 
 } // namespace Digikam

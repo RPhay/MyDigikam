@@ -110,8 +110,8 @@ void FacePipeline::plugFaceDetector()
 {
     d->detectionWorker = new DetectionWorker(d);
 
-    connect(d, SIGNAL(accuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
-            d->detectionWorker, SLOT(setAccuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
+    connect(d, SIGNAL(accuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
+            d->detectionWorker, SLOT(setAccuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
             Qt::QueuedConnection);
 }
 
@@ -132,8 +132,8 @@ void FacePipeline::plugParallelFaceDetectors()
     {
         DetectionWorker* const worker = new DetectionWorker(d);
 
-        connect(d, SIGNAL(accuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
-                worker, SLOT(setAccuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
+        connect(d, SIGNAL(accuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
+                worker, SLOT(setAccuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
                 Qt::QueuedConnection);
 
         d->parallelDetectors->add(worker);
@@ -144,8 +144,8 @@ void FacePipeline::plugFaceRecognizer()
 {
     d->recognitionWorker = new RecognitionWorker(d);
 
-    connect(d, SIGNAL(accuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
-            d->recognitionWorker, SLOT(setAccuracyAndModel(int,FaceScanSettings::FaceDetectionModel,FaceScanSettings::FaceDetectionSize,int,FaceScanSettings::FaceRecognitionModel)),
+    connect(d, SIGNAL(accuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
+            d->recognitionWorker, SLOT(setAccuracyAndModel(int, FaceScanSettings::FaceDetectionModel, FaceScanSettings::FaceDetectionSize, int, FaceScanSettings::FaceRecognitionModel)),
             Qt::QueuedConnection);
 }
 
@@ -182,11 +182,12 @@ void FacePipeline::construct()
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add preview thread";
     }
 
-    if      (d->parallelDetectors)
+    if (d->parallelDetectors)
     {
         d->pipeline << d->parallelDetectors;
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add parallel thread detectors";
     }
+
     else if (d->detectionWorker)
     {
         d->pipeline << d->detectionWorker;

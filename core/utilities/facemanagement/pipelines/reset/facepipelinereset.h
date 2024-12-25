@@ -38,10 +38,22 @@ public:
 
 protected:
     bool finder()                                               override;
-    bool loader()                                               override    { return false; }   
-    bool extractor()                                            override    { return false; }
-    bool classifier()                                           override    { return false; }
-    bool trainer()                                              override    { return false; }
+    bool loader()                                               override
+    {
+        return false;
+    }
+    bool extractor()                                            override
+    {
+        return false;
+    }
+    bool classifier()                                           override
+    {
+        return false;
+    }
+    bool trainer()                                              override
+    {
+        return false;
+    }
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;

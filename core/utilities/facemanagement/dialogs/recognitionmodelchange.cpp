@@ -57,7 +57,7 @@ public:
 ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const parent,
                                                              FaceScanSettings::FaceRecognitionModel newModel)
     : QDialog(parent),
-      d      (new Private)
+      d(new Private)
 {
     setModal(true);
     setWindowTitle(i18nc("@title:window", "Facial Recognition Model"));
@@ -85,24 +85,24 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
     }
 
     QString messageString = i18ncp(
-                                   "@info",
-                                   "You are about to change the face recognition model. This process can take several"
-                                   " minutes or more depending on the size of your library and the speed of your computer."
-                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                   " during the process.\n\nAre you sure you want to continue?",
-                                   "You are about to change the face recognition model to %1. This process can take several"
-                                   " minutes or more depending on the size of your library and the speed of your computer."
-                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                   " during the process.\n\nAre you sure you want to continue?",
-                                   newModelString
-                                  );
+                                "@info",
+                                "You are about to change the face recognition model. This process can take several"
+                                " minutes or more depending on the size of your library and the speed of your computer."
+                                " SFace is the preferred model. Do not use any facial detection or recognition features"
+                                " during the process.\n\nAre you sure you want to continue?",
+                                "You are about to change the face recognition model to %1. This process can take several"
+                                " minutes or more depending on the size of your library and the speed of your computer."
+                                " SFace is the preferred model. Do not use any facial detection or recognition features"
+                                " during the process.\n\nAre you sure you want to continue?",
+                                newModelString
+                            );
 
     d->page             = new QWidget(this);
     d->verticalLayout   = new QVBoxLayout(d->page);
     d->layoutGrid       = new QGridLayout(this);
 
     d->icon             = new QLabel(this);
-    d->icon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(QSize(64,64)));
+    d->icon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(QSize(64, 64)));
 
     d->message          = new QLabel(messageString, this);
     d->message->setWordWrap(true);

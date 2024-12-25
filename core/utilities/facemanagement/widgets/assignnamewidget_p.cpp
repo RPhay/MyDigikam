@@ -30,6 +30,7 @@ QWidget* AssignNameWidget::Private::addTagsWidget() const
     {
         return comboBox;
     }
+
     else
     {
         return lineEdit;
@@ -39,10 +40,10 @@ QWidget* AssignNameWidget::Private::addTagsWidget() const
 bool AssignNameWidget::Private::isValid() const
 {
     return (
-            (mode        != InvalidMode)                  &&
-            (layoutMode  != InvalidLayout)                &&
-            (visualStyle != InvalidVisualStyle)           &&
-            (widgetMode  != InvalidTagEntryWidgetMode)
+               (mode        != InvalidMode)                  &&
+               (layoutMode  != InvalidLayout)                &&
+               (visualStyle != InvalidVisualStyle)           &&
+               (widgetMode  != InvalidTagEntryWidgetMode)
            );
 }
 
@@ -207,6 +208,7 @@ void AssignNameWidget::Private::checkWidgets()
                                q, SLOT(slotReject()));
                 }
             }
+
             else
             {
                 clickLabel = new DClickLabel;
@@ -234,11 +236,12 @@ void AssignNameWidget::Private::checkWidgets()
 
 void AssignNameWidget::Private::layoutAddTagsWidget(bool exceedBounds, int minimumContentsLength)
 {
-    if      (comboBox)
+    if (comboBox)
     {
         comboBox->setMinimumContentsLength(minimumContentsLength);
         comboBox->lineEdit()->setAllowExceedBound(exceedBounds);
     }
+
     else if (lineEdit)
     {
         lineEdit->setAllowExceedBound(exceedBounds);
@@ -326,6 +329,7 @@ void AssignNameWidget::Private::updateLayout()
                         setToolButtonStyles(Qt::ToolButtonTextBesideIcon);
                         layoutAddTagsWidget(true, 10);
                     }
+
                     else
                     {
                         setToolButtonStyles(Qt::ToolButtonIconOnly);
@@ -351,6 +355,7 @@ void AssignNameWidget::Private::updateLayout()
                 setToolButtonStyles(Qt::ToolButtonIconOnly);
                 layoutAddTagsWidget(true, 0);
             }
+
             else
             {
                 layout->addWidget(clickLabel, 0, 0);
@@ -377,7 +382,7 @@ QString AssignNameWidget::Private::styleSheetFontDescriptor(const QFont& font) c
     QString s;
 
     s += (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px; ").arg(font.pixelSize())
-                                  : QString::fromUtf8("font-size: %1pt; ").arg(font.pointSize());
+         : QString::fromUtf8("font-size: %1pt; ").arg(font.pointSize());
     s += QString::fromUtf8("font-family: \"%1\"; ").arg(font.family());
 
     return s;
@@ -396,6 +401,7 @@ void AssignNameWidget::Private::updateVisualStyle()
     {
         appFont.setPixelSize(appFont.pixelSize() - 1);
     }
+
     else
     {
         appFont.setPointSize(appFont.pointSize() - 1);
@@ -464,8 +470,8 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "  color: white; background-color: transparent; border: none; "
                     "}"
                 ).arg(styleSheetFontDescriptor(appFont))
-                 .arg(((mode == ConfirmedMode) || (mode == IgnoredMode)) ? QLatin1String("8")
-                                                                         : QLatin1String("4"))
+                .arg(((mode == ConfirmedMode) || (mode == IgnoredMode)) ? QLatin1String("8")
+                     : QLatin1String("4"))
             );
 
             break;
@@ -488,9 +494,9 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "  border-radius: 8px; "
                     "}"
                 ).arg(styleSheetFontDescriptor(appFont))
-                 .arg(bg.red())
-                 .arg(bg.green())
-                 .arg(bg.blue())
+                .arg(bg.red())
+                .arg(bg.green())
+                .arg(bg.blue())
             );
 
             break;
@@ -512,7 +518,7 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
     if (widget)
     {
         widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18nc("@label", "Who is this?")
-                                                                 : QString());
+                                   : QString());
         widget->setCurrentTag(currentTag);
 
         if (confirmButton)
@@ -529,10 +535,11 @@ void AssignNameWidget::Private::updateContents()
         return;
     }
 
-    if      (comboBox)
+    if (comboBox)
     {
         setAddTagsWidgetContents(comboBox);
     }
+
     else if (lineEdit)
     {
         setAddTagsWidgetContents(lineEdit);
@@ -543,8 +550,9 @@ void AssignNameWidget::Private::updateContents()
         if (mode != IgnoredMode)
         {
             clickLabel->setText(currentTag ? currentTag->title()
-                                           : QString());
+                                : QString());
         }
+
         else
         {
             int tagId = FaceTags::ignoredPersonTagId();
@@ -562,8 +570,9 @@ void AssignNameWidget::Private::updateIgnoreButton()
         ignoreButton->setToolTip(i18nc("@info:tooltip", "Ignore this face"));
 
         q->connect(ignoreButton, SIGNAL(clicked()),
-                    q, SLOT(slotIgnore()));
+                   q, SLOT(slotIgnore()));
     }
+
     else
     {
         FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
@@ -571,10 +580,11 @@ void AssignNameWidget::Private::updateIgnoreButton()
         if (
             (face.type() == FaceTagsIface::IgnoredName) ||
             (face.type() == FaceTagsIface::UnknownName)
-           )
+        )
         {
             ignoreButton->hide();
         }
+
         else
         {
             ignoreButton->show();
@@ -591,11 +601,12 @@ void AssignNameWidget::Private::updateRejectButton()
 
     FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
 
-    if      (face.type() == FaceTagsIface::UnknownName)
+    if (face.type() == FaceTagsIface::UnknownName)
     {
         rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
         rejectButton->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
     }
+
     else if (face.type() == FaceTagsIface::UnconfirmedName)
     {
         rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));

@@ -42,10 +42,10 @@ QString RecognitionBenchmarker::result() const
     }
 
     QString s = QString::fromUtf8("<p>"
-                        "<u>Collection Properties:</u><br/>"
-                        "%1 Images <br/>"
-                        "%2 Identities <br/>"
-                        "</p><p>").arg(totalImages).arg(results.size());
+                                  "<u>Collection Properties:</u><br/>"
+                                  "%1 Images <br/>"
+                                  "%2 Identities <br/>"
+                                  "</p><p>").arg(totalImages).arg(results.size());
 
     for (QMap<int, Statistics>::const_iterator it = results.begin() ;
          it != results.end() ; ++it)

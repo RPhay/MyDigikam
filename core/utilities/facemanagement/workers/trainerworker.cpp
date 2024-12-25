@@ -68,7 +68,7 @@ public:
 
 TrainerWorker::TrainerWorker(FacePipeline::Private* const dd)
     : imageRetriever(dd),
-      d             (dd)
+      d(dd)
 {
 }
 
@@ -82,9 +82,9 @@ TrainerWorker::~TrainerWorker()
  */
 void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
-*/
+    /*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
+    */
 
     // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace).
 
@@ -124,6 +124,7 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         {
             images = imageRetriever.getThumbnails(package->filePath, toTrain);
         }
+
         else
         {
             images = imageRetriever.getDetails(package->image, toTrain);

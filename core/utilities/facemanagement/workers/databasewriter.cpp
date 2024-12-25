@@ -25,15 +25,15 @@ namespace Digikam
 {
 
 DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode wmode, FacePipeline::Private* const dd)
-    : mode               (wmode),
+    : mode(wmode),
       thumbnailLoadThread(dd->createThumbnailLoadThread()),
-      d                  (dd)
+      d(dd)
 {
 }
 
 void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 {
-    if      (package->databaseFaces.isEmpty())
+    if (package->databaseFaces.isEmpty())
     {
         // Detection / Recognition.
 
@@ -42,19 +42,20 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
         // OverwriteUnconfirmed means that a new scan discarded unconfirmed results of previous scans
         // (assuming at least equal or new, better methodology is in use compared to the previous scan).
 
-        if      (
-                 (mode == FacePipeline::OverwriteUnconfirmed) &&
-                 (package->processFlags & FacePipelinePackage::ProcessedByDetector)
-                )
+        if (
+            (mode == FacePipeline::OverwriteUnconfirmed) &&
+            (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+        )
         {
             QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
             qCDebug(DIGIKAM_GENERAL_LOG) << "Removing old entries" << oldEntries;
             utils.removeFaces(oldEntries);
         }
+
         else if (
-                 (mode == FacePipeline::OverwriteAllFaces) &&
-                 (package->processFlags & FacePipelinePackage::ProcessedByDetector)
-                )
+            (mode == FacePipeline::OverwriteAllFaces) &&
+            (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+        )
         {
             utils.removeAllFaces(package->info.id());
             // TODO: remove all faces from training here.  This resets all facial recognition to 0
@@ -79,6 +80,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
             }
         }
     }
+
     else if (package->processFlags & FacePipelinePackage::ProcessedByRecognizer)
     {
         FaceUtils utils;
@@ -96,7 +98,7 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                 if (
                     (i < package->recognitionResults.size()) &&
                     !package->recognitionResults[i].isNull()
-                   )
+                )
                 {
                     // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624.
 
@@ -105,9 +107,10 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 
                 package->databaseFaces[i]        = FacePipelineFaceTagsIface(utils.changeSuggestedName(package->databaseFaces[i], tagId));
                 package->databaseFaces[i].roles &= ~FacePipelineFaceTagsIface::ForRecognition;
-           }
+            }
         }
     }
+
     else
     {
         // Editing database entries.
@@ -118,15 +121,16 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 
         for (it = package->databaseFaces.begin() ; it != package->databaseFaces.end() ; ++it)
         {
-            if      (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
+            if (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
                 FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
                 confirmed.roles                    |= FacePipelineFaceTagsIface::Confirmed | FacePipelineFaceTagsIface::ForTraining;
                 add << confirmed;
             }
+
             else if (it->roles & FacePipelineFaceTagsIface::ForEditing)
             {
-                if      (it->isNull())
+                if (it->isNull())
                 {
                     // Add Manually.
 
@@ -134,15 +138,18 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                     utils.addManually(newFace);
                     add << FacePipelineFaceTagsIface(newFace);
                 }
+
                 else if (it->assignedRegion.isValid())
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
                 }
+
                 else if (FaceTags::isPerson(it->assignedTagId))
                 {
                     // Change Tag operation.
                     add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId));
                 }
+
                 else
                 {
                     utils.removeFace(*it);

@@ -48,7 +48,7 @@ public:
 
     explicit FacePipelinePackageBase(qlonglong _imageId,
                                      const FaceTagsIface& _face);
-                                     
+
     explicit FacePipelinePackageBase(const ItemInfo& _info,
                                      const FaceTagsIface& _face,
                                      int _tagId,

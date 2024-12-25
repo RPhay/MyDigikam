@@ -44,7 +44,7 @@ namespace Digikam
 {
 
 FacePipelineReset::FacePipelineReset(const FaceScanSettings& _settings) :
-                                       FacePipelineBase(_settings)
+    FacePipelineBase(_settings)
 {
 }
 
@@ -79,7 +79,7 @@ void FacePipelineReset::cancel()
 bool FacePipelineReset::finder()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Writer, thisQueue, nextQueue);
     QElapsedTimer timer;
     //--------------------------------------------------------------------------------
@@ -103,19 +103,20 @@ bool FacePipelineReset::finder()
         if (!album->isTrashAlbum())
         {
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
-            
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size())>25 && QThread::idealThreadCount()>4)
+
+            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
             {
                 moreCpu = true;
 
                 int newInstances = (QThread::idealThreadCount() / 4) - 1;
+
                 for (int i = 0; i < newInstances; ++i)
                 {
                     Q_EMIT signalAddMoreWorkers();
                 }
             }
 
-            for(qlonglong imageId : std::as_const(imageIds))
+            for (qlonglong imageId : std::as_const(imageIds))
             {
                 // filter out duplicate image IDs
 
@@ -128,7 +129,7 @@ bool FacePipelineReset::finder()
         }
     }
 
-    Q_EMIT signalUpdateItemCount(totalItemCount);    
+    Q_EMIT signalUpdateItemCount(totalItemCount);
 
     performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
@@ -143,7 +144,7 @@ bool FacePipelineReset::finder()
 bool FacePipelineReset::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
@@ -166,12 +167,14 @@ bool FacePipelineReset::writer()
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
@@ -207,19 +210,22 @@ bool FacePipelineReset::writer()
             performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
             performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error.  Restarting...";
             std::cerr << e.what() << '\n';
         }
-        catch(...)
+
+        catch (...)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;
             }
-        }        
+        }
     }
 
     // retrain the classifier after all results have been processed

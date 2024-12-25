@@ -47,11 +47,20 @@ public:
     FaceTagsIface addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain = true);
 
 protected:
-    bool finder()                                               override    { return false; }
+    bool finder()                                               override
+    {
+        return false;
+    }
     bool loader()                                               override;
     bool extractor()                                            override;
-    bool classifier()                                           override    { return false; }
-    bool trainer()                                              override    { return false; }
+    bool classifier()                                           override
+    {
+        return false;
+    }
+    bool trainer()                                              override
+    {
+        return false;
+    }
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;

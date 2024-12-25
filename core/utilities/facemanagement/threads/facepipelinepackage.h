@@ -148,7 +148,7 @@ public:
 // ------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
-                                                  public QSharedData
+    public QSharedData
 {
 public:
 

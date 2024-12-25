@@ -39,6 +39,7 @@ void FacePipeline::Private::processBatch(const QList<ItemInfo>& infos)
         infosForFiltering += infos.size();
         databaseFilter->process(infos);
     }
+
     else
     {
         for (const ItemInfo& info : std::as_const(infos))
@@ -77,6 +78,7 @@ FacePipelineExtendedPackage::Ptr FacePipeline::Private::filterOrBuildPackage(con
     {
         return databaseFilter->filter(info);
     }
+
     else
     {
         return buildPackage(info);
@@ -206,10 +208,11 @@ void FacePipeline::Private::start()
 
     for (QObject* const element : std::as_const(pipeline))
     {
-        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->schedule();
         }
+
         else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->schedule();
@@ -245,14 +248,16 @@ void FacePipeline::Private::stop()
 
     for (QObject* const element : std::as_const(pipeline))
     {
-        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->deactivate();
         }
+
         else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->deactivate();
         }
+
         else if ((thread = qobject_cast<DynamicThread*>(element)))
         {
             thread->stop();
@@ -286,14 +291,16 @@ void FacePipeline::Private::wait()
 
     for (QObject* const element : std::as_const(pipeline))
     {
-        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->wait();
         }
+
         else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->wait();
         }
+
         else if ((thread = qobject_cast<DynamicThread*>(element)))
         {
             thread->wait();
@@ -310,10 +317,11 @@ void FacePipeline::Private::applyPriority()
 
     for (QObject* const element : std::as_const(pipeline))
     {
-        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->setPriority(priority);
         }
+
         else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->setPriority(priority);
@@ -331,9 +339,9 @@ ThumbnailLoadThread* FacePipeline::Private::createThumbnailLoadThread()
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
-/*
-    Image::recommendedSizeForRecognition()
-*/
+    /*
+        Image::recommendedSizeForRecognition()
+    */
     thumbnailLoadThread->setPriority(priority);
 
     thumbnailLoadThreads << thumbnailLoadThread;

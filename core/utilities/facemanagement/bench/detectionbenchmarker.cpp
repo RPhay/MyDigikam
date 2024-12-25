@@ -67,7 +67,8 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
             for (const FaceTagsIface& testedFace : std::as_const(testedFaces))
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
-                {   // cppcheck-suppress useStlAlgorithm
+                {
+                    // cppcheck-suppress useStlAlgorithm
                     matchedTrueFaces << trueFace;
                     unmatchedTrueFaces.removeOne(trueFace);
 
@@ -81,7 +82,8 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
             for (const FaceTagsIface& trueFace : std::as_const(groundTruth))
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
-                {   // cppcheck-suppress useStlAlgorithm
+                {
+                    // cppcheck-suppress useStlAlgorithm
                     unmatchedTestedFaces.removeOne(testedFace);
 
                     break;
@@ -95,6 +97,7 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
             {
                 ++trueNegativeImages;
             }
+
             else
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "The image, truly without faces, is false-positive";
@@ -140,19 +143,19 @@ QString DetectionBenchmarker::result() const
     if (negativeImages < (0.2 * totalImages))
     {
         specificityWarning = QString::fromUtf8("<p><b>Note:</b><br/> "
-                                     "Only %1 of the %2 test images have <i>no</i> depicted faces. "
-                                     "This means the result is cannot be representative; "
-                                     "it can only be used to compare preselected collections, "
-                                     "and the specificity and false-positive rate have little meaning. </p>")
-                                     .arg(negativeImages).arg(totalImages);
+                                               "Only %1 of the %2 test images have <i>no</i> depicted faces. "
+                                               "This means the result is cannot be representative; "
+                                               "it can only be used to compare preselected collections, "
+                                               "and the specificity and false-positive rate have little meaning. </p>")
+                             .arg(negativeImages).arg(totalImages);
         negativeImages     = qMax(negativeImages, 1);
     }
 
     if (trueFaces == 0)
     {
         sensitivityWarning = QString::fromUtf8("<p><b>Note:</b><br/> "
-                                     "No picture in the test collection contained a face. "
-                                     "This means that sensitivity and PPV have no meaning and will be zero. </p>");
+                                               "No picture in the test collection contained a face. "
+                                               "This means that sensitivity and PPV have no meaning and will be zero. </p>");
         trueFaces          = 1;
     }
 
@@ -195,10 +198,10 @@ QString DetectionBenchmarker::result() const
                              "Given face with no images on it, the detector will with a probability "
                              "of %5% falsely find a face on it. "
                              "</p>")
-                             .arg(totalImages).arg(faces).arg(pixelCoverage * 100, 0, 'f', 1)
-                             .arg(specificity * 100, 0, 'f', 1).arg(falsePositiveRate * 100, 0, 'f', 1)
-                             .arg(sensitivity * 100, 0, 'f', 1).arg(ppv * 100, 0, 'f', 1)
-                             .arg(specificityWarning).arg(sensitivityWarning);
+           .arg(totalImages).arg(faces).arg(pixelCoverage * 100, 0, 'f', 1)
+           .arg(specificity * 100, 0, 'f', 1).arg(falsePositiveRate * 100, 0, 'f', 1)
+           .arg(sensitivity * 100, 0, 'f', 1).arg(ppv * 100, 0, 'f', 1)
+           .arg(specificityWarning).arg(sensitivityWarning);
 }
 
 } // namespace Digikam

@@ -44,7 +44,7 @@ namespace Digikam
 {
 
 FacePipelineRetrain::FacePipelineRetrain(const FaceScanSettings& _settings) :
-                                       FacePipelineBase(_settings)
+    FacePipelineBase(_settings)
 {
 }
 
@@ -87,7 +87,7 @@ void FacePipelineRetrain::cancel()
 bool FacePipelineRetrain::finder()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
     //--------------------------------------------------------------------------------
@@ -111,25 +111,27 @@ bool FacePipelineRetrain::finder()
         if (!album->isTrashAlbum())
         {
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
-            
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size())>25 && QThread::idealThreadCount()>4)
+
+            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
             {
                 moreCpu = true;
 
                 int newInstances = (QThread::idealThreadCount() / 4) - 1;
+
                 for (int i = 0; i < newInstances; ++i)
                 {
                     Q_EMIT signalAddMoreWorkers();
                 }
             }
 
-            for(qlonglong imageId : std::as_const(imageIds))
+            for (qlonglong imageId : std::as_const(imageIds))
             {
                 // filter out duplicate image IDs
 
                 if (!filter.contains(imageId))
                 {
                     QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(imageId);
+
                     for (FaceTagsIface face : std::as_const(faces))
                     {
                         ++totalItemCount;
@@ -141,7 +143,7 @@ bool FacePipelineRetrain::finder()
         }
     }
 
-    Q_EMIT signalUpdateItemCount(totalItemCount);    
+    Q_EMIT signalUpdateItemCount(totalItemCount);
 
     performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
@@ -171,7 +173,7 @@ bool FacePipelineRetrain::classifier()
 bool FacePipelineRetrain::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
@@ -192,6 +194,7 @@ bool FacePipelineRetrain::writer()
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
@@ -209,9 +212,10 @@ bool FacePipelineRetrain::writer()
                 Identity identity = utils.identityForTag(package->face.tagId());
                 idProvider->addTraining(identity, package->face.hash(), package->features);
             }
+
             else
             {
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";    
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
             }
 
 
@@ -223,19 +227,22 @@ bool FacePipelineRetrain::writer()
 
             delete package;
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error.  Restarting...";
             std::cerr << e.what() << '\n';
         }
-        catch(...)
+
+        catch (...)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;
             }
-        }        
+        }
     }
 
     // retrain the classifier after all results have been processed

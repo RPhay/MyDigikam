@@ -134,7 +134,7 @@ bool FacePipelineEdit::start()
     {
         started = true;
 
-        {            
+        {
             // use the mutex to synchronize the start of the threads
 
             QMutexLocker lock(&mutex);
@@ -150,6 +150,7 @@ bool FacePipelineEdit::start()
 
         return FacePipelineBase::start();
     }
+
     else
     {
         return true;
@@ -174,7 +175,7 @@ bool FacePipelineEdit::extractor()
 bool FacePipelineEdit::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
@@ -195,12 +196,14 @@ bool FacePipelineEdit::writer()
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
@@ -221,35 +224,43 @@ bool FacePipelineEdit::writer()
                     {
                         idProvider->addTraining(identity, confirmedFace.hash(), package->features);
                     }
+
                     else
                     {
-                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";    
+                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
                     }
+
                     break;
                 }
+
                 case FacePipelinePackageBase::EditPipelineAction::Remove:
                 {
                     utils.removeFace(package->face);
                     break;
                 }
+
                 case FacePipelinePackageBase::EditPipelineAction::EditTag:
                 {
                     // Change Tag operation.
                     utils.changeTag(package->face, package->tagId);
                     break;
                 }
+
                 case FacePipelinePackageBase::EditPipelineAction::EditRegion:
                 {
                     if (package->face.region() != package->region)
                     {
                         utils.changeRegion(package->face, package->region);
                     }
+
                     break;
                 }
+
                 case FacePipelinePackageBase::EditPipelineAction::AddManually:
                 {
                     utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region));
                 }
+
                     // if      (package->face.isNull())
                     // {
                     //     // Add Manually.
@@ -261,7 +272,7 @@ bool FacePipelineEdit::writer()
                     // else if (package->face.assignedRegion.isValid())
                     // {
                     //     add << FacePipelineFaceTagsIface();
-                    // }       
+                    // }
             }
 
             // update the tags
@@ -305,11 +316,13 @@ bool FacePipelineEdit::writer()
             performanceProfileList[MLPipelineStage::Writer].elapsedTime += timer.elapsed();
             performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             std::cerr << e.what() << '\n';
         }
-        catch(...)
+
+        catch (...)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error.  Restarting...";
 

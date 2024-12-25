@@ -82,12 +82,14 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount, thisQueue->size());
             ++performanceProfileList[thisStage].itemCount;
 
@@ -107,6 +109,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
                 enqueue(nextQueue, package);
             }
+
             else
             {
                 // send a notification that the file was skipped
@@ -124,7 +127,8 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
             performanceProfileList[thisStage].elapsedTime   += timer.elapsed();
             performanceProfileList[thisStage].maxElapsedTime = qMax((qint64)performanceProfileList[thisStage].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error. " << e.what() << "    Restarting...";
 
@@ -133,13 +137,14 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error.  Restarting...";
 
             if (package)
             {
-                delete package; 
+                delete package;
             }
         }
     }
@@ -154,7 +159,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
     stageEnd(thisStage, nextStage);
 
-   return true;
+    return true;
 }
 
 bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
@@ -221,7 +226,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             //     if (true)
             //     {
-            //         QString filename = QLatin1String("/Users/michmill/Downloads/thumbnails/") + package->info.name();        
+            //         QString filename = QLatin1String("/Users/michmill/Downloads/thumbnails/") + package->info.name();
             //         filename = filename.first(filename.lastIndexOf(QLatin1String("."))) + pipelineName + QStringLiteral(".jpg");
             //         qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): writing. " << filename << package->info;
             //         cv::imwrite(filename.toLocal8Bit().data(), cvImage);
@@ -234,7 +239,8 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             performanceProfileList[MLPipelineStage::Extractor].elapsedTime += timer.elapsed();
             performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error. " << e.what() << "    Restarting...";
 
@@ -243,7 +249,8 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error.  Restarting...";
 

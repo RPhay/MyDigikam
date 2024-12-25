@@ -39,7 +39,7 @@ class ThumbnailLoadThread;
 class ThumbnailImageCatcher;
 
 class FaceUtils : public QObject,
-                  public FaceTagsEditor
+    public FaceTagsEditor
 {
     Q_OBJECT
 
@@ -90,12 +90,12 @@ public:
      * This uses a thumbnail load thread to load the image detail.
      * If requested, the faces will be scaled to the given (fixed) size.
      */
-/*
-    void                 fillImageInFaces(ThumbnailImageCatcher* const catcher,
-                                          const QString& filePath,
-                                          QList<Face>& faceList,
-                                          const QSize& scaleSize = QSize())             const;
-*/
+    /*
+        void                 fillImageInFaces(ThumbnailImageCatcher* const catcher,
+                                              const QString& filePath,
+                                              QList<Face>& faceList,
+                                              const QSize& scaleSize = QSize())             const;
+    */
 
     /**
      * Store the needed thumbnails for the given faces. This can be a huge optimization
@@ -110,9 +110,9 @@ public:
      * Conversion.
      */
     QList<FaceTagsIface> toFaceTagsIfaces(qlonglong imageid,
-                                         const QList<QRectF>& detectedFaces,
-                                         const QList<Identity>& recognitionResults,
-                                         const QSize& fullSize)                         const;
+                                          const QList<QRectF>& detectedFaces,
+                                          const QList<Identity>& recognitionResults,
+                                          const QSize& fullSize)                         const;
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict
