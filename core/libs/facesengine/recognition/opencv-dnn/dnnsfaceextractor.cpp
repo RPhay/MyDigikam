@@ -63,7 +63,7 @@ DNNSFaceExtractor::DNNSFaceExtractor()
 
     if (!this->loadModels())
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Failed to load SFace model";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Failed to load SFace model";
         std::runtime_error e("Failed to load SFace model");
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -105,7 +105,7 @@ bool DNNSFaceExtractor::loadModels()
             {
                 cv::Ptr<cv::FaceRecognizerSF> net = static_cast<DNNModelSFace*>(d->model)->getNet();
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Extractor model:" << d->model->info.displayName;
             }
 
             // Load the YuNet model for 5-point face alignment.
@@ -114,14 +114,14 @@ bool DNNSFaceExtractor::loadModels()
             {
                 cv::Ptr<cv::FaceDetectorYN> detNet = static_cast<DNNModelYuNet*>(d->detectorModel)->getNet();
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
             }
         }
 
         else
         {
-            qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot load faces engine DNN models";
-            qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "SFace cannot load faces engine DNN models";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Faces recognition feature cannot be used!";
 
             return false;
         }
@@ -129,15 +129,15 @@ bool DNNSFaceExtractor::loadModels()
 
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return false;
     }
 
     catch (...)
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot find faces engine DNN models";
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "SFace cannot find faces engine DNN models";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Faces recognition feature cannot be used!";
 
         return false;
     }
@@ -243,34 +243,41 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Start neural network";
 
                 timer.start();
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
 
-                normalize(face_descriptors, normalized_descriptors);
+                if (face_descriptors.rows > 0)
+                {
+                    normalize(face_descriptors, normalized_descriptors);
+                }
+                else
+                {
+                    normalized_descriptors = face_descriptors;
+                }
             }
 
             else
             {
-                qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "No face landmarks found";
             }
         }
     }
 
     catch (cv::Exception& e)
     {
-        qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
 
     catch (...)
     {
-        qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception: unknown error";
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception: unknown error";
     }
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
 
     return normalized_descriptors;
@@ -279,6 +286,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
 {
     cv::UMat face_descriptors;
+    cv::UMat normalized_descriptors;
     cv::UMat paddedFace;
     cv::UMat alignedFace;
 
@@ -334,7 +342,7 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
             cv::UMat faceLandmark;
 
             d->detectorModel->getNet()->setInputSize(borderFace.size());
-            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold());
+            d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold(1));
             d->detectorModel->getNet()->detect(borderFace, faceLandmark);
 
             detectorLock.unlock();
@@ -347,36 +355,44 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Start neural network";
 
                 timer.start();
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
-                normalize(face_descriptors, face_descriptors);
+
+                if (face_descriptors.rows > 0)
+                {
+                    normalize(face_descriptors, normalized_descriptors);
+                }
+                else
+                {
+                    normalized_descriptors = face_descriptors;
+                }
             }
 
             else
             {
-                qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "No face landmarks found";
             }
         }
     }
 
     catch (cv::Exception& e)
     {
-        qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
 
     catch (...)
     {
-        // qCDebug(DIGIKAM_FACEDB_LOG) << e.what();
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception: unknown error";
     }
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
 
-    return face_descriptors;
+    return normalized_descriptors;
 }
 
 } // namespace Digikam
