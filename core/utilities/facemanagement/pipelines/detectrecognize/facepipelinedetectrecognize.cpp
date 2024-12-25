@@ -359,6 +359,11 @@ bool FacePipelineDetectRecognize::extractor()
             // copy the image to a cv::Mat
 
             cv::UMat cvUImage;
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << QStringLiteral("bytesDepth:") << package->image.bytesDepth() 
+                                             << QStringLiteral("  bitsDepth:") << package->image.bitsDepth()
+                                             << QStringLiteral("  Alpha:") << package->image.hasAlpha()
+                                             << QStringLiteral("  Image name:") << package->image.originalFilePath();
+
             int type               = (package->image.sixteenBit() ? CV_16UC4 : CV_8UC4);
             cv::Mat cvImageWrapper = cv::Mat(package->image.height(), package->image.width(), type, package->image.bits());
 
@@ -368,14 +373,11 @@ bool FacePipelineDetectRecognize::extractor()
 
             // prepare the UMat image for processing
 
-            if (package->image.hasAlpha())
-            {
-                cvtColor(cvUImageWrapper, cvUImage, cv::COLOR_RGBA2BGR);
-            }
-            else
-            {
-                cvtColor(cvUImageWrapper, cvUImage, cv::COLOR_RGB2BGR);
-            }
+            // DImg is always 4 channel.  convert to 3 channel RGB
+
+            cvtColor(cvUImageWrapper, cvUImage, cv::COLOR_RGBA2RGB);
+
+            // convert to 8 bit if 16 bit
 
             if (type == CV_16UC4)
             {

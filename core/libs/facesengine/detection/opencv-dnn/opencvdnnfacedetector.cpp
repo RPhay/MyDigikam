@@ -88,14 +88,11 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     int type               = (inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4);
     cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-    if (inputImage.hasAlpha())
-    {
-        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-    }
-    else
-    {
-        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-    }
+    // DImg is always 4 channel.  convert to 3 channel RGB
+
+    cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
+
+    // convert to 8 bit if 16 bit
 
     if (type == CV_16UC4)
     {
@@ -133,7 +130,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
 
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                      qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
             break;
         }
 
@@ -142,7 +139,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
             qimage         = qimage.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
                                      qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+            // cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
             break;
         }
     }

@@ -111,7 +111,7 @@ public:
     FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
 
     /// Detection Model.
-    FaceDetectionSize                       detectSize                  = FaceDetectionSize::Medium;
+    FaceDetectionSize                       detectSize                  = FaceDetectionSize::Large;
 
     /// Detection accuracy.
     int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf

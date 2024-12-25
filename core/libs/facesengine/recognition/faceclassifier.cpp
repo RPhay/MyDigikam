@@ -347,7 +347,14 @@ int FaceClassifier::predict(const cv::UMat& target) const
 
 int FaceClassifier::predictFullSearch(const cv::Mat& target)    const
 {
-    return listSearch(target, d->identityFeatures);
+    QElapsedTimer timer;
+    timer.start();
+
+    int label = listSearch(target, d->identityFeatures);
+    
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictFullSearch: classifier prediction is: "  << label << "    completed in " << timer.elapsed();
+
+    return label;
 }
 
 int FaceClassifier::predictClassifier(const cv::Mat& target)    const

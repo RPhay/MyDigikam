@@ -178,7 +178,9 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
 
     if (model && model->modelLoaded)
     {
-        const float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
+        // set the confidence threshold
+
+        float confidenceThreshold = model->getThreshold(uiConfidenceThreshold);
 
         // Lock the model for single threading.
 
@@ -195,7 +197,7 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
 
             static_cast<DNNModelYuNet*>(model)->getNet()->setInputSize(inputImage.size());
             static_cast<DNNModelYuNet*>(model)->getNet()->setScoreThreshold(confidenceThreshold);
-            static_cast<DNNModelYuNet*>(model)->getNet()->setNMSThreshold(nmsThreshold);
+            static_cast<DNNModelYuNet*>(model)->getNet()->setNMSThreshold(confidenceThreshold * 0.80);
 
             // Detect faces.
 
