@@ -39,11 +39,11 @@ MLPipelineFoundation::MLPipelineFoundation()
 
     threadPool      = new QThreadPool();
 
-// #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    // #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-//     threadPool->setMaxThreadCount(std::max(6, QThread::idealThreadCount()));
+    //     threadPool->setMaxThreadCount(std::max(6, QThread::idealThreadCount()));
 
-// #endif
+    // #endif
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
@@ -82,7 +82,7 @@ void MLPipelineFoundation::cancel()
      * 1. waiting for a new package
      * 2. processing a package
      * 3. waiting to push a package
-     * 
+     *
      * handle all 3 cases so the worker thread sees the cancel signal
      */
 
@@ -156,16 +156,16 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::finder,
-            this
+                                                 &MLPipelineFoundation::finder,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::finder
+                                                 this,
+                                                 &MLPipelineFoundation::finder
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -174,6 +174,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::Loader:
         {
             // create a queue if one doesn't exist
@@ -190,16 +191,16 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::loader,
-            this
+                                                 &MLPipelineFoundation::loader,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::loader
+                                                 this,
+                                                 &MLPipelineFoundation::loader
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -208,6 +209,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::Extractor:
         {
             // create a queue if one doesn't exist
@@ -224,16 +226,16 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::extractor,
-            this
+                                                 &MLPipelineFoundation::extractor,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::extractor
+                                                 this,
+                                                 &MLPipelineFoundation::extractor
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -242,6 +244,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::Classifier:
         {
             // create a queue if one doesn't exist
@@ -258,16 +261,16 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::classifier,
-            this
+                                                 &MLPipelineFoundation::classifier,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::classifier
+                                                 this,
+                                                 &MLPipelineFoundation::classifier
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -276,6 +279,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::Trainer:
         {
             // create a queue if one doesn't exist
@@ -288,20 +292,20 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
             // start a new thread
 
             QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+            watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::trainer,
-            this
+                                                 &MLPipelineFoundation::trainer,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::trainer
+                                                 this,
+                                                 &MLPipelineFoundation::trainer
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -310,6 +314,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::Writer:
         {
             // create a queue if one doesn't exist
@@ -322,20 +327,20 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
             // start a new thread
 
             QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
-            watcher->setFuture(QtConcurrent::run(threadPool, 
+            watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            &MLPipelineFoundation::writer,
-            this
+                                                 &MLPipelineFoundation::writer,
+                                                 this
 
 #else
 
-            this,
-            &MLPipelineFoundation::writer
+                                                 this,
+                                                 &MLPipelineFoundation::writer
 
 #endif
-            ));
+                                                ));
 
             watchList.append(watcher);
 
@@ -344,6 +349,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             break;
         }
+
         case MLPipelineStage::None:
         {
             // do nothing
@@ -382,7 +388,7 @@ void MLPipelineFoundation::clearQueue(MLPipelineQueue* thisQueue)
 
 void MLPipelineFoundation::clearAllQueues()
 {
-    for(MLPipelineQueue* const queue : std::as_const(queues))
+    for (MLPipelineQueue* const queue : std::as_const(queues))
     {
         // udate the max queue size to something big
 
@@ -432,6 +438,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
         return true;
     }
+
     else
     {
         if (queueEndSignal() != package)
@@ -475,6 +482,7 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority, MLPipeli
         profile.maxThreadCount      = 1;
         performanceProfileList.insert(thisStage, profile);
     }
+
     else
     {
         performanceProfileList[thisStage].currentThreadCount++;
@@ -530,6 +538,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     {
         notify(notification, _name, _path, _processed, DImg(_thumbnail));
     }
+
     else
     {
         notify(notification, _name, _path, _processed, QIcon());
@@ -542,6 +551,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     {
         notify(notification, _name, _path, _processed, QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
     }
+
     else
     {
         notify(notification, _name, _path, _processed, QIcon());
@@ -550,22 +560,23 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QIcon& _thumbnail)
 {
-        MLPipelinePackageNotify::Ptr notify;
-        notify = new MLPipelinePackageNotify(_name, _path, _processed, _thumbnail);
+    MLPipelinePackageNotify::Ptr notify;
+    notify = new MLPipelinePackageNotify(_name, _path, _processed, _thumbnail);
 
-        switch (notification)
+    switch (notification)
+    {
+        case MLPipelineNotification::notifyProcessed:
         {
-            case MLPipelineNotification::notifyProcessed:
-            {
-                Q_EMIT processed(notify);
-                break;
-            }
-            case MLPipelineNotification::notifySkipped:
-            {
-                Q_EMIT skipped(notify);
-                break;
-            }
+            Q_EMIT processed(notify);
+            break;
         }
+
+        case MLPipelineNotification::notifySkipped:
+        {
+            Q_EMIT skipped(notify);
+            break;
+        }
+    }
 }
 
 void MLPipelineFoundation::showPipelinePerformance() const

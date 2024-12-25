@@ -88,7 +88,7 @@ public:
         QAtomicInteger<int> maxThreadCount;
     }
     MLPipelinePerformanceProfile;
-    
+
     typedef SharedQueue<MLPipelinePackageFoundation*> MLPipelineQueue;
 
     MLPipelineFoundation();
@@ -154,7 +154,10 @@ protected:
     virtual void addMoreWorkers()                               = 0;
 
     // queue helper functions
-    MLPipelinePackageFoundation* queueEndSignal() const         { return nullptr; }
+    MLPipelinePackageFoundation* queueEndSignal() const
+    {
+        return nullptr;
+    }
     void clearQueue(MLPipelineQueue* thisQueue);
     void clearAllQueues();
 
@@ -162,7 +165,10 @@ protected:
     virtual MLPipelinePackageFoundation* dequeue(MLPipelineQueue* thisQueue);
 
     bool addWorker(const MLPipelineStage& stage);
-    void waitForStart()                                         { QMutexLocker lock(&mutex); }
+    void waitForStart()
+    {
+        QMutexLocker lock(&mutex);
+    }
     void stageStart(QThread::Priority threadPriority, MLPipelineStage thisStage, MLPipelineStage nextStage, MLPipelineQueue*& thisQueue, MLPipelineQueue*& nextQueue);
     void stageEnd(MLPipelineStage thisStage, MLPipelineStage nextStage);
 
@@ -171,7 +177,7 @@ protected:
     void notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QIcon& _thumbnail);
 
     void showPipelinePerformance() const;
-    
+
 private:
 
     MLPipelineFoundation(MLPipelineFoundation&)                 = delete;

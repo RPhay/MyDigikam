@@ -39,7 +39,7 @@ public:
 
     const QString   name;
     const QString   path;
-    int             processed       = 0;     
+    int             processed       = 0;
     QIcon           thumbnail;
 
     typedef QExplicitlySharedDataPointer<MLPipelinePackageNotify> Ptr;

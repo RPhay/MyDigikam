@@ -42,9 +42,9 @@ public:
 
     virtual bool retrain()                                              = 0;
 
-// Q_SIGNALS:
+    // Q_SIGNALS:
 
-//     void signalTrainingComplete();
+    //     void signalTrainingComplete();
 
 protected:
 
@@ -77,7 +77,7 @@ protected:
 
         void    addVote(int label, float score);
         int     winner(WinnerType winnerType);
-    
+
     private:
         QMap<int, QPair<int, float> >      votes;
 
@@ -87,9 +87,9 @@ protected:
 
     virtual bool loadTrainingData()                                     = 0;
 
-// protected Q_SLOTS:
+    // protected Q_SLOTS:
 
-//     virtual void slotTrainingComplete()                                 = 0;
+    //     virtual void slotTrainingComplete()                                 = 0;
 
 private:
 

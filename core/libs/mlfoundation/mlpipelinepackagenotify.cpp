@@ -19,10 +19,10 @@ namespace Digikam
 {
 
 MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name, const QString _path, int _processed, const DImg& _thumbnail) :
-                                                     QSharedData(),
-                                                     name(_name),
-                                                     path(_path),
-                                                     processed(_processed)
+    QSharedData(),
+    name(_name),
+    path(_path),
+    processed(_processed)
 {
     if (!_thumbnail.isNull())
     {
@@ -31,11 +31,11 @@ MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name, const QStr
 }
 
 MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name, const QString _path, int _processed, const QIcon& _thumbnail) :
-                                                     QSharedData(),
-                                                     name(_name),
-                                                     path(_path),
-                                                     processed(_processed),
-                                                     thumbnail(_thumbnail)
+    QSharedData(),
+    name(_name),
+    path(_path),
+    processed(_processed),
+    thumbnail(_thumbnail)
 {
 }
 
