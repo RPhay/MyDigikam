@@ -655,7 +655,7 @@ void TextConverterDialog::setBusy(bool busy)
     else
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Start OCR"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));      
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));
         plugProcessMenu();
     }
 

@@ -54,7 +54,7 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary = QByteArray("----------") + 
+    QByteArray m_boundary = QByteArray("----------") +
                             WSToolUtils::randomString(42 + 13).toLatin1();
 };
 

@@ -202,7 +202,7 @@ QDebug operator<<(QDebug d, const DigikamGenericRajcePlugin::RajceSession& s)
     str << ", imageQuality="      << s.imageQuality();
     str << ", albums=[";
 
-    const auto albums = s.albums(); 
+    const auto albums = s.albums();
 
     for (DigikamGenericRajcePlugin::RajceAlbum a : albums)
     {

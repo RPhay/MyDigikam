@@ -402,7 +402,7 @@ bool VidSlideOutputPage::isComplete() const
 
     d->audioPlayer->setAudioFile(apath);
     d->audioPlayer->setDisabled(apath.isEmpty());
-    
+
 
 #endif
 

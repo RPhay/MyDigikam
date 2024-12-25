@@ -235,7 +235,7 @@ void WaterMark::registerSettingsWidget()
     d->waterMarkOpacityPercent->setWhatsThis(i18n("Opacity of watermark"));
     opacityLabel->setText(i18n("Opacity (%): "));
     imageSettingsGroupBoxLayout->addWidget(watermarkImageOpacityBox);
- 
+
     // ---
 
     d->textSettingsGroupBox                       = new QGroupBox(vbox);

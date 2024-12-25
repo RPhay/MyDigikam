@@ -215,7 +215,7 @@ PresentationLoader::~PresentationLoader()
 void PresentationLoader::next()
 {
     int victim   = (
-                    d->currIndex - 
+                    d->currIndex -
                     (
                      ((d->cacheSize % 2) == 0) ? (d->cacheSize / 2) - 1
                                                : int(d->cacheSize / 2)
