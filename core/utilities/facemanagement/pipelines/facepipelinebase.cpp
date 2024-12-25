@@ -198,40 +198,26 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
-            cv::Mat uImage, cvImage, uFeatures;
-            cv::Mat mImage;
+            cv::Mat cvImage;
 
             QImage inputImage(package->thumbnail.copy());
 
-            if (inputImage.format() != QImage::Format_ARGB32_Premultiplied)
+            // preprocess image to be in the correct format
+
+            if (inputImage.format() != QImage::Format_RGB888)
             {
-                inputImage = inputImage.convertToFormat(QImage::Format_ARGB32_Premultiplied);
+                inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
             }
 
-            mImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.scanLine(0), inputImage.bytesPerLine()); //.getUMat(cv::ACCESS_RW);
-            // uImage = mImage.getUMat(cv::ACCESS_RW);
-            uImage = mImage;
-            // inputImage.detach();
-            cv::cvtColor(uImage, cvImage, CV_RGBA2RGB);
+            // create a cv::Mat image from the QImage
 
-            uFeatures = extractor.getFaceEmbedding(cvImage);
+            cvImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine());
 
-            package->features = uFeatures;
+            // extract the face features
+
+            package->features = extractor.getFaceEmbedding(cvImage);
 
             enqueue(nextQueue, package);
-
-            // if (0 == uFeatures.rows)
-            // {
-            //     // no faces found
-
-            //     if (true)
-            //     {
-            //         QString filename = QLatin1String("/Users/michmill/Downloads/thumbnails/") + package->info.name();
-            //         filename = filename.first(filename.lastIndexOf(QLatin1String("."))) + pipelineName + QStringLiteral(".jpg");
-            //         qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): writing. " << filename << package->info;
-            //         cv::imwrite(filename.toLocal8Bit().data(), cvImage);
-            //     }
-            // }
 
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
