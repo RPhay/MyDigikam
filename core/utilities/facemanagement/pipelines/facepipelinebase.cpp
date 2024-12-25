@@ -21,7 +21,7 @@
 #include <QThread>
 #include <QList>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
@@ -33,9 +33,9 @@
 namespace Digikam
 {
 
-FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings) :
-                                   MLPipelineFoundation(),
-                                   settings(_settings)
+FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings)
+    : MLPipelineFoundation(),
+      settings(_settings)
 {
 }
 
@@ -56,10 +56,12 @@ void FacePipelineBase::cancel()
 bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, thisStage, nextStage, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     ThumbnailLoadThread* thumbnailLoadThread = new ThumbnailLoadThread;
@@ -113,18 +115,19 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
                 // delete the package since it is not needed
 
-                delete package;            
+                delete package;
             }
 
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[thisStage].elapsedTime += timer.elapsed();
-            performanceProfileList[thisStage].maxElapsedTime = qMax(performanceProfileList[thisStage].maxElapsedTime, timer.elapsed());
+            performanceProfileList[thisStage].elapsedTime   += timer.elapsed();
+            performanceProfileList[thisStage].maxElapsedTime = qMax((qint64)performanceProfileList[thisStage].maxElapsedTime, timer.elapsed());
         }
         catch(const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error. " << e.what() << "    Restarting...";
+
             if (package)
             {
                 delete package;
@@ -133,11 +136,12 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
         catch(...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package; 
             }
-        }        
+        }
     }
 
     catcher->setActive(false);
@@ -147,6 +151,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(thisStage, nextStage);
 
    return true;
@@ -155,12 +160,14 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, thisStage, nextStage, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
-    
+
     DNNSFaceExtractor           extractor;
 
     while (!cancelled)
@@ -170,12 +177,14 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
         try
         {
             package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Extractor].itemCount;
 
@@ -223,11 +232,12 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             performanceProfileList[MLPipelineStage::Extractor].elapsedTime += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime, timer.elapsed());
         }
         catch(const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error. " << e.what() << "    Restarting...";
+
             if (package)
             {
                 delete package;
@@ -236,6 +246,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
         catch(...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;

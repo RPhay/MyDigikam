@@ -303,7 +303,7 @@ bool FacePipelineEdit::writer()
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             performanceProfileList[MLPipelineStage::Writer].elapsedTime += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
         catch(const std::exception& e)
         {
@@ -312,11 +312,12 @@ bool FacePipelineEdit::writer()
         catch(...)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;
             }
-        }        
+        }
     }
 
     //--------------------------------------------------------------------------------
@@ -331,6 +332,6 @@ void FacePipelineEdit::addMoreWorkers()
     // edit pipeline is always single thread per stage
 }
 
-}
+} // namespace Digikam
 
 #include "moc_facepipelineedit.cpp"
