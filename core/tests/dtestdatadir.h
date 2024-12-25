@@ -84,7 +84,7 @@ public:
     /**
      * Returns DTestDataDir for a sub-tree of the digiKam Test Data.
      * This provides access to files in the subtree.
-     * 
+     *
      * \param subdirPath path of subdir, relative to the Digikam Test Data root
      */
     static DTestDataDir TestData(const QString& subdirPath)
