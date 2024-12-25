@@ -204,8 +204,8 @@ bool FacePipelineReset::writer()
 
             delete package;
 
-            performanceProfileList[MLPipelineStage::Writer].elapsedTime += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
+            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
         catch(const std::exception& e)
         {
