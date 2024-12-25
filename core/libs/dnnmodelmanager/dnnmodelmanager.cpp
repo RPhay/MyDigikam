@@ -156,7 +156,7 @@ void DNNModelManager::loadConfig()
 
             if (usageStr.contains(QLatin1String("face_detection")))
             {
-                info.usage.append(DNNModelUsage::DNNUsageFaceDetection); 
+                info.usage.append(DNNModelUsage::DNNUsageFaceDetection);
             }
 
             if (usageStr.contains(QLatin1String("face_recognition")))
