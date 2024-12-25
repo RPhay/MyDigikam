@@ -103,6 +103,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     {
         return prepareForDetectionYuNet(cvImage, paddedSize);
     }
+
     else
     {
         return prepareForDetection(cvImage, paddedSize);
@@ -282,24 +283,26 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
     std::vector<cv::Rect> detectedBboxes = cvDetectFaces(inputImage, paddedSize);
 
     QList<QRect> results;
-/*
-    cv::Mat imageTest = inputImage.clone();
-*/
+
+    /*
+        cv::Mat imageTest = inputImage.clone();
+    */
     for (const cv::Rect& bbox : detectedBboxes)
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
-/*
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
-        cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
-                                          bbox.y + paddedSize.height,
-                                          bbox.width, bbox.height), cv::Scalar(0, 128, 0));
-*/
+        /*
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
+                cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
+                                                  bbox.y + paddedSize.height,
+                                                  bbox.width, bbox.height), cv::Scalar(0, 128, 0));
+        */
     }
-/*
-    cv::imshow("image", imageTest);
-    cv::waitKey(0);
-*/
+
+    /*
+        cv::imshow("image", imageTest);
+        cv::waitKey(0);
+    */
     return results;
 }
 

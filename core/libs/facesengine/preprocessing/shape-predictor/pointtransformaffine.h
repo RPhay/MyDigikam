@@ -38,7 +38,7 @@ public:
                          const std::vector<float>& b_);
     explicit PointTransformAffine(const std::vector<std::vector<float> >& m_);
 
-    const std::vector<float> operator() (const std::vector<float>& p) const;
+    const std::vector<float> operator()(const std::vector<float>& p) const;
 
     const std::vector<std::vector<float> >& get_m() const;
     const std::vector<float>& get_b() const;

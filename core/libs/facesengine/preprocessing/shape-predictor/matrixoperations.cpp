@@ -31,10 +31,10 @@ std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& ma
 {
     Q_ASSERT((mat.size() == 2) && (mat[0].size() == 2));
 
-    std::vector<std::vector<float> > m(2,std::vector<float>(2, 0));
+    std::vector<std::vector<float> > m(2, std::vector<float>(2, 0));
 
-    float det = mat[0][0]*mat[1][1] -
-                mat[0][1]*mat[1][0];
+    float det = mat[0][0] * mat[1][1] -
+                mat[0][1] * mat[1][0];
 
     Q_ASSERT(det != 0);
 
@@ -50,7 +50,7 @@ std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& ma
 {
     std::vector<std::vector<float> > result(mat[0].size(), std::vector<float>(mat.size()));
     cv::Mat B((int)mat[0].size(), (int)mat.size(),    CV_32FC1);
-    cv::Mat A((int)mat.size(),    (int)mat[0].size(), CV_32FC1);
+    cv::Mat A((int)mat.size(), (int)mat[0].size(), CV_32FC1);
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {
@@ -216,7 +216,7 @@ bool svd3(std::vector<std::vector<float> >& a,
         s     = 0.0F;
         scale = 0.0F;
 
-        if ((i < m) && (i < n-1))
+        if ((i < m) && (i < n - 1))
         {
             for (long k = l ; k < n ; ++k)
             {
@@ -266,9 +266,9 @@ bool svd3(std::vector<std::vector<float> >& a,
         anorm = std::max(anorm, (std::abs(w[i]) + std::abs(rv1[i])));
     }
 
-    for (long i = n-1 ; i >= 0 ; --i)
+    for (long i = n - 1 ; i >= 0 ; --i)
     {
-        if (i < (n-1))
+        if (i < (n - 1))
         {
             if (g != 0.0F)
             {
@@ -288,7 +288,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                     for (long k = l ; k < n ; ++k)
                     {
-                        v[k][j] += s*v[k][i];
+                        v[k][j] += s * v[k][i];
                     }
                 }
             }
@@ -304,7 +304,7 @@ bool svd3(std::vector<std::vector<float> >& a,
         l       = i;
     }
 
-    for (long i = std::min(m,n) - 1 ; i >= 0 ; --i)
+    for (long i = std::min(m, n) - 1 ; i >= 0 ; --i)
     {
         l = i + 1;
         g = w[i];
@@ -340,6 +340,7 @@ bool svd3(std::vector<std::vector<float> >& a,
                 a[j][i] *= g;
             }
         }
+
         else
         {
             for (long j = i ; j < m ; ++j)
@@ -351,7 +352,7 @@ bool svd3(std::vector<std::vector<float> >& a,
         ++a[i][i];
     }
 
-    for (long k = n-1 ; k >= 0 ; --k)
+    for (long k = n - 1 ; k >= 0 ; --k)
     {
         for (long its = 1 ; its <= max_iter ; ++its)
         {
@@ -446,22 +447,22 @@ bool svd3(std::vector<std::vector<float> >& a,
                 g      = c * g;
                 z      = pythag(f, h);
                 rv1[j] = z;
-                c      = f/z;
-                s      = h/z;
-                f      = x*c + g*s;
-                g      = g*c - x*s;
-                h      = y*s;
+                c      = f / z;
+                s      = h / z;
+                f      = x * c + g * s;
+                g      = g * c - x * s;
+                h      = y * s;
                 y     *= c;
 
                 for (long jj = 0 ; jj < n ; ++jj)
                 {
                     x        = v[jj][j];
                     z        = v[jj][i];
-                    v[jj][j] = x*c + z*s;
-                    v[jj][i] = z*c - x*s;
+                    v[jj][j] = x * c + z * s;
+                    v[jj][i] = z * c - x * s;
                 }
 
-                z    = pythag(f,h);
+                z    = pythag(f, h);
                 w[j] = z;
 
                 if (z != 0)
@@ -471,15 +472,15 @@ bool svd3(std::vector<std::vector<float> >& a,
                     s = h * z;
                 }
 
-                f = c*g + s*y;
-                x = c*y - s*g;
+                f = c * g + s * y;
+                x = c * y - s * g;
 
                 for (long jj = 0 ; jj < m ; ++jj)
                 {
                     y        = a[jj][j];
                     z        = a[jj][i];
-                    a[jj][j] = y*c + z*s;
-                    a[jj][i] = z*c - y*s;
+                    a[jj][j] = y * c + z * s;
+                    a[jj][i] = z * c - y * s;
                 }
             }
 
@@ -531,6 +532,7 @@ void svd(const std::vector<std::vector<float> >& m,
             {
                 w[i][j] = W[i];
             }
+
             else
             {
                 w[i][j] = 0.0;
@@ -541,7 +543,7 @@ void svd(const std::vector<std::vector<float> >& m,
 
 float determinant(const std::vector<std::vector<float> >& u)
 {
-    float result = u[0][0]*u[1][1] - u[1][0]*u[0][1];
+    float result = u[0][0] * u[1][1] - u[1][0] * u[0][1];
 
     return result;
 }

@@ -58,17 +58,19 @@ bool DNNFaceDetectorSSD::loadModels()
             qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName
                                         << ", SSD data:" << model->info.configName;
         }
+
         catch (cv::Exception& e)
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
+
         catch (...)
         {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
 
-           return false;
+            return false;
         }
     }
 
@@ -76,6 +78,7 @@ bool DNNFaceDetectorSSD::loadModels()
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName << "ready";
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: SSD not loaded";
@@ -104,6 +107,7 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
         static_cast<DNNModelNet*>(model)->getNet().setInput(inputBlob);
         detection = static_cast<DNNModelNet*>(model)->getNet().forward();
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: SSD not loaded. Processed 0 images.";
@@ -145,26 +149,28 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                 int bottom        = (int)(bottomRatio * inputImageSize.height);
 
                 selectBbox(paddedSize,
-                        confidence,
-                        left,
-                        right,
-                        top,
-                        bottom,
-                        goodConfidences,
-                        goodBoxes,
-                        doubtConfidences,
-                        doubtBoxes);
+                           confidence,
+                           left,
+                           right,
+                           top,
+                           bottom,
+                           goodConfidences,
+                           goodBoxes,
+                           doubtConfidences,
+                           doubtBoxes);
             }
         }
-    /*
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
-    */
+
+        /*
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
+        */
         if (goodBoxes.empty())
         {
             boxes       = doubtBoxes;
             confidences = doubtConfidences;
         }
+
         else
         {
             boxes       = goodBoxes;

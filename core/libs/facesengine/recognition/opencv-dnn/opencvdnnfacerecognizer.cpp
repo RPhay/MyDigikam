@@ -27,6 +27,7 @@ OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer(Classifier method, FaceScanSett
     {
         d = new Private(method, recModel);
     }
+
     else
     {
         ++(d->ref);
@@ -67,10 +68,10 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(QImage& inputImage)
     cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.scanLine(0), inputImage.bytesPerLine());
     cv::cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
 
-/*
-    resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), cv::INTER_LINEAR);
-    equalizeHist(cvImage, cvImage);
-*/
+    /*
+        resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), cv::INTER_LINEAR);
+        equalizeHist(cvImage, cvImage);
+    */
     return cvImage;
 }
 
@@ -171,13 +172,15 @@ void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear)
     {
         FaceDbAccess().db()->clearDNNTraining();
     }
+
     else
     {
         FaceDbAccess().db()->clearDNNTraining(idsToClear);
     }
-/*
-    FaceDbAccess().db()->clearTreeDb();
-*/
+
+    /*
+        FaceDbAccess().db()->clearTreeDb();
+    */
 }
 
 bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedImage, int label)

@@ -52,6 +52,7 @@ public:
         {
             acquired = dbAccess->backend()->beginTransaction();
         }
+
         else
         {
             FaceDbAccess dbAccess;
@@ -69,6 +70,7 @@ public:
             {
                 dbAccess->backend()->commitTransaction();
             }
+
             else
             {
                 FaceDbAccess dbAccess;

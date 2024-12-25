@@ -37,9 +37,9 @@ float DNNFaceDetectorBase::nmsThreshold           = 0.4F;
 DNNFaceDetectorBase::DNNFaceDetectorBase(float scale,
                                          const cv::Scalar& val,
                                          const cv::Size& inputImgSize)
-    : scaleFactor      (scale),
+    : scaleFactor(scale),
       meanValToSubtract(val),
-      inputImageSize   (inputImgSize)
+      inputImageSize(inputImgSize)
 {
 }
 
@@ -82,12 +82,12 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
      * out of non-padded zone.
      */
 
-    if      (
-             (left   >= (int)cv::min(borderLeft*0.9,                       borderLeft   - 0.1*width))      &&
-             (right  <= (int)cv::max(borderRight  + 0.1*paddedSize.width,  borderRight  + 0.1*width))      &&
-             (top    >= (int)cv::min(borderTop*0.9,                        borderTop    - 0.1*height))     &&
-             (bottom <= (int)cv::max(borderBottom + 0.1*paddedSize.height, borderBottom + 0.1*height))
-            )
+    if (
+        (left   >= (int)cv::min(borderLeft * 0.9,                       borderLeft   - 0.1 * width))      &&
+        (right  <= (int)cv::max(borderRight  + 0.1 * paddedSize.width,  borderRight  + 0.1 * width))      &&
+        (top    >= (int)cv::min(borderTop * 0.9,                        borderTop    - 0.1 * height))     &&
+        (bottom <= (int)cv::max(borderBottom + 0.1 * paddedSize.height, borderBottom + 0.1 * height))
+    )
     {
         goodBoxes.push_back(bbox);
         goodConfidences.push_back(confidence);
@@ -95,14 +95,15 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Good rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height)
                                          << ", conf = " << confidence;
     }
+
     else if (
-             (right  >  left)                           &&
-             (right  >= (borderLeft   + 0.75*width))    &&
-             (left   <= (borderRight  - 0.75*width))    &&
-             (bottom >  top)                            &&
-             (bottom >= (borderRight  + 0.75*height))   &&
-             (top    <= (borderBottom - 0.75*height))
-            )
+        (right  >  left)                           &&
+        (right  >= (borderLeft   + 0.75 * width))    &&
+        (left   <= (borderRight  - 0.75 * width))    &&
+        (bottom >  top)                            &&
+        (bottom >= (borderRight  + 0.75 * height))   &&
+        (top    <= (borderBottom - 0.75 * height))
+    )
     {
         doubtBoxes.push_back(bbox);
         doubtConfidences.push_back(confidence);
@@ -117,9 +118,9 @@ void DNNFaceDetectorBase::correctBbox(cv::Rect& bbox, const cv::Size& paddedSize
     // TODO: Should the box be cropped to square or not?
 
     int left    = cv::max(bbox.x - paddedSize.width,  0);
-    int right   = cv::min(left   + bbox.width,        inputImageSize.width  - 2*paddedSize.width);
+    int right   = cv::min(left   + bbox.width,        inputImageSize.width  - 2 * paddedSize.width);
     int top     = cv::max(bbox.y - paddedSize.height, 0);
-    int bottom  = cv::min(top    + bbox.height,       inputImageSize.height - 2*paddedSize.height);
+    int bottom  = cv::min(top    + bbox.height,       inputImageSize.height - 2 * paddedSize.height);
 
     bbox.x      = left;
     bbox.y      = top;

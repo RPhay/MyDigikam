@@ -57,7 +57,7 @@ public:
 
 DNNSFaceExtractor::DNNSFaceExtractor()
     : DNNFaceExtractorBase(),
-      d                   (new Private)
+      d(new Private)
 {
     // Virtual call in contructor: use dynamic binding.
 
@@ -117,6 +117,7 @@ bool DNNSFaceExtractor::loadModels()
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Recognition model:" << d->detectorModel->info.displayName;
             }
         }
+
         else
         {
             qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot load faces engine DNN models";
@@ -125,12 +126,14 @@ bool DNNSFaceExtractor::loadModels()
             return false;
         }
     }
+
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
 
         return false;
     }
+
     catch (...)
     {
         qCCritical(DIGIKAM_FACEDB_LOG) << "SFace cannot find faces engine DNN models";
@@ -196,13 +199,14 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
         int newHeight           = (int)(resizeFactor * faceImage.rows);
         cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
     }
+
     else
     {
         paddedFace = faceImage.clone();
     }
 
     // Add a border so there is room to rotate the image during alignment.
-    
+
     cv::Mat borderFace;
     cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
@@ -217,7 +221,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             d->model->modelLoaded           &&
             d->detectorModel                &&
             d->detectorModel->modelLoaded
-           )
+        )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
 
@@ -248,16 +252,19 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
                 normalize(face_descriptors, normalized_descriptors);
             }
+
             else
             {
                 qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
             }
         }
     }
+
     catch (cv::Exception& e)
     {
         qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
     }
+
     catch (...)
     {
         qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception: unknown error";
@@ -296,6 +303,7 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
         int newHeight           = (int)(resizeFactor * faceImage.rows);
         cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
     }
+
     else
     {
         paddedFace = faceImage.clone();
@@ -309,7 +317,7 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
                        60, 60,
                        cv::BORDER_CONSTANT,
                        cv::Scalar(0, 0, 0));
-    
+
     try
     {
         if (
@@ -317,7 +325,7 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
             d->model->modelLoaded           &&
             d->detectorModel                &&
             d->detectorModel->modelLoaded
-           )
+        )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
 
@@ -347,16 +355,19 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
                 static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
                 normalize(face_descriptors, face_descriptors);
             }
+
             else
             {
                 qCDebug(DIGIKAM_FACEDB_LOG) << "No face landmarks found";
             }
         }
     }
+
     catch (cv::Exception& e)
     {
         qCritical(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
     }
+
     catch (...)
     {
         // qCDebug(DIGIKAM_FACEDB_LOG) << e.what();

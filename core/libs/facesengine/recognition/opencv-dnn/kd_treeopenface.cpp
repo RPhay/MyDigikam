@@ -30,9 +30,9 @@ namespace Digikam
 {
 
 KDTreeOpenFace::KDTreeOpenFace(
-                               int dim,
-                               int threshold
-                              )
+    int dim,
+    int threshold
+)
     : KDTreeBase(dim, threshold)
 {
 }
@@ -47,11 +47,11 @@ KDNodeBase* KDTreeOpenFace::createNode(const cv::Mat& nodePos,
                                        int dimension)
 {
     return new KDNodeOpenFace(
-                              nodePos,
-                              identity,
-                              splitAxis,
-                              dimension
-                             );
+               nodePos,
+               identity,
+               splitAxis,
+               dimension
+           );
 }
 
 } // namespace Digikam

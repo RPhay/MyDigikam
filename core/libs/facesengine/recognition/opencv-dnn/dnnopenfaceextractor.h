@@ -46,14 +46,22 @@ public:
      * factor built into the model
      */
     float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const override;
-    
+
     virtual cv::Mat alignFace(const cv::Mat& inputImage) const      override;
     virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)      override;
     // UMat versions are empty
     // UMat versions
-    virtual cv::UMat alignFace(const cv::UMat& inputImage) const    override { Q_UNUSED(inputImage); return cv::UMat(); }
-    virtual cv::UMat getFaceEmbedding(const cv::UMat& faceImage)    override { Q_UNUSED(faceImage); return cv::UMat(); }
-    
+    virtual cv::UMat alignFace(const cv::UMat& inputImage) const    override
+    {
+        Q_UNUSED(inputImage);
+        return cv::UMat();
+    }
+    virtual cv::UMat getFaceEmbedding(const cv::UMat& faceImage)    override
+    {
+        Q_UNUSED(faceImage);
+        return cv::UMat();
+    }
+
 private:
 
     /// Disable

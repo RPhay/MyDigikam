@@ -54,29 +54,29 @@ KDNodeBase* KDNodeSFace::createNode(const cv::Mat& nodePos,
                                     int dimension)
 {
     return new KDNodeSFace(
-                           nodePos,
-                           identity,
-                           splitAxis,
-                           dimension
-                           //m_net
-                          );
+               nodePos,
+               identity,
+               splitAxis,
+               dimension
+               //m_net
+           );
 }
 
 KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
-                                                       const cv::Mat& queryPosition,
-                                                       const cv::Mat& currentPosition,
-                                                       float sqRange,
-                                                       float cosThreshold,
-                                                       int nbDimension
-                                                      ) const
+    const cv::Mat& queryPosition,
+    const cv::Mat& currentPosition,
+    float sqRange,
+    float cosThreshold,
+    int nbDimension
+) const
 {
     KDNodeBase::NodeCompareResult result;
 
     Q_UNUSED(nbDimension);
-/*
-    const double cosDistance     = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_COSINE);
-    const double norm_l1Distance = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_NORM_L2);
-*/
+    /*
+        const double cosDistance     = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_COSINE);
+        const double norm_l1Distance = m_net->match(queryPosition, currentPosition, cv::FaceRecognizerSF::DisType::FR_NORM_L2);
+    */
     double cosDistance     = sum(queryPosition.mul(currentPosition))[0];
     double norm_l1Distance = norm(queryPosition, currentPosition);
 
@@ -88,10 +88,10 @@ KDNodeBase::NodeCompareResult KDNodeSFace::nodeCompare(
     // to avoid false negatives.
 
     cosThreshold = 1.0 + (sqRange / 10.0);
-/*
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Checking cos:" << cosDistance << " norm_l1:" << norm_l1Distance;
-    qCDebug(DIGIKAM_FACEDB_LOG) << "params: sqRange" << sqRange << " cosThreshold:" << cosThreshold;
-*/
+    /*
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Checking cos:" << cosDistance << " norm_l1:" << norm_l1Distance;
+        qCDebug(DIGIKAM_FACEDB_LOG) << "params: sqRange" << sqRange << " cosThreshold:" << cosThreshold;
+    */
     result.distance1 = 1.0 - cosDistance;
     result.distance2 = norm_l1Distance;
 

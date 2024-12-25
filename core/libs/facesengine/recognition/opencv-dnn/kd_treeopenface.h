@@ -27,9 +27,9 @@ class KDTreeOpenFace: public KDTreeBase
 public:
 
     explicit KDTreeOpenFace(
-                            int dim,
-                            int threshold = KDTREE_MAP_THRESHOLD
-                           );
+        int dim,
+        int threshold = KDTREE_MAP_THRESHOLD
+    );
     ~KDTreeOpenFace() override;
 
 private:

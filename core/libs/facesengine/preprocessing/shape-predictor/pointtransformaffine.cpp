@@ -48,6 +48,7 @@ PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> 
             {
                 b[i]    = m_[i][2];
             }
+
             else
             {
                 m[i][j] = m_[i][j];
@@ -56,9 +57,9 @@ PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> 
     }
 }
 
-const std::vector<float> PointTransformAffine::operator() (const std::vector<float>& p) const
+const std::vector<float> PointTransformAffine::operator()(const std::vector<float>& p) const
 {
-    return (m*p + b);
+    return (m * p + b);
 }
 
 const std::vector<std::vector<float> >& PointTransformAffine::get_m() const
@@ -116,7 +117,7 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
     {
         sigmaFrom = sigmaFrom + length_squared(fromPoints[i] - meanFrom);
         sigmaTo   = sigmaTo   + length_squared(toPoints[i]   - meanTo);
-        cov       = cov + (toPoints[i] - meanTo)*(fromPoints[i] - meanFrom);
+        cov       = cov + (toPoints[i] - meanTo) * (fromPoints[i] - meanFrom);
     }
 
     sigmaFrom = sigmaFrom / (int)fromPoints.size();
@@ -124,11 +125,11 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
     cov       = cov       / (int)fromPoints.size();
     (void)sigmaTo; // to silent clang scan-build
 
-    std::vector<std::vector<float> >  u(2,std::vector<float>(2));
-    std::vector<std::vector<float> >  v(2,std::vector<float>(2));
-    std::vector<std::vector<float> > vt(2,std::vector<float>(2));
-    std::vector<std::vector<float> >  d(2,std::vector<float>(2));
-    std::vector<std::vector<float> >  s(2,std::vector<float>(2,0));
+    std::vector<std::vector<float> >  u(2, std::vector<float>(2));
+    std::vector<std::vector<float> >  v(2, std::vector<float>(2));
+    std::vector<std::vector<float> > vt(2, std::vector<float>(2));
+    std::vector<std::vector<float> >  d(2, std::vector<float>(2));
+    std::vector<std::vector<float> >  s(2, std::vector<float>(2, 0));
 
     MatrixOperations::svd(cov, u, d, vt);
     s[0][0] = 1;
@@ -142,6 +143,7 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
         {
             s[1][1] = -1;
         }
+
         else
         {
             s[0][0] = -1;

@@ -94,6 +94,7 @@ FaceClassifier::FaceClassifier()
         d->identityProvider = IdentityProvider::instance();
         retrain();
     }
+
     else
     {
         ++(d->ref);
@@ -139,10 +140,12 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
             }
         }
     }
+
     catch (const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+
     catch (...)
     {
         // do nothing
@@ -184,25 +187,25 @@ bool FaceClassifier::retrain()
         return false;
     }
 
-    d->trainingFuture.setFuture(QtConcurrent::run(QThreadPool::globalInstance(), 
+    d->trainingFuture.setFuture(QtConcurrent::run(QThreadPool::globalInstance(),
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        &FaceClassifier::loadTrainingData,
-        this
+                                                  &FaceClassifier::loadTrainingData,
+                                                  this
 
 #else
 
-        this,
-        &FaceClassifier::loadTrainingData
+                                                  this,
+                                                  &FaceClassifier::loadTrainingData
 
 #endif
 
-        ));
-/*
-    connect(&d->trainingFuture, &QFutureWatcher<bool>::finished,
-            this, &FaceClassifier::slotTrainingComplete);
-*/
+                                                 ));
+    /*
+        connect(&d->trainingFuture, &QFutureWatcher<bool>::finished,
+                this, &FaceClassifier::slotTrainingComplete);
+    */
     return true;
 }
 
@@ -236,14 +239,14 @@ bool FaceClassifier::loadTrainingData()
                 cv::Mat samples = trainData->getSamples();
                 cv::Mat labels  = trainData->getResponses();
 
-/* TODO: Remove this.
+                /* TODO: Remove this.
 
-                QFile file(QLatin1String("/Users/michmill/Downloads/trainingData.csv"));
-                file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate | QIODevice::Unbuffered);
-*/
+                                QFile file(QLatin1String("/Users/michmill/Downloads/trainingData.csv"));
+                                file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate | QIODevice::Unbuffered);
+                */
                 for (int i = 0 ; i < labels.rows ; ++i)
                 {
-                    int label = labels.at<int>(cv::Point(i,0));
+                    int label = labels.at<int>(cv::Point(i, 0));
                     identityFeatures[label].append(samples.row(i));
 
                     // file.write(QString::number(label).toUtf8());
@@ -265,18 +268,22 @@ bool FaceClassifier::loadTrainingData()
             }
 
         }
+
         catch (cv::Exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
+
         catch (const QException& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
+
         catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
+
         catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception";
@@ -326,6 +333,7 @@ int FaceClassifier::predict(const cv::Mat& target) const
 
         label = predictFullSearch(target);
     }
+
     else
     {
         // use the classifier algorithm
@@ -351,7 +359,7 @@ int FaceClassifier::predictFullSearch(const cv::Mat& target)    const
     timer.start();
 
     int label = listSearch(target, d->identityFeatures);
-    
+
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictFullSearch: classifier prediction is: "  << label << "    completed in " << timer.elapsed();
 
     return label;
@@ -374,7 +382,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     // stage 1 - compare SVM and KNN classifier results
 
     d->svmClassifier->predict(target, svm_prediction);
-    int svm_result = int(svm_prediction.at<float>(0,0));
+    int svm_result = int(svm_prediction.at<float>(0, 0));
 
     d->knnClassifier->findNearest(target,
                                   std::min<int>(d->identityFeatures.count(), d->knn_defaultK),
@@ -383,7 +391,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
                                   knn_neighbors,
                                   knn_distances);
 
-    int knn_result = int(knn_resultMat.at<float>(0,0));
+    int knn_result = int(knn_resultMat.at<float>(0, 0));
 
     // check if results exist in recognition DB
 
@@ -391,6 +399,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     {
         svm_result = -1;
     }
+
     if (!idProvider->isValidId(knn_result))
     {
         knn_result = -1;
@@ -406,6 +415,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 1 prediction is: "  << svm_result << "    completed in " << timer.elapsed();
             return svm_result;
         }
+
         else
         {
             badLabel1 = svm_result;
@@ -422,10 +432,10 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 
         for (int i = 0 ; i < knn_neighbors.cols ; ++i)
         {
-            if (distance > abs(knn_distances.at<float>(0,i)))
+            if (distance > abs(knn_distances.at<float>(0, i)))
             {
-                label    = int(knn_neighbors.at<float>(0,i));
-                distance = abs(knn_distances.at<float>(0,i));
+                label    = int(knn_neighbors.at<float>(0, i));
+                distance = abs(knn_distances.at<float>(0, i));
             }
         }
 
@@ -440,6 +450,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 2 prediction is: "  << label << "    completed in " << timer.elapsed();
                 return label;
             }
+
             else
             {
                 badLabel2 = label;
@@ -448,7 +459,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 
     }
 
-    // Stage 3 - do brute-force search on distinct set of SVM and KNN labels returned 
+    // Stage 3 - do brute-force search on distinct set of SVM and KNN labels returned
     // from the internal classifiers that weren't checked before
 
     {
@@ -529,7 +540,7 @@ int FaceClassifier::listSearch(const cv::Mat& target, const QMap<int, QList<cv::
 
             if (featureSFaceCompare(target, feature, distance))
             {
-                votes.addVote(key, distance/value.count());
+                votes.addVote(key, distance / value.count());
             }
         }
     }
@@ -596,7 +607,7 @@ bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& s
 //         featureSet = d->identityFeatures;
 //     }
 
-//     // search through the lists for the closest match 
+//     // search through the lists for the closest match
 
 //     label = listSearch(target, featureSet);
 

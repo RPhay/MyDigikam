@@ -27,7 +27,7 @@ class Q_DECL_HIDDEN KDTreeBase::Private
 public:
 
     Private(int dim, int threshold)
-        : nbDimension (dim),
+        : nbDimension(dim),
           mapThreshold(threshold)
     {
     }
@@ -50,10 +50,10 @@ public:
 };
 
 KDTreeBase::KDTreeBase(
-                       int dim,
-                       int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
-                      )
-                    : d(new Private(dim, threshold))
+    int dim,
+    int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
+)
+    : d(new Private(dim, threshold))
 {
     /**
      * Using this to compare brute force vs kdtree performance due to sparse data
@@ -67,7 +67,7 @@ KDTreeBase::KDTreeBase(
         if (
             QString::fromUtf8("1")    == bruteForce ||
             QString::fromUtf8("true") == bruteForce.toLower()
-           )
+        )
         {
             d->mapThreshold = std::numeric_limits<int>::max();      // Set the vectorThreshold so high we always use the vector.
         }
@@ -91,6 +91,7 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
 
             newNode = d->root;
         }
+
         else
         {
             newNode = d->root->insert(position, identity);
@@ -107,6 +108,7 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
             {
                 d->nodeMap.append(newNode);
             }
+
             else
             {
                 d->useMap = false;
@@ -150,6 +152,7 @@ QMap<double, QVector<int> > KDTreeBase::getClosestNeighbors(const cv::Mat& posit
             ++node;
         }
     }
+
     else
     {
         if (d->root)

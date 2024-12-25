@@ -119,9 +119,9 @@ private:
 private:
 
     class Private;
-/*
-    Private* const d = nullptr;
-*/
+    /*
+        Private* const d = nullptr;
+    */
     static Private* d;
 };
 

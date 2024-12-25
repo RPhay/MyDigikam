@@ -69,6 +69,7 @@ FacialRecognitionWrapper::Private::Private()
             identityCache[identity.id()] = identity;
         }
     }
+
     else
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to initialize face database";

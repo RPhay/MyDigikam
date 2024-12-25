@@ -47,6 +47,7 @@ inline T signdlib(const T& a, const T& b)
     {
         return -std::abs(a);
     }
+
     else
     {
         return std::abs(a);
@@ -61,20 +62,22 @@ inline T pythag(const T& a, const T& b)
 
     if (absa > absb)
     {
-        T val = absb/absa;
+        T val = absb / absa;
         val  *= val;
 
         return (absa * std::sqrt(1.0F + val));
     }
+
     else
     {
         if (absb == 0.0)
         {
             return 0.0;
         }
+
         else
         {
-            T val = absa/absb;
+            T val = absa / absb;
             val  *= val;
 
             return (absb * std::sqrt(1.0F + val));

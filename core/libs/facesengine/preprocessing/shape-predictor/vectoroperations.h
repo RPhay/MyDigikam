@@ -83,10 +83,10 @@ std::vector<T> operator/(const std::vector<T>& v1, int divisor)
 template<class T>
 std::vector<std::vector<T> > operator/(const std::vector<std::vector<T> >& v1, int divisor)
 {
-/*
-    Q_ASSERT(v1[0].size() != v2.size());
-*/
-    std::vector<std::vector<T> > result(v1.size(),std::vector<T>(v1[0].size(),0));
+    /*
+        Q_ASSERT(v1[0].size() != v2.size());
+    */
+    std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(), 0));
 
     for (unsigned int i = 0 ; i < v1.size() ; ++i)
     {
@@ -119,11 +119,11 @@ std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
                                        const std::vector<std::vector<T> >& v2)
 {
     Q_ASSERT(
-             (v1.size()    == v2.size())     &&
-             (v1[0].size() == v2[0].size())
-            );
+        (v1.size()    == v2.size())     &&
+        (v1[0].size() == v2[0].size())
+    );
 
-    std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(),0));
+    std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(), 0));
 
     for (unsigned int i = 0 ; i < v1.size() ; ++i)
     {
@@ -164,7 +164,7 @@ std::vector<std::vector<T> > operator*(const std::vector<std::vector<T> >& v1,
 {
     Q_ASSERT(v1[0].size() == v2.size());
 
-    std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v2[0].size(),0));
+    std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v2[0].size(), 0));
 
     for (unsigned int i = 0 ; i < v1.size() ; ++i)
     {
@@ -206,10 +206,10 @@ template<class T>
 std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
                                        float d)
 {
-/*
-    Q_ASSERT((v1.size()    == v2.size())    &&
-             (v1[0].size() == v2[0].size()));
-*/
+    /*
+        Q_ASSERT((v1.size()    == v2.size())    &&
+                 (v1[0].size() == v2[0].size()));
+    */
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(), 0));
 
     for (unsigned int i = 0 ; i < v1.size() ; ++i)
@@ -228,10 +228,10 @@ template<class T>
 std::vector<T> operator*(const std::vector<T>& v1,
                          float d)
 {
-/*
-    Q_ASSERT((v1.size()    == v2.size())    &&
-             (v1[0].size() == v2[0].size()));
-*/
+    /*
+        Q_ASSERT((v1.size()    == v2.size())    &&
+                 (v1[0].size() == v2[0].size()));
+    */
     std::vector<T> result(v1.size());
 
     for (unsigned int i = 0 ; i < v1.size() ; ++i)

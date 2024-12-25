@@ -22,7 +22,7 @@ namespace Digikam
 
 FullObjectDetection::FullObjectDetection(const cv::Rect& rect_,
                                          const std::vector<std::vector<float> >& parts_)
-    : rect (rect_),
+    : rect(rect_),
       parts(parts_)
 {
 }
@@ -81,19 +81,21 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
         {
             std::vector<float> x = shape.part(i);
 
-            if      (x[0] < tlx)
+            if (x[0] < tlx)
             {
                 tlx = (int)x[0];
             }
+
             else if (x[0] > brx)
             {
                 brx = (int)x[0];
             }
 
-            if      (x[1] < tly)
+            if (x[1] < tly)
             {
                 tly = (int)x[1];
             }
+
             else if (x[1] > bry)
             {
                 bry = (int)x[1];

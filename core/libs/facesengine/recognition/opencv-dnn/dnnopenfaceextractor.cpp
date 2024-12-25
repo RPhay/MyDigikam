@@ -64,7 +64,7 @@ public:
 
 DNNOpenFaceExtractor::DNNOpenFaceExtractor()
     : DNNFaceExtractorBase(),
-      d                   (new Private)
+      d(new Private)
 {
     // Virtual call in contructor: use dynamic binding.
 
@@ -99,19 +99,22 @@ bool DNNOpenFaceExtractor::loadModels()
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << d->model->info.displayName;
             }
         }
+
         catch (cv::Exception& e)
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
+
         catch (...)
         {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
 
-           return false;
+            return false;
         }
     }
+
     else
     {
         qCCritical(DIGIKAM_FACEDB_LOG) << "OpenFace cannot find faces engine DNN model";
@@ -142,10 +145,10 @@ cv::Mat DNNOpenFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     cv::Mat face_descriptors;
     cv::Mat alignedFace;
-/*
-    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
-    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
-*/
+    /*
+        qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
+        qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
+    */
     QElapsedTimer timer;
 
     timer.start();

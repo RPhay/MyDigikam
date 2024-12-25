@@ -90,17 +90,19 @@ bool DNNFaceDetectorYuNet::loadModels()
             cv::Ptr<cv::FaceDetectorYN> net = static_cast<DNNModelYuNet*>(model)->getNet();
             qCDebug(DIGIKAM_FACEDB_LOG) << "Face detection model:" << model->info.displayName << "loaded";
         }
+
         catch (cv::Exception& e)
         {
             qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
+
         catch (...)
         {
-           qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
 
-           return false;
+            return false;
         }
     }
 
@@ -108,6 +110,7 @@ bool DNNFaceDetectorYuNet::loadModels()
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face detection model:" << model->info.displayName << "ready";
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded";
@@ -149,6 +152,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
 
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
         }
+
         catch (const std::exception& ex)
         {
             // ...
@@ -163,6 +167,7 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
             loadModels();
         }
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded. Processed 0 images.";
@@ -205,6 +210,7 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
 
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
         }
+
         catch (const std::exception& ex)
         {
             // ...
@@ -219,6 +225,7 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
             loadModels();
         }
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded. Processed 0 images.";
@@ -250,7 +257,7 @@ void DNNFaceDetectorYuNet::detectFaces(const cv::Mat& inputImage,
 
     // Process faces found.
 
-    if ( faces.rows > 0)
+    if (faces.rows > 0)
     {
         // Loop through the faces found.
 
@@ -281,10 +288,11 @@ void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionS
     try
     {
         inputImageSize = cv::Size(
-                                  faceenum2size.at(faceSize),
-                                  faceenum2size.at(faceSize)
-                                 );
+                             faceenum2size.at(faceSize),
+                             faceenum2size.at(faceSize)
+                         );
     }
+
     catch (const std::exception& e)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet face size error:" << e.what() << '\n';

@@ -54,21 +54,21 @@ KDNodeBase* KDNodeOpenFace::createNode(const cv::Mat& nodePos,
                                        int dimension)
 {
     return new KDNodeOpenFace(
-                              nodePos,
-                              identity,
-                              splitAxis,
-                              dimension
-                             );
+               nodePos,
+               identity,
+               splitAxis,
+               dimension
+           );
 }
 
 
 KDNodeBase::NodeCompareResult KDNodeOpenFace::nodeCompare(
-                                                          const cv::Mat& queryPosition,
-                                                          const cv::Mat& currentPosition,
-                                                          float sqRange,
-                                                          float cosThreshold,
-                                                          int nbDimension
-                                                         ) const
+    const cv::Mat& queryPosition,
+    const cv::Mat& currentPosition,
+    float sqRange,
+    float cosThreshold,
+    int nbDimension
+) const
 {
     KDNodeBase::NodeCompareResult result;
 

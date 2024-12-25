@@ -63,17 +63,19 @@ bool DNNFaceDetectorYOLO::loadModels()
             qCDebug(DIGIKAM_FACEDB_LOG) << "YOLOv3 model:" << model->info.displayName
                                         << ", YOLOv3 data:" << model->info.configName;
         }
+
         catch (cv::Exception& e)
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
+
         catch (...)
         {
-           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
 
-           return false;
+            return false;
         }
     }
 
@@ -81,6 +83,7 @@ bool DNNFaceDetectorYOLO::loadModels()
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << model->info.displayName << "ready";
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YOLOv3 not loaded";
@@ -116,6 +119,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YOLOv3 not loaded. Processed 0 images.";
@@ -174,15 +178,15 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
                     int bottom  = centerY + height / 2;
 
                     selectBbox(paddedSize,
-                            confidence,
-                            left,
-                            right,
-                            top,
-                            bottom,
-                            goodConfidences,
-                            goodBoxes,
-                            doubtConfidences,
-                            doubtBoxes);
+                               confidence,
+                               left,
+                               right,
+                               top,
+                               bottom,
+                               goodConfidences,
+                               goodBoxes,
+                               doubtConfidences,
+                               doubtBoxes);
                 }
             }
         }
@@ -195,6 +199,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
             boxes       = doubtBoxes;
             confidences = doubtConfidences;
         }
+
         else
         {
             boxes       = goodBoxes;

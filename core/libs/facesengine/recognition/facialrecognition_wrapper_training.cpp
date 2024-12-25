@@ -39,10 +39,12 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
         {
             recognizer->train(images, identity.id());
         }
+
         catch (cv::Exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training Recognizer:" << e.what();
         }
+
         catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";

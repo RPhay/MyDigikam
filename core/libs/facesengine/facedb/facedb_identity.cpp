@@ -61,6 +61,7 @@ void FaceDb::deleteIdentity(const QString& uuid)
     {
         deleteIdentity(ids.first().toInt());
     }
+
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot delete identity with uuid "
@@ -80,9 +81,9 @@ Identity FaceDb::identity(int id) const
     Identity p;
     p.setId(id);
     d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"),
-                    p.id(), &values);
+                   p.id(), &values);
 
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
     {
         QString attribute = it->toString();
         ++it;
@@ -91,6 +92,7 @@ Identity FaceDb::identity(int id) const
 
         p.setAttribute(attribute, value);
     }
+
     return p;
 }
 
@@ -109,7 +111,7 @@ QList<Identity> FaceDb::identities() const
         d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"),
                        p.id(), &values);
 
-        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
         {
             QString attribute = it->toString();
             ++it;

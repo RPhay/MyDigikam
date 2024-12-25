@@ -30,17 +30,18 @@ void FacialRecognitionWrapper::Private::applyParameters()
     int k                                           = 5;
     int threshold                                   = DNN_MODEL_THRESHOLD_NOT_SET;
     FaceScanSettings::FaceRecognitionModel oldModel = recognizeModel;
-/*
-    if      (parameters.contains(QLatin1String("k-nearest")))
-    {
-        k = parameters.value(QLatin1String("k-nearest")).toInt();
-    }
-    else if (parameters.contains(QLatin1String("threshold")))
-    {
-        threshold = parameters.value(QLatin1String("threshold")).toFloat();
-    }
-    else
-*/
+
+    /*
+        if      (parameters.contains(QLatin1String("k-nearest")))
+        {
+            k = parameters.value(QLatin1String("k-nearest")).toInt();
+        }
+        else if (parameters.contains(QLatin1String("threshold")))
+        {
+            threshold = parameters.value(QLatin1String("threshold")).toFloat();
+        }
+        else
+    */
     if (parameters.contains(QLatin1String("recognizeAccuracy")))
     {
         threshold = parameters.value(QLatin1String("recognizeAccuracy")).toInt();
@@ -94,8 +95,8 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
     d->trainingLock.lockForWrite();
 
     for (QVariantMap::const_iterator it  = parameters.begin() ;
-                                     it != parameters.end() ;
-                                     ++it)
+         it != parameters.end() ;
+         ++it)
     {
         d->parameters.insert(it.key(), it.value());
     }

@@ -46,6 +46,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
                                       << "bound values" << query.boundValues()
                                       << query.lastError();
     }
+
     else
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Commit face mat data "
@@ -59,7 +60,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 bool FaceDb::removeFaceVector(const int nodeId) const
 {
     d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE id=?;"),
-                                            nodeId);
+                     nodeId);
     qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted nodeId " << nodeId << " from FaceMatricies";
 
     return true;
@@ -67,7 +68,7 @@ bool FaceDb::removeFaceVector(const int nodeId) const
 
 bool FaceDb::removeFaceVector(const QString& hash) const
 {
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE removeHash=?;"), hash);        
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE removeHash=?;"), hash);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted hash " << hash << " from FaceMatricies";
 
@@ -139,6 +140,7 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
     {
         return nullptr;
     }
+
     else
     {
         return cv::ml::TrainData::create(feature, cv::ml::ROW_SAMPLE, label);

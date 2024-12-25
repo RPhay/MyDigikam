@@ -57,9 +57,9 @@ public:
     QHash<int, Identity>            identityCache;
 
     QReadWriteLock                  trainingLock;
-/*
-    QMutex                          trainingMutex;
-*/
+    /*
+        QMutex                          trainingMutex;
+    */
     RecognitionTrainingUpdateQueue  removeQueue;
     QThreadPool*                    removeThreadPool        = nullptr;
     QFuture<bool>                   removeThreadResult;
@@ -114,9 +114,10 @@ IdentityProvider::IdentityProvider()
                                                   &IdentityProvider::trainingRemoveConcurrent
 
 #endif
-            );
+                                                 );
 
     }
+
     else
     {
         ++(d->ref);
@@ -158,28 +159,30 @@ bool IdentityProvider::initialize()
     {
         return false;
     }
-/*
-    // check for seed identities
 
-    Identity id = FaceDbAccess().db()->identity(1);
+    /*
+        // check for seed identities
 
-    if (id.attributesMap().isEmpty())
-    {
-        addSeedTraining();
-    }
-*/
+        Identity id = FaceDbAccess().db()->identity(1);
+
+        if (id.attributesMap().isEmpty())
+        {
+            addSeedTraining();
+        }
+    */
     const auto ids = FaceDbAccess().db()->identities();
 
     for (const Identity& identity : ids)
     {
         d->identityCache[identity.id()] = identity;
     }
-/*
-    QMultiMap<QString, QString> attributes;
-    attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
-    id = findIdentity(attributes);
-    d->seedMax = id.id();
-*/
+
+    /*
+        QMultiMap<QString, QString> attributes;
+        attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
+        id = findIdentity(attributes);
+        d->seedMax = id.id();
+    */
     return true;
 }
 
@@ -325,7 +328,7 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
             (it.key() == QLatin1String("uuid"))     ||
             (it.key() == QLatin1String("fullName")) ||
             (it.key() == QLatin1String("name"))
-           )
+        )
         {
             continue;
         }
@@ -495,9 +498,9 @@ int IdentityProvider::addTraining(const Identity& identity, const QString& hash,
 
 bool IdentityProvider::isValidId(int label) const
 {
-/*
-    return ((label > d->seedMax) && d->identityCache.contains(label));
-*/
+    /*
+        return ((label > d->seedMax) && d->identityCache.contains(label));
+    */
     return (d->identityCache.contains(label));
 }
 
@@ -517,7 +520,7 @@ bool IdentityProvider::identityContains(const Identity& identity,
     const QMultiMap<QString, QString> map          = identity.attributesMap();
     QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
-    for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
+    for (; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
     {
         if (it.value() == value)
         {
@@ -532,14 +535,15 @@ bool IdentityProvider::identityContains(const Identity& identity,
 }
 
 Identity IdentityProvider::findByAttribute(const QString& attribute,
-                                                            const QString& value) const
+                                           const QString& value) const
 {
     d->trainingLock.lockForRead();
 
     for (const Identity& identity : std::as_const(d->identityCache))
     {
         if (identityContains(identity, attribute, value))
-        {   // cppcheck-suppress useStlAlgorithm
+        {
+            // cppcheck-suppress useStlAlgorithm
             d->trainingLock.unlock();
 
             return identity;
@@ -555,18 +559,19 @@ Identity IdentityProvider::findByAttribute(const QString& attribute,
  * NOTE: Takes care that there may be multiple values of attribute in valueMap.
  */
 Identity IdentityProvider::findByAttributes(const QString& attribute,
-                                                             const QMultiMap<QString, QString>& valueMap) const
+                                            const QMultiMap<QString, QString>& valueMap) const
 {
     QMultiMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
     d->trainingLock.lockForRead();
 
-    for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
+    for (; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
         for (const Identity& identity : std::as_const(d->identityCache))
         {
             if (identityContains(identity, attribute, it.value()))
-            {   // cppcheck-suppress useStlAlgorithm
+            {
+                // cppcheck-suppress useStlAlgorithm
                 d->trainingLock.unlock();
 
                 return identity;
@@ -585,9 +590,9 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
     while (true)
     {
-/*
-        hash = self->removeQueue.front();
-*/
+        /*
+                hash = self->removeQueue.front();
+        */
         hash = d->removeQueue.pop_front();
 
         if (d->removeQueue.endSignal() != hash)
@@ -597,6 +602,7 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
             FaceClassifier::instance()->retrain();
         }
+
         else
         {
             break;

@@ -97,7 +97,7 @@ public:
     bool clearTraining(const QString& hash);
 
     /**
-     * clears all identites and face training 
+     * clears all identites and face training
      * from the recognition DB
      */
     void clearAllTraining();
@@ -134,8 +134,8 @@ private:
     void addSeedTraining();
 
     bool identityContains(const Identity& identity,
-                                 const QString& attribute,
-                                 const QString& value)                      const;
+                          const QString& attribute,
+                          const QString& value)                      const;
 
     Identity findByAttribute(const QString& attribute,
                              const QString& value)                          const;

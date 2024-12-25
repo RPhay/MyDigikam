@@ -29,7 +29,10 @@ public:
     FaceClassifierBase()                                        = default;
     ~FaceClassifierBase()                                       = default;
 
-    void setThreshold(float _threshold)                         { threshold = _threshold; }
+    void setThreshold(float _threshold)
+    {
+        threshold = _threshold;
+    }
 
 protected:
 

@@ -36,10 +36,12 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
     {
         ids = d->recognizer->recognize(images->images());
     }
+
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
+
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";

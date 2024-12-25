@@ -33,6 +33,7 @@ FacialRecognitionWrapper::FacialRecognitionWrapper()
     {
         d = new Private;
     }
+
     else
     {
         ++(d->ref);

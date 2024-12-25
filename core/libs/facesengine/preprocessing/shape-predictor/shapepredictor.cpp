@@ -42,12 +42,12 @@ QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp)
 
 unsigned long left_child(unsigned long idx)
 {
-    return (2*idx + 1);
+    return (2 * idx + 1);
 }
 
 unsigned long right_child(unsigned long idx)
 {
-    return (2*idx + 2);
+    return (2 * idx + 2);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -67,6 +67,7 @@ const std::vector<float>& RegressionTree::operator()(const std::vector<float>& f
         {
             i = left_child(i);
         }
+
         else
         {
             i = right_child(i);
@@ -178,10 +179,10 @@ PointTransformAffine findTformBetweenShapes(const std::vector<float>& from_shape
                                             const std::vector<float>& to_shape)
 {
     Q_ASSERT(
-             (from_shape.size() == to_shape.size()) &&
-             ((from_shape.size() % 2) == 0)         &&
-             (from_shape.size() > 0)
-            );
+        (from_shape.size() == to_shape.size()) &&
+        ((from_shape.size() % 2) == 0)         &&
+        (from_shape.size() > 0)
+    );
 
     std::vector<std::vector<float> > from_points, to_points;
     const unsigned long num = (unsigned long)from_shape.size() / 2;
@@ -282,10 +283,11 @@ bool pointContained(const cv::Rect& rect,
     if (
         (x >= 0) && (x < rect.width)   &&
         (y >= 0) && (y < rect.height)
-       )
+    )
     {
         return true;
     }
+
     else
     {
         return false;
@@ -313,12 +315,13 @@ void extractFeaturePixelValues(const cv::Mat& img_,
         // Compute the point in the current shape corresponding to the i-th pixel and
         // then map it from the normalized shape space into pixel space.
 
-        std::vector<float> p = tform_to_img(tform*reference_pixel_deltas[i] + location(current_shape, reference_pixel_anchor_idx[i]));
+        std::vector<float> p = tform_to_img(tform * reference_pixel_deltas[i] + location(current_shape, reference_pixel_anchor_idx[i]));
 
         if (pointContained(area, p))
         {
             feature_pixel_values[i] = img.at<unsigned char>(std::round(p[1]), std::round(p[0]));
         }
+
         else
         {
             feature_pixel_values[i] = 0;
@@ -395,8 +398,8 @@ QDataStream& operator << (QDataStream& dataStream, const ShapePredictor& shape)
         dataStream << shape.initial_shape[i];
     }
 
-    dataStream<<(unsigned int)shape.forests.size();
-    dataStream<<(unsigned int)shape.forests[0].size();
+    dataStream << (unsigned int)shape.forests.size();
+    dataStream << (unsigned int)shape.forests[0].size();
 
     for (unsigned int i = 0 ; i < shape.forests.size() ; ++i)
     {

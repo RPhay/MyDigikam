@@ -31,7 +31,7 @@ bool FacialRecognitionWrapper::Private::identityContains(const Identity& identit
     const QMultiMap<QString, QString> map          = identity.attributesMap();
     QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
-    for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
+    for (; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
     {
         if (it.value() == value)
         {
@@ -48,7 +48,8 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
     for (const Identity& identity : std::as_const(identityCache))
     {
         if (identityContains(identity, attribute, value))
-        {   // cppcheck-suppress useStlAlgorithm
+        {
+            // cppcheck-suppress useStlAlgorithm
             return identity;
         }
     }
@@ -64,12 +65,13 @@ Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attr
 {
     QMultiMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
-    for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
+    for (; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
         for (const Identity& identity : std::as_const(identityCache))
         {
             if (identityContains(identity, attribute, it.value()))
-            {   // cppcheck-suppress useStlAlgorithm
+            {
+                // cppcheck-suppress useStlAlgorithm
                 return identity;
             }
         }
@@ -190,7 +192,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
             (it.key() == QLatin1String("uuid"))     ||
             (it.key() == QLatin1String("fullName")) ||
             (it.key() == QLatin1String("name"))
-           )
+        )
         {
             continue;
         }
@@ -321,7 +323,7 @@ void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QSt
 {
     if (!d || !d->dbAvailable)
     {
-            return;
+        return;
     }
 
     d->trainingLock.lockForWrite();

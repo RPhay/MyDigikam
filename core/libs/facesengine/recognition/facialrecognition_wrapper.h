@@ -184,9 +184,9 @@ public:
      */
 
     // TODO: review to see if this function is necessary
-/*
-    int recommendedImageSize(const QSize& availableSize = QSize()) const;
-*/
+    /*
+        int recommendedImageSize(const QSize& availableSize = QSize()) const;
+    */
     /**
      * Performs recognition.
      * The face details to be recognized are passed by the provider.
@@ -206,9 +206,9 @@ private:
 
     class Private;
     static Private* d;
-/*
-    static FaceScanSettings::FaceRecognitionModel recognizeModel;
-*/
+    /*
+        static FaceScanSettings::FaceRecognitionModel recognizeModel;
+    */
 };
 
 } // namespace Digikam

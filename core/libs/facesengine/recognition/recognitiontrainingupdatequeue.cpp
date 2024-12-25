@@ -42,7 +42,8 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
 
 void RecognitionTrainingUpdateQueue::push(const QString& hash)
 {
-    QString val = hash; queue.push_back(val);
+    QString val = hash;
+    queue.push_back(val);
 }
 
 QString RecognitionTrainingUpdateQueue::pop_front()

@@ -39,12 +39,12 @@ class Q_DECL_HIDDEN KDNodeBase::Private
 public:
 
     Private(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension)
-        : identity   (identity),
-          splitAxis  (splitAxis),
+        : identity(identity),
+          splitAxis(splitAxis),
           nbDimension(dimension),
-          position   (nodePos.clone()),
-          maxRange   (nodePos.clone()),
-          minRange   (nodePos.clone())
+          position(nodePos.clone()),
+          maxRange(nodePos.clone()),
+          minRange(nodePos.clone())
     {
     }
 
@@ -121,10 +121,10 @@ KDNodeBase::KDNodeBase(const cv::Mat& nodePos,
     Q_ASSERT(splitAxis < dimension);
 
     Q_ASSERT(
-             (nodePos.rows == 1) &&
-             (nodePos.cols == dimension) &&
-             (nodePos.type() == CV_32F)
-            );
+        (nodePos.rows == 1) &&
+        (nodePos.cols == dimension) &&
+        (nodePos.type() == CV_32F)
+    );
 }
 
 KDNodeBase::~KDNodeBase()
@@ -136,33 +136,35 @@ KDNodeBase* KDNodeBase::insert(const cv::Mat& nodePos, const int identity)
 {
     if (
         !(
-          (nodePos.rows   == 1)              &&
-          (nodePos.cols   == d->nbDimension) &&
-          (nodePos.type() == CV_32F)
+            (nodePos.rows   == 1)              &&
+            (nodePos.cols   == d->nbDimension) &&
+            (nodePos.type() == CV_32F)
         )
-       )
+    )
     {
         return nullptr;
     }
 
-    KDNodeBase *const parent  = findParent(nodePos);
+    KDNodeBase* const parent  = findParent(nodePos);
 
-    KDNodeBase *const newNode = createNode(
-                                           nodePos,
-                                           identity,
-                                           ((parent->d->splitAxis + 1) % d->nbDimension),
-                                           d->nbDimension
-                                          );
+    KDNodeBase* const newNode = createNode(
+                                    nodePos,
+                                    identity,
+                                    ((parent->d->splitAxis + 1) % d->nbDimension),
+                                    d->nbDimension
+                                );
 
     newNode->d->parent = parent;
-/*
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "parent embedding" << parent->getPosition() << std::endl;
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "node embedding" << nodePos << std::endl;
-*/
+
+    /*
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "parent embedding" << parent->getPosition() << std::endl;
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "node embedding" << nodePos << std::endl;
+    */
     if (nodePos.at<float>(0, parent->d->splitAxis) >= parent->getPosition().at<float>(0, parent->d->splitAxis))
     {
         parent->d->right = newNode;
     }
+
     else
     {
         parent->d->left = newNode;
@@ -237,6 +239,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
             {
                 neighborList.erase(farthestNodes);
             }
+
             else
             {
                 farthestNodes.value().pop_back();
@@ -257,6 +260,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     {
         sqrDistanceleftTree = DBL_MAX;
     }
+
     else
     {
         const float* const minRange = d->left->d->minRange.ptr<float>();
@@ -276,6 +280,7 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
     {
         sqrDistancerightTree = DBL_MAX;
     }
+
     else
     {
         const float* const minRange = d->right->d->minRange.ptr<float>();
@@ -293,9 +298,9 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
 
     if (sqrDistanceleftTree < sqrDistancerightTree)
     {
-/*
-        if (sqrDistanceleftTree < sqRange)
-*/
+        /*
+                if (sqrDistanceleftTree < sqRange)
+        */
         {
             // Traverse left Tree.
 
@@ -315,11 +320,12 @@ double KDNodeBase::getClosestNeighbors(QMap<double, QVector<int> >& neighborList
             }
         }
     }
+
     else
     {
-/*
-        if (sqrDistancerightTree < sqRange)
-*/
+        /*
+                if (sqrDistancerightTree < sqRange)
+        */
         {
             // Traverse right Tree.
 
@@ -347,11 +353,11 @@ void KDNodeBase::updateRange(const cv::Mat& pos)
 {
     if (
         !(
-          (pos.rows   == 1)              &&
-          (pos.cols   == d->nbDimension) &&
-          (pos.type() == CV_32F)
-         )
-       )
+            (pos.rows   == 1)              &&
+            (pos.cols   == d->nbDimension) &&
+            (pos.type() == CV_32F)
+        )
+    )
     {
         return;
     }
@@ -383,6 +389,7 @@ KDNodeBase* KDNodeBase::findParent(const cv::Mat& nodePos)
         {
             currentNode = currentNode->d->right;
         }
+
         else
         {
             currentNode = currentNode->d->left;

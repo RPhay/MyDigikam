@@ -39,7 +39,7 @@ public:
                          const int      identity,
                          int            splitAxis,
                          int            dimension);
-                         // cv::Ptr<cv::FaceRecognizerSF> net);
+    // cv::Ptr<cv::FaceRecognizerSF> net);
     virtual ~KDNodeSFace() override;
 
 protected:
@@ -50,32 +50,32 @@ protected:
                            int dimension) override;
 
     KDNodeBase::NodeCompareResult nodeCompare(
-                                              const cv::Mat& queryPosition,
-                                              const cv::Mat& currentPosition,
-                                              float sqRange,
-                                              float cosThreshold,
-                                              int nbDimension
-                                             ) const override;
+        const cv::Mat& queryPosition,
+        const cv::Mat& currentPosition,
+        float sqRange,
+        float cosThreshold,
+        int nbDimension
+    ) const override;
 
 private:
 
-/*
-    // Hide this constructor so we don't use it.
+    /*
+        // Hide this constructor so we don't use it.
 
-    explicit KDNodeSFace(const cv::Mat& nodePos,
-                         const int      identity,
-                         int            splitAxis,
-                         int            dimension);
-*/
+        explicit KDNodeSFace(const cv::Mat& nodePos,
+                             const int      identity,
+                             int            splitAxis,
+                             int            dimension);
+    */
     // Disable
     KDNodeSFace(const KDNodeSFace&)             = delete;
     KDNodeSFace& operator=(const KDNodeSFace&)  = delete;
 
 private:
 
-/*
-    cv::Ptr<cv::FaceRecognizerSF> m_net         = nullptr;
-*/
+    /*
+        cv::Ptr<cv::FaceRecognizerSF> m_net         = nullptr;
+    */
 };
 
 } // namespace Digikam

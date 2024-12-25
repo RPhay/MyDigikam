@@ -34,10 +34,10 @@ class KDNodeBase
 {
 public:
 
-   KDNodeBase(const cv::Mat& nodePos,
-              const int identity,
-              int splitAxis,
-              int dimension);
+    KDNodeBase(const cv::Mat& nodePos,
+               const int identity,
+               int splitAxis,
+               int dimension);
 
     virtual ~KDNodeBase();
 
@@ -86,12 +86,12 @@ public:
     };
 
     virtual NodeCompareResult nodeCompare(
-                                           const cv::Mat& queryPosition,
-                                           const cv::Mat& currentPosition,
-                                           float sqRange,
-                                           float cosThreshold,
-                                           int nbDimension
-                                         ) const                                    = 0;
+        const cv::Mat& queryPosition,
+        const cv::Mat& currentPosition,
+        float sqRange,
+        float cosThreshold,
+        int nbDimension
+    ) const                                    = 0;
 
 protected:
 

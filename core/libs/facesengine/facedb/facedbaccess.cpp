@@ -77,7 +77,7 @@ public:
 
     explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const dd)
         : QMutexLocker(&dd->lock.mutex),
-          d           (dd)
+          d(dd)
     {
         d->lock.lockCount++;
     }
@@ -159,9 +159,10 @@ void FaceDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorhan
     {
         d = new FaceDbAccessStaticPriv();
     }
-/*
-    DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
-*/
+
+    /*
+        DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+    */
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
@@ -217,7 +218,7 @@ bool FaceDbAccess::checkReadyForUse(InitializationObserver* const observer)
     if (!d->backend)
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face database: no database backend available in checkReadyForUse. "
-                                         "Did you call setParameters before?";
+                                      "Did you call setParameters before?";
         return false;
     }
 

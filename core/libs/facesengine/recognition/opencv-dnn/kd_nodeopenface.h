@@ -49,12 +49,12 @@ protected:
                            int dimension) override;
 
     KDNodeBase::NodeCompareResult nodeCompare(
-                                              const cv::Mat& queryPosition,
-                                              const cv::Mat& currentPosition,
-                                              float sqRange,
-                                              float cosThreshold,
-                                              int nbDimension
-                                             ) const override;
+        const cv::Mat& queryPosition,
+        const cv::Mat& currentPosition,
+        float sqRange,
+        float cosThreshold,
+        int nbDimension
+    ) const override;
 
 private:
 

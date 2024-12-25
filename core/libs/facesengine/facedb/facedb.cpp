@@ -57,6 +57,7 @@ QString FaceDb::setting(const QString& keyword) const
     {
         return QString();
     }
+
     else
     {
         return values.first().toString();
@@ -75,25 +76,25 @@ bool FaceDb::integrityCheck()
             // For SQLite the integrity check returns a single row with one string column "ok"
             // on success and multiple rows on error.
 
-            return(
-                    (values.size() == 1) &&
-                    (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
-                  );
+            return (
+                       (values.size() == 1) &&
+                       (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
+                   );
         }
 
         case BdEngineBackend::DbType::MySQL:
         {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
-/*
-            qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
-*/
+            /*
+                        qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+            */
             if ((values.size() % 4) != 0)
             {
                 return false;
             }
 
-            for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
+            for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ;)
             {
                 QString tableName   = (*it).toString();
                 ++it;
@@ -113,6 +114,7 @@ bool FaceDb::integrityCheck()
                                                   << tableName << ". Reason:" << messageText;
                     return false;
                 }
+
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;

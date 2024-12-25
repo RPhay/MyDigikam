@@ -39,18 +39,19 @@ namespace Digikam
   * digiKam is still running. We need that because this variable is the internal data
   * for matrix faceTemplate below.
   */
-static float FACE_TEMPLATE[3][2] = {
-                                       { 18.639072F, 16.249624F },
-                                       { 75.73048F,  15.18443F  },
-                                       { 47.515285F, 49.38637F  }
-                                   };
+static float FACE_TEMPLATE[3][2] =
+{
+    { 18.639072F, 16.249624F },
+    { 75.73048F,  15.18443F  },
+    { 47.515285F, 49.38637F  }
+};
 
 // ---------------------------------------------------------------------------------------------------
 
 OpenfacePreprocessor::OpenfacePreprocessor()
-    : outImageSize          (cv::Size(96, 96)),
-      faceTemplate          (cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
-      outerEyesNosePositions( { 36, 45, 33 } )
+    : outImageSize(cv::Size(96, 96)),
+      faceTemplate(cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
+      outerEyesNosePositions({ 36, 45, 33 })
 {
 }
 
@@ -76,6 +77,7 @@ bool OpenfacePreprocessor::loadModels()
         sp = *temp;
         model.close();
     }
+
     else
     {
         delete temp;
@@ -109,6 +111,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     {
         cv::cvtColor(image, gray, CV_RGB2GRAY);   // 3 channels
     }
+
     else
     {
         cv::cvtColor(image, gray, CV_RGBA2GRAY);  // 4 channels
@@ -131,11 +134,11 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
         int index                      = outerEyesNosePositions[i];
         landmarks.at<float>((int)i, 0) = object.part(index)[0];
         landmarks.at<float>((int)i, 1) = object.part(index)[1];
-/*
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
-                                         << ", landmarks: (" << landmarks.at<float>(i, 0)
-                                         << ", " << landmarks.at<float>(i, 1) << ")" << Qt::endl;
-*/
+        /*
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
+                                                 << ", landmarks: (" << landmarks.at<float>(i, 0)
+                                                 << ", " << landmarks.at<float>(i, 1) << ")" << Qt::endl;
+        */
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Full object detection and landmark computation finished";
@@ -151,6 +154,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face alignment failed!";
         return image;
     }
+
     else
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Align face finished";

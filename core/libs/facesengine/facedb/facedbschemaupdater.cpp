@@ -153,6 +153,7 @@ bool FaceDbSchemaUpdater::startUpdates()
 
                 return true;
             }
+
             else
             {
                 QString errorMsg = i18n("The database has been used with a more recent version of digiKam "
@@ -171,11 +172,13 @@ bool FaceDbSchemaUpdater::startUpdates()
                 return false;
             }
         }
+
         else
         {
             return makeUpdates();
         }
     }
+
     else
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face database: no database file available";
@@ -207,18 +210,21 @@ bool FaceDbSchemaUpdater::makeUpdates()
 {
     if (d->currentVersion < schemaVersion())
     {
-        if      (d->currentVersion == 1)
+        if (d->currentVersion == 1)
         {
             updateV1ToV2();
         }
+
         else if (d->currentVersion == 2)
         {
             updateV2ToV5();
         }
+
         else if (d->currentVersion == 3)
         {
             updateV3ToV5();
         }
+
         else if (d->currentVersion == 4)
         {
             updateV4ToV5();
@@ -237,6 +243,7 @@ bool FaceDbSchemaUpdater::createDatabase()
 
         return true;
     }
+
     else
     {
         return false;
@@ -248,9 +255,9 @@ bool FaceDbSchemaUpdater::createTables()
     // The creation order is important because of the foreign keys in MySQL.
 
     return (
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))
+               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
+               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
+               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))
            );
 }
 
@@ -266,14 +273,14 @@ bool FaceDbSchemaUpdater::createTriggers()
 
 bool FaceDbSchemaUpdater::updateV1ToV2()
 {
-/*
-    if (!d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction("UpdateDBSchemaFromV1ToV2")))
-    {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Schema upgrade in DB from V1 to V2 failed!";
+    /*
+        if (!d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction("UpdateDBSchemaFromV1ToV2")))
+        {
+            qCCritical(DIGIKAM_FACEDB_LOG) << "Schema upgrade in DB from V1 to V2 failed!";
 
-        return false;
-    }
-*/
+            return false;
+        }
+    */
 
     d->currentVersion         = 2;
     d->currentRequiredVersion = 1;
@@ -297,8 +304,8 @@ bool FaceDbSchemaUpdater::updateV2ToV5()
         return false;
     }
 
-   if (!createIndices())
-   {
+    if (!createIndices())
+    {
         qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create FaceMatrices index";
 
         return false;
