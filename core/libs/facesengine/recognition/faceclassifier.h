@@ -40,14 +40,14 @@ public:
 
     bool ready()                                        const;
 
-    int predict(const cv::Mat& target)                  const;
-    int predict(const cv::UMat& target)                 const;
+    int predict(const cv::Mat& target)                  const override;
+    int predict(const cv::UMat& target)                 const override;
 
-    bool retrain();
+    bool retrain()                                            override;
 
 protected:
 
-    bool loadTrainingData();
+    bool loadTrainingData()                                   override;
 
     void slotTrainingComplete();
 

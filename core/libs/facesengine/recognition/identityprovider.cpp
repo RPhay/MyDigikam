@@ -57,9 +57,9 @@ public:
     QHash<int, Identity>            identityCache;
 
     QReadWriteLock                  trainingLock;
-    /*
-        QMutex                          trainingMutex;
-    */
+/*
+    QMutex                          trainingMutex;
+*/
     RecognitionTrainingUpdateQueue  removeQueue;
     QThreadPool*                    removeThreadPool        = nullptr;
     QFuture<bool>                   removeThreadResult;
@@ -160,16 +160,16 @@ bool IdentityProvider::initialize()
         return false;
     }
 
-    /*
-        // check for seed identities
+/*
+    // check for seed identities
 
-        Identity id = FaceDbAccess().db()->identity(1);
+    Identity id = FaceDbAccess().db()->identity(1);
 
-        if (id.attributesMap().isEmpty())
-        {
-            addSeedTraining();
-        }
-    */
+    if (id.attributesMap().isEmpty())
+    {
+        addSeedTraining();
+    }
+*/
     const auto ids = FaceDbAccess().db()->identities();
 
     for (const Identity& identity : ids)
@@ -177,12 +177,12 @@ bool IdentityProvider::initialize()
         d->identityCache[identity.id()] = identity;
     }
 
-    /*
-        QMultiMap<QString, QString> attributes;
-        attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
-        id = findIdentity(attributes);
-        d->seedMax = id.id();
-    */
+/*
+    QMultiMap<QString, QString> attributes;
+    attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
+    id = findIdentity(attributes);
+    d->seedMax = id.id();
+*/
     return true;
 }
 
@@ -367,7 +367,8 @@ Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attrib
         {
             // This situation is not well defined.
 
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Called addIdentity with a given UUID, and there is such a UUID already in the database."
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Called addIdentity with a given UUID, "
+                                                "and there is such a UUID already in the database."
                                              << "The existing identity is returned without adjusting properties!";
 
             return matchByUuid;
@@ -520,7 +521,7 @@ bool IdentityProvider::identityContains(const Identity& identity,
     const QMultiMap<QString, QString> map          = identity.attributesMap();
     QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
-    for (; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
+    for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
     {
         if (it.value() == value)
         {
@@ -590,9 +591,9 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
     while (true)
     {
-        /*
-                hash = self->removeQueue.front();
-        */
+/*
+        hash = self->removeQueue.front();
+*/
         hash = d->removeQueue.pop_front();
 
         if (d->removeQueue.endSignal() != hash)
@@ -615,5 +616,3 @@ bool IdentityProvider::trainingRemoveConcurrent()
 }
 
 } // namespace Digikam
-
-#include "moc_identityprovider.cpp"
