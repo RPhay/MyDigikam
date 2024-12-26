@@ -36,7 +36,7 @@ namespace Digikam
 MLPipelineFoundation::MLPipelineFoundation()
 {
     threadPool      = new QThreadPool(this);
-    threadPool->setMaxThreadCount(qMax(4, QThread::idealThreadCount()));
+    threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount()*2));
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
