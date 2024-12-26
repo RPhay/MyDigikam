@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-25 02:19+0000\n"
+"POT-Creation-Date: 2024-12-26 01:58+0000\n"
 "PO-Revision-Date: 2024-12-18 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -28014,7 +28014,7 @@ msgstr "Sameignarmappa sem tengd er í \"%1\""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:233
+#: core/libs/facesengine/facedb/facedbaccess.cpp:234
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34462,7 +34462,7 @@ msgstr ""
 "Ekki er hægt að yfirfara núverandi gagnagrunnsskema. Reyndu að ræsa með "
 "tómum gagnagrunni. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:158
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34475,7 +34475,7 @@ msgstr ""
 "(Þetta þýðir að þessi útgáfa digiKam er of gömul og að gagnagrunnssniðið er "
 "of nýtt). Uppfærðu í nýrri útgáfu digiKam en þá sem þú ert að nota núna. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:189
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -51639,76 +51639,76 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Byrja"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
 msgstr "Virkja breytingar á andlitaupplýsingum"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Í lagi"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Staðfestu að valinn einstaklingur sé birtur hér"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Staðfesta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Fjarlægja"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:205
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Fjarlægja þetta andlitssvæði"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Taka Hunsað-merki af þessu andliti"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:514
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:520
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Hver er þetta?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:569
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Hunsa"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Hunsa þetta andlit"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Merkja þetta andlit sem hunsað"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -60864,8 +60864,8 @@ msgstr "Sjálfvirk úthlutun merkja fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:481
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:558
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -61037,93 +61037,93 @@ msgstr "Tvítekningar fundust: %1"
 msgid "Duplicate found: %1"
 msgstr "Tvítekning fannst: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:213
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Leita að andlitum í albúmi: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:314
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:225
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Leita að andlitum í %1 albúmum"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:224
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:322
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Leita að andlitum í mynd: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:327
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:238
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Leita að andlitum í %1 myndum"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:333
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:244
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppfæri andlitagagnagrunn"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:510
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Leitað í atriðum að andlitum: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:515
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Leitað í atriði að andlitum: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:520
 #, kde-format
 msgid "Faces processed: %1"
 msgstr "Andlit meðhöndluð: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:525
 #, kde-format
 msgid "Face processed: %1"
 msgstr "Andlit meðhöndlað: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:480
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:557
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Leitað að andlitum: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:485
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "No face"
 msgstr "Ekkert andlit"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:567
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
 msgstr[0] "1 andlit"
 msgstr[1] "%1 andlit"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:267
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:382
 #, fuzzy, kde-format
 #| msgid "Enable face detection"
 msgid "Error starting face detection."
 msgstr "Virkja andlitaskönnun"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:455
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Myndir fundust í %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:460
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"

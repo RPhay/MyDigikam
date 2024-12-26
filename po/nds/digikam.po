@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-25 02:19+0000\n"
+"POT-Creation-Date: 2024-12-26 01:58+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -28857,7 +28857,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:233
+#: core/libs/facesengine/facedb/facedbaccess.cpp:234
 #, fuzzy, kde-format
 #| msgid ""
 #| "Error opening database backend.\n"
@@ -35511,7 +35511,7 @@ msgstr ""
 "Verschoon vun't Datenbankschema lett sik nich pröven. Versöök dat bitte un "
 "fang nochmaal mit en leddig Datenbank an. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:158
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
 #, fuzzy, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -35524,7 +35524,7 @@ msgstr ""
 "(Dat bedüüdt: Disse Verschoon is to oolt, oder dat Datenbankformaat is to "
 "nieg. Bruuk bitte de nieger digiKam-Verschoon, de Du al bruukt hest. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:189
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to create tables in database.\n"
@@ -53982,79 +53982,79 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, fuzzy, kde-format
 msgid "Applying face changes"
 msgstr "Ännern bruken?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Instellen"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "&Wegmaken"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:205
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Dit Slötelwoort wegmaken"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:514
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:520
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:569
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Monitorprofil:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Dit Slötelwoort övergahn"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:606
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Nieg Slötelwoort tofögen..."
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -63391,8 +63391,8 @@ msgstr "Meetmetood:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:481
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:558
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"
@@ -63568,75 +63568,75 @@ msgstr "Dubbels"
 msgid "Duplicate found: %1"
 msgstr "Dubbels"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:213
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:314
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:225
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:224
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:322
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
 #, fuzzy, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Na niege Biller dörkieken"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:327
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:238
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Na niege Biller dörkieken"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:333
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:244
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>De Fingerafdruck-Datenbank warrt opfrischt, tööv bitte...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:510
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:515
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:520
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces processed: %1"
 msgstr "Biller binnen \"%1\" funnen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:525
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face processed: %1"
 msgstr "Biller binnen \"%1\" funnen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:480
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:557
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, fuzzy, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Söken in:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:485
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Keen Blix"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:567
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -63644,20 +63644,20 @@ msgid_plural "%1 faces"
 msgstr[0] "Keen Blix"
 msgstr[1] "Keen Blix"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:267
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:382
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:455
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Biller binnen \"%1\" funnen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:460
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"

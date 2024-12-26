@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-25 02:19+0000\n"
+"POT-Creation-Date: 2024-12-26 01:58+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27179,7 +27179,7 @@ msgstr "共享目录挂载于“%1”"
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
-#: core/libs/facesengine/facedb/facedbaccess.cpp:233
+#: core/libs/facesengine/facedb/facedbaccess.cpp:234
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -33394,7 +33394,7 @@ msgstr ""
 "数据库无效：“DBFaceVersion”设置不存在，无法验证当前数据库纲目结构版本。请尝试"
 "使用一个空数据库进行启动。"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:158
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -33405,7 +33405,7 @@ msgstr ""
 "该数据库曾经被版本较新的 digiKam 使用过，它的纲目结构已被更新为新版，因此无法"
 "用于此旧版 digiKam。请升级为在此数据库中使用过的新版 digiKam。"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:189
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -50216,76 +50216,76 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "开始"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
 msgstr "应用人脸更改"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "确定"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "确认所选人物显示在此处"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "确认"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "移除"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:205
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "移除此人脸区域"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "取消标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:514
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:520
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "这是谁？"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:569
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "忽略这张人脸"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:596
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:601
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -50308,28 +50308,24 @@ msgstr ""
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "扫描图像"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "扫描图像"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "识别人脸"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
@@ -59026,14 +59022,10 @@ msgid "Reset and clear all faces and training"
 msgstr "重置并清除全部人脸和训练数据"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "This will clear all detected and tagged faces, and then rescan images to "
-#| "detect faces."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr "这将清除所有检测到且分配了标签的人脸，然后重新扫描图像以检测人脸。"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
@@ -59163,18 +59155,12 @@ msgid "Warning"
 msgstr "警告"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:400
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-#| "faces? You’ll need to start tagging unknown faces again before any faces "
-#| "can be recognized."
+#, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
-"您确定要删除所有已确认、未确认和未知的人脸吗？删除后您必须重新对未知人脸分配"
-"标签，否则将无法识别任何人脸。"
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:409
@@ -59212,8 +59198,8 @@ msgstr "%1 的自动标签\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:536
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:481
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:558
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -59382,95 +59368,93 @@ msgstr "已找到重复项：%1"
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:296
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:213
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "扫描相册中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:314
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:225
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "扫描 %1 个相册中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:307
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:224
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:322
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "扫描图像中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:327
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:238
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "扫描 %1 张图像中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:333
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:244
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:490
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:510
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:494
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:515
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:520
 #, kde-format
 msgid "Faces processed: %1"
 msgstr "已处理人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:503
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:525
 #, kde-format
 msgid "Face processed: %1"
 msgstr "已处理人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:535
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:480
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:557
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "已扫描人脸：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:540
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:485
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "No face"
 msgstr "没有人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:544
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:567
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
 msgstr[0] "%1 张人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:267
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:297
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:382
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
-#, fuzzy, kde-format
-#| msgid "Duplicates found: %1"
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:455
+#, kde-format
 msgid "Faces found: %1"
-msgstr "已找到重复项：%1"
+msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
-#, fuzzy, kde-format
-#| msgid "Duplicate found: %1"
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:460
+#, kde-format
 msgid "Face found: %1"
-msgstr "已找到重复项：%1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -65716,43 +65700,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Skip images already scanned"
-#~ msgstr "跳过已扫描图像"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Scan again and merge results"
-#~ msgstr "重新扫描并合并结果"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear unconfirmed results and rescan"
-#~ msgstr "清除未确认结果并重新扫描"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect faces"
-#~ msgstr "检测人脸"
-
-#~ msgctxt "@info"
-#~ msgid "Find all faces in your photos"
-#~ msgstr "查找照片中所有的人脸。"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect and recognize faces"
-#~ msgstr "检测与识别人脸"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Find all faces in your photos and\n"
-#~ "try to recognize which person is depicted"
-#~ msgstr ""
-#~ "查找照片中所有的人脸，\n"
-#~ "并尝试识别人脸所属的人物"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Try again to recognize the people depicted\n"
-#~ "on marked but yet unconfirmed faces."
-#~ msgstr ""
-#~ "尝试重新识别\n"
-#~ "已标记但未确认人物的人脸。"
