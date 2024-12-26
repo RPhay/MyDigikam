@@ -173,10 +173,8 @@ cv::UMat DNNSFaceExtractor::alignFace(const cv::UMat& inputImage) const
 
 cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
-    cv::Mat face_descriptors;
-    cv::Mat normalized_descriptors;
     cv::Mat paddedFace;
-    cv::Mat alignedFace;
+    cv::Mat normalized_descriptors = cv::Mat();
 
     QElapsedTimer timer;
 
@@ -208,11 +206,14 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     // Add a border so there is room to rotate the image during alignment.
 
     cv::Mat borderFace;
+    
     cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
                        60, 60,
                        cv::BORDER_CONSTANT,
                        cv::Scalar(0, 0, 0));
+
+    paddedFace.release();
 
     try
     {
@@ -237,11 +238,17 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
             if (0 < faceLandmark.rows)
             {
+                cv::Mat face_descriptors;
+                cv::Mat alignedFace;
+
                 QMutexLocker lock(&d->model->mutex);
 
                 // Align and crop the face to standard size.
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
+
+                borderFace.release();
+                faceLandmark.release();
 
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "Start neural network";
@@ -250,16 +257,13 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
 
+                alignedFace.release();
+
                 if (face_descriptors.rows > 0)
                 {
                     normalize(face_descriptors, normalized_descriptors);
                 }
-                else
-                {
-                    normalized_descriptors = face_descriptors;
-                }
             }
-
             else
             {
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "No face landmarks found";
@@ -283,12 +287,10 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     return normalized_descriptors;
 }
 
-cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
+cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
 {
-    cv::UMat face_descriptors;
-    cv::UMat normalized_descriptors;
     cv::UMat paddedFace;
-    cv::UMat alignedFace;
+    cv::Mat normalized_descriptors = cv::Mat();
 
     QElapsedTimer timer;
 
@@ -320,11 +322,14 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
     // Add a border so there is room to rotate the image during alignment.
 
     cv::UMat borderFace;
+    
     cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
                        60, 60,
                        cv::BORDER_CONSTANT,
                        cv::Scalar(0, 0, 0));
+
+    paddedFace.release();
 
     try
     {
@@ -349,29 +354,33 @@ cv::UMat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
 
             if (0 < faceLandmark.rows)
             {
+                cv::Mat face_descriptors;
+                cv::UMat uface_descriptors;
+                cv::UMat alignedFace;
+
                 QMutexLocker lock(&d->model->mutex);
 
                 // Align and crop the face to standard size.
 
                 static_cast<DNNModelSFace*>(d->model)->getNet()->alignCrop(borderFace, faceLandmark, alignedFace);
 
+                borderFace.release();
+                faceLandmark.release();
+
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "Start neural network";
 
                 timer.start();
 
-                static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, face_descriptors);
+                static_cast<DNNModelSFace*>(d->model)->getNet()->feature(alignedFace, uface_descriptors);
 
-                if (face_descriptors.rows > 0)
+                alignedFace.release();
+
+                if (uface_descriptors.rows > 0)
                 {
-                    normalize(face_descriptors, normalized_descriptors);
-                }
-                else
-                {
-                    normalized_descriptors = face_descriptors;
+                    normalize(uface_descriptors.getMat(cv::ACCESS_FAST), normalized_descriptors);
                 }
             }
-
             else
             {
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "No face landmarks found";

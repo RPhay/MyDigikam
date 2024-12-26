@@ -152,6 +152,8 @@ protected:
 
     virtual void addMoreWorkers()                               = 0;
 
+    bool checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu);
+
     // queue helper functions
 
     MLPipelinePackageFoundation* queueEndSignal() const

@@ -114,15 +114,9 @@ bool FacePipelineRetrain::finder()
         {
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
 
-            if (!moreCpu && settings.useFullCpu && ((totalItemCount + imageIds.size()) > 25) && (QThread::idealThreadCount() > 4))
+            if (!moreCpu)
             {
-                moreCpu          = true;
-                int newInstances = (QThread::idealThreadCount() / 4) - 1;
-
-                for (int i = 0 ; i < newInstances ; ++i)
-                {
-                    Q_EMIT signalAddMoreWorkers();
-                }
+                moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
             }
 
             for (qlonglong imageId : std::as_const(imageIds))

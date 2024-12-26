@@ -198,7 +198,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
-            cv::Mat cvImage;
+            cv::UMat cvUImage;
 
             QImage inputImage(package->thumbnail.copy());
 
@@ -209,13 +209,13 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
             }
 
-            // create a cv::Mat image from the QImage
+            // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-            cvImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine());
+            cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
 
             // extract the face features
 
-            package->features = extractor.getFaceEmbedding(cvImage);
+            package->features = extractor.getFaceEmbedding(cvUImage);
 
             enqueue(nextQueue, package);
 

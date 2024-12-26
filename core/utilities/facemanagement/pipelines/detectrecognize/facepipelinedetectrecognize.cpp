@@ -166,16 +166,9 @@ bool FacePipelineDetectRecognize::finder()
 
             // quick check if we should add threads.
 
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
+            if (!moreCpu)
             {
-                moreCpu = true;
-
-                int newInstances = (QThread::idealThreadCount() / 4) - 1;
-
-                for (int i = 0; i < newInstances; ++i)
-                {
-                    Q_EMIT signalAddMoreWorkers();
-                }
+                moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
             }
 
             // iterate over the image IDs and add unique IDs to the queue for processing
@@ -377,11 +370,10 @@ bool FacePipelineDetectRecognize::extractor()
                                              << QStringLiteral("  Image name:") << package->image.originalFilePath();
 
             int type               = (package->image.sixteenBit() ? CV_16UC4 : CV_8UC4);
-            cv::Mat cvImageWrapper = cv::Mat(package->image.height(), package->image.width(), type, package->image.bits());
 
-            // Move the image to GPU with UMat
+            // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-            cv::UMat cvUImageWrapper = cvImageWrapper.getUMat(cv::ACCESS_RW);
+            cv::UMat cvUImageWrapper = cv::Mat(package->image.height(), package->image.width(), type, package->image.bits()).getUMat(cv::ACCESS_FAST);
 
             // prepare the UMat image for processing
 
@@ -400,20 +392,20 @@ bool FacePipelineDetectRecognize::extractor()
 
             cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
 
-            if (std::max(cvImageWrapper.cols, cvImageWrapper.rows) > std::max(inputImageSize.width, inputImageSize.height))
+            if (std::max(cvUImageWrapper.cols, cvUImageWrapper.rows) > std::max(inputImageSize.width, inputImageSize.height))
             {
                 // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
                 // so we just need to make sure no one bound exceeds the max. No padding needed.
 
-                float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImageWrapper.cols),
-                                                   static_cast<float>(inputImageSize.height) / static_cast<float>(cvImageWrapper.rows));
+                float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImageWrapper.cols),
+                                                   static_cast<float>(inputImageSize.height) / static_cast<float>(cvUImageWrapper.rows));
 
-                int newWidth            = (int)(resizeFactor * cvImageWrapper.cols);
-                int newHeight           = (int)(resizeFactor * cvImageWrapper.rows);
+                int newWidth            = (int)(resizeFactor * cvUImageWrapper.cols);
+                int newHeight           = (int)(resizeFactor * cvUImageWrapper.rows);
                 cv::resize(cvUImage, cvUImage, cv::Size(newWidth, newHeight));
             }
 
-            // we are done with the cvImageWrapper, so release it
+            // we are done with the cvUImageWrapper, so release it
 
             cvUImageWrapper.release();
 

@@ -56,10 +56,10 @@ public:
         Q_UNUSED(inputImage);
         return cv::UMat();
     }
-    virtual cv::UMat getFaceEmbedding(const cv::UMat& faceImage)    override
+    virtual cv::Mat getFaceEmbedding(const cv::UMat& faceImage)    override
     {
         Q_UNUSED(faceImage);
-        return cv::UMat();
+        return cv::Mat();
     }
 
 private:

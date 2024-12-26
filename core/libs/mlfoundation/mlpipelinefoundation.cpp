@@ -38,12 +38,6 @@ MLPipelineFoundation::MLPipelineFoundation()
     totalItemCount  = 0;
     threadPool      = new QThreadPool();
 
-    // #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    //     threadPool->setMaxThreadCount(std::max(6, QThread::idealThreadCount()));
-
-    // #endif
-
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
 }
@@ -367,6 +361,23 @@ void MLPipelineFoundation::slotFinished()
     }
 }
 
+bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu)
+{
+    if (useFullCpu && (totalItemCount + currentItemCount) > 25 && QThread::idealThreadCount() > 4)
+    {
+        int newInstances = (QThread::idealThreadCount() / 4) - 1;
+
+        for (int i = 0; i < newInstances; ++i)
+        {
+            Q_EMIT signalAddMoreWorkers();
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
 void MLPipelineFoundation::slotAddMoreWorkers()
 {
     addMoreWorkers();
@@ -424,11 +435,6 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
             thisQueue->maxDepth(QThread::idealThreadCount());
         }
-
-        // while (package->size + usedBufferSize > maxBufferSize)
-        // {
-        //     QThread::msleep(50);
-        // }
 
         // add the package to the queue
 

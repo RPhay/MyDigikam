@@ -147,16 +147,9 @@ bool FacePipelineDetect::finder()
 
             // quick check if we should add threads.
 
-            if (!moreCpu && settings.useFullCpu && (totalItemCount + imageIds.size()) > 25 && QThread::idealThreadCount() > 4)
+            if (!moreCpu)
             {
-                moreCpu = true;
-
-                int newInstances = (QThread::idealThreadCount() / 4) - 1;
-
-                for (int i = 0; i < newInstances; ++i)
-                {
-                    Q_EMIT signalAddMoreWorkers();
-                }
+                moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
             }
 
             // iterate over the image IDs and add unique IDs to the queue for processing

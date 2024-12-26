@@ -33,37 +33,37 @@ class DIGIKAM_GUI_EXPORT DNNSFaceExtractor: public DNNFaceExtractorBase
 public:
 
     DNNSFaceExtractor();
-    ~DNNSFaceExtractor() override;
+    ~DNNSFaceExtractor()                                                        override;
 
 public:
 
     /**
      * Read pretrained neural network for face recognition.
      */
-    bool loadModels()                                               override;
+    bool loadModels()                                                           override;
 
     /**
      * covert the UI threshold to a float using the conversion
      * factor built into the model
      */
-    float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const override;
+    float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)   const   override;
 
-    virtual cv::Mat alignFace(const cv::Mat& inputImage) const      override;
-    virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)      override;
+    virtual cv::Mat alignFace(const cv::Mat& inputImage)                const   override;
+    virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)                  override;
 
-    virtual cv::UMat alignFace(const cv::UMat& inputImage) const      override;
-    virtual cv::UMat getFaceEmbedding(const cv::UMat& faceImage)      override;
+    virtual cv::UMat alignFace(const cv::UMat& inputImage)              const   override;
+    virtual cv::Mat getFaceEmbedding(const cv::UMat& faceImage)                 override;
 
 private:
 
     /// Disable
-    DNNSFaceExtractor(const DNNSFaceExtractor&)             = delete;
-    DNNSFaceExtractor& operator=(const DNNSFaceExtractor&)  = delete;
+    DNNSFaceExtractor(const DNNSFaceExtractor&)                                 = delete;
+    DNNSFaceExtractor& operator=(const DNNSFaceExtractor&)                      = delete;
 
 private:
 
     class Private;
-    Private* const d                = nullptr;
+    Private* const d                                                            = nullptr;
 };
 
 } // namespace Digikam
