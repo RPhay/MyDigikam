@@ -18,26 +18,32 @@
 namespace Digikam
 {
 
-FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId) :
-    info(_imageId)
+FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId)
+    : info(_imageId)
 {
 }
 
-FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face) :
-    info(_imageId),
-    face(_face)
+FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face)
+    : info(_imageId),
+      face(_face)
 {
 }
 
-FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info, const FaceTagsIface& _face, int _tagId, const TagRegion& _region, const DImg& _image, EditPipelineAction _action, bool _retrain) :
-    info(_info),
-    face(_face),
-    image(_image),
-    tagId(_tagId),
-    region(_region),
-    action(_action),
-    retrain(_retrain)
+FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
+                                                 const FaceTagsIface& _face,
+                                                 int _tagId,
+                                                 const TagRegion& _region,
+                                                 const DImg& _image,
+                                                 EditPipelineAction _action,
+                                                 bool _retrain)
+    : info   (_info),
+      face   (_face),
+      image  (_image),
+      tagId  (_tagId),
+      region (_region),
+      action (_action),
+      retrain(_retrain)
 {
 }
 
-}
+} // namespace Digikam

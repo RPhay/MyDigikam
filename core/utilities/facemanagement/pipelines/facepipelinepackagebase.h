@@ -16,6 +16,7 @@
 #pragma once
 
 // Qt includes
+
 #include <QImage>
 #include <QRectF>
 
@@ -43,6 +44,8 @@ public:
         AddManually
     };
 
+public:
+
     FacePipelinePackageBase()                                               = default;
     explicit FacePipelinePackageBase(qlonglong _imageId);
 
@@ -58,6 +61,8 @@ public:
                                      bool _retrain);
 
     virtual ~FacePipelinePackageBase()                                      = default;
+
+public:
 
     ItemInfo                info;
     FaceTagsIface           face;
@@ -77,7 +82,6 @@ public:
 private:
 
     FacePipelinePackageBase(FacePipelinePackageBase&)                       = delete;
-
 };
 
-}
+} // namespace Digikam

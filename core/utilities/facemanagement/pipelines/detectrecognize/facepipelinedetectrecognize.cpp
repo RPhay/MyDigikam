@@ -42,8 +42,8 @@
 namespace Digikam
 {
 
-FacePipelineDetectRecognize::FacePipelineDetectRecognize(const FaceScanSettings& _settings) :
-    FacePipelineBase(_settings)
+FacePipelineDetectRecognize::FacePipelineDetectRecognize(const FaceScanSettings& _settings)
+    : FacePipelineBase(_settings)
 {
 }
 
@@ -65,7 +65,8 @@ bool FacePipelineDetectRecognize::start()
     try
     {
         faceDetector = new DNNFaceDetectorYuNet;
-        faceExtractor = static_cast<DNNModelSFace*>(DNNModelManager::instance()->getModel(QStringLiteral("sface"), DNNModelUsage::DNNUsageFaceRecognition));
+        faceExtractor = static_cast<DNNModelSFace*>(DNNModelManager::instance()->getModel(QStringLiteral("sface"),
+                                                                                          DNNModelUsage::DNNUsageFaceRecognition));
         faceExtractor->getNet();
     }
 
@@ -93,7 +94,7 @@ bool FacePipelineDetectRecognize::start()
 
     // check if the detector and extractor were created
 
-    if (nullptr == faceDetector || nullptr == faceExtractor || !faceExtractor->modelLoaded)
+    if ((nullptr == faceDetector) || (nullptr == faceExtractor) || !faceExtractor->modelLoaded)
     {
         return false;
     }
@@ -135,9 +136,11 @@ void FacePipelineDetectRecognize::cancel()
 bool FacePipelineDetectRecognize::finder()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -162,7 +165,9 @@ bool FacePipelineDetectRecognize::finder()
         {
             // get the image IDs for the album
 
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, FaceScanSettings::AlreadyScannedHandling::Skip != settings.alreadyScannedHandling);
+            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
+                                                                         DatabaseItem::Status::Visible,
+                                                                         (FaceScanSettings::AlreadyScannedHandling::Skip != settings.alreadyScannedHandling));
 
             // quick check if we should add threads.
 
@@ -212,11 +217,13 @@ bool FacePipelineDetectRecognize::finder()
     // end pipeline stage specific code
     //////////////////////////////////////////////////////////////////////////////////////////////
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
+    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
 
     //--------------------------------------------------------------------------------
+
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
 
     return true;
@@ -225,10 +232,12 @@ bool FacePipelineDetectRecognize::finder()
 bool FacePipelineDetectRecognize::loader()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Loader, MLPipelineStage::Extractor, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     while (!cancelled)
@@ -246,7 +255,8 @@ bool FacePipelineDetectRecognize::loader()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Loader].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Loader].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Loader].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Loader].maxQueueCount,
+                                                                                 thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Loader].itemCount;
 
             timer.start();
@@ -274,14 +284,17 @@ bool FacePipelineDetectRecognize::loader()
 
                     sendNotification = false;
                 }
-
             }
 
             if (sendNotification)
             {
                 // send a notification that the file was skipped
 
-                notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), package->faceRects.size(), package->thumbnailIcon);
+                notify(MLPipelineNotification::notifySkipped,
+                       package->info.name(),
+                       package->info.filePath(),
+                       package->faceRects.size(),
+                       package->thumbnailIcon);
 
                 // delete the package since it is not needed
 
@@ -292,12 +305,14 @@ bool FacePipelineDetectRecognize::loader()
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             performanceProfileList[MLPipelineStage::Loader].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Loader].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Loader].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Loader].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Loader].maxElapsedTime,
+                                                                                  timer.elapsed());
         }
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::loader(): unknown error. " << e.what() << " Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::loader(): unknown error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -318,6 +333,7 @@ bool FacePipelineDetectRecognize::loader()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Loader, MLPipelineStage::Extractor);
 
     return true;
@@ -326,10 +342,12 @@ bool FacePipelineDetectRecognize::loader()
 bool FacePipelineDetectRecognize::extractor()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::NormalPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
@@ -349,7 +367,8 @@ bool FacePipelineDetectRecognize::extractor()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount,
+                                                                                    thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Extractor].itemCount;
 
             timer.start();
@@ -369,15 +388,19 @@ bool FacePipelineDetectRecognize::extractor()
                                              << QStringLiteral("  Alpha:") << package->image.hasAlpha()
                                              << QStringLiteral("  Image name:") << package->image.originalFilePath();
 
-            int type               = (package->image.sixteenBit() ? CV_16UC4 : CV_8UC4);
+            int type                 = (package->image.sixteenBit() ? CV_16UC4 : CV_8UC4);
 
             // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-            cv::UMat cvUImageWrapper = cv::Mat(package->image.height(), package->image.width(), type, package->image.bits()).getUMat(cv::ACCESS_FAST);
+            cv::UMat cvUImageWrapper = cv::Mat(package->image.height(),
+                                               package->image.width(),
+                                               type,
+                                               package->image.bits())
+                                       .getUMat(cv::ACCESS_FAST);
 
             // prepare the UMat image for processing
 
-            // DImg is always 4 channel.  convert to 3 channel RGB
+            // DImg is always 4 channel. convert to 3 channel RGB
 
             cvtColor(cvUImageWrapper, cvUImage, cv::COLOR_RGBA2RGB);
 
@@ -388,13 +411,13 @@ bool FacePipelineDetectRecognize::extractor()
                 cvUImage.convertTo(cvUImage, CV_8UC3, 1 / 256.0);
             }
 
-            // resize the image if needed.  Only resize if the image is larger than the input size of the detector
+            // resize the image if needed. Only resize if the image is larger than the input size of the detector
 
             cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
 
             if (std::max(cvUImageWrapper.cols, cvUImageWrapper.rows) > std::max(inputImageSize.width, inputImageSize.height))
             {
-                // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
+                // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
                 // so we just need to make sure no one bound exceeds the max. No padding needed.
 
                 float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImageWrapper.cols),
@@ -411,7 +434,7 @@ bool FacePipelineDetectRecognize::extractor()
 
             // detect any faces in the image
 
-            cv::UMat udetectionResults    = faceDetector->callModel(cvUImage);
+            cv::UMat udetectionResults  = faceDetector->callModel(cvUImage);
 
             // process detected faces
 
@@ -422,7 +445,6 @@ bool FacePipelineDetectRecognize::extractor()
                 // get list of previously confirmed faces
 
                 QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(package->info.id());
-
                 QList<QRectF> faceFRects;
 
                 // Loop through the faces found.
@@ -453,14 +475,15 @@ bool FacePipelineDetectRecognize::extractor()
                         {
                             // compute current image relative rect
 
-                            QRect rect = QRect(package->image.width() * faceFRects[i].x(),
+                            QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
                                                package->image.height() * faceFRects[i].y(),
-                                               package->image.width() * faceFRects[i].width(),
+                                               package->image.width()  * faceFRects[i].width(),
                                                package->image.height() * faceFRects[i].height());
 
                             if (faces[j].region().intersects(TagRegion(rect), 0.85))
                             {
                                 found = true;
+
                                 break;
                             }
                         }
@@ -499,7 +522,6 @@ bool FacePipelineDetectRecognize::extractor()
                             package->featuresList << normalized_features;
                             package->faceRects << faceFRects[i];
                         }
-
                     }
                 }
             }
@@ -517,7 +539,8 @@ bool FacePipelineDetectRecognize::extractor()
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::extractor(): unknown extractor error. " << e.what() << " Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::extractor(): unknown extractor error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -527,7 +550,7 @@ bool FacePipelineDetectRecognize::extractor()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::extractor(): unknown extractor error.  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::extractor(): unknown extractor error. Restarting...";
 
             if (package)
             {
@@ -538,6 +561,7 @@ bool FacePipelineDetectRecognize::extractor()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Extractor, MLPipelineStage::Classifier);
 
     return true;
@@ -546,13 +570,15 @@ bool FacePipelineDetectRecognize::extractor()
 bool FacePipelineDetectRecognize::classifier()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
-    FaceClassifier* classifier = FaceClassifier::instance();
+    FaceClassifier* const classifier = FaceClassifier::instance();
     classifier->setParameters(settings);
 
     while (!cancelled)
@@ -570,7 +596,8 @@ bool FacePipelineDetectRecognize::classifier()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount,
+                                                                                     thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Classifier].itemCount;
 
             timer.start();
@@ -578,7 +605,7 @@ bool FacePipelineDetectRecognize::classifier()
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
-            for (int i = 0; i < package->featuresList.size(); ++i)
+            for (int i = 0 ; i < package->featuresList.size() ; ++i)
             {
                 // verify the feature mat is not empty
 
@@ -588,7 +615,6 @@ bool FacePipelineDetectRecognize::classifier()
 
                     package->labelList << classifier->predict(package->featuresList[i]);
                 }
-
                 else
                 {
                     package->labelList << -1;
@@ -601,12 +627,14 @@ bool FacePipelineDetectRecognize::classifier()
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             performanceProfileList[MLPipelineStage::Classifier].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime,
+                                                                                      timer.elapsed());
         }
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. " << e.what() << "    Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -616,7 +644,7 @@ bool FacePipelineDetectRecognize::classifier()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error.  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. Restarting...";
 
             if (package)
             {
@@ -627,6 +655,7 @@ bool FacePipelineDetectRecognize::classifier()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 
     return true;
@@ -635,13 +664,15 @@ bool FacePipelineDetectRecognize::classifier()
 bool FacePipelineDetectRecognize::writer()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
-    IdentityProvider* idProvider = IdentityProvider::instance();
+    IdentityProvider* const idProvider             = IdentityProvider::instance();
     FaceUtils utils;
     ThumbnailLoadThread* const thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
 
@@ -660,7 +691,8 @@ bool FacePipelineDetectRecognize::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount,
+                                                                                 thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
             timer.start();
@@ -692,12 +724,14 @@ bool FacePipelineDetectRecognize::writer()
                 //     // Filter out similar rects
                 //     break;
                 // }
+
                 case FaceScanSettings::RecognizeOnly:
                 case FaceScanSettings::Skip:
                 {
                     // do nothing
                     // Skipped images were skipped in the finder stage
                     // RecognizeOnly defines the pipeline
+
                     break;
                 }
             }
@@ -712,14 +746,13 @@ bool FacePipelineDetectRecognize::writer()
             {
                 QList<Identity> identities;
 
-                for (int i = 0; i < package->faceRects.size(); ++i)
+                for (int i = 0 ; i < package->faceRects.size() ; ++i)
                 {
                     if (package->labelList[i] != -1)
                     {
                         Identity identity = idProvider->identity(package->labelList[i]);
                         identities << identity;
                     }
-
                     else
                     {
                         identities << Identity();
@@ -740,33 +773,34 @@ bool FacePipelineDetectRecognize::writer()
                 }
 
                 // QList<FaceTagsIface> faces = utils.unconfirmedFaceTagsIfaces(package->info.id());
-
-                // for (int i = 0; i < package->faceRects.size(); ++i)
+                //
+                // for (int i = 0 ; i < package->faceRects.size() ; ++i)
                 // {
                 //     if (-1 != package->labelList[i])
                 //     {
                 //         int faceIndex = -1;
-
+                //
                 //         QRect rect = QRect(package->image.width() * package->faceRects[i].x(),
-                //                                 package->image.height() * package->faceRects[i].y(),
-                //                                 package->image.width() * package->faceRects[i].width(),
-                //                                 package->image.height() * package->faceRects[i].height());
+                //                            package->image.height() * package->faceRects[i].y(),
+                //                            package->image.width() * package->faceRects[i].width(),
+                //                            package->image.height() * package->faceRects[i].height());
                 //         qCDebug(DIGIKAM_FACESENGINE_LOG) << "test face rect:" << rect;
-
-                //         for (int j = 0; j < databaseFaces.size(); ++j)
+                //
+                //         for (int j = 0 ; j < databaseFaces.size() ; ++j)
                 //         {
                 //             qCDebug(DIGIKAM_FACESENGINE_LOG) << "unconfirmed face rect:" << databaseFaces[j].region();
+                //
                 //             if (databaseFaces[j].region().intersects(TagRegion(rect), 0.85))
                 //             {
                 //                 faceIndex = j;
                 //                 break;
                 //             }
                 //         }
-
+                //
                 //         if (-1 != faceIndex)
                 //         {
                 //             Identity identity = idProvider->identity(package->labelList[i]);
-                //             int tagId = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
+                //             int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
                 //             utils.changeSuggestedName(databaseFaces[faceIndex], tagId);
                 //         }
                 //     }
@@ -775,7 +809,11 @@ bool FacePipelineDetectRecognize::writer()
 
             // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), package->faceRects.size(), package->thumbnailIcon);
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   package->info.filePath(),
+                   package->faceRects.size(),
+                   package->thumbnailIcon);
 
             // delete the package
 
@@ -790,7 +828,8 @@ bool FacePipelineDetectRecognize::writer()
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::writer(): unknown writer error. " << e.what() << " Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::writer(): unknown writer error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -800,7 +839,7 @@ bool FacePipelineDetectRecognize::writer()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::writer(): unknown writer error.  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineDetectRecognize::writer(): unknown writer error. Restarting...";
 
             if (package)
             {
@@ -811,6 +850,7 @@ bool FacePipelineDetectRecognize::writer()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;
@@ -831,6 +871,6 @@ void FacePipelineDetectRecognize::addMoreWorkers()
     addWorker(Extractor);
 }
 
-}
+} // namespace Digikam
 
 #include "moc_facepipelinedetectrecognize.cpp"

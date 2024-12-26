@@ -15,14 +15,11 @@
 
 #pragma once
 
-// Qt includes
-
 // Local includes
 
 #include "facepipelinebase.h"
 #include "dnnmodelbase.h"
 #include "dnnfacedetectoryunet.h"
-// #include "dnnsfaceextractor.h"
 #include "dnnmodelmanager.h"
 #include "dnnmodelsface.h"
 
@@ -31,26 +28,33 @@ namespace Digikam
 
 class FacePipelineDetectRecognize : public FacePipelineBase
 {
+    Q_OBJECT
+
 public:
+
     explicit FacePipelineDetectRecognize(const FaceScanSettings& _settings);
-    ~FacePipelineDetectRecognize()                                       override;
+    ~FacePipelineDetectRecognize()                              override;
+
+public:
 
     bool start()                                                override;
     void cancel()                                               override;
 
 protected:
+
     bool finder()                                               override;
     bool loader()                                               override;
     bool extractor()                                            override;
     bool classifier()                                           override;
+
     bool trainer()                                              override
     {
         return false;
     }
+
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;
-
 
 private:
 
@@ -59,7 +63,6 @@ private:
 
     FacePipelineDetectRecognize()                                       = delete;
     FacePipelineDetectRecognize(FacePipelineDetectRecognize&)           = delete;
-
 };
 
-}
+} // namespace Digikam
