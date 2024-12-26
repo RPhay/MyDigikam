@@ -595,6 +595,7 @@ QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint)
 
     if (mat.type() == CV_8UC1)
     {
+        // cppcheck-suppress duplicateConditionalAssign
         if (   (formatHint != QImage::Format_Indexed8)
 
 #if QT_VERSION >= 0x050500
@@ -606,6 +607,7 @@ QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint)
 
            )
         {
+            // cppcheck-suppress duplicateConditionalAssign
             formatHint = QImage::Format_Indexed8;
         }
 
