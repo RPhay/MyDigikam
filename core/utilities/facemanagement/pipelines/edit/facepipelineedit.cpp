@@ -22,6 +22,10 @@
 #include <QElapsedTimer>
 #include <QRectF>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -78,6 +82,10 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
+
+    ++totalItemCount;
+    Q_EMIT started(i18n("Confirming face"));
+
     enqueue(nextQueue, package);
 
     return (FaceTagsEditor::confirmedEntry(face, tagId, face.region()));
@@ -88,6 +96,10 @@ void FacePipelineEdit::removeFace(const ItemInfo& info,
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
+
+    ++totalItemCount;
+    Q_EMIT started(i18n("Removing face"));
+
     enqueue(nextQueue, package);
 }
 
@@ -97,6 +109,10 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
+
+    ++totalItemCount;
+    Q_EMIT started(i18n("Editing face tag"));
+
     enqueue(nextQueue, package);
 
     FaceTagsIface newFace(package->face);
@@ -113,6 +129,10 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
+
+    ++totalItemCount;
+    Q_EMIT started(i18n("Editing face region"));
+
     enqueue(nextQueue, package);
 
     FaceTagsIface newFace(package->face);
@@ -129,6 +149,10 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FaceTagsIface face                     = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), image, FacePipelinePackageBase::EditPipelineAction::AddManually, retrain);
+
+    ++totalItemCount;
+    Q_EMIT started(i18n("Manually adding face"));
+
     enqueue(nextQueue, package);
 
     return face;
@@ -136,9 +160,9 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
 
 bool FacePipelineEdit::start()
 {
-    if (!started)
+    if (!isStarted)
     {
-        started = true;
+        isStarted = true;
 
         {
             // use the mutex to synchronize the start of the threads
@@ -153,6 +177,8 @@ bool FacePipelineEdit::start()
             // addWorker(MLPipelineStage::Classifier);
             addWorker(MLPipelineStage::Writer);
         }
+
+        Q_EMIT scheduled();
 
         return FacePipelineBase::start();
     }
@@ -191,7 +217,6 @@ bool FacePipelineEdit::writer()
     IdentityProvider* const idProvider             = IdentityProvider::instance();
 
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
-    // thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
 
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
@@ -319,6 +344,18 @@ bool FacePipelineEdit::writer()
             // delete the package
 
             delete package;
+
+            if ((0 == queues[MLPipelineStage::Loader]->size()) && (0 == queues[MLPipelineStage::Extractor]->size()) && (0 == queues[MLPipelineStage::Writer]->size()))
+            {
+                Q_EMIT progressValueChanged((float)1.0);
+                totalItemCount = 0;
+                Q_EMIT finished();
+            }
+            else
+            {
+                ++itemsProcessed;
+                Q_EMIT progressValueChanged((float)itemsProcessed/(float)totalItemCount);
+            }
 
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////

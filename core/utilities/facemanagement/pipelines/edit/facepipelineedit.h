@@ -89,7 +89,7 @@ protected:
 
 private:
 
-    bool started = false;
+    bool isStarted = false;
 
 private:
 

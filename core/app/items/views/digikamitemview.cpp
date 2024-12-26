@@ -72,15 +72,16 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 {
     installDefaultModels();
 
-    d->newEditPipeline = FacePipelineEdit::instance();
-    d->newEditPipeline->start();
-
     // d->editPipeline.plugDatabaseEditor();
     // d->editPipeline.plugTrainer();
     // d->editPipeline.construct();
 
-    // connect(&d->editPipeline, SIGNAL(scheduled()),
-    //         this, SLOT(slotInitProgressIndicator()));
+    d->newEditPipeline = FacePipelineEdit::instance();
+
+    connect(d->newEditPipeline, SIGNAL(scheduled()),
+            this, SLOT(slotInitProgressIndicator()));
+
+    d->newEditPipeline->start();
 
     d->normalDelegate = new DigikamItemDelegate(this);
     d->faceDelegate   = new ItemFaceDelegate(this);
@@ -793,14 +794,14 @@ void DigikamItemView::slotInitProgressIndicator()
     {
         FileActionProgress* const item = new FileActionProgress(QLatin1String("FaceActionProgress"));
 
-        // connect(&d->editPipeline, SIGNAL(started(QString)),
-        //         item, SLOT(slotProgressStatus(QString)));
+        connect(d->newEditPipeline, SIGNAL(started(QString)),
+                item, SLOT(slotProgressStatus(QString)));
 
-        // connect(&d->editPipeline, SIGNAL(progressValueChanged(float)),
-        //         item, SLOT(slotProgressValue(float)));
+        connect(d->newEditPipeline, SIGNAL(progressValueChanged(float)),
+                item, SLOT(slotProgressValue(float)));
 
-        // connect(&d->editPipeline, SIGNAL(finished()),
-        //         item, SLOT(slotCompleted()));
+        connect(d->newEditPipeline, SIGNAL(finished()),
+                item, SLOT(slotCompleted()));
     }
 }
 
