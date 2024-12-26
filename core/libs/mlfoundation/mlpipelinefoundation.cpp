@@ -363,7 +363,7 @@ void MLPipelineFoundation::slotFinished()
 
 bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu)
 {
-    if (useFullCpu && (totalItemCount + currentItemCount) > 25 && QThread::idealThreadCount() > 4)
+    if (useFullCpu && ((totalItemCount + currentItemCount) > 25) && (QThread::idealThreadCount() > 4))
     {
         int newInstances = (QThread::idealThreadCount() / 4) - 1;
 
@@ -429,7 +429,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
         // check for 50% free buffer space
 
-        if (1 == thisQueue->maxDepth() && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
+        if ((1 == thisQueue->maxDepth()) && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
         {
             // speed things up
 
@@ -471,7 +471,11 @@ MLPipelinePackageFoundation* MLPipelineFoundation::dequeue(MLPipelineQueue* this
     return package;
 }
 
-void MLPipelineFoundation::stageStart(QThread::Priority threadPriority, MLPipelineStage thisStage, MLPipelineStage nextStage, MLPipelineQueue*& thisQueue, MLPipelineQueue*& nextQueue)
+void MLPipelineFoundation::stageStart(QThread::Priority threadPriority,
+                                      MLPipelineStage thisStage,
+                                      MLPipelineStage nextStage,
+                                      MLPipelineQueue*& thisQueue,
+                                      MLPipelineQueue*& nextQueue)
 {
     QMutexLocker lock(&threadStageMutex);
 
@@ -535,7 +539,11 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
     }
 }
 
-void MLPipelineFoundation::notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QImage& _thumbnail)
+void MLPipelineFoundation::notify(MLPipelineNotification notification,
+                                  const QString _name,
+                                  const QString _path,
+                                  int _processed,
+                                  const QImage& _thumbnail)
 {
     if (!_thumbnail.isNull())
     {
@@ -547,7 +555,11 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     }
 }
 
-void MLPipelineFoundation::notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const DImg& _thumbnail)
+void MLPipelineFoundation::notify(MLPipelineNotification notification,
+                                  const QString _name,
+                                  const QString _path, 
+                                  int _processed,
+                                  const DImg& _thumbnail)
 {
     if (!_thumbnail.isNull())
     {
@@ -559,7 +571,11 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
     }
 }
 
-void MLPipelineFoundation::notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QIcon& _thumbnail)
+void MLPipelineFoundation::notify(MLPipelineNotification notification,
+                                  const QString _name,
+                                  const QString _path,
+                                  int _processed,
+                                  const QIcon& _thumbnail)
 {
     MLPipelinePackageNotify::Ptr notify;
     notify = new MLPipelinePackageNotify(_name, _path, _processed, _thumbnail);
@@ -569,12 +585,14 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification, const QSt
         case MLPipelineNotification::notifyProcessed:
         {
             Q_EMIT processed(notify);
+
             break;
         }
 
         case MLPipelineNotification::notifySkipped:
         {
             Q_EMIT skipped(notify);
+
             break;
         }
     }
@@ -600,8 +618,10 @@ void MLPipelineFoundation::showPipelinePerformance() const
         if (profile.itemCount > 0)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
-                                            << " Max Queue:" << profile.maxQueueCount << " Elapsed:" << profile.elapsedTime
-                                            << " Max Elapsed:" << profile.maxElapsedTime << " Average:" << profile.elapsedTime / profile.itemCount;
+                                            << " Max Queue:" << profile.maxQueueCount
+                                            << " Elapsed:" << profile.elapsedTime
+                                            << " Max Elapsed:" << profile.maxElapsedTime
+                                            << " Average:" << profile.elapsedTime / profile.itemCount;
         }
     }
 }

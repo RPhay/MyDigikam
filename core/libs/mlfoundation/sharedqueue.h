@@ -59,6 +59,7 @@ public:
         T& result = queue_.front();
         queue_.pop_front();
         back_.notify_one();
+
         return result;
     }
 

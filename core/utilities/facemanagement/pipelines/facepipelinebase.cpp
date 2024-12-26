@@ -35,7 +35,7 @@ namespace Digikam
 
 FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings)
     : MLPipelineFoundation(),
-      settings(_settings)
+      settings            (_settings)
 {
 }
 
@@ -64,14 +64,14 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
     //--------------------------------------------------------------------------------
 
-    ThumbnailLoadThread* thumbnailLoadThread = new ThumbnailLoadThread;
+    ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     // ThumbnailLoadThread* thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
 
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
     thumbnailLoadThread->setPriority(QThread::NormalPriority);
 
-    ThumbnailImageCatcher* catcher = new ThumbnailImageCatcher(thumbnailLoadThread);
+    ThumbnailImageCatcher* const catcher           = new ThumbnailImageCatcher(thumbnailLoadThread);
 
     catcher->setActive(true);
 
@@ -90,7 +90,8 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
                 break;
             }
 
-            performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount, thisQueue->size());
+            performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount,
+                                                                   thisQueue->size());
             ++performanceProfileList[thisStage].itemCount;
 
             timer.start();
@@ -104,12 +105,11 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
             if (images.size() && !images[0].isNull())
             {
-                package->thumbnail = images[0];
+                package->thumbnail     = images[0];
                 package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
 
                 enqueue(nextQueue, package);
             }
-
             else
             {
                 // send a notification that the file was skipped
@@ -130,7 +130,8 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error. " << e.what() << "    Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error. "
+                                                << e.what() << "    Restarting...";
 
             if (package)
             {
@@ -162,7 +163,9 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
     return true;
 }
 
-bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
+bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
+                                                    MLPipelineStage thisStage,
+                                                    MLPipelineStage nextStage)
 {
     // All threads start with the same basic functions
 
@@ -173,7 +176,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
     //--------------------------------------------------------------------------------
 
-    DNNSFaceExtractor           extractor;
+    DNNSFaceExtractor extractor;
 
     while (!cancelled)
     {
@@ -190,7 +193,8 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount,
+                                                                                    thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Extractor].itemCount;
 
             timer.start();
@@ -222,13 +226,15 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Extractor].elapsedTime += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Extractor].elapsedTime   += timer.elapsed();
+            performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime,
+                                                                                     timer.elapsed());
         }
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error. " << e.what() << "    Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error. "
+                                                << e.what() << "    Restarting...";
 
             if (package)
             {
@@ -249,6 +255,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(thisStage, nextStage);
 
     return true;
@@ -266,6 +273,6 @@ bool FacePipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoun
     return MLPipelineFoundation::enqueue(thisQueue, package);
 }
 
-}
+} // namespace Digikam
 
 #include "moc_facepipelinebase.cpp"

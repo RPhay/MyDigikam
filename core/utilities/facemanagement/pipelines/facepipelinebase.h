@@ -36,6 +36,7 @@ namespace Digikam
 
 class FacePipelineBase : public MLPipelineFoundation
 {
+    Q_OBJECT
 
 public:
 
@@ -72,39 +73,15 @@ public:
         OverwriteUnconfirmed
     };
 
+public:
+
     explicit FacePipelineBase(const FaceScanSettings& _settings);
     virtual ~FacePipelineBase();
 
+public:
+
     virtual bool start()    override;
     virtual void cancel()   override;
-
-    // Q_SIGNALS:
-
-    //     /// Emitted when processing is scheduled.
-    //     void scheduled();
-
-    //     /// Emitted when processing has started.
-    //     void started(const QString& message);
-
-    //     /// Emitted when one package begins processing.
-    //     void processing(const FacePipelinePackageNotify::Ptr& package);
-
-    //     /// Emitted when one package has finished processing.
-    //     void processed(const FacePipelinePackageNotify::Ptr& package);
-    //     void progressValueChanged(float progress);
-
-    //     /// Emitted when the last package has finished processing.
-    //     void finished();
-
-    //     /// Emitted when one or several packages were skipped, usually because they have already been scanned.
-    //     void skipped(const FacePipelinePackageNotify::Ptr& package);
-
-    //     void signalAddMoreWorkers();
-
-    // private Q_SLOTS:
-
-    //     void slotFinished();
-    //     void slotAddMoreWorkers();
 
 protected:
 
@@ -121,7 +98,6 @@ private:
 
     FacePipelineBase()                                          = delete;
     FacePipelineBase(FacePipelineBase&)                         = delete;
-
 };
 
-}
+} // namespace Digikam

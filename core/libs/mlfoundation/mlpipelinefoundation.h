@@ -67,7 +67,7 @@ public:
         /// Writer stage saves the data to the DB
         Writer,
 
-        // empty stage
+        /// Empty stage
         None
     };
 
@@ -79,16 +79,19 @@ public:
 
     typedef struct _MLPipelinePerformanceProfile
     {
-        int elapsedTime;
-        int itemCount;
-        int maxQueueCount;
-        int maxElapsedTime;
+        int elapsedTime                         = 0;
+        int itemCount                           = 0;
+        int maxQueueCount                       = 0;
+        int maxElapsedTime                      = 0;
+
         QAtomicInteger<int> currentThreadCount;
         QAtomicInteger<int> maxThreadCount;
     }
     MLPipelinePerformanceProfile;
 
     typedef SharedQueue<MLPipelinePackageFoundation*> MLPipelineQueue;
+
+public:
 
     MLPipelineFoundation();
     virtual ~MLPipelineFoundation();
@@ -143,6 +146,7 @@ protected:
     quint64                                             usedBufferSize      = 0;
 
 protected:
+
     virtual bool finder()                                       = 0;
     virtual bool loader()                                       = 0;
     virtual bool extractor()                                    = 0;
@@ -154,7 +158,7 @@ protected:
 
     bool checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu);
 
-    // queue helper functions
+    // Queue helper functions
 
     MLPipelinePackageFoundation* queueEndSignal() const
     {
@@ -174,12 +178,31 @@ protected:
         QMutexLocker lock(&mutex);
     }
 
-    void stageStart(QThread::Priority threadPriority, MLPipelineStage thisStage, MLPipelineStage nextStage, MLPipelineQueue*& thisQueue, MLPipelineQueue*& nextQueue);
+    void stageStart(QThread::Priority threadPriority,
+                    MLPipelineStage thisStage,
+                    MLPipelineStage nextStage,
+                    MLPipelineQueue*& thisQueue,
+                    MLPipelineQueue*& nextQueue);
+
     void stageEnd(MLPipelineStage thisStage, MLPipelineStage nextStage);
 
-    void notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QImage& _thumbnail);
-    void notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const DImg& _thumbnail);
-    void notify(MLPipelineNotification notification, const QString _name, const QString _path, int _processed, const QIcon& _thumbnail);
+    void notify(MLPipelineNotification notification,
+                const QString _name,
+                const QString _path,
+                int _processed,
+                const QImage& _thumbnail);
+
+    void notify(MLPipelineNotification notification,
+                const QString _name,
+                const QString _path,
+                int _processed,
+                const DImg& _thumbnail);
+
+    void notify(MLPipelineNotification notification,
+                const QString _name,
+                const QString _path,
+                int _processed,
+                const QIcon& _thumbnail);
 
     void showPipelinePerformance() const;
 

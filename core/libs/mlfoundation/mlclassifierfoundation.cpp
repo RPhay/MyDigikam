@@ -25,13 +25,13 @@ void MLClassifierFoundation::VotingGroups::addVote(int label, float score)
         votes.insert(label, QPair<int, float>(0, 0.0f));
     }
 
-    votes[label] = QPair<int, float>(votes.value(label).first + 1,  votes.value(label).second + score);
+    votes[label] = QPair<int, float>(votes.value(label).first + 1, votes.value(label).second + score);
 }
 
-// template <typename T>
-struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore // public std::binary_function<bool, const T*, const T*>
+struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore
 {
-    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
+    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
+                    const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
         if (a.votes == b.votes)
         {
@@ -42,10 +42,10 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore // public std::
     }
 };
 
-// template <typename T>
-struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore // public std::binary_function<bool, const T*, const T*>
+struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore
 {
-    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
+    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
+                    const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
         // May want to check that the pointers aren't zero...
 
@@ -58,10 +58,10 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore // public std:
     }
 };
 
-// template <typename T>
-struct MLClassifierFoundation::VotingGroups::WinnerLowScore // public std::binary_function<bool, const T*, const T*>
+struct MLClassifierFoundation::VotingGroups::WinnerLowScore
 {
-    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
+    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
+                    const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
         // May want to check that the pointers aren't zero...
 
@@ -69,10 +69,10 @@ struct MLClassifierFoundation::VotingGroups::WinnerLowScore // public std::binar
     }
 };
 
-// template <typename T>
-struct MLClassifierFoundation::VotingGroups::WinnerHighScore // public std::binary_function<bool, const T*, const T*>
+struct MLClassifierFoundation::VotingGroups::WinnerHighScore
 {
-    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a, const MLClassifierFoundation::VotingGroups::VoteTally& b) const
+    bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
+                    const MLClassifierFoundation::VotingGroups::VoteTally& b) const
     {
         // May want to check that the pointers aren't zero...
 

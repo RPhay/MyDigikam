@@ -29,9 +29,8 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MLClassifierFoundation// : public QObject
+class DIGIKAM_EXPORT MLClassifierFoundation
 {
-    // Q_OBJECT
 
 public:
 
@@ -42,10 +41,6 @@ public:
     virtual int predict(const cv::UMat& target)     const               = 0;
 
     virtual bool retrain()                                              = 0;
-
-    // Q_SIGNALS:
-
-    //     void signalTrainingComplete();
 
 protected:
 
@@ -64,9 +59,9 @@ protected:
 
         struct VoteTally
         {
-            int     label;
-            int     votes;
-            float   score;
+            int     label = 0;
+            int     votes = 0;
+            float   score = 0.0F;
         };
 
         struct WinnerVotesLowScore;
@@ -91,11 +86,9 @@ protected:
 
     QReadWriteLock  lock;
 
+protected:
+
     virtual bool loadTrainingData()                                     = 0;
-
-    // protected Q_SLOTS:
-
-    //     virtual void slotTrainingComplete()                                 = 0;
 
 private:
 
