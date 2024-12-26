@@ -71,7 +71,10 @@ FacePipelineEdit* FacePipelineEdit::instance()
     return &FacePipelineEditCreator->object;
 }
 
-FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info, const FaceTagsIface& face, int tagId, bool retrain)
+FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
+                                            const FaceTagsIface& face,
+                                            int tagId,
+                                            bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
@@ -80,14 +83,17 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info, const FaceTags
     return (FaceTagsEditor::confirmedEntry(face, tagId, face.region()));
 }
 
-void FacePipelineEdit::removeFace(const ItemInfo& info, const FaceTagsIface& face)
+void FacePipelineEdit::removeFace(const ItemInfo& info,
+                                  const FaceTagsIface& face)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
     enqueue(nextQueue, package);
 }
 
-FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info, const FaceTagsIface& face, int newTagId)
+FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
+                                        const FaceTagsIface& face,
+                                        int newTagId)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
@@ -99,7 +105,11 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info, const FaceTagsIfac
     return newFace;
 }
 
-FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info, const FaceTagsIface& face, TagRegion& region, const DImg& image, bool retrain)
+FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
+                                           const FaceTagsIface& face,
+                                           const TagRegion& region,
+                                           const DImg& image,
+                                           bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
@@ -111,7 +121,10 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info, const FaceTagsI
     return newFace;
 }
 
-FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain)
+FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
+                                            const DImg& image,
+                                            const TagRegion& region,
+                                            bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FaceTagsIface face                     = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);

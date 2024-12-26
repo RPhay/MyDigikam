@@ -41,11 +41,28 @@ public:
     bool start()                                                override;
     void cancel()                                               override;
 
-    FaceTagsIface confirmFace(const ItemInfo& info, const FaceTagsIface& face, int tagId, bool retrain = true);
-    void removeFace(const ItemInfo& info, const FaceTagsIface& face);
-    FaceTagsIface editTag(const ItemInfo& info, const FaceTagsIface& face, int newTagId);
-    FaceTagsIface editRegion(const ItemInfo& info, const FaceTagsIface& face, TagRegion& region, const DImg& image, bool retrain = true);
-    FaceTagsIface addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain = true);
+    FaceTagsIface confirmFace(const ItemInfo& info,
+                              const FaceTagsIface& face,
+                              int tagId,
+                              bool retrain = true);
+
+    void removeFace(const ItemInfo& info,
+                    const FaceTagsIface& face);
+
+    FaceTagsIface editTag(const ItemInfo& info,
+                          const FaceTagsIface& face,
+                          int newTagId);
+
+    FaceTagsIface editRegion(const ItemInfo& info,
+                             const FaceTagsIface& face,
+                             const TagRegion& region,
+                             const DImg& image,
+                             bool retrain = true);
+
+    FaceTagsIface addManually(const ItemInfo& info,
+                              const DImg& image,
+                              const TagRegion& region,
+                              bool retrain = true);
 
 protected:
 
