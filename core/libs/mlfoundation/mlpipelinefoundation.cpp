@@ -367,7 +367,7 @@ bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemC
     {
         int newInstances = (QThread::idealThreadCount() / 4) - 1;
 
-        for (int i = 0; i < newInstances; ++i)
+        for (int i = 0 ; i < newInstances ; ++i)
         {
             Q_EMIT signalAddMoreWorkers();
         }

@@ -256,9 +256,12 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
 bool FacePipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)
 {
-    // calculate the package size.  Only big items need to be checked
+    if (nullptr != package)
+    {
+        // calculate the package size.  Only big items need to be checked
 
-    package->size = static_cast<FacePipelinePackageBase*>(package)->image.size().width() * static_cast<FacePipelinePackageBase*>(package)->image.size().height() * 4;
+        package->size = static_cast<FacePipelinePackageBase*>(package)->image.size().width() * static_cast<FacePipelinePackageBase*>(package)->image.size().height() * 4;
+    }
 
     return MLPipelineFoundation::enqueue(thisQueue, package);
 }
