@@ -63,7 +63,7 @@ BUGFIXES:
 044 ==> 497775 - Your Flatpak installation is setuid, which is not supported.
 045 ==> 497824 - Wrong location displayed for mp4.
 046 ==> 497791 - Unwanted face recognition function in preview mode when face management is disabled.
-047 ==>
+047 ==> 497814 - Add Support for Configurable Output Color Profile When Editing with darktable.
 048 ==>
 049 ==>
 050 ==>
