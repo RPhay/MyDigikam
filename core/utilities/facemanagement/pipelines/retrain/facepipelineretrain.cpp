@@ -79,11 +79,6 @@ bool FacePipelineRetrain::start()
     return FacePipelineBase::start();
 }
 
-void FacePipelineRetrain::cancel()
-{
-    FacePipelineBase::cancel();
-}
-
 bool FacePipelineRetrain::finder()
 {
     // All threads start with the same basic functions

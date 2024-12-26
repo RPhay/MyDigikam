@@ -162,11 +162,6 @@ bool FacePipelineEdit::start()
     }
 }
 
-void FacePipelineEdit::cancel()
-{
-    FacePipelineBase::cancel();
-}
-
 bool FacePipelineEdit::loader()
 {
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"),

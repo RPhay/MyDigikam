@@ -107,11 +107,6 @@ bool FacePipelineDetect::start()
     return FacePipelineBase::start();
 }
 
-void FacePipelineDetect::cancel()
-{
-    FacePipelineBase::cancel();
-}
-
 bool FacePipelineDetect::finder()
 {
     // All threads start with the same basic functions

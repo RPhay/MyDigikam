@@ -35,7 +35,6 @@ public:
 public:
 
     bool start()                                                override;
-    void cancel()                                               override;
 
 protected:
 

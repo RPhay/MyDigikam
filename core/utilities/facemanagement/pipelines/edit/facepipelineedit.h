@@ -39,7 +39,6 @@ public:
 public:
 
     bool start()                                                override;
-    void cancel()                                               override;
 
     FaceTagsIface confirmFace(const ItemInfo& info,
                               const FaceTagsIface& face,
