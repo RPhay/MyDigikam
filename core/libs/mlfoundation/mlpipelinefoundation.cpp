@@ -35,8 +35,8 @@ namespace Digikam
 
 MLPipelineFoundation::MLPipelineFoundation()
 {
-    threadPool      = new QThreadPool();
-    threadPool->setMaxThreadCount(qMax(6, QThread::idealThreadCount()));
+    threadPool      = new QThreadPool(this);
+    threadPool->setMaxThreadCount(qMax(4, QThread::idealThreadCount()));
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
@@ -46,7 +46,7 @@ MLPipelineFoundation::~MLPipelineFoundation()
 {
     cancelled = true;
 
-    delete threadPool;
+    threadPool->waitForDone();
 
     for (const QFutureWatcher<bool>* watcher : std::as_const(watchList))
     {
