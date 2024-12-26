@@ -57,7 +57,8 @@ Q_GLOBAL_STATIC(FacePipelineEditCreator, FacePipelineEditCreator)
 
 // -----------------------------------------------------------------------------------------------
 
-FacePipelineEdit::FacePipelineEdit() : FacePipelineBase(FaceScanSettings())
+FacePipelineEdit::FacePipelineEdit()
+    : FacePipelineBase(FaceScanSettings())
 {
 }
 
@@ -72,28 +73,24 @@ FacePipelineEdit* FacePipelineEdit::instance()
 
 FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info, const FaceTagsIface& face, int tagId, bool retrain)
 {
-    MLPipelineQueue* nextQueue = queues.value(MLPipelineStage::Loader);
-
-    FacePipelinePackageBase* package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
     enqueue(nextQueue, package);
 
-    return FaceTagsEditor::confirmedEntry(face, tagId, face.region());
-
+    return (FaceTagsEditor::confirmedEntry(face, tagId, face.region()));
 }
 
 void FacePipelineEdit::removeFace(const ItemInfo& info, const FaceTagsIface& face)
 {
-    MLPipelineQueue* nextQueue = queues.value(MLPipelineStage::Writer);
-
-    FacePipelinePackageBase* package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
     enqueue(nextQueue, package);
 }
 
 FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info, const FaceTagsIface& face, int newTagId)
 {
-    MLPipelineQueue* nextQueue = queues.value(MLPipelineStage::Writer);
-
-    FacePipelinePackageBase* package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
     enqueue(nextQueue, package);
 
     FaceTagsIface newFace(package->face);
@@ -104,9 +101,8 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info, const FaceTagsIfac
 
 FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info, const FaceTagsIface& face, TagRegion& region, const DImg& image, bool retrain)
 {
-    MLPipelineQueue* nextQueue = queues.value(MLPipelineStage::Writer);
-
-    FacePipelinePackageBase* package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
     enqueue(nextQueue, package);
 
     FaceTagsIface newFace(package->face);
@@ -117,15 +113,12 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info, const FaceTagsI
 
 FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain)
 {
-    MLPipelineQueue* nextQueue = queues.value(MLPipelineStage::Writer);
-
-    FaceTagsIface face = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);
-
-    FacePipelinePackageBase* package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), image, FacePipelinePackageBase::EditPipelineAction::AddManually, retrain);
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FaceTagsIface face                     = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), image, FacePipelinePackageBase::EditPipelineAction::AddManually, retrain);
     enqueue(nextQueue, package);
 
     return face;
-
 }
 
 bool FacePipelineEdit::start()
@@ -150,7 +143,6 @@ bool FacePipelineEdit::start()
 
         return FacePipelineBase::start();
     }
-
     else
     {
         return true;
@@ -164,27 +156,33 @@ void FacePipelineEdit::cancel()
 
 bool FacePipelineEdit::loader()
 {
-    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"), MLPipelineStage::Loader, MLPipelineStage::Extractor);
+    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"),
+                                     MLPipelineStage::Loader,
+                                     MLPipelineStage::Extractor);
 }
 
 bool FacePipelineEdit::extractor()
 {
-    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"), MLPipelineStage::Extractor, MLPipelineStage::Writer);
+    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"),
+                                        MLPipelineStage::Extractor,
+                                        MLPipelineStage::Writer);
 }
 
 bool FacePipelineEdit::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue* thisQueue, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
-    IdentityProvider* idProvider = IdentityProvider::instance();
+    IdentityProvider* const idProvider             = IdentityProvider::instance();
 
-    ThumbnailLoadThread* thumbnailLoadThread = new ThumbnailLoadThread;
+    ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     // thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
 
     thumbnailLoadThread->setPixmapRequested(false);
@@ -217,14 +215,12 @@ bool FacePipelineEdit::writer()
                 case FacePipelinePackageBase::EditPipelineAction::Confirm:
                 {
                     FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, package->face.region());
-
-                    Identity identity    = utils.identityForTag(confirmedFace.tagId());
+                    Identity identity           = utils.identityForTag(confirmedFace.tagId());
 
                     if (0 != package->features.rows)
                     {
                         idProvider->addTraining(identity, confirmedFace.hash(), package->features);
                     }
-
                     else
                     {
                         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
@@ -242,7 +238,9 @@ bool FacePipelineEdit::writer()
                 case FacePipelinePackageBase::EditPipelineAction::EditTag:
                 {
                     // Change Tag operation.
+
                     utils.changeTag(package->face, package->tagId);
+
                     break;
                 }
 
@@ -264,7 +262,7 @@ bool FacePipelineEdit::writer()
                     // if      (package->face.isNull())
                     // {
                     //     // Add Manually.
-
+                    //
                     //     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), package->face.assignedTagId, package->face.assignedRegion);
                     //     utils.addManually(newFace);
                     //     // add << FacePipelineFaceTagsIface(newFace);
@@ -304,7 +302,11 @@ bool FacePipelineEdit::writer()
 
             // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), package->faceRects.size(), package->thumbnail);
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   package->info.filePath(),
+                   package->faceRects.size(),
+                   package->thumbnail);
 
             // delete the package
 
@@ -313,7 +315,7 @@ bool FacePipelineEdit::writer()
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Writer].elapsedTime += timer.elapsed();
+            performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
             performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
 
@@ -324,7 +326,7 @@ bool FacePipelineEdit::writer()
 
         catch (...)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error.  Restarting...";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error. Restarting...";
 
             if (package)
             {
@@ -335,6 +337,7 @@ bool FacePipelineEdit::writer()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;

@@ -15,10 +15,6 @@
 
 #pragma once
 
-// Qt includes
-
-// #include <QThread>
-
 // Local includes
 
 #include "facepipelinebase.h"
@@ -31,11 +27,16 @@ namespace Digikam
 
 class FacePipelineEdit : public FacePipelineBase
 {
+    Q_OBJECT
+
 public:
+
     explicit FacePipelineEdit();
     ~FacePipelineEdit()                                         override;
 
     static FacePipelineEdit* instance();
+
+public:
 
     bool start()                                                override;
     void cancel()                                               override;
@@ -47,29 +48,36 @@ public:
     FaceTagsIface addManually(const ItemInfo& info, const DImg& image, const TagRegion& region, bool retrain = true);
 
 protected:
+
     bool finder()                                               override
     {
         return false;
     }
+
     bool loader()                                               override;
     bool extractor()                                            override;
+
     bool classifier()                                           override
     {
         return false;
     }
+
     bool trainer()                                              override
     {
         return false;
     }
+
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;
 
+private:
+
+    bool started = false;
 
 private:
-    bool started = false;
 
     FacePipelineEdit(FacePipelineEdit&)                         = delete;
 };
 
-}
+} // namespace Digikam
