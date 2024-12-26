@@ -18,8 +18,8 @@
 namespace Digikam
 {
 
-MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name,
-                                                 const QString _path,
+MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
+                                                 const QString& _path,
                                                  int _processed,
                                                  const DImg& _thumbnail)
     : QSharedData(),
@@ -33,8 +33,8 @@ MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name,
     }
 }
 
-MLPipelinePackageNotify::MLPipelinePackageNotify(const QString _name,
-                                                 const QString _path,
+MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
+                                                 const QString& _path,
                                                  int _processed,
                                                  const QIcon& _thumbnail)
     : QSharedData(),

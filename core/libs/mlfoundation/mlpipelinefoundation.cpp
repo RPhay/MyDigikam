@@ -540,8 +540,8 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 }
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
-                                  const QString _name,
-                                  const QString _path,
+                                  const QString& _name,
+                                  const QString& _path,
                                   int _processed,
                                   const QImage& _thumbnail)
 {
@@ -556,8 +556,8 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
 }
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
-                                  const QString _name,
-                                  const QString _path, 
+                                  const QString& _name,
+                                  const QString& _path, 
                                   int _processed,
                                   const DImg& _thumbnail)
 {
@@ -572,8 +572,8 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
 }
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
-                                  const QString _name,
-                                  const QString _path,
+                                  const QString& _name,
+                                  const QString& _path,
                                   int _processed,
                                   const QIcon& _thumbnail)
 {

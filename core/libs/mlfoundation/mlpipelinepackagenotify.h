@@ -32,8 +32,8 @@ class DIGIKAM_EXPORT MLPipelinePackageNotify : public QSharedData
 {
 public:
 
-    explicit MLPipelinePackageNotify(const QString _name, const QString _path, int _processed, const DImg& _thumbnail);
-    explicit MLPipelinePackageNotify(const QString _name, const QString _path, int _processed, const QIcon& _thumbnail);
+    explicit MLPipelinePackageNotify(const QString& _name, const QString& _path, int _processed, const DImg& _thumbnail);
+    explicit MLPipelinePackageNotify(const QString& _name, const QString& _path, int _processed, const QIcon& _thumbnail);
     virtual ~MLPipelinePackageNotify();
 
 public:

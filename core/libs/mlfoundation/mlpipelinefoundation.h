@@ -187,20 +187,20 @@ protected:
     void stageEnd(MLPipelineStage thisStage, MLPipelineStage nextStage);
 
     void notify(MLPipelineNotification notification,
-                const QString _name,
-                const QString _path,
+                const QString& _name,
+                const QString& _path,
                 int _processed,
                 const QImage& _thumbnail);
 
     void notify(MLPipelineNotification notification,
-                const QString _name,
-                const QString _path,
+                const QString& _name,
+                const QString& _path,
                 int _processed,
                 const DImg& _thumbnail);
 
     void notify(MLPipelineNotification notification,
-                const QString _name,
-                const QString _path,
+                const QString& _name,
+                const QString& _path,
                 int _processed,
                 const QIcon& _thumbnail);
 
