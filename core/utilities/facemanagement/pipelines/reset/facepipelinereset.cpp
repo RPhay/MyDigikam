@@ -43,8 +43,8 @@
 namespace Digikam
 {
 
-FacePipelineReset::FacePipelineReset(const FaceScanSettings& _settings) :
-    FacePipelineBase(_settings)
+FacePipelineReset::FacePipelineReset(const FaceScanSettings& _settings)
+    : FacePipelineBase(_settings)
 {
 }
 
@@ -79,9 +79,11 @@ void FacePipelineReset::cancel()
 bool FacePipelineReset::finder()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Writer, thisQueue, nextQueue);
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
@@ -124,11 +126,12 @@ bool FacePipelineReset::finder()
 
     Q_EMIT signalUpdateItemCount(totalItemCount);
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount;
+    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
     performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Finder, MLPipelineStage::Writer);
 
     return true;
@@ -137,16 +140,18 @@ bool FacePipelineReset::finder()
 bool FacePipelineReset::writer()
 {
     // All threads start with the same basic functions
+
     MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     FacePipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
     FaceTagsEditor editor;
-    IdentityProvider* idProvider = IdentityProvider::instance();
-    QIcon icon = QIcon::fromTheme(QLatin1String("person"));
+    IdentityProvider* const idProvider = IdentityProvider::instance();
+    QIcon icon                         = QIcon::fromTheme(QLatin1String("person"));
 
     // clear all identites and training from recognition DB before
     // we start looping through the results from the pipeline
@@ -168,7 +173,8 @@ bool FacePipelineReset::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount,
+                                                                                 thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
             timer.start();
@@ -182,7 +188,7 @@ bool FacePipelineReset::writer()
 
             editor.removeFaces(databaseFaces);
 
-            databaseFaces = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
+            databaseFaces                      = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
 
             editor.removeFaces(databaseFaces);
 
@@ -194,25 +200,30 @@ bool FacePipelineReset::writer()
 
             // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), package->faceRects.size(), icon);
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   package->info.filePath(),
+                   package->faceRects.size(),
+                   icon);
 
             // delete the package
 
             delete package;
 
             performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime,
+                                                                                  timer.elapsed());
         }
 
         catch (const std::exception& e)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error.  Restarting...";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error. Restarting...";
             std::cerr << e.what() << '\n';
         }
 
         catch (...)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error.  Restarting...";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error. Restarting...";
 
             if (package)
             {
@@ -222,10 +233,12 @@ bool FacePipelineReset::writer()
     }
 
     // retrain the classifier after all results have been processed
+
     FaceClassifier::instance()->retrain();
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;
@@ -236,6 +249,6 @@ void FacePipelineReset::addMoreWorkers()
     // reset pipeline is always single thread per stage
 }
 
-}
+} // namepsace Digikam
 
 #include "moc_facepipelinereset.cpp"
