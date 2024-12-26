@@ -15,8 +15,6 @@
 
 #pragma once
 
-// Qt includes
-
 // Local includes
 
 #include "facepipelinebase.h"
@@ -27,37 +25,46 @@ namespace Digikam
 
 class FacePipelineDetect : public FacePipelineBase
 {
+    Q_OBJECT
+
 public:
+
     explicit FacePipelineDetect(const FaceScanSettings& _settings);
     ~FacePipelineDetect()                                       override;
+
+public:
 
     bool start()                                                override;
     void cancel()                                               override;
 
 protected:
+
     bool finder()                                               override;
     bool loader()                                               override;
     bool extractor()                                            override;
+
     bool classifier()                                           override
     {
         return false;
     }
+
     bool trainer()                                              override
     {
         return false;
     }
+
     bool writer()                                               override;
 
     void addMoreWorkers()                                       override;
-
 
 private:
 
     FaceDetector*           detector                            = nullptr;
 
+private:
+
     FacePipelineDetect()                                        = delete;
     FacePipelineDetect(FacePipelineDetect&)                     = delete;
-
 };
 
-}
+} // namespace Digikam
