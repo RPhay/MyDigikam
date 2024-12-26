@@ -26,15 +26,20 @@ namespace Digikam
 
 class FacePipelineRecognize : public FacePipelineBase
 {
+    Q_OBJECT
+
 public:
 
     explicit FacePipelineRecognize(const FaceScanSettings& _settings);
     ~FacePipelineRecognize()                                    override;
 
+public:
+
     bool start()                                                override;
     void cancel()                                               override;
 
 protected:
+
     bool finder()                                               override;
     bool loader()                                               override;
     bool extractor()                                            override;
@@ -49,11 +54,11 @@ protected:
 
     void addMoreWorkers()                                       override;
 
-
 private:
 
     FaceDetector    detector;
-    // float           threshold   = 0.5;
+
+private:
 
     FacePipelineRecognize()                                     = delete;
     FacePipelineRecognize(FacePipelineRecognize&)               = delete;

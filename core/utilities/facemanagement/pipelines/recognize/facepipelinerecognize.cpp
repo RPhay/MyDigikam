@@ -190,12 +190,16 @@ bool FacePipelineRecognize::finder()
 
 bool FacePipelineRecognize::loader()
 {
-    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRecognize"), MLPipelineStage::Loader, MLPipelineStage::Extractor);
+    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRecognize"),
+                                     MLPipelineStage::Loader,
+                                     MLPipelineStage::Extractor);
 }
 
 bool FacePipelineRecognize::extractor()
 {
-    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRecognize"), MLPipelineStage::Extractor, MLPipelineStage::Classifier);
+    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRecognize"),
+                                        MLPipelineStage::Extractor,
+                                        MLPipelineStage::Classifier);
 }
 
 bool FacePipelineRecognize::classifier()
@@ -227,7 +231,8 @@ bool FacePipelineRecognize::classifier()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount,
+                                                                                     thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Classifier].itemCount;
 
             timer.start();
@@ -255,7 +260,11 @@ bool FacePipelineRecognize::classifier()
             {
                 // no suggested match found, so notify the user
 
-                notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), 1, package->thumbnail);
+                notify(MLPipelineNotification::notifyProcessed,
+                       package->info.name(),
+                       package->info.filePath(),
+                       1,
+                       package->thumbnail);
 
                 // delete the package
 
@@ -271,7 +280,8 @@ bool FacePipelineRecognize::classifier()
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. " << e.what() << "    Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -281,7 +291,7 @@ bool FacePipelineRecognize::classifier()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error.  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. Restarting...";
 
             if (package)
             {
@@ -327,7 +337,8 @@ bool FacePipelineRecognize::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
+            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount,
+                                                                                 thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
             timer.start();
@@ -344,7 +355,11 @@ bool FacePipelineRecognize::writer()
 
             // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), 1, package->thumbnail);
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   package->info.filePath(),
+                   1,
+                   package->thumbnail);
 
             // delete the package
 
@@ -354,12 +369,14 @@ bool FacePipelineRecognize::writer()
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
+            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime,
+                                                                                  timer.elapsed());
         }
 
         catch (const std::exception& e)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. " << e.what() << "  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. "
+                                                << e.what() << " Restarting...";
 
             if (package)
             {
@@ -369,7 +386,7 @@ bool FacePipelineRecognize::writer()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error.  Restarting...";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. Restarting...";
 
             if (package)
             {
