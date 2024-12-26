@@ -125,17 +125,28 @@ bool FaceClassifier::ready() const
 void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 {
     d->recognizeModel = parameters.recognizeModel;
+
+    // set the threshold for the model in case we can't get it from the model
+
     threshold         = 0.5;
 
     try
     {
+        // TODO: add other models if we decide to keep OpenFace
+
         if (d->recognizeModel == FaceScanSettings::FaceRecognitionModel::SFace)
         {
+            // get a pointer to the model
+
             DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("sface"),
                                                                               DNNModelUsage::DNNUsageFaceRecognition);
 
+            // check if the model is loaded
+
             if (model)
             {
+                // get the threshold from the model
+
                 threshold = model->getThreshold(parameters.recognizeAccuracy);
             }
         }
@@ -143,17 +154,19 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception: " << e.what();
     }
 
     catch (...)
     {
-        // do nothing
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception:";
     }
 }
 
 cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
 {
+    // create the KNN classifier
+
     cv::Ptr<cv::ml::KNearest> cvClassifier = cv::ml::KNearest::create();
     cvClassifier->setIsClassifier(true);
     cvClassifier->setAlgorithmType(d->knn_algorithm);
@@ -164,6 +177,8 @@ cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
 
 cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
 {
+    // create the SVM classifier
+
     cv::Ptr<cv::ml::SVM> cvClassifier = cv::ml::SVM::create();
     cvClassifier->setType(d->svm_type);
     cvClassifier->setKernel(d->svm_kernel);
@@ -176,9 +191,17 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
 
 bool FaceClassifier::retrain()
 {
+    // called to retrain the classifier
+
+    // lock the mutex
+
     QMutexLocker lock(&d->trainingMutex);
 
+    // tell the training thread there is training to do
+
     d->trainingWaiting = true;
+
+    // check if the training thread is already running
 
     if (d->trainingFuture.future().isRunning())
     {
@@ -186,6 +209,8 @@ bool FaceClassifier::retrain()
 
         return false;
     }
+
+    // start the training thread
 
     d->trainingFuture.setFuture(QtConcurrent::run(QThreadPool::globalInstance(),
 
@@ -211,19 +236,25 @@ bool FaceClassifier::retrain()
 
 bool FaceClassifier::loadTrainingData()
 {
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: training started";
+    // training thread to load the training data
+
+    // training thread should have a higher priority
 
     QThread::currentThread()->setPriority(QThread::Priority::HighPriority);
 
     QElapsedTimer timer;
     timer.start();
 
-    // loop to rebuild the classifier components
+    // loop to rebuild the classifier components if there is training waiting
     // d->trainingWaiting can be modified outside the loop
 
     do
     {
+        // clear the training waiting flag
+
         d->trainingWaiting = false;
+
+        // create new map and classifiers.  We'll swap them in at the end
 
         QMap<int, QList<cv::Mat> > identityFeatures;
 
@@ -232,34 +263,25 @@ bool FaceClassifier::loadTrainingData()
 
         try
         {
+            // get the training data from the identity provider
+
             cv::Ptr<cv::ml::TrainData> trainData = d->identityProvider->getTrainingData();
 
+            // if we have training data, split it into samples and labels
+            
             if (nullptr != trainData)
             {
                 cv::Mat samples = trainData->getSamples();
                 cv::Mat labels  = trainData->getResponses();
 
-                /* TODO: Remove this.
-
-                                QFile file(QLatin1String("/Users/michmill/Downloads/trainingData.csv"));
-                                file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate | QIODevice::Unbuffered);
-                */
                 for (int i = 0 ; i < labels.rows ; ++i)
                 {
                     int label = labels.at<int>(cv::Point(i, 0));
                     identityFeatures[label].append(samples.row(i));
-
-                    // file.write(QString::number(label).toUtf8());
-                    // for (int j = 0; j < samples.cols; ++j)
-                    // {
-                    //     file.write(",");
-                    //     file.write(QString::number(samples.at<float>(i,j)).toUtf8());
-                    // }
-                    // file.write("\n");
                 }
-
-                // file.close();
             }
+
+            // if we have enough samples, train the classifiers
 
             if (identityFeatures.count() > d->knn_defaultK)
             {
@@ -286,10 +308,14 @@ bool FaceClassifier::loadTrainingData()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception:";
         }
 
+        // lock the classifiers and identity list
+
         d->trainingLock.lockForWrite();
+
+        // swap the new classifiers and identity list with the currently running ones
 
         d->knnClassifier    = knn;
         d->svmClassifier    = svm;
@@ -386,7 +412,6 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 
     d->knnClassifier->findNearest(target,
                                   std::min<int>(d->identityFeatures.count(), d->knn_defaultK),
-                                  //1,
                                   knn_resultMat,
                                   knn_neighbors,
                                   knn_distances);
@@ -412,12 +437,16 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     {
         if (validateKNNSVMResult(target, svm_result))
         {
+            // we have a match
+
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 1 prediction is: "  << svm_result << "    completed in " << timer.elapsed();
             return svm_result;
         }
 
         else
         {
+            // save the bad label so we don't check it again
+
             badLabel1 = svm_result;
         }
     }
@@ -447,12 +476,16 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 
             if (validateKNNSVMResult(target, label))
             {
+                // we have a match
+
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 2 prediction is: "  << label << "    completed in " << timer.elapsed();
                 return label;
             }
 
             else
             {
+                // save the bad label so we don't check it again
+
                 badLabel2 = label;
             }
         }
@@ -460,7 +493,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     }
 
     // Stage 3 - do brute-force search on distinct set of SVM and KNN labels returned
-    // from the internal classifiers that weren't checked before
+    // from the internal classifiers.  Ignore labels we've already checked.
 
     {
         d->knnClassifier->findNearest(target,
@@ -571,181 +604,5 @@ bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& s
     return (distance < threshold) &&
            (norm_l1Distance < l1Threshold);
 }
-
-// int FaceClassifier::predictClassifier(const cv::Mat& target)    const
-// {
-//     cv::Mat knn_resultMat, knn_neighbors, knn_distances;
-//     int     label                   = -1;
-//     IdentityProvider* idProvider    = IdentityProvider::instance();
-//     QMap<int, QList<cv::Mat> > featureSet;
-
-//     QElapsedTimer timer;
-//     timer.start();
-
-//     // get the K nearest from the KNN classifier
-
-//     if (d->knnClassifier->isTrained())
-//     {
-//         d->knnClassifier->findNearest(target,
-//                                     std::min<int>(d->identityFeatures.count(), d->knn_defaultK),
-//                                     knn_resultMat,
-//                                     knn_neighbors,
-//                                     knn_distances);
-
-//         // create a map of the nearest neighbors face features lists
-
-//         for (int i = 0; i < knn_neighbors.cols; ++i)
-//         {
-//             if (idProvider->isValidId(knn_neighbors.at<float>(0,i)))
-//             {
-//                 featureSet[knn_neighbors.at<float>(0,i)] = d->identityFeatures[knn_neighbors.at<float>(0,i)];
-//             }
-//         }
-//     }
-//     else
-//     {
-//         featureSet = d->identityFeatures;
-//     }
-
-//     // search through the lists for the closest match
-
-//     label = listSearch(target, featureSet);
-
-//     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: search prediction is: "  << label << "    completed in " << timer.elapsed();
-
-//     return label;
-// }
-
-// int FaceClassifier::predictClassifier(const cv::Mat& target)    const
-// {
-//     int     label           = -1;
-//     cv::Mat knn_resultMat;
-//     cv::Mat knn_neighbors;
-//     cv::Mat knn_distances;
-//     cv::Mat svm_prediction;
-//     IdentityProvider* idProvider = IdentityProvider::instance();
-
-//     QElapsedTimer timer;
-//     timer.start();
-
-//     // stage 1 - compare SVM and KNN classifier results
-
-//     d->svmClassifier->predict(target,
-//                               svm_prediction);
-//     int svm_result = int(svm_prediction.at<float>(0,0));
-
-//     d->knnClassifier->findNearest(target,
-//                                                     //    std::min<int>(d->identityFeatures.count(), d->knn_defaultK),
-//                                                        5,
-//                                                        knn_resultMat,
-//                                                        knn_neighbors,
-//                                                        knn_distances);
-
-//     int knn_result = int(knn_resultMat.at<float>(0,0));
-//     // check if results exist in recognition DB
-
-//     if (!idProvider->isValidId(svm_result))
-//     {
-//         svm_result = -1;
-//     }
-//     if (!idProvider->isValidId(knn_result))
-//     {
-//         knn_result = -1;
-//     }
-
-//     // if the  SVM and KNN classifiers agree it's over 98% correct
-
-//     if (svm_result == knn_result)
-//     {
-//         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier prediction is: "  << svm_result << "    completed in " << timer.elapsed();
-//         return svm_result;
-//     }
-
-//     // Stage 2 - SVM and KNN didn't match
-
-//     // next step is to look at the count and distances returned from the KNN
-//     // we use counts first, if there is a tie for the number of counts, then
-//     // use the average distances. Count only votes within the threshold distance.
-
-//     knn_result = d->knnClassifier->findNearest(target,
-//                                                std::min<int>(d->identityFeatures.count(), d->knn_defaultK),
-//                                                knn_resultMat,
-//                                                knn_neighbors,
-//                                                knn_distances);
-
-//     {
-//         QMap<int, QList<float> > voteDistances;
-
-//         for (int i = 0; i < knn_distances.cols; ++i)
-//         {
-//             float flabel = knn_neighbors.at<float>(0,i);
-//             float dist = knn_distances.at<float>(0,i);
-//             voteDistances[int(flabel)].append(dist);
-//             // qCDebug(DIGIKAM_FACESENGINE_LOG) << "knn_distance " << i << " is " << dist;
-//         }
-
-//         VotingGroups votes;
-
-//         for(auto [key, value] : voteDistances.asKeyValueRange())
-//         {
-//             // verify the key (label) exists in the identity set
-
-//             if (idProvider->isValidId(key))
-//             {
-//                 for(const float& dist : std::as_const(value) )
-//                 {
-//                     // only count votes within the threshold
-//                     if (dist < threshold)
-//                     {
-//                         // divide the distance by the count so the sum is the average
-//                         votes.addVote(key, dist/value.count());
-//                     }
-//                 }
-//             }
-//         }
-
-//         label = votes.winner(MLClassifierFoundation::VotingGroups::VotesLowScore);
-//         // label |= votes.winner(MLClassifierFoundation::VotingGroups::VotesHighScore);
-//         // label |= votes.winner(MLClassifierFoundation::VotingGroups::LowScore);
-//         // label |= votes.winner(MLClassifierFoundation::VotingGroups::HighScore);
-
-//         if (-1 != label)
-//         {
-//             // label = votes.winner(MLClassifierFoundation::VotingGroups::VotesLowScore);
-//             // label = votes.winner(MLClassifierFoundation::VotingGroups::VotesHighScore);
-//             // label = votes.winner(MLClassifierFoundation::VotingGroups::LowScore);
-//             // label = votes.winner(MLClassifierFoundation::VotingGroups::HighScore);
-
-//             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: knearest prediction is: "  << label << "    completed in " << timer.elapsed();
-
-//             return label;
-//         }
-
-//     }
-
-//     // Stage 3 - do brute-force search on set of SVM and KNN labels
-
-//     {
-//         QMap<int, QList<cv::Mat> > featureSet;
-//         if (idProvider->isValidId(svm_result))
-//         {
-//             featureSet[svm_result] = d->identityFeatures[svm_result];
-//         }
-
-//         for (int i = 0; i < knn_neighbors.cols; ++i)
-//         {
-//             if (idProvider->isValidId(knn_neighbors.at<float>(0,i)))
-//             {
-//                 featureSet[knn_neighbors.at<float>(0,i)] = d->identityFeatures[knn_neighbors.at<float>(0,i)];
-//             }
-//         }
-
-//         label = listSearch(target, featureSet);
-//     }
-
-//     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: search prediction is: "  << label << "    completed in " << timer.elapsed();
-
-//     return label;
-// }
 
 } // namespace Digikam
