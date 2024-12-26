@@ -121,8 +121,7 @@ bool FacePipelineReset::finder()
 
     Q_EMIT signalUpdateItemCount(totalItemCount);
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
-    performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
+    pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer);
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
@@ -168,11 +167,7 @@ bool FacePipelineReset::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount,
-                                                                                 thisQueue->size());
-            ++performanceProfileList[MLPipelineStage::Writer].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Writer, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -205,15 +200,12 @@ bool FacePipelineReset::writer()
 
             delete package;
 
-            performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime,
-                                                                                  timer.elapsed());
+            pipelinePerformanceEnd(MLPipelineStage::Writer, timer);
         }
 
         catch (const std::exception& e)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error. Restarting...";
-            std::cerr << e.what() << '\n';
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineReset::writer(): unknown error. " << e.what() << " Restarting...";
         }
 
         catch (...)

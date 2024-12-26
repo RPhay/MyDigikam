@@ -204,6 +204,12 @@ protected:
                 int _processed,
                 const QIcon& _thumbnail);
 
+
+    // pipeline performance profiling
+
+    void pipelinePerformanceStart(const MLPipelineStage& stage, QElapsedTimer& timer);
+    void pipelinePerformanceEnd(const MLPipelineStage& stage, QElapsedTimer& timer);
+    void pipelinePerformanceEnd(const MLPipelineStage& stage, int totalItemCount, QElapsedTimer& timer);
     void showPipelinePerformance() const;
 
 private:

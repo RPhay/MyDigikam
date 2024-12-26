@@ -598,6 +598,32 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
     }
 }
 
+void MLPipelineFoundation::pipelinePerformanceStart(const MLPipelineStage& stage, QElapsedTimer& timer)
+{
+    if (queues.contains(stage))
+    {
+        performanceProfileList[stage].maxQueueCount = qMax(performanceProfileList[stage].maxQueueCount,
+                                                                                    queues[stage]->size());
+    }
+    ++performanceProfileList[stage].itemCount;
+
+    timer.start();
+}
+
+void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, QElapsedTimer& timer)
+{
+    qint64 elapsedTime = timer.elapsed();
+    performanceProfileList[stage].elapsedTime   += elapsedTime;
+    performanceProfileList[stage].maxElapsedTime = qMax((qint64)performanceProfileList[stage].maxElapsedTime, elapsedTime);
+}
+
+void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, int totalItemCount, QElapsedTimer& timer)
+{
+    performanceProfileList[stage].itemCount   = totalItemCount;
+    performanceProfileList[stage].elapsedTime = timer.elapsed();
+    performanceProfileList[stage].maxElapsedTime = performanceProfileList[stage].elapsedTime;
+}
+
 void MLPipelineFoundation::showPipelinePerformance() const
 {
 

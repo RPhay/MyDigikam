@@ -222,6 +222,10 @@ bool FacePipelineEdit::writer()
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
     thumbnailLoadThread->setPriority(QThread::NormalPriority);
 
+    // override the default queue depth
+
+    thisQueue->maxDepth(100000);
+
     while (!cancelled)
     {
         try
@@ -235,10 +239,7 @@ bool FacePipelineEdit::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
-            ++performanceProfileList[MLPipelineStage::Writer].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Writer, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -360,13 +361,12 @@ bool FacePipelineEdit::writer()
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
+            pipelinePerformanceEnd(MLPipelineStage::Writer, timer);
         }
 
         catch (const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error. " << e.what() << " Restarting...";
         }
 
         catch (...)

@@ -135,8 +135,7 @@ bool FacePipelineRetrain::finder()
 
     Q_EMIT signalUpdateItemCount(totalItemCount);
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
-    performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
+    pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer);
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions

@@ -125,8 +125,6 @@ bool FacePipelineRecognize::finder()
 
             for (qlonglong imageId : std::as_const(imageIds))
             {
-                ++performanceProfileList[MLPipelineStage::Finder].itemCount;
-
                 // filter out duplicate image IDs
 
                 if (!filter.contains(imageId))
@@ -146,8 +144,6 @@ bool FacePipelineRecognize::finder()
 
     for (const ItemInfo& info : std::as_const(settings.infos))
     {
-        ++performanceProfileList[MLPipelineStage::Finder].itemCount;
-
         // filter out duplicate image IDs
 
         qlonglong imageId = info.id();
@@ -172,8 +168,7 @@ bool FacePipelineRecognize::finder()
     // end pipeline stage specific code
     //////////////////////////////////////////////////////////////////////////////////////////////
 
-    performanceProfileList[MLPipelineStage::Finder].itemCount   = totalItemCount;
-    performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed();
+    pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer);
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
@@ -226,11 +221,7 @@ bool FacePipelineRecognize::classifier()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount,
-                                                                                     thisQueue->size());
-            ++performanceProfileList[MLPipelineStage::Classifier].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Classifier, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -269,8 +260,7 @@ bool FacePipelineRecognize::classifier()
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Classifier].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime, timer.elapsed());
+            pipelinePerformanceEnd(MLPipelineStage::Classifier, timer);
         }
 
         catch (const std::exception& e)
@@ -332,11 +322,7 @@ bool FacePipelineRecognize::writer()
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount,
-                                                                                 thisQueue->size());
-            ++performanceProfileList[MLPipelineStage::Writer].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Writer, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -363,9 +349,7 @@ bool FacePipelineRecognize::writer()
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Writer].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Writer].maxElapsedTime,
-                                                                                  timer.elapsed());
+            pipelinePerformanceEnd(MLPipelineStage::Writer, timer);
         }
 
         catch (const std::exception& e)

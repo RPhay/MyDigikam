@@ -80,11 +80,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
                 break;
             }
 
-            performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount,
-                                                                   thisQueue->size());
-            ++performanceProfileList[thisStage].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(thisStage, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -114,8 +110,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[thisStage].elapsedTime   += timer.elapsed();
-            performanceProfileList[thisStage].maxElapsedTime = qMax((qint64)performanceProfileList[thisStage].maxElapsedTime, timer.elapsed());
+            pipelinePerformanceEnd(thisStage, timer);
         }
 
         catch (const std::exception& e)
@@ -183,11 +178,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 break;
             }
 
-            performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount,
-                                                                                    thisQueue->size());
-            ++performanceProfileList[MLPipelineStage::Extractor].itemCount;
-
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Extractor, timer);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
@@ -216,9 +207,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             // end pipeline stage specific code
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            performanceProfileList[MLPipelineStage::Extractor].elapsedTime   += timer.elapsed();
-            performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax((qint64)performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime,
-                                                                                     timer.elapsed());
+            pipelinePerformanceEnd(MLPipelineStage::Extractor, timer);
         }
 
         catch (const std::exception& e)
