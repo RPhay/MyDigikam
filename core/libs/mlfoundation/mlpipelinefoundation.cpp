@@ -35,7 +35,6 @@ namespace Digikam
 
 MLPipelineFoundation::MLPipelineFoundation()
 {
-    totalItemCount  = 0;
     threadPool      = new QThreadPool();
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,

@@ -136,8 +136,8 @@ protected:
     QMap<MLPipelineStage, MLPipelineQueue*>             queues;
     QMutex                                              mutex;
     QMutex                                              threadStageMutex;
-    QAtomicInteger<int>                                 itemsProcessed;
-    QAtomicInteger<int>                                 totalItemCount;
+    QAtomicInteger<int>                                 itemsProcessed      = 0;
+    QAtomicInteger<int>                                 totalItemCount      = 0;
     bool                                                cancelled           = false;
     QThreadPool*                                        threadPool          = nullptr;
     QList<QFutureWatcher<bool>* >                       watchList;
