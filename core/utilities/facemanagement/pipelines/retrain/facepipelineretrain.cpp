@@ -153,12 +153,16 @@ bool FacePipelineRetrain::finder()
 
 bool FacePipelineRetrain::loader()
 {
-    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRetrain"), MLPipelineStage::Loader, MLPipelineStage::Extractor);
+    return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRetrain"),
+                                     MLPipelineStage::Loader,
+                                     MLPipelineStage::Extractor);
 }
 
 bool FacePipelineRetrain::extractor()
 {
-    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"), MLPipelineStage::Extractor, MLPipelineStage::Writer);
+    return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"),
+                                        MLPipelineStage::Extractor,
+                                        MLPipelineStage::Writer);
 }
 
 bool FacePipelineRetrain::classifier()
@@ -217,7 +221,11 @@ bool FacePipelineRetrain::writer()
 
             // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed, package->info.name(), package->info.filePath(), package->faceRects.size(), package->thumbnail);
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   package->info.filePath(),
+                   package->faceRects.size(),
+                   package->thumbnail);
 
             // delete the package
 
@@ -226,13 +234,13 @@ bool FacePipelineRetrain::writer()
 
         catch (const std::exception& e)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error.  Restarting...";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error. Restarting...";
             std::cerr << e.what() << '\n';
         }
 
         catch (...)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error.  Restarting...";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error. Restarting...";
 
             if (package)
             {

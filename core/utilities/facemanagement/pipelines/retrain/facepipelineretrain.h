@@ -26,6 +26,8 @@ namespace Digikam
 
 class FacePipelineRetrain : public FacePipelineBase
 {
+    Q_OBJECT
+
 public:
 
     explicit FacePipelineRetrain(const FaceScanSettings& _settings);
@@ -53,7 +55,8 @@ protected:
 private:
 
     FaceDetector    detector;
-    // float           threshold   = 0.5;
+
+private:
 
     FacePipelineRetrain()                                       = delete;
     FacePipelineRetrain(FacePipelineRetrain&)                   = delete;
