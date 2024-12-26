@@ -43,16 +43,6 @@ FacePipelineBase::~FacePipelineBase()
 {
 }
 
-bool FacePipelineBase::start()
-{
-    return MLPipelineFoundation::start();
-}
-
-void FacePipelineBase::cancel()
-{
-    MLPipelineFoundation::cancel();
-}
-
 bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
 {
     // All threads start with the same basic functions

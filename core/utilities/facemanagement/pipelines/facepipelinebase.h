@@ -78,11 +78,6 @@ public:
     explicit FacePipelineBase(const FaceScanSettings& _settings);
     virtual ~FacePipelineBase();
 
-public:
-
-    virtual bool start()    override;
-    virtual void cancel()   override;
-
 protected:
 
     FaceScanSettings                    settings;
