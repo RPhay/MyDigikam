@@ -49,7 +49,7 @@ protected:
 
     bool loadTrainingData()                                   override;
 
-    void slotTrainingComplete();
+    void trainingComplete();
 
 private:
 
@@ -76,6 +76,8 @@ private:
     ~FaceClassifier();
 
     FaceClassifier(FaceClassifier&)                     = delete;
+
+private:
 
     friend class FaceClassifierCreator;
 };

@@ -90,11 +90,13 @@ FaceClassifier::FaceClassifier()
 {
     if (!d)
     {
-        d = new Private;
+        d                   = new Private;
         d->identityProvider = IdentityProvider::instance();
-        retrain();
-    }
 
+        // Use dynamic binding as retrain() function is virtual and called in constructor.
+
+        this->retrain();
+    }
     else
     {
         ++(d->ref);
@@ -212,7 +214,8 @@ bool FaceClassifier::retrain()
 
     // start the training thread
 
-    d->trainingFuture.setFuture(QtConcurrent::run(QThreadPool::globalInstance(),
+    d->trainingFuture.setFuture(QtConcurrent::run(
+                                                  QThreadPool::globalInstance(),
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -226,11 +229,14 @@ bool FaceClassifier::retrain()
 
 #endif
 
-                                                 ));
-    /*
+                                                 )
+    );
+
+/*
         connect(&d->trainingFuture, &QFutureWatcher<bool>::finished,
-                this, &FaceClassifier::slotTrainingComplete);
-    */
+                this, &FaceClassifier::trainingComplete);
+*/
+
     return true;
 }
 
@@ -252,7 +258,7 @@ bool FaceClassifier::loadTrainingData()
     {
         // clear the training waiting flag
 
-        d->trainingWaiting = false;
+        d->trainingWaiting            = false;
 
         // create new map and classifiers.  We'll swap them in at the end
 
@@ -268,7 +274,7 @@ bool FaceClassifier::loadTrainingData()
             cv::Ptr<cv::ml::TrainData> trainData = d->identityProvider->getTrainingData();
 
             // if we have training data, split it into samples and labels
-            
+
             if (nullptr != trainData)
             {
                 cv::Mat samples = trainData->getSamples();
@@ -288,7 +294,6 @@ bool FaceClassifier::loadTrainingData()
                 knn->train(trainData);
                 svm->train(trainData);
             }
-
         }
 
         catch (cv::Exception& e)
@@ -327,12 +332,13 @@ bool FaceClassifier::loadTrainingData()
     }
     while (d->trainingWaiting);
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: training completed in " << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: training completed in "
+                                     << timer.elapsed() << "ms";
 
     return true;
 }
 
-void FaceClassifier::slotTrainingComplete()
+void FaceClassifier::trainingComplete()
 {
     if (d->trainingWaiting)
     {
@@ -359,7 +365,6 @@ int FaceClassifier::predict(const cv::Mat& target) const
 
         label = predictFullSearch(target);
     }
-
     else
     {
         // use the classifier algorithm
@@ -386,16 +391,17 @@ int FaceClassifier::predictFullSearch(const cv::Mat& target)    const
 
     int label = listSearch(target, d->identityFeatures);
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictFullSearch: classifier prediction is: "  << label << "    completed in " << timer.elapsed();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictFullSearch: classifier prediction is: "
+                                     << label << " completed in " << timer.elapsed();
 
     return label;
 }
 
 int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 {
-    int     label           = -1;
-    int     badLabel1       = -1;
-    int     badLabel2       = -1;
+    int     label                      = -1;
+    int     badLabel1                  = -1;
+    int     badLabel2                  = -1;
     cv::Mat knn_resultMat;
     cv::Mat knn_neighbors;
     cv::Mat knn_distances;
@@ -433,13 +439,15 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     // if the  SVM and KNN classifiers agree it's usually over 98% correct unless
     // we have massively unbalanced data so we need to validate the results
 
-    if (svm_result == knn_result && svm_result != -1)
+    if ((svm_result == knn_result) && (svm_result != -1))
     {
         if (validateKNNSVMResult(target, svm_result))
         {
             // we have a match
 
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 1 prediction is: "  << svm_result << "    completed in " << timer.elapsed();
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 1 prediction is: "
+                                             << svm_result << " completed in " << timer.elapsed();
+
             return svm_result;
         }
 
@@ -478,7 +486,9 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
             {
                 // we have a match
 
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 2 prediction is: "  << label << "    completed in " << timer.elapsed();
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 2 prediction is: "
+                                                 << label << " completed in " << timer.elapsed();
+
                 return label;
             }
 
@@ -489,7 +499,6 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
                 badLabel2 = label;
             }
         }
-
     }
 
     // Stage 3 - do brute-force search on distinct set of SVM and KNN labels returned
@@ -534,7 +543,7 @@ bool FaceClassifier::validateKNNSVMResult(const cv::Mat& target, int label) cons
 
     for (const cv::Mat& feature : std::as_const(d->identityFeatures[label]))
     {
-        float distance = 10000.0;
+        float distance = 10000.0F;
 
         // TODO: add a feature compare for OpenFace if we decide to keep it
 
@@ -601,8 +610,10 @@ bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& s
 
     distance = (1.0 - cosDistance);
 
-    return (distance < threshold) &&
-           (norm_l1Distance < l1Threshold);
+    return (
+            (distance        < threshold) &&
+            (norm_l1Distance < l1Threshold)
+           );
 }
 
 } // namespace Digikam
