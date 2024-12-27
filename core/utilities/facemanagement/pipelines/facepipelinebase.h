@@ -80,19 +80,27 @@ public:
 
 protected:
 
-    FaceScanSettings                    settings;
+    FaceScanSettings settings;
 
 protected:
-    bool commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineFoundation::MLPipelineStage thisStage, MLPipelineFoundation::MLPipelineStage nextStage);
-    bool commonFaceThumbnailExtractor(const QString& pipelineName, MLPipelineFoundation::MLPipelineStage thisStage, MLPipelineFoundation::MLPipelineStage nextStage);
+
+    bool commonFaceThumbnailLoader(const QString& pipelineName,
+                                   MLPipelineFoundation::MLPipelineStage thisStage,
+                                   MLPipelineFoundation::MLPipelineStage nextStage);
+
+    bool commonFaceThumbnailExtractor(const QString& pipelineName,
+                                      MLPipelineFoundation::MLPipelineStage thisStage,
+                                      MLPipelineFoundation::MLPipelineStage nextStage);
 
     // queue helper functions
     bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
 
 private:
 
-    FacePipelineBase()                                          = delete;
-    FacePipelineBase(FacePipelineBase&)                         = delete;
+    // Disable
+    FacePipelineBase()                                   = delete;
+    FacePipelineBase(const FacePipelineBase&)            = delete;
+    FacePipelineBase& operator=(const FacePipelineBase&) = delete;
 };
 
 } // namespace Digikam

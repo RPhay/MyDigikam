@@ -81,7 +81,9 @@ public:
 
 private:
 
-    FacePipelinePackageBase(FacePipelinePackageBase&)                       = delete;
+    // Disable
+    FacePipelinePackageBase(const FacePipelinePackageBase&)                 = delete;
+    FacePipelinePackageBase& operator=(const FacePipelinePackageBase&)      = delete;
 };
 
 } // namespace Digikam

@@ -30,8 +30,8 @@ class DIGIKAM_EXPORT MLPipelinePackageFoundation
 {
 public:
 
-    MLPipelinePackageFoundation()                           = default;
-    virtual ~MLPipelinePackageFoundation()                  = default;
+    MLPipelinePackageFoundation()                                              = default;
+    virtual ~MLPipelinePackageFoundation()                                     = default;
 
 public:
 
@@ -40,7 +40,9 @@ public:
 
 private:
 
-    MLPipelinePackageFoundation(MLPipelinePackageFoundation&) = delete;
+    // Disable
+    MLPipelinePackageFoundation(const MLPipelinePackageFoundation&)            = delete;
+    MLPipelinePackageFoundation& operator=(const MLPipelinePackageFoundation&) = delete;
 };
 
 } // namespace Digikam
