@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -53014,6 +53014,34 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "หมวด:"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgid "Removing face"
+msgstr "เอาป้ายกำกับออก"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "<b>กำลังทำการปรับปรุงฐานข้อมูลอัตลักษณ์ของภาพ โปรดรอสักครู่...</b>"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove this Tag"
+msgid "Editing face region"
+msgstr "เอาป้ายกำกับนี้ออก"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgid "Manually adding face"
+msgstr "แมนนวล (M)"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, fuzzy, kde-format
 msgid "Applying face changes"
@@ -72053,10 +72081,6 @@ msgstr "จัดเ&รียงรูปภาพ"
 #, fuzzy
 #~ msgid "<b>Skip Images Already Scanned</b>"
 #~ msgstr "ถูกกำหนดป้ายกำกับแล้ว"
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "หมวด:"
 
 #, fuzzy
 #~ msgid "Skip images already scanned"

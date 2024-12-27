@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -53817,6 +53817,35 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "Comhghaolú:"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove selected tag"
+msgid "Removing face"
+msgstr "Bain an chlib roghnaithe"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database."
+msgid "Editing face tag"
+msgstr "Bunachar sonraí aghaidheanna á nuashonrú."
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove this Tag"
+msgid "Editing face region"
+msgstr "Bain an Chlib Seo"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgid "Manually adding face"
+msgstr "De Láimh"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -71947,10 +71976,6 @@ msgstr "Iompórtáil Íomhánna"
 #, fuzzy
 #~ msgid "<b>Face Recognition</b>"
 #~ msgstr "Ionad na hÍomhá"
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "Comhghaolú:"
 
 #, fuzzy
 #~| msgid "Enter title here."

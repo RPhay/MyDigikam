@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -55562,6 +55562,38 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Deletion"
+msgid "Confirming face"
+msgstr "Επιβεβαίωση διαγραφής"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Να αφαιρεθεί η ετικέτα προσώπου;"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database."
+msgid "Editing face tag"
+msgstr "Ενημέρωση βάσης δεδομένων προσώπων σε εξέλιξη."
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove this Tag"
+msgid "Editing face region"
+msgstr "Αφαίρεση αυτής της ετικέτας"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Κατά Χειροκίνητα και Όνομα"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -75835,11 +75867,6 @@ msgstr "Εισαγωγή αντικειμένων"
 #~| msgid "Scan again and merge results"
 #~ msgid "<b>Scan Again and Merge</b>"
 #~ msgstr "Σάρωση ξανά και συγχώνευση αποτελεσμάτων"
-
-#, fuzzy
-#~| msgid "Confirm Deletion"
-#~ msgid "Confirm Faces"
-#~ msgstr "Επιβεβαίωση διαγραφής"
 
 #~ msgid "Write tags to XMP"
 #~ msgstr "Εγγραφή ετικετών στο XMP"

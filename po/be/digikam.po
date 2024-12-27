@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -49321,6 +49321,37 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Пацвердзіць твары"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Выдаліць тэг твару?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "Звесткі аб імпартаваных відарысах"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Face regions"
+msgid "Editing face region"
+msgstr "Вобласці твару"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Уласнаручна і па назве"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -66058,9 +66089,6 @@ msgstr "Імпарт"
 #~ msgid "Configure"
 #~ msgstr "Наладжванне"
 
-#~ msgid "Confirm Faces"
-#~ msgstr "Пацвердзіць твары"
-
 #, fuzzy
 #~ msgid "Enter title text here."
 #~ msgstr "Колер:"
@@ -67902,10 +67930,6 @@ msgstr "Імпарт"
 #~ msgctxt "@title:tab"
 #~ msgid "Default Settings"
 #~ msgstr "Агульныя настаўленні"
-
-#, fuzzy
-#~ msgid "Editing Images"
-#~ msgstr "Звесткі аб імпартаваных відарысах"
 
 #, fuzzy
 #~ msgid "Captions/Tags"
