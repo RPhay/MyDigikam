@@ -34,7 +34,9 @@ enum MatColorOrder
     MCO_RGB,
     MCO_BGRA = MCO_BGR,
     MCO_RGBA = MCO_RGB,
-    MCO_ARGB
+    MCO_ARGB,
+
+    MCO_INVALID
 };
 
 /** Convert QImage to/from cv::Mat
@@ -77,7 +79,7 @@ QImage mat2Image(const cv::Mat& mat, MatColorOrder order = MCO_BGR, QImage::Form
  * - User must make sure that the color channels order is the same as
  *   the color channels order requried by QImage.
  */
-cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* order = nullptr);
+cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* const order = nullptr);
 QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint = QImage::Format_Invalid);
 
 } // namespace Digikam
