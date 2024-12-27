@@ -32,10 +32,7 @@ namespace Digikam
 {
 
 class DImg;
-// class FacePipelinePackage;
 class FaceScanSettings;
-// class FacePipelinePackageNotify;
-// class FacePipelinePackageNotify::Ptr;
 
 class FacesEngine : public MaintenanceTool
 {
@@ -63,7 +60,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotStart()                                                override;
-    // void slotContinueAlbumListing();
     void slotUpdateItemCount(const qlonglong itemCount);
     void slotImagesSkipped(const MLPipelinePackageNotify::Ptr&);
     void slotShowOneDetected(const MLPipelinePackageNotify::Ptr&);

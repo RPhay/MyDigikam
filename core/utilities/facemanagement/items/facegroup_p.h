@@ -32,7 +32,6 @@
 #include "albummanager.h"
 #include "clickdragreleaseitem.h"
 #include "dimgpreviewitem.h"
-// #include "facepipeline.h"
 #include "faceitem.h"
 #include "facetags.h"
 #include "faceutils.h"
@@ -103,7 +102,6 @@ public:
     CheckableAlbumFilterModel* filterModel              = nullptr;
     TagPropertiesFilterModel*  filteredModel            = nullptr;
 
-    // FacePipeline               editPipeline;
     FacePipelineEdit*          newEditPipeline          = nullptr;
 
     FaceGroup* const           q                        = nullptr;

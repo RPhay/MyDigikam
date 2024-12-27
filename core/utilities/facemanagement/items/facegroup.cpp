@@ -21,7 +21,7 @@ namespace Digikam
 
 FaceGroup::FaceGroup(GraphicsDImgView* const view)
     : QObject(view),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->view                 = view;
     d->visibilityController = new ItemVisibilityController(this);
@@ -35,10 +35,11 @@ FaceGroup::FaceGroup(GraphicsDImgView* const view)
 
     connect(view->previewItem(), SIGNAL(stateChanged(int)),
             this, SLOT(itemStateChanged(int)));
-
-    // d->editPipeline.plugDatabaseEditor();
-    // d->editPipeline.plugTrainer();
-    // d->editPipeline.construct();
+/*
+    d->editPipeline.plugDatabaseEditor();
+    d->editPipeline.plugTrainer();
+    d->editPipeline.construct();
+*/
 }
 
 FaceGroup::~FaceGroup()
@@ -52,9 +53,9 @@ void FaceGroup::itemStateChanged(int itemState)
     {
         case DImgPreviewItem::NoImage:
 
-        /*
-                case DImgPreviewItem::Loading:
-        */
+/*
+        case DImgPreviewItem::Loading:
+*/
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
@@ -167,21 +168,19 @@ static QPointF closestPointOfRect(const QPointF& p, const QRectF& r)
 {
     QPointF cp = p;
 
-    if (p.x() < r.left())
+    if      (p.x() < r.left())
     {
         cp.setX(r.left());
     }
-
     else if (p.x() > r.right())
     {
         cp.setX(r.right());
     }
 
-    if (p.y() < r.top())
+    if      (p.y() < r.top())
     {
         cp.setY(r.top());
     }
-
     else if (p.y() > r.bottom())
     {
         cp.setY(r.bottom());
@@ -205,7 +204,7 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
             !closestItem             ||
             (distance < minDistance) ||
             ((distance == 0) && (p - r.center()).manhattanLength() < minCenterDistance)
-        )
+           )
         {
             closestItem = item;
             minDistance = distance;
@@ -244,7 +243,6 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
         {
             setVisibleItem(item);
         }
-
         else
         {
             // Get all items close to pos.
@@ -370,13 +368,8 @@ void FaceGroup::markAllAsIgnored()
         if (
             item->face().isUnknownName()   ||
             item->face().isUnconfirmedName()
-        )
+           )
         {
-            // FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
-            //                                              FaceTags::ignoredPersonTagId());
-
-            // item->setFace(face);
-
             FaceTagsIface face = d->newEditPipeline->editTag(d->info, item->face(),
                                                              FaceTags::ignoredPersonTagId());
             item->setFace(face);
@@ -413,7 +406,7 @@ void FaceGroup::slotAlbumRenamed(Album* album)
         if (
             !item->face().isNull() &&
             (item->face().tagId() == album->id())
-        )
+           )
         {
             item->updateCurrentTag();
         }
@@ -441,15 +434,14 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             action.shallAssignTag() &&
             (action.tagId() != face.tagId())
         )
-    )
+       )
     {
         int tagId = 0;
 
-        if (action.shallAssignTag())
+        if      (action.shallAssignTag())
         {
             tagId = action.tagId();
         }
-
         else if (action.shallCreateNewTag())
         {
             QStringList faceNames = action.newTagName().split(QLatin1Char('/'),
@@ -457,7 +449,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
             if (!faceNames.isEmpty())
             {
-                tagId             = action.parentTagId();
+                tagId = action.parentTagId();
 
                 for (const QString& name : std::as_const(faceNames))
                 {
@@ -477,10 +469,6 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to get person tag";
             return;
         }
-
-        // face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
-
-        // item->setFace(face);
 
         face = d->newEditPipeline->confirmFace(d->info, face, tagId, true);
         item->setFace(face);
@@ -514,7 +502,6 @@ void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
     if (faceList.size() == d->MaxFaceListSize)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
-        // d->editPipeline.remove(d->info, item->face());
         d->newEditPipeline->removeFace(d->info, item->face());
 
         item->setFace(FaceTagsIface());
@@ -552,15 +539,8 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
                 preview.rotateAndFlip(d->info.orientation());
             }
 
-            // face = d->editPipeline.editRegion(d->info, preview,
-            //                                   face, currentRegion);
             face = d->newEditPipeline->editRegion(d->info, face, currentRegion, preview, false);
         }
-
-        // face = d->editPipeline.editTag(d->info, face,
-        //                                FaceTags::ignoredPersonTagId());
-
-        // item->setFace(face);
 
         face = d->newEditPipeline->editTag(d->info, face,
                                            FaceTags::ignoredPersonTagId());
@@ -659,9 +639,6 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
         }
 
         TagRegion addRegion(faceRect);
-        // FaceTagsIface face   = d->editPipeline.addManually(d->info,
-        //                                                    preview,
-        //                                                    addRegion);
         FaceTagsIface face   = d->newEditPipeline->addManually(d->info,
                                                                preview,
                                                                addRegion,
@@ -722,10 +699,6 @@ void FaceGroup::applyItemGeometryChanges()
 
         if (item->face().region() != currentRegion)
         {
-            // d->editPipeline.editRegion(d->info,
-            //                            preview,
-            //                            item->face(),
-            //                            currentRegion);
             d->newEditPipeline->editRegion(d->info,
                                            item->face(),
                                            currentRegion,

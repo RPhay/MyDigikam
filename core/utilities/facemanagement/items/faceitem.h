@@ -56,6 +56,7 @@ protected:
 private:
 
     // Disable
+
     FaceItem()                           = delete;
     FaceItem(const FaceItem&)            = delete;
     FaceItem& operator=(const FaceItem&) = delete;

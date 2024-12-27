@@ -83,6 +83,7 @@ public:
 private:
 
     // Disable
+
     BenchmarkMessageDisplay(QWidget*);
 };
 
@@ -93,6 +94,8 @@ class Q_DECL_HIDDEN FacesDetector::Private
 public:
 
     Private() = default;
+
+public:
 
     FacesDetector::InputSource source       = FacesDetector::Albums;
     bool                       benchmark    = false;
@@ -109,7 +112,7 @@ public:
 
 FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("FacesDetector"), parent),
-      d(new Private)
+      d              (new Private)
 {
     if (settings.task == FaceScanSettings::RetrainAll)
     {
@@ -121,7 +124,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         d->pipeline.plugTrainer();
         d->pipeline.construct();
     }
-
     else if (settings.task == FaceScanSettings::BenchmarkDetection)
     {
         d->benchmark = true;
@@ -132,7 +134,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         {
             d->pipeline.plugParallelFaceDetectors();
         }
-
         else
         {
             d->pipeline.plugFaceDetector();
@@ -141,7 +142,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         d->pipeline.plugDetectionBenchmarker();
         d->pipeline.construct();
     }
-
     else if (settings.task == FaceScanSettings::BenchmarkRecognition)
     {
         d->benchmark = true;
@@ -150,11 +150,10 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         d->pipeline.plugRecognitionBenchmarker();
         d->pipeline.construct();
     }
-
     else if (
-        (settings.task == FaceScanSettings::DetectAndRecognize) ||
-        (settings.task == FaceScanSettings::Detect)
-    )
+             (settings.task == FaceScanSettings::DetectAndRecognize) ||
+             (settings.task == FaceScanSettings::Detect)
+            )
     {
         FacePipeline::FilterMode filterMode;
         FacePipeline::WriteMode  writeMode;
@@ -164,13 +163,11 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             filterMode = FacePipeline::SkipAlreadyScanned;
             writeMode  = FacePipeline::NormalWrite;
         }
-
         else if (settings.alreadyScannedHandling == FaceScanSettings::Rescan)
         {
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::OverwriteUnconfirmed;
         }
-
         else if (settings.alreadyScannedHandling == FaceScanSettings::ClearAll)
         {
             // Delete existing identities from FacesDb.
@@ -184,7 +181,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::OverwriteAllFaces;
         }
-
         else // FaceScanSettings::Merge.
         {
             filterMode = FacePipeline::ScanAll;
@@ -198,7 +194,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         {
             d->pipeline.plugParallelFaceDetectors();
         }
-
         else
         {
             d->pipeline.plugFaceDetector();
@@ -206,9 +201,9 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
 
         if (settings.task == FaceScanSettings::DetectAndRecognize)
         {
-            /*
-                        d->pipeline.plugRerecognizingDatabaseFilter();
-            */
+/*
+            d->pipeline.plugRerecognizingDatabaseFilter();
+*/
             d->pipeline.plugFaceRecognizer();
         }
 
@@ -255,33 +250,29 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     if (
         settings.wholeAlbums &&
         (settings.task == FaceScanSettings::RecognizeMarkedFaces)
-    )
+       )
     {
         d->idsTodoList   = CoreDbAccess().db()->getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
                                                                               ImageTagPropertyName::autodetectedFace());
 
         d->source        = FacesDetector::Ids;
     }
-
     else if (settings.task == FaceScanSettings::RetrainAll)
     {
         d->idsTodoList   = CoreDbAccess().db()->getImagesWithProperty(ImageTagPropertyName::tagRegion());
 
         d->source        = FacesDetector::Ids;
     }
-
     else if (settings.albums.isEmpty() && settings.infos.isEmpty())
     {
         d->albumTodoList = AlbumManager::instance()->allPAlbums();
         d->source        = FacesDetector::Albums;
     }
-
     else if (!settings.albums.isEmpty())
     {
         d->albumTodoList = settings.albums;
         d->source        = FacesDetector::Albums;
     }
-
     else
     {
         d->infoTodoList  = settings.infos;
@@ -308,13 +299,11 @@ void FacesDetector::slotStart()
         {
             setLabel(i18n("Scan for faces in album: %1", d->albumTodoList.first()->title()));
         }
-
         else
         {
             setLabel(i18n("Scan for faces in %1 albums", d->albumTodoList.size()));
         }
     }
-
     else if (d->infoTodoList.size() > 0)
     {
         if (d->infoTodoList.size() == 1)
@@ -327,7 +316,6 @@ void FacesDetector::slotStart()
             setLabel(i18n("Scan for faces in %1 images", d->infoTodoList.size()));
         }
     }
-
     else
     {
         setLabel(i18n("Updating faces database"));
@@ -335,7 +323,7 @@ void FacesDetector::slotStart()
 
     ProgressManager::addProgressItem(this);
 
-    if (d->source == FacesDetector::Infos)
+    if      (d->source == FacesDetector::Infos)
     {
         int total = d->infoTodoList.count();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
@@ -353,7 +341,6 @@ void FacesDetector::slotStart()
 
         return;
     }
-
     else if (d->source == FacesDetector::Ids)
     {
         ItemInfoList itemInfos(d->idsTodoList);
@@ -390,7 +377,6 @@ void FacesDetector::slotStart()
         {
             hasPAlbums = true;
         }
-
         else
         {
             hasTAlbums = true;
@@ -509,7 +495,6 @@ void FacesDetector::slotDone()
     {
         lbl.append(i18n("Items scanned for faces: %1\n", totalItems()));
     }
-
     else
     {
         lbl.append(i18n("Item scanned for faces: %1\n", totalItems()));
@@ -519,7 +504,6 @@ void FacesDetector::slotDone()
     {
         lbl.append(i18n("Faces processed: %1", d->totalFacesFound));
     }
-
     else
     {
         lbl.append(i18n("Face processed: %1", d->totalFacesFound));
@@ -534,7 +518,7 @@ void FacesDetector::slotDone()
     // Switch on scanned for faces flag on digiKam config file.
 
     KSharedConfig::openConfig()->group(QLatin1String("General Settings"))
-    .writeEntry("Face Scanner First Run", true);
+                                       .writeEntry("Face Scanner First Run", true);
 
     MaintenanceTool::slotDone();
 }
@@ -561,7 +545,6 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& package)
     {
         lbl.append(i18n("No face"));
     }
-
     else
     {
         lbl.append(i18np("1 face", "%1 faces", qMax(package.detectedFaces.count(), package.processedFaceCount)));

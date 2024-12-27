@@ -39,21 +39,11 @@ QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
     closeItems.removeOne(view->previewItem());
 
     return closeItems;
-
-    /*
-        qreal distance;
-        d->faceGroup->closestItem(mapToScene(e->pos()), &distance);
-
-        if (distance < 15)
-        {
-            return false;
-        }
-    */
 }
 
 void FaceGroup::Private::applyVisible()
 {
-    if (state == NoFaces)
+    if      (state == NoFaces)
     {
         // If not yet loaded, load. load() will transitionToVisible after loading.
 
@@ -102,9 +92,9 @@ FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
 
     AssignNameWidget* const assignWidget = createAssignNameWidget(face, identifier);
     item->setHudWidget(assignWidget);
-    /*
+/*
         new StyleSheetDebugger(assignWidget);
-    */
+*/
     visibilityController->addItem(item);
 
     items << item;
@@ -169,20 +159,20 @@ AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface
     assignWidget->setAlbumModels(tagModel, filteredModel, filterModel);
     assignWidget->setParentTag(AlbumManager::instance()->findTAlbum(FaceTags::personParentTag()));
 
-    q->connect(assignWidget, SIGNAL(assigned(TaggingAction, ItemInfo, QVariant)),
-               q, SLOT(slotAssigned(TaggingAction, ItemInfo, QVariant)));
+    q->connect(assignWidget, SIGNAL(assigned(TaggingAction,ItemInfo,QVariant)),
+               q, SLOT(slotAssigned(TaggingAction,ItemInfo,QVariant)));
 
-    q->connect(assignWidget, SIGNAL(rejected(ItemInfo, QVariant)),
-               q, SLOT(slotRejected(ItemInfo, QVariant)));
+    q->connect(assignWidget, SIGNAL(rejected(ItemInfo,QVariant)),
+               q, SLOT(slotRejected(ItemInfo,QVariant)));
 
-    q->connect(assignWidget, SIGNAL(ignored(ItemInfo, QVariant)),
-               q, SLOT(slotIgnored(ItemInfo, QVariant)));
+    q->connect(assignWidget, SIGNAL(ignored(ItemInfo,QVariant)),
+               q, SLOT(slotIgnored(ItemInfo,QVariant)));
 
-    q->connect(assignWidget, SIGNAL(ignoredClicked(ItemInfo, QVariant)),
-               q, SLOT(slotIgnoredClicked(ItemInfo, QVariant)));
+    q->connect(assignWidget, SIGNAL(ignoredClicked(ItemInfo,QVariant)),
+               q, SLOT(slotIgnoredClicked(ItemInfo,QVariant)));
 
-    q->connect(assignWidget, SIGNAL(labelClicked(ItemInfo, QVariant)),
-               q, SLOT(slotLabelClicked(ItemInfo, QVariant)));
+    q->connect(assignWidget, SIGNAL(labelClicked(ItemInfo,QVariant)),
+               q, SLOT(slotLabelClicked(ItemInfo,QVariant)));
 
     return assignWidget;
 }
