@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-12-18 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -51639,6 +51639,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Byrja"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Staðfesta andlit"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Fjarlægja andlitsmerki?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Uppfæri andlitagagnagrunn"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Fjarlægja þetta andlitssvæði"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Eftir handvirkri röðun og nafni"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -71213,9 +71246,6 @@ msgstr "Flytja inn atriði"
 #~ "hægt að bæta niðurstöður andlitakennsla með því að endurbyggja "
 #~ "þjálfunargögnin. Það má gera með því að fara í Verkfæri -> Viðhald -> "
 #~ "Finna og þekkja andlit -> Hreinsa og endurbyggja þjálfunargögn."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Staðfesta andlit"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

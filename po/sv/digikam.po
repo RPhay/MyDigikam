@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-12-03 21:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -51707,6 +51707,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Börja"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Bekräfta ansikten"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Ta bort ansiktsetikett?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Uppdaterar ansiktsdatabasen"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Ta bort det här ansiktsområdet"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Enligt manuellt och namn"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -71381,9 +71414,6 @@ msgstr "Importera objekt"
 #~ "ansiktsresultaten också förbättras genom att skapa om inlärningsdata. Det "
 #~ "kan göras via Verktyg -> Underhåll -> Detektera och känn igen ansikten -> "
 #~ "Rensa och bygg om all inlärningsdata."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Bekräfta ansikten"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -48715,6 +48715,31 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "Tetapkan"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+msgid "Removing face"
+msgstr "Buang Kumpulan"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "Songsangkan Warna"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+msgid "Editing face region"
+msgstr "Buang Kumpulan"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+msgid "Manually adding face"
+msgstr "Manual"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -64396,10 +64421,6 @@ msgstr "Sharuzzaman Ahmat Raslan"
 #~ msgstr "Namafail"
 
 #, fuzzy
-#~ msgid "Edit placemark"
-#~ msgstr "Songsangkan Warna"
-
-#, fuzzy
 #~ msgid "Style, Color"
 #~ msgstr "Warna:"
 
@@ -65122,10 +65143,6 @@ msgstr "Sharuzzaman Ahmat Raslan"
 #, fuzzy
 #~ msgid "<b>Face Recognition</b>"
 #~ msgstr "Pilihan"
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "Tetapkan"
 
 #, fuzzy
 #~ msgid "Enter title text here."

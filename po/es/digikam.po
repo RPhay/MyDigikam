@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
-"PO-Revision-Date: 2024-12-23 20:35+0100\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
+"PO-Revision-Date: 2024-12-26 20:04+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -52286,6 +52286,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Empezar"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Confirmar caras"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "¿Eliminar etiqueta de cara?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Actualizando la base de datos de caras"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Eliminar esta región de cara"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "De forma manual y por nombre"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -52378,28 +52411,24 @@ msgstr ""
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Escanear imágenes"
+msgstr "Escanear nuevas imágenes"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Escanear imágenes"
+msgstr "Escanear todas las imágenes"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Reconocer caras"
+msgstr "Reconocer caras solamente"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
@@ -61377,16 +61406,10 @@ msgid "Reset and clear all faces and training"
 msgstr "Reiniciar y borrar todas las caras y los datos de entrenamiento"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "This will clear all detected and tagged faces, and then rescan images to "
-#| "detect faces."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr ""
-"Esto borrará todas las caras detectadas y etiquetadas, y volverá a escanear "
-"todas las imágenes para detectar caras."
+msgstr "Esto borrará todas las caras detectadas y etiquetadas."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
@@ -61532,19 +61555,15 @@ msgid "Warning"
 msgstr "Advertencia"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:400
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-#| "faces? You’ll need to start tagging unknown faces again before any faces "
-#| "can be recognized."
+#, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
 "¿Seguro que quiere borrar todas las caras confirmadas, no confirmadas y "
-"desconocidas? Tendrá que volver a etiquetar las caras desconocidas antes de "
-"poder reconocer caras."
+"desconocidas? Tendrá que volver a escanear las imágenes y empezar a "
+"etiquetar las caras desconocidas antes de poder reconocer caras."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:409
@@ -61832,19 +61851,17 @@ msgstr[1] "%1 caras"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:382
 #, kde-format
 msgid "Error starting face detection."
-msgstr ""
+msgstr "Ha ocurrido un error al iniciar la detección de caras."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:455
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "rutas encontradas: %1"
+msgstr "Caras encontradas: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:460
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "rutas encontradas: %1"
+msgstr "Cara encontrada: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -72003,9 +72020,6 @@ msgstr "Elementos importados"
 #~ "datos de entrenamiento. Esto se puede hacer usando «Herramientas -> "
 #~ "Mantenimiento -> Detectar y reconocer caras -> Borrar y reconstruir todos "
 #~ "los datos de entrenamiento»."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Confirmar caras"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

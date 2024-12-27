@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-12-25 08:18+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -51850,6 +51850,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Začni"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Potrdite obraze"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Odstrani značko obraza?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Posodabljanje podatkovne zbirke obrazov"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Odstrani to oznako obraza"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Ročno in po imenu"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -71256,9 +71289,6 @@ msgstr "Predmeti uvoza"
 #~ "obraza izboljša tudi ponovno izgradnjo podatkov o učenju. To lahko "
 #~ "storite z orodji -> Vzdrževanje -> Zaznaj in prepoznaj obraze -> Počisti "
 #~ "in obnovi vse učne podatke."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Potrdite obraze"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

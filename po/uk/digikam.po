@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-12-25 09:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -52439,6 +52439,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Почати"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Підтвердження облич"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Вилучити мітки облич?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Оновлюється база даних облич"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Вилучити цю область обличчя"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "За додаванням вручну і назвою"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -72147,9 +72180,6 @@ msgstr "Імпортовані пункти"
 #~ "Зробити це можна за допомогою пункту меню «Інструменти -> Супровід -> "
 #~ "Виявити і розпізнати обличчя -> Вилучити і повторно створити всі "
 #~ "тренувальні дані»."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Підтвердження облич"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

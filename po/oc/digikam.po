@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -50174,6 +50174,35 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Confirming face"
+msgstr "Colors"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "images"
+msgid "Removing face"
+msgstr "imatges"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Editing face tag"
+msgstr "Colors"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "images"
+msgid "Editing face region"
+msgstr "imatges"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, kde-format
+msgid "Manually adding face"
+msgstr ""
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -65428,11 +65457,6 @@ msgstr ""
 #~ msgstr "Diàpo"
 
 #, fuzzy
-#~| msgid "images"
-#~ msgid "Decoding surfaces"
-#~ msgstr "imatges"
-
-#, fuzzy
 #~| msgid "Slide"
 #~ msgctxt "@option: video filter"
 #~ msgid "Video"
@@ -66100,11 +66124,6 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Colors"
-#~ msgid "Edit placemark"
-#~ msgstr "Colors"
-
-#, fuzzy
-#~| msgid "Colors"
 #~ msgid "Style, Color"
 #~ msgstr "Colors"
 
@@ -66684,11 +66703,6 @@ msgstr ""
 #~ msgid ""
 #~ "New tool to share items on the network with a Motion JPEG stream server."
 #~ msgstr "imatges"
-
-#, fuzzy
-#~| msgid "Colors"
-#~ msgid "Confirm Faces"
-#~ msgstr "Colors"
 
 #, fuzzy
 #~| msgid "Colors"

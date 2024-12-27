@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -56163,6 +56163,37 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Deletion"
+msgid "Confirming face"
+msgstr "Confirmar exclusão"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Remover etiqueta de rosto?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database."
+msgid "Editing face tag"
+msgstr "Atualizando o banco de dados de rostos."
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove this Tag"
+msgid "Editing face region"
+msgstr "Remover esta etiqueta"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgid "Manually adding face"
+msgstr "Manual"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -76867,11 +76898,6 @@ msgstr "Importar itens"
 #~| msgid "Scan again and merge results"
 #~ msgid "<b>Scan Again and Merge</b>"
 #~ msgstr "Analisar novamente e mesclar os resultados"
-
-#, fuzzy
-#~| msgid "Confirm Deletion"
-#~ msgid "Confirm Faces"
-#~ msgstr "Confirmar exclusão"
 
 #~ msgid "Write tags to XMP"
 #~ msgstr "Gravar as etiquetas no XMP"

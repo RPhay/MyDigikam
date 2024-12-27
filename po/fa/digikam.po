@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -51316,6 +51316,31 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "همبستگی:"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+msgid "Removing face"
+msgstr "بازنشانی شمایل برچسب"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+msgid "Editing face region"
+msgstr "حذف این برچسب"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+msgid "Manually adding face"
+msgstr "راهنما"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, fuzzy, kde-format
 msgid "Applying face changes"
@@ -69007,10 +69032,6 @@ msgstr "&مرتب‌سازی تصاویر‌"
 #, fuzzy
 #~ msgid "<b>Skip Images Already Scanned</b>"
 #~ msgstr "برچسبهای قبلاً انتساب‌شده"
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "همبستگی:"
 
 #, fuzzy
 #~ msgid "Write tags to XMP"

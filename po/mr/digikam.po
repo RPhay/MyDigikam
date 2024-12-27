@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -50870,6 +50870,33 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "(निवड नाही)"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove filter"
+msgid "Removing face"
+msgstr "गाळणी काढून टाका"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+msgid "Editing face region"
+msgstr "घटक काढून टाका"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgid "Manually adding face"
+msgstr "स्वहस्ते"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -67965,10 +67992,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "<b>Face Recognition</b>"
 #~ msgstr "प्रतिमेचे स्थान"
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "(निवड नाही)"
 
 #, fuzzy
 #~ msgid "Enter title text here."

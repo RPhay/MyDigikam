@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -50997,6 +50997,33 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+msgid "Confirming face"
+msgstr "कोई चयन नहीं"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgid "Removing face"
+msgstr "टैग हटाएँ"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+msgid "Editing face region"
+msgstr "यह टैग मिटाएँ"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgid "Manually adding face"
+msgstr "हस्तचालित"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, fuzzy, kde-format
 msgid "Applying face changes"
@@ -68323,10 +68350,6 @@ msgstr "छवियाँ छांटें (&S)"
 #, fuzzy
 #~ msgid "<b>Skip Images Already Scanned</b>"
 #~ msgstr "टैग्स पहले से आबंटित है."
-
-#, fuzzy
-#~ msgid "Confirm Faces"
-#~ msgstr "कोई चयन नहीं"
 
 #, fuzzy
 #~ msgid "Skip images already scanned"

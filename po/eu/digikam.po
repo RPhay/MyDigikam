@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2024-08-27 23:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -54086,6 +54086,36 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Deletion"
+msgid "Confirming face"
+msgstr "Berretsi ezabatzea"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgid "Removing face"
+msgstr "Kendu etiketa"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+msgid "Editing face tag"
+msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove this Tag"
+msgid "Editing face region"
+msgstr "Kendu etiketa hau"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Eskuz eta izenaren arabera"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -73699,11 +73729,6 @@ msgstr "Inportatu elementuak"
 #, fuzzy
 #~ msgid "<b>Skip Images Already Scanned</b>"
 #~ msgstr "Etiketak jadanik esleituta daude"
-
-#, fuzzy
-#~| msgid "Confirm Deletion"
-#~ msgid "Confirm Faces"
-#~ msgstr "Berretsi ezabatzea"
 
 #~ msgid "Write tags to XMP"
 #~ msgstr "Idatzi etiketak XMPra"

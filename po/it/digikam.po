@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
-"PO-Revision-Date: 2024-12-10 19:35+0100\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
+"PO-Revision-Date: 2024-12-23 20:36+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -673,7 +673,7 @@ msgstr "Raggruppa i selezionati qui"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
-msgstr "Raggruppa i selezionati per Tempo"
+msgstr "Raggruppa i selezionati per tempo"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:146
 #, kde-format
@@ -7038,7 +7038,6 @@ msgstr ""
 "Questa libreria è disponibile nel tuo sistema ma non è in grado di "
 "codificare l'immagine con una profondità di colore adatta."
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:84
 #, kde-kuit-format
 msgctxt "@info"
@@ -7226,7 +7225,6 @@ msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
 msgstr "Un caricatore di immagini basato sul codificatore Libjpeg"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
@@ -7305,7 +7303,6 @@ msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Un caricatore di immagini basato sul codificatore Libjasper"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
@@ -7362,7 +7359,6 @@ msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Un caricatore di immagini basato sui codificatori ImageMagick"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@info"
@@ -7437,7 +7433,6 @@ msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr "Un caricatore di immagini basato sul codificatore Libpgf"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
 #, kde-kuit-format
 msgctxt "@info"
@@ -7500,7 +7495,6 @@ msgctxt "@info"
 msgid "An image loader based on Libpng codec"
 msgstr "Un caricatore di immagini basato sul codificatore Libpng"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
@@ -39888,7 +39882,7 @@ msgstr "Modifica il titolo del tag"
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
-msgstr "Reimposta l'icona del tag"
+msgstr "Reimposta icona del tag"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
 #: core/libs/tags/manager/tagsmanager.cpp:733
@@ -40113,7 +40107,7 @@ msgstr "Modifica il titolo dal tag selezionato."
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
-"Ripristina l'icona ai tag selezionati. Funziona con la selezione multipla."
+"Reimposta l'icona ai tag selezionati. Funziona con la selezione multipla."
 
 #: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
@@ -44764,13 +44758,11 @@ msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Colore"
 
-# ML XXX Controllare!
-# se si riferisce a "Sotto-campionatura cromatica:" ci vuole "Nessuna"
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
-msgstr "Nessuno"
+msgstr "Nessuna"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, kde-format
@@ -50189,14 +50181,14 @@ msgstr "Scorri l'elemento attivo al centro della barra delle miniature"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Memorizza le miniature sul disco per un riuso più rapido"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Deseleziona questa opzione se non vuoi usare l'antialias per ridimensionare."
+"Disabilita questa opzione se non vuoi usare che le miniature siano "
+"memorizzate nella cache sul disco."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -52280,6 +52272,39 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Inizia"
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Confirm Faces"
+msgid "Confirming face"
+msgstr "Conferma i volti"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove face tag?"
+#| msgid_plural "Remove face tags?"
+msgid "Removing face"
+msgstr "Rimuovere il tag volto?"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Updating faces database"
+msgid "Editing face tag"
+msgstr "Aggiornamento della banca dati dei volti"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove this face region"
+msgid "Editing face region"
+msgstr "Rimuovi quest'area del viso"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Manual and Name"
+msgid "Manually adding face"
+msgstr "Manualmente e per nome"
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -53652,7 +53677,7 @@ msgstr "Villaggio"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
-msgstr "Caselle di &informazioni"
+msgstr "Riquadri &informativi"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, kde-format
@@ -57835,7 +57860,7 @@ msgstr "Aggiungi tag del villaggio"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:194
 #, kde-format
 msgid "Add hamlet tag"
-msgstr "Aggiungi tag della località"
+msgstr "Aggiungi tag della frazione"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:196
 #, kde-format
@@ -60098,7 +60123,6 @@ msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Decrescente"
 
-# &?
 #: core/utilities/import/main/importui.cpp:459
 #, kde-format
 msgctxt "@title:menu"
@@ -60652,25 +60676,7 @@ msgstr ""
 "un contenitore senza perdita di dati con supporto dei metadati.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -60695,18 +60701,18 @@ msgstr ""
 "precedente (da 1 a 31)</p><p><b>dd</b>: il giorno come un numero con uno "
 "zero precedente (da 01 a 31)</p><p><b>ddd</b>: l'abbreviazione del nome del "
 "giorno tradotto (es.: da «lun» a «dom»)</p><p><b>dddd</b>: la versione lunga "
-"del nome del giorno tradotto (es: da «lunedì» a «domenica»).</p><p><b>M</b>: "
+"del nome del giorno tradotto (es: da «lunedì» a «domenica»)</p><p><b>M</b>: "
 "il mese come un numero senza uno zero precedente (da 1 a 12)</p><p><b>MM</"
 "b>: il mese come un numero con uno zero precedente (da 01 a 12)</"
 "p><p><b>MMM</b>: l'abbreviazione del nome del mese tradotto (es.: da «gen» a "
 "«dic»)</p><p><b>MMMM</b>: il nome lungo del mese tradotto (es.: da «gennaio» "
 "a «dicembre»)</p><p><b>yy</b>: l'anno come un numero a due cifre (es.: da 00 "
-"a 99)</p><p><b>yyyy</b>: l'anno come un numero a 4 cifre (es. 2012)</"
+"a 99)</p><p><b>yyyy</b>: l'anno come un numero a quattro cifre (es. 2012)</"
 "p><p>Tutti gli altri caratteri saranno trattati come testo. Qualsiasi "
 "sequenza di caratteri racchiusa tra virgolette singole sarà trattata come "
 "testo e non usata nell'espressione. Esempi, se la data è il 20 luglio 1969:</"
-"p><p><b>dd.MM.yyyy</b>: 20.07.1969</p><p><b>ddd MMMM d yy</b>: dom luglio 20 "
-"69</p><p><b>'Foto scattata domenica' dddd</b>: Foto scattata domenica</p>"
+"p><p><b>dd.MM.yyyy</b>: 20.07.1969</p><p><b>ddd d MMMM yy</b>: dom 20 luglio "
+"69</p><p><b>'Foto scattata ' dddd</b>: Foto scattata domenica</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
@@ -71857,9 +71863,6 @@ msgstr "Importa elementi"
 #~ "di addestramento, mediante Strumenti -> Manutenzione -> Rileva e "
 #~ "riconosci i volti -> Azzera e ricostruisci tutte le informazioni di "
 #~ "addestramento."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Conferma i volti"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

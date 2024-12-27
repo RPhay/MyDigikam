@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 01:58+0000\n"
+"POT-Creation-Date: 2024-12-27 01:56+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -50304,6 +50304,35 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Confirming face"
+msgstr "रँग"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#, fuzzy, kde-format
+#| msgid "Remove item"
+msgid "Removing face"
+msgstr "मद हटाबू"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Editing face tag"
+msgstr "रँग"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove item"
+msgid "Editing face region"
+msgstr "मद हटाबू"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#, kde-format
+msgid "Manually adding face"
+msgstr ""
+
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
 #, kde-format
 msgid "Applying face changes"
@@ -65672,11 +65701,6 @@ msgstr ""
 #~ msgstr "वीडियो"
 
 #, fuzzy
-#~| msgid "Remove item"
-#~ msgid "Decoding surfaces"
-#~ msgstr "मद हटाबू"
-
-#, fuzzy
 #~| msgid "Video"
 #~ msgctxt "@option: video filter"
 #~ msgid "Video"
@@ -66923,11 +66947,6 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Colors"
-#~ msgid "Edit placemark"
-#~ msgstr "रँग"
-
-#, fuzzy
-#~| msgid "Colors"
 #~ msgid "Style, Color"
 #~ msgstr "रँग"
 
@@ -67528,11 +67547,6 @@ msgstr ""
 #~ msgid ""
 #~ "New tool to share items on the network with a Motion JPEG stream server."
 #~ msgstr "पूर्वावलोकन..."
-
-#, fuzzy
-#~| msgid "Colors"
-#~ msgid "Confirm Faces"
-#~ msgstr "रँग"
 
 #, fuzzy
 #~| msgid "Colors"
