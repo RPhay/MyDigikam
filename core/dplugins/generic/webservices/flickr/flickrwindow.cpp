@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     unsigned int                     uploadCount                    = 0;
     unsigned int                     uploadTotal                    = 0;
 
@@ -816,13 +818,13 @@ void FlickrWindow::slotListPhotoSetsFailed(const QString& msg)
 void FlickrWindow::slotAddPhotoFailed(const QString& msg)
 {
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                     i18nc("@title:window", "Warning"),
+                     i18nc("@title: window failed add photo", "Warning"),
                      i18n("Failed to upload photo into %1. %2\nDo you want to continue?",
                           d->serviceName, msg),
                      QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-    (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button failed add photo", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action: button failed add photo", "Cancel"));
 
     if (warn->exec() != QMessageBox::Yes)
     {
