@@ -142,7 +142,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                                                     QLatin1String("digikamrc"));
 
         databaseError     += i18n("<p>If you want to start with a new configuration and "
-                                  "with a first run wizard, delete the file:<br>%1</p>",
+                                  "with a first run wizard, delete the file:<br/>%1</p>",
                                   QDir::toNativeSeparators(configPath));
 
         return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
