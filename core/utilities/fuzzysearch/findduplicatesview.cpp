@@ -57,10 +57,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN FindDuplicatesView::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QLabel*              includeAlbumsLabel      = nullptr;
     QLabel*              similarityLabel         = nullptr;
@@ -213,7 +214,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->refImageAlbumSelector->setVisible((refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder) ||
                                          (refSelMethod == HaarIface::RefImageSelMethod::PreferFolder));
 
-    auto* const refImageselectionGroup = new QGroupBox(i18nc("@group", "Reference Image Selection Method"));
+    auto* const refImageselectionGroup = new QGroupBox(i18nc("@info", "Reference Image Selection Method"));
     auto* const layout                 = new QVBoxLayout;
     layout->addWidget(d->refImageSelMethod);
     layout->addWidget(d->refImageAlbumSelector);
