@@ -22,7 +22,7 @@ namespace Digikam
 {
 
 ScanStateFilter::ScanStateFilter(FacePipeline::FilterMode fmode, FacePipeline::Private* const dd)
-    : d(dd),
+    : d   (dd),
       mode(fmode)
 {
     connect(this, SIGNAL(signalInfosToDispatch()),
@@ -56,17 +56,15 @@ FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
         {
             QList<FaceTagsIface> databaseFaces;
 
-            if (mode == FacePipeline::ReadUnconfirmedFaces)
+            if      (mode == FacePipeline::ReadUnconfirmedFaces)
             {
                 databaseFaces = utils.unconfirmedFaceTagsIfaces(info.id());
 
             }
-
             else if (mode == FacePipeline::ReadFacesForTraining)
             {
                 databaseFaces = utils.databaseFacesForTraining(info.id());
             }
-
             else
             {
                 databaseFaces = utils.confirmedFaceTagsIfaces(info.id());
@@ -76,9 +74,9 @@ FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
             {
                 FacePipelineExtendedPackage::Ptr package = d->buildPackage(info);
                 package->databaseFaces                   = databaseFaces;
-                /*
-                                qCDebug(DIGIKAM_GENERAL_LOG) << "Prepared package with" << databaseFaces.size();
-                */
+/*
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Prepared package with" << databaseFaces.size();
+*/
                 package->databaseFaces.setRole(FacePipelineFaceTagsIface::ReadFromDatabase);
 
                 if (tasks)
@@ -100,9 +98,9 @@ void ScanStateFilter::process(const QList<ItemInfo>& infos)
 {
     QMutexLocker lock(threadMutex());
     toFilter << infos;
-    /*
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Received" << infos.size() << "images for filtering";
-    */
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Received" << infos.size() << "images for filtering";
+*/
     start(lock);
 }
 
@@ -128,7 +126,6 @@ void ScanStateFilter::run()
                 todo = toFilter;
                 toFilter.clear();
             }
-
             else
             {
                 stop(lock);
@@ -150,16 +147,14 @@ void ScanStateFilter::run()
                 {
                     itemsToSend << package;
                 }
-
                 else
                 {
                     itemsToSkip << info;
                 }
             }
-
-            /*
-                        qCDebug(DIGIKAM_GENERAL_LOG) << "Filtered" << todo.size() << "images, send" << send.size() << "skip" << skip.size();
-            */
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Filtered" << todo.size() << "images, send" << send.size() << "skip" << skip.size();
+*/
             {
                 QMutexLocker lock(threadMutex());
                 toSend      << itemsToSend;
@@ -183,10 +178,9 @@ void ScanStateFilter::dispatch()
         itemsToSkip = toBeSkipped;
         toBeSkipped.clear();
     }
-
-    /*
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Dispatching, sending" << send.size() << "skipping" << skip.size();
-    */
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Dispatching, sending" << send.size() << "skipping" << skip.size();
+*/
     if (!itemsToSkip.isEmpty())
     {
         d->skipFromFilter(itemsToSkip);

@@ -28,8 +28,8 @@ FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const dd)
 
     setLoadingPolicy(PreviewLoadThread::LoadingPolicySimpleAppend);
 
-    connect(this, SIGNAL(signalImageLoaded(LoadingDescription, DImg)),
-            this, SLOT(slotImageLoaded(LoadingDescription, DImg)));
+    connect(this, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
+            this, SLOT(slotImageLoaded(LoadingDescription,DImg)));
 }
 
 void FacePreviewLoader::cancel()
@@ -49,10 +49,10 @@ void FacePreviewLoader::process(const FacePipelineExtendedPackage::Ptr& package)
 
     scheduledPackages << package;
     loadHighQuality(package->filePath, PreviewSettings::RawPreviewFromRawHalfSize);
-    /*
-        load(package->filePath, 800, MetaEngineSettings::instance()->settings().exifRotate);
-        loadHighQuality(package->filePath, MetaEngineSettings::instance()->settings().exifRotate);
-    */
+/*
+    load(package->filePath, 800, MetaEngineSettings::instance()->settings().exifRotate);
+    loadHighQuality(package->filePath, MetaEngineSettings::instance()->settings().exifRotate);
+*/
     checkRestart();
 }
 
@@ -67,11 +67,13 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
 
     // Avoid congestion before detection or recognition by pausing the thread.
     // We are throwing around serious amounts of memory!
-    /*
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "sent out packages:"
-                                       << d->packagesOnTheRoad - scheduledPackages.size()
-                                       << "scheduled:" << scheduledPackages.size();
-    */
+
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "sent out packages:"
+                                 << d->packagesOnTheRoad - scheduledPackages.size()
+                                 << "scheduled:" << scheduledPackages.size();
+*/
+
     if (sentOutLimitReached() && !scheduledPackages.isEmpty())
     {
         stop();

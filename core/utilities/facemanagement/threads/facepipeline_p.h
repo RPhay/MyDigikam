@@ -104,7 +104,11 @@ Q_SIGNALS:
     friend class FacePipeline;
     void startProcess(const FacePipelineExtendedPackage::Ptr& package);
 
-    void accuracyAndModel(int detectAccuracy, FaceScanSettings::FaceDetectionModel detectModel, FaceScanSettings::FaceDetectionSize detectSize, int recognizeAccuracy, FaceScanSettings::FaceRecognitionModel recognizeModel);
+    void accuracyAndModel(int detectAccuracy,
+                          FaceScanSettings::FaceDetectionModel detectModel,
+                          FaceScanSettings::FaceDetectionSize detectSize,
+                          int recognizeAccuracy,
+                          FaceScanSettings::FaceRecognitionModel recognizeModel);
 
 private:
 
