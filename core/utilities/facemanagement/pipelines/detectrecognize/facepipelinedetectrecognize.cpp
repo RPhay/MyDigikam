@@ -688,12 +688,6 @@ bool FacePipelineDetectRecognize::writer()
                     break;
                 }
 
-                // case FaceScanSettings::Merge:
-                // {
-                //     // Filter out similar rects
-                //     break;
-                // }
-
                 case FaceScanSettings::RecognizeOnly:
                 case FaceScanSettings::Skip:
                 {
@@ -709,11 +703,12 @@ bool FacePipelineDetectRecognize::writer()
 
             utils.markAsScanned(package->info);
 
-            // write the new face rects to the database
+            // create thumbnails and write the new face rects to the database
 
             if (package->faceRects.size())
             {
-                QList<Identity> identities;
+                QList<FaceTagsIface>    databaseFaces;
+                QList<Identity>         identities;
 
                 for (int i = 0 ; i < package->faceRects.size() ; ++i)
                 {
@@ -721,59 +716,41 @@ bool FacePipelineDetectRecognize::writer()
                     {
                         Identity identity = idProvider->identity(package->labelList[i]);
                         identities << identity;
+                        databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
+                                                        package->info.id(),
+                                                        FaceTags::unconfirmedPersonTagId(),
+                                                        TagRegion(QRect(package->image.width() * package->faceRects[i].x(),
+                                                                        package->image.height() * package->faceRects[i].y(),
+                                                                        package->image.width() * package->faceRects[i].width(),
+                                                                        package->image.height() * package->faceRects[i].height())));
                     }
                     else
                     {
                         identities << Identity();
+                        databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnknownName,
+                                                        package->info.id(),
+                                                        FaceTags::unknownPersonTagId(),
+                                                        TagRegion(QRect(package->image.width() * package->faceRects[i].x(),
+                                                                        package->image.height() * package->faceRects[i].y(),
+                                                                        package->image.width() * package->faceRects[i].width(),
+                                                                        package->image.height() * package->faceRects[i].height())));
                     }
                 }
-
-                QList<FaceTagsIface> databaseFaces = utils.writeUnconfirmedResults(package->info.id(),
-                                                                                   package->faceRects,
-                                                                                   identities,
-                                                                                   package->image.originalSize());
 
                 // store the thumbnails
 
                 if (!package->image.isNull())
                 {
                     utils.storeThumbnails(thumbnailLoadThread, package->info.filePath(),
-                                          databaseFaces, package->image);
+                                        databaseFaces, package->image);
                 }
 
-                // QList<FaceTagsIface> faces = utils.unconfirmedFaceTagsIfaces(package->info.id());
-                //
-                // for (int i = 0 ; i < package->faceRects.size() ; ++i)
-                // {
-                //     if (-1 != package->labelList[i])
-                //     {
-                //         int faceIndex = -1;
-                //
-                //         QRect rect = QRect(package->image.width() * package->faceRects[i].x(),
-                //                            package->image.height() * package->faceRects[i].y(),
-                //                            package->image.width() * package->faceRects[i].width(),
-                //                            package->image.height() * package->faceRects[i].height());
-                //         qCDebug(DIGIKAM_FACESENGINE_LOG) << "test face rect:" << rect;
-                //
-                //         for (int j = 0 ; j < databaseFaces.size() ; ++j)
-                //         {
-                //             qCDebug(DIGIKAM_FACESENGINE_LOG) << "unconfirmed face rect:" << databaseFaces[j].region();
-                //
-                //             if (databaseFaces[j].region().intersects(TagRegion(rect), 0.85))
-                //             {
-                //                 faceIndex = j;
-                //                 break;
-                //             }
-                //         }
-                //
-                //         if (-1 != faceIndex)
-                //         {
-                //             Identity identity = idProvider->identity(package->labelList[i]);
-                //             int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
-                //             utils.changeSuggestedName(databaseFaces[faceIndex], tagId);
-                //         }
-                //     }
-                // }
+                // write the new face rects to the database
+
+                utils.writeUnconfirmedResults(package->info.id(),
+                                              package->faceRects,
+                                              identities,
+                                              package->image.originalSize());
             }
 
             // send a notification that the image was processed
