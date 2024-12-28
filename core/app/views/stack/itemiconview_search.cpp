@@ -64,7 +64,7 @@ void ItemIconView::slotImageFindSimilar()
 void ItemIconView::slotImageScanForFaces()
 {
 
-    if (ProgressManager::instance()->findItembyId(i18n("FacesDetector")))
+    if (ProgressManager::instance()->findItembyId(i18n("FacesEngine")))
     {
         QString message = i18n("A face recognition task is already running. "
                                "Only one task can be running at a time. "
@@ -111,7 +111,7 @@ void ItemIconView::slotImageScanForFaces()
 
 void ItemIconView::slotImageRecognizeFaces()
 {
-    if (ProgressManager::instance()->findItembyId(i18n("FacesDetector")))
+    if (ProgressManager::instance()->findItembyId(i18n("FacesEngine")))
     {
         QString message = i18n("A face recognition task is already running. "
                                "Only one task can be running at a time. "

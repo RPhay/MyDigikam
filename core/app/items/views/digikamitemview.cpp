@@ -809,7 +809,7 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
     // we do not want to change the view, when in the "Thumbnails" view in "People"
     // see bugs 444692, 40232, ...
 
-    bool runningFaceAction = (ProgressManager::instance()->findItembyId(QLatin1String("FacesDetector"))    ||
+    bool runningFaceAction = (ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))    ||
                               ProgressManager::instance()->findItembyId(QLatin1String("FaceActionProgress")));
 
     if ((viewMode() == QListView::IconMode) && getFaceMode() && runningFaceAction)
