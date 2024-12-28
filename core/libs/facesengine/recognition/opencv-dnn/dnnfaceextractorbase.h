@@ -50,7 +50,7 @@ public:
     virtual bool loadModels()                                                       = 0;
 
     /**
-     * covert the UI threshold to a float using the conversion
+     * cover the UI threshold to a float using the conversion
      * factor built into the model
      */
     virtual float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const = 0;

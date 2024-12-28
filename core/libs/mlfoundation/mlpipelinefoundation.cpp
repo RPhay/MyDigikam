@@ -140,7 +140,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
     {
         case MLPipelineStage::Finder:
         {
-            // always 1 finder thread, no incomming queue
+            // always 1 finder thread, no incoming queue
             // start a new thread
 
             QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
@@ -408,7 +408,7 @@ void MLPipelineFoundation::clearAllQueues()
 
         queue->push_back(queueEndSignal());
 
-        // remove any incomming items
+        // remove any incoming items
 
         clearQueue(queue);
     }

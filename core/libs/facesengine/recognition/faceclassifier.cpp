@@ -480,7 +480,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
 
         if ((label == svm_result) && (label != badLabel1))
         {
-            // check the distance of of the target to the samples for the label
+            // check the distance of the target to the samples for the label
 
             if (validateKNNSVMResult(target, label))
             {

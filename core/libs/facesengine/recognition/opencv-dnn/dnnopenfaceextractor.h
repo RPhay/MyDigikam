@@ -42,7 +42,7 @@ public:
     bool loadModels()                                               override;
 
     /**
-     * covert the UI threshold to a float using the conversion
+     * cover the UI threshold to a float using the conversion
      * factor built into the model
      */
     float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const override;

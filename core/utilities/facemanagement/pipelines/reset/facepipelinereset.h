@@ -66,7 +66,7 @@ protected:
 
 private:
 
-    // Disbale
+    // Disable
     FacePipelineReset()                                         = delete;
     FacePipelineReset(QObject* const)                           = delete;
     FacePipelineReset(const FacePipelineReset&)                 = delete;
