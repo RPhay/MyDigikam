@@ -983,13 +983,13 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
         else
         {
             QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                             i18nc("@title:window", "Warning"),
+                             i18nc("@title: window get photo done", "Warning"),
                              i18nc("@info", "Failed to save photo: %1\n"
                                    "Do you want to continue?", errText),
                              QMessageBox::Yes | QMessageBox::No);
 
-            (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-            (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+            (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button get photo done", "Continue"));
+            (warn->button(QMessageBox::No))->setText(i18nc("@action: button get photo done", "Cancel"));
 
             if (warn->exec() != QMessageBox::Yes)
             {
@@ -1004,13 +1004,13 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
     else
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18nc("@title:window", "Warning"),
+                         i18nc("@title: window get photo done", "Warning"),
                          i18nc("@info", "Failed to download photo: %1\n"
                               "Do you want to continue?", errMsg),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-        (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button get photo done", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action: button get photo done", "Cancel"));
 
         if (warn->exec() != QMessageBox::Yes)
         {
@@ -1031,7 +1031,7 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
 
     if (!QFile::rename(tmpUrl.toLocalFile(), newUrl.toLocalFile()))
     {
-        QMessageBox::critical(this, i18nc("@title:window", "Error"),
+        QMessageBox::critical(this, i18nc("@title: window get photo done", "Error"),
                               i18nc("@info", "Failed to save image to %1",
                                    newUrl.toLocalFile()));
     }
@@ -1053,14 +1053,14 @@ void GSWindow::slotAddPhotoDone(int err, const QString& msg)
         d->widget->imagesList()->processed(d->transferQueue.first().first,false);
 
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18nc("@title:window", "Warning"),
+                         i18nc("@title: window add photo done", "Warning"),
                          i18nc("@info", "Failed to upload photo to %1.\n%2\n"
                               "Do you want to continue?",
                               d->toolName, msg),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-        (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button add photo done", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action: button add photo done", "Cancel"));
 
         if (warn->exec() != QMessageBox::Yes)
         {
@@ -1103,13 +1103,13 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
     if (err == 0)
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                     i18nc("@title:window", "Warning"),
+                                                     i18nc("@title: window upload photo done", "Warning"),
                                                      i18nc("@info", "Failed to finish uploading photo to %1.\n%2\n"
                                                            "No image uploaded to your account.",
                                                            d->toolName, msg),
                                                      QMessageBox::Yes);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "OK"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button upload photo done", "OK"));
 
         d->uploadQueue.clear();
         d->widget->progressBar()->hide();
@@ -1262,7 +1262,7 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
         {
             if (code == 0)
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
+                QMessageBox::critical(this, i18nc("@title: window create folder", "Error"),
                                       i18nc("@info", "Google Drive call failed:\n%1", msg));
             }
             else
@@ -1279,7 +1279,7 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
         {
             if (code == 0)
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
+                QMessageBox::critical(this, i18nc("@title: window create folder", "Error"),
                                       i18nc("@info", "Google Photos call failed:\n%1", msg));
             }
             else
@@ -1321,13 +1321,13 @@ void GSWindow::slotTransferCancel()
 void GSWindow::slotUserChangeRequest()
 {
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                    i18nc("@title:window", "Warning"),
+                                                    i18nc("@title: window change user", "Warning"),
                                                     i18nc("@info", "You will be logged out of your account, "
                                                           "click \"Continue\" to authenticate for another account"),
                                                     QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-    (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button change user", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action: button change user", "Cancel"));
 
     if (warn->exec() == QMessageBox::Yes)
     {
