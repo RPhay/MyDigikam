@@ -701,7 +701,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
 {
     d->orgPrms = settings->getDbEngineParameters();
 
-    if (d->orgPrms.databaseType == DbEngineParameters::SQLiteDatabaseType())
+    if      (d->orgPrms.databaseType == DbEngineParameters::SQLiteDatabaseType())
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.getCoreDatabaseNameOrDir());
         d->dbType->setCurrentIndex(d->dbTypeMap[SQlite]);

@@ -74,6 +74,8 @@ public:
 
     Private() = default;
 
+public:
+
     DVBox*             mysqlCmdBox              = nullptr;
 
     QLineEdit*         dbNameCore               = nullptr;
