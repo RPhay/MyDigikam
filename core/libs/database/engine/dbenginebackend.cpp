@@ -1813,7 +1813,7 @@ DbEngineSqlQuery BdEngineBackend::prepareQuery(const QString& sql)
         {
             if (queryErrorHandling(query, retries++))
             {
-                qCDebug(DIGIKAM_DBENGINE_LOG) << "Retray to prepare query";
+                qCDebug(DIGIKAM_DBENGINE_LOG) << "Retry preparing query";
 
                 continue;
             }
