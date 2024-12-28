@@ -57,8 +57,11 @@ private:
 
 private:
 
+    // Disable
     FacePipelineRetrain()                                       = delete;
-    FacePipelineRetrain(FacePipelineRetrain&)                   = delete;
+    FacePipelineRetrain(QObject* const)                         = delete;
+    FacePipelineRetrain(const FacePipelineRetrain&)             = delete;
+    FacePipelineRetrain& operator=(const FacePipelineRetrain&)  = delete;
 };
 
 } // namespace Digikam

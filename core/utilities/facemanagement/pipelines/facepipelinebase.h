@@ -99,6 +99,7 @@ private:
 
     // Disable
     FacePipelineBase()                                   = delete;
+    FacePipelineBase(QObject* const)                     = delete;
     FacePipelineBase(const FacePipelineBase&)            = delete;
     FacePipelineBase& operator=(const FacePipelineBase&) = delete;
 };

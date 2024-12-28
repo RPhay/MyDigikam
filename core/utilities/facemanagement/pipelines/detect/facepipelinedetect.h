@@ -62,8 +62,11 @@ private:
 
 private:
 
+    // Disable
     FacePipelineDetect()                                        = delete;
-    FacePipelineDetect(FacePipelineDetect&)                     = delete;
+    FacePipelineDetect(QObject* const)                          = delete;
+    FacePipelineDetect(const FacePipelineDetect&)               = delete;
+    FacePipelineDetect& operator=(const FacePipelineDetect&)    = delete;
 };
 
 } // namespace Digikam

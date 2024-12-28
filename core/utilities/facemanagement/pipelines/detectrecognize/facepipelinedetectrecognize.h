@@ -60,8 +60,13 @@ private:
     DNNFaceDetectorYuNet*           faceDetector                        = nullptr;
     DNNModelSFace*                  faceExtractor                       = nullptr;
 
-    FacePipelineDetectRecognize()                                       = delete;
-    FacePipelineDetectRecognize(FacePipelineDetectRecognize&)           = delete;
+private:
+
+    // Disable
+    FacePipelineDetectRecognize()                                               = delete;
+    FacePipelineDetectRecognize(QObject* const)                                 = delete;
+    FacePipelineDetectRecognize(const FacePipelineDetectRecognize&)             = delete;
+    FacePipelineDetectRecognize& operator=(const FacePipelineDetectRecognize&)  = delete;
 };
 
 } // namespace Digikam

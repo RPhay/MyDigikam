@@ -93,7 +93,10 @@ private:
 
 private:
 
-    FacePipelineEdit(FacePipelineEdit&)                         = delete;
+    // Disable
+    FacePipelineEdit(QObject* const)                            = delete;
+    FacePipelineEdit(const FacePipelineEdit&)                   = delete;
+    FacePipelineEdit& operator=(const FacePipelineEdit&)        = delete;
 };
 
 } // namespace Digikam

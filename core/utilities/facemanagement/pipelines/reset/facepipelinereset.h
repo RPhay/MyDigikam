@@ -66,8 +66,12 @@ protected:
 
 private:
 
-    FacePipelineReset()                                       = delete;
-    FacePipelineReset(FacePipelineReset&)                     = delete;
+    // Disbale
+    FacePipelineReset()                                         = delete;
+    FacePipelineReset(QObject* const)                           = delete;
+    FacePipelineReset(const FacePipelineReset&)                 = delete;
+    FacePipelineReset& operator=(const FacePipelineReset&)      = delete;
+
 };
 
 } // namespace Digikam
