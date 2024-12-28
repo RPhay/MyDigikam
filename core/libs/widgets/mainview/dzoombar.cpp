@@ -207,7 +207,7 @@ void DZoomBar::setZoom(double zoom, double zmin, double zmax)
     d->zoomSlider->setValue(size);
     d->zoomSlider->blockSignals(false);
 
-    QString ztxt = i18nc("%1 is the zoom percent value, % is the percent sign", "%1%", QString::number(lround(zoom*100.0)));
+    QString ztxt = i18nc("%1 is the zoom percent value, % is the percent sign", "%1%", lround(zoom*100.0));
     d->zoomCombo->blockSignals(true);
     d->zoomCombo->setCurrentIndex(-1);
     d->zoomCombo->setEditText(ztxt);
