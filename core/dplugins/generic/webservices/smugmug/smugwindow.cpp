@@ -58,6 +58,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool             import             = false;
     unsigned int     imagesCount        = 0;
     unsigned int     imagesTotal        = 0;
@@ -652,13 +654,13 @@ void SmugWindow::slotUserChangeRequest(bool /*anonymous*/)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Slot Change User Request";
 
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                 i18nc("@title:window", "Warning"),
+                                                 i18nc("@title: window change user", "Warning"),
                                                  i18n("You will be logged out of your account, "
                                                  "click \"Continue\" to authenticate for another account."),
                                                  QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-    (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button change user", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action: button change user", "Cancel"));
 
     if (warn->exec() == QMessageBox::Yes)
     {
