@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     unsigned int    imagesCount         = 0;
     unsigned int    imagesTotal         = 0;
 
@@ -242,12 +244,12 @@ void BOXWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                i18nc("@title:window", "Warning"),
+                i18nc("@title: window start transfert", "Warning"),
                 i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                 QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
-        (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfert", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfert", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
