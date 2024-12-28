@@ -26,9 +26,9 @@ namespace Digikam
 {
 
 FaceScanWidget::FaceScanWidget(QWidget* const parent)
-    : QTabWidget(parent),
+    : QTabWidget       (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setObjectName(d->configName);
     setupUi();
@@ -150,15 +150,18 @@ void FaceScanWidget::setupUi()
     QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
 
     d->alreadyScannedBox                = new SqueezedComboBox;
-    // d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-    // d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-    // d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+/*
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+*/
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-    /*
-        d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
-    */
+
+/*
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
+*/
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
@@ -166,10 +169,10 @@ void FaceScanWidget::setupUi()
 
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
-    {
-        openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
-    }
-           );
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
+        }
+    );
 
     scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
     scanOptionLayout->addWidget(d->helpButton,        1);
@@ -282,11 +285,11 @@ void FaceScanWidget::setupUi()
     detectSizeLabel->setAlignment(Qt::AlignLeft);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Small"), FaceScanSettings::FaceDetectionSize::ExtraSmall);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Small"),       FaceScanSettings::FaceDetectionSize::Small);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Medium"),      FaceScanSettings::FaceDetectionSize::Medium);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Large"),       FaceScanSettings::FaceDetectionSize::Large);
-    d->detectSizeBox->addSqueezedItem(i18nc("@label:listbox", "Extra Large"), FaceScanSettings::FaceDetectionSize::ExtraLarge);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Extra Small"), FaceScanSettings::FaceDetectionSize::ExtraSmall);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Small"),       FaceScanSettings::FaceDetectionSize::Small);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Medium"),      FaceScanSettings::FaceDetectionSize::Medium);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Large"),       FaceScanSettings::FaceDetectionSize::Large);
+    d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Extra Large"), FaceScanSettings::FaceDetectionSize::ExtraLarge);
     d->detectSizeBox->setEditable(false);
     d->detectSizeBox->setToolTip(i18nc("@info:tooltip",
                                        "<p>Selecting <b>Extra Small</b> means the model will detect small background faces in addition "
@@ -307,16 +310,16 @@ void FaceScanWidget::setupUi()
     detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
     detectGrid->addWidget(detectSizeLabel,          2, 0, 1, 1);
     detectGrid->addWidget(d->detectSizeBox,         2, 2, 1, 1);
-    /*
-        // old layout for easy revert
+/*
+    // old layout for easy revert
 
-        detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
-        detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
-        detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
-        detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
-        detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
-        detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
-    */
+    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
+    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
+    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
+    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
+    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
+    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
+*/
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
 
@@ -370,14 +373,14 @@ void FaceScanWidget::setupUi()
     recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
     recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
 
-    /*
-        // old layout for easy revert
+/*
+    // old layout for easy revert
 
-        recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
-        recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
-        recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
-        recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
-    */
+    recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeAccuracyInput, 1, 0, 1, 3);
+    recognizeGrid->addWidget(recognizeModelLabel,       2, 0, 1, 3);
+    recognizeGrid->addWidget(d->recognizeModelBox,      2, 2, 1, 1);
+*/
     // ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);

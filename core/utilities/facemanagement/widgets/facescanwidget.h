@@ -30,7 +30,7 @@ namespace Digikam
 {
 
 class FaceScanWidget : public QTabWidget,
-    public StateSavingObject
+                       public StateSavingObject
 {
     Q_OBJECT
 
@@ -54,15 +54,15 @@ private:
 
 Q_SIGNALS:
 
-    /*
-        void signalRebuildFaceTraining();
-    */
+/*
+    void signalRebuildFaceTraining();
+*/
 
 private Q_SLOTS:
 
-    /*
-        void slotRebuildFaceTraining():
-    */
+/*
+    void slotRebuildFaceTraining():
+*/
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
     void slotDetectAccuracyChanged();
