@@ -147,14 +147,14 @@ protected:
 
 protected:
 
-    virtual bool finder()                                       = 0;
-    virtual bool loader()                                       = 0;
-    virtual bool extractor()                                    = 0;
-    virtual bool classifier()                                   = 0;
-    virtual bool trainer()                                      = 0;
-    virtual bool writer()                                       = 0;
+    virtual bool finder()                                        = 0;
+    virtual bool loader()                                        = 0;
+    virtual bool extractor()                                     = 0;
+    virtual bool classifier()                                    = 0;
+    virtual bool trainer()                                       = 0;
+    virtual bool writer()                                        = 0;
 
-    virtual void addMoreWorkers()                               = 0;
+    virtual void addMoreWorkers()                                = 0;
 
     bool checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu);
 
@@ -205,7 +205,7 @@ protected:
                 const QIcon& _thumbnail);
 
 
-    // pipeline performance profiling
+    // Pipeline performance profiling
 
     void pipelinePerformanceStart(const MLPipelineStage& stage, QElapsedTimer& timer);
     void pipelinePerformanceEnd(const MLPipelineStage& stage, QElapsedTimer& timer);
@@ -214,7 +214,10 @@ protected:
 
 private:
 
-    MLPipelineFoundation(MLPipelineFoundation&)                 = delete;
+    // Disable
+    MLPipelineFoundation(QObject* const)                         = delete;
+    MLPipelineFoundation(const MLPipelineFoundation&)            = delete;
+    MLPipelineFoundation& operator=(const MLPipelineFoundation&) = delete;
 };
 
 } // namespace Digikam
