@@ -21,7 +21,6 @@
 // Qt includes
 
 #include <QLineEdit>
-#include <QAction>
 #include <QLayout>
 #include <QSlider>
 #include <QTimer>
@@ -48,6 +47,8 @@ class Q_DECL_HIDDEN DZoomBar::Private
 public:
 
     Private() = default;
+
+public:
 
     QToolButton*    zoomToFitButton = nullptr;
     QToolButton*    zoomTo100Button = nullptr;
@@ -118,7 +119,8 @@ DZoomBar::DZoomBar(QWidget* const parent)
 
     for (const double zoom : std::as_const(zoomLevels))
     {
-        d->zoomCombo->addItem(i18nc("%1 is the zoom percent value, % is the percent sign", "%1%", (int)zoom), QVariant(zoom));
+        d->zoomCombo->addItem(i18nc("%1 is the zoom percent value, % is the percent sign",
+                                    "%1%", (int)zoom), QVariant(zoom));
     }
 
     layout()->setContentsMargins(QMargins());
@@ -183,7 +185,7 @@ void DZoomBar::slotZoomSliderChanged(int)
     d->zoomTimer = new QTimer( this );
 
     connect(d->zoomTimer, SIGNAL(timeout()),
-            this, SLOT(slotDelayedZoomSliderChanged()) );
+            this, SLOT(slotDelayedZoomSliderChanged()));
 
     d->zoomTimer->setSingleShot(true);
     d->zoomTimer->start(300);
@@ -207,7 +209,9 @@ void DZoomBar::setZoom(double zoom, double zmin, double zmax)
     d->zoomSlider->setValue(size);
     d->zoomSlider->blockSignals(false);
 
-    QString ztxt = i18nc("%1 is the zoom percent value, % is the percent sign", "%1%", lround(zoom*100.0));
+    QString ztxt = i18nc("%1 is the zoom percent value, % is the percent sign",
+                         "%1%", lround(zoom*100.0));
+
     d->zoomCombo->blockSignals(true);
     d->zoomCombo->setCurrentIndex(-1);
     d->zoomCombo->setEditText(ztxt);
@@ -228,23 +232,23 @@ int DZoomBar::sizeFromZoom(double zoom, double zmin, double zmax)
 {
     double h     = (double)ThumbnailSize::maxThumbsSize();
     double s     = (double)ThumbnailSize::Small;
-    double zoomN = log(zoom)/log(2);
-    double zminN = log(zmin)/log(2);
-    double zmaxN = log(zmax)/log(2);
-    double zval  = (zoomN-zminN)/(zmaxN-zminN);
+    double zoomN = log(zoom) / log(2);
+    double zminN = log(zmin) / log(2);
+    double zmaxN = log(zmax) / log(2);
+    double zval  = (zoomN - zminN) / (zmaxN - zminN);
 
-    return (int)(zval*(h - s) + s);
+    return ((int)(zval * (h - s) + s));
 }
 
 double DZoomBar::zoomFromSize(int size, double zmin, double zmax)
 {
     double h     = (double)ThumbnailSize::maxThumbsSize();
     double s     = (double)ThumbnailSize::Small;
-    double zminN = log(zmin)/log(2);
-    double zmaxN = log(zmax)/log(2);
-    double zval  = (size - s)/(h - s);
+    double zminN = log(zmin) / log(2);
+    double zmaxN = log(zmax) / log(2);
+    double zval  = (size - s) / (h - s);
 
-    return pow(2, zval*(zmaxN-zminN) + zminN);
+    return (pow(2, zval * (zmaxN - zminN) + zminN));
 }
 
 void DZoomBar::triggerZoomTrackerToolTip()
@@ -306,6 +310,7 @@ void DZoomBar::setBarMode(BarMode mode)
             d->zoomCombo->show();
             d->zoomCombo->setEnabled(true);
             d->zoomTracker->setEnable(false);
+
             break;
         }
 
@@ -328,6 +333,7 @@ void DZoomBar::setBarMode(BarMode mode)
             d->zoomCombo->show();
             d->zoomCombo->setEnabled(false);
             d->zoomTracker->setEnable(true);
+
             break;
         }
 
@@ -337,6 +343,7 @@ void DZoomBar::setBarMode(BarMode mode)
             d->zoomTo100Button->hide();
             d->zoomCombo->hide();
             d->zoomTracker->setEnable(true);
+
             break;
         }
     }

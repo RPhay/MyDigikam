@@ -17,13 +17,12 @@
 // Qt includes
 
 #include <QString>
+#include <QAction>
 
 // Local includes
 
 #include "dlayoutbox.h"
 #include "digikam_export.h"
-
-class QAction;
 
 namespace Digikam
 {
