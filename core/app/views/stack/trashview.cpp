@@ -444,9 +444,9 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
 void TrashView::slotContextMenuEmptyTrash(const QPoint& pos)
 {
     QMenu* const emptyTrashMenu = new QMenu(this);
-    emptyTrashMenu->addSection(i18n("Selection"));
+    emptyTrashMenu->addSection(i18nc("delete the selected items from trash", "Selection"));
     emptyTrashMenu->addAction(d->restoreAction);
-    emptyTrashMenu->addSection(i18n("Delete"));
+    emptyTrashMenu->addSection(i18nc("delete all items from trash", "Delete"));
     emptyTrashMenu->addAction(d->deleteAllAction);
     emptyTrashMenu->addAction(d->deleteAction);
     emptyTrashMenu->popup(d->tableView->viewport()->mapToGlobal(pos));
@@ -527,7 +527,9 @@ ThumbnailAligningDelegate::ThumbnailAligningDelegate(QObject* const parent)
 {
 }
 
-void ThumbnailAligningDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+void ThumbnailAligningDelegate::paint(QPainter* painter,
+                                      const QStyleOptionViewItem& option,
+                                      const QModelIndex& index) const
 {
     QPixmap pixmap;
     pixmap        = index.data(Qt::DecorationRole).value<QPixmap>();

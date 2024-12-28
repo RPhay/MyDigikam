@@ -101,7 +101,9 @@ public:
 
     explicit ThumbnailAligningDelegate(QObject* const parent = nullptr);
 
-    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    void paint(QPainter* painter,
+               const QStyleOptionViewItem& option,
+               const QModelIndex& index) const override;
 };
 
 } // namespace Digikam
