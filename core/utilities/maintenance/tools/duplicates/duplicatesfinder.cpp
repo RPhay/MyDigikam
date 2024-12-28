@@ -168,11 +168,11 @@ void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& in
 
     if (!duplicates)
     {
-        lbl.append(i18n("No duplicate"));
+        lbl.append(i18n("No duplicate item"));
     }
     else
     {
-        lbl.append(i18np("1 duplicate", "%1 duplicates", duplicates));
+        lbl.append(i18np("1 duplicate item", "%1 duplicate items", duplicates));
     }
 
     setLabel(lbl);
