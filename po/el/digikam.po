@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-27 01:56+0000\n"
+"POT-Creation-Date: 2024-12-28 02:05+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -11865,6 +11865,7 @@ msgstr "Δύο χάρτες - οριζόντια"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -65414,8 +65415,8 @@ msgstr "Λειτουργία μέτρησης:"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:558
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -65612,88 +65613,88 @@ msgstr "Διπλές εμφανίσεις"
 msgid "Duplicate found: %1"
 msgstr "Διπλές εμφανίσεις"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:309
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in album: %1"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:314
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:225
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in %1 albums"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:322
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:233
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:327
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:238
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:333
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:244
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Ενημέρωση βάσης δεδομένων προσώπων σε εξέλιξη."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:510
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:515
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:520
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces processed: %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:525
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face processed: %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:557
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scanned for faces: %1\n"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:562
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Χωρίς φλας"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:567
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -65701,21 +65702,21 @@ msgid_plural "%1 faces"
 msgstr[0] "Χωρίς φλας"
 msgstr[1] "Χωρίς φλας"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:267
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:297
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:382
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, fuzzy, kde-format
 #| msgid "Enable face detection"
 msgid "Error starting face detection."
 msgstr "Ενεργοποίηση ανίχνευσης προσώπων"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:455
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:460
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
