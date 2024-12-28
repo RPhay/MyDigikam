@@ -84,6 +84,7 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
 
     ++totalItemCount;
+    Q_EMIT scheduled();
     Q_EMIT started(i18n("Confirming face"));
 
     enqueue(nextQueue, package);
@@ -98,6 +99,7 @@ void FacePipelineEdit::removeFace(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
 
     ++totalItemCount;
+    Q_EMIT scheduled();
     Q_EMIT started(i18n("Removing face"));
 
     enqueue(nextQueue, package);
@@ -111,6 +113,7 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
 
     ++totalItemCount;
+    Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face tag"));
 
     enqueue(nextQueue, package);
@@ -131,6 +134,7 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
 
     ++totalItemCount;
+    Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face region"));
 
     enqueue(nextQueue, package);
@@ -151,6 +155,7 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), image, FacePipelinePackageBase::EditPipelineAction::AddManually, retrain);
 
     ++totalItemCount;
+    Q_EMIT scheduled();
     Q_EMIT started(i18n("Manually adding face"));
 
     enqueue(nextQueue, package);
@@ -177,8 +182,6 @@ bool FacePipelineEdit::start()
             // addWorker(MLPipelineStage::Classifier);
             addWorker(MLPipelineStage::Writer);
         }
-
-        Q_EMIT scheduled();
 
         return FacePipelineBase::start();
     }

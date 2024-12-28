@@ -18,6 +18,7 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
+#include "facepipelineedit.h"
 
 namespace Digikam
 {
@@ -252,6 +253,8 @@ DigikamApp::DigikamApp()
 
 DigikamApp::~DigikamApp()
 {
+    FacePipelineEdit::instance()->cancel();
+
     ProgressManager::instance()->slotAbortAll();
 
     ItemAttributesWatch::shutDown();

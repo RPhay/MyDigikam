@@ -77,11 +77,10 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     // d->editPipeline.construct();
 
     d->newEditPipeline = FacePipelineEdit::instance();
+    d->newEditPipeline->start();
 
     connect(d->newEditPipeline, SIGNAL(scheduled()),
             this, SLOT(slotInitProgressIndicator()));
-
-    d->newEditPipeline->start();
 
     d->normalDelegate = new DigikamItemDelegate(this);
     d->faceDelegate   = new ItemFaceDelegate(this);
