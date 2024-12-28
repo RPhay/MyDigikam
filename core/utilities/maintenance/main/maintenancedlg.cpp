@@ -396,7 +396,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             {
                 int mbResult = QMessageBox(
                                            QMessageBox::Warning,
-                                           i18n("Warning"),
+                                           i18nc("@title: window reset face database", "Warning"),
                                            i18n("Are you sure you want to delete all confirmed, unconfirmed, and unknown faces? "
                                                 "You’ll need to rescan images and start tagging unknown faces again before any faces can be recognized."),
                                            QMessageBox::Ok | QMessageBox::Cancel,
