@@ -32,14 +32,12 @@
 #include "digikam_opencv.h"
 #include "mlpipelinepackagenotify.h"
 #include "mlpipelinepackagefoundation.h"
+#include "sharedqueue.h"
 
 namespace Digikam
 {
 
 class MLPipelinePackage;
-
-template <typename T>
-class DIGIKAM_EXPORT SharedQueue;
 
 class DIGIKAM_EXPORT MLPipelineFoundation : public QObject
 {

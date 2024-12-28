@@ -37,6 +37,8 @@ public:
     MLClassifierFoundation()                                            = default;
     virtual ~MLClassifierFoundation()                                   = default;
 
+public:
+
     virtual int predict(const cv::Mat& target)      const               = 0;
     virtual int predict(const cv::UMat& target)     const               = 0;
 
@@ -92,9 +94,9 @@ protected:
 
 private:
 
-    // hide
-
-    MLClassifierFoundation(MLClassifierFoundation&)                     = delete;
+    // Disable
+    MLClassifierFoundation(const MLClassifierFoundation&)               = delete;
+    MLClassifierFoundation& operator=(const MLClassifierFoundation&)    = delete;
 };
 
 } // namespace Digikam

@@ -35,7 +35,9 @@ public:
     SharedQueue()                   = default;
     ~SharedQueue()                  = default;
 
-    T&   front()
+public:
+
+    T& front()
     {
         std::unique_lock<std::mutex> mlock(mutex_);
 
@@ -47,7 +49,7 @@ public:
         return queue_.front();
     }
 
-    T&   pop_front()
+    T& pop_front()
     {
         std::unique_lock<std::mutex> mlock(mutex_);
 
@@ -91,7 +93,7 @@ public:
         front_.notify_one();     // Notify one waiting thread?
     }
 
-    int  size()
+    int size()
     {
         std::unique_lock<std::mutex> mlock(mutex_);
         int size = queue_.size();
@@ -116,12 +118,12 @@ public:
         mlock.unlock();
     }
 
-    int  maxDepth()
+    int maxDepth() const
     {
         return maxDepth_;
     }
 
-    void maxDepth(int depth)
+    void setMaxDepth(int depth)
     {
         maxDepth_ = depth;
     }

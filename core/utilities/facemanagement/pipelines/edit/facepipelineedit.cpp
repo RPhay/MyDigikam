@@ -227,7 +227,7 @@ bool FacePipelineEdit::writer()
 
     // override the default queue depth
 
-    thisQueue->maxDepth(100000);
+    thisQueue->setMaxDepth(100000);
 
     while (!cancelled)
     {

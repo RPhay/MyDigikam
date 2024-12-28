@@ -86,7 +86,7 @@ void MLPipelineFoundation::cancel()
     {
         // update the max queue size to something big
 
-        queue->maxDepth(1000000);
+        queue->setMaxDepth(1000000);
 
         // send end of queue signal (case 1 above)
 
@@ -402,7 +402,7 @@ void MLPipelineFoundation::clearAllQueues()
     {
         // update the max queue size to something big
 
-        queue->maxDepth(1000000);
+        queue->setMaxDepth(1000000);
 
         // tell the threads to exit
 
@@ -424,7 +424,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
         {
             // slow things down
 
-            thisQueue->maxDepth(1);
+            thisQueue->setMaxDepth(1);
         }
 
         // check for 50% free buffer space
@@ -433,7 +433,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
         {
             // speed things up
 
-            thisQueue->maxDepth(QThread::idealThreadCount());
+            thisQueue->setMaxDepth(QThread::idealThreadCount());
         }
 
         // add the package to the queue
@@ -508,7 +508,7 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority,
 
         if (MLPipelineStage::Loader != thisStage)
         {
-            thisQueue->maxDepth(QThread::idealThreadCount());
+            thisQueue->setMaxDepth(QThread::idealThreadCount());
         }
     }
 
@@ -524,7 +524,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     if (queues.contains(thisStage))
     {
-        queues[thisStage]->maxDepth(1000000);
+        queues[thisStage]->setMaxDepth(1000000);
         queues[thisStage]->push_back(queueEndSignal());
     }
 
@@ -534,7 +534,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     if (queues.contains(nextStage) && (performanceProfileList[thisStage].currentThreadCount == 0))
     {
-        queues[nextStage]->maxDepth(1000000);
+        queues[nextStage]->setMaxDepth(1000000);
         queues[nextStage]->push_back(queueEndSignal());
     }
 }

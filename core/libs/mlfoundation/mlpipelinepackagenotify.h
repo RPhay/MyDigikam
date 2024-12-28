@@ -47,8 +47,8 @@ public:
 
 private:
 
-    MLPipelinePackageNotify()                           = delete;
-    MLPipelinePackageNotify(MLPipelinePackageNotify&)   = delete;
+    MLPipelinePackageNotify()                                 = delete;
+    MLPipelinePackageNotify(const MLPipelinePackageNotify&)   = delete;
 };
 
 } // namespace Digikam
