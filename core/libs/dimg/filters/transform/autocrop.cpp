@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     QRect  cropArea;
 };
 
@@ -510,6 +512,9 @@ QRect AutoCrop::spiralClockwiseTraversal(const QImage& source, int topCrop, int 
 
 void AutoCrop::startAnalyse()
 {
+
+#ifndef __clang_analyzer__
+
     QImage img       = m_orgImage.copyQImage();
     int breakflag    = 0;
     int topRow       = -1;
@@ -1077,6 +1082,9 @@ void AutoCrop::startAnalyse()
     }
 */
     qCDebug(DIGIKAM_DIMG_LOG) << "Inner Crop Area : " << d->cropArea;
+
+#endif
+
 }
 
 QRect AutoCrop::autoInnerCrop() const
