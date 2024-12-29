@@ -9,7 +9,7 @@
  ;
  ; SPDX-FileCopyrightText: 2010      by Julien Narboux <julien at narboux dot fr>
  ; SPDX-FileCopyrightText: 2011-2014 by Ananta Palani  <anantapalani at gmail dot com>
- ; SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; SPDX-FileCopyrightText: 2010-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
  ; VERSION    : the digiKam version                              [string].
@@ -17,7 +17,7 @@
  ; DEBUG_SYMB : the bundle includes binary debug symbols (.pdb)  [boolean].
  ; OUTPUT     : the output installer file name                   [string].
  ;
- ; Example: makensis -DVERSION=8.0.0 -DBUNDLEPATH=../bundle -DDEBUG_SYMB digikam.nsi
+ ; Example: makensis -DVERSION=8.5.0 -DBUNDLEPATH=../bundle -DDEBUG_SYMB digikam.nsi
  ;
  ; NSIS script reference can be found at this url:
  ; https://nsis.sourceforge.net/Docs/Chapter4.html
