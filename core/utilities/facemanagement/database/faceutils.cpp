@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -110,10 +110,9 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
             faces << FaceTagsIface();
             continue;
         }
-
-        /*
-                qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
-        */
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
+*/
         faces << FaceTagsIface(type, imageid, tagId, TagRegion(fullSizeRect));
     }
 
@@ -210,7 +209,6 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                     }
                 }
             }
-
             else
             {
                 // We have a name in the new face. Do we have names in overlapping faces?
@@ -219,7 +217,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                 {
                     const FaceTagsIface& oldFace = overlappingEntries[j];
 
-                    if (oldFace.isUnknownName())
+                    if      (oldFace.isUnknownName())
                     {
                         // Remove old face.
                     }
@@ -237,7 +235,6 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
                             // Else remove old face.
                         }
-
                         else
                         {
                             // Assume new recognition is more trained, remove older face.
@@ -325,7 +322,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
         !FaceTags::isTheIgnoredPerson(tagId)  &&
         !FaceTags::isTheUnknownPerson(tagId)  &&
         !FaceTags::isTheUnconfirmedPerson(tagId)
-    )
+       )
     {
         qlonglong faceItemId = CoreDbAccess().db()->getFirstItemWithFaceTag(tagId);
 
@@ -344,7 +341,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
                 if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                                 0, err))
                 {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err;
                 }
             }
         }

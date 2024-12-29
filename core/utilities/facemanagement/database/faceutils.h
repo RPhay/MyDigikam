@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -24,7 +24,6 @@
 // Local includes
 
 #include "identity.h"
-// #include "facialrecognition_wrapper.h"
 #include "iteminfo.h"
 #include "facetagseditor.h"
 #include "digikam_export.h"
@@ -39,7 +38,7 @@ class ThumbnailLoadThread;
 class ThumbnailImageCatcher;
 
 class FaceUtils : public QObject,
-    public FaceTagsEditor
+                  public FaceTagsEditor
 {
     Q_OBJECT
 
@@ -90,12 +89,12 @@ public:
      * This uses a thumbnail load thread to load the image detail.
      * If requested, the faces will be scaled to the given (fixed) size.
      */
-    /*
-        void                 fillImageInFaces(ThumbnailImageCatcher* const catcher,
-                                              const QString& filePath,
-                                              QList<Face>& faceList,
-                                              const QSize& scaleSize = QSize())             const;
-    */
+/*
+    void                 fillImageInFaces(ThumbnailImageCatcher* const catcher,
+                                          const QString& filePath,
+                                          QList<Face>& faceList,
+                                          const QSize& scaleSize = QSize())             const;
+*/
 
     /**
      * Store the needed thumbnails for the given faces. This can be a huge optimization
@@ -121,9 +120,11 @@ public:
      */
     static QRect         faceRectToDisplayRect(const QRect& rect);
 
-    // TODO: investigate this method.
+/*
+    TODO: investigate this method.
 
-    // Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)                  const;
+    Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)                  const;
+*/
     Identity identityForTag(int tagId)                  const;
     int      tagForIdentity(const Identity& identity)                                         const;
 
