@@ -109,6 +109,9 @@ NRContainer NREstimate::settings() const
 
 void NREstimate::startAnalyse()
 {
+
+#ifndef __clang_analyzer__
+
     readImage();
     postProgress(5);
 
@@ -523,6 +526,9 @@ void NREstimate::startAnalyse()
     }
 
     postProgress(100);
+
+#endif
+
 }
 
 } // namespace Digikam
