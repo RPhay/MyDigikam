@@ -241,6 +241,8 @@ void SlideToolBar::slotChangeDelayButtonPressed()
     delay = QInputDialog::getInt(this, i18nc("@title:window", "Specify Delay for Slide Show"),
                                        i18n("Delay:"), delay, 1, 3600, 1, &ok);
 
+    d->parentWidget->setFocus();
+
     if (ok)
     {
         d->settings->delay = delay;
