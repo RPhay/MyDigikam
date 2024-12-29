@@ -58,6 +58,8 @@ public:
     QToolButton*          setupBtn          = nullptr;
     QToolButton*          screenSelectBtn   = nullptr;
 
+    QWidget*              parentWidget      = nullptr;
+
     bool                  currentlyPause    = false;
 
     SlideShowSettings*    settings          = nullptr;
@@ -71,6 +73,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     setContentsMargins(QMargins());
 
     d->settings       = settings;
+    d->parentWidget   = parent;
 
     d->playBtn        = new QToolButton(this);
     d->prevBtn        = new QToolButton(this);
@@ -273,6 +276,8 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
     int ret                              = setup->exec();
     delete setup;
 
+    d->parentWidget->setFocus();
+
     if (ret == QDialog::Accepted)
     {
         Q_EMIT signalUpdateSettings();
@@ -298,6 +303,8 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
         QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->settings->plugin);
         help->exec();
         delete help;
+
+        d->parentWidget->setFocus();
 
         if (!d->currentlyPause && d->playBtn->isEnabled())
         {
