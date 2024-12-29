@@ -6,8 +6,8 @@
  * Date        : 2024-12-23
  * Description : Helper methods to convert OpenCV image to Qt containers and vis-versa.
  *
- * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  * SPDX-FileCopyrightText: 2012-2015 by Debao Zhang    <hello at debao dot me>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

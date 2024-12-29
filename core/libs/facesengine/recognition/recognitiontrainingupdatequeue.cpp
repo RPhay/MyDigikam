@@ -5,8 +5,8 @@
  * Date        : 2024-10-28
  * Description : Threadsafe queue for submitting face training removal requests.
  *
- * SPDX-FileCopyrightText: 2024      by Michael Miller <micahel underscore miller at msn dot com>
- * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <micahel underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
