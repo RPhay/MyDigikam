@@ -323,6 +323,42 @@ void SlideVideo::stop()
     d->player->setSource(QUrl());
 }
 
+void SlideVideo::forward()
+{
+    if (d->player->isSeekable())
+    {
+        qint64 step   = d->player->duration() * 10 / 100;
+        qint64 stepTo = d->player->position() + step;
+
+        if (stepTo > d->player->duration())
+        {
+            d->player->setPosition(d->player->duration());
+        }
+        else
+        {
+            d->player->setPosition(stepTo);
+        }
+    }
+}
+
+void SlideVideo::backward()
+{
+    if (d->player->isSeekable())
+    {
+        qint64 step   = d->player->duration() * 10 / 100;
+        qint64 stepTo = d->player->position() - step;
+
+        if (stepTo < 0)
+        {
+            d->player->setPosition(0);
+        }
+        else
+        {
+            d->player->setPosition(stepTo);
+        }
+    }
+}
+
 void SlideVideo::slotVolumeChanged(int volume)
 {
     d->audio->setVolume(volume / 100.0F);

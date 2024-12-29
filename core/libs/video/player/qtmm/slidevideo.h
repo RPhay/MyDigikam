@@ -42,6 +42,8 @@ public:
     void setCurrentUrl(const QUrl& url);
     void pause(bool);
     void stop();
+    void forward();
+    void backward();
 
 Q_SIGNALS:
 

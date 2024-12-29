@@ -91,6 +91,8 @@ QString SlideShowPlugin::details() const
                     "<tr><td></td>"                      "<td>Mouse wheel down</td></tr>"
                     "<tr><td></td>"                      "<td>Right mouse button</td></tr>"
                     "<tr><td>Pause/Start:</td>"          "<td><i>Space</i> key</td></tr>"
+                    "<tr><td>Video forward:</td>"        "<td><i>Ctrl+Right</i> key</td></tr>"
+                    "<tr><td>Video backward:</td>"       "<td><i>Ctrl+Left</i> key</td></tr>"
                     "<tr><td>Slideshow Settings:</td>"   "<td><i>Alt+P</i> key</td></tr>"
                     "<tr><td>Hide/Show Overlays:</td>"   "<td><i>Alt+Y</i> key</td></tr>"
                     "<tr><td>Quit:</td>"                 "<td><i>Esc</i> key</td></tr>"

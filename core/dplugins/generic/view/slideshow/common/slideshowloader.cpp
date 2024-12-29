@@ -601,6 +601,29 @@ void SlideShowLoader::keyPressEvent(QKeyEvent* e)
         return;
     }
 
+#ifdef HAVE_MEDIAPLAYER
+
+    if (
+        (currentIndex() == VideoView) &&
+        (e->modifiers() == Qt::ControlModifier)
+       )
+    {
+        if      (e->key() == Qt::Key_Right)
+        {
+            d->videoView->forward();
+
+            return;
+        }
+        else if (e->key() == Qt::Key_Left)
+        {
+            d->videoView->backward();
+
+            return;
+        }
+    }
+
+#endif
+
     d->osd->toolBar()->keyPressEvent(e);
 }
 
