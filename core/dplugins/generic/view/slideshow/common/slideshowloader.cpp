@@ -610,13 +610,17 @@ void SlideShowLoader::keyPressEvent(QKeyEvent* e)
     {
         if      (e->key() == Qt::Key_Right)
         {
+            d->osd->showVideoIndicator(true);
             d->videoView->forward();
+            d->mouseMoveTimer->start();
 
             return;
         }
         else if (e->key() == Qt::Key_Left)
         {
+            d->osd->showVideoIndicator(true);
             d->videoView->backward();
+            d->mouseMoveTimer->start();
 
             return;
         }
