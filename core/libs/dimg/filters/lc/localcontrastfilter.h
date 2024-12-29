@@ -43,6 +43,8 @@ private:
 
         Args() = default;
 
+    public:
+
         uint   start            = 0;
         uint   stop             = 0;
         float  a                = 0.0F;
