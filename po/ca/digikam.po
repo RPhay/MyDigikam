@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 02:05+0000\n"
+"POT-Creation-Date: 2024-12-29 02:02+0000\n"
 "PO-Revision-Date: 2024-12-27 09:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1317,32 +1317,32 @@ msgstr "Paràmetres tècnics"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Dades binàries</i>"
 
-#: core/app/main/digikamapp.cpp:76
+#: core/app/main/digikamapp.cpp:77
 #, kde-format
 msgid "Initializing..."
 msgstr "S'està inicialitzant..."
 
-#: core/app/main/digikamapp.cpp:157 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "S'estan carregant els connectors..."
 
-#: core/app/main/digikamapp.cpp:181 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:182 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "S'està comprovant el repositori ICC..."
 
-#: core/app/main/digikamapp.cpp:195
+#: core/app/main/digikamapp.cpp:196
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Neteja la base de dades..."
 
-#: core/app/main/digikamapp.cpp:217
+#: core/app/main/digikamapp.cpp:218
 #, kde-format
 msgid "Loading albums..."
 msgstr "S'estan carregant els àlbums..."
 
-#: core/app/main/digikamapp.cpp:364
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1354,7 +1354,7 @@ msgstr ""
 "característica de «Gestió del color» quedarà inactivada fins que resoleu "
 "aquesta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:420
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1367,92 +1367,92 @@ msgstr ""
 "disponibilitat del fitxer executable de l'ExifTool a la secció metadades.\n"
 "Missatge d'error: %1"
 
-#: core/app/main/digikamapp.cpp:706 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:715
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Cap element seleccionat (%1 [%2] element)"
 msgstr[1] "Cap element seleccionat (%1 [%2] elements)"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:720
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Cap element seleccionat (%1 element. Amb elements agrupats: %2)"
 msgstr[1] "Cap element seleccionat (%1 elements. Amb elements agrupats: %2)"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:731
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element seleccionat (%3/%4)"
 msgstr[1] "%1/%2 elements seleccionats (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:744
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element seleccionat (%4/%5)"
 msgstr[1] "%1/%2 [%3] elements seleccionats (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:749
+#: core/app/main/digikamapp.cpp:752
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element seleccionat. Total amb elements agrupats: %3"
 msgstr[1] "%1/%2 elements seleccionats. Total amb elements agrupats: %3"
 
-#: core/app/main/digikamapp.cpp:757
+#: core/app/main/digikamapp.cpp:760
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element seleccionat (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elements seleccionats (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:769
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 element seleccionat. Amb elements agrupats: %3/%4"
 msgstr[1] "%1/%2 elements seleccionats. Amb elements agrupats: %3/%4"
 
-#: core/app/main/digikamapp.cpp:797
+#: core/app/main/digikamapp.cpp:800
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:811
+#: core/app/main/digikamapp.cpp:814
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:815
+#: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total amb elements agrupats: %3)"
 
-#: core/app/main/digikamapp.cpp:826
+#: core/app/main/digikamapp.cpp:829
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element ocult"
 msgstr[1] "%1 elements ocults"
 
-#: core/app/main/digikamapp.cpp:878
+#: core/app/main/digikamapp.cpp:881
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escriu les metadades al fitxer"
 msgstr[1] "Escriu les metadades als fitxers seleccionats"
 
-#: core/app/main/digikamapp.cpp:880
+#: core/app/main/digikamapp.cpp:883
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3139,9 +3139,11 @@ msgstr "Última cerca"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, kde-format
-msgid "FacesDetector"
-msgstr "Detector de cares"
+#, fuzzy, kde-format
+#| msgctxt "@label face size for detection"
+#| msgid "Face size:"
+msgid "FacesEngine"
+msgstr "Mida de les cares:"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3260,15 +3262,16 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Esteu segur que voleu suprimir TOTS els elements permanentment?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Selecció"
 
 #: core/app/views/stack/trashview.cpp:449
-#: core/libs/database/utils/ifaces/dio.cpp:902
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Suprimeix"
 
@@ -11663,39 +11666,32 @@ msgstr "Es desen els canvis -"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:237
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:239
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:831
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:431
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:433
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:617
-#: core/dplugins/generic/webservices/google/gswindow.cpp:355
-#: core/dplugins/generic/webservices/google/gswindow.cpp:396
-#: core/dplugins/generic/webservices/google/gswindow.cpp:427
-#: core/dplugins/generic/webservices/google/gswindow.cpp:495
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1032
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1280
+#: core/dplugins/generic/webservices/google/gswindow.cpp:357
+#: core/dplugins/generic/webservices/google/gswindow.cpp:398
+#: core/dplugins/generic/webservices/google/gswindow.cpp:429
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:576
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:236
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:240
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:427
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:436
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:474
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:511
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
@@ -20484,8 +20480,8 @@ msgid "Image properties file done"
 msgstr "S'ha creat el fitxer de propietats de les imatges"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:972
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:985
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:974
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:987
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
@@ -22634,39 +22630,39 @@ msgid "Failed to list folders"
 msgstr "Ha fallat en llistar les carpetes"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:73
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Exportació a Box"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:75
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:77
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:73
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
-#: core/dplugins/generic/webservices/google/gswindow.cpp:127
-#: core/dplugins/generic/webservices/google/gswindow.cpp:174
+#: core/dplugins/generic/webservices/google/gswindow.cpp:129
+#: core/dplugins/generic/webservices/google/gswindow.cpp:176
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:75
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:77
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:77
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:266
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:117
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:119
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "Comença la pujada"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:76
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:78
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "Comença la pujada al Box"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:238
-#: core/dplugins/generic/webservices/google/gswindow.cpp:496
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:237
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:240
+#: core/dplugins/generic/webservices/google/gswindow.cpp:498
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
@@ -22674,85 +22670,67 @@ msgstr ""
 "No s'ha seleccionat cap imatge. Si us plau, seleccioneu les imatges que "
 "s'haurien de pujar."
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
-#: core/dplugins/generic/webservices/google/gswindow.cpp:516
-#: core/dplugins/generic/webservices/google/gswindow.cpp:546
-#: core/dplugins/generic/webservices/google/gswindow.cpp:984
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1005
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1054
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1104
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1322
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:655
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
-#, kde-format
-msgctxt "@title:window"
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:247
+#: core/dplugins/generic/webservices/google/gswindow.cpp:518
+#: core/dplugins/generic/webservices/google/gswindow.cpp:548
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:246
-#: core/dplugins/generic/webservices/google/gswindow.cpp:517
-#: core/dplugins/generic/webservices/google/gswindow.cpp:547
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:245
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:248
+#: core/dplugins/generic/webservices/google/gswindow.cpp:519
+#: core/dplugins/generic/webservices/google/gswindow.cpp:549
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "Ha fallat en l'autenticació. Cliqueu a «Continua» per a autenticar."
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:249
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:824
-#: core/dplugins/generic/webservices/google/gswindow.cpp:520
-#: core/dplugins/generic/webservices/google/gswindow.cpp:550
-#: core/dplugins/generic/webservices/google/gswindow.cpp:989
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1010
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1060
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1327
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:248
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:252
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:660
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:252
-#, kde-format
-msgctxt "@action:button"
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:251
+#: core/dplugins/generic/webservices/google/gswindow.cpp:522
+#: core/dplugins/generic/webservices/google/gswindow.cpp:552
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Continua"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:250
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:825
-#: core/dplugins/generic/webservices/google/gswindow.cpp:521
-#: core/dplugins/generic/webservices/google/gswindow.cpp:551
-#: core/dplugins/generic/webservices/google/gswindow.cpp:990
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1011
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1061
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1328
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:249
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:253
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:661
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:253
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
-#, kde-format
-msgctxt "@action:button"
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
+#: core/dplugins/generic/webservices/google/gswindow.cpp:523
+#: core/dplugins/generic/webservices/google/gswindow.cpp:553
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:278
-#: core/dplugins/generic/webservices/google/gswindow.cpp:378
-#: core/dplugins/generic/webservices/google/gswindow.cpp:632
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:277
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:280
+#: core/dplugins/generic/webservices/google/gswindow.cpp:380
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:279
 #, kde-format
 msgctxt "@info: progress bar"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:282
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid "Box export"
 msgstr "Exporta a Box"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:318
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
@@ -22760,11 +22738,11 @@ msgstr "Exporta a Box"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:317
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:321
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:323
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:905
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:320
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:907
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:322
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, kde-format
 msgctxt "@title:window"
@@ -22772,7 +22750,7 @@ msgid "Uploading Failed"
 msgstr "Ha fallat la pujada"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:319
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22784,28 +22762,28 @@ msgstr ""
 "%1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:377
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:379
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:369
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:377
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:379
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:383
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "Ha fallat l'inici de la sessió"
 
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:378
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:378
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:380
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "Authentication failed. Do you want to try again?"
 msgstr "Ha fallat en l'autenticació. Ho voleu tornar a provar?"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:393
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:398
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:395
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:400
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22864,8 +22842,8 @@ msgid "Start upload to Dropbox"
 msgstr "Comença la pujada al Dropbox"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:238
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:241
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:241
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:243
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:243
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
 msgstr ""
@@ -22874,8 +22852,8 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:380
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:384
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr "Ha fallat en l'autenticació. Ho voleu tornar a provar?"
@@ -22883,10 +22861,10 @@ msgstr "Ha fallat en l'autenticació. Ho voleu tornar a provar?"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:281
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:745
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:781
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:281
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:283
 #, kde-format
 msgid "%v / %m"
 msgstr "%v / %m"
@@ -22994,8 +22972,8 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:586
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:867
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:881
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:869
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:883
 #, kde-format
 msgid "Cannot open file"
 msgstr "No s'ha pogut obrir el fitxer"
@@ -23806,37 +23784,44 @@ msgstr "Menys opcions de publicació"
 msgid "Fewer tag options"
 msgstr "Menys opcions d'etiquetes"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:117
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "Exportació al servei web %1"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:156
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:158
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Inicia la pujada"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:584
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:586
 #, kde-format
 msgid "Photostream Only"
 msgstr "Només per al Photostream"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:777
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:779
 #, kde-format
 msgid "Flickr Export"
 msgstr "Exportació a Flickr"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:812
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:814
 #, kde-format
 msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr ""
 "Ha fallat en recuperar la informació del conjunt de fotografies des de %1. "
 "%2\n"
 
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:820
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window failed add photo"
+msgid "Warning"
+msgstr "Avís"
+
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:822
 #, kde-format
 msgid ""
 "Failed to upload photo into %1. %2\n"
@@ -23844,6 +23829,20 @@ msgid ""
 msgstr ""
 "Ha fallat en pujar la fotografia al %1. %2\n"
 "Voleu continuar?"
+
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button failed add photo"
+msgid "Continue"
+msgstr "Continua"
+
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button failed add photo"
+msgid "Cancel"
+msgstr "Cancel·la"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, kde-format
@@ -24086,75 +24085,104 @@ msgstr "Cadenes combinades"
 msgid "Build a combined tag string."
 msgstr "Construeix una cadena d'etiquetes combinades."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:125
+#: core/dplugins/generic/webservices/google/gswindow.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Exportació a Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:128
+#: core/dplugins/generic/webservices/google/gswindow.cpp:130
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Comença la pujada al Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:172
+#: core/dplugins/generic/webservices/google/gswindow.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Exportació al servei web Google Photos"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:175
+#: core/dplugins/generic/webservices/google/gswindow.cpp:177
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
 msgstr "Comença la pujada al servei web Google Photos"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:181
+#: core/dplugins/generic/webservices/google/gswindow.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Importació des del servei web de Google Photos"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:183
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:108
+#: core/dplugins/generic/webservices/google/gswindow.cpp:185
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
 msgstr "Comença la baixada"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:184
+#: core/dplugins/generic/webservices/google/gswindow.cpp:186
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
 msgstr "Comença la baixada des del servei web de Google Photos"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:356
-#: core/dplugins/generic/webservices/google/gswindow.cpp:428
+#: core/dplugins/generic/webservices/google/gswindow.cpp:358
+#: core/dplugins/generic/webservices/google/gswindow.cpp:430
 #, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
 msgstr "Ha fallat la crida al Google Photos: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:397
+#: core/dplugins/generic/webservices/google/gswindow.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Ha fallat la crida al Google Drive: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:641
-#, kde-format
-msgctxt "@info"
+#: core/dplugins/generic/webservices/google/gswindow.cpp:497
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window start transfert"
+msgid "Error"
+msgstr "Error"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:634
+#, fuzzy, kde-format
+#| msgid "%v / %m"
+msgctxt "@info: progress bar start transfert"
+msgid "%v / %m"
+msgstr "%v / %m"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:643
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Google Drive export"
+msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Exportació a Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:649
-#, kde-format
-msgctxt "@info"
+#: core/dplugins/generic/webservices/google/gswindow.cpp:651
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Google Photo export"
+msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Exportació a Google Photo"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:985
+#: core/dplugins/generic/webservices/google/gswindow.cpp:986
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1007
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window get photo done"
+msgid "Warning"
+msgstr "Avís"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:987
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24164,7 +24192,23 @@ msgstr ""
 "Ha fallat en desar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1006
+#: core/dplugins/generic/webservices/google/gswindow.cpp:991
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1012
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button get photo done"
+msgid "Continue"
+msgstr "Continua"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:992
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button get photo done"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1008
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24174,13 +24218,27 @@ msgstr ""
 "Ha fallat en baixar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1033
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1034
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window get photo done"
+msgid "Error"
+msgstr "Error"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1035
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Ha fallat en desar la imatge a %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1055
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1056
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window add photo done"
+msgid "Warning"
+msgstr "Avís"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1057
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24192,7 +24250,28 @@ msgstr ""
 "%2\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1105
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1062
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button add photo done"
+msgid "Continue"
+msgstr "Continua"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button add photo done"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1106
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window upload photo done"
+msgid "Warning"
+msgstr "Avís"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24204,13 +24283,22 @@ msgstr ""
 "%2\n"
 "No s'ha pujat cap imatge al vostre compte."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1110
-#, kde-format
-msgctxt "@action:button"
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1112
+#, fuzzy, kde-format
+#| msgid "OK"
+msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "D'acord"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1264
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1265
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1282
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window create folder"
+msgid "Error"
+msgstr "Error"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24220,7 +24308,7 @@ msgstr ""
 "Ha fallat la crida al Google Drive:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1281
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1283
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24230,7 +24318,15 @@ msgstr ""
 "Ha fallat la crida al Google Photos:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1323
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1324
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window change user"
+msgid "Warning"
+msgstr "Avís"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1325
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24239,6 +24335,22 @@ msgid ""
 msgstr ""
 "Es tancarà la sessió del compte, feu clic a «Continua» per a autenticar-vos "
 "amb un altre compte"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1329
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button change user"
+msgid "Continue"
+msgstr "Continua"
+
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1330
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button change user"
+msgid "Cancel"
+msgstr "Cancel·la"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:44
 #, kde-format
@@ -25612,26 +25724,26 @@ msgctxt "@action"
 msgid "Export to &Onedrive..."
 msgstr "Exporta a &Onedrive..."
 
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:73
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "Exportació a Onedrive"
 
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:76
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "Comença la pujada al Onedrive"
 
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:281
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
 msgstr "Exporta a Onedrive"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:318
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25643,8 +25755,8 @@ msgstr ""
 "%1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:392
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:397
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:394
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25694,30 +25806,30 @@ msgstr "Ha fallat en pujar el PIN"
 msgid "Failed to list boards"
 msgstr "Ha fallat en llistar les taules"
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:73
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Exportació a Pinterest"
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:76
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:78
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "Comença la pujada al Pinterest"
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:249
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:249
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:251
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:251
 #, kde-format
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "Ha fallat en l'autenticació. Cliqueu a «Continua» per a autenticar."
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:285
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:287
 #, kde-format
 msgid "Pinterest export"
 msgstr "Exportació a Pinterest"
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:322
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:324
 #, kde-format
 msgid ""
 "Failed to upload photo to Pinterest.\n"
@@ -25728,8 +25840,8 @@ msgstr ""
 "%1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:394
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:399
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:396
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:401
 #, kde-format
 msgid ""
 "Pinterest call failed:\n"
@@ -26423,45 +26535,45 @@ msgstr ""
 msgid "Maximum dimension:"
 msgstr "Dimensió màxima:"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:106
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:108
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "Importació des del servei web de SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:109
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:111
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "Comença la baixada des del servei web de SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:115
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "Exportació al servei web SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:118
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:120
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Comença la pujada al servei web de SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:427
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:436
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:474
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:511
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
 #, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "La crida a SmugMug ha fallat: %1\n"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:507
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:509
 #, kde-format
 msgid "&lt;none&gt;"
 msgstr "&lt;cap&gt;"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:656
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:658
 #, kde-format
 msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
@@ -26470,17 +26582,17 @@ msgstr ""
 "Es tancarà la sessió del compte, feu clic a «Continua» per a autenticar-vos "
 "amb un altre compte."
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:748
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:750
 #, kde-format
 msgid "SmugMug Import"
 msgstr "Importació des de SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:784
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:786
 #, kde-format
 msgid "SmugMug Export"
 msgstr "Exportació a SmugMug"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:906
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:908
 #, kde-format
 msgid ""
 "Failed to upload photo to SmugMug.\n"
@@ -26491,7 +26603,7 @@ msgstr ""
 "%1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:973
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:975
 #, kde-format
 msgid ""
 "Failed to save photo: %1\n"
@@ -26500,7 +26612,7 @@ msgstr ""
 "Ha fallat en desar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:986
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:988
 #, kde-format
 msgid ""
 "Failed to download photo: %1\n"
@@ -26565,24 +26677,24 @@ msgstr ""
 msgid "Failed to create tweet for photo uploaded"
 msgstr "Ha fallat en crear el tweet de la fotografia pujada"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:73
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "Exportació a Twitter"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:76
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "Comença la pujada al Twitter"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:285
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:287
 #, kde-format
 msgid "Twitter export"
 msgstr "Exportació a Twitter"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:321
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:323
 #, kde-format
 msgid ""
 "Failed to upload photo to Twitter.\n"
@@ -26594,8 +26706,8 @@ msgstr ""
 "Voleu continuar?"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:401
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:406
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
 #, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -27118,10 +27230,13 @@ msgid "The SQLite core database was not found."
 msgstr "No s'ha trobat la base de dades del nucli de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If you want to start with a new configuration and with a first run "
+#| "wizard, delete the file:<br>%1</p>"
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
-"wizard, delete the file:<br>%1</p>"
+"wizard, delete the file:<br/>%1</p>"
 msgstr ""
 "<p>Si voleu començar amb una configuració nova i amb un assistent de primera "
 "execució, suprimiu el fitxer:<br>%1</p>"
@@ -29114,6 +29229,13 @@ msgstr "Mou imatges"
 msgid "Move Files"
 msgstr "Mou fitxers"
 
+#: core/libs/database/utils/ifaces/dio.cpp:902
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
+#, kde-format
+msgid "Delete"
+msgstr "Suprimeix"
+
 #: core/libs/database/utils/ifaces/dio.cpp:912
 #, kde-format
 msgid "Restore Trash"
@@ -29177,7 +29299,7 @@ msgid "Migrate ->"
 msgstr "Migra ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
-#: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
@@ -29592,7 +29714,18 @@ msgstr ""
 "i></b> per la correcta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Note: with a Linux server, a database can be initialized following the "
+#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
+#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
+#| "digiKam databases with grant privileges (see behind)</p><p>...</"
+#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
+#| "based Linux system, use the addition command in the mysql prompt to be "
+#| "able to create MySQL triggers.<br>SET GLOBAL "
+#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
+#| "collection, you should start MySQL server with mysql --"
+#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29600,9 +29733,10 @@ msgid ""
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
 "p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
 "system, use the addition command in the mysql prompt to be able to create "
-"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
-"If you have an enormous collection, you should start MySQL server with mysql "
-"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+"MySQL triggers.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
+"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
+"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
+"settings</p>"
 msgstr ""
 "<p>Nota: En un servidor Linux, la base de dades es pot inicialitzar amb les "
 "ordres següents:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -"
@@ -34707,25 +34841,27 @@ msgstr "Dimensió màxima:"
 msgid "JPEG Quality:"
 msgstr "Qualitat JPEG:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:55
-#, kde-format
-msgctxt "@action:button"
+#: core/libs/dplugins/webservices/wstooldialog.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "&Start"
+msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Inicia"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:98
+#: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #: core/libs/onlineversion/onlineversiondlg.cpp:308
 #: core/libs/onlineversion/onlineversiondlg.cpp:485
 #, kde-format
 msgid "Close"
 msgstr "Tanca"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:100
+#: core/libs/dplugins/webservices/wstooldialog.cpp:102
 #, kde-format
 msgid "Close window"
 msgstr "Tanca la finestra"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:107
+#: core/libs/dplugins/webservices/wstooldialog.cpp:109
 #, kde-format
 msgid "Cancel current operation"
 msgstr "Cancel·la l'operació actual"
@@ -43641,14 +43777,14 @@ msgstr "Pestanya següent de la barra lateral dreta"
 msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:121
-#: core/libs/widgets/mainview/dzoombar.cpp:210
+#: core/libs/widgets/mainview/dzoombar.cpp:123
+#: core/libs/widgets/mainview/dzoombar.cpp:213
 #, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
 msgstr "%1%"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:223
+#: core/libs/widgets/mainview/dzoombar.cpp:227
 #, kde-format
 msgid "Size: %1"
 msgstr "Mida: %1"
@@ -52268,32 +52404,38 @@ msgctxt "@action:button"
 msgid "Begin"
 msgstr "Comença"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
+#, kde-format
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmació de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:101
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
 #, kde-format
 msgid "Removing face"
 msgstr "Eliminació de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:114
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
 #, kde-format
 msgid "Editing face tag"
 msgstr "Edició d'etiqueta de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
 #, kde-format
 msgid "Editing face region"
 msgstr "Edició de regió de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:154
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
 #, kde-format
 msgid "Manually adding face"
 msgstr "Addició de cara manualment"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:225
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "S'estan aplicant els canvis de cares"
@@ -52383,52 +52525,56 @@ msgstr ""
 #. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
 #. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
+#.
+#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
+#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
+#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Explora les imatges noves"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Explora totes les imatges"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Només reconeix les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de treball"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:222
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Cerca a"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:237
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52440,31 +52586,31 @@ msgstr ""
 "valor, amb més precisió\n"
 "es detectaran les cares, però es reconeixeran menys cares."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:249
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
 #, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:255
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:258
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YuNet"
 msgstr "YuNet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:256
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:259
 #, kde-format
 msgctxt "@label:listbox"
 msgid "YOLOv3"
 msgstr "YOLOv3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:257
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
 msgstr "SSD"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52479,43 +52625,53 @@ msgstr ""
 "Nota: El YuNet només és disponible si el digiKam s'ha compilat amb l'OpenCV "
 "4.6.0 o posterior."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:281
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
-#, kde-format
-msgctxt "@label:listbox"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Extra Small"
+msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molt petita"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
-#, kde-format
-msgctxt "@label:listbox"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Small"
+msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Petita"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#, kde-format
-msgctxt "@label:listbox"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Mitjana"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, kde-format
-msgctxt "@label:listbox"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Large"
+msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, kde-format
-msgctxt "@label:listbox"
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Extra Large"
+msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molt gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52547,18 +52703,18 @@ msgstr ""
 "de detecció de 6-8 i una mida de cara <b>Mitjana</b> o <b>Gran</b> per a un "
 "ús normal.</p><p>Aquest paràmetre no s'aplica a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:320
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configuració de la detecció de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:329
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:336
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52573,25 +52729,25 @@ msgstr ""
 "Nota: només es reconeixeran les cares que siguin molt similars a les cares "
 "etiquetades amb anterioritat."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:341
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:344
 #, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Model:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:345
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:348
 #, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:346
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
 #, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52605,14 +52761,14 @@ msgstr ""
 "Nota: El SFace només és disponible si el digiKam s'ha compilat amb l'OpenCV "
 "4.6.0 o posterior."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:384
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52624,12 +52780,12 @@ msgstr ""
 "Podeu triar si desitgeu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:393
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configuració del reconeixement de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:398
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53063,13 +53219,13 @@ msgstr "Similitud mitjana"
 msgid "This shows all found duplicate items."
 msgstr "Això mostra tots els elements duplicats trobats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:107
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualitza les empremtes digitals"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:109
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
@@ -53077,13 +53233,13 @@ msgstr ""
 "Useu aquest botó per a actualitzar totes les empremtes digitals de les "
 "imatges."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:111
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Cerca els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:113
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53091,43 +53247,43 @@ msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar els "
 "elements duplicats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:118
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Cerca a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Interval de similitud:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:140
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restricció:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Cap"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Restringeix a l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Exclou l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53139,92 +53295,94 @@ msgstr ""
 "criteris, com limitar la cerca a l'àlbum de la imatge de referència, o per a "
 "excloure de la cerca l'àlbum de la imatge de referència."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restringeix a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Només la pestanya seleccionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un de"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambdós"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Àlbums però no etiquetes"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetes però no àlbums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr "Més antiga o més gran"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr "Prefereix la carpeta seleccionada com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 "Prefereix una altra carpeta en lloc de la seleccionada com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Prefereix una data de creació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Prefereix una data de modificació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:208
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Selecció del mètode per a la selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "Reference"
 msgstr "Referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:216
-#, kde-format
-msgctxt "@group"
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#, fuzzy, kde-format
+#| msgctxt "@group"
+#| msgid "Reference Image Selection Method"
+msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Mètode de selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53251,13 +53409,13 @@ msgstr ""
 "«Només la pestanya seleccionada» vol dir que només s'usa la pestanya "
 "seleccionada."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Elimina els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:241
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -61539,7 +61697,9 @@ msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Avís"
 
@@ -61734,14 +61894,17 @@ msgid "Duplicates for: %1\n"
 msgstr "Duplicats de: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, kde-format
-msgid "No duplicate"
+#, fuzzy, kde-format
+#| msgid "No duplicate"
+msgid "No duplicate item"
 msgstr "Cap duplicat"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, kde-format
-msgid "1 duplicate"
-msgid_plural "%1 duplicates"
+#, fuzzy, kde-format
+#| msgid "1 duplicate"
+#| msgid_plural "%1 duplicates"
+msgid "1 duplicate item"
+msgid_plural "%1 duplicate items"
 msgstr[0] "1 duplicat"
 msgstr[1] "%1 duplicats"
 
@@ -68524,6 +68687,25 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgid "FacesDetector"
+#~ msgstr "Detector de cares"
+
+#~ msgctxt "@title:window"
+#~ msgid "Warning"
+#~ msgstr "Avís"
+
+#~ msgctxt "@action:button"
+#~ msgid "Continue"
+#~ msgstr "Continua"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "D'acord"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Medium"
+#~ msgstr "Mitjana"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Skip images already scanned"
