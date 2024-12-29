@@ -64,7 +64,7 @@ BUGFIXES:
 045 ==> 497824 - Wrong location displayed for mp4.
 046 ==> 497791 - Unwanted face recognition function in preview mode when face management is disabled.
 047 ==> 497814 - Add Support for Configurable Output Color Profile When Editing with darktable.
-048 ==>
+048 ==> 497567 - Feature Request: "No New Images for Deceased Persons".
 049 ==>
 050 ==>
 051 ==>
