@@ -68,7 +68,7 @@ BUGFIXES:
 049 ==> 459499 - The possibility to disable persons.
 050 ==> 498005 - Provide shortcuts for videos in the slideshow.
 051 ==> 498025 - Excluded directory is still not excluded.
-052 ==>
+052 ==> 498041 - Debian testing doesn't need libgnutls.so.30 from AppImage.
 053 ==>
 054 ==>
 055 ==>

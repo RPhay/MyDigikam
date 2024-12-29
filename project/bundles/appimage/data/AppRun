@@ -60,6 +60,13 @@ if [ -z "${OS_VERSION}" ] ; then
 
 fi
 
+if [ "${OS_NAME}" == "debian gnu/linux" ] ; then
+
+    # Debian testing versions don't include numbers in /etc/os-release.
+    OS_VERSION=$(</etc/debian_version)
+
+fi
+
 echo "-- Detected host Linux $OS_NAME-$OS_ARCH-$OS_VERSION"
 
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted
@@ -186,6 +193,8 @@ preload_shared_library libgmodule-2.0.so.0
 # See bug #216915 and #492040
 
 if [[ ! (($OS_NAME == "arch"                && $OS_VERSION == "rolling")                                                ||
+         ($OS_NAME == "debian gnu/linux"    && $OS_VERSION == "sid")                                                    ||
+         ($OS_NAME == "debian gnu/linux"    && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "13"      ) }') == "1")  ||
          ($OS_NAME == "ubuntu"              && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "20.10"   ) }') == "1")  ||
          ($OS_NAME == "manjarolinux"        && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "24.7"    ) }') == "1")  ||
          ($OS_NAME == "fedora linux"        && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "40"      ) }') == "1")  ||
