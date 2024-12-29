@@ -213,6 +213,42 @@ void SlideVideo::stop()
     d->videoWidget->player()->setSource(QString());
 }
 
+void SlideVideo::forward()
+{
+    if (d->videoWidget->player()->isSeekable())
+    {
+        qint64 step   = d->videoWidget->player()->duration() * 10 / 100;
+        qint64 stepTo = d->videoWidget->player()->position() + step;
+
+        if (stepTo > d->player->duration())
+        {
+            d->videoWidget->player()->seek(d->player->duration());
+        }
+        else
+        {
+            d->videoWidget->player()->seek(stepTo);
+        }
+    }
+}
+
+void SlideVideo::backward()
+{
+    if (d->videoWidget->player()->isSeekable())
+    {
+        qint64 step   = d->videoWidget->player()->duration() * 10 / 100;
+        qint64 stepTo = d->videoWidget->player()->position() - step;
+
+        if (stepTo < 0)
+        {
+            d->videoWidget->player()->seek(0);
+        }
+        else
+        {
+            d->videoWidget->player()->seek(stepTo);
+        }
+    }
+}
+
 void SlideVideo::slotVolumeChanged(int volume)
 {
     d->videoWidget->audioOutput()->setVolume((qreal)volume / 100.0);
