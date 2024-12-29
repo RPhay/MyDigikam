@@ -402,6 +402,8 @@ void SlideToolBar::slotRemoveImage()
     int ret = msgBox->exec();
     delete msgBox;
 
+    d->parentWidget->setFocus();
+
     if (ret == QMessageBox::Yes)
     {
         Q_EMIT signalRemoveImageFromList();
