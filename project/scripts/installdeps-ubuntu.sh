@@ -239,6 +239,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libclang-dev"                       # For static analysis
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
+                   "texlive-full"                       # For API doc
                    "kate"                               # For debuging
                    "ktexteditor-katepart"               # For debuging
                    "ccache"                             # For compiling
@@ -305,8 +306,5 @@ done
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
 
-# Remove native Qt6 libs from the system
-
-sudo apt remove -y libqt6core || true
 
 
