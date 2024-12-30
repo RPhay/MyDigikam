@@ -222,7 +222,7 @@ void SlideVideo::forward()
 
         if (stepTo > d->videoWidget->player()->duration())
         {
-            d->videoWidget->player()->seek(d->player->duration());
+            d->videoWidget->player()->seek(d->videoWidget->player()->duration());
         }
         else
         {
