@@ -54,7 +54,7 @@ CURRENT_DATE=`date +"%Y-%m-%d"`
 TARBALL_FILE="digiKam-apidoc-$CURRENT_DATE.tar.xz"
 TARBALL_PATH="$CURRENT_DIR/$TARBALL_FILE"
 PDF_FILE="digiKam-apidoc-$CURRENT_DATE.pdf"
-PDF_PATH="$CURRENT_DIR/$PDF_FILE"
+PDF_PATH="$CURRENT_DIR/latex/$PDF_FILE"
 
 QT_INSTALL_PREFIX=`$QTPATHS --install-prefix`
 QT_PLUGIN_INSTALL_DIR=`$QTPATHS --plugin-dir`
@@ -114,7 +114,7 @@ latex refman.tex || true
 dviinfox -p refman.dvi
 dvipdfm refman.dvi
 
-mv refman.pdf $PDF_FILE
+mv ./refman.pdf $PDF_FILE
 
 # Upload API PDF section
 
