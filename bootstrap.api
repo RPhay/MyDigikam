@@ -110,7 +110,7 @@ rm -fr $TARBALL_PATH
 
 cd $CURRENT_DIR/latex
 
-latex refman.tex
+latex refman.tex || true
 dviinfox -p refman.dvi
 dvipdfm refman.dvi
 
