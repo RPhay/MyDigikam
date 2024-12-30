@@ -220,7 +220,7 @@ void SlideVideo::forward()
         qint64 step   = d->videoWidget->player()->duration() * 10 / 100;
         qint64 stepTo = d->videoWidget->player()->position() + step;
 
-        if (stepTo > d->player->duration())
+        if (stepTo > d->videoWidget->player()->duration())
         {
             d->videoWidget->player()->seek(d->player->duration());
         }
