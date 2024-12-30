@@ -114,7 +114,7 @@ latex refman.tex || true
 dviinfox -p refman.dvi
 dvipdfm refman.dvi
 
-mv ./refman.pdf $PDF_FILE
+mv ./refman.pdf $PDF_PATH
 
 # Upload API PDF section
 
