@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-29 02:02+0000\n"
-"PO-Revision-Date: 2024-12-27 15:24+0300\n"
+"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"PO-Revision-Date: 2024-12-29 14:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3153,11 +3153,9 @@ msgstr "Son Arama"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Yüz boyutu:"
+msgstr "Yüz İşletkesi"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3275,15 +3273,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "TÜM ögeleri kalıcı olarak silmek istediğinizden emin misiniz?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Seçim"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Sil"
@@ -21891,27 +21887,27 @@ msgid "Presentation..."
 msgstr "Sunum…"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Slayt Gösterisi için Gecikmeyi Belirt"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgid "Delay:"
 msgstr "Gecikme:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Görseli Sil"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Bu görseli çöp kutusuna taşımak istiyor musunuz?"
@@ -21994,7 +21990,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22255,7 +22251,31 @@ msgid "A tool to render slideshow"
 msgstr "Slayt gösterisi oluşturmak için bir araç"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22268,11 +22288,13 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
-"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
+"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
+"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22306,29 +22328,29 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Diğerleri</h1></b></center></nobr></td></"
 "tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> düğmesi</td></tr></table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
 #: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, kde-format
 msgid "Play All"
 msgstr "Tümünü Oynat"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, kde-format
 msgid "Play Selection"
 msgstr "Seçimi Oynat"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "Alt Albümlerle Oynat"
@@ -22353,12 +22375,12 @@ msgstr ""
 "%1\n"
 "ögesi gösterilirken hata oluştu"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
 #, kde-format
 msgid "Switch Screen"
 msgstr "Ekran Değiştir"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -22465,8 +22487,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Uyarı"
@@ -22487,8 +22508,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Sürdür"
@@ -22499,8 +22519,7 @@ msgstr "Sürdür"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "İptal"
@@ -23597,8 +23616,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "%1 konumundan Photoset bilgisi getirilemedi. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Uyarı"
@@ -23613,15 +23631,13 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "İptal"
@@ -23923,39 +23939,32 @@ msgstr "Google Drive çağrısı başarısız: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Hata"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Google Drive’a dışa aktar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Google Fotoğraflar’a dışa aktar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Uyarı"
@@ -23972,16 +23981,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "İptal"
@@ -23997,8 +24004,7 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Hata"
@@ -24010,8 +24016,7 @@ msgid "Failed to save image to %1"
 msgstr "Görsel, %1 konumuna kaydedilemedi"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Uyarı"
@@ -24029,22 +24034,19 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "İptal"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Uyarı"
@@ -24062,16 +24064,14 @@ msgstr ""
 "Hesabınıza bir görsel yüklenmedi."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "Tamam"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Hata"
@@ -24098,8 +24098,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Uyarı"
@@ -24116,16 +24115,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "İptal"
@@ -26996,16 +26993,13 @@ msgid "The SQLite core database was not found."
 msgstr "SQLite çekirdek veritabanı bulunamadı."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
-"<p>İlk kullanım sihirbazı ile yeni bir yapılandırma başlatmak istiyorsanız "
-"şu dosyayı silin:<br>%1</p>"
+"<p>İlk kullanım sihirbazını çalıştırıp yeni bir yapılandırma başlatmak "
+"istiyorsanız şu dosyayı silin:<br/>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -29438,18 +29432,7 @@ msgstr ""
 "değiştirdikten sonra).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29468,7 +29451,7 @@ msgstr ""
 "için MySQL istemine SQL kodunu girin (arkaya bakın)</p><p>…</p><p>çık</"
 "p><p>NOT: Ubuntu tabanlı bir Linux dağıtımında MySQL sunucularıyla "
 "sorunlarınız varsa MySQL tetikleyicilerini oluşturabilmek için toplama "
-"komutunu kullanın.<br>SET GLOBAL log_bin_trust_function_creators=1;</"
+"komutunu kullanın.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
 "p><p>NOT: Devasa bir koleksiyonunuz varsa MySQL sunucusunu mysql --"
 "max_allowed_packet=128M OR in my.ini veya ~/.my.cnf ile başlatıp ayarları "
 "değiştirmelisiniz</p>"
@@ -32403,7 +32386,7 @@ msgstr "Girdi renk profili “%1” kullanılamıyor"
 msgid "Output color profile \"%1\" not available"
 msgstr "Çıktı renk profili “%1” kullanılamıyor"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Yerel Karşıtlık Süzgeci"
@@ -34467,9 +34450,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG kalitesi:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Başlat"
@@ -42650,8 +42631,9 @@ msgid "A KDE Family Project"
 msgstr "Bir KDE projesi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, kde-format
-msgid "(c) 2001-2024, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2024, digiKam developers team"
+msgid "(c) 2001-2025, digiKam developers team"
 msgstr "© 2002–2024, digiKam geliştiricileri takımı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
@@ -52120,41 +52102,31 @@ msgid "Face size:"
 msgstr "Yüz boyutu:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Ekstra küçük"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Küçük"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Orta"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Büyük"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Ekstra büyük"
@@ -52851,12 +52823,10 @@ msgid "Reference"
 msgstr "Başvuru"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
-msgstr "Başvuru Görsel Seçim Yöntemi"
+msgstr "Başvuru görsel seçim yöntemi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
@@ -61112,8 +61082,7 @@ msgid "Sync Metadata and Database"
 msgstr "Üst Veriyi ve Veritabanını Eşzamanla"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Uyarı"
@@ -61307,19 +61276,16 @@ msgid "Duplicates for: %1\n"
 msgstr "Şunun için olan yinelenenler: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Yinelenen yok"
+msgstr "Yinelenen öge yok"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "1 yinelenen"
-msgstr[1] "%1 yinelenen"
+msgstr[0] "1 yinelenen öge"
+msgstr[1] "%1 yinelenen öge"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, kde-format

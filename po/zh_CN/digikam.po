@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-29 02:02+0000\n"
+"POT-Creation-Date: 2024-12-30 02:00+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3067,11 +3067,9 @@ msgstr "上次搜索"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgid "FacesEngine"
-msgstr "人脸大小："
+msgstr ""
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3184,18 +3182,16 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您确定要彻底删除所有项目吗？"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
-msgstr "选中内容"
+msgstr ""
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: core/app/views/stack/trashview.cpp:516
 #, kde-format
@@ -21070,27 +21066,27 @@ msgid "Presentation..."
 msgstr "演示..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "指定幻灯片放映延迟"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgid "Delay:"
 msgstr "延迟："
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "删除图像"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "您想要将此图像移动至回收站吗？"
@@ -21173,7 +21169,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21424,7 +21420,31 @@ msgid "A tool to render slideshow"
 msgstr "放映图像幻灯片"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -21437,11 +21457,13 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
-"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
+"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
+"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -21471,29 +21493,29 @@ msgstr ""
 "nobr></td></tr><tr><td>显示此帮助信息：</td><td><i>F1</i> 键</td></tr></"
 "table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "幻灯片"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
 #: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, kde-format
 msgid "Play All"
 msgstr "放映所有项"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, kde-format
 msgid "Play Selection"
 msgstr "放映选中项"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "放映含子相册项"
@@ -21518,12 +21540,12 @@ msgstr ""
 "显示以下项目时发生错误\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
 #, kde-format
 msgid "Switch Screen"
 msgstr "切换屏幕"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -21627,11 +21649,10 @@ msgstr "未选择图像。请选择要上传的图像。"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:248
 #: core/dplugins/generic/webservices/google/gswindow.cpp:519
@@ -21648,11 +21669,10 @@ msgstr "身份验证失败。点击“继续”进行身份验证。"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21660,11 +21680,10 @@ msgstr "继续"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -22726,11 +22745,10 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "无法获取照片集 %1 信息。%2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:822
 #, kde-format
@@ -22742,18 +22760,16 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, kde-format
@@ -23047,42 +23063,35 @@ msgstr "Google Drive 调用失败： %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
-msgstr "%v / %m"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
-msgstr "Google Drive 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
-msgstr "Google Photos 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:987
 #, kde-format
@@ -23096,19 +23105,17 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1008
 #, kde-format
@@ -23121,11 +23128,10 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1035
 #, kde-format
@@ -23134,11 +23140,10 @@ msgid "Failed to save image to %1"
 msgstr "无法保存照片到 %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1057
 #, kde-format
@@ -23153,25 +23158,22 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1107
 #, kde-format
@@ -23186,19 +23188,17 @@ msgstr ""
 "并未上传任何图像到您的账户。"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
-msgstr "确定"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1266
 #, kde-format
@@ -23222,11 +23222,10 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1325
 #, kde-format
@@ -23238,19 +23237,17 @@ msgstr "您的账户将退出登录，点击“继续”以登录到另一个账
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:44
 #, kde-format
@@ -26077,16 +26074,11 @@ msgid "The SQLite core database was not found."
 msgstr "找不到 SQLite 核心数据库。"
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
-"<p>如果您想要使用全新的配置文件启动并打开首次运行配置向导，请删除文件：<br>"
-"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -28428,18 +28420,7 @@ msgstr ""
 "命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -28452,14 +28433,6 @@ msgid ""
 "with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
 "settings</p>"
 msgstr ""
-"<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
-"p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
-"提示符下输入以下 SQL 命令初始化 digiKam 数据库并授予所需权限 (详见后文)</"
-"p><p>...</p><p>quit</p><p>提示：如果您在基于 Ubuntu 的发行版中遇到了 MySQL 服"
-"务器问题，请在 MySQL 的命令行模式中输入以下的附加命令来创建 MySQL 触发器 ："
-"<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>提示：如果您的相册集"
-"合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
-"令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -31282,7 +31255,7 @@ msgstr "输入色彩特性文件“%1”不可用"
 msgid "Output color profile \"%1\" not available"
 msgstr "输出色彩特性文件“%1”不可用"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "局部对比度滤镜"
@@ -33283,12 +33256,10 @@ msgid "JPEG Quality:"
 msgstr "JPEG 画质："
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
-msgstr "开始(&S)"
+msgstr ""
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #: core/libs/onlineversion/onlineversiondlg.cpp:308
@@ -41239,8 +41210,9 @@ msgid "A KDE Family Project"
 msgstr "KDE 社区软件项目"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, kde-format
-msgid "(c) 2001-2024, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2024, digiKam developers team"
+msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001-2024, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
@@ -50362,27 +50334,27 @@ msgstr "取消"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
 #, kde-format
 msgid "Confirming face"
-msgstr ""
+msgstr "正在确认人脸"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
 #, kde-format
 msgid "Removing face"
-msgstr ""
+msgstr "正在移除人脸"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
 #, kde-format
 msgid "Editing face tag"
-msgstr ""
+msgstr "正在编辑人脸标签"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
 #, kde-format
 msgid "Editing face region"
-msgstr ""
+msgstr "正在编辑人脸区域"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
 #, kde-format
 msgid "Manually adding face"
-msgstr ""
+msgstr "正在手动添加人脸"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -50577,44 +50549,34 @@ msgid "Face size:"
 msgstr "人脸大小："
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
-msgstr "超小"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
-msgstr "小"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
-msgstr "中等大小"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "大"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
-msgstr "超大"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
 #, kde-format
@@ -51267,12 +51229,10 @@ msgid "Reference"
 msgstr "参考图像"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
-msgstr "参考图像选择方式"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
@@ -59334,11 +59294,10 @@ msgid "Sync Metadata and Database"
 msgstr "图像与数据库元数据同步"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:400
 #, kde-format
@@ -59526,18 +59485,15 @@ msgid "Duplicates for: %1\n"
 msgstr "%1 的重复项\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
-msgstr "无重复项"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "%1 个重复项"
+msgstr[0] ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, kde-format
@@ -65891,22 +65847,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "FacesDetector"
-#~ msgstr "人脸检测程序"
-
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "警告"
-
-#~ msgctxt "@action:button"
-#~ msgid "Continue"
-#~ msgstr "继续"
-
-#~ msgctxt "@action:button"
-#~ msgid "OK"
-#~ msgstr "确定"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Medium"
-#~ msgstr "中"

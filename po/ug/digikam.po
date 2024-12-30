@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-29 02:02+0000\n"
+"POT-Creation-Date: 2024-12-30 02:00+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -21515,7 +21515,7 @@ msgid "Presentation..."
 msgstr "ئايلاندۇر"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgctxt "@title:window"
@@ -21523,13 +21523,13 @@ msgid "Specify Delay for Slide Show"
 msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -21537,7 +21537,7 @@ msgid "Delete Image"
 msgstr "خەتكۈش ئۆچۈرۈش"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgid "Do you want to move this image to the trash?"
@@ -21625,7 +21625,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "تام تەسۋىرى"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21893,11 +21893,13 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
-"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
+"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
+"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -21906,31 +21908,31 @@ msgid ""
 "td></tr></table>"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "تام تەسۋىرى"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
 #: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "تام تەسۋىرى"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, fuzzy, kde-format
 msgid "Play All"
 msgstr "ھەممىنى تازىلا"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Play Selection"
 msgstr "تاللاش"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr ""
@@ -21950,12 +21952,12 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
 #, kde-format
 msgid "Switch Screen"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -31692,7 +31694,7 @@ msgstr ""
 msgid "Output color profile \"%1\" not available"
 msgstr ""
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr ""
@@ -41789,7 +41791,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
 #, kde-format
-msgid "(c) 2001-2024, digiKam developers team"
+msgid "(c) 2001-2025, digiKam developers team"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76

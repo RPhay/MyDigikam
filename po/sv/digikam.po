@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-29 02:02+0000\n"
+"POT-Creation-Date: 2024-12-30 02:00+0000\n"
 "PO-Revision-Date: 2024-12-03 21:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -21852,27 +21852,27 @@ msgid "Presentation..."
 msgstr "Presentation..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Ange fördröjning för bildspel"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgid "Delay:"
 msgstr "Fördröjning:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Ta bort bild"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Vill du flytta bilden till papperskorgen?"
@@ -21955,7 +21955,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Bildspel"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22213,7 +22213,31 @@ msgid "A tool to render slideshow"
 msgstr "Ett verktyg för att återge ett bildspel"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22226,11 +22250,13 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
-"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
+"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
+"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22264,29 +22290,29 @@ msgstr ""
 "tr><tr><td>Visa den här hjälpen:</td><td>tangenten <i>F1</i></td></tr></"
 "table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Bildspel"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
 #: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "Bildspel"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, kde-format
 msgid "Play All"
 msgstr "Spela alla"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, kde-format
 msgid "Play Selection"
 msgstr "Spela markering"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "Spela med delalbum"
@@ -22311,12 +22337,12 @@ msgstr ""
 "Ett fel uppstod när objektet skulle visas\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
 #, kde-format
 msgid "Switch Screen"
 msgstr "Byt skärm"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -32357,7 +32383,7 @@ msgstr "Färginmatningsprofil \"%1\" inte tillgänglig"
 msgid "Output color profile \"%1\" not available"
 msgstr "Färgutmatningsprofil \"%1\" inte tillgänglig"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Lokal kontrastfilter"
@@ -42612,8 +42638,9 @@ msgid "A KDE Family Project"
 msgstr "Ett projekt i KDE-familjen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, kde-format
-msgid "(c) 2001-2024, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2024, digiKam developers team"
+msgid "(c) 2001-2025, digiKam developers team"
 msgstr "© 2001-2024, Digikam-utvecklingsgruppen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76

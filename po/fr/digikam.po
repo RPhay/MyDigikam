@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-29 02:02+0000\n"
-"PO-Revision-Date: 2024-12-26 10:52+0100\n"
+"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"PO-Revision-Date: 2024-12-28 09:36+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -22276,27 +22276,27 @@ msgid "Presentation..."
 msgstr "Présentation…"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:238
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Spécifier un délai pour le diaporama"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:239
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgid "Delay:"
 msgstr "Retard :"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:389
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Supprimer une image"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:390
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Voulez-vous vraiment déplacer cette image  ?"
@@ -22379,7 +22379,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22647,7 +22647,31 @@ msgid "A tool to render slideshow"
 msgstr "Un outil de rendu de diaporama"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22660,11 +22684,13 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>Alt+P</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt"
-"+Y</i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
+"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
+"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
+"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22700,29 +22726,29 @@ msgstr ""
 "tr><tr><td>Afficher cette page d'aide : </td><td>Touche <i> « F1 » </i></"
 "td></tr></table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
 #: core/libs/settings/applicationsettings_miscs.cpp:488
 #, kde-format
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, kde-format
 msgid "Play All"
 msgstr "Tout jouer"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, kde-format
 msgid "Play Selection"
 msgstr "Jouer la sélection"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "Jouer avec les sous-albums"
@@ -22747,12 +22773,12 @@ msgstr ""
 "Une erreur est survenue pour afficher l'élément\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:118
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
 #, kde-format
 msgid "Switch Screen"
 msgstr "Changer d'écran"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:131
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -32972,7 +32998,7 @@ msgstr "Profil colorimétrique d'entrée « %1 » non disponible"
 msgid "Output color profile \"%1\" not available"
 msgstr "Profil colorimétrique de sortie « %1 » non disponible"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Filtre de contraste local"
@@ -43402,8 +43428,9 @@ msgid "A KDE Family Project"
 msgstr "Une projet de la famille KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, kde-format
-msgid "(c) 2001-2024, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2024, digiKam developers team"
+msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001 - 2024, L'équipe de développement de DigiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
@@ -52736,37 +52763,29 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
-#, fuzzy, kde-format
-#| msgid "Confirm Faces"
+#, kde-format
 msgid "Confirming face"
-msgstr "Confirmer les visages"
+msgstr "Confirmation d'un visage"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Supprimer l'étiquette de visage ?"
+msgstr "Suppression d'un visage"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Mise à jour de la base de données des visages."
+msgstr "Modification d'une étiquette d'un visage."
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "Supprimer cette région de visages"
+msgstr "Modification d'une région d'un visage."
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Manuellement et par nom"
+msgstr "Ajout manuel d'un visage"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
