@@ -69,7 +69,7 @@ BUGFIXES:
 050 ==> 498005 - Provide shortcuts for videos in the slideshow.
 051 ==> 498025 - Excluded directory is still not excluded.
 052 ==> 498041 - Debian testing doesn't need libgnutls.so.30 from AppImage.
-053 ==>
+053 ==> 498053 - The use of XMP metadata in custom renaming patterns does not work as expected.
 054 ==>
 055 ==>
 056 ==>

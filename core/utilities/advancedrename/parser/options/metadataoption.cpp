@@ -175,7 +175,8 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
 
     if (!m_exifMetadataCache.contains(settings.fileUrl))
     {
-        QScopedPointer<DMetadata> meta(new DMetadata(settings.fileUrl.toLocalFile()));
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        (void)meta->load(settings.fileUrl.toLocalFile(), true);
 
         m_exifMetadataCache.insert(settings.fileUrl,
                                    meta->getExifTagsDataList(QStringList(), true));
