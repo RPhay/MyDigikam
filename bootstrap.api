@@ -53,6 +53,8 @@ CMAKE_BINARY="cmake"
 CURRENT_DATE=`date +"%Y-%m-%d"`
 TARBALL_FILE="digiKam-apidoc-$CURRENT_DATE.tar.xz"
 TARBALL_PATH="$CURRENT_DIR/$TARBALL_FILE"
+PDF_FILE="digiKam-apidoc-$CURRENT_DATE.pdf"
+PDF_PATH="$CURRENT_DIR/$PDF_FILE"
 
 QT_INSTALL_PREFIX=`$QTPATHS --install-prefix`
 QT_PLUGIN_INSTALL_DIR=`$QTPATHS --plugin-dir`
@@ -70,7 +72,7 @@ echo "ECM min version : $ECM_MIN_VERSION"
 mkdir -p $BUILDDIR
 cd $BUILDDIR
 
-# Build API DOC section
+# Build API HTML section
 
 $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DBUILD_TESTING=OFF \
@@ -87,7 +89,7 @@ XZ_OPT=-9 tar cJf $TARBALL_PATH -C $CURRENT_DIR ./html
 rm -fr $BUILDDIR
 rm -fr $CURRENT_DIR/html
 
-# Upload section
+# Upload API HTML tarball section
 
 cd $CURRENT_DIR
 
@@ -103,3 +105,26 @@ echo -e "---------- to $API_UPLOADURL \n"
 rsync -r -v --progress -e ssh $TARBALL_PATH $API_UPLOADURL
 
 rm -fr $TARBALL_PATH
+
+# Build API PDF section
+
+cd $CURRENT_DIR/latex
+
+latex refman.tex
+dviinfox -p refman.dvi
+dvipdfm refman.dvi
+
+mv refman.pdf $PDF_FILE
+
+# Upload API PDF section
+
+echo -e "---------- Cleanup older API PDF files from files.kde.org repository \n"
+
+sftp -q $API_UPLOADURL <<< "rm digiKam-apidoc-*.pdf"
+
+echo -e "---------- Upload $PDF_PATH PDF files"
+echo -e "---------- to $API_UPLOADURL \n"
+
+rsync -r -v --progress -e ssh $PDF_PATH $API_UPLOADURL
+
+rm -fr $CURRENT_DIR/latex

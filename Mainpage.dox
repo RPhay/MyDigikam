@@ -805,19 +805,15 @@ a = (b == foobar) ? 1 : -1; // you are asking for trouble by putting comments he
 
 - Add copyright to top of every file. Use the same header than others digiKam
   source code.
-- Double inclusion protection defines are all upper case letters and are
-  composed of the class name and a H suffix separated by underscore
+- Add double inclusion protection
 
 \code
-#ifndef DIGIKAM_ANOTHER_NICE_CLASS_H
-#define DIGIKAM_ANOTHER_NICE_CLASS_H
+#pragma once
 
 class AnotherNiceClass
 {
 ...
 }
-
-#endif // DIGIKAM_ANOTHER_NICE_CLASS_H
 \endcode
 
 - Use forward declarations as much as possible.
@@ -1039,6 +1035,13 @@ To generate API documentation, you need to install:
 
 - Doxygen program (http://www.doxygen.org)
 - Dot program (http://www.graphviz.org)
+- TeXLive package full version to generate the API doc in PDF (https://tug.org/texlive/)
+
+Under Ubuntu run: 
+
+\code
+sudo apt install doxygen graphviz texlive-full
+\endcode
 
 After cmake generated a Makefile you can call 'make doc'. A new subfolder named
 'html' will be created. Warning, this can take a while.
