@@ -99,37 +99,15 @@ Extra Bugzilla servers for shared libs used by digiKam :
 * [GPhoto2 library](http://gphoto.org/bugs)
 * [Exiv2 library](https://github.com/Exiv2/exiv2/issues)
 
-# External Dependencies
+# Compilation and Installation
 
-See the [online Dependencies list](https://www.digikam.org/api/index.html#externaldeps) for details.
+From the **developper documentation** [available at this url](https://files.kde.org/digikam/api/), see the sections:
 
-# Cmake Configuration
-
-See the [online Configuration rules](https://www.digikam.org/api/index.html#cmakeoptions) for details.
-
-# Installation
-
-In order to compile for qt5, just use something like that:
-
-    export QTDIR=/usr/lib/qt5
-    export PATH=$QTDIR/bin:$PATH
-    cmake .
-    make -j4
-    sudo make install/fast
-
-Usual CMake options :
-
-* `-DCMAKE_INSTALL_PREFIX`     : decide where the program will be install on your computer.
-* `-DCMAKE_BUILD_TYPE`         : decide which type of build you want. You can chose between:
-  * `Debug`.                   : for hacking. Include all debug information.
-  * `RelWithDebInfo`           : default. use gcc `-O2` `-g` options.
-  * `Release`                  : generate stripped and optimized bin files. For packaging.
-
-More details can be found [at this url](https://community.kde.org/Guidelines_and_HOWTOs/CMake)
-
-Note: To know KDE install path on your computer, use `kf5-config --prefix` command line like this (with full debug object enabled):
-
-* `cmake . -DCMAKE_BUILD_TYPE=debugfull -DCMAKE_INSTALL_PREFIX=$(kf5-config --prefix)`
+- **External Dependencies**
+- **Get Source Code**
+- **Development Environment**
+- **Cmake Configuration Options**
+- **Setup Local Compilation and Run-Time**
 
 # Donate Money
 
