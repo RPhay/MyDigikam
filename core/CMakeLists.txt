@@ -333,7 +333,7 @@ if(Boost_FOUND                          AND
 
 else()
 
-    message(FATAL_ERROR " digiKam will be compiled.................. NO  (Check dependencies at https://www.digikam.org/api/index.html#depscomplink)")
+    message(FATAL_ERROR " digiKam will be compiled.................. NO  (Check dependencies from the developper documentation https://files.kde.org/digikam/api/)")
     set(DIGIKAM_CAN_BE_COMPILED false)
 
 endif()

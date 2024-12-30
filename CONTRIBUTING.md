@@ -20,17 +20,17 @@ For the todo list, see bugzilla for details which is the complete story of the p
 
 # CODING STYLE
 
-See the coding style detailed at this [Doxygen page](https://www.digikam.org/api/index.html#codecontrib).
+See the coding style detailed on **developper documentation** [available at this url](https://files.kde.org/digikam/api/)
 
 # DOCUMENTATION
 
-See The API documentation to generate with Doxygen. You will find all information about the dependencies,
+See The API documentation generated with Doxygen. You will find all information about the dependencies,
 the configuration options, the rules to compile and install, and all pointers to contribute to the project as a developer.
 
 Install Doxygen and Graphviz, and then run make doc from build directory. You can also run doxygen command line tool
 directly from this folder or consult the Mainpage.dox file.
 
-[Online version](https://www.digikam.org/api/index.html)
+[Online version archive](https://files.kde.org/digikam/api/)
 
 # LICENSING
 
