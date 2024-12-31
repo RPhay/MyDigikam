@@ -13,6 +13,19 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implm
                  detector has also been improved to reduce false positives. There is a
                  completely new face classifier using cross-validating KNN and SVM internal
                  classifiers that increases matching accuracy even more.
+                 Everything has changed between the UI and the DNN level, including the way we call the DNN models.
+                 First, the pipelines have a whole new structure that allows us to dynamically scale the number of
+                 worker threads based on load and the hardware.
+                 Next, the way the images are loaded and converted to a format that OpenCV understands has changed.
+                 8.5.0 was converting the images to BGR format and YuNet and SFace want RGB.
+                 Another change is pipelines take better advantage of GPU processing. Images are moved to the GPU
+                 for resizing and color format conversion. We’re also passing the GPU image to the DNN layer now so
+                 DNN processing happens on the GPU via OpenCL.
+                 The final big change is the face classifier which “matches” one face to another for recognition.
+                 8.5.0 used a custom made K Nearest Neighbor (KNN) classifier. In 8.6.0 we’re using an ensemble approach
+                 using cross validating KNN and SVM classifiers from OpenCV with a single custom distance check.
+                 It’s faster and more accurate.
+                 The only thing we’re really reusing from 8.5.0 are the YuNet and SFace models themselves.
 
 *****************************************************************************************************
 BUGFIXES:

@@ -105,16 +105,13 @@ echo -e "---------- to $API_UPLOADURL \n"
 rsync -r -v --progress -e ssh $TARBALL_PATH $API_UPLOADURL
 
 rm -fr $TARBALL_PATH
-
+exit
 # Build API PDF section
 
 cd $CURRENT_DIR/latex
 
 latex refman.tex || true
-dviinfox -p refman.dvi
-dvipdfm refman.dvi
-
-mv ./refman.pdf $PDF_PATH
+dvipdfm -p a3 -o $PDF_PATH refman.dvi
 
 # Upload API PDF section
 
