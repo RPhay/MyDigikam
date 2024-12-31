@@ -279,7 +279,7 @@ EXTRA_SEARCH_MAPPINGS  =
 #---------------------------------------------------------------------------
 GENERATE_LATEX         = YES
 LATEX_OUTPUT           = latex
-LATEX_CMD_NAME         =
+LATEX_CMD_NAME         = "\"latex\" -cnf-line=extra_mem_top=12000000 -cnf-line=extra_mem_bot=12000000 -cnf-line=main_memory=12000000"
 MAKEINDEX_CMD_NAME     = makeindex
 LATEX_MAKEINDEX_CMD    = makeindex
 COMPACT_LATEX          = NO
