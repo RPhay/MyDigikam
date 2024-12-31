@@ -836,14 +836,15 @@ sub getAlbumRoots{
       # if its volumeid:\?uuid followed by a uuid of a device, then specificPath
       # is relative to the mountpoint of this device
       if( $identifier =~/volumeid.*uuid/ ){
-	 $uuid=$identifier;
-	 $uuid=~s/^.*uuid=//i; 
+       $blkid = `PATH=\$PATH:/usr/sbin/ which blkid`;
+       chomp $blkid;
+       ($uuid) = $identifier =~ /\?uuid=([-0-9a-z]+)\&/;
 	 $ucuuid=uc($uuid);  # make uuid upper case because sometimes it is upper case in /dev
 	 if( -e "/dev/disk/by-uuid/$uuid" ){
-	    $uuiddev=`blkid -U $uuid`;
+        $uuiddev=`$blkid -U $uuid`;
 	    die "Error: Cannot find system binary \"blkid\". Please install to continue.\n" if( $? != 0 );
 	 }elsif(-e "/dev/disk/by-uuid/$ucuuid" ){
-	    $uuiddev=`blkid -U $ucuuid`;
+        $uuiddev=`$blkid -U $ucuuid`;
 	    die "Error: Cannot find system binary \"blkid\". Please install to continue.\n" if( $? != 0 );
 	 }else{
 	    print "Cannot find device /dev/disk/by-uuid/$uuid or  ..../$ucuuid. Skipped.\n";
