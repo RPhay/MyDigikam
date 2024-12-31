@@ -83,7 +83,7 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       $SOURCEDIR && echo "$MESSAGE"
 
 make -j4 doc
-exit
+
 XZ_OPT=-9 tar cJf $TARBALL_PATH -C $CURRENT_DIR ./html
 
 rm -fr $BUILDDIR
@@ -105,13 +105,14 @@ echo -e "---------- to $API_UPLOADURL \n"
 rsync -r -v --progress -e ssh $TARBALL_PATH $API_UPLOADURL
 
 rm -fr $TARBALL_PATH
-exit
+
 # Build API PDF section
 
 cd $CURRENT_DIR/latex
 
-latex refman.tex || true
-dvipdfm -p a3 -o $PDF_PATH refman.dvi
+make
+make pdf
+mv refman.pdf $PDF_PATH
 
 # Upload API PDF section
 
