@@ -4,7 +4,7 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = digiKam
+PROJECT_NAME           = digiKam Developer Documentation
 PROJECT_NUMBER         =
 PROJECT_BRIEF          =
 PROJECT_LOGO           = ./core/data/icons/apps/48-apps-digikam.png
@@ -250,7 +250,7 @@ QHP_CUST_FILTER_ATTRS  =
 QHP_SECT_FILTER_ATTRS  =
 QHG_LOCATION           =
 GENERATE_ECLIPSEHELP   = NO
-ECLIPSE_DOC_ID         = org.digikam
+ECLIPSE_DOC_ID         = org.kde.digikam
 DISABLE_INDEX          = NO
 GENERATE_TREEVIEW      = YES
 FULL_SIDEBAR           = NO

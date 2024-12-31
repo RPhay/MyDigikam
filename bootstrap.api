@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-# Configure compile and upload the API doc.
+# Configure compile and upload the API doc (html tarball + PDF).
 
 # Halt and catch errors
 set -eE
@@ -51,7 +51,7 @@ BUILDDIR=$CURRENT_DIR"/build.api"
 LIBPATH="lib64"
 CMAKE_BINARY="cmake"
 CURRENT_DATE=`date +"%Y-%m-%d"`
-TARBALL_FILE="digiKam-apidoc-$CURRENT_DATE.tar.xz"
+TARBALL_FILE="digiKam-apidoc-html-$CURRENT_DATE.tar.xz"
 TARBALL_PATH="$CURRENT_DIR/$TARBALL_FILE"
 PDF_FILE="digiKam-apidoc-$CURRENT_DATE.pdf"
 PDF_PATH="$CURRENT_DIR/latex/$PDF_FILE"
