@@ -113,7 +113,7 @@ inline FocusPoint::TypePoint& operator&=(FocusPoint::TypePoint& type1, FocusPoin
     return (type1 = type1 & type2);
 }
 
-//! qDebug() stream operator. Writes property @fp to the debug output in a nicely formatted way.
+//! qDebug() stream operator. Writes FocusPoint to the debug output in a nicely formatted way.
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const FocusPoint& fp);
 
 } // namespace Digikam

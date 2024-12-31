@@ -80,7 +80,7 @@ private:
      * @param deleteTime: delete time from the image
      * @param collectionPath: path of collection that the image belongs to
      *
-     * @example createJsonRecordForFile("home/user/Pics", "/home/user/Pics/cats/cute/katy.jpg")
+     * Usage: createJsonRecordForFile("home/user/Pics", "/home/user/Pics/cats/cute/katy.jpg")
      *          returns => "katy"
      */
     static QString createJsonRecordForFile(qlonglong imageId,
@@ -95,7 +95,7 @@ private:
      * @param baseName: the baseName of the image
      * @param version: a digit to append to the image baseName
      *
-     * @example getAvialableJsonFilePathInTrash("home/user/Pics", "katy", 0)
+     * Usage: getAvialableJsonFilePathInTrash("home/user/Pics", "katy", 0)
      *          return => "home/user/Pics/.trash/info/katy.dtrashInfo"
      *          if this name was available, if not
      *          returns => "home/user/Pics/.trash/info/katy{version}.dtrashInfo"

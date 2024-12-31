@@ -414,17 +414,19 @@ public:
      * \note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
      * @return the newly created PAlbum or 0 if it fails
-     * @param parent  The parent album under which to create the new Album.
-     *                Parent must not be root. Otherwise, use the other variants of this method.
-     *                If parent is root, the albumRootPath must be supplied.
-     * @param name    the name of the new album
-     * @param caption the caption for the new album
-     * @param date    the date for the new album
-     * @param errMsg  this will contain the error message describing why the
-     * operation failed
+     * @param parent   the parent album under which to create the new Album.
+     *                 Parent must not be root. Otherwise, use the other variants of this method.
+     *                 If parent is root, the albumRootPath must be supplied.
+     * @param name     the name of the new album
+     * @param caption  the caption for the new album
+     * @param date     the date for the new album
+     * @param category the category for the new album
+     * @param errMsg   this will contain the error message describing why the operation failed
      */
-    PAlbum* createPAlbum(PAlbum* parent, const QString& name,
-                         const QString& caption, const QDate& date,
+    PAlbum* createPAlbum(PAlbum* parent,
+                         const QString& name,
+                         const QString& caption,
+                         const QDate& date,
                          const QString& category,
                          QString& errMsg);
 
@@ -432,8 +434,10 @@ public:
      * Overloaded method. Here you can supply an albumRootPath which must
      * correspond to an available collection location.
      */
-    PAlbum* createPAlbum(const QString& albumRootPath, const QString& name,
-                         const QString& caption, const QDate& date,
+    PAlbum* createPAlbum(const QString& albumRootPath,
+                         const QString& name,
+                         const QString& caption,
+                         const QDate& date,
                          const QString& category,
                          QString& errMsg);
 
@@ -442,34 +446,44 @@ public:
      * must be available).
      *
      * @param location the collection for the new album
+     * @param name     the name of the new album
+     * @param caption  the caption for the new album
+     * @param date     the date for the new album
+     * @param category the category for the new album
+     * @param errMsg   this will contain the error message describing why the operation failed
      */
-    PAlbum* createPAlbum(const CollectionLocation& location, const QString& name,
-                         const QString& caption, const QDate& date,
+    PAlbum* createPAlbum(const CollectionLocation& location,
+                         const QString& name,
+                         const QString& caption,
+                         const QDate& date,
                          const QString& category,
                          QString& errMsg);
 
     /**
      * Renames a PAlbum. This is equivalent to actually renaming the corresponding
      * folder on the disk.
+     *
      * @return true if the operation succeeds, false otherwise
-     * @param album the Album which should be renamed
+     * @param album   the Album which should be renamed
      * @param newName the new name for the album
-     * @param errMsg this will contain the error message describing why the
-     * operation failed
+     * @param errMsg  this will contain the error message describing why the operation failed
      */
-    bool renamePAlbum(PAlbum* album, const QString& newName,
+    bool renamePAlbum(PAlbum* album,
+                      const QString& newName,
                       QString& errMsg);
 
     /**
      * Update the icon for an album. The @p icon is the name (and not full path)
      * of the file in the album
+     *
      * @return true if the operation succeeds, false otherwise
      * @param album  the album for which icon should be changed
      * @param iconID the filename of the new icon
-     * @param errMsg if the operation fails, this will contain the error message
-     * describing why the operation failed
+     * @param errMsg if the operation fails, this will contain the error message describing why the operation failed
      */
-    bool updatePAlbumIcon(PAlbum* album, qlonglong iconID, QString& errMsg);
+    bool updatePAlbumIcon(PAlbum* album,
+                          qlonglong iconID,
+                          QString& errMsg);
 
 private:
 
@@ -539,20 +553,22 @@ public:
      * The tag is added to the database
      * \note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
+     *
      * @return the newly created TAlbum or 0 if it fails
      * @param parent  the parent album under which to create the new Album
      * @param name    the name of the new album
-     * @param iconkde the iconkde for the new album (this is a filename which
-     * kde iconloader can load up
-     * @param errMsg  this will contain the error message describing why the
-     * operation failed
+     * @param iconkde the iconkde for the new album (this is a filename which kde iconloader can load up
+     * @param errMsg  this will contain the error message describing why the operation failed
      */
-    TAlbum* createTAlbum(TAlbum* parent, const QString& name,
-                         const QString& iconkde, QString& errMsg);
+    TAlbum* createTAlbum(TAlbum* parent,
+                         const QString& name,
+                         const QString& iconkde,
+                         QString& errMsg);
 
     /**
      * A list of tag paths is supplied.
      * If no corresponding TAlbum exists, a new one will be created.
+     *
      * @param tagPaths A list of tag paths
      * @returns A list of all TAlbums for the list (already existing or newly created)
      */
@@ -563,81 +579,89 @@ public:
      * The tag is removed from the database
      * \note the signalAlbumDeleted will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of album deletes
+     *
      * @return true if the operation succeeds or false otherwise
-     * @param album   the TAlbum to delete
-     * @param errMsg  this will contain the error message describing why the
-     * @param askUser ask user to write metadata to images
-     * operation failed
+     * @param album    the TAlbum to delete
+     * @param errMsg   this will contain the error message describing why the
+     * @param imageIds list of image ID from the database where tag is removed
      */
     bool deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>* imageIds = nullptr);
 
     /**
      * Renames a TAlbum.
      * This updates the tag name in the database
+     *
      * @return true if the operation succeeds, false otherwise
-     * @param album the Album which should be renamed
-     * @param name the new name for the album
-     * @param errMsg this will contain the error message describing why the
-     * operation failed
+     * @param album  the Album which should be renamed
+     * @param name   the new name for the album
+     * @param errMsg this will contain the error message describing why the operation failed
      */
     bool renameTAlbum(TAlbum* album, const QString& name, QString& errMsg);
 
     /**
      * Move a TAlbum to a new parent.
      * This updates the tag parent ID in the database
+     *
      * @return true if the operation succeeds, false otherwise
-     * @param album the Album which should be moved
+     * @param album     the Album which should be moved
      * @param newParent the Parent Album to which album should be moved
-     * @param errMsg this will contain the error message describing why the
-     * operation failed
+     * @param errMsg    this will contain the error message describing why the operation failed
      */
     bool moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg);
 
     /**
      * Merge a TAlbum to a TAlbum.
      * This updates the image tags in the database
+     *
      * @return true if the operation succeeds, false otherwise
-     * @param album the Album which should be merged
+     * @param album     the Album which should be merged
      * @param destAlbum the Album to which album should be merged
-     * @param dialog show dialog to ask the user if he wants to merge
-     * @param errMsg this will contain the error message describing why the
-     * operation failed
+     * @param dialog    show dialog to ask the user if he wants to merge
+     * @param errMsg    this will contain the error message describing why the operation failed
      */
 
     bool mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QString& errMsg);
 
     /**
      * Update the icon for a TAlbum.
+     *
      * @return true if the operation succeeds, false otherwise
-     * @param album the album for which icon should be changed
+     * @param album    the album for which icon should be changed
      * @param iconKDE  a simple filename which can be loaded by KIconLoader
      * @param iconID   id of the icon image file
-     * @param errMsg this will contain the error message describing why the
-     * operation failed
+     * @param errMsg   this will contain the error message describing why the operation failed
+     *
      * \note if iconKDE is not empty then iconID is used. So if you want to set
      * the icon to a file which can be loaded by QIcon, pass it in as
      * iconKDE. otherwise pass a null QString to iconKDE and set iconID
      */
-    bool updateTAlbumIcon(TAlbum* album, const QString& iconKDE,
-                          qlonglong iconID, QString& errMsg);
+    bool updateTAlbumIcon(TAlbum* album,
+                          const QString& iconKDE,
+                          qlonglong iconID,
+                          QString& errMsg);
 
     /**
      * Get a list of recently assigned tags (only last 6 tags are listed)
+     *
      * @return the list of recently assigned TAlbums
      * @param includeInternal include internal tags in the returned list, or skip them
      */
     AlbumList getRecentlyAssignedTags(bool includeInternal = false)                                      const;
 
     /**
-     * @return A list with the tag paths for a list of tag IDs.
-     * @param tagIDs list of tag album IDs
-     * @param leadingSlash if <code>true</code> return tags with a leading slash
+     * Return A list with the tag paths for a list of tag IDs.
+     *
+     * @param tagIDs          list of tag album IDs
+     * @param leadingSlash    if <code>true</code> return tags with a leading slash
      * @param includeInternal include internal tags in the returned list, or skip them
      */
-    QStringList tagPaths(const QList<int>& tagIDs, bool leadingSlash=true, bool includeInternal = false) const;
+    QStringList tagPaths(const QList<int>& tagIDs,
+                         bool leadingSlash = true,
+                         bool includeInternal = false) const;
 
     /**
      * @return A list with the tag names for a list of tag IDs.
+     *
      * @param tagIDs list of tag album IDs
      */
     QStringList tagNames(const QList<int>& tagIDs, bool includeInternal = false)                         const;
@@ -675,8 +699,7 @@ private:
      *
      * @param parent album to check children for
      * @param title the title to search for
-     * @return <code>true</code> if there is a child with name, else
-     *         <code>false</code>
+     * @return <code>true</code> if there is a child with name, else <code>false</code>
      */
     void insertTAlbum(TAlbum* album, TAlbum* parent);
     void removeTAlbum(TAlbum* album);
@@ -745,6 +768,7 @@ public:
      * existing SAlbum, the url is updated and written out to the database
      * \note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
+     *
      * @return the newly created SAlbum or an existing SAlbum with same name
      * @param name  name for the new search
      * @param type  the type of the search
@@ -756,6 +780,7 @@ public:
 
     /**
      * Update the url for a SAlbum
+     *
      * @return true if the operation succeeds, false otherwise
      * @param album the album to update
      * @param changedQuery the new query data of the album
@@ -771,6 +796,7 @@ public:
      * Delete a SAlbum from the database
      * \note the signalAlbumDeleted will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of album deletes
+     *
      * @return true if the operation succeeds, false otherwise
      * @param album the album to delete
      */

@@ -147,7 +147,7 @@ protected:
     QStringList              m_subjects;
 };
 
-//! qDebug() stream operator. Writes property @t to the debug output in a nicely formatted way.
+//! qDebug() stream operator. Writes Template to the debug output in a nicely formatted way.
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const Template& t);
 
 } // namespace Digikam
