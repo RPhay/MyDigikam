@@ -321,15 +321,6 @@ bool FacePipelineEdit::writer()
                 writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
             }
 
-            // store the thumbnails if we have an image
-
-            if (!package->image.isNull())
-            {
-                QList<FaceTagsIface> faces;
-                faces << package->face;
-                utils.storeThumbnails(thumbnailLoadThread, package->info.filePath(), faces, package->image);
-            }
-
             // retrain the face classifier if the retrain flag is set
 
             if (package->retrain)

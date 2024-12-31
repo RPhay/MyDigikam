@@ -264,6 +264,10 @@ bool FacePipelineDetectRecognize::loader()
 
                 if (!package->image.isNull())
                 {
+                    // create a thumbnail for the notification
+
+                    package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+
                     // send to the next stage
 
                     enqueue(nextQueue, package);
@@ -355,10 +359,6 @@ bool FacePipelineDetectRecognize::extractor()
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
-
-            // create a thumbnail for the notification
-
-            package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
 
             // copy the image to a cv::Mat
 
@@ -712,6 +712,11 @@ bool FacePipelineDetectRecognize::writer()
 
                 for (int i = 0 ; i < package->faceRects.size() ; ++i)
                 {
+                    QRect faceRect(std::round(package->image.width() * package->faceRects[i].x()),
+                                    std::round(package->image.height() * package->faceRects[i].y()),
+                                    std::round(package->image.width() * package->faceRects[i].width()),
+                                    std::round(package->image.height() * package->faceRects[i].height()));
+                    
                     if (package->labelList[i] != -1)
                     {
                         Identity identity = idProvider->identity(package->labelList[i]);
@@ -719,10 +724,7 @@ bool FacePipelineDetectRecognize::writer()
                         databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
                                                         package->info.id(),
                                                         FaceTags::unconfirmedPersonTagId(),
-                                                        TagRegion(QRect(package->image.width() * package->faceRects[i].x(),
-                                                                        package->image.height() * package->faceRects[i].y(),
-                                                                        package->image.width() * package->faceRects[i].width(),
-                                                                        package->image.height() * package->faceRects[i].height())));
+                                                        TagRegion(faceRect));
                     }
                     else
                     {
@@ -730,10 +732,7 @@ bool FacePipelineDetectRecognize::writer()
                         databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnknownName,
                                                         package->info.id(),
                                                         FaceTags::unknownPersonTagId(),
-                                                        TagRegion(QRect(package->image.width() * package->faceRects[i].x(),
-                                                                        package->image.height() * package->faceRects[i].y(),
-                                                                        package->image.width() * package->faceRects[i].width(),
-                                                                        package->image.height() * package->faceRects[i].height())));
+                                                        TagRegion(faceRect));
                     }
                 }
 
