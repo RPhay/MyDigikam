@@ -39,14 +39,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-30 02:00+0000\n"
-"PO-Revision-Date: 2024-08-27 23:51+0200\n"
+"PO-Revision-Date: 2024-12-30 20:35+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -194,13 +194,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
-msgstr "Hasi: "
+msgstr "Hasiera: "
 
 #: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
-msgstr "Bukatu: "
+msgstr "Bukaera: "
 
 #: core/app/date/timelinewidget.cpp:281
 #, kde-format
@@ -256,7 +256,7 @@ msgstr "Zama-jaitsi kameratik"
 #: core/app/dragdrop/itemdragdrop.cpp:773
 #, kde-format
 msgid "Download && Delete From Camera"
-msgstr "Zama-jaitsi eta ezabatu kameratik"
+msgstr "Kameratik zama-jaitsi eta ezabatu"
 
 #: core/app/dragdrop/importdragdrop.cpp:50
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
@@ -301,12 +301,12 @@ msgstr "Esleitu etiketa baztertutako elementuei"
 #: core/app/dragdrop/itemdragdrop.cpp:653
 #, kde-format
 msgid "Change Face Tags"
-msgstr "Aldatu «aurpegia» etiketak"
+msgstr "Aldatu aurpegi etiketak"
 
 #: core/app/dragdrop/itemdragdrop.cpp:657
 #, kde-format
 msgid "Change Face Tag"
-msgstr "Aldatu «aurpegia» etiketa"
+msgstr "Aldatu aurpegi etiketa"
 
 #: core/app/dragdrop/itemdragdrop.cpp:661
 #: core/app/dragdrop/itemdragdrop.cpp:714
@@ -366,12 +366,12 @@ msgstr "Testu iragazkia"
 #: core/app/filters/filtersidebarwidget.cpp:118
 #, kde-format
 msgid "MIME Type Filter"
-msgstr "MIME mota Iragazkia"
+msgstr "MIME mota iragazkia"
 
 #: core/app/filters/filtersidebarwidget.cpp:124
 #, kde-format
 msgid "Geolocation Filter"
-msgstr "Geokokatze iragazkia"
+msgstr "Geokokapen iragazkia"
 
 #: core/app/filters/filtersidebarwidget.cpp:141
 #, kde-format
@@ -395,8 +395,8 @@ msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr ""
-"Zehazten du hautatutako etiketak irudiak iragazteko zein eratan konbinatzen "
-"diren. Honek barnean hartzen du '%1' kontrol-laukia."
+"Hautatutako etiketak irudiak iragazteko zein eratan konbinatzen diren "
+"definitzen du. Honek '%1' kontrol-laukia barnean hartzen du."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
 #: core/utilities/searchwindow/searchgroup_label.cpp:286
@@ -418,22 +418,22 @@ msgstr "Etiketen iragazkia"
 #: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Face tags"
-msgstr "«aurpegia» etiketarik gabeko irudiak"
+msgstr "Aurpegi etiketarik gabeko irudiak"
 
 #: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a face tag."
-msgstr "Erakutsi «aurpegia» etiketarik gabeko irudiak."
+msgstr "Erakutsi aurpegi etiketarik gabeko irudiak."
 
 #: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr "«Aurpegia» etiketak bat etortzeko baldintza"
+msgstr "Aurpegi etiketak bat etortzeko baldintza"
 
 #: core/app/filters/filtersidebarwidget.cpp:218
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "«Aurpegia» etiketen iragazkia"
+msgstr "Aurpegi etiketen iragazkia"
 
 #: core/app/filters/filtersidebarwidget.cpp:236
 #, kde-format
@@ -468,7 +468,7 @@ msgstr "Etiketen iragazte-modua"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
-msgstr "Ezikusi etiketa honi"
+msgstr "Ezikusi etiketa hau"
 
 #: core/app/filters/tagfilterview.cpp:68
 #, kde-format
@@ -480,7 +480,7 @@ msgstr "Etiketa hau izan behar du"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
-msgstr "Etiketa hau ez du izan behar"
+msgstr "Ez du etiketa hau izan behar"
 
 #: core/app/items/delegate/itemdelegate.cpp:386
 #, kde-format
@@ -519,7 +519,7 @@ msgstr "Taldea itxita dago."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has geolocation information."
-msgstr "Elementu honek geokokatze informazioa du."
+msgstr "Elementu honek geokokapen informazioa du."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
 #, kde-format
@@ -593,13 +593,13 @@ msgstr "Berrezarri albumaren ikonoa"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "All Albums"
-msgstr "Album guztiak"
+msgstr "Album denak"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:96
 #, kde-format
 msgctxt "@action: context menu"
 msgid "All Tags"
-msgstr "Etiketa guztiak"
+msgstr "Etiketa denak"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
 #, kde-format
@@ -669,7 +669,7 @@ msgstr "Ezkutatu taldekatutako irudiak"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup"
-msgstr "Taldetik bereizi"
+msgstr "Bereizi"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:126
 #, kde-format
@@ -681,37 +681,37 @@ msgstr "Kendu taldetik"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
-msgstr "Taldekatu hemen hautatuak"
+msgstr "Taldekatu hautatutakoak hemen"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
-msgstr "Taldekatu denboraren arabera hautatuak"
+msgstr "Taldekatu hautatutakoak orduaren arabera"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
-msgstr "Taldekatu fitxategi-izenaren arabera hautatuak"
+msgstr "Taldekatu hautatutakoak fitxategi-izenaren arabera"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:151
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "Taldea timelapse / kliskatu jarrituaren arabera hautatu da"
+msgstr "Taldekatu hautapena timelapse / kliskatze jarraituaren arabera"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:177
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Selected From Groups"
-msgstr "Kendu hautatuak taldeetatik"
+msgstr "Kendu hautatutakoak taldeetatik"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:182
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
-msgstr "Taldetik bereizi hautatuak"
+msgstr "Bereizi hautatutakoak"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
@@ -731,7 +731,7 @@ msgstr "Ireki honekin"
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
-msgstr "Bestelakoak..."
+msgstr "Beste..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
@@ -764,13 +764,13 @@ msgstr "Ezabatu etiketak"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "Markatu «aurpegia» etiketa gisa"
+msgstr "Markatu aurpegi etiketa gisa"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "Markatu «aurpegia» etiketak gisa"
+msgstr "Markatu aurpegi etiketa gisa"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
 #, kde-format
@@ -782,7 +782,7 @@ msgstr "Propietateak..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "Desmarkatu etiketa «aurpegia» gisa"
+msgstr "Kendu aurpegi marka etiketari"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -791,15 +791,15 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"«Aurpegia» propietatea kentzen du hautatutako etiketatik eta aurpegi "
-"eskualdea duten irudietatik. Irudiei etiketa kentzerik ere badago hala nahi "
-"izanez gero."
+"Hautatutako etiketatik aurpegi propietatea kentzen du eta hura duten "
+"irudietatik aurpegi-eskualdea kentzen du. Irudietatik etiketa ere ken "
+"daiteke hala nahi izanez gero."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "Desmarkatu etiketak «aurpegia» gisa"
+msgstr "Kendu aurpegi marka etiketei"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -808,9 +808,9 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"«Aurpegia» propietatea kentzen du hautatutako etiketetatik eta aurpegi "
-"eskualdea duten irudietatik. Irudiei etiketa kentzerik ere badago hala nahi "
-"izanez gero."
+"Hautatutako etiketetatik aurpegi propietatea kentzen du eta haiek dituzten "
+"irudietatik aurpegi-eskualdea kentzen du. Irudietatik etiketak ere ken "
+"daitezke hala nahi izanez gero."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
@@ -886,7 +886,7 @@ msgstr "Inportatu"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No import tool available"
-msgstr "Ez dago inportatzeko tresna erabilgarririk"
+msgstr "Ez dago inportatzeko tresnarik erabilgarri"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:97
 #, kde-format
@@ -898,19 +898,19 @@ msgstr "Esportatu"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
-msgstr "Ez dago esportatzeko tresna erabilgarririk"
+msgstr "Ez dago esportatzeko tresnarik erabilgarri"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "Sorta-ilara kudeatzailea"
+msgstr "Sorta-ilararen kudeatzailea"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
-msgstr "Gehitu dagoen ilara bati"
+msgstr "Gehitu dagoen ilarara"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
 #: core/app/items/utils/itemcategorydrawer.cpp:286
@@ -944,8 +944,8 @@ msgstr[1] "Albumaren data: %4 %3 %2 - %1 elementu"
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
-msgstr[0] "%2 azpi-etiketa 1ekin"
-msgstr[1] "%2 %1 azpi-etiketekin"
+msgstr[0] "%2 azpi-etiketa 1 barne"
+msgstr[1] "%2 %1 azpi-etiketa barne"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
@@ -968,8 +968,8 @@ msgstr[1] "%2 - %1 elementu"
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
-msgstr[0] "Gako-hitzaren bilaketa - Elementu 1"
-msgstr[1] "Gako-hitzaren bilaketa - %1 elementu"
+msgstr[0] "Gako-hitzen bilaketa - Elementu 1"
+msgstr[1] "Gako-hitzen bilaketa - %1 elementu"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
@@ -988,7 +988,7 @@ msgstr "%2 %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "Hautatu helburuko karpeta"
+msgstr "Hautatu jomuga karpeta"
 
 #: core/app/items/utils/itemviewutilities.cpp:228
 #, kde-format
@@ -996,8 +996,8 @@ msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
 "selected images into.</p>"
 msgstr ""
-"<p>Hautatu jomuga albuma digiKam-liburutegitik hautatutako irudiak horra "
-"eramateko.</p>"
+"<p>Mesedez, aukeratu hautatuko irudiak eraman beharreko digiKam liburutegiko "
+"jomuga albuma.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
 #: core/utilities/imageeditor/main/imagewindow.cpp:1120
@@ -1100,7 +1100,7 @@ msgstr "Ezezaguna"
 #: core/app/items/utils/tooltipfiller.cpp:330
 #, kde-format
 msgid "Aspect Ratio:"
-msgstr "Aspektu-erlazioa:"
+msgstr "Itxura-proportzioa:"
 
 #: core/app/items/utils/tooltipfiller.cpp:147
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
@@ -1132,14 +1132,14 @@ msgstr "Lentea:"
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
-msgstr "Sortua:"
+msgstr "Sorrera:"
 
 #: core/app/items/utils/tooltipfiller.cpp:232
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
-msgstr "Irekidura/Fokua:"
+msgstr "Irekidura/Fokala:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
@@ -1193,7 +1193,7 @@ msgstr "Iraupena:"
 #: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
 msgid "Frame Rate:"
-msgstr "Bilbe tasa:"
+msgstr "Fotograma-emaria:"
 
 #: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
@@ -1209,7 +1209,7 @@ msgstr "Bideo kodeka:"
 #: core/app/items/utils/tooltipfiller.cpp:416
 #, kde-format
 msgid "Audio Bit Rate:"
-msgstr "Audio bit tasa:"
+msgstr "Audio bit-emaria:"
 
 #: core/app/items/utils/tooltipfiller.cpp:428
 #, kde-format
@@ -1242,7 +1242,7 @@ msgstr "Titulua:"
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
-msgstr "Irudi-testua:"
+msgstr "Epigrafea:"
 
 #: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
@@ -1291,7 +1291,7 @@ msgstr "Epigrafea:"
 #: core/app/items/utils/tooltipfiller.cpp:639
 #, kde-format
 msgid "Preview:"
-msgstr "Aurreikusi:"
+msgstr "Aurreikuspegia:"
 
 #: core/app/items/utils/tooltipfiller.cpp:664
 #, kde-format
@@ -1325,7 +1325,7 @@ msgstr "Berregingarria:"
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
-msgstr "Azalpena:"
+msgstr "Deskribapena:"
 
 #: core/app/items/utils/tooltipfiller.cpp:718
 #, kde-format
@@ -1374,9 +1374,10 @@ msgid ""
 "setting it again, choose \"Yes\" here, otherwise choose \"No\", and the "
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
-"<p>ICC profilen karpeta baliogabea dela dirudi.</p><p>Hura berriz ezarri "
-"nahi baduzu, hautatu \"Bai\" hemen, bestela hautatu \"Ez\", eta \"Kolore "
-"kudeaketa\" eginbidea desgaitu egingo da arazo hau ebazten duzun arte.</p>"
+"<p>ICC profilen karpeta baliogabea dela ematen du.</p><p>Hura berriz "
+"ezartzen saiatu nahi baduzu, hemen \"Bai\" hautatu, bestela \"Ez\" hautatu, "
+"eta arazo hau konpontzen duzun arte, \"Kolore kudeaketa\" ezaugarria ezgaitu "
+"egingo da.</p>"
 
 #: core/app/main/digikamapp.cpp:423
 #, kde-format
@@ -1387,8 +1388,8 @@ msgid ""
 "Error message: %1"
 msgstr ""
 "«ExifTool» ez dago erabilgarri digiKamen zure instalazioan edo ez dabil "
-"behar bezala. Joan digiKamen ezarpenetara eta egiaztatu «ExifTool» fitxategi "
-"bitarra meta-datuak atalean erabilgarri dagoen.\n"
+"behar bezala. Joan digiKamen ezarpenetara eta egiaztatu meta-datuak atalean "
+"«ExifTool»en fitxategi bitarra erabilgarri dagoen.\n"
 "Errore mezua: %1"
 
 #: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
@@ -1418,35 +1419,35 @@ msgstr[1] ""
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
-msgstr[0] "elementu 1/%2 hautatu da (%3/%4)"
+msgstr[0] "1/%2 elementu hautatu da (%3/%4)"
 msgstr[1] "%1/%2 elementu hautatu dira (%3/%4)"
 
 #: core/app/main/digikamapp.cpp:744
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
-msgstr[0] "elementu 1/%2 [%3] hautatu da (%4/%5)"
+msgstr[0] "1/%2 [%3] elementu hautatu da (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementu hautatu dira (%4/%5)"
 
 #: core/app/main/digikamapp.cpp:752
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
-msgstr[0] "elementu 1/%2 hautatu da. Guztira taldekatutako elementuekin: %3"
+msgstr[0] "1/%2 elementu hautatu da. Guztira taldekatutako elementuekin: %3"
 msgstr[1] "%1/%2 elementu hautatu dira. Guztira taldekatutako elementuekin: %3"
 
 #: core/app/main/digikamapp.cpp:760
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
-msgstr[0] "elementu 1/%2 [%3/%4] hautatu da (%5/%6)"
+msgstr[0] "1/%2 [%3/%4] elementu hautatu da (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementu hautatu dira (%5/%6)"
 
 #: core/app/main/digikamapp.cpp:769
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
-msgstr[0] "elementu 1/%2 hautatu da. Taldekatutako elementuekin: %3/%4"
+msgstr[0] "1/%2 elementu hautatu da. Taldekatutako elementuekin: %3/%4"
 msgstr[1] "%1/%2 elementu hautatu dira. Taldekatutako elementuekin: %3/%4"
 
 #: core/app/main/digikamapp.cpp:800
@@ -1462,21 +1463,21 @@ msgstr "(%1 / %2 [%3] )"
 #: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
-msgstr " (%1 %2(e)tik. Guztira taldekatutako elementuekin: %3)"
+msgstr " (%1 / %2. Guztira taldekatutako elementuekin: %3)"
 
 #: core/app/main/digikamapp.cpp:829
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
-msgstr[0] "Elementu ezkutu %1"
-msgstr[1] "%1 elementu ezkutu"
+msgstr[0] "Elementu %1 ezkutuan"
+msgstr[1] "%1 elementu ezkutuan"
 
 #: core/app/main/digikamapp.cpp:881
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
-msgstr[0] "Idatzi meta-datuak fitxategira"
-msgstr[1] "Idatzi meta-datuak hautatutako fitxategietara"
+msgstr[0] "Idatzi meta-datuak fitxategian"
+msgstr[1] "Idatzi meta-datuak hautatutako fitxategietan"
 
 #: core/app/main/digikamapp.cpp:883
 #, kde-format
@@ -1488,7 +1489,7 @@ msgstr[1] "Berrirakurri meta-datuak hautatutako fitxategietatik"
 #: core/app/main/digikamapp_camera.cpp:26
 #, kde-format
 msgid "Auto-Detecting Camera..."
-msgstr "Kamera automatikoki hautematen..."
+msgstr "Kamera automatikoki antzematea..."
 
 #: core/app/main/digikamapp_camera.cpp:40
 #: core/app/main/digikamapp_camera.cpp:55
@@ -1519,7 +1520,7 @@ msgstr "Gehitu irudiak..."
 #: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "Adds new items to an Album."
-msgstr "Gehitu elementu berriak album batera."
+msgstr "Album batean elementu berriak gehitzen ditu."
 
 #: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
@@ -1529,7 +1530,7 @@ msgstr "Gehitu karpetak..."
 #: core/app/main/digikamapp_camera.cpp:88
 #, kde-format
 msgid "Adds new folders to Album library."
-msgstr "Gehitu karpeta berriak album liburutegira."
+msgstr "Album-liburutegian karpeta berria gehitzen du."
 
 #: core/app/main/digikamapp_camera.cpp:229
 #, kde-format
@@ -1544,7 +1545,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 "Kolore-antolaera argi bat aukeratu duzu. Ikono iluneko gai batera aldatzen "
-"dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
+"dugu. DigiKam berrabiatu ondoren ikono-gaia erabilgarri egongo."
 
 #: core/app/main/digikamapp_config.cpp:125
 #: core/showfoto/main/showfoto_config.cpp:204
@@ -1554,19 +1555,19 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 "Kolore-antolaera ilun bat aukeratu duzu. Ikono argiko gai batera aldatzen "
-"dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
+"dugu. Digikam berrabiatu ondoren ikono-gaia erabilgarri egongo da."
 
 #: core/app/main/digikamapp_import.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "Hautatu sintaxia aztertu beharreko karpeta"
+msgstr "Hautatu prozesatu beharreko karpeta"
 
 #: core/app/main/digikamapp_import.cpp:115
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr "Hautatu albumera inportatu beharreko karpetak"
+msgstr "Hautatu albumetan inportatu beharreko karpetak"
 
 #: core/app/main/digikamapp_import.cpp:157
 #, kde-format
@@ -1574,8 +1575,8 @@ msgid ""
 "<p>Please select the destination album from the digiKam library to import "
 "folders into.</p>"
 msgstr ""
-"<p>Hautatu karpetak inportatu behar direneko digiKam liburutegiko helmugako "
-"albuma.</p>"
+"<p>Mesedez, hautatu karpetak digiKam liburutegiko zein albumean inportatu "
+"behar diren.</p>"
 
 #: core/app/main/digikamapp_import.cpp:186
 #, kde-format
@@ -1607,13 +1608,13 @@ msgstr "Aurrera"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
-msgstr "Freskatu"
+msgstr "Berritu"
 
 #: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
-msgstr "Freskatu uneko edukiak."
+msgstr "Uneko edukia berritu."
 
 #: core/app/main/digikamapp_setup.cpp:215
 #, kde-format
@@ -1625,19 +1626,19 @@ msgstr "&Berria..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
-msgstr "Bilduman album huts berri bat sortuko du."
+msgstr "Bilduman album berri huts bat sortzen du."
 
 #: core/app/main/digikamapp_setup.cpp:224
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
-msgstr "&Eraman albumera..."
+msgstr "Era&man albumera..."
 
 #: core/app/main/digikamapp_setup.cpp:225
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
-msgstr "Eraman hautatutako irudiak album batera."
+msgstr "Hautatutako irudiak album batera eraman."
 
 #: core/app/main/digikamapp_setup.cpp:232
 #, kde-format
@@ -1649,7 +1650,7 @@ msgstr "&Kopiatu hona..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
-msgstr "Kopiatu hautatutako irudiak helburuko karpeta barera."
+msgstr "Hautatutako irudiak helburuko karpeta batera eraman."
 
 #: core/app/main/digikamapp_setup.cpp:240
 #, kde-format
@@ -1675,7 +1676,7 @@ msgstr "Propietateak"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
-msgstr "Editatu albumaren propietateak eta bildumaren informazioa."
+msgstr "Albumaren propietateak eta bildumaren informazioa editatu."
 
 #: core/app/main/digikamapp_setup.cpp:264
 #, kde-format
@@ -1691,8 +1692,9 @@ msgid ""
 "Updates metadata of files in the current album with the contents of digiKam "
 "database (file metadata will be overwritten with data from the database)."
 msgstr ""
-"Uneko albumeko fitxategien metadatuak eguneratzen ditu digiKam datu-baseko "
-"edukiekin (fitxategi metadatuak datu-baseko datuekin gainidatziko dira)."
+"Uneko albumeko fitxategien metadatuak digiKam datu-baseko edukiekin "
+"eguneratzen ditu (fitxategien metadatuak datu-baseko datuekin gainidatziko "
+"dira)."
 
 #: core/app/main/digikamapp_setup.cpp:275
 #, kde-format
@@ -1709,9 +1711,9 @@ msgid ""
 "album (information in the database will be overwritten with data from the "
 "files' metadata)."
 msgstr ""
-"digiKam datu-basea eguneratzen du uneko albumeko fitxategietako "
-"metadatuetatik (datu-baseko informazioa fitxategietako metadatuen "
-"informazioarekin gainidatziko da)."
+"digiKam datu-basea, uneko albumeko fitxategietako metadatuetatik eguneratzen "
+"du (datu-baseko informazioa fitxategietako metadatuen informazioarekin "
+"gainidatziko da)."
 
 #: core/app/main/digikamapp_setup.cpp:286
 #, kde-format
@@ -1844,7 +1846,7 @@ msgstr "Gehitu hautatutako elementuak argi-mahaiaren koadro txikien barrara."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
-msgstr "Sorta-ilara kudeatzailea"
+msgstr "Sorta-ilararen kudeatzailea"
 
 #: core/app/main/digikamapp_setup.cpp:418
 #, kde-format
@@ -1856,21 +1858,20 @@ msgstr "Gehitu uneko ilarara"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
-msgstr ""
-"Gehitu hautatutako elementuak agindu-sorta kudeatzaileko uneko ilarara."
+msgstr "Gehitu hautatutako elementuak sorta-kudeatzailearen uneko ilaran."
 
 #: core/app/main/digikamapp_setup.cpp:425
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
-msgstr "Gehitu ilara berrira"
+msgstr "Gehitu ilara berrian"
 
 #: core/app/main/digikamapp_setup.cpp:426
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr ""
-"Gehitu hautatutako elementuak agindu-sorta kudeatzaileko ilara berri batera."
+"Gehitu hautatutako elementuak sorta-kudeatzailearen ilara berri batean."
 
 #: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
@@ -1882,7 +1883,7 @@ msgstr "Inportatu"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
-msgstr "Idatzi meta-datuak hautatutako fitxategietara"
+msgstr "Idatzi meta-datuak hautatutako fitxategietan"
 
 #: core/app/main/digikamapp_setup.cpp:451
 #, kde-format
@@ -2015,7 +2016,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
-msgstr "Erakutsi taldekatutako elementu guztiak Irekita gisa"
+msgstr "Erakutsi taldekatutako elementu guztiak irekita gisa"
 
 #: core/app/main/digikamapp_setup.cpp:581
 #, kde-format
@@ -2054,13 +2055,13 @@ msgstr "Bide-izenaren arabera"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
-msgstr "Sortze dataren arabera"
+msgstr "Sorrera-dataren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
-msgstr "Aldatze dataren arabera"
+msgstr "Aldatze-dataren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
@@ -2096,7 +2097,7 @@ msgstr "Aurpegi motaren arabera"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
-msgstr "Antzekotasunagatik"
+msgstr "Antzekotasunaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
@@ -2120,27 +2121,28 @@ msgstr "Elementua sailkatzeko &hurrenkera"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
-msgstr "Irudiak gorantz edo beherantz sailkatuko diren zehazten du."
+msgstr ""
+"Irudiak era gorakorrean edo beherakorrean sailkatuko diren zehazten du."
 
 #: core/app/main/digikamapp_setup.cpp:654
 #: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
-msgstr "Gorantz"
+msgstr "Gorakorra"
 
 #: core/app/main/digikamapp_setup.cpp:656
 #: core/app/main/digikamapp_setup.cpp:711
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
-msgstr "Beherantz"
+msgstr "Beherakorra"
 
 #: core/app/main/digikamapp_setup.cpp:666
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
-msgstr "Elementu bereiziak"
+msgstr "Elementuak bereizi"
 
 #: core/app/main/digikamapp_setup.cpp:667
 #, kde-format
@@ -2224,7 +2226,7 @@ msgstr "Zoom % 100era"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
-msgstr "Doitu &leihora"
+msgstr "Egokitu &leihora"
 
 #: core/app/main/digikamapp_setup.cpp:800
 #, kde-format
@@ -2254,19 +2256,19 @@ msgstr "Bilatu bikoiztuak..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
-msgstr "Datu-baseen migrazioa..."
+msgstr "Datu-base migrazioa..."
 
 #: core/app/main/digikamapp_setup.cpp:853
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
-msgstr "Mantentzea..."
+msgstr "Mantentze-lana..."
 
 #: core/app/main/digikamapp_setup.cpp:860
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
-msgstr "Aztertu irudi berri bila"
+msgstr "Aztertu elementu berri bila"
 
 #: core/app/main/digikamapp_setup.cpp:866
 #, kde-format
@@ -2302,7 +2304,7 @@ msgstr "Aurreko irudia"
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
-msgstr "Lehenengo irudia"
+msgstr "Lehen irudia"
 
 #: core/app/main/digikamapp_setup.cpp:933
 #, kde-format
@@ -2404,13 +2406,13 @@ msgstr "Biratu"
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
-msgstr "Ezker"
+msgstr "Ezkerrera"
 
 #: core/app/main/digikamapp_setup.cpp:1067
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
-msgstr "Eskuin"
+msgstr "Eskuinera"
 
 #: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
@@ -2434,7 +2436,7 @@ msgstr "Bertikalki"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
-msgstr "Auto biratu/Irauli Exif informazioa erabiliz"
+msgstr "Automatikoki biratu/Irauli Exif informazioa erabiliz"
 
 #: core/app/main/digikamapp_setup.cpp:1109
 #, kde-format
@@ -2457,27 +2459,27 @@ msgstr "Tresnak zamatzen..."
 #: core/app/main/digikamapp_solid.cpp:289
 #, kde-format
 msgid "CompactFlash Card Reader"
-msgstr "CompactFlash-txartel irakurlea"
+msgstr "CompactFlash txartel irakurgailua"
 
 #: core/app/main/digikamapp_solid.cpp:295
 #, kde-format
 msgid "Memory Stick Reader"
-msgstr "Memoria-makil irakurlea"
+msgstr "Memoria-makil irakurgailua"
 
 #: core/app/main/digikamapp_solid.cpp:301
 #, kde-format
 msgid "SmartMedia Card Reader"
-msgstr "SmartMedia-txartel irakurlea"
+msgstr "SmartMedia-txartel irakurgailua"
 
 #: core/app/main/digikamapp_solid.cpp:307
 #, kde-format
 msgid "SD / MMC Card Reader"
-msgstr "SD- / MMC-txartel irakurlea"
+msgstr "SD / MMC txartel irakurgailua"
 
 #: core/app/main/digikamapp_solid.cpp:313
 #, kde-format
 msgid "xD Card Reader"
-msgstr "xD-txartel irakurlea"
+msgstr "xD txartel irakurgailua"
 
 #: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
@@ -2517,7 +2519,7 @@ msgstr " (%1)"
 #: core/app/main/digikamapp_solid.cpp:666
 #, kde-format
 msgid "Cannot access the storage device.\n"
-msgstr "Ezin da biltegiratzeko gailua atzitu.\n"
+msgstr "Ezin du biltegiratze-gailua atzitu.\n"
 
 #: core/app/main/digikamapp_solid.cpp:697
 #, kde-format
@@ -2527,7 +2529,7 @@ msgstr "%1(e)ko irudiak"
 #: core/app/main/digikamapp_solid.cpp:730
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
-msgstr "Zehaztutako gailua (\"%1\") ez da baliogarria."
+msgstr "Zehaztutako gailuak (\"%1\") ez du balio."
 
 #: core/app/main/digikamapp_solid.cpp:743
 #, kde-format
@@ -2545,7 +2547,7 @@ msgstr "Tresna nagusiak"
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
-msgstr "Prozesatze ondorengoa"
+msgstr "Osteko prozesaketa"
 
 #: core/app/main/digikamapp_tools.cpp:58
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
@@ -2601,7 +2603,7 @@ msgstr "&Editatu"
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
 #, kde-format
 msgid "&View"
-msgstr "&Ikusi"
+msgstr "&Ikuspegia"
 
 #. i18n: ectx: Menu (Tools)
 #: core/app/main/digikamui5.rc:118 core/showfoto/main/showfotoui5.rc:92
@@ -2672,42 +2674,41 @@ msgstr "digiKam"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Iñaki Larrañaga Murgoitio"
+msgstr "Iñaki Larrañaga Murgoitio;Iñigo Salvador Azurmendi"
 
 #: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "dooteo@euskalgnu.org"
+msgstr "dooteo@euskalgnu.org;xalba@ni.eus"
 
 #: core/app/main/main.cpp:243
 #, kde-format
 msgid "Open camera dialog at \"path\""
-msgstr "Ireki kameraren elkarrizketa-koadroa «bide-izenen»ean"
+msgstr "Ireki kameraren elkarrizketa-koadroa \"bide-izenen\"ean"
 
 #: core/app/main/main.cpp:246
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
-msgstr ""
-"Ireki kameraren elkarrizketa-koadroa Solid UDI \"udi\" duen gailuarentzat"
+msgstr "Ireki kameraren elkarrizketa-koadroa Solid UDI \"udi\" erabiliz"
 
 #: core/app/main/main.cpp:249
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
-msgstr "Automatikoki hauteman eta ireki konektatutako gphoto2 kamera bat"
+msgstr "Automatikoki antzeman eta ireki konektatutako gphoto2 kamera bat"
 
 #: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
-"Abiarazi «digiKam» \"dir\" direktorioan aurkitutako SQLite datu-base "
+"Abiarazi digiKam \"dir\" direktorioan aurkitutako SQLite datu-base "
 "fitxategiarekin"
 
 #: core/app/main/main.cpp:254
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "Abiarazi «digiKam» konfiguratzeko \"config\" fitxategiarekin"
+msgstr "Abiarazi digiKam konfiguratzeko \"config\" fitxategiarekin"
 
 #: core/app/main/main.cpp:287
 #, kde-format
@@ -2717,7 +2718,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 "Exekuzio-garaiko Qt SQLite edo MySQL datu-base plugina ez dago erabilgarri. "
-"Instalatu ezazu.\n"
+"Mesedez, instalatu ezazu.\n"
 "Zure ordenagailuan ez dago instalatuta datu-base pluginik."
 
 #: core/app/main/main.cpp:296
@@ -2728,8 +2729,8 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 "Exekuzio-garaiko Qt SQLite edo MySQL datu-base plugina ez dago erabilgarri. "
-"Instalatu ezazu.\n"
-"Zure ordenagailuan instalatutako datu-base pluginak beheran zerrendatuta "
+"Mesedez, instalatu ezazu.\n"
+"Zure ordenagailuan instalatutako datu-base pluginak behean zerrendatuta "
 "daude."
 
 #: core/app/main/main.cpp:340
@@ -2739,9 +2740,9 @@ msgid ""
 "directory does not exist, it is a directory itself or it cannot be read/"
 "written to.</p>"
 msgstr ""
-"<p>Konfiguratzeko fitxategiarentzako emandako bide-izena ez da baliagarria. "
-"Bere guraso karpeta ez dago, edo bera ere direktorio bat da edo ezin da "
-"irakurria/idatzia izan.</p>"
+"<p>Konfiguratzeko fitxategirako emandako bide-izena ez da baliagarria. Bere "
+"guraso karpeta ez da existitzen, bera ere direktorio bat da edo ezin da "
+"irakurri/idatzi.</p>"
 
 #: core/app/utils/digikam_globals.cpp:121
 #, kde-format
@@ -25485,306 +25486,283 @@ msgid "This is the login form to your account on the chosen wiki."
 msgstr "Hau da hautatutako wikian zure kontuan saio-hasteko inprimakia."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: properties"
 msgid "Title:"
 msgstr "Titulua:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgctxt "@label: properties"
 msgid "Date:"
 msgstr "Data:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: properties"
 msgid "Description:"
-msgstr "Azalpena:"
+msgstr "Deskribapena:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgctxt "@label: properties"
 msgid "Categories:"
-msgstr "Kategoriak: "
+msgstr "Kategoriak:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label: properties"
 msgid "Latitude:"
 msgstr "Latitudea:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
 msgstr "Longitudea:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
-#, fuzzy, kde-format
-#| msgid "Amount:"
+#, kde-format
 msgctxt "@option"
 msgid "Account"
 msgstr "Kontua"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "This is the list of images to batch process."
+#, kde-format
 msgctxt "@info"
 msgid "This is the login form to your MediaWiki account."
 msgstr "Hau da zure MediaWiki kontuan saio-hasteko inprimakia."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:238
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@option: button"
 msgid "New"
 msgstr "Berria"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Add a new value to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add a wiki to this list"
 msgstr "Gehitu wiki bat zerrenda honetara"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikimedia Commons"
 msgstr "Wikimedia Commons"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:245
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikimedia Meta"
 msgstr "Wikimedia Meta"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikibooks"
 msgstr "Wikibooks"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikinews"
 msgstr "Wikinews"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgctxt "@item"
 msgid "Wikiquote"
 msgstr "Wikiquote"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgctxt "@item"
 msgid "Wikisource"
 msgstr "Wikisource"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
-#, fuzzy, kde-format
-#| msgid "MacBinary II"
+#, kde-format
 msgctxt "@item"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Median:"
+#, kde-format
 msgctxt "@item"
 msgid "MediaWiki"
 msgstr "MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikia Foto"
 msgstr "Wikia Foto"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Wikia Uncyclopedia"
 msgstr "Wikia Uncyclopedia"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:259
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Wiki:"
 msgstr "Wiki:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:270
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "These are options for adding a Wiki."
-msgstr "Hauek dira Wiki bat Wiki bat gehitzeko aukerak."
+msgstr "Hauek dira Wiki bat gehitzeko aukerak."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:275
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: name of wiki area"
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:278
-#, fuzzy, kde-format
-#| msgid "URL:"
+#, kde-format
 msgctxt "@label"
 msgid "API URL:"
 msgstr "APIaren URL:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: button"
 msgid "Add"
 msgstr "Gehitu"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:285
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Add a new wiki"
 msgstr "Gehitu wiki berri bat"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:294
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Login:"
-msgstr "Saio-hasiera:"
+msgstr "Saio-hasi:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:297
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label"
 msgid "Password:"
 msgstr "Pasahitza:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:302
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "&Log in"
 msgstr "&Hasi saioa"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:318
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Login Information"
 msgstr "Saio-hasteko informazioa"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:324
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
-msgstr "Saio-hasita hemen:"
+msgstr "Saio-hasita: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:328
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
-msgstr "Saio-hasita honela:"
+msgstr "Honela saio-hasita: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
-#, fuzzy, kde-format
-#| msgid "Change Case"
+#, kde-format
 msgctxt "@action: button"
 msgid "Change Account"
 msgstr "Aldatu kontua"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:333
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
 msgstr "Saio-itxi eta aldatu transferentziak egiteko erabilitako kontua"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:345
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@option"
 msgid "Information"
 msgstr "Informazioa"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:351
-#, fuzzy, kde-format
-#| msgid "Author"
+#, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Egilea:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:354
-#, fuzzy, kde-format
-#| msgid "Source:"
+#, kde-format
 msgctxt "@label: source file"
 msgid "Source:"
 msgstr "Iturburua:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:357
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Lizentzia:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:361
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
-msgstr ""
-"Nere lana, Creative Commons Attribution-Share Alike 4.0 (Aitortzea-Berdin "
-"Partekatzea)"
+msgstr "Lan propioa, Creative Commons Attribution-Share Alike 4.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
-msgstr "Nere lana, lizentzia-aniztuna CC-BY-SA-3.0 eta GFDL"
+msgstr "Lan propioa, lizentzia-anitz CC-BY-SA-3.0 eta GFDL duena"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
-msgstr "Nere lana, lizentzia-aniztuna CC-BY-SA-3.0 eta zaharragoa"
+msgstr "Lan propioa, lizentzia-anitz CC-BY-SA-3.0 eta zaharragoa duena"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
-msgstr ""
-"Nere lana, Creative Commons Attribution-Share Alike 3.0  (Aitortzea-Berdin "
-"Partekatzea)"
+msgstr "Lan propioa, Creative Commons Attribution-Share Alike 3.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution 3.0"
-msgstr "Nere lana, Creative Commons Attribution 3.0 ( (Aitortzea)"
+msgstr "Lan propioa, Creative Commons Attribution 3.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
-msgstr "Nere lana, argitaratu jendartean CC-Zero lizentziaren babespean"
+msgstr "Lan propioa, argitaratu jendartean CC-Zero lizentzia pean"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Author died more than 100 years ago"
 msgstr "Egilea duela 100 baino gehiago hil zen"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid ""
 "Photo of a two-dimensional work whose author died more than 100 years ago"
@@ -25793,76 +25771,66 @@ msgstr ""
 "gehiago hil zen"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "First published in the United States before 1923"
-msgstr "Aurrenekoz argitaratua AEBetan 1923 baino lehen"
+msgstr "Aurrenekoz AEBetan 1923 baino lehen argitaratua"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Work of a U.S. government agency"
 msgstr "AEBetako gobernu-agentzia baten lana"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Simple typefaces, individual words or geometric shapes"
-msgstr "Tipografia soilak, banakako hitzak edo forma geometrikoak"
+msgstr "Tipografia sinpleak, banakako hitzak edo forma geometrikoak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Logos with only simple typefaces, individual words or geometric shapes"
 msgstr ""
-"Tipografia soilak baino ez dituzten logotipoak, banakako hitzak edo forma "
+"Tipografia sinpleak baino ez dituzten logotipoak, banakako hitzak edo forma "
 "geometrikoak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "No license specified (not recommended for public wiki sites)"
 msgstr ""
-"Ez da lizentziarik zehaztu (wiki-leku publikoetan ez erabiltzea gomendatzen "
-"da)"
+"Ez da lizentziarik zehaztu (wiki-leku publikoetarako ez da gomendatzen)"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:388
-#, fuzzy, kde-format
-#| msgid "Supplemental categories:"
+#, kde-format
 msgctxt "@label"
 msgid "Generic categories:"
 msgstr "Kategoria generikoak:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:391
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value in degrees will be added to main angle value to set fine "
-#| "target angle."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This is a place to enter categories that will be added to all the files."
-msgstr "Hau da fitxategi guztiei gehituko zaizkien kategoriak sartzeko tokia."
+msgstr "Fitxategi guztiei gehituko zaizkien kategoriak sartzeko tokia da hau."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:394
-#, fuzzy, kde-format
-#| msgctxt "generic black and white film"
-#| msgid "Generic"
+#, kde-format
 msgctxt "@label"
 msgid "Generic text:"
 msgstr "Testu generikoa:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:397
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value in degrees will be added to main angle value to set fine "
-#| "target angle."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This is a place to enter text that will be added to all the files, below the "
 "Information template."
 msgstr ""
-"Hau da fitxategi guztiei, informazio txantiloiaren azpian, gehituko zaien "
-"testua sartzeko tokia."
+"Fitxategi guztiei, informazio-txantiloiaren azpian, gehituko zaien testua "
+"sartzeko tokia da hau."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
 #, kde-format
@@ -25877,13 +25845,12 @@ msgid ""
 "This is a place to enter text that will be used as upload comments. The "
 "default of 'Uploaded via digiKam uploader' will be used if empty."
 msgstr ""
-"Hau, zama-igoera iruzkin gisa erabiliko den testua sartzeko toki bat da. "
-"Hutsik dagoenean lehenetsitako «digiKam zama-igotzailearen bidez zama-igoa» "
+"Zama-igotako iruzkin gisa erabiliko den testua sartzeko toki bat da hau. "
+"Hutsik badago, lehenetsitako 'digiKam zama-igotzailearen bidez zama-igo da' "
 "erabiliko da."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgctxt "@option"
 msgid "Options"
 msgstr "Aukerak"
@@ -25892,7 +25859,8 @@ msgstr "Aukerak"
 #, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
-msgstr "Aukera hauek dira argazkiei zama-igo aurretik ezarriko zaizkienak."
+msgstr ""
+"Argazkiei haiek zama-igo aurretik aplikatuko zaizkien aukera dira hauek."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:433
 #, kde-format
@@ -25901,36 +25869,34 @@ msgid "Resize photos before uploading"
 msgstr "Aldatu argazkien handiera zama-igo aurretik"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:443
-#, fuzzy, kde-format
-#| msgid "Matrix size:"
+#, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "Gehienezko neurria:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:451
-#, fuzzy, kde-format
-#| msgid "JPEG quality:"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG quality:"
 msgstr "JPEG kalitatea:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:454
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Remove metadata from file"
-msgstr "Kendu fitxategiko meta-datuak"
+msgstr "Kendu fitxategiko metadatuak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:458
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Remove coordinates from file"
 msgstr "Kendu fitxategiko koordenatuak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:475
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Items Properties"
-msgstr "Elementuen propietateak"
+msgstr "Elementuaren propietateak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:476
 #, kde-format
@@ -25939,35 +25905,32 @@ msgid "Upload Settings"
 msgstr "Zama-igotzeko ezarpenak"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "Esportatu MediaWiki-ra"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:98
-#, fuzzy, kde-format
-#| msgid "Start upload to MediaWiki"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
-msgstr "Abiatu MediaWiki-ra zama-igotzea"
+msgstr "Hasi MediaWiki-ra zama-igotzen"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:297
-#, fuzzy, kde-format
-#| msgid "LibLCMS"
+#, kde-format
 msgid "MediaWiki export"
-msgstr "MediaWiki Esportatu"
+msgstr "MediaWiki esportatu"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:333
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
 msgstr "Saio-haste errorea"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:333
-#, fuzzy, kde-format
+#, kde-format
 msgid "Please check your credentials and try again."
-msgstr "Ikuskatu zure egiaztagiriak eta berriz saiatu."
+msgstr "Mesedez, aztertu zure egiaztagiriak eta berriz saiatu."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:354
 #, kde-format
@@ -25975,53 +25938,53 @@ msgid "Upload finished with no errors."
 msgstr "Zama-igotzea errorerik gabe bukatu da."
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "LibLCMS"
+#, kde-format
 msgctxt "@title"
 msgid "OneDrive"
-msgstr "LibLCMS"
+msgstr "OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to OneDrive web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "OneDrive web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to OneDrive web-service.\n"
 "\n"
 "See OneDrive web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak OneDrive web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi OneDrive-n webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
-msgstr "Esportatu"
+msgstr "Esportatu &Onedrive-ra..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr "Esportatu"
+msgstr "Esportatu Onedrive-ra"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Onedrive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
-msgstr "Abiatu Onedrive-ra zama-igotzea"
+msgstr "Hasi Onedrive-ra zama-igotzen"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
-#, fuzzy, kde-format
-#| msgid "LibLCMS"
+#, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
-msgstr "LibLCMS"
+msgstr "Onedrive esportatzea"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
 #, kde-format
@@ -26031,82 +25994,84 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Huts egin du argazkia OneDrive-ra zama-igotzea.\n"
+"OneDrive-ra argazkia zama-igotzea huts egin du.\n"
 "%1\n"
 "Jarraitu nahi duzu?"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:394
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:399
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Onedrive call failed:\n"
 "%1"
-msgstr "Ez bilatu altituderik"
+msgstr ""
+"Onedrive deiak huts egin du:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Color: "
+#, kde-format
 msgctxt "@title"
 msgid "Pinterest"
-msgstr "Hasierako kolorea: "
+msgstr "Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Pinterest web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Pinterest web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Pinterest web-service.\n"
 "\n"
 "See Pinterest web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Pinterest web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi Pinterest-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
-msgstr "Esportatu"
+msgstr "Esportatu &Pinterest-era..."
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:491
 #, kde-format
 msgid "Failed to upload Pin"
-msgstr "Huts egin du PINa zama-igotzea"
+msgstr "PINa zama-igotzea huts egin du"
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:517
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to list boards"
-msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
+msgstr "Taulak zerrendatzea huts egin du"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr "Esportatu"
+msgstr "Esportatu Pinterest-era"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Start upload to Pinterest"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
-msgstr "Abiatu Pinterest-era zama-igotzea"
+msgstr "Hasi Pinterest-era zama-igotzen"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:251
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:251
-#, fuzzy, kde-format
+#, kde-format
 msgid "Authentication failed. Click \"Continue\" to authenticate."
-msgstr ""
-"Autentifikatzea huts egin du. Egin klik \"Jarraitu\"n autentifikatzeko."
+msgstr "Egiaztatzea huts egin du. Egin klik \"Jarraitu\"n egiaztatzeko."
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:287
-#, fuzzy, kde-format
-#| msgid "Start Color: "
+#, kde-format
 msgid "Pinterest export"
-msgstr "Hasierako kolorea: "
+msgstr "Pinterest esportatzea"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:324
 #, kde-format
@@ -26115,75 +26080,75 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Huts egin du argazkia Pinterest-era zama-igotzea.\n"
+"Argazkia Pinterest-era zama-igotzea huts egin du.\n"
 "%1\n"
 "Jarraitu nahi duzu?"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:396
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:401
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Pinterest call failed:\n"
 "%1"
-msgstr "Ez bilatu altituderik"
+msgstr ""
+"Pinterest deiak huts egin du:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:80
-#, fuzzy, kde-format
-#| msgid "URL:"
+#, kde-format
 msgctxt "piwigo login settings"
 msgid "URL:"
 msgstr "URLa:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:84
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgctxt "piwigo login settings"
 msgid "Username:"
 msgstr "Erabiltzaile-izena:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:88
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "piwigo login settings"
 msgid "Password:"
 msgstr "Pasahitza:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@title"
 msgid "Piwigo"
-msgstr "Esportatu"
+msgstr "Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Piwigo web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Piwigo web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Piwigo web-service.See Piwigo web "
 "site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Piwigo web-zerbitzura esportatzeko "
+"aukera ematen die. Ikusi Piwigo-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
-msgstr "Esportatu"
+msgstr "Esportatu &Piwigo-ra..."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
-#, fuzzy, kde-format
+#, kde-format
 msgid "Check if %1 already exists"
 msgstr "Egiaztatu %1 aurretik dagoen"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
-#, fuzzy, kde-format
+#, kde-format
 msgid "Piwigo URL probably incorrect"
-msgstr "Piwigo URLa ziur aski ez da zuzena"
+msgstr "Piwigo-ren URLa ziur aski ez da zuzena"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, fuzzy, kde-format
@@ -67096,7 +67061,7 @@ msgstr "Gailuak"
 #: core/utilities/setup/camera/setupcamera.cpp:315
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
-msgstr ""
+msgstr "Erabili fitxategiaren metadatuak (konexioa moteltzen du)"
 
 #: core/utilities/setup/camera/setupcamera.cpp:316
 #, kde-format
@@ -69837,7 +69802,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:181
 #, kde-format
 msgid "When the profile of an image does not match the working color space"
-msgstr "Irudi baten profila bat ez datorrenean laneko kolore-espazioarekin"
+msgstr "Irudi baten profila laneko kolore-eremuarekin bat ez datorrenean"
 
 #: core/utilities/setup/setupicc.cpp:189 core/utilities/setup/setupicc.cpp:220
 #, kde-format
@@ -69852,15 +69817,15 @@ msgid ""
 "the embedded profile or discard the embedded profile and assign a different "
 "one.</p>"
 msgstr ""
-"<p>Irudi batek kapsulatutako kolore-profila badu baina ez badator laneko "
-"espazio-profilarekin bat, digiKam-ek ea laneko espaziora bihurtzea, "
-"kapsulatutako profila mantentzea edo kapsulatutako profila baztertuz "
-"bestelako bat esleitzea nahi duzun galdetuko dizu.</p>"
+"<p>Irudi batek laneko-eremu profilarekin bat ez datorren kapsulatutako "
+"kolore-profil bat badu, digiKamek laneko-eremura bihurtu nahi duzun, "
+"kapsulatutako profila mantendu nahi duzun edo kapsulatutako profila baztertu "
+"eta beste bat esleitu nahi diozun galdegingo du.</p>"
 
 #: core/utilities/setup/setupicc.cpp:196
 #, kde-format
 msgid "Convert the image to the working color space"
-msgstr "Bihurtu irudia laneko kolore-espaziora"
+msgstr "Bihurtu irudia laneko kolore-eremura"
 
 #: core/utilities/setup/setupicc.cpp:197
 #, kde-format
@@ -69870,15 +69835,15 @@ msgid ""
 "color space. This changes the pixel data, but not the appearance of the "
 "image.</p>"
 msgstr ""
-"<p>Irudi batek kapsulatutako kolore-profila badu baina ez badator laneko "
-"espazio-profilarekin bat, digiKam-ek irudiaren koloreen informazioa laneko "
-"kolore-espaziora bihurtuko du. Honek pixelen datuak aldatuko ditu, baina ez "
-"irudiaren itxura.</p>"
+"<p>Irudi batek laneko-eremu profilarekin bat ez datorren kapsulatutako "
+"kolore-profil bat badu, digiKamek irudiaren kolore-informazioa laneko kolore-"
+"eremura bihurtuko du. Horrek pixelen datuak aldatzen ditu, irudiaren itxura "
+"ez ordea.</p>"
 
 #: core/utilities/setup/setupicc.cpp:213
 #, kde-format
 msgid "When an image has no color profile information"
-msgstr "Irudiak ez duenean kolore-profilaren informaziorik"
+msgstr "Irudi batek kolore-profilaren informaziorik ez duenean"
 
 #: core/utilities/setup/setupicc.cpp:221
 #, kde-format
@@ -69887,72 +69852,72 @@ msgid ""
 "space shall be used to interpret the image and to which color space it shall "
 "be transformed for editing.</p>"
 msgstr ""
-"<p>Irudiak ez badu kolore-profilik kapsulatuta, digiKam-ek zer kolore-"
-"espazio erabili behar den irudia interpretatzeko eta bihurketan zer kolore-"
-"espazio erabiliko den editatzeko galdetuko dizu.</p>"
+"<p>Irudi batek kapsulatutako irudi-profilik ez badu, digiKamek irudia "
+"interpretatzeko erabili beharreko kolore-eremuari buruz galdegingo du eta "
+"editatzeko zein kolore-eremura bihurtu beharko litzatekeen ere.</p>"
 
 #: core/utilities/setup/setupicc.cpp:225
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "sGBU (Interneteko estandarra) kolore-espazioa darabilela suposatu "
+msgstr "sGBU kolore-eremua (Interneteko estandarra) darabilela suposatu"
 
 #. i18n("<p></p>"));
 #.
 #: core/utilities/setup/setupicc.cpp:231
 #, kde-format
 msgid "and convert it to the working color space"
-msgstr "eta bihurtu laneko kolore-espaziora"
+msgstr "eta bihurtu laneko kolore-eremura"
 
 #: core/utilities/setup/setupicc.cpp:244
 #, kde-format
 msgid "Assume it is using the working color space"
-msgstr "Laneko kolore-espazioa darabilela suposatu"
+msgstr "Laneko kolore-eremua darabilela suposatu"
 
 #. i18n("<p></p>"));
 #.
 #: core/utilities/setup/setupicc.cpp:250
 #, kde-format
 msgid "Convert it from default input color space to working space"
-msgstr "Bihurtu sarrerako kolore-espazio lehenetsitik laneko espaziora"
+msgstr "Bihurtu sarrerako kolore-eremu lehenetsitik laneko-eremura"
 
 #: core/utilities/setup/setupicc.cpp:269
 #, kde-format
 msgid "When loading a RAW file with uncalibrated colors"
-msgstr "RAW fitxategia kalibratu gabeko koloreekin kargatzean "
+msgstr "Kalibratu gabeko koloreak dituen RAW fitxategi bat zamatzean"
 
 #: core/utilities/setup/setupicc.cpp:276
 #, kde-format
 msgid "Ask for the input profile"
-msgstr "Galdetu sarrerako profilari buruz"
+msgstr "Sarrerako profilagatik galdetu"
 
 #. i18n("<p></p>"));
 #.
 #: core/utilities/setup/setupicc.cpp:282
 #, kde-format
 msgid "Automatic color correction"
-msgstr "Kolorearen zuzenketa automatikoa"
+msgstr "Kolore-zuzenketa automatikoa"
 
 #. i18n("<p></p>"));
 #.
 #: core/utilities/setup/setupicc.cpp:288
 #, kde-format
 msgid "Convert it from the default input profile"
-msgstr "Bihurtu sarrerako profila lehenetsira"
+msgstr "Bihurtu sarrerako profil lehenetsitik"
 
 #: core/utilities/setup/setupicc.cpp:313
 #, kde-format
 msgid "Color Managed View"
-msgstr "Kolore-kudeaketaren ikuspegia"
+msgstr "Kudeatutako kolore profila"
 
 #: core/utilities/setup/setupicc.cpp:318
 #, kde-format
 msgid "Monitor profile:"
-msgstr "Pantailaren profila:"
+msgstr "Monitore profila:"
 
 #: core/utilities/setup/setupicc.cpp:322
 #, kde-format
 msgid "<p>Select the color profile for your monitor here.</p>"
-msgstr "<p>Hautatu pantailaren kolorearen profila</p>"
+msgstr "<p>Hautatu hemen zure monitorearentzako kolore-profila.</p>"
 
 #: core/utilities/setup/setupicc.cpp:326
 #, kde-format
@@ -69960,13 +69925,13 @@ msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected monitor profile.</p>"
 msgstr ""
-"<p>Botoi hau erabil dezakezu pantailaren hautatutako profilari buruzko "
-"informazio gehiago eskuratzeko.</p>"
+"<p>Botoi hau erabil dezakezu hautatutako monitore-profilari buruzko "
+"informazio zehatzagoa lortzeko.</p>"
 
 #: core/utilities/setup/setupicc.cpp:330
 #, kde-format
 msgid "Use color managed view in editor"
-msgstr "Erabili kolore-kudeaketaren ikuspegia editorean"
+msgstr "Editorean kudeatutako kolore ikuspegia erabili"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format
@@ -69977,16 +69942,17 @@ msgid ""
 "Editor window. <i>Warning</i>: This can slow down rendering of the image, "
 "depending on the speed of your computer.</p>"
 msgstr ""
-"<p>Gaitu aukera hau <b>Pantailaren kolore-profila</b> erabiltzea nahi baduzu "
-"zure irudiak irudien editorearen leihoan pantailari egokitutako kolore-"
-"zuzenketarekin erakusteko. Edozer unetan Editorea leihotik txandaka dezakezu "
-"aukera hau. <i>Abisua</i>: honek irudiaren errendatzea moteltzen du, "
-"ordenagailuaren abiaduraren arabera.</p>"
+"<p>Piztu aukera hau irudi-editore leihoan zure irudiak zure monitorera "
+"egokitutako kolore-zuzenketarekin erakusteko zure <b>Monitorearen kolore-"
+"profila</b> erabili nahi baduzu. Aukera editore leihotik hau nahi duzunean "
+"txandakatu dezakezu. <i>Abisua</i>: zure ordenagailuaren abiaduraren "
+"arabera, honek irudiaren errendatzea motel dezake.</p>"
 
 #: core/utilities/setup/setupicc.cpp:338
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
-msgstr "Erabili kolore-kudeaketaren ikuspegia aurrebista eta koadro txikietan"
+msgstr ""
+"Erabili kudeatutako kolore ikuspegia aurreikuspegi eta koadro txikietarako"
 
 #: core/utilities/setup/setupicc.cpp:354
 #, kde-format
@@ -69996,7 +69962,7 @@ msgstr "Kamera eta eskanerra"
 #: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Default input color profile:"
-msgstr "Sarrerako kolore-profila lehenetsia:"
+msgstr "Sarrerako kolore-profil lehenetsia:"
 
 #: core/utilities/setup/setupicc.cpp:361
 #, kde-format
@@ -70006,10 +69972,10 @@ msgid ""
 "conversion of RAW images in 16bit. Some of the options about loading "
 "behavior above refer to this profile.</p>"
 msgstr ""
-"<p>Sarrerako gailuaren (kamera edo eskanerra) kolore-profila lehenetsia da. "
-"Kameraren sarrerako profila gomendatzen da 16 bitetako RAW irudiak "
-"bihurtzeko. Arestian aipatutako kargatzearen portaerari buruzko aukera "
-"batzuk profila honi dagozkio.</p>"
+"<p>Zure sarrerako gailuaren (hau da, zure kamera edo eskanerra) kolore-"
+"profil lehenetsia da. Kameraren sarrerako profil bat gomendatzen da RAW "
+"irudiak 16 bitera bihurtzeko. Zamatzeko jokabideari buruzko goiko aukeretako "
+"batzuk profil honi dagozkio..</p>"
 
 #: core/utilities/setup/setupicc.cpp:368
 #, kde-format
@@ -70018,12 +69984,12 @@ msgid ""
 "selected input profile.</p>"
 msgstr ""
 "<p>Botoi hau erabil dezakezu hautatutako sarrerako profilari buruzko "
-"informazio gehiago eskuratzeko.</p>"
+"informazio zehatzagoa lortzeko.</p>"
 
 #: core/utilities/setup/setupicc.cpp:379
 #, kde-format
 msgid "Printing and Proofing"
-msgstr "Inprimatzea eta frogatzea"
+msgstr "Inprimatzea eta probatarako"
 
 #: core/utilities/setup/setupicc.cpp:384
 #, kde-format
@@ -70036,13 +70002,13 @@ msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected proofing profile.</p>"
 msgstr ""
-"<p>Botoi hau erabil dezakezu hautatutako frogapeneko profilari buruzko "
+"<p>Botoi hau erabil dezakezu hautatutako probako profilari buruzko "
 "informazio gehiago eskuratzeko.</p>"
 
 #: core/utilities/setup/setupicc.cpp:404
 #, kde-format
 msgid "Color Profiles Repository"
-msgstr "Kolore-profilen biltegia"
+msgstr "Kolore-profilen gordetegia"
 
 #: core/utilities/setup/setupicc.cpp:409
 #, kde-format
@@ -70050,8 +70016,8 @@ msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
-"digiKam-ek ICC profilak bilatzen ditu hainbat <a href='default'>kokaleku "
-"lehenetsietan</a>. Karpeta gehigarria zehatz dezakezu:"
+"digiKamek <a href='default'>kokaleku lehenetsi</a> batzuetan ICC profilak "
+"bilatzen ditu. Karpeta gehigarri bat zehaztu dezakezu:"
 
 #: core/utilities/setup/setupicc.cpp:417
 #, kde-format
@@ -70060,9 +70026,9 @@ msgid ""
 "a few selected profiles. Store all your additional color profiles in the "
 "directory set here.</p>"
 msgstr ""
-"<p>digiKam-ek  ICC profilak bilatzen ditu sistemako karpeta lehenetsietan "
-"eta berarekin datozten profil hautatu batzuk. Gorde zure kolore-profil "
-"gehigarriak hemen ezarritako direktorioan.</p>"
+"<p>digiKamek sistemaren karpeta lehenetsietan ICC profilak bilatzen ditu eta "
+"berak ere hautatuko profil batzuk ere eramaten ditu. Biltegiratu zure kolore-"
+"profil gehigarri guztiak hemen ezarritako direktorioan.</p>"
 
 #: core/utilities/setup/setupicc.cpp:440
 #, kde-format
@@ -70076,14 +70042,14 @@ msgid ""
 "maximum black levels of digital files and the black capabilities of various "
 "digital devices.</p>"
 msgstr ""
-"<p><b>Puntu beltzaren konpentsazioa</b> fitxategi digitaleko beltzaren "
-"gehienezko mailen eta gailu digital batzuen beltzaren ahalmenaren arteko "
-"doiketak egiteko moduari deitzen zaio.</p>"
+"<p><b>Puntu beltzaren konpentsazioa</b> fitxategi digitalen gehienezko beltz-"
+"mailen eta hainbat gailu digitalen beltz gaitasunen artean doikuntzak "
+"egiteko era da.</p>"
 
 #: core/utilities/setup/setupicc.cpp:447
 #, kde-format
 msgid "Rendering Intents:"
-msgstr "Errendatzearen saiakerak:"
+msgstr "Errendatze asmoak:"
 
 #: core/utilities/setup/setupicc.cpp:462
 #, kde-format
@@ -70106,17 +70072,17 @@ msgstr "Aurreratua"
 #: core/utilities/setup/setupicc.cpp:665
 #, kde-format
 msgid "Monitor Profile From System Settings"
-msgstr "Pantailako profila sistemako ezarpenetatik"
+msgstr "Monitorearen profila sistemako ezarpenetatik"
 
 #: core/utilities/setup/setupicc.cpp:697
 #, kde-format
 msgid "No ICC profiles files found."
-msgstr "Ez da ICC profilen fitxategirik aurkitu."
+msgstr "Ez da ICC profil fitxategirik aurkitu."
 
 #: core/utilities/setup/setupicc.cpp:713
 #, kde-format
 msgid "No Display Profile Available"
-msgstr "Ez dago pantailako profilik erabilgarri"
+msgstr "Ez dago bistaratzeko profilik erabilgarri"
 
 #: core/utilities/setup/setupicc.cpp:715
 #, kde-format
@@ -70130,21 +70096,20 @@ msgid "none"
 msgstr "bat ere ez"
 
 #: core/utilities/setup/setupicc.cpp:858
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
 "spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
 "Windows/Color/</li></ul>On your system, currently these paths exist and are "
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
-"Linux sisteman, bilaketako bide-izen lehenetsiak honakoak ditu: <ul><li>/usr/"
-"share/color/icc</li> <li>/usr/local/share/color/icc</li> <li>~/.local/share/"
-"color/icc/</li> <li>~/.local/share/icc/</li> <li>~/.color/icc/</li></"
-"ul>Darabilzun sisteman, honako bide-izenak daude eta eskaneatu dira:<ul><li>"
-"%1</li></ul>"
+"Windows-en, bilaketa bide-izen lehenetsiak honakoak ditu:  <ul><li>%1/"
+"Windows/System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/"
+"</li><li> %2/Windows/Color/</li></ul>Zure sisteman egun honako bide-izenak "
+"daude eta eskaneatu dira:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:874
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -70153,11 +70118,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"Linux sisteman, bilaketako bide-izen lehenetsiak honakoak ditu: <ul><li>/usr/"
-"share/color/icc</li> <li>/usr/local/share/color/icc</li> <li>~/.local/share/"
-"color/icc/</li> <li>~/.local/share/icc/</li> <li>~/.color/icc/</li></"
-"ul>Darabilzun sisteman, honako bide-izenak daude eta eskaneatu dira:<ul><li>"
-"%1</li></ul>"
+"macOS-en, bilaketa bide-izen lehenetsiak honakoak ditu: <ul><li>/System/"
+"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
+"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
+"Contents/Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Zure sisteman egun "
+"honako bide-izenak daude eta eskaneatu dira:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:893
 #, kde-format
@@ -70167,11 +70133,11 @@ msgid ""
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
 "currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
-"Linux sisteman, bilaketako bide-izen lehenetsiak honakoak ditu: <ul><li>/usr/"
-"share/color/icc</li> <li>/usr/local/share/color/icc</li> <li>~/.local/share/"
-"color/icc/</li> <li>~/.local/share/icc/</li> <li>~/.color/icc/</li></"
-"ul>Darabilzun sisteman, honako bide-izenak daude eta eskaneatu dira:<ul><li>"
-"%1</li></ul>"
+"Linux-en, bilaketa bide-izen lehenetsiak honakoak ditu: <ul><li>/usr/share/"
+"color/icc</li> <li>/usr/local/share/color/icc</li> <li>~/.local/share/color/"
+"icc/</li> <li>~/.local/share/icc/</li> <li>~/.color/icc/</li></ul>Zure "
+"sisteman egun honako bide-izenak daude eta eskaneatu dira:<ul><li>%1</li></"
+"ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:51
 #, kde-format
@@ -70206,15 +70172,15 @@ msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr ""
-"Ezarri aukera hau zooma eta ezkerreko eta eskuineko panelen arteko "
-"panoramika automatikoki sinkronizatzeko irudiak tamaina berekoak badira."
+"Ezarri aukera hau, ezker eta eskuineko paneletako irudiak neurri berekoak "
+"badira, zooma eta panoramika automatikoki sinkronizatzeko."
 
 #: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr ""
-"Koadro txikien barrako elementua hautatzean irudia eskuineko panelean "
-"kargatuko da"
+"Koadro txikien barrako elementu bat hautatze denean, irudia eskuineko "
+"panelean zamatzen da"
 
 #: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
@@ -70222,8 +70188,8 @@ msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr ""
-"Ezarri aukera hau irudia eskuineko panelean automatikoki kargatzeko dagokion "
-"elementua koadro txikien barran hautatzen denean."
+"Ezarri aukera hau, koadro txikien barran elementua bat hautatzen denean, "
+"dagokion irudia eskuineko panelean automatikoki zamatzeko."
 
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
@@ -70236,8 +70202,9 @@ msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
-"Ezarri aukera hau irudi guztiak argi-mahaitik kentzeko hura ixtean, edo "
-"kendu ezarpena uneko irudiak argi-mahaian mantentzeko."
+"Ezarri aukera hau, argi-mahaia ixten duzunean han dauden irudi guztiak "
+"ixteko, edo ezarri gabe utzi argi-mahaian une honetan dauden irudiak "
+"mantentzeko."
 
 #: core/utilities/setup/setupplugins.cpp:66
 #, kde-format
@@ -70271,7 +70238,7 @@ msgstr "Txantiloiaren titulua:"
 #: core/utilities/setup/setuptemplate.cpp:80
 #, kde-format
 msgid "Enter the metadata template title here."
-msgstr "Sartu metadatuen txantiloiaren titulua."
+msgstr "Sartu hemen metadatu-txantiloiaren titulua."
 
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
@@ -70279,8 +70246,8 @@ msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
 "identify a template in your collection.</p>"
 msgstr ""
-"<p>Sartu metadatuen txantiloiaren titulua. Titulu hau txantiloia "
-"direktorioan identifikatzeko erabiliko da.</p>"
+"<p>Sartu hemen metadatu-txantiloiaren titulua. Titulu hori zure bilduman "
+"txantiloi bat identifikatzeko erabiliko da.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:91
 #, kde-format
@@ -70294,41 +70261,43 @@ msgstr ""
 "<b>Oharra: informazio hauek <b><a href='http://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a></b> eta <b><a href='http://en."
 "wikipedia.org/wiki/IPTC'>IPTC</a></b> etiketen edukia ezartzeko erabiltzen "
-"dira. Ez dago murriztapenik XMPrekin, baina jakin ezazu IPTCko testu "
-"etiketen neurriak mugatuta daudela. Erabili testuinguruko laguntza "
-"xehetasunetarako.</b>"
+"dira. XMPrekin ez dago mugarik, baina kontuan izan IPTC testu etiketen "
+"neurriak mugatuta daudela. Erabili testuinguru-laguntza xehetasunetarako.</b>"
 
 #: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Replace..."
-msgstr "&Ordeztu..."
+msgstr "O&rdeztu..."
 
 #: core/utilities/setup/setuptemplate.cpp:245
 #: core/utilities/setup/setuptemplate.cpp:276
 #, kde-format
 msgid "Cannot register new metadata template without title."
-msgstr "Ezin da metadatuen txantiloi berria erregistratu titulurik gabe."
+msgstr "Ezin da metadatu-txantiloi berri bat titulurik gabe erregistratu."
 
 #: core/utilities/setup/setuptemplate.cpp:252
 #, kde-format
 msgid "A metadata template named '%1' already exists."
-msgstr "'%1' izeneko metadatuen txantiloia badago lehendik ere."
+msgstr "'%1' izeneko metadatu-txantiloi bat jada badago."
 
 #: core/utilities/setup/setuptooltip.cpp:131
 #, kde-format
 msgid "Tool-Tips Font:"
-msgstr "Argibideen letra-tipoa:"
+msgstr "Trena-argibideen letra-tipoa:"
 
 #: core/utilities/setup/setuptooltip.cpp:132
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
-msgstr "Hautatu letra-tipoa argibideetako testuak bistaratzean erabiltzeko."
+msgstr ""
+"Hautatu hemen tresna-argibideetan testua bistarartzeko erabilitako letra-"
+"tipoa."
 
 #: core/utilities/setup/setuptooltip.cpp:140
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr ""
-"Erakutsi ikonoen ikuspegiko eta koadro txikien barrako elementuen argibideak"
+"Erakutsi ikono-ikuspegi eta koadro txikien barrako elementuen tresna-"
+"argibideak"
 
 #: core/utilities/setup/setuptooltip.cpp:141
 #, kde-format
@@ -70336,8 +70305,8 @@ msgid ""
 "Set this option to display image information when the mouse hovers over an "
 "icon-view or thumb-bar item."
 msgstr ""
-"Gaitu aukera hau irudiaren informazioa bistaratzeko sagua ikonoen "
-"ikuspegikoedo koadro txikien barrako elementu baten gainean kokatzean."
+"Gaitu aukera hau, sagua ikono-ikuspegi baten edo koadro txikien barrako "
+"elementu baten gainetik igarotzen denean."
 
 #: core/utilities/setup/setuptooltip.cpp:144
 #, kde-format
@@ -70347,7 +70316,7 @@ msgstr "Fitxategi/Irudiaren informazioa"
 #: core/utilities/setup/setuptooltip.cpp:147
 #, kde-format
 msgid "File name"
-msgstr "Fitxategi izena"
+msgstr "Fitxategiaren izena"
 
 #: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
@@ -70372,18 +70341,18 @@ msgstr "Irudiaren dimentsioak"
 #: core/utilities/setup/setuptooltip.cpp:162
 #, kde-format
 msgid "Image aspect ratio"
-msgstr "Irudiaren itxura proportzioa"
+msgstr "Irudiaren itxura-proportzioa"
 
 #: core/utilities/setup/setuptooltip.cpp:163
 #, kde-format
 msgid "Set this option to display the image aspect ratio."
-msgstr "Ezarri aukera hau irudiaren itxura proportzioa bistaratzeko."
+msgstr "Ezarri aukera hau irudiaren itxura-proportzioa bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:179
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
 msgid "Camera make and model"
-msgstr "Kameraren fabrikatzailea edo eredua"
+msgstr "Kameraren marka edo eredua"
 
 #: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
@@ -70411,7 +70380,7 @@ msgstr "Kameraren modua eta programa"
 #: core/utilities/setup/setuptooltip.cpp:375
 #, kde-format
 msgid "Camera flash settings"
-msgstr "Kamera flasharen ezarpenak"
+msgstr "Kameraren flash-ezarpenak"
 
 #: core/utilities/setup/setuptooltip.cpp:206
 #: core/utilities/setup/setuptooltip.cpp:379
@@ -70464,18 +70433,18 @@ msgstr "Irudiaren etiketak"
 #: core/utilities/setup/setuptooltip.cpp:236
 #, kde-format
 msgid "Set this option to display the image tags."
-msgstr "Ezarri aukera hau irudien etiketak bistaratzeko."
+msgstr "Ezarri aukera hau irudiaren labelak bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:238
 #, kde-format
 msgid "Image labels"
-msgstr "Irudi etiketak"
+msgstr "Irudi labelak"
 
 #: core/utilities/setup/setuptooltip.cpp:239
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
-"Ezarri aukera hau irudiaren hautua, kolorea, balorazioa etiketak azaltzeko."
+"Ezarri aukera hau irudiaren hautua, kolorea, balorazioa labelak azaltzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:251
 #, kde-format
@@ -70485,13 +70454,13 @@ msgstr "Audio/bideoaren informazioa"
 #: core/utilities/setup/setuptooltip.cpp:254
 #, kde-format
 msgid "Video Aspect Ratio"
-msgstr "Bideoaren itxura proportzioa"
+msgstr "Bideoaren itxura-proportzioa"
 
 #: core/utilities/setup/setuptooltip.cpp:255
 #: core/utilities/setup/setuptooltip.cpp:270
 #, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr "Ezarri aukera hau bideoaren itxura proportzioa bistaratzeko."
+msgstr "Ezarri aukera hau bideoaren itxura-proportzioa bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:258
 #, kde-format
@@ -70521,7 +70490,7 @@ msgstr "Ezarri aukera hau bideoaren iraupena bistaratzeko."
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Video Frame Rate"
-msgstr "Bideo bilbe-emaria"
+msgstr "Bideoaren fotograma-emaria"
 
 #: core/utilities/setup/setuptooltip.cpp:273
 #, kde-format
@@ -70545,8 +70514,8 @@ msgid ""
 "Set this option to display album information when the mouse hovers over a "
 "folder-view item."
 msgstr ""
-"Ezarri aukera hau albumaren informazioa bistaratzeko sagua karpeta-ikuspegi "
-"elementu baten gainetik igarotzean."
+"Ezarri aukera hau sagua karpeta-ikuspegi elementu baten gainetik igarotzean "
+"albumaren informazioa bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
@@ -70646,7 +70615,7 @@ msgstr "Elementu mota"
 #: core/utilities/setup/setuptooltip.cpp:350
 #, kde-format
 msgid "Set this option to display the item type."
-msgstr "Ezarri aukera hau elementu mota bistaratzeko."
+msgstr "Ezarri aukera hau elementu-mota bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:352
 #, kde-format
@@ -70664,8 +70633,8 @@ msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
-"Oharra: ezarpen hauek, Kamera ezarpen jokabidea orriko \"Erabili fitxategiko "
-"meta-datuak\" aukera behar dute."
+"Oharra: ezarpen hauek, Kamera ezarpen jokabidea orriko \"Erabili "
+"fitxategiaren metadatuak\" aukera behar dute."
 
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
