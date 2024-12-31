@@ -83,7 +83,7 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       $SOURCEDIR && echo "$MESSAGE"
 
 make -j4 doc
-
+exit
 XZ_OPT=-9 tar cJf $TARBALL_PATH -C $CURRENT_DIR ./html
 
 rm -fr $BUILDDIR
