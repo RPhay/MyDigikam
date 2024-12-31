@@ -713,9 +713,9 @@ bool FacePipelineDetectRecognize::writer()
                 for (int i = 0 ; i < package->faceRects.size() ; ++i)
                 {
                     QRect faceRect(std::round(package->image.width() * package->faceRects[i].x()),
-                                    std::round(package->image.height() * package->faceRects[i].y()),
-                                    std::round(package->image.width() * package->faceRects[i].width()),
-                                    std::round(package->image.height() * package->faceRects[i].height()));
+                                   std::round(package->image.height() * package->faceRects[i].y()),
+                                   std::round(package->image.width() * package->faceRects[i].width()),
+                                   std::round(package->image.height() * package->faceRects[i].height()));
                     
                     if (package->labelList[i] != -1)
                     {

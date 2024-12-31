@@ -39,7 +39,6 @@
 #include "previewloadthread.h"
 #include "faceutils.h"
 #include "facepipelinepackagebase.h"
-#include "thumbnailloadthread.h"
 #include "identityprovider.h"
 #include "identity.h"
 #include "dnnsfaceextractor.h"
@@ -218,12 +217,6 @@ bool FacePipelineEdit::writer()
 
     FaceUtils utils;
     IdentityProvider* const idProvider             = IdentityProvider::instance();
-
-    ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
-
-    thumbnailLoadThread->setPixmapRequested(false);
-    thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
-    thumbnailLoadThread->setPriority(QThread::NormalPriority);
 
     // override the default queue depth
 
