@@ -39,7 +39,6 @@
 #include "previewloadthread.h"
 #include "faceutils.h"
 #include "facepipelinepackagebase.h"
-#include "thumbnailloadthread.h"
 #include "identityprovider.h"
 #include "identity.h"
 #include "dnnsfaceextractor.h"
@@ -219,12 +218,6 @@ bool FacePipelineEdit::writer()
     FaceUtils utils;
     IdentityProvider* const idProvider             = IdentityProvider::instance();
 
-    ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
-
-    thumbnailLoadThread->setPixmapRequested(false);
-    thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
-    thumbnailLoadThread->setPriority(QThread::NormalPriority);
-
     // override the default queue depth
 
     thisQueue->setMaxDepth(100000);
@@ -319,15 +312,6 @@ bool FacePipelineEdit::writer()
 
                 ScanController::FileMetadataWrite writeScope(package->info);
                 writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
-            }
-
-            // store the thumbnails if we have an image
-
-            if (!package->image.isNull())
-            {
-                QList<FaceTagsIface> faces;
-                faces << package->face;
-                utils.storeThumbnails(thumbnailLoadThread, package->info.filePath(), faces, package->image);
             }
 
             // retrain the face classifier if the retrain flag is set
