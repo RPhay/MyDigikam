@@ -71,7 +71,7 @@ BUGFIXES:
 052 ==> 498041 - Debian testing doesn't need libgnutls.so.30 from AppImage.
 053 ==> 498053 - The use of XMP metadata in custom renaming patterns does not work as expected.
 054 ==> 484479 - HDR video playback not supported fully on Mac.
-055 ==>
+055 ==> 498072 - FlatPak: no sound when playing videos.
 056 ==>
 057 ==>
 058 ==>
