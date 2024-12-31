@@ -179,6 +179,13 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     qputenv("QT_MEDIA_BACKEND", system.videoBackend.toLatin1());
 
+    if (isRunningInAppImageBundle())
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Set XCURSOR_SIZE to 30";
+
+        qputenv("XCURSOR_SIZE", "30");
+    }
+
 #endif
 
 
