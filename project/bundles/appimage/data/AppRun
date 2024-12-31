@@ -12,19 +12,23 @@
 
 preload_shared_library ()
 {
-    FILE=$1
-    echo -e "Check library $FILE"
-
-#    if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
-#        export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib64/$FILE
-#    elif
-    if   [ -f "/usr/lib64/$FILE" ] ; then
-        export LD_PRELOAD=$LD_PRELOAD:/usr/lib64/$FILE
-    elif [ -f "/usr/lib/x86_64-linux-gnu/$FILE" ] ; then
-        export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/$FILE
-    elif [ -f "/lib/x86_64-linux-gnu/$FILE" ] ; then
-        export LD_PRELOAD=$LD_PRELOAD:/lib/x86_64-linux-gnu/$FILE
-    fi
+    FILENAME=$1
+    for dir in /usr/lib64 /usr/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu ; do
+        fullpath=$dir/$FILENAME
+        # Check with ld.so if the library can be loaded
+        # We need also to check if the library exists, otherwise ld.so will print:
+        #  ERROR: ld.so: object from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+        # but exit with 0.
+        # See also bug 492040
+        # echo -n "$fullpath " # Uncomment for debugging
+        if [ -f "$fullpath" ] && ld.so --preload "$fullpath" /bin/true >/dev/null 2>&1 ; then
+            echo "Preloading             $fullpath"
+            export LD_PRELOAD="$LD_PRELOAD:$fullpath"
+            return 0
+        fi
+    done
+    echo "Preloading skipped for $FILENAME"
+    return 1
 }
 
 ###
@@ -192,17 +196,7 @@ preload_shared_library libgmodule-2.0.so.0
 
 # See bug #216915 and #492040
 
-if [[ ! (($OS_NAME == "arch"                && $OS_VERSION == "rolling")                                                ||
-         ($OS_NAME == "debian gnu/linux"    && $OS_VERSION == "sid")                                                    ||
-         ($OS_NAME == "debian gnu/linux"    && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "13"      ) }') == "1")  ||
-         ($OS_NAME == "ubuntu"              && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "20.10"   ) }') == "1")  ||
-         ($OS_NAME == "manjarolinux"        && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "24.7"    ) }') == "1")  ||
-         ($OS_NAME == "fedora linux"        && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "40"      ) }') == "1")  ||
-         ($OS_NAME == "opensuse tumbleweed" && $(awk -v osv=$OS_VERSION 'BEGIN { print (osv >= "20240908") }') == "1")) ]] ; then
-
-    preload_shared_library libgnutls.so.30
-
-fi
+preload_shared_library libgnutls.so.30
 
 # See bug #261634
 
