@@ -72,7 +72,7 @@ BUGFIXES:
 053 ==> 498053 - The use of XMP metadata in custom renaming patterns does not work as expected.
 054 ==> 484479 - HDR video playback not supported fully on Mac.
 055 ==> 498072 - FlatPak: no sound when playing videos.
-056 ==>
+056 ==> 498077 - digitaglinktree fails with blkid and does wrong uuid extraction [patch].
 057 ==>
 058 ==>
 059 ==>
