@@ -365,7 +365,7 @@ bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemC
 {
     if (useFullCpu && ((totalItemCount + currentItemCount) > 25) && (QThread::idealThreadCount() > 4))
     {
-        int newInstances = (QThread::idealThreadCount() / 4) - 1;
+        int newInstances = qMin(3, (QThread::idealThreadCount() / 4) - 1);
 
         for (int i = 0 ; i < newInstances ; ++i)
         {
