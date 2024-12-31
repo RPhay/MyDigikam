@@ -48,13 +48,13 @@ fi
 
 # Show host OS name and version.
 
-OS_NAME=$(awk -F'=' '$1 ~ /^DISTRIB_ID/ {print $2}' /etc/*-release | tr '[:upper:]' '[:lower:]' | tr -d '"')
+OS_NAME=$(awk -F'=' '$1 ~ /^DISTRIB_ID/ {print $2}' /etc/*-release | tr -d '"')
 OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 OS_VERSION=$(awk -F'=' '$1 ~ /^DISTRIB_RELEASE/ {print $2}' /etc/*-release | tr -d '"')
 
 if [ -z "${OS_NAME}" ] ; then
 
-    OS_NAME=$(awk -F'=' '$1 ~ /^NAME/ {print $2}' /etc/*-release | tr '[:upper:]' '[:lower:]' | tr -d '"')
+    OS_NAME=$(awk -F'=' '$1 ~ /^NAME/ {print $2}' /etc/*-release | tr -d '"')
 
 fi
 
@@ -64,7 +64,7 @@ if [ -z "${OS_VERSION}" ] ; then
 
 fi
 
-if [ "${OS_NAME}" == "debian gnu/linux" ] ; then
+if [ "${OS_NAME}" == "Debian GNU/Linux" ] ; then
 
     # Debian testing versions don't include numbers in /etc/os-release.
     OS_VERSION=$(</etc/debian_version)
