@@ -70,7 +70,7 @@ BUGFIXES:
 051 ==> 498025 - Excluded directory is still not excluded.
 052 ==> 498041 - Debian testing doesn't need libgnutls.so.30 from AppImage.
 053 ==> 498053 - The use of XMP metadata in custom renaming patterns does not work as expected.
-054 ==>
+054 ==> 484479 - HDR video playback not supported fully on Mac.
 055 ==>
 056 ==>
 057 ==>
