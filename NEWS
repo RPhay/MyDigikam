@@ -87,7 +87,7 @@ BUGFIXES:
 055 ==> 498072 - FlatPak: no sound when playing videos.
 056 ==> 498077 - digitaglinktree fails with blkid and does wrong uuid extraction [patch].
 057 ==> 498076 - Colors of .heic file are corrupted once a tag is assigned.
-058 ==>
+058 ==> 498134 - Updating tags re-reads the image file, which is unnecessarily slow.
 059 ==>
 060 ==>
 061 ==>
