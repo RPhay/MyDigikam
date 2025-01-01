@@ -485,7 +485,7 @@ public:
 
     /**
      * Returns a list of tag ids with the specified property.
-     * FIXME: Not tested, might not work at all.
+     * \todo: Not tested, might not work at all.
      */
     QList<int> getTagsWithProperty(const QString& property)                                                         const;
 
@@ -493,6 +493,7 @@ public:
 
     /**
      * Add a new search to the database with the given attributes
+     *
      * @param type       search type
      * @param name       name of the search
      * @param query      search query to use
@@ -502,15 +503,20 @@ public:
 
     /**
      * Updates Search with new attributes
+     *
      * @param searchID   the id of the search
      * @param type       type of the search
+     * @param name       name of the search
      * @param query      database query of the search
      */
-    void updateSearch(int searchID, DatabaseSearch::Type type,
-                      const QString& name, const QString& query);
+    void updateSearch(int searchID,
+                      DatabaseSearch::Type type,
+                      const QString& name,
+                      const QString& query);
 
     /**
      * Delete a search from the database.
+     *
      * @param searchID the id of the search
      */
     void deleteSearch(int searchID);
@@ -534,6 +540,7 @@ public:
 
     /**
      * Put a new item in the database or replace an existing one.
+     *
      * @return the id of item added or -1 if it fails
      */
     qlonglong addItem(int albumID,
