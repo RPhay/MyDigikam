@@ -211,7 +211,8 @@ public:
 
     /**
      * @return a Album with the given type and id
-     * @param id the id for the album (not the global id)
+     * @param type the type of album
+     * @param id   the id for the album (not the global id)
      */
     Album*    findAlbum(Album::Type type, int id)   const;
 
@@ -663,16 +664,20 @@ public:
      * @return A list with the tag names for a list of tag IDs.
      *
      * @param tagIDs list of tag album IDs
+     * @param includeInternal include internal tags in the returned list, or skip them
      */
     QStringList tagNames(const QList<int>& tagIDs, bool includeInternal = false)                         const;
 
     /**
      * @return A hash with the tag paths for all tag IDs.
+     * @param leadingSlash    if <code>true</code> return tags with a leading slash
+     * @param includeInternal include internal tags in the returned list, or skip them
      */
-    QHash<int, QString> tagPaths(bool leadingSlash=true, bool includeInternal = false)                   const;
+    QHash<int, QString> tagPaths(bool leadingSlash = true, bool includeInternal = false)                   const;
 
     /**
      * @return A hash with the tag names for all tag IDs.
+     * @param includeInternal include internal tags in the returned list, or skip them
      */
     QHash<int, QString> tagNames(bool includeInternal = false)                                           const;
 
