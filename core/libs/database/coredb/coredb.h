@@ -131,16 +131,21 @@ public:
 
     /**
      * Add a new album to the database with the given attributes
+     *
      * @param type The type of the album root
+     * @param identifier The album root identifier
      * @param specificPath The path specific to volume
      * @param label        An (optional) user-visible label
      * @returns the album root id of the newly created root
      */
-    int addAlbumRoot(CollectionLocation::Type type, const QString& identifier,
-                     const QString& specificPath, const QString& label)                                             const;
+    int addAlbumRoot(CollectionLocation::Type type,
+                     const QString& identifier,
+                     const QString& specificPath,
+                     const QString& label)                                                                         const;
 
     /**
      * Deletes an album  root from the database.
+     *
      * @param rootId the id of the album root
      */
     void deleteAlbumRoot(int rootId);
@@ -269,6 +274,7 @@ public:
     /**
      * Copy the properties of the given srcAlbum to the dstAlbum.
      * Both albums must exist.
+     *
      * @return true if the operations succeeds
      */
     bool copyAlbumProperties(int srcAlbumID, int dstAlbumID)                                                        const;
@@ -280,6 +286,7 @@ public:
 
     /**
      * Set a caption for the album.
+     *
      * @param albumID the id of the album
      * @param caption the new caption for the album
      */
@@ -287,6 +294,7 @@ public:
 
     /**
      * Set a category for the album.
+     *
      * @param albumID  the id of the album
      * @param category the new category for the album
      */
@@ -294,6 +302,7 @@ public:
 
     /**
      * Set a date for the album.
+     *
      * @param albumID  the id of the album
      * @param date     the date for the album
      */
@@ -301,13 +310,15 @@ public:
 
     /**
      * Set the modification date time for the album.
-     * @param albumID  the id of the album
-     * @param dateTime the modification date time for the album
+     *
+     * @param albumID          the id of the album
+     * @param modificationDate the modification date time for the album
      */
     void setAlbumModificationDate(int albumID, const QDateTime& modificationDate);
 
     /**
      * Set the icon for the album.
+     *
      * @param albumID the id of the album
      * @param iconID  the id of the icon file
      */
@@ -315,6 +326,7 @@ public:
 
     /**
      * Given an albumid, this returns the album root id for that album
+     *
      * @param albumID the id of the albumdb
      * @return the id of the album root of this album
      */
@@ -323,6 +335,7 @@ public:
     /**
      * Given an albumid, this returns the relative path for that album
      * (the path below the album root, starting with a slash)
+     *
      * @param albumID the id of the album
      * @return the url of the album
      */
@@ -330,6 +343,7 @@ public:
 
     /**
      * Returns the lowest/oldest date of all images for that album.
+     *
      * @param albumID the id of the album to calculate
      * @return the date.
      */
@@ -337,6 +351,7 @@ public:
 
     /**
      * Returns the highest/newest date of all images for that album.
+     *
      * @param albumID the id of the album to calculate
      * @return the date.
      */
@@ -358,19 +373,22 @@ public:
 
     /**
      * Returns the number of items in the album.
+     *
      * @param albumID the id of the album
      */
     int getNumberOfItemsInAlbum(int albumID)                                                                        const;
 
     /**
      * Returns the QDateTime of the album modification date.
+     *
      * @param albumID the id of the album
      */
     QDateTime getAlbumModificationDate(int albumID)                                                                 const;
 
     /**
      * Returns a QMap with relative path and the album modification date.
-     * @param albumRootID id of the album root of the album
+     *
+     * @param albumRootId id of the album root of the album
      */
     QMap<QString, QDateTime> getAlbumModificationMap(int albumRootId)                                               const;
 
@@ -513,11 +531,13 @@ public:
     QString getSearchQuery(int searchId)                                                                            const;
 
     // ----------- Adding and deleting Items -----------
+
     /**
      * Put a new item in the database or replace an existing one.
      * @return the id of item added or -1 if it fails
      */
-    qlonglong addItem(int albumID, const QString& name,
+    qlonglong addItem(int albumID,
+                      const QString& name,
                       DatabaseItem::Status status,
                       DatabaseItem::Category category,
                       const QDateTime& modificationDate,
@@ -526,6 +546,7 @@ public:
 
     /**
      * Deletes an item from the database.
+     *
      * @param albumID The id of the album.
      * @param file The filename of the file to delete.
      */
@@ -533,13 +554,15 @@ public:
 
     /**
      * Deletes an item from the database if it does not belong to an album.
-     * This method can only be used if the album of the image is NULL!
+     * This method can only be used if the album of the image is null!
+     *
      * @param imageId The id of the image.
      */
     void deleteItem(qlonglong imageId);
 
     /**
      * Deletes an item from the database without checking the album.
+     *
      * @param imageId The id of the image.
      */
     void deleteObsoleteItem(qlonglong imageId);
@@ -550,9 +573,10 @@ public:
      * The album can be deleted afterwards without removing
      * the entries for the items, which
      * can later be removed by deleteRemovedItems().
+     *
      * @param albumID The id of the album
-     * @param ids Fully optional: The image ids in the album, if you know them anyway.
-     *            This parameter is only used for distributing the change notification.
+     * @param ids_forInformation Fully optional: The image ids in the album, if you know them anyway.
+     *                           This parameter is only used for distributing the change notification.
      */
     void removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forInformation = QList<qlonglong>());
 
@@ -560,6 +584,7 @@ public:
      * Marks all items in the list as removed,
      * resets their dirids.
      * The items can later be removed by deleteRemovedItems().
+     *
      * @param itemIDs a list of item IDs to be marked
      * @param albumIDs this parameter is purely informational.
      *                 it shall contain the albums that the items are removed from.
@@ -570,6 +595,7 @@ public:
      * Marks all items in the list as obsolete,
      * resets their dirids.
      * The items can later be removed by deleteRemovedItems().
+     *
      * @param itemIDs a list of item IDs to be marked
      * @param albumIDs this parameter is purely informational.
      *                 it shall contain the albums that the items are removed from.
@@ -578,7 +604,7 @@ public:
 
     /**
      * Delete all items from the database that are marked as removed.
-     * Use with care!
+     * \warning: Use with care!
      */
     void deleteRemovedItems();
 
@@ -586,6 +612,7 @@ public:
 
     /**
      * Get the imageId of the item
+     *
      * @param albumID the albumID of the item
      * @param name the name of the item
      * @return the ImageId for the item, or -1 if it does not exist
@@ -594,6 +621,7 @@ public:
 
     /**
      * Get the imageId fitting to the information given for the item
+     *
      * @param albumID the albumID of the item (-1 means NULL)
      * @param name the name of the item
      * @param status the status of the item
@@ -604,6 +632,7 @@ public:
 
     /**
      * Get the imageId fitting to the information given for the item
+     *
      * @param albumID the albumID of the item (-1 means NULL)
      * @param status the status of the item
      * @param scanned return scanned/unscanned items
@@ -613,6 +642,7 @@ public:
 
     /**
      * Returns all image ids with the given status.
+     *
      * @param status The status.
      * @return The ids of the images that have the given status.
      */
@@ -620,6 +650,7 @@ public:
 
     /**
      * Returns all image ids with the given status and category.
+     *
      * @param status The status.
      * @param category The category.
      * @return The ids of the images that have the given status.
@@ -629,7 +660,8 @@ public:
 
     /**
      * Find the imageId fitting to the information given for the item
-     * @param albumID the albumID of the item (-1 means NULL)
+     *
+     * @param albumID the albumID of the item (-1 means null)
      * @param name the name of the item
      * @param status the status of the item
      * @param category the category of the item
@@ -656,6 +688,7 @@ public:
      * Returns all items for a given albumid. This is used to
      * verify if all items on disk are consistent with the database
      * in the CollectionScanner class.
+     *
      * @param albumID The albumID for which you want all items.
      * @param recursive perform a recursive folder hierarchy parsing
      * @return It returns a QStringList with the filenames.
@@ -677,7 +710,8 @@ public:
     /**
      * Returns the id of the item with the given filename in
      * the album with the given id.
-     * @param albumId The albumId in which we search the item.
+     *
+     * @param albumID The albumId in which we search the item.
      * @param fileName The name of the item file.
      * @return The item id or -1 if not existent.
      */
@@ -691,7 +725,8 @@ public:
 
     /**
      * Given a albumID, get a list of the url of all items in the album
-     * NOTE: Uses the CollectionManager
+     * \note: Uses the CollectionManager
+     *
      * @param  albumID the id of the album
      * @param  order   order for the returned items to use
      * @return a list of urls for the items in the album. The urls are the
@@ -701,6 +736,7 @@ public:
 
     /**
      * Given a albumID, get a list of Ids of all items in the album
+     *
      * @param  albumID the id of the album
      * @return a list of Ids for the items in the album.
      */
@@ -708,7 +744,8 @@ public:
 
     /**
      * Given a albumID, get a map of Ids and urls of all items in the album
-     * NOTE: Uses the CollectionManager
+     *
+     * \note: Uses the CollectionManager
      * @param  albumID the id of the album
      * @return a map of Ids and urls for the items in the album. The urls are the
      * absolute path of the items
@@ -717,7 +754,8 @@ public:
 
     /**
      * Given a tagid, get a list of the url of all items in the tag
-     * NOTE: Uses the CollectionManager
+     *
+     * \note: Uses the CollectionManager
      * @param  tagID the id of the tag
      * @param  recursive perform a recursive folder hierarchy parsing
      * @return a list of urls for the items in the tag. The urls are the
@@ -727,6 +765,7 @@ public:
 
     /**
      * Given a tagID, get a list of Ids of all items in the tag
+     *
      * @param  tagID the id of the tag
      * @param  recursive perform a recursive folder hierarchy parsing
      * @return a list of Ids for the items in the tag.
@@ -747,6 +786,7 @@ public:
 
     /**
      * Find the album of an item
+     *
      * @param imageID The ID of the item
      * @return The ID of the PAlbum of the item, or -1 if not found
      */
@@ -754,6 +794,7 @@ public:
 
     /**
      * Retrieve the name of the item
+     *
      * @param imageID The ID of the item
      * @return The name of the item, or a null string if not found
      */
@@ -767,7 +808,8 @@ public:
     /**
      * Get item and album if from albumRootId, album path and file name.
      */
-    ItemShortInfo getItemShortInfo(int albumRootId, const QString& relativePath,
+    ItemShortInfo getItemShortInfo(int albumRootId,
+                                   const QString& relativePath,
                                    const QString& name)                                                             const;
 
     /**
@@ -778,7 +820,12 @@ public:
     /**
      * Update the fields of the Images table that have changed when
      * the file has been modified on disk.
-     * @param imageID the image that has been modified
+     *
+     * @param imageID          the image that has been modified
+     * @param category         the image category that has been modified
+     * @param modificationDate the image time-stamp that has been modified
+     * @param filesize         the image file size that has been modified
+     * @param uniqueHash       the image hash that has been modified
      */
     void updateItem(qlonglong imageID,
                     DatabaseItem::Category category,
@@ -788,13 +835,15 @@ public:
 
     /**
      * Updates the status field for the item.
-     * Note: Do not use this to set to the Removed status, see removeItems().
+     *
+     * \note: Do not use this to set to the Removed status, see removeItems().
      */
     void setItemStatus(qlonglong imageID, DatabaseItem::Status status);
 
     /**
      * Updates the album field for the item.
-     * Note: Do not use this to move the item. This function only has the purpose to
+     *
+     * \note: Do not use this to move the item. This function only has the purpose to
      * reuse image infos for restored images from trash.
      */
     void setItemAlbum(qlonglong imageID, qlonglong albumId);
