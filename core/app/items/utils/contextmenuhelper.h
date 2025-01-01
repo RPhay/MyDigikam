@@ -188,7 +188,7 @@ public:
      * This is a convenience function to ensure consistent menus and reduce
      * code duplication.
      *
-     * @param imageIds the list of selected items
+     * @param ids the list of selected items
      * @param lightTable for the light table
      */
     void addOpenAndNavigateActions(const imageIds& ids, bool lightTable = false);
@@ -215,7 +215,7 @@ public:
      * are not emitted and you will not be able to react on triggered actions from this menu.
      * Make sure to connect the signals to the appropriate slots in the context menu handling method.
      *
-     * @param imageIds the list of selected items
+     * @param ids the list of selected items
      * @see exec()
      * @see signalGotoAlbum() signalGotoDate() signalGotoTag()
      */

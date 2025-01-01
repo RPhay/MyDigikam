@@ -63,6 +63,8 @@ public:
         }
     }
 
+public:
+
     QString            language;
     QList<RGInfo>      request;
     QByteArray         data;
@@ -90,7 +92,7 @@ public:
 
 /**
  * Constructor
- * @param Parent object.
+ * @param parent the parent object.
  */
 BackendOsmRG::BackendOsmRG(QObject* const parent)
     : RGBackend(parent),
@@ -139,6 +141,7 @@ void BackendOsmRG::nextPhoto()
 
 /**
  * Takes the coordinate of each image and then connects to Open Street Map's reverse geocoding service.
+ *
  * @param rgList A list containing information needed in reverse geocoding process. At this point, it contains only coordinates.
  * @param language The language in which the data will be returned.
  */
@@ -178,6 +181,7 @@ void BackendOsmRG::callRGBackend(const QList<RGInfo>& rgList, const QString& lan
 
 /**
  * The data is returned from Open Street Map in a XML. This function translates the XML into a QMap.
+ *
  * @param xmlData The returned XML.
  */
 QMap<QString, QString> BackendOsmRG::makeQMapFromXML(const QString& xmlData)

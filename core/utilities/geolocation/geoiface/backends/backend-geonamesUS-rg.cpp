@@ -82,6 +82,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                           itemCounter   = 0;
     int                           itemCount     = 0;
     QList<GeonamesUSInternalJobs> jobs;
@@ -92,7 +94,7 @@ public:
 
 /**
  * Constructor
- * @param Parent object.
+ * @param parent the parent object.
  */
 BackendGeonamesUSRG::BackendGeonamesUSRG(QObject* const parent)
     : RGBackend(parent),

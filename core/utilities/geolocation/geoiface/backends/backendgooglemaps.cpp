@@ -75,6 +75,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPointer<HTMLWidget>                      htmlWidget                    = nullptr;
     QPointer<QWidget>                         htmlWidgetWrapper             = nullptr;
     bool                                      isReady                       = false;
@@ -1346,7 +1348,7 @@ void BackendGoogleMaps::setActive(const bool state)
             setCenter(d->cacheCenter);
             d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetZoom(%1);").arg(d->cacheZoom));
 
-            /// @TODO update tracks more gently
+            /// @todo update tracks more gently
 
             slotTracksChanged(d->trackChangeTracker);
             d->trackChangeTracker.clear();

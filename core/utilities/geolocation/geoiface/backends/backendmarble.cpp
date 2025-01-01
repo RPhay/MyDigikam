@@ -77,6 +77,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPointer<Marble::MarbleWidget>            marbleWidget                      = nullptr;
 
     QActionGroup*                             actionGroupMapTheme               = nullptr;
@@ -753,8 +755,7 @@ void BackendMarble::marbleCustomPaint(Marble::GeoPainter* painter)
                     d->trackCache.insert(track.id, lineString);
                 }
 
-                /// @TODO looks a bit too thick IMHO when you zoom out.
-                ///       Maybe adjust to zoom level?
+                /// @todo looks a bit too thick IMHO when you zoom out. Maybe adjust to zoom level?
 
                 QColor trackColor = track.color;
                 trackColor.setAlpha(180);
@@ -861,6 +862,7 @@ void BackendMarble::marbleCustomPaint(Marble::GeoPainter* painter)
             if (!screenCoordinates(clusterCoordinates, &clusterPoint))
             {
                 /// @todo This check does not work properly in all cases!
+
                 // cluster is not visible
 
                 continue;
@@ -2011,7 +2013,7 @@ void BackendMarble::applyCacheToWidget()
 
 void BackendMarble::slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges)
 {
-    // invalidate the cache for all changed tracks
+    // Invalidate the cache for all changed tracks
 
     for (const TrackManager::TrackChanges& tc : std::as_const(trackChanges))
     {
@@ -2028,7 +2030,7 @@ void BackendMarble::slotScheduleUpdate()
 {
     if (d->marbleWidget && d->activeState)
     {
-        /// @TODO Put this onto the eventloop to collect update calls into one.
+        /// @todo Put this onto the eventloop to collect update calls into one.
 
         d->marbleWidget->update();
     }

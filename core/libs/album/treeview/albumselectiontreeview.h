@@ -57,7 +57,7 @@ Q_SIGNALS:
     /**
      * Emitted if a find duplicates search shall be invoked on the given album.
      *
-     * @param album the album to find duplicates in
+     * @param albums the album to find duplicates in
      */
     void signalFindDuplicates(const QList<PAlbum*>& albums);
 
