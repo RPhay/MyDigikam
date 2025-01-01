@@ -88,7 +88,7 @@ BUGFIXES:
 056 ==> 498077 - digitaglinktree fails with blkid and does wrong uuid extraction [patch].
 057 ==> 498076 - Colors of .heic file are corrupted once a tag is assigned.
 058 ==> 498134 - Updating tags re-reads the image file, which is unnecessarily slow.
-059 ==>
+059 ==> 498133 - Geolocation icon missing / disappeared in 8.5.0 appimage Linux.
 060 ==>
 061 ==>
 062 ==>
