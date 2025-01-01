@@ -296,6 +296,9 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
         // ICC Profile ------------------------------------
 
+        if (!getExifTagString("Exif.Image.Make").contains(QLatin1String("APPLE"), Qt::CaseInsensitive))
+        {
+
 #if EXIV2_TEST_VERSION(0,27,99)
 
         d->iccProfileBuf() = image->iccProfile();
@@ -305,6 +308,8 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
         d->iccProfileBuf() = *(image->iccProfile());
 
 #endif
+
+        }
 
         return true;
     }
