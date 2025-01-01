@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -51755,31 +51755,31 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Batal"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgid "Confirming face"
 msgstr "Konfirmasi"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "Detect Noise"
 msgid "Removing face"
 msgstr "Deteksi Kepyur"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 #| msgid "Add information from the database"
 msgid "Editing face tag"
 msgstr "Tambahkan informasi dari database"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 #| msgid "Image settings"
 msgid "Editing face region"
 msgstr "Pengaturan citra"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -53833,30 +53833,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "設定"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "選択したタグを削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "顔データベースの更新中です。"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "このタグを取り除く"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"

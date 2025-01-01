@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -55936,32 +55936,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Loobu"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 #| msgid "Confirm Restore"
 msgid "Confirming face"
 msgstr "Taastamise kinnitus"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Kas eemaldada näosilt?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Nägude andmebaasi uuendamine."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Eemalda see silt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgid "By Manual and Name"
 msgid "Manually adding face"

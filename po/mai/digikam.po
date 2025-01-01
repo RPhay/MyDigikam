@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -50412,31 +50412,31 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr ""
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Confirming face"
 msgstr "रँग"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Removing face"
 msgstr "मद हटाबू"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Editing face tag"
 msgstr "रँग"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Editing face region"
 msgstr "मद हटाबू"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, kde-format
 msgid "Manually adding face"
 msgstr ""

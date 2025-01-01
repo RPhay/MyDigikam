@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -50820,27 +50820,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "T&hôi"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "Độ tương quan:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 msgid "Removing face"
 msgstr "Đặt lại biểu tượng thẻ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 msgid "Editing face region"
 msgstr "Bỏ thẻ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "Sổ tay"

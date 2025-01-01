@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
-"PO-Revision-Date: 2024-12-30 20:35+0100\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
+"PO-Revision-Date: 2025-01-01 01:31+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2792,47 +2792,42 @@ msgstr "Onartutako fitxategi guztiak (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Atzeraelikadura: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "Dokumentazioa"
+msgstr "Dokumentazioa: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "Build Date: "
-msgstr "Fitxategiaren data"
+msgstr "Eraikitze data: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "Helburua"
+msgstr "Eraikitzeko jomuga: "
 
 #: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
+#, kde-format
 msgid "Build Architecture: "
-msgstr "Euskarririk gabeko arkitektura: %1"
+msgstr "Eraikitzeko arkitektura: "
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgid "Std. deviation: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "Desbiderapen estandarra: "
+msgstr "Git berrikuspena: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git adarra: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -2853,7 +2848,7 @@ msgstr "Aurrera"
 #: core/app/views/preview/itempreviewview.cpp:176
 #, kde-format
 msgid "Add a Face Tag"
-msgstr "Gehitu «aurpegi» etiketa bat"
+msgstr "Gehitu aurpegi etiketa bat"
 
 #: core/app/views/preview/itempreviewview.cpp:181
 #, kde-format
@@ -2868,7 +2863,7 @@ msgstr "Markatu baieztatu gabeko aurpegi guztiak ezikusi gisa"
 #: core/app/views/preview/itempreviewview.cpp:191
 #, kde-format
 msgid "Show Face Tags"
-msgstr "Erakutsi  «aurpegi» etiketak"
+msgstr "Erakutsi  aurpegi etiketak"
 
 #: core/app/views/preview/itempreviewview.cpp:196
 #, kde-format
@@ -2932,16 +2927,13 @@ msgstr "Labelak"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:123
 #, kde-format
 msgid "Scan collection for faces"
-msgstr "Aztertu bilduma aurpegi bila"
+msgstr "Miatu bilduma aurpegi bila"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr ""
-"Erabili botoi hau, hautatutako albumak bikoiztutako elementu bila miatzeko."
+msgstr "Erabili botoi hau, hautatutako albumak aurpegi bila miatzeko"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #, kde-format
@@ -3051,9 +3043,9 @@ msgid ""
 "visible on the graph.</p>"
 msgstr ""
 "<p>Hautatu histogramaren eskala.</p><p>Daten kopuru maximoa txikia bada, "
-"lerro-eskala erabil dezakezu.</p><p>Kopuru maximoak handiak direnean eskala "
-"logaritmikoa erabil daiteke; erabiltzen bada, balio guztiak (txiki zein "
-"handi) grafikoan ikusgai egongo dira.</p>"
+"eskala lineala erabil dezakezu.</p><p>Kopuru maximoak handiak direnean "
+"eskala logaritmikoa erabil daiteke; erabiltzen bada, balio guztiak (txiki "
+"zein handi) grafikoan ikusgai egongo dira.</p>"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
@@ -3131,7 +3123,7 @@ msgstr "Iragazkiak"
 #: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
-msgstr "Ezin ireki erroko albuma. Ez da kokaleku fisikoa."
+msgstr "Ezin du ireki erroko albuma. Ez da kokaleku fisiko bat."
 
 #: core/app/views/stack/itemiconview_items.cpp:739
 #, kde-format
@@ -3165,11 +3157,9 @@ msgstr "Azken bilaketa"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Motorra"
+msgstr "AurpegienMotorra"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3179,7 +3169,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 "Aurpegi-ezagutza ataza bat dagoeneko martxan da. Aldiko ataza bat ibil "
-"daiteke. Mesedez, itxoin amaitu arte."
+"daiteke bakarrik. Mesedez, itxoin hura amaitu arte."
 
 #: core/app/views/stack/itemiconview_views.cpp:127
 #, kde-format
@@ -3188,8 +3178,8 @@ msgid ""
 "The storage location of this image\n"
 "is currently not available"
 msgstr ""
-"Irudi honen biltegiratze-kokalekua\n"
-"une honetan ez dago erabilgarri"
+"Irudi honen biltegi-kokalekua une honetan\n"
+"ez dago erabilgarri"
 
 #: core/app/views/stack/itemiconview_views.cpp:243
 #, kde-format
@@ -3222,12 +3212,12 @@ msgstr "Lehengoratu bakarrik zakarrontziko azken sarrera."
 #: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore"
-msgstr "Leheneratu"
+msgstr "Lehengoratu"
 
 #: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Lehengoratu zakarrontzitik fitxategi-hautapena."
+msgstr "Lehengoratu zakarrontziko fitxategi-hautapena."
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3266,7 +3256,7 @@ msgstr[1] "Ziur zaude %1 elementu lehengoratu nahi dituzula?"
 #: core/app/views/stack/trashview.cpp:298
 #, kde-format
 msgid "Confirm Restore"
-msgstr "Berretsi leheneratzea"
+msgstr "Berretsi lehengoratzea"
 
 #: core/app/views/stack/trashview.cpp:327
 #: core/app/views/stack/trashview.cpp:377
@@ -3284,18 +3274,16 @@ msgstr[1] "Ziur zaude %1 elementu betiko ezabatu nahi dituzula?"
 #: core/app/views/stack/trashview.cpp:378
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
-msgstr "Ziur zaude elementu GUZTIAK behin betiko ezabatu nahi dituzula?"
+msgstr "Ziur zaude elementu GUZTIAK betiko ezabatu nahi dituzula?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Hautapena"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Ezabatu"
@@ -3314,7 +3302,7 @@ msgstr "Bugzillan erabiltzaileen 1500 txosten baino gehiago itxi dira."
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
-"Kodea Qt6 «framework»era eratorri da (kodea oraindik Qt5 APIarekin "
+"Kodea Qt6 «framework»era eratortzea (kodea oraindik Qt5 APIarekin "
 "bateragarria da)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
@@ -3329,22 +3317,20 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
-"JPEG-XL, WEBP, eta AVIF esportatzeko ezarpenak leku guztietan gehitu dira."
+msgstr "JPEG-XL, WEBP, eta AVIF esportatzeko ezarpenak leku guztietan gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
-"Kameratik inportatzean galerarik gabeko JPEG-XL, WEBP, eta AVIF bihurtzea "
-"gehitu da."
+"Kameratik inportatu bitartean galerarik gabeko JPEG-XL, WEBP, eta AVIF "
+"bihurtzea gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-msgstr ""
-"Gehitu JPEG-XL; WEBP, eta AVIF bihurtzaileak sortakako ilara kudeatzailean."
+msgstr "Gehitu JPEG-XL; WEBP, eta AVIF bihurtzaileak sortailara kudeatzailean."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
@@ -11244,8 +11230,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Inportatu eskanerretik..."
@@ -18147,6 +18132,11 @@ msgid ""
 "selection of albums.</p><p>jAlbum is themable with different templates and "
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
+"<p>Trena honek erabiltzaileei elementuak jAlbum html galeria sortzailera "
+"esportatzeko aukera ematen die.</p><p>Prozesatu beharreko elementuak banaka "
+"edo taldeka, albumen hautapen baten bidez, hauta daitezke.</p><p>jAlbum-ek "
+"gaiak onartzen ditu, txantiloi eta antolaera ezberdinekin. Begiratu jAlbum-"
+"en webgunea xehetasunetarako: https://jalbum.net/.</p>"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
 #, fuzzy, kde-format
@@ -22763,25 +22753,29 @@ msgid "Box"
 msgstr "Koadroa"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Box web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Box web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.\n"
 "\n"
 "See Box web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Box web-zerbitzura esportatzeko aukera "
+"ematen die.\n"
+"\n"
+"Ikusi Box-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
-msgstr "Esportatu"
+msgstr "Esportatu &Box-era..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
@@ -22809,10 +22803,10 @@ msgid "Failed to list folders"
 msgstr "Huts egin du karpetak zerrendatzea"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr "Esportatu"
+msgstr "Esportatu Box-era"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:77
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:73
@@ -22833,12 +22827,10 @@ msgid "Start Upload"
 msgstr "Abiatu zama-igotzea"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start upload to Box"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
-msgstr "Abiatu Box-era zama-igotzea"
+msgstr "Hasi Box-era zama-igotzen"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:240
 #: core/dplugins/generic/webservices/google/gswindow.cpp:498
@@ -22962,12 +22954,14 @@ msgstr "Autentifikazioak huts egin du. Berriz saiatu nahi duzu?"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:395
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:400
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Box call failed:\n"
 "%1"
-msgstr "Ez bilatu altituderik"
+msgstr ""
+"Box deitzea huts egin du:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:44
 #, fuzzy, kde-format
@@ -22976,38 +22970,41 @@ msgid "Dropbox"
 msgstr "Dropbox"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Dropbox web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Dropbox web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Dropbox web-service.\n"
 "\n"
 "See Dropbox web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Dropbox web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi DropBox-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
-msgstr "Esportatu"
+msgstr "Esportatu &Dropbox-era..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Esportatu Dropbox-era"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
-msgstr "Abiatu Dropbox-era zama-igotzea"
+msgstr "Hasi Dropbox-era zama-igotzen"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:243
@@ -23053,12 +23050,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:384
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:389
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Dropbox call failed:\n"
 "%1"
 msgstr ""
-"Dropbox-era deiak huts egin du:\n"
+"Dropbox deitzea huts egin du:\n"
 "%1"
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:46
@@ -23093,24 +23090,27 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "A tool to convert to black and white."
+#, kde-format
 msgid "A tool to export to Facebook web-service"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr "Facebook web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>This tool allows users to export items to Facebook web-service.</p><p>See "
 "Facebook web site for details: <a href='https://www.facebook.com/'>https://"
 "www.facebook.com/</a></p>"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"<p>Trena honek erabiltzaileei elementuak Facebook web-zerbitzura "
+"esportatzeko aukera ematen die.</p><p>Ikusi Facebook-en webgunea "
+"xehetasunetarako: <a href='https://www.facebook.com/'>https://www.facebook."
+"com/</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
-msgstr "Esportatu"
+msgstr "Esportatu &Facebook-era..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
 #, fuzzy, kde-format
@@ -23190,17 +23190,16 @@ msgid "Validate previous session..."
 msgstr "Balidatu aurreko saioa..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "Esportatu Facebook-eko web zerbitzura"
+msgstr "Esportatu Facebook web-zerbitzura"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr "Abiatu Facebook-eko web zerbitzura zama-igotzea"
+msgstr "Hasi Facebook web-zerbitzura zama-igotzen"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
@@ -23222,9 +23221,9 @@ msgstr "Biratu automatikoki"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:330
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
-#, fuzzy, kde-format
+#, kde-format
 msgid "Facebook Call Failed: %1\n"
-msgstr "Huts egin du Facebook-i deitzean: %1\n"
+msgstr "Facebook deitzea huts egin du: %1\n"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:485
 #, fuzzy, kde-format
@@ -23241,9 +23240,9 @@ msgstr ""
 "Jarraitu nahi duzu?"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
-#, fuzzy, kde-format
+#, kde-format
 msgid "Facebook Call Failed: %1"
-msgstr "Huts egin du Facebook-i deitzean: %1"
+msgstr "Facebook deitzea huts egin du: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
@@ -23336,11 +23335,10 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "Irudien zerrenda da batch prozesuan lantzeko."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Inportatu eskanerretik..."
+msgstr "Esportatu biltegi lokalera"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
@@ -23352,11 +23350,10 @@ msgstr "Abiatu esportatzea"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid "Align text to the left"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
-msgstr "Abiatu esportatzea adierazitako jomugara"
+msgstr "Hasi adierazitako jomugara esportatzen"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
 #, fuzzy, kde-format
@@ -23386,17 +23383,18 @@ msgid "A tool to export items to a local storage"
 msgstr "Puntuazioak inportatuta"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Tresna honek erabiltzaileei elementuak biltegi lokal batera esportatzeko "
+"aukera ematen die."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:100
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Esportatu biltegi lokalera..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
 #, kde-format
@@ -23439,10 +23437,10 @@ msgid "<i>not selected</i>"
 msgstr "Ez aukeratua"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Esportatu urruneko biltegiratzera"
+msgstr "Esportatu urruneko biltegira"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:180
 #, fuzzy, kde-format
@@ -23478,11 +23476,10 @@ msgid "Select Items to Import..."
 msgstr "Hautatu irudiak"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "Inportatu urruneko biltegiratzetik"
+msgstr "Inportatu urrutiko biltegitik"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
 #, fuzzy, kde-format
@@ -23522,35 +23519,36 @@ msgid "File Transfer"
 msgstr "Fitxategi-transferentzia"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to add film grain"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with a remote location"
-msgstr "Filma pikortsua gehitzeko tresna."
+msgstr ""
+"Urrutiko kokaleku batekin elementuak esportatzeko eta inportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:66
-#, fuzzy, kde-format
-#| msgid "A tool to add film grain"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with a remote location.\n"
 "\n"
 "Many protocols can be used, as FTP, SFTP, SAMBA, etc."
-msgstr "Filma pikortsua gehitzeko tresna."
+msgstr ""
+"Trena honek erabiltzaileei elementuak urrutiko kokaleku batekin esportatzeko "
+"eta inportatzeko aukera ematen die.\n"
+"\n"
+"Protokolo ugari erabil daitezke, FTP, SFTP, SAMBA, etab."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Esportatu urrutiko biltegira..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Inportatu urrutiko biltegitik..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -23617,26 +23615,29 @@ msgid "Flickr"
 msgstr "Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "A tool to convert to black and white."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Flickr web-service"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr "Flickr web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Flickr web-service.\n"
 "\n"
 "See Flickr web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Flickr web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi Flickr-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
-msgstr "Esportatu"
+msgstr "Esportatu &Flickr-rera..."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:324
 #, fuzzy, kde-format
@@ -23992,10 +23993,10 @@ msgid "Fewer tag options"
 msgstr "Etiketen aukera gutxiago"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "Esportatu %1 Web zerbitzura"
+msgstr "Esportatu %1 web-zerbitzura"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:158
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:205
@@ -24153,13 +24154,14 @@ msgid "Google"
 msgstr "Google"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with Google web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Google web-zerbitzuarekin elementuak esportatzeko eta inportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services.\n"
@@ -24167,27 +24169,31 @@ msgid ""
 "Google Photo and Google Drive web services are supported.\n"
 "\n"
 "See Google web sites for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak SmugMug web-zerbitzuarekin "
+"esportatzeko eta inportatzeko aukera ematen die.\n"
+"\n"
+"Google Photo eta Google Drive web-zerbitzuak onartzen ditu.\n"
+"\n"
+"Ikusi Google-en webguneak xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Esportatu &Google Photos-era..."
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from &Google Photos..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Inportatu &Google Photos-etik..."
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
-msgstr "Esportatu"
+msgstr "Esportatu &Google Drive-ra..."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:91
 #, fuzzy, kde-format
@@ -24294,40 +24300,34 @@ msgid "Build a combined tag string."
 msgstr "Eraiki etiketa kate konbinatu bat."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Esportatu Google Drivera"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
-msgstr "Abiatu Google Drivera zama-igotzea"
+msgstr "Hasi Google Drive-ra zama-igotzen"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:174
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr "Inportatu eskanerretik..."
+msgstr "Esportatu Google Photos zerbitzura"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Photos Service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Abiatu Google Photos zerbitzura zama-igotzea"
+msgstr "Hasi Google Photos zerbitzura zama-igotzen"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:183
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "Inportatu eskanerretik..."
+msgstr "Inportatu Google Photos zerbitzutik"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:185
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:110
@@ -24344,16 +24344,16 @@ msgstr "Hautatu irudia igotzeko"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:358
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
-msgstr "Ez bilatu altituderik"
+msgstr "Google Photos deitzea huts egin du: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:399
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
-msgstr "Ez bilatu altituderik"
+msgstr "Google Drive deitzea huts egin du: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:497
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
@@ -24508,22 +24508,24 @@ msgid "Error"
 msgstr "Errorea"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1266
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Drive call failed:\n"
 "%1"
 msgstr ""
-"Google Drive deiak huts egin du:\n"
+"Google Drive deitzea huts egin du:\n"
 "%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1283
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Photos call failed:\n"
 "%1"
-msgstr "Ez bilatu altituderik"
+msgstr ""
+"Google Photos deitzea huts egin du:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
@@ -24565,26 +24567,29 @@ msgid "ImageShack"
 msgstr "ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "A tool to convert to black and white."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImageShack web-service"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr "ImageShack web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImageShack web-service.\n"
 "\n"
 "See ImageShack web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak ImageShack web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi ImageShack-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
-msgstr "Esportatu"
+msgstr "Esportatu &Imageshack-era..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:222
 #, fuzzy, kde-format
@@ -24635,10 +24640,10 @@ msgid "Create new gallery"
 msgstr "Sortu galeria berria"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr "Esportatu &Imageshack-era..."
+msgstr "Esportatu &Imageshack-era"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
@@ -24650,11 +24655,10 @@ msgid "Upload"
 msgstr "Zama-igo"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Start upload to ImageShack web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr "Abiatu Imageshack web zerbitzura zama-igotzea"
+msgstr "Hasi ImageShack web-zerbitzura zama-igotzen"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
 #, fuzzy, kde-format
@@ -24726,13 +24730,13 @@ msgid "ImgUr"
 msgstr "Imgur"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImgUr web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "ImgUr web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImgUr web-service.\n"
@@ -24740,13 +24744,20 @@ msgid ""
 "You can export items as anonymous or with an user account.\n"
 "\n"
 "See ImgUr web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak ImgUr web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Elementuak era anonimoan edo erabiltzaile-kontu baten bidez esporta "
+"ditzakezu.\n"
+"\n"
+"Ikusi ImgUr-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
-msgstr "Esportatu"
+msgstr "Esportatu &Imgur-rera..."
 
 #: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:186
 #, fuzzy, kde-format
@@ -24776,17 +24787,16 @@ msgid "Upload Anonymously"
 msgstr "Zama-igo era anonimoan"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
-msgstr "Esportatu imgur.com lekura"
+msgstr "Esportatu imgur.com gunera"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
-msgstr "Abiatu Imgur-rera zama-igotzea"
+msgstr "Hasi Imgur-rera zama-igotzen"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
 #, fuzzy, kde-format
@@ -24858,10 +24868,10 @@ msgid ""
 msgstr "Puntuazioak inportatuta"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
-msgstr "Esportatu"
+msgstr "Esportatu &iNaturalist-era..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:257
 #, kde-format
@@ -25356,38 +25366,41 @@ msgid "IPFS"
 msgstr ""
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to IPFS web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "IPFS web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to IPFS web-service.\n"
 "\n"
 "See IPFS web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak IPFS web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi IPFSren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
-msgstr "Esportatu"
+msgstr "Esportatu &Ipfs-era..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
-msgstr "Esportatu"
+msgstr "Esportatu IPFSra"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Start upload to IPFS"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
-msgstr "Abiatu IPFS-ra zama-igotzea"
+msgstr "Hasi IPFSra zama-igotzen"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
 #, kde-format
@@ -25418,25 +25431,29 @@ msgid "MediaWiki"
 msgstr "MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to MediaWiki web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "MediaWiki web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to MediaWiki web-service.\n"
 "\n"
 "See MediaWiki web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak MediaWiki web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi MediaWiki-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
-msgstr "Esportatu"
+msgstr "Esportatu MediaWiki-ra..."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:112
 #, fuzzy, kde-format
@@ -26006,7 +26023,7 @@ msgid ""
 "Onedrive call failed:\n"
 "%1"
 msgstr ""
-"Onedrive deiak huts egin du:\n"
+"Onedrive deitzea huts egin du:\n"
 "%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:44
@@ -26091,7 +26108,7 @@ msgid ""
 "Pinterest call failed:\n"
 "%1"
 msgstr ""
-"Pinterest deiak huts egin du:\n"
+"Pinterest deitzea huts egin du:\n"
 "%1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:80
@@ -26151,7 +26168,7 @@ msgid "Piwigo URL probably incorrect"
 msgstr "Piwigo-ren URLa ziur aski ez da zuzena"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
-#, fuzzy, kde-format
+#, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Erabiltzaile-izen edo pasahitz okerra zehaztu da"
 
@@ -26159,38 +26176,36 @@ msgstr "Erabiltzaile-izen edo pasahitz okerra zehaztu da"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
-msgstr "Piwigo 2.4 baino bertsio txikiagora zama-igotzea ez da onartzen"
+msgstr "Piwigo 2.4 baino bertsio txikiagora zama-igotzea jada ez da onartzen"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid response received from remote Piwigo"
-msgstr "Urruneko Piwigo zerbitzariak erantzun baliogabea eman du"
+msgstr "Urruneko Piwigo zerbitzaritik erantzun baliogabea jaso da"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
-#, fuzzy, kde-format
-#| msgid "Failed to rename Album"
+#, kde-format
 msgid "Failed to list albums"
-msgstr "Huts egin du albumak zerrendatzea"
+msgstr "Albumak zerrendatzea huts egin du"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
-#, fuzzy, kde-format
-#| msgid "Tag name already exists"
+#, kde-format
 msgid "Photo '%1' already exists."
-msgstr "'%1' argazkia badago lehendik ere."
+msgstr "'%1' argazkia lehendik ere badago."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
-#, fuzzy, kde-format
+#, kde-format
 msgid "Photo '%1' already exists in this album."
-msgstr "'%1' argazkia lehendik ere badago album honetan."
+msgstr "'%1' argazkia album honetan lehendik ere badago."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error : Cannot open photo: %1"
-msgstr "Errorea: Ezin da argazkia ireki: %1"
+msgstr "Errorea: Ezin du argazkia ireki: %1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
 #, kde-format
@@ -26205,44 +26220,39 @@ msgstr "Abisua: Neurri osoko argazkia ezin da zama-igo."
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
 #, kde-format
 msgid "Upload the metadata of %1"
-msgstr "Zama-igo %1(r)(e)n meta-datuak"
+msgstr "Zama-igo %1(r)(e)n metadatuak"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
-msgstr "Erantzun baliogabea eman du urruneko Piwigo zerbitzariak (%1)"
+msgstr "urruneko Piwigo zerbitzaritik erantzun baliogabea jaso da (%1)"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Visit Piwigo website"
-msgstr "Bisitatu Piwigo webgunea"
+msgstr "Bisitatu Piwigo-ren webgunea"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgid "Remote Albums"
-msgstr "Ezabatu albuma"
+msgstr "Urrutiko albumak"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "reload album list"
 msgid "Reload"
-msgstr "Birkargatu"
+msgstr "Birzamatu"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:163
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "Load playlist"
+#, kde-format
 msgid "Reload album list"
-msgstr "Birkargatu albumen zerrenda"
+msgstr "Birzamatu albumen zerrenda"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Izena:"
@@ -26251,13 +26261,12 @@ msgstr "Izena:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URLa:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:184
-#, fuzzy, kde-format
-#| msgid "Change Case"
+#, kde-format
 msgid "Change Account"
 msgstr "Aldatu kontua"
 
@@ -26269,25 +26278,22 @@ msgid "Resize photos before uploading"
 msgstr "Aldatu argazkien handiera zama-igo aurretik"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgid "Maximum width:"
 msgstr "Gehienezko zabalera:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "New height:"
+#, kde-format
 msgid "Maximum height:"
 msgstr "Gehienezko altuera:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
-#, fuzzy, kde-format
-#| msgid "JPEG quality:"
+#, kde-format
 msgid "Resized JPEG quality:"
-msgstr "Handiera aldatutako JPEG kalitatea:"
+msgstr "Handiera aldatutako JPEGren kalitatea:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo esportatu"
@@ -26295,23 +26301,23 @@ msgstr "Piwigo esportatu"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:285
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:420
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:695
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Editatu Piwigo datuak"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:411
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to login into remote piwigo. "
-msgstr "Huts egin du urruneko piwigo webgunean saio-hastea."
+msgstr "Urruneko piwigo saio-hastea huts egin du. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "Do you want to check your settings and try again?"
 msgstr ""
 "\n"
-"Zure ezarpenak ikuskatu eta berriro saiatzea nahi duzu?"
+"Zure ezarpenak ikuskatu eta berriro saiatu nahi duzu?"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:489
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:513
@@ -26334,7 +26340,7 @@ msgstr ""
 "Ez dago zama-igotzeko ezer - mesedez, hautatu zama-igo beharreko argazkiak."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:610
-#, fuzzy, kde-format
+#, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "%1 fitxategiak ez dauka onartutako irudi edo bideo formatu bat"
 
@@ -26346,11 +26352,10 @@ msgstr "%1 fitxategia zama-igotzen"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Huts egin du euskarria urruneko Piwigo-ra zama-igotzea."
+msgstr "Hedabidea urrutiko Piwgo-n zama-igotzea huts egin du. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
-#, fuzzy, kde-format
-#| msgid " Do you want to continue?"
+#, kde-format
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -26359,20 +26364,19 @@ msgstr ""
 "Jarraitu nahi duzu?"
 
 #: core/dplugins/generic/webservices/rajce/rajcenewalbumdlg.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Visibility"
 msgstr "Ikusgaitasuna"
 
 #: core/dplugins/generic/webservices/rajce/rajcenewalbumdlg.cpp:41
-#, fuzzy, kde-format
-#| msgid "Select the input intensity of the histogram here."
+#, kde-format
 msgctxt "@info"
 msgid "Set the visibility of the album"
 msgstr "Ezarri albumaren ikusgaitasuna"
 
 #: core/dplugins/generic/webservices/rajce/rajcenewalbumdlg.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: properties"
 msgid "Public"
 msgstr "Publikoa"
@@ -26381,78 +26385,76 @@ msgstr "Publikoa"
 #, kde-format
 msgctxt "@title"
 msgid "Rajce"
-msgstr ""
+msgstr "Rajce"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Rajce web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Rajce web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Rajce web-service.\n"
 "\n"
 "See Rajce web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Rajce web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi Rajce-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
-msgstr "Esportatu"
+msgstr "Esportatu &Rajce-ra..."
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Not Tagged"
+#, kde-format
 msgid "Not logged in"
 msgstr "Saioa hasteke"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid command"
 msgstr "Komando baliogabea"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid login name or password"
 msgstr "Saio-hasteko izena edo pasahitza baliogabea"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:231
-#, fuzzy, kde-format
+#, kde-format
 msgid "Session expired"
 msgstr "Saioa iraungi da"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:233
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:234
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown album"
 msgstr "Album ezezaguna"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
-#, fuzzy, kde-format
-#| msgid "Failed to rename Album"
+#, kde-format
 msgid "Failed to open album"
 msgstr "Albuma irekitzea huts egin du"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
-#, fuzzy, kde-format
-#| msgid "Album name cannot be empty."
+#, kde-format
 msgid "The album name cannot be empty"
-msgstr "Albumaren izena ezin da hutsik utzi"
+msgstr "Albumaren izena ezin da hutsik egon"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
-#, fuzzy, kde-format
-#| msgid "Failed to rename Album"
+#, kde-format
 msgid "Failed to create album"
-msgstr "Huts egin du albuma sortzea"
+msgstr "Albuma sortzea huts egin du"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:238
-#, fuzzy, kde-format
-#| msgid "File does not exist"
+#, kde-format
 msgid "Album does not exist"
 msgstr "Albuma ez da existitzen"
 
@@ -26463,88 +26465,84 @@ msgid "File upload failed"
 msgstr "Fitxategi zama-igotzea huts egin du"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unsupported file extension"
 msgstr "Onartu gabeko fitxategi-luzapena"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
-#, fuzzy, kde-format
+#, kde-format
 msgid "Logging in %v%"
 msgstr "%v%-(e)n saio-hasten"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 msgid "Logging out %v%"
 msgstr "%v%-(e)n saio-ixten"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
-#, fuzzy, kde-format
-#| msgid "Loading: %1"
+#, kde-format
 msgid "Loading albums %v%"
-msgstr "%v% albumak zamatzea"
+msgstr "%v% albumak zamatzen"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:303
-#, fuzzy, kde-format
-#| msgid "Create new album"
+#, kde-format
 msgid "Creating album %v%"
-msgstr "%v% albuma sortzea"
+msgstr "%v% albuma sortzen"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:304
-#, fuzzy, kde-format
+#, kde-format
 msgid "Opening album %v%"
-msgstr "%v% albuma irekitzea"
+msgstr "%v% albuma irekitzen"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:305
-#, fuzzy, kde-format
+#, kde-format
 msgid "Closing album %v%"
-msgstr "%v% albuma ixtea"
+msgstr "%v% albuma ixten"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:306
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adding photos %v%"
-msgstr "%v% argazkiak gehitzea"
+msgstr "%v% argazkiak gehitzen"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Esportatu Rajce.net gunera"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
-msgstr "Abiatu Rajce.net-era zama-igotzea"
+msgstr "Hasi Rajce.net-era zama-igotzen"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:71
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgid "SmugMug New Album"
 msgstr "SmugMug-eko album berria"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "These are basic settings for the new SmugMug album."
-msgstr "Hauek oinarrizko ezarpenak dira SmugMug-eko album berriarentzako"
+msgstr "SmugMug album berrirako oinarrizko ezarpenak dira hauek."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid "Title of the album that will be created (required)."
 msgstr "Sortuko den albumaren titulua (beharrezkoa)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Description of the album that will be created (optional)."
-msgstr "Sortuko den albumaren azalpena (aukerakoa)."
+msgstr "Sortuko den albumaren deskribapena (aukerakoa)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album template for the new album (optional)."
-msgstr "Album berriaren txantiloia (aukerakoa)."
+msgstr "Album berrirako album-txantiloia (aukerakoa)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "new smug album dialog"
 msgid "Title:"
 msgstr "Titulua:"
@@ -26553,58 +26551,54 @@ msgstr "Titulua:"
 #. i18nc("new smug album dialog", "Subcategory:"), d->subCategCoB);
 #.
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "new smug album dialog"
 msgid "Description:"
-msgstr "Azalpena:"
+msgstr "Deskribapena:"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:112
-#, fuzzy, kde-format
-#| msgid "Template: "
+#, kde-format
 msgctxt "new smug album dialog"
 msgid "Template:"
 msgstr "Txantiloia:"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "Security && Privacy"
 msgstr "Segurtasuna eta pribatutasuna"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "These are security and privacy settings for the new SmugMug album."
 msgstr ""
-"SmugMug-eko album berriaren segurtasunaren eta pribatutasunaren ezarpenak "
-"dira."
+"SmugMug-eko album berrirako segurtasun eta pribatutasun ezarpenak dira hauek."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "smug album privacy"
 msgid "Public"
 msgstr "Publikoa"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:125
-#, fuzzy, kde-format
+#, kde-format
 msgid "Public album is listed on your public SmugMug page."
-msgstr "Album publikoa zerrendatu da SmugMug-eko zure orrialde publikoan."
+msgstr "Album publikoa zure SmugMug orri publikoan zerrendatzen da."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "smug album privacy"
 msgid "Unlisted"
 msgstr "Zerrendatu gabea"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgid "Require password to access the album (optional)."
-msgstr "Pasahitza behar da albuma atzitzeko (aukerakoa)."
+msgstr "Pasahitza eskatu albumera sartzeko (aukerakoa)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgid "Password hint to present to users in the password prompt (optional)."
-msgstr ""
-"Pasahitzaren argibidea erabiltzaileei pasahitza eskatzean aurkezteko "
-"(aukerakoa)."
+msgstr "Pasahitz-gonbitean erabiltzaileari aurkezteko iradokizuna (aukerakoa)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
@@ -26614,169 +26608,164 @@ msgid "Password:"
 msgstr "Pasahitza:"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgid "Password Hint:"
 msgstr "Pasahitzaren argibidea:"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@title"
 msgid "SmugMug"
-msgstr "Inportatu"
+msgstr "SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with SmugMug web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"SmugMug web-zerbitzuarekin elementuak esportatzeko eta inportatzeko tresna "
+"bat"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with SmugMug web-service.\n"
 "\n"
 "See SmugMug web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak SmugMug web-zerbitzuarekin "
+"esportatzeko eta inportatzeko aukera ematen die.\n"
+"\n"
+"Ikusi SmugMug-en webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
-msgstr "Esportatu"
+msgstr "Esportatu &SmugMug-era..."
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from &SmugMug..."
-msgstr "Inportatu eskanerretik..."
+msgstr "Inportatu &SmugMug-etik..."
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:352
-#, fuzzy, kde-format
+#, kde-format
 msgid "Logging in to SmugMug service..."
-msgstr "Hasi saioa SmugMug zerbitzuan..."
+msgstr "SmugMug zerbitzuan saio-hasten..."
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
-#, fuzzy, kde-format
+#, kde-format
 msgid "Login failed"
-msgstr "Saio-hasierak huts egin du"
+msgstr "Saio-hasteak huts egin du"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid user/nick/password"
-msgstr "Baliogabeko izena/goitizena/pasahitza"
+msgstr "izen/goitizen/pasahitz baliogabea"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid API key"
-msgstr "APIaren gakoa baliogabea"
+msgstr "API-gako baliogabea"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
-#, fuzzy, kde-format
-#| msgid "Failed to rename Album"
+#, kde-format
 msgid "Failed to list album template"
-msgstr "Huts egin du albuma izenez aldatzean"
+msgstr "Album-txantiloia zerrendatzea huts egin du"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:66
 #, kde-format
 msgid "This is the list of images to upload to your SmugMug account."
-msgstr "Hau da SmugMug kontura zama-igotzeko irudien zerrenda."
+msgstr "Hau da zure SmugMug kontura zama-igo beharreko irudien zerrenda."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is a clickable link to open the SmugMug home page in a web browser."
 msgstr ""
-"Esteka honetan klik egin dezakezu SmugMug-eko hasierako orrialdea irekitzeko "
-"web arakatzaile batean."
+"SmugMug etxeko orria arakatzaile batean irekitzeko esteka klikagarria da hau."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Amount:"
+#, kde-format
 msgid "Account"
 msgstr "Kontua"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the SmugMug account that will be used to authenticate."
-msgstr "SmugMug-eko zure kontua da, autentifikatzeko erabiliko dena."
+msgstr "Hau da egiaztatzeko erabiliko den SmugMug kontua."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "smug account login"
 msgid "Anonymous"
 msgstr "Anonimoa"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Login as anonymous to SmugMug web service."
-msgstr "Hasi saioa anonimoki SmugMug webeko zerbitzuan."
+msgstr "Hasi saioa anonimoki SmugMug web-zerbitzuan."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "SmugMug Account"
-msgstr "SmugMug-eko kontua"
+msgstr "SmugMug kontua"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "Login to SmugMug web service using email and password."
 msgstr ""
-"Hasi saioa SmugMug webeko zerbitzuan erabiltzaile-izena eta pasahitza "
-"erabiliz."
+"SmugMug web-zerbitzuan erabiltzaile-izena eta pasahitza erabiliz saio-hasi."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "smug account settings"
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "smug account settings"
 msgid "Email:"
-msgstr "Helbide elek."
+msgstr "E-posta:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Change SmugMug Account used to authenticate"
-msgstr "Aldatu SmugMug-eko kontua, autentifikatzeko erabiliko dena"
+msgstr "Aldatu egiaztatzeko erabilitako SmugMug kontua"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "These albums will be moved to Trash."
+#, kde-format
 msgid "This is the SmugMug album that will be used for transfer."
-msgstr "SmugMug-eko albuma da transferitzeko."
+msgstr "Hau da transferentziarako erabiliko den SmugMug albuma."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "Nickname of SmugMug user to list albums."
-msgstr "SmugMug-eko erabiltzailearen goitizena albumak zerrendatzeko."
+msgstr "Albumak zerrendatzeko SmugMug-erabiltzailearen goitizena."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgid "Site Password:"
 msgstr "Gunearen pasahitza:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Site-wide password for specified SmugMug nick/user."
-msgstr "SmugMug webgunean emandako goitizenaren/erabiltzailearen pasahitza."
+msgstr ""
+"Zehaztutako SmugMug goitizen/erabiltzailearen sistema osorako psahitza."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgid "Album Password:"
 msgstr "Albumaren pasahitza:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgid "Password for SmugMug album."
 msgstr "SmugMug albumaren pasahitza."
 
@@ -26787,15 +26776,14 @@ msgid "New Album"
 msgstr "Album berria"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:131
-#, fuzzy, kde-format
-#| msgid "Create new album"
+#, kde-format
 msgid "Create new SmugMug album"
-msgstr "Sortu album berria SmugMug-en"
+msgstr "Sortu SmugMug album berria"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the location where SmugMug images will be downloaded."
-msgstr "SmugMug-eko kokalekua irudiak deskargatzeko."
+msgstr "SmugMug irudiak zama-jaitsiko diren kokalekua da hau."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #, kde-format
@@ -26803,46 +26791,45 @@ msgid "These are options that will be applied to images before upload."
 msgstr "Horiek dira argazkiei zama-igo aurretik ezarriko zaizkien aukerak."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgid "Maximum dimension:"
 msgstr "Gehienezko dimentsioa:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr "Inportatu SmugMug-eko web zerbitzutik"
+msgstr "Inportatu SmugMug web-zerbitzutik"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
-msgstr "Hasi deskarga SmugMug-eko web zerbitzutik"
+msgstr "Hasi SmugMug web-zerbitzutik zama-jaisten"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "Esportatu SmugMug webeko zerbitzura"
+msgstr "Esportatu SmugMug web-zerbitzura"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
-msgstr "Abiatu SmugMug web zerbitzura zama-igotzea"
+msgstr "Hasi SmugMug web-zerbitzura zama-igotzen"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
-#, fuzzy, kde-format
+#, kde-format
 msgid "SmugMug call failed: %1\n"
-msgstr "Huts egin du SmugMug-i deitzean: %1\n"
+msgstr "SmugMug deitzea huts egin du: %1\n"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:509
-#, fuzzy, kde-format
+#, kde-format
 msgid "&lt;none&gt;"
 msgstr "&lt;bat ere ez&gt;"
 
@@ -26902,25 +26889,29 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Twitter web-service"
-msgstr "Puntuazioak inportatuta"
+msgstr "Twitter web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Twitter web-service.\n"
 "\n"
 "See Twitter web site for details: %1"
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak Twitter web-zerbitzura esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Ikusi Twitter-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
-msgstr "Esportatu"
+msgstr "Esportatu &Twitter-rera..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
@@ -26950,17 +26941,16 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Zama-igotako argazkiarentzako txioa sortzea huts egin du"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr "Esportatu"
+msgstr "Esportatu Twitter-rera"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Start upload to Twitter"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
-msgstr "Abiatu Twitterrera zama-igotzea"
+msgstr "Hasi Twitter-rera zama-igotzen"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:287
 #, fuzzy, kde-format
@@ -26981,11 +26971,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Twitter call failed:\n"
 "%1"
-msgstr "Ez bilatu altituderik"
+msgstr ""
+"Twitter deitzea huts egin du:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:286
 #, fuzzy, kde-format
@@ -26993,11 +26985,10 @@ msgid "Cannot open image at %1\n"
 msgstr "Ezin da \"%1\" fitxategia gorde"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:414
-#, fuzzy, kde-format
-#| msgid "All Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
-msgstr "Fitxategi guztiak"
+msgstr "%1 deitzea huts egin du"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:415
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:352
@@ -27029,19 +27020,23 @@ msgid "A tool to export items to web-services"
 msgstr "Puntuazioak inportatuta"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to many web-services.\n"
 "\n"
 "This is a unified tool, grouping many tools in one."
-msgstr "Puntuazioak inportatuta"
+msgstr ""
+"Trena honek erabiltzaileei elementuak web-zerbitzu askotara esportatzeko "
+"aukera ematen die.\n"
+"\n"
+"Tresna bateratu bat da hua, tresna ugari bakarrean biltzen dituena."
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
-msgstr "Puntuazioak inportatuta"
+msgstr "Esportatu web-zerbitzuetara..."
 
 #: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
 #, kde-format
@@ -27101,14 +27096,14 @@ msgid "&Choose operation:"
 msgstr "Kameraren informazioa"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Export to web services"
-msgstr "Puntuazioak inportatuta"
+msgstr "Esportatu web-zerbitzuetara"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import from web services"
-msgstr "Puntuazioak inportatuta"
+msgstr "Inportatu web zerbitzuetatik"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:105
 #, kde-format
@@ -27121,10 +27116,10 @@ msgid "&Choose account:"
 msgstr "Pixelak: "
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr "Puntuazioak inportatuta"
+msgstr "Esportatu web-zerbitzuetara"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
 #, fuzzy, kde-format
@@ -28130,8 +28125,7 @@ msgstr "Aukeraturik ez"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
-#, fuzzy, kde-format
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Errefusatua"
@@ -28261,8 +28255,7 @@ msgid "No Pick"
 msgstr "Aukeraturik ez"
 
 #: core/libs/album/treeview/labelstreeview.cpp:450
-#, fuzzy, kde-format
-#| msgid "Rejected Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Errefusatutako elementua"
@@ -35209,11 +35202,10 @@ msgid "Location: "
 msgstr "Kokalekua: "
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Reset all settings to their default values."
+#, kde-format
 msgctxt "@info"
 msgid "These are basic settings for the new %1 album."
-msgstr "Hauek dira %1 album berrirako oinarrizko ezarpenak."
+msgstr "%1 album berrirako oinarrizko ezarpenak dira hauek."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:111
 #, fuzzy, kde-format
@@ -35997,7 +35989,7 @@ msgstr "Irudi-fitxategiak"
 #: core/libs/filters/mimefilter.cpp:29
 #, kde-format
 msgid "No RAW Files"
-msgstr "RAW fitxategirik ez"
+msgstr "RAW fitxategiak ez"
 
 #: core/libs/filters/mimefilter.cpp:30
 #, kde-format
@@ -36005,22 +35997,19 @@ msgid "JPEG Files"
 msgstr "JPEG fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:31
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 image"
+#, kde-format
 msgid "JPEG-2000 Files"
-msgstr "JPEG-2000 irudia"
+msgstr "JPEG-2000 fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:32
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgid "JPEG-XL Files"
-msgstr "JPEG fitxategiak"
+msgstr "JPEG-XL fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:33
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgid "WEBP Files"
-msgstr "PNG fitxategiak"
+msgstr "WEBP fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:34
 #, kde-format
@@ -36043,10 +36032,9 @@ msgid "HEIF Files"
 msgstr "HEIF fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:38
-#, fuzzy, kde-format
-#| msgid "HEIF Files"
+#, kde-format
 msgid "AVIF Files"
-msgstr "HEIF fitxategiak"
+msgstr "AVIF fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:39
 #, kde-format
@@ -36068,7 +36056,7 @@ msgstr "Bideo fitxategiak"
 #: core/utilities/setup/album/setupmime.cpp:156
 #, kde-format
 msgid "Audio Files"
-msgstr "Audio-fitxategiak"
+msgstr "Audio fitxategiak"
 
 #: core/libs/filters/mimefilter.cpp:43
 #, kde-format
@@ -36087,41 +36075,43 @@ msgid ""
 "Graphics\" are file formats from raster graphics editors, such as Photoshop, "
 "The Gimp, Krita, etc."
 msgstr ""
+"Hautatu erakustea nahi duzun fitxategi-motak (MIME motak). Oharra: \"Raster "
+"grafikoak\" raster grafiko editoreetako fitxategi-formatuak dira, hala nola "
+"Photoshop, The Gimp, Krita, etab."
 
 #: core/libs/filters/ratingfilter.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
 msgstr ""
-"Hautatu puntuazioaren balioa albumen edukia iragazteko. Erabili "
-"testuinguruko menua puntuazioaren iragazkiaren baldintzak ezartzeko."
+"Hautatu albumen edukia iragazteko erabilitako balorazio balioa. Erabili "
+"testuinguru-menu gainerakorra balorazio iragazkiaren baldintzak ezartzeko."
 
 #: core/libs/filters/ratingfilter.cpp:177
 #, kde-format
 msgid "Rating greater than or equal to %1."
-msgstr "Puntuazioa %1 baino handiagoa edo berdina."
+msgstr "Balorazioa %1 baino handiagoa edo berdina."
 
 #: core/libs/filters/ratingfilter.cpp:183
 #, kde-format
 msgid "Rating equal to %1."
-msgstr "Puntuazioa %1(r)en berdina."
+msgstr "Balorazioa %1(r)en berdina."
 
 #: core/libs/filters/ratingfilter.cpp:189
 #, kde-format
 msgid "Rating less than or equal to %1."
-msgstr "Puntuazioa %1 baino gutxiagoa edo berdina."
+msgstr "Balorazioa %1 baino gutxiago edo berdina."
 
 #: core/libs/filters/ratingfilter.cpp:229
-#, fuzzy, kde-format
-#| msgid "Images Without Tags"
+#, kde-format
 msgid "Items Without Rating"
-msgstr "Etiketarik gabeko irudiak"
+msgstr "Baloraziorik gabeko elementuak"
 
 #: core/libs/filters/ratingfilter.cpp:233
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating Filter Options"
-msgstr "Puntuazioaren iragazkia"
+msgstr "Balorazio iragazkiaren aukerak"
 
 #: core/libs/filters/ratingfilter.cpp:238
 #, kde-format
@@ -36136,36 +36126,36 @@ msgstr "Baldintzaren berdina"
 #: core/libs/filters/ratingfilter.cpp:242
 #, kde-format
 msgid "Less Than or Equals Condition"
-msgstr "Baldintzaren berdina edo gutxiagoa"
+msgstr "Baldintzaren berdina edo gutxiago"
 
 #: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Exclude Items Without Rating"
-msgstr ""
+msgstr "Kanporatu baloraziorik gabeko elementuak"
 
 #: core/libs/filters/textfilter.cpp:59
 #, kde-format
 msgid "Text quick filter (search)"
-msgstr "Testu azkarraren iragazkia (bilaketa)"
+msgstr "Testu azkarreko iragazkia (bilaketa)"
 
 #: core/libs/filters/textfilter.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
-"Sartu bilaketako ereduak fitxategi-izenen, epigrafeen (iruzkinen) eta "
-"etiketen ikuspegi hau azkar iragazteko."
+"Bilaketako ereduak sartu ikuspegi hau azkar batean fitxategi-izenen, "
+"epigrafeen (iruzkinak) eta etiketen arabera iragazteko."
 
 #: core/libs/filters/textfilter.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Text Search Fields"
-msgstr "Nire bilaketak"
+msgstr "Testua bilatzeko eremuak"
 
 #: core/libs/filters/textfilter.cpp:67
 #, kde-format
 msgid "Defines which fields to search for the text in."
-msgstr ""
+msgstr "Barruko testua zein eremutan bilatu zehazten du."
 
 #: core/libs/filters/textfilter.cpp:70
 #, kde-format
@@ -36198,9 +36188,9 @@ msgid "Item Aspect Ratio"
 msgstr "Elementuaren itxura-proportzioa"
 
 #: core/libs/filters/textfilter.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item Pixel Size"
-msgstr "Irudiaren fitxategi-tamaina"
+msgstr "Elementuaren pixel-neurria"
 
 #: core/libs/filters/textfilter.cpp:85
 #, kde-format
@@ -36210,40 +36200,41 @@ msgstr "Garbitu dena"
 #: core/libs/filters/textfilter.cpp:87
 #, kde-format
 msgid "Select All"
-msgstr "Hautatu denak"
+msgstr "Hautatu dena"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:67
-#, fuzzy, kde-format
-#| msgid "Revert to default settings"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
-msgstr "Leheneratu ezarpen lehenetsietara"
+msgstr "Erabili ezarpen lehenetsiak"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
+"Ezarpen elkarrizketa-koadroan konfiguratutako kalitatea sailkatzeko "
+"parametro lehenetsiak erabili."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@label: subject widget"
-#| msgid "Use custom definition"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
-msgstr "Erabili norberak finkatutako definizioa"
+msgstr "Erabili neurrira finkatutako ezarpenak"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
+"Kalitate-sailkatzea gauzatzeko, lehenetsitakoen ordez, neurrira ipinitako "
+"parametroak erabili."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr ""
+msgstr "kalitate txikiko argazkiei 'Errefusatua\" etiketa esleitu"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
@@ -36252,6 +36243,8 @@ msgid ""
 "Low quality images detected by blur, noise, and compression analysis will be "
 "assigned to Rejected label."
 msgstr ""
+"Lausotasuna, zarata eta konpresio analisiengatik antzemandako kalitate "
+"baxuko irudiei Errefusatua etiketa esleituko zaie."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
@@ -36310,16 +36303,18 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
-msgstr "Atalasea:"
+msgstr "Errefusatu atalasea:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
+"Atalase muga zeinetatik behera irudi guztiei Errefusatua etiketa esleitzen "
+"zaien"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, fuzzy, kde-format
@@ -36661,9 +36656,10 @@ msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
 msgstr "Begi gorriak murrizteko modua duen flasha"
 
+# https://www.berria.eus/estiloliburua/mundua/E#74
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:333
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:481
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Afar"
 msgstr "Afar"
@@ -36677,9 +36673,7 @@ msgstr "Abkhaziera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:335
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Afrikaans"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Afrikaans"
 msgstr "Afrikaans"
@@ -36693,18 +36687,14 @@ msgstr "Amharera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:337
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:485
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Arabic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Arabic"
 msgstr "Arabiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:338
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:486
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Assamese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Assamese"
 msgstr "Assamera"
@@ -36718,17 +36708,17 @@ msgstr "Aymara"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:340
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:488
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijani"
 msgstr "Azerbaijanera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:341
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:489
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bashkir"
-msgstr "Bashkir"
+msgstr "Baxkirera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:342
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:490
@@ -36741,9 +36731,7 @@ msgstr "Errusiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:343
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Bulgarian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bulgarian"
 msgstr "Bulgariera"
@@ -36764,79 +36752,63 @@ msgstr "Bislama"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:346
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:494
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bengali;Bangla"
-msgstr "Bengalî (Inde)"
+msgstr "Bengalera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:347
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:495
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Tibetan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tibetan"
 msgstr "Tibetera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:348
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Breton"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Breton"
 msgstr "Bretoiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:349
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Catalan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Catalan"
 msgstr "Katalana"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Corsican"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Corsican"
 msgstr "Korsikera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:351
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:499
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Czech"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Czech"
 msgstr "Txekiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:352
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Welsh"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Welsh"
 msgstr "Galesa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:353
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Danish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Danish"
 msgstr "Daniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:354
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:502
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "German"
+#, kde-format
 msgctxt "@info: country code"
 msgid "German"
 msgstr "Alemana"
@@ -36850,70 +36822,56 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Greek"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Greek"
 msgstr "Grekoa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:357
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "English"
+#, kde-format
 msgctxt "@info: country code"
 msgid "English"
 msgstr "Ingelesa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:358
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:506
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Esperanto"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Esperanto"
 msgstr "Esperantoa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Spanish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Spanish"
 msgstr "Gaztelania"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:360
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:508
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Estonian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Estonian"
 msgstr "Estoniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:361
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:509
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Basque"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Basque"
 msgstr "Euskara"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:362
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:510
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Persian(farsi)"
-msgstr "Persan (Iran)"
+msgstr "Persiera (Farsiera)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:363
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Finnish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Finnish"
 msgstr "Finlandiera"
@@ -36927,52 +36885,42 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Faroese"
 msgstr "Faroera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:366
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "French"
+#, kde-format
 msgctxt "@info: country code"
 msgid "French"
 msgstr "Frantsesa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:367
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Frisian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Frisian"
 msgstr "Frisiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:368
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:516
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Irish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Irish"
 msgstr "Irlandera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:369
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:517
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Scotsgaelic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Scotsgaelic"
 msgstr "Eskoziako gaelera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:370
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Galician"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Galician"
 msgstr "Galiziera"
@@ -36986,79 +36934,63 @@ msgstr "Guaraniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:372
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:520
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Gujarati"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Gujarati"
 msgstr "Gujaratera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:373
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Hausa"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hausa"
 msgstr "Hausa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:374
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Hebrew"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hebrew"
 msgstr "Hebreera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:375
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Hindi"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hindi"
 msgstr "Hindi"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:376
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Croatian"
 msgstr "Kroaziera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:377
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:525
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Hungarian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hungarian"
 msgstr "Hungariera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:378
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:526
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Armenian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Armenian"
 msgstr "Armeniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:379
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:527
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Interlingua"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Interlingua"
 msgstr "Interlingua"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:380
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:528
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Interlingue"
 msgstr "Interlingue"
@@ -37072,27 +37004,21 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:382
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Indonesian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Indonesian"
 msgstr "Indonesiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:383
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:531
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Icelandic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Icelandic"
 msgstr "Islandiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:384
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Italian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Italian"
 msgstr "Italiera"
@@ -37106,9 +37032,7 @@ msgstr "Inuktitut"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:386
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:534
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Japanese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Japanese"
 msgstr "Japoniera"
@@ -37122,18 +37046,14 @@ msgstr "Javera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:388
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:536
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Georgian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Georgian"
 msgstr "Georgiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:389
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Kazakh"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kazakh"
 msgstr "Kazakhera"
@@ -37154,18 +37074,14 @@ msgstr "Kamera muntatzeko bide-izena"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:392
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:540
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Kannada"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kannada"
 msgstr "Kannada"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:393
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:541
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Korean"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Korean"
 msgstr "Koreera"
@@ -37179,9 +37095,7 @@ msgstr "Kaxmirera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:395
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Kurdish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kurdish"
 msgstr "Kurduera"
@@ -37195,9 +37109,7 @@ msgstr "Kirgiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:397
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Latin"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Latin"
 msgstr "Latina"
@@ -37218,19 +37130,17 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:400
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:548
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Lithuanian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Lithuanian"
 msgstr "Lituaniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:401
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:549
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Latvian;Lettish"
-msgstr "Letton (Lettonie)"
+msgstr "Letoniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:402
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:550
@@ -37248,59 +37158,49 @@ msgstr "Maoria"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:404
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:552
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Macedonian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Macedonian"
 msgstr "Mazedoniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:405
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:553
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Malayalam"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Malayalam"
 msgstr "Malabarera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:406
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:554
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Mongolian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mongolian"
 msgstr "Mongoliera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:407
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:555
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Marathi"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Marathi"
 msgstr "Marathera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:408
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:556
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Malay"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Malay"
 msgstr "Malaysiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:409
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:557
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Maltese"
 msgstr "Maltera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:410
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:558
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Burmese"
 msgstr "Birmaniera"
@@ -37315,36 +37215,28 @@ msgstr "Nauru"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:412
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:560
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Nepali"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Nepali"
 msgstr "Nepalera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:413
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:561
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Dutch"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Dutch"
 msgstr "Nederlandera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:414
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:562
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Norwegian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Norwegian"
 msgstr "Norvegiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:415
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Occitan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Occitan"
 msgstr "Okzitaniera"
@@ -37354,31 +37246,25 @@ msgstr "Okzitaniera"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Oromoera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:417
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Oriya"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Oriya"
 msgstr "Oriya"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:418
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Punjabi"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Punjabi"
 msgstr "Punjabera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:419
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:567
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Polish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Polish"
 msgstr "Poloniera"
@@ -37388,13 +37274,11 @@ msgstr "Poloniera"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pashto;Pushto"
-msgstr ""
+msgstr "Paxtunera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:421
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:569
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Portuguese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese"
 msgstr "Portugesa"
@@ -37422,18 +37306,14 @@ msgstr "Burundi"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:425
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Romanian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Romanian"
 msgstr "Errumaniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:426
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:574
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Russian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Russian"
 msgstr "Errusiera"
@@ -37447,12 +37327,10 @@ msgstr "Kinyaruanda"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:428
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:576
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Sanskrit"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Sanskrit"
-msgstr "Sanskritoa"
+msgstr "Sanskrito"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:429
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:577
@@ -37477,18 +37355,14 @@ msgstr "Une personne"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:432
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Slovak"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Slovak"
 msgstr "Eslovakiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:433
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Slovenian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Slovenian"
 msgstr "Esloveniera"
@@ -37517,18 +37391,14 @@ msgstr "Somaliera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:437
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:585
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Albanian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Albanian"
 msgstr "Albaniera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:438
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:586
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Serbian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Serbian"
 msgstr "Serbiera"
@@ -37556,55 +37426,45 @@ msgstr "Sundanera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:442
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:590
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Swedish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Swedish"
 msgstr "Suediera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:443
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:591
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Swahili"
-msgstr "Swahilia"
+msgstr "Swahili"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:444
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:592
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Tamil"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tamil"
 msgstr "Tamilera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:445
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:593
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Telugu"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Telugu"
 msgstr "Teluguera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:446
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:594
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Tajik"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tajik"
 msgstr "Tajikera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:447
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:595
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Thai"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Thai"
-msgstr "Thailandiera"
+msgstr "Thaiera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:448
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:596
@@ -37644,9 +37504,7 @@ msgstr "Tonga"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:453
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Turkish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Turkish"
 msgstr "Turkiera"
@@ -37660,9 +37518,7 @@ msgstr "Tsongera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:455
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:603
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Tatar"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tatar"
 msgstr "Tatarera"
@@ -37683,34 +37539,28 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:458
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Ukrainian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ukrainian"
 msgstr "Ukrainera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:459
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:607
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Urdu"
 msgstr "Urduera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:608
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Uzbek"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Uzbek"
 msgstr "Uzbekera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:461
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:609
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Vietnamese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Vietnamese"
 msgstr "Vietnamera"
@@ -37731,19 +37581,17 @@ msgstr "Wolofera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:464
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:612
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Xhosa"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Xhosa"
 msgstr "Xhosera"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:465
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:613
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish"
-msgstr "Jidisha"
+msgstr "Yiddish"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:466
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:614
@@ -37761,9 +37609,7 @@ msgstr "Zhuang"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:468
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:616
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Chinese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Chinese"
 msgstr "Txinera"
@@ -37776,29 +37622,25 @@ msgid "Zulu"
 msgstr "Zuluera"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:52
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: xmp namespace for tags container"
 msgid "Tags"
 msgstr "Etiketak"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:56
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: xmp namespace for title container"
 msgid "Title"
 msgstr "Titulua"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:60
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@title: xmp namespace for rating container"
 msgid "Rating"
 msgstr "Balorazioa"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:64
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
 msgstr "Epigrafea"
@@ -37821,7 +37663,7 @@ msgstr "Kolore-etiketa"
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
-msgstr ""
+msgstr "Datu bitarrak %1 byte"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, fuzzy, kde-format
@@ -54172,30 +54014,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirming face"
 msgstr "Berretsi ezabatzea"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Removing face"
 msgstr "Kendu etiketa"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Kendu etiketa hau"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"
@@ -61991,99 +61833,91 @@ msgstr ""
 "Mesedez, aukeratu irudiak kameraren zein karpetara zama-igo nahi dituzun."
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Device Information"
-msgstr "Gailuaren gaineko informazioa"
+msgstr "Gailuaren informazioa"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "Device Summary"
+#, kde-format
 msgctxt "@title"
 msgid "Device Summary"
 msgstr "Gailuaren laburpena"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:67
-#, fuzzy, kde-format
-#| msgid "Device Manual"
+#, kde-format
 msgctxt "@title"
 msgid "Device Manual"
 msgstr "Gailuaren eskuliburua"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:75
-#, fuzzy, kde-format
-#| msgid "About Driver"
+#, kde-format
 msgctxt "@title"
 msgid "About Driver"
-msgstr "Kontrolatzaileari buruz"
+msgstr "Gidariari buruz"
 
 #: core/utilities/import/dialogs/cameramessagebox.cpp:132
-#, fuzzy, kde-format
-#| msgid "Thumb"
+#, kde-format
 msgctxt "@title"
 msgid "Thumb"
 msgstr "Koadro txikia"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
-msgstr "Kapturatu %1(e)tik"
+msgstr "Atzeman %1(e)tik"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Capture"
-msgstr "Kapturatu"
+msgstr "Atzeman"
 
 #: core/utilities/import/items/importcategorydrawer.cpp:216
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown Format"
-msgstr "Ezezaguna"
+msgstr "Formatu ezezaguna"
 
 #: core/utilities/import/items/importoverlays.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item is locked."
-msgstr "Irudi honek ez dauka kolore-kudeaketarik."
+msgstr "Elementu hau giltzatuta dago."
 
 #: core/utilities/import/items/importoverlays.cpp:238
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has an unknown download status"
-msgstr "Irudi honek ez dauka kolore-kudeaketarik."
+msgstr "Elementu honek zama-jaiste egoera ezezaguna du"
 
 #: core/utilities/import/items/importoverlays.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has never been downloaded"
-msgstr "Irudi honek ez dauka kolore-kudeaketarik."
+msgstr "Elementu hau ez da inoiz zama-jaitsi"
 
 #: core/utilities/import/items/importoverlays.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
-msgstr ""
+msgstr "Elementu hau jada zama-jaitsi da"
 
 #: core/utilities/import/main/importui.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set how digiKam will rename files as they are downloaded."
+#, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr ""
-"Ezarri digiKam-ek nola aldatuko dituen fitxategien izenak deskargatu bezain "
-"laster."
+"Zama-jaistean digiKam-ek fitxategiak nola berrizendatuko dituen ezarri."
 
 #: core/utilities/import/main/importui.cpp:157
-#, fuzzy, kde-format
-#| msgid "File Renaming Options"
+#, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
-msgstr "Fitxategien izenak aldatzeko aukerak"
+msgstr "Fitxategiak berrizendatzeko aukerak"
 
 #: core/utilities/import/main/importui.cpp:163
-#, fuzzy, kde-format
-#| msgid "Auto-creation of Albums"
+#, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Albumen sorrera automatikoa"
@@ -62096,113 +61930,112 @@ msgid "On the Fly Operations (JPEG only)"
 msgstr "Zuzeneko eragiketak (JPEG soilik)"
 
 #: core/utilities/import/main/importui.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
-msgstr "Ezarpen arruntak"
+msgstr "DNG bihurtzeko aukerak"
 
 #: core/utilities/import/main/importui.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Scripting"
-msgstr "Scriptgintza"
+msgstr "Gidoigintza"
 
 #: core/utilities/import/main/importui.cpp:189
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "Ezarpenak"
 
 #: core/utilities/import/main/importui.cpp:204
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Utzi"
 
 #: core/utilities/import/main/importui.cpp:211
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Informazioa"
 
 #: core/utilities/import/main/importui.cpp:218
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
-msgstr "Kapturatu"
+msgstr "Atzeman"
 
 #: core/utilities/import/main/importui.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
-msgstr "Hautatu denak"
+msgstr "Hautatu dena"
 
 #: core/utilities/import/main/importui.cpp:238
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Bat ere ez hautatu"
 
 #: core/utilities/import/main/importui.cpp:246
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Alderantzikatu hautapena"
 
 #: core/utilities/import/main/importui.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Hautatu elementu berriak"
 
 #: core/utilities/import/main/importui.cpp:261
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
-msgstr "Hautatu blokeatutako elementuak"
+msgstr "Hautatu giltzatutako elementuak"
 
 #: core/utilities/import/main/importui.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Download"
-msgstr "Deskargatu"
+msgstr "Zama-jaitsi"
 
 #: core/utilities/import/main/importui.cpp:274
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download New"
-msgstr "Deskargatu"
+msgstr "Berria zama-jaitsi"
 
 #: core/utilities/import/main/importui.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download Selected"
-msgstr "Deskargatu hautatutakoak"
+msgstr "Zama-jaitsi hautatutakoa"
 
 #: core/utilities/import/main/importui.cpp:291
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download All"
-msgstr "Deskargatu guztiak"
+msgstr "Zama-jaitsi dena"
 
 #: core/utilities/import/main/importui.cpp:299
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
-msgstr "Deskargatu/Ezabatu guztiak"
+msgstr "Zama-jaitsi eta berria ezabatu"
 
 #: core/utilities/import/main/importui.cpp:307
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
-msgstr "Deskargatu/Ezabatu hautatutakoak"
+msgstr "Zama-jaitsi eta hautatutakoa ezabatu"
 
 #: core/utilities/import/main/importui.cpp:315
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
-msgstr "Deskargatu/Ezabatu guztiak"
+msgstr "Zama-jaitsi eta dena ezabatu"
 
 #: core/utilities/import/main/importui.cpp:322
 #, kde-format
@@ -62211,43 +62044,43 @@ msgid "Upload..."
 msgstr "Zama-igo..."
 
 #: core/utilities/import/main/importui.cpp:330
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
-msgstr "Txandakatu blokeoa"
+msgstr "Txandakatu giltzatzea"
 
 #: core/utilities/import/main/importui.cpp:338
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
-msgstr "Markatu deskargatuta gisa"
+msgstr "Markatu zama-jaitsitako gisa"
 
 #: core/utilities/import/main/importui.cpp:345
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Ezabatu"
 
 #: core/utilities/import/main/importui.cpp:350
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Ezabatu hautatutakoa"
 
 #: core/utilities/import/main/importui.cpp:358
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Ezabatuta dena"
 
 #: core/utilities/import/main/importui.cpp:364
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
-msgstr "Ezabatu fitxategia"
+msgstr "Ezabatu berria"
 
 #: core/utilities/import/main/importui.cpp:372
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Ikuspegiak"
@@ -62259,10 +62092,10 @@ msgid "Thumbnails"
 msgstr "Koadro txikiak"
 
 #: core/utilities/import/main/importui.cpp:383
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
-msgstr "Aurreko irudia"
+msgstr "Aurreikusi elementua"
 
 #: core/utilities/import/main/importui.cpp:393
 #, kde-format
@@ -62271,212 +62104,210 @@ msgid "Map"
 msgstr "Mapa"
 
 #: core/utilities/import/main/importui.cpp:405
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Sailkatu elementuak"
 
 #: core/utilities/import/main/importui.cpp:406
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
-msgstr "Balioa album bateko irudiak koadro txikien ikuspegian ordenatzeko."
+msgstr ""
+"Koadro txikien ikuspegian elementuak zein balioren arabera sailkatzen diren"
 
 #: core/utilities/import/main/importui.cpp:411
-#, fuzzy, kde-format
-#| msgid "By Name"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Izenaren arabera"
 
 #: core/utilities/import/main/importui.cpp:412
-#, fuzzy, kde-format
-#| msgid "By Path"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Bide-izenaren arabera"
 
 #: core/utilities/import/main/importui.cpp:413
-#, fuzzy, kde-format
-#| msgid "By Date"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Dataren arabera"
 
 #: core/utilities/import/main/importui.cpp:414
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Neurriaren arabera"
 
 #: core/utilities/import/main/importui.cpp:415
-#, fuzzy, kde-format
-#| msgid "By Rating"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Balorazioaren arabera"
 
 #: core/utilities/import/main/importui.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
-msgstr "Deskargatu hautatutakoak"
+msgstr "Zama-jaiste egoeraren arabera"
 
 #: core/utilities/import/main/importui.cpp:440
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
-msgstr "Irudiak ordenatzeko &ordena"
+msgstr "Elementua sailkatzeko &hurrenkera"
 
 #: core/utilities/import/main/importui.cpp:441
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
-msgstr "Definitu irudiak goranzko edo beheranzko moduan ordenatuko diren."
+msgstr ""
+"Elementuak hurrenkera gorakorrean edo beherakorrean sailkatzen diren "
+"definitzen du."
 
 #: core/utilities/import/main/importui.cpp:445
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
-msgstr "Gorantz"
+msgstr "Gorakorra"
 
 #: core/utilities/import/main/importui.cpp:447
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
-msgstr "Beherantz"
+msgstr "Beherakorra"
 
 #: core/utilities/import/main/importui.cpp:459
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
-msgstr "&Taldekatu irudiak"
+msgstr "Elementuak &taldekatu"
 
 #: core/utilities/import/main/importui.cpp:460
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
-msgstr "Irudiak koadro txikien ikuspegian zein kategoriatan bistaratuko diren."
+msgstr "Koadro txikien ikuspegian elementuak zein kategoriatan azaltzen diren"
 
 #: core/utilities/import/main/importui.cpp:465
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Zerrenda laua"
 
 #: core/utilities/import/main/importui.cpp:466
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Karpetaren arabera"
 
 #: core/utilities/import/main/importui.cpp:467
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Formatuaren arabera"
 
 #: core/utilities/import/main/importui.cpp:468
-#, fuzzy, kde-format
-#| msgid "By Date"
+#, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Dataren arabera"
 
 #: core/utilities/import/main/importui.cpp:494
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
-msgstr "Doitu &leihora"
+msgstr "Egokitu &leihora"
 
 #: core/utilities/import/main/importui.cpp:499
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Zoom % 100era"
 
 #: core/utilities/import/main/importui.cpp:517
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Erakutsi historia"
 
 #: core/utilities/import/main/importui.cpp:523
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Erakutsi koadro txikien barra"
 
 #: core/utilities/import/main/importui.cpp:558
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
-msgstr "Saiatu berriro"
+msgstr "Berriz saiatu"
 
 #: core/utilities/import/main/importui.cpp:783
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Irten aurreikuspegi modutik"
 
 #: core/utilities/import/main/importui.cpp:788
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Hurrengo irudia"
 
 #: core/utilities/import/main/importui.cpp:800
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
-msgstr "Lehenengo irudia"
+msgstr "Lehen irudia"
 
 #: core/utilities/import/main/importui.cpp:805
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Azken irudia"
 
 #: core/utilities/import/main/importui.cpp:906
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
-msgstr "Uneko eragiketa bertan behera uzten. Itxaron..."
+msgstr "Uneko eragiketa bertan behera uzten, itxoin mesedez..."
 
 #: core/utilities/import/main/importui.cpp:962
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 "Elkarrizketa-koadroa itxi eta uneko eragiketa bertan behera uztea nahi duzu?"
 
 #: core/utilities/import/main/importui.cpp:972
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
-msgstr "Kameratik deskonektatzen. Itxaron..."
+msgstr "Kameratik deskonektatzen, itxoin mesedez..."
 
 #: core/utilities/import/main/importui.cpp:1049
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Prest"
 
 #: core/utilities/import/main/importui.cpp:1106
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to connect to the camera. Please make sure it is connected properly "
 "and turned on."
 msgstr ""
-"Huts egin du kamerarekin konektatzean. Ziurtatu ongi konektatuta dagoela eta "
-"piztuta dagoela. Berriro saiatu nahi duzu?"
+"Kamerarekin konektatzea huts egin du. Mesedez, ziurtatu behar bezala "
+"konektatuta eta piztuta dagoela."
 
 #: core/utilities/import/main/importui.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
-msgstr "Hautatu zama-igotzeko irudia"
+msgstr "Hautatu zama-igo beharreko irudia"
 
 #: core/utilities/import/main/importui.cpp:1235
 #, kde-format
@@ -62487,26 +62318,26 @@ msgid ""
 "Space require: %1\n"
 "Available free space: %2"
 msgstr ""
-"Ez dago nahikoa leku kameraren euskarrian irudiak igotzeko.\n"
+"Kameraren euskarrian ez dago irudiak zama-igotzeko behar adina leku huts.\n"
 "\n"
 "Behar den lekua: %1\n"
-"Leku libre erabilgarria: %2"
+"Leku huts erabilgarria: %2"
 
 #: core/utilities/import/main/importui.cpp:1290
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Camera Folder \"%1\" already contains the item \"%2\".\n"
 "Please enter a new filename (without extension):"
 msgstr ""
-"Kameraren <b>%1</b> karpetak dagoeneko badauka <b>%2</b> elementua.<br/"
-">Sartu fitxategi-izen berria (luzapenik gabe):"
+"Kamerako \"%1\" karpetak jada \"%2\" elementua du.\n"
+"Mesedez, sartu fitxategi-izen berri bat (luzapenik gabe):"
 
 #: core/utilities/import/main/importui.cpp:1294
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "Fitxategia badago lehendik ere"
+msgstr "Fitxategia lehendik ere badago"
 
 #: core/utilities/import/main/importui.cpp:1363
 #, kde-format
@@ -62676,22 +62507,23 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:2562
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
-msgstr "Markatu deskargatuta gisa"
+msgstr "Irudiak zama-jaistea bukatu da"
 
 #: core/utilities/import/main/importui.cpp:2588
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
-msgstr "Izen bereko fitxategia (%1) badago lehendik ere %2 karpetan."
+msgstr ""
+"Izen bereko fitxategi bat (\"%1\") lehendik ere badago \"%2\" karpetan."
 
 #: core/utilities/import/main/importui.cpp:2601
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
-msgstr "Huts egin du \"%1\" bide-izenaren albuma bilatzean."
+msgstr "\"%1\" bide-izenerako albuma aurkitzea huts egin du."
 
 #. i18n: ectx: Menu (Device)
 #: core/utilities/import/main/importui5.rc:6
@@ -62705,29 +62537,25 @@ msgid "Camera Folders"
 msgstr "Kameraren karpetak"
 
 #: core/utilities/import/views/cameranamehelper.cpp:27
-#, fuzzy, kde-format
-#| msgid "auto-detected"
+#, kde-format
 msgctxt "in camera model string"
 msgid "auto-detected"
-msgstr "automatikoki detektatuta"
+msgstr "automatikoki antzeman"
 
 #: core/utilities/import/views/importpreviewview.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Escape preview"
-msgstr "Ireki aurrebista"
+msgstr "Ihes aurreikuspegitik"
 
 #: core/utilities/import/views/importpreviewview.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Atzera"
 
 #: core/utilities/import/views/importpreviewview.cpp:187
-#, fuzzy, kde-format
-#| msgid "Forward"
+#, kde-format
 msgctxt "@action: go to next image"
 msgid "Forward"
 msgstr "Aurrera"
@@ -62736,88 +62564,87 @@ msgstr "Aurrera"
 #, kde-format
 msgctxt "@option:check"
 msgid "Write the document name to EXIF"
-msgstr ""
+msgstr "Dokumentuaren izena EXIFen idatzi"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Fix internal date && time"
-msgstr "Finkatu barneko data eta ordua"
+msgstr "Konpondu barneko data eta ordua"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Auto-rotate/flip image"
-msgstr "Auto-biratu/irauli irudia"
+msgstr "Automatikoki biratu/irauli irudia"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Convert to lossless file format"
 msgstr "Bihurtu galerarik gabeko fitxategi-formatura"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:80
-#, fuzzy, kde-format
-#| msgid "New image format:"
+#, kde-format
 msgctxt "@label"
 msgid "New image format:"
-msgstr "Irudiaren formatu berria:"
+msgstr "Irudi-formatu berria:"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
 #: core/utilities/setup/editor/setupversioning.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
-msgstr "LibPNG"
+msgstr "PNG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:83
 #: core/utilities/setup/editor/setupversioning.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
-msgstr "LibTIFF"
+msgstr "TIFF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:84
 #: core/utilities/setup/editor/setupversioning.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
-msgstr "LibPGF"
+msgstr "PGF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:88
 #: core/utilities/setup/editor/setupversioning.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-2000"
-msgstr "JPEG 2000 irudia"
+msgstr "JPEG-2000"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:94
 #: core/utilities/setup/editor/setupversioning.cpp:140
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
-msgstr ""
+msgstr "HEIF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:102
 #: core/utilities/setup/editor/setupversioning.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-XL"
-msgstr "LibJPEG"
+msgstr "JPEG-XL"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:109
 #: core/utilities/setup/editor/setupversioning.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
-msgstr ""
+msgstr "WEBP"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:116
 #: core/utilities/setup/editor/setupversioning.cpp:162
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
-msgstr ""
+msgstr "AVIF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:130
 #, fuzzy, kde-format

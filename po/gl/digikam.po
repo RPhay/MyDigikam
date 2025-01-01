@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-30 02:00+0000\n"
-"PO-Revision-Date: 2024-12-27 19:12+0100\n"
+"POT-Creation-Date: 2025-01-01 01:52+0000\n"
+"PO-Revision-Date: 2024-12-31 09:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3183,11 +3183,9 @@ msgstr "Última busca"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Tamaño das caras:"
+msgstr "Motor facial"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3306,15 +3304,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Seguro que quere eliminar todos os elementos permanentemente?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Selección"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Eliminar"
@@ -22385,31 +22381,7 @@ msgid "A tool to render slideshow"
 msgstr "Unha ferramenta para renderizar a presentación"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22442,16 +22414,17 @@ msgstr ""
 "álbums en modo recursivo, incluíndo os álbums aniñados se os hai.</p> "
 "<p><u>Uso:</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Acceso a "
 "elementos</h1></b></center></nobr></td></tr><tr><td>Elemento anterior:</"
-"td><td>Tecla <i>Arriba</i></td></tr><tr><td></td><td>Tecla <i>RePáx</i></"
-"td><tr><td></td><td>Tecla <i>Esquerda</i></td><tr><td></td><td>Roda do rato "
-"cara arriba</td> </tr><tr><td></td><td>Botón principal</td><tr><td>Seguinte "
-"elemento:</td><td>Tecla <i>Abaixo</i></td></tr><tr><td></td><td>Tecla "
-"<i>AvPáx</i></td><tr><td></td><td>Tecla <i>Dereita</i></td><tr><td></"
-"td><td>Roda do rato cara abaixo</td><tr><td></td><td>Botón secundario</"
-"td><tr><td>Pausa ou inicio:</td><td><i>Espazador</i></td></"
-"tr><tr><td>Configuración da presentación:</td><td>Tecla <i>Alt+P</i></td></"
-"tr><tr><td>Agochar ou amosar as superposicións:</td><td>Tecla <i>Alt+Y</i></"
-"td></tr><tr><td>Saír:</td><td>Tecla <i>Esc</i><td></tr><tr><td colspan="
+"td><td><i>↑</i></td></tr><tr><td></td><td><i>RePáx</i></td><tr><td></"
+"td><td><i>←</i></td><tr><td></td><td>Roda do rato cara arriba</td> </"
+"tr><tr><td></td><td>Botón principal</td><tr><td>Seguinte elemento:</"
+"td><td><i>↓</i></td></tr><tr><td></td><td><i>AvPáx</i></td><tr><td></"
+"td><td><i>→</i></td><tr><td></td><td>Roda do rato cara abaixo</td><tr><td></"
+"td><td>Botón secundario</td><tr><td>Pausa ou inicio:</td><td><i>Espazador</"
+"i></td></tr><tr><td>Avanzar o vídeo:</td><td><i>Ctrl + →</i></td></"
+"tr><tr><td>Atrasar o vídeo:</td><td><i>Ctrl + ←</i></td></"
+"tr><tr><td>Configuración da presentación:</td><td><i>Alt + P</i></td></"
+"tr><tr><td>Agochar ou amosar as superposicións:</td><td><i>Alt + Y</i></td></"
+"tr><tr><td>Saír:</td><td><i>Esc</i><td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Propiedades dos elementos</h1></b></center></"
 "nobr></td></tr><tr><td>Cambiar as etiquetas:</td><td>Use os atallos de "
 "teclado de etiquetas.</td></tr><tr><td>Cambiar a cualificación:</td><td>Use "
@@ -22459,7 +22432,7 @@ msgstr ""
 "de cor:</td><td>Use os atallos de teclados de etiquetas de cores.</td></"
 "tr><tr><td>Cambiar a marca:</td><td>Use os atallos de teclado de marcas.</"
 "td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Outros</h1></b></center></"
-"nobr></td></tr><tr><td>Amosar esta axuda:</td><td>Tecla <i>F1</i></td></tr></"
+"nobr></td></tr><tr><td>Amosar esta axuda:</td><td><i>F1</i></td></tr></"
 "table></qt>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
@@ -22619,8 +22592,7 @@ msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para enviar."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Aviso"
@@ -22640,8 +22612,7 @@ msgstr "Fallou a autenticación. Prema «Continuar» para autenticarse."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Continuar"
@@ -22652,8 +22623,7 @@ msgstr "Continuar"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "Cancelar"
@@ -23742,8 +23712,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Non foi posíbel obter información dos conxuntos de fotos de %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Aviso"
@@ -23758,15 +23727,13 @@ msgstr ""
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "Continuar"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "Cancelar"
@@ -24072,39 +24039,32 @@ msgstr "Fallou a chamada a Google Drive: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Erro"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Exportación a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Exportación de Google Photo"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Aviso"
@@ -24121,16 +24081,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "Continuar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "Cancelar"
@@ -24146,8 +24104,7 @@ msgstr ""
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Erro"
@@ -24159,8 +24116,7 @@ msgid "Failed to save image to %1"
 msgstr "Non foi posíbel gardar a imaxe en %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Aviso"
@@ -24178,22 +24134,19 @@ msgstr ""
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "Continuar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Aviso"
@@ -24211,16 +24164,14 @@ msgstr ""
 "Non se enviou ningunha imaxe á súa conta."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "Aceptar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Erro"
@@ -24247,8 +24198,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Aviso"
@@ -24264,16 +24214,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "Continuar"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "Cancelar"
@@ -27146,16 +27094,13 @@ msgid "The SQLite core database was not found."
 msgstr "Non se atopou a base de datos base de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
 "<p>Se quere comezar cunha nova configuración e un asistente da primeira "
-"execución, elimine o seguinte ficheiro:<br>%1</p>"
+"execución, elimine o seguinte ficheiro:<br/>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -29612,18 +29557,7 @@ msgstr ""
 "contrasinal correcto).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29642,7 +29576,7 @@ msgstr ""
 "preparar as bases de datos de digiKam cos privilexios configurados (como se "
 "indicou antes).</p> <p>…</p> <p>quit</p><p>Nota: Se ten problemas cun "
 "servidor MySQL en sistemas Linux baseados en Ubuntu, use a orde de engadir "
-"no intérprete de MySQL para crear disparadores de MySQL.<br>SET GLOBAL "
+"no intérprete de MySQL para crear disparadores de MySQL.<br/>SET GLOBAL "
 "log_bin_trust_function_creators=1;</p><p>Nota: Se ten unha colección enorme, "
 "debería iniciar o servidor de MySQL con «mysql --max_allowed_packet=128M» ou "
 "cambiar a configuración en «my.ini» ou en «~/.my.cnf».</p>"
@@ -34681,9 +34615,7 @@ msgid "JPEG Quality:"
 msgstr "Calidade de JPEG:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Iniciar"
@@ -42910,10 +42842,9 @@ msgid "A KDE Family Project"
 msgstr "Un proxecto da familia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "© 2001-2024 Equipo de desenvolvedores de digiKam"
+msgstr "© 2001-2025 Equipo de desenvolvemento de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -52178,27 +52109,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:88
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmando a cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:103
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
 #, kde-format
 msgid "Removing face"
 msgstr "Retirando a cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:117
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
 #, kde-format
 msgid "Editing face tag"
 msgstr "Editando a etiqueta facial"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:138
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
 #, kde-format
 msgid "Editing face region"
 msgstr "Editando a rexión facial"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, kde-format
 msgid "Manually adding face"
 msgstr "Engadindo a cara manualmente"
@@ -52400,41 +52331,31 @@ msgid "Face size:"
 msgstr "Tamaño das caras:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Anano"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Pequeno"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Medio"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grande"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Enorme"
@@ -53133,12 +53054,10 @@ msgid "Reference"
 msgstr "Referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
-msgstr "Método de selección de imaxe de referencia"
+msgstr "Método de selección de imaxe de referencia."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
@@ -61416,8 +61335,7 @@ msgid "Sync Metadata and Database"
 msgstr "Sincronizar os metadatos e a base de datos"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Aviso"
@@ -61611,19 +61529,16 @@ msgid "Duplicates for: %1\n"
 msgstr "Duplicados de: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Non hai duplicados"
+msgstr "Non hai elementos duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "1 duplicado"
-msgstr[1] "%1 duplicados"
+msgstr[0] "1 elemento duplicado"
+msgstr[1] "%1 elementos duplicados"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, kde-format
