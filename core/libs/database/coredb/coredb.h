@@ -831,7 +831,7 @@ public:
      * @param imageID          the image that has been modified
      * @param category         the image category that has been modified
      * @param modificationDate the image time-stamp that has been modified
-     * @param filesize         the image file size that has been modified
+     * @param fileSize         the image file size that has been modified
      * @param uniqueHash       the image hash that has been modified
      */
     void updateItem(qlonglong imageID,
@@ -890,6 +890,7 @@ public:
      * Add (or replace) the ItemInformation of the specified item.
      * If there is already an entry, it will be discarded.
      * The QVariantList shall have 9 entries, of types in this order:
+     *
      * 0) Int       rating
      * 1) DateTime* creationDate
      * 2) DateTime* digitizationDate
@@ -899,7 +900,8 @@ public:
      * 6) String    format
      * 7) Int       colorDepth
      * 8) Int       colorModel
-     * ( (*) You can provide the date also as a string in the format Qt::IsoDate)
+     *
+     * \note: you can provide the date also as a string in the format Qt::IsoDate.
      * You can leave out entries from this list, which will then be filled with null values.
      * Indicate the values that you have passed in the ItemInformation flag in the third parameters.
      */
@@ -927,6 +929,7 @@ public:
      * If there is already an entry, it will be discarded.
      * The QVariantList shall have at most 16 entries, of types as defined
      * in the DBSCHEMA and in metadatainfo.h, in this order:
+     *
      *  0) String    make
      *  1) String    model
      *  2) String    lens
@@ -943,7 +946,8 @@ public:
      * 13) Int       meteringMode
      * 14) Double    subjectDistance
      * 15) Double    subjectDistanceCategory
-     * You can leave out entries from this list. Indicate the values that you have
+     *
+     * \note: you can leave out entries from this list. Indicate the values that you have
      * passed in the ImageMetadata flag in the third parameters.
      */
     void addImageMetadata(qlonglong imageID, const QVariantList& infos,
@@ -967,6 +971,7 @@ public:
      * Add (or replace) the VideoMetadata of the specified item.
      * If there is already an entry, it will be discarded.
      * The QVariantList shall have 8 entries, of types in this order:
+     *
      * 0) String    AspectRatio
      * 1) String    AudioBitRate
      * 2) String    AudioChannelType
@@ -974,7 +979,8 @@ public:
      * 4) String    Duration
      * 5) String    FrameRate
      * 6) String    VideoCodec
-     * You can leave out entries from this list, which will then be filled with null values.
+     *
+     * \note: you can leave out entries from this list, which will then be filled with null values.
      * Indicate the values that you have passed in the VideoMetadata flag in the third parameters.
      */
     void addVideoMetadata(qlonglong imageID, const QVariantList& infos,
@@ -998,6 +1004,7 @@ public:
      * Add (or replace) the ItemPosition of the specified item.
      * If there is already an entry, it will be discarded.
      * The QVariantList shall have at most 10 entries, of types in this order:
+     *
      * 0) String    Latitude
      * 1) Double    LatitudeNumber
      * 2) String    Longitude
@@ -1008,7 +1015,8 @@ public:
      * 7) Double    Roll
      * 8) Double    Accuracy
      * 9) String    Description
-     * You can leave out entries from this list. Indicate the values that you have
+     *
+     * \note: you can leave out entries from this list. Indicate the values that you have
      * passed in the ItemInfo flag in the third parameters.
      */
     void addItemPosition(qlonglong imageID, const QVariantList& infos,
@@ -1048,6 +1056,7 @@ public:
     /**
      * Sets the comments for the image. A comment for the image with the same
      * source, language and author will be overwritten.
+     *
      * @param imageID  The imageID of the image
      * @param comment  The comment string
      * @param type     The type of the comment
@@ -1058,6 +1067,7 @@ public:
      *                 If not supported by the source, pass a null string.
      * @param date     Optional information about the date when the comment was written
      *                 If not supported by the source, pass a null string.
+     *
      * @returns the comment ID of the comment
      */
     int setImageComment(qlonglong imageID, const QString& comment, DatabaseComment::Type type,
@@ -1067,6 +1077,7 @@ public:
     /**
      * Changes the properties of a comment.
      * The QVariantList shall have at most 5 entries, of types in this order:
+     *
      * 0) Int       Type
      * 1) String    Language
      * 2) String    Author
@@ -1117,19 +1128,23 @@ public:
     /**
      * Sets the property with the given name for the given image to the specified value and extraValue
      */
-    void setItemCopyrightProperty(qlonglong imageID, const QString& property,
-                                   const QString& value, const QString& extraValue = QString(),
-                                   CopyrightPropertyUnique uniqueness = PropertyUnique);
+    void setItemCopyrightProperty(qlonglong imageID,
+                                  const QString& property,
+                                  const QString& value,
+                                  const QString& extraValue = QString(),
+                                  CopyrightPropertyUnique uniqueness = PropertyUnique);
 
     /**
      * Removes copyright properties for the given image id. All values after the first null value,
      * in order of parameters, are treated as wild cards (you can give value as wildcard; value and
      * extraValue; or property, extraValue and value).
-     * Note that extraValue is ordered before value in this method!
+     *
+     * \warning: extraValue is ordered before value in this method! Take a care to the parameter order.
      */
-    void removeItemCopyrightProperties(qlonglong imageID, const QString& property = QString(),
-                                        const QString& extraValue = QString(),
-                                        const QString& value = QString() /* NOTE parameter order */);
+    void removeItemCopyrightProperties(qlonglong imageID,
+                                       const QString& property = QString(),
+                                       const QString& extraValue = QString(),
+                                       const QString& value = QString());
 
     /**
      * Removes all copyright properties for the given image id.
@@ -1269,6 +1284,7 @@ public:
 
     /**
      * Add a tag for the item
+     *
      * @param imageID the ID of the item
      * @param tagID   the tagID for the tag
      * @param newTag  add to last assigned tag list
@@ -1277,6 +1293,7 @@ public:
 
     /**
      * Add a tag for the item
+     *
      * @param albumID the albumID of the item
      * @param name    the name of the item
      * @param tagID   the tagID for the tag
@@ -1291,6 +1308,7 @@ public:
 
     /**
      * Remove a specific tag for the item
+     *
      * @param imageID the ID of the item
      * @param tagID   the tagID for the tag
      */
@@ -1298,6 +1316,7 @@ public:
 
     /**
      * Remove all tags for the item
+     *
      * @param imageID the ID of the item
      * @param currentTagIds the current tags ids assigned to the item
      */
@@ -1311,6 +1330,7 @@ public:
 
     /**
      * Get a list of names of all the tags for the item
+     *
      * @param imageID the ID of the item
      * @return the list of names of all tags for the item
      */
@@ -1318,6 +1338,7 @@ public:
 
     /**
      * Get a list of IDs of all the tags for the item
+     *
      * @param imageID the ID of the item
      * @return the list of IDs of all tags for the item
      */
@@ -1354,7 +1375,8 @@ public:
      * removes all properties with the given name. If property is null,
      * removes all properties for the given tag.
      * If tagId is -1, removes all image tag properties for the given image.
-     * Note: After the first parameter you give as a wildcard, the following will be ignored and taken as wildcard as well.
+     *
+     * \note: After the first parameter you give as a wildcard, the following will be ignored and taken as wildcard as well.
      */
     void removeImageTagProperties(qlonglong imageId, int tagId = -1, const QString& property = QString(),
                                   const QString& value = QString());
@@ -1362,6 +1384,7 @@ public:
     /**
      * Given a set of items (identified by their IDs),
      * this will see if any of the items has a tag.
+     *
      * @param imageIDList a list of IDs of the items
      * @return true if at least one of the items has a tag
      */
@@ -1370,6 +1393,7 @@ public:
     /**
      * Given a set of items (identified by their IDs),
      * get a list of ID of all common tags
+     *
      * @param imageIDList a list of IDs of the items
      * @return the list of common IDs of the given items
      */
@@ -1403,8 +1427,7 @@ public:
     QList<qlonglong> getImagesWithProperty(const QString& property)                                                 const;
 
     /**
-     * Returns a QMap<QString,int> of ItemInformation.format
-     * -> count of items with that format.
+     * Returns a QMap<QString,int> of ItemInformation.format corresponding to count of items with that format.
      */
     QMap<QString, int> getFormatStatistics()                                                                        const;
     QMap<QString, int> getFormatStatistics(DatabaseItem::Category category)                                         const;
@@ -1419,6 +1442,7 @@ public:
     /**
      * Move the attributes of an item to a different item. Useful when
      * say a file is renamed
+     *
      * @param  srcAlbumID the id of the source album
      * @param  dstAlbumID the id of the destination album
      * @param  srcName    the name of the source file
@@ -1431,6 +1455,7 @@ public:
      * Copy the attributes of an item to a different item. Useful when
      * say a file is copied.
      * The operation fails (returns -1) of src and dest are identical.
+     *
      * @param  srcAlbumID the id of the source album
      * @param  dstAlbumID the id of the destination album
      * @param  srcName    the name of the source file

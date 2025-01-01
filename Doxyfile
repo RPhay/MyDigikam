@@ -278,7 +278,11 @@ EXTRA_SEARCH_MAPPINGS  =
 #---------------------------------------------------------------------------
 GENERATE_LATEX         = YES
 LATEX_OUTPUT           = latex
-LATEX_CMD_NAME         = "\"pdflatex\" -cnf-line=extra_mem_top=12000000 -cnf-line=extra_mem_bot=12000000 -cnf-line=main_memory=12000000"
+
+# NOTE: increase the memory limit to pass the latex to pdf conversion, especially with the dot graph generation which consume RAM.
+
+LATEX_CMD_NAME         = "\"pdflatex\" -cnf-line=extra_mem_top=230000000 -cnf-line=extra_mem_bot=12000000 -cnf-line=main_memory=12000000"
+
 MAKEINDEX_CMD_NAME     = makeindex
 LATEX_MAKEINDEX_CMD    = makeindex
 COMPACT_LATEX          = NO
@@ -372,7 +376,10 @@ DOT_EDGE_ATTR          = "labelfontname=FreeSans,labelfontsize=10"
 DOT_NODE_ATTR          = "shape=box,height=0.2,width=0.4"
 DOT_FONTPATH           =
 CLASS_GRAPH            = YES
-COLLABORATION_GRAPH    = YES
+
+# NOTE: this option explode the RAM usage. To hack later.
+COLLABORATION_GRAPH    = NO
+
 GROUP_GRAPHS           = NO
 UML_LOOK               = YES
 UML_LIMIT_NUM_FIELDS   = 10
@@ -386,7 +393,7 @@ CALLER_GRAPH           = NO
 GRAPHICAL_HIERARCHY    = YES
 DIRECTORY_GRAPH        = NO
 DIR_GRAPH_MAX_DEPTH    = 1
-DOT_IMAGE_FORMAT       = png
+DOT_IMAGE_FORMAT       = jpg
 INTERACTIVE_SVG        = NO
 DOT_PATH               =
 DOTFILE_DIRS           =
