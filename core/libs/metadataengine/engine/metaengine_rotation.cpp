@@ -44,17 +44,7 @@ namespace Digikam
  *  y' = m21 x + m22 y
  *
  * Moreover, all combinations of these rotate/flip operations result in one of the eight
- * matrices defined below.
- * (I did not proof that mathematically, but empirically)
- *
- * static const MetaEngineRotation identity;               //( 1,  0,  0,  1)
- * static const MetaEngineRotation rotate90;               //( 0,  1, -1,  0)
- * static const MetaEngineRotation rotate180;              //(-1,  0,  0, -1)
- * static const MetaEngineRotation rotate270;              //( 0, -1,  1,  0)
- * static const MetaEngineRotation flipHorizontal;         //(-1,  0,  0,  1)
- * static const MetaEngineRotation flipVertical;           //( 1,  0,  0, -1)
- * static const MetaEngineRotation rotate90flipHorizontal; //( 0,  1,  1,  0), first rotate, then flip
- * static const MetaEngineRotation rotate90flipVertical;   //( 0, -1, -1,  0), first rotate, then flip
+ * matrices defined below. This did not proof that mathematically, but empirically.
  */
 
 namespace Matrix
@@ -66,8 +56,8 @@ static const MetaEngineRotation rotate180              (-1,  0,  0, -1);
 static const MetaEngineRotation rotate270              ( 0, -1,  1,  0);
 static const MetaEngineRotation flipHorizontal         (-1,  0,  0,  1);
 static const MetaEngineRotation flipVertical           ( 1,  0,  0, -1);
-static const MetaEngineRotation rotate90flipHorizontal ( 0,  1,  1,  0);
-static const MetaEngineRotation rotate90flipVertical   ( 0, -1, -1,  0);
+static const MetaEngineRotation rotate90flipHorizontal ( 0,  1,  1,  0);    ///< first rotate, then flip
+static const MetaEngineRotation rotate90flipVertical   ( 0, -1, -1,  0);    ///< first rotate, then flip
 
 MetaEngineRotation matrix(MetaEngineRotation::TransformationAction action)
 {

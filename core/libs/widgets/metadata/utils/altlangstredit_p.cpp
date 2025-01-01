@@ -18,9 +18,9 @@ namespace Digikam
 {
 
 /**
- * NOTE: We cannot use KLocale::allLanguagesList() here because KDE only
- * support 2 characters country codes. XMP require 2+2 characters language+country
- * following RFC 3066.
+ * \warning: We cannot use KLocale::allLanguagesList() here because KDE framework only
+ * support 2 characters country codes. XMP require 2+2 characters language+country following RFC 3066.
+ *
  * The format is based on xx-XX using ISO-639 two-letter code with ISO-3166 two-letter country code.
  *
  * List version 1       : babelwiki.babelzilla.org/index.php?title=Language_codes
@@ -29,8 +29,8 @@ namespace Digikam
  *                        List of ISO 639-2 codes (https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes)
  *                        List of ISO 639 macrolanguage (https://en.wikipedia.org/wiki/ISO_639_macrolanguage)
  *
- * NOTE: this lists of RFC3066 map is also used un conversion map from DOnlineTranslator class.
- *       Any changes here must be also backported to DOnlineTranslator class.
+ * \note: this lists of RFC3066 map is also used in conversion map from DOnlineTranslator class.
+ * Any changes here must be also backported to DOnlineTranslator class.
  */
 const LanguageCodeMap s_rfc3066ForXMP =
 {
