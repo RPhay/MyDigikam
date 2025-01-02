@@ -115,13 +115,15 @@ void DPointSelect::setRange(int _minX, int _minY, int _maxX, int _maxY)
 {
     if (_maxX == _minX)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DPointSelect::setRange invalid range: " << _maxX << " == " << _minX << " (for X) ";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DPointSelect::setRange invalid range: "
+                                       << _maxX << " == " << _minX << " (for X) ";
         return;
     }
 
     if (_maxY == _minY)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DPointSelect::setRange invalid range: " << _maxY << " == " << _minY << " (for Y) ";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DPointSelect::setRange invalid range: "
+                                       << _maxY << " == " << _minY << " (for Y) ";
         return;
     }
 
@@ -285,6 +287,8 @@ public:
         : q(qq)
     {
     }
+
+public:
 
     DHueSaturationSelector* q           = nullptr;
     QPixmap                 pixmap;

@@ -166,14 +166,14 @@ public:
      * Sets the chooser mode. The allowed modes are defined
      * in DColorChooserMode.
      *
-     * @param    The chooser mode as defined in DColorChooserMode
+     * @param chooserMode The chooser mode as defined in DColorChooserMode
      */
     void setChooserMode(DColorChooserMode chooserMode);
 
     /**
      * Returns the chooser mode.
      *
-     * @return   The chooser mode (defined in DColorChooserMode)
+     * @return The chooser mode (defined in DColorChooserMode)
      */
     DColorChooserMode chooserMode() const;
 
@@ -216,7 +216,7 @@ public:
     /**
      * Sets the color value (0-255)
      *
-     * @param  colorValue  The color value (0-255)
+     * @param color The color value (0-255)
      */
     void setColorValue(int color);
 
