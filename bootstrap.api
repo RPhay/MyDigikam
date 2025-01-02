@@ -72,7 +72,7 @@ echo "ECM min version : $ECM_MIN_VERSION"
 mkdir -p $BUILDDIR
 cd $BUILDDIR
 
-# Build API HTML section
+# Build API HTML section with Doxygen
 
 $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DBUILD_TESTING=OFF \
@@ -104,9 +104,8 @@ echo -e "---------- to $API_UPLOADURL \n"
 
 rsync -r -v --progress -e ssh $TARBALL_PATH $API_UPLOADURL
 
-rm -fr $TARBALL_PATH
 
-# Build API PDF section
+# Build API PDF section with PDFLatex
 
 cd $CURRENT_DIR/latex
 
@@ -125,4 +124,11 @@ echo -e "---------- to $API_UPLOADURL \n"
 
 rsync -r -v --progress -e ssh $PDF_PATH $API_UPLOADURL
 
+# Build API Epub section using Calibre CLI tool
+
+#ebook-convert refman.pdf refman.epub
+
+# Cleanup
+
+rm -fr $TARBALL_PATH
 rm -fr $CURRENT_DIR/latex
