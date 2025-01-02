@@ -13,7 +13,6 @@
  *
  * ============================================================ */
 
-#include "dconfigdlgwidgets.h"
 #include "dconfigdlgwidgets_p.h"
 
 // Qt include

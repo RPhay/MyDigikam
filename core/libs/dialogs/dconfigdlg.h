@@ -212,8 +212,10 @@ protected:
     /**
      * This constructor can be used by subclasses to provide a custom page widget.
      *
-     * \param widget The DConfigDlgWdg object will be reparented to this object, so you can create
+     * @param widget The DConfigDlgWdg object will be reparented to this object, so you can create
      * it without parent and you are not allowed to delete it.
+     * @param parent The widget parent instance
+     * @param flags The window flags
      */
     DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = Qt::WindowFlags());
     DConfigDlg(DConfigDlgPrivate& dd, DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = Qt::WindowFlags());
