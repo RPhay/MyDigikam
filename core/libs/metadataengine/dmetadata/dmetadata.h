@@ -40,8 +40,6 @@ namespace Digikam
 class Template;
 class IccProfile;
 
-// TODO: merge with MetaEngine class.
-
 class DIGIKAM_EXPORT DMetadata : public MetaEngine
 {
 
@@ -113,8 +111,10 @@ public: // Faces helpers
     /**
      * Set Images Face Map tags in Picassa/Metadatagroup format.
      *
-     * @param write : if true all faces will be written, else update mode:
-     *                search if at least a face tag exist and write if true.
+     * @param facesPath The face  map to register in metadata based on tags stored in Picassa/Metadatagroup
+     * @param write If true all faces will be written, else update mode
+     *              search if at least a face tag exist and write if true.
+     * @param size The size of the area grouping all faces in image.
      */
     bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())       const;
 
