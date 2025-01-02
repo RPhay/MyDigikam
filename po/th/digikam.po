@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 01:52+0000\n"
+"POT-Creation-Date: 2025-01-02 01:51+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -54550,7 +54550,7 @@ msgid "Valley"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
 #, kde-format
 msgid "Terrain"
 msgstr ""
@@ -54666,7 +54666,7 @@ msgid "Coordinate"
 msgstr "พิกัดขั้ว"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Satellite"
 msgstr "ดาวเทียม"
@@ -57377,7 +57377,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:357
 #, kde-format
 msgid "Mercator"
 msgstr ""
@@ -58027,106 +58027,106 @@ msgstr "อัตโนมัติ"
 msgid "Maximum Tile Level"
 msgstr "ขนาดเมทริกซ์:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:167
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:172
 #, fuzzy, kde-format
 msgid "Show Navigation Control"
 msgstr "ควบคุม Gain:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:177
 #, fuzzy, kde-format
 msgid "Show Scale Control"
 msgstr "ความเปรียบต่างภายใน"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:368
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, fuzzy, kde-format
 msgid "Float items"
 msgstr "ไม่มีรายการใด ๆ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:160
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:289
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:290
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "ดาวเทียม"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, fuzzy, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "พลิกทางแนวตั้ง"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:362
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
 #, fuzzy, kde-format
 msgid "Show compass"
 msgstr "แสดงป้ายกำกับต่าง ๆ ของภาพ"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:376
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:378
 #, fuzzy, kde-format
 msgid "Show scale bar"
 msgstr "แสดงวันที่ของกล้อง"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:381
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:383
 #, fuzzy, kde-format
 msgid "Show navigation"
 msgstr "ควบคุม Gain:"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:386
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:399
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:428
 #, fuzzy, kde-format
 msgid "Projection"
 msgstr "คลังภาพ:"

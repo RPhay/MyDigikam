@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 01:52+0000\n"
+"POT-Creation-Date: 2025-01-02 01:51+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -53946,7 +53946,7 @@ msgid "Valley"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
@@ -54065,7 +54065,7 @@ msgid "Coordinate"
 msgstr "Coordonate polare"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
@@ -56781,7 +56781,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:357
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
@@ -57433,108 +57433,108 @@ msgstr "Auto"
 msgid "Maximum Tile Level"
 msgstr "Mărime mozaic: "
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Roadmap"
 msgstr "Hartă rutieră"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:167
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Arată controlul de tip de hartă"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:172
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Arată controlul de navigare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:177
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Arată controlul de scalare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr "Hărți Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:368
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Float items"
 msgstr "Elemente flotante"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:160
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Globul virtual Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:289
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
 msgid "Atlas map"
 msgstr "Hartă Atlas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:290
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sferică"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:362
 #, kde-format
 msgid "Equirectangular"
 msgstr "Echirectangular"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
 #, kde-format
 msgid "Show compass"
 msgstr "Arată compasul"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:376
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:378
 #, kde-format
 msgid "Show scale bar"
 msgstr "Arată bara de măsură"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:381
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:383
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Show navigation"
 msgstr "Arată controlul de navigare"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:386
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgid "Show overview map"
 msgstr "Arată harta sumară"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:399
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:428
 #, kde-format
 msgid "Projection"
 msgstr "Proiecție"

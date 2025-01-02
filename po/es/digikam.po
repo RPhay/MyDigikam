@@ -37,7 +37,7 @@
 # SPDX-FileCopyrightText: 2006, 2007 Pablo de Vicente <pablo.devicente@gmail.com>
 # SPDX-FileCopyrightText: 2007 Alberto Garcia <info@trebol-a.com>
 # SPDX-FileCopyrightText: 2007, 2008 Jaime Robles <jaime@kde.org>
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2013 Aitor Morant <fromhell091@gmail.com>
 # SPDX-FileCopyrightText: 2007, 2008, 2010 Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008, 2010.
@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 01:52+0000\n"
-"PO-Revision-Date: 2024-12-29 12:31+0100\n"
+"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"PO-Revision-Date: 2025-01-01 04:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22499,31 +22499,7 @@ msgid "A tool to render slideshow"
 msgstr "Herramienta para visualizar una presentación"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22564,6 +22540,8 @@ msgstr ""
 "tr><tr><td></td><td>Tecla <i>Derecha</i></td></tr><tr><td></td><td>Rueda del "
 "ratón hacia abajo</td></tr><tr><td></td><td>Botón derecho del ratón</td></"
 "tr><tr><td>Pausa/inicio:</td><td>Tecla <i>Espacio</i></td></"
+"tr><tr><td>Avance de. vídeo:</td><td>Tecla <i>Ctrl+Derecha</i></td></"
+"tr><tr><td>Retroceso del vídeo:</td><td>Tecla <i>Ctrl+Izquierda</i></td></"
 "tr><tr><td>Preferencias de la presentación:</td><td>Tecla <i>Alt+P</i></td></"
 "tr><tr><td>Ocultar/mostrar superposiciones:</td><td>Tecla <i>Alt+Y</i></td></"
 "tr><tr><td>Salir:</td><td>Tecla <i>Esc</i></td></tr><tr><td colspan="
@@ -43114,10 +43092,9 @@ msgid "A KDE Family Project"
 msgstr "Un proyecto de la familia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "© 2001-2024, el equipo de desarrollo de digiKam"
+msgstr "© 2001-2025, el equipo de desarrollo de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -53841,7 +53818,7 @@ msgid "Valley"
 msgstr "Valle"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
 #, kde-format
 msgid "Terrain"
 msgstr "Terreno"
@@ -53952,7 +53929,7 @@ msgid "Coordinate"
 msgstr "Coordenada"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Satellite"
 msgstr "Satélite"
@@ -56558,7 +56535,7 @@ msgstr ""
 "usa en geología estructural para trazar datos direccionales.</p>"
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:357
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
@@ -57181,105 +57158,105 @@ msgstr "hasta"
 msgid "Maximum Tile Level"
 msgstr "Tamaño de cuadrícula máximo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Roadmap"
 msgstr "Mapa de carreteras"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
 #, kde-format
 msgid "Hybrid"
 msgstr "Híbrido"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:167
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Mostrar control de tipo de mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:172
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Mostrar control de navegación"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:177
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Mostrar control de escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:368
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Float items"
 msgstr "Elementos flotantes"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:160
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Globo virtual Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:289
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
 msgid "Atlas map"
 msgstr "Mapa de atlas"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:290
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, kde-format
 msgid "Satellite map"
 msgstr "Mapa de satélite"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap (Vectorial)"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Esférica"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:362
 #, kde-format
 msgid "Equirectangular"
 msgstr "Cilíndrica equidistante"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
 #, kde-format
 msgid "Show compass"
 msgstr "Mostrar brújula"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:376
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:378
 #, kde-format
 msgid "Show scale bar"
 msgstr "Mostrar la barra de escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:381
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:383
 #, kde-format
 msgid "Show navigation"
 msgstr "Mostrar navegación"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:386
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgid "Show overview map"
 msgstr "Mostrar vista general del mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:399
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgid "Other Marble Themes"
 msgstr "Otros temas de Marble"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:428
 #, kde-format
 msgid "Projection"
 msgstr "Proyección"
