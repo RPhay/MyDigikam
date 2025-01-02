@@ -45,10 +45,9 @@ class DIGIKAM_EXPORT DCategoryDrawer : public QObject       // clazy:exclude=cto
     friend class DCategorizedView;
 
 public:
+
     /**
      * Construct a category drawer for a given view
-     *
-     * @since 5.0
      */
     explicit DCategoryDrawer(DCategorizedView* const view);
     ~DCategoryDrawer()                                            override;
@@ -60,7 +59,11 @@ public:
 
     /**
      * This method purpose is to draw a category represented by the given
-     * @param index with the given @param sortRole sorting role
+     *
+     * @param index with the given
+     * @param sortRole sorting role
+     * @param option painter style options
+     * @param painter painter instance
      *
      * @note This method will be called one time per category, always with the
      *       first element in that category

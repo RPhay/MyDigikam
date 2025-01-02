@@ -33,12 +33,15 @@ namespace Digikam
 class Q_DECL_HIDDEN DCategoryDrawer::Private
 {
 public:
+
     explicit Private(DCategorizedView* const view)
         : view(view)
     {
     }
 
     ~Private() = default;
+
+public:
 
     DCategorizedView* view = nullptr;
 };
