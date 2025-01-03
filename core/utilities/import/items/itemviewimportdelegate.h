@@ -30,9 +30,10 @@ class ImportFilterModel;
 class ImportItemModel;
 class ItemViewImportDelegatePrivate;
 
-/// NOTE: Some reuse of the existing model-view classes.
+// NOTE: Some reuse of the existing model-view classes.
 
-class ItemViewImportDelegate : public DItemDelegate, public ItemDelegateOverlayContainer
+class ItemViewImportDelegate : public DItemDelegate,
+                               public ItemDelegateOverlayContainer
 {
     Q_OBJECT
 

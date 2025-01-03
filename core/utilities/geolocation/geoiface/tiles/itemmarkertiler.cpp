@@ -333,6 +333,8 @@ void ItemMarkerTiler::slotSourceModelReset()
 
 /**
  * @brief Remove a marker from the grid
+ *
+ * @param markerIndex     The marker index to remove
  * @param ignoreSelection Do not remove the marker from the count of selected items.
  *                        This is only used by slotSourceModelRowsAboutToBeRemoved internally,
  *                        because the selection model sends us an extra signal about the deselection.

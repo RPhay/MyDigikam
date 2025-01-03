@@ -61,6 +61,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString           configSplitterStateEntry    = QLatin1String("SplitterState");
 
     QToolButton*            saveBtn                     = nullptr;
@@ -81,10 +83,12 @@ public:
 
 /**
  * @brief Constructor
- * @param parent the parent object.
- * @param searchModel The model that stores the searches.
- * @param imageFilterModel The image model used by displaying the selected images on map.
- * @param itemSelectionModel The selection model corresponding to the imageFilterModel.
+ *
+ * @param parent                    The parent object.
+ * @param searchModel               The model that stores the searches.
+ * @param searchModificationHelper  The helper instance to perform the searches.
+ * @param imageFilterModel          The image model used by displaying the selected images on map.
+ * @param itemSelectionModel        The selection model corresponding to the imageFilterModel.
  */
 GPSSearchView::GPSSearchView(QWidget* const parent,
                              SearchModel* const searchModel,
@@ -96,9 +100,6 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
       d                (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-
-    /// @todo Really?
-
     setAcceptDrops(true);
 
     d->imageAlbumModel        = qobject_cast<ItemAlbumModel*>(imageFilterModel->sourceModel());
@@ -183,10 +184,8 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
                                              MouseModeFilter        |
                                              MouseModeSelectThumbnail);
 
-    /**
-     * construct a second row of control actions below the control widget
-     * @todo Should we still replace the icons of the actions with text as discussed during the sprint?
-     */
+    // construct a second row of control actions below the control widget
+
     QWidget* const secondActionRow            = new QWidget();
     QHBoxLayout* const secondActionRowHBox    = new QHBoxLayout();
     secondActionRowHBox->setContentsMargins(QMargins());

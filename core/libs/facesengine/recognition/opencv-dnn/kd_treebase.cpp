@@ -27,7 +27,7 @@ class Q_DECL_HIDDEN KDTreeBase::Private
 public:
 
     Private(int dim, int threshold)
-        : nbDimension(dim),
+        : nbDimension (dim),
           mapThreshold(threshold)
     {
     }
@@ -50,9 +50,9 @@ public:
 };
 
 KDTreeBase::KDTreeBase(
-    int dim,
-    int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
-)
+                       int dim,
+                       int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
+                      )
     : d(new Private(dim, threshold))
 {
     /**

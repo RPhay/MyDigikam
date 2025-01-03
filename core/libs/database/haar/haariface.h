@@ -210,7 +210,9 @@ public:
 
     /**
      * This method rebuilds the given SAlbums using the given results.
+     *
      * @param results Map of duplicates images found over a list of images.
+     * @param isAlbumUpdate if true update the SAlbums in the database.
      */
     static void rebuildDuplicatesAlbums(const DuplicatesResultsMap& results, bool isAlbumUpdate);
 
@@ -229,7 +231,9 @@ public:
 
     /**
      * This method loads a QImage from the given filename.
+     *
      * @param filename the name of the file (path)
+     *
      * @return A QImage, non-null on success.
      */
     QImage loadQImage(const QString& filename);
@@ -240,6 +244,7 @@ private:
 
     /**
      * This method writes the search results to the SearchXml structure.
+     *
      * @param searchResults The results to write as XML.
      */
     static QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
@@ -251,6 +256,7 @@ private:
 
     /**
      * @brief bestMatchesWithThreshold
+     *
      * @param imageid
      * @param querySig
      * @param requiredPercentage
@@ -258,6 +264,7 @@ private:
      * @param targetAlbums
      * @param searchResultRestriction
      * @param type
+     *
      * @return (av. similarity, Maps with images and similarity)
      */
     QPair<double, QMap<qlonglong, double> > bestMatchesWithThreshold(qlonglong imageid,
@@ -270,11 +277,13 @@ private:
 
     /**
      * This method is the core functionality: It assigns a score to every image in the database.
+     *
      * @param data The signature of the original image for score calculation.
      * @param type The type of the sketch, e.g. scanned.
      * @param searchResultRestriction restrictions to apply to the generated map, i.e. None (default), same album or different album.
      * @param originalImageId the id of the original image to compare to other images. -1 is only used for sketch search.
      * @param albumId The album which images must or must not belong to (depending on searchResultRestriction).
+     *
      * @return The map of image ids and scores which fulfill the restrictions, if any.
      */
     QMap<qlonglong, double> searchDatabase(Haar::SignatureData* const data,

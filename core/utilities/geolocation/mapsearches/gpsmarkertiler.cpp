@@ -78,6 +78,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<InternalJobs>           jobs;
     ThumbnailLoadThread*          thumbnailLoadThread       = nullptr;
     QHash<qlonglong, QVariant>    thumbnailMap;
@@ -93,7 +95,9 @@ public:
 
 /**
  * @brief Constructor
- * @param parent the parent object
+ * @param parent            The parent object
+ * @param imageFilterModel  The image filter instance
+ * @param selectionModel    The selection model instance
  */
 GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
                                ItemFilterModel* const imageFilterModel,
@@ -255,6 +259,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
 
 /**
  * @brief Returns a pointer to a tile.
+ *
  * @param tileIndex The index of a tile.
  * @param stopIfEmpty Determines whether child tiles are also created for empty tiles.
  */
@@ -337,8 +342,10 @@ int GPSMarkerTiler::getTileSelectedCount(const TileIndex& tileIndex)
 
 /**
  * @brief This function finds the best representative marker from a tile of markers.
+ *
  * @param tileIndex Index of the tile from which the best marker should be found.
  * @param sortKey Sets the criteria for selecting the representative thumbnail, a combination of the SortOptions bits.
+ *
  * @return Returns the internally used index of the marker.
  */
 QVariant GPSMarkerTiler::getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)
@@ -382,8 +389,10 @@ QVariant GPSMarkerTiler::getTileRepresentativeMarker(const TileIndex& tileIndex,
 
 /**
  * @brief This function finds the best representative marker from a group of markers. This is needed to display a thumbnail for a marker group.
+ *
  * @param indices A list containing markers, obtained by getTileRepresentativeMarker.
  * @param sortKey Sets the criteria for selecting the representative thumbnail, a combination of the SortOptions bits.
+ *
  * @return Returns the internally used index of the marker.
  */
 QVariant GPSMarkerTiler::bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)
@@ -425,8 +434,10 @@ QVariant GPSMarkerTiler::bestRepresentativeIndexFromList(const QList<QVariant>& 
 
 /**
  * @brief This function retrieves the thumbnail for an index.
+ *
  * @param index The marker's index.
  * @param size The size of the thumbnail.
+ *
  * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned.
  * If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
  */

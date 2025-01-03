@@ -43,21 +43,27 @@ public:
 
     /**
      * @brief Deletes image to the trash of a particular collection
+     *
      * @param imagePath: path to image
      * @param deleteTime: delete time from the image
+     *
      * @return true if the image was deleted
      */
     static bool deleteImage(const QString& imagePath, const QDateTime& deleteTime);
 
     /**
      * @brief Deletes a whole folder from the collection
+     *
      * @param dirToDelete: path to folder
+     * @param deleteTime: delete time from the image
+     *
      * @return true if folder was deleted
      */
     static bool deleteDirRecursivley(const QString& dirToDelete, const QDateTime& deleteTime);
 
     /**
      * @brief Extracts the data from json file and gives it to DTrashItemInfo
+     *
      * @param collPath: path to collection
      * @param baseName: name of the file inside the trash
      * @param itemInfo: item to extract data to it
@@ -68,7 +74,9 @@ private:
 
     /**
      * @brief Ensures that the trash caching folder exists before moving items to trash
+     *
      * @param collectionPath: the full path to the collection to prepare the trash for
+     *
      * @return true if the trash is prepared successfully
      */
     static bool prepareCollectionTrash(const QString& collectionPath);
@@ -76,6 +84,7 @@ private:
     /**
      * @brief Creates a json file containing the image path and deletion timestamp
      *        and return the baseName for this json file
+     *
      * @param imageId: the image id for the file
      * @param imagePath: path of image to create json file for
      * @param deleteTime: delete time from the image
@@ -92,6 +101,7 @@ private:
     /**
      * @brief Checks for duplicates of files names inside the trash and if there is
      *        a duplication it does a simple versioning recursively
+     *
      * @param collectionPath: path of collection that the image belongs to
      * @param baseName: the baseName of the image
      * @param version: a digit to append to the image baseName

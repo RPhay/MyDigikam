@@ -45,6 +45,12 @@ class KDTreeBase
 
 public:
 
+    /**
+     * @brief: Constructor of the class implementing the KD-Tree for vector space partitioning.
+     *
+     * @param: dim             The dimmension of the tree.
+     * @param: kdtreeThreshold The KD-Tree threshold. Above this value, we start using the KD-Tree instead of the vector.
+     */
     explicit KDTreeBase(int dim, int kdtreeThreshold);
     virtual ~KDTreeBase();
 
@@ -57,19 +63,23 @@ public:
 
     /**
      * @brief add new node to KD-Tree
+     *
      * @param position : K-dimension vector
      * @param identity : identity of this face vector
-     * @return
+     *
+     * @return the KD-Tree node base instance
      */
     virtual KDNodeBase* add(const cv::Mat& position, const int identity);
 
     /**
      * @brief create an ew node
+     *
      * @param nodePos   : extracted face vectors
      * @param identity  : identity of this face vector
      * @param splitAxis : current axis/dimension of the vector
      * @param dimension : number of dimensions (usually 128)
-     * @return : KDNodeBase pointer
+     *
+     * @return the KD-Tree node base instance
      */
     virtual KDNodeBase* createNode(const cv::Mat& nodePos,
                                    const int identity,

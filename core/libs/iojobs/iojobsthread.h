@@ -38,67 +38,72 @@ public:
 
     /**
      * @brief Starts a number of jobs to copy or move source files to destination
+     *
      * @param data: IOJobsData container
      */
     void copyOrMove(IOJobData* const data);
 
     /**
      * @brief Starts a number of jobs to delete multiple files
+     *
      * @param data: IOJobsData container
      */
     void deleteFiles(IOJobData* const data);
 
     /**
      * @brief Starts one job to rename a file to a new name
+     *
      * @param data: IOJobsData container
      */
     void renameFile(IOJobData* const data);
 
     /**
      * @brief Starts a job for listing trash items in a collection
+     *
      * @param collectionPath
      */
     void listDTrashItems(const QString& collectionPath);
 
     /**
      * @brief creates a job for every item to restore back to album
+     *
      * @param data: IOJobsData container
      */
     void restoreDTrashItems(IOJobData* const data);
 
     /**
      * @brief creates a job for every item to delete from collection trash
+     *
      * @param data: IOJobsData container
      */
     void emptyDTrashItems(IOJobData* const data);
 
     /**
      * @brief creates a job for count trash items from all collections
-     * @param data: IOJobsData container
      */
     void buildTrashCounters();
 
     /**
      * @brief isCanceled
+     *
      * @return true if the thread was interrupted
      */
     bool isCanceled() const;
 
     /**
      * @brief hasErrors
+     *
      * @return true if string list was not empty
      */
     bool hasErrors() const;
 
     /**
-     * @brief errorsList
-     * @return
+     * @return the current errors list
      */
     QStringList& errorsList() const;
 
     /**
-     * @brief jobData
-     * @return
+     * @return the current data job instance
      */
     IOJobData* jobData() const;
 
@@ -123,6 +128,7 @@ private:
 
     /**
      * @brief connects the job with signals/slots
+     *
      * @param job to be connected
      */
     void connectOneJob(IOJob* const j);
@@ -137,6 +143,7 @@ private Q_SLOTS:
 
     /**
      * @brief A slot to receive the error from the job
+     *
      * @param errString: string to be appended
      */
     void slotError(const QString& errString);
