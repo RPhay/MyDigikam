@@ -91,7 +91,17 @@ void VideoThumbDecoder::destroy()
 
     if (d->pVideoCodecContext)
     {
+
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(61, 3, 100)
+
+        avcodec_free_context(&d->pVideoCodecContext);
+
+#else
+
         avcodec_close(d->pVideoCodecContext);
+
+#endif
+
         d->pVideoCodecContext = nullptr;
     }
 
