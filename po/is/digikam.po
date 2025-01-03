@@ -25,13 +25,13 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Sveinn í Felli <sv1@fellsnet.is>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-02 01:51+0000\n"
-"PO-Revision-Date: 2024-12-18 09:21+0000\n"
+"PO-Revision-Date: 2025-01-02 09:37+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3138,11 +3138,9 @@ msgstr "Síðasta leit"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Vél"
+msgstr "FacesEngine"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3259,15 +3257,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ertu viss um að þú viljir eyða öllum atriðum endanlega?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Val"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Eyða"
@@ -22157,31 +22153,7 @@ msgid "A tool to render slideshow"
 msgstr "Verkfæri til að myndgera skyggnusýningu"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22220,16 +22192,18 @@ msgstr ""
 "td></tr><tr><td></td><td><i>PgDown</i>-lykill</td></tr><tr><td></"
 "td><td><i>Hægri</i>-lykill</td></tr><tr><td></td><td>Músarhjól niður</td></"
 "tr><tr><td></td><td>Hægri músarhnappur</td></tr><tr><td>Bið/Spila:</"
-"td><td><i>Bilslár</i>-lykill</td></tr><tr><td>Stillingar skyggnusýningar:</"
-"td><td><i>Alt+P</i>-lykill</td></tr><tr><td>Fela/Sýna yfirlög:</td><td><i>Alt"
-"+Y</i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</td></"
-"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Eiginleikar atriða</h1></b></"
-"center></nobr></td></tr><tr><td>Breyta merkjum:</td><td>Nota flýtilykla "
-"fyrir merki</td></tr><tr><td>Breyta einkunn:</td><td>Nota flýtilykla fyrir "
-"einkunnir</td></tr><tr><td>Breyta litmerki:</td><td>Nota flýtilykla fyrir "
-"litmerkingar</td></tr><tr><td>Breyta sérmerkingu:</td><td>Nota flýtilykla "
-"fyrir sérmerkingar</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Annað</h1></b></center></nobr></td></"
+"td><td><i>Bilslár</i>-lykill</td></tr><tr><td>Myndskeið áfram:</"
+"td><td><i>Ctrl+Hægri</i>-lykill</td></tr><tr><td>Myndskeið afturábak:</"
+"td><td><i>Ctrl+Vinstri</i>-lykill</td></tr><tr><td>Stillingar "
+"skyggnusýningar:</td><td><i>Alt+P</i>-lykill</td></tr><tr><td>Fela/Sýna "
+"yfirlög:</td><td><i>Alt+Y</i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</"
+"i>-lykill</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Eiginleikar "
+"atriða</h1></b></center></nobr></td></tr><tr><td>Breyta merkjum:</"
+"td><td>Nota flýtilykla fyrir merki</td></tr><tr><td>Breyta einkunn:</"
+"td><td>Nota flýtilykla fyrir einkunnir</td></tr><tr><td>Breyta litmerki:</"
+"td><td>Nota flýtilykla fyrir litmerkingar</td></tr><tr><td>Breyta "
+"sérmerkingu:</td><td>Nota flýtilykla fyrir sérmerkingar</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Annað</h1></b></center></nobr></td></"
 "tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-lykill</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
@@ -22388,8 +22362,7 @@ msgstr "Engin mynd valin. Veldu hvaða myndir ætti að senda inn."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -22409,8 +22382,7 @@ msgstr "Auðkenning mistókst. Ýttu á 'Áfram' til að auðkenna."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Halda áfram"
@@ -22421,8 +22393,7 @@ msgstr "Halda áfram"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "Hætta við"
@@ -23505,8 +23476,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Tókst ekki að ná í upplýsingar um myndasett frá %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -23521,15 +23491,13 @@ msgstr ""
 "Viltu halda áfram?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "Halda áfram"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "Hætta við"
@@ -23830,39 +23798,32 @@ msgstr "Google Drive skipun mistókst: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Villa"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Google Drive útflutningur"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Google Photo útflutningur"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -23879,16 +23840,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "Halda áfram"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "Hætta við"
@@ -23904,8 +23863,7 @@ msgstr ""
 "Viltu halda áfram?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Villa"
@@ -23917,8 +23875,7 @@ msgid "Failed to save image to %1"
 msgstr "Tókst ekki að vista mynd í %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -23936,22 +23893,19 @@ msgstr ""
 "Viltu halda áfram?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "Halda áfram"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "Hætta við"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -23969,16 +23923,14 @@ msgstr ""
 "Engin mynd var send inn á notandaaðganginn þinn."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "Í lagi"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Villa"
@@ -24005,8 +23957,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -24023,16 +23974,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "Halda áfram"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "Hætta við"
@@ -26900,10 +26849,7 @@ msgid "The SQLite core database was not found."
 msgstr "SQLite-kjarnagagnagrunnurinn fannst ekki."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
@@ -29340,18 +29286,7 @@ msgstr ""
 "að hafa skipt út <b><i>password</i></b> fyrir rétta lykilorðið).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -34374,9 +34309,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG gæði:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Byrja"
@@ -42572,10 +42505,9 @@ msgid "A KDE Family Project"
 msgstr "Verkefni frá KDE-fjölskyldunni"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2002-2024, digiKam þróunarteymið"
+msgstr "(c) 2001-2025, digiKam þróunarteymið"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -49738,15 +49670,14 @@ msgstr "Skruna þetta atriði á miðja smámyndastiku"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Geyma smámyndir á diski til að flýta fyrir notkun þeirra"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki nota afstöllun við að kvarða litlar "
-"myndir svo þær passi í gluggann."
+"Taktu merkið úr hér ef þú vilt ekki að smámyndir séu geymdar í biðminni á "
+"diski."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -51810,37 +51741,29 @@ msgid "Cancel"
 msgstr "Hætta við"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
-#, fuzzy, kde-format
-#| msgid "Confirm Faces"
+#, kde-format
 msgid "Confirming face"
 msgstr "Staðfesta andlit"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Fjarlægja andlitsmerki?"
+msgstr "Fjarlægja andlit"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Uppfæri andlitagagnagrunn"
+msgstr "Breyta andlitsmerki"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "Fjarlægja þetta andlitssvæði"
+msgstr "Breyta andlitssvæði"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Eftir handvirkri röðun og nafni"
+msgstr "Bæta andliti við handvirkt"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -51938,28 +51861,24 @@ msgstr ""
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Skanna myndir"
+msgstr "Skanna nýjar myndir"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Skanna myndir"
+msgstr "Skanna allar myndir"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Þekkja andlit"
+msgstr "Einungis þekkja andlit"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
@@ -52042,41 +51961,31 @@ msgid "Face size:"
 msgstr "Stærð andlita:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Mjög lítil"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Lítil"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Miðlungs"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Stór"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Mjög stór"
@@ -52776,9 +52685,7 @@ msgid "Reference"
 msgstr "Tilvísun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Aðferð við val viðmiðunarmyndar"
@@ -60884,16 +60791,10 @@ msgid "Reset and clear all faces and training"
 msgstr "Endurstilla og hreinsa út öll andlit og þjálfunargögn"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "This will clear all detected and tagged faces, and then rescan images to "
-#| "detect faces."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr ""
-"Þetta mun hreinsa út öll greind og merkt andlit og síðan endurskanna myndir "
-"til að finna andlit að nýju."
+msgstr "Þetta mun hreinsa út öll greind og merkt andlit."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
@@ -61028,18 +60929,13 @@ msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Aðvörun"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:400
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-#| "faces? You’ll need to start tagging unknown faces again before any faces "
-#| "can be recognized."
+#, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
 "faces? You’ll need to rescan images and start tagging unknown faces again "
@@ -61227,15 +61123,12 @@ msgid "Duplicates for: %1\n"
 msgstr "Tvítekningar fyrir: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
 msgstr "Engar tvítekningar"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "1 tvítekning"
@@ -61336,22 +61229,19 @@ msgstr[1] "%1 andlit"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
-#, fuzzy, kde-format
-#| msgid "Enable face detection"
+#, kde-format
 msgid "Error starting face detection."
-msgstr "Virkja andlitaskönnun"
+msgstr "Villa við að ræsa andlitaskönnun."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Myndir fundust í %1"
+msgstr "Andlit fundust: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Myndir fundust í %1"
+msgstr "Andlit fannst: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

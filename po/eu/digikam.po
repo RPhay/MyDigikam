@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-02 01:51+0000\n"
-"PO-Revision-Date: 2025-01-01 22:03+0100\n"
+"PO-Revision-Date: 2025-01-02 08:40+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1124,7 +1124,7 @@ msgstr "Marka/eredua:"
 #, kde-format
 msgctxt "camera lens"
 msgid "Lens:"
-msgstr "Lentea:"
+msgstr "Objektiboa:"
 
 #: core/app/items/utils/tooltipfiller.cpp:205
 #: core/app/items/utils/tooltipfiller.cpp:210
@@ -3330,7 +3330,8 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-msgstr "Gehitu JPEG-XL; WEBP, eta AVIF bihurtzaileak sortailara kudeatzailean."
+msgstr ""
+"Gehitu JPEG-XL; WEBP, eta AVIF bihurtzaileak sorta ilara kudeatzailean."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
@@ -3720,12 +3721,12 @@ msgstr ""
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
-msgstr "Ongi etorri digiKam %1 bertsiora"
+msgstr "Ongi etorri digiKam %1(e)ra"
 
 #: core/app/views/stack/welcomepageview.cpp:242
 #, kde-format
 msgid "Background Image Credits"
-msgstr "Atzealdeko irudien merituak"
+msgstr "Atzeko planoko irudiaren merituak"
 
 #: core/app/views/stack/welcomepageview.cpp:245
 #, kde-format
@@ -3736,7 +3737,7 @@ msgstr "Egilea:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
-msgstr "Lieu :"
+msgstr "Kokalekua:"
 
 #: core/app/views/stack/welcomepageview.cpp:248
 #, kde-format
@@ -3746,7 +3747,7 @@ msgstr "Kamera:"
 #: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Lens:"
-msgstr "Lentea:"
+msgstr "Objektiboa:"
 
 #: core/app/views/tableview/tableview.cpp:322
 #, kde-format
@@ -3799,7 +3800,7 @@ msgstr "Iraupena"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:102
 #, kde-format
 msgid "Frame rate"
-msgstr "Bilbe tasa"
+msgstr "Fotograma emaria"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:71
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:107
@@ -3816,7 +3817,7 @@ msgstr "Konfiguratu \"%1\" zutabea"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
-msgstr "digiKamen propietateak"
+msgstr "digiKam-en propietateak"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
@@ -3862,7 +3863,7 @@ msgid "Rating"
 msgstr "Balorazioa"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:95
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Aukera etiketa"
@@ -4016,13 +4017,13 @@ msgstr "Pertsonentzako irakurgarria"
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Plain"
-msgstr "Xehea"
+msgstr "Soila"
 
 #: core/app/views/tableview/tableview_column_file.cpp:236
 #: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
-msgstr "Bistaratze formatua"
+msgstr "Azaltzeko formatua"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
@@ -4033,7 +4034,7 @@ msgstr "Geo propietateak"
 #: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
-msgstr "Geo-etiketatua"
+msgstr "Geoetiketatua"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
@@ -4101,7 +4102,7 @@ msgstr "Dimentsioak"
 #: core/app/views/tableview/tableview_column_item.cpp:107
 #, kde-format
 msgid "Pixel count"
-msgstr "Pixelak kopurua"
+msgstr "Pixel kopurua"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:112
@@ -4208,7 +4209,7 @@ msgstr "Sentikortasuna"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Mode/program"
-msgstr "Modua/Programa"
+msgstr "Modua/programa"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:81
 #: core/app/views/tableview/tableview_column_photo.cpp:133
@@ -4527,7 +4528,7 @@ msgstr "Ekualizatu"
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
 #, kde-format
 msgid "Stretch Contrast"
-msgstr "Hedatu kontrastea"
+msgstr "Luzatu kontrastea"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
@@ -4556,7 +4557,7 @@ msgstr "Koloreen zuzenketa automatikoa"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix colors automatically"
-msgstr "Koloreak automatikoki finkatzeko tresna bat"
+msgstr "Koloreak automatikoki konpontzeko tresna bat"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
 #, kde-kuit-format
@@ -4644,7 +4645,7 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:194
 #, kde-format
 msgid "Color Balance"
-msgstr "Kolore-balantzea"
+msgstr "Kolore-oreka"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, kde-format
@@ -4683,7 +4684,7 @@ msgstr "Bihurtu 8 bitetara"
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:33
 #, kde-format
 msgid "Convert color depth from 16 to 8 bits."
-msgstr "Bihurtu kolore-sakonera 16tik 8 bitera."
+msgstr "Kolore-sakonera 16tik 8 bitera bihurtu."
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:42
 #, kde-format
@@ -4743,7 +4744,7 @@ msgstr "Kurbak doitzea"
 #, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
-msgstr "Kurben doiketak egiteko tresna."
+msgstr "Kurben doiketak egitea."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:56
 #, kde-format
@@ -4791,7 +4792,7 @@ msgstr "Zamatu..."
 #, kde-format
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
-msgstr "Zamatu parametro guztiak ezarpenen testu-fitxategitik."
+msgstr "ezarpenen testu-fitxategitik parametro denak zamatu."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:55
@@ -4885,14 +4886,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
-msgstr "Zurien oreka"
+msgstr "Zuri-oreka"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
-msgstr "Zurien oreka doitzeko tresna bat"
+msgstr "Zuri-oreka doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, kde-kuit-format
@@ -4901,14 +4902,14 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
-"<para>Sorta-ilara kudeatzeko tresna honek irudietako zuriaren oreka doitu "
-"dezake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako zuri-oreka doitu dezake."
+"</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To AVIF"
-msgstr "Bihurtu «AVIF»era"
+msgstr "Bihurtu AVIFera"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, kde-format
@@ -4953,7 +4954,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To HEIF"
-msgstr "Bihurtu «HEIF»era"
+msgstr "Bihurtu HEIFera"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, kde-format
@@ -4981,7 +4982,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
-msgstr "Bihurtu «JP2»ra"
+msgstr "Bihurtu JP2ra"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, kde-format
@@ -5006,7 +5007,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JPEG"
-msgstr "Bihurtu «JPEG»ra"
+msgstr "Bihurtu JPEGra"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:57
 #, kde-format
@@ -5030,7 +5031,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JXL"
-msgstr "Bihurtu «JXL»ra"
+msgstr "Bihurtu JXLra"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, kde-format
@@ -5054,7 +5055,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
-msgstr "Bihurtu «PGF»ra"
+msgstr "Bihurtu PGFra"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, kde-format
@@ -5085,7 +5086,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
-msgstr "Bihurtu «PNG»ra"
+msgstr "Bihurtu PNGra"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, kde-format
@@ -5108,7 +5109,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
-msgstr "Bihurtu «TIFF»era"
+msgstr "Bihurtu TIFFera"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, kde-format
@@ -5132,7 +5133,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Convert To WEBP"
-msgstr "Bihurtu «WEBP»ra"
+msgstr "Bihurtu WEBPra"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, kde-format
@@ -5233,10 +5234,9 @@ msgid "User Script: No script."
 msgstr "Erabiltzailearen gidoia: gidoirik ez."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:292
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Erabiltzailearen gidoia: gidoirik ez."
+msgstr "Erabiltzailearen gidoia: Fitxategia irekitzeko errorea."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
@@ -5244,10 +5244,9 @@ msgid "User Script: Timeout from script."
 msgstr "Erabiltzailearen gidoia: gidoiaren denbora-muga."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:317
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "Erabiltzailearen gidoia: gidoirik ez."
+msgstr "Erabiltzailearen gidoia: Errorerik ez."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
@@ -5257,7 +5256,7 @@ msgstr "Erabiltzailearen gidoia: gidoia abiatzea huts egin du."
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr "Erabiltzailearen gidoia: gidoi prozesuak huts egin du."
+msgstr "Erabiltzailearen gidoia: prozesua kraskatu egin da."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
@@ -5265,10 +5264,9 @@ msgid "User Script: Command not found."
 msgstr "Erabiltzaile gidoia: komandoa ez da aurkitu."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:339
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Erabiltzailearen gidoia: gidoirik ez."
+msgstr "Erabiltzailearen gidoia: Errore kodea itzuli du %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, kde-format
@@ -5280,7 +5278,7 @@ msgstr "Erabiltzailearen oskoleko gidoia"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
-msgstr "Norberak finkatutako oskoleko gidoi bat exekutatzeko tresna bat"
+msgstr "Neurrira ipinitako oskoleko gidoi bat exekutatzeko tresna bat"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:62
 #, kde-kuit-format
@@ -5336,7 +5334,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr ""
 "<para>Sorta-ilara kudeatzeko tresna honek irudien gainean ehundura bat "
-"erabil dezake.</para>"
+"aplika dezake.</para>"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
@@ -5348,12 +5346,12 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
-msgstr "Ehundura"
+msgstr "Erabili neurri absolutua"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, kde-format
 msgid "Watermark type: "
-msgstr "Filigrana mota:"
+msgstr "Filigrana mota: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:178
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:533
@@ -5379,7 +5377,7 @@ msgstr "Egin klik filigranaren irudia hautatzeko."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, kde-format
 msgid "Watermark image: "
-msgstr "Filigrana irudia:"
+msgstr "Filigrana irudia: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
@@ -5490,7 +5488,7 @@ msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
-"Ezarri filigranaren atzeko planoaren opakutasuna. 100 erabat opakua, 0 "
+"Ezarri filigranaren atzeko planoaren opakutasuna. 100 erabat opakua da, 0 "
 "erabat gardena."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
@@ -5506,7 +5504,7 @@ msgstr "Errepikapen sistematikoa"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
 #, kde-format
 msgid "Random Repetition"
-msgstr "Ausazko errepikatzea"
+msgstr "Ausazko errepikapena"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
 #, kde-format
@@ -5717,8 +5715,9 @@ msgid ""
 "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
 "matrix radius that determines how much to blur the image."
 msgstr ""
-"0 balioko leuntasunak ez du efekturik eta 1 edo balio handiagoek Gauss-en "
-"lausotze matrizearen erradioa zehazten du."
+"0 balioko leuntasunak ez du efekturik, 1 eta balio handiagoek irudia zenbat "
+"lausotu behar den zehazten duen Gauss-en lausotze matrizearen erradioa "
+"zehazten du."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
@@ -5759,7 +5758,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
-"<para>Sorta-ilara kudeatzeko tresna honek irudietako pixel erreakzuzen "
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako pixel erreak zuzen "
 "ditzake.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
@@ -8717,9 +8716,9 @@ msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
 "barrel distortion, while positive values correct lens pincushion distortion."
 msgstr ""
-"Balio honek distortsio kopurua kontrolatzen du. Balio negatiboek lentearen "
-"upelaren distortsioa zuzentzen dute, positiboek berriz, lentearen kuxinaren "
-"distortsioa zuzentzen dute."
+"Balio honek distortsio kopurua kontrolatzen du. Balio negatiboek "
+"objektiboaren upelaren distortsioa zuzentzen dute, positiboek berriz, "
+"objektiboaren kuxinaren distortsioa zuzentzen dute."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
 #, kde-format
@@ -9262,7 +9261,7 @@ msgstr ""
 "antzemanezin eta  beroko irudiak sortzeko erabili ohi da.</"
 "p><p><b>Astintzea</b>: pixelak ausaz astinduz lausotzen du irudia. Honek "
 "kamera ausaz mugitzean sortzen den lausoa simulatzen du.</p><p><b>Fokua</b>: "
-"irudiaren ertzak lausotzen ditu lente baten astigmatismoaren distortsioa "
+"irudiaren ertzak lausotzen ditu objektu baten astigmatismoaren distortsioa "
 "erreproduzituz.</p><p><b>Azkarra</b>: irudiaren koloreen ertzak bilatu eta "
 "lausotzen ditu irudiaren beste edukia eraldatu gabe.</p><p><b>Beira izoztua</"
 "b>: ausaz sakabanatzen du izoztutako beira batetik zehar datorren argia eta "
@@ -13235,7 +13234,7 @@ msgstr "Data eta ordua"
 #, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
-msgstr "Lentea"
+msgstr "Objektiboa"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
 #, kde-format
@@ -13284,7 +13283,7 @@ msgstr "Kameraren fitxategiaren propietateak"
 #, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
-msgstr "Lenteen ezarpenak"
+msgstr "Objektiboaren ezarpenak"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, fuzzy, kde-format
@@ -31098,7 +31097,7 @@ msgstr "<b>Kodak HIE</b>:<p>Simulatu Kodak HIE film infragorria.</p>"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
 #, kde-format
 msgid "No Lens Filter"
-msgstr "Lentearen iragazkirik gabe"
+msgstr "Objektiboaren iragazkirik gabe"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:218
 #, kde-format
@@ -31106,8 +31105,8 @@ msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr ""
-"<b>Lentearen iragazkirik gabe</b>:<p>Ez ezarri lentearen iragazki bat irudia "
-"errendatzean.</p>"
+"<b>Objektiboaren iragazkirik gabe</b>:<p>Ez ezarri objektiboaren iragazki "
+"bat irudia errendatzean.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:307
@@ -31222,7 +31221,7 @@ msgstr "Sendotasuna:"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:265
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
-msgstr "Hemen, ezarri lente iragazkiaren sendotasun doiketa."
+msgstr "Hemen, ezarri objektibo iragazkiaren sendotasun doiketa."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
 #, kde-format
@@ -31322,7 +31321,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
 #, kde-format
 msgid "Lens Filters"
-msgstr "Lentearen iragazkiak"
+msgstr "Objektiboaren iragazkiak"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
 #, kde-format
@@ -33211,9 +33210,9 @@ msgid "Y offset "
 msgstr "Y desplazamendua "
 
 #: core/libs/dimg/filters/lens/lensdistortionfilter.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lens Distortion Tool"
-msgstr "Lentearen distortsioa"
+msgstr "Objektiboaren distortsio tresna"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:442
 #, kde-format
@@ -33261,8 +33260,8 @@ msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
 "image metadata (as Exif or XMP)."
 msgstr ""
-"Ezarri aukera hau irudiaren metadatuetatik (EXIF edo XMP)kamera/lentearen "
-"ezarpen egokiak asmatzen saiatzeko."
+"Ezarri aukera hau irudiaren metadatuetatik (EXIF edo XMP) kamera/"
+"Objektiboaren ezarpen egokiak asmatzen saiatzeko."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, fuzzy, kde-format
@@ -33300,10 +33299,10 @@ msgid "(exact match found)"
 msgstr ""
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
-msgstr "Lentearen zuzenketa automatikoa"
+msgstr "Objektiboaren zuzenketa automatikoa"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
 #, fuzzy, kde-format
@@ -33312,10 +33311,10 @@ msgid "Camera: %1-%2"
 msgstr "\"%1\" kamera"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
-msgstr "Lentea: "
+msgstr "Objektiboa: %1"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
 #, fuzzy, kde-format
@@ -33446,8 +33445,8 @@ msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
-"Lau geometria kudeatu dira: laukizuzena (lente guztien ehuneko 99a), arrain-"
-"begia, zilindrikoa eta laukizuzenberdina."
+"Lau geometria kudeatu dira: laukizuzena (objektibo guztien ehuneko 99a), "
+"arrain-begia, zilindrikoa eta laukizuzen berdina."
 
 #: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
 #, kde-format
@@ -38399,11 +38398,10 @@ msgstr "Sortuta: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:133
-#, fuzzy, kde-format
-#| msgid "Lens: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
-msgstr "Lentea: "
+msgstr "Objektiboa: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
@@ -53202,7 +53200,7 @@ msgstr "Kameraren modeloa"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
 #, kde-format
 msgid "Lens of the camera"
-msgstr "Kameraren lentea"
+msgstr "Kameraren objektiboa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:430
@@ -64874,7 +64872,7 @@ msgstr "Kameraren modeloa"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
 msgid "Lens"
-msgstr "Lentea"
+msgstr "Objektiboa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, fuzzy, kde-format
@@ -64885,7 +64883,7 @@ msgstr "Multimediaren fitxategi mota"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
 msgid "Lens aperture as f-number"
-msgstr "Lentearen irekidura f-zenbaki gisa"
+msgstr "Objektiboaren irekidura f-zenbaki gisa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:431
 #, kde-format
@@ -64896,7 +64894,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:450
 #, kde-format
 msgid "Focal length of the lens"
-msgstr "Lentearen fokuaren luzera"
+msgstr "Objektibo fokuaren luzera"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:451
 #, kde-format
@@ -64991,7 +64989,7 @@ msgstr "Gaiaren distantzia"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Distance of the subject from the lens"
-msgstr "Gaiaren distantzia lentetik"
+msgstr "Subjektuaren objektiboarekiko distantzia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
