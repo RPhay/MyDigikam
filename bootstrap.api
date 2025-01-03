@@ -124,10 +124,6 @@ echo -e "---------- to $API_UPLOADURL \n"
 
 rsync -r -v --progress -e ssh $PDF_PATH $API_UPLOADURL
 
-# Build API Epub section using Calibre CLI tool
-
-#ebook-convert refman.pdf refman.epub
-
 # Cleanup
 
 rm -fr $TARBALL_PATH

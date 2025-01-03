@@ -6,7 +6,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = digiKam Developer Documentation
 PROJECT_NUMBER         =
-PROJECT_BRIEF          =
+PROJECT_BRIEF          = Professional Photo Management with the Power of Open Source
 PROJECT_LOGO           = ./core/data/icons/apps/48-apps-digikam.png
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = YES
@@ -61,8 +61,8 @@ SUBGROUPING            = YES
 INLINE_GROUPED_CLASSES = NO
 INLINE_SIMPLE_STRUCTS  = NO
 TYPEDEF_HIDES_STRUCT   = NO
-LOOKUP_CACHE_SIZE      = 2
-NUM_PROC_THREADS       = 1
+LOOKUP_CACHE_SIZE      = 5
+NUM_PROC_THREADS       = 0
 TIMESTAMP              = YES
 #---------------------------------------------------------------------------
 # Build related configuration options
@@ -252,7 +252,7 @@ GENERATE_ECLIPSEHELP   = NO
 ECLIPSE_DOC_ID         = org.kde.digikam
 DISABLE_INDEX          = NO
 GENERATE_TREEVIEW      = YES
-FULL_SIDEBAR           = NO
+FULL_SIDEBAR           = YES
 ENUM_VALUES_PER_LINE   = 4
 TREEVIEW_WIDTH         = 250
 EXT_LINKS_IN_WINDOW    = NO
