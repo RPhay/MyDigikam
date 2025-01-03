@@ -88,7 +88,7 @@ public:
      */
     int insertFaceVector(const cv::Mat& faceEmbedding,
                          const int label,
-                         const QString& hash)                                const;
+                         const QString& hash)                                   const;
 
     /**
      * @brief removeFaceVector: remove a face embedding from the database.
@@ -99,16 +99,10 @@ public:
 
     /**
      * @brief removeFaceVector: remove a face embedding from the database.
-     * @param nodeId the nodeId (row id) to remove.
+     * @param id the nodeId (row id) to remove.
      * @return bool
      */
     bool removeFaceVector(const int id)                                         const;
-
-    /**
-     * @brief reconstructTree: reconstruct KD-Tree from data in the database.
-     * @return the KD-Tree instance.
-     */
-    // KDTreeBase* reconstructTree(FaceScanSettings::FaceRecognitionModel recModel);
 
     /**
      * @brief trainData: extract train data from database.
@@ -117,70 +111,14 @@ public:
     cv::Ptr<cv::ml::TrainData> trainData()                                      const;
 
     /**
-     * @brief insertToTreeDb: insert a new node to spatial database.
-     * @param nodeID
-     * @param label
-     * @param faceEmbedding
-     * @return true if successed.
-     */
-    // bool insertToTreeDb(const int nodeID,
-    //                     const cv::Mat& faceEmbedding)                           const;
-
-    /**
-     * @brief getClosestNeighborsTreeDb: return a list of closest neighbor, limited by maxNbNeighbors and sqRange.
-     * @param subTree
-     * @param neighborList
-     * @param position
-     * @param sqRange
-     * @param cosThreshold
-     * @param maxNbNeighbors
-     *
-     * @return the map of data.
-     */
-    // QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
-    //                                                       float sqRange,
-    //                                                       float cosThreshold,
-    //                                                       int maxNbNeighbors)   const;
-
-    /**
-     * @brief clearTreeDb: clear the KD-Tree from data in the database.
-     */
-    // void clearTreeDb()                                                          const;
-
-    /**
      * @brief clearDNNTraining: clear all trained data in the database.
      */
     void clearDNNTraining();
-    void clearDNNTraining(const QList<int>& identities);
-
-private:
-
-    // void updateRangeTreeDb(int nodeId,
-    //                        cv::Mat& minRange,
-    //                        cv::Mat& maxRange,
-    //                        const cv::Mat& position)                             const;
-    // int findParentTreeDb(const cv::Mat& nodePos,
-    //                      bool& leftChild,
-    //                      int& parentSplitAxis)                                  const;
-
-    // class DataNode;
 
     /**
-     * @brief getClosestNeighborsTreeDb: return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange.
-     * @param subTree
-     * @param neighborList
-     * @param position
-     * @param sqRange
-     * @param cosThreshold
-     * @param maxNbNeighbors
-     * @return double
+     * @brief clearDNNTraining: clear @param identities in the database.
      */
-    // double getClosestNeighborsTreeDb(const DataNode& subTree,
-    //                                  QMap<double, QVector<int> >& neighborList,
-    //                                  const cv::Mat& position,
-    //                                  float sqRange,
-    //                                  float cosThreshold,
-    //                                  int maxNbNeighbors)                        const;
+    void clearDNNTraining(const QList<int>& identities);
 
 private:
 

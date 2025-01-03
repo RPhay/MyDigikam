@@ -59,6 +59,7 @@ public:
      * @brief Returns the widget associated to @p index and @p widget
      * @param index The index to search into.
      * @param option a QStyleOptionViewItem.
+     * @param updateWidgets a flag to force to update widgets.
      * @return A QList of the pointers to the widgets found.
      * @internal
      */

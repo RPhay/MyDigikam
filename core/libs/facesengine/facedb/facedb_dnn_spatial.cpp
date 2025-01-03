@@ -94,7 +94,6 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         {
             query = d->db->execQuery(QLatin1String("UPDATE KDTree SET left = ? WHERE id = ?;"), bindingValues);
         }
-
         else
         {
             query = d->db->execQuery(QLatin1String("UPDATE KDTree SET right = ? WHERE id = ?;"), bindingValues);
@@ -192,9 +191,9 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         {
             if (parent == 1)
             {
-                /*
-                                qCDebug(DIGIKAM_FACEDB_LOG) << "add root";
-                */
+/*
+                qCDebug(DIGIKAM_FACEDB_LOG) << "add root";
+*/
                 return 0;
             }
 
@@ -203,11 +202,11 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
             return -1;
         }
 
-        /*
-                qCDebug(DIGIKAM_FACEDB_LOG) << "split axis" << query.value(0).toInt()
-                                            << "left"       << query.value(4)
-                                            << "right"      << query.value(5);
-        */
+/*
+        qCDebug(DIGIKAM_FACEDB_LOG) << "split axis" << query.value(0).toInt()
+                                    << "left"       << query.value(4)
+                                    << "right"      << query.value(5);
+*/
 
         int split        = query.value(0).toInt();
         parentSplitAxis  = split;
@@ -238,7 +237,6 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
             currentNode = right;
             leftChild   = false;
         }
-
         else
         {
             currentNode = left;
@@ -272,7 +270,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     if (
         (sqrdistanceToCurrentNode < sqRange) &&
         (KDNodeBase::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
-    )
+       )
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
@@ -297,7 +295,6 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             {
                 neighborList.erase(farthestNodes);
             }
-
             else
             {
                 farthestNodes.value().pop_back();
@@ -320,7 +317,6 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     {
         sqrDistanceLeftTree = DBL_MAX;
     }
-
     else
     {
         QVariantList bindingValues;
@@ -369,7 +365,6 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     {
         sqrDistanceRightTree = DBL_MAX;
     }
-
     else
     {
         QVariantList bindingValues;
@@ -432,7 +427,6 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             }
         }
     }
-
     else
     {
         if (sqrDistanceRightTree < sqRange)

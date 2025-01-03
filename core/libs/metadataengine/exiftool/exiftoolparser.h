@@ -130,6 +130,7 @@ public:
      * Apply tag changes to a target file using ExifTool with a list of tag properties.
      * Tags can already exists in target file or new ones can be created.
      * To remove a tag, pass an empty string as value.
+     *
      * @param path is the target files to change.
      * @param newTags is the list of tag properties.
      */
@@ -138,16 +139,22 @@ public:
     /**
      * Apply tag changes to a target file using ExifTool with a EXV container.
      * Tags can already exists in target file or new ones can be created.
-     * @param path is the target files to change.
+     *
+     * @param path        is the target files to change.
      * @param exvTempFile is the list of changes embedded in EXV container.
-     * @param hasExif if the EXV container has Exif metadata restore MarkerNotes.
+     * @param hasExif     if the EXV container has Exif metadata restore MarkerNotes.
+     * @param hasXmp      if the EXV container has Xmp metadata.
+     * @param hasCSet     if the EXV container has characters set information.
      */
     bool applyChanges(const QString& path,
                       const QString& exvTempFile,
-                      bool hasExif = true, bool hasXmp = true, bool hasCSet = false);
+                      bool hasExif = true,
+                      bool hasXmp = true,
+                      bool hasCSet = false);
 
     /**
      * Apply a file with metadata to the target file.
+     *
      * @param path is the target file to change.
      * @param meta is the metadata file.
      */
@@ -155,6 +162,7 @@ public:
 
     /**
      * Change all timestamps of the target file using ExifTool.
+     *
      * @param path is the target file to change.
      * @param dateTime is the date/time.
      */
@@ -181,7 +189,8 @@ public:
     /**
      * Return a list of all tags from ExifTool database.
      * Use currentData() to get the container.
-     * Warning: This method get whole ExifTool database in XML format and take age.
+     *
+     * @warning: This method get whole ExifTool database in XML format and take age.
      */
     bool tagsDatabase();
 
@@ -193,10 +202,11 @@ public:
 
     /**
      * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
-     * @param copyOps is a OR combination of ExifToolProcess::CopyTagsSource values.
-     * @param transOps is a OR combination of ExifToolProcess::TranslateTagsOps values.
-     * @param writeModes is a OR combaniation of ExifToolProcess::WritingTagsMode values.
+     *
+     * @param src must be a readable file format supported by ExifTool.
      * @param dst must be a writable file format supported by ExifTool.
+     * @param copyOps is a OR combination of ExifToolProcess::CopyTagsSource values.
+     * @param writeModes is a OR combaniation of ExifToolProcess::WritingTagsMode values.
      */
     bool copyTags(const QString& src,
                   const QString& dst,
@@ -205,6 +215,8 @@ public:
 
     /**
      * Translate group of tags in file.
+     *
+     * @param path must be a readable file format supported by ExifTool.
      * @param transOps is a OR combination of ExifToolProcess::TranslateTagsOps values.
      */
     bool translateTags(const QString& path, unsigned char transOps);

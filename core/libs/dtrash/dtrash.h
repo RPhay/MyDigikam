@@ -44,6 +44,7 @@ public:
     /**
      * @brief Deletes image to the trash of a particular collection
      * @param imagePath: path to image
+     * @param deleteTime: delete time from the image
      * @return true if the image was deleted
      */
     static bool deleteImage(const QString& imagePath, const QDateTime& deleteTime);

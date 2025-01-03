@@ -301,9 +301,6 @@ public Q_SLOTS:
      */
     void show(const QPoint& p);
 
-    /**
-     * @reimp
-     */
     void setVisible(bool visible) override;
 
 Q_SIGNALS:
@@ -352,19 +349,8 @@ protected:
      */
     void moveNear(const QRect& target);
 
-    /**
-     * @reimp
-     */
     void hideEvent(QHideEvent*) override;
-
-    /**
-     * @reimp
-     */
     void mouseReleaseEvent(QMouseEvent* e) override;
-
-    /**
-     * @reimp
-     */
     void paintEvent(QPaintEvent* pe) override;
 
 private:

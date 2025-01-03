@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * date        : 2006-09-13
- * Description : Raw Decoder settings widgets
+ * Description : Raw Decoder settings widget
  *
  * SPDX-FileCopyrightText: 2006-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
@@ -58,6 +58,8 @@ public:
 public:
 
     /**
+     * @brief The widget to host the Raw Decoder settings
+     * @param parent the parent widget instance
      * @param advSettings the default value is COLORSPACE
      */
     explicit DRawDecoderWidget(QWidget* const parent, int advSettings = COLORSPACE);

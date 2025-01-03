@@ -211,6 +211,7 @@ protected:
      * given unchanged to the AbstractIdentifiedObjectAbstractIdentifiedObject(Map)
      * super-class constructor.
      *
+     * @param name              The ellipsoid name.
      * @param semiMajorAxis     The equatorial radius.
      * @param semiMinorAxis     The polar radius.
      * @param inverseFlattening The inverse of the flattening value.

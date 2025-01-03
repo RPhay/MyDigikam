@@ -157,7 +157,7 @@ public Q_SLOTS:
      * This function sets the percentage of the highlighted area that is visible.
      * The rest is hidden. This stacks with the previous highlight area.
      * \param percentage is the percentage of the highlighted area that is shown.
-     * \param hideColor is the color to use to hide the highlighted area of the image.
+     * \param highLightColor is the color to use to hide the highlighted area of the image.
      */
     void slotSetHighlightShown(int percentage, const QColor& highLightColor = Qt::white);
 
@@ -178,11 +178,11 @@ protected:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    void enterEvent(QEnterEvent*)          override;
+    void enterEvent(QEnterEvent*)           override;
 
 #else
 
-    void enterEvent(QEvent*)               override;
+    void enterEvent(QEvent*)                override;
 
 #endif
 

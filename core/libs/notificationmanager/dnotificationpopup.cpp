@@ -170,7 +170,7 @@ public:
                     surround.setPoint(z++, QPoint(xh, height - 10));
                 }
             }
-            else if (!bottom && i == 0)
+            else if (!bottom && (i == 0))
             {
                 if (right)
                 {

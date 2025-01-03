@@ -77,53 +77,6 @@ bool FaceDb::removeFaceVector(const QString& hash) const
     return true;
 }
 
-// KDTreeBase* FaceDb::reconstructTree(FaceScanSettings::FaceRecognitionModel recModel)
-// {
-//     KDTreeBase* tree  = nullptr;
-//     d->recognizeModel = recModel;
-
-//     switch (d->recognizeModel)
-//     {
-//         case FaceScanSettings::FaceRecognitionModel::OpenFace:
-//         {
-//             tree     = new KDTreeOpenFace(128);
-//             break;
-//         }
-
-//         case FaceScanSettings::FaceRecognitionModel::SFace:
-//         {
-//             tree     = new KDTreeSFace(128);
-//             break;
-//         }
-
-//         default:
-//         {
-//              qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "FaceDb::reconstructTree Unknown recognition model specified" << Qt::endl;
-//         }
-//     }
-
-//     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
-
-//     while (query.next())
-//     {
-//         int nodeId                    = query.value(0).toInt();
-//         int identity                  = query.value(1).toInt();
-//         cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
-//         KDNodeBase* const newNode     = tree->add(recordedFaceEmbedding, identity);
-
-//         if (newNode)
-//         {
-//             newNode->setNodeId(nodeId);
-//         }
-//         else
-//         {
-//             qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert node" << nodeId;
-//         }
-//     }
-
-//     return tree;
-// }
-
 cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
 {
     cv::Mat feature, label;

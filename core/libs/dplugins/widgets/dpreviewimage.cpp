@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPen        penDark;
     QPen        penLight;
     QPen        penAnchors;
@@ -418,6 +420,8 @@ public:
 public:
 
     Private() = default;
+
+public:
 
     int                        lastdx           = 0;
     int                        lastdy           = 0;
