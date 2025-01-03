@@ -89,7 +89,7 @@ BUGFIXES:
 057 ==> 498076 - Colors of .heic file are corrupted once a tag is assigned.
 058 ==> 498134 - Updating tags re-reads the image file, which is unnecessarily slow.
 059 ==> 498133 - Geolocation icon missing / disappeared in 8.5.0 appimage Linux.
-060 ==>
+060 ==> 432760 - New items for people entries without seeing the mentioned photos.
 061 ==>
 062 ==>
 063 ==>
