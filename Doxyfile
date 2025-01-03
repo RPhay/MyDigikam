@@ -1,5 +1,7 @@
 # Doxyfile 1.9.8
 
+# Doxygen configuration online documentation: https://www.doxygen.nl/manual/config.html
+
 #---------------------------------------------------------------------------
 # Project related configuration options
 #---------------------------------------------------------------------------
