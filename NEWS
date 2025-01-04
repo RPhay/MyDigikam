@@ -90,7 +90,7 @@ BUGFIXES:
 058 ==> 498134 - Updating tags re-reads the image file, which is unnecessarily slow.
 059 ==> 498133 - Geolocation icon missing / disappeared in 8.5.0 appimage Linux.
 060 ==> 432760 - New items for people entries without seeing the mentioned photos.
-061 ==>
+061 ==> 498234 - Rotated jxl images are displateyed without rotation.
 062 ==>
 063 ==>
 064 ==>
