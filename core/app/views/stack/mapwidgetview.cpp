@@ -815,7 +815,7 @@ void MapViewModelHelper::slotThumbnailLoaded(const CamItemInfo& info)
 }
 
 /**
- * @breif This functions is called when one clicks on a thumbnail.
+ * @brief This functions is called when one clicks on a thumbnail.
  *
  * @param clickedIndices A list containing the marker indices belonging the group whose thumbnail has been clicked.
  */

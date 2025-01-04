@@ -144,7 +144,7 @@ public:
 
 
     /**
-     * @breif Constructs a meta engine object for given filePath,
+     * @brief Constructs a meta engine object for given filePath,
      *        calls the above method, writes the changes out to the file,
      *        and notifies the ItemAttributesWatch.
      *
@@ -165,7 +165,7 @@ public:
                const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
-     * @breif Constructs a meta engine object from the metadata stored in the given DImg object,
+     * @brief Constructs a meta engine object from the metadata stored in the given DImg object,
      *        calls the above method, and changes the stored metadata in the DImg object.
      *
      * @param image          The DImg container to retrieve current tags
@@ -181,7 +181,7 @@ public:
                const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
-     * @breif Will write only Tags to image. Used by TagsManager to write tags to image
+     * @brief Will write only Tags to image. Used by TagsManager to write tags to image
      *        Other metadata are not updated.
 
      * @param filePath       The file path to update current tags
@@ -215,7 +215,7 @@ public:
     QStringList cleanupTags(const QStringList& toClean);
 
     /**
-     * @breif With the currently applied changes, the given writeMode and settings,
+     * @brief With the currently applied changes, the given writeMode and settings,
      *
      * @param writeMode      The mode to write metadata
      * @param settings       The metadata settings to be set
@@ -238,7 +238,7 @@ public:
 protected:
 
     /**
-     * @breif Applies the set of metadata contained in this MetadataHub
+     * @brief Applies the set of metadata contained in this MetadataHub
      *        to the given meta engine object.
      *
      * @param writeMode The mode to write metadata

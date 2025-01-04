@@ -69,7 +69,7 @@ public:
      */
     void setCenter(const QString& coordinateString);
     /**
-     * @breif Get starting center with cooredinates
+     * @brief Get starting center with cooredinates
      * used if a scene downloadUrl do not handle elements in other locations
      * return A QVariantList of lon lat as specified in the dgml
      */
