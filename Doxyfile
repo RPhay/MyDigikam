@@ -1,5 +1,7 @@
 # Doxyfile 1.9.8
 
+# NOTE: Doxygen configuration online documentation: https://www.doxygen.nl/manual/config.html
+
 # This file describes the settings to be used by the documentation system
 # doxygen (www.doxygen.org) for a project.
 #
@@ -1982,7 +1984,9 @@ LATEX_OUTPUT           = latex
 # the output language.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_CMD_NAME         = "pdflatex" -cnf-line=extra_mem_top=230000000 -cnf-line=extra_mem_bot=12000000 -cnf-line=main_memory=12000000
+# NOTE: increase the memory limit to pass the latex to pdf conversion, especially with the dot graph generation which consume RAM.
+
+LATEX_CMD_NAME         = "\"pdflatex\" -cnf-line=extra_mem_top=230000000 -cnf-line=extra_mem_bot=12000000 -cnf-line=main_memory=12000000"
 
 # The MAKEINDEX_CMD_NAME tag can be used to specify the command name to generate
 # index for LaTeX.
@@ -2579,6 +2583,8 @@ CLASS_GRAPH            = YES
 # accomplished by means of the command \hidecollaborationgraph.
 # The default value is: YES.
 # This tag requires that the tag HAVE_DOT is set to YES.
+
+# NOTE: this option explode the RAM usage. To hack later.
 
 COLLABORATION_GRAPH    = NO
 

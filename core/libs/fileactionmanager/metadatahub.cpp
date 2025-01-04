@@ -209,7 +209,7 @@ template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& 
 
 /**
  * safe method
- **/
+ */
 bool MetadataHub::writeToMetadata(const ItemInfo& info,
                                   WriteComponent writeMode,
                                   bool ignoreLazySync,

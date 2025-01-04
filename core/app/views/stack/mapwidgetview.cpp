@@ -66,6 +66,8 @@ public:
 
     Private() = default;
 
+public:
+
     MapWidget*                 mapWidget                    = nullptr;
 
     ItemAlbumModel*            imageModel                   = nullptr;
@@ -87,9 +89,11 @@ public:
 
 /**
  * @brief Constructor
- * @param selectionModel digiKam's selection model
- * @param imageFilterModel digikam's filter model
- * @param parent the parent object
+ *
+ * @param selectionModel    digiKam's selection model
+ * @param imageFilterModel  digikam's filter model
+ * @param parent            the parent object
+ * @param application       the type of application host
  */
 MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                              DCategorizedSortFilterProxyModel* const imageFilterModel,
@@ -178,7 +182,7 @@ MapWidgetView::~MapWidgetView()
 
 void MapWidgetView::doLoadState()
 {
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group                 = getConfigGroup();
 
     d->gpsItemInfoSorter->setSortOptions(GPSItemInfoSorter::SortOptions(group.readEntry(QLatin1String("Sort Order"),
                                                                                         int(d->gpsItemInfoSorter->getSortOptions()))));
@@ -189,7 +193,7 @@ void MapWidgetView::doLoadState()
 
 void MapWidgetView::doSaveState()
 {
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group           = getConfigGroup();
 
     group.writeEntry(QLatin1String("Sort Order"), int(d->gpsItemInfoSorter->getSortOptions()));
 
@@ -417,6 +421,8 @@ public:
 
     Private() = default;
 
+public:
+
     ItemFilterModel*            model               = nullptr;
     ImportFilterModel*          importModel         = nullptr;
     QItemSelectionModel*        selectionModel      = nullptr;
@@ -563,10 +569,13 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
 
 /**
  * @brief This function retrieves the thumbnail for an index.
+ *
  * @param index The marker's index.
  * @param size The size of the thumbnail.
+ *
  * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned.
- * If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
+ * If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded
+ *is emitted when the thumbnail becomes available.
  */
 QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModelIndex& index, const QSize& size)
 {
@@ -610,9 +619,12 @@ QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModel
 }
 
 /**
- * @brief This function finds the best representative marker from a group of markers. This is needed to display a thumbnail for a marker group.
- * @param indices A list containing markers.
+ * @brief This function finds the best representative marker from a group of markers.
+ *        This is needed to display a thumbnail for a marker group.
+ *
+ * @param list    A list containing markers.
  * @param sortKey Determines the sorting options and is actually of type GPSItemInfoSorter::SortOptions
+ *
  * @return Returns the index of the marker.
  */
 QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
@@ -803,7 +815,8 @@ void MapViewModelHelper::slotThumbnailLoaded(const CamItemInfo& info)
 }
 
 /**
- * This functions is called when one clicks on a thumbnail.
+ * @breif This functions is called when one clicks on a thumbnail.
+ *
  * @param clickedIndices A list containing the marker indices belonging the group whose thumbnail has been clicked.
  */
 void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& clickedIndices)

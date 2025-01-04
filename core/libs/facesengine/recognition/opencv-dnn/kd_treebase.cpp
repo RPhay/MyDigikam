@@ -65,9 +65,9 @@ KDTreeBase::KDTreeBase(
     if (bruteForce.length() > 0)
     {
         if (
-            QString::fromUtf8("1")    == bruteForce ||
-            QString::fromUtf8("true") == bruteForce.toLower()
-        )
+            (QString::fromUtf8("1")    == bruteForce) ||
+            (QString::fromUtf8("true") == bruteForce.toLower())
+           )
         {
             d->mapThreshold = std::numeric_limits<int>::max();      // Set the vectorThreshold so high we always use the vector.
         }
@@ -91,7 +91,6 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
 
             newNode = d->root;
         }
-
         else
         {
             newNode = d->root->insert(position, identity);
@@ -108,7 +107,6 @@ KDNodeBase* KDTreeBase::add(const cv::Mat& position, const int identity)
             {
                 d->nodeMap.append(newNode);
             }
-
             else
             {
                 d->useMap = false;
@@ -152,7 +150,6 @@ QMap<double, QVector<int> > KDTreeBase::getClosestNeighbors(const cv::Mat& posit
             ++node;
         }
     }
-
     else
     {
         if (d->root)

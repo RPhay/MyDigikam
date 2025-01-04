@@ -245,24 +245,24 @@ private:
 // --------------------------------------------------------------------------------------------
 
 /**
- * The ProgressManager singleton keeps track of all ongoing transactions
- * and notifies observers (progress dialogs) when their progress percent value
- * changes, when they are completed (by their owner), and when they are canceled.
- * Each ProgressItem emits those signals individually and the singleton
- * broadcasts them. Use the ::createProgressItem() statics to acquire an item
- * and then call ->setProgress( int percent ) on it every time you want to
- * update the item and ->setComplete() when the operation is done. This will
- * delete the item. Connect to the item's progressItemCanceled() signal to be
- * notified when the user cancels the transaction using one of the observing
- * progress dialogs or by calling item->cancel() in some other way. The owner
- * is responsible for calling setComplete() on the item, even if it is canceled.
- * Use the standardCancelHandler() slot if that is all you want to do on cancel.
+ * @breif The ProgressManager singleton keeps track of all ongoing transactions
+ *        and notifies observers (progress dialogs) when their progress percent value
+ *        changes, when they are completed (by their owner), and when they are canceled.
+ *        Each ProgressItem emits those signals individually and the singleton
+ *        broadcasts them. Use the ::createProgressItem() statics to acquire an item
+ *        and then call ->setProgress( int percent ) on it every time you want to
+ *        update the item and ->setComplete() when the operation is done. This will
+ *        delete the item. Connect to the item's progressItemCanceled() signal to be
+ *        notified when the user cancels the transaction using one of the observing
+ *        progress dialogs or by calling item->cancel() in some other way. The owner
+ *        is responsible for calling setComplete() on the item, even if it is canceled.
+ *        Use the standardCancelHandler() slot if that is all you want to do on cancel.
  *
- * Note that if you request an item with a certain id and there is already
- * one with that id, there will not be a new one created but the existing
- * one will be returned. This is convenient for accessing items that are
- * needed regularly without the to store a pointer to them or to add child
- * items to parents by id.
+ * @note if you request an item with a certain id and there is already
+ *       one with that id, there will not be a new one created but the existing
+ *       one will be returned. This is convenient for accessing items that are
+ *       needed regularly without the to store a pointer to them or to add child
+ *       items to parents by id.
  */
 class DIGIKAM_EXPORT ProgressManager : public QObject
 {
@@ -276,7 +276,7 @@ public:
     bool isEmpty()                                  const;
 
     /**
-     * @return the progressitem for this id if it exist, else null.
+     * @return the progressitem for this @param id if it exist, else null.
      */
     ProgressItem* findItembyId(const QString& id)   const;
 
@@ -303,14 +303,16 @@ public:
     QString getUniqueID();
 
      /**
-      * Creates a ProgressItem with a unique id and the given label.
-      * This is the simplest way to acquire a progress item. It will not
-      * have a parent.
-      * @param label The text to be displayed by progress handlers
-      * @param status Additional text to be displayed for the item.
-      * @param canBeCanceled can the user cancel this operation?
-      * Cancelling the parent will cancel the children as well (if they can be
-      * canceled) and ongoing children prevent parents from finishing.
+      * @breif Creates a ProgressItem with a unique id and the given label.
+      *        This is the simplest way to acquire a progress item. It will not have a parent.
+      *
+      * @param label         The text to be displayed by progress handlers
+      * @param status        Additional text to be displayed for the item.
+      * @param canBeCanceled Can the user cancel this operation?
+      *                      Cancelling the parent will cancel the children as well (if they can be
+      *                      canceled) and ongoing children prevent parents from finishing.
+      * @param hasThumb      flag to indicate if progress item has a thumbnail.
+      *
       * @return The ProgressItem representing the operation.
       */
     static ProgressItem* createProgressItem(const QString& label,
@@ -319,16 +321,17 @@ public:
                                             bool  hasThumb = false);
 
     /**
-     * Creates a new progressItem with the given parent, id, label and initial
-     * status.
+     * Creates a new progressItem with the given parent, id, label and initial status.
      *
-     * @param parent Specify an already existing item as the parent of this one.
-     * @param id Used to identify this operation for cancel and progress info.
-     * @param label The text to be displayed by progress handlers
-     * @param status Additional text to be displayed for the item.
+     * @param parent        Specify an already existing item as the parent of this one.
+     * @param id            Used to identify this operation for cancel and progress info.
+     * @param label         The text to be displayed by progress handlers
+     * @param status        Additional text to be displayed for the item.
      * @param canBeCanceled can the user cancel this operation?
-     * Cancelling the parent will cancel the children as well (if they can be
-     * canceled) and ongoing children prevent parents from finishing.
+     *                      Cancelling the parent will cancel the children as well (if they can be
+     *                      canceled) and ongoing children prevent parents from finishing.
+     * @param hasThumb      flag to indicate if progress item has a thumbnail.
+     *
      * @return The ProgressItem representing the operation.
      */
     static ProgressItem* createProgressItem(ProgressItem* const parent,
@@ -339,8 +342,19 @@ public:
                                             bool  hasThumb = false);
 
     /**
-     * Use this version if you have the id string of the parent and want to
-     * add a subjob to it.
+     * @breif Use this version if you have the id string of the parent and want to
+     *        add a subjob to it.
+     *
+     * @param parent        Specify an already existing item as the parent of this one.
+     * @param id            Used to identify this operation for cancel and progress info.
+     * @param label         The text to be displayed by progress handlers
+     * @param status        Additional text to be displayed for the item.
+     * @param canBeCanceled can the user cancel this operation?
+     *                      Cancelling the parent will cancel the children as well (if they can be
+     *                      canceled) and ongoing children prevent parents from finishing.
+     * @param hasThumb      flag to indicate if progress item has a thumbnail.
+     *
+     * @return The ProgressItem representing the operation.
      */
     static ProgressItem* createProgressItem(const QString& parent,
                                             const QString& id,
@@ -359,17 +373,18 @@ public:
                                             bool  hasThumb = false);
 
     /**
-     * Add a created progressItem outside manager with the given parent.
+     * @breif Add a created progressItem outside manager with the given parent.
      *
-     * @param t The process to add on manager.
+     * @param t      The process to add on manager.
      * @param parent Specify an already existing item as the parent of this one (can be null).
+     *
      * @return true if ProgressItem have been added to manager, else false.
      */
     static bool addProgressItem(ProgressItem* const t, ProgressItem* const parent = nullptr);
 
     /**
-     * Ask all listeners to show the progress dialog, because there is
-     * something that wants to be shown.
+     * @breif Ask all listeners to show the progress dialog, because there is
+     *        something that wants to be shown.
      */
     static void emitShowProgressView();
 
@@ -416,8 +431,8 @@ Q_SIGNALS:
     void progressItemThumbnail(ProgressItem*, const QPixmap&);
 
     /**
-     * Emitted when an operation requests the listeners to be shown.
-     * Use emitShowProgressView() to trigger it.
+     * @breif Emitted when an operation requests the listeners to be shown.
+     *        Use emitShowProgressView() to trigger it.
      */
     void showProgressView();
 
@@ -426,14 +441,15 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     /**
-     * Calls setCompleted() on the item, to make sure it goes away.
-     * Provided for convenience.
+     * @breif Calls setCompleted() on the item, to make sure it goes away.
+     *        Provided for convenience.
+     *
      * @param item the canceled item.
      */
     void slotStandardCancelHandler(ProgressItem* item);
 
     /**
-     * Aborts all running jobs. Bound to "Esc"
+     * @breif Aborts all running jobs. Bound to "Esc"
      */
     void slotAbortAll();
 
