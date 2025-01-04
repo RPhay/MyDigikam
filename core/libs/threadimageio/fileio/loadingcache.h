@@ -119,9 +119,8 @@ class DIGIKAM_EXPORT LoadingCache : public QObject
 public:
 
     /**
-     * NOTE: !! All methods of LoadingCache shall only be called when a CacheLock is held !!
+     * @warning All methods of LoadingCache shall only be called when a CacheLock is held
      */
-
     class DIGIKAM_EXPORT CacheLock
     {
     public:

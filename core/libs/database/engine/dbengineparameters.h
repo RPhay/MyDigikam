@@ -107,7 +107,7 @@ public:
     void writeToConfig(const QString& configGroup = QString())  const;
 
     /**
-     * NOTE: In case of SQLite, the database name typically is a file.
+     * @note In case of SQLite, the database name typically is a file.
      * For non-SQLite, this simply handle the database name.
      */
     QString getCoreDatabaseNameOrDir()                          const;

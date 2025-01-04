@@ -115,7 +115,7 @@ public:
     /**
      * @brief  Get the properties that are categorized into groups
      *
-     * NOTE: If you want all the properties distributed among groups
+     * @note If you want all the properties distributed among groups
      *       then please use:  QVector<GeoSceneProperty*> allProperties().
      */
     QVector<GeoSceneProperty*> rootProperties();

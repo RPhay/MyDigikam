@@ -31,8 +31,9 @@ namespace Digikam
 {
 
 /**
- * The class MetaEngineSettingsContainer encapsulates all metadata related settings.
- * NOTE: this allows supply changed arguments to MetadataHub without changing the global settings.
+ * @brief The class MetaEngineSettingsContainer encapsulates all metadata related settings.
+ *
+ * @note this allows supply changed arguments to MetadataHub without changing the global settings.
  */
 class DIGIKAM_EXPORT MetaEngineSettingsContainer
 {

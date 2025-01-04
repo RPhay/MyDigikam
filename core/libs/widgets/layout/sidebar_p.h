@@ -119,7 +119,7 @@ public:
 
     /**
      * Backup of shrinked status before backup(), restored by restore()
-     * NOTE: when sidebar is hidden, only icon bar is affected. If sidebar view is
+     * @note when sidebar is hidden, only icon bar is affected. If sidebar view is
      * visible, this one must be shrink and restored accordingly.
      */
     bool                          isMinimized               = false;

@@ -31,16 +31,17 @@ class DIGIKAM_EXPORT DImgThreadedAnalyser : public DImgThreadedFilter
 public:
 
     /**
-     * Constructs a filter without argument.
-     * You need to call setupFilter() and startFilter()
-     * to start the threaded computation.
-     * To run filter without to use multithreading, call startFilterDirectly().
-     * NOTE: Versioning is not supported in this class
+     * @brief Constructs a filter without argument.
+     *        You need to call setupFilter() and startFilter()
+     *        to start the threaded computation.
+     *        To run filter without to use multithreading, call startFilterDirectly().
+     *
+     * @warning Versioning is not supported in this class
      */
     explicit DImgThreadedAnalyser(QObject* const parent = nullptr, const QString& name = QString());
 
     /**
-     * Constructs an image ananlyser with all arguments (ready to use).
+     * @brief Constructs an image ananlyser with all arguments (ready to use).
      * The given original image will be copied.
      * You need to call startFilter() to start the threaded computation.
      * To run analyser without to use multithreading, call startFilterDirectly().

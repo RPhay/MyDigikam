@@ -35,10 +35,10 @@
 #include "dcategorydrawer.h"
 
 /**
- * NOTE: By defining DOLPHIN_DRAGANDDROP the custom drag and drop implementation of
+ * @note By defining DOLPHIN_DRAGANDDROP the custom drag and drop implementation of
  * DCategorizedView is bypassed to have a consistent drag and drop look for all
  * views. Hopefully transparent pixmaps for drag objects will be supported in
- * Qt 4.4, so that this workaround can be skipped.
+ * Qt 4.4 and later, so that this workaround can be skipped.
  */
 #define DOLPHIN_DRAGANDDROP
 

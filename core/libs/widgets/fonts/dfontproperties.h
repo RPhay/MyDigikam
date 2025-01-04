@@ -206,7 +206,7 @@ public:
     /**
      * Sets the state of the checkbox indicating whether the font size
      * is to be interpreted as relative size.
-     * NOTE: If parameter sizeIsRelative was not set in the constructor
+     * @note If parameter sizeIsRelative was not set in the constructor
      *       of the widget this setting will be ignored.
      */
     void setSizeIsRelative(Qt::CheckState relative);
@@ -223,7 +223,7 @@ public:
     QString sampleText() const;
 
     /**
-     * Sets the sample text.
+     * @brief Sets the sample text.
      *
      * Normally you should not change this
      * text, but it can be better to do this if the default text is

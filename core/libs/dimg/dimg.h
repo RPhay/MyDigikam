@@ -479,21 +479,23 @@ public:
     int exifOrientation(const QString& filePath);
 
     /**
-     * When loaded from a file, some attributes like format and isReadOnly still depend on this
+     * @brief When loaded from a file, some attributes like format and isReadOnly still depend on this
      * originating file. When saving in a different format to a different file,
      * you may wish to switch these attributes to the new file.
+     *
      * - fileOriginData() returns the current origin data, bundled in the returned QVariant.
      * - setFileOriginData() takes such a variant and adjusts the properties
      * - lastSavedFileOriginData() returns the origin data as if the image was loaded from
      *   the last saved image.
      * - switchOriginToLastSaved is equivalent to setting origin data returned from lastSavedFileOriginData()
      *
-     * Example: an image loaded from a RAW and saved to PNG will be read-only and format RAW.
+     * @exemple an image loaded from a RAW and saved to PNG will be read-only and format RAW.
      * After calling switchOriginToLastSaved, it will not be read-only, format will be PNG,
      * and rawDecodingSettings will be null. detectedFormat() will not change.
      * In the history, the last referred image that was added (as intermediate) is made
      * the new Current image.
-     * NOTE: Set the saved image path with imageSavedAs() before!
+     *
+     * @note Set the saved image path with imageSavedAs() before!
      */
     QVariant    fileOriginData()          const;
     void        setFileOriginData(const QVariant& data);

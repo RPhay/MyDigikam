@@ -561,7 +561,7 @@ public Q_SLOTS:
 
     /**
      * @brief Set whether the is tile is visible
-     * NOTE: This is part of the transitional debug API
+     * @note This is part of the transitional debug API
      *       and might be subject to changes until Marble 0.8
      * @param visible visibility of the tile
      */

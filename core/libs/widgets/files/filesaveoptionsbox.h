@@ -37,8 +37,7 @@ public:
     enum FORMAT
     {
         /**
-         * NOTE: Order is important here:
-         * See filesaveoptionbox.cpp which use these values to fill a stack of widgets.
+         * @warning Order is important here. See filesaveoptionbox.cpp which use these values to fill a stack of widgets.
          */
         NONE = 0,
         JPEG,
@@ -67,7 +66,7 @@ public:
 public:
 
     /**
-     * Constructor. Don't forget to call setDialog after creation of the dialog.
+     * @brief Constructor. Don't forget to call setDialog after creation of the dialog.
      *
      * @param parent the parent for Qt's parent child mechanism
      */

@@ -68,7 +68,7 @@ public:
                                    const QModelIndex& index, QRect* activationRect = nullptr) const = 0;
 
     /**
-     * NOTE: to be called by ItemViewCategorized only
+     * @note to be called by ItemViewCategorized only
      */
     virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) = 0;
 

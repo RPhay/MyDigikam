@@ -32,15 +32,15 @@ namespace PGFUtils
 {
 
 /**
- * PGF image data to QImage using memory stream.
- * NOTE: Only use this method to manage PGF thumbnails stored in database.
+ * @brief PGF image data to QImage using memory stream.
+ * @note Only use this method to manage PGF thumbnails stored in database.
  */
 DIGIKAM_EXPORT bool readPGFImageData(const QByteArray& data,
                                      QImage& img,
                                      bool verbose=false);
 
 /**
- * QImage to PGF image data using memory stream.
+ * @brief QImage to PGF image data using memory stream.
  * @param quality set compression ratio:
  *  0    => lossless compression, as PNG.
  *  1    => Not loss less compression, wavelets based...
@@ -49,7 +49,7 @@ DIGIKAM_EXPORT bool readPGFImageData(const QByteArray& data,
  *  4    => Same compression ratio near than JPEG quality=85.
  *          Image quality is valid for  thumbnails.
  *  >= 5 => provide artifacts due to down-sampling. Do not use it...
- * NOTE: Only use this method to manage PGF thumbnails stored in database.
+ * @note Only use this method to manage PGF thumbnails stored in database.
  */
 DIGIKAM_EXPORT bool writePGFImageData(const QImage& image,
                                       QByteArray& data,
@@ -57,7 +57,7 @@ DIGIKAM_EXPORT bool writePGFImageData(const QImage& image,
                                       bool verbose=false);
 
 /**
- * QImage to PGF image data using file stream.
+ * @brief QImage to PGF image data using file stream.
  * Uses same params than writePGFImageData() excepted 'filePath'
  * which is PGF target file path.
  */
@@ -67,14 +67,14 @@ DIGIKAM_EXPORT bool writePGFImageFile(const QImage& image,
                                       bool verbose=false);
 
 /**
- * Load a reduced version of PGF file
+ * @brief Load a reduced version of PGF file
  */
 DIGIKAM_EXPORT bool loadPGFScaled(QImage& img,
                                   const QString& path,
                                   int maximumSize);
 
 /**
- * Return a libpgf version string
+ * @return a libpgf version string
  */
 DIGIKAM_EXPORT QString libPGFVersion();
 

@@ -177,7 +177,7 @@ protected:
     void setFaceTagModel(bool enable);
 
     /**
-     * NOTE: these can be reimplemented in a subclass
+     * @note these can be reimplemented in a subclass
      */
 
     /// For subclassing convenience: A part of the implementation of data()
@@ -471,7 +471,7 @@ protected:
     Qt::ItemFlags flags(const QModelIndex& index)                                          const override;
 
     /**
-     * NOTE: Do not call this function directly, use the setData(..., bool recursive)
+     * @note Do not call this function directly, use the setData(..., bool recursive)
      */
     bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
     bool setData(const QModelIndex& index, const QVariant& value, int role, bool recursive);

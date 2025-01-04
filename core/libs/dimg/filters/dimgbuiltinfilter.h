@@ -91,7 +91,7 @@ public:
     void apply(DImg& image)                                                                         const;
 
     /**
-     * NOTE: The following methods are also accessed by the more general
+     * @note The following methods are also accessed by the more general
      * DImgFilterManager methods, so you usually do not need to call these directly.
      */
 

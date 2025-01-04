@@ -48,7 +48,7 @@ public:
     enum AdditionalRoles
     {
         /**
-         * NOTE: use printf "0x%08X\n" $(($RANDOM*$RANDOM))
+         * @note use printf "0x%08X\n" $(($RANDOM*$RANDOM))
          * to define additional roles.
          */
 

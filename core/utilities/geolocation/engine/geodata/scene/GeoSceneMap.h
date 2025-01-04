@@ -111,7 +111,7 @@ public:
      * @brief  Checks for valid layers that contain texture data
      * @return Whether a texture layer got created internally
      *
-     * NOTE: The existence of the file(s) that contain the actual data
+     * @note The existence of the file(s) that contain the actual data
      *       still needs to get checked at runtime!
      */
     bool hasTextureLayers() const;
@@ -120,7 +120,7 @@ public:
      * @brief  Checks for valid layers that contain vector data
      * @return Whether a vector layer got created internally
      *
-     * NOTE: The existence of the file(s) that contain the actual data
+     * @note The existence of the file(s) that contain the actual data
      *       still needs to get checked at runtime!
      */
     bool hasVectorLayers() const;

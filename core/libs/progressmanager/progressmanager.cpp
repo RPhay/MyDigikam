@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     volatile bool   waitingForKids      = false;
     volatile bool   canceled            = false;
     bool            usesBusyIndicator   = false;

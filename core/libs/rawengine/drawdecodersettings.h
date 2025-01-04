@@ -35,9 +35,9 @@ class DIGIKAM_EXPORT DRawDecoderSettings
 public:
 
     /**
-     * RAW decoding Interpolation methods
+     * @brief RAW decoding Interpolation methods
      *
-     * NOTE: from original dcraw demosaic
+     * @note from original dcraw demosaic
      *
      *  Bilinear: use high-speed but low-quality bilinear
      *            interpolation (default - for slow computer). In this method,

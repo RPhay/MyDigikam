@@ -364,7 +364,7 @@ public:
      * @brief normalize both longitude and latitude at the same time
      * This method normalizes both latitude and longitude, so that the
      * latitude and the longitude stay within the "usual" range.
-     * NOTE: If the latitude exceeds M_PI/2 (+90.0 deg) or -M_PI/2 (-90.0 deg)
+     * @note If the latitude exceeds M_PI/2 (+90.0 deg) or -M_PI/2 (-90.0 deg)
      * then this will be interpreted as a pole traversion where the point will
      * end up on the opposite side of the globe. Therefore the longitude will
      * change by M_PI (180 deg).

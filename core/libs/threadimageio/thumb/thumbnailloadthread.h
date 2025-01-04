@@ -160,8 +160,8 @@ public:
     QList<LoadingDescription> lastDescriptions() const;
 
     /**
-     * NOTE: If the thread is currently loading thumbnails, there is no guarantee as to when
-     * the property change by one of the following methods takes effect.
+     * @note If the thread is currently loading thumbnails, there is no guarantee as to when
+     *       the property change by one of the following methods takes effect.
      */
 
     /**

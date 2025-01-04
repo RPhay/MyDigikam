@@ -45,8 +45,8 @@ public:
     void setThumbnail(const QPixmap&);
 
     /**
-     * NOTE: the given text is interpreted as RichText, so you might need to
-     * use .toHtmlEscaped() it before passing
+     * @note the given text is interpreted as RichText, so you might need to
+     *       use .toHtmlEscaped() it before passing.
      */
     void setStatus(const QString&);
 
@@ -57,7 +57,7 @@ public:
     void addSubTransaction(ProgressItem* const item);
 
     /**
-     * The progressitem is deleted immediately, we take 5s to go out,
+     * @brief The progressitem is deleted immediately, we take 5s to go out,
      * so better not use mItem during this time.
      */
     void setItemComplete();

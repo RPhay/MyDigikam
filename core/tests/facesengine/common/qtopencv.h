@@ -29,7 +29,8 @@
 
 namespace QtOpenCV
 {
-// NOTE: This does not cover all cases - it should be easy to add new ones as required.
+
+/// @note: This does not cover all cases - it should be easy to add new ones as required.
 
 inline QImage cvMatToQImage(const cv::Mat& inMat)
 {
@@ -96,8 +97,9 @@ inline QPixmap cvMatToQPixmap(const cv::Mat& inMat)
 /**
  * If inImage exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inImage's
  * data with the cv::Mat directly.
- * NOTE: Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
- * NOTE: This does not cover all cases - it should be easy to add new ones as required.
+ *
+ * @note Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
+ *       This does not cover all cases - it should be easy to add new ones as required.
  */
 inline cv::Mat QImageToCvMat(const QImage& inImage, bool inCloneImageData = true)
 {
@@ -176,7 +178,8 @@ inline cv::Mat QImageToCvMat(const QImage& inImage, bool inCloneImageData = true
 /**
  * If inPixmap exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inPixmap's data
  * with the cv::Mat directly.
- * NOTE: Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
+ *
+ * @note Format_RGB888 is an exception since we need to use a local QImage and thus must clone the data regardless
  */
 inline cv::Mat QPixmapToCvMat(const QPixmap& inPixmap, bool inCloneImageData = true)
 {

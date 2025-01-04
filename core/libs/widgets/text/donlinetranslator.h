@@ -619,7 +619,7 @@ private Q_SLOTS:
     void slotSkipGarbageText();
 
     /**
-     * NOTE: Engines have translation limit, so need to split all text into parts and make request sequentially.
+     * @note Engines have translation limit, so need to split all text into parts and make request sequentially.
      * Also Yandex and Bing requires several requests to get dictionary, transliteration etc.
      * We use state machine to rely async computation with signals and slots.
      */

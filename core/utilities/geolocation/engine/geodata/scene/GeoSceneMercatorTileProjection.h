@@ -34,7 +34,7 @@ namespace Marble
  * in y dimension southwards with the first tiles beginning at +85.05113 degree and a y value of 0
  * and the last tiles ending at -85.05113 degree.
  *
- * NOTE: The method @c tileIndexes() handles any latitude value >= +85.0 degree as
+ * @note The method @c tileIndexes() handles any latitude value >= +85.0 degree as
  * exactly +85.0 degree and any latitude value <= -85.0 as exactly -85.0 degree.
  * So for higher zoomlevels the outermost tiles will be masked by that and not included in any results.
  */

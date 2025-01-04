@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT IccProfilesComboBox : public SqueezedComboBox
 
 public:
     /**
-     * NOTE: Use the signal currentIndexChanged(int) for change notification
+     * @note Use the signal currentIndexChanged(int) for change notification
      */
 
     explicit IccProfilesComboBox(QWidget* const parent = nullptr);

@@ -36,7 +36,7 @@ public:
     enum Category
     {
         /**
-         * NOTE: Do not change existing values, they are written to XML in files!
+         * @note Do not change existing values, they are written to XML in files!
          */
 
         /**
