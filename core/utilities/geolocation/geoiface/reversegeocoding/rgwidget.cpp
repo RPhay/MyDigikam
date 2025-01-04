@@ -68,12 +68,13 @@ namespace Digikam
  *
  * @brief The RGWidget class represents the main widget for reverse geocoding.
  */
-
 class Q_DECL_HIDDEN RGWidget::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     bool                   currentlyAskingCancelQuestion    = false;
     bool                   hideOptions                      = true;
@@ -130,13 +131,17 @@ public:
 };
 
 /**
- * Constructor
- * @param imageModel image model
- * @param selectionModel image selection model
- * @param parent The parent object
+ * @brief Constructor
+ *
+ * @param imageModel     The image model
+ * @param selectionModel The image selection model
+ * @param externTagModel The tag model
+ * @param parent         The parent object
  */
-RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const selectionModel,
-                   QAbstractItemModel* externTagModel, QWidget* const parent)
+RGWidget::RGWidget(GPSItemModel* const imageModel,
+                   QItemSelectionModel* const selectionModel,
+                   QAbstractItemModel* externTagModel,
+                   QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {

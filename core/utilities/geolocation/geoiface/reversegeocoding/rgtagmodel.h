@@ -47,6 +47,7 @@ public:
 
     /**
      * @brief Constructor
+     *
      * @param externalTagModel The tag model found in the host application.
      * @param parent The parent object
      */
@@ -74,18 +75,21 @@ public:
 
     /**
      * @brief Translates the model index from host's tag model to this model.
+     *
      * @return The index of current old tag.
      */
     QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex)                           const;
 
     /**
      * @brief Translates the model index from this model to host's tag model.
+     *
      * @return The index of a tag in host's tag model.
      */
     QModelIndex toSourceIndex(const QModelIndex& tagModelIndex)                                     const;
 
     /**
      * @brief Adds a spacer tag.
+     *
      * @param parent The index of the parent. If parent == QModelIndex(), then the spacer is added to top-level
      * @param spacerName The name of the spacer. If it's an address element, the address element name will have the form {addressElement}.For example: {Country}, {City}...
      */
@@ -93,8 +97,10 @@ public:
 
     /**
      * @brief Adds a tag containing data returned from backends.
-     * @param parent The index of the parent.
+     *
+     * @param parent     The index of the parent.
      * @param newTagName The name of the new tag.
+     * @param newElement The new element of the tag.
      */
     QPersistentModelIndex addNewTag(const QModelIndex& parent,
                                     const QString& newTagName,
@@ -102,17 +108,20 @@ public:
 
     /**
      * @brief Add new tags to tag tree. The function starts to scan the tree from root level.
-     * When it finds a spacer containing an address element, it looks to see if the address element is found in elements list.
-     * If it's found, a new tag is added.
-     * @param elements A list containing address elements. Example: {Country}, {City}...
+     *        When it finds a spacer containing an address element, it looks to see if the address element is found in elements list.
+     *        If it's found, a new tag is added.
+     *
+     * @param elements     A list containing address elements. Example: {Country}, {City}...
      * @param resultedData A list containing the name of each address element found in elements. Example: France, Paris...
+     *
      * @return A list containing new tags
      */
     QList<QList<TagData> > addNewData(const QStringList& elements, const QStringList& resultedData);
 
     /**
      * @brief The function starts to scan the tree starting with currentBranch. When it finds a spacer containing an address element, it
-     * looks to see if the address element is found in addressElements list. If it's found, a new tag is added.
+     *        looks to see if the address element is found in addressElements list. If it's found, a new tag is added.
+     *
      * @param currentBranch The branch from where the scan starts.
      * @param currentRow The row of the current branch.
      * @param addressElements A list containing address elements. Example: {Country}, {City}...
@@ -129,7 +138,8 @@ public:
     QList<TagData> getTagAddress();
 
     /**
-     * @brief Deletes all spacers or all new tags below @currentBranch.
+     * @brief Deletes all spacers or all new tags below current branch.
+     *
      * @param currentBranch The tree branch from where the scan starts.
      * @param currentRow The row of current branch.
      * @param whatShouldRemove The tag type that should to be removed. The options are: spacers or new tags.
@@ -140,6 +150,7 @@ public:
 
     /**
      * @brief Deletes all spacers or all new tags.
+     *
      * @param currentIndex If whatShouldRemove represents a spacer, the function will remove all spacers below currentIndex.If whatShouldRemove represents a new tag, the function will delete all new tags.
      * @param whatShouldRemove The tag type that should be removed. The options are: spacers or new tags.
      */
@@ -147,15 +158,16 @@ public:
 
     /**
      * @brief Readds new tags to tag tree.
+     *
      * @param currentBranch The branch from where the scan starts.
      * @param currentRow The row of the currentBranch.
      * @param tagAddressElements A list containing address elements. Example: {Country}, {City}...
      * @param elementsData A list containing the name of each address element found in elements. Example: France, Paris...
      *
      * @note tagAddressElements contains address tag: Places,Spain,Barcelona
-     * readdTag climbs the tree and checks on each level if tagAddressElements[level] is found.
-     * if the tag is found, it climbs up the next level
-     * else, it recreates the new tag and climbs up that tree.
+     *       readdTag climbs the tree and checks on each level if tagAddressElements[level] is found.
+     *       if the tag is found, it climbs up the next level
+     *       else, it recreates the new tag and climbs up that tree.
      */
     void readdTag(TreeBranch*& currentBranch,
                   int currentRow,
@@ -164,37 +176,44 @@ public:
 
     /**
      * @brief Takes each tag contained in tagAddressList and adds it to the tag tree.
+     *
      * @param tagAddressList A list containing new tags.
      */
     void readdNewTags(const QList<QList<TagData> >& tagAddressList);
 
     /**
      * @brief Deletes a tag.
+     *
      * @param currentIndex The tag found at this index will be deleted.
      */
     void deleteTag(const QModelIndex& currentIndex);
 
     /**
      * @brief Gets all spacers.
+     *
      * @return The spacer list.
      */
     QList<QList<TagData> > getSpacers();
 
     /**
      * @brief Gets the spacers addresses below currentBranch. Address means the path from rootTag to currentBranch.
+     *
      * @param currentBranch The branch from where the search starts.
      */
     void climbTreeAndGetSpacers(const TreeBranch* currentBranch);
 
     /**
      * @brief Gets the address of a spacer. Address means the path from rootTag to currentBranch
+     *
      * @param currentBranch The branch where the scan stops.
+     *
      * @return The tag address of currentBranch
      */
     QList<TagData> getSpacerAddress(TreeBranch* currentBranch);
 
     /**
      * @brief Add tags from host application to the tag tree.
+     *
      * @param parentBranch The branch that will be parent for the old tag.
      * @param currentRow The row where this external tag will be added.
      */
@@ -214,14 +233,18 @@ public:
 
     /**
      * @brief Gets the type of a tag found at index.
+     *
      * @param index The index of the tag.
+     *
      * @return The type of the tag found at index.
      */
     Type getTagType(const QModelIndex& index)                                                       const;
 
     /**
      * @brief Returns the branch found at index
+     *
      * @param index Current model index.
+     *
      * @return The branch for the current index.
      */
     TreeBranch* branchFromIndex(const QModelIndex& index)                                           const;

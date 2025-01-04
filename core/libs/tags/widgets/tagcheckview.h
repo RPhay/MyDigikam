@@ -55,9 +55,9 @@ public:
     void setToggleAutoTags(ToggleAutoTags toggle);
 
     /**
-     * If this is switched on, a tag that is created
-     * from _within_ this view, typically via the context menu,
-     * will automatically be set checked.
+     * @brief If @param checkNewTags is switched on, a tag that is created
+     *        from _within_ this view, typically via the context menu,
+     *        will automatically be set checked.
      */
     void setCheckNewTags(bool checkNewTags);
     bool checkNewTags() const;
@@ -70,7 +70,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * Emitted if the checked tags have changed.
+     * @brief Emitted if the checked tags have changed.
      *
      * @param tags a list of selected tag ids
      */
@@ -79,7 +79,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     /**
-     * Resets the whole tag filter.
+     * @brief Resets the whole tag filter.
      */
     void slotResetCheckState();
 
@@ -90,7 +90,7 @@ protected:
 private Q_SLOTS:
 
     /**
-     * Called if the check state of a single item changes. Wraps this to an
+     * @brief Called if the check state of a single item changes. Wraps this to an
      * event that is more useful for filtering tags.
      */
     void slotCheckStateChange(Album* album, Qt::CheckState state);

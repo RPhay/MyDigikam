@@ -164,7 +164,6 @@ public:
          * Usually dark areas over a light theme. For instance the fullscreen UI
          * of a picture viewer, or the logout/lock screen of the plasma workspace
          * ask for a dark color scheme even on light themes.
-         * @since 5.19
          */
         Complementary
     };
@@ -436,24 +435,25 @@ public:
     static QColor shade(const QColor&, ShadeRole);
 
     /**
-     * Retrieve the requested shade color, using the specified color as the
-     * base color and the specified contrast.
+     * @brief Retrieve the requested shade color, using the specified color as the
+     *        base color and the specified contrast.
      *
-     * @param contrast Amount roughly specifying the contrast by which to
-     * adjust the base color, between -1.0 and 1.0 (values between 0.0 and 1.0
-     * correspond to the value from SchemeManager::contrastF)
+     * @param color        The color base color
+     * @param role         The color role
+     * @param contrast     Amount roughly specifying the contrast by which to
+     *                     adjust the base color, between -1.0 and 1.0 (values between 0.0 and 1.0
+     *                     correspond to the value from SchemeManager::contrastF)
      * @param chromaAdjust (optional) Amount by which to adjust the chroma of
-     * the shade (1.0 means no adjustment)
+     *                     the shade (1.0 means no adjustment)
      *
      * @note Shades are chosen such that all shades would contrast with the
-     * base color. This means that if base is very dark, the 'dark' shades will
-     * be lighter than the base color, with midlight() == shadow().
-     * Conversely, if the base color is very light, the 'light' shades will be
-     * darker than the base color, with light() == mid().
-     *
+     *       base color. This means that if base is very dark, the 'dark' shades will
+     *       be lighter than the base color, with midlight() == shadow().
+     *       Conversely, if the base color is very light, the 'light' shades will be
+     *       darker than the base color, with light() == mid().
      */
-    static QColor shade(const QColor&,
-                        ShadeRole,
+    static QColor shade(const QColor& color,
+                        ShadeRole role,
                         qreal contrast,
                         qreal chromaAdjust = 0.0);
 
@@ -489,7 +489,7 @@ public:
 
     /**
      * Used to obtain the QPalette that will be used to set the application
-     * palette from KDE Platform theme.
+     * palette from desktop platform theme.
      *
      * @param config KConfig from which to load the colors
      *

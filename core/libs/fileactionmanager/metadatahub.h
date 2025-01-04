@@ -241,7 +241,8 @@ protected:
      * @brief Applies the set of metadata contained in this MetadataHub
      *        to the given meta engine object.
      *
-     * @param writeMode The mode to write metadata
+     * @param metadata  The metadata backend instance.
+     * @param writeMode The mode to write metadata.
      * @param settings  The MetaEngineSettingsContainer determine whether data is actually set or not.
      *                  The following metadata fields may be set (depending on settings):
      *                   - Comment
@@ -254,7 +255,7 @@ protected:
      * @note The data fields taken from this MetadataHub object are only set if their status is MetadataAvailable.
      *       If the status is MetadataInvalid or MetadataDisjoint, the respective metadata field is not touched.
      *
-     * @return Returns true if the metadata object has been touched
+     * @return Returns true if the metadata object has been touched.
      */
     bool write(DMetadata& metadata,
                WriteComponent writeMode = WRITE_ALL,

@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     TagsManager* tagMngr = nullptr;
 };
 
