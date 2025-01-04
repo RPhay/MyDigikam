@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
-"PO-Revision-Date: 2025-01-02 09:37+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
+"PO-Revision-Date: 2025-01-03 07:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -358,7 +358,7 @@ msgstr "Textasía"
 #: core/app/filters/filtersidebarwidget.cpp:118
 #, kde-format
 msgid "MIME Type Filter"
-msgstr "Síun MIME tegunda"
+msgstr "Síun MIME-tegunda"
 
 #: core/app/filters/filtersidebarwidget.cpp:124
 #, kde-format
@@ -2731,17 +2731,17 @@ msgstr "%1 mynd (%2)"
 #: core/app/utils/digikam_globals.cpp:125
 #, kde-format
 msgid "TIFF Image (*.tiff *.tif)"
-msgstr "TIFF mynd (*.tiff *.tif)"
+msgstr "TIFF-mynd (*.tiff *.tif)"
 
 #: core/app/utils/digikam_globals.cpp:127
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
-msgstr "JPEG mynd (*.jpg *.jpeg *.jpe)"
+msgstr "JPEG-mynd (*.jpg *.jpeg *.jpe)"
 
 #: core/app/utils/digikam_globals.cpp:132
 #, kde-format
 msgid "JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"
-msgstr "JPEG2000 mynd (*.jp2 *.j2k *.jpx *.pgx)"
+msgstr "JPEG2000-mynd (*.jp2 *.j2k *.jpx *.pgx)"
 
 #: core/app/utils/digikam_globals.cpp:137
 #, kde-format
@@ -34460,37 +34460,37 @@ msgstr "Handbók á netinu..."
 msgid "About..."
 msgstr "Um hugbúnaðinn..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Renna að"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Renna að"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Renna frá"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Renna frá"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Aðdráttur svo passi"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -34841,12 +34841,12 @@ msgstr "Myndskrár"
 #: core/libs/filters/mimefilter.cpp:29
 #, kde-format
 msgid "No RAW Files"
-msgstr "Engar RAW skrár"
+msgstr "Engar RAW-skrár"
 
 #: core/libs/filters/mimefilter.cpp:30
 #, kde-format
 msgid "JPEG Files"
-msgstr "JPEG skrár"
+msgstr "JPEG-skrár"
 
 #: core/libs/filters/mimefilter.cpp:31
 #, kde-format
@@ -34866,12 +34866,12 @@ msgstr "WEBP-skrár"
 #: core/libs/filters/mimefilter.cpp:34
 #, kde-format
 msgid "PNG Files"
-msgstr "PNG skrár"
+msgstr "PNG-skrár"
 
 #: core/libs/filters/mimefilter.cpp:35
 #, kde-format
 msgid "TIFF Files"
-msgstr "TIFF skrár"
+msgstr "TIFF-skrár"
 
 #: core/libs/filters/mimefilter.cpp:36
 #, kde-format
@@ -34891,12 +34891,12 @@ msgstr "AVIF-skrár"
 #: core/libs/filters/mimefilter.cpp:39
 #, kde-format
 msgid "DNG Files"
-msgstr "DNG skrár"
+msgstr "DNG-skrár"
 
 #: core/libs/filters/mimefilter.cpp:40
 #, kde-format
 msgid "RAW Files"
-msgstr "RAW skrár"
+msgstr "RAW-skrár"
 
 #: core/libs/filters/mimefilter.cpp:41
 #: core/utilities/setup/album/setupmime.cpp:121
@@ -57569,7 +57569,7 @@ msgstr "Sýna yngstu myndina fyrst"
 msgid "Sort by rating"
 msgstr "Raða eftir einkunn"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -57578,12 +57578,12 @@ msgstr ""
 "Settu hér nafnið á þeirri kortaleit sem þú vilt vista í \"Kortaleitir\"-"
 "sýnina."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Vista núverandi kortaleit í nýtt sýndaralbúm."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -57593,17 +57593,17 @@ msgstr ""
 "sýndaralbúm fyrir leitir og verður heitið notað sem skilgreint er hér til "
 "vinstri."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
 msgid "Search by area:"
 msgstr "Leita eftir svæði:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Birta óhnattstaðsett atriði"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -57614,7 +57614,7 @@ msgstr ""
 "Önnur leit með sama nafni er til.\n"
 "Veldu eitthvað annað nafn:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
@@ -57622,7 +57622,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Nafn er þegar til"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Ekki-hnattstaðsett atriði"
@@ -60328,7 +60328,7 @@ msgstr "Einungis nýjar skrár"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Raw Files"
-msgstr "RAW skrár"
+msgstr "RAW-skrár"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:142
 #, kde-format

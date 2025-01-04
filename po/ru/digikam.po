@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
 "PO-Revision-Date: 2024-11-17 16:28+0300\n"
 "Last-Translator: Александр Яворский <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -34987,37 +34987,37 @@ msgstr "Руководство пользователя с веб-сайта..."
 msgid "About..."
 msgstr "О модуле..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Увеличить масштаб"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Увеличить масштаб"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Уменьшить масштаб"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Уменьшить масштаб"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Вместить в окно"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -58350,7 +58350,7 @@ msgstr "Сначала более новые"
 msgid "Sort by rating"
 msgstr "Сортировать по оценке"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -58359,12 +58359,12 @@ msgstr ""
 "Введите имя, под которым результаты поиска будут сохранены в «Поиск по "
 "карте»."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Сохранить поисковый запрос по карте в виде виртуального альбома."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -58373,17 +58373,17 @@ msgstr ""
 "При нажатии этой кнопки текущий поиск по карте будет сохранён в новый "
 "виртуальный альбом под именем, указанным слева."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
 msgid "Search by area:"
 msgstr "Искать по региону:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Показать объекты без данных о местоположении"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -58394,7 +58394,7 @@ msgstr ""
 "Поисковый запрос с таким именем уже существует.\n"
 "Ввести другое имя:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
@@ -58402,7 +58402,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Это имя уже занято"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Объекты без данных о местоположении"

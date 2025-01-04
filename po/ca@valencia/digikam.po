@@ -1,5 +1,5 @@
 # Translation of digikam.po to Catalan (Valencian)
-# Copyright (C) 2004-2024 This_file_is_part_of_KDE
+# Copyright (C) 2004-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
 # SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
@@ -7,13 +7,13 @@
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
-# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
-"PO-Revision-Date: 2024-12-30 22:49+0100\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
+"PO-Revision-Date: 2025-01-02 20:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -29691,12 +29691,11 @@ msgstr ""
 "u root</p><p>…</p><p>Introduïu el codi SQL a l'indicador de MySQL per tal "
 "d'iniciar les bases de dades de digiKam amb atorgament de privilegis (vegeu "
 "abans)</p><p>…</p><p>quit</p><p>NOTA: Si teniu problemes amb un servidor "
-"MySQL en un sistema Ubuntu basat en Linux, utilitzeu l'ordre addicional: <br/"
-">SET GLOBAL log_bin_trust_function_creators=1;<br>en l'indicador de MySQL "
-"per a poder crear activadors de MySQL.</p><p>NOTA: Si teniu una col·lecció "
+"MySQL en un sistema Ubuntu basat en Linux, utilitzeu l'ordre addicional en "
+"l'indicador de MySQL per a poder crear activadors de MySQL.<br/>SET GLOBAL "
+"log_bin_trust_function_creators=1;</p><p>NOTA: Si teniu una col·lecció "
 "enorme, haureu d'iniciar el servidor MySQL amb «mysql --"
-"max_allowed_packet=128M OR in my.ini» o canvieu la configuració a ~/.my.cnf."
-"</p>"
+"max_allowed_packet=128M» O canvieu la configuració a my.ini o ~/.my.cnf</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -34944,37 +34943,37 @@ msgstr "Manual en línia…"
 msgid "About..."
 msgstr "Quant a…"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Amplia"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Amplia"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Reduïx"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Reduïx"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Zoom fins que ajuste"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -58260,7 +58259,7 @@ msgstr "Mostra primer la més recent"
 msgid "Sort by rating"
 msgstr "Ordena per valoració"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -58269,12 +58268,12 @@ msgstr ""
 "Introduïu ací el nom de la busca actual per mapa per a guardar-la en la "
 "vista de «Busques per mapa»."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Guarda la busca actual per mapa a un àlbum virtual nou."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -58283,17 +58282,17 @@ msgstr ""
 "Si es prem este botó, la busca actual per mapa es guardarà a un àlbum "
 "virtual nou de busques utilitzant el nom establit a l'esquerra."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
 msgid "Search by area:"
 msgstr "Busca per àrea:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Mostra els elements sense geolocalització"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -58304,7 +58303,7 @@ msgstr ""
 "Ja hi ha una busca amb el nom.\n"
 "Introduïu-ne un de nou:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
@@ -58312,7 +58311,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Este nom ja existix"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Elements sense geolocalització"

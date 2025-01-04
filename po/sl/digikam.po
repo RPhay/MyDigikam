@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
 "PO-Revision-Date: 2024-12-30 07:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -34594,37 +34594,37 @@ msgstr "Sprotni priročnik..."
 msgid "About..."
 msgstr "O programu..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Približaj"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Približaj"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Oddalji"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Oddalji"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Prilagodi velikost oknu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -57791,7 +57791,7 @@ msgstr "Najprej prikaži najmlajše"
 msgid "Sort by rating"
 msgstr "Razvrsti po oceni"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -57800,12 +57800,12 @@ msgstr ""
 "Vnesite ime trenutnega iskanja po zemljevidu, da ga shranite v pogled "
 "\"Iskanja po zemljevidih\"."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Shrani trenutno iskanje po zemljevidu v nov navidezni album."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -57814,17 +57814,17 @@ msgstr ""
 "Če pritisnete ta gumb, bo trenutno iskanje po zemljevidu shranjeno v novi "
 "navidezni iskalnim album z imenom nastavljenim na levi."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
 msgid "Search by area:"
 msgstr "Iskanje po območju:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Pokaži predmete, ki nimajo zemljepisne lege"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -57835,7 +57835,7 @@ msgstr ""
 "Ime iskanja že obstaja.\n"
 "Vnesite novo ime:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
@@ -57843,7 +57843,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Ime že obstaja"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Predmeti brez zemljepisne lege"

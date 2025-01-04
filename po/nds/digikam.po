@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -35524,42 +35524,42 @@ msgstr "Handbook för KIPI-Modulen"
 msgid "About..."
 msgstr "Över"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Grötter"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Grötter"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Lütter"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Lütter"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Lütter maken"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@info"
@@ -60085,7 +60085,7 @@ msgstr "Niegst toeerst wiesen"
 msgid "Sort by rating"
 msgstr "Beweerten importeert"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -60094,12 +60094,12 @@ msgstr ""
 "Giff den Naam in, mit den Du de aktuelle Koort-Söök binnen \"De Koort-"
 "Sööklist\" sekern wullt."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Aktuell Koort-Söök as nieg virtuell Album sekern"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -60108,17 +60108,17 @@ msgstr ""
 "Klickst Du op dissen Knoop, warrt de aktuelle Koort-Söök mit den Naam links "
 "as en nieg virtuell Söökalbum sekert."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, fuzzy, kde-format
 msgid "Search by area:"
 msgstr "Söken in:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, fuzzy, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Dubbels söken"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -60129,7 +60129,7 @@ msgstr ""
 "Dat gifft al en Söök mit dissen Naam.\n"
 "Bitte giff en anner Naam in:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
@@ -60138,7 +60138,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Gifft Naam al"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, fuzzy, kde-format
 msgid "Non Geo-located Items"
 msgstr "Dubbels söken"

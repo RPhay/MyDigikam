@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
-"PO-Revision-Date: 2025-01-02 08:40+0100\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
+"PO-Revision-Date: 2025-01-03 22:51+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -17623,10 +17623,9 @@ msgstr "Gorde irudia"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -17642,22 +17641,22 @@ msgstr "Neurri handiena:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
-msgstr ""
+msgstr "Neurri osoko jatorrizko irudiak zama-jaisteko barneratu"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use original image"
-msgstr "Jatorrizko irudia"
+msgstr "Erabili jatorrizko irudia"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thumbnail Properties:"
-msgstr "Propietateak"
+msgstr "Koadro txikiaren propietateak:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
-#, fuzzy, kde-format
+#, kde-format
 msgid "Square thumbnails"
-msgstr "Koadro txikiak"
+msgstr "Koadro txiki karratuak"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:69
 #, kde-format
@@ -17674,9 +17673,9 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Choose image selection method:"
-msgstr "&Aukeratu irudiak hautatzeko metodoa:"
+msgstr "Au&keratu irudiak hautatzeko metodoa:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
@@ -17689,45 +17688,40 @@ msgid "Images"
 msgstr "Irudiak"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:67
-#, fuzzy, kde-format
-#| msgid "Camera Title"
+#, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
-msgstr "Kameraren titulua"
+msgstr "Galeriaren titulua:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:77
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
-msgstr "Destination :"
+msgstr "Helburuko karpeta:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:275
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Helburuko karpeta"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:89
-#, fuzzy, kde-format
-#| msgid "Open in Terminal"
+#, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
-msgstr "Ireki terminalean"
+msgstr "Ireki arakatzailean:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Bat ere ez"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "Barnekoa"
@@ -17749,102 +17743,93 @@ msgstr ""
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "Custom Image Renaming"
-#| msgid "Customize"
+#, kde-format
 msgid "can be customized"
-msgstr "Pertsonalizatu"
+msgstr "Neurrira egokitu daiteke"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
-#, fuzzy, kde-format
-#| msgid "No options available"
+#, kde-format
 msgid "no customization available"
-msgstr "Aukera ez dago erabilgarri"
+msgstr "Neurrira egokitzea ez dago erabilgarri"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Author: %1<br/><br/>"
-msgstr "Pertsonalizatua"
+msgstr "Egilea: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
-#, fuzzy, kde-format
-#| msgid "Created tables"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
-msgstr "Taulak sortuta"
+msgstr "Sortu HTML galeria"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
-msgstr ""
+msgstr "Ongietorri HTML galeria tresnara"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgid "Items Selection"
-msgstr "Hautapena"
+msgstr "Elementu-hautapena"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgid "Theme Selection"
-msgstr "Gaiaren hautapena"
+msgstr "Gai-hautapena"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Theme Parameters"
-msgstr "Gurasoak"
+msgstr "Gaiaren parametroak"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
-#, fuzzy, kde-format
-#| msgid "Queue Settings"
+#, kde-format
 msgid "Output Settings"
 msgstr "Irteerako ezarpenak"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Deleting file %1..."
+#, kde-format
 msgid "Generating Gallery"
-msgstr "%1 fitxategia ezabatzen..."
+msgstr "Galeria sortzea"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create directories"
-msgstr "Esleitu etiketa hau"
+msgstr "Sortu direktorioak"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not create folder '%1'"
-msgstr "Ezin izan da '%1' karpeta sortu"
+msgstr "Ezin izan du '%1' karpeta sortu"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create jAlbum project files"
-msgstr "Filma-fitxategiak"
+msgstr "Sortu jAlbum proiektu-fitxategiak"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to create project files"
-msgstr "Huts egin du elementua gordetzean..."
+msgstr "Proiektu-fitxategiak sortzea huts egin du"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to create settings file"
-msgstr "Huts egin du elementua gordetzean..."
+msgstr "Ezarpen-fitxategia sortzea huts egin du"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
 #, kde-format
 msgid "Launch jAlbum with new project files"
-msgstr ""
+msgstr "Abiarazi jAlbum proiektu-fitxategi berri batekin"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "jAlbum Export"
 msgstr "jAlbum Esportatu"
 
@@ -17852,6 +17837,7 @@ msgstr "jAlbum Esportatu"
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
+"Irudiak jAlbum galeria sortzaile batera irudiak esportatzeko tresna bat"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:64
 #, kde-format
@@ -17868,34 +17854,31 @@ msgstr ""
 "en webgunea xehetasunetarako: https://jalbum.net/.</p>"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:93
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
-msgstr "Sortu eskema..."
+msgstr "Sortu jAlbum galeria..."
 
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjar.cpp:38
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjava.cpp:31
 #, kde-format
 msgid "jAlbum Gallery Generator."
-msgstr ""
+msgstr "jAlbum galeria sortzailea."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgid "Starting to generate jAlbum..."
-msgstr "Sortu eskema..."
+msgstr "jAlbum sortzen hasten..."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
-msgstr ""
+msgstr "Jalbum osatuta dago, baina abisu batzuk gertatu dira."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
-#, fuzzy, kde-format
-#| msgid "Batch queue is completed..."
+#, kde-format
 msgid "Jalbum completed."
-msgstr "Batch-aren ilara osatuta..."
+msgstr "Jalbum osatuta."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
 #, kde-format
@@ -17906,82 +17889,74 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Album name"
+#, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
-msgstr "Albumaren izena"
+msgstr "jAlbum bitarrak"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgid "Project Title:"
-msgstr "Bilduma:"
+msgstr "Proiektuaren titulua:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the project title"
-msgstr "Définissez ici le fournisseur du contact."
+msgstr "Proiektuaren titulua hemen ezarri"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:77
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgid "Projects folder:"
-msgstr "Karpetaren arabera"
+msgstr "Proiektuaren karpeta:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:80
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
-msgstr "Karpetaren arabera"
+msgstr "Proiektuen karpeta"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create New Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
-msgstr "Sortu album berria"
+msgstr "Sortu jAlbum albuma"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
-#, fuzzy, kde-format
-#| msgid "Welcome to digiKam %1"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Ongi etorri digiKam %1 bertsiora"
+msgstr "Ongi etorri jAlbum esportatzeko tresnara"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgid "Paths Selection"
-msgstr "Hautapena"
+msgstr "Bide-izenen hautapena"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Generating jAlbum"
-msgstr "Esportatu"
+msgstr "jAlbum sortzen"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Abiarazi irudien editorea"
+msgstr "DLNA hedabide zerbitzariaren bidez fitxategiak partekatu"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
-#, fuzzy, kde-format
-#| msgid "Custom list"
+#, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
-msgstr "Pertsonalizatu zerrenda"
+msgstr "Abioan zerbitzaria abiatzea"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to turn-on the DLNA server at application start-up "
 "automatically"
-msgstr "Gaitu aukera hau albumaren izena bistaratzeko."
+msgstr ""
+"Ezarri aukera hau DLNA zerbitzaria aplikazioaren abioan automatikoki pizteko"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #, kde-format
@@ -18000,11 +17975,10 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgid "Median: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
-msgstr "Mediana: "
+msgstr "Hedabide zerbitzariaren edukia"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #, kde-format
@@ -18013,39 +17987,37 @@ msgid ""
 "The items list to share has changed. Do you want to start now the media "
 "server with this contents?"
 msgstr ""
+"Partekatu beharreko elementu-zerrenda aldatu egin da. Hedabide zerbitzaria "
+"eduki honekin orain abiatu nahi duzu?"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
-msgstr ""
+msgstr "Zerbitzaria martxan dago"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
-#, fuzzy, kde-format
-#| msgid "No album ids passed"
+#, kde-format
 msgctxt "@info"
 msgid "1 album shared"
 msgid_plural "%1 albums shared"
-msgstr[0] "Ez da albumaren IDrik eman"
-msgstr[1] "Ez da albumaren IDrik eman"
+msgstr[0] "Album 1 partekatuta"
+msgstr[1] "%1 album partekatuta"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info"
 msgid "1 item shared"
 msgid_plural "%1 items shared"
-msgstr[0] "Elementu 1"
-msgstr[1] "%1 elementu"
+msgstr[0] "Elementu 1 partekatuta"
+msgstr[1] "%1 elementu partekatuta"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Gelditu"
@@ -18055,66 +18027,60 @@ msgstr "Gelditu"
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
-msgstr ""
+msgstr "Zerbitzaria ez dago martxan"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "Start index for custom range"
-#| msgid "Start:"
+#, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Hasi"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
-#, fuzzy, kde-format
-#| msgid "There are no items to process in the queues."
+#, kde-format
 msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
-msgstr "Ez dago elementurik ilaran prozesatzeko."
+msgstr "Uneko hautapenarekin ez dago partekatu beharreko bildumarik..."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
-#, fuzzy, kde-format
-#| msgid "There are no items to process in the queues."
+#, kde-format
 msgctxt "@info"
 msgid "There is no item to share with the current selection..."
-msgstr "Ez dago elementurik ilaran prozesatzeko."
+msgstr "Uneko hautapenarekin ez dago partekatu beharreko elementurik..."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Shared Items"
-msgstr "&Ordenatu irudiak"
+msgstr "Partekatutako elementuak"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
-msgstr "Abiarazi irudien editorea"
+msgstr "Hedabide zerbitzaria abiarazten"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player...."
+#, kde-format
 msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
-msgstr "Errorea gertatu da multimediaren erreproduzitzailean..."
+msgstr "Errorea bat gertatu da hedabide zerbitzaria abiatu bitartean..."
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "DLNA Export"
-msgstr "Esportatu"
+msgstr "DLNA esportatu"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr ""
+"DLNArekin bateragarria den gailu batekin elementuak esportatzeko tresna bat"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
 #, kde-format
@@ -18129,50 +18095,44 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
-msgstr ""
+msgstr "Partekatu DLNA erabiliz..."
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgid "%1 Media Server"
-msgstr "Abiarazi irudien editorea"
+msgstr "%1 hedabide zerbitzaria"
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
-#, fuzzy, kde-format
-#| msgid "The folders have been listed."
+#, kde-format
 msgid "Media Server have been started"
-msgstr "Karpetak zerrendatu dira."
+msgstr "Hedabide zerbitzaria abiarazi da"
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server cannot be started!"
-msgstr ""
+msgstr "Hedabide zerbitzaria ezin da abiatu!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:170
-#, fuzzy, kde-format
-#| msgid "The folders have been listed."
+#, kde-format
 msgid "MJPEG Server have been started"
-msgstr "Karpetak zerrendatu dira."
+msgstr "MJPEG zerbitzaria abiarazi da"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
-#, fuzzy, kde-format
-#| msgid "The folders have been listed."
+#, kde-format
 msgid "MJPEG Server cannot be started!"
-msgstr "Karpetak zerrendatu dira."
+msgstr "MJPEG zerbitzaria ezin da abiarazi!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Abiarazi irudien editorea"
+msgstr "Partekatu fitxategiak MJPEG korronte zerbitzariarekin"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgid "Median: "
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
-msgstr "Mediana: "
+msgstr "MJPEG zerbitzariaren edukia"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:98
 #, kde-format
@@ -18181,26 +18141,28 @@ msgid ""
 "The items list to share has changed. Do you want to start now the MJPEG "
 "server with this contents?"
 msgstr ""
+"Partekatu beharreko elementu-zerrenda aldatu egin da. MJPEG zerbitzaria "
+"eduki honekin orain abiatu nahi duzu?"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Server Port:"
-msgstr "Karpeta-ikuspegiaren aukerak"
+msgstr "Zerbitzariren atakak:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG server IP port."
-msgstr ""
+msgstr "MJPEG zerbitzariaren IP ataka."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to turn-on the MJPEG server at application start-up "
 "automatically"
-msgstr "Gaitu aukera hau albumaren izena bistaratzeko."
+msgstr "Ezarri aukera hau, abio garaian MJPEG zerbitzari automatikoki pizteko"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
 #, kde-format
@@ -18216,11 +18178,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgctxt "@action: button"
 msgid "Preview..."
-msgstr "Aurrez ikusi..."
+msgstr "Aurreikuspegia..."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:95
 #, kde-format
@@ -18228,16 +18189,17 @@ msgctxt "@info"
 msgid ""
 "Press this button to preview the stream on your computer with your browser."
 msgstr ""
+"Sakatu botoi hau, korrontea zure ordenagailuan zure arakatzailearekin "
+"aurreikusteko."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Server"
-msgstr "Angelu nagusia:"
+msgstr "Zerbitzaria"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:127
-#, fuzzy, kde-format
-#| msgid "JPEG quality:"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG Quality:"
 msgstr "JPEG kalitatea:"
@@ -18249,13 +18211,14 @@ msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
 "more network bandwidth"
 msgstr ""
+"JPEG kalitatea [50:baxuagoa - 100:altuagoa]. Abisua: Kalitate hobearekin "
+"sareko banda zabalera gehiago behar da"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG Size:"
-msgstr "JPEG fitxategiak"
+msgstr "JPEG neurria:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
 #, kde-format
@@ -18264,18 +18227,17 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size require more network bandwidth"
 msgstr ""
+"JPEG irudiaren neurria pixeletan, pantaila-bereizmen estandarrak erabiliz. "
+"Abisua: neurri handiagoarekin sareko banda zabalera handiagoa behar da"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Milliseconds"
+#, kde-format
 msgctxt "@label"
 msgid "Delay in Seconds:"
-msgstr "Milisegundo"
+msgstr "Atzerapena segundotan:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:164
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgctxt "@info"
 msgid "The delay in seconds between images."
 msgstr "Irudien arteko atzerapena segundotan."
@@ -18284,7 +18246,7 @@ msgstr "Irudien arteko atzerapena segundotan."
 #, kde-format
 msgctxt "@label"
 msgid "Frames by Second:"
-msgstr ""
+msgstr "Fotogramak segundoko:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:171
 #, kde-format
@@ -18293,35 +18255,32 @@ msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "require more network bandwidth"
 msgstr ""
+"Korrontea errendatzeko segundoko fotograma kopurua. Abisua: Emari "
+"handiagoarekin sareko banda zabalera handiagoa behar da"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Eritrea"
+#, kde-format
 msgctxt "@option:check"
 msgid "Stream in Loop"
-msgstr "Eritrea"
+msgstr "Korrontea begiztan"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead once."
-msgstr ""
+msgstr "MJPEG korrontea begiztan joko da behin bakarrik egin beharrean."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Eritrea"
+#, kde-format
 msgctxt "@title"
 msgid "Stream"
-msgstr "Eritrea"
+msgstr "Korrontea"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:73
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:100
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label"
 msgid "Type:"
 msgstr "Mota:"
@@ -18336,11 +18295,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@title"
 msgid "Transition"
-msgstr "Posizioa:"
+msgstr "Trantsizio"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
 #, kde-format
@@ -35323,42 +35281,42 @@ msgstr "Lerroko eskuliburua..."
 msgid "About..."
 msgstr "Honi buruz..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Handiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Handiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Txikiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Txikiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Doitzeko zooma"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@info"
@@ -59857,7 +59815,7 @@ msgstr "Erakutsi berriena aurrenik"
 msgid "Sort by rating"
 msgstr "Sailkatu puntuazioen arabera"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -59866,12 +59824,12 @@ msgstr ""
 "Sartu uneko maparen bilaketaren izena \"Nire mapen bilaketak\" ikuspegian "
 "gordetzeko"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Gorde uneko maparen bilaketa album birtual berrian."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -59881,17 +59839,17 @@ msgstr ""
 "bilaketako album birtual berri batean ezkerreko aldean ezarritako izena "
 "erabiliz."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, fuzzy, kde-format
 msgid "Search by area:"
 msgstr "Bilatu hemen:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, fuzzy, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -59902,7 +59860,7 @@ msgstr ""
 "Izen bereko beste bilaketa bat lehendik ere badago.\n"
 "Sartu izen berria:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
@@ -59911,7 +59869,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Izena lehendik dago"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Geo-kokatu gabeko elementuak"

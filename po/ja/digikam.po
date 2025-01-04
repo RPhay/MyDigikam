@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -35256,28 +35256,28 @@ msgstr ""
 msgid "About..."
 msgstr "情報"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Zoom:"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "ズーム:"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, fuzzy, kde-format
 #| msgid "Zoom:"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "ズーム:"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, fuzzy, kde-format
 #| msgid "Zoom Blur"
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "ズームぼかし"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, fuzzy, kde-format
 #| msgid "Zoom Blur"
 msgctxt "@info"
@@ -35285,7 +35285,7 @@ msgid "Zoom Out"
 msgstr "ズームぼかし"
 
 # ACCELERATOR added by translator
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action"
@@ -35293,7 +35293,7 @@ msgid "Zoom to Fit"
 msgstr "原寸で表示(&Z)"
 
 # ACCELERATOR added by translator
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@info"
@@ -59821,7 +59821,7 @@ msgid "Sort by rating"
 msgstr "評価でソート"
 
 # well-spelled: マイ
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -59830,29 +59830,29 @@ msgstr ""
 "現在の地図検索を<interface>マイ地図検索</interface>に保存するための名前を入力"
 "します。"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, fuzzy, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "現在の地図検索を新しい仮想アルバムに保存します"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, fuzzy, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
 "search virtual album using the name set on the left side."
 msgstr "現在の地図検索を左で設定した名前の仮想アルバムに保存します。"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, fuzzy, kde-format
 msgid "Search by area:"
 msgstr "検索:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "ジオロケーション情報のないアイテムを表示"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -59863,7 +59863,7 @@ msgstr ""
 "検索名は既に存在します。\n"
 "他の名前を入力してください:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
@@ -59872,7 +59872,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "名前は存在します"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "ジオロケーション情報のないアイテム"

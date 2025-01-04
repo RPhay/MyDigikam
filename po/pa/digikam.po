@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-02 01:51+0000\n"
+"POT-Creation-Date: 2025-01-04 01:51+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -34380,42 +34380,42 @@ msgstr "ਕਿਪਿ ਪਲੱਗਇਨ ਹੱਥਲੀ ਬੁੱਕ"
 msgid "About..."
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "ਜ਼ੂਮ ਇਨ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "ਜ਼ੂਮ ਇਨ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "ਜ਼ੂਮ ਆਉਟ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "ਜ਼ੂਮ ਆਉਟ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "ਜ਼ੂਮ ਆਉਟ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@info"
@@ -58452,36 +58452,36 @@ msgstr "ਸਭ ਤੋਂ ਨਵੇਂ ਪਹਿਲਾਂ ਵੇਖੋ"
 msgid "Sort by rating"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, fuzzy, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "ਮੌਜੂਦਾ ਚੋਣ ਇੱਕ ਨਵੀਂ ਵੁਰਚੁਅਲ ਐਲਬਮ ਵਿੱਚ ਸੰਭਾਲੋ"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
 "search virtual album using the name set on the left side."
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, fuzzy, kde-format
 msgid "Search by area:"
 msgstr "ਇਸ 'ਚ ਖੋਜ:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, fuzzy, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "ਡੁਪਲੀਕੇਟ ਲੱਭੋ"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -58492,7 +58492,7 @@ msgstr ""
 "ਇਸੇ ਨਾਂ ਨਾਲ ਹੋਰ ਖੋਜ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ।\n"
 "ਇੱਕ ਵੱਖਰਾ ਨਾਂ ਦਿਓ ਜੀ:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
@@ -58501,7 +58501,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "ਨਾਂ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, fuzzy, kde-format
 msgid "Non Geo-located Items"
 msgstr "ਡੁਪਲੀਕੇਟ ਲੱਭੋ"
