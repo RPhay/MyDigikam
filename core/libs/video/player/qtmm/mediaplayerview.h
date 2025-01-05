@@ -69,6 +69,7 @@ private Q_SLOTS:
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotPlaybackRate(QAction* action);
+    void slotAudioChanged(QAction* action);
     void slotVolumeChanged(int volume);
     void slotLoopToggled(bool loop);
     void slotPosition(int position);

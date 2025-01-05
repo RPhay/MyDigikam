@@ -38,6 +38,8 @@
 #include <QVideoSink>
 #include <QVideoFrame>
 #include <QAudioOutput>
+#include <QAudioDevice>
+#include <QMediaDevices>
 #include <QMediaMetaData>
 #include <QStandardPaths>
 
@@ -172,6 +174,7 @@ public:
     QToolButton*         rateButton         = nullptr;
 
     QPushButton*         loopPlay           = nullptr;
+    QPushButton*         speaker            = nullptr;
 
     QToolBar*            toolBar            = nullptr;
 
@@ -186,7 +189,7 @@ public:
     QSlider*             slider             = nullptr;
     QSlider*             volume             = nullptr;
     QLabel*              tlabel             = nullptr;
-    QLabel*              speaker            = nullptr;
+
     QUrl                 currentItem;
 
     int                  videoOrientation   = 0;
@@ -387,8 +390,27 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
-    d->speaker        = new QLabel(hbox);
-    d->speaker->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
+
+    d->speaker        = new QPushButton(hbox);
+    d->speaker->setIcon(QIcon::fromTheme(QLatin1String("audio-volume-high")));
+    d->speaker->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    d->speaker->setFocusPolicy(Qt::NoFocus);
+    d->speaker->setMinimumSize(22, 22);
+
+    QMenu* const audioMenu         = new QMenu(this);
+    QActionGroup* const audioGroup = new QActionGroup(audioMenu);
+
+    for (const auto& device : QMediaDevices::audioOutputs())
+    {
+        QAction* const action = audioGroup->addAction(device.description());
+        action->setCheckable(true);
+        action->setData(device.id());
+        action->setChecked(device.isDefault());
+        audioMenu->addAction(action);
+    }
+
+    d->speaker->setMenu(audioMenu);
+
     d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
@@ -483,6 +505,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(rateMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotPlaybackRate(QAction*)));
+
+    connect(audioMenu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotAudioChanged(QAction*)));
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -574,8 +599,6 @@ void MediaPlayerView::slotThemeChanged()
     QPalette palette2;
     palette2.setColor(d->playerView->backgroundRole(), qApp->palette().color(QPalette::Base));
     d->playerView->setPalette(palette2);
-
-    d->speaker->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
 }
 
 void MediaPlayerView::slotEscapePressed()
@@ -911,6 +934,21 @@ void MediaPlayerView::slotPlaybackRate(QAction* action)
     if (action)
     {
         d->player->setPlaybackRate(action->data().toReal());
+    }
+}
+
+void MediaPlayerView::slotAudioChanged(QAction* action)
+{
+    if (action)
+    {
+        for (const auto& device : QMediaDevices::audioOutputs())
+        {
+            if (action->data().toByteArray() == device.id())
+            {
+                d->audio->setDevice(device);
+                break;
+            }
+        }
     }
 }
 

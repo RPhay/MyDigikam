@@ -92,7 +92,7 @@ BUGFIXES:
 060 ==> 432760 - New items for people entries without seeing the mentioned photos.
 061 ==> 498234 - Rotated jxl images are displateyed without rotation.
 062 ==> 490848 - digiKam fails to preview animated .webp files.
-063 ==>
+063 ==> 497364 - Not possible to redirect Sound output when previewing/playing video files.
 064 ==>
 065 ==>
 066 ==>
