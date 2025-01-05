@@ -17,15 +17,15 @@
 # Stefano Ferri <ferriste@gmail.com>, 2013.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2022.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2015.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Valter Mura <valtermura@gmail.com>
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 01:51+0000\n"
-"PO-Revision-Date: 2024-12-23 20:36+0100\n"
+"POT-Creation-Date: 2025-01-05 01:54+0000\n"
+"PO-Revision-Date: 2025-01-02 18:19+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3153,11 +3153,9 @@ msgstr "Ultima ricerca"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Motore"
+msgstr "MotoreVolti"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3276,15 +3274,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Vuoi davvero eliminare definitivamente TUTTI gli elementi?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Selezione"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Elimina"
@@ -22505,31 +22501,7 @@ msgid "A tool to render slideshow"
 msgstr "Strumento per eseguire la resa di una presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22570,19 +22542,20 @@ msgstr ""
 "<i>PagGiù</i></td></tr><tr><td></td><td>tasto <i>freccia destra</i></td></"
 "tr><tr><td></td><td>Rotella del mouse giù</td></tr><tr><td></td><td>Pulsante "
 "destro del mouse</td></tr><tr><td>Pausa/Avvio:</td><td>barra <i>spaziatrice</"
-"i></td></tr><tr><td>Impostazioni presentazione:</td><td>combinazione <i>Alt"
-"+P</i></td></tr><tr><td>Mostra/nascondi sovraimpressioni:</"
-"td><td>combinazione <i>Alt+Y</i></td></tr><tr><td>Esci:</td><td>tasto "
-"<i>Esc</i></td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Proprietà "
-"elemento</h1></b></center></nobr></td></tr><tr><td>Cambia tag:</td><td>usa "
-"le scorciatoie da tastiera per i tag</td></tr><tr><td>Cambia valutazione:</"
-"td><td>usa le scorciatoie da tastiera per le valutazioni</td></"
-"tr><tr><td>Cambia etichetta colorata:</td><td>usa le scorciatoie da tastiera "
-"per l'etichetta colorata</td></tr><tr><td>Cambia l'etichetta di scelta:</"
-"td><td>usa le scorciatoie da tastiera per l'etichetta di scelta</td></"
-"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Altro</h1></b></center></"
-"nobr></td></tr><tr><td>Mostra questa guida:</td><td>tasto <i>F1</i></td></"
-"tr></table>"
+"i></td></tr><tr><td>Video avanti:</td><td><i>Ctrl+tasto destro</i> </td></"
+"tr><tr><td>Video indietro:</td><td><i>Ctrl+tasto sinistro</i> </td></"
+"tr><tr><td>Impostazioni presentazione:</td><td>combinazione <i>Alt+P</i></"
+"td></tr><tr><td>Mostra/nascondi sovraimpressioni:</td><td>combinazione <i>Alt"
+"+Y</i></td></tr><tr><td>Esci:</td><td>tasto <i>Esc</i></td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Proprietà elemento</h1></b></center></"
+"nobr></td></tr><tr><td>Cambia tag:</td><td>usa le scorciatoie da tastiera "
+"per i tag</td></tr><tr><td>Cambia valutazione:</td><td>usa le scorciatoie da "
+"tastiera per le valutazioni</td></tr><tr><td>Cambia etichetta colorata:</"
+"td><td>usa le scorciatoie da tastiera per l'etichetta colorata</td></"
+"tr><tr><td>Cambia l'etichetta di scelta:</td><td>usa le scorciatoie da "
+"tastiera per l'etichetta di scelta</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Altro</h1></b></center></nobr></td></"
+"tr><tr><td>Mostra questa guida:</td><td>tasto <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
@@ -22741,8 +22714,7 @@ msgstr "Nessuna immagine selezionata. Seleziona le immagini da caricare."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Attenzione"
@@ -22762,8 +22734,7 @@ msgstr "Autenticazione non riuscita. Fai clic su «Continua» per autenticarti."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Continua"
@@ -22774,8 +22745,7 @@ msgstr "Continua"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "Annulla"
@@ -23869,8 +23839,7 @@ msgstr ""
 "Recupero non riuscito da %1 delle informazioni sui gruppi di foto. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Attenzione"
@@ -23885,15 +23854,13 @@ msgstr ""
 "Vuoi continuare?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "Continua"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "Annulla"
@@ -24197,39 +24164,32 @@ msgstr "Chiamata a Google Drive non riuscita: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Errore"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Esportazione in Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Esportazione in Google Foto"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Attenzione"
@@ -24246,16 +24206,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "Continua"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "Annulla"
@@ -24271,8 +24229,7 @@ msgstr ""
 "Vuoi continuare?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Errore"
@@ -24284,8 +24241,7 @@ msgid "Failed to save image to %1"
 msgstr "Salvataggio dell'immagine su %1 non riuscito"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Attenzione"
@@ -24303,22 +24259,19 @@ msgstr ""
 "Vuoi continuare?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "Continua"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "Annulla"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Attenzione"
@@ -24336,16 +24289,14 @@ msgstr ""
 "Non è stata caricata alcuna immagine nel tuo account."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "OK"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Errore"
@@ -24372,8 +24323,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Attenzione"
@@ -24390,16 +24340,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "Continua"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "Annulla"
@@ -25043,7 +24991,7 @@ msgstr "Luogo:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:435
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
 #, kde-format
 msgid "More options"
 msgstr "Più opzioni"
@@ -27287,16 +27235,13 @@ msgid "The SQLite core database was not found."
 msgstr "La banca dati di SQLite non è stata trovata."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
 "<p>Se vuoi iniziare una nuova configurazione con una nuova procedura "
-"guidata, elimina il file:<br>%1</p>"
+"guidata, elimina il file:<br/>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -27923,7 +27868,7 @@ msgid "Labels Album"
 msgstr "Album etichette"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:201
-#: core/libs/tags/manager/tagmngrtreeview.cpp:155
+#: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
@@ -29772,18 +29717,7 @@ msgstr ""
 "quella corretta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29803,7 +29737,7 @@ msgstr ""
 "privilegi di amministrazione (vedi indietro)</p><p>...</p><p>quit</"
 "p><p>NOTA: se hai problemi con un server MySQL in Ubuntu, un sistema basato "
 "su Linux, usa il comando aggiuntivo nella finestra di prompt MySQL per "
-"creare attivatori MySQL.<br>SET GLOBAL log_bin_trust_function_creators=1;</"
+"creare attivatori MySQL.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
 "p><p>NOTA: se possiedi una raccolta molto grande, devi avviare il server "
 "MySQL con mysql --max_allowed_packet=128M OPPURE cambiare le impostazioni in "
 "my.ini o ~/.my.cnf</p>"
@@ -34896,9 +34830,7 @@ msgid "JPEG Quality:"
 msgstr "Qualità JPEG:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Avvia"
@@ -37573,7 +37505,7 @@ msgstr "Impossibile aprire il file di destinazione."
 msgid "Visit digiKam project website"
 msgstr "Visita il sito web del progetto digiKam"
 
-#: core/libs/progressmanager/progressmanager.cpp:158
+#: core/libs/progressmanager/progressmanager.cpp:160
 #, kde-format
 msgid "Aborting..."
 msgstr "Annullamento..."
@@ -40029,43 +39961,43 @@ msgstr "Aggiungi all'elenco"
 msgid "Add selected tags to Quick Access List"
 msgstr "Aggiungi i tag selezionati alla lista di accesso rapido"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:137
+#: core/libs/tags/manager/tagmngrtreeview.cpp:139
 #, kde-format
 msgid "Delete Tags"
 msgstr "Elimina tag"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:145
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Modifica il titolo del tag"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagmngrtreeview.cpp:151
 #: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reimposta icona del tag"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:152
+#: core/libs/tags/manager/tagmngrtreeview.cpp:154
 #: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverti la selezione"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:158
+#: core/libs/tags/manager/tagmngrtreeview.cpp:160
 #: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Espandi albero dei tag"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:161
+#: core/libs/tags/manager/tagmngrtreeview.cpp:163
 #: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Contrai l'albero dei tag"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:164
+#: core/libs/tags/manager/tagmngrtreeview.cpp:166
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
@@ -43147,10 +43079,9 @@ msgid "A KDE Family Project"
 msgstr "Un progetto della famiglia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2001-2024, la squadra degli sviluppatori di digiKam"
+msgstr "(c) 2001-2025, la squadra degli sviluppatori di digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -52443,37 +52374,29 @@ msgid "Cancel"
 msgstr "Annulla"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
-#, fuzzy, kde-format
-#| msgid "Confirm Faces"
+#, kde-format
 msgid "Confirming face"
-msgstr "Conferma i volti"
+msgstr "Conferma del volto"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Rimuovere il tag volto?"
+msgstr "Rimozione del volto"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Aggiornamento della banca dati dei volti"
+msgstr "Modifica del tag volto"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "Rimuovi quest'area del viso"
+msgstr "Modifica della regione del volto"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Manualmente e per nome"
+msgstr "Aggiunta manuale del volto"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52550,7 +52473,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rifiuta questo suggerimento"
 
-# VM: verificare i tag dell'origine
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
@@ -52572,28 +52494,24 @@ msgstr ""
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Analizza immagini"
+msgstr "Analizza nuove immagini"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Analizza immagini"
+msgstr "Analizza tutte le immagini"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Riconosci i volti"
+msgstr "Riconosci solo i volti"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
@@ -52676,41 +52594,31 @@ msgid "Face size:"
 msgstr "Dimensione volto:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molto piccolo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Piccolo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
-msgstr "Media"
+msgstr "Medio"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grande"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molto grande"
@@ -53414,9 +53322,7 @@ msgid "Reference"
 msgstr "Riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Metodo di selezione dell'immagine di riferimento"
@@ -57527,7 +57433,7 @@ msgstr "<p>Copyright %1</p>"
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
 msgid "Warning: Sidecar settings"
-msgstr "Avviso: impostazioni dei file ausiliari"
+msgstr "Avviso: impostazioni dei file sidecar"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:116
 #, kde-format
@@ -57538,10 +57444,10 @@ msgid ""
 "Please enable reading of sidecar files in the host application or continue "
 "at your own risk."
 msgstr ""
-"Hai abilitato la scrittura su file ausiliari per la memorizzazione dei "
+"Hai abilitato la scrittura su file sidecar per la memorizzazione dei "
 "metadati dell'applicazione ospite, ma non la lettura. Questo vuol dire che "
-"tutti i metadati memorizzati nei file ausiliari verranno sovrascritti.\n"
-"Abilita la lettura dei file ausiliari nell'applicazione ospite o continua a "
+"tutti i metadati memorizzati nei file sidecar verranno sovrascritti.\n"
+"Abilita la lettura dei file sidecar nell'applicazione ospite o continua a "
 "tuo rischio e pericolo."
 
 #: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
@@ -57998,175 +57904,175 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{AAL2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:176
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:181
 #, kde-format
 msgid "Add country tag"
 msgstr "Aggiungi tag della nazione"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:178
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:183
 #, kde-format
 msgid "Add state tag"
 msgstr "Aggiungi tag dello stato"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:180
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:185
 #, kde-format
 msgid "Add state district tag"
 msgstr "Aggiungi tag del distretto"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:182
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:187
 #, kde-format
 msgid "Add county tag"
 msgstr "Aggiungi tag della contea"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:184
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:189
 #, kde-format
 msgid "Add city tag"
 msgstr "Aggiungi tag della città"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:186
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:191
 #, kde-format
 msgid "Add city district tag"
 msgstr "Aggiungi tag del quartiere"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:188
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:193
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Aggiungi tag del sobborgo"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:190
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:195
 #, kde-format
 msgid "Add town tag"
 msgstr "Aggiungi tag del paese"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:192
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:197
 #, kde-format
 msgid "Add village tag"
 msgstr "Aggiungi tag del villaggio"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:194
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:199
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Aggiungi tag della frazione"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:196
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:201
 #, kde-format
 msgid "Add street"
 msgstr "Aggiungi via"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:198
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:203
 #, kde-format
 msgid "Add house number tag"
 msgstr "Aggiungi tag del numero civico"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:200
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:205
 #, kde-format
 msgid "Add place"
 msgstr "Aggiungi luogo"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:202
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Aggiungi area amministrativa locale 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:204
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:209
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Aggiungi area amministrativa locale 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:206
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
 #, kde-format
 msgid "Add new tag"
 msgstr "Aggiungi nuovo tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:212
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Rimuovi il tag selezionato"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:208
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:213
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Rimuovi tutti i tag di controllo sotto questo"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:216
 #, kde-format
 msgid "Add all address elements"
 msgstr "Aggiungi tutti gli elementi dell'indirizzo"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:214
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:219
 #, kde-format
 msgid "Select language:"
 msgstr "Seleziona lingua:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Select service:"
 msgstr "Seleziona servizio:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Nome di luogo di Geonames.org (fuori dagli USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Indirizzo completo di Geonames.org (solo USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:441
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
 #, kde-format
 msgid "Less options"
 msgstr "Meno opzioni"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Write locations as tags"
 msgstr "Registra le posizioni come tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Write locations metadata"
 msgstr "Registra i metadati delle posizioni"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:261
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Elabora la geocodifica inversa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:384
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:389
 #, kde-format
 msgid "Image tags are changed."
 msgstr "I tag dell'immagine sono cambiati."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:420
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Recupero di informazioni GI -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:457
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr "Errore di geocodifica inversa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:797
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Aggiungi nuovo tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:798
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Seleziona un nome per il nuovo tag:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:941
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -58176,7 +58082,7 @@ msgstr ""
 "mantenere i tag precedentemente ottenuti?"
 
 # VM: errore di persona nell'originale. 'have' >>> 'has'.
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:948
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -58185,7 +58091,7 @@ msgstr ""
 "Un'immagine è stata sottoposta a geocodifica inversa. Vuoi mantenere i tag "
 "precedentemente ottenuti?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:954
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
@@ -61577,16 +61483,10 @@ msgid "Reset and clear all faces and training"
 msgstr "Azzera, pulisci tutti i volti e addestra"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "This will clear all detected and tagged faces, and then rescan images to "
-#| "detect faces."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr ""
-"Questa opzione cancellerà tutti i volti rilevati e con tag, quindi "
-"rianalizzerà le immagini per individuare di nuovo i volti."
+msgstr "Questa opzione cancellerà tutti i volti rilevati e con tag."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
@@ -61727,26 +61627,21 @@ msgid "Sync Metadata and Database"
 msgstr "Sincronizza metadati e banca dati"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Attenzione"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:400
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-#| "faces? You’ll need to start tagging unknown faces again before any faces "
-#| "can be recognized."
+#, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
 "Vuoi davvero eliminare tutti i volti confermati, non confermati e "
-"sconosciuti? Sarà necessario attribuire di nuovo i tag ai volti sconosciuti "
-"prima che i volti possano essere riconosciuti."
+"sconosciuti? Sarà necessario rianalizzare le immagini e attribuire di nuovo "
+"i tag ai volti sconosciuti prima che i volti possano essere riconosciuti."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:409
@@ -61927,19 +61822,16 @@ msgid "Duplicates for: %1\n"
 msgstr "Duplicati per: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Nessun duplicato"
+msgstr "Nessun elemento duplicato"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "Un duplicato"
-msgstr[1] "%1 duplicati"
+msgstr[0] "Un elemento duplicato"
+msgstr[1] "%1 elementi duplicati"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, kde-format
@@ -62036,22 +61928,19 @@ msgstr[1] "%1 volti"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
-#, fuzzy, kde-format
-#| msgid "Enable face detection"
+#, kde-format
 msgid "Error starting face detection."
-msgstr "Abilita il riconoscimento facciale"
+msgstr "Errore di avvio del rilevamento facciale."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "itinerari trovati: %1"
+msgstr "Volti trovati: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "itinerari trovati: %1"
+msgstr "Volto trovato: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68719,17 +68608,17 @@ msgstr ""
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
 msgid "Icon Items"
-msgstr "Elementi icone"
+msgstr "Elementi icona"
 
 #: core/utilities/setup/setuptooltip.cpp:407
 #, kde-format
 msgid "Album Items"
-msgstr "Elementi dell'album"
+msgstr "Elementi album"
 
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
 msgid "Import Items"
-msgstr "Importa elementi"
+msgstr "Elementi importati"
 
 #~ msgid "FacesDetector"
 #~ msgstr "RilevatoreFacciale"

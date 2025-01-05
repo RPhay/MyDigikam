@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 01:51+0000\n"
+"POT-Creation-Date: 2025-01-05 01:54+0000\n"
 "PO-Revision-Date: 2025-01-02 20:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -24964,7 +24964,7 @@ msgstr "Lloc:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:435
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
 #, kde-format
 msgid "More options"
 msgstr "Més opcions"
@@ -27838,7 +27838,7 @@ msgid "Labels Album"
 msgstr "Retola l'àlbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:201
-#: core/libs/tags/manager/tagmngrtreeview.cpp:155
+#: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
@@ -37469,7 +37469,7 @@ msgstr "No s'ha pogut obrir el fitxer de destinació."
 msgid "Visit digiKam project website"
 msgstr "Visiteu el lloc web del projecte digiKam"
 
-#: core/libs/progressmanager/progressmanager.cpp:158
+#: core/libs/progressmanager/progressmanager.cpp:160
 #, kde-format
 msgid "Aborting..."
 msgstr "S'està interrompent..."
@@ -39934,43 +39934,43 @@ msgstr "Afegeix a la llista"
 msgid "Add selected tags to Quick Access List"
 msgstr "Afegeix les etiquetes seleccionades a la llista d'accés ràpid"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:137
+#: core/libs/tags/manager/tagmngrtreeview.cpp:139
 #, kde-format
 msgid "Delete Tags"
 msgstr "Suprimeix les etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:145
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edita el títol de l'etiqueta"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagmngrtreeview.cpp:151
 #: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reinicia la icona de l'etiqueta"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:152
+#: core/libs/tags/manager/tagmngrtreeview.cpp:154
 #: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:158
+#: core/libs/tags/manager/tagmngrtreeview.cpp:160
 #: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Desplega l'arbre d'etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:161
+#: core/libs/tags/manager/tagmngrtreeview.cpp:163
 #: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Redueix l'arbre d'etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:164
+#: core/libs/tags/manager/tagmngrtreeview.cpp:166
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
@@ -57917,175 +57917,175 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{LAU2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:176
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:181
 #, kde-format
 msgid "Add country tag"
 msgstr "Afegeix etiqueta de país"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:178
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:183
 #, kde-format
 msgid "Add state tag"
 msgstr "Afegeix etiqueta d'estat"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:180
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:185
 #, kde-format
 msgid "Add state district tag"
 msgstr "Afegeix etiqueta de districte d'estat"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:182
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:187
 #, kde-format
 msgid "Add county tag"
 msgstr "Afegeix etiqueta de comptat"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:184
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:189
 #, kde-format
 msgid "Add city tag"
 msgstr "Afegeix etiqueta de ciutat"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:186
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:191
 #, kde-format
 msgid "Add city district tag"
 msgstr "Afegeix etiqueta de districte de ciutat"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:188
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:193
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Afegeix etiqueta de barri"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:190
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:195
 #, kde-format
 msgid "Add town tag"
 msgstr "Afegeix etiqueta de poble"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:192
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:197
 #, kde-format
 msgid "Add village tag"
 msgstr "Afegeix etiqueta de vila"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:194
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:199
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Afegeix etiqueta de llogaret"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:196
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:201
 #, kde-format
 msgid "Add street"
 msgstr "Afegeix carrer"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:198
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:203
 #, kde-format
 msgid "Add house number tag"
 msgstr "Afegeix etiqueta de número de casa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:200
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:205
 #, kde-format
 msgid "Add place"
 msgstr "Afegeix lloc"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:202
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Afegeix l'àrea administrativa local 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:204
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:209
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Afegeix l'àrea administrativa local 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:206
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
 #, kde-format
 msgid "Add new tag"
 msgstr "Afegeix una etiqueta nova"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:212
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Elimina l'etiqueta seleccionada"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:208
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:213
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Elimina totes les etiquetes de control sota aquesta etiqueta"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:216
 #, kde-format
 msgid "Add all address elements"
 msgstr "Afegeix tots els elements de l'adreça"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:214
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:219
 #, kde-format
 msgid "Select language:"
 msgstr "Selecciona l'idioma:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Select service:"
 msgstr "Seleccioneu un servei:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Nom de lloc del Geonames.org (no-US)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Adreça completa del Geonames.org (no-US)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:441
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
 #, kde-format
 msgid "Less options"
 msgstr "Menys opcions"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Write locations as tags"
 msgstr "Escriu les ubicacions com a etiquetes"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Write locations metadata"
 msgstr "Escriu les metadades de les ubicacions"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:261
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Processa la geocodificació inversa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:384
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:389
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Les etiquetes de la imatge han canviat."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:420
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "S'està recuperant la informació RG -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:457
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr "Error de geocodificació inversa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:797
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Afegeix una etiqueta nova"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:798
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Selecciona un nom per a la nova l'etiqueta:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:941
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -58094,7 +58094,7 @@ msgstr ""
 "S'han geocodificat inversament %1 de %2 imatges. Voleu mantenir les "
 "etiquetes que ja s'han obtingut?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:948
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -58103,7 +58103,7 @@ msgstr ""
 "S'han geocodificat inversament 1 imatge. Voleu mantenir les etiquetes que ja "
 "s'han obtingut?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:954
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
