@@ -106,7 +106,7 @@ VersionsTreeView::VersionsTreeView(QWidget* const parent)
     setMouseTracking(true);
 }
 
-/// NOTE: All overlay management code in a sophisticated form can be studied in ItemCategorizedView
+/// @note All overlay management code in a sophisticated form can be studied in ItemCategorizedView
 VersionsTreeView::~VersionsTreeView()
 {
     m_delegate->removeAllOverlays();

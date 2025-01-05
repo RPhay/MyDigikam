@@ -29,7 +29,7 @@
 
 #ifdef HAVE_GEOLOCATION
 
-/// NOTE: forward declaration only to declare interoperability operators
+/// @note forward declaration only to declare interoperability operators
 namespace Marble
 {
     class GeoDataCoordinates;

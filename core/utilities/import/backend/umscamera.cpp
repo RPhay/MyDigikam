@@ -103,7 +103,7 @@ QByteArray UMSCamera::cameraMD5ID()
     return md5.result().toHex();
 }
 
-/// NOTE: implemented in gui, outside the camera thread.
+/// @note implemented in gui, outside the camera thread.
 bool UMSCamera::getFreeSpace(qint64& /*bytesSize*/, qint64& /*bytesAvail*/)
 {
     return false;

@@ -516,7 +516,7 @@ public:
         return verticesLst;
     }
 
-    /// NOTE: for "hasAdjacentVertices", simply use hasEdges(v, flags).
+    /// @note for "hasAdjacentVertices", simply use hasEdges(v, flags).
 
     int vertexCount() const
     {

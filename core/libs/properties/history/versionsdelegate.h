@@ -56,7 +56,7 @@ Q_SIGNALS:
     void animationStateChanged();
     void visualChange(); // for ItemDelegateOverlayContainer
 
-    /// NOTE: for ItemDelegateOverlayContainer, unimplemented:
+    /// @note for ItemDelegateOverlayContainer, unimplemented:
     void requestNotification(const QModelIndex& index, const QString& message);
     void hideNotification();
 

@@ -285,7 +285,7 @@ private:
 
 public:
 
-    /// NOTE: Declared public because it's used in ItemModelIncrementalUpdater class
+    /// @note Declared public because it's used in ItemModelIncrementalUpdater class
     class Private;
 
 private:

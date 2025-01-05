@@ -103,7 +103,7 @@ public:
     bool                                    qualitySort             = false;
 
     /// Mode to assign Pick Labels to items.
-    /// NOTE: turn all items by default to prevent clearing whole Pick Labels from Collection
+    /// @note turn all items by default to prevent clearing whole Pick Labels from Collection
     int                                     qualityScanMode         = ImageQualitySorter::AllItems;
 
     /// Type of quality settings selected.

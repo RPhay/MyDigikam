@@ -163,7 +163,7 @@ public:
 
 protected:
 
-    /// NOTE: Value class, do not create a d-pointer
+    /// @note Value class, do not create a d-pointer
     Category                 m_category         = ReproducibleFilter;
     Flags                    m_flags;
     QString                  m_identifier;

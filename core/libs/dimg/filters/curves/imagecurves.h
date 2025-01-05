@@ -116,7 +116,7 @@ public:
     QPolygon getCurvePoints(int channel)                 const;
     QPolygon getCurveValues(int channel)                 const;
 
-    /// NOTE: bits depth must match
+    /// @note bits depth must match
     void   setContainer(const CurvesContainer& container);
 
     /**

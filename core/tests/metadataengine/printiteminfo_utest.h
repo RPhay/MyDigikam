@@ -40,7 +40,7 @@ private:
                        bool expectedRead
                       );
 
-    /// NOTE: 'expected' paramareters want mean that we expect a info container non empty
+    /// @note 'expected' paramareters want mean that we expect a info container non empty
     void printComments(const DMetadata& meta, bool expected);
     void printTitles(const DMetadata& meta, bool expected);
 

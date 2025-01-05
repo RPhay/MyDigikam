@@ -76,7 +76,7 @@ public:
 
     // --- Identity management (facesengine_interface_identity.cpp) ----------------------
 
-    /// NOTE: For the documentation of standard attributes, see identity.h
+    /// @note For the documentation of standard attributes, see identity.h
 
     /**
      * Returns all identities known to the database

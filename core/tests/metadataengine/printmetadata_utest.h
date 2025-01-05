@@ -34,7 +34,7 @@ private:
     void printMetadataMap(const DMetadata::MetaDataMap& map);
     void printMetadata(const QString& filePath, bool exif, bool iptc, bool xmp, bool expectedRead);
 
-    /// NOTE: 'expected' paramareters want mean that we expect a metadata tags map non empty
+    /// @note 'expected' paramareters want mean that we expect a metadata tags map non empty
     void loadExif(const DMetadata& meta, bool expected);
     void loadIptc(const DMetadata& meta, bool expected);
     void loadXmp(const DMetadata& meta, bool expected);

@@ -38,7 +38,7 @@ class DIGIKAM_EXPORT TrackManager : public QObject
 
 public:
 
-    /// NOTE: we assume here that we will never load more than uint32_max tracks.
+    /// @note we assume here that we will never load more than uint32_max tracks.
     typedef quint32 Id;
 
     enum ChangeFlag

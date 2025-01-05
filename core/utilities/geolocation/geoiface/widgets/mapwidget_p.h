@@ -87,7 +87,7 @@ public:
     QString                 currentBackendName;
     QStackedLayout*         stackedLayout                           = nullptr;
 
-    /// NOTE: these values are cached in case the backend is not ready:
+    /// @note these values are cached in case the backend is not ready:
 
     GeoCoordinates          cacheCenterCoordinate                   = GeoCoordinates(52.0, 6.0);
     QString                 cacheZoom                               = QLatin1String("marble:900");
@@ -143,7 +143,7 @@ public:
     QAction*                actionStickyMode                        = nullptr;
     QToolButton*            buttonStickyMode                        = nullptr;
 
-    /// NOTE: to be sorted later
+    /// @note to be sorted later
 
     PlaceholderWidget*      placeholderWidget                       = nullptr;
 };

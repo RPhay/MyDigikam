@@ -241,12 +241,12 @@ public:
 
 Q_SIGNALS:
 
-    /// NOTE: See LoadSaveThread for a QImage-based thumbnailLoaded() signal.
+    /// @note See LoadSaveThread for a QImage-based thumbnailLoaded() signal.
     void signalThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& pix);
 
 public:
 
-    /// NOTE: For internal use - may only be used from the thread
+    /// @note For internal use - may only be used from the thread
     ThumbnailCreator* thumbnailCreator() const;
 
 protected:
@@ -263,7 +263,7 @@ private:
 
 Q_SIGNALS:
 
-    /// NOTE: For internal use only.
+    /// @note For internal use only.
     void thumbnailsAvailable();
     void ThumbnailLoaded(const LoadingDescription&, const QImage&);
 

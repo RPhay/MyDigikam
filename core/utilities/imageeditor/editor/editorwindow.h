@@ -154,7 +154,7 @@ protected:
     QString                   m_formatForRAWVersioning;
     QString                   m_formatForSubversions;
 
-    /// NOTE: using QVector to store transforms
+    /// @note using QVector to store transforms
     QVector<TransformType>    m_transformQue;
 
 protected:
