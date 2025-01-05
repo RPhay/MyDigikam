@@ -72,7 +72,7 @@ typedef std::vector<dng_camera_profile_metadata> dng_profile_metadata_list;
 
 /*****************************************************************************/
 
-/// \brief Noise model for photon and sensor read noise, assuming that they are
+/// @brief Noise model for photon and sensor read noise, assuming that they are
 /// independent random variables and spatially invariant.
 ///
 /// The noise model is N (x) = sqrt (scale*x + offset), where x represents a linear
@@ -160,7 +160,7 @@ class dng_noise_function: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief Noise profile for a negative.
+/// @brief Noise profile for a negative.
 ///
 /// For mosaiced negatives, the noise profile describes the approximate noise
 /// characteristics of a mosaic negative after linearization, but prior to
@@ -221,7 +221,7 @@ class dng_noise_profile
 
 /*****************************************************************************/
 
-/// \brief Main class for holding metadata.
+/// @brief Main class for holding metadata.
 
 class dng_metadata
     {
@@ -625,7 +625,7 @@ const X & dng_metadata::XMP () const
 
 /*****************************************************************************/
 
-/// \brief Main class for holding DNG image data and associated metadata.
+/// @brief Main class for holding DNG image data and associated metadata.
 
 class dng_negative
     {

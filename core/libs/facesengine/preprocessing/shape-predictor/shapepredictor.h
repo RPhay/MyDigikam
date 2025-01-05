@@ -49,7 +49,7 @@ struct SplitFeature
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp);
 QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp);
 
-// NOTE: a tree is just a std::vector<RedEye::SplitFeature>. We use this function to navigate the tree nodes.
+/// @note a tree is just a std::vector<RedEye::SplitFeature>. We use this function to navigate the tree nodes.
 
 /**
  * Returns the index of the left child of the binary tree node idx
@@ -72,14 +72,14 @@ struct RegressionTree
 
     /**
      * requires
-     *     - All the index values in splits are less than feature_pixel_values.size()
+     *     - All the index values in splits are less than @param feature_pixel_values size.
      *     - leaf_values.size() is a power of 2.
      *          (i.e. we require a tree with all the levels fully filled out.
      *     - leaf_values.size() == splits.size()+1
      *          (i.e. there needs to be the right number of leaves given the number of splits in the tree)
      * ensures
-     *      - runs through the tree and returns the vector at the leaf we end up in.
-     *      - #i == the selected leaf node index.
+     *      runs through the tree and returns the vector at the leaf we end up in.
+     *      @param i egal the selected leaf node index.
      */
     const std::vector<float>& operator()(const std::vector<float>& feature_pixel_values,
                                          unsigned long& i) const;

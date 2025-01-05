@@ -74,7 +74,7 @@ void OptimizeOrder (void *&dPtr,
 
 /*****************************************************************************/
 
-/// \brief Holds a buffer of pixel data with "pixel geometry" metadata.
+/// @brief Holds a buffer of pixel data with "pixel geometry" metadata.
 ///
 /// The pixel geometry describes the layout in terms of how many planes, rows and columns
 /// plus the steps (in bytes) between each column, row and plane.

@@ -26,7 +26,7 @@
 
 /*****************************************************************************/
 
-/// \brief Represents a task which filters an area of a source dng_image to an area
+/// @brief Represents a task which filters an area of a source dng_image to an area
 /// of a destination dng_image.
 
 class dng_filter_task: public dng_area_task

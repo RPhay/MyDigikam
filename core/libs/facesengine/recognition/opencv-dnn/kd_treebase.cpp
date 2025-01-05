@@ -49,10 +49,7 @@ public:
 
 };
 
-KDTreeBase::KDTreeBase(
-                       int dim,
-                       int threshold = KDTREE_MAP_THRESHOLD        ///< If the vector grows to 500 items, start using the KDTree.
-                      )
+KDTreeBase::KDTreeBase(int dim, int threshold)
     : d(new Private(dim, threshold))
 {
     /**

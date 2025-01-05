@@ -24,8 +24,8 @@ namespace Marble
 {
 
 /*!
- \class Tile
- \brief A class that resembles a tile (then it is extended to TextureTile or Vectortile).
+ @class Tile
+ @brief A class that resembles a tile (then it is extended to TextureTile or Vectortile).
 
  A tile provides a bitmap image or vector data for a certain (geographic) area and
  for a given zoom level. Each Tile can be identified via a unique
@@ -55,7 +55,7 @@ public:
     virtual ~Tile();
 
     /*!
-     \brief Returns a unique ID for the tile.
+     @brief Returns a unique ID for the tile.
      \return A TileId object that encodes zoom level, position and map theme.
     */
     TileId const& id() const;

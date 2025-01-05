@@ -22,7 +22,7 @@
 
 /*****************************************************************************/
 
-/// \brief A dng_1d_function for gamma encoding in sRGB color space
+/// @brief A dng_1d_function for gamma encoding in sRGB color space
 
 class dng_function_GammaEncode_sRGB: public dng_1d_function
     {
@@ -39,7 +39,7 @@ class dng_function_GammaEncode_sRGB: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief A dng_1d_function for gamma encoding with 1.8 gamma.
+/// @brief A dng_1d_function for gamma encoding with 1.8 gamma.
 
 class dng_function_GammaEncode_1_8: public dng_1d_function
     {
@@ -56,7 +56,7 @@ class dng_function_GammaEncode_1_8: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief A dng_1d_function for gamma encoding with 2.2 gamma.
+/// @brief A dng_1d_function for gamma encoding with 2.2 gamma.
 
 class dng_function_GammaEncode_2_2: public dng_1d_function
     {
@@ -73,7 +73,7 @@ class dng_function_GammaEncode_2_2: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief Base class for two-part gamma encoding with a linear + power function.
+/// @brief Base class for two-part gamma encoding with a linear + power function.
 
 class dng_function_GammaEncode_TwoPart: public dng_1d_function
     {
@@ -154,7 +154,7 @@ typedef dng_function_GammaEncode_Rec709 dng_function_GammaEncode_Rec2020;
 
 /*****************************************************************************/
 
-/// \brief An abstract color space
+/// @brief An abstract color space
 
 class dng_color_space
     {
@@ -267,7 +267,7 @@ class dng_space_sRGB: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for AdobeRGB color space.
+/// @brief Singleton class for AdobeRGB color space.
 
 class dng_space_AdobeRGB: public dng_color_space
     {
@@ -295,7 +295,7 @@ class dng_space_AdobeRGB: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for ColorMatch color space.
+/// @brief Singleton class for ColorMatch color space.
 
 class dng_space_ColorMatch: public dng_color_space
     {
@@ -323,7 +323,7 @@ class dng_space_ColorMatch: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for Display P3 color space.
+/// @brief Singleton class for Display P3 color space.
 
 class dng_space_DisplayP3: public dng_color_space
     {
@@ -345,7 +345,7 @@ class dng_space_DisplayP3: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for Rec. 2020 color space.
+/// @brief Singleton class for Rec. 2020 color space.
 
 class dng_space_Rec2020: public dng_color_space
     {
@@ -367,7 +367,7 @@ class dng_space_Rec2020: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for ProPhoto RGB color space.
+/// @brief Singleton class for ProPhoto RGB color space.
 
 class dng_space_ProPhoto: public dng_color_space
     {
@@ -395,7 +395,7 @@ class dng_space_ProPhoto: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for gamma 1.8 grayscale color space.
+/// @brief Singleton class for gamma 1.8 grayscale color space.
 
 class dng_space_GrayGamma18: public dng_color_space
     {
@@ -423,7 +423,7 @@ class dng_space_GrayGamma18: public dng_color_space
 
 /*****************************************************************************/
 
-/// \brief Singleton class for gamma 2.2 grayscale color space.
+/// @brief Singleton class for gamma 2.2 grayscale color space.
 
 class dng_space_GrayGamma22: public dng_color_space
     {

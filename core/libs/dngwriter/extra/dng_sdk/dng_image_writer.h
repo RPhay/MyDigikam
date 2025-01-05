@@ -37,7 +37,7 @@
 
 /*****************************************************************************/
 
-/// \brief Image resolution.
+/// @brief Image resolution.
 
 class dng_resolution
     {
@@ -1257,7 +1257,7 @@ enum
 
 /*****************************************************************************/
 
-/// \brief Support for writing dng_image or dng_negative instances to a
+/// @brief Support for writing dng_image or dng_negative instances to a
 /// dng_stream in TIFF or DNG format.
 
 class dng_image_writer

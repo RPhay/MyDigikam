@@ -89,7 +89,7 @@ public:
     };
 
     /**
-     * \brief The RefImageSelMethod enum
+     * @brief The RefImageSelMethod enum
      * Selection method to determine which image
      * will be the reference in the duplicate search
      *

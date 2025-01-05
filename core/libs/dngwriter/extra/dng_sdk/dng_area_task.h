@@ -45,7 +45,7 @@ class dng_area_task_progress: private dng_uncopyable
 
 /*****************************************************************************/
 
-/// \brief Abstract class for rectangular processing operations with support
+/// @brief Abstract class for rectangular processing operations with support
 /// for partitioning across multiple processing resources and observing memory
 /// constraints.
 

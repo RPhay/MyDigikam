@@ -49,7 +49,7 @@ extern const char * kAdobeCalibrationSignature;
 
 /******************************************************************************/
 
-/// \brief An ID for a camera profile consisting of a name and optional fingerprint.
+/// @brief An ID for a camera profile consisting of a name and optional fingerprint.
 
 class dng_camera_profile_id
     {
@@ -190,7 +190,7 @@ dng_string StripProfileGroupPrefix (const dng_string &name);
 
 /******************************************************************************/
 
-/// \brief Information for selecting a specific profile from a profile group.
+/// @brief Information for selecting a specific profile from a profile group.
 
 class dng_camera_profile_group_selector
     {
@@ -205,7 +205,7 @@ class dng_camera_profile_group_selector
 
 /******************************************************************************/
 
-/// \brief Container for DNG camera color profile and calibration data.
+/// @brief Container for DNG camera color profile and calibration data.
 
 class dng_camera_profile
     {

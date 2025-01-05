@@ -21,7 +21,7 @@
 
 /*****************************************************************************/
 
-/// \brief A stream to/from a disk file. See dng_stream for read/write interface
+/// @brief A stream to/from a disk file. See dng_stream for read/write interface
 ///
 /// Also see comment in dng_stream.h regarding the caller's responsibility for
 /// calling the Flush method.

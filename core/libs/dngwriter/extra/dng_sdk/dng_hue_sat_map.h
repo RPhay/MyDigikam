@@ -27,7 +27,7 @@
 
 /*****************************************************************************/
 
-/// \brief A 3D table that maps HSV (hue, saturation, and value) floating-point
+/// @brief A 3D table that maps HSV (hue, saturation, and value) floating-point
 /// input coordinates in the range [0,1] to delta signals. The table must have at
 /// least 1 sample in the hue dimension, at least 2 samples in the saturation
 /// dimension, and at least 1 sample in the value dimension. Tables are stored in

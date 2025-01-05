@@ -1339,7 +1339,7 @@ void QAVPlayer::setVideoCodecOptions(const QMap<QString, QString> &opts)
 }
 
 /*!
- * \brief Use to set log level of FFmpeg backend
+ * @brief Use to set log level of FFmpeg backend
  * \param[in] level
  * Level log to use. Please see:
  * https://ffmpeg.org/doxygen/trunk/group__lavu__log__constants.html

@@ -18,7 +18,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class for holding a date/time and converting to and from relevant
+/// @brief Class for holding a date/time and converting to and from relevant
 /// date/time formats
 
 class dng_date_time
@@ -100,7 +100,7 @@ class dng_date_time
 
 /*****************************************************************************/
 
-/// \brief Class for holding a time zone.
+/// @brief Class for holding a time zone.
 
 class dng_time_zone
     {
@@ -185,7 +185,7 @@ class dng_time_zone
 
 /*****************************************************************************/
 
-/// \brief Class for holding complete data/time/zone information.
+/// @brief Class for holding complete data/time/zone information.
 
 class dng_date_time_info
     {
@@ -329,7 +329,7 @@ enum dng_date_time_format
 
 /*****************************************************************************/
 
-/// \brief Store file offset from which date was read.
+/// @brief Store file offset from which date was read.
 ///
 /// Used internally by Adobe to update date in original file.
 /// \warning Use at your own risk.

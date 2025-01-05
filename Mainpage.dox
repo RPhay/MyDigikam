@@ -524,7 +524,7 @@ E.g. you can start digiKam like this on the command line with thumbnails and cor
 
 \subsection digiKamloggincat Logging Categories in digiKam
 
-All logging categories are listed in \ref digikam_debug.cpp source code.
+All logging categories are listed in \include core/app/utils/digikam_debug.cpp source code.
 
 \subsection moreaboutloggincat Further Reading
 

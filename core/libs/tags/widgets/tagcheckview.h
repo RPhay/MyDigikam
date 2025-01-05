@@ -72,7 +72,8 @@ Q_SIGNALS:
     /**
      * @brief Emitted if the checked tags have changed.
      *
-     * @param tags a list of selected tag ids
+     * @param includedTags a list of selected tag ids processed.
+     * @param excludedTags a list of tag ids ignored.
      */
     void checkedTagsChanged(const QList<TAlbum*>& includedTags, const QList<TAlbum*>& excludedTags);
 

@@ -23,7 +23,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class to provide resource acquisition is instantiation discipline
+/// @brief Class to provide resource acquisition is instantiation discipline
 /// for small memory allocations.
 ///
 /// This class does not use dng_memory_allocator for memory allocation.

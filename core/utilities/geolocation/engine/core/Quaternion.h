@@ -55,7 +55,7 @@ public:
     Quaternion();
     Quaternion(qreal w, qreal x, qreal y, qreal z);
 
-    /*!\brief used to generate Quaternion from longitude and latitude
+    /*!@brief used to generate Quaternion from longitude and latitude
      *
      * \param lon longitude
      * \param lat latitude

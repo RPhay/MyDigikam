@@ -134,7 +134,7 @@ public Q_SLOTS:
 
     /**
      * This function is used to set a selection without the user setting it.
-     * \note all parameters must be in the range 0.0 -> 1.0.
+     * @note all parameters must be in the range 0.0 -> 1.0.
      * \param tl_x is the x coordinate of the top left corner 0=0 1=image with.
      * \param tl_y is the y coordinate of the top left corner 0=0 1=image height.
      * \param br_x is the x coordinate of the bottom right corner 0=0 1=image with.
@@ -145,7 +145,7 @@ public Q_SLOTS:
 
     /**
      * This function is used to darken everything except what is inside the given area.
-     * \note all parameters must be in the range 0.0 -> 1.0.
+     * @note all parameters must be in the range 0.0 -> 1.0.
      * \param tl_x is the x coordinate of the top left corner 0=0 1=image with.
      * \param tl_y is the y coordinate of the top left corner 0=0 1=image height.
      * \param br_x is the x coordinate of the bottom right corner 0=0 1=image with.

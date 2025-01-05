@@ -866,7 +866,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 //////////////////////////////  Reader
 
 /*!
-    \class Q_DECL_HIDDEN QZipReader::FileInfo
+    @class Q_DECL_HIDDEN QZipReader::FileInfo
     \internal
     Represents one entry in the zip table of contents.
 */
@@ -913,11 +913,11 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 */
 
 /*!
-    \class Q_DECL_HIDDEN QZipReader
+    @class Q_DECL_HIDDEN QZipReader
     \internal
     \since 4.5
 
-    \brief the QZipReader class Q_DECL_HIDDEN provides a way to inspect the contents of a zip
+    @brief the QZipReader class Q_DECL_HIDDEN provides a way to inspect the contents of a zip
     archive and extract individual files from it.
 
     QZipReader can be used to read a zip archive either from a file or from any
@@ -1289,11 +1289,11 @@ void MarbleZipReader::close()
 ////////////////////////////// Writer
 
 /*!
-    \class Q_DECL_HIDDEN QZipWriter
+    @class Q_DECL_HIDDEN QZipWriter
     \internal
     \since 4.5
 
-    \brief the QZipWriter class Q_DECL_HIDDEN provides a way to create a new zip archive.
+    @brief the QZipWriter class Q_DECL_HIDDEN provides a way to create a new zip archive.
 
     QZipWriter can be used to create a zip archive containing any number of files
     and directories. The files in the archive will be compressed in a way that is
@@ -1433,7 +1433,7 @@ MarbleZipWriter::Status MarbleZipWriter::status() const
 /*!
      Sets the policy for compressing newly added files to the new \a policy.
 
-    \note the default policy is AlwaysCompress
+    @note the default policy is AlwaysCompress
 
     \sa compressionPolicy()
     \sa addFile()
@@ -1456,7 +1456,7 @@ MarbleZipWriter::CompressionPolicy MarbleZipWriter::compressionPolicy() const
 /*!
     Sets the permissions that will be used for newly added files.
 
-    \note the default permissions are QFile::ReadOwner | QFile::WriteOwner.
+    @note the default permissions are QFile::ReadOwner | QFile::WriteOwner.
 
     \sa creationPermissions()
     \sa addFile()

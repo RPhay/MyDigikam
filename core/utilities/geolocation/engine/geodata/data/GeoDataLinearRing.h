@@ -27,8 +27,8 @@ namespace Marble
 class GeoDataLinearRingPrivate;
 
 /*!
-    \class GeoDataLinearRing
-    \brief A LinearRing that allows to store a closed, contiguous set of line segments.
+    @class GeoDataLinearRing
+    @brief A LinearRing that allows to store a closed, contiguous set of line segments.
 
     GeoDataLinearRing is a tool class that implements the LinearRing tag/class
     of the Open Geospatial Consortium standard KML 2.2.
@@ -73,19 +73,19 @@ class DIGIKAM_EXPORT GeoDataLinearRing : public GeoDataLineString
 public:
 
     /*!
-        \brief Creates a new LinearRing.
+        @brief Creates a new LinearRing.
     */
     explicit GeoDataLinearRing(TessellationFlags f = NoTessellation);
 
 
     /*!
-        \brief Creates a LinearRing from an existing geometry object.
+        @brief Creates a LinearRing from an existing geometry object.
     */
     explicit GeoDataLinearRing(const GeoDataGeometry& other);
 
 
     /*!
-        \brief Destroys a LinearRing.
+        @brief Destroys a LinearRing.
     */
     ~GeoDataLinearRing() override;
 
@@ -97,7 +97,7 @@ public:
 
 
     /*!
-        \brief Returns true/false depending on whether this and other are/are not equal.
+        @brief Returns true/false depending on whether this and other are/are not equal.
     */
 
     bool operator==(const GeoDataLinearRing& other) const;
@@ -105,7 +105,7 @@ public:
 
 
     /*!
-        \brief Returns whether a LinearRing is a closed polygon.
+        @brief Returns whether a LinearRing is a closed polygon.
 
         \return <code>true</code> for a LinearRing.
     */
@@ -113,7 +113,7 @@ public:
 
 
     /*!
-        \brief Returns the length of the LinearRing across a sphere.
+        @brief Returns the length of the LinearRing across a sphere.
 
         As a parameter the \a planetRadius needs to be passed.
 
@@ -127,14 +127,14 @@ public:
     qreal length(qreal planetRadius, int offset = 0) const override;
 
     /*!
-        \brief Returns whether the given coordinates lie within the polygon.
+        @brief Returns whether the given coordinates lie within the polygon.
 
         \return <code>true</code> if the coordinates lie within the polygon, false otherwise.
     */
     virtual bool contains(const GeoDataCoordinates& coordinates) const;
 
     /*!
-     * \brief Returns whether the orientaion of ring is coloskwise or not
+     * @brief Returns whether the orientaion of ring is coloskwise or not
      * \return Return value is true if ring is clockwise orientated
      */
     virtual bool isClockwise() const;

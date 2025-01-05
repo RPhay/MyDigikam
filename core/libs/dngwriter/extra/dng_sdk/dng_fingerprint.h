@@ -29,7 +29,7 @@
 
 /*****************************************************************************/
 
-/// \brief Container fingerprint (MD5 only at present).
+/// @brief Container fingerprint (MD5 only at present).
 
 class dng_fingerprint
     {
@@ -119,7 +119,7 @@ class dng_fingerprint
 
 /*****************************************************************************/
 
-/// \brief Utility to compare fingerprints (e.g., for sorting).
+/// @brief Utility to compare fingerprints (e.g., for sorting).
 
 struct dng_fingerprint_less_than
     {
@@ -140,7 +140,7 @@ struct dng_fingerprint_less_than
 
 /******************************************************************************/
 
-/// \brief Utility to hash fingerprints (e.g., for hashtables).
+/// @brief Utility to hash fingerprints (e.g., for hashtables).
 
 struct dng_fingerprint_hash
     {
@@ -190,7 +190,7 @@ typedef std::vector<dng_fingerprint> dng_fingerprint_vector;
 // These notices must be retained in any copies of any part of this
 // documentation and/or software.
 
-/// \brief Class to hash binary data to a fingerprint using the MD5 Message-Digest
+/// @brief Class to hash binary data to a fingerprint using the MD5 Message-Digest
 /// Algorithm.
 
 class dng_md5_printer
@@ -346,7 +346,7 @@ class dng_md5_printer
 
 /*****************************************************************************/
 
-/// \brief A dng_stream based interface to the MD5 printing logic.
+/// @brief A dng_stream based interface to the MD5 printing logic.
 
 class dng_md5_printer_stream : public dng_stream, dng_md5_printer
     {

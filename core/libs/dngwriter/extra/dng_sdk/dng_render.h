@@ -29,7 +29,7 @@
 
 /******************************************************************************/
 
-/// \brief Curve for removing zero offset from stage3 image.
+/// @brief Curve for removing zero offset from stage3 image.
 
 class dng_function_zero_offset: public dng_1d_function
     {
@@ -50,7 +50,7 @@ class dng_function_zero_offset: public dng_1d_function
 
 /******************************************************************************/
 
-/// \brief Curve for pre-exposure-compensation adjustment based on noise floor,
+/// @brief Curve for pre-exposure-compensation adjustment based on noise floor,
 /// shadows, and highlight level.
 
 class dng_function_exposure_ramp: public dng_1d_function
@@ -81,7 +81,7 @@ class dng_function_exposure_ramp: public dng_1d_function
 
 /******************************************************************************/
 
-/// \brief Exposure compensation curve for a given compensation amount in stops using
+/// @brief Exposure compensation curve for a given compensation amount in stops using
 /// quadric for roll-off.
 
 class dng_function_exposure_tone: public dng_1d_function
@@ -130,7 +130,7 @@ class dng_tone_curve_acr3_default: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief Encoding gamma curve for a given color space.
+/// @brief Encoding gamma curve for a given color space.
 
 class dng_function_gamma_encode: public dng_1d_function
     {
@@ -149,7 +149,7 @@ class dng_function_gamma_encode: public dng_1d_function
 
 /*****************************************************************************/
 
-/// \brief Class used to render digital negative to displayable image.
+/// @brief Class used to render digital negative to displayable image.
 
 class dng_render: private dng_uncopyable
     {

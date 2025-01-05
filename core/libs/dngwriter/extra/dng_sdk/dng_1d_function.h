@@ -24,7 +24,7 @@
 
 /*****************************************************************************/
 
-/// \brief A 1D floating-point function.
+/// @brief A 1D floating-point function.
 ///
 /// The domain (input) is always from 0.0 to 1.0, while the range (output) can
 /// be an arbitrary interval.

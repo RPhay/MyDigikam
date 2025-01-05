@@ -25,7 +25,7 @@
 
 /*****************************************************************************/
 
-/// \brief Thread priority level.
+/// @brief Thread priority level.
 
 enum dng_priority
     {
@@ -45,7 +45,7 @@ enum dng_priority
 
 /*****************************************************************************/
 
-/// \brief Convenience class for setting thread priority level to minimum.
+/// @brief Convenience class for setting thread priority level to minimum.
 
 class dng_set_minimum_priority
     {
@@ -67,7 +67,7 @@ class dng_set_minimum_priority
 
 /*****************************************************************************/
 
-/** \brief Class for signaling user cancellation and receiving progress updates.
+/** @brief Class for signaling user cancellation and receiving progress updates.
  *
  * DNG SDK clients should derive a host application specific implementation
  * from this class.
@@ -169,7 +169,7 @@ class dng_abort_sniffer
 
 /******************************************************************************/
 
-/// \brief Class to establish scope of a named subtask in DNG processing.
+/// @brief Class to establish scope of a named subtask in DNG processing.
 ///
 /// Instances of this class are intended to be stack allocated.
 

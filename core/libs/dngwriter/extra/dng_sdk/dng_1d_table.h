@@ -25,7 +25,7 @@
 
 /*****************************************************************************/
 
-/// \brief A 1D floating-point lookup table using linear interpolation.
+/// @brief A 1D floating-point lookup table using linear interpolation.
 
 class dng_1d_table: private dng_uncopyable
     {

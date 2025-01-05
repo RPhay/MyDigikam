@@ -483,19 +483,18 @@ public:
      * originating file. When saving in a different format to a different file,
      * you may wish to switch these attributes to the new file.
      *
-     * - fileOriginData() returns the current origin data, bundled in the returned QVariant.
-     * - setFileOriginData() takes such a variant and adjusts the properties
-     * - lastSavedFileOriginData() returns the origin data as if the image was loaded from
-     *   the last saved image.
-     * - switchOriginToLastSaved is equivalent to setting origin data returned from lastSavedFileOriginData()
+     * @see fileOriginData returns the current origin data, bundled in the returned QVariant.
+     * @see setFileOriginData takes such a variant and adjusts the properties.
+     * @see lastSavedFileOriginData returns the origin data as if the image was loaded from the last saved image.
+     * @see switchOriginToLastSaved is equivalent to setting origin data returned from @see lastSavedFileOriginData.
      *
-     * @exemple an image loaded from a RAW and saved to PNG will be read-only and format RAW.
-     * After calling switchOriginToLastSaved, it will not be read-only, format will be PNG,
-     * and rawDecodingSettings will be null. detectedFormat() will not change.
+     * For example, an image loaded from a RAW and saved to PNG will be read-only and format RAW.
+     * After calling @see switchOriginToLastSaved, it will not be read-only, format will be PNG,
+     * and @see rawDecodingSettings will be null. @see detectedFormat will not change.
      * In the history, the last referred image that was added (as intermediate) is made
      * the new Current image.
      *
-     * @note Set the saved image path with imageSavedAs() before!
+     * @note Set the saved image path with @see imageSavedAs before!
      */
     QVariant    fileOriginData()          const;
     void        setFileOriginData(const QVariant& data);

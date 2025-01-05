@@ -842,7 +842,7 @@ void MarbleWidgetPopupMenu::slotInfoDialog()
                 content.replace(QStringLiteral("$[description]"), placemark->description(), Qt::CaseInsensitive);
                 content.replace(QStringLiteral("$[address]"), placemark->address(), Qt::CaseInsensitive);
 
-                // @TODO: implement the line calculation, so that snippet().maxLines actually has effect.
+                // @todo: implement the line calculation, so that snippet().maxLines actually has effect.
 
                 content.replace(QStringLiteral("$[snippet]"), placemark->snippet().text(), Qt::CaseInsensitive);
                 content.replace(QStringLiteral("$[id]"), placemark->id(), Qt::CaseInsensitive);

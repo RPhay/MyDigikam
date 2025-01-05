@@ -26,7 +26,7 @@
 
 /*****************************************************************************/
 
-/// \brief Holds a discrete (i.e., sampled) 2D representation of a gain map. This is
+/// @brief Holds a discrete (i.e., sampled) 2D representation of a gain map. This is
 /// effectively an image containing scale factors.
 
 class dng_gain_map: private dng_uncopyable
@@ -140,7 +140,7 @@ class dng_gain_map: private dng_uncopyable
 
 /*****************************************************************************/
 
-/// \brief Holds a discrete (i.e., sampled) 2D representation of a gain table
+/// @brief Holds a discrete (i.e., sampled) 2D representation of a gain table
 /// map. This is effectively an image containing tables of scale factors.
 /// Corresponds to the ProfileGainTableMap tag introduced in DNG 1.6 and the
 /// ProfileGainTableMap2 tag introduced in DNG 1.7.
@@ -426,7 +426,7 @@ class dng_gain_table_map: private dng_uncopyable
 
 /*****************************************************************************/
 
-/// \brief An opcode to fix 2D spatially-varying light falloff or color casts (i.e.,
+/// @brief An opcode to fix 2D spatially-varying light falloff or color casts (i.e.,
 /// uniformity issues). This is commonly due to shading.
 
 class dng_opcode_GainMap: public dng_inplace_opcode,

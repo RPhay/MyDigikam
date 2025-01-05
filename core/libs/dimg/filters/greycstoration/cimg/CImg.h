@@ -4511,7 +4511,7 @@ namespace cimg_library {
 
     // Execute an external system command.
     /**
-       \note This function is similar to <tt>std::system()</tt>
+       @note This function is similar to <tt>std::system()</tt>
        and is here because using the <tt>std::</tt> version on
        Windows may open undesired consoles.
      **/
@@ -4707,7 +4707,7 @@ namespace cimg_library {
 
     //! Return the absolute value of a number.
     /**
-       \note This function is different from <tt>std::abs()</tt> or <tt>std::fabs()</tt>
+       @note This function is different from <tt>std::abs()</tt> or <tt>std::fabs()</tt>
        because it is able to consider a variable of any type, without cast needed.
     **/
     template<typename T>
@@ -4808,7 +4808,7 @@ namespace cimg_library {
 
     //! Return the modulo of a number.
     /**
-       \note This modulo function accepts negative and floating-points modulo numbers, as well as
+       @note This modulo function accepts negative and floating-points modulo numbers, as well as
        variable of any type.
     **/
     template<typename T>
@@ -4926,7 +4926,7 @@ namespace cimg_library {
 
     //! Read a float number from a C-string.
     /**
-       \note This function is quite similar to <tt>std::atof()</tt>,
+       @note This function is quite similar to <tt>std::atof()</tt>,
        but that it allows the retrieval of fractions as in "1/2".
     **/
     inline float atof(const char *const str) {
@@ -4936,7 +4936,7 @@ namespace cimg_library {
 
     //! Compute the length of a C-string.
     /**
-       \note This function is similar to <tt>std::strlen()</tt>
+       @note This function is similar to <tt>std::strlen()</tt>
        and is here because some old compilers do not
        define the <tt>std::</tt> version.
     **/
@@ -4949,7 +4949,7 @@ namespace cimg_library {
 
     //! Compare the first \p n characters of two C-strings.
     /**
-       \note This function is similar to <tt>std::strncmp()</tt>
+       @note This function is similar to <tt>std::strncmp()</tt>
        and is here because some old compilers do not
        define the <tt>std::</tt> version.
     **/
@@ -4962,7 +4962,7 @@ namespace cimg_library {
 
     //! Compare the first \p n characters of two C-strings, ignoring the case.
     /**
-       \note This function is similar to <tt>std::strncasecmp()</tt>
+       @note This function is similar to <tt>std::strncasecmp()</tt>
        and is here because some old compilers do not
        define the <tt>std::</tt> version.
     **/
@@ -4975,7 +4975,7 @@ namespace cimg_library {
 
     //! Compare two C-strings.
     /**
-       \note This function is similar to <tt>std::strcmp()</tt>
+       @note This function is similar to <tt>std::strcmp()</tt>
        and is here because some old compilers do not
        define the <tt>std::</tt> version.
     **/
@@ -4986,7 +4986,7 @@ namespace cimg_library {
 
     //! Compare two C-strings, ignoring the case.
     /**
-       \note This function is similar to <tt>std::strcasecmp()</tt>
+       @note This function is similar to <tt>std::strcasecmp()</tt>
        and is here because some old compilers do not
        define the <tt>std::</tt> version.
     **/
@@ -12888,7 +12888,7 @@ namespace cimg_library {
     //! Fill an image by a value \p val.
     /**
        \param val = fill value
-       \note All pixel values of the instance image will be initialized by \p val.
+       @note All pixel values of the instance image will be initialized by \p val.
     **/
     CImg<T>& fill(const T val) {
       if (is_empty()) return *this;
@@ -13476,7 +13476,7 @@ namespace cimg_library {
        - 0 = zero-value at borders
        - 1 = nearest pixel.
        - 2 = Fourier style.
-       \note Returned image will probably have a different size than the instance image *this.
+       @note Returned image will probably have a different size than the instance image *this.
     **/
     CImg<T>& rotate(const float angle, const unsigned int border_conditions=3, const unsigned int interpolation=1) {
       return get_rotate(angle,border_conditions,interpolation).transfer_to(*this);
@@ -13716,7 +13716,7 @@ namespace cimg_library {
        - 5 = bi-cubic interpolation.
        \param border_condition Border condition type.
        \param center Set centering type (only if \p interpolation_type=0).
-       \note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
+       @note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
     **/
     CImg<T>& resize(const int pdx, const int pdy=-100, const int pdz=-100, const int pdv=-100,
                     const int interpolation_type=1, const int border_condition=-1, const bool center=false) {
@@ -14061,7 +14061,7 @@ namespace cimg_library {
        - 4 = grid interpolation.
        - 5 = bi-cubic interpolation.
        \param border_condition Border condition type.
-       \note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
+       @note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
     **/
     template<typename t>
     CImg<T>& resize(const CImg<t>& src, const int interpolation_type=1,
@@ -14087,7 +14087,7 @@ namespace cimg_library {
        - 5 = bi-cubic interpolation.
        - 6 = moving average (best quality for photographs)
        \param border_condition Border condition type.
-       \note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
+       @note If pd[x,y,z,v]<0, it corresponds to a percentage of the original size (the default value is -100).
     **/
     CImg<T>& resize(const CImgDisplay& disp, const int interpolation_type=1,
                     const int border_condition=-1, const bool center=false) {
@@ -15474,11 +15474,11 @@ namespace cimg_library {
        won't be counted.
        \param val_max = Maximum value considered for the histogram computation. All pixel values higher than val_max
        won't be counted.
-       \note If val_min==val_max==0 (default values), the function first estimates the minimum and maximum
+       @note If val_min==val_max==0 (default values), the function first estimates the minimum and maximum
        pixel values of the current image, then uses these values for the histogram computation.
        \result The histogram is returned as a 1D CImg<float> image H, having a size of (nblevels,1,1,1) such that
        H(0) and H(nblevels-1) are respectively equal to the number of occurrences of the values val_min and val_max in I.
-       \note Histogram computation always returns a 1D function. Histogram of multi-valued (such as color) images
+       @note Histogram computation always returns a 1D function. Histogram of multi-valued (such as color) images
        are not multi-dimensional.
     **/
     CImg<T>& histogram(const unsigned int nblevels, const T val_min=(T)0, const T val_max=(T)0) {
@@ -15511,7 +15511,7 @@ namespace cimg_library {
        won't be changed.
        \param val_max = Maximum value considered for the histogram computation. All pixel values higher than val_max
        won't be changed.
-       \note If val_min==val_max==0 (default values), the function acts on all pixel values of the image.
+       @note If val_min==val_max==0 (default values), the function acts on all pixel values of the image.
        \return A new image with same size is returned, where pixels have been equalized.
     **/
     CImg<T>& equalize(const unsigned int nblevels, const T val_min=(T)0, const T val_max=(T)0) {
@@ -17860,7 +17860,7 @@ namespace cimg_library {
 
     //! Convert a (R,G,B) image to a Bayer-coded representation.
     /**
-       \note First (upper-left) pixel if the red component of the pixel color.
+       @note First (upper-left) pixel if the red component of the pixel color.
     **/
     CImg<T>& RGBtoBayer() {
       return get_RGBtoBayer().transfer_to(*this);
@@ -20428,7 +20428,7 @@ namespace cimg_library {
        \param brightness1 = brightness of the second corner (in [0,2]).
        \param brightness2 = brightness of the third corner (in [0,2]).
        \param opacity = opacity of the drawing.
-       \note Clipping is supported.
+       @note Clipping is supported.
     **/
     template<typename tc>
     CImg<T>& draw_triangle(const int x0, const int y0,
@@ -20619,7 +20619,7 @@ namespace cimg_library {
        \param ty2 = Y-coordinate of the third corner in the texture image.
        \param opacity = opacity of the drawing.
        \param brightness = brightness of the drawing (in [0,2]).
-       \note Clipping is supported, but texture coordinates do not support clipping.
+       @note Clipping is supported, but texture coordinates do not support clipping.
     **/
     template<typename tc>
     CImg<T>& draw_triangle(const int x0, const int y0,
@@ -21033,7 +21033,7 @@ namespace cimg_library {
        \param lx2 = X-coordinate of the third corner in the light image.
        \param ly2 = Y-coordinate of the third corner in the light image.
        \param opacity = opacity of the drawing.
-       \note Clipping is supported, but texture coordinates do not support clipping.
+       @note Clipping is supported, but texture coordinates do not support clipping.
     **/
     template<typename tc, typename tl>
     CImg<T>& draw_triangle(const int x0, const int y0,
@@ -21265,7 +21265,7 @@ namespace cimg_library {
        \param brightness1 = brightness value of the second corner.
        \param brightness2 = brightness value of the third corner.
        \param opacity = opacity of the drawing.
-       \note Clipping is supported, but texture coordinates do not support clipping.
+       @note Clipping is supported, but texture coordinates do not support clipping.
     **/
     template<typename tc>
     CImg<T>& draw_triangle(const int x0, const int y0,
@@ -21599,7 +21599,7 @@ namespace cimg_library {
        \param lx2 = X-coordinate of the third corner in the light image.
        \param ly2 = Y-coordinate of the third corner in the light image.
        \param opacity = opacity of the drawing.
-       \note Clipping is supported, but texture coordinates do not support clipping.
+       @note Clipping is supported, but texture coordinates do not support clipping.
     **/
     template<typename tc, typename tl>
     CImg<T>& draw_triangle(const int x0, const int y0,
@@ -22262,7 +22262,7 @@ namespace cimg_library {
        \param font Font used for drawing text.
        \param opacity Drawing opacity.
        \param format 'printf'-style format string, followed by arguments.
-       \note Clipping is supported.
+       @note Clipping is supported.
     **/
     template<typename tc1, typename tc2, typename t>
     CImg<T>& draw_text(const int x0, const int y0, const char *const text,
@@ -22312,7 +22312,7 @@ namespace cimg_library {
        \param font_size Size of the font (nearest match).
        \param opacity Drawing opacity.
        \param format 'printf'-style format string, followed by arguments.
-       \note Clipping is supported.
+       @note Clipping is supported.
     **/
     template<typename tc1, typename tc2>
     CImg<T>& draw_text(const int x0, const int y0, const char *const text,
@@ -22370,7 +22370,7 @@ namespace cimg_library {
        \param quiver_type Type of plot. Can be 0 (arrows) or 1 (segments).
        \param opacity Opacity of the drawing.
        \param pattern Used pattern to draw lines.
-       \note Clipping is supported.
+       @note Clipping is supported.
     **/
     template<typename t1, typename t2>
     CImg<T>& draw_quiver(const CImg<t1>& flow,
@@ -22389,7 +22389,7 @@ namespace cimg_library {
        \param quiver_type Type of plot. Can be 0 (arrows) or 1 (segments).
        \param opacity Opacity of the drawing.
        \param pattern Used pattern to draw lines.
-       \note Clipping is supported.
+       @note Clipping is supported.
     **/
     template<typename t1, typename t2>
     CImg<T>& draw_quiver(const CImg<t1>& flow,
@@ -22583,7 +22583,7 @@ namespace cimg_library {
        \param opacity Drawing opacity.
        \param pattern Drawing pattern.
        \param opacity_out Drawing opacity of 'outside' axes.
-       \note if \c precision==0, precision of the labels is automatically computed.
+       @note if \c precision==0, precision of the labels is automatically computed.
     **/
     template<typename t, typename tc>
     CImg<T>& draw_axis(const CImg<t>& xvalues, const int y,
@@ -25601,7 +25601,7 @@ namespace cimg_library {
        \param bgridz Size of the bilateral grid along the Z-axis.
        \param bgridr Size of the bilateral grid along the range axis.
        \param interpolation_type Use interpolation for image slicing.
-       \note This algorithm uses the optimisation technique proposed by S. Paris and F. Durand, in ECCV'2006
+       @note This algorithm uses the optimisation technique proposed by S. Paris and F. Durand, in ECCV'2006
        (extended for 3D volumetric images).
     **/
     CImg<T>& blur_bilateral(const float sigmax, const float sigmay, const float sigmaz, const float sigmar,
@@ -28844,7 +28844,7 @@ namespace cimg_library {
     //! Load an image from a file.
     /**
        \param filename is the name of the image file to load.
-       \note The extension of \c filename defines the file format. If no filename
+       @note The extension of \c filename defines the file format. If no filename
        extension is provided, CImg<T>::get_load() will try to load a .cimg file.
     **/
     CImg<T>& load(const char *const filename) {
@@ -36682,7 +36682,7 @@ namespace cimg {
      \param logo = Logo image displayed at the left of the main message. This parameter is optional.
      \param centering = Tell to center the dialog window on the screen.
      \return The button number (from 0 to 5), or -1 if the dialog window has been closed by the user.
-     \note If a button text is set to 0, then the corresponding button (and the followings) won't appear in
+     @note If a button text is set to 0, then the corresponding button (and the followings) won't appear in
      the dialog box. At least one button is necessary.
   **/
 

@@ -29,7 +29,7 @@
 
 /*****************************************************************************/
 
-/// \brief Abstract base class holding common warp opcode parameters (e.g.,
+/// @brief Abstract base class holding common warp opcode parameters (e.g.,
 /// number of planes, optical center) and common warp routines.
 
 class dng_warp_params
@@ -293,7 +293,7 @@ class dng_warp_params_radial
 
 /*****************************************************************************/
 
-/// \brief Warp parameters for pinhole perspective rectilinear (not fisheye)
+/// @brief Warp parameters for pinhole perspective rectilinear (not fisheye)
 /// camera model. Supports radial and tangential (decentering) distortion
 /// correction parameters.
 ///
@@ -410,7 +410,7 @@ class dng_warp_params_rectilinear: public dng_warp_params
 
 /*****************************************************************************/
 
-/// \brief Warp parameters for fisheye camera model (radial component only).
+/// @brief Warp parameters for fisheye camera model (radial component only).
 /// Note the restrictions described below.
 
 class dng_warp_params_fisheye: public dng_warp_params
@@ -520,7 +520,7 @@ class dng_warp_params_fisheye: public dng_warp_params
 
 /*****************************************************************************/
 
-/// \brief Abstract base class for WarpRectilinear and WarpRectilinear2 opcodes.
+/// @brief Abstract base class for WarpRectilinear and WarpRectilinear2 opcodes.
 
 class dng_opcode_BaseWarpRectilinear: public dng_opcode
     {
@@ -569,7 +569,7 @@ class dng_opcode_BaseWarpRectilinear: public dng_opcode
 
 /*****************************************************************************/
 
-/// \brief Warp opcode for pinhole perspective (rectilinear) camera model
+/// @brief Warp opcode for pinhole perspective (rectilinear) camera model
 /// introduced in DNG 1.3.
 
 class dng_opcode_WarpRectilinear: public dng_opcode_BaseWarpRectilinear
@@ -594,7 +594,7 @@ class dng_opcode_WarpRectilinear: public dng_opcode_BaseWarpRectilinear
 
 /*****************************************************************************/
 
-/// \brief Warp opcode for pinhole perspective (rectilinear) camera model
+/// @brief Warp opcode for pinhole perspective (rectilinear) camera model
 /// introduced in DNG 1.6.
 
 class dng_opcode_WarpRectilinear2: public dng_opcode_BaseWarpRectilinear
@@ -619,7 +619,7 @@ class dng_opcode_WarpRectilinear2: public dng_opcode_BaseWarpRectilinear
 
 /*****************************************************************************/
 
-/// \brief Warp opcode for fisheye camera model.
+/// @brief Warp opcode for fisheye camera model.
 
 class dng_opcode_WarpFisheye: public dng_opcode
     {
@@ -655,7 +655,7 @@ class dng_opcode_WarpFisheye: public dng_opcode
 
 /*****************************************************************************/
 
-/// \brief Radially-symmetric vignette (peripheral illuminational falloff)
+/// @brief Radially-symmetric vignette (peripheral illuminational falloff)
 /// correction parameters.
 
 class dng_vignette_radial_params
@@ -706,7 +706,7 @@ class dng_vignette_radial_params
 
 /*****************************************************************************/
 
-/// \brief Radially-symmetric lens vignette correction opcode.
+/// @brief Radially-symmetric lens vignette correction opcode.
 
 class dng_opcode_FixVignetteRadial: public dng_inplace_opcode
     {

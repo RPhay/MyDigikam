@@ -43,8 +43,8 @@ class GeoDataPoint;
 class GeoDataPolygon;
 
 /*!
-    \class GeoPainter
-    \brief A painter that allows to draw geometric primitives on the map.
+    @class GeoPainter
+    @brief A painter that allows to draw geometric primitives on the map.
 
     This class allows application developers to draw simple geometric shapes
     and objects onto the map.
@@ -82,7 +82,7 @@ class GeoDataPolygon;
     don't want to take care of repainting) then you need to use other solutions
     such as the KML import of the Marble framework or Marble's GeoGraphicsItems.
 
-    \note By default the GeoPainter automatically filters geographical content
+    @note By default the GeoPainter automatically filters geographical content
     in order to provide fast painting:
     \li Geographically positioned objects which are outside the viewport are not
     drawn at all.
@@ -108,7 +108,7 @@ public:
     Q_DECLARE_FLAGS(Frames, Frame)
 
     /*!
-        \brief Creates a new geo painter.
+        @brief Creates a new geo painter.
 
         To create a geo painter it's necessary to provide \a paintDevice
         as a canvas and the viewportParams to specify the map projection
@@ -120,19 +120,19 @@ public:
 
 
     /*!
-        \brief Destroys the geo painter.
+        @brief Destroys the geo painter.
     */
     ~GeoPainter();
 
     /*!
-        \brief Returns the map quality.
+        @brief Returns the map quality.
         \return The map quality that got assigned to the painter.
     */
     MapQuality mapQuality() const;
 
 
     /*!
-        \brief Draws a text annotation that points to a geodesic position.
+        @brief Draws a text annotation that points to a geodesic position.
 
         The annotation consists of a bubble with the specified \a text inside.
         By choosing an appropriate pen for the painter it's possible to change
@@ -171,7 +171,7 @@ public:
 
 
     /*!
-        \brief Draws a single point at a given geographic position.
+        @brief Draws a single point at a given geographic position.
         The point is drawn using the painter's pen color.
 
         \see GeoDataCoordinates
@@ -180,7 +180,7 @@ public:
 
 
     /*!
-        \brief Creates a region for a given geographic position.
+        @brief Creates a region for a given geographic position.
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawPoint( GeoDataCoordinates ). It can be used e.g. for
@@ -198,7 +198,7 @@ public:
 
 
     /*!
-        \brief Draws a single point at a given geographic position.
+        @brief Draws a single point at a given geographic position.
         The point is drawn using the painter's pen color.
 
         \see GeoDataPoint
@@ -207,7 +207,7 @@ public:
 
 
     /*!
-        \brief Create a region for a given geographic position.
+        @brief Create a region for a given geographic position.
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawPoint( GeoDataPoint ). It can be used e.g. for
@@ -223,7 +223,7 @@ public:
 
 
     /*!
-        \brief Draws the given text at a given geographic position.
+        @brief Draws the given text at a given geographic position.
         The \a text is drawn starting at the given \a position using the painter's
         font property. The text rendering is performed in screen coordinates and is
         not subject to the current projection.
@@ -239,7 +239,7 @@ public:
 
 
     /*!
-        \brief Draws an ellipse at the given position.
+        @brief Draws an ellipse at the given position.
         The ellipse is placed with its center located at the given \a centerPosition.
 
         For the outline it uses the painter's pen and for the background the
@@ -259,7 +259,7 @@ public:
 
 
     /*!
-        \brief Creates a region for an ellipse at a given position
+        @brief Creates a region for an ellipse at a given position
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawEllipse(). As such it can be used e.g. for input event
@@ -277,7 +277,7 @@ public:
 
 
     /*!
-        \brief Draws an image at the given position.
+        @brief Draws an image at the given position.
         The image is placed with its center located at the given \a centerPosition.
 
         The image rendering is performed in screen coordinates and is
@@ -290,7 +290,7 @@ public:
 
 
     /*!
-        \brief Draws a pixmap at the given position.
+        @brief Draws a pixmap at the given position.
         The pixmap is placed with its center located at the given \a centerPosition.
 
         The image rendering is performed in screen coordinates and is
@@ -302,7 +302,7 @@ public:
                     const QPixmap& pixmap /*, bool isGeoProjected = false */);
 
     /*!
-        \brief Creates a region for a rectangle for a pixmap at a given position.
+        @brief Creates a region for a rectangle for a pixmap at a given position.
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawPixmap(). This can be used e.g. for input event handling
@@ -317,7 +317,7 @@ public:
                                  int margin = 0) const;
 
     /*!
-        \brief Helper method for safe and quick linestring conversion.
+        @brief Helper method for safe and quick linestring conversion.
 
         In general drawPolyline() should be used instead. However
         in situations where the same linestring is supposed to be
@@ -331,7 +331,7 @@ public:
 
 
     /*!
-        \brief Draws a given line string (a "polyline") with a label.
+        @brief Draws a given line string (a "polyline") with a label.
 
         The \a lineString is drawn using the current pen. It's possible to
         provide a \a labelText for the \a lineString. The text is rendered using
@@ -347,7 +347,7 @@ public:
                       const QColor& labelcolor = Qt::black);
 
     /*!
-        \brief Draws Labels for a given set of screen polygons.
+        @brief Draws Labels for a given set of screen polygons.
 
         In common cases the drawPolyline overload can be used instead.
         However in certain more complex cases this particular method
@@ -360,7 +360,7 @@ public:
                                const QColor& labelColor);
 
     /*!
-        \brief Draws a given line string (a "polyline").
+        @brief Draws a given line string (a "polyline").
 
         The \a lineString is drawn using the current pen.
 
@@ -369,7 +369,7 @@ public:
     void drawPolyline(const GeoDataLineString& lineString);
 
     /*!
-        \brief Creates a region for a given line string (a "polyline").
+        @brief Creates a region for a given line string (a "polyline").
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawPolyline( GeoDataLineString ). As such it can be used
@@ -387,7 +387,7 @@ public:
 
 
     /*!
-        \brief Draws a given linear ring (a "polygon without holes").
+        @brief Draws a given linear ring (a "polygon without holes").
 
         The outline of the \a linearRing is drawn using the current pen. The
         background is painted using the current brush of the painter.
@@ -401,7 +401,7 @@ public:
 
 
     /*!
-        \brief Creates a region for a given linear ring (a "polygon without holes").
+        @brief Creates a region for a given linear ring (a "polygon without holes").
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawPolygon( GeoDataLinearRing ). As such it can be used
@@ -425,7 +425,7 @@ public:
 
 
     /*!
-        \brief Draws a given polygon (which may contain holes).
+        @brief Draws a given polygon (which may contain holes).
 
         The outline of the \a polygon is drawn using the current pen. The
         background is painted using the current brush of the painter.
@@ -442,7 +442,7 @@ public:
                                            const QVector<QPolygonF*>& innerPolygons) const;
 
     /*!
-        \brief Draws a rectangle at the given position.
+        @brief Draws a rectangle at the given position.
         The rectangle is placed with its center located at the given
         \a centerPosition.
 
@@ -464,7 +464,7 @@ public:
 
 
     /*!
-        \brief Creates a region for a rectangle at a given position.
+        @brief Creates a region for a rectangle at a given position.
 
         A QRegion object is created that represents the area covered by
         GeoPainter::drawRect(). This can be used e.g. for input event handling
@@ -487,7 +487,7 @@ public:
 
 
     /*!
-        \brief Draws a rectangle with rounded corners at the given position.
+        @brief Draws a rectangle with rounded corners at the given position.
         The rectangle is placed with its center located at the given
         \a centerPosition.
 

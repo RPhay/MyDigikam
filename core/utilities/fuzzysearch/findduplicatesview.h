@@ -62,7 +62,7 @@ private Q_SLOTS:
     void slotSearchUpdated(SAlbum* a);
     void slotSelectItemsTimer();
     /*!
-     * \brief slotClear
+     * @brief slotClear
      * Remove extradata from every album stored in the listview
      * This extra data is used to indicate that the album was already
      * processed

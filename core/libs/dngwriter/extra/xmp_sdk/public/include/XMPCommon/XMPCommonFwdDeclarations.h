@@ -129,7 +129,7 @@ namespace AdobeXMPCommon {
     //! @brief A function pointer to get the memory allocated from the library.
     //! \param[in] size a value indicating the number of bytes to be allocated.
     //! \return a pointer to memory allocated by the library.
-    //! \note NULL value is returned in case memory allocation fails.
+    //! @note NULL value is returned in case memory allocation fails.
     //!
     typedef void * ( *MemAllocateProc )( sizet size );
     void * MemAllocate( sizet size ) __NOTHROW__;

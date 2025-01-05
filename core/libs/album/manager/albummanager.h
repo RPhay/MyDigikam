@@ -46,7 +46,7 @@ class CollectionImageChangeset;
 class ImageTagChangeset;
 
 /**
- * \class AlbumManager
+ * @class AlbumManager
  *
  * AlbumManager manages albums: does listing of albums and controls the lifetime of it.
  * For PAlbums and TAlbums, the listing is done by reading the db directly and
@@ -412,7 +412,7 @@ public:
      * This is equivalent to creating a new folder on the disk with supplied
      * name in the parent's folder path. Also the supplied attributes are written
      * out to the database
-     * \note the signalAlbumAdded will be fired before this function returns. Its
+     * @note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
      * @return the newly created PAlbum or 0 if it fails
      * @param parent   the parent album under which to create the new Album.
@@ -552,7 +552,7 @@ public:
     /**
      * Create a new TAlbum with supplied properties as a child of the parent
      * The tag is added to the database
-     * \note the signalAlbumAdded will be fired before this function returns. Its
+     * @note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
      *
      * @return the newly created TAlbum or 0 if it fails
@@ -578,7 +578,7 @@ public:
     /**
      * Delete a TAlbum.
      * The tag is removed from the database
-     * \note the signalAlbumDeleted will be fired before this function returns. Its
+     * @note the signalAlbumDeleted will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of album deletes
      *
      * @return true if the operation succeeds or false otherwise
@@ -632,7 +632,7 @@ public:
      * @param iconID   id of the icon image file
      * @param errMsg   this will contain the error message describing why the operation failed
      *
-     * \note if iconKDE is not empty then iconID is used. So if you want to set
+     * @note if iconKDE is not empty then iconID is used. So if you want to set
      * the icon to a file which can be loaded by QIcon, pass it in as
      * iconKDE. otherwise pass a null QString to iconKDE and set iconID
      */
@@ -771,7 +771,7 @@ public:
      * exists this function will return a pointer to that album, instead of creating
      * a new one. A newly created search album is added to the database. For an
      * existing SAlbum, the url is updated and written out to the database
-     * \note the signalAlbumAdded will be fired before this function returns. Its
+     * @note the signalAlbumAdded will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of new album added
      *
      * @return the newly created SAlbum or an existing SAlbum with same name
@@ -799,7 +799,7 @@ public:
 
     /**
      * Delete a SAlbum from the database
-     * \note the signalAlbumDeleted will be fired before this function returns. Its
+     * @note the signalAlbumDeleted will be fired before this function returns. Its
      * recommended to connect to that signal to get notification of album deletes
      *
      * @return true if the operation succeeds, false otherwise

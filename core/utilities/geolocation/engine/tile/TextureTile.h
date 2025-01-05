@@ -31,8 +31,8 @@ class Blending;
 class TileId;
 
 /*!
-  \class TextureTile
-  \brief A class that resembles an image tile (extends Tile).
+  @class TextureTile
+  @brief A class that resembles an image tile (extends Tile).
 
   This tile provides a bitmap image for a certain (geographic) area and
   for a given zoom level. Each Tile can be identified via a unique
@@ -62,13 +62,13 @@ public:
     ~TextureTile() override;
 
     /*!
-     \brief Returns the QImage that describes the look of the Tile
+     @brief Returns the QImage that describes the look of the Tile
      \return A non-zero pointer to a QImage associated with the tile.
     */
     QImage const* image() const;
 
     /*!
-     \brief Returns the kind of blending used for the texture tile.
+     @brief Returns the kind of blending used for the texture tile.
      \return A pointer to the blending object used for painting/merging the Tile.
 
      If no blending is set the pointer returned will be zero.

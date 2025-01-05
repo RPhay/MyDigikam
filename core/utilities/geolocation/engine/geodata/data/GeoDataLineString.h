@@ -34,8 +34,8 @@ class GeoDataCoordinates;
 class GeoDataLineStringPrivate;
 
 /*!
-    \class GeoDataLineString
-    \brief A LineString that allows to store a contiguous set of line segments.
+    @class GeoDataLineString
+    @brief A LineString that allows to store a contiguous set of line segments.
 
     GeoDataLineString is a tool class that implements the LineString tag/class
     of the Open Geospatial Consortium standard KML 2.2.
@@ -83,19 +83,19 @@ public:
     using const_iterator = QVector<GeoDataCoordinates>::const_iterator;
 
     /*!
-     \brief Creates a new LineString.
+     @brief Creates a new LineString.
     */
     explicit GeoDataLineString(TessellationFlags f = NoTessellation);
 
 
     /*!
-     \brief Creates a LineString from an existing geometry object.
+     @brief Creates a LineString from an existing geometry object.
     */
     explicit GeoDataLineString(const GeoDataGeometry& other);
 
 
     /*!
-     \brief Destroys a LineString.
+     @brief Destroys a LineString.
     */
     ~GeoDataLineString() override;
 
@@ -106,7 +106,7 @@ public:
     GeoDataGeometry* copy() const override;
 
     /*!
-     \brief Returns whether a LineString is a closed polygon.
+     @brief Returns whether a LineString is a closed polygon.
 
      \return <code>false</code> if the LineString is not a LinearRing.
     */
@@ -114,7 +114,7 @@ public:
 
 
     /*!
-     \brief Returns whether the LineString follows the earth's surface.
+     @brief Returns whether the LineString follows the earth's surface.
 
      \return <code>true</code> if the LineString's line segments follow the
      earth's surface and terrain along great circles.
@@ -123,7 +123,7 @@ public:
 
 
     /*!
-     \brief Sets the tessellation property for the LineString.
+     @brief Sets the tessellation property for the LineString.
 
      If \a tessellate is <code>true</code> then the LineString's line segments
      are bent and follow the earth's surface and terrain along great circles.
@@ -134,23 +134,23 @@ public:
 
 
     /*!
-     \brief Returns the tessellation flags for a LineString.
+     @brief Returns the tessellation flags for a LineString.
     */
     TessellationFlags tessellationFlags() const;
 
 
     /*!
-     \brief Sets the given tessellation flags for a LineString.
+     @brief Sets the given tessellation flags for a LineString.
     */
     void setTessellationFlags(TessellationFlags f);
 
     /*!
-     \brief Reverses the LineString.
+     @brief Reverses the LineString.
     */
     void reverse();
 
     /*!
-     \brief Returns the smallest latLonAltBox that contains the LineString.
+     @brief Returns the smallest latLonAltBox that contains the LineString.
      \see GeoDataLatLonAltBox
     */
     const GeoDataLatLonAltBox& latLonAltBox() const override;
@@ -166,7 +166,7 @@ public:
     virtual qreal length(qreal planetRadius, int offset = 0) const;
 
     /*!
-     \brief Provides a more generic representation of the LineString.
+     @brief Provides a more generic representation of the LineString.
 
      The LineString is normalized, and pole corrected.
 
@@ -176,7 +176,7 @@ public:
 
 
     /*!
-     \brief The line string with nodes that have proper longitude/latitude ranges.
+     @brief The line string with nodes that have proper longitude/latitude ranges.
 
      \return A LineString that resembles the original linestring with nodes that
              have longitude values between -180 and +180 deg and that
@@ -188,7 +188,7 @@ public:
 
 
     /*!
-     \brief The line string with more generic pole values.
+     @brief The line string with more generic pole values.
 
      \return A LineString that resembles the original linestring. Nodes that
              represent one of the poles are duplicated to allow for a better
@@ -200,7 +200,7 @@ public:
 
 
     /*!
-     \brief The line string corrected for date line crossing.
+     @brief The line string corrected for date line crossing.
 
      \return A set of LineStrings that don't cross the dateline and which
              resemble the original linestring.
@@ -213,7 +213,7 @@ public:
 
     // "Reimplementation" of QVector API
     /*!
-     \brief Returns whether the LineString has no nodes at all.
+     @brief Returns whether the LineString has no nodes at all.
 
      \return <code>true</code> if there are no nodes inside the line string.
     */
@@ -221,27 +221,27 @@ public:
 
 
     /*!
-     \brief Returns the number of nodes in a LineString.
+     @brief Returns the number of nodes in a LineString.
     */
     int size() const;
 
 
     /*!
-     \brief Returns a reference to the coordinates of a node at a given position.
+     @brief Returns a reference to the coordinates of a node at a given position.
      This method detaches the returned coordinate object from the line string.
     */
     GeoDataCoordinates& at(int pos);
 
 
     /*!
-     \brief Returns a reference to the coordinates of a node at a given position.
+     @brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
     const GeoDataCoordinates& at(int pos) const;
 
 
     /*!
-     \brief Returns a reference to the coordinates of a node at a given position.
+     @brief Returns a reference to the coordinates of a node at a given position.
      This method detaches the returned coordinate object from the line string.
     */
     GeoDataCoordinates& operator[](int pos);
@@ -255,150 +255,150 @@ public:
     GeoDataLineString mid(int pos, int length = -1) const;
 
     /*!
-     \brief Returns a reference to the coordinates of a node at a given position.
+     @brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
     const GeoDataCoordinates& operator[](int pos) const;
 
 
     /*!
-     \brief Returns a reference to the first node in the LineString.
+     @brief Returns a reference to the first node in the LineString.
      This method detaches the returned coordinate object from the line string.
     */
     GeoDataCoordinates& first();
 
 
     /*!
-     \brief Returns a reference to the first node in the LineString.
+     @brief Returns a reference to the first node in the LineString.
      This method does not detach the returned coordinate object from the line string.
     */
     const GeoDataCoordinates& first() const;
 
 
     /*!
-     \brief Returns a reference to the last node in the LineString.
+     @brief Returns a reference to the last node in the LineString.
      This method detaches the returned coordinate object from the line string.
     */
     GeoDataCoordinates& last();
 
 
     /*!
-     \brief Returns a reference to the last node in the LineString.
+     @brief Returns a reference to the last node in the LineString.
      This method does not detach the returned coordinate object from the line string.
     */
     const GeoDataCoordinates& last() const;
 
 
     /*!
-     \brief Inserts a new node at the given index.
+     @brief Inserts a new node at the given index.
     */
     void insert(int index, const GeoDataCoordinates& value);
 
     /*!
-     \brief Attempts to allocate memory for at least \a size coordinates.
+     @brief Attempts to allocate memory for at least \a size coordinates.
     */
     void reserve(int size);
 
     /*!
-     \brief Appends a given geodesic position as a new node to the LineString.
+     @brief Appends a given geodesic position as a new node to the LineString.
     */
     void append(const GeoDataCoordinates& value);
 
 
     /*!
-     \brief Appends a given geodesic position as new nodes to the LineString.
+     @brief Appends a given geodesic position as new nodes to the LineString.
     */
     void append(const QVector<GeoDataCoordinates>& values);
 
 
     /*!
-     \brief Appends a given geodesic position as a new node to the LineString.
+     @brief Appends a given geodesic position as a new node to the LineString.
     */
     GeoDataLineString& operator << (const GeoDataCoordinates& value);
 
 
     /*!
-     \brief Appends a given LineString to the end of the LineString.
+     @brief Appends a given LineString to the end of the LineString.
     */
     GeoDataLineString& operator << (const GeoDataLineString& lineString);
 
 
     /*!
-     \brief Returns true/false depending on whether this and other are/are not equal.
+     @brief Returns true/false depending on whether this and other are/are not equal.
     */
     bool operator==(const GeoDataLineString& other) const;
     bool operator!=(const GeoDataLineString& other) const;
 
 
     /*!
-     \brief Returns an iterator that points to the begin of the LineString.
+     @brief Returns an iterator that points to the begin of the LineString.
     */
     QVector<GeoDataCoordinates>::Iterator begin();
     QVector<GeoDataCoordinates>::ConstIterator begin() const;
 
 
     /*!
-     \brief Returns an iterator that points to the end of the LineString.
+     @brief Returns an iterator that points to the end of the LineString.
     */
     QVector<GeoDataCoordinates>::Iterator end();
     QVector<GeoDataCoordinates>::ConstIterator end() const;
 
 
     /*!
-     \brief Returns a const iterator that points to the begin of the LineString.
+     @brief Returns a const iterator that points to the begin of the LineString.
     */
     QVector<GeoDataCoordinates>::ConstIterator constBegin() const;
 
 
     /*!
-     \brief Returns a const iterator that points to the end of the LineString.
+     @brief Returns a const iterator that points to the end of the LineString.
     */
     QVector<GeoDataCoordinates>::ConstIterator constEnd() const;
 
 
     /*!
-     \brief Destroys all nodes in a LineString.
+     @brief Destroys all nodes in a LineString.
     */
     void clear();
 
 
     /*!
-     \brief Removes the node at the given position and returns it.
+     @brief Removes the node at the given position and returns it.
      */
     QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& position);
 
 
     /*!
-     \brief Removes the nodes within the given range and returns them.
+     @brief Removes the nodes within the given range and returns them.
     */
     QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& begin,
                                                 const QVector<GeoDataCoordinates>::Iterator& end);
 
 
     /*!
-     \brief Removes the node at the given position and destroys it.
+     @brief Removes the node at the given position and destroys it.
     */
     void remove(int i);
 
     /*!
-     \brief Returns a linestring with detail values assigned to each node.
+     @brief Returns a linestring with detail values assigned to each node.
     */
     GeoDataLineString optimized() const;
 
     /*!
-     \brief Returns a javascript-style list (that can be used e.g. with the QML GeoPolyline element).
+     @brief Returns a javascript-style list (that can be used e.g. with the QML GeoPolyline element).
     */
     QVariantList toVariantList() const;
 
     // Serialization
     /*!
-     \brief Serialize the LineString to a stream.
+     @brief Serialize the LineString to a stream.
      \param stream the stream.
     */
     void pack(QDataStream& stream) const override;
 
     /*!
-     \brief Unserialize the LineString from a stream.
+     @brief Unserialize the LineString from a stream.
      \param stream the stream.
     */
     void unpack(QDataStream& stream) override;

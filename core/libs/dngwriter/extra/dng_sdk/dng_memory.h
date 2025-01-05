@@ -36,7 +36,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class to provide resource acquisition is instantiation discipline
+/// @brief Class to provide resource acquisition is instantiation discipline
 /// for small memory allocations.
 ///
 /// This class does not use dng_memory_allocator for memory allocation.
@@ -286,7 +286,7 @@ class dng_memory_data: private dng_uncopyable
 
 /*****************************************************************************/
 
-/// \brief Class to provide resource acquisition is instantiation discipline for
+/// @brief Class to provide resource acquisition is instantiation discipline for
 /// image buffers and other larger memory allocations.
 ///
 /// This class requires a dng_memory_allocator for allocation.
@@ -512,7 +512,7 @@ class dng_memory_block: private dng_uncopyable
 
 /*****************************************************************************/
 
-/// \brief Interface for dng_memory_block allocator.
+/// @brief Interface for dng_memory_block allocator.
 
 class dng_memory_allocator
     {
@@ -565,7 +565,7 @@ class dng_malloc_block : public dng_memory_block
 
 /*****************************************************************************/
 
-/// \brief Default memory allocator used if NULL is passed in for allocator
+/// @brief Default memory allocator used if NULL is passed in for allocator
 /// when constructing a dng_host.
 ///
 /// Uses new and delete for memory block object and malloc/free for underlying
@@ -575,7 +575,7 @@ extern dng_memory_allocator gDefaultDNGMemoryAllocator;
 
 /*****************************************************************************/
 
-/// \brief C++ allocator (i.e. an implementation of the Allocator concept)
+/// @brief C++ allocator (i.e. an implementation of the Allocator concept)
 /// that throws a dng_exception with error code dng_error_memory if it cannot
 /// allocate memory.
 

@@ -202,7 +202,7 @@ extern "C" {
 
 // =================================================================================================
 /// \file XMP_Const.h
-/// \brief Common C/C++ types and constants for the XMP toolkit.
+/// @brief Common C/C++ types and constants for the XMP toolkit.
 // =================================================================================================
 
 // =================================================================================================
@@ -323,19 +323,19 @@ typedef struct __XMPFiles__ *       XMPFilesRef;
 /// @{
 
 /// \typedef XMP_StringPtr
-/// \brief The type for input string parameters. A <tt>const char *</tt>, a null-terminated UTF-8
+/// @brief The type for input string parameters. A <tt>const char *</tt>, a null-terminated UTF-8
 /// string.
 
 /// \typedef XMP_StringLen
-/// \brief The type for string length parameters. A 32-bit unsigned integer, as big as will be
+/// @brief The type for string length parameters. A 32-bit unsigned integer, as big as will be
 /// practically needed.
 
 /// \typedef XMP_Index
-/// \brief The type for offsets and indices. A 32-bit signed integer. It is signed to allow -1 for
+/// @brief The type for offsets and indices. A 32-bit signed integer. It is signed to allow -1 for
 /// loop termination.
 
 /// \typedef XMP_OptionBits
-/// \brief The type for a collection of 32 flag bits.
+/// @brief The type for a collection of 32 flag bits.
 /// @details Individual flags are defined as enum value bit
 ///  masks; see \c #kXMP_PropValueIsURI and following. A number of macros provide common set or set
 ///  operations, such as \c XMP_PropIsSimple. For other tests use an expression like <code>options &
@@ -348,12 +348,12 @@ typedef XMP_Int32    XMP_Index;      // Signed, sometimes -1 is handy.
 typedef XMP_Uns32    XMP_OptionBits; // Used as 32 individual bits.
 
 /// \def kXMP_TrueStr
-/// \brief The canonical true string value for Booleans in serialized XMP.
+/// @brief The canonical true string value for Booleans in serialized XMP.
 ///
 /// Code that converts from string to bool should be case insensitive, and also allow "1".
 
 /// \def kXMP_FalseStr
-/// \brief The canonical false string value for Booleans in serialized XMP.
+/// @brief The canonical false string value for Booleans in serialized XMP.
 ///
 /// Code that converts  from string to bool should be case insensitive, and also allow "0".
 
@@ -377,7 +377,7 @@ typedef XMP_Int8 XMP_TriState;
 // =================================================================================================
 
 /// \struct XMP_DateTime
-/// \brief The expanded type for a date and time.
+/// @brief The expanded type for a date and time.
 ///
 /// Dates and time in the serialized XMP are ISO 8601 strings. The \c XMP_DateTime struct allows
 /// easy conversion with other formats.
@@ -468,34 +468,34 @@ enum {
 /// @{
 ///
 /// \def kXMP_NS_XMP
-/// \brief The XML namespace for the XMP "basic" schema.
+/// @brief The XML namespace for the XMP "basic" schema.
 ///
 /// \def kXMP_NS_XMP_Rights
-/// \brief The XML namespace for the XMP copyright schema.
+/// @brief The XML namespace for the XMP copyright schema.
 ///
 /// \def kXMP_NS_XMP_MM
-/// \brief The XML namespace for the XMP digital asset management schema.
+/// @brief The XML namespace for the XMP digital asset management schema.
 ///
 /// \def kXMP_NS_XMP_BJ
-/// \brief The XML namespace for the job management schema.
+/// @brief The XML namespace for the job management schema.
 ///
 /// \def kXMP_NS_XMP_T
-/// \brief The XML namespace for the XMP text document schema.
+/// @brief The XML namespace for the XMP text document schema.
 ///
 /// \def kXMP_NS_XMP_T_PG
-/// \brief The XML namespace for the XMP paged document schema.
+/// @brief The XML namespace for the XMP paged document schema.
 ///
 /// \def kXMP_NS_PDF
-/// \brief The XML namespace for the PDF schema.
+/// @brief The XML namespace for the PDF schema.
 ///
 /// \def kXMP_NS_Photoshop
-/// \brief The XML namespace for the Photoshop custom schema.
+/// @brief The XML namespace for the Photoshop custom schema.
 ///
 /// \def kXMP_NS_EXIF
-/// \brief The XML namespace for Adobe's EXIF schema.
+/// @brief The XML namespace for Adobe's EXIF schema.
 ///
 /// \def kXMP_NS_TIFF
-/// \brief The XML namespace for Adobe's TIFF schema.
+/// @brief The XML namespace for Adobe's TIFF schema.
 ///
 /// @}
 
@@ -539,25 +539,25 @@ enum {
 /// @{
 ///
 /// \def kXMP_NS_XMP_IdentifierQual
-/// \brief The XML namespace for qualifiers of the xmp:Identifier property.
+/// @brief The XML namespace for qualifiers of the xmp:Identifier property.
 ///
 /// \def kXMP_NS_XMP_Dimensions
-/// \brief The XML namespace for fields of the Dimensions type.
+/// @brief The XML namespace for fields of the Dimensions type.
 ///
 /// \def kXMP_NS_XMP_Image
-/// \brief The XML namespace for fields of a graphical image. Used for the Thumbnail type.
+/// @brief The XML namespace for fields of a graphical image. Used for the Thumbnail type.
 ///
 /// \def kXMP_NS_XMP_ResourceEvent
-/// \brief The XML namespace for fields of the ResourceEvent type.
+/// @brief The XML namespace for fields of the ResourceEvent type.
 ///
 /// \def kXMP_NS_XMP_ResourceRef
-/// \brief The XML namespace for fields of the ResourceRef type.
+/// @brief The XML namespace for fields of the ResourceRef type.
 ///
 /// \def kXMP_NS_XMP_ST_Version
-/// \brief The XML namespace for fields of the Version type.
+/// @brief The XML namespace for fields of the Version type.
 ///
 /// \def kXMP_NS_XMP_ST_Job
-/// \brief The XML namespace for fields of the JobRef type.
+/// @brief The XML namespace for fields of the JobRef type.
 ///
 /// @}
 
@@ -583,19 +583,19 @@ enum {
 /// @{
 ///
 /// \def kXMP_NS_DC
-/// \brief The XML namespace for the Dublin Core schema.
+/// @brief The XML namespace for the Dublin Core schema.
 ///
 /// \def kXMP_NS_IPTCCore
-/// \brief The XML namespace for the IPTC Core schema.
+/// @brief The XML namespace for the IPTC Core schema.
 ///
 /// \def kXMP_NS_IPTCExt
-/// \brief The XML namespace for the IPTC Extension schema.
+/// @brief The XML namespace for the IPTC Extension schema.
 ///
 /// \def kXMP_NS_RDF
-/// \brief The XML namespace for RDF.
+/// @brief The XML namespace for RDF.
 ///
 /// \def kXMP_NS_XML
-/// \brief The XML namespace for XML.
+/// @brief The XML namespace for XML.
 ///
 /// @}
 
@@ -629,13 +629,13 @@ enum {
 /// @{
 ///
 /// \def kXMP_ArrayLastItem
-/// \brief Options macro accesses last array item.
+/// @brief Options macro accesses last array item.
 ///
 /// \def kXMP_UseNullTermination
-/// \brief Options macro sets string style.
+/// @brief Options macro sets string style.
 ///
 /// \def kXMP_NoOptions
-/// \brief Options macro clears all property-type bits.
+/// @brief Options macro clears all property-type bits.
 ///
 /// @}
 
@@ -647,29 +647,29 @@ enum {
 /// @{
 ///
 /// \def XMP_SetOption
-/// \brief Macro sets an option flag bit.
+/// @brief Macro sets an option flag bit.
 /// \param var A variable storing an options flag.
 /// \param opt The bit-flag constant to set.
 ///
 /// \def XMP_ClearOption
-/// \brief Macro clears an option flag bit.
+/// @brief Macro clears an option flag bit.
 /// \param var A variable storing an options flag.
 /// \param opt The bit-flag constant to clear.
 ///
 /// \def XMP_TestOption
-/// \brief Macro reports whether an option flag bit is set.
+/// @brief Macro reports whether an option flag bit is set.
 /// \param var A variable storing an options flag.
 /// \param opt The bit-flag constant to test.
 /// \return True if the bit is set.
 ///
 /// \def XMP_OptionIsSet
-/// \brief Macro reports whether an option flag bit is set.
+/// @brief Macro reports whether an option flag bit is set.
 /// \param var A variable storing an options flag.
 /// \param opt The bit-flag constant to test.
 /// \return True if the bit is set.
 ///
 /// \def XMP_OptionIsClear
-/// \brief Macro reports whether an option flag bit is clear.
+/// @brief Macro reports whether an option flag bit is clear.
 /// \param var A variable storing an options flag.
 /// \param opt The bit-flag constant to test.
 /// \return True if the bit is clear.
@@ -686,51 +686,51 @@ enum {
 /// @{
 ///
 /// \def XMP_PropIsSimple
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropIsStruct
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropIsArray
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_ArrayIsUnordered
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_ArrayIsOrdered
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_ArrayIsAlternate
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_ArrayIsAltText
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropHasQualifiers
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropIsQualifier
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropHasLang
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_NodeIsSchema
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// \def XMP_PropIsAlias
-/// \brief Macro reports the property type specified by an options flag.
+/// @brief Macro reports the property type specified by an options flag.
 /// \param opt The options flag to check.
 ///
 /// @}
@@ -1229,31 +1229,31 @@ enum {
 /// @{
 ///
 /// \def XMP_CharFormIs16Bit
-/// \brief Macro reports the encoding of a character.
+/// @brief Macro reports the encoding of a character.
 /// \param f The character to check.
 ///
 /// \def XMP_CharFormIs32Bit
-/// \brief Macro reports the encoding of a character.
+/// @brief Macro reports the encoding of a character.
 /// \param f The character to check.
 ///
 /// \def XMP_CharFormIsBigEndian
-/// \brief Macro reports the byte-order of a character.
+/// @brief Macro reports the byte-order of a character.
 /// \param f The character to check.
 ///
 /// \def XMP_CharFormIsLittleEndian
-/// \brief Macro reports the byte-order of a character.
+/// @brief Macro reports the byte-order of a character.
 /// \param f The character to check.
 ///
 /// \def XMP_GetCharSize
-/// \brief Macro reports the byte-size of a character.
+/// @brief Macro reports the byte-size of a character.
 /// \param f The character to check.
 ///
 /// \def XMP_CharToSerializeForm
-/// \brief Macro converts \c XMP_Uns8 to \c XMP_OptionBits.
+/// @brief Macro converts \c XMP_Uns8 to \c XMP_OptionBits.
 /// \param cf The character to convert.
 ///
 /// \def XMP_CharFromSerializeForm
-/// \brief Macro converts \c XMP_OptionBits to \c XMP_Uns8.
+/// @brief Macro converts \c XMP_OptionBits to \c XMP_Uns8.
 /// \param sf The character to convert.
 ///
 /// @}
@@ -1267,11 +1267,11 @@ enum {
 #define XMP_CharFromSerializeForm(sf)  ( (XMP_Uns8)(sf) )
 
 /// \def kXMPFiles_UnknownOffset
-/// \brief Constant for an unknown packet offset within a file.
+/// @brief Constant for an unknown packet offset within a file.
 #define kXMPFiles_UnknownOffset ((XMP_Int64)-1)
 
 /// \def kXMPFiles_UnknownLength
-/// \brief Constant for an unknown packet length within a file.
+/// @brief Constant for an unknown packet length within a file.
 #define kXMPFiles_UnknownLength ((XMP_Int32)-1)
 
 /// @brief XMP packet description
@@ -1665,7 +1665,7 @@ enum { kXMP_EmbeddedDocInfoVersion = 1 };
 /// be added at any time. There are typically many possible explanations for each numeric code. The
 /// explanations try to be precise about the specific circumstances causing the error.
 ///
-/// \note The explanation string is for debugging use only. It must not be shown to users in a
+/// @note The explanation string is for debugging use only. It must not be shown to users in a
 /// final product. It is written for developers not users, and never localized.
 
 typedef XMP_Uns8 XMP_ErrorSeverity;

@@ -20,7 +20,7 @@
 #include <QDir>
 
 /**
- * \brief Class that provides convenient access to digiKam test data directories and files.
+ * @brief Class that provides convenient access to digiKam test data directories and files.
  *
  * When instantiated, the test-data directory is located dynamically; this algorithm works as long as
  * the current directory is the source root directory or any sub-directory.  After construction,

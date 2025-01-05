@@ -32,8 +32,8 @@ namespace Marble
 class TextureTile;
 
 /*!
-    \class StackedTile
-    \brief A single tile that consists of a stack of Tile layers.
+    @class StackedTile
+    @brief A single tile that consists of a stack of Tile layers.
 
     The StackedTile is a tile container that covers a certain area and is used
     for a particular zoom level. It consists of a <b>stack of several
@@ -72,19 +72,19 @@ public:
     int byteCount() const;
 
     /*!
-     \brief Returns the stack of Tiles
+     @brief Returns the stack of Tiles
      \return A container of Tile objects.
     */
     QVector<QSharedPointer<TextureTile> > tiles() const;
 
     /*!
-     \brief Returns the QImage that describes the merged stack of Tiles
+     @brief Returns the QImage that describes the merged stack of Tiles
      \return A non-zero pointer to the resulting QImage
     */
     QImage const* resultImage() const;
 
     /*!
-     \brief Returns the color value of the result tile at the given integer position.
+     @brief Returns the color value of the result tile at the given integer position.
      \return The uint that describes the color value of the given pixel
 
      Note: for gray scale images the color value of a single pixel is described
@@ -93,7 +93,7 @@ public:
     uint pixel(int x, int y) const;
 
     /*!
-     \brief Returns the color value of the result tile at a given floating point position.
+     @brief Returns the color value of the result tile at a given floating point position.
      \return The uint that describes the color value of the given pixel
 
      Subpixel calculation is done via bilinear interpolation.

@@ -39,18 +39,19 @@ class KDTreeBase
 public:
 
     /**
-     * @brief: Constructor of the class implementing the KD-Tree for vector space partitioning.
+     * @brief Constructor of the class implementing the KD-Tree for vector space partitioning.
      *
-     * @param: dim             The dimmension of the tree.
-     * @param: kdtreeThreshold The KD-Tree threshold. Above this value, we start using the KD-Tree instead of the vector.
+     * @param dim             The dimmension of the tree.
+     * @param kdtreeThreshold The KD-Tree threshold. Above this value, we start using the KD-Tree instead of the vector.
+     *                        If the vector grows to default KDTREE_MAP_THRESHOLD items, start using the KDTree.
      *
-     * @note: Due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
+     * @note Due to sparse data density in the tree, we initially use a vector of nodes to compare the target to the samples
      * once we have achieved a suitabe data density we delete the vector (but not the nodes)
      * and begin using the tree.
      *
-     * @todo: A future refactor of this class will include replacing the tree with a more appropriate HDLSS classifier.
+     * @todo A future refactor of this class will include replacing the tree with a more appropriate HDLSS classifier.
      */
-    explicit KDTreeBase(int dim, int kdtreeThreshold);
+    explicit KDTreeBase(int dim, int kdtreeThreshold = KDTREE_MAP_THRESHOLD);
     virtual ~KDTreeBase();
 
     /**
@@ -63,8 +64,8 @@ public:
     /**
      * @brief add new node to KD-Tree
      *
-     * @param position : K-dimension vector
-     * @param identity : identity of this face vector
+     * @param position K-dimension vector
+     * @param identity identity of this face vector
      *
      * @return the KD-Tree node base instance
      */
@@ -73,10 +74,10 @@ public:
     /**
      * @brief create an ew node
      *
-     * @param nodePos   : extracted face vectors
-     * @param identity  : identity of this face vector
-     * @param splitAxis : current axis/dimension of the vector
-     * @param dimension : number of dimensions (usually 128)
+     * @param nodePos   extracted face vectors
+     * @param identity  identity of this face vector
+     * @param splitAxis current axis/dimension of the vector
+     * @param dimension number of dimensions (usually 128)
      *
      * @return the KD-Tree node base instance
      */

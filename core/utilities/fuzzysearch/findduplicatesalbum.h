@@ -32,7 +32,7 @@ namespace Digikam
 {
 
 /*!
- * \brief The FindDuplicatesAlbum class
+ * @brief The FindDuplicatesAlbum class
  * Widgets used to show all reference images.
  */
 class FindDuplicatesAlbum : public QTreeWidget

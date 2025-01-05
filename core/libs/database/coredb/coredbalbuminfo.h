@@ -32,7 +32,7 @@ namespace Digikam
 typedef QPair<int, int> YearMonth;
 
 /**
- * \class AlbumRootInfo
+ * @class AlbumRootInfo
  */
 class AlbumRootInfo
 {
@@ -54,7 +54,7 @@ public:
 // --------------------------------------------------------------------------
 
 /**
- * \class AlbumInfo
+ * @class AlbumInfo
  * A container class for transporting album information
  * from the database to AlbumManager
  */
@@ -97,7 +97,7 @@ public:
 // --------------------------------------------------------------------------
 
 /**
- * \class TagInfo
+ * @class TagInfo
  * A container class for transporting tag information
  * from the database to AlbumManager
  */
@@ -133,7 +133,7 @@ public:
 // --------------------------------------------------------------------------
 
 /**
- * \class SearchInfo
+ * @class SearchInfo
  * A container class for transporting search information
  * from the database to AlbumManager
  */

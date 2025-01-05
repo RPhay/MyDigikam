@@ -32,8 +32,8 @@ namespace Marble
 class GeoDataBuildingPrivate;
 
 /*!
-    \class GeoDataBuilding
-    \brief Contains important information about a building and its floors (levels)
+    @class GeoDataBuilding
+    @brief Contains important information about a building and its floors (levels)
 
     GeoDataBuilding holds information such as minimum floor, maximum floor,
     floor data and their respective MultiGeometry and other possible metadata such

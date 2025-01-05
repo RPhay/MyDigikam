@@ -24,7 +24,7 @@
 
 /*****************************************************************************/
 
-/// \brief List of supported opcodes (by ID).
+/// @brief List of supported opcodes (by ID).
 
 enum dng_opcode_id
     {
@@ -98,7 +98,7 @@ enum dng_opcode_id
 
 /*****************************************************************************/
 
-/// \brief Virtual base class for opcode.
+/// @brief Virtual base class for opcode.
 
 class dng_opcode
     {
@@ -260,7 +260,7 @@ class dng_opcode
 
 /*****************************************************************************/
 
-/// \brief Class to represent unknown opcodes (e.g, opcodes defined in future
+/// @brief Class to represent unknown opcodes (e.g, opcodes defined in future
 /// DNG versions).
 
 class dng_opcode_Unknown: public dng_opcode
@@ -286,7 +286,7 @@ class dng_opcode_Unknown: public dng_opcode
 
 /*****************************************************************************/
 
-/// \brief Class to represent a filter opcode, such as a convolution.
+/// @brief Class to represent a filter opcode, such as a convolution.
 
 class dng_filter_opcode: public dng_opcode
     {
@@ -430,7 +430,7 @@ class dng_filter_opcode: public dng_opcode
 
 /*****************************************************************************/
 
-/// \brief Class to represent an in-place (i.e., pointwise, per-pixel) opcode,
+/// @brief Class to represent an in-place (i.e., pointwise, per-pixel) opcode,
 /// such as a global tone curve.
 
 class dng_inplace_opcode: public dng_opcode

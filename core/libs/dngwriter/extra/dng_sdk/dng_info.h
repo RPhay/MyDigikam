@@ -30,7 +30,7 @@
 
 /*****************************************************************************/
 
-/// \brief Top-level structure of DNG file with access to metadata.
+/// @brief Top-level structure of DNG file with access to metadata.
 ///
 /// See \ref spec_dng "DNG 1.1.0 specification" for information on member fields of this class.
 

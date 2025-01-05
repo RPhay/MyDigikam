@@ -116,7 +116,7 @@ GeoDataMultiGeometry* GeoDataBuilding::multiGeometry() const
 
 const GeoDataLatLonAltBox& GeoDataBuilding::latLonAltBox() const
 {
-    // @TODO: This is temporary, for only when we have just one child
+    // @todo: This is temporary, for only when we have just one child
     Q_ASSERT(d->m_multiGeometry.size() == 1);
     return static_cast<const GeoDataMultiGeometry>(d->m_multiGeometry).at(0).latLonAltBox();
 }

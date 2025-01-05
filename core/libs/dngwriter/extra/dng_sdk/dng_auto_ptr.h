@@ -30,7 +30,7 @@
 
 /*****************************************************************************/
 
-/// \brief A class intended to be used in stack scope to hold a pointer from new. The
+/// @brief A class intended to be used in stack scope to hold a pointer from new. The
 /// held pointer will be deleted automatically if the scope is left without calling
 /// Release on the AutoPtr first.
 
@@ -165,7 +165,7 @@ void AutoPtr<T>::Alloc ()
 
 /*****************************************************************************/
 
-/// \brief A class that provides a variable-length array that automatically
+/// @brief A class that provides a variable-length array that automatically
 /// deletes the underlying memory on scope exit.
 ///
 /// T is not required to be movable. The class is implemented using

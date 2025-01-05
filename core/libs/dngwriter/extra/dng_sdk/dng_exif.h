@@ -30,7 +30,7 @@
 
 /*****************************************************************************/
 
-/// \brief Container class for parsing and holding EXIF tags.
+/// @brief Container class for parsing and holding EXIF tags.
 ///
 /// Public member fields are documented in \ref spec_exif "EXIF specification."
 

@@ -28,7 +28,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class to get resource acquisition is instantiation behavior for tile
+/// @brief Class to get resource acquisition is instantiation behavior for tile
 /// buffers. Can be dirty or constant tile access.
 
 class dng_tile_buffer: public dng_pixel_buffer,
@@ -70,7 +70,7 @@ class dng_tile_buffer: public dng_pixel_buffer,
 
 /*****************************************************************************/
 
-/// \brief Class to get resource acquisition is instantiation behavior for
+/// @brief Class to get resource acquisition is instantiation behavior for
 /// constant (read-only) tile buffers.
 
 class dng_const_tile_buffer: public dng_tile_buffer
@@ -91,7 +91,7 @@ class dng_const_tile_buffer: public dng_tile_buffer
 
 /*****************************************************************************/
 
-/// \brief Class to get resource acquisition is instantiation behavior for
+/// @brief Class to get resource acquisition is instantiation behavior for
 /// dirty (writable) tile buffers.
 
 class dng_dirty_tile_buffer: public dng_tile_buffer
@@ -112,7 +112,7 @@ class dng_dirty_tile_buffer: public dng_tile_buffer
 
 /*****************************************************************************/
 
-/// \brief Base class for holding image data in DNG SDK. See dng_simple_image
+/// @brief Base class for holding image data in DNG SDK. See dng_simple_image
 /// for derived class most often used in DNG SDK.
 
 class dng_image

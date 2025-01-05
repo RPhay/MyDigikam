@@ -23,7 +23,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class for reading and holding IPTC metadata associated with a DNG file.
+/// @brief Class for reading and holding IPTC metadata associated with a DNG file.
 ///
 /// See the \ref spec_iptc "IPTC specification"
 /// for information on member fields of this class.

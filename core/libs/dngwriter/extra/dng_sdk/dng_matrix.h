@@ -23,7 +23,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class to represent 2D matrix up to kMaxColorPlanes x kMaxColorPlanes
+/// @brief Class to represent 2D matrix up to kMaxColorPlanes x kMaxColorPlanes
 /// in size.
 
 class dng_matrix
@@ -113,7 +113,7 @@ class dng_matrix
 
 /*****************************************************************************/
 
-/// \brief A 3x3 matrix.
+/// @brief A 3x3 matrix.
 
 class dng_matrix_3by3: public dng_matrix
     {
@@ -134,7 +134,7 @@ class dng_matrix_3by3: public dng_matrix
 
 /*****************************************************************************/
 
-/// \brief A 4x3 matrix. Handy for working with 4-color cameras.
+/// @brief A 4x3 matrix. Handy for working with 4-color cameras.
 
 class dng_matrix_4by3: public dng_matrix
     {
@@ -154,7 +154,7 @@ class dng_matrix_4by3: public dng_matrix
 
 /*****************************************************************************/
 
-/// \brief A 4x4 matrix. Handy for GPU APIs.
+/// @brief A 4x4 matrix. Handy for GPU APIs.
 
 class dng_matrix_4by4: public dng_matrix
     {
@@ -176,7 +176,7 @@ class dng_matrix_4by4: public dng_matrix
 
 /*****************************************************************************/
 
-/// \brief Class to represent 1-dimensional vector with up to kMaxColorPlanes
+/// @brief Class to represent 1-dimensional vector with up to kMaxColorPlanes
 /// components.
 
 class dng_vector
@@ -252,7 +252,7 @@ class dng_vector
 
 /*****************************************************************************/
 
-/// \brief A 3-element vector.
+/// @brief A 3-element vector.
 
 class dng_vector_3: public dng_vector
     {
@@ -271,7 +271,7 @@ class dng_vector_3: public dng_vector
 
 /*****************************************************************************/
 
-/// \brief A 4-element vector.
+/// @brief A 4-element vector.
 
 class dng_vector_4: public dng_vector
     {

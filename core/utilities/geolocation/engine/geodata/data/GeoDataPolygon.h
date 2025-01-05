@@ -34,8 +34,8 @@ class GeoDataLinearRing;
 class GeoDataCoordinates;
 
 /*!
-    \class GeoDataPolygon
-    \brief A polygon that can have "holes".
+    @class GeoDataPolygon
+    @brief A polygon that can have "holes".
 
     GeoDataPolygon is a tool class that implements the Polygon tag/class
     of the Open Geospatial Consortium standard KML 2.2.
@@ -88,17 +88,17 @@ class DIGIKAM_EXPORT GeoDataPolygon : public GeoDataGeometry
 public:
 
     /*!
-     \brief Creates a new Polygon.
+     @brief Creates a new Polygon.
     */
     explicit GeoDataPolygon(TessellationFlags f = NoTessellation);
 
     /*!
-     \brief Creates a Polygon from an existing geometry object.
+     @brief Creates a Polygon from an existing geometry object.
     */
     explicit GeoDataPolygon(const GeoDataGeometry& other);
 
     /*!
-     \brief Destroys a Polygon.
+     @brief Destroys a Polygon.
     */
     ~GeoDataPolygon() override;
 
@@ -109,26 +109,26 @@ public:
     GeoDataGeometry* copy() const override;
 
     /*!
-     \brief Returns true/false depending on whether this and other are/are not equal.
+     @brief Returns true/false depending on whether this and other are/are not equal.
     */
     bool operator==(const GeoDataPolygon& other) const;
     bool operator!=(const GeoDataPolygon& other) const;
 
     /*!
-     \brief Returns whether a Polygon is a closed polygon.
+     @brief Returns whether a Polygon is a closed polygon.
      \return <code>true</code> for a Polygon.
     */
     virtual bool isClosed() const;
 
     /*!
-     \brief Returns whether the Polygon follows the earth's surface.
+     @brief Returns whether the Polygon follows the earth's surface.
      \return <code>true</code> if the Polygon's line segments follow the
      earth's surface and terrain along great circles.
     */
     bool tessellate() const;
 
     /*!
-     \brief Sets the tessellation property for the Polygon.
+     @brief Sets the tessellation property for the Polygon.
      If \a tessellate is <code>true</code> then the Polygon's line segments
      are bent and follow the earth's surface and terrain along great circles.
      If \a tessellate is <code>false</code> then the Polygon's line segments
@@ -138,59 +138,59 @@ public:
 
 
     /*!
-     \brief Returns the tessellation flags for a Polygon.
+     @brief Returns the tessellation flags for a Polygon.
     */
     TessellationFlags tessellationFlags() const;
 
     /*!
-     \brief Sets the given tessellation flags for a Polygon.
+     @brief Sets the given tessellation flags for a Polygon.
     */
     void setTessellationFlags(TessellationFlags f);
 
     /*!
-     \brief Returns the smallest latLonAltBox that contains the Polygon.
+     @brief Returns the smallest latLonAltBox that contains the Polygon.
      \see GeoDataLatLonAltBox
     */
     const GeoDataLatLonAltBox& latLonAltBox() const override;
 
     /*!
-     \brief Returns the outer boundary that is represented as a LinearRing.
+     @brief Returns the outer boundary that is represented as a LinearRing.
      \see GeoDataLinearRing
     */
     GeoDataLinearRing& outerBoundary();
 
     /*!
-     \brief Returns the outer boundary that is represented as a LinearRing.
+     @brief Returns the outer boundary that is represented as a LinearRing.
      \see GeoDataLinearRing
     */
     const GeoDataLinearRing& outerBoundary() const;
 
     /*!
-     \brief Sets the given LinearRing as an outer boundary of the Polygon.
+     @brief Sets the given LinearRing as an outer boundary of the Polygon.
      \see GeoDataLinearRing
     */
     void setOuterBoundary(const GeoDataLinearRing& boundary);
 
     /*!
-     \brief Returns a set of inner boundaries which are represented as LinearRings.
+     @brief Returns a set of inner boundaries which are represented as LinearRings.
      \see GeoDataLinearRing
     */
     QVector<GeoDataLinearRing>& innerBoundaries();
 
     /*!
-     \brief Returns a set of inner boundaries which are represented as LinearRings.
+     @brief Returns a set of inner boundaries which are represented as LinearRings.
      \see GeoDataLinearRing
     */
     const QVector<GeoDataLinearRing>& innerBoundaries() const;
 
     /*!
-     \brief Appends a given LinearRing as an inner boundary of the Polygon.
+     @brief Appends a given LinearRing as an inner boundary of the Polygon.
      \see GeoDataLinearRing
     */
     void appendInnerBoundary(const GeoDataLinearRing& boundary);
 
     /*!
-     \brief Returns whether the given coordinates lie within the polygon.
+     @brief Returns whether the given coordinates lie within the polygon.
      \return <code>true</code> if the coordinates lie within the polygon
      (and not in its holes), false otherwise.
     */
@@ -199,13 +199,13 @@ public:
     // Serialization
 
     /*!
-     \brief Serialize the Polygon to a stream.
+     @brief Serialize the Polygon to a stream.
      \param stream the stream.
     */
     void pack(QDataStream& stream) const override;
 
     /*!
-     \brief Unserialize the Polygon from a stream.
+     @brief Unserialize the Polygon from a stream.
      \param stream the stream.
     */
     void unpack(QDataStream& stream) override;

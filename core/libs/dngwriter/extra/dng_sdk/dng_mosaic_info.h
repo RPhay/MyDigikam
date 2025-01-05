@@ -24,7 +24,7 @@
 
 /*****************************************************************************/
 
-/// \brief Support for describing color filter array patterns and manipulating mosaic sample data.
+/// @brief Support for describing color filter array patterns and manipulating mosaic sample data.
 ///
 /// See CFAPattern tag in \ref spec_tiff_ep "TIFF/EP specification" and CFAPlaneColor, CFALayout, and BayerGreenSplit
 /// tags in the \ref spec_dng "DNG 1.1.0 specification".

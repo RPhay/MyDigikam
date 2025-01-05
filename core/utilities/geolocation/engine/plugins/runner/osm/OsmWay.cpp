@@ -146,7 +146,7 @@ void OsmWay::addReference(qint64 id)
 
 bool OsmWay::isArea() const
 {
-    // @TODO A single OSM way can be both closed and non-closed, e.g. landuse=grass with barrier=fence.
+    // @todo A single OSM way can be both closed and non-closed, e.g. landuse=grass with barrier=fence.
     // We need to create two separate ways in cases like that to support this.
     // See also https://wiki.openstreetmap.org/wiki/Key:area
 

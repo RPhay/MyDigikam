@@ -215,7 +215,7 @@ void HaarIfaceTest::stopSql()
 // Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaler.png
 
 /*!
- * \brief HaarIfaceTest::testOriginal
+ * @brief HaarIfaceTest::testOriginal
  * Original behaviour
  */
 void HaarIfaceTest::testOriginal()
@@ -257,7 +257,7 @@ void HaarIfaceTest::testOriginal()
 }
 
 /*!
- * \brief HaarIfaceTest::testExcludeRefSelectpotentialDuplicates
+ * @brief HaarIfaceTest::testExcludeRefSelectpotentialDuplicates
  * The selected folder shall not be used as reference
  */
 void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
@@ -312,7 +312,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
 }
 
 /*!
- * \brief HaarIfaceTest::testPreferFolderSelectpotentialDuplicates
+ * @brief HaarIfaceTest::testPreferFolderSelectpotentialDuplicates
  * The selected folder is preferred as reference
  */
 void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
@@ -477,7 +477,7 @@ void HaarIfaceTest::testPreferFolderWhole()
 }
 
 /*!
- * \brief HaarIfaceTest::testReferenceFolderNotSelected
+ * @brief HaarIfaceTest::testReferenceFolderNotSelected
  * The reference folder is not in the search folders.
  * But neverthless the folder shall be checked, otherwise
  * the duplicates get not found. The Duplicatesfinder will merge interally the
@@ -554,7 +554,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
 }
 
 /*!
- * \brief HaarIfaceTest::testReferenceFolderNotSelected
+ * @brief HaarIfaceTest::testReferenceFolderNotSelected
  * Similar test to testReferenceFolderNotSelected(), but with the difference,
  * "Collection/potentialDuplicates/subfolder" is in both, the reference and in the search albums
  */

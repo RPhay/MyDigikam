@@ -26,7 +26,7 @@
 
 /*****************************************************************************/
 
-/// \brief Class for managing data values related to DNG linearization.
+/// @brief Class for managing data values related to DNG linearization.
 ///
 /// See LinearizationTable, BlackLevel, BlackLevelRepeatDim, BlackLevelDeltaH,
 /// BlackLevelDeltaV and WhiteLevel tags in the \ref spec_dng "DNG 1.1.0 specification".

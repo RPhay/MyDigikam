@@ -1425,8 +1425,8 @@ void BackendGoogleMaps::storeTrackChanges(const TrackManager::TrackChanges track
 
 void BackendGoogleMaps::slotTrackManagerChanged()
 {
-    /// @TODO disconnect old track manager
-    /// @TODO mark all tracks as dirty
+    /// @todo disconnect old track manager
+    /// @todo mark all tracks as dirty
 
     if (s->trackManager)
     {
@@ -1466,10 +1466,10 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         return;
     }
 
-    /// @TODO We have to re-read the tracks after being inactive.
-    /// @TODO Tracks have to be cleared in JavaScript every time the
+    /// @todo We have to re-read the tracks after being inactive.
+    /// @todo Tracks have to be cleared in JavaScript every time the
     ///       htmlwidget is passed to another mapwidget.
-    /// @TODO Clearing all tracks and re-adding them takes too long. We
+    /// @todo Clearing all tracks and re-adding them takes too long. We
     ///       have to see which track changed, and whether coordinates or only properties changed.
 
     if (!s->trackManager)
@@ -1489,7 +1489,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         }
         else
         {
-            /// @TODO For now, remove the track and re-add it.
+            /// @todo For now, remove the track and re-add it.
 
             d->htmlWidget->runScript(QString::fromLatin1("kgeomapRemoveTrack(%1);").arg(tc.first));
 
@@ -1510,7 +1510,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
 
             for (int coordIdx = 0 ; coordIdx < track.points.count() ; coordIdx += numPointsToPassAtOnce)
             {
-                /// @TODO Even by passing only a few points each time, we can
+                /// @todo Even by passing only a few points each time, we can
                 ///       block the UI for a long time. Instead, it may be better
                 ///       to call addPointsToTrack via the eventloop repeatedly
                 ///       to allow processing of other events.
@@ -1545,7 +1545,7 @@ void BackendGoogleMaps::addPointsToTrack(const quint64 trackId, TrackManager::Tr
             jsonBuilder << ',';
         }
 
-        /// @TODO This looks like a lot of text to parse. Is there a more compact way?
+        /// @todo This looks like a lot of text to parse. Is there a more compact way?
 
         jsonBuilder << "{\"lat\":" << coordinates.latString() << ","
                     << "\"lon\":"  << coordinates.lonString() << "}";
@@ -1558,7 +1558,7 @@ void BackendGoogleMaps::addPointsToTrack(const quint64 trackId, TrackManager::Tr
 
 void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
 {
-    /// @TODO Now we remove all tracks and re-add them on visibility change.
+    /// @todo Now we remove all tracks and re-add them on visibility change.
     ///       This is very slow.
 
     if      (newState)

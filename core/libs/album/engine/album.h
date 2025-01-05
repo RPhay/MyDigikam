@@ -43,8 +43,8 @@ typedef QList<Album*> AlbumList;
 class CoreDbUrl;
 
 /**
- * \class Album
- * \brief Abstract base class for all album types
+ * @class Album
+ * @brief Abstract base class for all album types
  *
  * A class which provides an abstraction for a type Album. This class is meant to
  * be derived and every time a new Album Type is defined add a enum corresponding
@@ -120,7 +120,7 @@ public:
      * Each album has a @p ID uniquely identifying it in the set of Albums of
      * a Type
      *
-     * \note The @p ID for a root Album is always 0
+     * @note The @p ID for a root Album is always 0
      *
      * @return the @p ID of the album
      * @see globalID()
@@ -132,14 +132,14 @@ public:
      * This is a global Identifier which will uniquely identifying the Album
      * among all Albums
      *
-     * \note If you are adding a new Album Type make sure to update
+     * @note If you are adding a new Album Type make sure to update
      * this implementation.
      *
      * You can always get the @p ID of the album using something like
      *
-     * \code
+     * @code
      * int albumID = rootAlbum->globalID() - album->globalID();
-     * \endcode
+     * @endcode
      *
      * @return the @p globalID of the album
      * @see id()
@@ -202,15 +202,15 @@ public:
      *
      * for eg,
      *
-     * \code
+     * @code
      * album->setExtraData( this, searchFolderItem );
-     * \endcode
+     * @endcode
      *
      * and can later access the searchFolderItem by doing
      *
-     * \code
+     * @code
      * SearchFolderItem *item = static_cast<SearchFolderItem*>(album->extraData(this));
-     * \endcode
+     * @endcode
      *
      * Note: you have to remove and destroy the data you associated yourself
      * when you don't need it anymore!
@@ -349,7 +349,7 @@ private:
 };
 
 /**
- * \class PAlbum
+ * @class PAlbum
  *
  * A Physical Album representation
  */
@@ -413,7 +413,7 @@ private:
 };
 
 /**
- * \class TAlbum
+ * @class TAlbum
  *
  * A Tag Album representation
  */
@@ -453,7 +453,7 @@ private:
 };
 
 /**
- * \class DAlbum
+ * @class DAlbum
  *
  * A Date Album representation
  */
@@ -486,7 +486,7 @@ private:
 };
 
 /**
- * \class SAlbum
+ * @class SAlbum
  *
  * A Search Album representation
  */
@@ -552,10 +552,10 @@ private:
 };
 
 /**
- *  \class AlbumIterator
+ *  @class AlbumIterator
  *
  *  Iterate over all children of this Album.
- *  \note It will not include the specified album
+ *  @note It will not include the specified album
  *
  *  Example usage:
  *  \code
@@ -565,7 +565,7 @@ private:
  *     qCDebug(DIGIKAM_GENERAL_LOG) << "Album: " << it.current()->title();
  *     ++it;
  *  }
- * \endcode
+ * @endcode
  *
  *  \warning Do not delete albums using this iterator.
  */

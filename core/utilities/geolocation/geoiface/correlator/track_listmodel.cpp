@@ -161,7 +161,7 @@ QModelIndex TrackListModel::index(int row, int column, const QModelIndex& parent
 
     const TrackManager::Track track = d->trackManager->getTrack(row);
 
-    /// @TODO We have to use quint32 for track ids
+    /// @todo We have to use quint32 for track ids
 
     return createIndex(row, column, quint32(track.id));
 }
@@ -212,8 +212,8 @@ QVariant TrackListModel::headerData(int section, Qt::Orientation orientation, in
         return QAbstractItemModel::headerData(section, orientation, role);
     }
 
-    /// @TODO Make color and #points sections more narrow
-    /// @TODO Display visible state and make it toggable
+    /// @todo Make color and #points sections more narrow
+    /// @todo Display visible state and make it toggable
 
     switch (section)
     {
@@ -253,7 +253,7 @@ Qt::ItemFlags TrackListModel::flags(const QModelIndex& index) const
 
 void Digikam::TrackListModel::slotTrackManagerUpdated()
 {
-    /// @TODO The TrackManager should send more detailed reports
+    /// @todo The TrackManager should send more detailed reports
 
     beginResetModel();
     endResetModel();

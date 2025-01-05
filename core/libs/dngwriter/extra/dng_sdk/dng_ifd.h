@@ -66,7 +66,7 @@ class dng_preview_info
 
 /*****************************************************************************/
 
-/// \brief Container for a single image file directory of a digital negative.
+/// @brief Container for a single image file directory of a digital negative.
 ///
 /// See \ref spec_dng "DNG 1.1.0 specification" for documentation of specific tags.
 

@@ -22,7 +22,7 @@
 
 /*****************************************************************************/
 
-/// \brief Compute a 3x3 matrix which maps colors from white point white1 to
+/// @brief Compute a 3x3 matrix which maps colors from white point white1 to
 /// white point white2
 ///
 /// Uses linearized Bradford adaptation matrix to compute a mapping from

@@ -157,12 +157,12 @@ public:
     void deleteAllSpacersOrNewTags(const QModelIndex& currentIndex, Type whatShouldRemove);
 
     /**
-     * @brief Readds new tags to tag tree.
+     * @brief Reads new tags to tag tree.
      *
-     * @param currentBranch The branch from where the scan starts.
-     * @param currentRow The row of the currentBranch.
-     * @param tagAddressElements A list containing address elements. Example: {Country}, {City}...
-     * @param elementsData A list containing the name of each address element found in elements. Example: France, Paris...
+     * @param currentBranch              The branch from where the scan starts.
+     * @param currentRow                 The row of the currentBranch.
+     * @param tagAddressElements         A list containing address elements. Example: {Country}, {City}...
+     * @param currentAddressElementIndex The current element in the tag adress list.
      *
      * @note tagAddressElements contains address tag: Places,Spain,Barcelona
      *       readdTag climbs the tree and checks on each level if tagAddressElements[level] is found.

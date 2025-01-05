@@ -99,7 +99,7 @@ GLViewerTexture::~GLViewerTexture()
 
 /*!
     \fn GLViewerTexture::load(QString fn, QSize size)
-    \brief load file from disc and save it in texture
+    @brief load file from disc and save it in texture
     \param fn filename to load
     \param size the size of image which is downloaded to texture mem
     if "size" is set to image size, scaling is only performed by the GPU but not
@@ -128,7 +128,7 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
 
 /*!
     \fn GLViewerTexture::load(QImage im, QSize size)
-    \brief copy file from QImage to texture
+    @brief copy file from QImage to texture
     \param im Qimage to be copied from
  */
 bool GLViewerTexture::load(const QImage& im)
@@ -144,7 +144,7 @@ bool GLViewerTexture::load(const QImage& im)
 }
 
 /*!
-    \brief load full size image from disc and save it in texture
+    @brief load full size image from disc and save it in texture
  */
 bool GLViewerTexture::loadFullSize()
 {
@@ -205,7 +205,7 @@ bool GLViewerTexture::loadInternal()
 
 /*!
     \fn GLViewerTexture::zoom(float delta, QPoint mousepos)
-    \brief calculate new tex coords on zooming
+    @brief calculate new tex coords on zooming
     \param delta the delta between previous zoom and current zoom
     \param mousepos mouse position returned by QT
     \TODO rename mousepos to something more generic
@@ -428,7 +428,7 @@ bool GLViewerTexture::setNewSize(QSize size)
 
 /*!
     \fn GLViewerTexture::rotate()
-    \brief smart image rotation
+    @brief smart image rotation
     since the two most frequent usecases are a CW or CCW rotation of 90,
     perform these rotation with one (+90) or two (-90) calls of rotation()
  */

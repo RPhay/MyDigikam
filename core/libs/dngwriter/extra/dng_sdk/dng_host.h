@@ -27,7 +27,7 @@
 
 /*****************************************************************************/
 
-/// \brief The main class for communication between the application and the
+/// @brief The main class for communication between the application and the
 /// DNG SDK. Used to customize memory allocation and other behaviors.
 ///
 /// dng_host allows setting parameters for the DNG conversion, mediates callback

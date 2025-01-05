@@ -24,7 +24,7 @@
 
 /*****************************************************************************/
 
-/// \brief Opcode to trim image to a specified rectangle.
+/// @brief Opcode to trim image to a specified rectangle.
 
 class dng_opcode_TrimBounds: public dng_opcode
     {
@@ -51,7 +51,7 @@ class dng_opcode_TrimBounds: public dng_opcode
 
 /*****************************************************************************/
 
-/// \brief A class to describe an area of an image, including a pixel subrectangle,
+/// @brief A class to describe an area of an image, including a pixel subrectangle,
 /// plane range, and row/column pitch (e.g., for mosaic images). Useful for
 /// specifying opcodes that only apply to specific color planes or pixel types (e.g.,
 /// only one of the two green Bayer pixels).
@@ -166,7 +166,7 @@ class dng_area_spec
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a 1D function (represented as a 16-bit table) to an
+/// @brief An opcode to apply a 1D function (represented as a 16-bit table) to an
 /// image area.
 
 class dng_opcode_MapTable: public dng_inplace_opcode
@@ -228,7 +228,7 @@ class dng_opcode_MapTable: public dng_inplace_opcode
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a 1D function (represented as a polynomial) to an
+/// @brief An opcode to apply a 1D function (represented as a polynomial) to an
 /// image area.
 
 class dng_opcode_MapPolynomial: public dng_inplace_opcode
@@ -310,7 +310,7 @@ class dng_opcode_MapPolynomial: public dng_inplace_opcode
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a delta (i.e., offset) that varies per row. Within
+/// @brief An opcode to apply a delta (i.e., offset) that varies per row. Within
 /// a row, the same delta value is applied to all specified pixels.
 
 class dng_opcode_DeltaPerRow: public dng_inplace_opcode
@@ -351,7 +351,7 @@ class dng_opcode_DeltaPerRow: public dng_inplace_opcode
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a delta (i.e., offset) that varies per column.
+/// @brief An opcode to apply a delta (i.e., offset) that varies per column.
 /// Within a column, the same delta value is applied to all specified pixels.
 
 class dng_opcode_DeltaPerColumn: public dng_inplace_opcode
@@ -392,7 +392,7 @@ class dng_opcode_DeltaPerColumn: public dng_inplace_opcode
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a scale factor that varies per row. Within a row,
+/// @brief An opcode to apply a scale factor that varies per row. Within a row,
 /// the same scale factor is applied to all specified pixels.
 
 class dng_opcode_ScalePerRow: public dng_inplace_opcode
@@ -431,7 +431,7 @@ class dng_opcode_ScalePerRow: public dng_inplace_opcode
 
 /*****************************************************************************/
 
-/// \brief An opcode to apply a scale factor that varies per column. Within a
+/// @brief An opcode to apply a scale factor that varies per column. Within a
 /// column, the same scale factor is applied to all specified pixels.
 
 class dng_opcode_ScalePerColumn: public dng_inplace_opcode

@@ -26,8 +26,8 @@ namespace Marble
 class GeoDataLodPrivate;
 
 /*!
-    \class GeoDataLod
-    \brief The level of detail which indicates visibility and importance.
+    @class GeoDataLod
+    @brief The level of detail which indicates visibility and importance.
 
     GeoDataLod is a tool class that implements the Lod tag/class
     of the Open Geospatial Consortium standard KML 2.2.
@@ -51,23 +51,23 @@ class DIGIKAM_EXPORT GeoDataLod : public GeoDataObject
 
 public:
     /*!
-        \brief Creates a new Level of Detail object.
+        @brief Creates a new Level of Detail object.
     */
     GeoDataLod();
 
     /*!
-        \brief Creates a new Level of Detail object as a copy of @p other.
+        @brief Creates a new Level of Detail object as a copy of @p other.
     */
     GeoDataLod(const GeoDataLod& other);
 
     /*!
-        \brief Destroys a Level of Detail object.
+        @brief Destroys a Level of Detail object.
     */
     ~GeoDataLod() override;
 
 
     /*!
-        \brief Provides type information for downcasting a GeoNode
+        @brief Provides type information for downcasting a GeoNode
     */
 
     bool operator==(const GeoDataLod& other) const;
@@ -77,7 +77,7 @@ public:
 
 
     /*!
-        \brief Returns the minimum size that is needed for the region to be active
+        @brief Returns the minimum size that is needed for the region to be active
         Returns the minimum number of pixels the region has to be projected on for
         the feature to be considered active.
         A value of 0 would mean no minimum number of pixels which is also the
@@ -87,7 +87,7 @@ public:
 
 
     /*!
-        \brief Sets the minimum size that is needed for the region to be active
+        @brief Sets the minimum size that is needed for the region to be active
         Sets the minimum number of \a pixels the region has to be projected on for
         the feature to be considered active.
     */
@@ -95,7 +95,7 @@ public:
 
 
     /*!
-        \brief Returns the maximum size that is needed for the region to be active
+        @brief Returns the maximum size that is needed for the region to be active
         Returns the maximum number of pixels the region has to be projected on for
         the feature to be considered active.
         A value of -1 would mean no minimum number of pixels which is also the
@@ -105,7 +105,7 @@ public:
 
 
     /*!
-        \brief Sets the maximum size that is needed for the region to be active
+        @brief Sets the maximum size that is needed for the region to be active
         Sets the maximum number of \a pixels the region has to be projected on for
         the feature to be considered active.
     */
@@ -113,7 +113,7 @@ public:
 
 
     /*!
-        \brief Returns how "quickly" the region fades when the region is far away.
+        @brief Returns how "quickly" the region fades when the region is far away.
         Returns the distance (counted from minLodPixels) over which the feature
         fades in or out.
     */
@@ -121,7 +121,7 @@ public:
 
 
     /*!
-        \brief Sets how "quickly" the region fades when the region is far away.
+        @brief Sets how "quickly" the region fades when the region is far away.
         Sets the distance (counted from minLodPixels) over which the feature fades
         in or out.
     */
@@ -129,7 +129,7 @@ public:
 
 
     /*!
-        \brief Returns how "quickly" the region fades when the region is near.
+        @brief Returns how "quickly" the region fades when the region is near.
         Returns the distance (counted from maxLodPixels) over which the feature
         fades in or out.
     */
@@ -137,7 +137,7 @@ public:
 
 
     /*!
-        \brief Sets how "quickly" the region fades when the region is near.
+        @brief Sets how "quickly" the region fades when the region is near.
         Sets the distance (counted from maxLodPixels) over which the feature fades
         in or out.
     */
@@ -146,14 +146,14 @@ public:
 
     // Serialization
     /*!
-        \brief Serialize the Lod to a stream.
+        @brief Serialize the Lod to a stream.
         \param stream the stream.
     */
     void pack(QDataStream& stream) const override;
 
 
     /*!
-        \brief Unserialize the Lod from a stream.
+        @brief Unserialize the Lod from a stream.
         \param stream the stream.
     */
     void unpack(QDataStream& stream) override;

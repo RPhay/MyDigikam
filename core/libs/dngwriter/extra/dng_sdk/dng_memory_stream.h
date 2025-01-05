@@ -21,7 +21,7 @@
 
 /*****************************************************************************/
 
-/// \brief A dng_stream which can be read from or written to memory.
+/// @brief A dng_stream which can be read from or written to memory.
 ///
 /// Stream is populated via writing and either read or accessed by asking for contents as a pointer.
 

@@ -25,7 +25,7 @@
 
 /*****************************************************************************/
 
-/// \brief An opcode to fix individual bad pixels that are marked with a constant
+/// @brief An opcode to fix individual bad pixels that are marked with a constant
 /// value (e.g., 0) in a Bayer image.
 
 class dng_opcode_FixBadPixelsConstant: public dng_filter_opcode
@@ -87,7 +87,7 @@ __attribute__((no_sanitize("unsigned-integer-overflow")))
 
 /*****************************************************************************/
 
-/// \brief A list of bad pixels and rectangles (usually single rows or columns).
+/// @brief A list of bad pixels and rectangles (usually single rows or columns).
 
 class dng_bad_pixel_list
     {
@@ -221,7 +221,7 @@ class dng_bad_pixel_list
 
 /*****************************************************************************/
 
-/// \brief An opcode to fix lists of bad pixels (indicated by position) in a Bayer
+/// @brief An opcode to fix lists of bad pixels (indicated by position) in a Bayer
 /// image.
 
 class dng_opcode_FixBadPixelsList: public dng_filter_opcode
