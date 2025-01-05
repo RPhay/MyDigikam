@@ -91,7 +91,7 @@ BUGFIXES:
 059 ==> 498133 - Geolocation icon missing / disappeared in 8.5.0 appimage Linux.
 060 ==> 432760 - New items for people entries without seeing the mentioned photos.
 061 ==> 498234 - Rotated jxl images are displateyed without rotation.
-062 ==>
+062 ==> 490848 - digiKam fails to preview animated .webp files.
 063 ==>
 064 ==>
 065 ==>
