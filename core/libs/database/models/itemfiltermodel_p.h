@@ -68,6 +68,9 @@ class ItemFilterModelPreparer;
 class ItemFilterModelFilterer;
 
 /**
+ * @class ItemFilterModelPrivate
+ * @internal
+ *
  * @note We need the EXPORT macro for the @class ItemFilterModelPrivate because
  * this class is shared across binary objects.
  * This does not make this classes here any more public.
@@ -81,7 +84,7 @@ public:
     ItemFilterModelPrivate();
     ~ItemFilterModelPrivate() override;
 
-    void init(ItemFilterModel* const qq);
+    void setupModel(ItemFilterModel* const qq);
     void setupWorkers();
     void infosToProcess(const QList<ItemInfo>& infos);
     void infosToProcess(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues, bool forReAdd = true);

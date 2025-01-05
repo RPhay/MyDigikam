@@ -251,19 +251,20 @@ ItemFilterModel::ItemFilterModel(QObject* const parent)
     : ImageSortFilterModel(parent),
       d_ptr               (new ItemFilterModelPrivate)
 {
-    d_ptr->init(this);
+    d_ptr->setupModel(this);
 }
 
 ItemFilterModel::ItemFilterModel(ItemFilterModelPrivate& dd, QObject* const parent)
     : ImageSortFilterModel(parent),
       d_ptr               (&dd)
 {
-    d_ptr->init(this);
+    d_ptr->setupModel(this);
 }
 
 ItemFilterModel::~ItemFilterModel()
 {
     Q_D(ItemFilterModel);
+
     delete d;
 }
 
