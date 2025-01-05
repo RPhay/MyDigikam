@@ -101,7 +101,7 @@ protected:
      */
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
-    /// NOTE: made protected
+    /// @note made protected
     void setSourceModel(QAbstractItemModel* const model)                                   override;
 
 protected:
@@ -263,7 +263,7 @@ Q_SIGNALS:
 
 public:
 
-    /// NOTE: Declared as public because of use in sub-classes.
+    /// @note Declared as public because of use in sub-classes.
     class ItemFilterModelPrivate;
 
 protected:

@@ -43,7 +43,7 @@ ItemFilterModel::ItemFilterModelPrivate::~ItemFilterModelPrivate()
     delete filterer;
 }
 
-void ItemFilterModel::ItemFilterModelPrivate::init(ItemFilterModel* qq)
+void ItemFilterModel::ItemFilterModelPrivate::init(ItemFilterModel* const qq)
 {
     q = qq;
 

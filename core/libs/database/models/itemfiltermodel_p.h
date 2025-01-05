@@ -30,17 +30,13 @@
 #include "itemfiltermodel.h"
 #include "digikam_export.h"
 
-// NOTE: we need the EXPORT macro in a private header because
-// this private header is shared across binary objects.
-// This does NOT make this classes here any more public!
-
 namespace Digikam
 {
 
 const int PrepareChunkSize = 101;
 const int FilterChunkSize  = 2001;
 
-class ItemFilterModelTodoPackage
+class Q_DECL_HIDDEN ItemFilterModelTodoPackage
 {
 public:
 
@@ -57,6 +53,8 @@ public:
     {
     }
 
+public:
+
     QVector<ItemInfo>      infos;
     QVector<QVariant>      extraValues;
     unsigned int           version      = 0;
@@ -69,6 +67,11 @@ public:
 class ItemFilterModelPreparer;
 class ItemFilterModelFilterer;
 
+/**
+ * @note We need the EXPORT macro for the @class ItemFilterModelPrivate because
+ * this class is shared across binary objects.
+ * This does not make this classes here any more public.
+ */
 class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public QObject
 {
     Q_OBJECT
@@ -78,7 +81,7 @@ public:
     ItemFilterModelPrivate();
     ~ItemFilterModelPrivate() override;
 
-    void init(ItemFilterModel* qq);
+    void init(ItemFilterModel* const qq);
     void setupWorkers();
     void infosToProcess(const QList<ItemInfo>& infos);
     void infosToProcess(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues, bool forReAdd = true);
