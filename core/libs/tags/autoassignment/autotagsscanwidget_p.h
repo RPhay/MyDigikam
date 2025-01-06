@@ -67,6 +67,11 @@ public:
 
 public:
 
+    const QString configAutotagsAssignment              = QLatin1String("AutotagsAssignment");
+    const QString configAutotaggingScanMode             = QLatin1String("AutotaggingScanMode");
+    const QString configModelSelectionMode              = QLatin1String("ModelSelectionMode");
+    const QString configAutotagsLanguages               = QLatin1String("AutotagsLanguages");
+
     QTabWidget*       tabWidget                         = nullptr;
 
     // ---

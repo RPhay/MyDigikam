@@ -34,57 +34,35 @@ AutoTagsScanWidget::~AutoTagsScanWidget()
 
 void AutoTagsScanWidget::doLoadState()
 {
-/*
     KConfigGroup group = getConfigGroup();
-    QString mainTask   = group.readEntry(entryName(d->configMainTask),
-                                         d->configValueDetect);
-
-    FaceScanSettings::AlreadyScannedHandling handling;
-    handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
-                                                                         (int)FaceScanSettings::Skip);
-
-     // ClearAll isn't a valid value anymore so set it Rescan.
-     // ClearAll is only used by ResetFacesDb in maintenance.
-
-    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == handling)
-    {
-        handling = FaceScanSettings::AlreadyScannedHandling::Rescan;
-    }
-
-    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
-
     d->albumSelectors->loadState();
 
-    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
-    d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
-    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
-    d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
-    d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(ApplicationSettings::instance()->getFaceRecognitionModel()));
+    AutoTagsScanSettings prm;
 
-    d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
-*/
+    int tagScanMode    = d->autotaggingScanMode->findData(group.readEntry(d->configAutotaggingScanMode, (int)prm.mode));
+    d->autotaggingScanMode->setCurrentIndex(tagScanMode);
+    int tagSelection   = d->modelSelectionMode->findData(group.readEntry(d->configModelSelectionMode,   (int)prm.modelType));
+    d->modelSelectionMode->setCurrentIndex(tagSelection);
+    d->trSelectorList->clearLanguages();
+
+    const auto lgs     = group.readEntry(d->configAutotagsLanguages,                                    prm.langs);
+
+    for (const QString& lg : lgs)
+    {
+        d->trSelectorList->addLanguage(lg);
+    }
 }
 
 void AutoTagsScanWidget::doSaveState()
 {
-/*
-    KConfigGroup group = getConfigGroup();
-
-    QString mainTask;
-
-    group.writeEntry(entryName(d->configAlreadyScannedHandling),
-                     d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+    KConfigGroup group       = getConfigGroup();
+    AutoTagsScanSettings prm = settings();
 
     d->albumSelectors->saveState();
 
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
-    ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
-    ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
-    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
-    ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
-
-    group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
-*/
+    group.writeEntry(d->configAutotaggingScanMode, (int)prm.mode);
+    group.writeEntry(d->configModelSelectionMode,  (int)prm.modelType);
+    group.writeEntry(d->configAutotagsLanguages,   prm.langs);
 }
 
 void AutoTagsScanWidget::setupUi()
