@@ -139,40 +139,14 @@ AutoTagsScanSettings AutoTagsScanWidget::settings() const
 {
 
     AutoTagsScanSettings settings;
-/*
-    d->settingsConflicted = false;
 
-    if (FaceScanSettings::RecognizeOnly == d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt())
-    {
-        settings.task = FaceScanSettings::RecognizeMarkedFaces;
-        settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+    settings.albums      = d->albumSelectors->selectedAlbumsAndTags();
+    settings.wholeAlbums = d->albumSelectors->wholeAlbumsChecked();
 
-    }
+    settings.mode        = (AutoTagsScanSettings::ScanMode)d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
+    settings.modelType   = (AutoTagsScanSettings::DetectorModel)d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
+    settings.langs       = d->trSelectorList->languagesList();
 
-    else
-    {
-        settings.task = FaceScanSettings::DetectAndRecognize;
-        settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
-                                          d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
-    }
-
-    settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-    settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
-
-    if (d->settingsConflicted)
-    {
-        int numberOfIdentities      = FaceDbAccess().db()->getNumberOfIdentities();
-        d->settingsConflicted       = (numberOfIdentities == 0);
-    }
-
-    settings.detectAccuracy         = d->detectAccuracyInput->value();
-    settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
-    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
-    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
-    settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
-
-    settings.useFullCpu             = d->useFullCpuButton->isChecked();
-*/
     return settings;
 }
 
