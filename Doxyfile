@@ -2429,7 +2429,31 @@ INCLUDE_FILE_PATTERNS  =
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
 PREDEFINED             = Q_DECL_HIDDEN= \
-                         Q_OBJECT=
+                         Q_OBJECT= \
+                         Q_GADGET= \
+                         Q_OS_LINUX= \
+                         Q_OS_UNIX= \
+                         Q_PROCESSOR_X86_64= \
+                         HAVE_GEOLOCATION= \
+                         HAVE_MEDIA_PLAYER= \
+                         HAVE_QWEBENGINE= \
+                         HAVE_QTMULTIMEDIA= \
+                         HAVE_OPENGL= \
+                         HAVE_MYSQLSUPPORT= \
+                         HAVE_INTERNALMYSQL= \
+                         HAVE_GPHOTO2= \
+                         HAVE_PANORAMA= \
+                         HAVE_X11= \
+                         HAVE_X265= \
+                         HAVE_DBUS= \
+                         HAVE_LENSFUN= \
+                         HAVE_HEIF= \
+                         HAVE_JXL= \
+                         HAVE_EIGEN3= \
+                         HAVE_JASPER= \
+                         HAVE_IMAGE_MAGICK= \
+                         _XMP_SUPPORT_=
+
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
