@@ -287,7 +287,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelTags             = new QLabel(QString(), w6);
     d->labelTags->setWordWrap(true);
 
-    d->peoples               = new DTextLabelName(i18nc("@label: item properties", "Peoples: "),      w6);
+    d->peoples               = new DTextLabelName(i18nc("@label: item properties", "People: "),      w6);
     d->labelPeoples          = new QLabel(QString(), w6);
     d->labelPeoples->setWordWrap(true);
 
