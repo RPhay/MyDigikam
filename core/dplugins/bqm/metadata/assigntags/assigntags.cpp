@@ -88,9 +88,9 @@ void AssignTags::registerSettingsWidget()
     hbox->setStretchFactor(space, 10);
 
     d->modelSelectionMode = new QComboBox(hbox);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   DetectorModel::YOLOV5NANO);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
-    d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   AutoTagsScanSettings::DetectorModel::YOLOV5NANO);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), AutoTagsScanSettings::DetectorModel::YOLOV5XLARGE);
+    d->modelSelectionMode->addItem(i18n("ResNet50"),      AutoTagsScanSettings::DetectorModel::RESNET50);
     d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
         "evaluate the integration of smaller-scale object detection scenarios. It's designed for objects detections, capable of recognizing "
@@ -124,7 +124,7 @@ BatchToolSettings AssignTags::defaultSettings()
 {
     BatchToolSettings settings;
 
-    settings.insert(QLatin1String("AutoTagModel"), (int)DetectorModel::YOLOV5NANO);
+    settings.insert(QLatin1String("AutoTagModel"), (int)AutoTagsScanSettings::DetectorModel::YOLOV5NANO);
 
     return settings;
 }
@@ -195,7 +195,7 @@ bool AssignTags::toolOperations()
 
     if (ret && !img.isNull())
     {
-        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(model)));
+        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(AutoTagsScanSettings::DetectorModel(model)));
         QList<QList<QString> > tagsLists = autotagsEngine->generateTagsList(QList<DImg>() << img, 16);
 
         if (!tagsLists.isEmpty())
