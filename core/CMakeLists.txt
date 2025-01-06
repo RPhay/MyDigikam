@@ -196,12 +196,22 @@ include(RulesLibraw)
 
 MACOS_DEBUG_POLICIES()
 
+
 # -- Compilation options definitions -------------------------------------------
 
 message(STATUS "--------------------------------------------------")
 message(STATUS "")
 
-MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sane_FOUND                HAVE_KSANE)
+if(Qt6_FOUND)
+
+    MACRO_BOOL_TO_01(KSaneWidgets6_FOUND                        HAVE_KSANE)
+
+else()
+
+    MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sane_FOUND            HAVE_KSANE)
+
+endif()
+
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}FileMetaData_FOUND        HAVE_KFILEMETADATA)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}CalendarCore_FOUND        HAVE_KCALENDAR)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Notifications_FOUND       HAVE_KNOTIFICATIONS)
@@ -292,7 +302,17 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://invent.kde.org/framew
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifications" "https://invent.kde.org/frameworks/knotifyconfig"                 "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notifications support."         KF${QT_VERSION_MAJOR}Notifications_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://invent.kde.org/frameworks/knotifications"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notify configuration support."  KF${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libsonnet"         "https://invent.kde.org/frameworks/sonnet"                        "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without spell-checking support."                    KF${QT_VERSION_MAJOR}Sonnet_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF${QT_VERSION_MAJOR}Sane_FOUND)
+
+if(Qt6_FOUND)
+
+    PRINT_OPTIONAL_LIBRARY_STATUS("libksane"      "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KSaneWidgets6_FOUND)
+
+else()
+
+    PRINT_OPTIONAL_LIBRARY_STATUS("libksane"      "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF${QT_VERSION_MAJOR}Sane_FOUND)
+
+endif()
+
 PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libglib2"          "https://developer.gnome.org/glib/"                               "(version >= 2.0.0)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       GLIB2_FOUND)
 
