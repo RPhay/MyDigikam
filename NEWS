@@ -94,7 +94,7 @@ BUGFIXES:
 062 ==> 490848 - digiKam fails to preview animated .webp files.
 063 ==> 497364 - Not possible to redirect Sound output when previewing/playing video files.
 064 ==> 498281 - No faces detected: -215:Assertion failed) inputs[vecIdx][j] == inputs[i][j] in function 'getMemoryShapes'.
-065 ==>
+065 ==> 498305 - digiKam states there is no libksane at configure phase.
 066 ==>
 067 ==>
 068 ==>
