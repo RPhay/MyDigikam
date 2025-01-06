@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "digikam_opencv.h"
 #include "dimg.h"
 #include "dnnbasedetectormodel.h"
