@@ -248,8 +248,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     hbox12->setStretchFactor(space8, 10);
 
     d->autotaggingScanMode = new QComboBox(hbox12);
-    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"), AutotagsAssignment::AllItems);
-    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),  AutotagsAssignment::NonAssignedItems);
+    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"), AutoTagsScanSettings::AllItems);
+    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),  AutoTagsScanSettings::NonAssignedItems);
     d->autotaggingScanMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-scan all items from scratch.</p>"
         "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag.</p>"));
@@ -260,9 +260,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     hbox13->setStretchFactor(space9, 10);
 
     d->modelSelectionMode  = new QComboBox(hbox13);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   DetectorModel::YOLOV5NANO);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
-    d->modelSelectionMode->addItem(i18n("ResNet50"),      DetectorModel::RESNET50);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   AutoTagsScanSettings::YOLOV5NANO);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), AutoTagsScanSettings::YOLOV5XLARGE);
+    d->modelSelectionMode->addItem(i18n("ResNet50"),      AutoTagsScanSettings::RESNET50);
     d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
         "evaluate the integration of smaller-scale object detection scenarios. It's designed for objects detections, capable of recognizing "

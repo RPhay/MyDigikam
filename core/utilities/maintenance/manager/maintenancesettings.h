@@ -29,6 +29,7 @@
 #include "imagequalitycontainer.h"
 #include "metadatasynchronizer.h"
 #include "imagequalitysorter.h"
+#include "autotagsscansettings.h"
 
 namespace Digikam
 {
@@ -90,14 +91,12 @@ public:
     bool                                    autotagsAssignment      = false;
 
     /// autotagging scan mode
-    int                                     autotaggingScanMode     = AutotagsAssignment::AllItems;
+    int                                     autotaggingScanMode     = AutoTagsScanSettings::AllItems;
 
     /// model selection mode
-    int                                     modelSelectionMode      = DetectorModel::YOLOV5NANO;
+    int                                     modelSelectionMode      = AutoTagsScanSettings::YOLOV5NANO;
     /// Autotags languages
     QStringList                             autotagsLanguages;
-
-
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort             = false;

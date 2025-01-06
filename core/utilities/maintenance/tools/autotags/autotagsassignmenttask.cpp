@@ -21,6 +21,7 @@
 #include "localizeselector.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
+#include "autotagsscansettings.h"
 #include "scancontroller.h"
 #include "metadatahub.h"
 #include "tagscache.h"
@@ -42,7 +43,7 @@ public:
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
     QStringList      langs;
-    int              modelType = DetectorModel::YOLOV5NANO;
+    int              modelType = AutoTagsScanSettings::YOLOV5NANO;
 };
 
 // -------------------------------------------------------
@@ -190,7 +191,7 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(DetectorModel(d->modelType)));
+        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(AutoTagsScanSettings::DetectorModel(d->modelType)));
         QList<QList<QString> > tagsLists = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
         if (tagsLists.size() >= inputImages.size())

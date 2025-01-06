@@ -26,25 +26,17 @@
 #include "digikam_opencv.h"
 #include "dimg.h"
 #include "dnnbasedetectormodel.h"
+#include "autotagsscansettings.h"
 
 namespace Digikam
 {
-
-enum DetectorModel
-{
-    YOLOV5NANO = 0,   ///< YOLO nano neural network model.
-    YOLOV5XLARGE,     ///< YOLO large neural network model.
-    RESNET50
-
-    // Add here another model.
-};
 
 class DIGIKAM_GUI_EXPORT AutoTagsAssign
 {
 
 public:
 
-    explicit AutoTagsAssign(DetectorModel model = DetectorModel::YOLOV5NANO);
+    explicit AutoTagsAssign(AutoTagsScanSettings::DetectorModel model = AutoTagsScanSettings::YOLOV5NANO);
     ~AutoTagsAssign();
 
     cv::Mat prepareForDetection(const DImg& inputImage)                                             const;
@@ -74,8 +66,8 @@ private:
 
 private:
 
-    DetectorModel         m_modelType;
-    DNNBaseDetectorModel* m_inferenceEngine = nullptr;
+    AutoTagsScanSettings::DetectorModel m_modelType;
+    DNNBaseDetectorModel*               m_inferenceEngine = nullptr;
 };
 
 } // namespace Digikam

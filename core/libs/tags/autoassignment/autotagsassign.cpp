@@ -33,24 +33,24 @@
 namespace Digikam
 {
 
-AutoTagsAssign::AutoTagsAssign(DetectorModel model)
+AutoTagsAssign::AutoTagsAssign(AutoTagsScanSettings::DetectorModel model)
     : m_modelType(model)
 {
     switch (m_modelType)
     {
-        case DetectorModel::YOLOV5NANO:
+        case AutoTagsScanSettings::YOLOV5NANO:
         {
             m_inferenceEngine = new DNNYoloDetector(YoloVersions(m_modelType));
             break;
         }
 
-        case DetectorModel::YOLOV5XLARGE:
+        case AutoTagsScanSettings::YOLOV5XLARGE:
         {
             m_inferenceEngine = new DNNYoloDetector(YoloVersions(m_modelType));
             break;
         }
 
-        case DetectorModel::RESNET50:
+        case AutoTagsScanSettings::RESNET50:
         {
             m_inferenceEngine = new DNNResnetDetector();
             break;

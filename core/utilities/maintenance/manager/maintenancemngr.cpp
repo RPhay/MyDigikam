@@ -41,7 +41,6 @@
 #include "metadatasynchronizer.h"
 #include "dnotificationwrapper.h"
 #include "progressmanager.h"
-// #include "facesdetector.h"
 #include "dbcleaner.h"
 #include "facesengine.h"
 
@@ -69,8 +68,7 @@ public:
     MetadataSynchronizer*  metadataSynchronizer  = nullptr;
     AutotagsAssignment*    autotagsAssignment    = nullptr;
     ImageQualitySorter*    imageQualitySorter    = nullptr;
-    // FacesDetector*         facesDetector         = nullptr;
-    FacesEngine*         facesDetector         = nullptr;
+    FacesEngine*           facesDetector         = nullptr;
     DbCleaner*             databaseCleaner       = nullptr;
 };
 
@@ -320,7 +318,6 @@ void MaintenanceMngr::stage6()
         d->settings.faceSettings.detectAccuracy     = ApplicationSettings::instance()->getFaceDetectionAccuracy();
         d->settings.faceSettings.recognizeModel     = ApplicationSettings::instance()->getFaceRecognitionModel();
         d->settings.faceSettings.recognizeAccuracy  = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-        // d->facesDetector                            = new FacesDetector(d->settings.faceSettings);
         d->facesDetector                            = new FacesEngine(d->settings.faceSettings);
         d->facesDetector->setNotificationEnabled(false);
         d->facesDetector->start();
@@ -341,7 +338,7 @@ void MaintenanceMngr::stage7()
         list << d->settings.albums;
         list << d->settings.tags;
 
-        d->autotagsAssignment = new AutotagsAssignment((AutotagsAssignment::AutotagsAssignmentScanMode)d->settings.autotaggingScanMode,
+        d->autotagsAssignment = new AutotagsAssignment((AutoTagsScanSettings::ScanMode)d->settings.autotaggingScanMode,
                                                        list, d->settings.modelSelectionMode, d->settings.autotagsLanguages);
         d->autotagsAssignment->setNotificationEnabled(false);
         d->autotagsAssignment->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);

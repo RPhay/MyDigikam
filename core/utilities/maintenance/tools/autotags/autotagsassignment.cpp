@@ -45,19 +45,19 @@ public:
 
 public:
 
-    AutotagsAssignmentScanMode mode            = AutotagsAssignmentScanMode::NonAssignedItems;
+    AutoTagsScanSettings::ScanMode mode            = AutoTagsScanSettings::NonAssignedItems;
 
-    QStringList                allPicturesPath;
-    QStringList                languages;
+    QStringList                    allPicturesPath;
+    QStringList                    languages;
 
-    AlbumList                  albumList;
+    AlbumList                      albumList;
 
-    MaintenanceThread*         thread          = nullptr;
+    MaintenanceThread*             thread          = nullptr;
 
-    int                        modelType       = DetectorModel::YOLOV5NANO;
+    int                            modelType       = AutoTagsScanSettings::YOLOV5NANO;
 };
 
-AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
+AutotagsAssignment::AutotagsAssignment(AutoTagsScanSettings::ScanMode mode,
                                        const AlbumList& list,
                                        int modelType,
                                        const QStringList& langs,
@@ -154,7 +154,7 @@ void AutotagsAssignment::slotStart()
             }
         }
 
-        if (d->mode == NonAssignedItems)
+        if (d->mode == AutoTagsScanSettings::NonAssignedItems)
         {
             for (const QString& path : std::as_const(aPaths))
             {

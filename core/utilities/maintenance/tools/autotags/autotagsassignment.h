@@ -23,6 +23,7 @@
 #include "album.h"
 #include "maintenancetool.h"
 #include "imagequalitycontainer.h"
+#include "autotagsscansettings.h"
 
 class QImage;
 
@@ -37,18 +38,10 @@ class AutotagsAssignment : public MaintenanceTool
 
 public:
 
-    enum AutotagsAssignmentScanMode
-    {
-        AllItems = 0,        ///< Clean all tags already assigned and re-scan all items.
-        NonAssignedItems     ///< Scan only items with no tags assigned.
-    };
-
-public:
-
     /**
      * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
-    explicit AutotagsAssignment(AutotagsAssignmentScanMode mode,
+    explicit AutotagsAssignment(AutoTagsScanSettings::ScanMode mode,
                                 const AlbumList& list,
                                 int modelType,
                                 const QStringList& langs,
