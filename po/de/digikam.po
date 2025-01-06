@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-05 01:54+0000\n"
+"POT-Creation-Date: 2025-01-06 01:57+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2821,7 +2821,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:283
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2829,7 +2829,7 @@ msgstr "Zurück"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:285
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -29101,7 +29101,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW-Bilddatei (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:384
+#: core/libs/database/models/itemfiltermodel.cpp:385
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -29109,13 +29109,13 @@ msgid_plural "%1 Faces"
 msgstr[0] "%1 Gesicht"
 msgstr[1] "%1 Gesichter"
 
-#: core/libs/database/models/itemfiltermodel.cpp:387
+#: core/libs/database/models/itemfiltermodel.cpp:388
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Kein Gesicht"
 
-#: core/libs/database/models/itemfiltermodel.cpp:400
+#: core/libs/database/models/itemfiltermodel.cpp:401
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -42285,38 +42285,38 @@ msgstr ""
 "%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Anhalten/Abspielen"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Videobild aufnehmen"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Mit dem Medienspieler ist ein Fehler aufgetreten ..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:386
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Abspielen in Endlosschleife"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -42324,55 +42324,55 @@ msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Vorwärts"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"

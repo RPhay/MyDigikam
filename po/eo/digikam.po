@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-05 01:54+0000\n"
-"PO-Revision-Date: 2024-09-21 22:27+0200\n"
+"POT-Creation-Date: 2025-01-06 01:57+0000\n"
+"PO-Revision-Date: 2025-01-05 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -2808,7 +2808,7 @@ msgstr "Git-Branĉo: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:283
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2816,7 +2816,7 @@ msgstr "Reen"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:285
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2907,13 +2907,10 @@ msgid "Scan collection for faces"
 msgstr "Skani kolekton por vizaĝoj"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr ""
-"Uzu ĉi tiun butonon por skani la elektitajn albumojn por duplikataj eroj."
+msgstr "Uzu ĉi tiun butonon por skani la elektitajn albumojn por vizaĝoj"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #, kde-format
@@ -3138,10 +3135,9 @@ msgstr "Lasta serĉo"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Maksimuma grandeco:"
+msgstr "FacesEngine"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3258,15 +3254,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ĉu vi certas, ke vi volas forigi ĈIUJN erojn porĉiame?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Elekto"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Forigi"
@@ -3409,15 +3403,12 @@ msgstr ""
 "Datumbazo: aldoni subtenon por SQLite WAL (Write-Ahead-Logging) reĝimo."
 
 #: core/app/views/stack/welcomepageview.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add spell-checking support in caption text widget using KF5::Sonnet "
-#| "component."
+#, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
-"Aldonu literumigan subtenon en bildoteksto-fenestraĵo per KF5::Soneto-"
+"Aldonu literumigan subtenon en bildoteksto-fenestraĵo per KDE-kadra Soneto-"
 "komponento."
 
 #: core/app/views/stack/welcomepageview.cpp:118
@@ -3579,22 +3570,12 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:141
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
-msgstr ""
-"Ĝisdatigi internan RAW-motoron al lasta libraw-momentversio 2024-06-16."
+msgstr "Ĝisdatigi internan RAW-motoron al lasta Libraw-momentkopio 2024-10-09."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-#| "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
-#| "Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-#| "ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
-#| "II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-"
-#| "HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with DNG "
-#| "format recorded."
+#, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
 "EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
@@ -3603,12 +3584,13 @@ msgid ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
-"Nova RAW-kapabloj: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
-"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
-"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
-"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.Pluraj "
-"flugrobotoj DJI kaj Skydio. Pluraj poŝtelefonoj kun DNG-formato registrita."
+"Nova RAW fotilo subtenata: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
+"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Cifereca OM-5.Panasonic DC-G9 II, "
+"DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-"
+"II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE- 7RM5 (A7R-V), ILME-FX30, DSC-HX95, "
+"A1.Multoblaj DJI kaj Skydio-virabeloj.Multoblaj saĝtelefonoj kun DNG-formato "
+"registrita."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -6763,37 +6745,30 @@ msgstr[0] "Enorma (1 rastrumero)"
 msgstr[1] "Enorma (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Granda (1 rastrumero)"
-msgstr[1] "Granda (%1 rastrumeroj)"
+msgstr[0] "QXGA (1 rastrumero)"
+msgstr[1] "Enorma (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Enorma (1 rastrumero)"
+msgstr[0] "QHD (1 rastrumero)"
 msgstr[1] "Enorma (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Enorma (1 rastrumero)"
+msgstr[0] "UHD (1 rastrumero)"
 msgstr[1] "Enorma (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
-msgstr "Ne pligrandigi malgrandajn bildojn"
+msgstr "Ne Grandigi Malgrandajn Bildojn"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
@@ -17159,10 +17134,9 @@ msgstr "Stakitaj Bildoj Ilo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#, fuzzy, kde-format
-#| msgid "Could not save image to file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Ne eblis konservi bildon al dosiero '%1'"
+msgstr "Ne eblis kopii bildon al dosiero '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
@@ -17510,10 +17484,9 @@ msgstr "Konservi bildon"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -22157,31 +22130,7 @@ msgid "A tool to render slideshow"
 msgstr "Ilo por bildigi bildaron"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22210,27 +22159,29 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo prezentas serion da eroj kiel simpla bildaro.</p><p>Multe da "
 "eroj ecoj povas esti montritaj kiel supermetaĵo dum funkciado.</p><p>Ĉi tiu "
-"ilo povas ludi albumajn enhavojn en rekursiva reĝimo kun idalbumoj se "
-"ekzistas.</p><p><u>Uzo:</u></p><table><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Aliro al eroj</h1></b></center></nobr></td></"
-"tr><tr><td>Antaŭa ero:</td><td><i>Supren</i> klavo</td></tr><tr><td></"
-"td><td><i>PgUp</i> klavo</td></tr><tr><td></td><td><i>Maldekstren</i> klavo</"
-"td></tr><tr><td></td><td>Musrado supren</td></tr><tr><td></td><td>Maldekstra "
-"musbutono</td></tr><tr><td>Sekva ero :</td><td><i>Malsupren</i> klavo</td></"
-"tr><tr><td></td><td><i>PgDown</i> klavo</td></tr><tr><td></"
-"td><td><i>Dekstren</i> klavo</td></tr><tr><td></td><td>Musrado malsupren</"
-"td></tr><tr><td></td><td>Dekstra musbutono</td></tr><tr><td>Paŭzi/Komenci:</"
-"td><td><i>Spaco</i> klavo</td></tr><tr><td>Bildprezentaj agordoj</"
-"td><td><i>F2</i> klavo</td></tr><tr><td>Kaŝi/Montri Supermetojn:</"
-"td><td><i>F4</i> klavo</td></tr><tr><td>Eliri:</td><td><i>Esc</i> klavo</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Eraj Trajtoj</h1></b></"
-"center></nobr></td></tr><tr><td>Ŝanĝi Etikedojn:</td><td>Uzi Etikedajn "
-"klavkombinojn</td></tr><tr><td>Ŝanĝi Taksadon:</td><td>Uzi Taksadajn "
-"fulmoklavojn</td></tr><tr><td>Ŝanĝi Koloretikedajn klavarajn ŝparvojojn</"
-"td></tr><tr><td>Ŝanĝi Elekt-Etikedon:</td><td>Uzi Etiked-elektajn "
-"klavkombinojn</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Aliaj</"
-"h1></b></center></nobr></td></tr><tr><td>Montri ĉi tiun helpon:</"
-"td><td><i>F1</i> klavo</td></tr></table>"
+"ilo povas ludi albumajn enhavojn en rekursiva reĝimo kun infanalbumoj se "
+"ekzistas.</p><p><u>Uzo:</u></p><table><tr><td colspan=\"2\"><nobr><center> "
+"<b><h1>Ero-Aliro</h1></b></center></nobr></td></tr><tr><td>Antaŭa ero:</"
+"td><td><i>Supren</i>-klavo</td></tr><tr><td></td><td><i>PgUp</i>-klavo</td></"
+"tr><tr><td></td><td><i>Maldekstren</i>-klavo</td></tr><tr><td></"
+"td><td>Musrado supren</td></tr><tr><td></td><td>Maldekstra musbutono</td></"
+"tr><tr><td>Sekva Ero:</td><td><i>Malsupren</i>-klavo</td></tr><tr><td></"
+"td><td><i>PgDown</i>-klavo</td></tr><tr><td></td><td><i>Dekstren</i>-klavo</"
+"td></tr><tr><td></td><td>Musrado malsupren</td></tr><tr><td></td><td>Dekstra "
+"musbutono</td></tr><tr><td>Paŭzi/Komenci::</td><td><i>Spaceto</i>-klavo</"
+"td></tr><tr><td>Vidbendo antaŭen:</td><td><i>Ctrl+Dekstren</i>-klavo</"
+"td>Vidbendo malantaŭen:</td><td><i>Ktrl+Maldekstren</i>-klavo</td></"
+"tr><tr><td>Agordo de Bildprezento:</td><td><i>Alt+P</i>-klavo</td></"
+"tr><tr><td>Kaŝi/Montri superkovraĵojn:</td><td><i>Alt+Y</i>-klavo</td></"
+"tr><tr><td>Eliri:</td><td><i>Esc</i>-klavo</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Proprecoj de Ero</h1></b></center></nobr></td></"
+"tr><tr><td>Ŝanĝi Etikedojn:</td><td>Uzi Etikedajn klavkombinojn</td></"
+"tr><tr><td>Ŝanĝi Taksadon:</td><td>Uzi klavarajn ŝparvojojn pri Taksado</"
+"td></tr><tr><td>Ŝanĝi Koloran Etikedon:</td><td>Uzi Kolor-etikedajn "
+"klavarajn ŝparvojojn</td></tr><tr><td>Ŝanĝi Etiked-Elekton:</td><td>Uzi "
+"Etiked-Elektajn klavar-ŝparvojojn</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Aliaj</h1></b></center></nobr></td></"
+"tr><tr><td>Montri ĉi tiun helpon:</td><td><i>F1</i> klavo</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
@@ -22388,9 +22339,7 @@ msgstr "Neniu bildo elektita. Bonvolu elekti kiuj bildoj devas esti alŝutitaj."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Averto"
@@ -22410,11 +22359,10 @@ msgstr "Aŭtentigo malsukcesis. Alklaku \"Daŭrigu\" por aŭtentikigi."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
-msgstr "Daŭrigi"
+msgstr "Daŭrigu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -22422,11 +22370,10 @@ msgstr "Daŭrigi"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -23505,9 +23452,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Malsukcesis preni informojn pri fotoaro de %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Averto"
@@ -23522,18 +23467,16 @@ msgstr ""
 "Ĉu vi volas daŭrigi?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
-msgstr "Daŭrigi"
+msgstr "Daŭrigu"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, kde-format
@@ -23832,40 +23775,32 @@ msgstr "Voko de Google Drive malsukcesis: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Eraro"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Eksporto de Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Eksporto de Google Foto"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Averto"
@@ -23882,19 +23817,17 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
-msgstr "Daŭrigi"
+msgstr "Daŭrigu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1008
 #, kde-format
@@ -23907,8 +23840,7 @@ msgstr ""
 "Ĉu vi volas daŭrigi?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Eraro"
@@ -23920,9 +23852,7 @@ msgid "Failed to save image to %1"
 msgstr "Malsukcesis konservi bildon al %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Averto"
@@ -23940,23 +23870,19 @@ msgstr ""
 "Ĉu vi volas daŭrigi?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
-msgstr "Daŭrigi"
+msgstr "Daŭrigu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Averto"
@@ -23974,16 +23900,14 @@ msgstr ""
 "Neniu bildo alŝutita al via konto."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
-msgstr "bone"
+msgstr "Bone"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Eraro"
@@ -24010,9 +23934,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Averto"
@@ -24029,19 +23951,17 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
-msgstr "Daŭrigi"
+msgstr "Daŭrigu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:44
 #, kde-format
@@ -26892,16 +26812,13 @@ msgid "The SQLite core database was not found."
 msgstr "La kerna datumbazo de SQLite ne estis trovita."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
-"<p>Se vi volas komenci kun nova agordo kaj per unua rulasistanto, forigu la "
-"dosieron:<br>%1</p>"
+"<p>Se vi volas komenci per nova agordo kaj per unua rula asistanto, forigu "
+"la dosieron:<br/>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -27906,20 +27823,16 @@ msgstr "Ĉiuj albumoj"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Rikura elekto."
+msgstr "Rekursiva elekto"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Rikura elekto."
+msgstr "Rekursiva albumelekto."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -27946,12 +27859,10 @@ msgid "All tags"
 msgstr "Ĉiuj etikedoj"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Rikura elekto."
+msgstr "Elekto de rekursivaj etikedoj."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -28589,7 +28500,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW bilddosiero (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:384
+#: core/libs/database/models/itemfiltermodel.cpp:385
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -28597,13 +28508,13 @@ msgid_plural "%1 Faces"
 msgstr[0] "%1 vizaĝo"
 msgstr[1] "%1 vizaĝoj"
 
-#: core/libs/database/models/itemfiltermodel.cpp:387
+#: core/libs/database/models/itemfiltermodel.cpp:388
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Neniu vizaĝo"
 
-#: core/libs/database/models/itemfiltermodel.cpp:400
+#: core/libs/database/models/itemfiltermodel.cpp:401
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -29332,18 +29243,7 @@ msgstr ""
 "ĝusta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29356,15 +29256,16 @@ msgid ""
 "with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
 "settings</p>"
 msgstr ""
-"<p>Noto: kun Linukso-servilo, datumbazo povas esti pravalorizita sekvante la "
-"subajn komandojn:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -"
-"u radiko</p><p>...</p><p>Enigu SQL-kodon al Mysql-instilo por lanĉi digiKam-"
-"datumbazon kun koncedaj privilegioj (vidu malantaŭe)</p><p>...</p><p>ĉesi</"
-"p><p>NOTO: Se vi havas problemojn kun MySQL-servilo sur Ubuntu-bazita Linuks-"
-"sistemo, uzu la aldonan komandon en la mysql-instigilo por povi krei MySQL-"
-"ekagilojn.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTO: Se "
-"vi havas enorman kolekton, vi devus komenci MySQL-servilon per mysql --"
-"max_allowed_packet=128M AŬ en my.ini aŭ ~/.my.cnf, ŝanĝu la agordojn</p>"
+"<p>Noto: kun Linukso-servilo, datumbazo povas esti pravaligita sekvante la "
+"subajn komandojn:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
+"- u radiko</p><p>...</p><p>Enigu SQL-kodon al Mysql-instilo por lanĉi "
+"digiKam-datumbazon kun koncedaj privilegioj (vidu malantaŭ)</p><p>...</"
+"p><p>ĉesi</p><p>NOTU: Se vi havas problemojn kun MySQL-servilo en Ubuntu-"
+"bazita Linukso-sistemo, uzu la aldonan komandon en la mysql prompto por povi "
+"krei MySQL-eksigilojn.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
+"p><p>NOTU: Se vi havas enorman kolekton, vi devus lanĉi MySQL-servilon per "
+"mysql --max_allowed_packet=128M AŬ en my.ini aŭ ~/.my.cnf, ŝanĝu la "
+"agordojn</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -32107,12 +32008,10 @@ msgstr "Ŝargante Kadron"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, kde-format
@@ -34360,9 +34259,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG Kvalito:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Komenci"
@@ -39404,10 +39301,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Asigni Takson \"%1 Stelo\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Asigni Takson \"%1 Stelo\""
+msgstr "Asigni Takson \"%1 Stelo\" (neniu baskulo)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -41559,92 +41455,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "Okazis eraro ludante: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Paŭzo/Ludo"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Kapto"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Okazis eraro ĉe la plurmedia ludilo..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:386
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Ŝalti ludadon en buklo"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Kadro Malantaŭen"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Kadro Antaŭen"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -42539,10 +42435,9 @@ msgid "A KDE Family Project"
 msgstr "KDE Familia Projekto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2001-2024, teamo de programistoj digiKam"
+msgstr "(c) 2001-2025, teamo de programistoj digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -42602,10 +42497,9 @@ msgstr ""
 "kaj portado de vizaĝa rekonmotoro al OpenCV-neŭrala reto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
+#, kde-format
 msgid "Michael Miller"
-msgstr "Kanala Miksilo"
+msgstr "Michael Miller"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:120
 #, kde-format
@@ -43204,12 +43098,10 @@ msgstr "Montru Statusbreton"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:123
 #: core/libs/widgets/mainview/dzoombar.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:227
 #, kde-format
@@ -49705,13 +49597,11 @@ msgid "Store thumbnails on disk for faster reuse"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Malmarku ĉi tion se vi ne volas skali malgrandajn bildojn por kongrui al "
-"fenestro."
+"Malebligu ĉi tiun opcion se vi ne volas ke bildetoj estu konservitaj en "
+"kaŝmemoro sur disko."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -51715,24 +51605,20 @@ msgid "No address book entries found"
 msgstr "Neniuj enskriboj de adreslibro trovitaj"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Model"
-msgstr "Selekta modelo:"
+msgstr "Vizaĝa Rekono-Modelo"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgid "OpenFace"
-msgstr "Malfermi Dosieron"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "SFace"
-msgstr "Vizaĝoj"
+msgstr "SFaĉo"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
 #, kde-format
@@ -51767,38 +51653,29 @@ msgid "Cancel"
 msgstr "Rezigni"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "Confirmed"
+#, kde-format
 msgid "Confirming face"
-msgstr "Konfirmita"
+msgstr "Konfirma vizaĝo"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Ĉu forigi facetikedon?"
+msgstr "Forigante vizaĝon"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Ĝisdatigi datumbazon de vizaĝoj"
+msgstr "Redaktado de vizaĝo-etikedo"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "Forigi ĉi tiun vizaĝregionon"
+msgstr "Redaktado de vizaĝregiono"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Per Manlibro kaj Nomo"
+msgstr "Mane aldonante vizaĝon"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -51896,28 +51773,24 @@ msgstr ""
 #. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #: core/utilities/maintenance/main/maintenancedlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Skani Bildojn"
+msgstr "Skani novajn bildojn"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #: core/utilities/maintenance/main/maintenancedlg.cpp:206
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Skani Bildojn"
+msgstr "Skani ĉiujn bildojn"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Rekoni vizaĝojn"
+msgstr "Rekoni nur vizaĝojn"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
@@ -51938,20 +51811,13 @@ msgid "Search in"
 msgstr "Serĉi en"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Akurateco"
+msgstr "Precizeco:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -51959,14 +51825,10 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 "Alĝustigu sentemon kontraŭ specifeco: ju pli alta estas la valoro, des pli "
-"precize vizaĝoj estos rekonitaj, sed malpli da vizaĝoj estos rekonitaj\n"
-"(nur vizaĝoj kiuj estas tre similaj al antaŭmarkitaj vizaĝoj estas "
-"rekonitaj)."
+"precize vizaĝoj estos detektitaj, sed malpli da vizaĝoj estos detektitaj."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face detection"
 msgid "Model:"
 msgstr "Modelo:"
@@ -51984,12 +51846,10 @@ msgid "YOLOv3"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "@title: On Screen Display"
-#| msgid "OSD"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SSD"
-msgstr "OSD"
+msgstr "SSD"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
 #, kde-format
@@ -52002,47 +51862,40 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
-msgstr "Maksimuma grandeco:"
+msgstr "Vizaĝa grandeco:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
-msgstr "Kromaj etikedoj"
+msgstr "Ekstra Malgranda"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
-msgstr "Kromaj etikedoj"
+msgstr "Malgranda"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
-msgstr "Ujo"
+msgstr "Meza"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "Celo"
+msgstr "Granda"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
-msgstr "Kromaj etikedoj"
+msgstr "Ekstra Granda"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
 #, kde-format
@@ -52064,26 +51917,18 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "Vizaĝa Detekto"
+msgstr "Agordoj pri Detektado de Vizaĝoj"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Akurateco"
+msgstr "Precizeco:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52092,32 +51937,28 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 "Alĝustigu sentemon kontraŭ specifeco: ju pli alta estas la valoro, des pli "
-"precize vizaĝoj estos rekonitaj, sed malpli da vizaĝoj estos rekonitaj\n"
-"(nur vizaĝoj kiuj estas tre similaj al antaŭmarkitaj vizaĝoj estas "
-"rekonitaj)."
+"precize vizaĝoj estos\n"
+"rekonitaj, sed malpli da vizaĝoj estos rekonitaj.\n"
+"Noto: nur vizaĝoj kiuj estas tre similaj al antaŭmarkitaj vizaĝoj estas "
+"rekonitaj."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:344
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label AI model used for face recognition"
 msgid "Model:"
 msgstr "Modelo:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:348
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "SFace"
-msgstr "Vizaĝoj"
+msgstr "SFaĉo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Open File"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "OpenFace"
-msgstr "Malfermi Dosieron"
+msgstr "OpenFace"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:352
 #, kde-format
@@ -52149,10 +51990,9 @@ msgstr ""
 "e via sistemo, aŭ labori en la fono nur sur unu kerno."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:393
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "Vizaĝa Rekono"
+msgstr "Agordoj de Vizaĝa Rekono"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
 #, kde-format
@@ -52733,12 +52573,10 @@ msgid "Reference"
 msgstr "Referenco"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
-msgstr "Referencbilda elektmetodo"
+msgstr "Referenca Bilda Elekta Metodo"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
@@ -60133,25 +59971,7 @@ msgstr ""
 "metadatuma subteno.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -60175,17 +59995,18 @@ msgstr ""
 "p><p><b>d</b>: La tago kiel nombro sen unua nulo (1 ĝis 31)</p><p> <b>dd</"
 "b>: La tago kiel nombro kun unua nulo (01 ĝis 31)</p><p><b>ddd</b>: La "
 "mallongigita lokalizita tagnomo (ekz. 'Lun' ĝis 'Suno')</p><p><b>dddd</b>: "
-"La longa lokalizita taga nomo (ekz. 'lundo' ĝis 'dimanĉo').</p><p><b>M</b> "
-">: La monato kiel nombro sen unua nulo (1 ĝis 12)</p><p><b>MM</b>: La monato "
-"kiel nombro kun unua nulo (01 ĝis 12)</p> <p><b>MMM</b>: La mallongigita "
-"lokalizita monata nomo (ekz. 'Jan' ĝis 'Dec')</p><p><b>MMMM</b>: La longa "
-"lokalizita monata nomo (ekz. 'januaro' ĝis 'decembro')</p><p><b>jj</b>: La "
-"jaro kiel ducifera nombro (ekz. 00 ĝis 99)</p><p><b>jjj</b> b>: La jaro kiel "
-"kvarcifera nombro (ekz. 2012)</p><p>Ĉiuj aliaj enigosignoj estos traktataj "
-"kiel teksto. Ajna sinsekvo de signoj enfermitaj en unucitoj estos traktata "
-"kiel teksto kaj ne uzata kiel esprimo. Ekzemploj, se dato estas 20 julio "
-"1969:</p><p><b>jj.MM.jjjj</b> : 20.07.1969</p><p><b>jj MMMM jj</b> : Suno la "
-"20-an de julio 69</p><p><b>'Foto je ' dddd</b> : Foto dimanĉe</p>"
+"La longa lokalizita taga nomo (ekz. 'lundo' ĝis 'dimanĉo')</p><p><b>M</b> : "
+"La monato kiel nombro sen unua nulo (1 ĝis 12)</p><p><b>MM</b>: La monato "
+"kiel nombro kun antaŭa nulo (01 ĝis 12)</p><p><b> p><b>MMM</b>: La "
+"mallongigita lokalizita monato nomo (ekz. 'januaro' ĝis 'dec')</"
+"p><p><b>MMMM</b>: La longa lokalizita monata nomo (ekz. 'januaro' ĝis "
+"'decembro')</p><p><p> b>jj</b>: La jaro kiel ducifera nombro (ekz. 00 ĝis "
+"99)</p><p><b>jjyy</b>: La jaro kiel kvarcifera nombro (ekz. 2012)</p><p>Ĉiuj "
+"aliaj enigosignoj estos traktataj kiel teksto. Ajna sinsekvo de signoj "
+"enfermitaj en unucitoj estos traktata kiel teksto kaj ne uzata kiel esprimo. "
+"Ekzemploj, se dato estas 20 julio 1969:</p><p><b>jj.MM.jjjj</b> : "
+"20.07.1969</p><p><b>jj MMMM jj</b> : Suno la 20-an de julio 69</"
+"p><p><b>'Foto sur ' dddd</b> : Foto dimanĉe</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
@@ -60738,13 +60559,7 @@ msgid "Scan for new items"
 msgstr "Skani por novaj eroj"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -60752,10 +60567,10 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
-"<qt><i>Noto: Se aktivigita, la Kerna DB ĉiam estas purigita. Vi povas elekti "
-"pliajn datumbazojn por purigado.<br/> Se vi elektas unu el la subaj elektoj, "
-"la procezo povas daŭri multe da tempo kaj povas provizore frostigi "
-"digiKam<br/> por certigi, ke neniu datumbaza korupto okazas.</i></qt>"
+"<qt><i>Noto: Se aktivigita, la kerna datumbazo ĉiam estas purigita. Vi povas "
+"elekti pliajn datumbazojn por purigado.<br/>Se vi elektas unu el la "
+"malsupraj opcioj, la procezo povas preni multe da tempo kaj povas frostigi "
+"digiKam provizore por certigi, ke neniu datumbaza korupto okazas.</i></qt >"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
@@ -60843,12 +60658,10 @@ msgid "Faces data management: "
 msgstr "Administrado de datumoj de vizaĝoj:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Malplenigi kaj rekonstrui ĉiujn trejnajn datumojn"
+msgstr "Rekonstruu ĉiujn trejnajn datumojn"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:215
 #, kde-format
@@ -60858,11 +60671,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Forigi ĉiujn vizaĝojn sur ĉi tiu bildo"
+msgstr "Restarigi kaj purigi ĉiujn vizaĝojn kaj trejnadon"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -61004,9 +60816,7 @@ msgid "Sync Metadata and Database"
 msgstr "Sinkronigi metadatumojn kaj datumbazon"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:399
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Averto"
@@ -61049,39 +60859,33 @@ msgid "Autotags Assignment"
 msgstr "Aŭtomat-etikeda Atribuado"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tags for: %1\n"
-msgstr "Aŭtomat-etikeda reĝimo:"
+msgstr "Aŭtomataj etikedoj por: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1\n"
-msgstr "#Sat: %1"
+msgstr "Vojo: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
+#, kde-format
 msgid "Keywords: %1"
-msgstr "Ŝlosilvortoj:"
+msgstr "Ŝlosilvortoj: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for auto-tags: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por aŭtomataj etikedoj: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for auto-tags: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por aŭtomataj etikedoj: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61163,36 +60967,33 @@ msgid "Find new items"
 msgstr "Trovi novajn erojn"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning from: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Skanado de: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "Albumo \"%1\""
+msgstr "Albumo: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr ""
+"Skanita:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por katalogado: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por katalogado: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
 #, kde-format
@@ -61200,53 +61001,41 @@ msgid "Find duplicates items"
 msgstr "Trovi duplikatajn erojn"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates for: %1\n"
-msgstr "Duplikatoj"
+msgstr "Duplikatoj por: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Trovi duplikatojn"
+msgstr "Neniu duplikata ero"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "Trovi duplikatojn"
-msgstr[1] "Trovi duplikatojn"
+msgstr[0] "1 duobligita ero"
+msgstr[1] "%1 eroj sur Luma Tablo"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por duplikatoj: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por duplikatoj: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Duplikatoj"
+msgstr "Duplikatoj trovitaj: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Duplikatoj"
+msgstr "Duplikato trovita: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
@@ -61280,54 +61069,45 @@ msgstr "Ĝisdatigi datumbazon de vizaĝoj"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por vizaĝoj: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por vizaĝoj: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces processed: %1"
-msgstr "Bildoj trovitaj en %1"
+msgstr "Vizaĝoj procezitaj: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Face processed: %1"
-msgstr "Bildoj trovitaj en %1"
+msgstr "Vizaĝo procezita: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanned for faces: %1\n"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Skanita por vizaĝoj: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "No face"
 msgstr "Neniu vizaĝo"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Neniu vizaĝo"
-msgstr[1] "Neniu vizaĝo"
+msgstr[0] "1 vizaĝo"
+msgstr[1] "%1 eroj sur Luma Tablo"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
@@ -61337,18 +61117,14 @@ msgid "Error starting face detection."
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Duplikatoj"
+msgstr "Vizaĝoj trovitaj: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Duplikatoj"
+msgstr "Vizaĝo trovita: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -61356,58 +61132,47 @@ msgid "Finger-prints"
 msgstr "Fingrospuroj"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint for: %1\n"
-msgstr "Rekonstrui fingrospurojn"
+msgstr "Rekonstrui Fingrospuron por: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
+#, kde-format
 msgid "Path: %1"
-msgstr "#Sat: %1"
+msgstr "Vojo: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por fingrospuro: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por fingrospuro: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality for: %1\n"
-msgstr "Bildkvalita Ordigo"
+msgstr "Bilda Kvalito por: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "Elektu Etikedon: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por kvalito: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por kvalito: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
 #, kde-format
@@ -61438,34 +61203,29 @@ msgstr ""
 "Ĉu volas daŭrigi?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Clear Metadata for: %1\n"
-msgstr "Metadatumaj Informoj"
+msgstr "Forigi metadatumojn por: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por forigi vizaĝojn: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por forigi vizaĝojn: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por forigi etikedojn: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por forigi etikedojn: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
 #, kde-format
@@ -61478,59 +61238,49 @@ msgid "Updating database from image metadata"
 msgstr "Ĝisdatigi datumbazon de bildaj metadatenoj"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Metadata Sync for: %1\n"
-msgstr "Metadatumaj Informoj"
+msgstr "Sinkronigo de metadatumoj por: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Sinkronigante bildajn metadatumojn kun datumbazo"
+msgstr "Eroj skanitaj por sinkronigi metadatenojn kun datumbazo: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Sinkronigante bildajn metadatumojn kun datumbazo"
+msgstr "Ero skanita por sinkronigi metadatenojn kun datumbazo: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por ĝisdatigi datumbazon kun metadatenoj: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por ĝisdatigi datumbazon kun metadatenoj: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "Miniaturoj"
+msgstr "Generi Bildetojn"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
-#, fuzzy, kde-format
-#| msgid "Thumbnail Properties:"
+#, kde-format
 msgid "Thumbnail for: %1\n"
-msgstr "Bildetaj Propraĵoj:"
+msgstr "Bildeto por: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Eroj skanitaj por bildetoj: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Ero skanita por bildetoj: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -63625,19 +63375,14 @@ msgstr ""
 "fenestro."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "Antaŭrigarda bildo estas ĉiam skalata por kongrui al fenestro"
+msgstr "Antaŭrigarda bildo uzu Kontraŭaliasing por pligrandigi"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
-"Malmarku ĉi tion se vi ne volas skali malgrandajn bildojn por kongrui al "
-"fenestro."
+msgstr "Malmarku ĉi tion se vi ne volas uzi Kontraŭaliasing por pligrandigi."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -64673,10 +64418,9 @@ msgid "Download Required Files"
 msgstr "Elŝuti Bezonatajn Dosierojn"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:158
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgid "Use Face Management feature"
-msgstr "Uzi Vizaĝ-Detektan kapablon"
+msgstr "Uzi Vizaĝomastruman funkcion"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
@@ -64754,18 +64498,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>For face detection, the red-eye removal tool, the classification of "
-#| "images according to aesthetics or the automatic assignment of tags to "
-#| "images, digiKam requires some large binary files. You can choose which "
-#| "feature you want to use.</p><p>Some of these files were not found. Click "
-#| "“Download” to begin downloading the files you need. You can close this "
-#| "dialog, you will be asked again the next time you start digiKam. Without "
-#| "these files the selected features will not work.</p><p>The files will be "
-#| "downloaded to %1.</p><p><b>After the successful download you have to "
-#| "restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some of these files were not found. Click “Download” to begin downloading "
@@ -64774,15 +64507,12 @@ msgid ""
 "not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
-"<p>Por detekto de vizaĝoj, la ilo por forigo de ruĝaj okuloj, la klasifiko "
-"de bildoj laŭ estetiko aŭ la aŭtomata atribuo de etikedoj al bildoj, digiKam "
-"postulas kelkajn grandajn binarajn dosierojn. Vi povas elekti kiun funkcion "
-"vi volas uzi.</p><p>Kelkaj el ĉi tiuj dosieroj ne estis trovitaj. Alklaku "
-"\"Elŝuti\" por komenci elŝuti la dosierojn, kiujn vi bezonas. Vi povas fermi "
-"ĉi tiun dialogon, oni demandos vin denove la venontan fojon kiam vi komencos "
+"<p>Kelkaj el ĉi tiuj dosieroj ne estis trovitaj. Alklaku \"Elŝuti\" por "
+"komenci elŝuti la dosierojn, kiujn vi bezonas. Vi povas fermi ĉi tiun "
+"dialogon, oni denove demandos vin la venontan fojon kiam vi komencos "
 "digiKam. Sen ĉi tiuj dosieroj la elektitaj funkcioj ne funkcios.</p><p>La "
-"dosieroj estos elŝutitaj al %1.</p><p><b>Post la sukcesa elŝuto vi devas "
-"rekomenci digiKam.</b></p>"
+"dosieroj estos elŝutitaj al \"<i>%1</i>\".</p><p><b>Post la sukcesa elŝuto "
+"vi devas rekomenci digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:521
 #, kde-format
@@ -65851,30 +65581,20 @@ msgid "Reading and Writing Metadata"
 msgstr "Legado kaj Skribo de Metadatumoj"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"Delegi al ExifTool-backend ĉiujn operaciojn por skribi metadatenojn al "
-"dosieroj"
+msgstr "Uzu ExifTool backend por legi metadatenojn el dosieroj"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Enŝaltu ĉi tiun opcion por skribi metadatumojn al dosieroj kun ExifTool "
+"Enŝaltu ĉi tiun opcion por legi metadatumojn de dosieroj kun ExifTool "
 "backend anstataŭ Exiv2. Ĉi tio malrapidigos iomete la sinkronigon de "
 "dosieroj metadatenoj kun datumbazo."
 
@@ -66685,16 +66405,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Uzi bildmapojn kun alta DPI-distingivo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Devigi uzon de programara OpenGL-bildigo"
+msgstr "Uzi la programaron OpenGL por bildigo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Malebligi aparatan akcelon OpenCL"
+msgstr "Uzi la OpenCL aparatan akcelon"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
@@ -66704,10 +66422,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Malebligi aparatan akcelon OpenCL"
+msgstr "Uzi la akceladon de video aparataro"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
@@ -66715,10 +66432,9 @@ msgid "Use the video textures conversion"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Malkodiga backend uzata por filmeto:"
+msgstr "Malkodi backend por bildi video:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
@@ -66731,28 +66447,24 @@ msgid "GStreamer (System)"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Vindozo (Sistemo)"
+msgstr "WMF (Sistemo)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (Sistemo)"
+msgstr "AV-Fondaĵo (Sistemo)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Elŝutu bezonatajn binarajn datumojn..."
+msgstr "Elŝuti bezonatajn duumajn datumojn:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Malfermante Elŝuta Dialogo..."
+msgstr "Malfermi Elŝutan Dialogon..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
@@ -67952,146 +67664,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgid "FacesDetector"
-#~ msgstr "VizaĝojDetektilo"
-
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "Averto"
-
-#~ msgctxt "@action:button"
-#~ msgid "Continue"
-#~ msgstr "Daŭrigi"
-
-#~ msgctxt "@action:button"
-#~ msgid "OK"
-#~ msgstr "bone"
-
-#, fuzzy
-#~| msgctxt "embedded preview type in dng file"
-#~| msgid "Medium"
-#~ msgctxt "@label:listbox"
-#~ msgid "Medium"
-#~ msgstr "Ujo"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Skip images already scanned"
-#~ msgstr "Preterpasi bildojn jam skanitajn"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Scan again and merge results"
-#~ msgstr "Skani denove kaj kunfandi rezultojn"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear unconfirmed results and rescan"
-#~ msgstr "Malplenigi nekonfirmitajn rezultojn kaj reskanu"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect faces"
-#~ msgstr "Detekti vizaĝojn"
-
-#~ msgctxt "@info"
-#~ msgid "Find all faces in your photos"
-#~ msgstr "Trovi ĉiujn vizaĝojn en viaj fotoj"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect and recognize faces"
-#~ msgstr "Detekti kaj rekoni vizaĝojn"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Find all faces in your photos and\n"
-#~ "try to recognize which person is depicted"
-#~ msgstr ""
-#~ "Trovi ĉiujn vizaĝojn en viaj fotoj kaj\n"
-#~ "eniro por rekoni kiu persono estas prezentita"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Try again to recognize the people depicted\n"
-#~ "on marked but yet unconfirmed faces."
-#~ msgstr ""
-#~ "Provu denove rekoni la personojn prezentitajn\n"
-#~ "ĉe markitaj sed tamen nekonfirmitaj vizaĝoj."
-
-#~ msgid "Create Tag from Address Book"
-#~ msgstr "Krei Etikedon el Adreslibro"
-
-#~ msgid "Copy geo: URL"
-#~ msgstr "Kopii geo: URL"
-
-#~ msgctxt "@option"
-#~ msgid "Recursive"
-#~ msgstr "Rikura"
-
-#~ msgid "Error loading RAW image '%1'"
-#~ msgstr "Eraro dum ŝargo de RAW-bildo '%1'"
-
-#~ msgid "Could not open file '%1' for writing"
-#~ msgstr "Ne eblis malfermi dosieron '%1' por skribado"
-
-#~ msgid "Fix AMD-GPU video decoding issue"
-#~ msgstr "Ripari AMD-GPU filmet-malkodigan problemon"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear all previous results and rescan"
-#~ msgstr "Malplenigi ĉiujn antaŭajn rezultojn kaj reskani"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "This will clear all training data for recognition and rebuild it from all "
-#~ "available faces."
-#~ msgstr ""
-#~ "Ĉi tio forigos ĉiujn trejnajn datumojn por rekono kaj rekonstruos ĝin el "
-#~ "ĉiuj disponeblaj vizaĝoj."
-
-#~ msgid "Thumbs"
-#~ msgstr "Dikfingroj"
-
-#, fuzzy
-#~| msgctxt "@option"
-#~| msgid "Login Information"
-#~ msgctxt "@action"
-#~ msgid "Begin operation"
-#~ msgid_plural "Begin %1."
-#~ msgstr[0] "Ensaluta Informo"
-#~ msgstr[1] "Ensaluta Informo"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Face Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Vizaĝo Precizeco"
-
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgctxt "@label AI model used for detection"
-#~ msgid "AI Model:"
-#~ msgstr "Modelo:"
-
-#, fuzzy
-#~| msgid "Face Recognition DB"
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Recognition Accuracy:"
-#~ msgstr "Vizaĝa Rekono DB"
-
-#~ msgctxt "@label left extremities of a scale"
-#~ msgid "Sensitivity"
-#~ msgstr "Sentemeco"
-
-#~ msgctxt "@label right extremities of a scale"
-#~ msgid "Specificity"
-#~ msgstr "Specifeco"
-
-#~ msgctxt "@option:check"
-#~ msgid "Use YOLO v3 detection model"
-#~ msgstr "Uzi modelon de detekto YOLO v3"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Face detection with YOLO v3 data model. Better results but slower."
-#~ msgstr ""
-#~ "Vizaĝdetekto kun YOLO v3 datummodelo. Pli bonaj rezultoj sed pli "
-#~ "malrapidaj."

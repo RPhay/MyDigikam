@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 01:52+0000\n"
+"POT-Creation-Date: 2025-01-05 01:54+0000\n"
 "PO-Revision-Date: 2024-08-27 20:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -23527,7 +23527,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:435
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
 #, kde-format
 msgid "More options"
 msgstr ""
@@ -26243,7 +26243,7 @@ msgid "Labels Album"
 msgstr ""
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:201
-#: core/libs/tags/manager/tagmngrtreeview.cpp:155
+#: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
@@ -32968,37 +32968,37 @@ msgstr "Handbok på nettet"
 msgid "About..."
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -35334,7 +35334,7 @@ msgstr ""
 msgid "Visit digiKam project website"
 msgstr ""
 
-#: core/libs/progressmanager/progressmanager.cpp:158
+#: core/libs/progressmanager/progressmanager.cpp:160
 #, kde-format
 msgid "Aborting..."
 msgstr "Avbryt …"
@@ -37615,43 +37615,43 @@ msgstr "Legg til i liste"
 msgid "Add selected tags to Quick Access List"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:137
+#: core/libs/tags/manager/tagmngrtreeview.cpp:139
 #, kde-format
 msgid "Delete Tags"
 msgstr "Slett merkelappar"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:145
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Edit Tag Title"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagmngrtreeview.cpp:151
 #: core/libs/tags/manager/tagsmanager.cpp:727
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Fjern merkelappikon"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:152
+#: core/libs/tags/manager/tagmngrtreeview.cpp:154
 #: core/libs/tags/manager/tagsmanager.cpp:733
 #, kde-format
 msgid "Invert Selection"
 msgstr "Omvend merking"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:158
+#: core/libs/tags/manager/tagmngrtreeview.cpp:160
 #: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:161
+#: core/libs/tags/manager/tagmngrtreeview.cpp:163
 #: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:164
+#: core/libs/tags/manager/tagmngrtreeview.cpp:166
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Remove Tag from Images"
@@ -50827,7 +50827,7 @@ msgid "Valley"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
 #, kde-format
 msgid "Terrain"
 msgstr "Terreng"
@@ -50938,7 +50938,7 @@ msgid "Coordinate"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Satellite"
 msgstr ""
@@ -53493,7 +53493,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:357
 #, fuzzy, kde-format
 msgid "Mercator"
 msgstr "Mercator"
@@ -54050,105 +54050,105 @@ msgstr ""
 msgid "Maximum Tile Level"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:167
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:172
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:177
 #, kde-format
 msgid "Show Scale Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:368
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, kde-format
 msgid "Float items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:160
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:289
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:290
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, kde-format
 msgid "Satellite map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, kde-format
 msgid "OpenStreetMap (Vector)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:362
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvirektangulært"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
 #, kde-format
 msgid "Show compass"
 msgstr "Vis kompass"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:376
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:378
 #, kde-format
 msgid "Show scale bar"
 msgstr "Vis skalalinje"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:381
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:383
 #, kde-format
 msgid "Show navigation"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:386
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:399
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:428
 #, kde-format
 msgid "Projection"
 msgstr "Projeksjon"
@@ -54780,189 +54780,189 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:176
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:181
 #, kde-format
 msgid "Add country tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:178
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:183
 #, kde-format
 msgid "Add state tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:180
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:185
 #, kde-format
 msgid "Add state district tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:182
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:187
 #, kde-format
 msgid "Add county tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:184
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:189
 #, kde-format
 msgid "Add city tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:186
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:191
 #, kde-format
 msgid "Add city district tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:188
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:193
 #, kde-format
 msgid "Add suburb tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:190
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:195
 #, kde-format
 msgid "Add town tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:192
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:197
 #, kde-format
 msgid "Add village tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:194
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:199
 #, kde-format
 msgid "Add hamlet tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:196
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:201
 #, kde-format
 msgid "Add street"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:198
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:203
 #, kde-format
 msgid "Add house number tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:200
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:205
 #, kde-format
 msgid "Add place"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:202
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:204
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:209
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:206
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
 #, kde-format
 msgid "Add new tag"
 msgstr "Legg til ny merkelapp"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:212
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Fjern vald merkelapp"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:208
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:213
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:216
 #, kde-format
 msgid "Add all address elements"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:214
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:219
 #, kde-format
 msgid "Select language:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Select service:"
 msgstr "Vel teneste:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Open Street Map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:441
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
 #, kde-format
 msgid "Less options"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Write locations as tags"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Write locations metadata"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:261
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:384
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:389
 #, kde-format
 msgid "Image tags are changed."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:420
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Hentar RG-info –"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:457
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:797
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:798
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:941
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:948
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:954
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
@@ -55109,36 +55109,36 @@ msgstr ""
 msgid "Sort by rating"
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:144
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:151
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
 "search virtual album using the name set on the left side."
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
 msgid "Search by area:"
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
@@ -55149,7 +55149,7 @@ msgstr ""
 "Det finst alt eit søk med dette namnet.\n"
 "Skriv inn eit nytt namn:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
@@ -55157,7 +55157,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr ""
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr ""

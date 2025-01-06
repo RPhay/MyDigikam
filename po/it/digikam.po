@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-05 01:54+0000\n"
-"PO-Revision-Date: 2025-01-02 18:19+0100\n"
+"POT-Creation-Date: 2025-01-06 01:57+0000\n"
+"PO-Revision-Date: 2025-01-05 20:02+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2825,7 +2825,7 @@ msgstr "Ramo Git: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:283
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2833,7 +2833,7 @@ msgstr "Indietro"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:285
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -28945,7 +28945,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "File di immagine RAW (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:384
+#: core/libs/database/models/itemfiltermodel.cpp:385
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -28953,13 +28953,13 @@ msgid_plural "%1 Faces"
 msgstr[0] "Un volto"
 msgstr[1] "%1 volti"
 
-#: core/libs/database/models/itemfiltermodel.cpp:387
+#: core/libs/database/models/itemfiltermodel.cpp:388
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Nessun volto"
 
-#: core/libs/database/models/itemfiltermodel.cpp:400
+#: core/libs/database/models/itemfiltermodel.cpp:401
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -29662,7 +29662,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, kde-format
 msgid "Similarity Db Name:"
-msgstr "Nome banca dati somiglianze:"
+msgstr "Nome Bd somiglianze:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
 #, kde-format
@@ -37704,7 +37704,7 @@ msgstr "Leggi i metadati dal file nella banca dati"
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
-msgstr "Scrivi i metadati su ogni file"
+msgstr "Scrivi i metadati in ogni file"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:535
 #, kde-format
@@ -40149,8 +40149,8 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "Questa operazione eliminerà tutti i tag solo dalla banca dati.\n"
-"Per applicare le modifiche ai file, devi poi scegliere di scrivere i "
-"metadati sul file.\n"
+"Per applicare le modifiche ai file, devi scegliere di scrivere i metadati "
+"nel file in seguito.\n"
 "Vuoi continuare?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:607
@@ -42092,92 +42092,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "Si è verificato un errore durante la riproduzione: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pausa/Riproduci"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Acquisisci"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Si è verificato un errore con il lettore multimediale..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:386
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Attiva la riproduzione con ripetizione"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Fotogramma all'indietro"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Fotogramma in avanti"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Cambia la velocità di riproduzione video"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -66532,7 +66532,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
-msgstr "Scrivi i metadati sui file DNG"
+msgstr "Scrivi i metadati nei file DNG"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:133
 #, kde-format
@@ -66544,7 +66544,7 @@ msgstr "Abilita questa opzione per scrivere i metadati nei file DNG."
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
-msgstr "Se possibile, scrivi i metadati sui file RAW"
+msgstr "Se possibile, scrivi i metadati nei file RAW"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
