@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-06 01:57+0000\n"
+"POT-Creation-Date: 2025-01-07 01:54+0000\n"
 "PO-Revision-Date: 2024-11-17 16:28+0300\n"
 "Last-Translator: Александр Яворский <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -6371,7 +6371,7 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет присвоить ярлык с "
 "оценкой, цветом или ярлык отбора метаданных для изображений.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:79
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6389,31 +6389,35 @@ msgstr ""
 "Нейронная сеть, используемая в фоновом режиме, автоматически создаст ряд "
 "меток, описывающих содержимое, и сохранит результаты в базе данных.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:258
 #, kde-format
 msgid "Selection model: "
 msgstr "Модель выделения:"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:97
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6456,7 +6460,8 @@ msgstr ""
 "Модель может распознавать объекты из обширного набора из более чем 1000 "
 "классов, охватывающих широкий спектр объектов, животных и сцен.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgctxt "@label"
@@ -38650,9 +38655,11 @@ msgid "Keywords: "
 msgstr "Ключевые слова: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Peoples: "
 msgctxt "@label: item properties"
-msgid "Peoples: "
+msgid "People: "
 msgstr "Люди: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
@@ -39801,6 +39808,124 @@ msgstr "На обработку и сортировку"
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Прочее"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:74
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Искать в"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:83
+#: core/utilities/maintenance/main/maintenancedlg.cpp:237
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+"<p><b>Этот инструмент позволяет автоматически присваивать метки изображениям "
+"путём анализа содержимого с помощью нейронной сети для глубокого обучения.</"
+"b></p><p>Параметры ниже определяют модель глубокого обучения, используемую "
+"при анализе содержимого изображения для определения объектов на фотографии. "
+"Нейронная сеть, используемая в фоновом режиме, автоматически создаст ряд "
+"меток, описывающих содержимое, и сохранит результаты в базе данных.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:92
+#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#, kde-format
+msgid "Auto-tagging mode: "
+msgstr "Режим автоматического присваивания меток:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:97
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#, kde-format
+msgid "Clean all and re-assign"
+msgstr "Удалить все данные и переназначить"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#, kde-format
+msgid "Scan non-assigned only"
+msgstr "Сканировать только непривязанные объекты"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag.</p>"
+msgstr ""
+"<p><b>Очистить все данные и переназначить</b>: очистить все уже назначенные "
+"метки и выполнить повторное сканирование всех элементов с нуля.</"
+"p><p><b>Сканировать только не назначенные</b>: сканировать только те "
+"элементы, которым не присвоена метка.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/utilities/maintenance/main/maintenancedlg.cpp:267
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios. It's designed for "
+"objects detections, capable of recognizing and extracting the location of "
+"objects within an image. The limitation on the number of recognizable "
+"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
+"model is a neural network dedicated for more complex object detection "
+"requirements and showcases remarkable capabilities. Despite the additional "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
+"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
+"model is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections. This king of design allows the training of very deep "
+"networks without encountering the vanishing gradient problem. Unlike YOLO, "
+"ResNet50 is primarily focused on image classification and does not provide "
+"object localization. It can recognize objects from a vast set of more than "
+"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+msgstr ""
+"<p><b>YOLOv5 Nano</b>: Эта модель представляет собой нейронную сеть, которая "
+"обеспечивает исключительную скорость и эффективность. Она позволяет без "
+"проблем интегрировать сценарии с обнаружением небольших объектов. С её "
+"помощью можно распознавать и извлекать расположение объектов на изображении. "
+"Ограничение на количество распознаваемых объектов установлено на 80.</"
+"p><p><b>YOLOv5 XLarge</b>: Как и предыдущая, эта модель представляет собой "
+"нейронную сеть, предназначенную для обнаружения более сложных объектов. Она "
+"демонстрирует замечательные возможности. Несмотря на дополнительную "
+"сложность, вносящую больше временной задержки и компьютерных ресурсов, её "
+"рекомендуется использовать для сценариев крупномасштабного обнаружения "
+"объектов, поскольку она обеспечивает более точные прогнозы, хоть и является "
+"медленной.</p><p><b>ResNet50</b>: Эта модель представляет собой особый тип "
+"нейронной сети со свёрткой, образованной путем наложения стопки блоков, "
+"обычно используемых в мощных программах компьютерного зрения для обнаружения "
+"объектов. Эта модель позволяет обучать очень глубокие сети, не сталкиваясь с "
+"проблемой исчезающего градиента. В отличие от YOLO, ResNet50 в первую "
+"очередь сосредоточен на классификации изображений без локализации объектов. "
+"Модель может распознавать объекты из обширного набора из более чем 1000 "
+"классов, охватывающих широкий спектр объектов, животных и сцен.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
+#, kde-format
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr "Параметры"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate to:"
+msgctxt "@title:tab"
+msgid "Translate"
+msgstr "Перевести на:"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -52577,12 +52702,6 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Задание"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Искать в"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
@@ -52799,12 +52918,6 @@ msgstr ""
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Параметры распознавания лиц"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Параметры"
 
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, kde-format
@@ -61631,96 +61744,6 @@ msgstr ""
 msgid "Detect and recognize Faces"
 msgstr "Найти и распознать лица"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:237
-#, kde-format
-msgctxt "@label"
-msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
-msgstr ""
-"<p><b>Этот инструмент позволяет автоматически присваивать метки изображениям "
-"путём анализа содержимого с помощью нейронной сети для глубокого обучения.</"
-"b></p><p>Параметры ниже определяют модель глубокого обучения, используемую "
-"при анализе содержимого изображения для определения объектов на фотографии. "
-"Нейронная сеть, используемая в фоновом режиме, автоматически создаст ряд "
-"меток, описывающих содержимое, и сохранит результаты в базе данных.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
-#, kde-format
-msgid "Auto-tagging mode: "
-msgstr "Режим автоматического присваивания меток:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#, kde-format
-msgid "Clean all and re-assign"
-msgstr "Удалить все данные и переназначить"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
-#, kde-format
-msgid "Scan non-assigned only"
-msgstr "Сканировать только непривязанные объекты"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag.</p>"
-msgstr ""
-"<p><b>Очистить все данные и переназначить</b>: очистить все уже назначенные "
-"метки и выполнить повторное сканирование всех элементов с нуля.</"
-"p><p><b>Сканировать только не назначенные</b>: сканировать только те "
-"элементы, которым не присвоена метка.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:267
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-"<p><b>YOLOv5 Nano</b>: Эта модель представляет собой нейронную сеть, которая "
-"обеспечивает исключительную скорость и эффективность. Она позволяет без "
-"проблем интегрировать сценарии с обнаружением небольших объектов. С её "
-"помощью можно распознавать и извлекать расположение объектов на изображении. "
-"Ограничение на количество распознаваемых объектов установлено на 80.</"
-"p><p><b>YOLOv5 XLarge</b>: Как и предыдущая, эта модель представляет собой "
-"нейронную сеть, предназначенную для обнаружения более сложных объектов. Она "
-"демонстрирует замечательные возможности. Несмотря на дополнительную "
-"сложность, вносящую больше временной задержки и компьютерных ресурсов, её "
-"рекомендуется использовать для сценариев крупномасштабного обнаружения "
-"объектов, поскольку она обеспечивает более точные прогнозы, хоть и является "
-"медленной.</p><p><b>ResNet50</b>: Эта модель представляет собой особый тип "
-"нейронной сети со свёрткой, образованной путем наложения стопки блоков, "
-"обычно используемых в мощных программах компьютерного зрения для обнаружения "
-"объектов. Эта модель позволяет обучать очень глубокие сети, не сталкиваясь с "
-"проблемой исчезающего градиента. В отличие от YOLO, ResNet50 в первую "
-"очередь сосредоточен на классификации изображений без локализации объектов. "
-"Модель может распознавать объекты из обширного набора из более чем 1000 "
-"классов, охватывающих широкий спектр объектов, животных и сцен.</p>"
-
 #: core/utilities/maintenance/main/maintenancedlg.cpp:285
 #, kde-format
 msgid "Auto-tags Assignment"
@@ -61784,7 +61807,7 @@ msgstr ""
 "какие-то лица."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61793,7 +61816,7 @@ msgstr ""
 "Все операции выполнены.\n"
 "Длительность: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:410
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Обслуживание digiKam"

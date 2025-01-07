@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-06 01:57+0000\n"
+"POT-Creation-Date: 2025-01-07 01:54+0000\n"
 "PO-Revision-Date: 2025-01-03 07:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -6222,7 +6222,7 @@ msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur úthlutað einkunn, litmerki "
 "eða sérmerki í lýsigögnum á myndir.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:79
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6240,31 +6240,35 @@ msgstr ""
 "ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
 "röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:258
 #, kde-format
 msgid "Selection model: "
 msgstr "Valhamur:"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:97
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6304,7 +6308,8 @@ msgstr ""
 "hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
 "af hlutum, dýrum og aðstæðum.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgctxt "@label"
@@ -38089,9 +38094,11 @@ msgid "Keywords: "
 msgstr "Stikkorð: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Peoples: "
 msgctxt "@label: item properties"
-msgid "Peoples: "
+msgid "People: "
 msgstr "Fólk: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
@@ -39229,6 +39236,121 @@ msgstr "Geralistinn"
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:74
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Leita í"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:83
+#: core/utilities/maintenance/main/maintenancedlg.cpp:237
+#, kde-format
+msgctxt "@label"
+msgid ""
+"<p><b>This tool allows to assign automatically tags to images by contents "
+"analysis using deep-learning neural network.</b></p><p>The settings below "
+"determines the deep-learning model to use while parsing image contents to "
+"determine the subjects of the photography. The neural network used in "
+"background will generate automatically a serie of tags describing the "
+"contents and store the results in the database.</p>"
+msgstr ""
+"<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
+"frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
+"network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
+"tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
+"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
+"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:92
+#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#, kde-format
+msgid "Auto-tagging mode: "
+msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:97
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#, kde-format
+msgid "Clean all and re-assign"
+msgstr "Hreinsa allt og endurúthluta"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:252
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#, kde-format
+msgid "Scan non-assigned only"
+msgstr "Skanna einungis óúthlutað"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
+"the items with no assigned tag.</p>"
+msgstr ""
+"<p><b>Hreinsa allt og endurúthluta</b>: hreinsa öll merki sem þegar hefur "
+"verið úthlutað og skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
+"einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
+"merki.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/utilities/maintenance/main/maintenancedlg.cpp:267
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+"exceptional speed and efficiency. It enables you to swiftly evaluate the "
+"integration of smaller-scale object detection scenarios. It's designed for "
+"objects detections, capable of recognizing and extracting the location of "
+"objects within an image. The limitation on the number of recognizable "
+"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
+"model is a neural network dedicated for more complex object detection "
+"requirements and showcases remarkable capabilities. Despite the additional "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
+"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
+"model is a specific type of convolutional neural network formed by stacking "
+"residual blocks commonly used to power computer vision applications as "
+"object detections. This king of design allows the training of very deep "
+"networks without encountering the vanishing gradient problem. Unlike YOLO, "
+"ResNet50 is primarily focused on image classification and does not provide "
+"object localization. It can recognize objects from a vast set of more than "
+"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+msgstr ""
+"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
+"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
+"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
+"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
+"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
+"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
+"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
+"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
+"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
+"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
+"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
+"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
+"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
+"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
+"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
+"af hlutum, dýrum og aðstæðum.</p>"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
+#, kde-format
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr "Stillingar"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate to:"
+msgctxt "@title:tab"
+msgid "Translate"
+msgstr "Þýða yfir á:"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -51892,12 +52014,6 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Vinnuferli"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Leita í"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
@@ -52103,12 +52219,6 @@ msgstr ""
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Stillingar fyrir andlitakennsl"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Stillingar"
 
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, kde-format
@@ -60801,93 +60911,6 @@ msgstr "Þetta mun hreinsa út öll greind og merkt andlit."
 msgid "Detect and recognize Faces"
 msgstr "Finna og þekkja andlit"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:237
-#, kde-format
-msgctxt "@label"
-msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
-msgstr ""
-"<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
-"frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
-"network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
-"tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
-"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
-"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
-#, kde-format
-msgid "Auto-tagging mode: "
-msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#, kde-format
-msgid "Clean all and re-assign"
-msgstr "Hreinsa allt og endurúthluta"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
-#, kde-format
-msgid "Scan non-assigned only"
-msgstr "Skanna einungis óúthlutað"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag.</p>"
-msgstr ""
-"<p><b>Hreinsa allt og endurúthluta</b>: hreinsa öll merki sem þegar hefur "
-"verið úthlutað og skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
-"einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
-"merki.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:267
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
-"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
-"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
-"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
-"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
-"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
-"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
-"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
-"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
-"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
-"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
-"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
-"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
-"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
-"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
-"af hlutum, dýrum og aðstæðum.</p>"
-
 #: core/utilities/maintenance/main/maintenancedlg.cpp:285
 #, kde-format
 msgid "Auto-tags Assignment"
@@ -60946,7 +60969,7 @@ msgstr ""
 "verður að bera kennsl á andlit."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60955,7 +60978,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:410
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
