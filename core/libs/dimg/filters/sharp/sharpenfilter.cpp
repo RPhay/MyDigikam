@@ -122,7 +122,7 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
         return;
     }
 
-    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]{});
+    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth] { 0.0 });
 
     if (kernel.isNull())
     {
@@ -204,7 +204,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
         return false;
     }
 
-    QScopedArrayPointer<double> normal_kernel(new double[prm.kernelWidth * prm.kernelWidth]{});
+    QScopedArrayPointer<double> normal_kernel(new double[prm.kernelWidth * prm.kernelWidth] { 0.0 });
 
     if (normal_kernel.isNull())
     {
