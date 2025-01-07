@@ -5,7 +5,7 @@ NEW FEATURES:
 
 RawEngine:       Update internal Libraw to last 20241203 upstream.
 Video:           Update internal QtAVPlayer to last 20250107 upstream (Qt5 only).
-Bundles:         Update to last ExifTool version 13.10.
+Bundles:         Update to last ExifTool version 13.11.
 Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implmentations.
                  There are significant improvements coming in 8.6.0. The pipelines have
