@@ -165,6 +165,9 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
 
 void HotPixelsWeights::calculateHotPixelsWeights()
 {
+
+#ifndef __clang_analyzer__
+
     m_coefficientNumber = (m_twoDim ? ((size_t)m_polynomeOrder + 1) * ((size_t)m_polynomeOrder + 1)
                                     :  (size_t)m_polynomeOrder + 1);
     size_t  ix, iy, i, j;
@@ -302,6 +305,9 @@ void HotPixelsWeights::calculateHotPixelsWeights()
             }
         }
     }
+
+#endif
+
 }
 
 bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const

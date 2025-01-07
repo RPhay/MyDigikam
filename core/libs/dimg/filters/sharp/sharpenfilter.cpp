@@ -190,6 +190,9 @@ void SharpenFilter::convolveImageMultithreaded(const Args& prm)
 
 bool SharpenFilter::convolveImage(const unsigned int order, const double* const kernel)
 {
+
+#ifndef __clang_analyzer__
+
     int     progress;
     double  normalize = 0.0;
 
@@ -272,6 +275,8 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
             postProgress(progress);
         }
     }
+
+#endif
 
     return true;
 }

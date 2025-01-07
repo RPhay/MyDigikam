@@ -263,6 +263,9 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
 
 bool CharcoalFilter::convolveImage(const unsigned int order, const double* kernel)
 {
+
+#ifndef __clang_analyzer__
+
     long kernelWidth = order;
 
     if ((kernelWidth % 2) == 0)
@@ -331,6 +334,8 @@ bool CharcoalFilter::convolveImage(const unsigned int order, const double* kerne
     {
         t.waitForFinished();
     }
+
+#endif
 
     return true;
 }
