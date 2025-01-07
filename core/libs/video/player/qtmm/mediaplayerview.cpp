@@ -302,7 +302,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->rateButton->setArrowType(Qt::NoArrow);
 
     QMenu* const rateMenu         = new QMenu(this);
-    QActionGroup* const rateGroup = new QActionGroup(rateMenu);
+    QActionGroup* const rateGroup = new QActionGroup(this);
 
     QAction* const rate05         = rateGroup->addAction(i18nc("video play rate", "0.5x"));
     rate05->setCheckable(true);
@@ -398,7 +398,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->speaker->setMinimumSize(22, 22);
 
     QMenu* const audioMenu         = new QMenu(this);
-    QActionGroup* const audioGroup = new QActionGroup(audioMenu);
+    QActionGroup* const audioGroup = new QActionGroup(this);
 
     for (const auto& device : QMediaDevices::audioOutputs())
     {
