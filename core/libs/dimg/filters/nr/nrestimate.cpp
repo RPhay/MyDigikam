@@ -158,7 +158,7 @@ void NREstimate::startAnalyse()
 
     //-- Divide into cluster->columns, sample->rows, in matrix standard deviation ---------------------------
 
-    QScopedArrayPointer<int> rowPosition(new int[d->clusterCount]{});
+    QScopedArrayPointer<int> rowPosition(new int[d->clusterCount] { 0 });
 
     // The row position array would just make the hold the number of elements in each cluster
 
@@ -216,7 +216,7 @@ void NREstimate::startAnalyse()
 
     //-- Initialize the rowPosition array -------------------------------------------------------------------
 
-    QScopedArrayPointer<int> rPosition(new int[d->clusterCount]);
+    QScopedArrayPointer<int> rPosition(new int[d->clusterCount] { 0 });
 
     for (uint i = 0 ; runningFlag() && (i < d->clusterCount) ; ++i)
     {

@@ -347,7 +347,7 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
     uint   samples[5] = { 0 };
     uint   size       = width * height;
 
-    QScopedArrayPointer<float> temp(new float[qMax(width, height)]);
+    QScopedArrayPointer<float> temp(new float[qMax(width, height)] { 0.0F });
 
     QList<int> vals = multithreadedSteps(size);
     QList <QFuture<void> > tasks;

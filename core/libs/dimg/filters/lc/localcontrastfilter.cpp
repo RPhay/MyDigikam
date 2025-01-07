@@ -200,7 +200,7 @@ void LocalContrastFilter::process16bitRgbImage(unsigned short* const img, int si
 #ifndef __clang_analyzer__
 
     int size = sizex * sizey;
-    QScopedArrayPointer<float> tmpimage(new float[size * 3] { } );
+    QScopedArrayPointer<float> tmpimage(new float[size * 3] { 0.0F } );
 
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {
@@ -325,8 +325,8 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
 #ifndef __clang_analyzer__
 
     int size = sizex * sizey;
-    QScopedArrayPointer<float> blurimage(new float[size]     { } );
-    QScopedArrayPointer<float> srcimg   (new float[size * 3] { } );
+    QScopedArrayPointer<float> blurimage(new float[size]     { 0.0F } );
+    QScopedArrayPointer<float> srcimg   (new float[size * 3] { 0.0F } );
 
     for (int i = 0 ; i < (size * 3) ; ++i)
     {

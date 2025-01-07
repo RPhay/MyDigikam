@@ -139,7 +139,7 @@ QString LensFunFilter::DisplayableName()
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 {
-    QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3]);
+    QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3] { 0.0F });
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)
     {
@@ -184,7 +184,7 @@ void LensFunFilter::filterVIGMultithreaded(uint start, uint stop)
 
 void LensFunFilter::filterDSTMultithreaded(uint start, uint stop)
 {
-    QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3]);
+    QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3] { 0.0F });
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)
     {
