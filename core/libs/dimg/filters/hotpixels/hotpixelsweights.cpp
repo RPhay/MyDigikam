@@ -150,7 +150,7 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
             {
                 // Allocate m_width columns on each row
 
-                m_weightMatrices[i][j] = new double[m_width];
+                m_weightMatrices[i][j] = new double[m_width] { 0.0 };
 
                 for (uint k = 0 ; k < m_width ; ++k)
                 {
@@ -184,10 +184,10 @@ void HotPixelsWeights::calculateHotPixelsWeights()
             for (x = (-1)*iPolynomeOrder ; (x < iWidth + iPolynomeOrder) ; ++x)
             {
                 if (
-                    ((x < 0)       && (y < 0)        && (-x - y < iPolynomeOrder + 2))                                  ||
-                    ((x < 0)       && (y >= iHeight) && (-x + y - iHeight < iPolynomeOrder + 1))                        ||
-                    ((x >= iWidth) && (y < 0)        && ( x - y - iWidth < iPolynomeOrder + 1))                         ||
-                    ((x >= iWidth) && (y >= iHeight) && ( x + y - iWidth - iHeight < iPolynomeOrder))                   ||
+                    ((x < 0)       && (y < 0)        && ((-x - y)                   < (iPolynomeOrder + 2)))            ||
+                    ((x < 0)       && (y >= iHeight) && ((-x + y - iHeight)         < (iPolynomeOrder + 1)))            ||
+                    ((x >= iWidth) && (y < 0)        && ((x - y - iWidth)           < (iPolynomeOrder + 1)))            ||
+                    ((x >= iWidth) && (y >= iHeight) && ((x + y - iWidth - iHeight) < iPolynomeOrder))                  ||
                     ((x < 0)       && (y >= 0)       && (y < iHeight)) || ((x >= iWidth)  && (y >= 0) && (y < iHeight)) ||
                     ((y < 0)       && (x >= 0)       && (x < iWidth))  || ((y >= iHeight) && (x >= 0) && (x < iWidth))
                    )
@@ -218,9 +218,9 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
     // Allocate memory.
 
-    QScopedArrayPointer<double> matrix (new double[m_coefficientNumber * m_coefficientNumber]{});
-    QScopedArrayPointer<double> vector0(new double[m_positions.count() * m_coefficientNumber]{});
-    QScopedArrayPointer<double> vector1(new double[m_positions.count() * m_coefficientNumber]{});
+    QScopedArrayPointer<double> matrix (new double[m_coefficientNumber * m_coefficientNumber] { 0.0 });
+    QScopedArrayPointer<double> vector0(new double[m_positions.count() * m_coefficientNumber] { 0.0 });
+    QScopedArrayPointer<double> vector1(new double[m_positions.count() * m_coefficientNumber] { 0.0 });
 
     // Calculate coefficient matrix and vectors
 
@@ -234,12 +234,12 @@ void HotPixelsWeights::calculateHotPixelsWeights()
         for (j = 0 ; j < (size_t)m_positions.count() ; ++j)
         {
             vector0[(int)(iy * m_positions.count() + j)] = polyTerm(iy, m_positions.at((int)j).x(),
-                                                                   m_positions.at((int)j).y(), m_polynomeOrder);
+                                                                    m_positions.at((int)j).y(), m_polynomeOrder);
 
             for (ix = 0 ; ix < m_coefficientNumber ; ++ix)
             {
                 matrix[(int)(iy* m_coefficientNumber + ix)] += (vector0[(int)(iy * m_positions.count() + j)] *
-                                                              polyTerm(ix, m_positions.at((int)j).x(), m_positions.at((int)j).y(), m_polynomeOrder));
+                                                                polyTerm(ix, m_positions.at((int)j).x(), m_positions.at((int)j).y(), m_polynomeOrder));
             }
         }
     }

@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                   = QLatin1String("hotpixels Tool");
     const QString configAllBlackFrameFilesEntry     = QLatin1String("All Black Frame Files");
     const QString configCurrentBlackFrameFileEntry  = QLatin1String("Current Black Frame File");

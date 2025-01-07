@@ -42,7 +42,6 @@
 #include "dimg.h"
 #include "loadsavethread.h"
 
-
 namespace Digikam
 {
 
@@ -51,6 +50,8 @@ class Q_DECL_HIDDEN BlackFrameParser::Private
 public:
 
     Private() = default;
+
+public:
 
     DImg            image;
 

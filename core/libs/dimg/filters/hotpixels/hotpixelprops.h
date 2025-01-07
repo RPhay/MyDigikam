@@ -44,13 +44,15 @@ public:
 
     bool operator==(const HotPixelProps& p)                     const;
 
-    // Helper methods to stream container data with string.
+    /// Helper methods to stream container data with string.
+
     QString toString()                                          const;
     bool fromString(const QString& str);
 
 public:
 
-    // Helper methods to stream list of containers data with string list.
+    /// Helper methods to stream list of containers data with string list.
+
     static QStringList toStringList(const QList<HotPixelProps>& lst);
     static QList<HotPixelProps> fromStringList(const QStringList& hplst);
 

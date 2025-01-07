@@ -30,6 +30,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString          tip;
 
     QTreeWidget*     view = nullptr;

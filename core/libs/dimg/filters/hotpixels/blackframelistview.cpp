@@ -35,11 +35,13 @@
 namespace Digikam
 {
 
- class Q_DECL_HIDDEN BlackFrameListView::Private
+class Q_DECL_HIDDEN BlackFrameListView::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     QTimer*            toolTipTimer = nullptr;
     BlackFrameToolTip* toolTip      = nullptr;
