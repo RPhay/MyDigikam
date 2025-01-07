@@ -343,7 +343,7 @@ void BlurFXFilter::radialBlurMultithreaded(const Args& prm)
     DColor color;
     int offset;
 
-    QScopedArrayPointer<double> nMultArray(new double[prm.Distance * 2 + 1]);
+    QScopedArrayPointer<double> nMultArray(new double[prm.Distance * 2 + 1] { 0.0 });
 
     for (int i = -prm.Distance ; i <= prm.Distance ; ++i)
     {
@@ -540,7 +540,7 @@ void BlurFXFilter::farBlur(DImg* const orgImage, DImg* const destImage, int Dist
     // we need to create our kernel
     // e.g. distance = 3, so kernel={3 1 1 2 1 1 3}
 
-    QScopedArrayPointer<int> nKern(new int[Distance * 2 + 1]);
+    QScopedArrayPointer<int> nKern(new int[Distance * 2 + 1] { 0 });
 
     for (int i = 0 ; i < Distance * 2 + 1 ; ++i)
     {
@@ -674,8 +674,8 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
 
     // we will alloc size and calc the possible results
 
-    QScopedArrayPointer<int> lpXArray(new int[nCount]);
-    QScopedArrayPointer<int> lpYArray(new int[nCount]);
+    QScopedArrayPointer<int> lpXArray(new int[nCount] { 0 });
+    QScopedArrayPointer<int> lpYArray(new int[nCount] { 0 });
 
     for (int i = 0 ; i < nCount ; ++i)
     {
@@ -984,10 +984,10 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
     int progress;
 
     quint64 numBytes = orgImage->numBytes();
-    QScopedArrayPointer<uchar> layer1(new uchar[numBytes]);
-    QScopedArrayPointer<uchar> layer2(new uchar[numBytes]);
-    QScopedArrayPointer<uchar> layer3(new uchar[numBytes]);
-    QScopedArrayPointer<uchar> layer4(new uchar[numBytes]);
+    QScopedArrayPointer<uchar> layer1(new uchar[numBytes] { 0 });
+    QScopedArrayPointer<uchar> layer2(new uchar[numBytes] { 0 });
+    QScopedArrayPointer<uchar> layer3(new uchar[numBytes] { 0 });
+    QScopedArrayPointer<uchar> layer4(new uchar[numBytes] { 0 });
 
     QList<int> vals = multithreadedSteps(orgImage->width());
     QList <QFuture<void> > tasks;
@@ -1494,7 +1494,7 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
         StrengthRange = (StrengthRange + 1) * 256 - 1;
     }
 
-    QScopedArrayPointer<uchar> pBlur(new uchar[orgImage->numBytes()]);
+    QScopedArrayPointer<uchar> pBlur(new uchar[orgImage->numBytes()] { 0 });
 
     // We need to copy our bits to blur bits
 
@@ -1636,10 +1636,10 @@ void BlurFXFilter::frostGlass(DImg* const orgImage, DImg* const destImage, int F
 
     // it is a huge optimization to allocate these here once
 
-    QScopedArrayPointer<uchar> IntensityCount(new uchar[range + 1]);
-    QScopedArrayPointer<uint> AverageColorR(new uint[range + 1]);
-    QScopedArrayPointer<uint> AverageColorG(new uint[range + 1]);
-    QScopedArrayPointer<uint> AverageColorB(new uint[range + 1]);
+    QScopedArrayPointer<uchar> IntensityCount(new uchar[range + 1] { 0 });
+    QScopedArrayPointer<uint> AverageColorR(new uint[range + 1] { 0 });
+    QScopedArrayPointer<uint> AverageColorG(new uint[range + 1] { 0 });
+    QScopedArrayPointer<uint> AverageColorB(new uint[range + 1] { 0 });
 
     for (h = 0; runningFlag() && (h < Height); ++h)
     {
@@ -2105,7 +2105,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
     int nKernelWidth = Radius * 2 + 1;
     int range = orgImage->sixteenBit() ? 65536 : 256;
 
-    QScopedArrayPointer<uchar> pBlur(new uchar[orgImage->numBytes()]);
+    QScopedArrayPointer<uchar> pBlur(new uchar[orgImage->numBytes()] { 0 });
 
     // We need to copy our bits to blur bits
 

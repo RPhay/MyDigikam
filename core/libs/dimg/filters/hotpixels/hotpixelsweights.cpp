@@ -325,7 +325,7 @@ bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
  */
 void HotPixelsWeights::matrixInv (double* const a, const size_t size)
 {
-    QScopedArrayPointer<double> b(new double[size * size]{});
+    QScopedArrayPointer<double> b(new double[size * size] { 0.0 });
     size_t ix, iy, j;
 
     // Copy matrix to new location.

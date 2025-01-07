@@ -92,12 +92,12 @@ void LocalContrastFilter::filterImage()
         {
             // sixteen bit image
 
-            QScopedArrayPointer<unsigned short> data(new unsigned short[size] {});
+            QScopedArrayPointer<unsigned short> data(new unsigned short[size] { 0 });
             unsigned short* dataImg = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
             for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
             {
-                data[i    ] = dataImg[j];
+                data[i    ] = dataImg[j    ];
                 data[i + 1] = dataImg[j + 1];
                 data[i + 2] = dataImg[j + 2];
             }
@@ -124,7 +124,7 @@ void LocalContrastFilter::filterImage()
         {
             // eight bit image
 
-            QScopedArrayPointer<uchar> data(new uchar[size] { } );
+            QScopedArrayPointer<uchar> data(new uchar[size] { 0 } );
 
             for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
             {
@@ -162,7 +162,7 @@ void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int size
 #ifndef __clang_analyzer__
 
     int size = sizex * sizey;
-    QScopedArrayPointer<float> tmpimage(new float[size * 3] { } );
+    QScopedArrayPointer<float> tmpimage(new float[size * 3] { 0.0F } );
 
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {
@@ -325,7 +325,7 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
 #ifndef __clang_analyzer__
 
     int size = sizex * sizey;
-    QScopedArrayPointer<float> blurimage(new float[size]     { 0.0F } );
+    QScopedArrayPointer<float> blurimage(new float[size    ] { 0.0F } );
     QScopedArrayPointer<float> srcimg   (new float[size * 3] { 0.0F } );
 
     for (int i = 0 ; i < (size * 3) ; ++i)

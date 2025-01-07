@@ -215,11 +215,11 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         if (imageSixteenBit())
         {
-            data = new uchar[imageWidth() * 8 * sizeof(uchar)];
+            data = new uchar[imageWidth() * 8 * sizeof(uchar)] { 0 };
         }
         else
         {
-            data = new uchar[imageWidth() * 4 * sizeof(uchar)];
+            data = new uchar[imageWidth() * 4 * sizeof(uchar)] { 0 };
         }
     }
     else
@@ -230,11 +230,11 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         if (imageSixteenBit())
         {
-            data = new uchar[imageWidth() * 6 * sizeof(uchar)];
+            data = new uchar[imageWidth() * 6 * sizeof(uchar)] { 0 };
         }
         else
         {
-            data = new uchar[imageWidth() * 3 * sizeof(uchar)];
+            data = new uchar[imageWidth() * 3 * sizeof(uchar)] { 0 };
         }
     }
 

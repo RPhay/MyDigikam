@@ -886,7 +886,7 @@ void AutoCrop::startAnalyse()
 
         // We need to find the maxima between the first two local minima from either side
 
-        int* const blackpointCount = new int[threshold.width()]{};
+        int* const blackpointCount = new int[threshold.width()] { 0 };
         int leftminima             = 0;
         int rightminima            = (threshold.width()-1);
         int topCropLine            = 0;

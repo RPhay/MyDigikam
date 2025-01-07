@@ -563,7 +563,7 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
 
     if (size)
     {
-        QScopedArrayPointer<char> databuf(new char[size]);
+        QScopedArrayPointer<char> databuf(new char[size] { 0 });
         int read;
 
         // Read first 100 kB
@@ -622,7 +622,7 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
 
     if (fsize)
     {
-        QScopedArrayPointer<char> databuf(new char[fsize]);
+        QScopedArrayPointer<char> databuf(new char[fsize] { 0 });
         qint64 read;
 
         for (int sp = 0 ; sp < 6 ; ++sp)

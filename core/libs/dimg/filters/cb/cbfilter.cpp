@@ -338,19 +338,19 @@ void CBFilter::adjustRGB(double r, double g, double b, double a, bool sixteenBit
 
     if (sixteenBit)
     {
-        r_table     = new int[65536];
-        g_table     = new int[65536];
-        b_table     = new int[65536];
-        a_table     = new int[65536];
-        dummy_table = new int[65536];
+        r_table     = new int[65536] { 0 };
+        g_table     = new int[65536] { 0 };
+        b_table     = new int[65536] { 0 };
+        a_table     = new int[65536] { 0 };
+        dummy_table = new int[65536] { 0 };
     }
     else
     {
-        r_table     = new int[256];
-        g_table     = new int[256];
-        b_table     = new int[256];
-        a_table     = new int[256];
-        dummy_table = new int[256];
+        r_table     = new int[256] { 0 };
+        g_table     = new int[256] { 0 };
+        b_table     = new int[256] { 0 };
+        a_table     = new int[256] { 0 };
+        dummy_table = new int[256] { 0 };
     }
 
     if ((r == g) && (r == b) && (r == a))

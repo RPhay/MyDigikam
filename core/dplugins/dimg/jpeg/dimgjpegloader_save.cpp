@@ -242,7 +242,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         // -------------------------------------------------------------------
         // Write Image data.
 
-        uchar* line       = new uchar[w * 3];
+        uchar* line       = new uchar[w * 3] { 0 };
         uchar* dstPtr     = nullptr;
         uint   checkPoint = 0;
         cleanupData->setLine(line);

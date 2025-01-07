@@ -718,7 +718,7 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
     x2 = u2;
     y2 = v2;
 
-    QScopedArrayPointer<uchar> dest(new uchar[width * bytesDepth]);
+    QScopedArrayPointer<uchar> dest(new uchar[width * bytesDepth] { 0 });
 
     uinc = m.coeff[0][0];
     vinc = m.coeff[1][0];
