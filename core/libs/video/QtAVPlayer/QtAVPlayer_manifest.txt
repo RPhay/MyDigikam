@@ -1,2 +1,2 @@
-+QTAVPLAYER Snapshot 2024-12-10
-QtAVPlayer:f11e0cdaaabcc7cd1d9a07fe350a4de549b72296
++QTAVPLAYER Snapshot 2025-01-07
+QtAVPlayer:c2cd8d374eb5d661f878db4be86ad65876c4e9ac

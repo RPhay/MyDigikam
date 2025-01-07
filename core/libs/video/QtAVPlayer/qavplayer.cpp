@@ -1005,6 +1005,12 @@ void QAVPlayer::setSubtitleStreams(const QList<QAVStream> &streams)
         Q_EMIT subtitleStreamsChanged(d->demuxer.currentSubtitleStreams());
 }
 
+AVFormatContext *QAVPlayer::avctx() const
+{
+    Q_D(const QAVPlayer);
+    return d->demuxer.avctx();
+}
+
 QAVPlayer::State QAVPlayer::state() const
 {
     Q_D(const QAVPlayer);
@@ -1339,7 +1345,7 @@ void QAVPlayer::setVideoCodecOptions(const QMap<QString, QString> &opts)
 }
 
 /*!
- * @brief Use to set log level of FFmpeg backend
+ * \brief Use to set log level of FFmpeg backend
  * \param[in] level
  * Level log to use. Please see:
  * https://ffmpeg.org/doxygen/trunk/group__lavu__log__constants.html
