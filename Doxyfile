@@ -211,7 +211,7 @@ SHORT_NAMES            = NO
 # description.)
 # The default value is: NO.
 
-JAVADOC_AUTOBRIEF      = NO
+JAVADOC_AUTOBRIEF      = YES
 
 # If the JAVADOC_BANNER tag is set to YES then doxygen will interpret a line
 # such as
@@ -544,7 +544,7 @@ EXTRACT_PACKAGE        = NO
 # included in the documentation.
 # The default value is: NO.
 
-EXTRACT_STATIC         = NO
+EXTRACT_STATIC         = YES
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
 # locally in source files will be included in the documentation. If set to NO,
@@ -703,7 +703,7 @@ SORT_BRIEF_DOCS        = YES
 # detailed member documentation.
 # The default value is: NO.
 
-SORT_MEMBERS_CTORS_1ST = NO
+SORT_MEMBERS_CTORS_1ST = YES
 
 # If the SORT_GROUP_NAMES tag is set to YES then doxygen will sort the hierarchy
 # of group names into alphabetical order. If set to NO the group names will
@@ -988,7 +988,9 @@ INPUT_FILE_ENCODING    =
 FILE_PATTERNS          = *.c \
                          *.cpp \
                          *.h \
-                         *.dox
+                         *.dox \
+                         *.mm \
+                         *.md
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1031,19 +1033,28 @@ EXCLUDE_PATTERNS       = */project/* \
                          */po/* \
                          */html/* \
                          */latex/* \
-                         */test-data/* \
                          */o2/* \
                          */lqr/* \
                          */cimg/* \
                          */core/dplugins/* \
                          */core/data/* \
                          */core/cmake/* \
-                         */core/tests/* \
                          */libjpeg/* \
                          */libpgf/* \
                          */libraw/* \
                          */QtAVPlayer/* \
-                         */geolocation/engine/*
+                         */geolocation/engine/* \
+                         */.git/* \
+                         */test-data/* \
+                         */test/* \
+                         */tests/* \
+                         */autotests/* \
+                         *.moc.* \
+                         moc* \
+                         *.all_cpp.* \
+                         *unload.* \
+                         *_p.cpp \
+                         *_p.h
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
@@ -1067,7 +1078,9 @@ EXCLUDE_SYMBOLS        = cimg_library \
                          std \
                          Solid \
                          boost \
-                         KSaneIface
+                         KSaneIface \
+                         iterator \
+                         const_iterator
 
 # The EXAMPLE_PATH tag can be used to specify one or more files or directories
 # that contain example code fragments that are included (see the \include
@@ -1189,7 +1202,7 @@ INLINE_SOURCES         = NO
 # Fortran comments will always remain visible.
 # The default value is: YES.
 
-STRIP_CODE_COMMENTS    = YES
+STRIP_CODE_COMMENTS    = NO
 
 # If the REFERENCED_BY_RELATION tag is set to YES then for each documented
 # entity all documented functions referencing it will be listed.
@@ -2434,6 +2447,16 @@ PREDEFINED             = Q_DECL_HIDDEN= \
                          Q_OS_LINUX= \
                          Q_OS_UNIX= \
                          Q_PROCESSOR_X86_64= \
+                         Q_SLOTS=slots \
+                         Q_SIGNALS=signals \
+                         Q_DECL_CONSTEXPR=constexpr \
+                         Q_DECL_FINAL=final \
+                         Q_DECL_NULLPTR=nullptr \
+                         Q_DECL_OVERRIDE=override \
+                         Q_REQUIRED_RESULT= \
+                         "Q_DECL_EQ_DEFAULT= = default" \
+                         "Q_DECL_EQ_DELETE= = delete" \
+                         "Q_DECLARE_FLAGS(Flags, Enum)=typedef QFlags<Enum> Flags;" \
                          HAVE_GEOLOCATION= \
                          HAVE_MEDIA_PLAYER= \
                          HAVE_QWEBENGINE= \
