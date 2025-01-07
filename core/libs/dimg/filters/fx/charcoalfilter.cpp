@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     double pencil           = 5.0;
     double smooth           = 10.0;
     int    globalProgress   = 0;
@@ -109,7 +111,7 @@ void CharcoalFilter::filterImage()
         return;
     }
 
-    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]{});
+    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth] { 0.0 });
 
     if (kernel.isNull())
     {
@@ -272,11 +274,12 @@ bool CharcoalFilter::convolveImage(const unsigned int order, const double* kerne
     long    i;
     double  normalize = 0.0;
 
-    QScopedArrayPointer<double> normal_kernel(new double[kernelWidth * kernelWidth]);
+    QScopedArrayPointer<double> normal_kernel(new double[kernelWidth * kernelWidth] { 0.0 });
 
     if (!normal_kernel)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
+
         return false;
     }
 
