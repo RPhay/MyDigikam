@@ -234,7 +234,6 @@ public:
 
 public:
 
-    static TableViewColumnDescription getDescription();
     static bool compareHelperBoolFailCheck(const bool okA, const bool okB, ColumnCompareResult* const result);
 
     template<class MyType>
