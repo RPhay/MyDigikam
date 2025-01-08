@@ -162,7 +162,7 @@ public:
      * @param currentBranch              The branch from where the scan starts.
      * @param currentRow                 The row of the currentBranch.
      * @param tagAddressElements         A list containing address elements. Example: {Country}, {City}...
-     * @param currentAddressElementIndex The current element in the tag adress list.
+     * @param currentAddressElementIndex The current element in the tag address list.
      *
      * @note tagAddressElements contains address tag: Places,Spain,Barcelona
      *       readdTag climbs the tree and checks on each level if tagAddressElements[level] is found.
