@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT DCategoryDrawer : public QObject       // clazy:exclude=cto
 public:
 
     /**
-     * Construct a category drawer for a given view
+     * @brief Construct a category drawer for a given view
      */
     explicit DCategoryDrawer(DCategorizedView* const view);
     ~DCategoryDrawer()                                            override;
@@ -58,12 +58,12 @@ public:
     DCategorizedView* view()                                const;
 
     /**
-     * This method purpose is to draw a category represented by the given
+     * @brief This method purpose is to draw a category represented by the given
      *
-     * @param index with the given
-     * @param sortRole sorting role
-     * @param option painter style options
-     * @param painter painter instance
+     * @param index    The index with the given
+     * @param sortRole The sorting role
+     * @param option   The painter style options
+     * @param painter  The painter instance
      *
      * @note This method will be called one time per category, always with the
      *       first element in that category
@@ -93,12 +93,12 @@ public:
 Q_SIGNALS:
 
     /**
-     * This signal becomes emitted when collapse or expand has been clicked.
+     * @brief This signal becomes emitted when collapse or expand has been clicked.
      */
     void collapseOrExpandClicked(const QModelIndex& index);
 
     /**
-     * Emit this signal on your subclass implementation to notify that something happened. Usually
+     * @brief Emit this signal on your subclass implementation to notify that something happened. Usually
      * this will be triggered when you have received an event, and its position matched some "hot spot".
      *
      * You give this action the integer you want, and having connected this signal to your code,
@@ -109,11 +109,11 @@ Q_SIGNALS:
 protected:
 
     /**
-     * Method called when the mouse button has been pressed.
+     * @brief Method called when the mouse button has been pressed.
      *
-     * @param index The representative index of the block of items.
+     * @param index     The representative index of the block of items.
      * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * @param event     The mouse event.
      *
      * @warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
@@ -122,11 +122,11 @@ protected:
     virtual void mouseButtonPressed(const QModelIndex& index, const QRect& blockRect, QMouseEvent* event);
 
     /**
-     * Method called when the mouse button has been released.
+     * @brief Method called when the mouse button has been released.
      *
-     * @param index The representative index of the block of items.
+     * @param index     The representative index of the block of items.
      * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * @param event     The mouse event.
      *
      * @warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
@@ -135,20 +135,20 @@ protected:
     virtual void mouseButtonReleased(const QModelIndex& index, const QRect& blockRect, QMouseEvent* event);
 
     /**
-     * Method called when the mouse has been moved.
+     * @brief Method called when the mouse has been moved.
      *
-     * @param index The representative index of the block of items.
+     * @param index     The representative index of the block of items.
      * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * @param event     The mouse event.
      */
     virtual void mouseMoved(const QModelIndex& index, const QRect& blockRect, QMouseEvent* event);
 
     /**
-     * Method called when the mouse button has been double clicked.
+     * @brief Method called when the mouse button has been double clicked.
      *
-     * @param index The representative index of the block of items.
+     * @param index     The representative index of the block of items.
      * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * @param event     The mouse event.
      *
      * @warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
@@ -157,9 +157,9 @@ protected:
     virtual void mouseButtonDoubleClicked(const QModelIndex& index, const QRect& blockRect, QMouseEvent* event);
 
     /**
-     * Method called when the mouse button has left this block.
+     * @brief Method called when the mouse button has left this block.
      *
-     * @param index The representative index of the block of items.
+     * @param index     The representative index of the block of items.
      * @param blockRect The rect occupied by the block of items.
      */
     virtual void mouseLeft(const QModelIndex& index, const QRect& blockRect);
