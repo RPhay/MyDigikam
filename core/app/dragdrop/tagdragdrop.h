@@ -31,7 +31,7 @@ public:
 
     explicit TagDragDropHandler(TagModel* const model);
 
-    TagModel* model()       const;
+    TagModel* model()                              const override;
 
     bool dropEvent(QAbstractItemView* view,
                    const QDropEvent* e,

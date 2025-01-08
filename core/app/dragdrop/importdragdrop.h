@@ -37,7 +37,7 @@ public:
 
     explicit ImportDragDropHandler(ImportItemModel* const model);
 
-    ImportItemModel* model()   const;
+    ImportItemModel* model()                              const override;
 
     bool           dropEvent(QAbstractItemView* view,
                              const QDropEvent* e,

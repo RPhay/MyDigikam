@@ -37,7 +37,7 @@ public:
     explicit AbstractItemDragDropHandler(QAbstractItemModel* const model);
     virtual ~AbstractItemDragDropHandler();
 
-    QAbstractItemModel* model()     const;
+    virtual QAbstractItemModel* model()     const;
 
     /**
      * Gives the view and the occurring drop event.
@@ -57,7 +57,7 @@ public:
      * Returns the supported mime types.
      * Called by the default implementation of model's mimeTypes().
      */
-    virtual QStringList mimeTypes() const;
+    virtual QStringList mimeTypes()         const;
 
     /**
      * Create a mime data object for starting a drag from the given Albums

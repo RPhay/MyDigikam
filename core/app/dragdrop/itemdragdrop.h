@@ -36,8 +36,8 @@ public:
 
     explicit ItemDragDropHandler(ItemModel* const model);
 
-    ItemModel*      model()      const;
-    ItemAlbumModel* albumModel() const;
+    ItemModel*      model()                         const override;
+    ItemAlbumModel* albumModel()                    const;
 
     /**
      * Enables a mode in which dropping will never start an operation
