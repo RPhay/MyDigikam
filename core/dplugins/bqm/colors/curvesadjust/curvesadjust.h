@@ -43,7 +43,7 @@ public:
 
 public Q_SLOTS:
 
-    void slotResetSettingsToDefault();
+    void slotResetSettingsToDefault()                       override;
 
 private:
 
