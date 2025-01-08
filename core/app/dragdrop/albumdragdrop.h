@@ -31,7 +31,7 @@ public:
 
     explicit AlbumDragDropHandler(AlbumModel* const model);
 
-    AlbumModel* model() const;
+    AlbumModel* model()                            const override;
 
     bool dropEvent(QAbstractItemView* view,
                    const QDropEvent* e,

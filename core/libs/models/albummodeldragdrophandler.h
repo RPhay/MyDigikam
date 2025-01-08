@@ -34,7 +34,7 @@ public:
     explicit AlbumModelDragDropHandler(AbstractAlbumModel* model);
     ~AlbumModelDragDropHandler() override = default;
 
-    AbstractAlbumModel* model()     const;
+    virtual AbstractAlbumModel* model()     const;
 
     /**
      * Gives the view and the occurring drop event.
