@@ -66,7 +66,7 @@ public:
                                            const char*        host,
                                            const char*        file_path);
 
-    void addAlbumsOnServer(const MediaServerMap& map);
+    virtual void addAlbumsOnServer(const MediaServerMap& map);
 
 protected:
 

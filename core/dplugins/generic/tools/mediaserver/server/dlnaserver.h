@@ -61,7 +61,7 @@ public:
                              NPT_UInt16   port = 0,
                              bool         port_rebind = false);
 
-    void addAlbumsOnServer(const MediaServerMap& map);
+    void addAlbumsOnServer(const MediaServerMap& map) override;
 
     NPT_Result SetupIcons() override;
 
