@@ -64,8 +64,8 @@ public:
     /**
      * @brief add new node to KD-Tree
      *
-     * @param position K-dimension vector
-     * @param identity identity of this face vector
+     * @param position The K-dimension vector
+     * @param identity The identity of this face vector
      *
      * @return the KD-Tree node base instance
      */
@@ -74,10 +74,10 @@ public:
     /**
      * @brief create an ew node
      *
-     * @param nodePos   extracted face vectors
-     * @param identity  identity of this face vector
-     * @param splitAxis current axis/dimension of the vector
-     * @param dimension number of dimensions (usually 128)
+     * @param nodePos   The extracted face vectors
+     * @param identity  The identity of this face vector
+     * @param splitAxis The current axis/dimension of the vector
+     * @param dimension The number of dimensions (usually 128)
      *
      * @return the KD-Tree node base instance
      */
