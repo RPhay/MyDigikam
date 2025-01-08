@@ -60,7 +60,7 @@ public:
     {
     }
 
-    AlbumSelectionTreeView* view() const
+    AlbumSelectionTreeView* view() const override
     {
         return static_cast<AlbumSelectionTreeView*>(ItemViewToolTip::view());
     }
