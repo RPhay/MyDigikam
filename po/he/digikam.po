@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 01:54+0000\n"
+"POT-Creation-Date: 2025-01-08 01:55+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3933,7 +3933,7 @@ msgstr ""
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, kde-format
 msgid "Size"
 msgstr "גודל"
@@ -4494,7 +4494,7 @@ msgstr "חשיפה אוטומטית"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:77
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
 #, kde-format
 msgid "Filter:"
 msgstr "מסנן:"
@@ -15394,7 +15394,7 @@ msgstr "תהליך יצירת התיקייה למסד הנתונים נכשל"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:66
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -30037,7 +30037,7 @@ msgstr "מסנן אדום"
 msgid "Blur FX Filter"
 msgstr "מסנן אדום"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "צבע אפקטים"
@@ -30525,7 +30525,7 @@ msgstr "הערכה מהירה"
 msgid "Enable fast approximation when rendering images."
 msgstr "אפשרות להערכה מהירה בעת תצוגת תמונות."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgctxt ""
@@ -30534,13 +30534,13 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "נקודות:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:259
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Remove Black Frame"
 msgstr "מסגרת שחורה..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, fuzzy, kde-format
 msgid "Clear List"
@@ -30597,36 +30597,36 @@ msgstr "נקודות:"
 msgid "Hot Pixels Tool"
 msgstr "נקודות:"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
 #, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "ממוצע"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:80
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
 #, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "קווי"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:83
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "ריבועי"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "מרובע"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:85
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgid "Black Frame..."
 msgstr "מסגרת שחורה..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -30642,19 +30642,19 @@ msgid ""
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:215
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "בחירת תמונה בעלת מסגרת שחורה"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:219
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:221
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "מסגרת שחורה..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:222
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""

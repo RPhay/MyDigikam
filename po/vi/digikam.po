@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 01:54+0000\n"
+"POT-Creation-Date: 2025-01-08 01:55+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3887,7 +3887,7 @@ msgstr "Đường dẫn"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, kde-format
 msgid "Size"
 msgstr "Cỡ"
@@ -4445,7 +4445,7 @@ msgstr "Tự động phơi nắng"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:77
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
 #, kde-format
 msgid "Filter:"
 msgstr "Lọc:"
@@ -15728,7 +15728,7 @@ msgstr "Lỗi tạo thư mục"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:66
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -30703,7 +30703,7 @@ msgstr "Lọc đỏ"
 msgid "Blur FX Filter"
 msgstr "Lọc đỏ"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "Hiệu ứng màu"
@@ -31214,7 +31214,7 @@ msgstr "Ước lượng nhanh"
 msgid "Enable fast approximation when rendering images."
 msgstr "<p>Bật khả năng ước lượng nhanh để vẽ ảnh."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #, fuzzy, kde-format
 msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
@@ -31222,13 +31222,13 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "Điểm ảnh nóng..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:259
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Remove Black Frame"
 msgstr "Khung khối..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, fuzzy, kde-format
 msgid "Clear List"
@@ -31280,36 +31280,36 @@ msgstr "Điểm ảnh nóng..."
 msgid "Hot Pixels Tool"
 msgstr "Điểm ảnh nóng..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
 #, fuzzy, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "Trung bình"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:80
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
 #, fuzzy, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "Tuyến"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:83
 #, fuzzy, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "Bậc hai"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, fuzzy, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "Bậc ba"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:85
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgid "Black Frame..."
 msgstr "Khung khối..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -31325,19 +31325,19 @@ msgid ""
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:215
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "Chọn ảnh khung đen"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:219
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:221
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Khung khối..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:222
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""

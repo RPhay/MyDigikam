@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 01:54+0000\n"
+"POT-Creation-Date: 2025-01-08 01:55+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -4126,7 +4126,7 @@ msgstr "Localização"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, kde-format
 msgid "Size"
 msgstr "Tamanho"
@@ -4671,7 +4671,7 @@ msgstr "Exposição Automática"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:77
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
 #, kde-format
 msgid "Filter:"
 msgstr "Filtro:"
@@ -16457,7 +16457,7 @@ msgstr "Criar Modelo para o Calendário"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:66
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -32129,7 +32129,7 @@ msgstr "Filtro de Borrão"
 msgid "Blur FX Filter"
 msgstr "Filtro FX de Borrão"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Efeito de Carvão"
@@ -32636,7 +32636,7 @@ msgstr "Aproximação rápida"
 msgid "Enable fast approximation when rendering images."
 msgstr "Permite uma aproximação rápida para representar a imagem."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #, kde-format
 msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
@@ -32644,12 +32644,12 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "Pixels Queimados"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:259
 #, kde-format
 msgid "Remove Black Frame"
 msgstr "Remover o Contorno Preto"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, kde-format
 msgid "Clear List"
@@ -32700,36 +32700,36 @@ msgstr "Pixels Queimados:"
 msgid "Hot Pixels Tool"
 msgstr "Ferramenta de Pixels Queimados"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
 #, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "Médio"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:80
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
 #, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "Linear"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:83
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "Quadrático"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "Cúbico"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:85
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgid "Black Frame..."
 msgstr "Contorno Preto..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -32758,18 +32758,18 @@ msgstr ""
 "de posições onde a imagem terá de ser corrigida para eliminar as cores "
 "erradas nestes pixels.</p>"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:215
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "Seleccione uma Imagem de Contorno Preto"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:219
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:221
 #, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Processador do Contorno Preto"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:222
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""

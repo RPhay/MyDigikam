@@ -33,7 +33,7 @@
 #
 # Translators:
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 # Adem Alp Yıldız <ademalp@kde.org.tr>, 2005.
 # Ayşe Genç <ayse@uludag.org.tr>, 2004-2005.
 # Baki İncebulut <bakiince@yahhoo.com.tr>, 2006.
@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 01:54+0000\n"
-"PO-Revision-Date: 2024-12-30 20:15+0300\n"
+"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"PO-Revision-Date: 2025-01-07 15:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3982,7 +3982,7 @@ msgstr "Yol"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, kde-format
 msgid "Size"
 msgstr "Boyut"
@@ -4526,7 +4526,7 @@ msgstr "Otomatik Pozlandırma"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:77
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
 #, kde-format
 msgid "Filter:"
 msgstr "Süz:"
@@ -16196,7 +16196,7 @@ msgstr "Takvim için Şablon Oluştur"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:66
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -31652,7 +31652,7 @@ msgstr "Bulanıklık Süzgeci"
 msgid "Blur FX Filter"
 msgstr "FX Bulanıklık Filtresi"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Karakalem Efekti"
@@ -32159,7 +32159,7 @@ msgstr "Hızlı yakınlık"
 msgid "Enable fast approximation when rendering images."
 msgstr "Görseller sunulurken hızlı yakınlığı etkinleştirin."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
 #, kde-format
 msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
@@ -32167,12 +32167,12 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "Sıcak Pikseller"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:259
 #, kde-format
 msgid "Remove Black Frame"
 msgstr "Siyah Kareyi Kaldır"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
 #, kde-format
 msgid "Clear List"
@@ -32221,36 +32221,36 @@ msgstr "Sıcak pikseller:"
 msgid "Hot Pixels Tool"
 msgstr "Sıcak Piksel Aracı"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
 #, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "Ortalama"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:80
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
 #, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "Doğrusal"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:81
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:83
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "İkilenik"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "Kübik"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:85
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgid "Black Frame..."
 msgstr "Siyah Kare…"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -32278,18 +32278,18 @@ msgstr ""
 "algılayacak ve bu piksellerdeki yanlış renkleri ortadan kaldırmak için "
 "görselin düzeltilmesi gereken konumlarının bir listesini oluşturacaktır.</p>"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:215
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "Siyah Kare Görseli Seç"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:219
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:221
 #, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Siyah Kare Ayrıştırıcısı"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:222
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
@@ -38217,9 +38217,7 @@ msgid "Keywords: "
 msgstr "Anahtar sözcükler: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Peoples: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Kişiler: "
@@ -39471,12 +39469,10 @@ msgid "Settings"
 msgstr "Ayarlar"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "Şuna çevir:"
+msgstr "Çevir"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
