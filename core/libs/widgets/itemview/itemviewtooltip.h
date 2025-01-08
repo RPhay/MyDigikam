@@ -35,9 +35,10 @@ public:
     explicit ItemViewToolTip(QAbstractItemView* const view);
     ~ItemViewToolTip()                      override;
 
-    QAbstractItemView* view()   const;
-    QAbstractItemModel* model() const;
-    QModelIndex currentIndex()  const;
+    virtual QAbstractItemView* view() const;
+
+    QAbstractItemModel* model()       const;
+    QModelIndex currentIndex()        const;
 
     /**
      * Show the tooltip for the given item.

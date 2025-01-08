@@ -54,7 +54,7 @@ public:
     {
     }
 
-    ItemCategorizedView* view() const
+    ItemCategorizedView* view() const override
     {
         return static_cast<ItemCategorizedView*>(ItemViewToolTip::view());
     }
