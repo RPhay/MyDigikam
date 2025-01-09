@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     ThumbnailLoadThread* thumbLoadThread    = nullptr;
 
     NewNameInfo          currentInfo;

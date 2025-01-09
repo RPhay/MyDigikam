@@ -54,7 +54,7 @@ protected:
 
 protected Q_SLOTS:
 
-    void slotCancel();
+    void slotCancel()               override;
     void slotRenameFinished();
     void slotRenameFailed(const QUrl& url);
 

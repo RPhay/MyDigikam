@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*           logo          = nullptr;
     QLabel*           title         = nullptr;
     QLabel*           label         = nullptr;

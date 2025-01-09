@@ -57,7 +57,7 @@ public Q_SLOTS:
 
 protected Q_SLOTS:
 
-    void slotCancel();
+    virtual void slotCancel();
 
 private:
 
