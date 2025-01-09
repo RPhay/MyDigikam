@@ -158,7 +158,6 @@ private:
 
 private Q_SLOTS:
 
-    void slotClose();
     void slotCancelButton();
 
     void slotShowLog();

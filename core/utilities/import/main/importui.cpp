@@ -944,11 +944,6 @@ void ImportUI::moveEvent(QMoveEvent* e)
     Q_EMIT signalWindowHasMoved();
 }
 
-void ImportUI::slotClose()
-{
-    close();
-}
-
 bool ImportUI::dialogClosed()
 {
     if (d->closed)
