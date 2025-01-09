@@ -115,7 +115,7 @@ public:
      *
      * @param visible visibility of the item
      */
-    void setVisible(bool visible);
+    void setVisible(bool visible);      // cppcheck-suppress duplInheritedMember
 
     /**
      * @brief Check visibility of the float item
@@ -125,7 +125,7 @@ public:
      *
      * @return visible or not
      */
-    bool visible() const;
+    bool visible() const;               // cppcheck-suppress duplInheritedMember
 
     /**
      * @brief Check is position locked
@@ -159,7 +159,7 @@ public Q_SLOTS:
      * If the item was hidden this function will show it
      *
      */
-    void show();
+    void show();        // cppcheck-suppress duplInheritedMember
 
     /**
      * @brief Hide the item
@@ -167,7 +167,7 @@ public Q_SLOTS:
      * If the item was shown this function will hide it
      *
      */
-    void hide();
+    void hide();        // cppcheck-suppress duplInheritedMember
 
 protected:
 
