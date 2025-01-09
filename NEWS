@@ -100,7 +100,7 @@ BUGFIXES:
 068 ==> 464276 - Failed to load image.
 069 ==> 477467 - digiKam 8.1 Image Editor could not interpret a Nikon Z9 NEF file.
 070 ==> 478038 - Unable to load the picture.
-071 ==>
+071 ==> 498406 - Double click behavior.
 072 ==>
 073 ==>
 074 ==>
