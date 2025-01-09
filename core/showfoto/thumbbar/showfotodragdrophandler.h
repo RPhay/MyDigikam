@@ -35,7 +35,7 @@ public:
 
     explicit ShowfotoDragDropHandler(ShowfotoItemModel* const model);
 
-    ShowfotoItemModel* model()                                                                           const;
+    ShowfotoItemModel* model()                                                                           const override;
 
     bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)       override;
     Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                                  override;

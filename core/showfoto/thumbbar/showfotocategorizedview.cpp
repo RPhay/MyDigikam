@@ -42,7 +42,7 @@ public:
     {
     }
 
-    ShowfotoCategorizedView* view() const
+    ShowfotoCategorizedView* view() const override
     {
         return static_cast<ShowfotoCategorizedView*>(ItemViewToolTip::view());
     }
@@ -159,7 +159,7 @@ QSortFilterProxyModel* ShowfotoCategorizedView::filterModel() const
     return d->filterModel;
 }
 
-ShowfotoDelegate* ShowfotoCategorizedView::delegate() const
+ShowfotoDelegate* ShowfotoCategorizedView::showfotoDelegate() const
 {
     return d->delegate;
 }

@@ -56,7 +56,7 @@ public:
      */
     ShowfotoThumbnailModel*     showfotoThumbnailModel()                const;
 
-    ShowfotoDelegate*           delegate()                              const;
+    ShowfotoDelegate*           showfotoDelegate()                      const;
 
     ShowfotoItemInfo            currentInfo()                           const;
     QUrl                        currentUrl()                            const;
