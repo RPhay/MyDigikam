@@ -149,9 +149,6 @@ protected Q_SLOTS:
 
 protected:
 
-    void encodeIsCutSelection(QMimeData* mime, bool isCutSelection);
-    bool decodeIsCutSelection(const QMimeData* mimeData);
-
     void setToolTip(ItemViewToolTip* tip);
     void setItemDelegate(DItemDelegate* delegate);
     void updateDelegateSizes();
