@@ -150,10 +150,11 @@ protected:
 
 class Q_DECL_HIDDEN LightTableThumbBar::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool                     navigateByPair     = false;
 
@@ -221,26 +222,6 @@ void LightTableThumbBar::setItems(const ItemInfoList& list)
             d->imageInfoModel->addItemInfo(info);
         }
     }
-}
-
-void LightTableThumbBar::slotDockLocationChanged(Qt::DockWidgetArea area)
-{
-    if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
-    {
-        if (flow() != TopToBottom)
-        {
-            setFlow(TopToBottom);
-        }
-    }
-    else
-    {
-        if (flow() != LeftToRight)
-        {
-            setFlow(LeftToRight);
-        }
-    }
-
-    scrollTo(currentIndex());
 }
 
 void LightTableThumbBar::clear()

@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     Qt::ScrollBarPolicy          scrollPolicy       = Qt::ScrollBarAlwaysOn;
     NoDuplicatesItemFilterModel* duplicatesFilter   = nullptr;
 };

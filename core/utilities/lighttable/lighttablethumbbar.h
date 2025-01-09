@@ -67,7 +67,6 @@ public Q_SLOTS:
     void slotColorLabelChanged(const QUrl&, int);
     void slotPickLabelChanged(const QUrl&, int);
     void slotToggleTag(const QUrl&, int);
-    void slotDockLocationChanged(Qt::DockWidgetArea area);
 
 private:
 
