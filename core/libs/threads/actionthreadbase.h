@@ -151,7 +151,7 @@ protected:
 
 protected Q_SLOTS:
 
-    void slotJobFinished();
+    virtual void slotJobFinished();
 
 private:
 

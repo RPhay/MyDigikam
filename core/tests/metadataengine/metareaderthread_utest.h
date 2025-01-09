@@ -67,7 +67,7 @@ public:
 
 protected Q_SLOTS:
 
-    void slotJobFinished();
+    void slotJobFinished() override;
     void slotStats(const QUrl& url, bool p);
 
 Q_SIGNALS:

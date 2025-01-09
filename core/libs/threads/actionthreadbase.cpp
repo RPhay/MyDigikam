@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     volatile bool       running = false;
 
     QWaitCondition      condVarJobs;
