@@ -36981,7 +36981,7 @@ msgstr "关键词："
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
-msgstr ""
+msgstr "人物："
 
 #: core/libs/properties/itempropertiestab.cpp:305
 #, kde-format
@@ -38170,7 +38170,7 @@ msgstr "设置"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr ""
+msgstr "翻译"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
