@@ -101,7 +101,7 @@ BUGFIXES:
 069 ==> 477467 - digiKam 8.1 Image Editor could not interpret a Nikon Z9 NEF file.
 070 ==> 478038 - Unable to load the picture.
 071 ==> 498406 - Double click behavior.
-072 ==>
+072 ==> 498391 - Hierarchical tags disappear.
 073 ==>
 074 ==>
 075 ==>
