@@ -57,7 +57,7 @@ public:
      */
     ImportThumbnailModel*  importThumbnailModel()             const;
 
-    ImportDelegate*        delegate()                         const;
+    ImportDelegate*        importDelegate()                   const;
 
     CamItemInfo            currentInfo()                      const;
     QUrl                   currentUrl()                       const;

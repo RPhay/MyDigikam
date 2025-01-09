@@ -136,7 +136,7 @@ void ImportIconView::setThumbnailSize(const ThumbnailSize& size)
 
 int ImportIconView::fitToWidthIcons()
 {
-    return delegate()->calculatethumbSizeToFit(viewport()->size().width());
+    return importDelegate()->calculatethumbSizeToFit(viewport()->size().width());
 }
 
 CamItemInfo ImportIconView::camItemInfo(const QString& folder, const QString& file)

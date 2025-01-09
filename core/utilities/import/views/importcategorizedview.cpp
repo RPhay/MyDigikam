@@ -45,7 +45,7 @@ public:
     {
     }
 
-    ImportCategorizedView* view() const
+    ImportCategorizedView* view() const override
     {
         return static_cast<ImportCategorizedView*>(ItemViewToolTip::view());
     }
@@ -65,6 +65,8 @@ class Q_DECL_HIDDEN ImportCategorizedView::Private
 public:
 
     Private() = default;
+
+public:
 
     ImportItemModel*       model                = nullptr;
     ImportSortFilterModel* filterModel          = nullptr;
@@ -175,7 +177,7 @@ QSortFilterProxyModel* ImportCategorizedView::filterModel() const
     return d->filterModel;
 }
 
-ImportDelegate* ImportCategorizedView::delegate() const
+ImportDelegate* ImportCategorizedView::importDelegate() const
 {
     return d->delegate;
 }
