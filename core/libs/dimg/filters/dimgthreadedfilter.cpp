@@ -241,7 +241,7 @@ void DImgThreadedFilter::cancelFilter()
 
 void DImgThreadedFilter::postProgress(int progr)
 {
-    if (m_master)
+    if      (m_master)
     {
         progr = modulateProgress(progr);
         m_master->postProgress(progr);

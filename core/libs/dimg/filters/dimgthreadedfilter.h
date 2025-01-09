@@ -191,7 +191,7 @@ protected:
     /**
      * Emit progress info.
      */
-    void postProgress(int progress);
+    virtual void postProgress(int progress);
 
 protected:
 

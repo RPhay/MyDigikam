@@ -115,8 +115,8 @@ public:
 
 protected:
 
-    void postProgress(int);                                     // not virtual
-    bool continueQuery()                                 const; // not virtual
+    void postProgress(int)                                     override;
+    bool continueQuery()                                 const;
 
     void filterImage()                                         override;
 
