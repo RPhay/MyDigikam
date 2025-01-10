@@ -243,26 +243,6 @@ private:
 
 public: // XMP helpers
 
-    /**
-     * Return a strings list of Xmp sub-categories from image. Return an empty list if no sub-category
-     * are set.
-     */
-    QStringList getXmpSubCategories()                                                                                   const;
-
-    /**
-     * Set Xmp sub-categories using a list of strings defined by 'newSubCategories' parameter.
-     * The existing sub-categories from image are preserved. The method will compare
-     * all new sub-categories with all already existing sub-categories to prevent duplicate entries in image.
-     *  Return true if sub-categories have been changed in metadata.
-     */
-    bool setXmpSubCategories(const QStringList& newSubCategories)                                                       const;
-
-    /**
-     * Remove those Xmp sub-categories that are listed in categoriesToRemove from the sub-categories in metadata.
-     * Return true if subjects are no longer contained in metadata.
-     */
-    bool removeXmpSubCategories(const QStringList& categoriesToRemove);
-
     bool removeXmpTags(const QStringList& tagFilters);
 
 private:
