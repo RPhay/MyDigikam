@@ -74,21 +74,6 @@ QVariant DMetadata::fromXmpLangAlt(const char* const xmpTagName) const
     return var;
 }
 
-QStringList DMetadata::getXmpKeywords() const
-{
-    return (getXmpTagStringBag("Xmp.dc.subject", false));
-}
-
-bool DMetadata::setXmpKeywords(const QStringList& newKeywords) const
-{
-    return setXmpTagStringBag("Xmp.dc.subject", newKeywords);
-}
-
-bool DMetadata::removeXmpKeywords(const QStringList& keywordsToRemove)
-{
-    return removeFromXmpTagStringBag("Xmp.dc.subject", keywordsToRemove);
-}
-
 QStringList DMetadata::getXmpSubCategories() const
 {
     return (getXmpTagStringBag("Xmp.photoshop.SupplementalCategories", false));

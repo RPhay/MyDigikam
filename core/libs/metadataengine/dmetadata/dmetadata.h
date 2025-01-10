@@ -244,25 +244,6 @@ private:
 public: // XMP helpers
 
     /**
-     * Return a strings list of Xmp keywords from image. Return an empty list if no keyword are set.
-     */
-    QStringList getXmpKeywords()                                                                                        const;
-
-    /**
-     * Set Xmp keywords using a list of strings defined by 'newKeywords' parameter.
-     * The existing keywords from image are preserved. The method will compare
-     * all new keywords with all already existing keywords to prevent duplicate entries in image.
-     * Return true if keywords have been changed in metadata.
-     */
-    bool setXmpKeywords(const QStringList& newKeywords)                                                                 const;
-
-    /**
-     * Remove those Xmp keywords that are listed in keywordsToRemove from the keywords in metadata.
-     * Return true if keywords are no longer contained in metadata.
-     */
-    bool removeXmpKeywords(const QStringList& keywordsToRemove);
-
-    /**
      * Return a strings list of Xmp subjects from image. Return an empty list if no subject are set.
      */
     QStringList getXmpSubjects()                                                                                        const;
