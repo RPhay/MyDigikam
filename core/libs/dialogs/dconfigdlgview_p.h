@@ -212,7 +212,7 @@ private Q_SLOTS:
 
 private:
 
-    QTabWidget* mTabWidget;
+    QTabWidget* mTabWidget = nullptr;
 };
 
 // ---------------------------

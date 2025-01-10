@@ -144,12 +144,12 @@ void DConfigDlgWdg::setCurrentPage(DConfigDlgWdgItem* item)
         return;
     }
 
-    DConfigDlgView::setCurrentPage(index);
+    DConfigDlgView::setCurrentIndex(index);
 }
 
 DConfigDlgWdgItem* DConfigDlgWdg::currentPage() const
 {
-    const QModelIndex index = DConfigDlgView::currentPage();
+    const QModelIndex index = DConfigDlgView::currentIndex();
 
     if (!index.isValid())
     {

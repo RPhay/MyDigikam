@@ -446,7 +446,7 @@ DConfigDlgView::FaceType DConfigDlgView::faceType() const
     return d_func()->faceType;
 }
 
-void DConfigDlgView::setCurrentPage(const QModelIndex& index)
+void DConfigDlgView::setCurrentIndex(const QModelIndex& index)
 {
     Q_D(DConfigDlgView);
 
@@ -458,7 +458,7 @@ void DConfigDlgView::setCurrentPage(const QModelIndex& index)
     d->view->selectionModel()->setCurrentIndex(index, QItemSelectionModel::SelectCurrent);
 }
 
-QModelIndex DConfigDlgView::currentPage() const
+QModelIndex DConfigDlgView::currentIndex() const
 {
     Q_D(const DConfigDlgView);
 
@@ -480,7 +480,7 @@ void DConfigDlgView::setItemDelegate(QAbstractItemDelegate* delegate)
     }
 }
 
-QAbstractItemDelegate *DConfigDlgView::itemDelegate() const
+QAbstractItemDelegate* DConfigDlgView::itemDelegate() const
 {
     Q_D(const DConfigDlgView);
 

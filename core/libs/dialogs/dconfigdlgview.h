@@ -118,13 +118,13 @@ public:
      * Sets the page with @param index to be the current page and emits
      * the @see currentPageChanged signal.
      */
-    void setCurrentPage(const QModelIndex& index);
+    void setCurrentIndex(const QModelIndex& index);
 
     /**
      * Returns the index for the current page or an invalid index
      * if no current page exists.
      */
-    QModelIndex currentPage() const;
+    QModelIndex currentIndex() const;
 
     /**
      * Sets the item @param delegate which can be used customize
