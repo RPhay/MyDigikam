@@ -60,7 +60,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         return false;
     }
 
-    TAlbum* const destAlbum = model()->albumForIndex(droppedOn);
+    TAlbum* const destAlbum = model()->talbumForIndex(droppedOn);
 
     if (DTagListDrag::canDecode(e->mimeData()))
     {
@@ -420,7 +420,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelIndex& dropIndex)
 {
-    TAlbum* const destAlbum = model()->albumForIndex(dropIndex);
+    TAlbum* const destAlbum = model()->talbumForIndex(dropIndex);
 
     if      (DTagListDrag::canDecode(e->mimeData()))
     {

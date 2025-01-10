@@ -36,7 +36,7 @@ void TagModel::setColumnHeader(const QString& header)
     m_columnHeader = header;
 }
 
-TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
+TAlbum* TagModel::talbumForIndex(const QModelIndex& index) const
 {
     return static_cast<TAlbum*>(AbstractCheckableAlbumModel::albumForIndex(index));
 }
@@ -144,7 +144,7 @@ void TagModel::activateFaceTagModel()
 
 bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    TAlbum* const talbum = albumForIndex(index);
+    TAlbum* const talbum = talbumForIndex(index);
 
     if (talbum && talbum->isInternalTag())
     {
