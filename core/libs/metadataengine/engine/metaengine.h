@@ -403,13 +403,13 @@ public:
      * Save all metadata to a file. This one can be different than original picture to perform
      * transfer operation Return true if metadata have been saved into file.
      */
-    bool save(const QString& filePath, bool setVersion = false) const;
+    virtual bool save(const QString& filePath, bool setVersion = false) const;
 
     /**
      * The same than save() method, but it apply on current item. Return true if metadata
      * have been saved into file.
      */
-    bool applyChanges(bool setVersion = false) const;
+    virtual bool applyChanges(bool setVersion = false) const;
 
     /**
      *  Export metadata to a temporary EXV file container.

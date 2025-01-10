@@ -83,8 +83,8 @@ public: // File I/O helpers
      * See MetaEngine::Backend enum for details.
      */
     bool load(const QString& filePath, bool videoAll = false, Backend* backend = nullptr);
-    bool save(const QString& filePath, bool setVersion = false)                                                         const;
-    bool applyChanges(bool setVersion = false)                                                                          const;
+    bool save(const QString& filePath, bool setVersion = false)                                                         const override;
+    bool applyChanges(bool setVersion = false)                                                                          const override;
 
     /**
      * Try to extract metadata using Raw Engine identify method (libraw).
