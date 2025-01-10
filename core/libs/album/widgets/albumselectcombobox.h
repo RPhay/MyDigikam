@@ -188,9 +188,9 @@ public:
     explicit TagTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     void setDefaultModel();
-    void setAlbumModels(TagModel* model,
-                        TagPropertiesFilterModel* filteredModel = nullptr,
-                        CheckableAlbumFilterModel* filterModel = nullptr);
+    virtual void setAlbumModels(TagModel* model,
+                                TagPropertiesFilterModel* filteredModel = nullptr,
+                                CheckableAlbumFilterModel* filterModel = nullptr);
     TagTreeView* view() const;
 };
 
