@@ -42,6 +42,7 @@ AutoExpoFilter::~AutoExpoFilter()
 {
 }
 
+// cppcheck-suppress duplInheritedMember
 QString AutoExpoFilter::DisplayableName()
 {
     return QString::fromUtf8(I18N_NOOP("Auto Exposure"));
