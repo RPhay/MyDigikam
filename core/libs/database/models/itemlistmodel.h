@@ -34,14 +34,10 @@ public:
     explicit ItemListModel(QWidget* const parent);
     ~ItemListModel() override = default;
 
-    // NOTE: necessary methods to add and remove ItemInfos to the model are inherited from ItemModel
-
-Q_SIGNALS:
-
     /**
-     * Emitted when images are removed from the model because they are removed in the database
+     * @note: necessary methods to add and remove ItemInfos to the model are inherited from ItemModel.
+     * ItemModel::imageInfosRemoved() is emitted when images are removed from the model because they are removed in the database.
      */
-    void imageInfosRemoved(const QList<ItemInfo>& infos);
 
 protected Q_SLOTS:
 
