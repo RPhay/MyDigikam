@@ -244,21 +244,6 @@ private:
 public: // XMP helpers
 
     /**
-     * Set an Xmp tag content using a list of strings defined by the 'entriesToAdd' parameter.
-     * The existing entries are preserved. The method will compare
-     * all new with all already existing entries to prevent duplicates in the image.
-     * Return true if the entries have been added to metadata.
-     */
-    bool addToXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToAdd)                            const;
-
-    /**
-     * Remove those Xmp tag entries that are listed in entriesToRemove from the entries in metadata.
-     * Return true if tag entries are no longer contained in metadata.
-     * All other entries are preserved.
-     */
-    bool removeFromXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToRemove)                    const;
-
-    /**
      * Return a strings list of Xmp keywords from image. Return an empty list if no keyword are set.
      */
     QStringList getXmpKeywords()                                                                                        const;
