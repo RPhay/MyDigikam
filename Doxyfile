@@ -285,7 +285,29 @@ TAB_SIZE               = 4
 # with the commands \{ and \} for these it is advised to use the version @{ and
 # @} or use a double escape (\\{ and \\})
 
-ALIASES                =
+ALIASES                = "intern=\par<b>Internal use only.</b>" \
+                         "reimp=\par<b>Reimplemented from superclass.</b>" \
+                         "obsolete=@deprecated" \
+                         "feature=\xrefitem features \"Feature(s)\" \"Features\"" \
+                         "unmaintained=\xrefitem unmaintained \"Unmaintained\" \"Unmaintained\"" \
+                         "requirement=\xrefitem requirements \"Requirement(s)\" \"Requirements\"" \
+                         "faq=\xrefitem FAQ \"F.A.Q.\" \"F.A.Q.\"" \
+                         "authors=\xrefitem authors \"Author(s)\" \"Authors\"" \
+                         "maintainers=\xrefitem maintainers \"Maintainer(s)\" \"Maintainers\"" \
+                         "glossary=\xrefitem glossary \"Glossary\" \"Glossary\"" \
+                         "acronym=\b " \
+                         "licenses=\xrefitem licenses \"License(s)\" \"Licenses\"" \
+                         "FIXME=\xrefitem fixme \"Fixme\" \"Fixme\"" \
+                         "TODO=\xrefitem todo \"Todo\" \"Todo\"" \
+                         "bc=\xrefitem bc \"Binary Compatible\" \"Binary Compatible\"" \
+                         "threadsafe=\xrefitem threadsafe \"Threadsafe\" \"Threadsafe\"" \
+                         "artistic=<a href=\"https://www.opensource.org/licenses/artistic-license.php\">Artistic</a>" \
+                         "bsd=<a href=\"https://www.xfree86.org/3.3.6/COPYRIGHT2.html#5\">BSD</a>" \
+                         "x11=<a href=\"https://www.xfree86.org/3.3.6/COPYRIGHT2.html#3\">X11</a>" \
+                         "gpl=<a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html#SEC1\">GPLv2</a>" \
+                         "lgpl=<a href=\"https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html#SEC1\">LGPLv2</a>" \
+                         "mit=<a href=\"https://www.opensource.org/licenses/mit-license.php\">MIT</a>" \
+                         "qpl=<a href=\"https://opensource.org/licenses/QPL-1.0\">QPL</a>"
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
@@ -989,8 +1011,7 @@ FILE_PATTERNS          = *.c \
                          *.cpp \
                          *.h \
                          *.dox \
-                         *.mm \
-                         *.md
+                         *.mm
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
