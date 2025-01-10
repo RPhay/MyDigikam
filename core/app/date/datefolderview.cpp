@@ -178,7 +178,7 @@ void DateFolderView::gotoDate(const QDate& dt)
         return;
     }
 
-    DAlbum* const dateAlbum = d->dateTreeView->albumModel()->albumForIndex(dateIndex);
+    DAlbum* const dateAlbum = d->dateTreeView->albumModel()->dalbumForIndex(dateIndex);
 
     if (!dateAlbum)
     {

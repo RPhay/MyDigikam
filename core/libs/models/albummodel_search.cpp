@@ -34,7 +34,7 @@ SearchModel::SearchModel(QObject* const parent)
             this, SLOT(albumSettingsChanged()));
 }
 
-SAlbum* SearchModel::albumForIndex(const QModelIndex& index) const
+SAlbum* SearchModel::salbumForIndex(const QModelIndex& index) const
 {
     return static_cast<SAlbum*>(AbstractCheckableAlbumModel::albumForIndex(index));
 }

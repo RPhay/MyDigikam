@@ -38,7 +38,7 @@ public:
     explicit AlbumModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
     ~AlbumModel() override = default;
 
-    PAlbum* albumForIndex(const QModelIndex& index) const;
+    PAlbum* palbumForIndex(const QModelIndex& index) const;
 
 private Q_SLOTS:
 
@@ -96,7 +96,7 @@ public:
      */
     explicit SearchModel(QObject* const parent = nullptr);
 
-    SAlbum* albumForIndex(const QModelIndex& index) const;
+    SAlbum* salbumForIndex(const QModelIndex& index) const;
 
     /**
      * Set a hash of internal names (key) that shall be replaced by a user-visible string (value).
@@ -148,7 +148,7 @@ public:
      */
     explicit DateAlbumModel(QObject* const parent = nullptr);
 
-    DAlbum* albumForIndex(const QModelIndex& index)     const;
+    DAlbum* dalbumForIndex(const QModelIndex& index)     const;
 
     /**
      * Finds an album index based on a date. The given date is therefore

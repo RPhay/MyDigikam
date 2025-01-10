@@ -691,7 +691,7 @@ void AlbumModelTest::testDAlbumCount()
     for (int yearRow = 0 ; yearRow < albumModel->rowCount(albumModel->rootAlbumIndex()) ; ++yearRow)
     {
         QModelIndex yearIndex    = albumModel->index(yearRow, 0);
-        DAlbum* const yearDAlbum = albumModel->albumForIndex(yearIndex);
+        DAlbum* const yearDAlbum = albumModel->dalbumForIndex(yearIndex);
         QVERIFY(yearDAlbum);
 
         QVERIFY(yearDAlbum->range() == DAlbum::Year);
@@ -709,7 +709,7 @@ void AlbumModelTest::testDAlbumCount()
             for (int monthRow = 0 ; monthRow < albumModel->rowCount(yearIndex) ; ++monthRow)
             {
                 QModelIndex monthIndex = albumModel->index(monthRow, 0, yearIndex);
-                DAlbum* monthDAlbum    = albumModel->albumForIndex(monthIndex);
+                DAlbum* monthDAlbum    = albumModel->dalbumForIndex(monthIndex);
                 QVERIFY(monthDAlbum);
 
                 QVERIFY(monthDAlbum->range() == DAlbum::Month);
@@ -754,7 +754,7 @@ void AlbumModelTest::testDAlbumCount()
             for (int monthRow = 0 ; monthRow < albumModel->rowCount(yearIndex) ; ++monthRow)
             {
                 QModelIndex monthIndex = albumModel->index(monthRow, 0, yearIndex);
-                DAlbum* monthDAlbum    = albumModel->albumForIndex(monthIndex);
+                DAlbum* monthDAlbum    = albumModel->dalbumForIndex(monthIndex);
                 QVERIFY(monthDAlbum);
 
                 QVERIFY(monthDAlbum->range() == DAlbum::Month);

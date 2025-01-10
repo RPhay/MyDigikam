@@ -61,7 +61,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         return false;
     }
 
-    AlbumPointer<PAlbum> destAlbum = model()->albumForIndex(droppedOn);
+    AlbumPointer<PAlbum> destAlbum = model()->palbumForIndex(droppedOn);
 
     if (!destAlbum)
     {
@@ -384,7 +384,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 Qt::DropAction AlbumDragDropHandler::accepts(const QDropEvent* e, const QModelIndex& dropIndex)
 {
-    PAlbum* const destAlbum = model()->albumForIndex(dropIndex);
+    PAlbum* const destAlbum = model()->palbumForIndex(dropIndex);
 
     if (!destAlbum)
     {

@@ -32,7 +32,7 @@ DateAlbumModel::DateAlbumModel(QObject* const parent)
     setup();
 }
 
-DAlbum* DateAlbumModel::albumForIndex(const QModelIndex& index) const
+DAlbum* DateAlbumModel::dalbumForIndex(const QModelIndex& index) const
 {
     return (static_cast<DAlbum*>(AbstractCountingAlbumModel::albumForIndex(index)));
 }
@@ -44,7 +44,7 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
     for (int yearIndex = 0 ; yearIndex < rowCount() ; ++yearIndex)
     {
         QModelIndex year        = index(yearIndex, 0);
-        DAlbum* const yearAlbum = albumForIndex(year);
+        DAlbum* const yearAlbum = dalbumForIndex(year);
 
         // do not search through months if we are sure, that the year already
         // does not match
@@ -63,7 +63,7 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
         for (int monthIndex = 0 ; monthIndex < rowCount(year) ; ++monthIndex)
         {
             QModelIndex month        = index(monthIndex, 0, year);
-            DAlbum* const monthAlbum = albumForIndex(month);
+            DAlbum* const monthAlbum = dalbumForIndex(month);
 
             if (
                 monthAlbum                                  &&

@@ -34,7 +34,7 @@ AlbumModel::AlbumModel(RootAlbumBehavior rootBehavior, QObject* const parent)
     setCountHash(AlbumManager::instance()->getPAlbumsCount());
 }
 
-PAlbum* AlbumModel::albumForIndex(const QModelIndex& index) const
+PAlbum* AlbumModel::palbumForIndex(const QModelIndex& index) const
 {
     return static_cast<PAlbum*>(AbstractCheckableAlbumModel::albumForIndex(index));
 }
