@@ -26,7 +26,7 @@ class ShowfotoItemViewToolTip;
 
 class ShowfotoThumbnailBar : public ShowfotoCategorizedView
 {
-    // clazy:exclude=duplInheritedMember
+    // cppcheck-suppress duplInheritedMember
     Q_OBJECT
 
 public:

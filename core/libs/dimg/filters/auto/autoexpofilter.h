@@ -36,21 +36,25 @@ public:
     AutoExpoFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent = nullptr);
     ~AutoExpoFilter()                                                         override;
 
+    // cppcheck-suppress duplInheritedMember
     static QString          FilterIdentifier()
     {
         return QLatin1String("digikam:AutoExpoFilter");
     }
 
+    // cppcheck-suppress duplInheritedMember
     static QList<int>       SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
+    // cppcheck-suppress duplInheritedMember
     static int              CurrentVersion()
     {
         return 1;
     }
 
+    // cppcheck-suppress duplInheritedMember
     static QString DisplayableName();
 
     QString         filterIdentifier()                                  const override
