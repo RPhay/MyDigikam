@@ -99,15 +99,8 @@ bool FacePipelineDetectRecognize::start()
         return false;
     }
 
-    // set the detector parameters
-
-    QVariantMap params;
-    params[QLatin1String("detectAccuracy")]       = settings.detectAccuracy;
-    params[QLatin1String("detectModel")]          = settings.detectModel;
-    params[QLatin1String("detectSize")]           = settings.detectSize;
-    params[QLatin1String("recognizeAccuracy")]    = settings.recognizeAccuracy;
-    params[QLatin1String("recognizeModel")]       = settings.recognizeModel;
-
+    // set the face detection size and accuracy
+    
     faceDetector->setFaceDetectionSize(settings.detectSize);
     faceDetector->uiConfidenceThreshold = settings.detectAccuracy;
 
@@ -384,7 +377,7 @@ bool FacePipelineDetectRecognize::extractor()
 
             cvtColor(cvUImageWrapper, cvUImage, cv::COLOR_RGBA2RGB);
 
-            // convert to 8 bit if 16 bit
+            // convert from 16 bit to 8 bit if needed
 
             if (type == CV_16UC4)
             {
@@ -813,6 +806,7 @@ void FacePipelineDetectRecognize::addMoreWorkers()
     addWorker(Loader);
     addWorker(Extractor);
     addWorker(Extractor);
+    addWorker(Classifier);
 }
 
 } // namespace Digikam

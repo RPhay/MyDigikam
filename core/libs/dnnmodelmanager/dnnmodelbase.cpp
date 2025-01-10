@@ -164,7 +164,14 @@ float DNNModelBase::getThreshold(int uiThreshold) const
 
     if (DNN_MODEL_THRESHOLD_NOT_SET == uiThreshold)
     {
-        threshold = (float)info.defaultThreshold / 100.0F;
+        if (info.defaultThreshold > 100)
+        {
+            threshold = (float)info.defaultThreshold / 1000.0F;
+        }
+        else
+        {
+            threshold = (float)info.defaultThreshold / 100.0F;
+        }
     }
     else
     {

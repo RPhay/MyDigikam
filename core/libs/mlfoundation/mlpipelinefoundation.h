@@ -33,6 +33,7 @@
 #include "mlpipelinepackagenotify.h"
 #include "mlpipelinepackagefoundation.h"
 #include "sharedqueue.h"
+#include "mlpipelinemacros.h"
 
 namespace Digikam
 {
@@ -148,7 +149,7 @@ protected:
     virtual bool finder()                                        = 0;
     virtual bool loader()                                        = 0;
     virtual bool extractor()                                     = 0;
-    virtual bool classifier()                                    = 0;
+    virtual bool classifier()                                    = 0;   /// TODO: rename to postprocessor
     virtual bool trainer()                                       = 0;
     virtual bool writer()                                        = 0;
 
@@ -184,23 +185,23 @@ protected:
 
     void stageEnd(MLPipelineStage thisStage, MLPipelineStage nextStage);
 
-    void notify(MLPipelineNotification notification,
-                const QString& _name,
-                const QString& _path,
-                int _processed,
-                const QImage& _thumbnail);
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const QImage& _thumbnail);
 
-    void notify(MLPipelineNotification notification,
-                const QString& _name,
-                const QString& _path,
-                int _processed,
-                const DImg& _thumbnail);
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const DImg& _thumbnail);
 
-    void notify(MLPipelineNotification notification,
-                const QString& _name,
-                const QString& _path,
-                int _processed,
-                const QIcon& _thumbnail);
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const QIcon& _thumbnail);
 
 
     // Pipeline performance profiling

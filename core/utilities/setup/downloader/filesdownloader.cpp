@@ -475,6 +475,7 @@ void FilesDownloader::createDownloadInfo()
     if (d->system.enableAutoTags)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
     }
 }
 

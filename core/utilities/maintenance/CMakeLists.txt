@@ -45,8 +45,8 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/imgqsort/imagequalitysorter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/imgqsort/imagequalitytask.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignment.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignmenttask.cpp
+    # ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignment.cpp
+    # ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignmenttask.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>

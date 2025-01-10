@@ -29,14 +29,17 @@ public:
     FaceClassifierBase()                                        = default;
     ~FaceClassifierBase()                                       = default;
 
-    void setThreshold(float _threshold)
+    QList<int> predictMulti(const QList<cv::Mat>& targets)      const override
     {
-        threshold = _threshold;
+        Q_UNUSED(targets);
+        return QList<int>();
     }
 
-protected:
-
-    float   threshold = 0.0F;
+    QList<int> predictMulti(const QList<cv::UMat>& targets)     const override
+    {
+        Q_UNUSED(targets);
+        return QList<int>();
+    }
 
 private:
 

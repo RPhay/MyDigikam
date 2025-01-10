@@ -18,34 +18,43 @@
 namespace Digikam
 {
 
-AutoTagsScanWidget::AutoTagsScanWidget(QWidget* const parent)
+AutotagsScanWidget::AutotagsScanWidget(SettingsDisplayMode _displayMode, QWidget* const parent)
     : QTabWidget       (parent),
       StateSavingObject(this),
       d                (new Private)
 {
+    d->displayMode = _displayMode;
     setObjectName(d->configName);
     setupUi();
 }
 
-AutoTagsScanWidget::~AutoTagsScanWidget()
+AutotagsScanWidget::~AutotagsScanWidget()
 {
     delete d;
 }
 
-void AutoTagsScanWidget::doLoadState()
+void AutotagsScanWidget::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
     d->albumSelectors->loadState();
 
-    AutoTagsScanSettings prm;
+    AutotagsScanSettings prm;
 
-    int tagScanMode    = d->autotaggingScanMode->findData(group.readEntry(d->configAutotaggingScanMode, (int)prm.mode));
-    d->autotaggingScanMode->setCurrentIndex(tagScanMode);
-    int tagSelection   = d->modelSelectionMode->findData(group.readEntry(d->configModelSelectionMode,   (int)prm.modelType));
-    d->modelSelectionMode->setCurrentIndex(tagSelection);
+    int tagScanMode             = d->scanMode->findData(group.readEntry(d->configScanMode, (int)prm.scanMode));
+    d->scanMode->setCurrentIndex(tagScanMode);
+
+    int tagTagMode              = d->tagMode->findData(group.readEntry(d->configTagMode, (int)prm.tagMode));
+    d->tagMode->setCurrentIndex(tagTagMode);
+
+    int objectDetectModel       = d->objectDetectModel->findData(group.readEntry(d->configObjectDetectModel,   (int)prm.objectDetectModel));
+    d->objectDetectModel->setCurrentIndex(objectDetectModel);
+
+    d->accuracyInput->setValue(group.readEntry(d->configObjectDetectAccuracy, prm.uiConfidenceThreshold));
+
+    d->useFullCpuButton->setChecked(group.readEntry(d->configObjectDetectAccuracy, prm.useFullCpu));
+
     d->trSelectorList->clearLanguages();
-
-    const auto lgs     = group.readEntry(d->configAutotagsLanguages,                                    prm.langs);
+    const auto lgs     = group.readEntry(d->configLanguages,                                    prm.languages);
 
     for (const QString& lg : lgs)
     {
@@ -53,19 +62,21 @@ void AutoTagsScanWidget::doLoadState()
     }
 }
 
-void AutoTagsScanWidget::doSaveState()
+void AutotagsScanWidget::doSaveState()
 {
     KConfigGroup group       = getConfigGroup();
-    AutoTagsScanSettings prm = settings();
+    AutotagsScanSettings prm = settings();
 
     d->albumSelectors->saveState();
 
-    group.writeEntry(d->configAutotaggingScanMode, (int)prm.mode);
-    group.writeEntry(d->configModelSelectionMode,  (int)prm.modelType);
-    group.writeEntry(d->configAutotagsLanguages,   prm.langs);
+    group.writeEntry(d->configScanMode,             (int)prm.scanMode);
+    group.writeEntry(d->configTagMode,              (int)prm.tagMode);
+    group.writeEntry(d->configObjectDetectModel,    (int)prm.objectDetectModel);
+    group.writeEntry(d->configObjectDetectAccuracy, (int)prm.uiConfidenceThreshold);
+    group.writeEntry(d->configLanguages,            prm.languages);
 }
 
-void AutoTagsScanWidget::setupUi()
+void AutotagsScanWidget::setupUi()
 {
     // --- Album tab --------------------------------------------------------------------------------------
 
@@ -80,11 +91,11 @@ void AutoTagsScanWidget::setupUi()
 
     QLabel* const title    = new QLabel(d->settingsTab);
     title->setText(i18nc("@label",
-                         "<p><b>This tool allows to assign automatically tags to images by contents analysis using "
-                         "deep-learning neural network.</b></p>"
-                         "<p>The settings below determines the deep-learning model to use while parsing image "
-                         "contents to determine the subjects of the photography. The neural network used in background "
-                         "will generate automatically a serie of tags describing the contents and store the results in "
+                         "<p><b>This tool automatically assigns tags to images by analyzing the image using "
+                         "a deep-learning neural network AI model.</b></p>"
+                         "<p>The settings below determine the deep-learning AI model to use while parsing image "
+                         "contents to determine objects in the image. The AI neural network used in background "
+                         "will automatically generate tags describing the contents and store the results in "
                          "the database.</p>"));
     title->setWordWrap(true);
 
@@ -93,37 +104,65 @@ void AutoTagsScanWidget::setupUi()
     QWidget* const space8  = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
-    d->autotaggingScanMode = new QComboBox(hbox12);
-    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"), AutoTagsScanSettings::AllItems);
-    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),  AutoTagsScanSettings::NonAssignedItems);
-    d->autotaggingScanMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-scan all items from scratch.</p>"
-        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag.</p>"));
+    d->scanMode = new QComboBox(hbox12);
+    d->scanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
+    d->scanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
+    d->scanMode->setToolTip(i18nc("@info:tooltip",
+        "<p><b>Scan all</b>: re-scan all items for tags.</p>"
+        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
+
+    DHBox* const hbox15    = new DHBox(d->settingsTab);
+    new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
+    QWidget* const space15 = new QWidget(hbox15);
+    hbox15->setStretchFactor(space15, 10);
+
+    d->tagMode = new QComboBox(hbox15);
+    d->tagMode->addItem(i18n("Repalce existing autotags"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
+    d->tagMode->setToolTip(i18nc("@info:tooltip",
+        "<p><b>Repalce existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+        "<p><b>Update autotags</b>: add any new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13    = new DHBox(d->settingsTab);
     new QLabel(i18n("Selection model: "), hbox13);
     QWidget* const space9  = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
-    d->modelSelectionMode  = new QComboBox(hbox13);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   AutoTagsScanSettings::YOLOV5NANO);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), AutoTagsScanSettings::YOLOV5XLARGE);
-    d->modelSelectionMode->addItem(i18n("ResNet50"),      AutoTagsScanSettings::RESNET50);
-    d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
-        "evaluate the integration of smaller-scale object detection scenarios. It's designed for objects detections, capable of recognizing "
-        "and extracting the location of objects within an image. The limitation on the number of recognizable objects is set to 80.</p>"
-        "<p><b>YOLOv5 XLarge</b>: as the previous one, this model is a neural network dedicated for more complex object detection requirements and "
-        "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
-        "computer resources, it must be used for larger-scale object detection scenarios as it provides more accurate predictions at the expense of speed.</p>"
-        "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
-        "commonly used to power computer vision applications as object detections. This king of design allows the training of very deep networks without "
-        "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
-        "It can recognize objects from a vast set of more than 1,000 classes, covering a wide range of objects, animals, and scenes.</p>"));
+    d->objectDetectModel  = new QComboBox(hbox13);
+    d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
+    d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
+    d->objectDetectModel->addItem(i18n("ResNet-152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
+    d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
+        "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
+        "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+        "<p><b>YOLOv11 XLarge</b>: large, rebust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
+        "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+        "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
+        "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
+
+    DHBox* const hbox14    = new DHBox(d->settingsTab);
+    new QLabel(i18n("Object detection accuracy: "), hbox14);
+    d->accuracyInput            = new DIntNumInput(hbox14);
+    d->accuracyInput->setDefaultValue(7);
+    d->accuracyInput->setRange(1, 10, 1);
+    d->accuracyInput->setToolTip(i18nc("@info:tooltip",
+                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
+                                                "be recognized, but fewer objects will be recognized.\n"));
+
+    DHBox* const hbox16    = new DHBox(d->settingsTab);
+    d->useFullCpuButton                 = new QCheckBox(hbox16);
+    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
+    d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
+                                          "Object detection and auto-tagging are time-consuming tasks.\n"
+                                          "You can choose if you wish to employ all processor cores\n"
+                                          "on your system, or work in the background only on one core."));
 
     settingsLayout->addWidget(title);
     settingsLayout->addWidget(hbox12);
+    settingsLayout->addWidget(hbox15);
+    settingsLayout->addWidget(hbox14);
     settingsLayout->addWidget(hbox13);
+    settingsLayout->addWidget(hbox16);
 
     addTab(d->settingsTab, i18nc("@title:tab", "Settings"));
 
@@ -133,21 +172,99 @@ void AutoTagsScanWidget::setupUi()
     d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
 
     addTab(d->trSelectorList, i18nc("@title:tab", "Translate"));
+
+    // --- Configure UI -----------------------------------------------------------------------------------
+
+    if (SettingsDisplayMode::BQM == d->displayMode)
+    {
+        hbox12->hide();
+        this->setTabVisible(0, false);
+        this->setCurrentIndex(1);
+    }
+
+    if (SettingsDisplayMode::Maintenance == d->displayMode)
+    {
+        this->setTabVisible(0, false);
+        this->setCurrentIndex(1);
+    }
+
+    if (SettingsDisplayMode::Normal == d->displayMode)
+    {
+        title->hide();
+    }
+
+    // --- Signals -----------------------------------------------------------------------------------
+
+    connect(d->albumSelectors, SIGNAL(signalSelectionChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->objectDetectModel, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->scanMode, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->tagMode, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->trSelectorList, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->accuracyInput, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
 }
 
-AutoTagsScanSettings AutoTagsScanWidget::settings() const
+AutotagsScanSettings AutotagsScanWidget::settings() const
 {
 
-    AutoTagsScanSettings settings;
+    AutotagsScanSettings result;
 
-    settings.albums      = d->albumSelectors->selectedAlbumsAndTags();
-    settings.wholeAlbums = d->albumSelectors->wholeAlbumsChecked();
+    if (SettingsDisplayMode::Normal == d->displayMode )
+    {
+        result.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+        result.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
+    }
 
-    settings.mode        = (AutoTagsScanSettings::ScanMode)d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
-    settings.modelType   = (AutoTagsScanSettings::DetectorModel)d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
-    settings.langs       = d->trSelectorList->languagesList();
+    if (SettingsDisplayMode::BQM != d->displayMode )
+    {
+        result.scanMode               = (AutotagsScanSettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
+    }
 
-    return settings;
+    result.tagMode                = (AutotagsScanSettings::TagMode)d->tagMode->itemData(d->tagMode->currentIndex()).toInt();
+    result.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)d->objectDetectModel->itemData(d->objectDetectModel->currentIndex()).toInt();
+    result.uiConfidenceThreshold  = d->accuracyInput->value();
+    result.languages              = d->trSelectorList->languagesList();
+
+    return result;
+}
+
+void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
+{
+    // d->albumSelectors->setAlbumSelected(newSettings.albums);
+    // d->albumSelectors->set
+
+    // result.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+    // result.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
+
+    d->scanMode->setCurrentIndex(d->scanMode->findData(newSettings.scanMode));
+    d->tagMode->setCurrentIndex(d->tagMode->findData(newSettings.tagMode));
+    d->objectDetectModel->setCurrentIndex(d->objectDetectModel->findData(newSettings.objectDetectModel));
+
+    if (d->accuracyInput->value() != newSettings.uiConfidenceThreshold)
+    {
+        d->accuracyInput->setValue(newSettings.uiConfidenceThreshold);
+    }
+
+    d->trSelectorList->clearLanguages();
+    for (const QString& lg : newSettings.languages)
+    {
+        d->trSelectorList->addLanguage(lg);
+    }
+}
+
+void AutotagsScanWidget::slotSettingsChanged()
+{
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam

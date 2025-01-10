@@ -174,6 +174,11 @@ void DNNModelManager::loadConfig()
                 info.usage.append(DNNModelUsage::DNNUsageObjectDetection);
             }
 
+            if (usageStr.contains(QLatin1String("image_classification")))
+            {
+                info.usage.append(DNNModelUsage::DNNUsageImageClassification);
+            }
+
             if (usageStr.contains(QLatin1String("aesthetics")))
             {
                 info.usage.append(DNNModelUsage::DNNUsageAesthetics);

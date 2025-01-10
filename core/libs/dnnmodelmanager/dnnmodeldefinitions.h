@@ -35,6 +35,7 @@ typedef enum _DNNModelUsage
     DNNUsageFaceRecognition,
     DNNUsageRedeyeDetection,
     DNNUsageObjectDetection,
+    DNNUsageImageClassification,
     DNNUsageAesthetics
 } DNNModelUsage;
 

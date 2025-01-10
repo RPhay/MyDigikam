@@ -7,6 +7,7 @@
  * Description : maintenance manager settings
  *
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -20,8 +21,6 @@
 
 // Local includes
 
-#include "autotagsassign.h"
-#include "autotagsassignment.h"
 #include "imagequalityconfselector.h"
 #include "album.h"
 #include "facescansettings.h"
@@ -29,6 +28,7 @@
 #include "imagequalitycontainer.h"
 #include "metadatasynchronizer.h"
 #include "imagequalitysorter.h"
+#include "autotagsscansettings.h"
 #include "autotagsscansettings.h"
 
 namespace Digikam
@@ -88,15 +88,22 @@ public:
     FaceScanSettings                        faceSettings;
 
     /// Autotags assignment.
-    bool                                    autotagsAssignment      = false;
+    bool                                    autotagsAssignment          = false;
 
     /// autotagging scan mode
-    int                                     autotaggingScanMode     = AutoTagsScanSettings::AllItems;
+    int                                     autotagsScanMode            = AutotagsScanSettings::ScanMode::AllItems;
+
+    /// autotagging tag mode
+    int                                     autotagsTagMode             = AutotagsScanSettings::TagMode::Replace;
 
     /// model selection mode
-    int                                     modelSelectionMode      = AutoTagsScanSettings::YOLOV5NANO;
+    int                                     autotagsObjectDetectModel   = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO;
+
     /// Autotags languages
     QStringList                             autotagsLanguages;
+
+    /// Autotags detection threshold
+    int                                     autotagsObjectDetectAccuracy = 7;
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort             = false;

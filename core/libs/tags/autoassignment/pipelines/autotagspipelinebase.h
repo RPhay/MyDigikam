@@ -1,0 +1,98 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : Integrated, multithread object detection / recognition
+ *
+ * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// Qt includes
+
+#include <QImage>
+#include <QSemaphore>
+#include <QAtomicInteger>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QThreadPool>
+#include <QFuture>
+#include <QFutureWatcher>
+#include <QStringList>
+#include <QUrl>
+
+// local includes
+
+#include "autotagsengine.h"
+#include "mlpipelinefoundation.h"
+#include "autotagsclassifierbase.h"
+#include "dnnmodelbase.h"
+#include "dnnmodelmanager.h"
+#include "dnnmodelnet.h"
+#include "dmetadata.h"
+
+namespace Digikam
+{
+
+class AutotagsPipelineBase : public MLPipelineFoundation
+{
+
+public:
+
+    explicit AutotagsPipelineBase(AutotagsScanSettings _settings);
+    virtual ~AutotagsPipelineBase();
+
+    virtual bool start()    override;
+    virtual void cancel()   override;
+
+    virtual void bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta, const ItemInfo& info, const QUrl& outputUrl, const DImg& image);
+
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const QImage& _thumbnail) override;
+
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const DImg& _thumbnail) override;
+
+    virtual void notify(MLPipelineNotification notification,
+                        const QString& _name,
+                        const QString& _path,
+                        int _processed,
+                        const QIcon& _thumbnail) override;
+protected:
+
+    AutotagsScanSettings        settings;
+    DNNModelNet*                model                   = nullptr;
+    AutotagsClassifierBase*     autotagsClassifier      = nullptr;
+
+    // Batch Queue Manager
+    QScopedPointer<DMetadata>   bqmMeta;
+    QSemaphore                  bqmSemaphore;
+    QUrl                        bqmOutputUrl;
+
+protected:
+
+    // queue helper functions
+    bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
+
+
+private:
+
+    AutotagsPipelineBase()                                              = delete;
+    AutotagsPipelineBase(AutotagsPipelineBase&)                         = delete;
+
+};
+
+}

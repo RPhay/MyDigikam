@@ -33,24 +33,24 @@
 namespace Digikam
 {
 
-AutoTagsAssign::AutoTagsAssign(AutoTagsScanSettings::DetectorModel model)
+AutotagsAssign::AutotagsAssign(AutotagsScanSettings::DetectorModel model)
     : m_modelType(model)
 {
     switch (m_modelType)
     {
-        case AutoTagsScanSettings::YOLOV5NANO:
+        case AutotagsScanSettings::YOLOV5NANO:
         {
             m_inferenceEngine = new DNNYoloDetector(YoloVersions(m_modelType));
             break;
         }
 
-        case AutoTagsScanSettings::YOLOV5XLARGE:
+        case AutotagsScanSettings::YOLOV5XLARGE:
         {
             m_inferenceEngine = new DNNYoloDetector(YoloVersions(m_modelType));
             break;
         }
 
-        case AutoTagsScanSettings::RESNET50:
+        case AutotagsScanSettings::RESNET50:
         {
             m_inferenceEngine = new DNNResnetDetector();
             break;
@@ -64,12 +64,12 @@ AutoTagsAssign::AutoTagsAssign(AutoTagsScanSettings::DetectorModel model)
     }
 }
 
-AutoTagsAssign::~AutoTagsAssign()
+AutotagsAssign::~AutotagsAssign()
 {
     delete m_inferenceEngine;
 }
 
-cv::Mat AutoTagsAssign::prepareForDetection(const DImg& inputImage) const
+cv::Mat AutotagsAssign::prepareForDetection(const DImg& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -83,14 +83,15 @@ cv::Mat AutoTagsAssign::prepareForDetection(const DImg& inputImage) const
         int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
         cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-        if (inputImage.hasAlpha())
-        {
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-        }
-        else
-        {
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-        }
+        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
+        // if (inputImage.hasAlpha())
+        // {
+        //     cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+        // }
+        // else
+        // {
+        //     cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+        // }
 
         if (type == CV_16UC4)
         {
@@ -109,7 +110,7 @@ cv::Mat AutoTagsAssign::prepareForDetection(const DImg& inputImage) const
     return cvImage;
 }
 
-cv::Mat AutoTagsAssign::prepareForDetection(const QImage& inputImage) const
+cv::Mat AutotagsAssign::prepareForDetection(const QImage& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -158,7 +159,7 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QImage& inputImage) const
     return cvImage;
 }
 
-cv::Mat AutoTagsAssign::prepareForDetection(const QString& inputImagePath) const
+cv::Mat AutotagsAssign::prepareForDetection(const QString& inputImagePath) const
 {
     std::vector<char> buffer;
     QFile file(inputImagePath);
@@ -190,7 +191,7 @@ cv::Mat AutoTagsAssign::prepareForDetection(const QString& inputImagePath) const
     return cvImage;
 }
 
-std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<DImg>& inputImages, int batchSize) const
+std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<DImg>& inputImages, int batchSize) const
 {
     std::vector<cv::Mat> result;
 
@@ -223,7 +224,7 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<DImg>& inpu
     return result;
 }
 
-std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
+std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
 {
     std::vector<cv::Mat> result;
 
@@ -256,7 +257,7 @@ std::vector<cv::Mat> AutoTagsAssign::prepareForDetection(const QList<QString>& i
     return result;
 }
 
-QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
+QList<QString> AutotagsAssign::generateTagsList(const DImg& image)
 {
     QList<QString> result;
 
@@ -282,7 +283,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const DImg& image)
     return result;
 }
 
-QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
+QList<QString> AutotagsAssign::generateTagsList(const QImage& image)
 {
     QList<QString> result;
 
@@ -310,7 +311,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const QImage& image)
     return result;
 }
 
-QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
+QList<QString> AutotagsAssign::generateTagsList(const QString& imagePath)
 {
     QList<QString> result;
 
@@ -333,7 +334,7 @@ QList<QString> AutoTagsAssign::generateTagsList(const QString& imagePath)
     return result;
 }
 
-QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<DImg>& inputImages, int batchSize) const
+QList<QList<QString> > AutotagsAssign::generateTagsList(const QList<DImg>& inputImages, int batchSize) const
 {
     QList<QList<QString> > result;
 
@@ -356,7 +357,7 @@ QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<DImg>& input
     return result;
 }
 
-QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
+QList<QList<QString> > AutotagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
 {
     QList<QList<QString> > result;
 
@@ -379,7 +380,7 @@ QList<QList<QString> > AutoTagsAssign::generateTagsList(const QList<QString>& in
     return result;
 }
 
-QList<QString> AutoTagsAssign::getPredefinedTagsPath() const
+QList<QString> AutotagsAssign::getPredefinedTagsPath() const
 {
     QList<QString> tagsPaths;
     QList<QString> objects = m_inferenceEngine->getPredefinedClasses();

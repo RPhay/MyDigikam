@@ -20,6 +20,7 @@
 #include <QObject>
 #include <QReadWriteLock>
 #include <QMap>
+#include <QList>
 
 // Local includes
 
@@ -34,15 +35,23 @@ class DIGIKAM_EXPORT MLClassifierFoundation
 
 public:
 
-    MLClassifierFoundation()                                            = default;
-    virtual ~MLClassifierFoundation()                                   = default;
+    MLClassifierFoundation()                                                    = default;
+    virtual ~MLClassifierFoundation()                                           = default;
 
 public:
 
-    virtual int predict(const cv::Mat& target)      const               = 0;
-    virtual int predict(const cv::UMat& target)     const               = 0;
+    virtual int predict(const cv::Mat& target)                      const       = 0;
+    virtual int predict(const cv::UMat& target)                     const       = 0;
 
-    virtual bool retrain()                                              = 0;
+    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       = 0;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets)  const       = 0;
+
+    virtual bool retrain()                                                      = 0;
+
+    void setThreshold(float _threshold)
+    {
+        threshold = _threshold;
+    }
 
 protected:
 
@@ -87,6 +96,8 @@ protected:
     };
 
     QReadWriteLock  lock;
+    float           threshold = 0.0F;
+
 
 protected:
 

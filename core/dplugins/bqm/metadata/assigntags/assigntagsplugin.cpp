@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2022-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2023      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -59,13 +60,13 @@ QIcon AssignTagsPlugin::icon() const
 
 QString AssignTagsPlugin::description() const
 {
-    return i18nc("@info", "A tool to assign tags automatically to images");
+    return i18nc("@info", "A tool to automatically assign tags to images");
 }
 
 QString AssignTagsPlugin::details() const
 {
-    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-                  "metadata values to images automatically using deep-learning engine.</para>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool will automatically assign keyword "
+                  "hierarchies metadata values to images using AI deep-learning models.</para>");
 }
 
 QString AssignTagsPlugin::handbookSection() const
@@ -91,7 +92,10 @@ QList<DPluginAuthor> AssignTagsPlugin::authors() const
                              QString::fromUtf8("(C) 2023"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2022-2023"))
+                             QString::fromUtf8("(C) 2022-2025"))
+            << DPluginAuthor(QString::fromUtf8("Michael Miller"),
+                             QString::fromUtf8("michael underscore miller at msn dot com"),
+                             QString::fromUtf8("(C) 2025"))
             ;
 }
 

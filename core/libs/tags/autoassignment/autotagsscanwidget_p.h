@@ -55,22 +55,19 @@
 #include "squeezedcombobox.h"
 #include "dexpanderbox.h"
 #include "localizeselector.h"
+#include "dnuminput.h"
+
 
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN AutoTagsScanWidget::Private
+class Q_DECL_HIDDEN AutotagsScanWidget::Private
 {
 public:
 
     Private() = default;
 
 public:
-
-    const QString configAutotagsAssignment              = QLatin1String("AutotagsAssignment");
-    const QString configAutotaggingScanMode             = QLatin1String("AutotaggingScanMode");
-    const QString configModelSelectionMode              = QLatin1String("ModelSelectionMode");
-    const QString configAutotagsLanguages               = QLatin1String("AutotagsLanguages");
 
     QTabWidget*       tabWidget                         = nullptr;
 
@@ -82,8 +79,11 @@ public:
 
     QWidget*          settingsTab                       = nullptr;
 
-    QComboBox*        autotaggingScanMode               = nullptr;
-    QComboBox*        modelSelectionMode                = nullptr;
+    QComboBox*        scanMode                          = nullptr;
+    QComboBox*        tagMode                           = nullptr;
+    QComboBox*        objectDetectModel                 = nullptr;
+    DIntNumInput*     accuracyInput                     = nullptr;
+    QCheckBox*        useFullCpuButton                  = nullptr;
 
     // ---
 
@@ -91,15 +91,19 @@ public:
 
     // ---
 
-    const QString     configName                        = QLatin1String("Face Management Settings");
-    const QString     configMainTask                    = QLatin1String("Face Scan Main Task");
-    const QString     configValueDetect                 = QLatin1String("Detect");
-    const QString     configValueDetectAndRecognize     = QLatin1String("Detect and Recognize Faces");
-    const QString     configValueRecognizedMarkedFaces  = QLatin1String("Recognize Marked Faces");
-    const QString     configAlreadyScannedHandling      = QLatin1String("Already Scanned Handling");
+    const QString     configName                        = QLatin1String("Autotags Settings");
+    const QString     configAlbums                      = QLatin1String("Albums");
+    const QString     configWholeAlbums                 = QLatin1String("Whole Albums");
+    const QString     configScanMode                    = QLatin1String("Scan Mode");
+    const QString     configTagMode                     = QLatin1String("Tag Mode");
+    const QString     configObjectDetectModel           = QLatin1String("Object Detection Model");
+    const QString     configObjectDetectAccuracy        = QLatin1String("Object Detection Accuracy");
+    const QString     configLanguages                   = QLatin1String("Languages");
     const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
+
+    AutotagsScanWidget::SettingsDisplayMode displayMode = AutotagsScanWidget::SettingsDisplayMode::Normal;
 };
 
 } // namespace Digikam

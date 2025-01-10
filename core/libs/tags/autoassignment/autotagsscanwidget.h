@@ -28,22 +28,39 @@
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT AutoTagsScanWidget : public QTabWidget,
+class DIGIKAM_GUI_EXPORT AutotagsScanWidget : public QTabWidget,
                                               public StateSavingObject
 {
     Q_OBJECT
 
 public:
 
-    explicit AutoTagsScanWidget(QWidget* const parent = nullptr);
-    ~AutoTagsScanWidget()                 override;
+    enum SettingsDisplayMode
+    {
+        Normal,
+        Maintenance,
+        BQM
+    };
+    Q_ENUM(SettingsDisplayMode)
 
-    AutoTagsScanSettings settings() const;
+    explicit AutotagsScanWidget(SettingsDisplayMode _displayMode, QWidget* const parent = nullptr);
+    ~AutotagsScanWidget()                 override;
+
+    AutotagsScanSettings settings() const;
+    void settings(const AutotagsScanSettings& newSettings);
+
+Q_SIGNALS:
+
+    void signalSettingsChanged();
 
 protected:
 
     void doLoadState()                    override;
     void doSaveState()                    override;
+
+private Q_SLOTS:
+
+    void slotSettingsChanged();
 
 private:
 

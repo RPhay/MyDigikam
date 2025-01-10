@@ -24,6 +24,7 @@ include_directories(
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 
     ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model
+    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers
 )
 
 set(libtags_SRCS
@@ -51,11 +52,19 @@ set(libtags_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/models/tagmngrlistitem.cpp
 )
 
-set(autotagassignment_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnbasedetectormodel.cpp
-                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnyolodetector.cpp
-                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnresnetdetector.cpp
-                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsassign.cpp
+set(autotagassignment_LIB_SRCS 
+                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnbasedetectormodel.cpp
+                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnyolodetector.cpp
+                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnresnetdetector.cpp
+                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsassign.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsscansettings.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsengine.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/pipelines/autotagspipelinebase.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/pipelines/autotagspipelinepackagebase.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/pipelines/object/autotagspipelineobject.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/autotagsclassifierbase.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/softmax/autotagsclassifiersoftmax.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/multiclassyolo/autotagsclassifiermultiyolo.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsscanwidget.cpp
 )
 

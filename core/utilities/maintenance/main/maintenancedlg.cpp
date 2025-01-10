@@ -7,6 +7,7 @@
  * Description : maintenance dialog
  *
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -17,6 +18,10 @@
 // Qt includes
 
 #include <QMessageBox>
+
+// local includes
+
+#include "autotagsscansettings.h"
 
 namespace Digikam
 {
@@ -199,15 +204,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space3  = new QWidget(hbox3);
     hbox3->setStretchFactor(space3, 10);
     d->faceScannedHandling = new QComboBox(hbox3);
-    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-    // d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->faceScannedHandling->addItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-/*
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
-*/
 
     d->retrainAllFaces     = new QCheckBox(d->vbox4);
     d->retrainAllFaces->setText(i18nc("@option:check", "Rebuild all training data"));
@@ -234,46 +233,64 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->vbox5               = new DVBox;
     QLabel* const title    = new QLabel(d->vbox5);
     title->setText(i18nc("@label",
-                         "<p><b>This tool allows to assign automatically tags to images by contents analysis using "
-                         "deep-learning neural network.</b></p>"
-                         "<p>The settings below determines the deep-learning model to use while parsing image "
-                         "contents to determine the subjects of the photography. The neural network used in background "
-                         "will generate automatically a serie of tags describing the contents and store the results in "
+                         "<p><b>This tool automatically assigns tags to images by analyzing the image using "
+                         "a deep-learning neural network AI model.</b></p>"
+                         "<p>The settings below determine the deep-learning AI model to use while parsing image "
+                         "contents to determine objects in the image. The AI neural network used in background "
+                         "will automatically generate tags describing the contents and store the results in "
                          "the database.</p>"));
     title->setWordWrap(true);
 
     DHBox* const hbox12    = new DHBox(d->vbox5);
-    new QLabel (i18n("Auto-tagging mode: "), hbox12);
+    new QLabel (i18n("Auto-tagging scan mode: "), hbox12);
     QWidget* const space8  = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
-    d->autotaggingScanMode = new QComboBox(hbox12);
-    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"), AutoTagsScanSettings::AllItems);
-    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),  AutoTagsScanSettings::NonAssignedItems);
-    d->autotaggingScanMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-scan all items from scratch.</p>"
-        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned tag.</p>"));
+    d->autotagsScanMode = new QComboBox(hbox12);
+    d->autotagsScanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
+    d->autotagsScanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
+    d->autotagsScanMode->setToolTip(i18nc("@info:tooltip",
+        "<p><b>Scan all</b>: re-scan all items for tags.</p>"
+        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
+
+    DHBox* const hbox15    = new DHBox(d->vbox5);
+    new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
+    QWidget* const space15 = new QWidget(hbox15);
+    hbox15->setStretchFactor(space15, 10);
+
+    d->autotagsTagMode = new QComboBox(hbox15);
+    d->autotagsTagMode->addItem(i18n("Repalce existing autotags"), AutotagsScanSettings::TagMode::Replace);
+    d->autotagsTagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
+    d->autotagsTagMode->setToolTip(i18nc("@info:tooltip",
+        "<p><b>Repalce existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+        "<p><b>Update autotags</b>: add new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13    = new DHBox(d->vbox5);
     new QLabel(i18n("Selection model: "), hbox13);
     QWidget* const space9  = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
-    d->modelSelectionMode  = new QComboBox(hbox13);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 Nano"),   AutoTagsScanSettings::YOLOV5NANO);
-    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), AutoTagsScanSettings::YOLOV5XLARGE);
-    d->modelSelectionMode->addItem(i18n("ResNet50"),      AutoTagsScanSettings::RESNET50);
-    d->modelSelectionMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers exceptional speed and efficiency. It enables you to swiftly "
-        "evaluate the integration of smaller-scale object detection scenarios. It's designed for objects detections, capable of recognizing "
-        "and extracting the location of objects within an image. The limitation on the number of recognizable objects is set to 80.</p>"
-        "<p><b>YOLOv5 XLarge</b>: as the previous one, this model is a neural network dedicated for more complex object detection requirements and "
-        "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
-        "computer resources, it must be used for larger-scale object detection scenarios as it provides more accurate predictions at the expense of speed.</p>"
-        "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
-        "commonly used to power computer vision applications as object detections. This king of design allows the training of very deep networks without "
-        "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
-        "It can recognize objects from a vast set of more than 1,000 classes, covering a wide range of objects, animals, and scenes.</p>"));
+    d->objectDetectModel  = new QComboBox(hbox13);
+    d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
+    d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
+    d->objectDetectModel->addItem(i18n("ResNet152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
+    d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
+        "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
+        "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+        "<p><b>YOLOv11 XLarge</b>: large, rebust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
+        "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+        "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
+        "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
+
+    DHBox* const hbox14    = new DHBox(d->vbox5);
+
+    new QLabel(i18n("Object Detection Accuracy: "), hbox14);
+    d->autotagsAccuracyInput            = new DIntNumInput(hbox14);
+    d->autotagsAccuracyInput->setDefaultValue(7);
+    d->autotagsAccuracyInput->setRange(1, 10, 1);
+    d->autotagsAccuracyInput->setToolTip(i18nc("@info:tooltip",
+                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
+                                                "be recognized, but fewer objects will be recognized.\n"));
 
     d->trSelectorList      = new LocalizeSelectorList(d->vbox5);
     d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));

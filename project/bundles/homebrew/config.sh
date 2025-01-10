@@ -95,9 +95,9 @@ DK_QTVERSION="6"
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
-#DK_VERSION=v8.4.0
+#DK_VERSION=v8.5.0
 #DK_VERSION=master
-DK_VERSION="work/michmill/faces-pipeline-refactor"
+DK_VERSION="work/michmill/autotags-refactor"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"

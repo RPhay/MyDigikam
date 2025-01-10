@@ -41,7 +41,7 @@ public:
     /**
      * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
-    explicit AutotagsAssignment(AutoTagsScanSettings::ScanMode mode,
+    explicit AutotagsAssignment(AutotagsScanSettings::ScanMode mode,
                                 const AlbumList& list,
                                 int modelType,
                                 const QStringList& langs,

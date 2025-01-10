@@ -15,7 +15,10 @@
 // Local includes
 
 #include "iteminfotasksplitter.h"
-#include "parallelworkers.h"
+
+// Qt includes
+
+#include <QThread>
 
 namespace Digikam
 {
@@ -23,7 +26,7 @@ namespace Digikam
 ItemInfoTaskSplitter::ItemInfoTaskSplitter(const FileActionItemInfoList& list)
     : FileActionItemInfoList(list)
 {
-    int parts = ParallelWorkers::optimalWorkerCount();
+    int parts = qMax(1, QThread::idealThreadCount());
     m_n       = qMax(1, list.size() / parts);
 }
 

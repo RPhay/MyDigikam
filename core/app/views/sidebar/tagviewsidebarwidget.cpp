@@ -42,6 +42,8 @@
 #include "tagsmanager.h"
 #include "coredb.h"
 #include "coredbsearchxml.h"
+#include "autotagsscanwidget.h"
+#include "autotagsengine.h"
 
 namespace Digikam
 {
@@ -62,25 +64,32 @@ public:
 
 public:
 
-    QPushButton*         openTagMngr            = nullptr;
-    SearchTextBarDb*     tagSearchBar           = nullptr;
-    TagFolderView*       tagFolderView          = nullptr;
-    QButtonGroup*        btnGroup               = nullptr;
-    QRadioButton*        noTagsBtn              = nullptr;
-    QRadioButton*        tagsBtn                = nullptr;
+    QPushButton*            openTagMngr            = nullptr;
+    SearchTextBarDb*        tagSearchBar           = nullptr;
+    TagFolderView*          tagFolderView          = nullptr;
+    QButtonGroup*           btnGroup               = nullptr;
+    QRadioButton*           noTagsBtn              = nullptr;
+    QRadioButton*           tagsBtn                = nullptr;
+    TagViewSideBarWidget*   parentInstance         = nullptr;
 
-    bool                 noTagsWasChecked       = false;
-    bool                 ExistingTagsWasChecked = false;
+    AutotagsScanWidget*     settingsWdg            = nullptr;
+    QPushButton*            rescanButton           = nullptr;
 
-    QString              noTagsSearchXml;
 
-    const QString configTagsSourceEntry         = QLatin1String("TagsSource");
+    bool                    noTagsWasChecked       = false;
+    bool                    ExistingTagsWasChecked = false;
+
+    QString                 noTagsSearchXml;
+
+    const QString configTagsSourceEntry             = QLatin1String("TagsSource");
 };
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
     : SidebarWidget(parent),
       d            (new Private)
 {
+    d->parentInstance = this;
+
     setObjectName(QLatin1String("TagView Sidebar"));
     setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F2));
 
@@ -114,11 +123,20 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 */
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
+    d->settingsWdg    = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, this);
+
+    d->rescanButton   = new QPushButton;
+    d->rescanButton->setText(i18n("Auto-tag scan"));
+    d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for objects to auto-tag"));
+
     layout->addWidget(d->openTagMngr);
     layout->addWidget(d->noTagsBtn);
     layout->addWidget(d->tagsBtn);
-    layout->addWidget(d->tagFolderView);
+    layout->addWidget(d->tagFolderView, 10);
     layout->addWidget(d->tagSearchBar);
+    layout->addWidget(d->settingsWdg, 5);
+    layout->addWidget(d->rescanButton);
     layout->setContentsMargins(0, 0, spacing, 0);
 
     connect(d->openTagMngr, SIGNAL(clicked()),
@@ -126,6 +144,9 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
+
+    connect(d->rescanButton, SIGNAL(pressed()),
+            this, SLOT(slotScanForAutotags()) );
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
@@ -254,6 +275,36 @@ void TagViewSideBarWidget::setNoTagsAlbum()
     }
 }
 
+void TagViewSideBarWidget::slotScanForAutotags()
+{
+    AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
+
+    doAutotagsScan(autotagsScanSettings);
+        
+
+    // AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
+
+    // if (!d->settingsWdg->settingsConflicted())
+    // {
+
+    //     doAutotagsScan(autotagsScanSettings);
+
+    // }
+    // else
+    // {
+    //     Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
+    //                                         "there are no identities to recognize. "
+    //                                         "Please add new identities."),
+    //                                    DNotificationWidget::Information);
+    // }
+}
+
+void TagViewSideBarWidget::slotScanComplete()
+{
+    d->settingsWdg->setEnabled(true);
+    d->rescanButton->setEnabled(true);
+}
+
 const QIcon TagViewSideBarWidget::getIcon()
 {
     return QIcon::fromTheme(QLatin1String("tag"));
@@ -306,6 +357,24 @@ void TagViewSideBarWidget::slotToggleTagsSelection(int radioClicked)
             break;
         }
     }
+}
+
+void TagViewSideBarWidget::doAutotagsScan(const AutotagsScanSettings& autotagsScanSettings)
+{
+    AutotagsEngine* const autotagsDetector = new AutotagsEngine(autotagsScanSettings);
+    autotagsDetector->start();
+
+    connect(autotagsDetector, SIGNAL(signalComplete()),
+            d->parentInstance, SLOT(slotScanComplete()));
+
+    connect(autotagsDetector, SIGNAL(signalCanceled()),
+            d->parentInstance, SLOT(slotScanComplete()));
+
+    connect(autotagsDetector, SIGNAL(signalScanNotification(QString,int)),
+            d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
+
+    d->settingsWdg->setEnabled(false);
+    d->rescanButton->setEnabled(false);
 }
 
 } // namespace Digikam

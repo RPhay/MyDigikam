@@ -1,0 +1,49 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-11-10
+ * Description : Integrated, multithread object detection / recognition
+ *
+ * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#pragma once
+
+// Qt includes
+
+
+// local includes
+
+#include "autotagsclassifierbase.h"
+
+namespace Digikam
+{
+
+class DIGIKAM_GUI_EXPORT AutotagsClassifierSoftmax : public AutotagsClassifierBase
+{
+
+public:
+
+    explicit AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile);
+    virtual ~AutotagsClassifierSoftmax();
+
+    virtual int predict(const cv::Mat& target)      const                       override;
+    virtual int predict(const cv::UMat& target)     const                       override;
+
+    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       override;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       override;
+
+private:
+
+    AutotagsClassifierSoftmax()                                                 = delete;
+    AutotagsClassifierSoftmax(AutotagsClassifierSoftmax&)                       = delete;
+
+};
+
+}

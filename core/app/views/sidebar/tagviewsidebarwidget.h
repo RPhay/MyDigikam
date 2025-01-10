@@ -22,6 +22,7 @@
 #include "digikam_config.h"
 #include "albummodel.h"
 #include "sidebarwidget.h"
+#include "autotagsscansettings.h"
 
 namespace Digikam
 {
@@ -49,6 +50,8 @@ public:
 
     AlbumPointer<TAlbum> currentAlbum()                         const;
 
+    void          doAutotagsScan(const AutotagsScanSettings& autotagsScanSettings);
+
 private:
 
     void setNoTagsAlbum();
@@ -58,6 +61,8 @@ public Q_SLOTS:
     void setCurrentAlbum(TAlbum* album);
     void slotOpenTagManager();
     void slotToggleTagsSelection(int radioClicked);
+    void slotScanForAutotags();
+    void slotScanComplete();
 
 Q_SIGNALS:
 

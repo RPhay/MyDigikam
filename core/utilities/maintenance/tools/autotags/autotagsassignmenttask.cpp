@@ -43,7 +43,7 @@ public:
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
     QStringList      langs;
-    int              modelType = AutoTagsScanSettings::YOLOV5NANO;
+    int              modelType = AutotagsScanSettings::YOLOV5NANO;
 };
 
 // -------------------------------------------------------
@@ -191,7 +191,7 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
 
-        QScopedPointer<AutoTagsAssign> autotagsEngine(new AutoTagsAssign(AutoTagsScanSettings::DetectorModel(d->modelType)));
+        QScopedPointer<AutotagsAssign> autotagsEngine(new AutotagsAssign(AutotagsScanSettings::DetectorModel(d->modelType)));
         QList<QList<QString> > tagsLists = autotagsEngine->generateTagsList(inputImages, d->batchSize);
 
         if (tagsLists.size() >= inputImages.size())

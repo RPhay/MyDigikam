@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -36,13 +37,14 @@
 #include "thumbsgenerator.h"
 #include "fingerprintsgenerator.h"
 #include "duplicatesfinder.h"
-#include "autotagsassignment.h"
+// #include "autotagsassignment.h"
 #include "imagequalitysorter.h"
 #include "metadatasynchronizer.h"
 #include "dnotificationwrapper.h"
 #include "progressmanager.h"
 #include "dbcleaner.h"
 #include "facesengine.h"
+#include "autotagsengine.h"
 
 namespace Digikam
 {
@@ -66,7 +68,7 @@ public:
     FingerPrintsGenerator* fingerPrintsGenerator = nullptr;
     DuplicatesFinder*      duplicatesFinder      = nullptr;
     MetadataSynchronizer*  metadataSynchronizer  = nullptr;
-    AutotagsAssignment*    autotagsAssignment    = nullptr;
+    AutotagsEngine*        newAutotagsAssignment = nullptr;
     ImageQualitySorter*    imageQualitySorter    = nullptr;
     FacesEngine*           facesDetector         = nullptr;
     DbCleaner*             databaseCleaner       = nullptr;
@@ -151,9 +153,9 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
         d->facesDetector = nullptr;
         stage7();
     }
-    else if(tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment))
+    else if(tool == dynamic_cast<ProgressItem*>(d->newAutotagsAssignment))
     {
-        d->autotagsAssignment = nullptr;
+        d->newAutotagsAssignment = nullptr;
         stage8();
     }
    else if (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))
@@ -179,7 +181,7 @@ void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
         (tool == dynamic_cast<ProgressItem*>(d->facesDetector))         ||
         (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))    ||
         (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer))  ||
-        (tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment))
+        (tool == dynamic_cast<ProgressItem*>(d->newAutotagsAssignment))
        )
     {
         cancel();
@@ -338,11 +340,22 @@ void MaintenanceMngr::stage7()
         list << d->settings.albums;
         list << d->settings.tags;
 
-        d->autotagsAssignment = new AutotagsAssignment((AutoTagsScanSettings::ScanMode)d->settings.autotaggingScanMode,
-                                                       list, d->settings.modelSelectionMode, d->settings.autotagsLanguages);
-        d->autotagsAssignment->setNotificationEnabled(false);
-        d->autotagsAssignment->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
-        d->autotagsAssignment->start();
+        // new autotags engine
+        AutotagsScanSettings settings;
+
+        settings.albums << d->settings.albums;
+        settings.albums << d->settings.tags;
+
+        settings.useFullCpu             = d->settings.useMutiCoreCPU;
+        settings.languages              = d->settings.autotagsLanguages;
+        settings.scanMode               = (AutotagsScanSettings::ScanMode)d->settings.autotagsScanMode;
+        settings.tagMode                = (AutotagsScanSettings::TagMode)d->settings.autotagsTagMode;
+        settings.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)d->settings.autotagsObjectDetectModel;
+        settings.uiConfidenceThreshold  = d->settings.autotagsObjectDetectAccuracy;
+
+        d->newAutotagsAssignment        = new AutotagsEngine(settings);
+        d->newAutotagsAssignment->start();
+
     }
     else
     {

@@ -33,7 +33,6 @@
 
 #include "digikam_debug.h"
 #include "applicationsettings.h"
-#include "dataproviders.h"
 #include "facedboperationgroup.h"
 #include "facedbaccess.h"
 #include "facedb.h"

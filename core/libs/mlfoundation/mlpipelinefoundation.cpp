@@ -369,6 +369,7 @@ bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemC
 
         for (int i = 0 ; i < newInstances ; ++i)
         {
+            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "MLPipelineFoundation::checkMoreWorkers: Sending signal to more workers";
             Q_EMIT signalAddMoreWorkers();
         }
 
@@ -643,11 +644,11 @@ void MLPipelineFoundation::showPipelinePerformance() const
 
         if (profile.itemCount > 0)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
-                                            << " Max Queue:" << profile.maxQueueCount
-                                            << " Elapsed:" << profile.elapsedTime
-                                            << " Max Elapsed:" << profile.maxElapsedTime
-                                            << " Average:" << profile.elapsedTime / profile.itemCount;
+            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
+                                                      << " Max Queue:" << profile.maxQueueCount
+                                                      << " Elapsed:" << profile.elapsedTime
+                                                      << " Max Elapsed:" << profile.maxElapsedTime
+                                                      << " Average:" << profile.elapsedTime / profile.itemCount;
         }
     }
 }

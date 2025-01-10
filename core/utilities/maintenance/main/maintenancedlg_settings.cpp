@@ -7,6 +7,7 @@
  * Description : maintenance dialog
  *
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -57,9 +58,11 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
 
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
-    prm.autotaggingScanMode                 = d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
-    prm.modelSelectionMode                  = d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
+    prm.autotagsScanMode                    = d->autotagsScanMode->itemData(d->autotagsScanMode->currentIndex()).toInt();
+    prm.autotagsTagMode                     = d->autotagsTagMode->itemData(d->autotagsTagMode->currentIndex()).toInt();
+    prm.autotagsObjectDetectModel           = d->objectDetectModel->itemData(d->objectDetectModel->currentIndex()).toInt();
     prm.autotagsLanguages                   = d->trSelectorList->languagesList();
+    prm.autotagsObjectDetectAccuracy        = d->autotagsAccuracyInput->value();
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
@@ -134,10 +137,12 @@ void MaintenanceDlg::readSettings()
         d->faceScannedHandling->setCurrentIndex(faceHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
-        int tagScanMode  = d->autotaggingScanMode->findData(group.readEntry(d->configAutotaggingScanMode,       prm.autotaggingScanMode));
-        d->autotaggingScanMode->setCurrentIndex(tagScanMode);
-        int tagSelection = d->modelSelectionMode->findData(group.readEntry(d->configModelSelectionMode,         prm.modelSelectionMode));
-        d->modelSelectionMode->setCurrentIndex(tagSelection);
+        int tagScanMode  = d->autotagsScanMode->findData(group.readEntry(d->configAutotagsScanMode,       prm.autotagsScanMode));
+        d->autotagsScanMode->setCurrentIndex(tagScanMode);
+        int tagTagMode   = d->autotagsTagMode->findData(group.readEntry(d->configAutotagsTagMode,         prm.autotagsTagMode));
+        d->autotagsTagMode->setCurrentIndex(tagTagMode);
+        int tagSelection = d->objectDetectModel->findData(group.readEntry(d->configAutotagsObjectDetectModel,         prm.autotagsObjectDetectModel));
+        d->objectDetectModel->setCurrentIndex(tagSelection);
         d->trSelectorList->clearLanguages();
 
         const auto lgs = group.readEntry(d->configAutotagsLanguages,                                            prm.autotagsLanguages);
@@ -146,6 +151,7 @@ void MaintenanceDlg::readSettings()
         {
             d->trSelectorList->addLanguage(lg);
         }
+        d->autotagsAccuracyInput->setValue(group.readEntry(d->configAutotagsObjectDetectAccuracy,                         prm.autotagsObjectDetectAccuracy));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         int qualityMod   = d->qualityScanMode->findData(group.readEntry(d->configQualityScanMode,               prm.qualityScanMode));
@@ -181,30 +187,32 @@ void MaintenanceDlg::writeSettings()
     {
         MaintenanceSettings prm   = settings();
 
-        group.writeEntry(d->configUseMutiCoreCPU,             prm.useMutiCoreCPU);
-        group.writeEntry(d->configNewItems,                   prm.newItems);
-        group.writeEntry(d->configCleanupDatabase,            prm.databaseCleanup);
-        group.writeEntry(d->configCleanupThumbDatabase,       prm.cleanThumbDb);
-        group.writeEntry(d->configCleanupFacesDatabase,       prm.cleanFacesDb);
-        group.writeEntry(d->configCleanupSimilarityDatabase,  prm.cleanSimilarityDb);
-        group.writeEntry(d->configShrinkDatabases,            prm.shrinkDatabases);
-        group.writeEntry(d->configThumbnails,                 prm.thumbnails);
-        group.writeEntry(d->configScanThumbs,                 prm.scanThumbs);
-        group.writeEntry(d->configFingerPrints,               prm.fingerPrints);
-        group.writeEntry(d->configScanFingerPrints,           prm.scanFingerPrints);
-        group.writeEntry(d->configDuplicates,                 prm.duplicates);
-        group.writeEntry(d->configMinSimilarity,              prm.minSimilarity);
-        group.writeEntry(d->configMaxSimilarity,              prm.maxSimilarity);
-        group.writeEntry(d->configDuplicatesRestriction,      (int)prm.duplicatesRestriction);
-        group.writeEntry(d->configFaceManagement,             prm.faceManagement);
-        group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
-        group.writeEntry(d->configAutotagsAssignment,         prm.autotagsAssignment);
-        group.writeEntry(d->configAutotaggingScanMode,        prm.autotaggingScanMode);
-        group.writeEntry(d->configModelSelectionMode,         prm.modelSelectionMode);
-        group.writeEntry(d->configAutotagsLanguages,          prm.autotagsLanguages);
-        group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
-        group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
-        group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
+        group.writeEntry(d->configUseMutiCoreCPU,               prm.useMutiCoreCPU);
+        group.writeEntry(d->configNewItems,                     prm.newItems);
+        group.writeEntry(d->configCleanupDatabase,              prm.databaseCleanup);
+        group.writeEntry(d->configCleanupThumbDatabase,         prm.cleanThumbDb);
+        group.writeEntry(d->configCleanupFacesDatabase,         prm.cleanFacesDb);
+        group.writeEntry(d->configCleanupSimilarityDatabase,    prm.cleanSimilarityDb);
+        group.writeEntry(d->configShrinkDatabases,              prm.shrinkDatabases);
+        group.writeEntry(d->configThumbnails,                   prm.thumbnails);
+        group.writeEntry(d->configScanThumbs,                   prm.scanThumbs);
+        group.writeEntry(d->configFingerPrints,                 prm.fingerPrints);
+        group.writeEntry(d->configScanFingerPrints,             prm.scanFingerPrints);
+        group.writeEntry(d->configDuplicates,                   prm.duplicates);
+        group.writeEntry(d->configMinSimilarity,                prm.minSimilarity);
+        group.writeEntry(d->configMaxSimilarity,                prm.maxSimilarity);
+        group.writeEntry(d->configDuplicatesRestriction,        (int)prm.duplicatesRestriction);
+        group.writeEntry(d->configFaceManagement,               prm.faceManagement);
+        group.writeEntry(d->configFaceScannedHandling,          (int)prm.faceSettings.alreadyScannedHandling);
+        group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
+        group.writeEntry(d->configAutotagsScanMode,             prm.autotagsScanMode);
+        group.writeEntry(d->configAutotagsTagMode,              prm.autotagsTagMode);
+        group.writeEntry(d->configAutotagsObjectDetectModel,    prm.autotagsObjectDetectModel);
+        group.writeEntry(d->configAutotagsLanguages,            prm.autotagsLanguages);
+        group.writeEntry(d->configAutotagsObjectDetectAccuracy, prm.autotagsObjectDetectAccuracy);
+        group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
+        group.writeEntry(d->configQualityScanMode,              prm.qualityScanMode);
+        group.writeEntry(d->configQualitySettingsSelected,      prm.qualitySettingsSelected);
 
         ImageQualityContainer imq = d->qualitySelector->customSettings();
         imq.writeToConfig(group);
@@ -255,7 +263,10 @@ void MaintenanceDlg::slotUseLastSettings(bool checked)
         d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
-        d->autotaggingScanMode->setCurrentIndex(prm.autotaggingScanMode);
+        d->autotagsScanMode->setCurrentIndex(prm.autotagsScanMode);
+
+        d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
+        d->autotagsTagMode->setCurrentIndex(prm.autotagsTagMode);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
         d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);

@@ -18,11 +18,11 @@
 namespace Digikam
 {
 
-AutoTagsScanSettings::AutoTagsScanSettings()
+AutotagsScanSettings::AutotagsScanSettings()
 {
 }
 
-AutoTagsScanSettings::~AutoTagsScanSettings()
+AutotagsScanSettings::~AutotagsScanSettings()
 {
 }
 

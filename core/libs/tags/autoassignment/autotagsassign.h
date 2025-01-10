@@ -31,13 +31,13 @@
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT AutoTagsAssign
+class DIGIKAM_GUI_EXPORT AutotagsAssign
 {
 
 public:
 
-    explicit AutoTagsAssign(AutoTagsScanSettings::DetectorModel model = AutoTagsScanSettings::YOLOV5NANO);
-    ~AutoTagsAssign();
+    explicit AutotagsAssign(AutotagsScanSettings::ObjectDetectionModel model = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
+    ~AutotagsAssign();
 
     cv::Mat prepareForDetection(const DImg& inputImage)                                             const;
     cv::Mat prepareForDetection(const QImage& inputImage)                                           const;
@@ -61,13 +61,13 @@ public:
 private:
 
     // Disable
-    AutoTagsAssign(const AutoTagsAssign&)            = delete;
-    AutoTagsAssign& operator=(const AutoTagsAssign&) = delete;
+    AutotagsAssign(const AutotagsAssign&)            = delete;
+    AutotagsAssign& operator=(const AutotagsAssign&) = delete;
 
 private:
 
-    AutoTagsScanSettings::DetectorModel m_modelType;
-    DNNBaseDetectorModel*               m_inferenceEngine = nullptr;
+    AutotagsScanSettings::ObjectDetectionModel m_modelType;
+    // DNNBaseDetectorModel*                     m_inferenceEngine = nullptr;
 };
 
 } // namespace Digikam

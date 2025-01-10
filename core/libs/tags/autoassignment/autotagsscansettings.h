@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2025-01-06
- * Description : autotags scanning settings container
+ * Date        : 2010-10-09
+ * Description : Autotags scan settings container.
  *
- * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -20,55 +21,94 @@
 #include "album.h"
 #include "iteminfo.h"
 #include "digikam_export.h"
+#include "dnnmodeldefinitions.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT AutoTagsScanSettings
+class DIGIKAM_GUI_EXPORT AutotagsScanSettings
 {
     Q_GADGET
 
 public:
 
-   /**
-    * Scanning modes
-    */
+    /**
+     * Different possible tasks processed while scanning operation.
+     */
     enum ScanMode
     {
-        AllItems = 0,        ///< Clean all tags already assigned and re-scan all items.
+        AllItems = 0,        ///< Scan all items
         NonAssignedItems     ///< Scan only items with no tags assigned.
     };
+    Q_ENUM(ScanMode)
 
     /**
-     * Objects detection model
+     * Different possible tasks processed while scanning operation.
      */
-    enum DetectorModel
+    enum TagMode
     {
-        YOLOV5NANO = 0,   ///< YOLO nano neural network model.
-        YOLOV5XLARGE,     ///< YOLO large neural network model.
-        RESNET50
-
-        // Add here another model.
+        Replace = 0,        ///< Clean all tags already assigned
+        Update              ///< Add new tags to existing tags
     };
+    Q_ENUM(TagMode)
+
+    /**
+     * object detection AI models.
+     */
+    enum ObjectDetectionModel
+    {
+        YOLOV11NANO,             
+        YOLOV11XLARGE,           
+        RESNET152
+    };
+    Q_ENUM(ObjectDetectionModel)
+
+    /**
+     * object detection AI models.
+     */
+    enum ImageClassificationModel
+    {          
+        ResNet152_v2
+    };
+    Q_ENUM(ImageClassificationModel)
 
 public:
 
-    AutoTagsScanSettings();
-    ~AutoTagsScanSettings();
+    AutotagsScanSettings();
+    ~AutotagsScanSettings();
 
 public:
 
     /// Whole albums checked.
-    bool                                    wholeAlbums = false;
+    ScanMode                                scanMode                    = ScanMode::AllItems;
+
+    /// Processing power.
+    bool                                    wholeAlbums                 = true;
+
+    /// Whole albums checked.
+    TagMode                                 tagMode                     = TagMode::Replace;
+
+    /// Processing power.
+    bool                                    useFullCpu                  = false;
+
+    /// Object Detection Model.
+    ObjectDetectionModel                    objectDetectModel           = ObjectDetectionModel::YOLOV11NANO;
+
+    /// Object Detection Model.
+    ImageClassificationModel                imageClassificationModel    = ImageClassificationModel::ResNet152_v2;
 
     /// Albums to scan.
     AlbumList                               albums;
 
-    ScanMode                                mode        = AllItems;
+    /// confidence threshold
+    int                                     uiConfidenceThreshold       = 7;
+    
+    /// Autotags languages
+    QStringList                             languages;
 
-    DetectorModel                           modelType   = YOLOV5NANO;
+    /// Set true for BQM
+    bool                                    bqmMode                     = false;
 
-    QStringList                             langs;
 };
 
 } // namespace Digikam

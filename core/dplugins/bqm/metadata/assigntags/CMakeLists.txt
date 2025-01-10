@@ -23,4 +23,10 @@ set(assigntagsplugin_SRCS
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    AssignTags
                        SOURCES ${assigntagsplugin_SRCS}
+                       DEPENDS opencv_core
+                               opencv_objdetect
+                               opencv_imgproc
+                               opencv_imgcodecs
+                               opencv_dnn
+                               opencv_flann
 )
