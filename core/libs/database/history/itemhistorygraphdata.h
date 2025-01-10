@@ -106,7 +106,8 @@ public:
     {
     }
 
-    ItemHistoryGraphData& operator=(const HistoryGraph& g)  // clazy:exclude=duplInheritedMember
+    // cppcheck-suppress duplInheritedMember
+    ItemHistoryGraphData& operator=(const HistoryGraph& g)
     {
         HistoryGraph::operator=(g);
 
