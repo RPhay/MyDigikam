@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -853,7 +853,7 @@ msgstr "Mở bằng"
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgctxt "@action: context menu"
@@ -4438,7 +4438,7 @@ msgstr "Kéo giãn độ tương phản"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Tự động phơi nắng"
@@ -49744,81 +49744,81 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Thay tên..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Tên"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Cỡ"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Kiểu :"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Ngày:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Tuy chọn giao diện"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Cỡ :"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Rộng (điểm ảnh):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Rộng (điểm ảnh):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Rộng (điểm ảnh):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Rộng (điểm ảnh):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Thêm thẻ mới..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Xoá hết"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"

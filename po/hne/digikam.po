@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -893,7 +893,7 @@ msgstr "एखर साथ खोलव"
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: context menu"
@@ -4530,7 +4530,7 @@ msgstr "स्ट्रेच कंट्रास्ट"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr "अपने अपन एक्सपोजर"
@@ -50385,83 +50385,83 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "नाम बदलव..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "आकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "किसिम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "तारीक"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "इंटरफेस विकल्प"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "आकारः"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "चौड़ाई ( पिक्सेल्स):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "चौड़ाई ( पिक्सेल्स):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "चौड़ाई ( पिक्सेल्स):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "चौड़ाई ( पिक्सेल्स):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "नवा टैग जोड़व..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "सब्बो साफ करव"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"

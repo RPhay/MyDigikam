@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -829,7 +829,7 @@ msgstr "Buka..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4380,7 +4380,7 @@ msgstr ""
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr ""
@@ -50658,84 +50658,84 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Ubah nama"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Nama"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Ukuran"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Tipe"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Tanggal"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 #| msgid "Preview Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Opsi Pratinjau"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Ukuran Ikon"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Kecil (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Sedang (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Besar (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr " (%1 dari %2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 #| msgid "Add tags per image"
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Tambahkan tag tiap citra"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Bersihkan Semua"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgctxt "@action: context menu"

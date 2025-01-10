@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2025-01-07 11:15+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -894,7 +894,7 @@ msgstr "Openen..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4566,7 +4566,7 @@ msgstr "Contrast uitrekken"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Autobelichting"
@@ -51168,79 +51168,79 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Naamloos"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Naam"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Grootte"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Type"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Datum"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Stapelweergave"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Pictogramgrootte"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Klein (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Middel (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Groot (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Enorm (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Als favoriet toevoegen"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Alle items wissen"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"

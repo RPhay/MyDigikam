@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2024-10-03 22:47+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -854,7 +854,7 @@ msgstr "Otvoriť..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4491,7 +4491,7 @@ msgstr "Roztiahnuť kontrast"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Automatická korekcia expozície"
@@ -52012,7 +52012,7 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Premenovať"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgctxt "@title: DPlugin properties"
 #| msgid "Name"
@@ -52020,42 +52020,42 @@ msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Meno"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Typ"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Možnosti zobrazenia ikon"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Veľkosť ikon:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "Small (size)"
 #| msgid "Small (%1 x %2 pixels)"
@@ -52063,7 +52063,7 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Malá (%1 x %2 pixelov)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "Medium (size)"
 #| msgid "Medium (%1 x %2 pixels)"
@@ -52071,7 +52071,7 @@ msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Stredná (%1 x %2 pixelov)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 #| msgctxt "Large (size)"
 #| msgid "Large (%1 x %2 pixels)"
@@ -52079,7 +52079,7 @@ msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Väčšia (%1 x %2 pixelov)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "Huge (size)"
 #| msgid "Huge (%1 x %2 pixels)"
@@ -52087,21 +52087,21 @@ msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Obrovská (%1 x %2 pixelov)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Pridať štítok tváre"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Vyčistiť všetko"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"

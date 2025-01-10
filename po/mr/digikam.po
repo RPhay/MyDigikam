@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -905,7 +905,7 @@ msgstr "यामध्ये उघडा..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4515,7 +4515,7 @@ msgstr ""
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr ""
@@ -49887,46 +49887,46 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "नाव बदला"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "नाव"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "आकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "प्रकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "दिनांक"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "संचयीका"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "आकार :"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Full size"
@@ -49934,38 +49934,38 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "पूर्ण आकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "फाईलचा आकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "टॅग"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "फाईलचा आकार"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "गुणधर्म"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "सर्व साफ करा"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"

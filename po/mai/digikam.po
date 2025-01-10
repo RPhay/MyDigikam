@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -862,7 +862,7 @@ msgstr ""
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4503,7 +4503,7 @@ msgstr ""
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr ""
@@ -49311,89 +49311,89 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "फाइलक नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "फाइलक नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Paper Size:"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "पृष्ठ आकार:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Video"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "वीडियो"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "फाइलक नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 #| msgid "Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "विकल्प"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 #| msgid "Paper Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "पृष्ठ आकार:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 #| msgid "Paper Size:"
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "पृष्ठ आकार:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 #| msgid "Options"
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "विकल्प"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "फाइलक नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 #| msgid "Options"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "विकल्प"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgctxt "@action: context menu"
