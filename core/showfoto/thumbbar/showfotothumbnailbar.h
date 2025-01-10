@@ -24,6 +24,8 @@ namespace ShowFoto
 
 class ShowfotoItemViewToolTip;
 
+// clazy:exclude=duplInheritedMember
+
 class ShowfotoThumbnailBar : public ShowfotoCategorizedView
 {
     Q_OBJECT
