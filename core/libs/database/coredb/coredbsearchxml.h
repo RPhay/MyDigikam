@@ -130,56 +130,57 @@ class DIGIKAM_DATABASE_EXPORT SearchXmlReader : public QXmlStreamReader
 public:
 
     explicit SearchXmlReader(const QString& xml);
+    virtual ~SearchXmlReader() = default;
 
     /** Continue parsing the document. Returns the type of the current element.
      */
-    SearchXml::Element  readNext();
+    virtual SearchXml::Element  readNext();
 
     /** Returns if the current element is a group element (start or end element).
      */
-    bool                isGroupElement() const;
+    bool                isGroupElement()        const;
 
     /** Returns if the current element is a field element (start or end element).
      */
-    bool                isFieldElement() const;
+    bool                isFieldElement()        const;
 
     /** Returns the group operator. Only valid if the current element is a group.
      */
-    SearchXml::Operator groupOperator() const;
+    virtual SearchXml::Operator groupOperator() const;
 
     /** Returns the (optional) group caption. Only valid if the current element is a group.
      */
-    QString             groupCaption() const;
+    virtual QString             groupCaption()  const;
 
     /** Returns the default field operator. This operator can be overridden by a specific fieldOperator().
      */
-    SearchXml::Operator defaultFieldOperator() const;
+    SearchXml::Operator defaultFieldOperator()  const;
 
     /** Returns the field attributes. Only valid if the current element is a field.
      *  fieldOperator returns the default operator if the field has not specified any.
      */
-    SearchXml::Operator fieldOperator() const;
-    QString             fieldName() const;
-    SearchXml::Relation fieldRelation() const;
+    virtual SearchXml::Operator fieldOperator() const;
+    virtual QString             fieldName()     const;
+    virtual SearchXml::Relation fieldRelation() const;
 
     /** Returns the field values. Only valid if the current element is a field.
      *  This reads to the end element of the field, and converts the found
      *  text/elements to the desired output.
      */
-    QString             value();
-    int                 valueToInt();
-    qlonglong           valueToLongLong();
-    double              valueToDouble();
-    QDateTime           valueToDateTime();
-    QList<int>          valueToIntList();
-    QList<qlonglong>    valueToLongLongList();
-    QList<double>       valueToDoubleList();
-    QStringList         valueToStringList();
-    QList<QDateTime>    valueToDateTimeList();
+    virtual QString             value();
+    virtual int                 valueToInt();
+    virtual qlonglong           valueToLongLong();
+    virtual double              valueToDouble();
+    virtual QDateTime           valueToDateTime();
+    virtual QList<int>          valueToIntList();
+    virtual QList<qlonglong>    valueToLongLongList();
+    virtual QList<double>       valueToDoubleList();
+    virtual QStringList         valueToStringList();
+    virtual QList<QDateTime>    valueToDateTimeList();
 
-    QList<int>          valueToIntOrIntList();
-    QList<double>       valueToDoubleOrDoubleList();
-    QList<QString>      valueToStringOrStringList();
+    virtual QList<int>          valueToIntOrIntList();
+    virtual QList<double>       valueToDoubleOrDoubleList();
+    virtual QList<QString>      valueToStringOrStringList();
 
     /** General helper method: Reads XML a start element with the given
      *  name is found. The method goes to the next start element, and from
@@ -220,6 +221,7 @@ public:
      *  Otherwise you will not produce the desired output.
      */
     explicit SearchXmlWriter();
+    ~SearchXmlWriter() = default;
 
     /** Adds a group. Use the returned group writer to add fields.
      */
@@ -374,28 +376,29 @@ public:
      *  with all calls possible multiple times.
      */
     explicit SearchXmlCachingReader(const QString& xml);
+    ~SearchXmlCachingReader() = default;
 
-    SearchXml::Element  readNext();
+    SearchXml::Element  readNext()                      override;
 
-    SearchXml::Operator groupOperator() const;
-    QString             groupCaption()  const;
+    SearchXml::Operator groupOperator()           const override;
+    QString             groupCaption()            const override;
 
-    SearchXml::Operator fieldOperator() const;
-    QString             fieldName()     const;
-    SearchXml::Relation fieldRelation() const;
-    QString             value();
-    int                 valueToInt();
-    qlonglong           valueToLongLong();
-    double              valueToDouble();
-    QDateTime           valueToDateTime();
-    QList<int>          valueToIntList();
-    QList<qlonglong>    valueToLongLongList();
-    QList<double>       valueToDoubleList();
-    QStringList         valueToStringList();
-    QList<QDateTime>    valueToDateTimeList();
-    QList<int>          valueToIntOrIntList();
-    QList<double>       valueToDoubleOrDoubleList();
-    QList<QString>      valueToStringOrStringList();
+    SearchXml::Operator fieldOperator()           const override;
+    QString             fieldName()               const override;
+    SearchXml::Relation fieldRelation()           const override;
+    QString             value()                         override;
+    int                 valueToInt()                    override;
+    qlonglong           valueToLongLong()               override;
+    double              valueToDouble()                 override;
+    QDateTime           valueToDateTime()               override;
+    QList<int>          valueToIntList()                override;
+    QList<qlonglong>    valueToLongLongList()           override;
+    QList<double>       valueToDoubleList()             override;
+    QStringList         valueToStringList()             override;
+    QList<QDateTime>    valueToDateTimeList()           override;
+    QList<int>          valueToIntOrIntList()           override;
+    QList<double>       valueToDoubleOrDoubleList()     override;
+    QList<QString>      valueToStringOrStringList()     override;
 
 protected:
 
