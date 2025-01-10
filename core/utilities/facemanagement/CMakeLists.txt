@@ -34,17 +34,10 @@ set(libfacemanagement_SRCS
     # new face engine
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/facepipelinebase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/facepipelinepackagebase.cpp
-
-    # ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/detect/facepipelinedetect.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/recognize/facepipelinerecognize.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/edit/facepipelineedit.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/retrain/facepipelineretrain.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/detectrecognize/facepipelinedetectrecognize.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/reset/facepipelinereset.cpp
 )
 
