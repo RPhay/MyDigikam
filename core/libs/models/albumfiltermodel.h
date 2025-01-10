@@ -288,8 +288,8 @@ public:
 
     explicit CheckableAlbumFilterModel(QObject* const parent = nullptr);
 
-    void setSourceAlbumModel(AbstractCheckableAlbumModel* const source);
-    AbstractCheckableAlbumModel* sourceAlbumModel()                             const;
+    void setSourceCheckableModel(AbstractCheckableAlbumModel* const source);
+    AbstractCheckableAlbumModel* sourceCheckableModel()                         const;
 
     void setSourceFilterModel(CheckableAlbumFilterModel* const source);
 
