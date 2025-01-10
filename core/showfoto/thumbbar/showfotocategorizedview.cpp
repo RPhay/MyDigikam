@@ -25,6 +25,10 @@
 #include "itemviewtooltip.h"
 #include "showfotodelegate.h"
 #include "showfototooltipfiller.h"
+#include "showfotoitemmodel.h"
+#include "showfotofiltermodel.h"
+#include "showfotothumbnailmodel.h"
+#include "itemdelegateoverlay.h"
 
 using namespace Digikam;
 

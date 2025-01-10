@@ -98,6 +98,7 @@
 #include "showfotostackviewlist.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
+#include "showfotofiltermodel.h"
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"

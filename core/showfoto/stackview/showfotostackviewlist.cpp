@@ -41,6 +41,11 @@
 #include "showfotostackviewtooltip.h"
 #include "showfotostackviewitem.h"
 #include "showfotosettings.h"
+#include "showfotoitemmodel.h"
+#include "showfotodelegate.h"
+#include "showfototooltipfiller.h"
+#include "showfotofiltermodel.h"
+#include "showfotothumbnailmodel.h"
 #include "dfileoperations.h"
 
 namespace ShowFoto

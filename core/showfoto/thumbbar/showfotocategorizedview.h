@@ -17,16 +17,22 @@
 // Local includes
 
 #include "itemviewcategorized.h"
-#include "showfotoitemmodel.h"
-#include "showfotofiltermodel.h"
-#include "showfotothumbnailmodel.h"
 #include "showfotoiteminfo.h"
-#include "itemdelegateoverlay.h"
+
+namespace Digikam
+{
+class ItemDelegateOverlay;
+class ThumbnailSize;
+};
 
 namespace ShowFoto
 {
 
+class ShowfotoItemModel;
 class ShowfotoDelegate;
+class ShowfotoSortFilterModel;
+class ShowfotoThumbnailModel;
+class ShowfotoFilterModel;
 
 class ShowfotoCategorizedView : public ItemViewCategorized
 {
