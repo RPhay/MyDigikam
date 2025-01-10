@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2024-10-29 20:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -30325,7 +30325,7 @@ msgstr "Jatka"
 msgid "Do not ask again"
 msgstr "Älä kysy uudelleen"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -37683,7 +37683,7 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -51112,31 +51112,31 @@ msgstr[1] "Muuta nimeä (%1 kuvaa)"
 msgid "Sort Images"
 msgstr "Lajittele kuvat"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Odota…</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "K&eskeytä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Käsitellään…"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Muutetaan kuvien nimiä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51152,19 +51152,19 @@ msgstr[1] ""
 "%1 kuvan nimeä muutettaessa tapahtui virhe.\n"
 "Haluatko muuttaa kuvan nimeä uudelleen vai korvata nämä tiedostot?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Muuta nimeä uudelleen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Korvaa"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Virheet: %1</b>"
@@ -55569,7 +55569,7 @@ msgstr "Uusi-Seelanti"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
@@ -59492,7 +59492,7 @@ msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> lataaminen epäonnistui"
@@ -60205,25 +60205,25 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Perutaan käynnissä oleva toiminto, odota…"
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Haluatko sulkea ikkunan ja keskeyttää nykyisen toiminnon?"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Suljetaan yhteyttä kameraan, odota…"
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Valmis"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60233,13 +60233,13 @@ msgstr ""
 "Yhteyden luominen kameraan epäonnistui. Tarkasta, että kamera on liitetty "
 "oikein ja virta on kytketty."
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Valitse siirrettävä kuva"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60253,7 +60253,7 @@ msgstr ""
 "Tarvittava tila: %1\n"
 "Tila vapaana: %2"
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60263,13 +60263,13 @@ msgstr ""
 "Kamerakansiossa ”%1” on jo tiedosto ”%2”.\n"
 "Anna uusi tiedostonimi (päätteettä):"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Tiedosto on jo olemassa"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60277,7 +60277,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60286,7 +60286,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60294,7 +60294,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60303,7 +60303,7 @@ msgid ""
 msgstr ""
 "Valitse digiKamin kirjastosta kohdealbumi, jonne kameran kuvat tuodaan."
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60311,18 +60311,18 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 "Tiedoston <filename>%1</filename> oheistiedoston siirtäminen epäonnistui"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> siirtäminen epäonnistui"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60334,7 +60334,7 @@ msgstr ""
 "poisteta. Jos haluat poistaa nämä kohteet, poista ensin lukitus ja yritä "
 "sitten uudelleen."
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60354,19 +60354,19 @@ msgstr[1] ""
 "Poistettuja tiedostoja ei enää voi palauttaa.\n"
 "Oletko varma?"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Varoitus"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Levytila ei riitä"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60386,8 +60386,8 @@ msgstr ""
 "\n"
 "Yritetäänkö silti?"
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60395,13 +60395,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ei valittuja kohteita (%1 kohde)"
 msgstr[1] "Ei valittuja kohteita (%1 kohdetta)"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "”%1” (%2 / %3)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60409,24 +60409,24 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 kohde valittu"
 msgstr[1] "%2/%1 kohdetta valittu"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Ohitettiin tiedosto <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Tiedoston nimeksi muutettiin <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 "Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
 "Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60436,19 +60436,19 @@ msgstr ""
 "Kuvien lataus valmistui; voit irrottaa kameran odotellessasi kuvien "
 "automaattista kääntöä"
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Kuvien lataus valmistui"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Kansiossa ”%2” on jo saman niminen tiedosto (”%1”)."
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -60991,27 +60991,27 @@ msgstr "Aseta tässä kuvan värikylläisyyden säätö."
 msgid "Drag and drop an image here"
 msgstr "Vedä ja pudota kuva tähän"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, kde-format
 msgid "Show on left panel"
 msgstr "Näytä vasemmassa paneelissa"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr "Näytä oikeassa paneelissa"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, kde-format
 msgid "Remove item"
 msgstr "Poista kohde"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, kde-format
 msgid "Clear all"
 msgstr "Tyhjennä kaikki"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Vedä ja pudota kuvia tähän"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -30267,7 +30267,7 @@ msgstr "계속"
 msgid "Do not ask again"
 msgstr "다시 묻지 않기"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -37811,7 +37811,7 @@ msgid "Description"
 msgstr "설명"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -52185,33 +52185,33 @@ msgstr[0] "이름 바꾸기(이미지 %1개)"
 msgid "Sort Images"
 msgstr "이미지 정렬"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>이미지 이름 바꾸는 중. 기다려 주십시오...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "중단(&A)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "처리 중..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "이미지 이름 바꾸는 중"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -52225,21 +52225,21 @@ msgstr[0] ""
 "해당 이미지의 이름을 다른 것으로 바꾸시겠습니까? 아니면 기존 이미지에 덮어 쓰"
 "시겠습니까?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Rename Again"
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "다시 이름 바꾸기"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, fuzzy, kde-format
 #| msgid "Overwrite"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "덮어쓰기"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>이미지 이름 바꾸는 중. 오류: %1</b>"
@@ -56571,7 +56571,7 @@ msgstr "뉴질랜드"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
@@ -60621,7 +60621,7 @@ msgstr "<filename>%1</filename>에 대한 메타데이터를 가져오지 못했
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 다운로드하지 못했습니다"
@@ -61317,19 +61317,19 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -61337,7 +61337,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "준비"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61345,13 +61345,13 @@ msgid ""
 "and turned on."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "업로드할 이미지 선택"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61361,7 +61361,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -61376,7 +61376,7 @@ msgstr ""
 "<qt><resource>%1</resource> 카메라 폴더는 이미 항목 <resource>%2</resource>이"
 "(가) 포함되어 있습니다.<br/>새 파일 이름(확장자 없이)을 입력하십시오:</qt>"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -61384,7 +61384,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "파일이 이미 존재함"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61392,7 +61392,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61401,7 +61401,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61409,7 +61409,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Please select the destination album from the digiKam library to import "
@@ -61420,7 +61420,7 @@ msgid ""
 "camera pictures into."
 msgstr "<p>폴더를 가져올 대상 앨범을 digiKam 라이브러리에서 선택하십시오.</p>"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61428,19 +61428,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61449,7 +61449,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -61464,19 +61464,19 @@ msgstr[0] ""
 "%1개의 그림을 삭제하려고 합니다. 삭제한 파일은 복구할 수 없습니다. 계속 진행"
 "하시겠습니까?"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "경고"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "디스크 공간 부족"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61489,15 +61489,15 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "선택한 항목 없음(항목 %1개)"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -61505,29 +61505,29 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%3 중 %2)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "항목 %2/%1개 선택됨"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "<filename>%1</filename> 파일을 건너뛰었습니다"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "파일 이름을 <filename>%1</filename>로 변경합니다"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61535,19 +61535,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "이미지 다운로드 완료"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "폴더 %2에 같은 이름의 파일이 (%1) 존재합니다"
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -62064,27 +62064,27 @@ msgstr "가져온 모든 이미지에 대해 실행할 스크립트를 설정하
 msgid "Drag and drop an image here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, kde-format
 msgid "Show on left panel"
 msgstr "왼쪽 패널에 표시"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr "오른쪽 패널에 표시"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, kde-format
 msgid "Remove item"
 msgstr "항목 삭제"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, kde-format
 msgid "Clear all"
 msgstr "모두 지우기"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "여기에 사진을 끌어 놓으십시오"

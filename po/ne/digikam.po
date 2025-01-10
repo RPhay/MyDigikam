@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -28669,7 +28669,7 @@ msgstr "समाविष्ट"
 msgid "Do not ask again"
 msgstr "फेरि नसोध्नुहोस्"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -35906,7 +35906,7 @@ msgid "Description"
 msgstr "वर्णन"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -49433,32 +49433,32 @@ msgstr[1] "पुन: नामकरण गर्नुहोस्..."
 msgid "Sort Images"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "तस्विरबाट ट्याग हटाउनुहोस् । कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "परित्याग गर्नुहोस्"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, fuzzy, kde-format
 msgid "Processing..."
 msgstr "फाइल गुण"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -49470,20 +49470,20 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "तस्विरबाट ट्याग हटाउनुहोस् । कृपया प्रतिक्षा गर्नुहोस्..."
@@ -53549,7 +53549,7 @@ msgstr "डच अनुवाद"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, fuzzy, kde-format
@@ -57417,7 +57417,7 @@ msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -58146,25 +58146,25 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "हालको सञ्चालन रद्द गर्दैछ, कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "तपाईँ संवाद बन्द गरेर हालको सञ्चालन रद्द गर्न चाहनुहुन्छ ?"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "क्यामेराबाट जडान विच्छेदन गर्दैछ, कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "तयार"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58174,13 +58174,13 @@ msgstr ""
 "क्यामेरामा जडान गर्न असफल । कृपया यो राम्रोसँग जडान भएको छ र खुला छ भन्ने यकिन गर्नुहोस् "
 "। तपाईँ पुन: प्रयास गर्न चाहनुहुन्छ ?"
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "अपलोड गर्ने छवि चयन गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58190,7 +58190,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58200,13 +58200,13 @@ msgstr ""
 "क्यामेरा फोल्डर <b>%1</b> ले पहिल्यै <b>%2</b>वस्तुहरू समाविष्ट गर्दछ <br>कृपया नयाँ फाइल "
 "नाम (विस्तार बिना) प्रविष्ट गर्नुहोस्:"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "फाइल पहिल्यै अवस्थित छ"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58214,7 +58214,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58223,7 +58223,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58231,7 +58231,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58240,7 +58240,7 @@ msgid ""
 msgstr ""
 "<p>क्यामेरा तस्विर आयात गर्न कृपया डिजिक्याम लाइब्रेरीबाट गन्तव्य एल्बम चयन गर्नुहोस् ।</p>"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58248,19 +58248,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58272,7 +58272,7 @@ msgstr ""
 "तपाईँले साच्चीकै ति वस्तुहरू मेट्न चाहनुहुन्छ भने, कृपया तिनिहरुको लक हटाउनुहोस् र पुन: प्रयास "
 "गर्नुहोस् ।"
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58294,19 +58294,19 @@ msgstr[1] ""
 "%n छविहरू मेट्न लाग्नुभएको रहेछ । मेटिएको फाइल पुन: प्राप्त गर्न नसकिने किसिमको हो । "
 "तपाईँ यकिन हुनुहुन्छ ?"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, fuzzy, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "दर"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58319,8 +58319,8 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -58328,13 +58328,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, fuzzy, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr " (%3 को %2)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -58342,25 +58342,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "\"%1\" फाइल अपलोड गर्न असफल"
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -58368,19 +58368,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr " (%1) नामको फाइल %2 फोल्डरमा अवस्थित छ"
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -58900,27 +58900,27 @@ msgstr "<p>यहाँ छविको प्रकाश समायोजन
 msgid "Drag and drop an image here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, fuzzy, kde-format
 msgid "Show on left panel"
 msgstr "फाइल नाम देखाउनुहोस्"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, fuzzy, kde-format
 msgid "Remove item"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, fuzzy, kde-format
 msgid "Clear all"
 msgstr "केन्द्र"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr ""

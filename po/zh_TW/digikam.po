@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -29516,7 +29516,7 @@ msgstr "繼續"
 msgid "Do not ask again"
 msgstr "不要再詢問"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -36965,7 +36965,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -50521,31 +50521,31 @@ msgstr[0] "重新命名 (%1 張影像)"
 msgid "Sort Images"
 msgstr "影像排序(&S)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>正在重新命名影像。請稍候...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "放棄(&A)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "正在處理..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "重新命名影像"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -50558,19 +50558,19 @@ msgstr[0] ""
 "重新命名 %1 張影像時發生問題。\n"
 "您要再次重新命名這些影像，還是透過覆寫來重新命名這些影像？"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "再次重新命名"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "覆寫"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>正在重新命名影像。錯誤：%1</b>"
@@ -54753,7 +54753,7 @@ msgstr "新增關聯"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
@@ -58638,7 +58638,7 @@ msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file <filename>%1</filename>."
 msgid "Failed to download <filename>%1</filename>"
@@ -59336,25 +59336,25 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "正在取消目前的操作。請稍候..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "您是否要關閉對話框並取消目前操作？"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "正在從相機中斷連線，請稍候..."
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "已就緒"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59362,13 +59362,13 @@ msgid ""
 "and turned on."
 msgstr "連線到相機失敗。請確定相機已正確連線且已開啟。"
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "選擇要更新的影像"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59382,7 +59382,7 @@ msgstr ""
 "需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59392,13 +59392,13 @@ msgstr ""
 "相機資料夾 \"%1\" 已經包含項目 \"%2\"。\n"
 "請輸入一個新的檔案名稱 (不含副檔名)："
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "檔案已存在"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59406,7 +59406,7 @@ msgid ""
 "settings..."
 msgstr "您自訂的目標相簿日期格式不合法。請檢查您的設定。"
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59417,7 +59417,7 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59426,7 +59426,7 @@ msgid ""
 msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿。請在相機設定裡選擇另一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59434,7 +59434,7 @@ msgid ""
 "camera pictures into."
 msgstr "請選擇要匯入相機圖片到 digiKam 相簿櫃之中的哪一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59449,18 +59449,18 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "移動 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59471,7 +59471,7 @@ msgstr ""
 "下面列出的項目已被相機鎖定 (只能讀取)。這些項目不會被刪除。如果您想要刪除這些"
 "項目，請將它們解除鎖定後重試一次。"
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59485,19 +59485,19 @@ msgid_plural ""
 msgstr[0] ""
 "將要刪除 %1 張影像。<warning>刪除的檔案無法復原</warning>。您確定嗎？"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "磁碟空間不足"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59514,15 +59514,15 @@ msgstr ""
 "估計的需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -59530,30 +59530,30 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (第 %2 張，共 %3 張)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "重新命名檔案到 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "儲存 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -59565,13 +59565,13 @@ msgid ""
 "are auto-rotated"
 msgstr "影像已下載完成，您可以取下您的相機。影像將會自動旋轉"
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "影像已下載"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -59579,7 +59579,7 @@ msgstr ""
 "在資料夾 <resource>%2</resource> 中已經存在相同名稱的檔案 (<filename>%1</"
 "filename>)。"
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -60139,27 +60139,27 @@ msgstr "在此設定對每個匯入影像執行的文稿。"
 msgid "Drag and drop an image here"
 msgstr "拖放一張影像到這裡"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, kde-format
 msgid "Show on left panel"
 msgstr "顯示在左邊面板"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr "顯示在右邊面板"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, kde-format
 msgid "Remove item"
 msgstr "移除項目"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, kde-format
 msgid "Clear all"
 msgstr "清除全部"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "拖放影像到這裡"

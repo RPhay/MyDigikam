@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -31742,7 +31742,7 @@ msgstr "Continuar"
 msgid "Do not ask again"
 msgstr "Não perguntar novamente"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -39787,7 +39787,7 @@ msgid "Description"
 msgstr "Descrição"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -55296,33 +55296,33 @@ msgstr[1] "Renomear (%1 imagens)"
 msgid "Sort Images"
 msgstr "Organizar imagens"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Renomeando imagens. Por favor, aguarde...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Cancelar"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Processando..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Renomeando imagens"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -55338,21 +55338,21 @@ msgstr[1] ""
 "Ocorreu um erro ao renomear %1 imagens.\n"
 "Você prefere renomear essas imagens novamente ou sobrescrevê-las?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Renomeação de arquivos"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Sobrescrever o arquivo?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, fuzzy, kde-format
 #| msgid "<b>Renaming images. Please wait...</b>"
 msgid "<b>Renaming images. Errors: %1</b>"
@@ -59854,7 +59854,7 @@ msgstr "Nova Zelândia"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
@@ -64122,7 +64122,7 @@ msgstr "Ocorreu um erro ao obter os metadados de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Ocorreu um erro ao transferir o arquivo <filename>%1</filename>."
@@ -64864,19 +64864,19 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Cancelando a operação atual. Por favor, aguarde..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Deseja fechar a caixa de diálogo e cancelar a operação atual?"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Desconectando da câmera. Por favor, aguarde..."
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -64884,7 +64884,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Pronto"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64894,13 +64894,13 @@ msgstr ""
 "Ocorreu um erro na conexão com a câmera. Verifique se ela está corretamente "
 "conectada ao cabo e ligada."
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Selecionar a imagem para enviar"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64915,7 +64915,7 @@ msgstr ""
 "Espaço necessário: %1\n"
 "Espaço livre disponível: %2"
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64930,7 +64930,7 @@ msgstr ""
 "<qt>A pasta da câmera <resource>%1<resource> já contém o item <resource>%2</"
 "resource>.<br>Digite um novo nome de arquivo (sem extensão):</qt>"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -64938,7 +64938,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "O arquivo já existe"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64948,7 +64948,7 @@ msgstr ""
 "O formato de datas personalizado do álbum de destino não é válido. Verifique "
 "as suas configurações..."
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64960,7 +64960,7 @@ msgstr ""
 "transferência câmera não está disponível. Use outra na janela de "
 "configuração da câmera."
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64970,7 +64970,7 @@ msgstr ""
 "O seu conjunto de álbuns de destino para processar a transferência da câmera "
 "não está disponível. Use outro na janela de configuração da câmera."
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -64984,7 +64984,7 @@ msgstr ""
 "<p>Por favor, selecione o álbum de destino na biblioteca do digiKam, para "
 "onde importar as imagens da câmera.</p>"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65000,19 +65000,19 @@ msgstr ""
 "transferência câmera não está disponível. Use outra na janela de "
 "configuração da câmera."
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65024,7 +65024,7 @@ msgstr ""
 "Estes itens não serão excluídos. Se deseja realmente excluir estes itens, "
 "desbloqueie-os e tente novamente."
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65049,20 +65049,20 @@ msgstr[1] ""
 "Você está prestes a excluir estas %1 imagens. <b>Os arquivos excluídos não "
 "poderão ser recuperados.</b> Tem certeza?"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Aviso"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Espaço em disco insuficiente"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65082,8 +65082,8 @@ msgstr ""
 "\n"
 "Tentar mesmo assim?"
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -65091,7 +65091,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Nenhum item selecionado (%1 item)"
 msgstr[1] "Nenhum item selecionado (%1 itens)"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -65099,7 +65099,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 de %3)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -65107,22 +65107,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 item selecionado"
 msgstr[1] "%2/%1 itens selecionados"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Ignorar o arquivo <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Renomear o arquivo para <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Ocorreu um erro ao salvar o arquivo secundário <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -65136,13 +65136,13 @@ msgstr ""
 "A transferência das imagens foi concluída e você pode agora desligar a sua "
 "câmera enquanto ocorre a rotação automática"
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "A transferência das imagens foi concluída"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65154,7 +65154,7 @@ msgstr ""
 "Já existe um arquivo com o mesmo nome (<b>%1</b>) na pasta <resource>%2</"
 "resource>."
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to find Album for path <b>%1</b>."
@@ -65796,27 +65796,27 @@ msgstr "Escolha aqui o script que é executado para cada imagem importada."
 msgid "Drag and drop an image here"
 msgstr "Arraste e solte uma imagem aqui"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, kde-format
 msgid "Show on left panel"
 msgstr "Mostrar no painel esquerdo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr "Mostrar no painel direito"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, kde-format
 msgid "Remove item"
 msgstr "Remover o item"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, kde-format
 msgid "Clear all"
 msgstr "Limpar tudo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Arraste e solte as imagens aqui"

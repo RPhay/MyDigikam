@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 01:55+0000\n"
+"POT-Creation-Date: 2025-01-10 01:18+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -28887,7 +28887,7 @@ msgstr "继续"
 msgid "Do not ask again"
 msgstr "不再询问"
 
-#: core/libs/dialogs/dprogressdlg.cpp:78
+#: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
@@ -36139,7 +36139,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1980
+#: core/utilities/import/main/importui.cpp:1975
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -49397,31 +49397,31 @@ msgstr[0] "重命名 (%1 张图像)"
 msgid "Sort Images"
 msgstr "图像排序"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>正在重命名图像。请稍候...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "中止(&A)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "正在处理..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "重命名图像"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -49434,19 +49434,19 @@ msgstr[0] ""
 "重命名 %1 张图像时出错。\n"
 "您想要重新调整这些图像的重命名模式，还是覆盖已有文件完成重命名？"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "再次重命名"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "覆盖"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>重命名图像。错误：%1</b>"
@@ -53583,7 +53583,7 @@ msgstr "新建关系"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
@@ -57442,7 +57442,7 @@ msgstr "无法获取 <filename>%1</filename> 的元数据"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2497
+#: core/utilities/import/main/importui.cpp:2492
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "无法下载 <filename>%1</filename>"
@@ -58138,25 +58138,25 @@ msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "正在取消当前操作，请稍候..."
 
-#: core/utilities/import/main/importui.cpp:962
+#: core/utilities/import/main/importui.cpp:957
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "您想要关闭对话框并取消当前操作吗？"
 
-#: core/utilities/import/main/importui.cpp:972
+#: core/utilities/import/main/importui.cpp:967
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "正在断开相机连接，请稍候..."
 
-#: core/utilities/import/main/importui.cpp:1049
+#: core/utilities/import/main/importui.cpp:1044
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "准备就绪"
 
-#: core/utilities/import/main/importui.cpp:1106
+#: core/utilities/import/main/importui.cpp:1101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58164,13 +58164,13 @@ msgid ""
 "and turned on."
 msgstr "无法连接到相机。请确保相机已经连接并且开机。"
 
-#: core/utilities/import/main/importui.cpp:1200
+#: core/utilities/import/main/importui.cpp:1195
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "选择要上传的图像"
 
-#: core/utilities/import/main/importui.cpp:1235
+#: core/utilities/import/main/importui.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58184,7 +58184,7 @@ msgstr ""
 "所需空间：%1\n"
 "可用空间：%2"
 
-#: core/utilities/import/main/importui.cpp:1290
+#: core/utilities/import/main/importui.cpp:1285
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58194,13 +58194,13 @@ msgstr ""
 "相机文件夹“%1”已经包含项目“%2”。\n"
 "请输入一个新的文件名称(不包含扩展名)："
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1289
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "文件己存在"
 
-#: core/utilities/import/main/importui.cpp:1363
+#: core/utilities/import/main/importui.cpp:1358
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58208,7 +58208,7 @@ msgid ""
 "settings..."
 msgstr "您的自定义目标相册日期格式无效。请检查您的设置..."
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1398
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58219,7 +58219,7 @@ msgstr ""
 "相机设备下载的默认目标相册所在的相册集合不可用。请从相机配置对话框选择另一个"
 "相册集合。"
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58227,7 +58227,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr "相机设备下载的默认目标相册不可用。请从相机配置对话框选择另一个相册。"
 
-#: core/utilities/import/main/importui.cpp:1437
+#: core/utilities/import/main/importui.cpp:1432
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58235,7 +58235,7 @@ msgid ""
 "camera pictures into."
 msgstr "请从 digiKam 数据库中选择用于导入相机照片的目标相册。"
 
-#: core/utilities/import/main/importui.cpp:1468
+#: core/utilities/import/main/importui.cpp:1463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58243,17 +58243,17 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr "用于从相机设备下载内容的目标相册的集合不可用。请选择另一个目标相册。"
 
-#: core/utilities/import/main/importui.cpp:1526
+#: core/utilities/import/main/importui.cpp:1521
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "无法移动 <filename>%1</filename> 的附带文件"
 
-#: core/utilities/import/main/importui.cpp:1533
+#: core/utilities/import/main/importui.cpp:1528
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "无法移动 <filename>%1</filename> 的文件"
 
-#: core/utilities/import/main/importui.cpp:1977
+#: core/utilities/import/main/importui.cpp:1972
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58264,7 +58264,7 @@ msgstr ""
 "下列项目已被相机锁定 (只读)。它们将不会被删除。如果您确定要删除这些项目，请解"
 "除锁定后重试。"
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1983
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58280,19 +58280,19 @@ msgstr[0] ""
 "文件在删除后将无法恢复。\n"
 "您确定要删除吗？"
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:2042
+#: core/utilities/import/main/importui.cpp:2037
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "存储空间不足"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58311,43 +58311,43 @@ msgstr ""
 "\n"
 "您仍然要尝试下载吗？"
 
-#: core/utilities/import/main/importui.cpp:2311
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2306
+#: core/utilities/import/main/importui.cpp:2332
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "无选中项 (共 %1 项)"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2325
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "“%1”(第 %2 张，共 %3 张)"
 
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2342
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "已选中 %2/%1 项"
 
-#: core/utilities/import/main/importui.cpp:2432
+#: core/utilities/import/main/importui.cpp:2427
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "跳过文件 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2454
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "重命名文件为 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2477
+#: core/utilities/import/main/importui.cpp:2472
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "无法保存 <filename>%1</filename> 的附带文件"
 
-#: core/utilities/import/main/importui.cpp:2554
+#: core/utilities/import/main/importui.cpp:2549
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -58355,19 +58355,19 @@ msgid ""
 "are auto-rotated"
 msgstr "图像下载已完成。您可以在图像进行自动旋转处理时断开相机连接。"
 
-#: core/utilities/import/main/importui.cpp:2562
+#: core/utilities/import/main/importui.cpp:2557
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "图像下载完成"
 
-#: core/utilities/import/main/importui.cpp:2588
+#: core/utilities/import/main/importui.cpp:2583
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "文件名为(“%1”)的文件已存在于文件夹(“%2”)。"
 
-#: core/utilities/import/main/importui.cpp:2601
+#: core/utilities/import/main/importui.cpp:2596
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -58890,27 +58890,27 @@ msgstr "在此设定为每个导入图像执行的脚本。"
 msgid "Drag and drop an image here"
 msgstr "拖放一张图像到此处"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:243
 #, kde-format
 msgid "Show on left panel"
 msgstr "显示到左视图"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:244
 #, kde-format
 msgid "Show on right panel"
 msgstr "显示到右视图"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:246
 #, kde-format
 msgid "Remove item"
 msgstr "移除项目"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:247
 #, kde-format
 msgid "Clear all"
 msgstr "全部清除"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:450
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "拖放图像到此处"
