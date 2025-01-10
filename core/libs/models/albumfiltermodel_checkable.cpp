@@ -24,7 +24,7 @@ CheckableAlbumFilterModel::CheckableAlbumFilterModel(QObject* const parent)
 {
 }
 
-void CheckableAlbumFilterModel::setSourceCheckableModel(AbstractCheckableAlbumModel* const source)
+void CheckableAlbumFilterModel::setSourceCheckableAlbumModel(AbstractCheckableAlbumModel* const source)
 {
     AlbumFilterModel::setSourceAlbumModel(source);
 }
@@ -34,7 +34,7 @@ void CheckableAlbumFilterModel::setSourceFilterModel(CheckableAlbumFilterModel* 
     AlbumFilterModel::setSourceFilterModel(source);
 }
 
-AbstractCheckableAlbumModel* CheckableAlbumFilterModel::sourceCheckableModel() const
+AbstractCheckableAlbumModel* CheckableAlbumFilterModel::sourceCheckableAlbumModel() const
 {
     return (static_cast<AbstractCheckableAlbumModel*>(AlbumFilterModel::sourceAlbumModel()));
 }
@@ -69,7 +69,7 @@ bool CheckableAlbumFilterModel::matches(Album* album) const
         return accepted;
     }
 
-    Qt::CheckState state = sourceCheckableModel()->checkState(album);
+    Qt::CheckState state = sourceCheckableAlbumModel()->checkState(album);
 
     bool stateAccepted = false;
 

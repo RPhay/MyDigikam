@@ -125,7 +125,7 @@ bool SearchFilterModel::matches(Album* album) const
     return true;
 }
 
-void SearchFilterModel::setSourceAlbumModel(AbstractAlbumModel* const source)
+void SearchFilterModel::setSourceSearchAlbumModel(AbstractAlbumModel* const source)
 {
     AlbumFilterModel::setSourceAlbumModel(source);
 }
