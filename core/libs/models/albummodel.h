@@ -65,7 +65,7 @@ public:
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
     TAlbum*      albumForIndex(const QModelIndex& index) const;
-    void         setColumnHeader(const QString& header);
+    void         setColumnHeader(const QString& header)        override;
     void         activateFaceTagModel();
 
 protected:

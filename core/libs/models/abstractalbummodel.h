@@ -243,7 +243,7 @@ public:
 protected:
 
     QString  columnHeader() const override;
-    void setColumnHeader(const QString& header);
+    virtual void setColumnHeader(const QString& header);
 
     /// You need to call this from your constructor if you intend to load the thumbnail facilities of this class
     void setupThumbnailLoading();
