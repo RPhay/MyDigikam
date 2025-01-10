@@ -89,21 +89,6 @@ bool DMetadata::removeXmpSubCategories(const QStringList& subCategoriesToRemove)
     return removeFromXmpTagStringBag("Xmp.photoshop.SupplementalCategories", subCategoriesToRemove);
 }
 
-QStringList DMetadata::getXmpSubjects() const
-{
-    return (getXmpTagStringBag("Xmp.iptc.SubjectCode", false));
-}
-
-bool DMetadata::setXmpSubjects(const QStringList& newSubjects) const
-{
-    return addToXmpTagStringBag("Xmp.iptc.SubjectCode", newSubjects);
-}
-
-bool DMetadata::removeXmpSubjects(const QStringList& subjectsToRemove)
-{
-    return removeFromXmpTagStringBag("Xmp.iptc.SubjectCode", subjectsToRemove);
-}
-
 bool DMetadata::removeXmpTags(const QStringList& tagFilters)
 {
     MetaDataMap m = getXmpTagsDataList(tagFilters);
