@@ -84,7 +84,7 @@ private:
     DImgPreviewItem(QObject*);
 
     class DImgPreviewItemPrivate;
-    Q_DECLARE_PRIVATE(DImgPreviewItem)
+    Q_DECLARE_PRIVATE(DImgPreviewItem)          // cppcheck-suppress duplInheritedMember
 
 protected:
 

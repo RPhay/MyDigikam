@@ -23,6 +23,8 @@
 namespace Digikam
 {
 
+// clazy:exclude=duplInheritedMember
+
 AutoExpoFilter::AutoExpoFilter(QObject* const parent)
     : WBFilter(parent)
 {
