@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 01:18+0000\n"
+"POT-Creation-Date: 2025-01-10 10:46+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -869,7 +869,7 @@ msgstr "Megnyitás ..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:403
+#: core/showfoto/stackview/showfotostackviewlist.cpp:408
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -4449,7 +4449,7 @@ msgstr "Kontraszt nyújtása"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Automatikus expozíció"
@@ -50265,7 +50265,7 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Átnevezés"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:83
+#: core/showfoto/stackview/showfotostackviewlist.cpp:88
 #, fuzzy, kde-format
 #| msgctxt "@title: DPlugin properties"
 #| msgid "Name"
@@ -50273,42 +50273,42 @@ msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Név"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:84
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Méret"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:85
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Típus"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:86
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:338
+#: core/showfoto/stackview/showfotostackviewlist.cpp:343
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Ikon nézet beállítások"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:340
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Ikon mérete:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, fuzzy, kde-format
 #| msgid "Small (1 pixel)"
 #| msgid_plural "Small (%1 pixels)"
@@ -50316,7 +50316,7 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Kicsi (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:349
+#: core/showfoto/stackview/showfotostackviewlist.cpp:354
 #, fuzzy, kde-format
 #| msgid "Medium (1 pixel)"
 #| msgid_plural "Medium (%1 pixels)"
@@ -50324,7 +50324,7 @@ msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Közepes (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:353
+#: core/showfoto/stackview/showfotostackviewlist.cpp:358
 #, fuzzy, kde-format
 #| msgid "Large (1 pixel)"
 #| msgid_plural "Large (%1 pixels)"
@@ -50332,7 +50332,7 @@ msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Hatalmas (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:357
+#: core/showfoto/stackview/showfotostackviewlist.cpp:362
 #, fuzzy, kde-format
 #| msgid "Huge (1 pixel)"
 #| msgid_plural "Huge (%1 pixels)"
@@ -50340,21 +50340,21 @@ msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Óriási (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:396
+#: core/showfoto/stackview/showfotostackviewlist.cpp:401
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Arc címke hozzáadása"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:410
+#: core/showfoto/stackview/showfotostackviewlist.cpp:415
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Minden törlése"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:418
+#: core/showfoto/stackview/showfotostackviewlist.cpp:423
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"
