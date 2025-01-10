@@ -42,16 +42,16 @@ public:
     /**
      * The corresponding methods of all added worker objects will be called
      */
-    void schedule();
-    void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals);
-    void wait();
+    virtual void schedule();
+    virtual void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals);
+    virtual void wait();
 
     void setPriority(QThread::Priority priority);
 
     /**
      * Returns true if the current number of added workers has reached the optimalWorkerCount()
      */
-    bool optimalWorkerCountReached()                            const;
+    bool optimalWorkerCountReached()                                    const;
 
     /**
      * Regarding the number of logical CPUs on the current machine,
@@ -63,10 +63,10 @@ public:
 
     /// Connects signals outbound from all workers to a given receiver
 
-    bool connect(const char* signal,
-                 const QObject* receiver,
-                 const char* method,
-                 Qt::ConnectionType type = Qt::AutoConnection)  const;
+    virtual bool connect(const char* signal,
+                         const QObject* receiver,
+                         const char* method,
+                         Qt::ConnectionType type = Qt::AutoConnection)  const;
 
 protected:
 
@@ -78,7 +78,7 @@ protected:
      * Replaces slot call distribution of the target QObject
      */
     int replacementQtMetacall(QMetaObject::Call _c, int _id, void** _a);
-    const QMetaObject* replacementMetaObject()                  const;
+    const QMetaObject* replacementMetaObject()                          const;
 
     /**
      * Return the target QObject (double inheritance)
@@ -93,7 +93,7 @@ protected:
     /**
      * The moc-generated metaObject of the target object
      */
-    virtual const QMetaObject* mocMetaObject()                  const                   = 0;
+    virtual const QMetaObject* mocMetaObject()                          const           = 0;
 
     int replacementStaticQtMetacall(QMetaObject::Call _c, int _id, void** _a);
     typedef void (*StaticMetacallFunction)(QObject*, QMetaObject::Call, int, void**);
@@ -133,8 +133,8 @@ public:
      * For outbound connections (signals emitted from the WorkerObject),
      * use ParallelAdapter's connect to have a connection from all added WorkerObjects.
      */
-    ParallelAdapter()                                                             = default;
-    ~ParallelAdapter()                                                   override = default;
+    ParallelAdapter()                                                                            = default;
+    ~ParallelAdapter()                                                                  override = default;
 
     void add(A* const worker)
     {
@@ -144,12 +144,12 @@ public:
     // Internal Implementation
     // I know this is a hack
 
-    int WorkerObjectQtMetacall(QMetaObject::Call _c, int _id, void** _a) override
+    int WorkerObjectQtMetacall(QMetaObject::Call _c, int _id, void** _a)                override
     {
         return WorkerObject::qt_metacall(_c, _id, _a);
     }
 
-    const QMetaObject* mocMetaObject()                             const override
+    const QMetaObject* mocMetaObject()                                            const override
     {
         return A::metaObject();
     }
@@ -159,37 +159,37 @@ public:
         static_cast<ParallelAdapter*>(o)->replacementStaticQtMetacall(_c, _id, _a);
     }
 
-    StaticMetacallFunction staticMetacallPointer()                      override
+    StaticMetacallFunction staticMetacallPointer()                                      override
     {
         return qt_static_metacall;
     }
 
-    const QMetaObject* metaObject()                                const override
+    const QMetaObject* metaObject()                                               const override
     {
         return ParallelWorkers::replacementMetaObject();
     }
 
-    int qt_metacall(QMetaObject::Call _c, int _id, void** _a)            override
+    int qt_metacall(QMetaObject::Call _c, int _id, void** _a)                           override
     {
         return ParallelWorkers::replacementQtMetacall(_c, _id, _a);
     }
 
-    QObject* asQObject()                                                 override
+    QObject* asQObject()                                                                override
     {
         return this;
     }
 
-    void schedule()
+    void schedule()                                                                     override
     {
         ParallelWorkers::schedule();
     }
 
-    void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals)
+    void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals)   override
     {
         ParallelWorkers::deactivate(mode);
     }
 
-    void wait()
+    void wait()                                                                         override
     {
         ParallelWorkers::wait();
     }
@@ -197,7 +197,7 @@ public:
     bool connect(const char* signal,
                  const QObject* receiver,
                  const char* method,
-                 Qt::ConnectionType type = Qt::AutoConnection)     const
+                 Qt::ConnectionType type = Qt::AutoConnection)                    const override
     {
         return ParallelWorkers::connect(signal, receiver, method, type);
     }
