@@ -33,13 +33,13 @@ public:
     explicit AutotagsClassifierBase(float _threshold, const QString& _predefinedClassFile);
     ~AutotagsClassifierBase();
 
-    QList<int> predictMulti(const QList<cv::Mat>& targets)              const override
+    QList<int> predictMulti(const QList<cv::Mat>& targets)        const override
     {
         Q_UNUSED(targets);
         return QList<int>();
     }
 
-    QList<int> predictMulti(const QList<cv::UMat>& targets)             const override
+    QList<int> predictMulti(const QList<cv::UMat>& targets)       const override
     {
         Q_UNUSED(targets);
         return QList<int>();
@@ -50,14 +50,14 @@ public:
         return false;
     }
 
-    QList<QString> getClassStrings(const QList<int>& labelList)         const;
+    QList<QString> getClassStrings(const QList<int>& labelList)   const;
 
 protected:
 
     QString         predefinedClassFile;
     QList<QString>  predefinedClasses;
 
-    bool loadTrainingData();
+    bool loadTrainingData()                                             override;
 
 private:
 

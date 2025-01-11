@@ -21,24 +21,25 @@
 #include <QTextStream>
 #include <QUnhandledException>
 
-
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 
 namespace Digikam
 {
 
-AutotagsClassifierBase::AutotagsClassifierBase(float _threshold, const QString& _predefinedClassFile) :
-                                               MLClassifierFoundation(),
-                                               predefinedClassFile(_predefinedClassFile)
+AutotagsClassifierBase::AutotagsClassifierBase(float _threshold, const QString& _predefinedClassFile)
+    : MLClassifierFoundation(),
+      predefinedClassFile   (_predefinedClassFile)
 {
     threshold = _threshold;
-    // predefinedClassFile = _predefinedClassFile;
-
+/*
+    predefinedClassFile = _predefinedClassFile;
+*/
     if (!loadTrainingData())
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierBase Failed to load predefined classes from file: " << predefinedClassFile;
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierBase Failed to load predefined classes from file:"
+                                               << predefinedClassFile;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -51,6 +52,7 @@ AutotagsClassifierBase::AutotagsClassifierBase(float _threshold, const QString& 
         QUnhandledException().raise();
 
 #endif
+
     }
 }
 
@@ -85,7 +87,7 @@ QList<QString> AutotagsClassifierBase::getClassStrings(const QList<int>& labelLi
 
     for (int label : labelList)
     {
-        if (label >= 0 && label < predefinedClasses.size())
+        if ((label >= 0) && (label < predefinedClasses.size()))
         {
             result << predefinedClasses[label];
         }
@@ -94,7 +96,4 @@ QList<QString> AutotagsClassifierBase::getClassStrings(const QList<int>& labelLi
     return result;
 }
 
-
-}
-
-// #include "moc_autotagsclassifierbase.cpp"
+} // namespace Digikam
