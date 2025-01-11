@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 10:46+0000\n"
+"POT-Creation-Date: 2025-01-11 01:50+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3208,27 +3208,41 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Otsing"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:101
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Ava sildihaldur"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:102
 #, kde-format
 msgid "No Tags"
 msgstr "Silte pole"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
 #, kde-format
 msgid "Existing Tags"
 msgstr "Olemasolevad sildid"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Auto-tag scan"
+msgstr "Automaatne kohandamine"
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#, fuzzy, kde-format
+#| msgid "Use this button to scan the selected albums for duplicate items."
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for objects to auto-tag"
+msgstr ""
+"Selle nupuga saab topeltelementide leidmiseks läbi uurida valitud albumid."
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
 msgid "No Tags Album"
 msgstr "Siltide albumit pole"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:316
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -4826,7 +4840,7 @@ msgstr "Kontrasti võimendamine"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:48
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Automaatsäritus"
@@ -6756,107 +6770,33 @@ msgid ""
 msgstr ""
 "<p>See hulgijärjekorrahaldur võib rakendada piltidele metaandmete malli.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:79
-#, kde-format
-msgctxt "@label"
-msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determine the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:258
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
-msgid "Selection model: "
-msgstr "Sihtkataloog:"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgid "ResNet50"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:97
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This kind of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:109
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
-msgctxt "@label"
-msgid "Translate Tags to:"
-msgstr "Liikumine asukohta %1"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Omista silt"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to assign automatically Pick Labels based on image "
 #| "quality."
 msgctxt "@info"
-msgid "A tool to assign tags automatically to images"
+msgid "A tool to automatically assign tags to images"
 msgstr ""
 "Selle märkimisel omistatakse pildile kvaliteeti aluseks võttes automaatselt "
 "valikumärgis."
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "<p>This Batch Queue Manager tool can apply metadata template over images."
 #| "</p>"
 msgctxt "@info"
 msgid ""
-"<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images automatically using deep-learning engine.</para>"
+"<para>This Batch Queue Manager tool will automatically assign keyword "
+"hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
 "<p>See hulgijärjekorrahaldur võib rakendada piltidele metaandmete malli.</p>"
 
@@ -9944,7 +9884,7 @@ msgstr "Värvihalduse kasutamine trükkimisel"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:332
+#: core/utilities/maintenance/main/maintenancedlg.cpp:349
 #, kde-format
 msgid "Settings..."
 msgstr "Seadistused ..."
@@ -30892,6 +30832,8 @@ msgid "Scanning collection"
 msgstr "Kogu uurimine"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
+#: core/libs/mlfoundation/mlpipelinemacros.h:59
+#: core/libs/mlfoundation/mlpipelinemacros.h:68
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -41781,90 +41723,250 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Muu"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:74
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
+#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Autotags Assignment"
+msgstr "Automaatne kohandamine"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Scan for objects in album: %1"
+msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Scan for objects in %1 albums"
+msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#, fuzzy, kde-format
+#| msgid "Enable face detection"
+msgid "Error starting object detection."
+msgstr "Näotuvastuse lubamine"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned for objects: %1\n"
+msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned for objects: %1\n"
+msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Scanned for objects: %1\n"
+msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "Sat. arv: %1"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Otsing asukohas"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:83
-#: core/utilities/maintenance/main/maintenancedlg.cpp:237
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgctxt "@label"
 msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
+"<p><b>This tool automatically assigns tags to images by analyzing the image "
+"using a deep-learning neural network AI model.</b></p><p>The settings below "
+"determine the deep-learning AI model to use while parsing image contents to "
+"determine objects in the image. The AI neural network used in background "
+"will automatically generate tags describing the contents and store the "
+"results in the database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:97
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
-msgid "Clean all and re-assign"
-msgstr "Kõigi puhastamine ja uus uurimine"
+#| msgid "Scan Images"
+msgid "Scan all"
+msgstr "Piltide skannimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:98
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Ainult omistama nägude uurimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag.</p>"
+"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
+"only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
-#: core/utilities/maintenance/main/maintenancedlg.cpp:267
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging tag mode: "
+msgstr "Mõõterežiim:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#, fuzzy, kde-format
+#| msgid "Update only existing timestamps"
+msgid "Repalce existing autotags"
+msgstr "Ainult olemasolevate ajatemplite uuendamine"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#, fuzzy, kde-format
+#| msgid "Upgrade Database"
+msgid "Update autotags"
+msgstr "Uuenda andmebaasi"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Destination Folder:"
+msgid "Selection model: "
+msgstr "Sihtkataloog:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#, kde-format
+msgid "YOLOv11 Nano"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#, kde-format
+msgid "YOLOv11 XLarge"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#, kde-format
+msgid "ResNet-152"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#, fuzzy, kde-format
+#| msgctxt "@groupbox"
+#| msgid "Face Accuracy"
+msgid "Object detection accuracy: "
+msgstr "Näo täpsus"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
+#| "results will be, but it will take more time."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately objects will\n"
+"be recognized, but fewer objects will be recognized.\n"
+msgstr ""
+"Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
+"tulemus, aga seda kauem ka aega kulub."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Kõigi protsessorituumade kasutamine"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Object detection and auto-tagging are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Nägude tuvastamine ja äratundmine on aeganõudvad tegevused.\n"
+"Siin saab valida, kas kasutada kõiki süsteemi protsessorituumi\n"
+"või töötada taustal ainult ühe tuumaga."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Seadistused"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#, fuzzy, kde-format
+#| msgid "Navigate to %1"
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "Liikumine asukohta %1"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -45675,7 +45777,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:310
+#: core/utilities/maintenance/main/maintenancedlg.cpp:327
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -56162,31 +56264,24 @@ msgstr ""
 "Kui oled tuvastanud oma sõbrad mitmel fotol,\n"
 "suudab rakendus neid ära tunda ka teistel piltidel."
 
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#.
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
-#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Piltide skannimine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
-#: core/utilities/maintenance/main/maintenancedlg.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Piltide skannimine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Recognize faces"
@@ -56194,27 +56289,27 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Nägude äratundmine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Abi"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Töövoog"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Täpsus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -56229,65 +56324,28 @@ msgstr ""
 "Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
 "tulemus, aga seda kauem ka aega kulub."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
-msgctxt "@label AI model used for face detection"
-msgid "Model:"
-msgstr "Mudel:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:258
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:259
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "OSM"
-msgctxt "@label:listbox"
-msgid "SSD"
-msgstr "OSM"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detection model used to find faces. YuNet is the default model.\n"
-"It is faster and more configurable than SSD and YOLOv3.\n"
-"Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Faili suurus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Lisasildid"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Lisasildid"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -56295,21 +56353,21 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Keskmine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Tulemus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Lisasildid"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56328,20 +56386,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Näotuvastus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Täpsus"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -56357,45 +56415,7 @@ msgstr ""
 "Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
 "tulemus, aga seda kauem ka aega kulub."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:344
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
-msgctxt "@label AI model used for face recognition"
-msgid "Model:"
-msgstr "Mudel:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:348
-#, fuzzy, kde-format
-msgctxt "@label:listbox"
-msgid "SFace"
-msgstr "Tühista kõik valikud"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgctxt "@label:listbox"
-msgid "OpenFace"
-msgstr "Faili avamine"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:352
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"SFace is the default detection model. It is faster and more accurate.\n"
-"OpenFace can be used for older libraries.\n"
-"Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Kõigi protsessorituumade kasutamine"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:389
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56407,7 +56427,7 @@ msgstr ""
 "Siin saab valida, kas kasutada kõiki süsteemi protsessorituumi\n"
 "või töötada taustal ainult ühe tuumaga."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:393
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
@@ -65502,31 +65522,31 @@ msgstr "Vasakpanee&l"
 msgid "&Right Panel"
 msgstr "Pa&rempaneel"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:33
+#: core/utilities/maintenance/main/maintenancedlg.cpp:38
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Hooldus"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:48
+#: core/utilities/maintenance/main/maintenancedlg.cpp:53
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Hooldusoperatsioonide valimine</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:59
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Elementide töötlemine asukohas:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:56
+#: core/utilities/maintenance/main/maintenancedlg.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:57
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores (when it possible)"
@@ -65534,12 +65554,12 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Kõigi protsessorituumade kasutamine (kui võimalik)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:63
+#: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, kde-format
 msgid "Common Options"
 msgstr "Üldised valikud"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -65548,12 +65568,12 @@ msgstr ""
 "<qt>Valikuid pole sisse lülitatud<br/><i>Märkus: tööriist töötleb ainult "
 "albumikogusid.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:75
+#: core/utilities/maintenance/main/maintenancedlg.cpp:80
 #, kde-format
 msgid "Scan for new items"
 msgstr "Uute elementide otsimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:85
+#: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -65573,29 +65593,29 @@ msgstr ""
 "midagi, võib protsess võtta omajagu aega ja digiKami tegevuse<br/> ajutiselt "
 "külmutada, et vältida andmebaaside riknemist.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:90
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Puhastatakse ka pisipildiandmebaas."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Puhastatakse ka nägude andmebaas."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:92
+#: core/utilities/maintenance/main/maintenancedlg.cpp:97
 #, fuzzy, kde-format
 #| msgid "Also clean up the thumbnail database."
 msgid "Also clean up the similarity database."
 msgstr "Puhastatakse ka pisipildiandmebaas."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:93
+#: core/utilities/maintenance/main/maintenancedlg.cpp:98
 #, fuzzy, kde-format
 #| msgid "Also clean up the thumbnail database."
 msgid "Extended clean up and shrink all databases."
 msgstr "Puhastatakse ka pisipildiandmebaas."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:99
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -65604,63 +65624,63 @@ msgstr ""
 "Sisselülitamisel surutakse andmebaasid kokku. Sellist võimalust toetab nii "
 "SQLite kui ka MySQL."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:106
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Andmebaasipuhastuse sooritamine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Muudetud või kataloogimata elementide otsimine (kiirem)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:116
+#: core/utilities/maintenance/main/maintenancedlg.cpp:121
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Pisipiltide taasloomine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:131
+#: core/utilities/maintenance/main/maintenancedlg.cpp:136
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Sõrmejälgede taasloomine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:144
+#: core/utilities/maintenance/main/maintenancedlg.cpp:149
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Sarnasusvahemik (protsentides): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:164
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Topeltpiltide piirang:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:168
+#: core/utilities/maintenance/main/maintenancedlg.cpp:173
 #, kde-format
 msgid "No restriction"
 msgstr "Piirang puudub"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Piiratud viitealbumiga"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:175
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Viitealbumist väljajätmine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Topeltelementide otsimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "Faces data management: "
 msgstr "Näoandmete haldus: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:213
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Clear and rebuild all training data"
@@ -65668,80 +65688,107 @@ msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Kõigi õppeandmete eemaldamine ja taasloomine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:217
+#: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Kõigi nägude eemaldamine pildilt"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:225
+#: core/utilities/maintenance/main/maintenancedlg.cpp:224
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Nägude tuvastamine ja äratundmine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:285
+#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging scan mode: "
+msgstr "Mõõterežiim:"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:265
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
+"found to the existing tags.</p>"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:276
+#, kde-format
+msgid "ResNet152"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@groupbox"
+#| msgid "Face Accuracy"
+msgid "Object Detection Accuracy: "
+msgstr "Näo täpsus"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Automaatne kohandamine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/utilities/maintenance/main/maintenancedlg.cpp:313
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Uurimismudel: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:301
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Kõigi puhastamine ja uus uurimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:321
+#: core/utilities/maintenance/main/maintenancedlg.cpp:338
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Sünkroonimise suund: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:325
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Andmebaasist piltide metaandmetesse"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:326
+#: core/utilities/maintenance/main/maintenancedlg.cpp:343
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Piltide metaandmetest andmebaasi"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:329
+#: core/utilities/maintenance/main/maintenancedlg.cpp:346
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Üksikasjade kontrollimine metatandmete seadistuste paneelilt: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaandmete ja andmebaasi sünkroonimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:399
+#: core/utilities/maintenance/main/maintenancedlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:400
+#: core/utilities/maintenance/main/maintenancedlg.cpp:417
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -65750,7 +65797,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65759,7 +65806,7 @@ msgstr ""
 "Kõik toimingud on tehtud.\n"
 "Kestus: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKami hooldus"
@@ -65773,27 +65820,11 @@ msgstr ""
 "Protsess on sooritatud.\n"
 "Kestus: %1"
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
-msgid "Autotags Assignment"
-msgstr "Automaatne kohandamine"
-
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tags for: %1\n"
 msgstr "Mõõterežiim:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "Sat. arv: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
@@ -69609,7 +69640,7 @@ msgstr "Pääsmiku tõrge"
 msgid "File on the server is too large."
 msgstr "Siltide salvestamine faili nurjus."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:506
+#: core/utilities/setup/downloader/filesdownloader.cpp:507
 #, kde-format
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
@@ -69618,7 +69649,7 @@ msgid ""
 "feature you want to use.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:513
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -69629,13 +69660,13 @@ msgid ""
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:521
+#: core/utilities/setup/downloader/filesdownloader.cpp:522
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:529
+#: core/utilities/setup/downloader/filesdownloader.cpp:530
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -72887,6 +72918,42 @@ msgid "Import Items"
 msgstr "Impordi elemendid"
 
 #, fuzzy
+#~| msgid "Clean all and re-scan"
+#~ msgid "Clean all and re-assign"
+#~ msgstr "Kõigi puhastamine ja uus uurimine"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for face detection"
+#~ msgid "Model:"
+#~ msgstr "Mudel:"
+
+#, fuzzy
+#~| msgid "OSM"
+#~ msgctxt "@label:listbox"
+#~ msgid "SSD"
+#~ msgstr "OSM"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for face recognition"
+#~ msgid "Model:"
+#~ msgstr "Mudel:"
+
+#, fuzzy
+#~ msgctxt "@label:listbox"
+#~ msgid "SFace"
+#~ msgstr "Tühista kõik valikud"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgctxt "@label:listbox"
+#~ msgid "OpenFace"
+#~ msgstr "Faili avamine"
+
+#, fuzzy
 #~| msgid "Face Detection"
 #~ msgid "FacesDetector"
 #~ msgstr "Näotuvastus"
@@ -72996,13 +73063,6 @@ msgstr "Impordi elemendid"
 #~ msgid_plural "Begin %1."
 #~ msgstr[0] "Sisselogimise teave"
 #~ msgstr[1] "Sisselogimise teave"
-
-#, fuzzy
-#~| msgctxt "@groupbox"
-#~| msgid "Face Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Näo täpsus"
 
 #, fuzzy
 #~| msgctxt "camera model"
@@ -80480,11 +80540,6 @@ msgstr "Impordi elemendid"
 #~| msgid "Accuracy"
 #~ msgid "accurate"
 #~ msgstr "Täpsus"
-
-#, fuzzy
-#~| msgid "Upgrade Database"
-#~ msgid "Update Database"
-#~ msgstr "Uuenda andmebaasi"
 
 #, fuzzy
 #~| msgid "Copied database file"

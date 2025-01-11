@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 10:46+0000\n"
+"POT-Creation-Date: 2025-01-11 01:50+0000\n"
 "PO-Revision-Date: 2025-01-07 09:42+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -2945,27 +2945,41 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Leita"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:101
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Opna í merkjastjóra"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:102
 #, kde-format
 msgid "No Tags"
 msgstr "Engin merki"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
 #, kde-format
 msgid "Existing Tags"
 msgstr "Merki sem þegar eru til"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
+#, fuzzy, kde-format
+#| msgid "Auto-tags Assignment"
+msgid "Auto-tag scan"
+msgstr "Sjálfvirk úthlutun merkja"
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Use this button to scan the selected albums for faces"
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for objects to auto-tag"
+msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
 msgid "No Tags Album"
 msgstr "Ekkert merkingaalbúm"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:316
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -4497,7 +4511,7 @@ msgstr "Teygja birtuskil"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:48
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Sjálfvirk lýsing"
@@ -6222,118 +6236,30 @@ msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur úthlutað einkunn, litmerki "
 "eða sérmerki í lýsigögnum á myndir.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:79
-#, kde-format
-msgctxt "@label"
-msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determine the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
-msgstr ""
-"<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
-"frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
-"network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
-"tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
-"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
-"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:258
-#, kde-format
-msgid "Selection model: "
-msgstr "Valhamur:"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr "YOLOv5 Nano"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr "YOLOv5 XLarge"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgid "ResNet50"
-msgstr "ResNet50"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:97
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This kind of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
-"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
-"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
-"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
-"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
-"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
-"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
-"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
-"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
-"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
-"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
-"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
-"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
-"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
-"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
-"af hlutum, dýrum og aðstæðum.</p>"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:109
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
-#, kde-format
-msgctxt "@label"
-msgid "Translate Tags to:"
-msgstr "Þýða merki yfir á:"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Úthluta merkjum"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
-#, kde-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign tags automatically to images"
 msgctxt "@info"
-msgid "A tool to assign tags automatically to images"
+msgid "A tool to automatically assign tags to images"
 msgstr "Verkfæri til að úthluta merkjum sjálfvirkt á myndir"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
-#, kde-kuit-format
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
+#| "metadata values to images automatically using deep-learning engine.</para>"
 msgctxt "@info"
 msgid ""
-"<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images automatically using deep-learning engine.</para>"
+"<para>This Batch Queue Manager tool will automatically assign keyword "
+"hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur úthlutað sjálfvirkt "
 "stigskipuðum gildum lýsigagna á myndir með aðstoð vélnámskerfis (deep-"
@@ -9124,7 +9050,7 @@ msgstr "Nota litastýringu við prentun"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:332
+#: core/utilities/maintenance/main/maintenancedlg.cpp:349
 #, kde-format
 msgid "Settings..."
 msgstr "Stillingar..."
@@ -28855,6 +28781,8 @@ msgid "Scanning collection"
 msgstr "Skanna myndasafn"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
+#: core/libs/mlfoundation/mlpipelinemacros.h:59
+#: core/libs/mlfoundation/mlpipelinemacros.h:68
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -39235,24 +39163,84 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:74
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
+#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
+#, kde-format
+msgid "Autotags Assignment"
+msgstr "Sjálfvirk úthlutun merkja"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Scan for objects in album: %1"
+msgstr "Leita að andlitum í albúmi: %1"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#, fuzzy, kde-format
+#| msgid "Scan for faces in %1 albums"
+msgid "Scan for objects in %1 albums"
+msgstr "Leita að andlitum í %1 albúmum"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#, fuzzy, kde-format
+#| msgid "Error starting face detection."
+msgid "Error starting object detection."
+msgstr "Villa við að ræsa andlitaskönnun."
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#, fuzzy, kde-format
+#| msgid "Items scanned for faces: %1\n"
+msgid "Items scanned for objects: %1\n"
+msgstr "Leitað í atriðum að andlitum: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#, fuzzy, kde-format
+#| msgid "Item scanned for faces: %1\n"
+msgid "Item scanned for objects: %1\n"
+msgstr "Leitað í atriði að andlitum: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#, fuzzy, kde-format
+#| msgid "Scanned for faces: %1\n"
+msgid "Scanned for objects: %1\n"
+msgstr "Leitað að andlitum: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, kde-format
+msgid "Path: %1\n"
+msgstr "Slóð: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Leita í"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:83
-#: core/utilities/maintenance/main/maintenancedlg.cpp:237
-#, kde-format
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p><b>This tool allows to assign automatically tags to images by contents "
+#| "analysis using deep-learning neural network.</b></p><p>The settings below "
+#| "determine the deep-learning model to use while parsing image contents to "
+#| "determine the subjects of the photography. The neural network used in "
+#| "background will generate automatically a serie of tags describing the "
+#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
+"<p><b>This tool automatically assigns tags to images by analyzing the image "
+"using a deep-learning neural network AI model.</b></p><p>The settings below "
+"determine the deep-learning AI model to use while parsing image contents to "
+"determine objects in the image. The AI neural network used in background "
+"will automatically generate tags describing the contents and store the "
+"results in the database.</p>"
 msgstr ""
 "<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
 "frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
@@ -39261,88 +39249,183 @@ msgstr ""
 "ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
 "röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:97
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#, kde-format
-msgid "Clean all and re-assign"
-msgstr "Hreinsa allt og endurúthluta"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Scan all images"
+msgid "Scan all"
+msgstr "Skanna allar myndir"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:98
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skanna einungis óúthlutað"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
-#, kde-format
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
+#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
+#| "only the items with no assigned tag.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag.</p>"
+"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
+"only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 "<p><b>Hreinsa allt og endurúthluta</b>: hreinsa öll merki sem þegar hefur "
 "verið úthlutað og skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
 "einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
 "merki.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
-#: core/utilities/maintenance/main/maintenancedlg.cpp:267
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tagging tag mode: "
+msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#, fuzzy, kde-format
+#| msgid "Update only existing timestamps"
+msgid "Repalce existing autotags"
+msgstr "Uppfæra aðeins fyrirliggjandi tímamerki"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#, fuzzy, kde-format
+#| msgid "Update Database"
+msgid "Update autotags"
+msgstr "Uppfæra gagnagrunn"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"autotags found to the existing tags.</p>"
 msgstr ""
-"<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
-"einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
-"samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti og "
-"staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta eru "
-"stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á undan, "
-"þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað er til "
-"ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig og auknar "
-"krafir um tíma og afköst, gefur þetta mun betri niðurstöður varðandi stærri "
-"hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: Þetta líkan er sérstök "
-"gerð tauganets sem mynduð er með stöflun afgangsblokka og vengulega notað í "
-"ýmsar gerðir tölvusjónar. Slík hönnun gefur kost á þjálfun einstaklega "
-"marglaga tauganeta án þess að takmarkast af vandamálum við hverfandi stigla "
-"(vanishing gradient problem). Ólíkt YOLO er ResNet50 fyrst og fremst hannað "
-"fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
-"hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
-"af hlutum, dýrum og aðstæðum.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#, kde-format
+msgid "Selection model: "
+msgstr "Valhamur:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#, fuzzy, kde-format
+#| msgid "YOLOv5 Nano"
+msgid "YOLOv11 Nano"
+msgstr "YOLOv5 Nano"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "YOLOv5 XLarge"
+msgid "YOLOv11 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#, fuzzy, kde-format
+#| msgid "ResNet50"
+msgid "ResNet-152"
+msgstr "ResNet50"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Face Accuracy"
+msgid "Object detection accuracy: "
+msgstr "Nákvæmni andlita"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately faces will\n"
+#| "be detected, but less faces will be detected."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately objects will\n"
+"be recognized, but fewer objects will be recognized.\n"
+msgstr ""
+"Aðlaga næmni á móti sérhæfni: Því hærra sem gildið er, því nákvæmar eru "
+"borin kennsl á\n"
+"andlit, en um leið þekkjast færri andlit."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Vinna á öllum kjörnum örgjörva"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Object detection and auto-tagging are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Andlitaskönnun og andlitakennsl eru tímafrekar aðgerðir.\n"
+"Þú getur valið um að nota alla örgjörvakjarna kerfisins, eða\n"
+"látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#, kde-format
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "Þýða merki yfir á:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -42845,7 +42928,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:310
+#: core/utilities/maintenance/main/maintenancedlg.cpp:327
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -51970,53 +52053,46 @@ msgstr ""
 "Þegar þú hefur auðkennt vini þína á nokkrum myndum\n"
 "er hægt að þekkja viðkomandi aftur á öðrum myndum."
 
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#.
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
-#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Skanna nýjar myndir"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
-#: core/utilities/maintenance/main/maintenancedlg.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Skanna allar myndir"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Einungis þekkja andlit"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Hjálp"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Vinnuferli"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52028,81 +52104,43 @@ msgstr ""
 "borin kennsl á\n"
 "andlit, en um leið þekkjast færri andlit."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
-#, kde-format
-msgctxt "@label AI model used for face detection"
-msgid "Model:"
-msgstr "Líkan:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:258
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr "YuNet"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:259
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr "YOLOv3"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
-#, kde-format
-msgctxt "@label:listbox"
-msgid "SSD"
-msgstr "SSD"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detection model used to find faces. YuNet is the default model.\n"
-"It is faster and more configurable than SSD and YOLOv3.\n"
-"Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-"Greiningarlíkan til að finna andlit. YuNet er sjálfgefið líkan.\n"
-"Það er hraðvirkara og stillanlegra en SSD og YOLOv3.\n"
-"Athugaðu: YuNet er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
-"eða nýrra."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Stærð andlita:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Mjög lítil"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Lítil"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Miðlungs"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Stór"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Mjög stór"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52134,18 +52172,18 @@ msgstr ""
 "6-8 og stærð andlita á <b>Miðlungs</b> eða <b>Stór</b>.</p><p>Þessi stilling "
 "á einungis við YuNet-líkanið.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Stillingar andlitaskönnunar"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52160,46 +52198,7 @@ msgstr ""
 "Athugið: einungis munu þekkjast andlit sem eru mjög lík áður merktum "
 "andlitum."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:344
-#, kde-format
-msgctxt "@label AI model used for face recognition"
-msgid "Model:"
-msgstr "Líkan:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:348
-#, kde-format
-msgctxt "@label:listbox"
-msgid "SFace"
-msgstr "SFace"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
-#, kde-format
-msgctxt "@label:listbox"
-msgid "OpenFace"
-msgstr "OpenFace"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:352
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"SFace is the default detection model. It is faster and more accurate.\n"
-"OpenFace can be used for older libraries.\n"
-"Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-"SFace er sjálfgefið greiningarlíkan. Það er hraðvirkara og stillanlegra.\n"
-"OpenFace er hægt að nota með eldri aðgerðaöafnum.\n"
-"Athugaðu: SFace er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
-"eða nýrra."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Vinna á öllum kjörnum örgjörva"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:389
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52211,7 +52210,7 @@ msgstr ""
 "Þú getur valið um að nota alla örgjörvakjarna kerfisins, eða\n"
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:393
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Stillingar fyrir andlitakennsl"
@@ -60727,41 +60726,41 @@ msgstr "&Vinstra spjald"
 msgid "&Right Panel"
 msgstr "Hæg&ra spjald"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:33
+#: core/utilities/maintenance/main/maintenancedlg.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Viðhald"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:48
+#: core/utilities/maintenance/main/maintenancedlg.cpp:53
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Veldu viðhaldsaðgerðir til keyrslu</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:59
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Vinna með atriði úr:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:56
+#: core/utilities/maintenance/main/maintenancedlg.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Nota síðast vistuði virku verkfæri og stillingar"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:57
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Vinna á öllum kjörnum örgjörva (þegar þar er hægt)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:63
+#: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, kde-format
 msgid "Common Options"
 msgstr "Algengar stillingar"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -60770,12 +60769,12 @@ msgstr ""
 "<qt>Engir valkostir<br/><i>Athugið: aðeins er unnið með albúmasöfn í þessu "
 "verkfæri.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:75
+#: core/utilities/maintenance/main/maintenancedlg.cpp:80
 #, kde-format
 msgid "Scan for new items"
 msgstr "Leita að nýjum atriðum"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:85
+#: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
@@ -60790,27 +60789,27 @@ msgstr ""
 "tíma og jafnvel fryst digiKam tímabundið<br/> til að tryggja að engar "
 "skemmdir verði á gagnagrunnum.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:90
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Einnig hreinsa smámyndagagnagrunn."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Einnig hreinsa andlitagagnagrunn."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:92
+#: core/utilities/maintenance/main/maintenancedlg.cpp:97
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Einnig hreinsa líkindagagnagrunn."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:93
+#: core/utilities/maintenance/main/maintenancedlg.cpp:98
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Ítarleg hreinsun og smækkun allra gagnagrunna."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:99
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -60819,69 +60818,69 @@ msgstr ""
 "Þessi kostur leiðir til minnkunnar (ryksugun - herping) of the databases. "
 "Herping er studd af bæði SQLite og MySQL."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:106
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Einnig framkvæma hreinsun gagnagrunna"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Leita að breyttum eða óskráðum atriðum (hraðvirkara)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:116
+#: core/utilities/maintenance/main/maintenancedlg.cpp:121
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Endurbyggja smámyndir"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:131
+#: core/utilities/maintenance/main/maintenancedlg.cpp:136
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Endurbyggja fingraför"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:144
+#: core/utilities/maintenance/main/maintenancedlg.cpp:149
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Líkindasvið (í prósentum): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:164
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Takmörkun á tvítekningum:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:168
+#: core/utilities/maintenance/main/maintenancedlg.cpp:173
 #, kde-format
 msgid "No restriction"
 msgstr "Engar takmarkanir"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Takmarka við albúm viðmiðunarmyndar"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:175
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Útiloka albúm viðmiðunarmyndar"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Finna tvítekin atriði"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "Faces data management: "
 msgstr "Stjórnun andlitsgagna: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:213
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Endurbyggja öll þjálfunargögn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60890,70 +60889,98 @@ msgstr ""
 "Þetta mun endurþjálfa andlitakennslakerfið með merktum andlitum í safninu "
 "þínu."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:217
+#: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Endurstilla og hreinsa út öll andlit og þjálfunargögn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr "Þetta mun hreinsa út öll greind og merkt andlit."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:225
+#: core/utilities/maintenance/main/maintenancedlg.cpp:224
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Finna og þekkja andlit"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:285
+#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "Auto-tagging mode: "
+msgid "Auto-tagging scan mode: "
+msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:265
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
+"found to the existing tags.</p>"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:276
+#, fuzzy, kde-format
+#| msgid "ResNet50"
+msgid "ResNet152"
+msgstr "ResNet50"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Face Accuracy"
+msgid "Object Detection Accuracy: "
+msgstr "Nákvæmni andlita"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/utilities/maintenance/main/maintenancedlg.cpp:313
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Skönnunarhamur"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:301
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Hreinsa allt og endurskanna"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:321
+#: core/utilities/maintenance/main/maintenancedlg.cpp:338
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Stefna samræmingar: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:325
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Úr gagnagrunni yfir í lýsigögn mynda"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:326
+#: core/utilities/maintenance/main/maintenancedlg.cpp:343
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Úr lýsigögnum mynda yfir í gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:329
+#: core/utilities/maintenance/main/maintenancedlg.cpp:346
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Skoða nánar á spjaldi fyrir uppsetningu lýsigagna: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:399
+#: core/utilities/maintenance/main/maintenancedlg.cpp:416
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:400
+#: core/utilities/maintenance/main/maintenancedlg.cpp:417
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -60965,7 +60992,7 @@ msgstr ""
 "verður að bera kennsl á andlit."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60974,7 +61001,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
@@ -60988,24 +61015,10 @@ msgstr ""
 "Ferli er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
-#, kde-format
-msgid "Autotags Assignment"
-msgstr "Sjálfvirk úthlutun merkja"
-
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
 #, kde-format
 msgid "Auto-tags for: %1\n"
 msgstr "Sjálfvirk úthlutun merkja fyrir: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Slóð: %1\n"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, kde-format
@@ -64627,7 +64640,7 @@ msgstr "Villa  við að opna skrá."
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:506
+#: core/utilities/setup/downloader/filesdownloader.cpp:507
 #, kde-format
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
@@ -64640,7 +64653,7 @@ msgstr ""
 "nokkurra mjög stórra tvíundakerfis-keyrsluskráa. Þú getur valið hvaða "
 "eiginleika þú vilt nota.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:513
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64657,13 +64670,13 @@ msgstr ""
 "p><p><b>Eftir að búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></"
 "p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:521
+#: core/utilities/setup/downloader/filesdownloader.cpp:522
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Niðurhalið krefst %1 skráa af stærðinni %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:529
+#: core/utilities/setup/downloader/filesdownloader.cpp:530
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Allar skrár valinna eiginleika fundust."
@@ -67809,6 +67822,158 @@ msgstr "Atriði í albúmi"
 msgid "Import Items"
 msgstr "Flytja inn atriði"
 
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~ "integration of smaller-scale object detection scenarios. It's designed "
+#~ "for objects detections, capable of recognizing and extracting the "
+#~ "location of objects within an image. The limitation on the number of "
+#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#~ "previous one, this model is a neural network dedicated for more complex "
+#~ "object detection requirements and showcases remarkable capabilities. "
+#~ "Despite the additional complexity introducing more time-latency and "
+#~ "computer resources, it must be used for larger-scale object detection "
+#~ "scenarios as it provides more accurate predictions at the expense of "
+#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~ "convolutional neural network formed by stacking residual blocks commonly "
+#~ "used to power computer vision applications as object detections. This "
+#~ "kind of design allows the training of very deep networks without "
+#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#~ "primarily focused on image classification and does not provide object "
+#~ "localization. It can recognize objects from a vast set of more than 1,000 "
+#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
+#~ "einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
+#~ "samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti "
+#~ "og staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta "
+#~ "eru stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á "
+#~ "undan, þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað "
+#~ "er til ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig "
+#~ "og auknar krafir um tíma og afköst, gefur þetta mun betri niðurstöður "
+#~ "varðandi stærri hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: "
+#~ "Þetta líkan er sérstök gerð tauganets sem mynduð er með stöflun "
+#~ "afgangsblokka og vengulega notað í ýmsar gerðir tölvusjónar. Slík hönnun "
+#~ "gefur kost á þjálfun einstaklega marglaga tauganeta án þess að takmarkast "
+#~ "af vandamálum við hverfandi stigla (vanishing gradient problem). Ólíkt "
+#~ "YOLO er ResNet50 fyrst og fremst hannað fyrir flokkun mynda og kemur ekki "
+#~ "með staðsetningu hluta. Það getur þekkt hluti úr stóru safni með meira en "
+#~ "1.000 flokkum, sem inniheldur breitt svið af hlutum, dýrum og aðstæðum.</"
+#~ "p>"
+
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "<p><b>This tool allows to assign automatically tags to images by contents "
+#~ "analysis using deep-learning neural network.</b></p><p>The settings below "
+#~ "determines the deep-learning model to use while parsing image contents to "
+#~ "determine the subjects of the photography. The neural network used in "
+#~ "background will generate automatically a serie of tags describing the "
+#~ "contents and store the results in the database.</p>"
+#~ msgstr ""
+#~ "<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir "
+#~ "út frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
+#~ "network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða "
+#~ "vélnáms-tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða "
+#~ "efni ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa "
+#~ "sjálfvirkt röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í "
+#~ "gagnagrunni.</p>"
+
+#~ msgid "Clean all and re-assign"
+#~ msgstr "Hreinsa allt og endurúthluta"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
+#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
+#~ "integration of smaller-scale object detection scenarios. It's designed "
+#~ "for objects detections, capable of recognizing and extracting the "
+#~ "location of objects within an image. The limitation on the number of "
+#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
+#~ "previous one, this model is a neural network dedicated for more complex "
+#~ "object detection requirements and showcases remarkable capabilities. "
+#~ "Despite the additional complexity introducing more time-latency and "
+#~ "computer resources, it must be used for larger-scale object detection "
+#~ "scenarios as it provides more accurate predictions at the expense of "
+#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
+#~ "convolutional neural network formed by stacking residual blocks commonly "
+#~ "used to power computer vision applications as object detections. This "
+#~ "king of design allows the training of very deep networks without "
+#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
+#~ "primarily focused on image classification and does not provide object "
+#~ "localization. It can recognize objects from a vast set of more than 1,000 "
+#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv5 Nano</b>: Þetta líkan er tauganetkerfi sem býður upp á "
+#~ "einstakan hraða og afköst. Það gerir þér kleift að láta meta í snarheitum "
+#~ "samtvinnun greiningar á smærri hlutum. Það er hannað til að finna hluti "
+#~ "og staðsetningar þeirra innan mynda. Takmörk á fjölda greinanlegra hluta "
+#~ "eru stillt á 80.</p><p><b>YOLOv5 XLarge</b>: Sama og talið var hér á "
+#~ "undan, þetta er tauganetkerfislíkan með undraverða eiginleika sem ætlað "
+#~ "er til ítarlegri greiningar flókinna hluta. Þrátt fyrir aukið flækjustig "
+#~ "og auknar krafir um tíma og afköst, gefur þetta mun betri niðurstöður "
+#~ "varðandi stærri hluti, en þá á kostnað hraða.</p><p><b>ResNet50</b>: "
+#~ "Þetta líkan er sérstök gerð tauganets sem mynduð er með stöflun "
+#~ "afgangsblokka og vengulega notað í ýmsar gerðir tölvusjónar. Slík hönnun "
+#~ "gefur kost á þjálfun einstaklega marglaga tauganeta án þess að takmarkast "
+#~ "af vandamálum við hverfandi stigla (vanishing gradient problem). Ólíkt "
+#~ "YOLO er ResNet50 fyrst og fremst hannað fyrir flokkun mynda og kemur ekki "
+#~ "með staðsetningu hluta. Það getur þekkt hluti úr stóru safni með meira en "
+#~ "1.000 flokkum, sem inniheldur breitt svið af hlutum, dýrum og aðstæðum.</"
+#~ "p>"
+
+#~ msgctxt "@label AI model used for face detection"
+#~ msgid "Model:"
+#~ msgstr "Líkan:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "YuNet"
+#~ msgstr "YuNet"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "YOLOv3"
+#~ msgstr "YOLOv3"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "SSD"
+#~ msgstr "SSD"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Detection model used to find faces. YuNet is the default model.\n"
+#~ "It is faster and more configurable than SSD and YOLOv3.\n"
+#~ "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
+#~ "later."
+#~ msgstr ""
+#~ "Greiningarlíkan til að finna andlit. YuNet er sjálfgefið líkan.\n"
+#~ "Það er hraðvirkara og stillanlegra en SSD og YOLOv3.\n"
+#~ "Athugaðu: YuNet er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
+#~ "eða nýrra."
+
+#~ msgctxt "@label AI model used for face recognition"
+#~ msgid "Model:"
+#~ msgstr "Líkan:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "SFace"
+#~ msgstr "SFace"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "OpenFace"
+#~ msgstr "OpenFace"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "SFace is the default detection model. It is faster and more accurate.\n"
+#~ "OpenFace can be used for older libraries.\n"
+#~ "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
+#~ "later."
+#~ msgstr ""
+#~ "SFace er sjálfgefið greiningarlíkan. Það er hraðvirkara og stillanlegra.\n"
+#~ "OpenFace er hægt að nota með eldri aðgerðaöafnum.\n"
+#~ "Athugaðu: SFace er aðeins tiltækt ef digiKam er vistþýtt með OpenCV 4.6.0 "
+#~ "eða nýrra."
+
 #~ msgid "FacesDetector"
 #~ msgstr "Andlitaskönnunarvél"
 
@@ -67910,13 +68075,6 @@ msgstr "Flytja inn atriði"
 #~ msgid_plural "Begin %1."
 #~ msgstr[0] "Upplýsingar um Innskráningu"
 #~ msgstr[1] "Upplýsingar um Innskráningu"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Face Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Nákvæmni andlita"
 
 #, fuzzy
 #~| msgctxt "camera model"
@@ -76214,9 +76372,6 @@ msgstr "Flytja inn atriði"
 
 #~ msgid "more missed faces"
 #~ msgstr "fleiri andlit sem misst er af"
-
-#~ msgid "Update Database"
-#~ msgstr "Uppfæra gagnagrunn"
 
 #~ msgid "Default database file open"
 #~ msgstr "Sjálfgefin gagnagrunnsskrá opin"

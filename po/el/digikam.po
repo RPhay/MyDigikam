@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 10:46+0000\n"
+"POT-Creation-Date: 2025-01-11 01:50+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3011,27 +3011,42 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:101
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Άνοιγμα διαχειριστή ετικετών"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:102
 #, kde-format
 msgid "No Tags"
 msgstr "Χωρίς ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
 #, kde-format
 msgid "Existing Tags"
 msgstr "Υφιστάμενες ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Auto-tag scan"
+msgstr "Αυτόματη προσαρμογή"
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#, fuzzy, kde-format
+#| msgid "Use this button to scan the selected albums for duplicate items."
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for objects to auto-tag"
+msgstr ""
+"Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
+"εύρεση διπλά εμφανιζόμενων αντικειμένων."
+
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
 msgid "No Tags Album"
 msgstr "Λεύκωμα χωρίς ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:316
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -4624,7 +4639,7 @@ msgstr "Τέντωμα αντίθεσης"
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
-#: core/libs/dimg/filters/auto/autoexpofilter.cpp:47
+#: core/libs/dimg/filters/auto/autoexpofilter.cpp:48
 #, kde-format
 msgid "Auto Exposure"
 msgstr "Αυτόματη έκθεση"
@@ -6408,101 +6423,27 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:79
-#, kde-format
-msgctxt "@label"
-msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determine the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:88
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:258
-#, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Selection model: "
-msgstr "Προορισμός:"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, kde-format
-msgid "YOLOv5 Nano"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#, kde-format
-msgid "YOLOv5 XLarge"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgid "ResNet50"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:97
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This kind of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
-msgstr ""
-
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:109
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
-msgctxt "@label"
-msgid "Translate Tags to:"
-msgstr "Πλοήγηση στο %1"
-
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@title"
 msgid "Assign Tags"
 msgstr "Ορισμός ετικέτας"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to assign tags automatically to images"
+msgid "A tool to automatically assign tags to images"
 msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για τον αυτόματο ορισμό του προσανατολισμού."
 
-#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
+#: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid ""
-"<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
-"values to images automatically using deep-learning engine.</para>"
+"<para>This Batch Queue Manager tool will automatically assign keyword "
+"hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
@@ -9462,7 +9403,7 @@ msgstr "Χρήση διαχείρισης χρωμάτων στην εκτύπω
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:332
+#: core/utilities/maintenance/main/maintenancedlg.cpp:349
 #, kde-format
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
@@ -30591,6 +30532,8 @@ msgid "Scanning collection"
 msgstr "Σάρωση συλλογής"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
+#: core/libs/mlfoundation/mlpipelinemacros.h:59
+#: core/libs/mlfoundation/mlpipelinemacros.h:68
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -41648,91 +41591,250 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:74
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:225
+#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Autotags Assignment"
+msgstr "Αυτόματη προσαρμογή"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scan for objects in album: %1"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scan for objects in %1 albums"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#, fuzzy, kde-format
+#| msgid "Enable face detection"
+msgid "Error starting object detection."
+msgstr "Ενεργοποίηση ανίχνευσης προσώπων"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for objects: %1\n"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for objects: %1\n"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scanned for objects: %1\n"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Δορ: %1"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Αναζήτηση σε:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:83
-#: core/utilities/maintenance/main/maintenancedlg.cpp:237
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgctxt "@label"
 msgid ""
-"<p><b>This tool allows to assign automatically tags to images by contents "
-"analysis using deep-learning neural network.</b></p><p>The settings below "
-"determines the deep-learning model to use while parsing image contents to "
-"determine the subjects of the photography. The neural network used in "
-"background will generate automatically a serie of tags describing the "
-"contents and store the results in the database.</p>"
+"<p><b>This tool automatically assigns tags to images by analyzing the image "
+"using a deep-learning neural network AI model.</b></p><p>The settings below "
+"determine the deep-learning AI model to use while parsing image contents to "
+"determine objects in the image. The AI neural network used in background "
+"will automatically generate tags describing the contents and store the "
+"results in the database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:92
-#: core/utilities/maintenance/main/maintenancedlg.cpp:246
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Λειτουργία μέτρησης:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:97
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, fuzzy, kde-format
-msgid "Clean all and re-assign"
-msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
+#| msgid "Scan Image"
+msgid "Scan all"
+msgstr "Σάρωση εικόνας"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:98
-#: core/utilities/maintenance/main/maintenancedlg.cpp:252
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/utilities/maintenance/main/maintenancedlg.cpp:251
+#: core/utilities/maintenance/main/maintenancedlg.cpp:319
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
-#: core/utilities/maintenance/main/maintenancedlg.cpp:254
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/utilities/maintenance/main/maintenancedlg.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-"scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
-"the items with no assigned tag.</p>"
+"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
+"only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
-#: core/utilities/maintenance/main/maintenancedlg.cpp:267
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging tag mode: "
+msgstr "Λειτουργία μέτρησης:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#, kde-format
+msgid "Repalce existing autotags"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#, fuzzy, kde-format
+#| msgid "Upgrade Database"
+msgid "Update autotags"
+msgstr "Αναβάθμιση βάσης δεδομένων"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-"exceptional speed and efficiency. It enables you to swiftly evaluate the "
-"integration of smaller-scale object detection scenarios. It's designed for "
-"objects detections, capable of recognizing and extracting the location of "
-"objects within an image. The limitation on the number of recognizable "
-"objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
-"model is a neural network dedicated for more complex object detection "
-"requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it must be "
-"used for larger-scale object detection scenarios as it provides more "
-"accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
-"model is a specific type of convolutional neural network formed by stacking "
-"residual blocks commonly used to power computer vision applications as "
-"object detections. This king of design allows the training of very deep "
-"networks without encountering the vanishing gradient problem. Unlike YOLO, "
-"ResNet50 is primarily focused on image classification and does not provide "
-"object localization. It can recognize objects from a vast set of more than "
-"1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:401
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Selection model: "
+msgstr "Προορισμός:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#, kde-format
+msgid "YOLOv11 Nano"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#, kde-format
+msgid "YOLOv11 XLarge"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#, kde-format
+msgid "ResNet-152"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgid "Object detection accuracy: "
+msgstr "Ακρίβεια"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
+#| "results will be, but it will take more time."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately objects will\n"
+"be recognized, but fewer objects will be recognized.\n"
+msgstr ""
+"Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
+"ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Face detection is a time-consuming task. You can choose if you wish to "
+#| "employ all processor cores on your system, or work in the background only "
+#| "on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Object detection and auto-tagging are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Η ανίχνευση προσώπων είναι μια χρονοβόρα εργασία. Μπορείτε να επιλέξετε αν "
+"θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
+"ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#, fuzzy, kde-format
+#| msgid "Navigate to %1"
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "Πλοήγηση στο %1"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -45536,7 +45638,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:310
+#: core/utilities/maintenance/main/maintenancedlg.cpp:327
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -55904,59 +56006,52 @@ msgstr ""
 "αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
 "και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
 
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#.
-#. i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-#. i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-#. i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
-#: core/utilities/maintenance/main/maintenancedlg.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Σάρωση εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
-#: core/utilities/maintenance/main/maintenancedlg.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Σάρωση εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Συγχρονισμός"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&Βοήθεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Ροή εργασιών"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:240
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:247
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -55971,51 +56066,14 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
-msgctxt "@label AI model used for face detection"
-msgid "Model:"
-msgstr "Μοντέλο:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:258
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YuNet"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:259
-#, kde-format
-msgctxt "@label:listbox"
-msgid "YOLOv3"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "OSM"
-msgctxt "@label:listbox"
-msgid "SSD"
-msgstr "OSM"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:263
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detection model used to find faces. YuNet is the default model.\n"
-"It is faster and more configurable than SSD and YOLOv3.\n"
-"Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Μέγεθος αρχείου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -56023,7 +56081,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Ετικέτες εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -56031,7 +56089,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Ετικέτες εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -56039,14 +56097,14 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Μεσαίο μέγεθος"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:291
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Προορισμός"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -56054,7 +56112,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Ετικέτες εικόνας"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:295
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56073,20 +56131,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:323
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:332
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:339
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -56102,44 +56160,7 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:344
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
-msgctxt "@label AI model used for face recognition"
-msgid "Model:"
-msgstr "Μοντέλο:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:348
-#, fuzzy, kde-format
-msgctxt "@label:listbox"
-msgid "SFace"
-msgstr "Χωρίς επιλογή"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:349
-#, fuzzy, kde-format
-msgctxt "@label:listbox"
-msgid "OpenFace"
-msgstr "Άνοιγμα φακέλου"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:352
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"SFace is the default detection model. It is faster and more accurate.\n"
-"OpenFace can be used for older libraries.\n"
-"Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-"later."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:387
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:389
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -56156,7 +56177,7 @@ msgstr ""
 "θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
 "ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:393
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
@@ -65283,31 +65304,31 @@ msgstr "Α&ριστερός πίνακας"
 msgid "&Right Panel"
 msgstr "&Δεξιός πίνακας"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:33
+#: core/utilities/maintenance/main/maintenancedlg.cpp:38
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Συντήρηση"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:48
+#: core/utilities/maintenance/main/maintenancedlg.cpp:53
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Επιλέξτε λειτουργίες συντήρησης για επεξεργασία</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:54
+#: core/utilities/maintenance/main/maintenancedlg.cpp:59
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Επεξεργασία αντικειμένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:56
+#: core/utilities/maintenance/main/maintenancedlg.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:57
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
@@ -65315,24 +65336,24 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:63
+#: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "Κοινές ρυθμίσεις"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:72
+#: core/utilities/maintenance/main/maintenancedlg.cpp:77
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:75
+#: core/utilities/maintenance/main/maintenancedlg.cpp:80
 #, kde-format
 msgid "Scan for new items"
 msgstr "Σάρωση για νέα αντικείμενα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:85
+#: core/utilities/maintenance/main/maintenancedlg.cpp:90
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
@@ -65342,99 +65363,99 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:90
+#: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the thumbnail database."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:91
+#: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Also clean up the faces database."
 msgstr "Ενημέρωση βάσης δεδομένων προσώπων σε εξέλιξη."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:92
+#: core/utilities/maintenance/main/maintenancedlg.cpp:97
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the similarity database."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:93
+#: core/utilities/maintenance/main/maintenancedlg.cpp:98
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Extended clean up and shrink all databases."
 msgstr "Αποτυχία απόδοσης αρχικών τιμών στη βάση δεδομένων εικόνων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:94
+#: core/utilities/maintenance/main/maintenancedlg.cpp:99
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:106
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:110
-#: core/utilities/maintenance/main/maintenancedlg.cpp:125
+#: core/utilities/maintenance/main/maintenancedlg.cpp:115
+#: core/utilities/maintenance/main/maintenancedlg.cpp:130
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Σάρωση για αλλαγμένα ή μη-καταγεγραμμένα αντικείμενα (ταχύτερο)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:116
+#: core/utilities/maintenance/main/maintenancedlg.cpp:121
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Ανακατασκευή εικονιδίων επισκόπησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:131
+#: core/utilities/maintenance/main/maintenancedlg.cpp:136
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Ανακατασκευή αποτυπωμάτων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:144
+#: core/utilities/maintenance/main/maintenancedlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Similarity (in percents): "
 msgid "Similarity range (in percents): "
 msgstr "Ομοιότητα (σε ποσοστά): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:164
+#: core/utilities/maintenance/main/maintenancedlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "Αναζήτηση διπλών εμφανίσεων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:168
+#: core/utilities/maintenance/main/maintenancedlg.cpp:173
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "Καμία επιλογή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, fuzzy, kde-format
 #| msgid "Store as a different name"
 msgid "Restrict to album of reference image"
 msgstr "Αποθήκευση με διαφορετικό όνομα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:170
+#: core/utilities/maintenance/main/maintenancedlg.cpp:175
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:187
+#: core/utilities/maintenance/main/maintenancedlg.cpp:192
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "Εύρεση διπλών αντικειμένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:198
+#: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
 msgid "Faces data management: "
 msgstr "Διαχείριση δεδομένων χαρακτηριστικών προσώπου: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:213
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Clear and rebuild all training data"
@@ -65442,80 +65463,106 @@ msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Καθαρισμός και ανακατασκευή όλων των δεδομένων μάθησης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:217
+#: core/utilities/maintenance/main/maintenancedlg.cpp:216
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Καθαρισμός όλων των προσώπων σε αυτήν την εικόνα"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:225
+#: core/utilities/maintenance/main/maintenancedlg.cpp:224
 #, fuzzy, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Ανίχνευση και αναγνώριση προσώπων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:285
+#: core/utilities/maintenance/main/maintenancedlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-tagging scan mode: "
+msgstr "Λειτουργία μέτρησης:"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:265
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
+"found to the existing tags.</p>"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:276
+#, kde-format
+msgid "ResNet152"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:287
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgid "Object Detection Accuracy: "
+msgstr "Ακρίβεια"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/utilities/maintenance/main/maintenancedlg.cpp:313
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "Μοντέλο: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:301
+#: core/utilities/maintenance/main/maintenancedlg.cpp:318
 #, fuzzy, kde-format
 msgid "Clean all and re-scan"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:321
+#: core/utilities/maintenance/main/maintenancedlg.cpp:338
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "Διόρθωση DST: %1"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:325
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "Ενημέρωση βάσης δεδομένων από μεταδεδομένα εικόνας σε εξέλιξη"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:326
+#: core/utilities/maintenance/main/maintenancedlg.cpp:343
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "Συγχρονισμός μεταδεδομένων εικόνων με τη βάση δεδομένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:329
+#: core/utilities/maintenance/main/maintenancedlg.cpp:346
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Επιλέξτε πίνακα ρύθμισης μεταδεδομένων για λεπτομέρειες: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:355
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Συγχρονισμός μεταδεδομένων εικόνων με τη βάση δεδομένων"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:399
+#: core/utilities/maintenance/main/maintenancedlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:400
+#: core/utilities/maintenance/main/maintenancedlg.cpp:417
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -65524,7 +65571,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65533,7 +65580,7 @@ msgstr ""
 "Όλες οι λειτουργίες ολοκληρώθηκαν.\n"
 "Διάρκεια: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:407
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Συντήρηση digiKam"
@@ -65547,27 +65594,11 @@ msgstr ""
 "Η επεξεργασία ολοκληρώθηκε.\n"
 "Διάρκεια: %1"
 
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
-msgid "Autotags Assignment"
-msgstr "Αυτόματη προσαρμογή"
-
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tags for: %1\n"
 msgstr "Λειτουργία μέτρησης:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Δορ: %1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
@@ -69573,7 +69604,7 @@ msgstr "Εργαλεία εξαγωγής"
 msgid "File on the server is too large."
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:506
+#: core/utilities/setup/downloader/filesdownloader.cpp:507
 #, kde-format
 msgid ""
 "<p>For the face management, the red-eye removal tool, and the classification "
@@ -69582,7 +69613,7 @@ msgid ""
 "feature you want to use.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:512
+#: core/utilities/setup/downloader/filesdownloader.cpp:513
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -69593,13 +69624,13 @@ msgid ""
 "p><p><b>After the successful download you have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:521
+#: core/utilities/setup/downloader/filesdownloader.cpp:522
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:529
+#: core/utilities/setup/downloader/filesdownloader.cpp:530
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -72872,6 +72903,40 @@ msgstr "Αντικείμενα λευκώματος"
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
 
+#, fuzzy
+#~ msgid "Clean all and re-assign"
+#~ msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for face detection"
+#~ msgid "Model:"
+#~ msgstr "Μοντέλο:"
+
+#, fuzzy
+#~| msgid "OSM"
+#~ msgctxt "@label:listbox"
+#~ msgid "SSD"
+#~ msgstr "OSM"
+
+#, fuzzy
+#~| msgctxt "camera model"
+#~| msgid "Model:"
+#~ msgctxt "@label AI model used for face recognition"
+#~ msgid "Model:"
+#~ msgstr "Μοντέλο:"
+
+#, fuzzy
+#~ msgctxt "@label:listbox"
+#~ msgid "SFace"
+#~ msgstr "Χωρίς επιλογή"
+
+#, fuzzy
+#~ msgctxt "@label:listbox"
+#~ msgid "OpenFace"
+#~ msgstr "Άνοιγμα φακέλου"
+
 #~ msgid "FacesDetector"
 #~ msgstr "Ανιχνευτής Προσώπων"
 
@@ -72992,12 +73057,6 @@ msgstr "Εισαγωγή αντικειμένων"
 #~ msgid_plural "Begin %1."
 #~ msgstr[0] "Αποκοπή πληροφοριών"
 #~ msgstr[1] "Αποκοπή πληροφοριών"
-
-#, fuzzy
-#~| msgid "Accuracy"
-#~ msgctxt "@label Face Detection Accuracy"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Ακρίβεια"
 
 #, fuzzy
 #~| msgctxt "camera model"
@@ -80444,11 +80503,6 @@ msgstr "Εισαγωγή αντικειμένων"
 #~| msgid "Accuracy"
 #~ msgid "accurate"
 #~ msgstr "Ακρίβεια"
-
-#, fuzzy
-#~| msgid "Upgrade Database"
-#~ msgid "Update Database"
-#~ msgstr "Αναβάθμιση βάσης δεδομένων"
 
 #, fuzzy
 #~| msgid "Copied database file"
