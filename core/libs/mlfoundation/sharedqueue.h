@@ -65,7 +65,7 @@ public:
         return result;
     }
 
-    void push_back(T& item)
+    void push_back(T const& item)
     {
         std::unique_lock<std::mutex> mlock(mutex_);
 
@@ -75,7 +75,6 @@ public:
         }
 
         queue_.push_back(item);
-        mlock.unlock();          // Unlock before notificiation to minimize mutex con.
         front_.notify_one();     // Notify one waiting thread.
     }
 
@@ -83,13 +82,12 @@ public:
     {
         std::unique_lock<std::mutex> mlock(mutex_);
 
-        if (maxDepth_ <= queue_.size())
+        while (maxDepth_ <= queue_.size())
         {
             back_.wait(mlock);
         }
 
         queue_.push_back(std::move(item));
-        mlock.unlock();          // Unlock before notificiation to minimize mutex con.
         front_.notify_one();     // Notify one waiting thread?
     }
 
@@ -97,7 +95,6 @@ public:
     {
         std::unique_lock<std::mutex> mlock(mutex_);
         int size = queue_.size();
-        mlock.unlock();
 
         return size;
     }
@@ -106,7 +103,6 @@ public:
     {
         std::unique_lock<std::mutex> mlock(mutex_);
         bool ret = queue_.empty();
-        mlock.unlock();
 
         return ret;
     }
@@ -115,7 +111,6 @@ public:
     {
         std::unique_lock<std::mutex> mlock(mutex_);
         queue_.clear();
-        mlock.unlock();
     }
 
     int maxDepth() const
@@ -123,7 +118,7 @@ public:
         return maxDepth_;
     }
 
-    void setMaxDepth(int depth)
+    void maxDepth(int depth)
     {
         maxDepth_ = depth;
     }
