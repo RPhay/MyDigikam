@@ -169,11 +169,6 @@ bool AutotagsPipelineObject::start()
     return AutotagsPipelineBase::start();
 }
 
-void AutotagsPipelineObject::cancel()
-{
-    AutotagsPipelineBase::cancel();
-}
-
 bool AutotagsPipelineObject::finder()
 {
     if (settings.bqmMode)

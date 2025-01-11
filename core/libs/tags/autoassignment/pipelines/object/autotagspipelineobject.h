@@ -33,7 +33,6 @@ public:
     ~AutotagsPipelineObject()                                   override;
 
     bool start()                                                override;
-    void cancel()                                               override;
 
 protected:
 
