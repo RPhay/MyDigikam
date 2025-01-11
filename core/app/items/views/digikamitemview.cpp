@@ -444,6 +444,11 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         }
     }
 
+    if (infos.size() > 1)
+    {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "DigikamItemView::confirmFaces(): INFO: more than 1 face confirmed";
+    }
+
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         // d->editPipeline.confirm(infos[i], faces[i], tagId);

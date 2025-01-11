@@ -82,7 +82,7 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
 {
     if (debugConfirmTimer.elapsed() < 250)
     {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 2 faces confirmed in less than 0.25 seconds";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 1 face confirmed in less than 0.25 seconds";
     }
     debugConfirmTimer.restart();
 
