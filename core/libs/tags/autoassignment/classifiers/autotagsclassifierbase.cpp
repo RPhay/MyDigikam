@@ -36,7 +36,7 @@ AutotagsClassifierBase::AutotagsClassifierBase(float _threshold, const QString& 
 /*
     predefinedClassFile = _predefinedClassFile;
 */
-    if (!loadTrainingData())
+    if (!this->loadTrainingData())
     {
         qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierBase Failed to load predefined classes from file:"
                                                << predefinedClassFile;
