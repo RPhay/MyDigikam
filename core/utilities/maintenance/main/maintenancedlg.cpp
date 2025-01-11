@@ -259,10 +259,10 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     hbox15->setStretchFactor(space15, 10);
 
     d->autotagsTagMode = new QComboBox(hbox15);
-    d->autotagsTagMode->addItem(i18n("Repalce existing autotags"), AutotagsScanSettings::TagMode::Replace);
+    d->autotagsTagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
     d->autotagsTagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
     d->autotagsTagMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Repalce existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+        "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
         "<p><b>Update autotags</b>: add new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13    = new DHBox(d->vbox5);

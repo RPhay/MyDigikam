@@ -117,10 +117,10 @@ void AutotagsScanWidget::setupUi()
     hbox15->setStretchFactor(space15, 10);
 
     d->tagMode = new QComboBox(hbox15);
-    d->tagMode->addItem(i18n("Repalce existing autotags"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
     d->tagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Repalce existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+        "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
         "<p><b>Update autotags</b>: add any new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13    = new DHBox(d->settingsTab);
