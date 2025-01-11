@@ -32,13 +32,9 @@
 namespace Digikam
 {
 
-AutotagsPipelineBase::AutotagsPipelineBase(AutotagsScanSettings _settings) :
-                                   MLPipelineFoundation(),
-                                   settings(_settings)
-{
-}
-
-AutotagsPipelineBase::~AutotagsPipelineBase()
+AutotagsPipelineBase::AutotagsPipelineBase(const AutotagsScanSettings& _settings)
+    : MLPipelineFoundation(),
+      settings            (_settings)
 {
 }
 
@@ -52,12 +48,10 @@ bool AutotagsPipelineBase::start()
     return MLPipelineFoundation::start();
 }
 
-void AutotagsPipelineBase::cancel()
-{
-    return MLPipelineFoundation::cancel();
-}
-
-void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta, const ItemInfo& info, const QUrl& outputUrl, const DImg& image)
+void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
+                                      const ItemInfo& info,
+                                      const QUrl& outputUrl,
+                                      const DImg& image)
 {
     if (settings.bqmMode)
     {
@@ -66,11 +60,11 @@ void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta, const
 
         // create a package for the image ID
         // the package should look like it just came from the finder stage
-        
-        AutotagsPipelinePackageBase* package = new AutotagsPipelinePackageBase();
-        package->info = info;
-        package->image = image;
-        bqmOutputUrl = outputUrl;
+
+        AutotagsPipelinePackageBase* const package = new AutotagsPipelinePackageBase();
+        package->info                              = info;
+        package->image                             = image;
+        bqmOutputUrl                               = outputUrl;
 
         // acquire the semaphore
 
@@ -181,6 +175,4 @@ bool AutotagsPipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
     return MLPipelineFoundation::enqueue(thisQueue, package);
 }
 
-}
-
-// #include "moc_autotagspipelinebase.cpp"
+} // namespace Digikam

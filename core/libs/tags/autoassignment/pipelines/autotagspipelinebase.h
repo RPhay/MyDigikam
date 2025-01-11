@@ -43,16 +43,17 @@ namespace Digikam
 
 class AutotagsPipelineBase : public MLPipelineFoundation
 {
-
 public:
 
-    explicit AutotagsPipelineBase(AutotagsScanSettings _settings);
-    virtual ~AutotagsPipelineBase();
+    explicit AutotagsPipelineBase(const AutotagsScanSettings& _settings);
+    virtual ~AutotagsPipelineBase() = default;
 
     virtual bool start()    override;
-    virtual void cancel()   override;
 
-    virtual void bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta, const ItemInfo& info, const QUrl& outputUrl, const DImg& image);
+    virtual void bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
+                            const ItemInfo& info,
+                            const QUrl& outputUrl,
+                            const DImg& image);
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
@@ -87,12 +88,11 @@ protected:
     // queue helper functions
     bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
 
-
 private:
 
-    AutotagsPipelineBase()                                              = delete;
-    AutotagsPipelineBase(AutotagsPipelineBase&)                         = delete;
-
+    // Disable
+    AutotagsPipelineBase()                      = delete;
+    AutotagsPipelineBase(AutotagsPipelineBase&) = delete;
 };
 
-}
+} // namespace digikam

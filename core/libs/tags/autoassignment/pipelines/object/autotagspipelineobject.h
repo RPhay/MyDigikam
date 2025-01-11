@@ -15,9 +15,7 @@
 
 #pragma once
 
-// Qt includes
-
-// local includes
+// Local includes
 
 #include "digikam_export.h"
 #include "autotagspipelinebase.h"
@@ -30,13 +28,15 @@ namespace Digikam
 class DIGIKAM_GUI_EXPORT AutotagsPipelineObject : public AutotagsPipelineBase
 {
 public:
+
     explicit AutotagsPipelineObject(const AutotagsScanSettings& _settings);
-    ~AutotagsPipelineObject()                                       override;
+    ~AutotagsPipelineObject()                                   override;
 
     bool start()                                                override;
     void cancel()                                               override;
 
 protected:
+
     bool finder()                                               override;
     bool loader()                                               override;
     bool extractor()                                            override;
@@ -50,7 +50,6 @@ private:
 
     AutotagsPipelineObject()                                    = delete;
     AutotagsPipelineObject(AutotagsPipelineObject&)             = delete;
-
 };
 
-}
+} // namespace Digikam

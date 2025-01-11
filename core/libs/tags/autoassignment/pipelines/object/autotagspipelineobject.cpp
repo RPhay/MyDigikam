@@ -50,12 +50,12 @@
 #include "tagscache.h"
 #include "localizeselector.h"
 #include "qtopencvimg.h"
-            
+
 namespace Digikam
 {
 
-AutotagsPipelineObject::AutotagsPipelineObject(const AutotagsScanSettings& _settings) :
-                                       AutotagsPipelineBase(_settings)
+AutotagsPipelineObject::AutotagsPipelineObject(const AutotagsScanSettings& _settings)
+    : AutotagsPipelineBase(_settings)
 {
 }
 
@@ -71,7 +71,6 @@ AutotagsPipelineObject::~AutotagsPipelineObject()
 
 bool AutotagsPipelineObject::start()
 {
-
     // create the image classification model
 
     try
@@ -81,21 +80,28 @@ bool AutotagsPipelineObject::start()
             case AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO:
             {
                 model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("YOLOv11-nano"), DNNModelUsage::DNNUsageObjectDetection));
+
                 break;
             }
+
             case AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE:
             {
                 model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("YOLOv11-xl"), DNNModelUsage::DNNUsageObjectDetection));
+
                 break;
             }
+
             case AutotagsScanSettings::ObjectDetectionModel::RESNET152:
             {
                 model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("ResNet152_v2"), DNNModelUsage::DNNUsageImageClassification));
+
                 break;
             }
+
             default:
             {
                 qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unknown object detection model. ";
+
                 return false;
             }
         }
@@ -118,17 +124,21 @@ bool AutotagsPipelineObject::start()
             }
         }
     }
-    catch(const std::exception& e)
+
+    catch (const std::exception& e)
     {
         qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unable to load model. " << e.what();
+
         if (model)
         {
             model = nullptr;
         }
     }
-    catch(...)
+
+    catch (...)
     {
         qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unknown error. Unable to load model. ";
+
         if (model)
         {
             model = nullptr;
@@ -137,7 +147,7 @@ bool AutotagsPipelineObject::start()
 
     // check if the model and classifier were created
 
-    if (nullptr == model || nullptr == autotagsClassifier)
+    if ((nullptr == model) || (nullptr == autotagsClassifier))
     {
         return false;
     }
@@ -172,9 +182,12 @@ bool AutotagsPipelineObject::finder()
     }
 
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue = nullptr;
+    MLPipelineQueue* nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -202,7 +215,7 @@ bool AutotagsPipelineObject::finder()
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
 
             // quick check if we should add threads.
-            
+
             if (!moreCpu)
             {
                 moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
@@ -210,7 +223,7 @@ bool AutotagsPipelineObject::finder()
 
             // iterate over the image IDs and add unique IDs to the queue for processing
 
-            for(qlonglong imageId : std::as_const(imageIds))
+            for (qlonglong imageId : std::as_const(imageIds))
             {
                 ++performanceProfileList[MLPipelineStage::Finder].itemCount;
 
@@ -238,6 +251,7 @@ bool AutotagsPipelineObject::finder()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
 
     return true;
@@ -256,7 +270,7 @@ bool AutotagsPipelineObject::loader()
         package = nullptr;
 
         try
-        {        
+        {
             MLPIPELINE_LOOP_START(MLPipelineStage::Loader, thisQueue);
             package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
@@ -270,8 +284,9 @@ bool AutotagsPipelineObject::loader()
             if (DatabaseItem::Category::Image == package->info.category())
             {
                 // load high quality image for detection
-
-                // package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
+/*
+                package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
+*/
                 package->image = PreviewLoadThread::loadFastSynchronously(package->info.filePath(), model->info.imageSize);
 
                 // check for corrupted images that can't be loaded
@@ -288,7 +303,6 @@ bool AutotagsPipelineObject::loader()
 
                     sendNotification = false;
                 }
-
             }
 
             if (sendNotification)
@@ -307,11 +321,13 @@ bool AutotagsPipelineObject::loader()
 
             MLPIPELINE_LOOP_END(MLPipelineStage::Loader);
         }
+
         MLPIPELINE_CATCH("AutotagsPipelineObject::loader");
     }
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     MLPIPELINE_STAGE_END(MLPipelineStage::Loader, MLPipelineStage::Extractor);
 
     return true;
@@ -320,10 +336,13 @@ bool AutotagsPipelineObject::loader()
 bool AutotagsPipelineObject::extractor()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue           = nullptr;
+    MLPipelineQueue* nextQueue           = nullptr;
     stageStart(QThread::NormalPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier, thisQueue, nextQueue);
     AutotagsPipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     FaceUtils utils;
@@ -335,12 +354,14 @@ bool AutotagsPipelineObject::extractor()
         try
         {
             package = static_cast<AutotagsPipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Extractor].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Extractor].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Extractor].itemCount;
 
@@ -349,12 +370,11 @@ bool AutotagsPipelineObject::extractor()
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
-
             // preprocess the image
 
             // copy the image to a cv::Mat
 
-            cv::Mat cvImage = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
+            cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
 
             // resize the image if needed.  Only resize if the image is larger than the input size of the detector
 
@@ -374,22 +394,25 @@ bool AutotagsPipelineObject::extractor()
 
             // pad the image if needed
 
-            if (model->info.imageSize != cvImage.cols || model->info.imageSize != cvImage.rows)
+            if ((model->info.imageSize != cvImage.cols) || (model->info.imageSize != cvImage.rows))
             {
                 // Image needs to be padded so we add a border
+
                 cv::Mat borderImage;
                 int xPad = model->info.imageSize - cvImage.cols;
                 int yPad = model->info.imageSize - cvImage.rows;
-                
+
                 cv::copyMakeBorder(cvImage, borderImage,
                                 0, yPad,
                                 0, xPad,
                                 cv::BORDER_CONSTANT,
                                 cv::Scalar(0, 0, 0));
+
                 cvImage = borderImage;
             }
 
             // convert the image to a blob 
+
             cv::Mat cvBlob = cv::dnn::blobFromImage(cvImage, 1.0/255, cv::Size(cvImage.cols, cvImage.rows), cv::Scalar(0, 0, 0), true, false);
 
             std::vector<cv::Mat> detectionResults;
@@ -408,7 +431,7 @@ bool AutotagsPipelineObject::extractor()
             {
                 package->featuresList << result;
             }
-            
+
             // send the package to the next stage
 
             enqueue(nextQueue, package);
@@ -419,17 +442,21 @@ bool AutotagsPipelineObject::extractor()
             performanceProfileList[MLPipelineStage::Extractor].elapsedTime += timer.elapsed();
             performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Extractor].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "AutotagsPipelineObject::extractor(): unknown extractor error. " << e.what() << " Restarting...";
+
             if (package)
             {
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "AutotagsPipelineObject::extractor(): unknown extractor error.  Restarting...";
+
             if (package)
             {
                 delete package;
@@ -439,6 +466,7 @@ bool AutotagsPipelineObject::extractor()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Extractor, MLPipelineStage::Classifier);
 
     return true;
@@ -447,10 +475,13 @@ bool AutotagsPipelineObject::extractor()
 bool AutotagsPipelineObject::classifier()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue           = nullptr;
+    MLPipelineQueue* nextQueue           = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer, thisQueue, nextQueue);
     AutotagsPipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     while (!cancelled)
@@ -460,17 +491,19 @@ bool AutotagsPipelineObject::classifier()
         try
         {
             package = static_cast<AutotagsPipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Classifier].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Classifier].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Classifier].itemCount;
 
             timer.start();
-            
+
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
@@ -489,17 +522,21 @@ bool AutotagsPipelineObject::classifier()
             performanceProfileList[MLPipelineStage::Classifier].elapsedTime += timer.elapsed();
             performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Classifier].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. " << e.what() << "    Restarting...";
+
             if (package)
             {
                 delete package;
             }
         }
-        catch(...)
+
+        catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error.  Restarting...";
+
             if (package)
             {
                 delete package;
@@ -509,6 +546,7 @@ bool AutotagsPipelineObject::classifier()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 
     return true;
@@ -517,10 +555,13 @@ bool AutotagsPipelineObject::classifier()
 bool AutotagsPipelineObject::writer()
 {
     // All threads start with the same basic functions
-    MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;
+
+    MLPipelineQueue* thisQueue           = nullptr;
+    MLPipelineQueue* nextQueue           = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
     AutotagsPipelinePackageBase* package = nullptr;
     QElapsedTimer timer;
+
     //--------------------------------------------------------------------------------
 
     const QString rootTag      = QLatin1String("auto/");
@@ -533,12 +574,14 @@ bool AutotagsPipelineObject::writer()
         try
         {
             package = static_cast<AutotagsPipelinePackageBase*>(dequeue(thisQueue));
+
             if (queueEndSignal() == package)
             {
                 // end of queue signal
 
                 break;
             }
+
             performanceProfileList[MLPipelineStage::Writer].maxQueueCount = qMax(performanceProfileList[MLPipelineStage::Writer].maxQueueCount, thisQueue->size());
             ++performanceProfileList[MLPipelineStage::Writer].itemCount;
 
@@ -555,7 +598,7 @@ bool AutotagsPipelineObject::writer()
 
             const auto ids = package->info.tagIds();
 
-            if (!settings.bqmMode && AutotagsScanSettings::TagMode::Replace == settings.tagMode)
+            if (!settings.bqmMode && (AutotagsScanSettings::TagMode::Replace == settings.tagMode))
             {
                 for (int tid : ids)
                 {
@@ -583,7 +626,7 @@ bool AutotagsPipelineObject::writer()
                         {
                             QString newTag = rootTag + trLang + QLatin1Char('/') + trOut;
                             tagsPath << newTag;
-                            tagId = tagsCache->getOrCreateTag(newTag);
+                            tagId          = tagsCache->getOrCreateTag(newTag);
                         }
                         else
                         {
@@ -602,7 +645,7 @@ bool AutotagsPipelineObject::writer()
                     tagId = tagsCache->getOrCreateTag(newTag);
                 }
 
-                if (!settings.bqmMode && tagId != -1 && !package->info.tagIds().contains(tagId))
+                if (!settings.bqmMode && (tagId != -1) && !package->info.tagIds().contains(tagId))
                 {
                     package->info.setTag(tagId);
                     tagsChanged = true;
@@ -626,8 +669,10 @@ bool AutotagsPipelineObject::writer()
             {
                 if (tagsPath.size() > 0)
                 {
-                    // QStringList oldTags = bqmMeta->getItemTagsPath();
-                    // oldTags.append(tagsPath);
+/*
+                    QStringList oldTags = bqmMeta->getItemTagsPath();
+                    oldTags.append(tagsPath);
+*/
                     bqmMeta->setItemTagsPath(tagsPath);
                     bqmMeta->save(bqmOutputUrl.toLocalFile());
                 }
@@ -647,17 +692,21 @@ bool AutotagsPipelineObject::writer()
             performanceProfileList[MLPipelineStage::Writer].elapsedTime += timer.elapsed();
             performanceProfileList[MLPipelineStage::Writer].maxElapsedTime = qMax(performanceProfileList[MLPipelineStage::Writer].maxElapsedTime, timer.elapsed());
         }
-        catch(const std::exception& e)
+
+        catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "AutotagsPipelineObject::writer(): unknown writer error. " << e.what() << " Restarting...";
+
             if (package)
             {
                 delete package;
             }
         }
+
         catch(...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "AutotagsPipelineObject::writer(): unknown writer error.  Restarting...";
+
             if (package)
             {
                 delete package;
@@ -667,6 +716,7 @@ bool AutotagsPipelineObject::writer()
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
+
     stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
 
     return true;
@@ -679,6 +729,7 @@ void AutotagsPipelineObject::addMoreWorkers()
 
     // for the detection pipeline, the loader is the slowest stage
     // so add 3 more loaders and 2 more extractors
+
     qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::addMoreWorkers: Adding more workers to the pipeline";
 
     addWorker(Loader);
@@ -689,6 +740,4 @@ void AutotagsPipelineObject::addMoreWorkers()
     addWorker(Classifier);
 }
 
-}
-
-// #include "moc_autotagspipelineobject.cpp"
+} // namespaxe Digikam
