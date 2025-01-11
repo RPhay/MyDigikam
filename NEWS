@@ -102,7 +102,7 @@ BUGFIXES:
 070 ==> 478038 - Unable to load the picture.
 071 ==> 498406 - Double click behavior.
 072 ==> 498391 - Hierarchical tags disappear.
-073 ==>
+073 ==> 498514 - Trash a image in macOS will not shown in Trash.
 074 ==>
 075 ==>
 076 ==>
