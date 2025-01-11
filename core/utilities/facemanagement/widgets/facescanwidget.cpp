@@ -153,6 +153,10 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
+    d->alreadyScannedBox->setToolTip(i18nc("@info:tooltip",
+                                           "<p><b>Scan new images</b> will scan for faces and attempt recognition for new images found in the albums selected in the \"Search in\" tab.</p>"
+                                           "<p><b>Scan all images</b> will scan for faces and attempt recognition for all images found in the albums selected in the \"Search in\" tab.</p>"
+                                           "<p><b>Recognize faces only</b> will try to match unknown faces with confirmed faces without scanning images new faces.</p>"));
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
