@@ -109,8 +109,8 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
     for (int i = 0; i < outputNumbox; ++i)
 	{
 		float* ptr = outputHost + i * outputNumprob;
-		int class_id;
-		float score;
+		int class_id = -1;
+		float score = -1.0f;
 		float objness = -1.0f;
 
 		if (yoloVersion == YOLOv5 || yoloVersion == YOLOv6 || yoloVersion == YOLOv7)
