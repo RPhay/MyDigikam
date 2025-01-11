@@ -27,8 +27,10 @@ SearchXmlReader::SearchXmlReader(const QString& xml)
 {
     m_defaultFieldOperator = SearchXml::And;
 
-    // read in root element "search"
-    readNext();
+    // Read in root element "search".
+    // NOTE: use dynamic binding.
+
+    this->readNext();
 }
 
 SearchXml::Element SearchXmlReader::readNext()
@@ -53,7 +55,7 @@ SearchXml::Element SearchXmlReader::readNext()
         {
             if      (isGroupElement())
             {
-                // get possible default operator
+                // Get possible default operator
 
                 m_defaultFieldOperator = readOperator(QLatin1String("fieldoperator"), SearchXml::standardFieldOperator());
 
@@ -65,7 +67,8 @@ SearchXml::Element SearchXmlReader::readNext()
             }
             else if (name() == QLatin1String("search"))
             {
-                // root element
+                // Root element
+
                 return SearchXml::Search;
             }
         }
