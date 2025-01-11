@@ -108,7 +108,7 @@ BUGFIXES:
 071 ==> 498406 - Double click behavior.
 072 ==> 498391 - Hierarchical tags disappear.
 073 ==> 498514 - Trash a image in macOS will not shown in Trash.
-074 ==>
+074 ==> 498519 - Build failled with mlpipelinemacros.h:53:68: error.
 075 ==>
 076 ==>
 077 ==>
