@@ -18,18 +18,18 @@
  * ensure that the pipeline stages are consistent and easy to read.
  */
 
-#define MLPIPELINE_FINDER_START(nextStage, nextQueue) \
-            MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
-            if (queueEndSignal() == mlpackage) { break; } \
-            performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount, thisQueue->size()); \
-            ++performanceProfileList[thisStage].itemCount; \
-            timer.start(); \
-            mlpackage
+#define MLPIPELINE_FINDER_START(nextStage) \
+            MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr; \
+            stageStart(QThread::LowPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
+            bool moreCpu = false; \
+            QElapsedTimer timer; \
+            timer.start();
 
-#define MLPIPELINE_FINDER_END(thisStage, nextStage) \
-            performanceProfileList[thisStage].itemCount = totalItemCount; \
-            performanceProfileList[thisStage].elapsedTime = timer.elapsed(); \
-            stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader); \
+#define MLPIPELINE_FINDER_END(nextStage) \
+            Q_EMIT signalUpdateItemCount(totalItemCount); \
+            performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount; \
+            performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed(); \
+            stageEnd(MLPipelineStage::Finder, nextStage); \
             return true;
             
 #define MLPIPELINE_STAGE_START(threadPriority, thisStage, nextStage) \
@@ -38,36 +38,63 @@
             QElapsedTimer timer;
 
 #define MLPIPELINE_STAGE_END(thisStage, nextStage) \
-            stageEnd(thisStage, nextStage);
+            stageEnd(thisStage, nextStage); \
+            return true;
 
 #define MLPIPELINE_LOOP_START(thisStage, thisQueue) \
-            MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
-            if (queueEndSignal() == mlpackage) { break; } \
-            performanceProfileList[thisStage].maxQueueCount = qMax(performanceProfileList[thisStage].maxQueueCount, thisQueue->size()); \
-            ++performanceProfileList[thisStage].itemCount; \
-            timer.start(); \
-            mlpackage
-
-#define MLPIPELINE_LOOP_END(thisStage) \
-            performanceProfileList[thisStage].elapsedTime += timer.elapsed(); \
-            performanceProfileList[thisStage].maxElapsedTime = qMax(performanceProfileList[thisStage].maxElapsedTime, timer.elapsed());
-
-#define MLPIPELINE_CATCH(pipelineStageName) \
-        catch(const std::exception& e) \
-        { \
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
-            notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-            if (package) \
+            while (!cancelled) \
             { \
-                delete package; \
+                package = nullptr; \
+                try \
+                { \
+                    MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
+                    if (queueEndSignal() == mlpackage) { break; } \
+                    performanceProfileList[thisStage].maxQueueCount = std::max<qint64>((qint64)performanceProfileList[thisStage].maxQueueCount, (qint64)thisQueue->size()); \
+                    ++performanceProfileList[thisStage].itemCount; \
+                    timer.start(); \
+                    mlpackage
+
+#define MLPIPELINE_LOOP_END(thisStage, pipelineStageName) \
+                performanceProfileList[thisStage].elapsedTime += timer.elapsed(); \
+                performanceProfileList[thisStage].maxElapsedTime = std::max<qint64>((qint64)performanceProfileList[thisStage].maxElapsedTime, (qint64)timer.elapsed()); \
             } \
-        } \
-        catch(...) \
-        { \
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
-            notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-            if (package) \
+            catch(const std::exception& e) \
             { \
-                delete package; \
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
+                notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+                if (package) \
+                { \
+                    delete package; \
+                } \
+            } \
+            catch(...) \
+            { \
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
+                notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+                if (package) \
+                { \
+                    delete package; \
+                } \
             } \
         }
+
+
+// #define MLPIPELINE_CATCH(pipelineStageName) \
+//         catch(const std::exception& e) \
+//         { \
+//             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
+//             notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+//             if (package) \
+//             { \
+//                 delete package; \
+//             } \
+//         } \
+//         catch(...) \
+//         { \
+//             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
+//             notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+//             if (package) \
+//             { \
+//                 delete package; \
+//             } \
+//         }
