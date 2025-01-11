@@ -15,10 +15,7 @@
 
 #pragma once
 
-// Qt includes
-
-
-// local includes
+// Local includes
 
 #include "autotagsclassifierbase.h"
 
@@ -31,19 +28,18 @@ class DIGIKAM_GUI_EXPORT AutotagsClassifierSoftmax : public AutotagsClassifierBa
 public:
 
     explicit AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierSoftmax();
+    virtual ~AutotagsClassifierSoftmax()                            = default;
 
-    virtual int predict(const cv::Mat& target)      const                       override;
-    virtual int predict(const cv::UMat& target)     const                       override;
+    virtual int predict(const cv::Mat& target)                      const override;
+    virtual int predict(const cv::UMat& target)                     const override;
 
-    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       override;
-    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       override;
+    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const override;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const override;
 
 private:
 
-    AutotagsClassifierSoftmax()                                                 = delete;
-    AutotagsClassifierSoftmax(AutotagsClassifierSoftmax&)                       = delete;
-
+    AutotagsClassifierSoftmax()                                     = delete;
+    AutotagsClassifierSoftmax(AutotagsClassifierSoftmax&)           = delete;
 };
 
-}
+} // namespace Digikam

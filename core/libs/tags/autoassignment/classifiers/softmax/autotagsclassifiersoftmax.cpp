@@ -26,12 +26,8 @@
 namespace Digikam
 {
 
-AutotagsClassifierSoftmax::AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile) :
-                                   AutotagsClassifierBase(_threshold, predefinedClassFile)
-{
-}
-
-AutotagsClassifierSoftmax::~AutotagsClassifierSoftmax()
+AutotagsClassifierSoftmax::AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile)
+    : AutotagsClassifierBase(_threshold, predefinedClassFile)
 {
 }
 
@@ -39,10 +35,10 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
 {
     assert(target.rows == 1);
 
-    float *input = reinterpret_cast<float*>(target.data);
+    float* input = reinterpret_cast<float*>(target.data);
+    float m      = -INFINITY;
 
-    float m = -INFINITY;
-    for (int i = 0; i < target.size[1]; i++)
+    for (int i = 0 ; i < target.size[1] ; i++)
     {
         if (input[i] > m)
         {
@@ -50,14 +46,21 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
         }
     }
 
-    float sum = 0.0;
-    for (int i = 0; i < target.size[1]; i++)
+    float sum = 0.0F;
+
+    for (int i = 0 ; i < target.size[1] ; i++)
     {
         sum += expf(input[i] - m);
     }
 
-    float offset = m + logf(sum);
-    for (int i = 0; i < target.size[1]; i++)
+    float offset = m;
+
+    if (sum > 0.0F)
+    {
+        offset += logf(sum);
+    }
+
+    for (int i = 0 ; i < target.size[1] ; i++)
     {
         input[i] = expf(input[i] - offset);
     }
@@ -69,12 +72,16 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
 
     if (final_prob > threshold)
     {
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierSoftmax::predict - Class ID: " << label_id << " " << predefinedClasses[label_id] << " Confidence: " << final_prob;
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierSoftmax::predict - Class ID:"
+                                            << label_id << predefinedClasses[label_id]
+                                            <<"Confidence:" << final_prob;
         return label_id;
     }
     else
     {
-        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierSoftmax::predict - Class ID: " << label_id << " " << predefinedClasses[label_id] << " Confidence: " << final_prob << " below threshold";
+        qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierSoftmax::predict - Class ID:"
+                                            << label_id << predefinedClasses[label_id]
+                                            << "Confidence:" << final_prob << "below threshold";
     }
 
     return -1;
@@ -90,7 +97,7 @@ QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::Mat>& targets
     QList<int> result;
 
     int label = predict(targets[0]);
-    
+
     if (-1 != label)
     {
         result << label;
@@ -104,7 +111,7 @@ QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::UMat>& target
     QList<int> result;
 
     int label = predict(targets[0]);
-    
+
     if (-1 != label)
     {
         result << label;
@@ -113,6 +120,4 @@ QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::UMat>& target
     return result;
 }
 
-}
-
-// #include "moc_autotagsclassifiersoftmax.cpp"
+} // namespace Digikam
