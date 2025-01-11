@@ -79,22 +79,27 @@
         }
 
 
-// #define MLPIPELINE_CATCH(pipelineStageName) \
-//         catch(const std::exception& e) \
-//         { \
-//             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
-//             notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-//             if (package) \
-//             { \
-//                 delete package; \
-//             } \
-//         } \
-//         catch(...) \
-//         { \
-//             qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
-//             notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-//             if (package) \
-//             { \
-//                 delete package; \
-//             } \
-//         }
+/*
+* TODO: delete this when we're sure we don't need it
+*
+
+#define MLPIPELINE_CATCH(pipelineStageName) \
+        catch(const std::exception& e) \
+        { \
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
+            notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+            if (package) \
+            { \
+                delete package; \
+            } \
+        } \
+        catch(...) \
+        { \
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
+            notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
+            if (package) \
+            { \
+                delete package; \
+            } \
+        }
+*/
