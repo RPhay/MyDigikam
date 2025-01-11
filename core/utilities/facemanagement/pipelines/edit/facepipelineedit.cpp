@@ -63,6 +63,7 @@ Q_GLOBAL_STATIC(FacePipelineEditCreator, FacePipelineEditCreator)
 FacePipelineEdit::FacePipelineEdit()
     : FacePipelineBase(FaceScanSettings())
 {
+    debugConfirmTimer.start();
 }
 
 FacePipelineEdit::~FacePipelineEdit()
@@ -79,6 +80,12 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
                                             int tagId,
                                             bool retrain)
 {
+    if (debugConfirmTimer.elapsed() < 250)
+    {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 2 faces confirmed in less than 0.25 seconds";
+    }
+    debugConfirmTimer.restart();
+
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
 

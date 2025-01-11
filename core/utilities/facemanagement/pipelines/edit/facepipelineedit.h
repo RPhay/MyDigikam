@@ -15,6 +15,9 @@
 
 #pragma once
 
+// Qt includes
+#include <QElapsedTimer>
+
 // Local includes
 
 #include "facepipelinebase.h"
@@ -90,6 +93,9 @@ protected:
 private:
 
     bool isStarted = false;
+
+    // TODO: Remove DEBUG timer
+    QElapsedTimer   debugConfirmTimer;
 
 private:
 
