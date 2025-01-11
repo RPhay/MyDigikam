@@ -28,8 +28,8 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dnnfacedetectorssd.h"
-#include "dnnfacedetectoryolo.h"
+// #include "dnnfacedetectorssd.h"
+// #include "dnnfacedetectoryolo.h"
 #include "dnnfacedetectoryunet.h"
 
 namespace Digikam
@@ -42,13 +42,13 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
     {
         case DetectorNNModel::DNNDetectorSSD:
         {
-            m_inferenceEngine = new DNNFaceDetectorSSD;
+            // m_inferenceEngine = new DNNFaceDetectorSSD;
             break;
         }
 
         case DetectorNNModel::DNNDetectorYOLOv3:
         {
-            m_inferenceEngine = new DNNFaceDetectorYOLO;
+            // m_inferenceEngine = new DNNFaceDetectorYOLO;
             break;
         }
 

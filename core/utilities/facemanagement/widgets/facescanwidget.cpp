@@ -88,10 +88,10 @@ void FaceScanWidget::doLoadState()
     d->albumSelectors->loadState();
 
     d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
-    d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
+    // d->detectModelBox->setCurrentIndex(d->detectModelBox->findData(ApplicationSettings::instance()->getFaceDetectionModel()));
     d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
     d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
-    d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(ApplicationSettings::instance()->getFaceRecognitionModel()));
+    // d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(ApplicationSettings::instance()->getFaceRecognitionModel()));
 
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 }
@@ -128,10 +128,10 @@ void FaceScanWidget::doSaveState()
     d->albumSelectors->saveState();
 
     ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
-    ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
+    // ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
     ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
     ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
-    ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
+    // ApplicationSettings::instance()->setFaceRecognitionModel(static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt()));
 
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
@@ -150,18 +150,9 @@ void FaceScanWidget::setupUi()
     QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
 
     d->alreadyScannedBox                = new SqueezedComboBox;
-/*
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),           FaceScanSettings::Skip);
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),          FaceScanSettings::Merge);
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"),  FaceScanSettings::Rescan);
-*/
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-
-/*
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear all previous results and rescan"), FaceScanSettings::ClearAll);
-*/
 
     QString buttonText;
     d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
@@ -248,12 +239,14 @@ void FaceScanWidget::setupUi()
                                              "the more accurately faces will\n"
                                              "be detected, but less faces will be detected."));
 
+    /**
+     * @info Code to select the detection model
+
     QLabel* const detectModelLabel      = new QLabel(i18nc("@label AI model used for face detection",
                                                            "Model:"), d->settingsTab);
     detectModelLabel->setAlignment(Qt::AlignLeft);
 
     d->detectModelBox                   = new SqueezedComboBox(d->settingsTab);
-
 
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YuNet"),  FaceScanSettings::FaceDetectionModel::YuNet);
     d->detectModelBox->addSqueezedItem(i18nc("@label:listbox", "YOLOv3"), FaceScanSettings::FaceDetectionModel::YOLOv3);
@@ -263,7 +256,7 @@ void FaceScanWidget::setupUi()
                                         "Detection model used to find faces. YuNet is the default model.\n"
                                         "It is faster and more configurable than SSD and YOLOv3.\n"
                                         "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or later."));
-
+    
 #if OPENCV_TEST_VERSION(4,6,0)
 
     auto* const detModel = qobject_cast<QStandardItemModel*>(d->detectModelBox->model());
@@ -279,6 +272,7 @@ void FaceScanWidget::setupUi()
     }
 
 #endif
+    */
 
     QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
                                                            "Face size:"), d->settingsTab);
@@ -306,20 +300,11 @@ void FaceScanWidget::setupUi()
 
     detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 1);
     detectGrid->addWidget(d->detectAccuracyInput,   0, 2, 1, 1);
-    detectGrid->addWidget(detectModelLabel,         1, 0, 1, 1);
-    detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
-    detectGrid->addWidget(detectSizeLabel,          2, 0, 1, 1);
-    detectGrid->addWidget(d->detectSizeBox,         2, 2, 1, 1);
-/*
-    // old layout for easy revert
+    // detectGrid->addWidget(detectModelLabel,         1, 0, 1, 1);
+    // detectGrid->addWidget(d->detectModelBox,        1, 2, 1, 1);
+    detectGrid->addWidget(detectSizeLabel,          1, 0, 1, 1);
+    detectGrid->addWidget(d->detectSizeBox,         1, 2, 1, 1);
 
-    detectGrid->addWidget(detectAccuracyLabel,      0, 0, 1, 3);
-    detectGrid->addWidget(d->detectAccuracyInput,   1, 0, 1, 3);
-    detectGrid->addWidget(detectModelLabel,         2, 0, 1, 1);
-    detectGrid->addWidget(d->detectModelBox,        2, 2, 1, 1);
-    detectGrid->addWidget(detectSizeLabel,          3, 0, 1, 1);
-    detectGrid->addWidget(d->detectSizeBox,         3, 2, 1, 1);
-*/
     expBox->addItem(detectWidget, i18n("Face Detection Settings"),
                     QLatin1String("FaceDetectionSettings"), true);
 
@@ -339,6 +324,9 @@ void FaceScanWidget::setupUi()
                                                 "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
                                                 "be recognized, but less faces will be recognized.\n"
                                                 "Note: only faces that are very similar to pre-tagged faces are recognized."));
+
+    /**
+     * @info Code to select the recognition model
 
     QLabel* const recognizeModelLabel    = new QLabel(i18nc("@label AI model used for face recognition",
                                                             "Model:"), d->settingsTab);
@@ -367,11 +355,12 @@ void FaceScanWidget::setupUi()
     }
 
 #endif
+    */
 
     recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 1);
     recognizeGrid->addWidget(d->recognizeAccuracyInput, 0, 2, 1, 1);
-    recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
-    recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
+    // recognizeGrid->addWidget(recognizeModelLabel,       1, 0, 1, 3);
+    // recognizeGrid->addWidget(d->recognizeModelBox,      1, 2, 1, 1);
 
 /*
     // old layout for easy revert
@@ -427,14 +416,14 @@ void FaceScanWidget::setupConnections()
     connect(d->recognizeAccuracyInput, &DIntNumInput::valueChanged,
             this, &FaceScanWidget::slotRecognizeAccuracyChanged);
 
-    connect(d->detectModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this, &FaceScanWidget::slotDetectModelChanged);
+    // connect(d->detectModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    //         this, &FaceScanWidget::slotDetectModelChanged);
 
     connect(d->detectSizeBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &FaceScanWidget::slotDetectSizeChanged);
 
-    connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this, &FaceScanWidget::slotRecognizeModelChanged);
+    // connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    //         this, &FaceScanWidget::slotRecognizeModelChanged);
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -449,18 +438,18 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 
 void FaceScanWidget::slotDetectModelChanged()
 {
-    ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
+    // ApplicationSettings::instance()->setFaceDetectionModel(static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()));
 
-    if (FaceScanSettings::FaceDetectionModel::YuNet ==
-        static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()))
-    {
-        d->detectSizeBox->setEnabled(true);
-    }
+    // if (FaceScanSettings::FaceDetectionModel::YuNet ==
+    //     static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt()))
+    // {
+    //     d->detectSizeBox->setEnabled(true);
+    // }
 
-    else
-    {
-        d->detectSizeBox->setEnabled(false);
-    }
+    // else
+    // {
+    //     d->detectSizeBox->setEnabled(false);
+    // }
 }
 
 void FaceScanWidget::slotDetectAccuracyChanged()
@@ -475,58 +464,58 @@ void FaceScanWidget::slotDetectSizeChanged()
 
 void FaceScanWidget::slotRecognizeModelChanged()
 {
-    // Save the model values if we have to revert.
+    // // Save the model values if we have to revert.
 
-    FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
-    FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
-    ChangeFaceRecognitionModelDlg* const dlg        = new ChangeFaceRecognitionModelDlg(this, newModel);
+    // FaceScanSettings::FaceRecognitionModel oldModel = ApplicationSettings::instance()->getFaceRecognitionModel();
+    // FaceScanSettings::FaceRecognitionModel newModel = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
+    // ChangeFaceRecognitionModelDlg* const dlg        = new ChangeFaceRecognitionModelDlg(this, newModel);
 
-    // Show the upgrade warning dialog box.
+    // // Show the upgrade warning dialog box.
 
-    if (d->recognizeModelBox->isVisible() && (QDialog::Accepted == dlg->exec()))
-    {
-        // Upgrade was approved. Save new value.
+    // if (d->recognizeModelBox->isVisible() && (QDialog::Accepted == dlg->exec()))
+    // {
+    //     // Upgrade was approved. Save new value.
 
-        ApplicationSettings* const appSettings = ApplicationSettings::instance();
-        appSettings->setFaceRecognitionModel(newModel);
-        appSettings->saveSettings();
+    //     ApplicationSettings* const appSettings = ApplicationSettings::instance();
+    //     appSettings->setFaceRecognitionModel(newModel);
+    //     appSettings->saveSettings();
 
-        // Start retraining and update pipeline here.
+    //     // Start retraining and update pipeline here.
 
-        FaceScanSettings settings;
+    //     FaceScanSettings settings;
 
-        settings.wholeAlbums            = true;
-        settings.useFullCpu             = d->useFullCpuButton->isChecked();
-        settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
-        settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
-        settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-        settings.recognizeModel         = newModel;
-        settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-        settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
+    //     settings.wholeAlbums            = true;
+    //     settings.useFullCpu             = d->useFullCpuButton->isChecked();
+    //     settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+    //     settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
+    //     settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    //     settings.recognizeModel         = newModel;
+    //     settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+    //     settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
-        PeopleSideBarWidget::doFaceScan(settings);
-    }
+    //     PeopleSideBarWidget::doFaceScan(settings);
+    // }
 
-    else
-    {
-        // Disconnect so we don't get multiple dialogs.
+    // else
+    // {
+    //     // Disconnect so we don't get multiple dialogs.
 
-        disconnect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-                   this, &FaceScanWidget::slotRecognizeModelChanged);
+    //     disconnect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    //                this, &FaceScanWidget::slotRecognizeModelChanged);
 
-        // Reselect the old model value in the drop-down.
+    //     // Reselect the old model value in the drop-down.
 
-        d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
+    //     d->recognizeModelBox->setCurrentIndex(d->recognizeModelBox->findData(oldModel));
 
-        // Reconnect for future notifications.
+    //     // Reconnect for future notifications.
 
-        connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-                this, &FaceScanWidget::slotRecognizeModelChanged);
-    }
+    //     connect(d->recognizeModelBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    //             this, &FaceScanWidget::slotRecognizeModelChanged);
+    // }
 
-    // Clean up the dialog.
+    // // Clean up the dialog.
 
-    delete dlg;
+    // delete dlg;
 }
 
 void FaceScanWidget::slotRecognizeAccuracyChanged()
@@ -598,10 +587,12 @@ FaceScanSettings FaceScanWidget::settings() const
     }
 
     settings.detectAccuracy         = d->detectAccuracyInput->value();
-    settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
+    // settings.detectModel            = static_cast<FaceScanSettings::FaceDetectionModel>(d->detectModelBox->currentData().toInt());
+    settings.detectModel            = FaceScanSettings::FaceDetectionModel::YuNet;
     settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
     settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
-    settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
+    // settings.recognizeModel         = static_cast<FaceScanSettings::FaceRecognitionModel>(d->recognizeModelBox->currentData().toInt());
+    settings.recognizeModel         = FaceScanSettings::FaceRecognitionModel::SFace;
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 

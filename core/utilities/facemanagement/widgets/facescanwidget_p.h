@@ -91,12 +91,12 @@ public:
 
     QWidget*          settingsTab                       = nullptr;
 
+    SqueezedComboBox* detectSizeBox                     = nullptr;
     DIntNumInput*     detectAccuracyInput               = nullptr;
     DIntNumInput*     recognizeAccuracyInput            = nullptr;
 
-    SqueezedComboBox* detectModelBox                    = nullptr;
-    SqueezedComboBox* detectSizeBox                     = nullptr;
-    SqueezedComboBox* recognizeModelBox                 = nullptr;
+    // SqueezedComboBox* detectModelBox                    = nullptr;
+    // SqueezedComboBox* recognizeModelBox                 = nullptr;
 
     // ---
 
