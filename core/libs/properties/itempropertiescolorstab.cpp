@@ -454,9 +454,9 @@ void ItemPropertiesColorsTab::loadImageFromUrl(const QUrl& url)
     d->currentFilePath           = desc.filePath;
     d->currentLoadingDescription = desc;
 
-    d->imageLoaderThread->load(d->currentLoadingDescription,
-                               SharedLoadSaveThread::AccessModeRead,
-                               SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
+    d->imageLoaderThread->loadShared(d->currentLoadingDescription,
+                                     SharedLoadSaveThread::AccessModeRead,
+                                     SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
 
     d->histogramBox->histogram()->setDataLoading();
     d->redHistogram->setDataLoading();
@@ -511,9 +511,9 @@ void ItemPropertiesColorsTab::slotMoreCompleteLoadingAvailable(const LoadingDesc
         // at a time.
 
         d->currentLoadingDescription = newLoadingDescription;
-        d->imageLoaderThread->load(newLoadingDescription,
-                                   SharedLoadSaveThread::AccessModeRead,
-                                   SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
+        d->imageLoaderThread->loadShared(newLoadingDescription,
+                                         SharedLoadSaveThread::AccessModeRead,
+                                         SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
     }
 }
 

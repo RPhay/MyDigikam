@@ -147,7 +147,7 @@ public:
      * The LoadingDescription shall be constructed with the constructor for preview/thumbnail jobs.
      * (in the description constructor, you need to specify file path, thumbnail size and Exif rotation)
      */
-    void load(const LoadingDescription& description);
+    void load(const LoadingDescription& description) override;
 
     /**
      * Returns the descriptions used by the last call to any of the above methods.

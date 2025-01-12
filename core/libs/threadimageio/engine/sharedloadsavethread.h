@@ -30,9 +30,9 @@ public:
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);
     ~SharedLoadSaveThread() override = default;
 
-    void load(const LoadingDescription& description,
-              AccessMode mode,
-              LoadingPolicy policy = LoadingPolicyAppend);
+    void loadShared(const LoadingDescription& description,
+                    AccessMode mode,
+                    LoadingPolicy policy = LoadingPolicyAppend);
 
 private:
 

@@ -123,7 +123,7 @@ public:
      * Default is TerminationPolicyTerminateLoading
      */
     explicit ManagedLoadSaveThread(QObject* const parent = nullptr);
-    ~ManagedLoadSaveThread() override;
+    ~ManagedLoadSaveThread()                                                                  override;
 
     /**
      * Append a task to load the given file to the task list.
@@ -132,7 +132,7 @@ public:
      * Only loading tasks will - if required by the policy - be stopped or removed,
      * saving tasks will not be touched.
      */
-    void load(const LoadingDescription& description);
+    virtual void load(const LoadingDescription& description)                                  override;
     void load(const LoadingDescription& description, LoadingPolicy policy);
 
     /**

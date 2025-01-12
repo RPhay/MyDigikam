@@ -447,9 +447,9 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
 
 void EditorCore::Private::loadCurrent()
 {
-    thread->load(currentDescription,
-                 SharedLoadSaveThread::AccessModeReadWrite,
-                 SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
+    thread->loadShared(currentDescription,
+                       SharedLoadSaveThread::AccessModeReadWrite,
+                       SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
 
     Q_EMIT EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
 }

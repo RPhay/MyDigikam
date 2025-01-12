@@ -138,7 +138,7 @@ public:
     /**
      * Append a task to load the given file to the task list
      */
-    void load(const LoadingDescription& description);
+    virtual void load(const LoadingDescription& description);
 
     /**
      * Append a task to save the image to the task list
