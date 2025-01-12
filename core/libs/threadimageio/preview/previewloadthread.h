@@ -70,7 +70,7 @@ public:
     /**
      * Load a preview. Loading description will not be touched.
      */
-    void load(const LoadingDescription& description);
+    void load(const LoadingDescription& description) override;
 
     /**
      * Optionally, set the displaying widget for color management
