@@ -28,8 +28,10 @@ public:
 
     Private() = default;
 
-    float                  threshold_punish = 0.9;
-    float                  weight_punish    = 20.0;
+public:
+
+    float                  threshold_punish = 0.9F;
+    float                  weight_punish    = 20.0F;
 
     QRecursiveMutex        mutex;
 
@@ -73,7 +75,10 @@ void ImageQualityCalculator::normalizeWeight() const
 
     for (auto& result : d->detectionResults)
     {
-        result.weight /= sum;
+        if (sum != 0.0F)
+        {
+            result.weight /= sum;
+        }
     }
 }
 
