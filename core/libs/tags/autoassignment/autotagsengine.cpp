@@ -7,9 +7,9 @@
  * Description : Object detection and image auto-tagging engine
  *
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
- * SPDX-FileCopyrightText: 2010-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Andi Clemens <andi dot clemens at gmail dot com>
- * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -73,7 +73,7 @@ public:
     int totalTagsAdded                              = 0;
 };
 
-AutotagsEngine::AutotagsEngine(AutotagsScanSettings _settings, ProgressItem* const parent)
+AutotagsEngine::AutotagsEngine(const AutotagsScanSettings& _settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("AutotagsEngine"), parent),
       d              (new Private)
 {
