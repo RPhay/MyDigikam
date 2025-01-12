@@ -146,9 +146,9 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
             // Grain size matrix processing.
 
-            for (int zx = 0 ; runningFlag() && zx < d->settings.grainSize ; ++zx)
+            for (int zx = 0 ; runningFlag() && (zx < d->settings.grainSize) ; ++zx)
             {
-                for (int zy = 0 ; runningFlag() && zy < d->settings.grainSize ; ++zy)
+                for (int zy = 0 ; runningFlag() && (zy < d->settings.grainSize) ; ++zy)
                 {
                     posX = x + zx;
                     posY = y + zy;
@@ -164,7 +164,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
                         if (d->settings.addLuminanceNoise)
                         {
-                            if (((refLumaRange - matLumaRange) / refLumaRange) > 0.1)
+                            if ((refLumaRange != 0.0) && ((refLumaRange - matLumaRange) / refLumaRange) > 0.1)
                             {
                                 adjustYCbCr(matCol, matLumaRange, matLumaNoise, Private::Luma);
                             }
@@ -176,7 +176,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
                         if (d->settings.addChrominanceBlueNoise)
                         {
-                            if (((refChromaBlueRange - matChromaBlueRange) / refChromaBlueRange) > 0.1)
+                            if ((refChromaBlueRange != 0.0) && ((refChromaBlueRange - matChromaBlueRange) / refChromaBlueRange) > 0.1)
                             {
                                 adjustYCbCr(matCol, matChromaBlueRange, matChromaBlueNoise, Private::ChromaBlue);
                             }
@@ -188,7 +188,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
                         if (d->settings.addChrominanceRedNoise)
                         {
-                            if (((refChromaRedRange - matChromaRedRange) / refChromaRedRange) > 0.1)
+                            if ((refChromaRedRange != 0.0) && ((refChromaRedRange - matChromaRedRange) / refChromaRedRange) > 0.1)
                             {
                                 adjustYCbCr(matCol, matChromaRedRange, matChromaRedNoise, Private::ChromaRed);
                             }
