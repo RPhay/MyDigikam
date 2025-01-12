@@ -71,6 +71,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("film Tool");
     const QString configGammaInputEntry         = QLatin1String("GammaInput");
     const QString configExposureEntry           = QLatin1String("Exposure");
@@ -477,6 +479,11 @@ void FilmTool::slotAutoWhitePoint()
         double percentage;
         double next_percentage;
         double count     = hist->getCount(channel, 0, sixteenBit ? 65535 : 255);
+
+        if (count == 0.0)
+        {
+            count = 1.0;
+        }
 
         for (int i = (sixteenBit ? 65535 : 255) ; i > 0 ; --i)
         {
