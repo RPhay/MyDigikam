@@ -159,7 +159,7 @@ public:
     /**
      * Append a task to save the image to the task list
      */
-    void save(const DImg& image, const QString& filePath, const QString& format);
+    virtual void save(const DImg& image, const QString& filePath, const QString& format)      override;
 
     void              setTerminationPolicy(TerminationPolicy terminationPolicy);
     TerminationPolicy terminationPolicy()                                               const;
