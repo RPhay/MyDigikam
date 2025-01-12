@@ -19,7 +19,7 @@
 
 // Local includes
 
-#include "kd_treeopenface.h"
+// #include "kd_treeopenface.h"
 #include "kd_treesface.h"
 
 namespace Digikam

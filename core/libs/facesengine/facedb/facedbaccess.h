@@ -75,7 +75,7 @@ private:
     friend class FaceDbAccessUnlock;
     static FaceDbAccessStaticPriv* d;
 
-    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::OpenFace;
+    FaceScanSettings::FaceRecognitionModel recognizeModel = FaceScanSettings::FaceRecognitionModel::SFace;
 };
 
 // ------------------------------------------------------------------------------------------

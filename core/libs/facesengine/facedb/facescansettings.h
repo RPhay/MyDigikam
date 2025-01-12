@@ -117,7 +117,7 @@ public:
     int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
 
     /// Detection Model.
-    FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::OpenFace;
+    FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::SFace;
 
     /// Detection accuracy.
     int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
