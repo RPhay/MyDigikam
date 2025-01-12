@@ -117,7 +117,7 @@ protected:
      * single last class in the hierarchy with an implemented destructor deleting data.
      * (the base class destructor is always called after the derived class)
      */
-    void shutDown();
+    virtual void shutDown();
 
     /**
      * In you run() method, you shall regularly check for runningFlag()

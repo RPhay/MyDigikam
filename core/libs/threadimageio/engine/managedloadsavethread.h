@@ -174,7 +174,7 @@ public:
 
 protected:
 
-    void shutDown();
+    void shutDown()                                                                           override;
 
     void load(const LoadingDescription& description, LoadingMode loadingMode,
               AccessMode mode = AccessModeReadWrite);
