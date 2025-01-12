@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-11-10
- * Description : Performs autotags object detection and recognition
+ * Description : Performs autotags object detection and classifiecation
  *
  * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
@@ -65,8 +65,6 @@ AutotagsPipelineObject::~AutotagsPipelineObject()
     {
         delete autotagsClassifier;
     }
-
-    // extractor is singleton, so no need to delete it
 }
 
 bool AutotagsPipelineObject::start()
@@ -178,10 +176,13 @@ bool AutotagsPipelineObject::finder()
 
     MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
 
-    //--------------------------------------------------------------------------------
-
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
+    /* =========================================================================================
+     * Pipeline finder specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_FINDER_END to find the IDs images to process.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is alaways 1.
+     */
 
     // get the IDs to process
 
@@ -225,8 +226,11 @@ bool AutotagsPipelineObject::finder()
         }
     }
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * Pipeline finder specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
+     */ 
 
     MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
@@ -234,19 +238,26 @@ bool AutotagsPipelineObject::finder()
 bool AutotagsPipelineObject::loader()
 {
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Loader, MLPipelineStage::Extractor);
-
     AutotagsPipelinePackageBase* package = nullptr;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
+
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Loader, thisQueue);
     package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
-    //
-    // All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
-    // All code in the loop is called once per image
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
         // check if the ID is for an image (not video or other file type)
 
@@ -285,10 +296,18 @@ bool AutotagsPipelineObject::loader()
             delete package;
         }
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
     MLPIPELINE_LOOP_END(MLPipelineStage::Loader, "AutotagsPipelineObject::loader");
+
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
+
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Loader, MLPipelineStage::Extractor);
 }
@@ -296,21 +315,28 @@ bool AutotagsPipelineObject::loader()
 bool AutotagsPipelineObject::extractor()
 {
     MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier);
-
     AutotagsPipelinePackageBase* package = nullptr;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
+
 
     FaceUtils utils;
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Extractor, thisQueue);
     package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
-    //
-    // All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
-    // All code in the loop is called once per image
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
         // preprocess the image
 
@@ -378,10 +404,18 @@ bool AutotagsPipelineObject::extractor()
 
         enqueue(nextQueue, package);
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
     MLPIPELINE_LOOP_END(MLPipelineStage::Extractor, "AutotagsPipelineObject::extractor");
+
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
+
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Extractor, MLPipelineStage::Classifier);
 }
@@ -389,19 +423,26 @@ bool AutotagsPipelineObject::extractor()
 bool AutotagsPipelineObject::classifier()
 {
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
-
     AutotagsPipelinePackageBase* package = nullptr;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
+
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Classifier, thisQueue);
     package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
-    //
-    // All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
-    // All code in the loop is called once per image
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
         package->labelList = autotagsClassifier->predictMulti(package->featuresList);
         package->tagList = autotagsClassifier->getClassStrings(package->labelList);
@@ -410,10 +451,18 @@ bool AutotagsPipelineObject::classifier()
 
         enqueue(nextQueue, package);
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
     MLPIPELINE_LOOP_END(MLPipelineStage::Classifier, "AutotagsPipelineObject::classifier");
+
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
+
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 }
@@ -421,10 +470,16 @@ bool AutotagsPipelineObject::classifier()
 bool AutotagsPipelineObject::writer()
 {
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
-
     AutotagsPipelinePackageBase* package = nullptr;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
+
 
     const QString rootTag      = QLatin1String("auto/");
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
@@ -432,11 +487,12 @@ bool AutotagsPipelineObject::writer()
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
-    //
-    // All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
-    // All code in the loop is called once per image
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
         bool tagsChanged           = false;
         QStringList tagsPath;
@@ -534,21 +590,31 @@ bool AutotagsPipelineObject::writer()
 
         delete package;
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
     MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "AutotagsPipelineObject::writer");
+
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
+
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
 
 void AutotagsPipelineObject::addMoreWorkers()
 {
-    // use the performanceProfile metrics to find the slowest stages
-    // and add more workers to those stages
-
-    // for the detection pipeline, the loader is the slowest stage
-    // so add 3 more loaders and 2 more extractors
+    /* =========================================================================================
+     * Use the performanceProfile metrics to find the slowest stages
+     * and add more workers to those stages.
+     * 
+     * For the Autotags object detection pipeline, the loader is the
+     * slowest stage so add 3 more loaders and 2 more extractors.
+     */
 
     qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::addMoreWorkers: Adding more workers to the pipeline";
 
@@ -557,7 +623,6 @@ void AutotagsPipelineObject::addMoreWorkers()
     addWorker(Loader);
     addWorker(Extractor);
     addWorker(Extractor);
-    addWorker(Classifier);
 }
 
 } // namespaxe Digikam
