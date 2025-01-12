@@ -28,7 +28,7 @@
 #include <QStringList>
 #include <QUrl>
 
-// local includes
+// Local includes
 
 #include "autotagsengine.h"
 #include "mlpipelinefoundation.h"

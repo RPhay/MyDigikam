@@ -6,8 +6,8 @@
  * Date        : 2024-11-10
  * Description : Integrated, multithread object detection / recognition
  *
- * SPDX-FileCopyrightText: 2024      by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2024      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -19,7 +19,7 @@
 
 #include <QSize>
 
-// local includes
+// Local includes
 
 #include "autotagsclassifierbase.h"
 
@@ -28,7 +28,6 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AutotagsClassifierYolo : public AutotagsClassifierBase
 {
-
 public:
 
     enum YoloVersion
@@ -42,6 +41,7 @@ public:
         YOLOv11,
     };
 
+public:
 
     explicit AutotagsClassifierYolo(float _threshold, const QString& predefinedClassFile);
     virtual ~AutotagsClassifierYolo();
@@ -49,12 +49,14 @@ public:
     virtual int predict(const cv::Mat& target)      const                       override
     {
         Q_UNUSED(target); 
+
         return -1;
     }
 
     virtual int predict(const cv::UMat& target)     const                       override
     { 
         Q_UNUSED(target); 
+
         return -1;
     }
 
@@ -62,13 +64,11 @@ public:
     virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       override
     { 
         Q_UNUSED(targets); 
+
         return QList<int>();
     }
 
     void setParams(YoloVersion version, QSize size);
-
-protected:
-
 
 private:
 
@@ -84,7 +84,6 @@ private:
 
     AutotagsClassifierYolo()                                                    = delete;
     AutotagsClassifierYolo(AutotagsClassifierYolo&)                             = delete;
-
 };
 
-}
+} // Digikam

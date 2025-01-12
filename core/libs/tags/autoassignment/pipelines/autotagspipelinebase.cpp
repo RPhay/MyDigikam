@@ -21,7 +21,7 @@
 #include <QThread>
 #include <QList>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
@@ -105,7 +105,8 @@ void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
             enqueue(queues[MLPipelineStage::Extractor], package);
         }
 
-        // try to acquire the semaphore again.  This will block until the package is processed and the semaphore is released
+        // Try to acquire the semaphore again. 
+        // This will block until the package is processed and the semaphore is released
 
         bqmSemaphore.acquire();
 
@@ -169,7 +170,8 @@ bool AutotagsPipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
     if (nullptr != package)
     {
-        package->size = static_cast<AutotagsPipelinePackageBase*>(package)->image.size().width() * static_cast<AutotagsPipelinePackageBase*>(package)->image.size().height() * 4;
+        package->size = static_cast<AutotagsPipelinePackageBase*>(package)->image.size().width()  * 
+                        static_cast<AutotagsPipelinePackageBase*>(package)->image.size().height() * 4;
     }
 
     return MLPipelineFoundation::enqueue(thisQueue, package);
