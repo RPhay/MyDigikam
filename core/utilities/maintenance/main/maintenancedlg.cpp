@@ -277,7 +277,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
         "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
         "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
-        "<p><b>YOLOv11 XLarge</b>: large, rebust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
+        "<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
         "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
         "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
         "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
