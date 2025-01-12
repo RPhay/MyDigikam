@@ -125,11 +125,17 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
     /**
      * This is a dichotomic search based on Blue and Red layers ratio
      * to find the matching temperature
-     *  adapted from ufraw (0.12.1) RGB_to_Temperature
+     * adapted from ufraw (0.12.1) RGB_to_Temperature
      */
     double tmin  = 2000.0;
     double tmax  = 12000.0;
-    double mBR   = (double)tc.blue() / (double)tc.red();
+    double mBR   = 0.0;
+
+    if (tc.red() != 0)
+    {
+        mBR = (double)tc.blue() / (double)tc.red();
+    }
+
     green        = 1.0;
 
     for (temperature = (tmin + tmax) / 2 ; tmax - tmin > 10 ; temperature = (tmin + tmax) / 2)
@@ -137,7 +143,7 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
         qCDebug(DIGIKAM_DIMG_LOG) << "Intermediate Temperature (K):" << temperature;
         setRGBmult(temperature, green, mr, mg, mb);
 
-        if (mr / mb > mBR)
+        if ((mb != 0.0) && ((mr / mb) > mBR))
         {
             tmax = temperature;
         }
@@ -149,7 +155,14 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
 
     // Calculate the green level to neutralize picture
 
-    green = (mr / mg) / ((double)tc.green() / (double)tc.red());
+    if ((mg != 0.0) && (tc.red() != 0))
+    {
+        green = (mr / mg) / ((double)tc.green() / (double)tc.red());
+    }
+    else
+    {
+        green = mr / (double)tc.green();
+    }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Temperature (K):" << temperature;
     qCDebug(DIGIKAM_DIMG_LOG) << "Green component:" << green;
