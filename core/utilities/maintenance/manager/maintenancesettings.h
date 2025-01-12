@@ -29,7 +29,6 @@
 #include "metadatasynchronizer.h"
 #include "imagequalitysorter.h"
 #include "autotagsscansettings.h"
-#include "autotagsscansettings.h"
 
 namespace Digikam
 {

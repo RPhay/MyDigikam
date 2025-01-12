@@ -46,7 +46,6 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dlayoutbox.h"
-#include "dnuminput.h"
 #include "digikam_debug.h"
 #include "albummodel.h"
 #include "albumselectors.h"

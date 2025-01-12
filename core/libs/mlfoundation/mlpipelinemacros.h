@@ -6,78 +6,80 @@
  * Date        : 2025-01-03
  * Description : Macros for simplifying the ML pipeline code
  *
- * SPDX-FileCopyrightText: 2025      by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
+#pragma once
+
 /**
- * These macros are used to simplify coding of ML pipeline stages. Whenever possible, use these macros to
+ * @brief: these macros are used to simplify coding of ML pipeline stages. Whenever possible, use these macros to
  * ensure that the pipeline stages are consistent and easy to read.
  */
 
-#define MLPIPELINE_FINDER_START(nextStage) \
-            MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr; \
+#define MLPIPELINE_FINDER_START(nextStage)                                                              \
+            MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;                                 \
             stageStart(QThread::LowPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
-            bool moreCpu = false; \
-            QElapsedTimer timer; \
+            bool moreCpu = false;                                                                       \
+            QElapsedTimer timer;                                                                        \
             pipelinePerformanceStart(MLPipelineStage::Finder, timer);
 
-#define MLPIPELINE_FINDER_END(nextStage) \
-            Q_EMIT signalUpdateItemCount(totalItemCount); \
+#define MLPIPELINE_FINDER_END(nextStage)                                            \
+            Q_EMIT signalUpdateItemCount(totalItemCount);                           \
             pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer); \
-            stageEnd(MLPipelineStage::Finder, nextStage); \
+            stageEnd(MLPipelineStage::Finder, nextStage);                           \
             return true;
-            
-#define MLPIPELINE_STAGE_START(threadPriority, thisStage, nextStage) \
-            MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr; \
+
+#define MLPIPELINE_STAGE_START(threadPriority, thisStage, nextStage)                \
+            MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;             \
             stageStart(threadPriority, thisStage, nextStage, thisQueue, nextQueue); \
             QElapsedTimer timer;
 
 #define MLPIPELINE_STAGE_END(thisStage, nextStage) \
-            stageEnd(thisStage, nextStage); \
+            stageEnd(thisStage, nextStage);        \
             return true;
 
-#define MLPIPELINE_LOOP_START(thisStage, thisQueue) \
-            while (!cancelled) \
-            { \
-                package = nullptr; \
-                try \
-                { \
+#define MLPIPELINE_LOOP_START(thisStage, thisQueue)                              \
+            while (!cancelled)                                                   \
+            {                                                                    \
+                package = nullptr;                                               \
+                try                                                              \
+                {                                                                \
                     MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
-                    if (queueEndSignal() == mlpackage) { break; } \
-                    pipelinePerformanceStart(thisStage, timer); \
+                    if (queueEndSignal() == mlpackage) { break; }                \
+                    pipelinePerformanceStart(thisStage, timer);                  \
                     mlpackage
 
-#define MLPIPELINE_LOOP_END(thisStage, pipelineStageName) \
-                pipelinePerformanceEnd(thisStage, timer); \
-            } \
-            catch(const std::exception& e) \
-            { \
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting..."; \
-                notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-                if (package) \
-                { \
-                    delete package; \
-                } \
-            } \
-            catch(...) \
-            { \
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting..."; \
+#define MLPIPELINE_LOOP_END(thisStage, pipelineStageName)                                                                                                     \
+                pipelinePerformanceEnd(thisStage, timer);                                                                                                     \
+            }                                                                                                                                                 \
+            catch(const std::exception& e)                                                                                                                    \
+            {                                                                                                                                                 \
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << e.what() << " Restarting...";                                                     \
+                notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), 0, QIcon::fromTheme(QStringLiteral("error")));          \
+                if (package)                                                                                                                                  \
+                {                                                                                                                                             \
+                    delete package;                                                                                                                           \
+                }                                                                                                                                             \
+            }                                                                                                                                                 \
+            catch(...)                                                                                                                                        \
+            {                                                                                                                                                 \
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineStageName << "  Restarting...";                                                                \
                 notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-                if (package) \
-                { \
-                    delete package; \
-                } \
-            } \
+                if (package)                                                                                                                                  \
+                {                                                                                                                                             \
+                    delete package;                                                                                                                           \
+                }                                                                                                                                             \
+            }                                                                                                                                                 \
         }
 
 
 /*
-* TODO: delete this when we're sure we don't need it
-*
+ * TODO: delete this when we're sure we don't need it
+ *
 
 #define MLPIPELINE_CATCH(pipelineStageName) \
         catch(const std::exception& e) \
