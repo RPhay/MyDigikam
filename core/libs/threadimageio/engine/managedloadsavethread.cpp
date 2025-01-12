@@ -32,7 +32,7 @@ ManagedLoadSaveThread::ManagedLoadSaveThread(QObject* const parent)
 
 ManagedLoadSaveThread::~ManagedLoadSaveThread()
 {
-    shutDown();
+    this->shutDown();
 }
 
 void ManagedLoadSaveThread::shutDown()

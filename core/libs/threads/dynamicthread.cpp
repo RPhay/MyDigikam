@@ -198,7 +198,8 @@ DynamicThread::DynamicThread(QObject* const parent)
 
 DynamicThread::~DynamicThread()
 {
-    shutDown();
+    this->shutDown();
+
     delete d;
 }
 

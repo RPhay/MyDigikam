@@ -119,14 +119,14 @@ public:
 public:
 
     /**
-     * Termination is controlled by setting the TerminationPolicy
+     * @note Termination is controlled by setting the TerminationPolicy
      * Default is TerminationPolicyTerminateLoading
      */
     explicit ManagedLoadSaveThread(QObject* const parent = nullptr);
     ~ManagedLoadSaveThread()                                                                  override;
 
     /**
-     * Append a task to load the given file to the task list.
+     * @brief Append a task to load the given file to the task list.
      * If there is already a task for the given file, it will possibly be rescheduled,
      * but no second task will be added.
      * Only loading tasks will - if required by the policy - be stopped or removed,
@@ -136,20 +136,20 @@ public:
     void load(const LoadingDescription& description, LoadingPolicy policy);
 
     /**
-     * Stop and remove tasks filtered by filePath and policy.
+     * @brief Stop and remove tasks filtered by filePath and policy.
      * If filePath isNull, applies to all file paths.
      */
     void stopLoading(const QString& filePath = QString(),
                      LoadingTaskFilter filter = LoadingTaskFilterAll);
 
     /**
-     * Same than previous method, but Stop and remove tasks filtered by LoadingDescription.
+     * @brief Same than previous method, but Stop and remove tasks filtered by LoadingDescription.
      */
     void stopLoading(const LoadingDescription& desc,
                      LoadingTaskFilter filter = LoadingTaskFilterAll);
 
     /**
-     * Stop and remove saving tasks filtered by filePath.
+     * @brief Stop and remove saving tasks filtered by filePath.
      * If filePath isNull, applies to all file paths.
      */
     void stopSaving(const QString& filePath = QString());
@@ -157,7 +157,7 @@ public:
     void stopAllTasks();
 
     /**
-     * Append a task to save the image to the task list
+     * @brief Append a task to save the image to the task list
      */
     virtual void save(const DImg& image, const QString& filePath, const QString& format)      override;
 
@@ -165,7 +165,7 @@ public:
     TerminationPolicy terminationPolicy()                                               const;
 
     /**
-     * Set the loading policy.
+     * @brief Set the loading policy.
      * Default is LoadingPolicyAppend.
      * You can override the default value for each operation.
      */

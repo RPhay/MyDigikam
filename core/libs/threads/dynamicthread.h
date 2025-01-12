@@ -46,20 +46,20 @@ public:
 public:
 
     /**
-     * This class extends QRunnable, so you have to reimplement
+     * @brief This class extends QRunnable, so you have to reimplement
      * virtual void run(). In all aspects the class will act similar to a QThread.
      */
     explicit DynamicThread(QObject* const parent = nullptr);
 
     /**
-     * The destructor calls stop() and wait(), but if you, in your destructor,
-     *  delete any data that is accessed by your run() method,
-     *  you must call stop() and wait() before yourself.
+     * @brief The destructor calls stop() and wait(), but if you, in your destructor,
+     * delete any data that is accessed by your run() method,
+     * you must call stop() and wait() before yourself.
      */
     ~DynamicThread() override;
 
     /**
-     * Implement this pure virtual function in your subclass.
+     * @brief Implement this pure virtual function in your subclass.
      */
     virtual void run() = 0;
 
@@ -70,7 +70,7 @@ public:
     void setEmitSignals(bool emitThem);
 
     /**
-     * Sets the priority for this dynamic thread.
+     * @brief Sets the priority for this dynamic thread.
      * Can be set anytime. If the thread is currently not running,
      * the priority will be set when it is run next time.
      * When you set QThread::InheritPriority (default), the
@@ -84,19 +84,19 @@ public Q_SLOTS:
     void start();
 
     /**
-     * Stop computation, sets the running flag to false.
+     * @brief Stop computation, sets the running flag to false.
      */
     void stop();
 
     /**
-     * Waits until the thread finishes. Typically, call stop() before.
+     * @brief Waits until the thread finishes. Typically, call stop() before.
      */
     void wait();
 
 Q_SIGNALS:
 
     /**
-     * Emitted if emitSignals is enabled
+     * @brief Emitted if emitSignals is enabled
      */
     void starting();
     void finished();
@@ -104,14 +104,14 @@ Q_SIGNALS:
 protected:
 
     /**
-     * If you are deleting data in your destructor which is accessed from the thread,
+     * @brief If you are deleting data in your destructor which is accessed from the thread,
      * do one of the following from your destructor to guarantee a safe shutdown:
      * 1) Call this method
      * 2) Call stop() and wait(), knowing that nothing will
      *    call start() anymore after this
      * 3) Be sure the thread will never be running at destruction.
-     * Note: This irrevocably stops this object.
-     * Note: It is not sufficient that your parent class does this.
+     * @note This irrevocably stops this object.
+     * @note It is not sufficient that your parent class does this.
      * Calling this method, or providing one of the above mentioned
      * equivalent guarantees, must be done by every
      * single last class in the hierarchy with an implemented destructor deleting data.
@@ -120,13 +120,13 @@ protected:
     virtual void shutDown();
 
     /**
-     * In you run() method, you shall regularly check for runningFlag()
-     *  and cleanup and return if false.
+     * @brief In you run() method, you shall regularly check for runningFlag()
+     * and cleanup and return if false.
      */
     bool runningFlag() const volatile;
 
     /**
-     * This is the non-recursive mutex used to protect state variables
+     * @brief This is the non-recursive mutex used to protect state variables
      * and waiting in this class. You can use it if you want to protect
      * your memory in the same scope as calling start, stop or wait,
      * then using the QMutexLocker variants below. Note that when you have locked this mutex,
@@ -135,10 +135,11 @@ protected:
     QMutex* threadMutex() const;
 
     /**
-     * Doing the same as start(), stop() and wait above, provide it
+     * @brief Doing the same as start(), stop() and wait above, provide it
      * with a locked QMutexLocker on mutex().
      * Note the start() will unlock and relock for scheduling once, after state change.
      */
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     void start(QMutexLocker<QMutex>& locker);
