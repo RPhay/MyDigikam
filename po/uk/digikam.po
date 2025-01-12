@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 01:50+0000\n"
-"PO-Revision-Date: 2025-01-07 19:13+0200\n"
+"POT-Creation-Date: 2025-01-12 02:00+0000\n"
+"PO-Revision-Date: 2025-01-11 13:42+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2998,20 +2998,17 @@ msgid "Existing Tags"
 msgstr "Наявні мітки"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Автоматичне призначення міток"
+msgstr "Сканування для автоміток"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
-"Натисніть цю кнопку, щоб наказати програмі виконати пошук облич у позначених "
-"альбомах"
+"Натисніть цю кнопку, щоб наказати програмі виконати пошук об'єктів для "
+"автоміток у позначених альбомах"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6338,19 +6335,13 @@ msgid "Assign Tags"
 msgstr "Призначити мітки"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Інструмент для автоматичного призначення позначок зображень"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
@@ -6358,7 +6349,7 @@ msgid ""
 msgstr ""
 "<para>За допомогою цього інструмента керування пакетною обробкою черги можна "
 "встановити значення ієрархій ключових слів значень метаданих зображень "
-"автоматично з використанням рушія глибинного навчання.</para>"
+"автоматично з використанням рушія глибинного навчання ШІ.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -29295,8 +29286,8 @@ msgid "Scanning collection"
 msgstr "Сканування збірки"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:59
-#: core/libs/mlfoundation/mlpipelinemacros.h:68
+#: core/libs/mlfoundation/mlpipelinemacros.h:64
+#: core/libs/mlfoundation/mlpipelinemacros.h:73
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -39848,40 +39839,34 @@ msgid "Autotags Assignment"
 msgstr "Автоматичне призначення міток"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:156
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Пошук облич в альбомі: %1"
+msgstr "Пошук об'єктів в альбомі: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:160
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Пошук облич у %1 альбомах"
+msgstr "Пошук об'єктів у %1 альбомах"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:309
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Помилка під час спроби розпочати виявлення облич."
+msgstr "Помилка під час спроби розпочати виявлення об'єктів."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:329
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Записи у пошуку облич: %1\n"
+msgstr "Елементи пошуку об'єктів: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:333
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Запис у пошуку облич: %1\n"
+msgstr "Елемент пошуку об'єктів: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:371
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Пошук облич: %1\n"
+msgstr "Пошук об'єктів: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:372
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
@@ -39894,7 +39879,7 @@ msgid "Path: %1\n"
 msgstr "Шлях: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -39902,15 +39887,7 @@ msgstr "Місця для пошуку"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39921,12 +39898,13 @@ msgid ""
 "results in the database.</p>"
 msgstr ""
 "<p><b>Цей інструмент уможливлює автоматичне призначення позначок до "
-"зображень на основі вмісту із використанням нейронної мережі для глибинного "
-"навчання.</b></p><p>Значення з наведеного нижче списку визначають модель "
-"глибинного навчання, якою слід скористатися для обробки вмісту зображення з "
-"метою визначення об'єктів на фотографії. У фоновому режимі буде використано "
-"нейронну мережу для автоматичного створення набору міток, що описують вміст, "
-"а отримані мітки буде збережено до бази даних.</p>"
+"зображень на основі аналізу зображення із використанням нейронної мережі для "
+"глибинного навчання у моделі ШІ.</b></p><p>Значення з наведеного нижче "
+"списку визначають модель глибинного навчання ШІ, якою слід скористатися для "
+"обробки вмісту зображення з метою визначення об'єктів на фотографії. У "
+"фоновому режимі буде використано нейронну мережу ШІ для автоматичного "
+"створення набору міток, що описують вміст, а отримані мітки буде збережено "
+"до бази даних.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -39935,66 +39913,64 @@ msgstr "Режим автоміток:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Сканувати усі зображення"
+msgstr "Сканувати усі"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
 #: core/utilities/maintenance/main/maintenancedlg.cpp:319
 #, kde-format
 msgid "Scan non-assigned only"
-msgstr "Шукати лише записи без призначень"
+msgstr "Шукати лише у записах без призначень"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Вилучити усі дані і повторити пов'язування</b>: вилучити усі "
-"призначені мітки і виконати повторне сканування усіх записів від початку.</"
-"p><p><b>Шукати лише записи без призначень</b>: сканувати лише записи без "
-"призначених міток.</p>"
+"<p><b>Сканувати усі</b>: виконати повторний пошук для встановлення міток для "
+"усіх елементів.</p><p><b>Шукати лише у записах без призначень</b>: шукати "
+"лише у записах без призначених автоміток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
-msgstr "Режим автоміток:"
+msgstr "Режим автоміток: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
 #, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
-msgid "Repalce existing autotags"
-msgstr "Оновлювати тільки наявні часові позначки"
+#| msgid "Repalce existing autotags"
+msgid "Replace existing autotags"
+msgstr "Замінити наявні автомітки"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Update items"
+#, kde-format
 msgid "Update autotags"
-msgstr "Оновити записи"
+msgstr "Оновити автомітки"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Замінити наявні автомітки</b>: вилучити наявні автомітки і замінити їх "
+"результатами сканування.</p><p><b>Оновити автомітки</b>: додати усі нові "
+"автомітки до наявних міток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -40004,33 +39980,42 @@ msgstr "Модель вибору:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#| "exceptional speed, but may miss identifying more objects in images. YOLO "
+#| "can detect multiple objects in an image. It is trained to recognize 80 "
+#| "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#| "large, rebust neural network offering good accuracy. It will detect more "
+#| "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#| "multiple objects in an image. It is trained to recognize 80 different "
+#| "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#| "powerful convoluted neural network. It will detect a single object in an "
+#| "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#| "different objects using the ImageNet dataset.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
 "exceptional speed, but may miss identifying more objects in images. YOLO can "
 "detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
 "neural network offering good accuracy. It will detect more objects in images "
 "than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
 "image. It is trained to recognize 80 different objects using the COCO "
@@ -40039,22 +40024,27 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: мала, невибаглива до ресурсів нейронна мережа з "
+"винятковою швидкістю роботи, але з можливістю пропускання об'єктів на "
+"зображеннях. YOLO може виявляти на одному зображенні декілька об'єктів. Її "
+"навчено розпізнавати до 80 різних об'єктів на основі набору даних COCO.</"
+"p><p><b>YOLOv11 XLarge</b>: велика, стійка нейронна мережа з доброю "
+"точністю. Виявляє більше об'єктів за YOLOv11 Nano на зображеннях, але є "
+"повільнішою. YOLO може виявляти декілька об'єктів на одному зображенні. Її "
+"навчено розпізнавати до 80 різних об'єктів на основі набору даних COCO.</"
+"p><p><b>ResNet-152</b>: велика і потужна нейронна мережа зі згорткою. "
+"Виявляє один об'єкт на одному зображенні з високою точністю. ResNet-152 "
+"навчено розпізнавати до 1000 різних об'єктів з використанням набору даних "
+"ImageNet.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgid "Object detection accuracy: "
-msgstr "Точність виявлення:"
+msgstr "Точність виявлення об'єктів: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -40062,11 +40052,11 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 "Коригування чутливість-специфічність: чим більшим є значення, тим точніше "
-"розпізнаватимуться обличчя,\n"
-"але тим менше буде розпізнано облич."
+"розпізнаватимуться об'єкти,\n"
+"але тим менше буде розпізнано об'єктів.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -40074,25 +40064,21 @@ msgid "Work on all processor cores"
 msgstr "Використовувати всі ядра процесора"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Виявлення і розпізнавання облич є доволі тривалим завданням.\n"
+"Виявлення і автоматичне встановлення міток об'єктів є доволі тривалим "
+"завданням.\n"
 "Ви можете наказати програмі використовувати всі ядра процесора\n"
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -52743,27 +52729,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
 #, kde-format
 msgid "Confirming face"
 msgstr "Підтвердження обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
 #, kde-format
 msgid "Removing face"
 msgstr "Вилучення обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
 #, kde-format
 msgid "Editing face tag"
 msgstr "Редагування мітки обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
 #, kde-format
 msgid "Editing face region"
 msgstr "Редагування області обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
 msgid "Manually adding face"
 msgstr "Додавання обличчя вручну"
@@ -52876,25 +52862,37 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Лише розпізнати обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Довідка"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Процес"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точність:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52906,43 +52904,43 @@ msgstr ""
 "розпізнаватимуться обличчя,\n"
 "але тим менше буде розпізнано облич."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Розмір обличчя:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Дуже малий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Малий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Середній"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Великий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Дуже великий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52974,18 +52972,18 @@ msgstr ""
 "встановити точність виявлення близько 6-8 і <b>Середній</b> або <b>Великий</"
 "b> розмір обличчя.</p><p>Цей параметр можна застосовувати лише до YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Параметри виявлення облич"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точність:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53000,7 +52998,7 @@ msgstr ""
 "Зауваження: буде розпізнано лише обличчя, які є дуже подібними до попередньо "
 "визначених за допомогою міток обличчя."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53013,7 +53011,7 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Параметри розпізнавання облич"
@@ -61826,32 +61824,65 @@ msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "Режим автоміток:"
+msgstr "Режим автоміток при скануванні:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
+"<p><b>Замінити наявні автомітки</b>: вилучити наявні автомітки і замінити їх "
+"результатами сканування.</p><p><b>Оновити автомітки</b>: додати знайдені "
+"нові автомітки до наявних міток.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet152"
-msgstr "ResNet50"
+msgstr "ResNet152"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
+"<p><b>YOLOv11 Nano</b>: мала, невибаглива до ресурсів нейронна мережа з "
+"винятковою швидкістю роботи, але з можливістю пропускання об'єктів на "
+"зображеннях. YOLO може виявляти на одному зображенні декілька об'єктів. Її "
+"навчено розпізнавати до 80 різних об'єктів на основі набору даних COCO.</"
+"p><p><b>YOLOv11 XLarge</b>: велика, стійка нейронна мережа з доброю "
+"точністю. Виявляє більше об'єктів за YOLOv11 Nano на зображеннях, але є "
+"повільнішою. YOLO може виявляти декілька об'єктів на одному зображенні. Її "
+"навчено розпізнавати до 80 різних об'єктів на основі набору даних COCO.</"
+"p><p><b>ResNet-152</b>: велика і потужна нейронна мережа зі згорткою. "
+"Виявляє один об'єкт на одному зображенні з високою точністю. ResNet-152 "
+"навчено розпізнавати до 1000 різних об'єктів з використанням набору даних "
+"ImageNet.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgid "Object Detection Accuracy: "
-msgstr "Точність виявлення:"
+msgstr "Точність виявлення об'єктів: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format

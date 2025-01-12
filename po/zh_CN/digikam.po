@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 01:50+0000\n"
+"POT-Creation-Date: 2025-01-12 02:00+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2900,18 +2900,15 @@ msgid "Existing Tags"
 msgstr "已有标签"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "自动标签分配"
+msgstr ""
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "点击此按钮以扫描所选相册中的人脸。"
+msgstr ""
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6035,26 +6032,18 @@ msgid "Assign Tags"
 msgstr "分配标签"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
-msgstr "自动分配标签到图像"
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>用于将关键词层级的元数据值自动分配给图像的批处理工具，基于深度学习引"
-"擎。</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -27922,8 +27911,8 @@ msgid "Scanning collection"
 msgstr "正在扫描相册集合"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:59
-#: core/libs/mlfoundation/mlpipelinemacros.h:68
+#: core/libs/mlfoundation/mlpipelinemacros.h:64
+#: core/libs/mlfoundation/mlpipelinemacros.h:73
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -38012,40 +38001,34 @@ msgid "Autotags Assignment"
 msgstr "自动标签分配"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:156
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "扫描相册中的人脸：%1"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:160
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "扫描 %1 个相册中的人脸"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:309
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "启动人脸检测时出错。"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:329
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "已扫描人脸的项目：%1\n"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:333
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "已扫描人脸的项目：%1\n"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:371
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "已扫描人脸：%1\n"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:372
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
@@ -38058,7 +38041,7 @@ msgid "Path: %1\n"
 msgstr "路径：%1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -38066,15 +38049,7 @@ msgstr "扫描范围"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -38084,10 +38059,6 @@ msgid ""
 "will automatically generate tags describing the contents and store the "
 "results in the database.</p>"
 msgstr ""
-"<p><b>用于自动分配标签到图像的工具，使用基于深度学习神经网络的内容分析模型。"
-"</b></p><p>您可以从下列选项中选取一种深度学习模型，它将被用于解析图像内容以确"
-"定照片主体。选定的神经网络模型会在后台自动生成一系列描述了图像内容的标签，并"
-"将它们存储到数据库中。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -38096,11 +38067,9 @@ msgstr "自动标签模式："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "扫描所有图像"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -38111,46 +38080,37 @@ msgstr "仅扫描未指定品质项目"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>清理所有标签并重新分配</b>：清理所有已经分配的标签，并重新扫描所有项"
-"目。</p><p><b>仅扫描未指定品质项目</b>：仅扫描未分配品质标签的项目。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
-msgstr "自动标签模式："
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
-msgid "Repalce existing autotags"
+msgid "Replace existing autotags"
 msgstr "仅更新已有时间戳"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Updates"
+#, kde-format
 msgid "Update autotags"
-msgstr "更新"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
@@ -38163,33 +38123,29 @@ msgstr "选择模型："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
 "exceptional speed, but may miss identifying more objects in images. YOLO can "
 "detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
 "neural network offering good accuracy. It will detect more objects in images "
 "than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
 "image. It is trained to recognize 80 different objects using the COCO "
@@ -38206,22 +38162,16 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately objects will\n"
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
-"调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -38229,24 +38179,16 @@ msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"人脸检测和识别任务耗时较长。\n"
-"您可以选择使用系统的所有处理器内核以提升速度，\n"
-"或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -50518,27 +50460,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
 #, kde-format
 msgid "Confirming face"
 msgstr "正在确认人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
 #, kde-format
 msgid "Removing face"
 msgstr "正在移除人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
 #, kde-format
 msgid "Editing face tag"
 msgstr "正在编辑人脸标签"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
 #, kde-format
 msgid "Editing face region"
 msgstr "正在编辑人脸区域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"
@@ -50651,25 +50593,37 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "仅识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "帮助"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "扫描流程"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50679,43 +50633,43 @@ msgid ""
 msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "人脸大小："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "超小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "中"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "大"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "超大"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50742,18 +50696,18 @@ msgstr ""
 "测精度设置为 6 - 8，并将人脸大小设置为 <b>中</b> 或者 <b>大</b>。</p><p>此设"
 "置仅适用于 YuNet。</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "人脸检测设置"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50766,7 +50720,7 @@ msgstr ""
 "数值越高，识别精度越高，识别到的人脸也越少。\n"
 "提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50778,7 +50732,7 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "人脸检测设置"
@@ -59270,25 +59224,40 @@ msgid "Detect and recognize Faces"
 msgstr "检测与识别人脸"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "自动标签模式："
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet152"
-msgstr "ResNet50"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
@@ -65875,136 +65844,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "kind of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>：这是一个快速、低资源消耗的神经网络模型。它能够在小"
-#~ "规模对象的检测场景中快速评估一致性。它专门为对象检测而设计，能够识别并提取"
-#~ "对象在图像中的位置。可识别的对象数量被限制为 80。</p><p><b>YOLOv5 XLarge</"
-#~ "b>：这是一个性能强大，专门用于检测复杂对象的神经网络模型。尽管更高的复杂度"
-#~ "导致了更高的时间延迟和更大的算力资源消耗，但此模型的预测精度更高，因此在大"
-#~ "规模对象的检测场景中必须使用此模型。</p><p><b>ResNet50</b>：这是一个通过堆"
-#~ "叠冗余块形成的特种卷积神经网络模型，常用于高算力计算机的对象检测。它的设计"
-#~ "思路允许训练深度极大的神经网络，而不会遭遇梯度消失问题。和 YOLO 模型不同，"
-#~ "ResNet50 主要着眼于图像分类，它并不提供对象定位功能。它能够识别大于 1000 "
-#~ "类的大型数据集，涵盖了类型广泛的对象、动物和场景。</p>"
-
-#~ msgctxt "@label"
-#~ msgid ""
-#~ "<p><b>This tool allows to assign automatically tags to images by contents "
-#~ "analysis using deep-learning neural network.</b></p><p>The settings below "
-#~ "determines the deep-learning model to use while parsing image contents to "
-#~ "determine the subjects of the photography. The neural network used in "
-#~ "background will generate automatically a serie of tags describing the "
-#~ "contents and store the results in the database.</p>"
-#~ msgstr ""
-#~ "<p><b>用于自动分配标签到图像的工具，使用基于深度学习神经网络的内容分析模"
-#~ "型。</b></p><p>您可以从下列选项中选取一种深度学习模型，它将被用于解析图像"
-#~ "内容以确定照片主体。选定的神经网络模型会在后台自动生成一系列描述了图像内容"
-#~ "的标签，并将它们存储到数据库中。</p>"
-
-#~ msgid "Clean all and re-assign"
-#~ msgstr "清理所有标签并重新分配"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "king of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>：这是一个快速、低资源消耗的神经网络模型。它能够在小"
-#~ "规模对象的检测场景中快速评估一致性。它专门为对象检测而设计，能够识别并提取"
-#~ "对象在图像中的位置。可识别的对象数量被限制为 80。</p><p><b>YOLOv5 XLarge</"
-#~ "b>：这是一个性能强大，专门用于检测复杂对象的神经网络模型。尽管更高的复杂度"
-#~ "导致了更高的时间延迟和更大的算力资源消耗，但此模型的预测精度更高，因此在大"
-#~ "规模对象的检测场景中必须使用此模型。</p><p><b>ResNet50</b>：这是一个通过堆"
-#~ "叠冗余块形成的特种卷积神经网络模型，常用于高算力计算机的对象检测。它的设计"
-#~ "思路允许训练深度极大的神经网络，而不会遭遇梯度消失问题。和 YOLO 模型不同，"
-#~ "ResNet50 主要着眼于图像分类，它并不提供对象定位功能。它能够识别大于 1000 "
-#~ "类的大型数据集，涵盖了类型广泛的对象、动物和场景。</p>"
-
-#~ msgctxt "@label AI model used for face detection"
-#~ msgid "Model:"
-#~ msgstr "模型："
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YuNet"
-#~ msgstr "YuNet"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YOLOv3"
-#~ msgstr "YOLOv3"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SSD"
-#~ msgstr "SSD"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Detection model used to find faces. YuNet is the default model.\n"
-#~ "It is faster and more configurable than SSD and YOLOv3.\n"
-#~ "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "用于查找人脸的检测模型。YuNet 是默认模型。\n"
-#~ "它比 SSD 和 YOLOv3 速度更快，可配置性也更好。\n"
-#~ "注意：YuNet 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"
-
-#~ msgctxt "@label AI model used for face recognition"
-#~ msgid "Model:"
-#~ msgstr "模型："
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SFace"
-#~ msgstr "SFace"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "OpenFace"
-#~ msgstr "OpenFace"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "SFace is the default detection model. It is faster and more accurate.\n"
-#~ "OpenFace can be used for older libraries.\n"
-#~ "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "SFace 是默认的检测模型，它速度更快且更精确。\n"
-#~ "OpenFace 支持程序库较为老旧的环境。\n"
-#~ "注意：SFace 仅在 digiKam 使用 OpenCV 4.6.0 或者更新版本编译时才可用。"

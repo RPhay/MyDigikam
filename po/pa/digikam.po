@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 01:50+0000\n"
+"POT-Creation-Date: 2025-01-12 02:00+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -28783,8 +28783,8 @@ msgid "Scanning collection"
 msgstr "ਭੰਡਾਰ ਦੀ ਖੋਜ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:59
-#: core/libs/mlfoundation/mlpipelinemacros.h:68
+#: core/libs/mlfoundation/mlpipelinemacros.h:64
+#: core/libs/mlfoundation/mlpipelinemacros.h:73
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -39136,7 +39136,7 @@ msgid "Path: %1\n"
 msgstr "ਰੇਟਿੰਗ:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
@@ -39192,9 +39192,10 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, kde-format
-msgid "Repalce existing autotags"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Upgrade Database"
+msgid "Replace existing autotags"
+msgstr "ਡਾਟਾਬੇਸ ਅੱਪਗਰੇਡ ਕਰੋ"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
@@ -39207,7 +39208,7 @@ msgstr "ਡਾਟਾਬੇਸ ਅੱਪਗਰੇਡ ਕਰੋ"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
@@ -39236,14 +39237,13 @@ msgid "ResNet-152"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
 "exceptional speed, but may miss identifying more objects in images. YOLO can "
 "detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
 "neural network offering good accuracy. It will detect more objects in images "
 "than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
 "image. It is trained to recognize 80 different objects using the COCO "
@@ -39270,7 +39270,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39287,7 +39287,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -52749,30 +52749,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "ਕੋਰਲੇਸ਼ਨ:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Removing face"
 msgstr "ਟੈਗ ਹਟਾਓ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "ਚਿਹਰਾ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "ਇਹ ਟੈਗ ਹਟਾਓ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "By Manual"
 msgid "Manually adding face"
@@ -52892,27 +52892,39 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "ਸੈਕਰੋਨਾਈਜ਼"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "ਮਦਦ(&H)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "ਐਡੀਟਰ ਵਿੰਡੋ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "ਸ਼ੁੱਧਤਾ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52921,14 +52933,14 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "ਫਾਇਲ ਸਾਈਜ਼"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -52936,7 +52948,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "ਚਿੱਤਰ ਟੈਗ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -52944,20 +52956,20 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "ਚਿੱਤਰ ਟੈਗ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, fuzzy, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "ਮੀਡਿਅਮ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "ਟਾਰਗੇਟ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -52965,7 +52977,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "ਚਿੱਤਰ ਟੈਗ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52984,19 +52996,19 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "ਉਲਟ ਕ੍ਰਮ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "ਸ਼ੁੱਧਤਾ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53006,7 +53018,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53015,7 +53027,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "ਉਲਟ ਕ੍ਰਮ"
@@ -61737,7 +61749,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
@@ -61745,6 +61757,23 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
 #, kde-format
 msgid "ResNet152"
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287

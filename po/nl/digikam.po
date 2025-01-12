@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 01:50+0000\n"
-"PO-Revision-Date: 2025-01-07 11:15+0100\n"
+"POT-Creation-Date: 2025-01-12 02:00+0000\n"
+"PO-Revision-Date: 2025-01-11 13:52+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3008,18 +3008,17 @@ msgid "Existing Tags"
 msgstr "Bestaande tags"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Automatisch toekennen van tags"
+msgstr "Scan op automatisch toekennen van tags"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "Gebruik deze knop om de geselecteerde albums te scannen op gezichten"
+msgstr ""
+"Gebruik deze knop om de geselecteerde albums te scannen op objecten voor "
+"automatisch toekennen van tags"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6325,27 +6324,21 @@ msgid "Assign Tags"
 msgstr "Tags toewijzen"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Een hulpmiddel om tags automatisch aan afbeeldingen toe te kennen"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Dit hulpmiddel Takenwachtrijbeheer zal automatisch metagegevenswaarden "
-"voor sleutelwoordhiërarchieën aan afbeeldingen toekennen met gebruik van "
-"deep-learning-engine.</para>"
+"<para>Dit hulpmiddel Takenwachtrijbeheer zal metagegevenswaarden voor "
+"sleutelwoordhiërarchieën aan afbeeldingen automatisch toekennen met gebruik "
+"van AI-deep-learning-modellen.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -29176,8 +29169,8 @@ msgid "Scanning collection"
 msgstr "Verzameling scannen"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:59
-#: core/libs/mlfoundation/mlpipelinemacros.h:68
+#: core/libs/mlfoundation/mlpipelinemacros.h:64
+#: core/libs/mlfoundation/mlpipelinemacros.h:73
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -39653,40 +39646,34 @@ msgid "Autotags Assignment"
 msgstr "Automatisch toekennen van tags"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:156
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Zoeken naar gezichten in album: %1"
+msgstr "Zoeken naar objecten in album: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:160
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Zoek naar gezichten in %1 albums"
+msgstr "Zoek naar objecten in %1 albums"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:309
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Fout bij starten van gezichtsherkenning."
+msgstr "Fout bij starten van objectenherkenning."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:329
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Items gescand op gezichten: %1\n"
+msgstr "Items gescand op objecten: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:333
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Item gescand op gezichten: %1\n"
+msgstr "Item gescand op objecten: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:371
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Gescand op gezichten: %1\n"
+msgstr "Gescand op objecten: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:372
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
@@ -39699,7 +39686,7 @@ msgid "Path: %1\n"
 msgstr "Pad: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:216
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -39707,15 +39694,7 @@ msgstr "Zoeken in"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39725,11 +39704,11 @@ msgid ""
 "will automatically generate tags describing the contents and store the "
 "results in the database.</p>"
 msgstr ""
-"<p><b>Dit hulpmiddel biedt het automatisch toekennen van tags aan "
-"afbeeldingen door analyse van inhoud met een deep-learning neuraal netwerk.</"
-"b></p><p>De onderstaande instellingen bepalen het te gebruiken model van "
+"<p><b>Dit hulpmiddel kent automatisch tags toe aan afbeeldingen door de "
+"afbeelding te analyseren met een deep-learning neuraal netwerk AI-model.</"
+"b></p><p>De onderstaande instellingen bepalen het te gebruiken AI-model voor "
 "deep-learning tijdens het ontleden van de inhoud van afbeeldingen om de "
-"onderwerpen van de foto te bepalen. Het neurale netwerk, gebruikt in de "
+"objecten in de afbeelding te bepalen. Het Ai-neurale netwerk, gebruikt in de "
 "achtergrond, zal automatisch een serie tags genereren die de inhoud "
 "beschrijven en de resultaten opslaan in de database.</p>"
 
@@ -39740,11 +39719,9 @@ msgstr "Modus voor automatisch toekennen van tags: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Alle afbeeldingen scannen"
+msgstr "Alles scannen"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -39755,50 +39732,52 @@ msgstr "Alleen niet-toegewezen scannen"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Alles wissen en opnieuw toekennen</b>: wist alle al toegekende tags en "
-"scant opnieuw alle items vanuit het niets.</p><p><b>Alleen niet toegekende "
-"scannen</b>: alleen de items scannen zonder toegekende tag.</p>"
+"<p><b>Alles scannen</b>: scan opnieuw alle items op tags.</p><p><b>Scan "
+"alleen niet toegekende</b>: alleen de items scannen zonder automatisch "
+"toegekende tags.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Modus voor automatisch toekennen van tags: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
 #, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
-msgid "Repalce existing autotags"
-msgstr "Alleen bestaande tijdstippen bijwerken"
+#| msgid "Repalce existing autotags"
+msgid "Replace existing autotags"
+msgstr "Vervang bestaande automatisch toegekende tags"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Update Database"
+#, kde-format
 msgid "Update autotags"
-msgstr "Database actualiseren"
+msgstr "Automatisch toegekende tags bijwerken"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Vervang bestaande automatisch toegekende tags</b>: wis bestaande "
+"automatisch toegekende tags en vervang deze met de resultaten van de scan.</"
+"p><p><b>Automatisch toegekende tags bijwerken</b>: voeg elke gevonden nieuwe "
+"automatisch toegekende tags toe aan de bestaande tags.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -39808,33 +39787,42 @@ msgstr "Selectiemodel: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#| "exceptional speed, but may miss identifying more objects in images. YOLO "
+#| "can detect multiple objects in an image. It is trained to recognize 80 "
+#| "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#| "large, rebust neural network offering good accuracy. It will detect more "
+#| "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#| "multiple objects in an image. It is trained to recognize 80 different "
+#| "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#| "powerful convoluted neural network. It will detect a single object in an "
+#| "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#| "different objects using the ImageNet dataset.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
 "exceptional speed, but may miss identifying more objects in images. YOLO can "
 "detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
 "neural network offering good accuracy. It will detect more objects in images "
 "than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
 "image. It is trained to recognize 80 different objects using the COCO "
@@ -39843,22 +39831,27 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: klein, lichtgewicht neuraal netwerk biedend "
+"uitzonderlijke snelheid, maar kan meer objecten missen bij identificeren in "
+"afbeeldingen. YOLO kan meerdere objecten in een afbeelding detecteren. Het "
+"is getraind om 80 verschillende objecten te identificeren met de COCO-"
+"dataset.</p><p><b>YOLOv11 XLarge</b>: groot, robuust neuraal netwerk biedend "
+"goede nauwkeurigheid. Het zal meer objecten in afbeeldingen detecteren dan "
+"YOLOv11 Nano, maar is langzamer. YOLO kan meerdere objecten in een "
+"afbeelding detecteren. Het is getraind om 80 verschillende objecten met "
+"gebruik van de COCO-dataset.</p><p><b>ResNet-152</b>: groot en krachtig "
+"geconvolueerd neuraal netwerk. Het zal een enkel object in en afbeelding met "
+"hoge nauwkeurigheid detecteren. ResNet-152 is getraind om 1.000 "
+"verschillende objecten te herkennen met gebruik van de ImageNet-dataset.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgid "Object detection accuracy: "
-msgstr "Nauwkeurigheid van detectie:"
+msgstr "Nauwkeurigheid van detectie van objecten: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -39866,11 +39859,11 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 "Pas gevoeligheid tegen specifiekheid aan: hoe hoger de waarde, hoe meer "
-"accuraat gezichten zullen\n"
-"worden gedetecteerd, maar minder gezichten zullen gedetecteerd worden."
+"accuraat objecten herkent\n"
+"zullen worden, maar minder objecten zullen herkend worden.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:376
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39878,24 +39871,19 @@ msgid "Work on all processor cores"
 msgstr "Werk op alle processorkernen"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Gezichtsdetectie en herkennen is een tijdrovende taak.\n"
+"Objectdetectie en automatisch toekennen van tags is een tijdrovende taak.\n"
 "U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:390
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -52468,27 +52456,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:87
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
 #, kde-format
 msgid "Confirming face"
 msgstr "Gezicht bevestigen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:102
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
 #, kde-format
 msgid "Removing face"
 msgstr "Gezichtstag wordt verwijderd"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:116
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
 #, kde-format
 msgid "Editing face tag"
 msgstr "Gezichten wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
 #, kde-format
 msgid "Editing face region"
 msgstr "Gezichtsgebied wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
 msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"
@@ -52601,25 +52589,37 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Alleen gezichten herkennen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Help"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Workflow"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:238
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52631,43 +52631,43 @@ msgstr ""
 "accuraat gezichten zullen\n"
 "worden gedetecteerd, maar minder gezichten zullen gedetecteerd worden."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:278
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Gezichtsafmeting:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Extra klein"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Klein"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:284
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Middel"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Groot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Extra groot"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52700,18 +52700,18 @@ msgstr ""
 "en gezichtsgrootte van <b>Middel</b> of <b>Groot</b> voor normaal gebruik in "
 "te stellen.</p><p>Deze instelling is alleen van toepassing op YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:308
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Instellingen voor gezichtsdetectie"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:317
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:324
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52726,7 +52726,7 @@ msgstr ""
 "Opmerking: alleen gezichten die erg gelijken op gezichten met een eerdere "
 "tag worden herkend."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:378
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52738,7 +52738,7 @@ msgstr ""
 "U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Instellingen voor gezichtsherkenning"
@@ -61506,32 +61506,66 @@ msgid "Detect and recognize Faces"
 msgstr "Gezichten detecteren en herkennen"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
 msgstr "Modus voor automatisch toekennen van tags: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
+"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
+"<p><b>Vervang bestaande automatisch toegekende tags</b>: wis bestaande "
+"automatisch toegekende tags en vervang deze met de resultaten van de scan.</"
+"p><p><b>Automatisch toegekende tags bijwerken</b>: voeg elke gevonden nieuwe "
+"automatisch toegekende tags toe aan de bestaande tags.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet152"
-msgstr "ResNet50"
+msgstr "ResNet152"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
+"neural network offering good accuracy. It will detect more objects in images "
+"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
+"image. It is trained to recognize 80 different objects using the COCO "
+"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
+"network. It will detect a single object in an image with high accuracy. "
+"ResNet-152 was trained to recognize 1,000 different objects using the "
+"ImageNet dataset.</p>"
+msgstr ""
+"<p><b>YOLOv11 Nano</b>: klein, lichtgewicht neuraal netwerk biedend "
+"uitzonderlijke snelheid, maar kan meer objecten missen bij identificeren in "
+"afbeeldingen. YOLO kan meerdere objecten in een afbeelding detecteren. Het "
+"is getraind om 80 verschillende objecten te identificeren met de COCO-"
+"dataset.</p><p><b>YOLOv11 XLarge</b>: groot, robuust neuraal netwerk biedend "
+"goede nauwkeurigheid. Het zal meer objecten in afbeeldingen detecteren dan "
+"YOLOv11 Nano, maar is langzamer. YOLO kan meerdere objecten in een "
+"afbeelding detecteren. Het is getraind om 80 verschillende objecten met "
+"gebruik van de COCO-dataset.</p><p><b>ResNet-152</b>: groot en krachtig "
+"geconvolueerd neuraal netwerk. Het zal een enkel object in en afbeelding met "
+"hoge nauwkeurigheid detecteren. ResNet-152 is getraind om 1.000 "
+"verschillende objecten te herkennen met gebruik van de ImageNet-dataset.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgid "Object Detection Accuracy: "
-msgstr "Nauwkeurigheid van detectie:"
+msgstr "Nauwkeurigheid van objectdetectie: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format
@@ -67906,7 +67940,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:447
 #, kde-format
 msgid "Rendering Intents:"
-msgstr "Rendering intenties:"
+msgstr "Rendering-intenties:"
 
 #: core/utilities/setup/setupicc.cpp:462
 #, kde-format
