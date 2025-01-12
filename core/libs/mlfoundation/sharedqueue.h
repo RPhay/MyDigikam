@@ -118,7 +118,7 @@ public:
         return maxDepth_;
     }
 
-    void maxDepth(int depth)
+    void setMaxDepth(int depth)
     {
         maxDepth_ = depth;
     }
