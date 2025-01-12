@@ -57,7 +57,6 @@
 #include "localizeselector.h"
 #include "dnuminput.h"
 
-
 namespace Digikam
 {
 

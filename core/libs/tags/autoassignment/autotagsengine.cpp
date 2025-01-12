@@ -52,49 +52,13 @@
 namespace Digikam
 {
 
-// class Q_DECL_HIDDEN BenchmarkMessageDisplay : public QWidget
-// {
-//     Q_OBJECT
-
-// public:
-
-//     explicit BenchmarkMessageDisplay(const QString& richText)
-//         : QWidget(nullptr)
-//     {
-//         setAttribute(Qt::WA_DeleteOnClose);
-
-//         QVBoxLayout* const vbox     = new QVBoxLayout;
-//         QTextEdit* const edit       = new QTextEdit;
-//         vbox->addWidget(edit, 1);
-//         QPushButton* const okButton = new QPushButton(i18n("OK"));
-//         vbox->addWidget(okButton, 0, Qt::AlignRight);
-
-//         setLayout(vbox);
-
-//         connect(okButton, SIGNAL(clicked()),
-//                 this, SLOT(close()));
-
-//         edit->setHtml(richText);
-//         QApplication::clipboard()->setText(edit->toPlainText());
-
-//         resize(500, 400);
-//         show();
-//         raise();
-//     }
-
-// private:
-
-//     // Disable
-//     BenchmarkMessageDisplay(QWidget*);
-// };
-
-// --------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN AutotagsEngine::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     AutotagsScanSettings            settings;
     bool                            benchmark       = false;
@@ -111,27 +75,25 @@ public:
 
 AutotagsEngine::AutotagsEngine(AutotagsScanSettings _settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("AutotagsEngine"), parent),
-      settings       (_settings),
       d              (new Private)
 {
-
+    d->settings    = _settings;
     d->newPipeline = new AutotagsPipelineObject(_settings);
 
     connect(d->newPipeline, SIGNAL(finished()),
             this, SLOT(slotDone()));
 
-    connect(d->newPipeline, SIGNAL(processed(const MLPipelinePackageNotify::Ptr&)),
-            this, SLOT(slotShowOneDetected(const MLPipelinePackageNotify::Ptr&)));
+    connect(d->newPipeline, SIGNAL(processed(MLPipelinePackageNotify::Ptr)),
+            this, SLOT(slotShowOneDetected(MLPipelinePackageNotify::Ptr)));
 
-    connect(d->newPipeline, SIGNAL(skipped(const MLPipelinePackageNotify::Ptr&)),
-            this, SLOT(slotImagesSkipped(const MLPipelinePackageNotify::Ptr&)));
+    connect(d->newPipeline, SIGNAL(skipped(MLPipelinePackageNotify::Ptr)),
+            this, SLOT(slotImagesSkipped(MLPipelinePackageNotify::Ptr)));
 
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    connect(d->newPipeline, SIGNAL(signalUpdateItemCount(const qlonglong)),
-            this, SLOT(slotUpdateItemCount(const qlonglong)));
-
+    connect(d->newPipeline, SIGNAL(signalUpdateItemCount(qlonglong)),
+            this, SLOT(slotUpdateItemCount(qlonglong)));
 }
 
 AutotagsEngine::~AutotagsEngine()
@@ -149,87 +111,19 @@ void AutotagsEngine::slotStart()
 
     // Set label depending on settings.
 
-    if      (settings.albums.size() > 0)
+    if      (d->settings.albums.size() > 0)
     {
-        if (settings.albums.size() == 1)
+        if (d->settings.albums.size() == 1)
         {
-            setLabel(i18n("Scan for objects in album: %1", settings.albums.first()->title()));
+            setLabel(i18n("Scan for objects in album: %1", d->settings.albums.first()->title()));
         }
         else
         {
-            setLabel(i18n("Scan for objects in %1 albums", settings.albums.size()));
+            setLabel(i18n("Scan for objects in %1 albums", d->settings.albums.size()));
         }
     }
-    // else if (d->infoTodoList.size() > 0)
-    // {
-    //     if (d->infoTodoList.size() == 1)
-    //     {
-    //         setLabel(i18n("Scan for objects in image: %1", d->infoTodoList.first().name()));
-    //     }
-    //     else
-    //     {
-    //         setLabel(i18n("Scan for objects in %1 images", d->infoTodoList.size()));
-    //     }
-    // }
-    // else
-    // {
-    //     setLabel(i18n("Updating tags database"));
-    // }
 
     ProgressManager::addProgressItem(this);
-
-    // if      (d->source == AutotagsEngine::Infos)
-    // {
-    //     int total = d->infoTodoList.count();
-    //     qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
-
-    //     setTotalItems(total);
-
-    //     if (d->infoTodoList.isEmpty())
-    //     {
-    //         slotDone();
-
-    //         return;
-    //     }
-
-    //     // slotItemsInfo(d->infoTodoList);
-
-    //     if (!d->newPipeline->start())
-    //     {
-    //         Q_EMIT signalScanNotification(QString(i18n("Error starting autotag detection.")), DNotificationWidget::Error);
-
-    //         slotDone();
-
-    //         return;       
-    //     }
-        
-    //     return;
-    // }
-    // else if (d->source == AutotagsEngine::Ids)
-    // {
-    //     ItemInfoList itemInfos(d->idsTodoList);
-
-    //     int total = itemInfos.count();
-    //     qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
-
-    //     setTotalItems(total);
-
-    //     if (itemInfos.isEmpty())
-    //     {
-    //         slotDone();
-
-    //         return;
-    //     }
-
-    //     // slotItemsInfo(itemInfos);
-
-    //     if (!d->newPipeline->start())
-    //     {
-    //         Q_EMIT signalScanNotification(QString(i18n("Error starting autotag detection.")), DNotificationWidget::Error);
-    //     }
-        
-    //     return;
-    // }
 
     setUsesBusyIndicator(true);
 
@@ -240,7 +134,7 @@ void AutotagsEngine::slotStart()
     bool hasPAlbums = false;
     bool hasTAlbums = false;
 
-    for (Album* const album : std::as_const(settings.albums))
+    for (Album* const album : std::as_const(d->settings.albums))
     {
         if (album->type() == Album::PHYSICAL)
         {
@@ -269,11 +163,11 @@ void AutotagsEngine::slotStart()
         QApplication::restoreOverrideCursor();
     }
 
-    // // First, we use the progressValueMap map to store absolute counts.
+    // First, we use the progressValueMap map to store absolute counts.
 
     QHash<Album*, int> progressValueMap;
 
-    for (Album* const album : std::as_const(settings.albums))
+    for (Album* const album : std::as_const(d->settings.albums))
     {
         if (album->type() == Album::PHYSICAL)
         {
@@ -317,11 +211,6 @@ void AutotagsEngine::slotUpdateItemCount(const qlonglong itemCount)
 
 void AutotagsEngine::slotDone()
 {
-    // if (d->benchmark)
-    // {
-    //     new BenchmarkMessageDisplay(d->pipeline.benchmarkResult());
-    // }
-
     QString lbl;
 
     if (totalItems() > 1)
@@ -332,15 +221,6 @@ void AutotagsEngine::slotDone()
     {
         lbl.append(i18n("Item scanned for objects: %1\n", totalItems()));
     }
-
-    // if (d->totalFacesFound > 1)
-    // {
-    //     lbl.append(i18n("Faces found: %1", d->totalFacesFound));
-    // }
-    // else
-    // {
-    //     lbl.append(i18n("Face found: %1", d->totalFacesFound));
-    // }
 
     setLabel(lbl);
 
@@ -361,7 +241,6 @@ void AutotagsEngine::slotImagesSkipped(const MLPipelinePackageNotify::Ptr& packa
 {
     Q_UNUSED(package);
     advance(1);
-    // delete package;
 }
 
 void AutotagsEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& package)

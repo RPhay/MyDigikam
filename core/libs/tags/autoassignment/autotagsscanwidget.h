@@ -43,6 +43,8 @@ public:
     };
     Q_ENUM(SettingsDisplayMode)
 
+public:
+
     explicit AutotagsScanWidget(SettingsDisplayMode _displayMode, QWidget* const parent = nullptr);
     ~AutotagsScanWidget()                 override;
 

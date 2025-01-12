@@ -67,7 +67,6 @@ private:
 private:
 
     AutotagsScanSettings::ObjectDetectionModel m_modelType;
-    // DNNBaseDetectorModel*                     m_inferenceEngine = nullptr;
 };
 
 } // namespace Digikam

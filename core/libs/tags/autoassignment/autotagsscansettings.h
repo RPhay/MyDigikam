@@ -57,8 +57,8 @@ public:
      */
     enum ObjectDetectionModel
     {
-        YOLOV11NANO,             
-        YOLOV11XLARGE,           
+        YOLOV11NANO,
+        YOLOV11XLARGE,
         RESNET152
     };
     Q_ENUM(ObjectDetectionModel)
@@ -67,7 +67,7 @@ public:
      * object detection AI models.
      */
     enum ImageClassificationModel
-    {          
+    {
         ResNet152_v2
     };
     Q_ENUM(ImageClassificationModel)
@@ -102,13 +102,12 @@ public:
 
     /// confidence threshold
     int                                     uiConfidenceThreshold       = 7;
-    
+
     /// Autotags languages
     QStringList                             languages;
 
     /// Set true for BQM
     bool                                    bqmMode                     = false;
-
 };
 
 } // namespace Digikam

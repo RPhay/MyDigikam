@@ -51,7 +51,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotStart()                                                override;
-    // void slotContinueAlbumListing();
     void slotUpdateItemCount(const qlonglong itemCount);
     void slotImagesSkipped(const MLPipelinePackageNotify::Ptr&);
     void slotShowOneDetected(const MLPipelinePackageNotify::Ptr&);
@@ -59,7 +58,6 @@ private Q_SLOTS:
     void slotCancel()                                               override;
 
 private:
-    AutotagsScanSettings          settings;
 
     class Private;
     Private* const d = nullptr;

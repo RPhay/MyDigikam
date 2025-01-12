@@ -84,14 +84,6 @@ cv::Mat AutotagsAssign::prepareForDetection(const DImg& inputImage) const
         cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
         cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
-        // if (inputImage.hasAlpha())
-        // {
-        //     cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-        // }
-        // else
-        // {
-        //     cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-        // }
 
         if (type == CV_16UC4)
         {
