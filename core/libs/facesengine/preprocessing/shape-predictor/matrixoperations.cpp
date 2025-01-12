@@ -50,7 +50,7 @@ std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& ma
 {
     std::vector<std::vector<float> > result(mat[0].size(), std::vector<float>(mat.size()));
     cv::Mat B((int)mat[0].size(), (int)mat.size(),    CV_32FC1);
-    cv::Mat A((int)mat.size(), (int)mat[0].size(), CV_32FC1);
+    cv::Mat A((int)mat.size(),    (int)mat[0].size(), CV_32FC1);
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {
@@ -105,7 +105,6 @@ void transpose(const std::vector<std::vector<float> >& src,
             dst[i][j] = src[j][i];
         }
     }
-
 }
 
 float trace(const std::vector<std::vector<float> >& src)
@@ -392,7 +391,12 @@ bool svd3(std::vector<std::vector<float> >& a,
                     g    = w[i];
                     h    = pythag(f, g);
                     w[i] = h;
-                    h    = 1.0F / h;
+
+                    if (h != 0.0F)
+                    {
+                        h = 1.0F / h;
+                    }
+
                     c    = g * h;
                     s    = -f * h;
 
@@ -447,8 +451,13 @@ bool svd3(std::vector<std::vector<float> >& a,
                 g      = c * g;
                 z      = pythag(f, h);
                 rv1[j] = z;
-                c      = f / z;
-                s      = h / z;
+
+                if (z != 0.0F)
+                {
+                    c = f / z;
+                    s = h / z;
+                }
+
                 f      = x * c + g * s;
                 g      = g * c - x * s;
                 h      = y * s;
@@ -465,7 +474,7 @@ bool svd3(std::vector<std::vector<float> >& a,
                 z    = pythag(f, h);
                 w[j] = z;
 
-                if (z != 0)
+                if (z != 0.0F)
                 {
                     z = 1.0F / z;
                     c = f * z;
