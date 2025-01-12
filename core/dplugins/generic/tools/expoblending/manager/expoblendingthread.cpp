@@ -72,7 +72,7 @@ class Q_DECL_HIDDEN ExpoBlendingThread::Private
 {
 public:
 
-    class Task
+    class Q_DECL_HIDDEN Task
     {
     public:
 
@@ -1026,7 +1026,10 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         }
         else
         {
-            nmr = (long)(1 / tmp + 0.5);
+            if ((tmp + 0.5) != 0.0)
+            {
+                nmr = (long)(1 / (tmp + 0.5));
+            }
         }
 
         if (div)
@@ -1050,7 +1053,10 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         }
         else
         {
-            nmr = (long)(1 / tmp + 0.5);
+            if ((tmp + 0.5) != 0.0)
+            {
+                nmr = (long)(1 / (tmp + 0.5));
+            }
         }
 
         if (div)
