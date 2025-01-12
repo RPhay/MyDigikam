@@ -61,6 +61,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool        antiAliasing            = false;
     bool        drawWhileMoving         = true;
     bool        drawGrid                = false;
@@ -589,7 +591,14 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
         }
         else
         {
-            matrix.coeff[2][1] = det1 / det2;
+            if (det2 != 0.0)
+            {
+                matrix.coeff[2][1] = det1 / det2;
+            }
+            else
+            {
+                matrix.coeff[2][1] = 1.0;
+            }
         }
 
         matrix.coeff[0][0] = tx2 - tx1 + matrix.coeff[2][0] * tx2;
