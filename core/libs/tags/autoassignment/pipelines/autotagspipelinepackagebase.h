@@ -64,7 +64,6 @@ public:
 private:
 
     AutotagsPipelinePackageBase(AutotagsPipelinePackageBase&)                   = delete;
-
 };
 
 } // namspace Digikam

@@ -38,6 +38,8 @@ public:
 
 private:
 
+    // Disable
+
     AutotagsClassifierSoftmax()                                     = delete;
     AutotagsClassifierSoftmax(AutotagsClassifierSoftmax&)           = delete;
 };

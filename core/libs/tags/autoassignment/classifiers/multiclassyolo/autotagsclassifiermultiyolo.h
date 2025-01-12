@@ -48,22 +48,22 @@ public:
 
     virtual int predict(const cv::Mat& target)      const                       override
     {
-        Q_UNUSED(target); 
+        Q_UNUSED(target);
 
         return -1;
     }
 
     virtual int predict(const cv::UMat& target)     const                       override
-    { 
-        Q_UNUSED(target); 
+    {
+        Q_UNUSED(target);
 
         return -1;
     }
 
     virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       override;
     virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       override
-    { 
-        Q_UNUSED(targets); 
+    {
+        Q_UNUSED(targets);
 
         return QList<int>();
     }
@@ -79,9 +79,12 @@ private:
     float       confidenceThreshold                                             = 0.33;
     float       nmsThreshold                                                    = 0.5;
     float       scoreThreshold                                                  = 0.2;
-    int         outputNumbox                                                    = 0;            
+    int         outputNumbox                                                    = 0;
     int         outputNumprob                                                   = 0;
 
+private:
+
+    // Disable
     AutotagsClassifierYolo()                                                    = delete;
     AutotagsClassifierYolo(AutotagsClassifierYolo&)                             = delete;
 };
