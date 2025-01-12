@@ -76,7 +76,7 @@ public:
                              const FilmGrainContainer& settings = FilmGrainContainer());
 
     /**
-     * Constructor for slave mode: execute immediately in current thread with specified master filter.
+     * @brief: constructor for slave mode: execute immediately in current thread with specified master filter.
      */
     explicit FilmGrainFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                              int progressBegin = 0, int progressEnd = 100,

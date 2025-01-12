@@ -51,6 +51,8 @@ public:
 
     Private() = default;
 
+public:
+
     double                div                   = 0.0;
     double                leadLumaNoise         = 1.0;
     double                leadChromaBlueNoise   = 1.0;
@@ -63,7 +65,7 @@ public:
     int                   globalProgress        = 0;
 
     QMutex                lock;
-    QMutex                lock2; // RandomNumberGenerator is not re-entrant (dixit Boost lib)
+    QMutex                lock2; /// @note: RandomNumberGenerator is not re-entrant (dixit Boost lib)
 };
 
 FilmGrainFilter::FilmGrainFilter(QObject* const parent)
@@ -188,7 +190,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
                         {
                             if (((refChromaRedRange - matChromaRedRange) / refChromaRedRange) > 0.1)
                             {
-                                adjustYCbCr(matCol, matChromaRedRange, matChromaRedNoise, Private::ChromaBlue);
+                                adjustYCbCr(matCol, matChromaRedRange, matChromaRedNoise, Private::ChromaRed);
                             }
                             else
                             {
@@ -216,7 +218,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 }
 
 /**
- * This method have been implemented following this report in bugzilla :
+ * @note: this method have been implemented following this report in bugzilla :
  * https://bugs.kde.org/show_bug.cgi?id=148540
  * We use YCbCr color space to perform noise addition. Please follow this url for
  * details about this color space :
@@ -272,7 +274,7 @@ void FilmGrainFilter::filterImage()
 }
 
 /**
- * This method compute lead noise of reference matrix point used to simulate graininess size
+ * @brief: this method compute lead noise of reference matrix point used to simulate graininess size.
  */
 void FilmGrainFilter::computeNoiseSettings(const DColor& col,
                                            double& luRange, double& luNoise,
@@ -302,7 +304,7 @@ void FilmGrainFilter::computeNoiseSettings(const DColor& col,
 }
 
 /**
- * This method apply grain adjustment on a pixel color channel from YCrCb color space.
+ * @brief: this method apply grain adjustment on a pixel color channel from YCrCb color space.
  * NRand is the lead uniform noise set from matrix used to scan whole image step by step.
  * Additionally noise is applied on pixel using Poisson or Gaussian distribution.
  */
@@ -345,7 +347,7 @@ void FilmGrainFilter::adjustYCbCr(DColor& col, double range, double nRand, int c
 }
 
 /**
- * This method compute uniform noise value used to randomize matrix reference point.
+ * @brief: this method compute uniform noise value used to randomize matrix reference point.
  * This value is lead noise apply to image.
  */
 double FilmGrainFilter::randomizeUniform(double range)
@@ -358,7 +360,7 @@ double FilmGrainFilter::randomizeUniform(double range)
 }
 
 /**
- * This method compute Gaussian noise value used to randomize all matrix points.
+ * @brief: this method compute Gaussian noise value used to randomize all matrix points.
  * This value is added to lead noise value.
  */
 double FilmGrainFilter::randomizeGauss(double sigma)
@@ -372,12 +374,12 @@ double FilmGrainFilter::randomizeGauss(double sigma)
 }
 
 /**
- * This method compute Poisson noise value used to randomize all matrix points.
+ * @brief: this method compute Poisson noise value used to randomize all matrix points.
  * This value is added to lead noise value.
  * Poisson noise is more realist to simulate photon noise apply on analog film.
- * NOTE: see approximation of Poisson noise using Gauss algorithm from noise.c code take from :
- *       registry.gimp.org/node/13016
- *       This method is very fast compared to real Poisson noise generator.
+ * @note: see approximation of Poisson noise using Gauss algorithm from noise.c code take from :
+ *        registry.gimp.org/node/13016
+ *        This method is very fast compared to real Poisson noise generator.
  */
 double FilmGrainFilter::randomizePoisson(double lambda)
 {
@@ -385,7 +387,7 @@ double FilmGrainFilter::randomizePoisson(double lambda)
 }
 
 /**
- * This method interpolate gain adjustments to apply grain on shadows, midtones and highlights colors.
+ * @brief: this method interpolate gain adjustments to apply grain on shadows, midtones and highlights colors.
  * The output value is a coefficient computed between 0.0 and 1.0.
  */
 double FilmGrainFilter::interpolate(int shadows, int midtones, int highlights, const DColor& col)
