@@ -664,7 +664,7 @@ QVector<const GeoSceneTextureTileDataset*> MergedLayerDecorator::Private::findRe
     return result;
 }
 
-// TODO: This should likely go into a math class Q_DECL_HIDDEN in the future ...
+// TODO: This should likely go into a math class in the future ...
 
 int MergedLayerDecorator::Private::maxDivisor(int maximum, int fullLength)
 {

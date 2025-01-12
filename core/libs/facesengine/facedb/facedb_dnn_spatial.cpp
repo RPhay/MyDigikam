@@ -24,7 +24,7 @@
 namespace Digikam
 {
 
-class FaceDb::DataNode
+class Q_DECL_HIDDEN FaceDb::DataNode
 {
 public:
 

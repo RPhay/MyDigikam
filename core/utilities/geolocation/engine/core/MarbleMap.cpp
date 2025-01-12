@@ -126,7 +126,7 @@ private:
 
 class Q_DECL_HIDDEN MarbleMapPrivate
 {
-    friend class Q_DECL_HIDDEN MarbleWidget;
+    friend class MarbleWidget;
 
 public:
 

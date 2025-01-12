@@ -417,7 +417,7 @@ void MarbleWidgetInputHandler::setDebugModeEnabled(bool enabled)
     d->m_debugModeEnabled = enabled;
 }
 
-//FIXME - these should be moved to superclass Q_DECL_HIDDEN and popupMenu should be abstracted in MarbleAbstractPresenter
+//FIXME - these should be moved to superclass and popupMenu should be abstracted in MarbleAbstractPresenter
 void MarbleWidgetInputHandler::showLmbMenu(int x, int y)
 {
     if (isMouseButtonPopupEnabled(Qt::LeftButton) && !d->m_pinchDetected && !d->m_panDetected)

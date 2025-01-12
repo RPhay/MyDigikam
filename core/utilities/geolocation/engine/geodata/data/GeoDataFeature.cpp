@@ -352,7 +352,7 @@ const GeoDataAbstractView* GeoDataFeature::abstractView() const
 GeoDataAbstractView* GeoDataFeature::abstractView()
 {
     // FIXME: Calling detach() doesn't help at all because the m_abstractView
-    // object isn't actually copied in the Private class Q_DECL_HIDDEN as well.
+    // object isn't actually copied in the Private class as well.
     // detach();
 
     Q_D(GeoDataFeature);

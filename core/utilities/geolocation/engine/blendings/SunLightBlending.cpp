@@ -161,7 +161,7 @@ void SunLightBlending::setLevelZeroLayout(int levelZeroColumns, int levelZeroRow
     m_levelZeroRows = levelZeroRows;
 }
 
-// TODO: This should likely go into a math class Q_DECL_HIDDEN in the future ...
+// TODO: This should likely go into a math class in the future ...
 int SunLightBlending::maxDivisor(int maximum, int fullLength)
 {
     // Find the optimal interpolation interval n for the
