@@ -27,10 +27,12 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implm
                  using cross validating KNN and SVM classifiers from OpenCV with a single custom distance check.
                  It’s faster and more accurate.
                  The only thing we’re really reusing from 8.5.0 are the YuNet and SFace models themselves.
-                 Remove old DNN models SSD and YOLOv3.
+                 Removed old SSD and YOLOv3 DNN models.
 
-AutoTags:        As for faceEngine, the pipelines and classifiers have been rewritten.
-                 New YOLOv11 and ResNet-12 DNN models added and Old models removed.
+AutoTags:        The Autotags engine has been completely rewritten using the new pipelines and improvements found
+                 in the FaceEngine. New classifiers and the option to adjust the Autotagging confidence threshold
+                 have been added. Autotagging is now faster and more accurate using new YOLOv11, YOLOv11 XLarge,
+                 and ResNet-152 DNN models.  The older YOLOv5 and ResNet-50 models have been removed.
 
 *****************************************************************************************************
 BUGFIXES:
