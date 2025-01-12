@@ -50,6 +50,9 @@ public:
     explicit FacePipelinePackageBase(qlonglong _imageId);
 
     explicit FacePipelinePackageBase(qlonglong _imageId,
+                                     const QString& _albumTitle);
+
+    explicit FacePipelinePackageBase(qlonglong _imageId,
                                      const FaceTagsIface& _face);
 
     explicit FacePipelinePackageBase(const ItemInfo& _info,
@@ -65,6 +68,7 @@ public:
 public:
 
     ItemInfo                info;
+    QString                 albumTitle;
     FaceTagsIface           face;
     QImage                  thumbnail;
     DImg                    image;

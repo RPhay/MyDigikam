@@ -426,27 +426,23 @@ void FacesEngine::slotImagesSkipped(const MLPipelinePackageNotify::Ptr& package)
     Q_UNUSED(package);
 
     advance(1);
-    // delete package;
 }
 
 void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& package)
 {
     setThumbnail(package->thumbnail);
 
-    QString lbl = i18n("Scanned for faces: %1\n", package->name);
-    lbl.append(i18n("Path: %1\n", package->path));
-
+    QString lbl = i18n("Path: %1\n", package->path);
     if (!package->processed)
     {
-        lbl.append(i18n("No face"));
+        lbl.append(i18n("No faces found in %1", package->name));
     }
     else
     {
-        lbl.append(i18np("1 face", "%1 faces", package->processed));
+        lbl.append(i18np("Found 1 face in ", "Found %1 faces in ", package->processed));
+        lbl.append(package->name);
         d->totalFacesFound += package->processed;
     }
-
-    // delete package;
 
     setLabel(lbl);
     advance(1);

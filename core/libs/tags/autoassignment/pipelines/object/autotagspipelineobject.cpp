@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-11-10
- * Description : Performs autotags object detection and classifiecation
+ * Description : Performs autotags object detection and classification
  *
  * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
@@ -232,6 +232,7 @@ bool AutotagsPipelineObject::finder()
      * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
      */ 
 
+
     MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
 
@@ -325,8 +326,6 @@ bool AutotagsPipelineObject::extractor()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-
-    FaceUtils utils;
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Extractor, thisQueue);
     package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
@@ -615,8 +614,6 @@ void AutotagsPipelineObject::addMoreWorkers()
      * For the Autotags object detection pipeline, the loader is the
      * slowest stage so add 3 more loaders and 2 more extractors.
      */
-
-    qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::addMoreWorkers: Adding more workers to the pipeline";
 
     addWorker(Loader);
     addWorker(Loader);

@@ -23,12 +23,11 @@
             stageStart(QThread::LowPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
             bool moreCpu = false; \
             QElapsedTimer timer; \
-            timer.start();
+            pipelinePerformanceStart(MLPipelineStage::Finder, timer);
 
 #define MLPIPELINE_FINDER_END(nextStage) \
             Q_EMIT signalUpdateItemCount(totalItemCount); \
-            performanceProfileList[MLPipelineStage::Finder].itemCount = totalItemCount; \
-            performanceProfileList[MLPipelineStage::Finder].elapsedTime = timer.elapsed(); \
+            pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer); \
             stageEnd(MLPipelineStage::Finder, nextStage); \
             return true;
             
@@ -49,14 +48,11 @@
                 { \
                     MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
                     if (queueEndSignal() == mlpackage) { break; } \
-                    performanceProfileList[thisStage].maxQueueCount = std::max<qint64>((qint64)performanceProfileList[thisStage].maxQueueCount, (qint64)thisQueue->size()); \
-                    ++performanceProfileList[thisStage].itemCount; \
-                    timer.start(); \
+                    pipelinePerformanceStart(thisStage, timer); \
                     mlpackage
 
 #define MLPIPELINE_LOOP_END(thisStage, pipelineStageName) \
-                performanceProfileList[thisStage].elapsedTime += timer.elapsed(); \
-                performanceProfileList[thisStage].maxElapsedTime = std::max<qint64>((qint64)performanceProfileList[thisStage].maxElapsedTime, (qint64)timer.elapsed()); \
+                pipelinePerformanceEnd(thisStage, timer); \
             } \
             catch(const std::exception& e) \
             { \

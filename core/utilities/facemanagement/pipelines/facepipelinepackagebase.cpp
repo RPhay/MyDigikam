@@ -23,6 +23,12 @@ FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId)
 {
 }
 
+FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const QString& _albumTitle)
+    : info(_imageId),
+      albumTitle(_albumTitle)
+{
+}
+
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face)
     : info(_imageId),
       face(_face)
