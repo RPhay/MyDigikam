@@ -98,9 +98,10 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=unassignedVariable \
 --suppress=class_X_Y \
 --suppress=ConfigurationNotChecked \
---suppress=useStlAlgorithm \
---suppress=cstyleCast \
---suppress=constVariablePointer \
---suppress=shadowFunction \
 --suppress=checkersReport \
+--suppress=shadowFunction \
+--suppress=useStlAlgorithm \
+--suppress=constVariablePointer \
 "
+
+#--suppress=cstyleCast \
