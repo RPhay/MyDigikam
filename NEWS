@@ -34,6 +34,8 @@ AutoTags:        The Autotags engine has been completely rewritten using the new
                  have been added. Autotagging is now faster and more accurate using new YOLOv11, YOLOv11 XLarge,
                  and ResNet-152 DNN models.  The older YOLOv5 and ResNet-50 models have been removed.
 
+RedEyes:         Refactor red-eye eye detection using YuNet DNN model.
+
 *****************************************************************************************************
 BUGFIXES:
 
