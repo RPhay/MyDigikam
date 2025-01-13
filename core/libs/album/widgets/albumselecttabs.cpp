@@ -142,7 +142,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     DVBox* const searchBox  = new DVBox(this);
     d->searchModel          = new SearchModel(searchBox);
     d->searchTreeView       = new SearchTreeView(searchBox);
-    d->searchTreeView->setAlbumModel(d->searchModel);
+    d->searchTreeView->setSAlbumModel(d->searchModel);
     d->searchTreeView->setEntryPrefix(QLatin1String("SearchTreeView"));
     d->searchTreeView->setConfigGroup(configGroup);
     d->searchTreeView->filteredModel()->listNormalSearches();

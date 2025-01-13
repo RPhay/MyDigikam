@@ -32,14 +32,14 @@ public:
     explicit SearchTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
     ~SearchTreeView() override = default;
 
-    /// Note: not filtered by search type
-    SearchModel* albumModel()          const;
+    /// @note: not filtered by search type
+    SearchModel* salbumModel()         const;
 
-    /// Contains only the searches with appropriate type - prefer to albumModel()
+    /// @brief Contains only the searches with appropriate type - prefer to albumModel()
     SearchFilterModel* filteredModel() const;
     SAlbum* currentAlbum()             const;
 
-    void setAlbumModel(SearchModel* const model);
+    void setSAlbumModel(SearchModel* const model);
     void setAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const model);
 
 public Q_SLOTS:

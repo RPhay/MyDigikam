@@ -41,7 +41,7 @@ SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
     }
 }
 
-void SearchTreeView::setAlbumModel(SearchModel* const model)
+void SearchTreeView::setSAlbumModel(SearchModel* const model)
 {
     AbstractCheckableAlbumTreeView::setAlbumModel(model);
 
@@ -51,7 +51,7 @@ void SearchTreeView::setAlbumModel(SearchModel* const model)
     }
 }
 
-SearchModel* SearchTreeView::albumModel() const
+SearchModel* SearchTreeView::salbumModel() const
 {
     return static_cast<SearchModel*>(m_albumModel);
 }
