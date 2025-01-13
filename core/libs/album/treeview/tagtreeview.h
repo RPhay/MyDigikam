@@ -32,7 +32,7 @@ public:
     explicit TagTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
     ~TagTreeView() override = default;
 
-    TagModel* albumModel()                          const;
+    TagModel* talbumModel()                         const;
 
     /**
      * Contains only the tags filtered by properties - prefer to albumModel()
@@ -58,7 +58,7 @@ public:
     TagModificationHelper* tagModificationHelper()  const;
 
     void setAlbumFilterModel(TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel);
-    void setAlbumModel(TagModel* const model);
+    void setTAlbumModel(TagModel* const model);
 
 public Q_SLOTS:
 

@@ -119,7 +119,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     DVBox* const tagBox = new DVBox(this);
     d->tagModel         = new TagModel(AbstractAlbumModel::IgnoreRootAlbum, tagBox);
     d->tagTreeView      = new TagTreeView(tagBox);
-    d->tagTreeView->setAlbumModel(d->tagModel);
+    d->tagTreeView->setTAlbumModel(d->tagModel);
     d->tagTreeView->setEntryPrefix(QLatin1String("TagTreeView"));
     d->tagTreeView->setConfigGroup(configGroup);
     d->prepareTreeView(d->tagTreeView);

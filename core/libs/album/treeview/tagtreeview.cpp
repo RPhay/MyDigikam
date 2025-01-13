@@ -57,7 +57,7 @@ void TagTreeView::setAlbumFilterModel(TagPropertiesFilterModel* const filteredMo
     albumFilterModel()->setSourceFilterModel(m_filteredModel);
 }
 
-void TagTreeView::setAlbumModel(TagModel* const model)
+void TagTreeView::setTAlbumModel(TagModel* const model)
 {
     // changing model is not implemented
 
@@ -77,7 +77,7 @@ void TagTreeView::setAlbumModel(TagModel* const model)
 
     if (!m_dragDropHandler)
     {
-        m_dragDropHandler = new TagDragDropHandler(albumModel());
+        m_dragDropHandler = new TagDragDropHandler(talbumModel());
         albumModel()->setDragDropHandler(m_dragDropHandler);
 
         connect(albumModel()->dragDropHandler(), SIGNAL(assignTags(QList<qlonglong>,QList<int>)),
@@ -95,7 +95,7 @@ void TagTreeView::setAlbumModel(TagModel* const model)
     }
 }
 
-TagModel* TagTreeView::albumModel() const
+TagModel* TagTreeView::talbumModel() const
 {
     return static_cast<TagModel*>(m_albumModel);
 }
