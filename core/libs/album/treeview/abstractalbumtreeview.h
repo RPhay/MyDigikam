@@ -38,7 +38,7 @@ class TagModificationHelper;
 struct State;
 
 /**
- * Base class for all tree views that display Album-based content provided by an
+ * @brief Base class for all tree views that display Album-based content provided by an
  * AbstractSpecificAlbumModel. This class enables various utility functions like
  * selecting albums on mouse actions or providing an infrastructure for
  * displaying a context menu for albums.
@@ -93,7 +93,7 @@ public:
 public:
 
     /**
-     * Constructs an album tree view.
+     * @brief Constructs an album tree view.
      * If you give 0 for model, call setAlbumModel afterwards.
      * If you supply 0 for filterModel, call setAlbumFilterModel afterwards.
      */
@@ -104,17 +104,17 @@ public:
     AlbumFilterModel* albumFilterModel()     const;
 
     /**
-     * Enable expanding of tree items on single click on the item (default: off)
+     * @brief Enable expanding of tree items on single click on the item (default: off)
      */
     void setExpandOnSingleClick(const bool doThat);
 
     /**
-     * Expand an item when making it the new current item
+     * @brief Expand an item when making it the new current item
      */
     void setExpandNewCurrentItem(const bool doThat);
 
     /**
-     * Sets whether to select an album on click via the album manager or not.
+     * @brief Sets whether to select an album on click via the album manager or not.
      *
      * @param selectOnClick if true, a click on an item automatically sets this
      *                      item as the current album in the album manager
@@ -122,7 +122,7 @@ public:
     void setSelectAlbumOnClick(const bool selectOnClick);
 
     /**
-     * Determines the global decision to show a popup menu or not. More detailed
+     * @brief Determines the global decision to show a popup menu or not. More detailed
      * decision at which position a menu can be shown and where not can be made
      * by implementing showContextMenuAt.
      *
@@ -131,7 +131,7 @@ public:
     void setEnableContextMenu(const bool enable);
 
     /**
-     * Sets whether to select the album under the mouse cursor on a context menu
+     * @brief Sets whether to select the album under the mouse cursor on a context menu
      * request (so that the album is shown using the album manager) or not
      *
      * Defaults to true.
@@ -141,7 +141,7 @@ public:
     void setSelectOnContextMenu(const bool select);
 
     /**
-     * Set the context menu title and icon.
+     * @brief Set the context menu title and icon.
      * This is used by the default implementation of contextMenuIcon()
      * and contextMenuTitle(). You can alternatively reimplement these methods.
      */
@@ -149,14 +149,14 @@ public:
     void setContextMenuTitle(const QString& title);
 
     /**
-     * This is a combination of indexAt() checked with visualRect().
-     * p must be in the viewport currently. Decoration will not be included.
+     * @brief This is a combination of indexAt() checked with visualRect().
+     * @param p must be in the viewport currently. Decoration will not be included.
      * Suitable for mouse click positions.
      */
     QModelIndex indexVisuallyAt(const QPoint& p);
 
     /**
-     * Ensures that every current match is visible by expanding all parent
+     * @brief Ensures that every current match is visible by expanding all parent
      * entries.
      *
      * @param index the index to start ensuring expansion state
@@ -169,7 +169,7 @@ public:
     //@{
 
     /**
-     * Implements state loading for the album tree view in a somewhat clumsy
+     * @brief Implements state loading for the album tree view in a somewhat clumsy
      * procedure because the model may not be fully loaded when this method is
      * called. Therefore the config is first parsed into d->statesByAlbumId
      * which holds the state of all tree view entries indexed by album id.
@@ -187,14 +187,14 @@ public:
     //@}
 
     /**
-     * Some treeviews shall control the global current album kept by AlbumManager.
+     * @brief Some treeviews shall control the global current album kept by AlbumManager.
      * Other treeview are self-contained and shall not change the current album.
      * Default: false
      */
     void setAlbumManagerCurrentAlbum(const bool setCurrentAlbum);
 
     /**
-     * Add a context menu element which can add actions to the context
+     * @brief Add a context menu element which can add actions to the context
      * menu when the menu is generated.
      * First, addCustomContextMenuActions is called, then
      * all elements' addActions method is called in order of addition.
@@ -207,7 +207,7 @@ public:
         virtual ~ContextMenuElement()           = default;
 
         /**
-         * Add actions to the context menu being generated
+         * @brief Add actions to the context menu being generated
          *
          * @param view The AbstractAlbumTreeView which generates the menu
          * @param cmh helper object to create the context menu
@@ -231,12 +231,12 @@ public:
     QList<A*> currentAlbums();
 
     /**
-     * For internal use only.
+     * @brief For internal use only.
      */
     bool viewportEvent(QEvent* event)                                           override;
 
     /**
-     * @brief selectedItems() -
+     * @return selected Items
      */
     QList<Album*> selectedItems();
 
@@ -245,7 +245,7 @@ public Q_SLOTS:
     void setSearchTextSettings(const SearchTextSettings& settings);
 
     /**
-     * Selects the given album.
+     * @brief Selects the given album.
      *
      * @param albums the albums to select
      * @param selectInAlbumManager the album will be set as current album, if both
@@ -254,17 +254,17 @@ public Q_SLOTS:
     virtual void setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager = true);
 
     /**
-     * Adapt the column sizes to the contents of the tree view.
+     * @brief Adapt the column sizes to the contents of the tree view.
      */
     void adaptColumnsToContent();
 
     /**
-     * Scrolls to the first selected album if there is one.
+     * @brief Scrolls to the first selected album if there is one.
      */
     void scrollToSelectedAlbum();
 
     /**
-     * Expands the complete tree under the given index.
+     * @brief Expands the complete tree under the given index.
      *
      * @param index the index to start expanding everything
      */
@@ -288,19 +288,19 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * Emitted when the currently selected album changes
+     * @brief Emitted when the currently selected album changes
      */
     void currentAlbumChanged(Album* currentAlbum);
 
     /**
-     * Emitted when the current selection changes. Use currentChanged unless in multi-selection mode.
+     * @brief Emitted when the current selection changes. Use currentChanged unless in multi-selection mode.
      */
     void selectedAlbumsChanged(const QList<Album*>& selectedAlbums);
 
 protected Q_SLOTS:
 
     /**
-     * override if implemented behavior is not as intended
+     * @note override if implemented behavior is not as intended
      */
     virtual void slotRootAlbumAvailable();
 
@@ -318,7 +318,7 @@ protected:
     // Context menu handling
 
     /**
-     * Hook method to implement that determines if a context menu shall be
+     * @brief Hook method to implement that determines if a context menu shall be
      * displayed for the given event at the position coded in the event.
      *
      * @param event context menu event to react on
@@ -330,7 +330,7 @@ protected:
     virtual bool showContextMenuAt(QContextMenuEvent* event, Album* albumForEvent);
 
     /**
-     * Hook method that can be implemented to return a special icon used for the
+     * @brief Hook method that can be implemented to return a special icon used for the
      * context menu.
      *
      * @return the icon for the context menu
@@ -338,14 +338,14 @@ protected:
     virtual QPixmap contextMenuIcon()  const;
 
     /**
-     * Hook method to implement that returns the title for the context menu.
+     * @brief Hook method to implement that returns the title for the context menu.
      *
      * @return title for the context menu
      */
     virtual QString contextMenuTitle() const;
 
     /**
-     * Hook method to add custom actions to the generated context menu.
+     * @brief Hook method to add custom actions to the generated context menu.
      *
      * @param cmh helper object to create the context menu
      * @param album tag on which the context menu will be created. May be null if
@@ -354,7 +354,7 @@ protected:
     virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album);
 
     /**
-     * Hook method to handle the custom context menu actions that were added
+     * @brief Hook method to handle the custom context menu actions that were added
      * with addCustomContextMenuActions.
      *
      * @param action the action that was chosen by the user, may be null if none
@@ -406,7 +406,7 @@ private:
                             QList<int>& selection, QList<int>& expansion);
 
     /**
-     * Restores the state of the index and all sub-indexes if there is an entry
+     * @brief Restores the state of the index and all sub-indexes if there is an entry
      * for this index in stateStore. Every album that is restored is removed
      * from the stateStore.
      *
@@ -417,13 +417,13 @@ private:
                                   const QMap<int, Digikam::State>& stateStore);
 
     /**
-     * Restore the state for this index.
+     * @brief Restore the state for this index.
      */
     void restoreState(const QModelIndex& index,
                       const QMap<int, Digikam::State>& stateStore);
 
     /**
-     * Creates the context menu.
+     * @brief Creates the context menu.
      *
      * @param event the event that requested the menu
      */
@@ -432,7 +432,7 @@ private:
 private Q_SLOTS:
 
     /**
-     * Adapts the columns in between the given model indices to the content
+     * @brief Adapts the columns in between the given model indices to the content
      * size. This can be connected to dataChanged.
      *
      * @param topLeft top left index of changed data
@@ -441,7 +441,7 @@ private Q_SLOTS:
     void adaptColumnsOnDataChange(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 
     /**
-     * Adapt the column sizes to new contents. This can be connected to all
+     * @brief Adapt the column sizes to new contents. This can be connected to all
      * signals indicating row changes.
      *
      * @param parent the parent index of changed rows
@@ -451,18 +451,18 @@ private Q_SLOTS:
     void adaptColumnsOnRowChange(const QModelIndex& parent, int start, int end);
 
     /**
-     * Adapts the column sizes if the layout changes.
+     * @brief Adapts the column sizes if the layout changes.
      */
     void adaptColumnsOnLayoutChange();
 
     /**
-     * This slot is used to ensure that after searching for entries the correct
+     * @brief This slot is used to ensure that after searching for entries the correct
      * album is selected again. Therefore it tracks new selections.
      */
     void currentAlbumChangedForBackupSelection(Album* currentAlbum);
 
     /**
-     * This slots is used to fix bug 400960.
+     * @note This slots is used to fix bug 400960.
      */
     void slotScrollBarValueChanged(int value);
     void slotScrollBarActionTriggered(int action);

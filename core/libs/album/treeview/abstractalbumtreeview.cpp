@@ -22,10 +22,10 @@ namespace Digikam
 {
 
 AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
-    : QTreeView             (parent),
-      StateSavingObject     (this),
-      m_flags               (flags),
-      d                     (new Private)
+    : QTreeView        (parent),
+      StateSavingObject(this),
+      m_flags          (flags),
+      d                (new Private)
 {
     if (flags & CreateDefaultDelegate)
     {
@@ -52,7 +52,7 @@ AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
 
     if (flags & CreateDefaultFilterModel)
     {
-        setAlbumFilterModel(new AlbumFilterModel(this));
+        this->setAlbumFilterModel(new AlbumFilterModel(this));
     }
 
     setSortingEnabled(true);
@@ -129,12 +129,14 @@ void AbstractAlbumTreeView::setAlbumFilterModel(AlbumFilterModel* const filterMo
         connect(m_albumFilterModel, SIGNAL(searchTextSettingsChanged(bool,bool)),
                 this, SLOT(slotSearchTextSettingsChanged(bool,bool)));
 
-        // NOTE: When only single selection was available, everything was
-        //       implemented using currentAlbum() which was equal with selectedAlbum()
-        //       after enabling multiple selection they are no longer the same
-        //       and some options must use selected others only currentAlbum
-        //       Now AlbumManager implementation is a little bit of mess
-        //       because selected are now currentAlbums()...
+        /**
+         * @note When only single selection was available, everything was
+         *       implemented using currentAlbum() which was equal with selectedAlbum()
+         *       after enabling multiple selection they are no longer the same
+         *       and some options must use selected others only currentAlbum
+         *       Now AlbumManager implementation is a little bit of mess
+         *       because selected are now currentAlbums().
+         */
 
         connect(selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
                 this, SLOT(slotCurrentChanged()));
@@ -533,8 +535,8 @@ void AbstractAlbumTreeView::startDrag(Qt::DropActions supportedActions)
 }
 
 /**
- *TODO: Move to delegate, when we have one.
- *      Copy code from image delegate for creating icons when dragging multiple items
+ * @todo Move to delegate, when we have one.
+ *       Copy code from image delegate for creating icons when dragging multiple items
  */
 QPixmap AbstractAlbumTreeView::pixmapForDrag(const QStyleOptionViewItem&, QList<QModelIndex> indexes)
 {

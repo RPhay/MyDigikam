@@ -71,7 +71,7 @@ static QList<A*> selectedAlbums(const QItemSelectionModel* const selModel,
 
 // -------------------------------------------------------------------------------
 
-struct State
+struct Q_DECL_HIDDEN State
 {
     State() = default;
 
