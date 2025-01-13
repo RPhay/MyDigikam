@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -4789,7 +4789,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Balanceamento de Cores"
@@ -7846,7 +7846,7 @@ msgid "Curves Adjust..."
 msgstr "Ajuste de Curvas..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7886,7 +7886,7 @@ msgid "Minimal input intensity."
 msgstr "Intensidade mínima de entrada."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Valor de entrada de gama."
@@ -7992,7 +7992,7 @@ msgstr ""
 "automaticamente."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -8281,27 +8281,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Esta imagem já usa uma profundidade de 16 bits / cor / pixel."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Negativo de Filme a Cores"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Intervalo de entrada do canal de cor vermelho."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Intervalo de entrada do canal de cor verde."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Intervalo de entrada do canal de cor azul."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8310,12 +8310,12 @@ msgstr ""
 "Assinale para aplicar o balanceamento de cores incorporado do perfil de "
 "filme. Desligue se deseja aplicar vocês mesmo o balanceamento de cores."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "Extractor de cor do ponto branco"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8328,22 +8328,22 @@ msgstr ""
 "escuro da imagem positiva, após a inversão. É também o ponto de referência "
 "para aplicar o perfil do filme."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "Repor o ponto branco."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "Se carregar neste botão, o ponto branco é reposto com o branco puro."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Ajusta o ponto branco automaticamente."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8354,12 +8354,12 @@ msgstr ""
 "dos dados da imagem. Esta função necessita de alguma máscara laranja "
 "residual em torno da área exposta do negativo."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "Correcção da exposição."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8370,7 +8370,7 @@ msgstr ""
 "sem saturar nenhum canal de cor. Use o histograma de saída para avaliar cada "
 "um dos canais."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8379,7 +8379,7 @@ msgstr ""
 "A análise linear de negativos de filme necessita da aplicação de uma curva "
 "de 'gama'. Os valores normais são 1,8 ou 2,2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10712,12 +10712,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Ajuste de Perspectiva..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Ferramenta de Ajuste de Perspectiva"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Ajuste de Perspectiva"
@@ -29353,8 +29353,8 @@ msgid "Scanning collection"
 msgstr "A analisar a colecção"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -32255,7 +32255,7 @@ msgstr "Efeito de Distorção"
 msgid "Emboss Effect"
 msgstr "Efeito de Elevação"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Efeito de Grão de Filme"
@@ -39842,53 +39842,53 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diversos"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
 msgstr "Ajuste Automático"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scan for objects in album: %1"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
 #, fuzzy, kde-format
 #| msgid "Scan for faces in %1 albums"
 msgid "Scan for objects in %1 albums"
 msgstr "Procurar por caras nos %1 álbuns"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for objects: %1\n"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for objects: %1\n"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for objects: %1\n"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -40000,6 +40000,7 @@ msgid "ResNet-152"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62105,23 +62106,6 @@ msgstr ""
 msgid "ResNet152"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -62459,14 +62443,12 @@ msgid "Face processed: %1"
 msgstr "Imagens encontradas em %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Procurar por caras no álbum: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -62474,7 +62456,6 @@ msgid "No face"
 msgstr "Sem cara"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -62501,6 +62482,19 @@ msgstr "Imagens encontradas em %1"
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Imagens encontradas em %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "Imagens encontradas em %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

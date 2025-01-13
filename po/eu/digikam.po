@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
-"PO-Revision-Date: 2025-01-11 22:16+0100\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"PO-Revision-Date: 2025-01-12 15:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1177,7 +1177,7 @@ msgstr "Flasha:"
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
-msgstr "Zuri-balantzea:"
+msgstr "Zuri-oreka:"
 
 #: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
@@ -4237,7 +4237,7 @@ msgstr "Flasha"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
-msgstr "Zuri-balantzea"
+msgstr "Zuri-oreka"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:234
 #, kde-format
@@ -4656,7 +4656,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Kolore-oreka"
@@ -7514,7 +7514,7 @@ msgid "Curves Adjust..."
 msgstr "Kurbak doitzea..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7552,7 +7552,7 @@ msgid "Minimal input intensity."
 msgstr "Sarrerako gutxieneko intentsitatea."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gamma-ren sarreraren balioa."
@@ -7657,7 +7657,7 @@ msgstr ""
 "dira."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -7936,39 +7936,39 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Irudi honek dagoeneko 16 biteko sakonera / kolorea / pixela darabil."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, fuzzy, kde-format
 msgid "White point color picker"
 msgstr "Tenperaturaren tonuaren kolore hartzailea."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -7977,24 +7977,24 @@ msgid ""
 "point for applying the film profile."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, fuzzy, kde-format
 msgid "Reset white point."
 msgstr "Berrezarri edukia"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, fuzzy, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr ""
 "Botoi hau sakatzen baduzu, denbora-lerroko uneko dataren hautapena garbitu "
 "egingo da."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, fuzzy, kde-format
 msgid "Adjust white point automatically."
 msgstr "Doitu maila guztiak automatikoki."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8002,12 +8002,12 @@ msgid ""
 "around the exposed area of the negative."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, fuzzy, kde-format
 msgid "Exposure correction."
 msgstr "Esposizioaren denbora"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8015,14 +8015,14 @@ msgid ""
 "each channel."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
 "Standard values are 1.8 or 2.2."
 msgstr ""
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -8151,32 +8151,29 @@ msgid "This image is not color managed."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:154
-#, fuzzy, kde-format
-#| msgid "Color Management is disabled..."
+#, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
-msgstr "Kolore-kudeaketa desgaituta dago..."
+msgstr "Kolore-kudeaketa ezgaituta dago..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
 #: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "White Balance"
-msgstr "Zuri-balantzea"
+msgstr "Zuri-oreka"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
-msgstr ""
-"Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
+msgstr "Irudi-editore tresna honek irudiaren zuri-oreka doi dezake."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "White Balance..."
+#, kde-format
 msgctxt "@action"
 msgid "White Balance..."
-msgstr "Zuri-balantzea..."
+msgstr "Zuri-oreka..."
 
 #: core/dplugins/editor/decorate/border/bordertool.cpp:60
 #: core/dplugins/editor/decorate/border/bordertool.cpp:156
@@ -10360,12 +10357,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Perspektibaren doiketa..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, fuzzy, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Perspektibaren doiketa"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Perspektibaren doiketa"
@@ -13611,7 +13608,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
 #, kde-format
 msgid "White balance:"
-msgstr "Zuri-balantzea:"
+msgstr "Zuri-oreka:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, kde-format
@@ -13626,17 +13623,13 @@ msgid "Manual"
 msgstr "Eskuz"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:188
-#, fuzzy, kde-format
-#| msgid ""
-#| "Select here the white balance mode set by the camera when the picture was "
-#| "taken."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Select here the white balance mode set by the camera when the picture was "
 "taken."
 msgstr ""
-"Sélectionnez ici le mode de balance des blancs utilisé par l'appareil lors "
-"de la prise de vue."
+"Kamerak argazkia hartzerakoan ezarria zuen zuri-oreka modua hemen aukeratu."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:71
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:69
@@ -16506,18 +16499,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
-#, fuzzy, kde-format
-#| msgid "Color Space Conversion"
+#, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
-msgstr "Kolore-espazioaren bihurketa"
+msgstr "DNG bihurtzailea..."
 
 #: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot identify Raw image"
-msgstr ""
-"Ezin da Raw irudia deskodetu honentzako:\n"
-"\"%1\""
+msgstr "Ezin du Raw irudia identifikatu"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
 #, kde-format
@@ -16526,75 +16516,70 @@ msgid "Include for Enfuse"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "Fitxategi-izena"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
-#, fuzzy, kde-format
-#| msgid "Exposure (E.V):"
+#, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
-msgstr "Esposizioa (E.V):"
+msgstr "Esposizioa (E.V)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Hardmask: enabled"
-msgstr "Eredua"
+msgstr "Maskara zurruna: gaituta"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Hardmask: disabled"
-msgstr "Eredua"
+msgstr "Maskara zurruna: ezgaituta"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "CIECAM02: enabled"
-msgstr "Eredua"
+msgstr "CIECAM02: gaituta"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "CIECAM02: disabled"
-msgstr "Eredua"
+msgstr "CIECAM02: ezgaituta"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Levels: auto"
-msgstr "Mailak doitzea..."
+msgstr "Mailak: automatikoa"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Levels: <numid>%1</numid>"
-msgstr "Mailak"
+msgstr "Mailak: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:50
-#, fuzzy, kde-format
-#| msgid "Exposure: "
+#, kde-format
 msgctxt "@info"
 msgid "Exposure: <numid>%1</numid>"
-msgstr "Esposizioa: "
+msgstr "Esposizioa: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:52
-#, fuzzy, kde-format
-#| msgid "Saturation:"
+#, kde-format
 msgctxt "@info"
 msgid "Saturation: <numid>%1</numid>"
-msgstr "Saturazioa:"
+msgstr "Asetasuna: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:54
-#, fuzzy, kde-format
-#| msgid "Contrast:"
+#, kde-format
 msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
-msgstr "Kontrastea:"
+msgstr "Kontrastea: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:109
 #, kde-format
@@ -16623,7 +16608,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
-msgstr ""
+msgstr "Irudi-ezaugarrien oreka:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
 #, kde-format
@@ -16644,11 +16629,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:128
-#, fuzzy, kde-format
-#| msgid "Unsharp Mask"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hard Mask"
-msgstr "Desenfokatze-maskara"
+msgstr "Maskara zurruna"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:130
 #, kde-format
@@ -16689,7 +16673,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
-msgstr ""
+msgstr "Asetasun handiko kontribuzioa:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:153
 #, kde-format
@@ -16709,7 +16693,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
-msgstr ""
+msgstr "Kontraste handiko kontribuzioa:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:164
 #, kde-format
@@ -16730,7 +16714,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
-msgstr ""
+msgstr "Kolorearen itxura eredu erabili (CIECAM02)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:172
 #, kde-format
@@ -16758,28 +16742,25 @@ msgid "Include during Saving"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:170
-#, fuzzy, kde-format
-#| msgid "Output device"
+#, kde-format
 msgctxt "@title:column Output file name"
 msgid "Output"
-msgstr "Irteerako gailua"
+msgstr "Irteera"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:171
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:column Source file names"
 msgid "Selected Inputs"
-msgstr "Hautatu elementua"
+msgstr "Hautatu sarrerak"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:197
-#, fuzzy, kde-format
-#| msgid "Remove item"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Remove item"
 msgstr "Kendu elementua"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:206
-#, fuzzy, kde-format
-#| msgid "Clear all"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Clear all"
 msgstr "Garbitu dena"
@@ -16792,23 +16773,22 @@ msgid "Exposure Blending"
 msgstr "Esposizioaren denbora"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Gorde"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
-msgstr "Ireki hautatutako elementua irudien editorean."
+msgstr "Hautatutako elementuak prozesatu eta gorde."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:128
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
-msgstr "&Aurrebista"
+msgstr "&Aurreikuspegia"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
 #, fuzzy, kde-format
@@ -16819,26 +16799,24 @@ msgstr "Batu urkilatutako irudiak..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "&Lehenetsia"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Reset current tool settings to default values."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
-msgstr "Berrezarri uneko tresnaren ezarpenak balio lehenetsietara."
+msgstr "Uneko ezarpenak lehenetsitako balioetara lehengoratu."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Details..."
-msgstr "Familia"
+msgstr "Xehetasunak..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:160
 #, fuzzy, kde-format
@@ -16848,16 +16826,16 @@ msgid "Enfuse Settings"
 msgstr "Configuration de l'objectif"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:172
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Save Result"
-msgstr "Gorde &honela..."
+msgstr "Gorde emaitza"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: textbox"
 msgid "File Name Template: "
-msgstr "Irudi berriaren fitxategi-izena"
+msgstr "Fitxategi-izen txantiloia: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
 #, fuzzy, kde-format
@@ -16867,11 +16845,10 @@ msgid "Enfuse Processing Messages"
 msgstr "Aurreko irudi bakunak"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
-msgstr "Huts egin du fitxategia gordetzean: %1"
+msgstr "Fitxategia %1(e)n gordetzea huts egin du."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, fuzzy, kde-format
@@ -16888,12 +16865,10 @@ msgid "Processing output of bracketed images..."
 msgstr "Batu urkilatutako irudiak..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:570
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
-msgstr ""
-"Huts egin du irudi hau kargatzean\n"
-"\"%1\""
+msgstr "Prozesatutako irudia zamatzea huts egin du."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:580
 #, fuzzy, kde-format
@@ -16936,8 +16911,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
-#, fuzzy, kde-format
-#| msgid "Auto-Correction..."
+#, kde-format
 msgid "Author and Maintainer"
 msgstr "Egilea eta mantentzailea"
 
@@ -16949,8 +16923,7 @@ msgid "Blend Stacked Images..."
 msgstr "Sortu eskema..."
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
-#, fuzzy, kde-format
-#| msgid "unknown"
+#, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "ezezaguna"
@@ -16962,6 +16935,9 @@ msgid ""
 "\n"
 " %2"
 msgstr ""
+"Ezin du %1 exekutatu:\n"
+"\n"
+" %2"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
 #, fuzzy, kde-format
@@ -17013,15 +16989,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
-msgstr ""
+msgstr "Informazio gehiago nahi izanez gero, begiratu hemen"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
-#, fuzzy, kde-format
-#| msgid "Next Image"
+#, kde-format
 msgctxt "@info"
 msgid "this page"
-msgstr "Hurrengo irudia"
+msgstr "orri hau"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, fuzzy, kde-format
@@ -17056,27 +17031,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
-msgstr ""
+msgstr "Ez nahastu irudi sakonera ezberdineko irudirik."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
-msgstr ""
+msgstr "Irudi guztiek dimentsio berdinak izan behar dituzte."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
-#, fuzzy, kde-format
-#| msgid "Exposure (E.V):"
+#, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
-msgstr "Esposizioa (E.V):"
+msgstr "Esposizioa (EV)"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
-#, fuzzy, kde-format
-#| msgid "Preview single images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
-msgstr "Aurreko irudi bakunak"
+msgstr "Aurre-prozesatzea osatu da"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
 #, fuzzy, kde-format
@@ -17144,15 +17117,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
-msgstr ""
+msgstr "Sakatu \"Hurrengoa\" botoia aurre-prozesatzea hasteko."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
-msgstr "Gailuaren detekzioa lanean diardu. Itxaron..."
+msgstr "Aurre-prozesatzea aurrera doa, itxoin mesedez."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
@@ -17160,14 +17132,14 @@ msgstr "Gailuaren detekzioa lanean diardu. Itxaron..."
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
-msgstr ""
+msgstr "Honek denboratxo bat har dezake..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
-msgstr "Filma-fitxategiak"
+msgstr "Aurre-prozesatzea huts egin du."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
 #, fuzzy, kde-format
@@ -17179,11 +17151,10 @@ msgstr "Batu urkilatutako irudiak..."
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
-#, fuzzy, kde-format
-#| msgid "Preview single images"
+#, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
-msgstr "Aurreko irudi bakunak"
+msgstr "Begiratu beheko prozesatze mezuak."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
 #, fuzzy, kde-format
@@ -17193,10 +17164,9 @@ msgstr "Oinarrizko tresnak"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Huts egin du fitxategia gordetzean: %1"
+msgstr "Ezin izan du irudia '%1' fitxategira kopiatu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, fuzzy, kde-format
@@ -17211,67 +17181,64 @@ msgid "unavailable"
 msgstr "ez dago eskuragarri"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
-msgstr "Ezin izan da '%1' sortu"
+msgstr "'%1'(e)n ezin izan du gaia aurkitu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Create directories"
-msgstr "Esleitu etiketa hau"
+msgstr "Sortu direktorioak"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
-msgstr "Ezin izan da '%1' karpeta sortu"
+msgstr "Ezin izan du '%1' karpeta sortu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
-#, fuzzy, kde-format
-#| msgid "Loading themes"
+#, kde-format
 msgctxt "@info"
 msgid "Copying theme"
-msgstr "Gaiak kargatzen"
+msgstr "Gaia kopiatzen"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
-msgstr "Ezin izan da '%1' sortu"
+msgstr "Ezin izan du gaia kopiatu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
-msgstr "%1 fitxategiaren EXIF biraketa..."
+msgstr "Irudiak eta XML fitxategiak sortu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
-#, fuzzy, kde-format
-#| msgid "Could not start database server."
+#, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
-msgstr "Ezin izan da datu-basearen zerbitzaria abiarazi."
+msgstr "Ezin izan du gallery.xml sortu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
-#, fuzzy, kde-format
-#| msgid "Deleting file %1..."
+#, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
-msgstr "%1 fitxategia ezabatzen..."
+msgstr "%1(e)rako fitxategiak sortzen"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
-msgstr "%1 fitxategiaren EXIF biraketa..."
+msgstr "HTML fitxategiak sortzen"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
-msgstr "Ezin izan da «%1» XSL fitxategia zamatu"
+msgstr "Ezin izan du '%1' XSL fitxategia zamatu"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
 #, kde-format
@@ -17491,7 +17458,7 @@ msgstr "Barneko errorea"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:112
 #, kde-format
 msgid "Starting to generate gallery..."
-msgstr ""
+msgstr "Galeria sortzen hasten..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
@@ -17515,25 +17482,22 @@ msgstr "Irteerako direktorioa: %1"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
-msgstr ""
+msgstr "Galeria osatuta dago, baina abisu batzuk izan dira."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:161
-#, fuzzy, kde-format
-#| msgid "Batch queue is completed..."
+#, kde-format
 msgid "Gallery completed."
-msgstr "Batch-aren ilara osatuta..."
+msgstr "Galeri osatu da."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:173
-#, fuzzy, kde-format
-#| msgid "Open in Terminal"
+#, kde-format
 msgid "Opening gallery with default desktop browser..."
-msgstr "Ireki terminalean"
+msgstr "Galeria mahaigaineko arakatzaile lehenetsiarekin irekitzen..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:182
-#, fuzzy, kde-format
-#| msgid "Open in Terminal"
+#, kde-format
 msgid "Opening gallery with internal browser..."
-msgstr "Ireki terminalean"
+msgstr "Galeria barneko arakatzailearekin irekitzen..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, kde-format
@@ -17654,7 +17618,7 @@ msgstr "Barnekoa"
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
-msgstr ""
+msgstr "Mahaigaineko lehenetsia"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:64
 #, kde-format
@@ -17662,6 +17626,8 @@ msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
 "different parameters are available."
 msgstr ""
+"Orri honetan gaiaren parametro batzuk alda ditzakezu. Gaiaren arabera "
+"parametro ezberdinak alda daitezke."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:140
 #, kde-format
@@ -18233,26 +18199,26 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Effect"
-msgstr "Efektuak"
+msgstr "Efektua"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
 #, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
-msgstr ""
+msgstr "OSD"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
 #, kde-format
 msgid "MJPEG Stream Server"
-msgstr ""
+msgstr "MJPEG korronte zerbitzaria"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgid "A tool to export items as MJPEG Stream"
-msgstr "Puntuazioak inportatuta"
+msgstr "Elementuak MJPEG korronte gisa esportatzeko tresna bat"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
 #, kde-format
@@ -18292,13 +18258,13 @@ msgstr "Garatzailea"
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
-msgstr ""
+msgstr "Partekatu MJPEG korronte gisa..."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
-msgstr ""
+msgstr "Orientazioa eta gidoi antzematea (OSD) bakarrik."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
 #, kde-format
@@ -18337,32 +18303,28 @@ msgid "Assume a single uniform block of text."
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
-msgstr "Ezarri lauzako ertz bakoitzaren tamaina."
+msgstr "Orria testu lerro bakar gisa tratatu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:62
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
-msgstr "Ezarri lauzako ertz bakoitzaren tamaina."
+msgstr "Irudia hitz bakar gisa tratatu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
-msgstr "Ezarri lauzako ertz bakoitzaren tamaina."
+msgstr "Irudia zirkulu bateko hitz bakar gisa tratatu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:68
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr "Ezarri lauzako ertz bakoitzaren tamaina."
+msgstr "Irudia karaktere bakar gisa tratatu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
@@ -18385,28 +18347,28 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
-msgstr "Amaierako etiketak soilik"
+msgstr "Ondare motorra bakarrik."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
-msgstr "Amaierako etiketak soilik"
+msgstr "LSTM sare neural motorra bakarrik."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
-msgstr "Amaierako etiketak soilik"
+msgstr "Ondarea + LSTM motorrak."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
-msgstr ""
+msgstr "Lehenetsia, erabilgarri dagoen horretan oinarritua."
 
 #: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:44
 #, kde-format
@@ -18418,19 +18380,16 @@ msgstr ""
 "motor bat da."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
-#, fuzzy, kde-format
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
-msgstr "Bihurtu"
+msgstr "OCR testu bihurketa"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "Start index for custom range"
-#| msgid "Start:"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
-msgstr "Hasiera:"
+msgstr "&Hasi OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
 #, kde-format
@@ -18460,9 +18419,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Gorde"
@@ -18475,43 +18432,40 @@ msgid "Text Review"
 msgstr "Testu iragazkia"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "%1 prozesatzen"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:437
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Process failed"
-msgstr "Filma-fitxategiak"
+msgstr "Prozesuak huts egin du"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:443
-#, fuzzy, kde-format
-#| msgid "Process Cancelled..."
+#, kde-format
 msgctxt "@info"
 msgid "Process canceled"
-msgstr "Prozesua bertan behera utzita..."
+msgstr "Prozesua bertan behera utzi da"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:451
-#, fuzzy, kde-format
-#| msgid "Internal Server"
+#, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Barneko errorea"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:502
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Arrakasta"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:566
-#, fuzzy, kde-format
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
-msgstr "Bihurtu"
+msgstr "Testu bihurtzailea"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:567
 #, kde-format
@@ -18520,84 +18474,79 @@ msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
 msgstr ""
+"Zerrendak ez dauka prozesatu beharreko fitxategi digitalik. Haiek hautatu "
+"behar dituzu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:578
-#, fuzzy, kde-format
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title"
 msgid "Text Converter"
-msgstr "Bihurtu"
+msgstr "Testu bihurtzailea"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action"
 msgid "&Abort"
-msgstr "&Abortatu"
+msgstr "&Galarazi"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:652
-#, fuzzy, kde-format
-#| msgid "Database conversion canceled."
+#, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
-msgstr "Datu-basearen bihurketa bertan behera utzi da."
+msgstr "Raw fitxategien OCR prozesatzea galarazi."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:657
-#, fuzzy, kde-format
-#| msgctxt "Start index for custom range"
-#| msgid "Start:"
+#, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
-msgstr "Hasiera:"
+msgstr "&Hasi OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:658
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:697
-#, fuzzy, kde-format
-#| msgid "Generate a Raw image preview using current settings."
+#, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
-msgstr "Sortu irudi gordinaren aurrebista uneko ezarpenak erabiliz."
+msgstr "Hasi OCR uneko ezarpenak erabiliz."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:701
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This library is not present on your system."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Tesseract program or language modules\n"
 "are not installed on your system."
-msgstr "Liburutegi hori ez dago zure sisteman."
+msgstr ""
+"Tesseract programa edo hizkuntza moduluak\n"
+"ez daude zure sisteman instalatuta."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:734
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Process All Items"
-msgstr "Kendu prozesatutako elementuak"
+msgstr "Elementu guztiak prozesatu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:736
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
-msgstr "Kendu prozesatutako elementuak"
+msgstr "Hautatutako elementuak prozesatu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
-#, fuzzy, kde-format
-#| msgid "Keywords"
+#, kde-format
 msgid "Words"
-msgstr "Mots clés"
+msgstr "Hitzak"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
-#, fuzzy, kde-format
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
-msgstr "Bihurtu"
+msgstr "OCR testu bihurtzailea"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
-msgstr "Irudiak PNG formatura bihurtzeko tresna."
+msgstr ""
+"OCR erabiliz dokumentatutako irudiak testu sortaka bihurtzeko tresna bat"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
@@ -18614,18 +18563,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "Color Space Conversion"
+#, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
-msgstr "Kolore-espazioaren bihurketa"
+msgstr "OCR testu bihurtzailea..."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label"
 msgid "Languages:"
-msgstr "Langue :"
+msgstr "Hizkuntzak:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
 #, kde-format
@@ -18642,77 +18589,70 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
-#, fuzzy, kde-format
-#| msgid "Destination:"
+#, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
-msgstr "Destination :"
+msgstr "Segmentazio-modua:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
-msgstr ""
+msgstr "Zehaztu orrialdea segmentatzeko modua."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
+#, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
-msgstr "Motorra"
+msgstr "Motorraren modua:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
-msgstr "Amaierako etiketak soilik"
+msgstr "OCR motorraren modua zehaztu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
-msgstr "Bereizmena:"
+msgstr "Bereizmen DPI:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
-msgstr ""
+msgstr "Sarrerako irudiaren DPI zehaztu."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr ""
+msgstr "Emaitza hemen biltegiratu: "
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgctxt "@option:check"
 msgid "Text file"
-msgstr "Testu iragazkia"
+msgstr "Testu-fitxategia"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
-#, fuzzy, kde-format
-#| msgid "Sync XMP creation date"
+#, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
-msgstr "Synchronisation de la date de création XMP"
+msgstr "OCR emaitza testu-fitxategi bereizian biltegiratu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "Metadatuak"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
-#, fuzzy, kde-format
-#| msgid "Sync XMP creation date"
+#, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
-msgstr "Synchronisation de la date de création XMP"
+msgstr "OCR emaitza XMP metadatuetan biltegiratu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
@@ -18721,17 +18661,13 @@ msgid "Use Multi-cores"
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you enable this option, the preview area will not be separated."
+#, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
-msgstr "<p>Hau gaitzen bada, aurrebistako area ez da bereiztuko."
+msgstr "Aukera hau gaitzen bada, fitxategiak paraleloan prozesatuko dira"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "default theme name"
-#| msgid "Default"
+#, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "Lehenetsia"
@@ -18740,26 +18676,23 @@ msgstr "Lehenetsia"
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr ""
+msgstr "Orientazioa eta gidoi antzematea"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
-msgstr "Nabigatu %1(e)ra"
+msgstr "Itzuli %1 erabiliz:"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgid "Create Panorama"
-msgstr "Sortu eskema..."
+msgstr "Sortu panorama"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:62
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgid "A tool to create panorama"
-msgstr "Sortu eskema..."
+msgstr "Panorama sortzeko tresna bat"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
 #, kde-format
@@ -18773,89 +18706,93 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
-msgstr "Sortu eskema..."
+msgstr "Sortu panorama..."
 
 #: core/dplugins/generic/tools/panorama/tasks/commandtask.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Canceled</b>"
-msgstr "Deskargatu"
+msgstr "<b>Utzi</b>"
 
 #: core/dplugins/generic/tools/panorama/tasks/commandtask.cpp:112
 #, kde-format
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
-msgstr ""
+msgstr "<b>Ezin du <i>%1</i> exekutatu:</b><p>%2</p>"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
-#, fuzzy, kde-format
-#| msgid "File does not exist"
+#, kde-format
 msgid "Temporary panorama file does not exists."
-msgstr "Fitxategia ez da existitzen"
+msgstr "Aldi baterako panorama fitxategia ez da existitzen."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
-#, fuzzy, kde-format
-#| msgid "Failed to download file \"%1\"."
+#, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
-msgstr "Huts egin du \"%1\" fitxategia deskargatzean."
+msgstr ""
+"<filename>%1</filename> izeneko panorama fitxategi bat dagoeneko existitzen "
+"da."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
-#, fuzzy, kde-format
-#| msgid "File does not exist"
+#, kde-format
 msgid "Temporary project file does not exist."
-msgstr "Fitxategia ez da existitzen"
+msgstr "Aldi baterako proiektu-fitxategia ez da existitzen."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
-#, fuzzy, kde-format
-#| msgid "Failed to upload file \"%1\"."
+#, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
-msgstr "Huts egin du \"%1\" fitxategia igotzean."
+msgstr ""
+"<filename>%1</filename> izeneko proiektu-fitxategi bat dagoeneko existitzen "
+"da."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
 msgstr ""
+"Ezin du panorama <filename>%1</filename>(e)tik <filename>%2</filename>(e)ra "
+"mugitu."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
 "filename>."
-msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
+msgstr ""
+"Ezin du proiektu-fitxategia <filename>%1</filename>(e)tik <filename>%2</"
+"filename>(e)ra mugitu."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
 "%2</filename>."
-msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
+msgstr ""
+"Ezin du bihurtutako irudia <filename>%1</filename>(e)tik <filename>%2</"
+"filename>(e)ra kopiatu."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:48
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
-msgstr ""
+msgstr "PTO fitxategia dagoeneko sortu da aldi baterako direktorioan."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
-msgstr ""
+msgstr "PTO fitxategia ezin da sortu aldi baterako direktorioan."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
-#, fuzzy, kde-format
-#| msgid "Connection failed."
+#, kde-format
 msgid "Project file parsing failed."
-msgstr "Konexioak huts egin du."
+msgstr "Proiektu-fitxategia prozesatzea huts egin du."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
-#, fuzzy, kde-format
-#| msgid "Failed to upload file \"%1\"."
+#, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
-msgstr "Huts egin du \"%1\" fitxategia igotzean."
+msgstr ""
+"Proiektu-fitxategian sarrerako fitxategi ezezaguna: <filename>%1</filename>"
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:172
 #, kde-format
@@ -18863,23 +18800,20 @@ msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:200
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Tiff image creation failed."
-msgstr "Erakutsi irudiaren sorrera-data"
+msgstr "Tiff irudi sorrerak huts egin du."
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
-#, fuzzy, kde-format
-#| msgid "Database conversion canceled."
+#, kde-format
 msgid "Raw file conversion failed."
-msgstr "Datu-basearen bihurketa bertan behera utzi da."
+msgstr "Raw fitxategi bihurketak huts egin du."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
-#, fuzzy, kde-format
-#| msgid "Welcome to digiKam %1"
+#, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
-msgstr "Ongi etorri digiKam %1 bertsiora"
+msgstr "Ongi etorri Panorama tresnara"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, fuzzy, kde-format
@@ -29238,8 +29172,8 @@ msgid "Scanning collection"
 msgstr "Bilduma aztertzen"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -32273,7 +32207,7 @@ msgstr "Distortsioaren efektuak"
 msgid "Emboss Effect"
 msgstr "Irudia zakarrontzira"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, fuzzy, kde-format
 msgid "Film Grain Effect"
 msgstr "Filma pikortsua"
@@ -33960,9 +33894,9 @@ msgstr ""
 "inguruko marko beltzak kentzeko."
 
 #: core/libs/dimg/filters/wb/wbfilter.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgid "White Balance Tool"
-msgstr "Zuri-balantzea"
+msgstr "Zuri-oreka"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:148
 #, fuzzy, kde-format
@@ -33979,11 +33913,10 @@ msgid "Adjustment:"
 msgstr "Doitzea:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set here the white balance color temperature in Kelvin."
+#, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
-msgstr "Ezarri zuri-balantzearen kolorearen tenperatura Kelvin unitatean."
+msgstr "Zuri-orekaren kolore tenperatura Kelvin-etan hemen ezarri."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:158
 #, fuzzy, kde-format
@@ -34089,15 +34022,13 @@ msgid "None"
 msgstr "Bat ere ez"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:176
-#, fuzzy, kde-format
-#| msgid "Select the white balance color temperature preset to use."
+#, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
-msgstr "Hautatu zuri-balantzearen kolorearen tenperaturaren aurre-ezarpena."
+msgstr "Erabili beharreko zuri-orekaren tenperatura aurrezarpena ezarri."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:177
-#, fuzzy, kde-format
-#| msgid "candle light"
+#, kde-format
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr "kandelaren argia"
@@ -38337,11 +38268,10 @@ msgstr "Flash-a: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
-#, fuzzy, kde-format
-#| msgid "White balance: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
-msgstr "Zuri-balantzea: "
+msgstr "Zuri-oreka: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:236
 #, fuzzy, kde-format
@@ -39195,7 +39125,7 @@ msgstr "Automatikoa"
 #, kde-format
 msgctxt "@item:inlistbox set white balance manually"
 msgid "Manual"
-msgstr "Eskuzkoa"
+msgstr "Eskuz"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:339
 #, kde-kuit-format
@@ -39432,7 +39362,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "White Balance"
-msgstr "Zuri-balantzea"
+msgstr "Zuri-oreka"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:504
 #, kde-format
@@ -39918,53 +39848,53 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Hainbat"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
 msgstr "Doitze automatikoa"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scan for objects in album: %1"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
 #, fuzzy, kde-format
 #| msgid "Scan for faces in %1 albums"
 msgid "Scan for objects in %1 albums"
 msgstr "Miatu %1 albumetan aurpegi bila"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for objects: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for objects: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for objects: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"
@@ -40085,6 +40015,7 @@ msgid "ResNet-152"
 msgstr "ResNet50"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51927,7 +51858,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
-msgstr "Erakutsi kameraren zuri-balantzearen ezarpenak"
+msgstr "Erakutsi kameraren zuri-orekarako ezarpenak"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:207
@@ -51944,127 +51875,110 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
-msgstr ""
+msgstr "Nire gogokoak"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
-msgstr "Fitxategiaren propietateak"
+msgstr "Gogoko karpetaren propietateak"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
-msgstr "Bilatu:"
+msgstr "Hierarkia:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr "Fitxategiaren propietateak"
+msgstr "Gogoko elementuaren propietateak"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
-msgstr "Sortua:"
+msgstr "Sorrera:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
-msgstr "Bilatu:"
+msgstr "Hierarkia:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:266
-#, fuzzy, kde-format
-#| msgid "Items:"
+#, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Elementuak:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
-msgstr "Azalpena:"
+msgstr "Deskribapena:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
-msgstr "Izena:"
+msgstr "Ize&na:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "Sartu etiketaren izen berria..."
+msgstr "Sartu gogoko sarreraren izena hemen..."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
-msgstr ""
+msgstr "Elementu gogokoaren izena, bakarra eta ez hutsa izan behar duena"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:136
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
-msgstr "Bilatu:"
+msgstr "Hierarkia:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr ""
+"Sarrera gogokoaren hierarkia, bakarra eta zuhaitz-ikuspegia izan behar duena"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Mota:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
-msgstr "Eginbide berriak"
+msgstr "Gogoko karpeta"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
-msgstr "Eginbide berriak"
+msgstr "Gogoko elementua"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:150
 #, kde-format
@@ -52076,25 +51990,22 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
-msgstr "Azalpena:"
+msgstr "&Deskribapena:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
-msgstr "Sartu etiketaren izen berria..."
+msgstr "Sartu gogoko elementuaren deskribapena hemen..."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:168
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
-msgstr "Sortua:"
+msgstr "&Sorrera:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:175
 #, kde-format
@@ -52145,43 +52056,37 @@ msgid "Assign favorite item icon to default in tree-view."
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:212
-#, fuzzy, kde-format
-#| msgid "Items:"
+#, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
-msgstr "Elementuak:"
+msgstr "&Elementuak:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "Izena"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Neurria"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Mota"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:229
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Data"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Bide-izena"
@@ -52229,45 +52134,42 @@ msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Izen bereko beste fitxategi edo karpeta bat badago lehendik ere"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:406
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
-msgstr[0] "GPX fitxategia:"
-msgstr[1] "GPX fitxategia:"
+msgstr[0] "fitxategi %1"
+msgstr[1] "%1 fitxategi"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
-msgstr "Eginbide berriak"
+msgstr "Gogoko elementu berria"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
-msgstr "Irudi-fitxategiak"
+msgstr "Editatu gogoko elementua"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
-msgstr "Eginbide berriak"
+msgstr "Gogoko karpeta berria"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
-msgstr "Irudi-fitxategiak"
+msgstr "Editatu gogoko karpeta"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
-#, fuzzy, kde-format
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
-msgstr "Ezin da batez bestekoa kalkulatu"
+msgstr "Ezin izan du batezbestekoa kalkulatu"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
 #, fuzzy, kde-format
@@ -52287,114 +52189,98 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "Gogokoak"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
-msgstr "Gehitu karpeta"
+msgstr "Gehitu gogokoa"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
-msgstr "Gehitu karpeta"
+msgstr "Gehitu azpikarpeta"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
-#, fuzzy, kde-format
-#| msgid "Add a new value to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
-msgstr "Gehitu irudi berriak zerrendara"
+msgstr "Gehitu azpikarpeta berria zerrendara"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Deselect Item"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Item"
-msgstr "Desautatu elementua"
+msgstr "Ezabatu elementua"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
-msgstr "Kendu hautatutako irudiak zerrendatik"
+msgstr "Kendu hautatutako elementua zerrendatik"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
-#, fuzzy, kde-format
-#| msgid "Edit Titles"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Item"
-msgstr "Editatu tituluak"
+msgstr "Editatu elementua"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
-msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
+msgstr "Editatu zerrendako uneko elementua"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
-msgstr "Eskaneatu irudi berriak"
+msgstr "Bilatu gogokoetan..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
-msgstr "Berretsi ezabatzea"
+msgstr "Baieztatu elementua ezabatzea"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete ALL items permanently?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Are you sure you want to remove the item \"%1\"\n"
 "and all nested items if any?"
 msgstr ""
-"<qt>Ziur zaude <b>%1</b> albuma, dituen argazki guztiak barne, ezabatu nahi "
-"dituzula?</qt>"
+"Ziur zaude \"%1\" elementua eta habiaratutako\n"
+"elementu kendu nahi dituzula?"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
-#, fuzzy, kde-format
-#| msgid "Rename"
-#| msgid_plural "Rename (%1 images)"
+#, kde-format
 msgctxt "@title"
 msgid "Unnamed"
-msgstr "Aldatu izena"
+msgstr "Izengabea"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:88
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Izena"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:89
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Neurria"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:90
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Mota"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:91
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Data"
@@ -52414,54 +52300,43 @@ msgid "Icon Size"
 msgstr "Ikonoen handiera:"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:350
-#, fuzzy, kde-format
-#| msgid "Small (1 pixel)"
-#| msgid_plural "Small (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
-msgstr "Txikia (1 pixel)"
+msgstr "Txikia (%1x%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:354
-#, fuzzy, kde-format
-#| msgid "Medium (1 pixel)"
-#| msgid_plural "Medium (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
-msgstr "Ertaina (1 pixel)"
+msgstr "Ertaina (%1x%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:358
-#, fuzzy, kde-format
-#| msgid "Large (1 pixel)"
-#| msgid_plural "Large (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
-msgstr "Oso handia (1 pixel)"
+msgstr "Handia (%1x%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:362
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
-msgstr "Ikaragarria (1 pixel)"
+msgstr "Itzela (%1x%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:401
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
-msgstr "Gehitu «aurpegi» etiketa bat"
+msgstr "Gehitu gogoko gisa"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:415
-#, fuzzy, kde-format
-#| msgid "Clear All"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
-msgstr "Garbitu dena"
+msgstr "Garbitu elementu denak"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:423
-#, fuzzy, kde-format
-#| msgid "Remove items"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Kendu elementuak"
@@ -52470,11 +52345,10 @@ msgstr "Kendu elementuak"
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
-msgstr ""
+msgstr "Pila"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
-#, fuzzy, kde-format
-#| msgid "C&ancel"
+#, kde-format
 msgctxt "@action"
 msgid "C&ancel"
 msgstr "&Utzi"
@@ -52484,7 +52358,7 @@ msgstr "&Utzi"
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
-msgstr "sortuta: %1"
+msgstr "sorrera: %1"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:215
 #, kde-format
@@ -52502,18 +52376,16 @@ msgid "By File Size"
 msgstr "Fitxategi-neurriaren arabera"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:225
-#, fuzzy, kde-format
-#| msgid "Ascending"
+#, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
-msgstr "Goraka"
+msgstr "Gorakorra"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:226
-#, fuzzy, kde-format
-#| msgid "Descending"
+#, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
-msgstr "Beheraka"
+msgstr "Beherakorra"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:253
 #, kde-format
@@ -52544,21 +52416,20 @@ msgstr[0] "Aldatu izena"
 msgstr[1] "Aldatu izenak (%1 irudi)"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:415
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sort Images"
-msgstr "&Ordenatu irudiak"
+msgstr "Sailkatu irudiak"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
-msgstr "Irudien etiketak kentzen. Itxaron..."
+msgstr "<b>Irudiak berrizendatzen. Itxoin mesedez...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
-msgstr "&Abortatu"
+msgstr "&Galarazi"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
@@ -52568,10 +52439,10 @@ msgstr "Prozesatzen..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
-msgstr "Izena aldatzeko aukerak"
+msgstr "Irudiak berrizendatzen"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
 #, kde-format
@@ -52586,23 +52457,21 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
-#, fuzzy, kde-format
-#| msgid "Rename Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
-msgstr "Errorea berrizendatzean"
+msgstr "Berriz berrizendatu"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Gainidatzi"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
-msgstr "Irudien etiketak kentzen. Itxaron..."
+msgstr "<b>Irudiak berrizendatzen. Erroreak: %1</b>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:331
 #, fuzzy, kde-format
@@ -52683,8 +52552,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:50
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Informazioa"
@@ -62964,23 +62832,6 @@ msgstr ""
 msgid "ResNet152"
 msgstr "ResNet50"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -63305,21 +63156,18 @@ msgid "Face processed: %1"
 msgstr "Aurkitutako plugin-ak: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "No face"
 msgstr "Pas de flash"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "1 face"
@@ -63345,6 +63193,19 @@ msgstr "Aurkitutako plugin-ak: %1"
 #| msgid "Plugins found: %1"
 msgid "Face found: %1"
 msgstr "Aurkitutako plugin-ak: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "%1(e)n aurkitutako irudiak"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, fuzzy, kde-format
@@ -64706,7 +64567,7 @@ msgstr "Kolorearen tenperatura zuri-balantzean erabiltzeko"
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format

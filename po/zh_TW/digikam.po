@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -4512,7 +4512,7 @@ msgstr "<para>這個「批次佇列管理器」工具可以用來混合影像的
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "顏色平衡"
@@ -7283,7 +7283,7 @@ msgid "Curves Adjust..."
 msgstr "曲線調整..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7321,7 +7321,7 @@ msgid "Minimal input intensity."
 msgstr "最小輸入強度。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "伽瑪輸入值。"
@@ -7421,7 +7421,7 @@ msgid ""
 msgstr "如果您按下這個按鈕，會自動調整所有色版的色階。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -7691,27 +7691,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "這張影像已經使用 16 位元 / 顏色 / 像素 的深度。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "負片轉換"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "紅色色版的輸入範圍。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "綠色色版的輸入範圍。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "藍色色版的輸入範圍。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -7719,12 +7719,12 @@ msgid ""
 msgstr ""
 "勾選此項目，則會套用此影像設定檔的內建色彩平衡。反之則自行套用色彩平衡。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "白點顏色挑選器"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -7735,22 +7735,22 @@ msgstr ""
 "此按鍵讓您可以從掃描的負片的橘色遮罩中選擇顏色。白點表示轉換後的負像，深黑色"
 "則表示正像。它也是套用影像設定檔的參考點。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "重設白點。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "如果您按下這個按鈕，白點會被重設為純白。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "自動調整白點。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -7760,12 +7760,12 @@ msgstr ""
 "若您按下此按鍵，會自動從影像資料中計算白點。此功能需要在負片的曝光區週圍有剩"
 "餘的橙色藥層(orange mask)。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "曝光修正。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -7775,14 +7775,14 @@ msgstr ""
 "移動滑動器到較高的值，直到在不修正任何色版的狀況下達到最高的亮度。使用輸出的"
 "直方圖來評估每個色版。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
 "Standard values are 1.8 or 2.2."
 msgstr "線性原始掃描影像的負片檔需要使用 Gamma 曲線。標準值為 1.8 或 2.2。"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10012,12 +10012,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "透視調整..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "透視調整工具"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "透視調整"
@@ -28570,8 +28570,8 @@ msgid "Scanning collection"
 msgstr "掃描收藏中"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -31393,7 +31393,7 @@ msgstr "扭曲效果"
 msgid "Emboss Effect"
 msgstr "浮雕效果"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "膠片顆粒效果"
@@ -38787,52 +38787,52 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "自動標籤指派"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scan for objects in album: %1"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
 #, fuzzy, kde-format
 #| msgid "Scan for faces in %1 albums"
 msgid "Scan for objects in %1 albums"
 msgstr "在 %1 本相簿裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
@@ -38944,6 +38944,7 @@ msgid "ResNet-152"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60551,23 +60552,6 @@ msgstr ""
 msgid "ResNet152"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -60896,14 +60880,12 @@ msgid "Face processed: %1"
 msgstr "在 %1 中找到影像"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scanned for faces: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -60911,7 +60893,6 @@ msgid "No face"
 msgstr "沒有臉孔"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
@@ -60937,6 +60918,18 @@ msgstr "在 %1 中找到影像"
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "在 %1 中找到影像"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "在 %1 中找到影像"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

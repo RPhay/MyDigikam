@@ -29,7 +29,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Arve Eriksson <031299870@telia.com>, 2011.
 # Stefan Asserhäll <stefan.asserhall@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
-"PO-Revision-Date: 2024-12-03 21:36+0100\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"PO-Revision-Date: 2025-01-12 11:22+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -2973,18 +2973,17 @@ msgid "Existing Tags"
 msgstr "Befintliga etiketter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Automatiskt tilldelning av etiketter"
+msgstr "Automatisk sökning efter etiketter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "Använd knappen för att söka igenom markerade album efter ansikten"
+msgstr ""
+"Använd knappen för att söka igenom markerade album efter objekt att "
+"automatiskt etikettera"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -3162,11 +3161,9 @@ msgstr "Senaste sökning"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Gränssnitt"
+msgstr "Ansiktsgränssnitt"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3284,15 +3281,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Är du säker på att du vill ta bort ALLA objekten permanent?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Markering"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Ta bort"
@@ -4651,7 +4646,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Färgbalans"
@@ -6274,27 +6269,21 @@ msgid "Assign Tags"
 msgstr "Tilldela etiketter"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Ett verktyg för att automatiskt tilldela etiketter till bilder"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Hanteringsverktyget för bakgrundskö kan tilldela nyckelord i "
-"hierarkiska metadatavärden automatiskt till bilder med användning av en "
-"djupinlärningsmodell.</para>"
+"<para>Hanteringsverktyget för bakgrundskö kan automatiskt tilldela nyckelord "
+"i hierarkiska metadatavärden till bilder med användning av AI "
+"djupinlärningsmodeller.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -6724,35 +6713,28 @@ msgstr[0] "Enorm (1 bildpunkt)"
 msgstr[1] "Enorm (%1 bildpunkter)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Stor (1 bildpunkt)"
-msgstr[1] "Stor (%1 bildpunkter)"
+msgstr[0] "QXGA (1 bildpunkt)"
+msgstr[1] "QXGA (%1 bildpunkter)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Enorm (1 bildpunkt)"
-msgstr[1] "Enorm (%1 bildpunkter)"
+msgstr[0] "QHD (1 bildpunkt)"
+msgstr[1] "QHD (%1 bildpunkter)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Enorm (1 bildpunkt)"
-msgstr[1] "Enorm (%1 bildpunkter)"
+msgstr[0] "UHD (1 bildpunkt)"
+msgstr[1] "UHD (%1 bildpunkter)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Förstora inte små bilder"
 
@@ -7651,7 +7633,7 @@ msgid "Curves Adjust..."
 msgstr "Kurvjusteringar..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7690,7 +7672,7 @@ msgid "Minimal input intensity."
 msgstr "Indatavärde för minimal intensitet."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gamma-indatavärde."
@@ -7794,7 +7776,7 @@ msgstr ""
 "Om du klickar på knappen, justeras alla kanalernas nivåvärden automatiskt."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -8069,27 +8051,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Den här bilden använder redan djupet 16 bitar per färg och bildpunkt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Negativ färgfilm"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Den röda färgkanalens indataintervall."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Den gröna färgkanalens indataintervall."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Den blåa färgkanalens indataintervall."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8098,12 +8080,12 @@ msgstr ""
 "Markera för att använda filmprofilens inbyggda färgbalans. Avmarkera om du "
 "vill utföra färgbalansering själv."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "Färghämtare för vitpunkt"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8116,22 +8098,22 @@ msgstr ""
 "positiva bilden efter invertering. Den är också referenspunkt vid användning "
 "av filmprofilen."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "Återställ vitpunkt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "Om du klickar på knappen, återställs vitpunkten till rent vit."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Justera vitpunkt automatiskt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8142,12 +8124,12 @@ msgstr ""
 "Funktionen kräver en viss kvarvarande orange mask omkring de exponerade "
 "delarna av negativet."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "Exponeringskorrigering."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8158,7 +8140,7 @@ msgstr ""
 "utan att klippa någon färgkanal. Använd utdatahistogrammet för att utvärdera "
 "varje kanal."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8167,7 +8149,7 @@ msgstr ""
 "Linjär obehandlad inläsning av filmnegativ kräver att en gammakurva används. "
 "Standardvärden är 1,8 eller 2,2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10455,12 +10437,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Perspektivjustering..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Verktyg för perspektivjustering"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Perspektivjustering"
@@ -22139,31 +22121,7 @@ msgid "A tool to render slideshow"
 msgstr "Ett verktyg för att återge ett bildspel"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-#| "td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22195,26 +22153,27 @@ msgstr ""
 "p><p>Verktyget kan visa albuminnehåll rekursivt med underliggande album, om "
 "några finns.</p><p><u>Användning:</u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Objektåtkomst</h1></b></center></nobr></td></"
-"tr><tr><td>Föregående objekt:</td><td>tangenten <i>Upp</i></td></"
+"tr><tr><td>Föregående objekt:</td><td>tangenten <i>Uppåtpil</i></td></"
 "tr><tr><td></td><td>tangenten <i>Page Up</i></td></tr><tr><td></"
-"td><td>tangenten <i>Vänster</i></td></tr><tr><td></td><td>Mushjul upp</td></"
-"tr><tr><td></td><td>Vänster musknapp</td></tr><tr><td>Nästa objekt:</"
-"td><td>tangenten <i>Ner</i></td></tr><tr><td></td><td>tangenten <i>Page "
-"Down</i></td></tr><tr><td></td><td>tangenten <i>Höger</i></td></tr><tr><td></"
-"td><td>Mushjul ner</td></tr><tr><td></td><td>Höger musknapp</td></"
-"tr><tr><td>Paus/Start:</td><td>tangenten <i>Mellanslag</i></td></"
-"tr><tr><td>Bildspelsinställningar:</td><td>tangenten <i>Alt+P</i></td></"
-"tr><tr><td>Visa/dölj överlagringar:</td><td>tangenten <i>Alt+Y</i></td></"
-"tr><tr><td>Avsluta:</td>tangenten <td><i>Esc</i></td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Objektegenskaper</h1></b></center></nobr></td></"
-"tr><tr><td>Ändra etiketter:</td><td>Använd snabbtangenterna för etiketter</"
-"td></tr><tr><td>Ändra betyg:</td><td>Använd snabbtangenterna för betyg</td></"
-"tr><tr><td>Ändra färgbeteckning:</td><td>Använd snabbtangenterna för "
-"färgbeteckningar</td></tr><tr><td>Ändra urvalsbeteckning:</td><td>Använd "
-"snabbtangenterna för urvalsbeteckningar</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Övriga</h1></b></center></nobr></td></"
-"tr><tr><td>Visa den här hjälpen:</td><td>tangenten <i>F1</i></td></tr></"
-"table>"
+"td><td>tangenten <i>Vänsterpil</i></td></tr><tr><td></td><td>Mushjul upp</"
+"td></tr><tr><td></td><td>Vänster musknapp</td></tr><tr><td>Nästa objekt:</"
+"td><td>tangenten <i>Neråtpil</i></td></tr><tr><td></td><td>tangenten <i>Page "
+"Down</i></td></tr><tr><td></td><td>tangenten <i>Högerpil</i></td></"
+"tr><tr><td></td><td>Mushjul ner</td></tr><tr><td></td><td>Höger musknapp</"
+"td></tr><tr><td>Paus/Start:</td><td>tangenten <i>Mellanslag</i></td></"
+"tr><tr><td>Video framåt:</td><td>tangenten <i>Ctrl+Högerpil</i></td></"
+"tr><tr><td>Video bakåt:</td><td>tangenten <i>Ctrl+Vänsterpil</i></td></"
+"tr><tr><td>Bildspelets inställningar:</td><td>tangenten <i>Alt+P</i></td></"
+"tr><tr><td>Visa eller dölj överlagringar:</td><td>tangenten <i>Alt+Y</i></"
+"td></tr><tr><td>Avsluta:</td><td>tangenten <i>Esc</i></td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Objektegenskaper</h1></b></center></"
+"nobr></td></tr><tr><td>Ändra etiketter:</td><td>Använd snabbtangenter för "
+"etiketter</td></tr><tr><td>Ändra betyg:</td><td>Använd snabbtangenter för "
+"betyg</td></tr><tr><td>Ändra färgbeteckning:</td><td>Använd snabbtangenter "
+"för färgbeteckning</td></tr><tr><td>Ändra urvalsbeteckning:</td><td>Använd "
+"snabbtangenter för urvalsbeteckningar</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Annat</h1></b></center></nobr></td></"
+"tr><tr><td>Visa hjälp:</td><td>tangenten <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
@@ -22373,8 +22332,7 @@ msgstr "Ingen bild markerad. Markera vilka bilder som ska laddas upp."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "Varning"
@@ -22396,8 +22354,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "Fortsätt"
@@ -22408,8 +22365,7 @@ msgstr "Fortsätt"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -23497,8 +23453,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Misslyckades hämta information om fotouppsättning från %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "Varning"
@@ -23513,15 +23468,13 @@ msgstr ""
 "Vill du fortsätta?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "Fortsätt"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -23824,39 +23777,32 @@ msgstr "Anrop till Google Drive misslyckades: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
 msgstr "Fel"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Export till Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Export till Google Foto"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "Varning"
@@ -23873,16 +23819,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "Fortsätt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -23898,8 +23842,7 @@ msgstr ""
 "Vill du fortsätta?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
 msgstr "Fel"
@@ -23911,8 +23854,7 @@ msgid "Failed to save image to %1"
 msgstr "Misslyckades spara bild i %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "Varning"
@@ -23930,22 +23872,19 @@ msgstr ""
 "Vill du fortsätta?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "Fortsätt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "Avbryt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "Varning"
@@ -23963,16 +23902,14 @@ msgstr ""
 "Ingen bild uppladdad till ditt konto."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "Ok"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
 msgstr "Fel"
@@ -23999,8 +23936,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "Varning"
@@ -24017,16 +23953,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "Fortsätt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -26901,16 +26835,13 @@ msgid "The SQLite core database was not found."
 msgstr "SQLite kärndatabasen hittades inte."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br/>%1</p>"
 msgstr ""
 "<p>Om du vill börja med en ny inställning och med guiden för användning "
-"första gången, ta bort filen:<br>%1</p>"
+"första gången, ta bort filen:<br/>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
@@ -27918,20 +27849,16 @@ msgstr "Alla album"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
 msgstr "Rekursiv markering."
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Rekursiv markering."
+msgstr "Rekursiv albummarkering."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -27958,12 +27885,10 @@ msgid "All tags"
 msgstr "Alla etiketter"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Rekursiv markering."
+msgstr "Rekursiv etikettmarkering."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -28910,8 +28835,8 @@ msgid "Scanning collection"
 msgstr "Söker igenom samling"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -29339,24 +29264,13 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 "<p>Digikam förväntar sig att databasen redan har skapats med ett dedikerat "
-"användarkonto. Användarnamnet <i>digikam<br> kräver fullständig åtkomst till "
+"användarkonto. Användarnamnet <i>digikam</I> kräver fullständig åtkomst till "
 "database.<br/> Om databasen inte redan är inställd, kan du använda följande "
 "SQL-kommandon (efter att ha ersatt <b><i>lösenord</i></b> med det riktiga).</"
 "p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29375,7 +29289,7 @@ msgstr ""
 "initiera Digikam-databaser och ge privilegier (se tidigare)</p><p>...</"
 "p><p>quit</p><p>Observera: Om du har problem med en MySQL-server på ett "
 "Ubuntu-baserat Linux-system, använd det ytterligare kommandot efter MySQL-"
-"prompten för att kunna skapa MySQL-triggers:<br>SET GLOBAL "
+"prompten för att kunna skapa MySQL-triggers:<br/>SET GLOBAL "
 "log_bin_trust_function_creators=1;</p><p>Observera: Om du har en mycket stor "
 "samling måste du starta MySQL-servern med mysql --max_allowed_packet=128M "
 "eller ändra inställningarna i my.ini eller ~/.my.cnf</p>"
@@ -31782,7 +31696,7 @@ msgstr "Förvrängningseffekt"
 msgid "Emboss Effect"
 msgstr "Reliefeffekt"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Filmkornseffekt"
@@ -34386,9 +34300,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG-kvalitet:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&Starta"
@@ -38170,9 +38082,7 @@ msgid "Keywords: "
 msgstr "Nyckelord: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Peoples: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Personer: "
@@ -39312,53 +39222,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Automatisk tilldelning av etiketter"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Sök efter ansikten i album: %1"
+msgstr "Sök efter objekt i album: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Sök efter ansikten i %1 album"
+msgstr "Sök efter objekt i %1 album"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
-#, fuzzy, kde-format
-#| msgid "Enable face detection"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Aktivera ansiktsigenkänning"
+msgstr "Fel vid start av objektdetektering."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Objekt genomsökta efter ansikten: %1\n"
+msgstr "Objekt genomsökta efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Objekt genomsökt efter ansikten: %1\n"
+msgstr "Objekt genomsökt efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Genomsökta efter ansikten: %1\n"
+msgstr "Genomsökta efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -39373,15 +39277,7 @@ msgstr "Sök i"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39392,12 +39288,12 @@ msgid ""
 "results in the database.</p>"
 msgstr ""
 "<p><b>Verktyget gör det möjligt att automatiskt tilldela etiketter till "
-"bilder genom innehållsanalys med djupinlärda neurala nätverk.</b></"
-"p><p>Inställningarna nedan bestämmer vilken djupinlärningsmodell som ska "
-"användas vid tolkning av bildinnehåll för att bestämma motiven för "
-"fotograferingen. Det neurala nätverket som används i bakgrunden genererar "
-"automatiskt en serie etiketter som beskriver innehållet och lagrar "
-"resultaten i databasen.</p>"
+"bilder genom innehållsanalys med en AI djupinlärd neural nätverksmodell.</"
+"b></p><p>Inställningarna nedan bestämmer vilken AI djupinlärningsmodell som "
+"ska användas vid tolkning av bildinnehåll för att bestämma objekten i "
+"bilden. Det neurala nätverket som används i bakgrunden genererar automatiskt "
+"en serie etiketter som beskriver innehållet och lagrar resultaten i "
+"databasen.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -39406,55 +39302,46 @@ msgstr "Automatiskt etiketteringsläge: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgid "Scan all"
-msgstr "Läs in bilder"
+msgstr "Sök igenom alla"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
 #: core/utilities/maintenance/main/maintenancedlg.cpp:319
 #, kde-format
 msgid "Scan non-assigned only"
-msgstr "Sök bara ej tilldelade"
+msgstr "Sök bara igenom ej tilldelade"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Rensa alla och tilldela om</b>: rensa alla etiketter som redan har "
-"tilldelats och sök igenom alla objekt igen från början.</p><p><b>Sök endast "
-"igenom icke-tilldelade</b> : skanna endast objekt utan tilldelad tagg.</p>"
+"<p><b>Sök igenom alla</b>: sök igenom alla objekt igen efter etiketter.</"
+"p><p><b>Sök bara igenom ej tilldelade</b>: sök bara igenom objekten utan "
+"några tilldelade automatiska etiketter.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Automatiskt etiketteringsläge: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
+#, kde-format
 msgid "Replace existing autotags"
-msgstr "Uppdatera bara befintliga tidsstämplar"
+msgstr "Ersätt befintliga automatiska etiketter"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Update Database"
+#, kde-format
 msgid "Update autotags"
-msgstr "Uppdatera databas"
+msgstr "Uppdatera automatiska etiketter"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -39464,6 +39351,10 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Ersätt befintliga automatiska etiketter</b>: rensa befintliga "
+"automatiska etiketter och ersätt med resultaten av sökningen.</"
+"p><p><b>Uppdatera automatiska etiketter</b>: lägg till alla nya automatiska "
+"etiketter som hittats i befintliga etiketter.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -39473,25 +39364,23 @@ msgstr "Urvalsmodell: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39507,30 +39396,34 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: litet, lätt neuralt nätverk som erbjuder "
+"exceptionell hastighet, men kan missa identifiering av flera objekt i "
+"bilder. YOLO kan upptäcka flera objekt i en bild. Det är tränat att känna "
+"igen 80 olika objekt med hjälp av datauppsättningen COCO.</p><p><b>YOLOv11 "
+"XLarge</b>: stort, robust neuralt nätverk som erbjuder bra noggrannhet. Det "
+"upptäcker flera objekt i bilder än YOLOv11 Nano, men är långsammare. YOLO "
+"kan upptäcka flera objekt i en bild. Det är tränat att känna igen 80 olika "
+"objekt med hjälp av datauppsättningen COCO.</p><p><b>ResNet-152</b>: stort "
+"och kraftfullt neuralt faltningsnätverk. Det upptäcker ett enda objekt i en "
+"bild med stor noggrannhet. ResNet-152 tränades för att känna igen 1 000 "
+"olika objekt med hjälp av datauppsättningen ImageNet.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#, kde-format
 msgid "Object detection accuracy: "
-msgstr "Ansiktsnoggrannhet"
+msgstr "Objektdetekteringsnoggrannhet"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately objects will\n"
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
-"Justera känslighet mot specificitet: Ju högre värde desto noggrannare\n"
-"blir igenkänningen av ansikten, men färre ansikten känns igen."
+"Justera känslighet kontra specificitet: ju högre värde, desto mer exakt\n"
+"känns objekt igen, men färre objekt känns igen.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
@@ -39541,19 +39434,14 @@ msgid "Work on all processor cores"
 msgstr "Använd alla processorkärnor"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Ansiktsdetektering och igenkänning är tidskrävande uppgifter.\n"
+"Objektdetektering och automatisk etikettering är tidskrävande uppgifter.\n"
 "Du kan välja om du vill använda alla processor-kärnor\n"
 "i systemet eller arbeta i bakgrunden med bara en kärna."
 
@@ -39572,12 +39460,10 @@ msgid "Translate Tags to:"
 msgstr "Översätt etikett till:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "Översätt till:"
+msgstr "Översätt"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -42835,10 +42721,9 @@ msgid "A KDE Family Project"
 msgstr "Ett projekt i KDE-familjen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "© 2001-2024, Digikam-utvecklingsgruppen"
+msgstr "© 2001-2025, Digikam-utvecklingsgruppen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -50008,13 +49893,14 @@ msgstr "Panorera aktuellt objekt till miniatyrbildsradens mitt"
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Lagra miniatyrbilder på disk för snabbare återanvändning"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
-msgstr "Avmarkera om du inte vill använda kantutjämning för att skala upp."
+msgstr ""
+"Inaktivera alternativet om du inte vill att miniatyrbilder ska lagras på "
+"disk."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -52075,37 +51961,29 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
-#, fuzzy, kde-format
-#| msgid "Confirm Faces"
+#, kde-format
 msgid "Confirming face"
-msgstr "Bekräfta ansikten"
+msgstr "Bekräftar ansikte"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Ta bort ansiktsetikett?"
+msgstr "Tar bort ansikte"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Uppdaterar ansiktsdatabasen"
+msgstr "Redigerar ansiktsetikett"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "Ta bort det här ansiktsområdet"
+msgstr "Redigerar ansiktsområde"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Enligt manuellt och namn"
+msgstr "Lägger till ansikte manuellt"
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
@@ -52196,28 +52074,24 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Läs in bilder"
+msgstr "Sök igenom nya bilder"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Läs in bilder"
+msgstr "Sök igenom alla bilder"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Känn igen ansikten"
+msgstr "Känn bara igen ansikten"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
@@ -52230,6 +52104,12 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Sök efter nya bilder</b> söker efter ansikten och försöker känna igen "
+"dem för nya bilder som finns i albumen som markerats under fliken \"Sök i\"."
+"</p><p><b>Sök efter alla bilder< /b> söker efter ansikten och försöka känna "
+"igen dem för alla bilder som finns i albumen som markerats under fliken "
+"\"Sök i\".</p><p><b>Känn bara igen ansikten</b> försöker matcha okända "
+"ansikten med bekräftade ansikten utan söka efter bildernas nya ansikten.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
@@ -52267,44 +52147,34 @@ msgid "Face size:"
 msgstr "Ansiktsstorlek:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
-msgstr "Extra små"
+msgstr "Extra liten"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
-msgstr "Små"
+msgstr "Liten"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Normal"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "Stora"
+msgstr "Stor"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Extra Large"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
-msgstr "Extra stora"
+msgstr "Extra stor"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
@@ -52956,9 +52826,7 @@ msgid "Reference"
 msgstr "Referens"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Metod för val av referensbild"
@@ -60367,25 +60235,7 @@ msgstr ""
 "para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -60408,19 +60258,19 @@ msgstr ""
 "<p>Följande uttryck kan användas för att anpassa datumformatet:</p><p><b>d</"
 "b>: Dagen som ett tal utan inledande nolla (1 till 31)</p><p><b>dd</b>: "
 "Dagen som ett tal med inledande nolla (01 till 31)</p><p><b>ddd</b>: Det "
-"förkortade lokala namnet på dagen (t.ex. 'mån' till 'sön')</p><p><b>dddd</"
-"b>: Det långa lokala namnet på dagen (t.ex. 'måndag' till 'söndag')</"
-"p><p><b>M</b>: Månaden som ett tal utan inledande nolla (1 till 12)</"
-"p><p><b>MM</b>: Månaden som ett tal med en inledande nolla (01 till 12)</"
-"p><p><b>MMM</b>: Det förkortade lokala månadsnamnet (t.ex. 'jan' till "
-"'dec')</p><p><b>MMMM</b>: Det långa lokala månadsnamnet (t.ex. 'januari' "
-"till 'december')</p><p><b>yy</b>: Året som ett tal med två siffror (t.ex. 00 "
-"till 99)</p><p><b>yyyy</b>: Året som ett tal med fyra siffror (t.ex. 2012)</"
-"p><p>Alla andra inmatade tecken behandlas som text. Alla textföljder omgivna "
-"av enkla citationstecken behandlas som text och används inte som ett "
-"uttryck. Om datumet exempelvis är 20 juli, 1969:</p><p><b>dd.MM.yyyy</b>: "
-"20.07.1969</p><p><b>ddd MMMM d yy</b>: sön juli 20 69</p><p><b>'Fotot taget "
-"på' dddd</b>: Fotot taget på söndag</p>"
+"förkortade lokala namnet på dagen (tex. 'mån' till 'sön')</p><p><b>dddd</b>: "
+"Det långa lokala namnet på dagen (t.ex. 'måndag' till 'söndag')</p><p><b>M</"
+"b>: Månaden som ett tal utan inledande nolla (1 till 12)</p><p><b>MM</b>: "
+"Månaden som ett tal med en inledande nolla (01 till 12)</p><p><b>MMM</b>: "
+"Det förkortade lokala månadsnamnet (t.ex. 'jan' till 'dec')</p><p><b>MMMM</"
+"b>: Det långa lokala månadsnamnet (t.ex. 'januari' till 'december')</"
+"p><p><b>yy</b>: Året som ett tal med två siffror (t.ex. 00 till 99)</"
+"p><p><b>yyyy</b>: Året som ett tal med fyra siffror (t.ex. 2012)</p><p>Alla "
+"andra inmatade tecken behandlas som text. Alla textföljder omgivna av enkla "
+"citationstecken behandlas som text och används inte som ett uttryck. Om "
+"datumet exempelvis är 20 juli, 1969:</p><p><b>dd.MM.yyyy</b>: 20.07.1969</"
+"p><p><b>ddd MMMM d yy</b>: sön juli 20 69</p><p><b>'Fotot taget på' dddd</"
+"b>: Fotot taget på söndag</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
@@ -61093,16 +60943,10 @@ msgid "Reset and clear all faces and training"
 msgstr "Nollställ och rensa alla ansikten och all inlärning"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:218
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "This will clear all detected and tagged faces, and then rescan images to "
-#| "detect faces."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr ""
-"Det rensar alla detekterade och etiketterade ansikten, och söker sedan "
-"igenom bilder för att detektera ansikten."
+msgstr "Rensar alla detekterade och etiketterade ansikten."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:224
 #, kde-format
@@ -61110,10 +60954,9 @@ msgid "Detect and recognize Faces"
 msgstr "Detektera och känn igen ansikten"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "Automatiskt etiketteringsläge: "
+msgstr "Sökläge för automatisk etikettering:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
@@ -61123,36 +60966,20 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
+"<p><b>Ersätt befintliga automatiska etiketter</b>: rensa befintliga "
+"automatiska etiketter och ersätt med resultaten av sökningen.</"
+"p><p><b>Uppdatera automatiska etiketter</b>: lägg till nya automatiska "
+"etiketter som hittats i befintliga etiketter.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
-msgid "ResNet152"
-msgstr "ResNet50"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
+msgid "ResNet152"
+msgstr "ResNet152"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#, kde-format
 msgid "Object Detection Accuracy: "
-msgstr "Ansiktsnoggrannhet"
+msgstr "Objektdetekteringsnoggrannhet:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format
@@ -61195,26 +61022,21 @@ msgid "Sync Metadata and Database"
 msgstr "Synkronisera metadata och databas"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:416
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Varning"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:417
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
-#| "faces? You’ll need to start tagging unknown faces again before any faces "
-#| "can be recognized."
+#, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
 "Är du säker på att du vill ta bort alla bekräftade, obekräftade och okända "
-"ansikten? Du måste börja etikettera okända ansikten igen innan några "
-"ansikten kan kännas igen."
+"ansikten? Du måste söka igenom bilder och börja etikettera okända ansikten "
+"igen innan några ansikten kan kännas igen."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:419
@@ -61379,19 +61201,16 @@ msgid "Duplicates for: %1\n"
 msgstr "Dubbletter av: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
-#, fuzzy, kde-format
-#| msgid "No duplicate"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Inga duplikat"
+msgstr "Inget duplicerat objekt"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
-#, fuzzy, kde-format
-#| msgid "1 duplicate"
-#| msgid_plural "%1 duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "1 duplikat"
-msgstr[1] "%1 duplikat"
+msgstr[0] "1 duplicerat objekt"
+msgstr[1] "%1 duplicerade objekt"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
 #, kde-format
@@ -61466,19 +61285,16 @@ msgid "Face processed: %1"
 msgstr "Behandlat ansikte: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Genomsökta efter ansikten: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "No face"
 msgstr "Inga ansikten"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61488,22 +61304,32 @@ msgstr[1] "%1 ansikten"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
-#, fuzzy, kde-format
-#| msgid "Enable face detection"
+#, kde-format
 msgid "Error starting face detection."
-msgstr "Aktivera ansiktsigenkänning"
+msgstr "Fel vid start av ansiktsdetektering."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Bilder hittade i %1"
+msgstr "Hittade ansikten: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#, kde-format
+msgid "Face found: %1"
+msgstr "Hittat ansikte: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
-msgid "Face found: %1"
-msgstr "Bilder hittade i %1"
+msgid "No faces found in %1"
+msgstr "Bilder funna i %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68071,6 +67897,33 @@ msgstr "Albumobjekt"
 #, kde-format
 msgid "Import Items"
 msgstr "Importera objekt"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
+#~ "can detect multiple objects in an image. It is trained to recognize 80 "
+#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#~ "large, rebust neural network offering good accuracy. It will detect more "
+#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#~ "multiple objects in an image. It is trained to recognize 80 different "
+#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#~ "powerful convoluted neural network. It will detect a single object in an "
+#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#~ "different objects using the ImageNet dataset.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv11 Nano</b>: litet, lätt neuralt nätverk som erbjuder "
+#~ "exceptionell hastighet, men kan missa identifiering av flera objekt i "
+#~ "bilder. YOLO kan upptäcka flera objekt i en bild. Det är tränat att känna "
+#~ "igen 80 olika objekt med hjälp av datauppsättningen COCO.</"
+#~ "p><p><b>YOLOv11 XLarge</b>: stort, robust neuralt nätverk som erbjuder "
+#~ "bra noggrannhet. Det upptäcker flera objekt i bilder än YOLOv11 Nano, men "
+#~ "är långsammare. YOLO kan upptäcka flera objekt i en bild. Det är tränat "
+#~ "att känna igen 80 olika objekt med hjälp av datauppsättningen COCO.</"
+#~ "p><p><b>ResNet-152</b>: stort och kraftfullt neuralt faltningsnätverk. "
+#~ "Det upptäcker ett enda objekt i en bild med stor noggrannhet. ResNet-152 "
+#~ "tränades för att känna igen 1 000 olika objekt med hjälp av "
+#~ "datauppsättningen ImageNet.</p>"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""

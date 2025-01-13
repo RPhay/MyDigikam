@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
-"PO-Revision-Date: 2025-01-11 17:42+0300\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"PO-Revision-Date: 2025-01-12 13:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -4639,7 +4639,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Renk Dengesi"
@@ -7640,7 +7640,7 @@ msgid "Curves Adjust..."
 msgstr "Eğrileri Ayarla…"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7678,7 +7678,7 @@ msgid "Minimal input intensity."
 msgstr "En düşük girdi yoğunluğu."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gama girdisi değeri."
@@ -7782,7 +7782,7 @@ msgstr ""
 "Bu düğmeye basarsanız tüm kanal düzeyleri kendiliğinden ayarlanacaktır."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -8067,27 +8067,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Bu görsel halihazırda 16 bit/renk/piksel derinliği kullanıyor."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Renkli Negatif Film"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Kırmızı renk kanalının girdi erimi."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Yeşil renk kanalının girdi erimi."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Mavi renk kanalının girdi erimi."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8096,12 +8096,12 @@ msgstr ""
 "Film profilinin yerleşik renk dengesini uygulamak için işaretleyin. Renk "
 "dengesini kendiniz uygulamak istiyorsanız işareti kaldırın."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "Beyaz nokta renk seçicisi"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8114,22 +8114,22 @@ msgstr ""
 "pozitif görselin en koyu siyah tonunu temsil eder. Aynı zamanda film "
 "profilini uygulamak için başvuru noktasıdır."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "Beyaz noktayı sıfırlayın."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "Bu düğmeye basarsanız beyaz nokta saf beyaza sıfırlanır."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Beyaz noktayı kendiliğinden ayarlayın."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8140,12 +8140,12 @@ msgstr ""
 "hesaplanır. Bu işlev, negatifin açıkta kalan alanının çevresinde bir miktar "
 "turuncu maske kalmasını gerektirir."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "Pozlama düzeltmesi."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8156,7 +8156,7 @@ msgstr ""
 "sürgüyü daha yüksek değerlere taşıyın. Her kanalı değerlendirmek için çıktı "
 "histogramını kullanın."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8165,7 +8165,7 @@ msgstr ""
 "Film negatiflerinin doğrusal ham taramaları, bir gama eğrisinin "
 "uygulanmasını gerektirir. Standart değerler 1,8 veya 2,2’dir."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10466,12 +10466,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Perspektif Ayarı…"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Perspektif Ayarlama Aracı"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Perspektif Ayarı"
@@ -28894,8 +28894,8 @@ msgid "Scanning collection"
 msgstr "Koleksiyon taranıyor…"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -31753,7 +31753,7 @@ msgstr "Bozunum Efekti"
 msgid "Emboss Effect"
 msgstr "Kabartma Efekti"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Film Greni Efekti"
@@ -39276,47 +39276,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Çeşitli"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Kendiliğinden Künye Ataması"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
 #, kde-format
 msgid "Scan for objects in album: %1"
 msgstr "Albümdeki nesneleri tara: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
 #, kde-format
 msgid "Scan for objects in %1 albums"
 msgstr "%1 albümdeki nesneleri tara"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Nesne algılaması başlatılırken hata."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Nesneler için taranan ögeler: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Nesneler için taranan öge: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, kde-format
 msgid "Scanned for objects: %1\n"
 msgstr "Nesneler için tarandı: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -39387,8 +39387,7 @@ msgstr "Kendiliğinden künyeleme kipi: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, fuzzy, kde-format
-#| msgid "Repalce existing autotags"
+#, kde-format
 msgid "Replace existing autotags"
 msgstr "Var olan kendiliğinden künyeleri değiştir"
 
@@ -39399,12 +39398,7 @@ msgid "Update autotags"
 msgstr "Kendiliğinden künyeleri güncelle"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
@@ -39440,20 +39434,8 @@ msgid "ResNet-152"
 msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-#| "exceptional speed, but may miss identifying more objects in images. YOLO "
-#| "can detect multiple objects in an image. It is trained to recognize 80 "
-#| "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
-#| "large, rebust neural network offering good accuracy. It will detect more "
-#| "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
-#| "multiple objects in an image. It is trained to recognize 80 different "
-#| "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
-#| "powerful convoluted neural network. It will detect a single object in an "
-#| "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
-#| "different objects using the ImageNet dataset.</p>"
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
@@ -52160,7 +52142,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Yeni görseller tara"
+msgstr "Yeni görselleri tara"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
@@ -52187,6 +52169,12 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Yeni görselleri tara</b>, “Şurada Ara” sekmesinde seçili albümlerde "
+"bulunan yeni görsellerdeki yüzleri tarayacak ve onları tanımaya çalışacaktır."
+"</p><p><b>Tüm görselleri tara</b>, “Şurada Ara” sekmesinde seçili albümlerde "
+"bulunan tüm görsellerdeki yüzleri tarayacak ve onları tanımaya çalışacaktır."
+"</p><p><b>Yalnızca yüzleri tanı</b>, görsellerdeki yeni yüzleri taramadan "
+"bilinmeyen yüzleri onaylı yüzlerle eşleştirmeye çalışacaktır.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
@@ -61035,12 +61023,7 @@ msgid "Auto-tagging scan mode: "
 msgstr "Kendiliğinden künyeleme tarama kipi: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
@@ -61056,34 +61039,6 @@ msgstr ""
 #, kde-format
 msgid "ResNet152"
 msgstr "ResNet152"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-"<p><b>YOLOv11 Nano</b>: Olağanüstü hız sunan küçük, hafif sinir ağı; ancak "
-"görsellerde daha fazla nesneyi tanımlamayı kaçırabilir. YOLO, bir görseldeki "
-"birden fazla nesneyi algılayabilir. COCO veri kümesini kullanarak 80 farklı "
-"nesneyi tanımak için eğitilmiştir.</p><p><b>YOLOv11 XLarge</b>: İyi doğruluk "
-"sunan büyük, sağlam sinir ağı. Görsellerde YOLOv11 Nano’dan daha fazla nesne "
-"algılar; ancak daha yavaştır. YOLO, bir görseldeki birden fazla nesneyi "
-"algılayabilir. COCO veri kümesini kullanarak 80 farklı nesneyi tanımak için "
-"eğitilmiştir.</p><p><b>ResNet-152</b>: Büyük ve güçlü kıvrımlı sinir ağı. "
-"Bir görseldeki tek bir nesneyi yüksek doğrulukla algılayacaktır. ResNet-152, "
-"ImageNet veri kümesini kullanarak 1.000 farklı nesneyi tanımak için eğitildi."
-"</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
@@ -61395,19 +61350,16 @@ msgid "Face processed: %1"
 msgstr "İşlenen yüz: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Yüzler için tarandı: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "No face"
 msgstr "Yüz yok"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61430,6 +61382,19 @@ msgstr "Bulunan yüzler: %1"
 #, kde-format
 msgid "Face found: %1"
 msgstr "Bulunan yüz: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "%1 içinde bulunan görseller"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68021,6 +67986,32 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
+#~ "can detect multiple objects in an image. It is trained to recognize 80 "
+#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#~ "large, rebust neural network offering good accuracy. It will detect more "
+#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#~ "multiple objects in an image. It is trained to recognize 80 different "
+#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#~ "powerful convoluted neural network. It will detect a single object in an "
+#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#~ "different objects using the ImageNet dataset.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv11 Nano</b>: Olağanüstü hız sunan küçük, hafif sinir ağı; "
+#~ "ancak görsellerde daha fazla nesneyi tanımlamayı kaçırabilir. YOLO, bir "
+#~ "görseldeki birden fazla nesneyi algılayabilir. COCO veri kümesini "
+#~ "kullanarak 80 farklı nesneyi tanımak için eğitilmiştir.</p><p><b>YOLOv11 "
+#~ "XLarge</b>: İyi doğruluk sunan büyük, sağlam sinir ağı. Görsellerde "
+#~ "YOLOv11 Nano’dan daha fazla nesne algılar; ancak daha yavaştır. YOLO, bir "
+#~ "görseldeki birden fazla nesneyi algılayabilir. COCO veri kümesini "
+#~ "kullanarak 80 farklı nesneyi tanımak için eğitilmiştir.</"
+#~ "p><p><b>ResNet-152</b>: Büyük ve güçlü kıvrımlı sinir ağı. Bir görseldeki "
+#~ "tek bir nesneyi yüksek doğrulukla algılayacaktır. ResNet-152, ImageNet "
+#~ "veri kümesini kullanarak 1.000 farklı nesneyi tanımak için eğitildi.</p>"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""

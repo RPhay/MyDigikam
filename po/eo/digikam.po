@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
-"PO-Revision-Date: 2025-01-07 14:53+0100\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"PO-Revision-Date: 2025-01-12 18:44+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -2959,23 +2959,22 @@ msgid "Existing Tags"
 msgstr "Ekzistantaj Etikedoj"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Aŭtomat-etikeda Atribuado"
+msgstr "Aŭtomat-etikediga skano"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "Uzu ĉi tiun butonon por skani la elektitajn albumojn por vizaĝoj"
+msgstr ""
+"Uzu ĉi tiun butonon por skani la elektitajn albumojn pri objektoj por "
+"aŭtomata etikedigo"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
 msgid "No Tags Album"
-msgstr "Neniu Etikedo Albumo"
+msgstr "Albumo Neniu Etikedoj"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:316
 #: core/libs/album/engine/album.cpp:554
@@ -4615,7 +4614,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Kolora Ekvilibro"
@@ -6229,26 +6228,21 @@ msgid "Assign Tags"
 msgstr "Asigni Etikedojn"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
-msgstr "Ilo por atribui etikedojn aŭtomate al bildoj"
+msgstr "Ilo por aŭtomate atribui etikedojn al bildoj"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Ĉi tiu ilo de Batch Queue Manager atribuos ŝlosilvort-hierarkiajn "
-"metadatumvalorojn al bildoj uzante profundlernan motoron.</para>"
+"<para>Ĉi tiu ilo de Batch Queue Manager aŭtomate atribuos ŝlosilvort-"
+"hierarkiajn metadatumvalorojn al bildoj uzante AI-profundlernajn modelojn.</"
+"para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -7586,7 +7580,7 @@ msgid "Curves Adjust..."
 msgstr "Kurboj ĝustigas..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7626,7 +7620,7 @@ msgid "Minimal input intensity."
 msgstr "Minimuma eniga intenseco."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gama eniga valoro."
@@ -7730,7 +7724,7 @@ msgstr ""
 "Se vi premas ĉi tiun butonon, ĉiuj kanalniveloj estos aŭtomate alĝustigitaj."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -8007,27 +8001,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Ĉi tiu bildo jam uzas profundon de 16 bitoj / koloro / rastrumero."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Kolora Negativa Filmo"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Eniga gamo de ruĝa kolorkanalo."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Eniga gamo de verda kolorkanalo."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Eniga gamo de blua kolorkanalo."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8036,12 +8030,12 @@ msgstr ""
 "Kontrolu por apliki la enkonstruitan kolorekvilibron de la filmprofilo. "
 "Malmarku ĉu vi volas mem apliki kolorekvilibron."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "Blanka punkto kolorelektilo"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8054,24 +8048,24 @@ msgstr ""
 "plej malhelan nigran tonon de la pozitiva bildo post inversio. Ĝi ankaŭ "
 "estas la referencpunkto por apliki la filmprofilon."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "Restarigi blankan punkton."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr ""
 "Se vi premas ĉi tiun butonon, la blanka punkto estas restarigita al pura "
 "blanka."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Ĝustigi blankan punkton aŭtomate."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8082,12 +8076,12 @@ msgstr ""
 "la bildaj datumoj. Ĉi tiu funkcio postulas havi iun restan oranĝan maskon "
 "ĉirkaŭ la senŝirma areo de la negativo."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "Korekto de elmeto."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8097,7 +8091,7 @@ msgstr ""
 "Movu la glitilon al pli altaj valoroj ĝis maksimuma brilo estas atingita sen "
 "tranĉi ajnan kolorkanalon. Uzu la eligan histogramon por taksi ĉiun kanalon."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8106,7 +8100,7 @@ msgstr ""
 "Liniaj krudaj skanadoj de filmnegativoj postulas aplikon de gama-kurbo. "
 "Normaj valoroj estas 1.8 aŭ 2.2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10384,12 +10378,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Perspektivalĝustigo..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Perspektiva Alĝustigo Ilo"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Alĝustigo de Perspektivo"
@@ -28739,8 +28733,8 @@ msgid "Scanning collection"
 msgstr "Skananta kolekto"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -31597,7 +31591,7 @@ msgstr "Distorda efiko"
 msgid "Emboss Effect"
 msgstr "Reliefo Efekto"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Filmo Grajna Efekto"
@@ -39105,52 +39099,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diversaj"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Aŭtomat-etikeda Atribuado"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Skani por vizaĝoj en albumo: %1"
+msgstr "Skani por objektoj en albumo: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Skani por vizaĝoj en %1 albumoj"
+msgstr "Skani por objektoj en %1 albumoj"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
-msgstr ""
+msgstr "Eraro komencante objektodetekton."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Eroj skanitaj por vizaĝoj: %1\n"
+msgstr "Eroj skanitaj por objektoj: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Ero skanita por vizaĝoj: %1\n"
+msgstr "Ero skanita por objektoj: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Skanita por vizaĝoj: %1\n"
+msgstr "Skanita por objektoj: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -39165,15 +39154,7 @@ msgstr "Serĉi en"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39184,11 +39165,11 @@ msgid ""
 "results in the database.</p>"
 msgstr ""
 "<p><b>Ĉi tiu ilo permesas aŭtomate atribui etikedojn al bildoj per "
-"enhavanalizo uzante profundan lernan neŭralan reton.</b></p><p>La subaj "
-"agordoj determinas la profundlernan modelon por uzi dum analizado de bildo. "
-"enhavoj por determini la temojn de la foto. La neŭrala reto uzata fone "
-"generos aŭtomate serion da etikedoj priskribantaj la enhavon kaj konservos "
-"la rezultojn en la datumbazo.</p>"
+"enhavanalizo uzante profundlernan neŭralretan AI-modelon.</b></p><p>La subaj "
+"agordoj determinas la profundlernan AI-modelon uzendan dum analizado bildaj "
+"enhavoj por determini la temojn de la foto. La neŭralreta AI fone uzita "
+"aŭtomate generos etikedojn priskribantaj la enhavon kaj konservos la "
+"rezultojn en la datumbazo.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -39197,11 +39178,9 @@ msgstr "Aŭtomat-etikeda reĝimo:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Skani ĉiujn bildojn"
+msgstr "Skani ĉiujn"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -39212,41 +39191,32 @@ msgstr "Skani nur ne-atribuitajn"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Purigi ĉion kaj reatribui</b>: purigi ĉiujn etikedojn jam asignitajn "
-"kaj reskani ĉiujn erojn de nulo.</p><p><b>Skani nur neatribuitajn</b> : "
-"skani nur la erojn kun neniu asignita etikedo</p>."
+"<p><b>Skani ĉiujn</b>: reskani ĉiujn erojn pri etikedoj</p><p><b>Skani nur "
+"neatribuitajn</b>: skani nur la erojn kun neniu asignita etikedo</p>."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Aŭtomat-etikeda reĝimo:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
+#, kde-format
 msgid "Replace existing autotags"
-msgstr "Ĝisdatigi nur ekzistantajn tempomarkojn"
+msgstr "Ĝisdatigi ekzistantajn aŭto-markojn"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Updates"
+#, kde-format
 msgid "Update autotags"
-msgstr "Ĝisdatigoj"
+msgstr "Ĝisdatigi aŭto-markojn"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -39265,25 +39235,23 @@ msgstr "Selekta modelo:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39307,20 +39275,16 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately objects will\n"
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
-"Alĝustigu sentemon kontraŭ specifeco: ju pli alta estas la valoro, des pli "
-"precize vizaĝoj estos detektitaj, sed malpli da vizaĝoj estos detektitaj."
+"Alĝustigi sentemon kontraŭ specifeco: ju pli alta estas la valoro, des pli "
+"precize objektoj estos\n"
+"rekonitaj, sed malpli da objektoj estos rekonitaj.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
@@ -39331,19 +39295,14 @@ msgid "Work on all processor cores"
 msgstr "Labori sur ĉiuj procesoraj kernoj"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Vizaĝdetekto kaj rekono estas tempopostulaj taskoj.\n"
+"Objektodetekto kaj aŭto-etikedado estas tempopostulaj taskoj.\n"
 "Vi povas elekti ĉu vi volas uzi ĉiujn procesorajn kernojn\n"
 "e via sistemo, aŭ labori en la fono nur sur unu kerno."
 
@@ -43716,7 +43675,7 @@ msgstr "Internacia Gazetara Telekomunika Konsilio"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
 msgid "ISO 9660 Disk Image"
-msgstr "ISO 9660 Diska Bildo"
+msgstr "ISO 9660 Diska Instalkopio"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
@@ -60805,10 +60764,9 @@ msgid "Detect and recognize Faces"
 msgstr "Detekti kaj rekoni Vizaĝojn"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "Aŭtomat-etikeda reĝimo:"
+msgstr "Aŭtomat-etikeda skanreĝimo:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
@@ -60820,27 +60778,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
-msgid "ResNet152"
-msgstr "ResNet50"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
+msgid "ResNet152"
+msgstr "ResNet152"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
@@ -61148,19 +61088,16 @@ msgid "Face processed: %1"
 msgstr "Vizaĝo procezita: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Skanita por vizaĝoj: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "No face"
 msgstr "Neniu vizaĝo"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61183,6 +61120,19 @@ msgstr "Vizaĝoj trovitaj: %1"
 #, kde-format
 msgid "Face found: %1"
 msgstr "Vizaĝo trovita: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "Bildoj trovitaj en %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

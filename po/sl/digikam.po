@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 02:00+0000\n"
-"PO-Revision-Date: 2025-01-11 09:07+0100\n"
+"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"PO-Revision-Date: 2025-01-12 07:44+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4679,7 +4679,7 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
-#: core/dplugins/editor/colors/film/filmtool.cpp:194
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
 msgstr "Ravnovesje barv"
@@ -7681,7 +7681,7 @@ msgid "Curves Adjust..."
 msgstr "Prilagoditev krivulj..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:155
+#: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
@@ -7719,7 +7719,7 @@ msgid "Minimal input intensity."
 msgstr "Najmanjša vhodna intenziteta."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Vhodna vrednost game."
@@ -7822,7 +7822,7 @@ msgid ""
 msgstr "Če pritisnete ta gumb, bodo vse ravni kanalov samodejno prilagojene."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
-#: core/dplugins/editor/colors/film/filmtool.cpp:210
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
@@ -8096,27 +8096,27 @@ msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Ta slika že uporablja globino 16 bitov / barv / slikovnih točk."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:119
+#: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Film z barvnim negativom"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:165
+#: core/dplugins/editor/colors/film/filmtool.cpp:167
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Vhodni obseg kanala rdeče barve."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:170
+#: core/dplugins/editor/colors/film/filmtool.cpp:172
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Vhodni obseg kanala zelene barve."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:175
+#: core/dplugins/editor/colors/film/filmtool.cpp:177
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Vhodni obseg kanala modre barve."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:196
+#: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8125,12 +8125,12 @@ msgstr ""
 "Označite, da uveljavite vgrajeno ravnovesje barv profila filma. Odstranite "
 "oznako, če želite to uveljavite ročno."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:204
+#: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
 msgstr "Izbirnik barve bele točke"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:205
+#: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8143,22 +8143,22 @@ msgstr ""
 "pozitiva po inverziji. Je tudi referenčna točka za uveljavljanje profila "
 "filma."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:212
+#: core/dplugins/editor/colors/film/filmtool.cpp:214
 #, kde-format
 msgid "Reset white point."
 msgstr "Ponastavi belo točko."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:213
+#: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "Če pritisnete ta gumb, bo bela točka ponastavljena na čisto belino."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:218
+#: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Samodejno prilagodi belo točko."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:219
+#: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8169,12 +8169,12 @@ msgstr ""
 "Ta funkcija zahteva nekaj ostankov oranžne maske okrog osvetljenega območja "
 "negativa."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:239
+#: core/dplugins/editor/colors/film/filmtool.cpp:241
 #, kde-format
 msgid "Exposure correction."
 msgstr "Popravljanje osvetlitve."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8185,7 +8185,7 @@ msgstr ""
 "brez da bi odrezali katerikoli barvni kanal. Da ocenite vsak kanal, "
 "uporabite izhodni histogram."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:248
+#: core/dplugins/editor/colors/film/filmtool.cpp:250
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8194,7 +8194,7 @@ msgstr ""
 "Prema groba preiskovanja filma zahtevajo uporabo krivulje game. Običajne "
 "vrednosti so 1.8 in 2.2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:642
+#: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
 #, kde-format
 msgid "Film"
@@ -10467,12 +10467,12 @@ msgctxt "@action"
 msgid "Perspective Adjustment..."
 msgstr "Prilagoditev perspektive..."
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:297
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:299
 #, kde-format
 msgid "Perspective Adjustment Tool"
 msgstr "Orodje za prilagoditev perspektive"
 
-#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:316
+#: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:318
 #, kde-format
 msgid "Perspective Adjustment"
 msgstr "Prilagoditev perspektive"
@@ -28874,8 +28874,8 @@ msgid "Scanning collection"
 msgstr "Preiskovanje zbirke"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:64
-#: core/libs/mlfoundation/mlpipelinemacros.h:73
+#: core/libs/mlfoundation/mlpipelinemacros.h:62
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -31751,7 +31751,7 @@ msgstr "Učinek popačenja"
 msgid "Emboss Effect"
 msgstr "Učinek izbočenja"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Učinek zrnatosti filma"
@@ -39322,47 +39322,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:147
+#: core/libs/tags/autoassignment/autotagsengine.cpp:109
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Samodejno dodeljevanje značk"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:156
+#: core/libs/tags/autoassignment/autotagsengine.cpp:118
 #, kde-format
 msgid "Scan for objects in album: %1"
 msgstr "Preišči predmete v albumu: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:160
+#: core/libs/tags/autoassignment/autotagsengine.cpp:122
 #, kde-format
 msgid "Scan for objects in %1 albums"
 msgstr "Preišči predmete v %1 albumih"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:309
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Napaka pri zagonu zaznavanja predmetov."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:329
+#: core/libs/tags/autoassignment/autotagsengine.cpp:218
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Postavk preiskanih za predmete: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:333
+#: core/libs/tags/autoassignment/autotagsengine.cpp:222
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Postavka preiskana za predmete: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:371
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, kde-format
 msgid "Scanned for objects: %1\n"
 msgstr "Preiskano za predmete: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:372
+#: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
@@ -39432,8 +39432,7 @@ msgstr "Način samodejnega dodeljevanja značk: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, fuzzy, kde-format
-#| msgid "Repalce existing autotags"
+#, kde-format
 msgid "Replace existing autotags"
 msgstr "Zamenjaj obstoječe samodejne značke"
 
@@ -39444,21 +39443,17 @@ msgid "Update autotags"
 msgstr "Posodobi samodejne značke"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
-"<p><b>Zamenjava obstoječih samodejnih značk</b>: počisti obstoječe samodejne "
-"značke in jih nadomesti z rezultati skeniranja.</p><p><b>Posodobi samodejne "
-"značke</b>: dodaj vse nove najdene samodejne značke v obstoječe značke.</p>"
+"<p><b>Zamenjaj obstoječe samodejne značke</b>: počisti obstoječe samodejne "
+"značke in jih nadomesti z rezultati prečesavanja.</p><p><b>Posodobi "
+"samodejne značke</b>: dodaj vse nove najdene samodejne značke v obstoječe "
+"značke.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -39484,20 +39479,8 @@ msgid "ResNet-152"
 msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-#| "exceptional speed, but may miss identifying more objects in images. YOLO "
-#| "can detect multiple objects in an image. It is trained to recognize 80 "
-#| "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
-#| "large, rebust neural network offering good accuracy. It will detect more "
-#| "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
-#| "multiple objects in an image. It is trained to recognize 80 different "
-#| "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
-#| "powerful convoluted neural network. It will detect a single object in an "
-#| "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
-#| "different objects using the ImageNet dataset.</p>"
+#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
@@ -39515,15 +39498,14 @@ msgstr ""
 "<p><b>YOLOv11 Nano</b>: majhna, lahka nevronska mreža, ki ponuja izjemno "
 "hitrost, vendar morda ne prepozna več predmetov na slikah. YOLO lahko zazna "
 "več predmetov na sliki. Usposobljen je za prepoznavanje 80 različnih "
-"objektov z uporabo nabora podatkov COCO.</p><p><b>YOLOv11 XLarge</b>: velika "
-"nevronska mreža, ki je bila ponovno naučena in ponuja dobro natančnost. "
-"Model bo zaznal več predmetov na slikah kot YOLOv11 Nano, vendar je "
-"počasnejši. YOLO lahko zazna več predmetov na sliki. Usposobljen je za "
-"prepoznavanje 80 različnih objektov z uporabo nabora podatkov COCO.</"
-"p><p><b>ResNet-152</b>: velika in močna zapletena nevronska mreža. Z visoko "
-"natančnostjo bo zaznal en sam predmet na sliki. ResNet-152 je bil "
-"usposobljen za prepoznavanje 1000 različnih predmetov z uporabo nabora "
-"podatkov ImageNet.</p>"
+"objektov z uporabo nabora podatkov COCO.</p><p><b>YOLOv11 XLarge</b>: "
+"velika, robustna nevronska mreža, ki ponuja dobro natančnost. Zaznala bo več "
+"predmetov na slikah kot YOLOv11 Nano, vendar je počasnejša. YOLO lahko zazna "
+"več predmetov na sliki. Usposobljena je za prepoznavanje 80 različnih "
+"objektov z uporabo nabora podatkov COCO.</p><p><b>ResNet-152</b>: velika in "
+"močna zapletena nevronska mreža. Z visoko natančnostjo bo zaznala en sam "
+"predmet na sliki. Model ResNet-152 je bil usposobljen za prepoznavanje 1000 "
+"različnih predmetov z uporabo nabora podatkov ImageNet.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, kde-format
@@ -52278,6 +52260,12 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Prečeši nove slike</b> poišče obraze in poskusi prepoznati nove slike, "
+"najdene v albumih, izbranih na zavihku »Išči v«.</p><p><b>Prečeši vse "
+"slike< /b> bo poiskal obraze in poskusil prepoznati vse slike v albumih, "
+"izbranih na zavihku »Išči v«.</p><p><b>Prepoznaj samo obraze</b> bo poskusil "
+"ujemati neznane obraze s potrjeni obrazi brez prečesavanja slik novih "
+"obrazov.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
@@ -61139,12 +61127,7 @@ msgid "Auto-tagging scan mode: "
 msgstr "Način prečesavanja s samodejnim označevanjem: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Repalce existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
@@ -61152,7 +61135,7 @@ msgid ""
 "found to the existing tags.</p>"
 msgstr ""
 "<p><b>Zamenjava obstoječih samodejnih značk</b>: počisti obstoječe samodejne "
-"značke in jih nadomestite z rezultati prečesavanja.</p><p><b>Posodobite "
+"značke in jih nadomesti z rezultati prečesavanja.</p><p><b>Posodobi "
 "samodejne značke</b>: dodaj nove najdene samodejne značke obstoječim značkam."
 "</p>"
 
@@ -61160,35 +61143,6 @@ msgstr ""
 #, kde-format
 msgid "ResNet152"
 msgstr "ResNet152"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, rebust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-"<p><b>YOLOv11 Nano</b>: majhna, lahka nevronska mreža, ki ponuja izjemno "
-"hitrost, vendar morda ne prepozna več predmetov na slikah. YOLO lahko zazna "
-"več predmetov na sliki. Usposobljen je za prepoznavanje 80 različnih "
-"objektov z uporabo nabora podatkov COCO.</p><p><b>YOLOv11 XLarge</b>: velika "
-"nevronska mreža, ki je bila ponovno naučena in ponuja dobro natančnost. "
-"Model bo zaznal več predmetov na slikah kot YOLOv11 Nano, vendar je "
-"počasnejši. YOLO lahko zazna več predmetov na sliki. Usposobljen je za "
-"prepoznavanje 80 različnih objektov z uporabo nabora podatkov COCO.</"
-"p><p><b>ResNet-152</b>: velika in močna zapletena nevronska mreža. Z visoko "
-"natančnostjo bo zaznal en sam predmet na sliki. ResNet-152 je bil "
-"usposobljen za prepoznavanje 1000 različnih predmetov z uporabo nabora "
-"podatkov ImageNet.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
@@ -61502,19 +61456,16 @@ msgid "Face processed: %1"
 msgstr "Obdelan obraz: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Scanned for faces: %1\n"
 msgstr "Preiskano za obraze: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "No face"
 msgstr "Ni obraza"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:445
 #, kde-format
 msgid "1 face"
 msgid_plural "%1 faces"
@@ -61539,6 +61490,21 @@ msgstr "Obrazov najdenih: %1"
 #, kde-format
 msgid "Face found: %1"
 msgstr "Obraz najden: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#, fuzzy, kde-format
+#| msgid "Images found in %1"
+msgid "No faces found in %1"
+msgstr "Slike najdene v %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#, kde-format
+msgid "Found 1 face in "
+msgid_plural "Found %1 faces in "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68096,6 +68062,33 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
+#~ "can detect multiple objects in an image. It is trained to recognize 80 "
+#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#~ "large, rebust neural network offering good accuracy. It will detect more "
+#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#~ "multiple objects in an image. It is trained to recognize 80 different "
+#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#~ "powerful convoluted neural network. It will detect a single object in an "
+#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#~ "different objects using the ImageNet dataset.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv11 Nano</b>: majhna, lahka nevronska mreža, ki ponuja izjemno "
+#~ "hitrost, vendar morda ne prepozna več predmetov na slikah. YOLO lahko "
+#~ "zazna več predmetov na sliki. Usposobljen je za prepoznavanje 80 "
+#~ "različnih objektov z uporabo nabora podatkov COCO.</p><p><b>YOLOv11 "
+#~ "XLarge</b>: velika nevronska mreža, ki je bila ponovno naučena in ponuja "
+#~ "dobro natančnost. Model bo zaznal več predmetov na slikah kot YOLOv11 "
+#~ "Nano, vendar je počasnejši. YOLO lahko zazna več predmetov na sliki. "
+#~ "Usposobljen je za prepoznavanje 80 različnih objektov z uporabo nabora "
+#~ "podatkov COCO.</p><p><b>ResNet-152</b>: velika in močna zapletena "
+#~ "nevronska mreža. Z visoko natančnostjo bo zaznal en sam predmet na sliki. "
+#~ "ResNet-152 je bil usposobljen za prepoznavanje 1000 različnih predmetov z "
+#~ "uporabo nabora podatkov ImageNet.</p>"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""
