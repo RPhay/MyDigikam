@@ -206,7 +206,7 @@ ActionVersionsOverlay::ActionVersionsOverlay(QObject* const parent, const QIcon&
 {
 }
 
-ActionVersionsOverlay::Button* ActionVersionsOverlay::button() const
+ActionVersionsOverlay::Button* ActionVersionsOverlay::overlayButton() const
 {
     return static_cast<Button*>(HoverButtonDelegateOverlay::button());
 }

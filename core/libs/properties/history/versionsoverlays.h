@@ -91,7 +91,7 @@ protected Q_SLOTS:
 protected:
 
     class Button;
-    Button* button()                          const;
+    Button* overlayButton()                   const;
 
 protected:
 
