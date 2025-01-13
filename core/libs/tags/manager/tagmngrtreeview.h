@@ -39,11 +39,8 @@ public:
     explicit TagMngrTreeView(TagsManager* const parent, TagModel* const model);
     ~TagMngrTreeView() override;
 
-    /**
-     * @brief setAlbumFilterModel reimplement from AbstractAlbumTree
-     */
-    void setAlbumFilterModel(TagsManagerFilterModel* const filteredModel,
-                             CheckableAlbumFilterModel* const filterModel);
+    void setAlbumFilterModels(TagsManagerFilterModel* const filteredModel,
+                              CheckableAlbumFilterModel* const filterModel);
 
     TagsManagerFilterModel* getFilterModel() const
     {

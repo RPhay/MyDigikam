@@ -53,7 +53,7 @@ TagMngrTreeView::TagMngrTreeView(TagsManager* const parent, TagModel* const mode
       d            (new Private)
 {
     d->tagMngr = parent;
-    setAlbumFilterModel(new TagsManagerFilterModel(this), checkableAlbumFilterModel());
+    setAlbumFilterModels(new TagsManagerFilterModel(this), checkableAlbumFilterModel());
     setSelectAlbumOnClick(false);
     expand(albumFilterModel()->rootAlbumIndex());
 }
@@ -96,8 +96,8 @@ void TagMngrTreeView::contextMenuEvent(QContextMenuEvent* event)
     Q_UNUSED(event);
 }
 
-void TagMngrTreeView::setAlbumFilterModel(TagsManagerFilterModel* const filteredModel,
-                                          CheckableAlbumFilterModel* const filterModel)
+void TagMngrTreeView::setAlbumFilterModels(TagsManagerFilterModel* const filteredModel,
+                                           CheckableAlbumFilterModel* const filterModel)
 {
     Q_UNUSED(filterModel);
 
