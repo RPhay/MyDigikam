@@ -36,7 +36,7 @@ public:
     PAlbum* currentPAlbum()                          const;
     PAlbum* palbumForIndex(const QModelIndex& index) const;
 
-    void setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
+    void setCheckableAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
     void setPAlbumModel(AlbumModel* const model);
 
 public Q_SLOTS:

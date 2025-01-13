@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configCheckedAlbumsEntry          = QLatin1String("Checked");
     const QString configPartiallyCheckedAlbumsEntry = QLatin1String("PartiallyChecked");
     const QString configRestoreCheckedEntry         = QLatin1String("RestoreChecked");
@@ -78,7 +80,7 @@ void AbstractCheckableAlbumTreeView::setAlbumModel(AbstractCheckableAlbumModel* 
     AbstractCountingAlbumTreeView::setAlbumModel(model);
 }
 
-void AbstractCheckableAlbumTreeView::setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel)
+void AbstractCheckableAlbumTreeView::setCheckableAlbumFilterModel(CheckableAlbumFilterModel* const filterModel)
 {
     AbstractCountingAlbumTreeView::setAlbumFilterModel(filterModel);
 }

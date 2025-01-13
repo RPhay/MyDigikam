@@ -441,7 +441,7 @@ void AlbumTreeViewSelectComboBox::setAlbumModels(AlbumModel* model, CheckableAlb
     }
 
     treeView()->setPAlbumModel(model);
-    treeView()->setAlbumFilterModel(filterModel);
+    treeView()->setCheckableAlbumFilterModel(filterModel);
 
     AlbumSelectComboBox::setAlbumModels(treeView()->albumModel(), treeView()->albumFilterModel());
 
@@ -491,7 +491,7 @@ void TagTreeViewSelectComboBox::setAlbumModels(TagModel* model,
     }
 
     treeView()->setTAlbumModel(model);
-    treeView()->setAlbumFilterModel(filteredModel, filterModel);
+    treeView()->setTAlbumFilterModel(filteredModel, filterModel);
 
     AlbumSelectComboBox::setAlbumModels(treeView()->albumModel(), treeView()->albumFilterModel());
 }

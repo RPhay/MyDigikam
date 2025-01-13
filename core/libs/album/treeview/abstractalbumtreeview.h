@@ -384,7 +384,7 @@ protected:
     virtual void middleButtonPressed(Album* a);
     virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, QList<QModelIndex> indexes);
 
-    void setAlbumFilterModel(AlbumFilterModel* const filterModel);
+    virtual void setAlbumFilterModel(AlbumFilterModel* const filterModel);
     void setAlbumModel(AbstractSpecificAlbumModel* const model);
 
     //@}

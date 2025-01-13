@@ -37,7 +37,7 @@ SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
 
     if (flags & CreateDefaultFilterModel) // must set again!
     {
-        setAlbumFilterModel(new SearchFilterModel(this), albumFilterModel());
+        setSAlbumFilterModel(new SearchFilterModel(this), albumFilterModel());
     }
 }
 
@@ -56,7 +56,7 @@ SearchModel* SearchTreeView::salbumModel() const
     return static_cast<SearchModel*>(m_albumModel);
 }
 
-void SearchTreeView::setAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
+void SearchTreeView::setSAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
 {
     m_filteredModel = filteredModel;
     AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);

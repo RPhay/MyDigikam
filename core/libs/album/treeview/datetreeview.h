@@ -36,7 +36,7 @@ public:
     DAlbum* albumForIndex(const QModelIndex& index) const;
 
     void setDAlbumModel(DateAlbumModel* const model);
-    void setAlbumFilterModel(AlbumFilterModel* const filterModel);
+    void setAlbumFilterModel(AlbumFilterModel* const filterModel) override;
 
 public Q_SLOTS:
 

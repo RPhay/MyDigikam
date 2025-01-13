@@ -40,7 +40,7 @@ public:
     SAlbum* currentAlbum()             const;
 
     void setSAlbumModel(SearchModel* const model);
-    void setAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const model);
+    void setSAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const model);
 
 public Q_SLOTS:
 

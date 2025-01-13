@@ -61,7 +61,7 @@ void AlbumTreeView::setPAlbumModel(AlbumModel* const model)
     }
 }
 
-void AlbumTreeView::setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel)
+void AlbumTreeView::setCheckableAlbumFilterModel(CheckableAlbumFilterModel* const filterModel)
 {
     AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
 }

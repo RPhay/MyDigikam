@@ -57,7 +57,7 @@ public:
     TAlbum* albumForIndex(const QModelIndex& index) const;
     TagModificationHelper* tagModificationHelper()  const;
 
-    void setAlbumFilterModel(TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel);
+    void setTAlbumFilterModel(TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel);
     void setTAlbumModel(TagModel* const model);
 
 public Q_SLOTS:
