@@ -44,6 +44,8 @@
 #include "dnnsfaceextractor.h"
 #include "metadatahub.h"
 #include "scancontroller.h"
+#include "facedetector.h"
+#include "faceclassifier.h"
 
 namespace Digikam
 {

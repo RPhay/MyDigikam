@@ -39,6 +39,7 @@
 #include "identityprovider.h"
 #include "identity.h"
 #include "dnnsfaceextractor.h"
+#include "faceclassifier.h"
 
 namespace Digikam
 {

@@ -19,7 +19,7 @@
 
 #include "facepipelinebase.h"
 #include "facedetector.h"
-#include "faceclassifier.h"
+// #include "faceclassifier.h"
 
 namespace Digikam
 {
