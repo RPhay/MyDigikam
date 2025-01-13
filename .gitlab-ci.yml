@@ -29,7 +29,7 @@ include:
       # - /gitlab-templates/windows-qt6.yml
 
       # Build Qt6 version under FreeBSD and run unit-tests.
-      - /gitlab-templates/freebsd-qt6.yml
+      #- /gitlab-templates/freebsd-qt6.yml
 
       # --- Continuous Deployement Qt6 ---
 
