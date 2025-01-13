@@ -35,7 +35,7 @@ public:
     TagModel* talbumModel()                         const;
 
     /**
-     * Contains only the tags filtered by properties - prefer to albumModel()
+     * @brief Contains only the tags filtered by properties - prefer to albumModel()
      */
     TagPropertiesFilterModel* filteredModel()       const;
 
@@ -62,7 +62,7 @@ public:
 
 public Q_SLOTS:
 
-    void setCurrentAlbums(const QList<Album*>& tags, bool selectInAlbumManager = true);
+    void setCurrentAlbums(const QList<Album*>& tags, bool selectInAlbumManager = true) override;
     void setCurrentAlbum(int tagId, bool selectInAlbumManager = true);
 
 Q_SIGNALS:

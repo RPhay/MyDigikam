@@ -251,7 +251,7 @@ public Q_SLOTS:
      * @param selectInAlbumManager the album will be set as current album, if both
      * this parameter is true and setAlbumManagerCurrentAlbum() was set to true.
      */
-    void setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager = true);
+    virtual void setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager = true);
 
     /**
      * Adapt the column sizes to the contents of the tree view.
