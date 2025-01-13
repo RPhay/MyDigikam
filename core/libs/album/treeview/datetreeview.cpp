@@ -34,12 +34,12 @@ DateTreeView::DateTreeView(QWidget* const parent, Flags flags)
     }
 }
 
-void DateTreeView::setAlbumModel(DateAlbumModel* const model)
+void DateTreeView::setDAlbumModel(DateAlbumModel* const model)
 {
     AbstractCountingAlbumTreeView::setAlbumModel(model);
 }
 
-DateAlbumModel* DateTreeView::albumModel() const
+DateAlbumModel* DateTreeView::dalbumModel() const
 {
     return static_cast<DateAlbumModel*>(m_albumModel);
 }

@@ -31,11 +31,11 @@ public:
 
     explicit DateTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
 
-    DateAlbumModel* albumModel()                    const;
+    DateAlbumModel* dalbumModel()                   const;
     DAlbum* currentAlbum()                          const;
     DAlbum* albumForIndex(const QModelIndex& index) const;
 
-    void setAlbumModel(DateAlbumModel* const model);
+    void setDAlbumModel(DateAlbumModel* const model);
     void setAlbumFilterModel(AlbumFilterModel* const filterModel);
 
 public Q_SLOTS:

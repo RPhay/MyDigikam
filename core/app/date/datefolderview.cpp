@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool          active        = false;
 
     DateTreeView* dateTreeView  = nullptr;
@@ -53,7 +55,7 @@ DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const date
     setObjectName(QLatin1String("DateFolderView"));
 
     d->dateTreeView = new DateTreeView(this);
-    d->dateTreeView->setAlbumModel(dateAlbumModel);
+    d->dateTreeView->setDAlbumModel(dateAlbumModel);
     d->dateTreeView->setAlbumManagerCurrentAlbum(true);
     d->monthview    = new MonthWidget(this);
 
@@ -169,7 +171,7 @@ void DateFolderView::gotoDate(const QDate& dt)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Going to date " << dt;
 
-    QModelIndex dateIndex = d->dateTreeView->albumModel()->monthIndexForDate(dt);
+    QModelIndex dateIndex = d->dateTreeView->dalbumModel()->monthIndexForDate(dt);
 
     if (!dateIndex.isValid())
     {
@@ -178,7 +180,7 @@ void DateFolderView::gotoDate(const QDate& dt)
         return;
     }
 
-    DAlbum* const dateAlbum = d->dateTreeView->albumModel()->dalbumForIndex(dateIndex);
+    DAlbum* const dateAlbum = d->dateTreeView->dalbumModel()->dalbumForIndex(dateIndex);
 
     if (!dateAlbum)
     {
@@ -190,7 +192,6 @@ void DateFolderView::gotoDate(const QDate& dt)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Got date album " << dateAlbum;
 
     d->dateTreeView->setCurrentAlbums(QList<Album*>() << dateAlbum);
-
 }
 
 void DateFolderView::changeAlbumFromHistory(DAlbum* const album)
