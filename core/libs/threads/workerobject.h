@@ -55,7 +55,7 @@ public:
 public:
 
     /**
-     * Deriving from a worker object allows you to execute your slots in a thread.
+     * @brief Deriving from a worker object allows you to execute your slots in a thread.
      * Implement any slots and connect signals just as usual.
      * Call schedule() before or when signals are emitted. The object
      * will have moved to a thread when the signals are received by the slots.
@@ -74,7 +74,7 @@ public:
     void wait();
 
     /**
-     * Sets the priority for this dynamic thread.
+     * @brief Sets the priority for this dynamic thread.
      * Can be set anytime. If the thread is currently not running,
      * the priority will be set when it is run next time.
      * When you set QThread::InheritPriority (default), the
@@ -84,7 +84,7 @@ public:
     QThread::Priority priority()    const;
 
     /**
-     * You must normally call schedule() to ensure that the object is active when you send
+     * @brief You must normally call schedule() to ensure that the object is active when you send
      * a signal with work data. Instead, you can use these connect() methods
      * when connecting your signal to this object, the signal that carries work data.
      * Then the object will be scheduled each time you emit the signal.
@@ -108,14 +108,14 @@ public:
 public Q_SLOTS:
 
     /**
-     * Starts execution of this worker object:
+     * @brief Starts execution of this worker object:
      * The object is moved to a thread and an event loop started,
      * so that queued signals will be received.
      */
     void schedule();
 
     /**
-     * Quits execution of this worker object.
+     * @brief Quits execution of this worker object.
      * If mode is FlushSignals, all already emitted signals will be cleared.
      * If mode is KeepSignals, already emitted signals are not cleared and
      * will be kept in the event queue until destruction or schedule() is called.
@@ -140,14 +140,14 @@ protected:
     void removeRunnable(WorkerObjectRunnable* loop);
 
     /**
-     * If you are deleting data in your destructor which is accessed from the thread,
+     * @brief If you are deleting data in your destructor which is accessed from the thread,
      * do one of the following from your destructor to guarantee a safe shutdown:
      * 1) Call this method
      * 2) Call stop() and wait(), knowing that nothing will
      *    call start() anymore after this
      * 3) Be sure the thread will never be running at destruction.
-     * Note: This irrevocably stops this object.
-     * Note: It is not sufficient that your parent class does this.
+     * @note This irrevocably stops this object.
+     * @note It is not sufficient that your parent class does this.
      * Calling this method, or providing one of the above mentioned
      * equivalent guarantees, must be done by every
      * single last class in the hierarchy with an implemented destructor deleting data.
@@ -156,14 +156,14 @@ protected:
     void shutDown();
 
     /**
-     * Called from within thread's event loop to quit processing.
+     * @brief Called from within thread's event loop to quit processing.
      * Quit any blocking operation.
      * Immediately afterwards, the event loop will be quit.
      */
     virtual void aboutToQuitLoop();
 
     /**
-     * Called from deactivate(), typically from a different
+     * @brief Called from deactivate(), typically from a different
      * thread than the worker thread, possibly the UI thread.
      * You can stop any extra controlled threads here.
      * Immediately afterwards, an event will be sent to the working

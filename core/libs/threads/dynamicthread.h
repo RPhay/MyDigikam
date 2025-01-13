@@ -162,8 +162,6 @@ private:
 
 private:
 
-    friend class DynamicThreadPriv;
-
     class Private;
     Private* const d = nullptr;
 };

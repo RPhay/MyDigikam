@@ -72,7 +72,7 @@ public:
 
         QMutexLocker locker(&mutex);
 
-        // first, wait until the object has been parked in ParkingThread by its owning thread.
+        // First, wait until the object has been parked in ParkingThread by its owning thread.
 
         while (parkedObject->thread() != this)
         {
@@ -81,12 +81,12 @@ public:
 
         QThread* const targetThread = QThread::currentThread();
 
-        // then, now that it's parked in ParkingThread, make ParkingThread move it to the current thread.
+        // Then, now that it's parked in ParkingThread, make ParkingThread move it to the current thread.
 
         todo << qMakePair(parkedObject, targetThread);
         condVar.wakeAll();
 
-        // wait until ParkingThread has pushed the object to current thread
+        // Wait until ParkingThread has pushed the object to current thread
 
         while (parkedObject->thread() != targetThread)
         {
@@ -96,7 +96,8 @@ public:
 
     void run() override
     {
-        /* The quirk here is that this thread never runs an event loop.
+        /**
+         * The quirk here is that this thread never runs an event loop.
          * That means events queued for parked object are only emitted when
          * these object have been moved to their own thread.
          */
@@ -173,7 +174,7 @@ void WorkerObjectRunnable::run()
         return;
     }
 
-    // if another thread should still be running, wait until the object is parked in ParkingThread
+    // If another thread should still be running, wait until the object is parked in ParkingThread
 
     parkingThread->moveToCurrentThread(object);
 
@@ -208,11 +209,11 @@ void WorkerObjectRunnable::run()
 
     Q_EMIT object->finished();
 
-    // if this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
+    // If this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
 
     parkingThread->parkObject(object);
 
-    // now, free the object - in case it wants to get deleted
+    // Now, free the object - in case it wants to get deleted
 
     object->removeRunnable(this);
 }

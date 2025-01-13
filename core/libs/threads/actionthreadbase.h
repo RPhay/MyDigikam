@@ -39,58 +39,58 @@ class DIGIKAM_EXPORT ActionJob : public QObject,
 public:
 
     /**
-     * Constructor which delegate deletion of QRunnable instance to ActionThreadBase, not QThreadPool.
+     * @brief Constructor which delegate deletion of QRunnable instance to ActionThreadBase, not QThreadPool.
      */
     explicit ActionJob(QObject* const parent = nullptr);
 
     /**
-     * Re-implement destructor in you implementation. Don't forget to cancel job.
+     * @brief Re-implement destructor in you implementation. Don't forget to cancel job.
      */
     ~ActionJob() override;
 
 Q_SIGNALS:
 
     /**
-     * Use this signal in your implementation to inform ActionThreadBase manager that job is started
+     * @brief Use this signal in your implementation to inform ActionThreadBase manager that job is started
      */
     void signalStarted();
 
     /**
-     * Use this signal in your implementation to inform ActionThreadBase manager the job progress
+     * @brief Use this signal in your implementation to inform ActionThreadBase manager the job progress
      */
     void signalProgress(int);
 
     /**
-     * Use this signal in your implementation to inform ActionThreadBase manager the job is done.
+     * @brief Use this signal in your implementation to inform ActionThreadBase manager the job is done.
      */
     void signalDone();
 
 public Q_SLOTS:
 
     /**
-     * Call this method to cancel job.
+     * @brief Call this method to cancel job.
      */
     void cancel();
 
 public:
 
     /**
-     * Timer to determine the running time of the job.
+     * @brief Timer to determine the running time of the job.
      */
     QElapsedTimer m_timer;
 
 protected:
 
     /**
-     * You can use this boolean in your implementation to know if job must be canceled.
+     * @brief You can use this boolean in your implementation to know if job must be canceled.
      */
     bool m_cancel = false;
 };
 
 /**
- * Define a QHash of job/priority to process by ActionThreadBase manager.
- * Priority value can be used to control the run queue's order of execution.
- * Zero priority want mean to process job with higher priority.
+ * @brief Define a QHash of job/priority to process by ActionThreadBase manager.
+ *        Priority value can be used to control the run queue's order of execution.
+ *        Zero priority want mean to process job with higher priority.
  */
 typedef QHash<ActionJob*, int> ActionJobCollection;
 
@@ -106,46 +106,46 @@ public:
     ~ActionThreadBase() override;
 
     /**
-     * Adjust maximum number of threads used to parallelize collection of job processing.
+     * @brief Adjust maximum number of threads used to parallelize collection of job processing.
      */
     void setMaximumNumberOfThreads(int n);
 
     /**
-     * Return the maximum number of threads used to parallelize collection of job processing.
+     * @return the maximum number of threads used to parallelize collection of job processing.
      */
     int  maximumNumberOfThreads()   const;
 
     /**
-     * Reset maximum number of threads used to parallelize collection of job processing to max core detected on computer.
+     * @brief Reset maximum number of threads used to parallelize collection of job processing to max core detected on computer.
      * This method is called in constructor.
      */
     void setDefaultMaximumNumberOfThreads();
 
     /**
-     * Cancel processing of current jobs under progress.
+     * @brief Cancel processing of current jobs under progress.
      */
     void cancel(bool isCancel = true);
 
 protected:
 
     /**
-     * Main thread loop used to process jobs in todo list.
+     * @brief Main thread loop used to process jobs in todo list.
      */
     void run()                            override;
 
     /**
-     * Append a collection of jobs to process into QThreadPool.
-     *  Jobs are add to pending lists and will be deleted by ActionThreadBase, not QThreadPool.
+     * @brief Append a collection of jobs to process into QThreadPool.
+     * Jobs are add to pending lists and will be deleted by ActionThreadBase, not QThreadPool.
      */
     void appendJobs(const ActionJobCollection& jobs);
 
     /**
-     * Return true if list of pending jobs to process is empty.
+     * @return true if list of pending jobs to process is empty.
      */
     bool isEmpty()                  const;
 
     /**
-     * Return the number of pending jobs to process.
+     * @return the number of pending jobs to process.
      */
     int pendingCount()              const;
 

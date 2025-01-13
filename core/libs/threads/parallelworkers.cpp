@@ -221,14 +221,14 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
                       args[8],
                       args[9]);
 
-        return (_id - properMethods); // this return is used by replacementQtMetacall
+        return (_id - properMethods); // This return is used by replacementQtMetacall
     }
     else
     {
         m_originalStaticMetacall(asQObject(), _c, _id, _a);
     }
 
-    return _id; // this return will be ignored (qt_static_metacall is void)
+    return _id; // This return will be ignored (qt_static_metacall is void)
 }
 
 int ParallelWorkers::replacementQtMetacall(QMetaObject::Call _c, int _id, void **_a)

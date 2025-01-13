@@ -32,15 +32,15 @@ class DIGIKAM_EXPORT ParallelWorkers
 public:
 
     /**
-     * ParallelWorkers is a helper class to distribute work over
+     * @brief ParallelWorkers is a helper class to distribute work over
      * several identical workers objects.
-     * See ParallelAdapter for guidance how to use it.
+     * @see ParallelAdapter for guidance how to use it.
      */
     ParallelWorkers() = default;
     virtual ~ParallelWorkers();
 
     /**
-     * The corresponding methods of all added worker objects will be called
+     * @brief The corresponding methods of all added worker objects will be called
      */
     virtual void schedule();
     virtual void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals);
@@ -49,20 +49,21 @@ public:
     void setPriority(QThread::Priority priority);
 
     /**
-     * Returns true if the current number of added workers has reached the optimalWorkerCount()
+     * @return true if the current number of added workers has reached the optimalWorkerCount()
      */
     bool optimalWorkerCountReached()                                    const;
 
     /**
-     * Regarding the number of logical CPUs on the current machine,
+     * @brief Regarding the number of logical CPUs on the current machine,
      * returns the optimal count of concurrent workers
      */
     static int optimalWorkerCount();
 
 public:
 
-    /// Connects signals outbound from all workers to a given receiver
-
+    /**
+     * @brief Connects signals outbound from all workers to a given receiver
+     */
     virtual bool connect(const char* signal,
                          const QObject* receiver,
                          const char* method,
@@ -75,23 +76,23 @@ protected:
     // Internal implementation
 
     /**
-     * Replaces slot call distribution of the target QObject
+     * @brief Replaces slot call distribution of the target QObject
      */
     int replacementQtMetacall(QMetaObject::Call _c, int _id, void** _a);
     const QMetaObject* replacementMetaObject()                          const;
 
     /**
-     * Return the target QObject (double inheritance)
+     * @return the target QObject (double inheritance)
      */
     virtual QObject* asQObject()                                                        = 0;
 
     /**
-     * The qt_metacall of WorkerObject, one level above the target QObject
+     * @brief The qt_metacall of WorkerObject, one level above the target QObject
      */
     virtual int WorkerObjectQtMetacall(QMetaObject::Call _c, int _id, void** _a)        = 0;
 
     /**
-     * The moc-generated metaObject of the target object
+     * @brief The moc-generated metaObject of the target object
      */
     virtual const QMetaObject* mocMetaObject()                          const           = 0;
 
@@ -124,10 +125,10 @@ class ParallelAdapter : public A,
 public:
 
     /**
-     * Instead of using a single WorkerObject, create a ParallelAdapter for
+     * @brief Instead of using a single WorkerObject, create a ParallelAdapter for
      * your worker object subclass, and add() individual WorkerObjects.
      * The load will be evenly distributed.
-     * Note: unlike with WorkerObject directly, there is no need to call schedule().
+     * @note Unlike with WorkerObject directly, there is no need to call schedule().
      * For inbound connections (signals connected to a WorkerObject's slot, to be processed,
      * use a Qt::DirectConnection on the adapter.
      * For outbound connections (signals emitted from the WorkerObject),

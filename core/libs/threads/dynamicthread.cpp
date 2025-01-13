@@ -39,9 +39,9 @@ public:
 
     void run() override;
 
-    void         takingThread();
-    bool         transitionToRunning();
-    void         transitionToInactive();
+    void takingThread();
+    bool transitionToRunning();
+    void transitionToInactive();
 
 public:
 
@@ -79,7 +79,7 @@ bool DynamicThread::Private::transitionToRunning()
     {
         case DynamicThread::Scheduled:
         {
-            // ensure that a newly scheduled thread does not run
+            // Ensure that a newly scheduled thread does not run
             // while an old, deactivated one has not yet called transitionToInactive
 
             while (assignedThread)

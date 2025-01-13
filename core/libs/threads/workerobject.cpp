@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     volatile WorkerObject::State state          = WorkerObject::Inactive;
     QMutex                       mutex;
     QWaitCondition               condVar;
