@@ -175,6 +175,11 @@ public:
     void setAlbumModels(AlbumModel* model,
                         CheckableAlbumFilterModel* filterModel = nullptr);
     AlbumTreeView* treeView() const;
+
+private:
+
+    // Disable
+    QAbstractItemView* view() const;
 };
 
 // ------------------------------------------------------------------------------------
@@ -192,6 +197,11 @@ public:
                                 TagPropertiesFilterModel* filteredModel = nullptr,
                                 CheckableAlbumFilterModel* filterModel = nullptr);
     TagTreeView* treeView() const;
+
+private:
+
+    // Disable
+    QAbstractItemView* view() const;
 };
 
 } // namespace Digikam
