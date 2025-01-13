@@ -63,10 +63,9 @@ protected:
 
 private:
 
-    // Hide
-
+    // Disable
     AutotagsClassifierBase()                                            = delete;
-    AutotagsClassifierBase(AutotagsClassifierBase&)                     = delete;
+    AutotagsClassifierBase(const AutotagsClassifierBase&)               = delete;
 };
 
 } // namespace Digikam

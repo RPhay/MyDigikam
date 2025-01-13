@@ -91,8 +91,8 @@ protected:
 private:
 
     // Disable
-    AutotagsPipelineBase()                      = delete;
-    AutotagsPipelineBase(AutotagsPipelineBase&) = delete;
+    AutotagsPipelineBase()                            = delete;
+    AutotagsPipelineBase(const AutotagsPipelineBase&) = delete;
 };
 
 } // namespace digikam

@@ -39,9 +39,8 @@ public:
 private:
 
     // Disable
-
     AutotagsClassifierSoftmax()                                     = delete;
-    AutotagsClassifierSoftmax(AutotagsClassifierSoftmax&)           = delete;
+    AutotagsClassifierSoftmax(const AutotagsClassifierSoftmax&)     = delete;
 };
 
 } // namespace Digikam

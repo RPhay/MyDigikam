@@ -47,8 +47,9 @@ protected:
 
 private:
 
+    // Disable
     AutotagsPipelineObject()                                    = delete;
-    AutotagsPipelineObject(AutotagsPipelineObject&)             = delete;
+    AutotagsPipelineObject(const AutotagsPipelineObject&)       = delete;
 };
 
 } // namespace Digikam

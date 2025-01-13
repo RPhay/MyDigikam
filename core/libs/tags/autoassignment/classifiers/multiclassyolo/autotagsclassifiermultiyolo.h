@@ -86,7 +86,7 @@ private:
 
     // Disable
     AutotagsClassifierYolo()                                                    = delete;
-    AutotagsClassifierYolo(AutotagsClassifierYolo&)                             = delete;
+    AutotagsClassifierYolo(const AutotagsClassifierYolo&)                       = delete;
 };
 
 } // Digikam
