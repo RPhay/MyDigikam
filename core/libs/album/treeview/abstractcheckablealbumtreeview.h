@@ -70,7 +70,7 @@ protected:
     void rowsInserted(const QModelIndex& parent, int start, int end)      override;
 
     void setAlbumModel(AbstractCheckableAlbumModel* const model);
-    void setCheckableAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
+    virtual void setCheckableAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
 
 private:
 
