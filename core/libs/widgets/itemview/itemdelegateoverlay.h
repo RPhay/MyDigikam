@@ -37,7 +37,7 @@ public:
     ~ItemDelegateOverlay() override = default;
 
     /**
-     * Called when the overlay was installed and shall begin working,
+     * @brief Called when the overlay was installed and shall begin working,
      * and before it is removed and shall stop.
      * Setup your connections to view and delegate here.
      * You will be disconnected automatically on removal.
@@ -45,7 +45,7 @@ public:
     virtual void setActive(bool active);
 
     /**
-     * Only these two methods are implemented as virtual methods.
+     * @brief Only these two methods are implemented as virtual methods.
      * For all other events, connect to the view's signals.
      * There are a few signals specifically for overlays and all
      * QAbstractItemView standard signals.
@@ -71,7 +71,7 @@ Q_SIGNALS:
 protected Q_SLOTS:
 
     /**
-     * Called when any change from the delegate occurs - when the overlay is installed,
+     * @brief Called when any change from the delegate occurs - when the overlay is installed,
      * when size hints, styles or fonts change
      */
     virtual void visualChange();
@@ -79,7 +79,7 @@ protected Q_SLOTS:
 protected:
 
     /**
-     * For the context that an overlay can affect multiple items:
+     * @brief For the context that an overlay can affect multiple items:
      * Assuming the currently overlayed index is given.
      * Will an operation affect only the single item, or multiple?
      * If multiple, retrieve the affected selection.
@@ -89,7 +89,7 @@ protected:
     int                numberOfAffectedIndexes(const QModelIndex& index) const;
 
     /**
-     * Utility method
+     * @brief Utility method
      */
     bool viewHasMultiSelection()                                         const;
 
@@ -99,14 +99,14 @@ protected:
     QAbstractItemDelegate* m_delegate   = nullptr;
 };
 
-#define REQUIRE_DELEGATE(Delegate)                                                                                                           \
-                                                                                                                                             \
-public:                                                                                                                                      \
-                                                                                                                                             \
-    void setDelegate(Delegate* delegate)                                 { ItemDelegateOverlay::setDelegate(delegate);                     } \
-    Delegate* delegate() const                                           { return static_cast<Delegate*>(ItemDelegateOverlay::delegate()); } \
-    virtual bool acceptsDelegate(QAbstractItemDelegate*d) const override { return dynamic_cast<Delegate*>(d);                              } \
-                                                                                                                                             \
+#define REQUIRE_DELEGATE(Delegate)                                                                                                                  \
+                                                                                                                                                    \
+public:                                                                                                                                             \
+                                                                                                                                                    \
+    void setItemDelegate(Delegate* const delegate)                              { ItemDelegateOverlay::setDelegate(delegate);                     } \
+    Delegate* itemDelegate() const                                              { return static_cast<Delegate*>(ItemDelegateOverlay::delegate()); } \
+    virtual bool acceptsDelegate(QAbstractItemDelegate* const d) const override { return dynamic_cast<Delegate*>(d);                              } \
+                                                                                                                                                    \
 private:
 
 // -------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ class DIGIKAM_EXPORT AbstractWidgetDelegateOverlay : public ItemDelegateOverlay
 public:
 
     /**
-     * This class provides functionality for using a widget in an overlay.
+     * @brief This class provides functionality for using a widget in an overlay.
      * You must reimplement at least createWidget to return your widget.
      * Per default it will be shown when the cursor enters an index and hidden when left.
      * Reimplement slotEntered() and mouseMove() for more fine grained control.
@@ -126,7 +126,7 @@ public:
     explicit AbstractWidgetDelegateOverlay(QObject* const parent);
 
     /**
-     * If active is true, this will call createWidget(), initialize the widget for use,
+     * @brief If active is true, this will call createWidget(), initialize the widget for use,
      * and setup connections for the virtual slots.
      * If active is false, this will delete the widget and
      * disconnect all signal from model and view to this object (!)
@@ -136,62 +136,62 @@ public:
 protected:
 
     /**
-     * Create your widget here. When creating the object, pass parentWidget() as parent widget.
+     * @brief Create your widget here. When creating the object, pass parentWidget() as parent widget.
      * Ownership of the object is passed. It will be deleted in setActive(false).
      */
     virtual QWidget* createWidget() = 0;
 
     /**
-     * Called when the widget shall be hidden (mouse cursor left index, viewport, uninstalled etc.).
+     * @brief Called when the widget shall be hidden (mouse cursor left index, viewport, uninstalled etc.).
      * Default implementation hide()s m_widget.
      */
     virtual void hide();
 
     /**
-     * Returns the widget to be used as parent for your widget created in createWidget()
+     * @return the widget to be used as parent for your widget created in createWidget()
      */
     QWidget* parentWidget()                           const;
 
     /**
-     * Return true here if you want to show the overlay for the given index.
+     * @return true here if you want to show the overlay for the given index.
      * The default implementation returns true.
      */
     virtual bool checkIndex(const QModelIndex& index) const;
 
     /**
-     * Called when a QEvent::Leave of the viewport is received.
+     * @brief Called when a QEvent::Leave of the viewport is received.
      * The default implementation hide()s.
      */
     virtual void viewportLeaveEvent(QObject* obj, QEvent* event);
 
     /**
-     * Called when a QEvent::Enter resp. QEvent::Leave event for the widget is received.
+     * @brief Called when a QEvent::Enter resp. QEvent::Leave event for the widget is received.
      * The default implementation does nothing.
      */
     virtual void widgetEnterEvent();
     virtual void widgetLeaveEvent();
 
     /**
-     * A sample implementation for above methods
+     * @brief A sample implementation for above methods
      */
     void widgetEnterNotifyMultiple(const QModelIndex& index);
     void widgetLeaveNotifyMultiple();
     virtual QString notifyMultipleMessage(const QModelIndex&, int number);
 
     /**
-     * Utility method called from slotEntered
+     * @brief Utility method called from slotEntered
      */
     bool checkIndexOnEnter(const QModelIndex& index)  const;
 
 protected Q_SLOTS:
 
     /**
-     * Default implementation shows the widget iff the index is valid and checkIndex returns true.
+     * @brief Default implementation shows the widget iff the index is valid and checkIndex returns true.
      */
     virtual void slotEntered(const QModelIndex& index);
 
     /**
-     * Default implementations of these three slots call hide()
+     * @brief Default implementations of these three slots call hide()
      */
     virtual void slotReset();
     virtual void slotViewportEntered();
@@ -220,7 +220,7 @@ public:
     explicit HoverButtonDelegateOverlay(QObject* const parent);
 
     /**
-     * Will call createButton().
+     * @brief Will call createButton().
      */
     void setActive(bool active)                 override;
 
@@ -229,12 +229,12 @@ public:
 protected:
 
     /**
-     * Create your widget here. Pass view() as parent.
+     * @brief Create your widget here. Pass view() as parent.
      */
     virtual ItemViewHoverButton* createButton() = 0;
 
     /**
-     * Called when a new index is entered. Reposition your button here,
+     * @brief Called when a new index is entered. Reposition your button here,
      * adjust and store state.
      */
     virtual void updateButton(const QModelIndex& index) = 0;
@@ -255,7 +255,7 @@ class DIGIKAM_EXPORT PersistentWidgetDelegateOverlay : public AbstractWidgetDele
     Q_OBJECT
 
     /**
-     * This class offers additional / modified behavior:
+     * @brief This class offers additional / modified behavior:
      * When a "persistent" mode is entered, it will not move
      * by mouse hover, but stay and only move on mouse click.
      * If the overlay widget had focus, it will be restored on show.
@@ -273,7 +273,7 @@ public:
 public Q_SLOTS:
 
     /**
-     * Enters persistent mode.
+     * @brief Enters persistent mode.
      * The overlay is moved because of mouse hover.
      */
     void setPersistent(bool persistent);
@@ -287,7 +287,7 @@ protected:
     QModelIndex index() const;
 
     /**
-     * Most overlays reimplement this slot to get the starting point
+     * @brief Most overlays reimplement this slot to get the starting point
      * for repositioning a widget etc.
      * This class instead provides showOnIndex() which you shall
      * use for this purpose.
@@ -301,12 +301,14 @@ protected:
     void hide()                                                         override;
 
     /**
-     * Reimplement to set the focus on the correct subwidget.
+     * @brief Reimplement to set the focus on the correct subwidget.
      * Default implementation sets focus on widget()
      */
     virtual void setFocusOnWidget();
 
-    /// see slotEntered()
+    /**
+     * @see slotEntered()
+     */
     virtual void showOnIndex(const QModelIndex& index);
 
     void restoreFocus();
@@ -324,7 +326,7 @@ class DIGIKAM_EXPORT ItemDelegateOverlayContainer
 public:
 
     /**
-     * This is a sample implementation for
+     * @brief This is a sample implementation for
      * delegate management methods, to be inherited by a delegate.
      * Does not inherit QObject, the delegate already does.
      */
@@ -352,10 +354,10 @@ protected:
 
     virtual void drawOverlays(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
-    /// Declare as slot in the derived class calling this method
+    /// @brief Declare as slot in the derived class calling this method
     virtual void overlayDestroyed(QObject* o);
 
-    /// Returns the delegate, typically, the derived class
+    /// @return the delegate, typically, the derived class
     virtual QAbstractItemDelegate* asDelegate() = 0;
 
 protected:

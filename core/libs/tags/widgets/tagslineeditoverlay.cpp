@@ -112,7 +112,7 @@ void TagsLineEditOverlay::updatePosition()
         return;
     }
 
-    QRect thumbrect  = delegate()->ratingRect();
+    QRect thumbrect  = itemDelegate()->ratingRect();
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "updatePosition called, probably a mouseover : " << thumbrect;
 

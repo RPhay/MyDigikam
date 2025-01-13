@@ -328,7 +328,7 @@ void ImportRatingOverlay::widgetLeaveEvent()
 
 void ImportRatingOverlay::hide()
 {
-    delegate()->setRatingEdited(QModelIndex());
+    itemDelegate()->setRatingEdited(QModelIndex());
     AbstractWidgetDelegateOverlay::hide();
 }
 
@@ -339,7 +339,7 @@ void ImportRatingOverlay::updatePosition()
         return;
     }
 
-    QRect rect = delegate()->ratingRect();
+    QRect rect = itemDelegate()->ratingRect();
 
     if (rect.width() > ratingWidget()->maximumVisibleWidth())
     {
@@ -389,7 +389,7 @@ void ImportRatingOverlay::slotEntered(const QModelIndex& index)
     updatePosition();
     updateRating();
 
-    delegate()->setRatingEdited(m_index);
+    itemDelegate()->setRatingEdited(m_index);
     view()->update(m_index);
 }
 

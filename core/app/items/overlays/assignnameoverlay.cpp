@@ -212,8 +212,8 @@ void AssignNameOverlay::updatePosition()
     // Depending of icon-view item options enabled in setup, the free space to use can be different.
     // We can continue to show the widget behind bottom of thumbnail view.
 
-    QRect rect = delegate()->imageInformationRect();
-    rect.setTop(delegate()->pixmapRect().top());
+    QRect rect = itemDelegate()->imageInformationRect();
+    rect.setTop(itemDelegate()->pixmapRect().top());
 
     if (rect.width() < m_widget->minimumSizeHint().width())
     {
