@@ -50,8 +50,7 @@
                 {                                                                \
                     MLPipelinePackageFoundation* mlpackage = dequeue(thisQueue); \
                     if (queueEndSignal() == mlpackage) { break; }                \
-                    pipelinePerformanceStart(thisStage, timer);                  \
-                    mlpackage
+                    pipelinePerformanceStart(thisStage, timer);
 
 #define MLPIPELINE_LOOP_END(thisStage, pipelineStageName)                                                                                                     \
                 pipelinePerformanceEnd(thisStage, timer);                                                                                                     \
