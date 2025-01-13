@@ -94,7 +94,7 @@ void AlbumFolderViewSideBarWidget::setActive(bool active)
 {
     if (active)
     {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentAlbum());
+        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentPAlbum());
     }
 }
 
@@ -128,7 +128,7 @@ void AlbumFolderViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& a
 
 AlbumPointer<PAlbum> AlbumFolderViewSideBarWidget::currentAlbum() const
 {
-    return AlbumPointer<PAlbum> (d->albumFolderView->currentAlbum());
+    return AlbumPointer<PAlbum> (d->albumFolderView->currentPAlbum());
 }
 
 void AlbumFolderViewSideBarWidget::setCurrentAlbum(PAlbum* album)

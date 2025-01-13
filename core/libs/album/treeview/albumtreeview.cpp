@@ -36,11 +36,11 @@ AlbumTreeView::AlbumTreeView(QWidget* const parent, Flags flags)
 
     if (flags & CreateDefaultModel)
     {
-        setAlbumModel(new AlbumModel(AlbumModel::IncludeRootAlbum, this));
+        setPAlbumModel(new AlbumModel(AlbumModel::IncludeRootAlbum, this));
     }
 }
 
-void AlbumTreeView::setAlbumModel(AlbumModel* const model)
+void AlbumTreeView::setPAlbumModel(AlbumModel* const model)
 {
     // changing model is not implemented
 
@@ -51,11 +51,11 @@ void AlbumTreeView::setAlbumModel(AlbumModel* const model)
 
     AbstractCheckableAlbumTreeView::setAlbumModel(model);
 
-    m_dragDropHandler = albumModel()->dragDropHandler();
+    m_dragDropHandler = palbumModel()->dragDropHandler();
 
     if (!m_dragDropHandler)
     {
-        m_dragDropHandler = new AlbumDragDropHandler(albumModel());
+        m_dragDropHandler = new AlbumDragDropHandler(palbumModel());
 
         model->setDragDropHandler(m_dragDropHandler);
     }
@@ -66,17 +66,17 @@ void AlbumTreeView::setAlbumFilterModel(CheckableAlbumFilterModel* const filterM
     AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
 }
 
-AlbumModel* AlbumTreeView::albumModel() const
+AlbumModel* AlbumTreeView::palbumModel() const
 {
     return dynamic_cast<AlbumModel*>(m_albumModel);
 }
 
-PAlbum* AlbumTreeView::currentAlbum() const
+PAlbum* AlbumTreeView::currentPAlbum() const
 {
     return dynamic_cast<PAlbum*> (m_albumFilterModel->albumForIndex(currentIndex()));
 }
 
-PAlbum* AlbumTreeView::albumForIndex(const QModelIndex& index) const
+PAlbum* AlbumTreeView::palbumForIndex(const QModelIndex& index) const
 {
     return dynamic_cast<PAlbum*> (m_albumFilterModel->albumForIndex(index));
 }

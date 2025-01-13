@@ -69,7 +69,7 @@ protected:
 
     QString tipContents() override
     {
-        PAlbum* const album = view()->albumForIndex(currentIndex());
+        PAlbum* const album = view()->palbumForIndex(currentIndex());
 
         return (ToolTipFiller::albumTipContents(album, view()->albumModel()->albumCount(album)));
     }
@@ -424,7 +424,7 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
         return true;
     }
 
-    PAlbum* const album = albumForIndex(index);
+    PAlbum* const album = palbumForIndex(index);
 
     if (!album || album->isRoot() || album->isAlbumRoot())
     {

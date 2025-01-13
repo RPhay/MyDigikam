@@ -32,12 +32,12 @@ public:
     explicit AlbumTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
     ~AlbumTreeView() override = default;
 
-    AlbumModel* albumModel()                        const;
-    PAlbum* currentAlbum()                          const;
-    PAlbum* albumForIndex(const QModelIndex& index) const;
+    AlbumModel* palbumModel()                        const;
+    PAlbum* currentPAlbum()                          const;
+    PAlbum* palbumForIndex(const QModelIndex& index) const;
 
     void setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
-    void setAlbumModel(AlbumModel* const model);
+    void setPAlbumModel(AlbumModel* const model);
 
 public Q_SLOTS:
 

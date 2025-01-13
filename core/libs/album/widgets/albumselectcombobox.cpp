@@ -440,7 +440,7 @@ void AlbumTreeViewSelectComboBox::setAlbumModels(AlbumModel* model, CheckableAlb
         filterModel = new CheckableAlbumFilterModel(this);
     }
 
-    treeView()->setAlbumModel(model);
+    treeView()->setPAlbumModel(model);
     treeView()->setAlbumFilterModel(filterModel);
 
     AlbumSelectComboBox::setAlbumModels(treeView()->albumModel(), treeView()->albumFilterModel());

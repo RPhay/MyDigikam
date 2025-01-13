@@ -97,7 +97,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     DVBox* const albumBox = new DVBox(this);
     d->albumModel         = new AlbumModel(AbstractAlbumModel::IgnoreRootAlbum, albumBox);
     d->albumTreeView      = new AlbumTreeView(albumBox);
-    d->albumTreeView->setAlbumModel(d->albumModel);
+    d->albumTreeView->setPAlbumModel(d->albumModel);
     d->albumTreeView->setEntryPrefix(QLatin1String("AlbumTreeView"));
     d->albumTreeView->setConfigGroup(configGroup);
     d->prepareTreeView(d->albumTreeView);

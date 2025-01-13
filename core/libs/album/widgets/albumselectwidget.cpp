@@ -90,7 +90,7 @@ void AlbumSelectTreeView::handleCustomContextMenuAction(QAction* action, const A
 
 void AlbumSelectTreeView::slotNewAlbum()
 {
-    PAlbum* const palbum = currentAlbum();
+    PAlbum* const palbum = currentPAlbum();
 
     if (palbum)
     {
@@ -220,7 +220,7 @@ AlbumSelectWidget::~AlbumSelectWidget()
 
 PAlbum* AlbumSelectWidget::currentAlbum() const
 {
-    return d->albumTreeView->currentAlbum();
+    return d->albumTreeView->currentPAlbum();
 }
 
 void AlbumSelectWidget::setCurrentAlbum(PAlbum* const albumToSelect)
@@ -230,7 +230,7 @@ void AlbumSelectWidget::setCurrentAlbum(PAlbum* const albumToSelect)
 
 QUrl AlbumSelectWidget::currentAlbumUrl() const
 {
-    PAlbum* const palbum = d->albumTreeView->currentAlbum();
+    PAlbum* const palbum = d->albumTreeView->currentPAlbum();
 
     if (palbum)
     {
