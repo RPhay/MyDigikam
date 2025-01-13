@@ -115,7 +115,7 @@ void AddTagsComboBox::setParentTag(TAlbum* const album)
 
 void AddTagsComboBox::setCurrentTag(TAlbum* const album)
 {
-    view()->setCurrentAlbums(QList<Album*>() << album);
+    treeView()->setCurrentAlbums(QList<Album*>() << album);
     slotViewIndexActivated(view()->currentIndex());
 }
 
@@ -146,7 +146,7 @@ TaggingAction AddTagsComboBox::currentTaggingAction()
 
 void AddTagsComboBox::slotViewIndexActivated(const QModelIndex& index)
 {
-    TAlbum* const album = view()->albumForIndex(index);
+    TAlbum* const album = treeView()->albumForIndex(index);
 
     if (album)
     {

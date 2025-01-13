@@ -174,7 +174,7 @@ public:
     void setDefaultModel();
     void setAlbumModels(AlbumModel* model,
                         CheckableAlbumFilterModel* filterModel = nullptr);
-    AlbumTreeView* view() const;
+    AlbumTreeView* treeView() const;
 };
 
 // ------------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ public:
     virtual void setAlbumModels(TagModel* model,
                                 TagPropertiesFilterModel* filteredModel = nullptr,
                                 CheckableAlbumFilterModel* filterModel = nullptr);
-    TagTreeView* view() const;
+    TagTreeView* treeView() const;
 };
 
 } // namespace Digikam

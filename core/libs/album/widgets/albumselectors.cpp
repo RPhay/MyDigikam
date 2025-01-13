@@ -193,7 +193,7 @@ void AlbumSelectors::initAlbumWidget()
 */
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
-    d->albumClearButton = new ModelClearButton(d->albumSelectCB->view()->albumModel());
+    d->albumClearButton = new ModelClearButton(d->albumSelectCB->treeView()->albumModel());
     d->albumClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected albums"));
 
     QHBoxLayout* l      = new QHBoxLayout;
@@ -222,12 +222,12 @@ void AlbumSelectors::initAlbumWidget()
         }
     );
 
-    connect(d->albumSelectCB->view()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
+    connect(d->albumSelectCB->treeView()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotUpdateClearButtons()));
 
-    d->albumSelectCB->view()->setObjectName(d->configName);
-    d->albumSelectCB->view()->setEntryPrefix(QLatin1String("AlbumComboBox-"));
-    d->albumSelectCB->view()->setRestoreCheckState(true);
+    d->albumSelectCB->treeView()->setObjectName(d->configName);
+    d->albumSelectCB->treeView()->setEntryPrefix(QLatin1String("AlbumComboBox-"));
+    d->albumSelectCB->treeView()->setRestoreCheckState(true);
 }
 
 void AlbumSelectors::initTagWidget()
@@ -251,7 +251,7 @@ void AlbumSelectors::initTagWidget()
     d->tagSelectCB->setNoSelectionText(i18nc("@info", "No Tag Selected"));
     d->tagSelectCB->addCheckUncheckContextMenuActions();
 
-    d->tagClearButton = new ModelClearButton(d->tagSelectCB->view()->albumModel());
+    d->tagClearButton = new ModelClearButton(d->tagSelectCB->treeView()->albumModel());
     d->tagClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected tags"));
 
     QHBoxLayout* l    = new QHBoxLayout;
@@ -273,7 +273,7 @@ void AlbumSelectors::initTagWidget()
     connect(d->wholeTags, SIGNAL(toggled(bool)),
             this, SLOT(slotWholeTags(bool)));
 
-    connect(d->tagSelectCB->view()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
+    connect(d->tagSelectCB->treeView()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotUpdateClearButtons()));
 
     connect(d->recursiveSelectionTags, &QCheckBox::clicked,
@@ -283,9 +283,9 @@ void AlbumSelectors::initTagWidget()
         }
     );
 
-    d->tagSelectCB->view()->setObjectName(d->configName);
-    d->tagSelectCB->view()->setEntryPrefix(QLatin1String("TagComboBox-"));
-    d->tagSelectCB->view()->setRestoreCheckState(true);
+    d->tagSelectCB->treeView()->setObjectName(d->configName);
+    d->tagSelectCB->treeView()->setEntryPrefix(QLatin1String("TagComboBox-"));
+    d->tagSelectCB->treeView()->setRestoreCheckState(true);
 }
 
 void AlbumSelectors::slotWholeAlbums(bool b)
@@ -496,7 +496,7 @@ void AlbumSelectors::loadState()
     if (d->albumWidget)
     {
         d->wholeAlbums->setChecked(group.readEntry(d->configUseWholeAlbumsEntry, true));
-        d->albumSelectCB->view()->loadState();
+        d->albumSelectCB->treeView()->loadState();
         d->albumClearButton->animateVisible(!d->albumSelectCB->model()->checkedAlbums().isEmpty());
 
         slotWholeAlbums(wholeAlbumsChecked());
@@ -506,7 +506,7 @@ void AlbumSelectors::loadState()
     if (d->tagWidget)
     {
         d->wholeTags->setChecked(group.readEntry(d->configUseWholeTagsEntry, false));
-        d->tagSelectCB->view()->loadState();
+        d->tagSelectCB->treeView()->loadState();
         d->tagClearButton->animateVisible(!d->tagSelectCB->model()->checkedAlbums().isEmpty());
 
         slotWholeTags(wholeTagsChecked());
@@ -527,13 +527,13 @@ void AlbumSelectors::saveState()
     if (d->albumWidget)
     {
         group.writeEntry(d->configUseWholeAlbumsEntry, wholeAlbumsChecked());
-        d->albumSelectCB->view()->saveState();
+        d->albumSelectCB->treeView()->saveState();
     }
 
     if (d->tagWidget)
     {
         group.writeEntry(d->configUseWholeTagsEntry, wholeTagsChecked());
-        d->tagSelectCB->view()->saveState();
+        d->tagSelectCB->treeView()->saveState();
     }
 
     if (d->selectionMode == All)
