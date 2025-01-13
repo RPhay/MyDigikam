@@ -113,7 +113,7 @@ BUGFIXES:
 072 ==> 498391 - Hierarchical tags disappear.
 073 ==> 498514 - Trash a image in macOS will not shown in Trash.
 074 ==> 498519 - Build failled with mlpipelinemacros.h:53:68: error.
-075 ==>
+075 ==> 498603 - Face detection feature stopped working.
 076 ==>
 077 ==>
 078 ==>
