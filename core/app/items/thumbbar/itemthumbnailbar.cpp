@@ -193,7 +193,7 @@ void ItemThumbnailBar::slotSetupChanged()
 
 void ItemThumbnailBar::assignRating(const QList<QModelIndex>& indexes, int rating)
 {
-    ItemInfoList infos(imageSortFilterModel()->imageInfos(indexes));
+    ItemInfoList infos(itemSortFilterModel()->imageInfos(indexes));
 
     if (needGroupResolving(MetadataOps, infos))
     {
@@ -217,30 +217,30 @@ bool ItemThumbnailBar::event(QEvent* e)
 
 QModelIndex ItemThumbnailBar::nextIndex(const QModelIndex& index) const
 {
-    return imageFilterModel()->index(index.row() + 1, 0);
+    return itemFilterModel()->index(index.row() + 1, 0);
 }
 
 QModelIndex ItemThumbnailBar::previousIndex(const QModelIndex& index) const
 {
-    return imageFilterModel()->index(index.row() - 1, 0);
+    return itemFilterModel()->index(index.row() - 1, 0);
 }
 
 QModelIndex ItemThumbnailBar::firstIndex() const
 {
-    return imageFilterModel()->index(0, 0);
+    return itemFilterModel()->index(0, 0);
 }
 
 QModelIndex ItemThumbnailBar::lastIndex() const
 {
-    return imageFilterModel()->index(imageFilterModel()->rowCount() - 1, 0);
+    return itemFilterModel()->index(itemFilterModel()->rowCount() - 1, 0);
 }
 
 bool ItemThumbnailBar::hasHiddenGroupedImages(const ItemInfo& info) const
 {
     return (
             info.hasGroupedImages()                &&
-            !imageFilterModel()->isAllGroupsOpen() &&
-            !imageFilterModel()->isGroupOpen(info.id())
+            !itemFilterModel()->isAllGroupsOpen() &&
+            !itemFilterModel()->isGroupOpen(info.id())
            );
 }
 

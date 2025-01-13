@@ -77,6 +77,8 @@ public:
 
     Private() = default;
 
+public:
+
     ItemModel*            model             = nullptr;
     ImageSortFilterModel* filterModel       = nullptr;
 
@@ -182,32 +184,32 @@ void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* filt
     }
 }
 
-ItemModel* ItemCategorizedView::imageModel() const
+ItemModel* ItemCategorizedView::itemModel() const
 {
     return d->model;
 }
 
-ImageSortFilterModel* ItemCategorizedView::imageSortFilterModel() const
+ImageSortFilterModel* ItemCategorizedView::itemSortFilterModel() const
 {
     return d->filterModel;
 }
 
-ItemFilterModel* ItemCategorizedView::imageFilterModel() const
+ItemFilterModel* ItemCategorizedView::itemFilterModel() const
 {
     return d->filterModel->imageFilterModel();
 }
 
-ItemThumbnailModel* ItemCategorizedView::imageThumbnailModel() const
+ItemThumbnailModel* ItemCategorizedView::itemThumbnailModel() const
 {
     return qobject_cast<ItemThumbnailModel*>(d->model);
 }
 
-ItemAlbumModel* ItemCategorizedView::imageAlbumModel() const
+ItemAlbumModel* ItemCategorizedView::itemAlbumModel() const
 {
     return qobject_cast<ItemAlbumModel*>(d->model);
 }
 
-ItemAlbumFilterModel* ItemCategorizedView::imageAlbumFilterModel() const
+ItemAlbumFilterModel* ItemCategorizedView::itemAlbumFilterModel() const
 {
     return qobject_cast<ItemAlbumFilterModel*>(d->filterModel->imageFilterModel());
 }
@@ -217,7 +219,7 @@ QSortFilterProxyModel* ItemCategorizedView::filterModel() const
     return d->filterModel;
 }
 
-ItemDelegate* ItemCategorizedView::delegate() const
+ItemDelegate* ItemCategorizedView::itemDelegate() const
 {
     return d->delegate;
 }
@@ -266,7 +268,7 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 
 Album* ItemCategorizedView::currentAlbum() const
 {
-    ItemAlbumModel* const albumModel = imageAlbumModel();
+    ItemAlbumModel* const albumModel = itemAlbumModel();
 
     // TODO: Change to QList return type
 
@@ -399,7 +401,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
 
 void ItemCategorizedView::openAlbum(const QList<Album*>& albums)
 {
-    ItemAlbumModel* const albumModel = imageAlbumModel();
+    ItemAlbumModel* const albumModel = itemAlbumModel();
 
     if (albumModel)
     {
@@ -683,7 +685,7 @@ void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems, 
 
 Album* ItemCategorizedView::albumAt(const QPoint& pos) const
 {
-    if (imageFilterModel()->imageSortSettings().categorizationMode == ItemSortSettings::CategoryByAlbum)
+    if (itemFilterModel()->imageSortSettings().categorizationMode == ItemSortSettings::CategoryByAlbum)
     {
         QModelIndex categoryIndex = indexForCategoryAt(pos);
 

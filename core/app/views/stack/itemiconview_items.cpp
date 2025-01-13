@@ -428,7 +428,7 @@ void ItemIconView::slotSortImages(int sortRole)
     }
 
     settings->setImageSortOrder(sortRole);
-    d->iconView->imageFilterModel()->setSortRole((ItemSortSettings::SortRole) sortRole);
+    d->iconView->itemFilterModel()->setSortRole((ItemSortSettings::SortRole) sortRole);
     settings->emitSetupChanged();
 }
 
@@ -442,7 +442,7 @@ void ItemIconView::slotSortImagesOrder(int order)
     }
 
     settings->setImageSorting(order);
-    d->iconView->imageFilterModel()->setSortOrder((ItemSortSettings::SortOrder) order);
+    d->iconView->itemFilterModel()->setSortOrder((ItemSortSettings::SortOrder) order);
     settings->emitSetupChanged();
 }
 
@@ -456,7 +456,7 @@ void ItemIconView::slotSeparateImages(int categoryMode)
     }
 
     settings->setImageSeparationMode(categoryMode);
-    d->iconView->imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode) categoryMode);
+    d->iconView->itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode) categoryMode);
 }
 
 void ItemIconView::slotImageSeparationSortOrder(int order)
@@ -469,7 +469,7 @@ void ItemIconView::slotImageSeparationSortOrder(int order)
     }
 
     settings->setImageSeparationSortOrder(order);
-    d->iconView->imageFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) order);
+    d->iconView->itemFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) order);
 }
 
 void ItemIconView::slotImagePaste()
@@ -644,7 +644,7 @@ ItemInfoList ItemIconView::allInfo(const OperationType type) const
 
 int ItemIconView::itemCount() const
 {
-    return d->iconView->imageModel()->itemCount();
+    return d->iconView->itemModel()->itemCount();
 }
 
 QUrl ItemIconView::currentUrl() const
@@ -734,7 +734,7 @@ void ItemIconView::slotEmptyMessageTimer()
         return;
     }
 
-    if      (!d->iconView->imageModel()->itemCount())
+    if      (!d->iconView->itemModel()->itemCount())
     {
         QString message = i18n("The current query from the database returned no results. "
                                "Change search settings or select an album with content.");

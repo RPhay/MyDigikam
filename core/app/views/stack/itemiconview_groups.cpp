@@ -81,7 +81,7 @@ void ItemIconView::setAllGroupsOpen(bool open)
 
     if (!d->iconView->getFaceMode())
     {
-        d->iconView->imageFilterModel()->setAllGroupsOpen(open);
+        d->iconView->itemFilterModel()->setAllGroupsOpen(open);
     }
 }
 

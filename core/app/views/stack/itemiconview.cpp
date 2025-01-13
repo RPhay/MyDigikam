@@ -122,7 +122,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->dateViewSideBar     = new DateFolderViewSideBarWidget(d->leftSideBar,
                                                              d->modelCollection->getDateAlbumModel(),
-                                                             d->iconView->imageAlbumFilterModel());
+                                                             d->iconView->itemAlbumFilterModel());
     d->leftSideBarWidgets << d->dateViewSideBar;
 
     // timeline side bar
@@ -157,7 +157,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
                                                         d->modelCollection->getSearchModel(),
                                                         d->searchModificationHelper,
-                                                        d->iconView->imageFilterModel(),
+                                                        d->iconView->itemFilterModel(),
                                                         d->iconView->getSelectionModel());
 
     d->leftSideBarWidgets << d->gpsSearchSideBar;
@@ -201,7 +201,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
                                i18nc("Filters as in Search type Filters", "Filters"));
 
     // Versions sidebar overlays
-    d->rightSideBar->getFiltersHistoryTab()->addOpenAlbumAction(d->iconView->imageModel());
+    d->rightSideBar->getFiltersHistoryTab()->addOpenAlbumAction(d->iconView->itemModel());
     d->rightSideBar->getFiltersHistoryTab()->addShowHideOverlay();
 
     d->selectionTimer = new QTimer(this);
@@ -253,7 +253,7 @@ void ItemIconView::applySettings()
         sidebarWidget->applySettings();
     }
 
-    d->iconView->imageFilterModel()->setVersionItemFilterSettings(
+    d->iconView->itemFilterModel()->setVersionItemFilterSettings(
         VersionItemFilterSettings(
             ApplicationSettings::instance()->getVersionManagerSettings()));
 
@@ -316,7 +316,7 @@ void ItemIconView::setupConnections()
     connect(d->iconView->model(), SIGNAL(layoutChanged()),
             this, SLOT(slotImageSelected()));
 
-    connect(d->iconView->imageModel(), SIGNAL(allRefreshingFinished()),
+    connect(d->iconView->itemModel(), SIGNAL(allRefreshingFinished()),
             d->msgNotifyTimer, SLOT(start()));
 
     connect(d->iconView, SIGNAL(selectionChanged()),
@@ -391,17 +391,17 @@ void ItemIconView::setupConnections()
 #ifdef HAVE_GEOLOCATION
 
     connect(d->gpsSearchSideBar, SIGNAL(signalMapSoloItems(QList<qlonglong>,QString)),
-            d->iconView->imageFilterModel(), SLOT(setIdWhitelist(QList<qlonglong>,QString)));
+            d->iconView->itemFilterModel(), SLOT(setIdWhitelist(QList<qlonglong>,QString)));
 
 #endif // HAVE_GEOLOCATION
 
     // -- Filter Bars Connections ---------------------------------
 
-    ItemAlbumFilterModel* const model = d->iconView->imageAlbumFilterModel();
+    ItemAlbumFilterModel* const model = d->iconView->itemAlbumFilterModel();
 
     connect(d->filterWidget,
             SIGNAL(signalTagFilterChanged(QList<int>,QList<int>,ItemFilterSettings::MatchingCondition,bool,QList<int>,QList<int>)),
-            d->iconView->imageFilterModel(), SLOT(setTagFilter(QList<int>,QList<int>,ItemFilterSettings::MatchingCondition,bool,QList<int>,QList<int>)));
+            d->iconView->itemFilterModel(), SLOT(setTagFilter(QList<int>,QList<int>,ItemFilterSettings::MatchingCondition,bool,QList<int>,QList<int>)));
 
     connect(d->filterWidget, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
             model, SLOT(setRatingFilter(int,ItemFilterSettings::RatingCondition,bool)));
@@ -485,7 +485,7 @@ void ItemIconView::setupConnections()
     connect(d->iconView, SIGNAL(currentChanged(ItemInfo)),
             d->albumHistory, SLOT(slotCurrentChange(ItemInfo)));
 
-    connect(d->iconView->imageModel(), SIGNAL(imageInfosAdded(QList<ItemInfo>)),
+    connect(d->iconView->itemModel(), SIGNAL(imageInfosAdded(QList<ItemInfo>)),
             d->albumHistory, SLOT(slotAlbumCurrentChanged()));
 
     connect(d->albumHistory, SIGNAL(signalSetCurrent(qlonglong)),

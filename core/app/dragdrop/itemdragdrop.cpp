@@ -385,7 +385,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (thumbBar)
             {
-                droppedOnInfo = model()->imageInfo(thumbBar->imageFilterModel()->mapToSourceItemModel(droppedOn));
+                droppedOnInfo = model()->imageInfo(thumbBar->itemFilterModel()->mapToSourceItemModel(droppedOn));
             }
             else
             {
@@ -742,7 +742,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
                 if (thumbBar)
                 {
-                    dropIndex = thumbBar->imageFilterModel()->mapToSourceItemModel(droppedOn);
+                    dropIndex = thumbBar->itemFilterModel()->mapToSourceItemModel(droppedOn);
                 }
 
                 Q_EMIT assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);

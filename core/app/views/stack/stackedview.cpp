@@ -99,8 +99,8 @@ StackedView::StackedView(QWidget* const parent)
     d->imagePreviewView = new ItemPreviewView(this);
     d->thumbBarDock     = new ThumbBarDock();
     d->thumbBar         = new ItemThumbnailBar(d->thumbBarDock);
-    d->thumbBar->setModelsFiltered(d->imageIconView->imageModel(),
-                                   d->imageIconView->imageFilterModel());
+    d->thumbBar->setModelsFiltered(d->imageIconView->itemModel(),
+                                   d->imageIconView->itemFilterModel());
     d->thumbBar->installOverlays();
     d->thumbBarDock->setWidget(d->thumbBar);
     d->thumbBarDock->setObjectName(QLatin1String("mainwindow_thumbbar"));
@@ -108,7 +108,7 @@ StackedView::StackedView(QWidget* const parent)
     d->welcomePageView  = new WelcomePageView(this);
 
     d->tableView        = new TableView(d->imageIconView->getSelectionModel(),
-                                        d->imageIconView->imageFilterModel(),
+                                        d->imageIconView->itemFilterModel(),
                                         this);
     d->tableView->setObjectName(QLatin1String("mainwindow_tableview"));
 
@@ -117,7 +117,7 @@ StackedView::StackedView(QWidget* const parent)
 #ifdef HAVE_GEOLOCATION
 
     d->mapWidgetView    = new MapWidgetView(d->imageIconView->getSelectionModel(),
-                                            d->imageIconView->imageFilterModel(), this,
+                                            d->imageIconView->itemFilterModel(), this,
                                             MapWidgetView::ApplicationDigikam);
     d->mapWidgetView->setObjectName(QLatin1String("mainwindow_mapwidgetview"));
 
@@ -372,7 +372,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 
         // do not touch the selection, only adjust current info
 
-        QModelIndex currentIndex = d->thumbBar->imageSortFilterModel()->indexForItemInfo(info);
+        QModelIndex currentIndex = d->thumbBar->itemSortFilterModel()->indexForItemInfo(info);
         d->thumbBar->selectionModel()->setCurrentIndex(currentIndex, QItemSelectionModel::NoUpdate);
     }
 }
@@ -465,8 +465,8 @@ void StackedView::setViewMode(const StackedViewMode mode, bool focus)
 
 void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
 {
-    ImageSortFilterModel* const fromModel = from->imageSortFilterModel();
-    ImageSortFilterModel* const toModel   = to->imageSortFilterModel();
+    ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
+    ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
     QModelIndex currentIndex              = toModel->indexForItemInfo(from->currentInfo());
 
     // sync selection

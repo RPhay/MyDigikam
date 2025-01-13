@@ -326,7 +326,7 @@ void ItemIconView::slotAlbumRefreshComplete()
     // force reload. Should normally not be necessary, but we may have bugs
 
     qlonglong currentId = currentInfo().id();
-    d->iconView->imageAlbumModel()->refresh();
+    d->iconView->itemAlbumModel()->refresh();
 
     if (currentId != -1)
     {
@@ -386,7 +386,7 @@ void ItemIconView::slotAlbumReadMetadata()
 
 void ItemIconView::setRecurseAlbums(bool recursive)
 {
-    d->iconView->imageAlbumModel()->setRecurseAlbums(recursive);
+    d->iconView->itemAlbumModel()->setRecurseAlbums(recursive);
 }
 
 Album* ItemIconView::currentAlbum() const

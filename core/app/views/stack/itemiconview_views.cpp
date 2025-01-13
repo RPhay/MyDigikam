@@ -25,7 +25,7 @@ namespace Digikam
 
 void ItemIconView::connectIconViewFilter(FilterStatusBar* const filterbar)
 {
-    ItemAlbumFilterModel* const model = d->iconView->imageAlbumFilterModel();
+    ItemAlbumFilterModel* const model = d->iconView->itemAlbumFilterModel();
 
     connect(model, SIGNAL(filterMatches(bool)),
             filterbar, SLOT(slotFilterMatches(bool)));

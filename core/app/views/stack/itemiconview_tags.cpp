@@ -25,7 +25,7 @@ namespace Digikam
 
 void ItemIconView::setRecurseTags(bool recursive)
 {
-    d->iconView->imageAlbumModel()->setRecurseTags(recursive);
+    d->iconView->itemAlbumModel()->setRecurseTags(recursive);
 }
 
 void ItemIconView::toggleTag(int tagID)
@@ -135,7 +135,7 @@ void ItemIconView::slotRemoveTag(int tagID)
     if (!FaceTags::isSystemPersonTagId(tagID))
     {
         QTimer::singleShot(200, this,
-                           [this, tagID]()
+                           [tagID]()
             {
                 int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
                                                                                   ImageTagPropertyName::tagRegion());

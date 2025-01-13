@@ -90,27 +90,27 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
+    itemFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
 
-    imageAlbumModel()->setThumbnailLoadThread(ThumbnailLoadThread::defaultIconViewThread());
+    itemAlbumModel()->setThumbnailLoadThread(ThumbnailLoadThread::defaultIconViewThread());
 
     // Virtual method: use Dynamic binding.
 
     this->setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
 
-    imageAlbumModel()->setPreloadThumbnails(true);
+    itemAlbumModel()->setPreloadThumbnails(true);
 
-    imageModel()->setDragDropHandler(new ItemDragDropHandler(imageModel()));
+    itemModel()->setDragDropHandler(new ItemDragDropHandler(itemModel()));
     setDragEnabled(true);
     setAcceptDrops(true);
     setDropIndicatorShown(false);
 
     setToolTipEnabled(settings->showToolTipsIsValid());
-    imageFilterModel()->setStringTypeNatural(settings->isStringTypeNatural());
-    imageFilterModel()->setSortRole((ItemSortSettings::SortRole)settings->getImageSortOrder());
-    imageFilterModel()->setSortOrder((ItemSortSettings::SortOrder)settings->getImageSorting());
-    imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)settings->getImageSeparationMode());
-    imageFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) settings->getImageSeparationSortOrder());
+    itemFilterModel()->setStringTypeNatural(settings->isStringTypeNatural());
+    itemFilterModel()->setSortRole((ItemSortSettings::SortRole)settings->getImageSortOrder());
+    itemFilterModel()->setSortOrder((ItemSortSettings::SortOrder)settings->getImageSorting());
+    itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)settings->getImageSeparationMode());
+    itemFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) settings->getImageSeparationSortOrder());
 
     // selection overlay
 
@@ -151,13 +151,13 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
     d->utilities = new ItemViewUtilities(this);
 
-    connect(imageModel()->dragDropHandler(), SIGNAL(assignTags(QList<ItemInfo>,QList<int>)),
+    connect(itemModel()->dragDropHandler(), SIGNAL(assignTags(QList<ItemInfo>,QList<int>)),
             FileActionMngr::instance(), SLOT(assignTags(QList<ItemInfo>,QList<int>)));
 
-    connect(imageModel()->dragDropHandler(), SIGNAL(addToGroup(ItemInfo,QList<ItemInfo>)),
+    connect(itemModel()->dragDropHandler(), SIGNAL(addToGroup(ItemInfo,QList<ItemInfo>)),
             FileActionMngr::instance(), SLOT(addToGroup(ItemInfo,QList<ItemInfo>)));
 
-    connect(imageModel()->dragDropHandler(), SIGNAL(dragDropSort(ItemInfo,QList<ItemInfo>)),
+    connect(itemModel()->dragDropHandler(), SIGNAL(dragDropSort(ItemInfo,QList<ItemInfo>)),
             this, SLOT(dragDropSort(ItemInfo,QList<ItemInfo>)));
 
     connect(d->utilities, SIGNAL(editorCurrentUrlChanged(QUrl)),
@@ -188,7 +188,7 @@ ItemViewUtilities* DigikamItemView::utilities() const
 
 void DigikamItemView::setThumbnailSize(const ThumbnailSize& size)
 {
-    imageThumbnailModel()->setPreloadThumbnailSize(size);
+    itemThumbnailModel()->setPreloadThumbnailSize(size);
     ItemCategorizedView::setThumbnailSize(size);
 }
 
@@ -272,7 +272,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
 
     QApplication::restoreOverrideCursor();
 
-    imageFilterModel()->invalidate();
+    itemFilterModel()->invalidate();
  }
 
 bool DigikamItemView::allNeedGroupResolving(const OperationType type) const
@@ -287,12 +287,12 @@ bool DigikamItemView::selectedNeedGroupResolving(const OperationType type) const
 
 int DigikamItemView::fitToWidthIcons()
 {
-    return delegate()->calculatethumbSizeToFit(viewport()->size().width());
+    return itemDelegate()->calculatethumbSizeToFit(viewport()->size().width());
 }
 
 void DigikamItemView::slotSetupChanged()
 {
-    imageFilterModel()->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
+    itemFilterModel()->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
     setInitialSelectedItem(ApplicationSettings::instance()->getSelectFirstAlbumItem());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
     setFont(ApplicationSettings::instance()->getIconViewFont());
@@ -305,8 +305,8 @@ void DigikamItemView::slotSetupChanged()
 bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
     return (info.hasGroupedImages()                &&
-            !imageFilterModel()->isAllGroupsOpen() &&
-            !imageFilterModel()->isGroupOpen(info.id()));
+            !itemFilterModel()->isAllGroupsOpen() &&
+            !itemFilterModel()->isGroupOpen(info.id()));
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
@@ -335,29 +335,29 @@ void DigikamItemView::setFaceMode(bool on)
     {
         // See ItemLister, which creates a search the implements listing tag in the ioslave
 
-        imageAlbumModel()->setSpecialTagListing(QLatin1String("faces"));
+        itemAlbumModel()->setSpecialTagListing(QLatin1String("faces"));
         setItemDelegate(d->faceDelegate);
 
         // grouping is not very much compatible with faces
 
-        imageFilterModel()->setAllGroupsOpen(true);
+        itemFilterModel()->setAllGroupsOpen(true);
 
         // by default, Face View is categorized by Faces.
 
-        imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
+        itemFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
 
         Q_EMIT signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
     }
     else
     {
-        imageAlbumModel()->setSpecialTagListing(QString());
+        itemAlbumModel()->setSpecialTagListing(QString());
         setItemDelegate(d->normalDelegate);
 
         bool open = ApplicationSettings::instance()->getAllGroupsOpen();
         int separationMode = ApplicationSettings::instance()->getImageSeparationMode();
 
-        imageFilterModel()->setAllGroupsOpen(open);
-        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
+        itemFilterModel()->setAllGroupsOpen(open);
+        itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
 
         Q_EMIT signalSeparationModeChanged((int)separationMode);
     }
@@ -439,7 +439,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
             if (needFastRemove)
             {
-                sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+                sourceIndexes << itemSortFilterModel()->mapToSourceItemModel(index);
             }
         }
     }
@@ -455,7 +455,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         d->newEditPipeline->confirmFace(infos[i], faces[i], tagId, i == (infos.size()-1));
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
+    itemAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -472,7 +472,7 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
         {
             faces         << d->faceDelegate->face(index);
             infos         << ItemModel::retrieveItemInfo(index);
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            sourceIndexes << itemSortFilterModel()->mapToSourceItemModel(index);
         }
     }
 
@@ -482,7 +482,7 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
         d->newEditPipeline->removeFace(infos[i], faces[i]);
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
+    itemAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -499,7 +499,7 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         {
             faces         << d->faceDelegate->face(index);
             infos         << ItemModel::retrieveItemInfo(index);
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            sourceIndexes << itemSortFilterModel()->mapToSourceItemModel(index);
         }
     }
 
@@ -511,7 +511,7 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
                                 FaceTags::unknownPersonTagId());
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
+    itemAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -528,7 +528,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         {
             faces         << d->faceDelegate->face(index);
             infos         << ItemModel::retrieveItemInfo(index);
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            sourceIndexes << itemSortFilterModel()->mapToSourceItemModel(index);
         }
     }
 
@@ -557,7 +557,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         }
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
+    itemAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -574,7 +574,7 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
         {
             faces         << d->faceDelegate->face(index);
             infos         << ItemModel::retrieveItemInfo(index);
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            sourceIndexes << itemSortFilterModel()->mapToSourceItemModel(index);
         }
     }
 
@@ -586,7 +586,7 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
                                 FaceTags::ignoredPersonTagId());
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
+    itemAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -642,14 +642,14 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
 
 void DigikamItemView::showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info)
 {
-    Q_EMIT signalShowContextMenuOnInfo(event, info, QList<QAction*>(), imageFilterModel());
+    Q_EMIT signalShowContextMenuOnInfo(event, info, QList<QAction*>(), itemFilterModel());
 }
 
 void DigikamItemView::showGroupContextMenu(const QModelIndex& index, QContextMenuEvent* event)
 {
     Q_UNUSED(index);
 
-    Q_EMIT signalShowGroupContextMenu(event, selectedItemInfosCurrentFirst(), imageFilterModel());
+    Q_EMIT signalShowGroupContextMenu(event, selectedItemInfosCurrentFirst(), itemFilterModel());
 }
 
 void DigikamItemView::showContextMenu(QContextMenuEvent* event)
@@ -688,7 +688,7 @@ void DigikamItemView::assignRating(const QList<QModelIndex>& indexes, int rating
 
 void DigikamItemView::groupIndicatorClicked(const QModelIndex& index)
 {
-    ItemInfo info = imageFilterModel()->imageInfo(index);
+    ItemInfo info = itemFilterModel()->imageInfo(index);
 
     if (info.isNull())
     {
@@ -696,8 +696,8 @@ void DigikamItemView::groupIndicatorClicked(const QModelIndex& index)
     }
 
     setCurrentIndex(index);
-    imageFilterModel()->toggleGroupOpen(info.id());
-    imageAlbumModel()->ensureHasGroupedImages(info);
+    itemFilterModel()->toggleGroupOpen(info.id());
+    itemAlbumModel()->ensureHasGroupedImages(info);
 }
 
 void DigikamItemView::rename()
@@ -744,7 +744,7 @@ void DigikamItemView::rename()
             QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList, this);
             (void)dlg2->exec();
 
-            imageFilterModel()->invalidate();
+            itemFilterModel()->invalidate();
             urls = dlg2->failedUrls();
             delete dlg2;
         }

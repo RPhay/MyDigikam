@@ -46,22 +46,22 @@ public:
 
     void setModels(ItemModel* model, ImageSortFilterModel* filterModel);
 
-    ItemModel*            imageModel()                                              const;
-    ImageSortFilterModel* imageSortFilterModel()                                    const;
+    ItemModel*            itemModel()                                               const;
+    ImageSortFilterModel* itemSortFilterModel()                                     const;
 
     QItemSelectionModel*  getSelectionModel()                                       const;
 
     /// Returns any ItemFilterMode in chain. May not be sourceModel()
-    ItemFilterModel*      imageFilterModel()                                        const;
+    ItemFilterModel*      itemFilterModel()                                         const;
 
     /// Returns 0 if the ItemModel is not an ItemThumbnailModel
-    ItemThumbnailModel*   imageThumbnailModel()                                     const;
+    ItemThumbnailModel*   itemThumbnailModel()                                      const;
 
     /// Returns 0 if the ItemModel is not an ItemAlbumModel
-    ItemAlbumModel*       imageAlbumModel()                                         const;
-    ItemAlbumFilterModel* imageAlbumFilterModel()                                   const;
+    ItemAlbumModel*       itemAlbumModel()                                          const;
+    ItemAlbumFilterModel* itemAlbumFilterModel()                                    const;
 
-    ItemDelegate*         delegate()                                                const;
+    ItemDelegate*         itemDelegate()                                            const;
 
     Album*                currentAlbum()                                            const;
     ItemInfo              currentInfo()                                             const;
