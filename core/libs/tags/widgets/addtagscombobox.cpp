@@ -116,7 +116,7 @@ void AddTagsComboBox::setParentTag(TAlbum* const album)
 void AddTagsComboBox::setCurrentTag(TAlbum* const album)
 {
     treeView()->setCurrentAlbums(QList<Album*>() << album);
-    slotViewIndexActivated(view()->currentIndex());
+    slotViewIndexActivated(treeView()->currentIndex());
 }
 
 void AddTagsComboBox::setPlaceholderText(const QString& message)
