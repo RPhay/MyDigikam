@@ -56,8 +56,8 @@ public:
 
     void prepareTreeView(AbstractCheckableAlbumTreeView* const treeView)
     {
-        treeView->checkableModel()->setShowCount(false);
-        treeView->checkableModel()->setCheckable(true);
+        treeView->checkableAlbumModel()->setShowCount(false);
+        treeView->checkableAlbumModel()->setCheckable(true);
         treeView->setRootIsDecorated(true);
         treeView->setSortingEnabled(true);
         treeView->setSelectAlbumOnClick(false);
@@ -225,7 +225,7 @@ AlbumList AlbumSelectTabs::selectedAlbums() const
 
     list << d->albumModel->checkedAlbums();
     list << d->tagModel->checkedAlbums();
-    list << d->searchTreeView->albumModel()->checkedAlbums();
+    list << d->searchTreeView->checkableAlbumModel()->checkedAlbums();
     list << d->labelsSearchHandler->albumForSelectedItems();
 
     // Remove all null albums.

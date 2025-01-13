@@ -133,21 +133,21 @@ void TagFilterView::handleCustomContextMenuAction(QAction* action, const AlbumPo
     }
     else if (action == d->ignoreTagAction)
     {
-        albumModel()->setCheckState(album, Qt::Unchecked);
+        checkableAlbumModel()->setCheckState(album, Qt::Unchecked);
     }
     else if (action == d->includeTagAction)
     {
-        albumModel()->setCheckState(album, Qt::Checked);
+        checkableAlbumModel()->setCheckState(album, Qt::Checked);
     }
     else if (action == d->excludeTagAction)
     {
-        albumModel()->setCheckState(album, Qt::PartiallyChecked);
+        checkableAlbumModel()->setCheckState(album, Qt::PartiallyChecked);
     }
 }
 
 void TagFilterView::slotDeleteTagByContextMenu(TAlbum* tag)
 {
-    albumModel()->setCheckState(tag, Qt::Unchecked);
+    checkableAlbumModel()->setCheckState(tag, Qt::Unchecked);
 }
 
 } // namespace Digikam

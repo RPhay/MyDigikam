@@ -193,7 +193,7 @@ void AlbumSelectors::initAlbumWidget()
 */
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
-    d->albumClearButton = new ModelClearButton(d->albumSelectCB->treeView()->albumModel());
+    d->albumClearButton = new ModelClearButton(d->albumSelectCB->treeView()->checkableAlbumModel());
     d->albumClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected albums"));
 
     QHBoxLayout* l      = new QHBoxLayout;
@@ -251,7 +251,7 @@ void AlbumSelectors::initTagWidget()
     d->tagSelectCB->setNoSelectionText(i18nc("@info", "No Tag Selected"));
     d->tagSelectCB->addCheckUncheckContextMenuActions();
 
-    d->tagClearButton = new ModelClearButton(d->tagSelectCB->treeView()->albumModel());
+    d->tagClearButton = new ModelClearButton(d->tagSelectCB->treeView()->checkableAlbumModel());
     d->tagClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected tags"));
 
     QHBoxLayout* l    = new QHBoxLayout;

@@ -71,7 +71,7 @@ protected:
     {
         PAlbum* const album = view()->palbumForIndex(currentIndex());
 
-        return (ToolTipFiller::albumTipContents(album, view()->albumModel()->albumCount(album)));
+        return (ToolTipFiller::albumTipContents(album, view()->checkableAlbumModel()->albumCount(album)));
     }
 };
 

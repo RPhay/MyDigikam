@@ -86,7 +86,7 @@ void ItemDescEditTab::initTagsView()
     connect(d->openTagMngr, SIGNAL(clicked()),
             this, SLOT(slotOpenTagsManager()));
 
-    connect(d->tagCheckView->checkableModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
+    connect(d->tagCheckView->checkableAlbumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotTagStateChanged(Album*,Qt::CheckState)));
 
     connect(d->tagsSearchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),

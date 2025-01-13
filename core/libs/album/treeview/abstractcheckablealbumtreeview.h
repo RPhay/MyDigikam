@@ -39,18 +39,8 @@ public:
     /**
      * Manage check state through the model directly.
      */
-    AbstractCheckableAlbumModel* albumModel()                       const;
-    CheckableAlbumFilterModel* albumFilterModel()                   const;
-
-    AbstractCheckableAlbumModel* checkableModel()                   const
-    {
-        return albumModel();
-    }
-
-    CheckableAlbumFilterModel* checkableAlbumFilterModel()          const
-    {
-        return albumFilterModel();
-    }
+    AbstractCheckableAlbumModel* checkableAlbumModel()              const;
+    CheckableAlbumFilterModel* checkableAlbumFilterModel()          const;
 
     /**
      * Enable checking on middle mouse button click (default: on).

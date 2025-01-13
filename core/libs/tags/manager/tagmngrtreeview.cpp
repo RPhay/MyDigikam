@@ -53,7 +53,7 @@ TagMngrTreeView::TagMngrTreeView(TagsManager* const parent, TagModel* const mode
       d            (new Private)
 {
     d->tagMngr = parent;
-    setAlbumFilterModel(new TagsManagerFilterModel(this), albumFilterModel());
+    setAlbumFilterModel(new TagsManagerFilterModel(this), checkableAlbumFilterModel());
     setSelectAlbumOnClick(false);
     expand(albumFilterModel()->rootAlbumIndex());
 }

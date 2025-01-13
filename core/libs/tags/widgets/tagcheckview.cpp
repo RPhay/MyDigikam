@@ -103,7 +103,7 @@ TagCheckView::~TagCheckView()
 
 void TagCheckView::slotResetCheckState()
 {
-    albumModel()->resetAllCheckedAlbums();
+    checkableAlbumModel()->resetAllCheckedAlbums();
 }
 
 void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
@@ -122,23 +122,23 @@ void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
     {
         case Children:
         {
-            albumModel()->setCheckState(album, state);
-            albumModel()->setCheckStateForChildren(album, state);
+            checkableAlbumModel()->setCheckState(album, state);
+            checkableAlbumModel()->setCheckStateForChildren(album, state);
             break;
         }
 
         case Parents:
         {
-            albumModel()->setCheckState(album, state);
-            albumModel()->setCheckStateForParents(album, state);
+            checkableAlbumModel()->setCheckState(album, state);
+            checkableAlbumModel()->setCheckStateForParents(album, state);
             break;
         }
 
         case ChildrenAndParents:
         {
-            albumModel()->setCheckState(album, state);
-            albumModel()->setCheckStateForChildren(album, state);
-            albumModel()->setCheckStateForParents(album, state);
+            checkableAlbumModel()->setCheckState(album, state);
+            checkableAlbumModel()->setCheckStateForChildren(album, state);
+            checkableAlbumModel()->setCheckStateForParents(album, state);
             break;
         }
 
@@ -175,7 +175,7 @@ void TagCheckView::doSaveState()
 QList<TAlbum*> TagCheckView::getCheckedTags() const
 {
     QList<TAlbum*> tags;
-    const auto albums = albumModel()->checkedAlbums();
+    const auto albums = checkableAlbumModel()->checkedAlbums();
 
     for (Album* const album : albums)
     {
@@ -193,7 +193,7 @@ QList<TAlbum*> TagCheckView::getCheckedTags() const
 QList<TAlbum*> TagCheckView::getPartiallyCheckedTags() const
 {
     QList<TAlbum*> tags;
-    const auto albums = albumModel()->partiallyCheckedAlbums();
+    const auto albums = checkableAlbumModel()->partiallyCheckedAlbums();
 
     for (Album* const album : albums)
     {
@@ -246,7 +246,7 @@ bool TagCheckView::checkNewTags() const
 
 void TagCheckView::slotCreatedNewTagByContextMenu(TAlbum* tag)
 {
-    albumModel()->setChecked(tag, true);
+    checkableAlbumModel()->setChecked(tag, true);
 
     if (albumFilterModel())
     {
@@ -262,7 +262,7 @@ void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* al
 
     // selection (checked) modification
 
-    cmh.setAlbumModel(albumModel());
+    cmh.setAlbumModel(checkableAlbumModel());
     cmh.addAlbumCheckUncheckActions(album);
     cmh.addSeparator();
 

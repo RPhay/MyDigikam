@@ -34,9 +34,9 @@ public:
 protected:
 
     void setAlbumModel(AbstractCountingAlbumModel* const model);
-    void setAlbumFilterModel(AlbumFilterModel* const filterModel)    override;
+    virtual void setAlbumFilterModel(AlbumFilterModel* const filterModel)    override;
 
-    void rowsInserted(const QModelIndex& parent, int start, int end) override;
+    void rowsInserted(const QModelIndex& parent, int start, int end)         override;
 
 private Q_SLOTS:
 

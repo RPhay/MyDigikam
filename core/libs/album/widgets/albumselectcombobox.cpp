@@ -443,7 +443,7 @@ void AlbumTreeViewSelectComboBox::setAlbumModels(AlbumModel* model, CheckableAlb
     treeView()->setPAlbumModel(model);
     treeView()->setCheckableAlbumFilterModel(filterModel);
 
-    AlbumSelectComboBox::setAlbumModels(treeView()->albumModel(), treeView()->albumFilterModel());
+    AlbumSelectComboBox::setAlbumModels(treeView()->checkableAlbumModel(), treeView()->albumFilterModel());
 
     treeView()->expandToDepth(0);
 }
@@ -493,7 +493,7 @@ void TagTreeViewSelectComboBox::setAlbumModels(TagModel* model,
     treeView()->setTAlbumModel(model);
     treeView()->setTAlbumFilterModel(filteredModel, filterModel);
 
-    AlbumSelectComboBox::setAlbumModels(treeView()->albumModel(), treeView()->albumFilterModel());
+    AlbumSelectComboBox::setAlbumModels(treeView()->checkableAlbumModel(), treeView()->albumFilterModel());
 }
 
 } // namespace Digikam

@@ -65,12 +65,12 @@ AbstractCheckableAlbumTreeView::~AbstractCheckableAlbumTreeView()
     delete d;
 }
 
-AbstractCheckableAlbumModel* AbstractCheckableAlbumTreeView::albumModel() const
+AbstractCheckableAlbumModel* AbstractCheckableAlbumTreeView::checkableAlbumModel() const
 {
     return dynamic_cast<AbstractCheckableAlbumModel*>(m_albumModel);
 }
 
-CheckableAlbumFilterModel* AbstractCheckableAlbumTreeView::albumFilterModel() const
+CheckableAlbumFilterModel* AbstractCheckableAlbumTreeView::checkableAlbumFilterModel() const
 {
     return dynamic_cast<CheckableAlbumFilterModel*> (m_albumFilterModel);
 }
@@ -152,7 +152,7 @@ void AbstractCheckableAlbumTreeView::doLoadState()
         m_restoreCheckState = group.readEntry(entryName(d->configRestoreCheckedEntry), false);
     }
 
-    if (!m_restoreCheckState || !checkableModel()->isCheckable())
+    if (!m_restoreCheckState || !checkableAlbumModel()->isCheckable())
     {
         return;
     }
@@ -200,7 +200,7 @@ void AbstractCheckableAlbumTreeView::rowsInserted(const QModelIndex& parent, int
     {
         for (int i = start ; i <= end ; ++i)
         {
-            const QModelIndex child = checkableModel()->index(i, 0, parent);
+            const QModelIndex child = checkableAlbumModel()->index(i, 0, parent);
             restoreCheckState(child);
         }
     }
@@ -210,9 +210,9 @@ void AbstractCheckableAlbumTreeView::restoreCheckStateForHierarchy(const QModelI
 {
     // recurse children
 
-    for (int i = 0 ; i < checkableModel()->rowCount(index) ; ++i)
+    for (int i = 0 ; i < checkableAlbumModel()->rowCount(index) ; ++i)
     {
-        const QModelIndex child = checkableModel()->index(i, 0, index);
+        const QModelIndex child = checkableAlbumModel()->index(i, 0, index);
         restoreCheckState(child);
         restoreCheckStateForHierarchy(child);
     }
@@ -220,7 +220,7 @@ void AbstractCheckableAlbumTreeView::restoreCheckStateForHierarchy(const QModelI
 
 void AbstractCheckableAlbumTreeView::restoreCheckState(const QModelIndex& index)
 {
-    Album* const album = checkableModel()->albumForIndex(index);
+    Album* const album = checkableAlbumModel()->albumForIndex(index);
 
     if (!album || !(album->id()))
     {
@@ -229,13 +229,13 @@ void AbstractCheckableAlbumTreeView::restoreCheckState(const QModelIndex& index)
 
     if (d->checkedAlbumIds.contains(album->id()))
     {
-        checkableModel()->setCheckState(album, Qt::Checked);
+        checkableAlbumModel()->setCheckState(album, Qt::Checked);
         d->checkedAlbumIds.removeOne(album->id());
     }
 
     if (d->partiallyCheckedAlbumIds.contains(album->id()))
     {
-        checkableModel()->setCheckState(album, Qt::PartiallyChecked);
+        checkableAlbumModel()->setCheckState(album, Qt::PartiallyChecked);
         d->partiallyCheckedAlbumIds.removeOne(album->id());
     }
 }
@@ -248,12 +248,12 @@ void AbstractCheckableAlbumTreeView::doSaveState()
 
     group.writeEntry(entryName(d->configRestoreCheckedEntry), m_restoreCheckState);
 
-    if (!m_restoreCheckState || !checkableModel()->isCheckable())
+    if (!m_restoreCheckState || !checkableAlbumModel()->isCheckable())
     {
         return;
     }
 
-    const QList<Album*> checkedAlbums = checkableModel()->checkedAlbums();
+    const QList<Album*> checkedAlbums = checkableAlbumModel()->checkedAlbums();
     QStringList checkedIds;
 
     for (Album* const album : std::as_const(checkedAlbums))
@@ -263,12 +263,12 @@ void AbstractCheckableAlbumTreeView::doSaveState()
 
     group.writeEntry(entryName(d->configCheckedAlbumsEntry), checkedIds);
 
-    if (!checkableModel()->isTristate())
+    if (!checkableAlbumModel()->isTristate())
     {
         return;
     }
 
-    const QList<Album*> partiallyCheckedAlbums = checkableModel()->partiallyCheckedAlbums();
+    const QList<Album*> partiallyCheckedAlbums = checkableAlbumModel()->partiallyCheckedAlbums();
     QStringList partiallyCheckedIds;
 
     for (Album* const album : std::as_const(partiallyCheckedAlbums))

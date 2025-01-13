@@ -37,7 +37,7 @@ SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
 
     if (flags & CreateDefaultFilterModel) // must set again!
     {
-        setSAlbumFilterModel(new SearchFilterModel(this), albumFilterModel());
+        setSAlbumFilterModel(new SearchFilterModel(this), checkableAlbumFilterModel());
     }
 }
 

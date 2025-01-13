@@ -43,7 +43,7 @@ TagTreeView::TagTreeView(QWidget* const parent, Flags flags)
 
     if (flags & CreateDefaultFilterModel) // must set again!
     {
-        setTAlbumFilterModel(new TagPropertiesFilterModel(this), albumFilterModel());
+        setTAlbumFilterModel(new TagPropertiesFilterModel(this), checkableAlbumFilterModel());
     }
 }
 
