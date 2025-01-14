@@ -32,7 +32,7 @@ namespace Digikam
 {
 
 /**
- * @note: In strict technical terms, this is not a classifier.  This is a post-processor.
+ * @note: In strict technical terms, this is not a classifier. This is a post-processor.
  * The initial classification is done by the YOLO detector, and this class is used to
  * interpret the results of that classification and provide a list of labels
  * based on the confidence of the classification.
@@ -48,7 +48,7 @@ AutotagsClassifierYolo::~AutotagsClassifierYolo()
 
 void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
 {
-    /// @important: This classifier does not handle YOLO v10
+    /// @warning: This classifier does not handle YOLO v10
 
     yoloVersion = version;
     imageSize   = size;
@@ -79,7 +79,7 @@ void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
 
 QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  const
 {
-    /// @note: This classifier does not handle YOLOv10
+    /// @warning: This classifier does not handle YOLOv10
 
     QList<int> results;
 
