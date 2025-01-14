@@ -36,7 +36,6 @@
 #include "coredb.h"
 #include "facescansettings.h"
 #include "dimg.h"
-#include "previewloadthread.h"
 #include "faceutils.h"
 #include "facepipelinepackagebase.h"
 #include "identityprovider.h"

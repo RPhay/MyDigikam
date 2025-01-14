@@ -222,7 +222,9 @@ bool FacePipelineDetect::loader()
 
                 package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
 
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Image format:" << package->image.format() << " color depth:" << package->image.bitsDepth() << "  filename:" << package->info.filePath();
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "Image format:" << package->image.format()
+                                                 << " color depth:" << package->image.bitsDepth()
+                                                 << "  filename:" << package->info.filePath();
 
                 // send to the next stage
 

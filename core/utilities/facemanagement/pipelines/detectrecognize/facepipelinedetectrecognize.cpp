@@ -105,7 +105,7 @@ bool FacePipelineDetectRecognize::start()
     }
 
     // set the face detection size and accuracy
-    
+
     faceDetector->setFaceDetectionSize(settings.detectSize);
     faceDetector->uiConfidenceThreshold = settings.detectAccuracy;
 
@@ -583,7 +583,7 @@ bool FacePipelineDetectRecognize::writer()
                                    std::round(package->image.height() * package->faceRects[i].y()),
                                    std::round(package->image.width() * package->faceRects[i].width()),
                                    std::round(package->image.height() * package->faceRects[i].height()));
-                    
+
                     if (package->labelList[i] != -1)
                     {
                         Identity identity = idProvider->identity(package->labelList[i]);
@@ -620,7 +620,6 @@ bool FacePipelineDetectRecognize::writer()
                                               package->image.originalSize());
             }
 
-            
             // send a notification that the image was processed
 
             notify(MLPipelineNotification::notifyProcessed,
