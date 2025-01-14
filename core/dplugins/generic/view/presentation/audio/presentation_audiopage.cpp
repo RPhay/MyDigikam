@@ -62,6 +62,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<QUrl>                             urlList;
     PresentationContainer*                  sharedData = nullptr;
     QTime                                   totalTime;
@@ -427,7 +429,7 @@ void PresentationAudioPage::slotSoundFilesButtonUp()
 
     PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(index));
 
-    m_SoundFilesListBox->insertItem(index - 1, pitem);
+    m_SoundFilesListBox->insertItem(((index > 0) ? index - 1 : index), pitem);
     m_SoundFilesListBox->setCurrentItem(pitem);
 
     updateFileList();
