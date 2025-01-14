@@ -67,7 +67,7 @@ void DRawDecoder::Private::createPPMHeader(QByteArray& imgData, libraw_processed
                                                           .arg(img->height)
                                                           .arg((1 << img->bits)-1);
     imgData.append(header.toLatin1());
-    imgData.append(QByteArray((const char*)img->data, (int)img->data_size));
+    imgData.append(QByteArray(reinterpret_cast<const char*>(img->data), (int)img->data_size));
 }
 
 int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration, int expected)
@@ -220,12 +220,12 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
 
     if (identify.hasIccProfile)
     {
-        identify.iccData           = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
+        identify.iccData           = QByteArray(reinterpret_cast<const char*>(raw->imgdata.color.profile), raw->imgdata.color.profile_length);
     }
 
     if (raw->imgdata.thumbnail.tformat != LIBRAW_THUMBNAIL_UNKNOWN)
     {
-        identify.thumbnail         = QByteArray((char*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
+        identify.thumbnail         = QByteArray(reinterpret_cast<const char*>(raw->imgdata.thumbnail.thumb), raw->imgdata.thumbnail.tlength);
     }
 
     identify.lensModel             = QString::fromUtf8(raw->imgdata.lens.Lens);
@@ -489,7 +489,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         {
             // (-p embed) Use input profile from RAW file to define the camera's raw colorspace.
 
-            raw->imgdata.params.camera_profile = (char*)"embed";
+            raw->imgdata.params.camera_profile = const_cast<char*>("embed");
             break;
         }
 
@@ -724,7 +724,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
 
     if (img->colors == 3)
     {
-        imageData = QByteArray((const char*)img->data, (int)img->data_size);
+        imageData = QByteArray(reinterpret_cast<const char*>(img->data), (int)img->data_size);
     }
     else
     {
@@ -797,7 +797,7 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
     }
     else
     {
-        imgData = QByteArray((const char*)thumb->data, (int)thumb->data_size);
+        imgData = QByteArray(reinterpret_cast<const char*>(thumb->data), (int)thumb->data_size);
     }
 
     // Clear memory allocation. Introduced with LibRaw 0.11.0
