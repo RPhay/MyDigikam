@@ -24,7 +24,6 @@
 #include "recognitionworker.h"
 #include "trainerworker.h"
 #include "facepreviewloader.h"
-#include "faceitemretriever.h"
 #include "parallelpipes.h"
 #include "scanstatefilter.h"
 

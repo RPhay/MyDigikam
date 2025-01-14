@@ -22,7 +22,6 @@
 #include "detectionworker.h"
 #include "recognitionworker.h"
 #include "trainerworker.h"
-#include "faceitemretriever.h"
 #include "recognitionbenchmarker.h"
 #include "detectionbenchmarker.h"
 #include "facepreviewloader.h"

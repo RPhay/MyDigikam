@@ -39,7 +39,6 @@ class RecognitionWorker;
 class TrainerWorker;
 class DatabaseWriter;
 class FacePreviewLoader;
-class FaceItemRetriever;
 class ParallelPipes;
 class ScanStateFilter;
 

@@ -18,7 +18,6 @@
 // Local includes
 
 #include "facepipeline_p.h"
-#include "faceitemretriever.h"
 
 namespace Digikam
 {
