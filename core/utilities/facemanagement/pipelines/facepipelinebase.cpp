@@ -137,8 +137,11 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
     catcher->setActive(false);
 
+    catcher->thread()->stopAllTasks();
+    catcher->cancel();
+
+    delete catcher->thread();
     delete catcher;
-    delete thumbnailLoadThread;
 
     //--------------------------------------------------------------------------------
     // all threads end with the same basic functions
