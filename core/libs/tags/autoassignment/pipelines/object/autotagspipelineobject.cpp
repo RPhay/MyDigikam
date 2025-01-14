@@ -224,8 +224,8 @@ bool AutotagsPipelineObject::finder()
                 if (!filter.contains(imageId))
                 {
                     ++totalItemCount;
-                    filter << imageId;
-                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId));
+                    filter << imageId;                    
+                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
                 }
             }
         }
@@ -293,7 +293,11 @@ bool AutotagsPipelineObject::loader()
      {
          // send a notification that the file was skipped
 
-         notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), 0, package->thumbnailIcon);
+         notify(MLPipelineNotification::notifySkipped,
+                package->info.name(),
+                package->albumTitle,
+                0,
+                package->thumbnailIcon);
 
          // delete the package since it is not needed
 
@@ -492,6 +496,7 @@ bool AutotagsPipelineObject::writer()
 
         bool tagsChanged           = false;
         QStringList tagsPath;
+        QStringList displayTags;
         const int rootTagId        = tagsCache->getOrCreateTag(rootTag);
 
         // Clear auto-tags
@@ -510,6 +515,9 @@ bool AutotagsPipelineObject::writer()
             }
         }
 
+        tagsPath.clear();
+        displayTags.clear();
+
         for (const auto& tag : package->tagList)
         {
             int tagId = -1;
@@ -526,6 +534,7 @@ bool AutotagsPipelineObject::writer()
                     {
                         QString newTag = rootTag + trLang + QLatin1Char('/') + trOut;
                         tagsPath << newTag;
+                        displayTags << trOut;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                     else
@@ -534,6 +543,7 @@ bool AutotagsPipelineObject::writer()
                                                             << error;
                         QString newTag = rootTag + trLang + QLatin1Char('/') + tag;
                         tagsPath << newTag;
+                        displayTags << tag;
                         tagId = tagsCache->getOrCreateTag(newTag);
                     }
                 }
@@ -542,6 +552,7 @@ bool AutotagsPipelineObject::writer()
             {
                 QString newTag = rootTag + tag;
                 tagsPath << newTag;
+                displayTags << tag;
                 tagId = tagsCache->getOrCreateTag(newTag);
             }
 
@@ -578,11 +589,19 @@ bool AutotagsPipelineObject::writer()
             }
         }
 
+        // combine the image name with the tags for the notification
+
+        QString displayName(package->info.name() + QStringLiteral("\n"));
+        if (!displayTags.isEmpty())
+        {
+            displayName += displayTags.join(QLatin1String(", "));
+        }
+
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-               package->info.name(),
-               package->info.filePath(),
+               displayName,
+               package->albumTitle,
                1,
                package->thumbnailIcon);
 
