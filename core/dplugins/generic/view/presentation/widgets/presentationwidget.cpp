@@ -69,6 +69,8 @@ public:
 
     Private() = default;
 
+public:
+
     PresentationContainer*      sharedData      = nullptr;
 
     // -------------------------
@@ -479,13 +481,13 @@ void PresentationWidget::printComments()
 
     QStringList commentsByLines;
 
-    uint commentsIndex = 0; // Comments QString index
+    uint commentsIndex = 0;     // Comments QString index
 
     while (commentsIndex < (uint)comments.length())
     {
         QString newLine;
         bool breakLine = false; // End Of Line found
-        uint currIndex; //  Comments QString current index
+        uint currIndex = 0;     //  Comments QString current index
 
         // Check minimal lines dimension
 
@@ -528,7 +530,11 @@ void PresentationWidget::printComments()
             while (!newLine.endsWith(QLatin1Char(' ')))
             {
                 newLine.truncate(newLine.length() - 1);
-                commentsIndex--;
+
+                if (commentsIndex > 0)
+                {
+                    commentsIndex--;
+                }
             }
         }
 
