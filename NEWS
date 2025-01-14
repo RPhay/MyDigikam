@@ -114,7 +114,7 @@ BUGFIXES:
 073 ==> 498514 - Trash a image in macOS will not shown in Trash.
 074 ==> 498519 - Build failled with mlpipelinemacros.h:53:68: error.
 075 ==> 498603 - Face detection feature stopped working.
-076 ==>
+076 ==> 497832 - digiKam 8.5.0-Qt6 Win64 crashes on startup.
 077 ==>
 078 ==>
 079 ==>
