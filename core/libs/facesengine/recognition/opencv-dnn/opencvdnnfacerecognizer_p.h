@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     Private(Classifier mthd, FaceScanSettings::FaceRecognitionModel recModel)
-        : method(mthd),
+        : method        (mthd),
           recognizeModel(recModel)
     {
         ref = 1;
@@ -171,12 +171,12 @@ class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::Parallel
 {
 public:
 
-    ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* const d,
+    ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* const dd,
                        const QList<QPair<QImage*, QString> >& images,
                        QVector<int>& ids)
         : images(images),
-          ids(ids),
-          d(d)
+          ids   (ids),
+          d     (dd)
     {
         ids.resize(images.size());
     }
@@ -243,13 +243,13 @@ class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoop
 {
 public:
 
-    ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const d,
+    ParallelTrainer(OpenCVDNNFaceRecognizer::Private* const dd,
                     const QList<QPair<QImage*,
                     QString> >& images,
                     const int& id)
         : images(images),
-          id(id),
-          d(d)
+          id    (id),
+          d     (dd)
     {
     }
 
@@ -363,12 +363,12 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
     QMap<int, QVector<double> > votingGroups;
 
-    for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
-         iter != closestNeighbors.cend();
+    for (QMap<double, QVector<int> >::const_iterator iter = closestNeighbors.cbegin() ;
+         iter != closestNeighbors.cend() ;
          ++iter)
     {
-        for (QVector<int>::const_iterator node  = iter.value().cbegin();
-             node != iter.value().cend();
+        for (QVector<int>::const_iterator node = iter.value().cbegin() ;
+             node != iter.value().cend() ;
              ++node)
         {
             int label = (*node);
@@ -380,8 +380,8 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     double maxScore = 0.0;
     int prediction  = -1;
 
-    for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
-         group != votingGroups.cend();
+    for (QMap<int, QVector<double> >::const_iterator group = votingGroups.cbegin() ;
+         group != votingGroups.cend() ;
          ++group)
     {
         double score = 0.0;
@@ -421,8 +421,8 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
 
     QMap<int, QVector<double> > votingGroups;
 
-    for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
-         iter != closestNeighbors.cend();
+    for (QMap<double, QVector<int> >::const_iterator iter = closestNeighbors.cbegin() ;
+         iter != closestNeighbors.cend() ;
          ++iter)
     {
         for (int i = 0 ; i < iter.value().size() ; ++i)
@@ -434,8 +434,8 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
     double maxScore = 0.0;
     int prediction  = -1;
 
-    for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
-         group != votingGroups.cend();
+    for (QMap<int, QVector<double> >::const_iterator group = votingGroups.cbegin() ;
+         group != votingGroups.cend() ;
          ++group)
     {
         double score = 0.0;
@@ -471,7 +471,7 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
         qCWarning(DIGIKAM_FACEDB_LOG) << "Error inserting face embedding to database";
     }
 
-    if (method == DB)
+    if      (method == DB)
     {
         if (!FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
@@ -480,7 +480,6 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
             return false;
         }
     }
-
     else if (method == Tree)
     {
         KDNodeBase* const newNode = tree->add(nodePos, label);
@@ -489,7 +488,6 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
         {
             newNode->setNodeId(nodeId);
         }
-
         else
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert new node" << nodeId;

@@ -111,7 +111,7 @@ public:
     /**
      * checks if the id exists in the recognition DB
      */
-    bool isValidId(int label)   const;
+    bool isValidId(int label)                                               const;
 
 protected:
 
@@ -120,7 +120,7 @@ protected:
     /**
      * Deletes a list of identities from the database.
      */
-    cv::Ptr<cv::ml::TrainData> getTrainingData() const;
+    cv::Ptr<cv::ml::TrainData> getTrainingData()                            const;
 
     bool addIdentityFace(const Identity& identity, QString& hash, cv::Mat embedding);
     bool deleteIdentityFace(const Identity& identity, QString& hash);
@@ -135,7 +135,7 @@ private:
 
     bool identityContains(const Identity& identity,
                           const QString& attribute,
-                          const QString& value)                      const;
+                          const QString& value)                             const;
 
     Identity findByAttribute(const QString& attribute,
                              const QString& value)                          const;
@@ -150,9 +150,10 @@ private:
 
 private:
 
-    // Hide
+    // Disable
+    IdentityProvider(const IdentityProvider&)                     = delete;
 
-    IdentityProvider(IdentityProvider&)                     = delete;
+private:
 
     friend class IdentityProviderCreator;
     friend class Identity;

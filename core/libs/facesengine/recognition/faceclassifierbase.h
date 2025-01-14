@@ -43,9 +43,8 @@ public:
 
 private:
 
-    // Hide
-
-    FaceClassifierBase(FaceClassifierBase&)                     = delete;
+    // Disable
+    FaceClassifierBase(const FaceClassifierBase&)               = delete;
 };
 
 } // namespace Digikam

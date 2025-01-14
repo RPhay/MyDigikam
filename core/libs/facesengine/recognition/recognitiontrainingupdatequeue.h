@@ -53,6 +53,8 @@ private:
     static QList<const QThread*> readers;
     static int                   ref;
 
+private:
+
     Q_DISABLE_COPY(RecognitionTrainingUpdateQueue)
 };
 

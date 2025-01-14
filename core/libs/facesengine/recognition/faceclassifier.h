@@ -70,12 +70,10 @@ private:
 
 private:
 
-    // Hide
-
+    // Disable
     FaceClassifier();
     ~FaceClassifier();
-
-    FaceClassifier(FaceClassifier&)                     = delete;
+    FaceClassifier(const FaceClassifier&)                     = delete;
 
 private:
 

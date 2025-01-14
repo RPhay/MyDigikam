@@ -42,6 +42,8 @@ public:
         DB                  ///< Closest Neighbors Tree from the database
     };
 
+public:
+
     /**
      *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm.
      */

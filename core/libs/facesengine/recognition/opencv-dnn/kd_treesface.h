@@ -27,17 +27,9 @@ class KDTreeSFace: public KDTreeBase
 
 public:
 
-    explicit KDTreeSFace(
-        int dim,
-        int threshold = KDTREE_MAP_THRESHOLD
-    );
+    explicit KDTreeSFace(int dim,
+                         int threshold = KDTREE_MAP_THRESHOLD);
     ~KDTreeSFace() override;
-
-private:
-
-    // Disable
-    KDTreeSFace(const KDTreeSFace&)            = delete;
-    KDTreeSFace& operator=(const KDTreeSFace&) = delete;
 
 private:
 
@@ -50,6 +42,12 @@ private:
     {
         return 1.0 + (sqRange / 10.0);
     }
+
+private:
+
+    // Disable
+    KDTreeSFace(const KDTreeSFace&)            = delete;
+    KDTreeSFace& operator=(const KDTreeSFace&) = delete;
 };
 
 } // namespace Digikam

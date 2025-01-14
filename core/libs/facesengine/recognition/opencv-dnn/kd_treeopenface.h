@@ -26,17 +26,9 @@ class KDTreeOpenFace: public KDTreeBase
 
 public:
 
-    explicit KDTreeOpenFace(
-        int dim,
-        int threshold = KDTREE_MAP_THRESHOLD
-    );
+    explicit KDTreeOpenFace(int dim,
+                            int threshold = KDTREE_MAP_THRESHOLD);
     ~KDTreeOpenFace() override;
-
-private:
-
-    // Disable
-    KDTreeOpenFace(const KDTreeOpenFace&)            = delete;
-    KDTreeOpenFace& operator=(const KDTreeOpenFace&) = delete;
 
 private:
 
@@ -51,6 +43,12 @@ private:
 
         return 0.8;
     }
+
+private:
+
+    // Disable
+    KDTreeOpenFace(const KDTreeOpenFace&)            = delete;
+    KDTreeOpenFace& operator=(const KDTreeOpenFace&) = delete;
 };
 
 } // namespace Digikam
