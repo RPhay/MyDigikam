@@ -161,6 +161,8 @@ public:
 
     Private() = default;
 
+public:
+
     QFrame*              errorView          = nullptr;
     QFrame*              playerView         = nullptr;
 
@@ -281,7 +283,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     const int spacing      = layoutSpacing();
 
-
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
                                          i18nc("go to previous image", "Back"),           this);
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
@@ -397,6 +398,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->speaker->setFocusPolicy(Qt::NoFocus);
     d->speaker->setMinimumSize(22, 22);
 
+#ifndef __clang_analyzer__
+
     QMenu* const audioMenu         = new QMenu(this);
     QActionGroup* const audioGroup = new QActionGroup(this);
 
@@ -410,6 +413,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     }
 
     d->speaker->setMenu(audioMenu);
+
+#endif
 
     d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
