@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     const int                maxStringLen   = 80;
 
     QUrl                     url;
@@ -346,7 +348,11 @@ void SlideProperties::printComments(QPainter& p, int& offset, const QString& com
             while (!newLine.endsWith(QLatin1Char(' ')))
             {
                 newLine.truncate(newLine.length() - 1);
-                --commentsIndex;
+
+                if (commentsIndex > 0)
+                {
+                    --commentsIndex;
+                }
             }
         }
 
