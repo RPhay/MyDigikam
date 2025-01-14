@@ -385,7 +385,7 @@ bool AutotagsPipelineObject::extractor()
 
      // convert the image to a blob 
 
-     cv::Mat cvBlob = cv::dnn::blobFromImage(cvImage, 1.0/255, cv::Size(cvImage.cols, cvImage.rows), cv::Scalar(0, 0, 0), true, false);
+     cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0/255, cv::Size(cvImage.cols, cvImage.rows), cv::Scalar(0, 0, 0), true, false).getUMat(cv::ACCESS_READ);
 
      std::vector<cv::Mat> detectionResults;
 
@@ -394,7 +394,7 @@ bool AutotagsPipelineObject::extractor()
 
          QMutexLocker lock(&(model->mutex));
 
-         model->getNet().setInput(cvBlob);
+         model->getNet().setInput(cvUBlob);
 
          model->getNet().forward(detectionResults, model->getNet().getUnconnectedOutLayersNames());
      }
