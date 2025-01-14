@@ -83,7 +83,7 @@ bool readPGFImageData(const QByteArray& data,
             return false;
         }
 
-        CPGFMemoryStream stream((UINT8*)data.data(), (size_t)data.size());
+        CPGFMemoryStream stream(reinterpret_cast<UINT8*>(const_cast<char*>(data.data())), (size_t)data.size());
 
         if (verbose)
         {
@@ -121,12 +121,12 @@ bool readPGFImageData(const QByteArray& data,
         if (QSysInfo::ByteOrder == QSysInfo::BigEndian)
         {
             int map[] = {3, 2, 1, 0};
-            pgfImg.GetBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgfImg.GetBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
         else
         {
             int map[] = {0, 1, 2, 3};
-            pgfImg.GetBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgfImg.GetBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
 
         if (verbose)
@@ -252,7 +252,7 @@ bool writePGFImageData(const QImage& image, QByteArray& data, int quality, bool 
 
 #endif
 
-        data                 = QByteArray((const char*)stream.GetBuffer(), pgfsize);
+        data                 = QByteArray(reinterpret_cast<const char*>(stream.GetBuffer()), pgfsize);
 
         if (!pgfsize)
         {
@@ -361,12 +361,12 @@ bool writePGFImageDataToStream(const QImage& image,
         if (QSysInfo::ByteOrder == QSysInfo::BigEndian)
         {
             int map[] = {3, 2, 1, 0};
-            pgfImg.ImportBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgfImg.ImportBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
         else
         {
             int map[] = {0, 1, 2, 3};
-            pgfImg.ImportBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgfImg.ImportBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
 
         nWrittenBytes = 0;
@@ -518,12 +518,12 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
         if (QSysInfo::ByteOrder == QSysInfo::BigEndian)
         {
             int map[] = {3, 2, 1, 0};
-            pgf.GetBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgf.GetBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
         else
         {
             int map[] = {0, 1, 2, 3};
-            pgf.GetBitmap(img.bytesPerLine(), (UINT8*)img.bits(), img.depth(), map);
+            pgf.GetBitmap(img.bytesPerLine(), reinterpret_cast<UINT8*>(img.bits()), img.depth(), map);
         }
 
 #ifdef Q_OS_WIN
