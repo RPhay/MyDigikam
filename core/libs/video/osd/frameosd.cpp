@@ -343,7 +343,11 @@ void FrameOsd::printComments(const QString& comments)
             while (!newLine.endsWith(QLatin1Char(' ')))
             {
                 newLine.truncate(newLine.length() - 1);
-                --commentsIndex;
+
+                if (commentsIndex > 0)
+                {
+                    --commentsIndex;
+                }
             }
         }
 

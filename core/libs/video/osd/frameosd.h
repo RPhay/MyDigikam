@@ -44,7 +44,7 @@ public:
 public:
 
     /**
-     * Insert OSD on frame.
+     * @brief Insert OSD on frame.
      */
     void insertOsdToFrame(QImage& frame,
                           const QUrl& url,
@@ -52,24 +52,24 @@ public:
                           const DInfoInterface* const info);
 
     /**
-     * Populate OSD items properties base on Url
+     * @brief Populate OSD items properties base on Url
      */
     void populateOSD(const QUrl& url,
                      const FrameOsdSettings& settings,
                      const DInfoInterface* const info);
 
     /**
-     * print comments
+     * @brief Print comments
      */
     void printComments(const QString& comments);
 
     /**
-     * print tags
+     * @brief Print tags
      */
     void printTags(QStringList& tags);
 
     /**
-     * Insert message OSD on broken frame or end frame
+     * @brief Insert message OSD on broken frame or end frame
      */
     void insertMessageOsdToFrame(QImage& frame,
                                  const QSize& JPEGsize,
