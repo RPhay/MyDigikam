@@ -31,10 +31,8 @@ namespace Digikam
 {
 
 /**
- * Album tree view used in the left sidebar to select PAlbums and perform
+ * @brief Album tree view used in the left sidebar to select PAlbums and perform
  * operations on them via a context menu.
- *
- * @author jwienke
  */
 class AlbumSelectionTreeView: public AlbumTreeView
 {
@@ -48,14 +46,14 @@ public:
     ~AlbumSelectionTreeView()         override;
 
     /**
-     * Sets whether this widget shall display tool tips or not.
+     * @brief Sets whether this widget shall display tool tips or not.
      */
     void setEnableToolTips(bool enable);
 
 Q_SIGNALS:
 
     /**
-     * Emitted if a find duplicates search shall be invoked on the given album.
+     * @brief Emitted if a find duplicates search shall be invoked on the given album.
      *
      * @param albums the album to find duplicates in
      */
@@ -71,7 +69,7 @@ private Q_SLOTS:
 private:
 
     /**
-     * Re-implemented to handle custom tool tips.
+     * @brief Re-implemented to handle custom tool tips.
      *
      * @param event the event to process.
      */

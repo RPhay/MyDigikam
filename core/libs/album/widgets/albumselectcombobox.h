@@ -130,7 +130,7 @@ class AbstractAlbumTreeViewSelectComboBox : public AlbumSelectComboBox
 public:
 
     /**
-     * Abstract class.
+     * @brief Abstract class.
      * This is an AlbumSelectComboBox which installs an AlbumTreeView,
      * not a plain QTreeView, as view.
      */
@@ -138,14 +138,14 @@ public:
     explicit AbstractAlbumTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     /**
-     * Set a tree view created by you instead of creating a default view
+     * @brief Set a tree view created by you instead of creating a default view
      * (in the subclasses).
      * Only takes effect before calling setModel.
      */
     void setTreeView(AbstractAlbumTreeView* const treeView);
 
     /**
-     * Enables a context menu which contains options to
+     * @brief Enables a context menu which contains options to
      * check or uncheck groups of albums, given you have a checkable model.
      * Call this method after setModel().
      */
@@ -178,7 +178,10 @@ public:
 
 private:
 
-    // Disable
+    /**
+     * @brief Disabled. Use treeView() method instead.
+     * @see treeView().
+     */
     QAbstractItemView* view() const;
 };
 
@@ -200,7 +203,10 @@ public:
 
 private:
 
-    // Disable
+    /**
+     * @brief Disabled. Use treeView() method instead.
+     * @see treeView().
+     */
     QAbstractItemView* view() const;
 };
 

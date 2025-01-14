@@ -30,32 +30,31 @@ class AbstractCheckableAlbumTreeView : public AbstractCountingAlbumTreeView
 public:
 
     /**
-     * Models of these view _can_ be checkable, they need _not_. You need to enable it on the model.
+     * @note Models of these view _can_ be checkable, they need _not_. You need to enable it on the model.
      */
-
     explicit AbstractCheckableAlbumTreeView(QWidget* const parent, Flags flags);
     ~AbstractCheckableAlbumTreeView()                                     override;
 
     /**
-     * Manage check state through the model directly.
+     * @brief Manage check state through the model directly.
      */
     AbstractCheckableAlbumModel* checkableAlbumModel()              const;
     CheckableAlbumFilterModel* checkableAlbumFilterModel()          const;
 
     /**
-     * Enable checking on middle mouse button click (default: on).
+     * @brief Enable checking on middle mouse button click (default: on).
      */
     void setCheckOnMiddleClick(bool doThat);
 
     /**
-     * Tells if the check state is restored while loading / saving state.
+     * @brief Tells if the check state is restored while loading / saving state.
      *
      * @return true if restoring check state is active
      */
     bool isRestoreCheckState()                                      const;
 
     /**
-     * Set whether to restore check state or not.
+     * @brief Set whether to restore check state or not.
      *
      * @param restore if true, restore check state
      */
