@@ -33,7 +33,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
     bindingValues << label;
     bindingValues << hash;
-    bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
+    bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(faceEmbedding.ptr<float>()), (sizeof(float) * 128));
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, removeHash, embedding) "
                                                             "VALUES (?,?,?);"),
