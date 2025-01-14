@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -26052,7 +26052,7 @@ msgstr ""
 msgid "Context menu"
 msgstr ""
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -27463,8 +27463,8 @@ msgid "Scanning collection"
 msgstr "לפי אוסף"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -31446,7 +31446,7 @@ msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 msgid "Raw Conversion"
 msgstr "מרחב צבע"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, fuzzy, kde-format
 msgid "RedEye Correction Filter"
 msgstr "כלי תיקון עין-אדומה"
@@ -50238,30 +50238,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "מתאם:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, fuzzy, kde-format
 msgid "Removing face"
 msgstr "אתחול התוכן"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr ""
 "<b>מתאם את נתוני המידע-הנוסף של כל התמונות עם מסד הנתונים של Digikam. אנא "
 "המתינו...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "הסרת תוויות זו"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "ספר הדרכה "

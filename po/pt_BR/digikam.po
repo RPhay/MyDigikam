@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -29000,7 +29000,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Menu de contexto"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, fuzzy, kde-format
 #| msgid "Trash"
@@ -30673,8 +30673,8 @@ msgid "Scanning collection"
 msgstr "Analisando a coleção"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -35154,7 +35154,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Conversão de RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filtro de correção de olho vermelho"
@@ -56487,32 +56487,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirming face"
 msgstr "Confirmar exclusão"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Remover etiqueta de rosto?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Atualizando o banco de dados de rostos."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Remover esta etiqueta"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"

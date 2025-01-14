@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
-"PO-Revision-Date: 2025-01-12 14:38+0100\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"PO-Revision-Date: 2025-01-13 12:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2276,7 +2276,7 @@ msgstr "Geavanceerd zoeken..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
-msgstr "Dubbels zoeken..."
+msgstr "Duplicaten zoeken..."
 
 #: core/app/main/digikamapp_setup.cpp:844
 #, kde-format
@@ -27626,7 +27626,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Contextmenu"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -29169,8 +29169,8 @@ msgid "Scanning collection"
 msgstr "Verzameling scannen"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -33438,7 +33438,7 @@ msgstr "Kan het tekstbestand met ruisverminderingsinstellingen niet opslaan."
 msgid "Raw Conversion"
 msgstr "Rawconversie"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filter voor rode ogen corrigeren"
@@ -40513,7 +40513,7 @@ msgstr "Geen recent toegevoegde tags"
 #: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
-msgstr "Recent toegewezen tags"
+msgstr "Recent toegekende tags"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:605
 #: core/libs/tags/widgets/tagspopupmenu.cpp:745
@@ -52438,27 +52438,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "Gezicht bevestigen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "Gezichtstag wordt verwijderd"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "Gezichten wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "Gezichtsgebied wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"
@@ -61863,17 +61863,16 @@ msgid "Face found: %1"
 msgstr "Gezicht gevonden: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "No faces found in %1"
-msgstr "Afbeeldingen gevonden in %1"
+msgstr "Geen gezichten gevonden in %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 gezicht gevonden in "
+msgstr[1] "%1 gezichten gevonden in "
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

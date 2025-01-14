@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -27847,7 +27847,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "コンテキストメニュー"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -29449,8 +29449,8 @@ msgid "Scanning collection"
 msgstr "コレクションをスキャン中"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -33671,7 +33671,7 @@ msgstr "ノイズ低減設定ファイルに設定を保存できません。"
 msgid "Raw Conversion"
 msgstr "カラースペースの変換"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, fuzzy, kde-format
 #| msgid "Red-Eye Correction Tool"
 msgid "RedEye Correction Filter"
@@ -54003,30 +54003,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "設定"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "選択したタグを削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "顔データベースの更新中です。"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "このタグを取り除く"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"

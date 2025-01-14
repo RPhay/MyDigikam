@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
-"PO-Revision-Date: 2025-01-12 07:44+0100\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"PO-Revision-Date: 2025-01-13 05:38+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -27345,7 +27345,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Vsebinski meni"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -28874,8 +28874,8 @@ msgid "Scanning collection"
 msgstr "Preiskovanje zbirke"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -33114,7 +33114,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Groba pretvorba"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Orodje za popravek rdečih oči"
@@ -52116,27 +52116,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "Potrjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "Odstranjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "Urejanje značke obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "Urejanje območja obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ročno dodajanje obraza"
@@ -61492,19 +61492,18 @@ msgid "Face found: %1"
 msgstr "Obraz najden: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "No faces found in %1"
-msgstr "Slike najdene v %1"
+msgstr "Ni najdenih obrazov v %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Najdeno %1 obrazov v "
+msgstr[1] "Najde %1 obraz v n"
+msgstr[2] "Najdena %1 obraza v "
+msgstr[3] "Najdeni %1 obrazi v "
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format

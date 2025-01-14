@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
-"PO-Revision-Date: 2025-01-08 09:13+0100\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"PO-Revision-Date: 2025-01-12 10:25+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3044,20 +3044,17 @@ msgid "Existing Tags"
 msgstr "Étiquettes existantes"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Association automatique des étiquettes"
+msgstr "Analyse de l'étiquetage automatique"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
-"Utilisez ce bouton pour analyser les albums sélectionnés à la recherche de "
-"visages."
+"Veuillez utiliser ce bouton pour l'analyser des albums sélectionnés à la "
+"recherche d'objets pour étiquetage automatique."
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6406,27 +6403,21 @@ msgid "Assign Tags"
 msgstr "Attribuer des étiquettes"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Un outil pour associer automatiquement des étiquettes aux images."
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Ce gestionnaire de traitement par lots allouera des valeurs de "
-"métadonnées pour les hiérarchies de mots clé de façon automatique en "
-"utilisant un moteur d'apprentissage profond.</para>"
+"<para>Ce gestionnaire de traitement par lots associera automatiquement des "
+"valeurs de métadonnées avec des hiérarchies de mots clé avec utilisation "
+"d'un moteur d'apprentissage profond.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -27852,7 +27843,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Menu contextuel"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -29412,8 +29403,8 @@ msgid "Scanning collection"
 msgstr "Analyse d'une collection"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -33722,7 +33713,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Conversion RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filtre de correction de l'effet « yeux rouges »"
@@ -39972,40 +39963,34 @@ msgid "Autotags Assignment"
 msgstr "Association automatique des étiquettes"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:118
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Rechercher des visages dans un album : %1"
+msgstr "Analyse d'objets dans un album : %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:122
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Rechercher des visages dans %1 albums"
+msgstr "Analyse d'objets dans %1 albums"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:203
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Erreur durant le démarrage de la détection des visages"
+msgstr "Erreur lors du démarrage de la détection d'objets"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:218
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Éléments analysés à la recherche de visages : %1\n"
+msgstr "Éléments analysés à la recherche d'objets : %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:222
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Élément analysé à la recherche de visages : %1\n"
+msgstr "Élément analysé à la recherche d'objets : %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Balayage des visages : %1\n"
+msgstr "Analysé pour les objets : %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:251
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
@@ -40026,15 +40011,7 @@ msgstr "Chercher dans"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -40044,12 +40021,12 @@ msgid ""
 "will automatically generate tags describing the contents and store the "
 "results in the database.</p>"
 msgstr ""
-"<p><b>Cet outil permet d'associer automatiquement des étiquettes aux images "
-"par analyse de contenu à l'aide d'un réseau neuronal d'apprentissage "
-"profond. </b></p><p>Les paramètres ci-dessous déterminent le modèle "
-"d'apprentissage profond à utiliser lors de l'analyse du contenu des images "
-"pour déterminer les sujets de la photographie. Le réseau neuronal utilisé en "
-"arrière-plan générera automatiquement une série d'étiquettes décrivant le "
+"<p><b>Cet outil associe automatiquement des étiquettes aux images par "
+"analyse de contenu à l'aide d'un réseau neuronal d'apprentissage profond "
+"d'IA. </b></p><p>Les paramètres ci-dessous déterminent le modèle "
+"d'apprentissage profond d'IA à utiliser lors de l'analyse du contenu des "
+"images pour déterminer les objets dans l'image. Le réseau neuronal d'IA "
+"utilisé en arrière-plan générera automatiquement des étiquettes décrivant le "
 "contenu et enregistrera les résultats dans la base de données. </p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
@@ -40059,11 +40036,9 @@ msgstr "Mode d'étiquetage automatique :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Analyser toutes les images"
+msgstr "Tout analyser"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -40074,26 +40049,19 @@ msgstr "Analyser seulement ce qui n'est pas affecté"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Tout effacer et réattribuer</b> : effacer toutes les étiquettes déjà "
-"associées et ré-analyser tous les éléments à partir de zéro. </"
-"p><p><b>N'analyser que les éléments non associés</b> : analyser uniquement "
-"les éléments n'ayant aucune étiquette associée.</p>."
+"<p><b>Tout analyser</b> : nouvelle analyse de tous les éléments à la "
+"recherche d'étiquettes.</p><p><b>analyse uniquement des éléments n'ayant "
+"aucune étiquette automatique associée.</p>."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Mode d'étiquetage automatique :"
 
@@ -40106,10 +40074,9 @@ msgstr "Ne mettre à jour que les horodatages existants"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgid "Update autotags"
-msgstr "Mettre à niveau une base de données"
+msgstr "Mettre à jour les étiquettes automatiques"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -40128,23 +40095,20 @@ msgstr "Modèle de sélection :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #: core/utilities/maintenance/main/maintenancedlg.cpp:278
@@ -40165,20 +40129,13 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#, kde-format
 msgid "Object detection accuracy: "
-msgstr "Précision pour le visage"
+msgstr "Précision de détection des objets :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -40186,8 +40143,8 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 "Ajuster la sensibilité vis-à-vis de la spécificité : plus la valeur est "
-"élevée, plus la reconnaissance\n"
-"de visages sera précise mais moins de visages seront reconnus."
+"élevée, plus la reconnaissance des objets\n"
+"sera précise mais moins de visages seront reconnus.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
@@ -40198,20 +40155,15 @@ msgid "Work on all processor cores"
 msgstr "Travailler sur tous les cœurs de processeurs"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La reconnaissance des visages est une tâche consommatrice de temps de "
-"traitement.\n"
+"La détection des objets et l'étiquetage automatique sont des tâches "
+"consommatrices de temps de calcul.\n"
 "Vous pouvez décider d'utiliser ou non tous les cœurs de vos processeurs "
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
@@ -52896,27 +52848,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmation d'un visage"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "Suppression d'un visage"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "Modification d'une étiquette d'un visage."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "Modification d'une région d'un visage."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ajout manuel d'un visage"
@@ -62019,10 +61971,9 @@ msgid "Detect and recognize Faces"
 msgstr "Détecter et reconnaître des visages"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "Mode d'étiquetage automatique :"
+msgstr "Mode d'analyse avec étiquetage automatique :"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
@@ -62034,17 +61985,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet152"
-msgstr "ResNet50"
+msgstr "ResNet152"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#, kde-format
 msgid "Object Detection Accuracy: "
-msgstr "Précision pour le visage"
+msgstr "Précision de détection des objets :"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format

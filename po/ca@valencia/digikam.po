@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-13 01:56+0000\n"
-"PO-Revision-Date: 2025-01-07 10:40+0100\n"
+"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"PO-Revision-Date: 2025-01-13 10:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2962,19 +2962,17 @@ msgid "Existing Tags"
 msgstr "Etiquetes existents"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Assignació automàtica d'etiquetes"
+msgstr "Exploreu etiquetes automàtiques"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
-"Utilitzeu este botó per a explorar els àlbums seleccionats per a buscar cares"
+"Utilitzeu este botó per a explorar els àlbums seleccionats per a buscar "
+"objectes a etiquetar automàticament"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6293,27 +6291,21 @@ msgid "Assign Tags"
 msgstr "Assignació d'etiquetes"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Una eina per a assignar automàticament etiquetes a les imatges"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Esta eina del gestor de la cua per lots assignarà valors de metadades "
-"de jerarquies de paraules clau a les imatges automàticament utilitzant un "
-"motor d'aprenentatge profund.</para>"
+"<para>Esta eina del gestor de la cua per lots assignarà automàticament "
+"valors de metadades de jerarquies de paraules clau a les imatges utilitzant "
+"models d'IA d'aprenentatge profund.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -27611,7 +27603,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Menú contextual"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
 #: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
@@ -29158,8 +29150,8 @@ msgid "Scanning collection"
 msgstr "S'està explorant la col·lecció"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
-#: core/libs/mlfoundation/mlpipelinemacros.h:62
-#: core/libs/mlfoundation/mlpipelinemacros.h:71
+#: core/libs/mlfoundation/mlpipelinemacros.h:61
+#: core/libs/mlfoundation/mlpipelinemacros.h:70
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -33458,7 +33450,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Conversió RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:94
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Eina de correcció dels ulls rojos"
@@ -39685,40 +39677,34 @@ msgid "Autotags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:118
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Exploració de cares en l'àlbum: %1"
+msgstr "Exploreu objectes en l'àlbum: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:122
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Exploració de cares en %1 àlbums"
+msgstr "Exploreu objectes en %1 àlbums"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:203
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "S'ha produït un error en iniciar la detecció de cares."
+msgstr "S'ha produït un error en iniciar la detecció d'objectes."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:218
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Elements explorats buscant cares: %1\n"
+msgstr "Elements explorats buscant objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:222
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Element explorat buscant cares: %1\n"
+msgstr "Element explorat buscant objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#, fuzzy, kde-format
-#| msgid "Scanned for faces: %1\n"
+#, kde-format
 msgid "Scanned for objects: %1\n"
-msgstr "Cares explorades: %1\n"
+msgstr "Objectes explorats: %1\n"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
@@ -39741,15 +39727,7 @@ msgstr "Busca a"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39759,14 +39737,14 @@ msgid ""
 "will automatically generate tags describing the contents and store the "
 "results in the database.</p>"
 msgstr ""
-"<p><b>Esta eina permet assignar automàticament etiquetes a les imatges "
-"mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
+"<p><b>Esta eina assigna automàticament etiquetes a les imatges mitjançant "
+"l'anàlisi del contingut mitjançant un model d'IA de xarxa neuronal "
 "d'aprenentatge profund.</b></p><p>Els paràmetres de davall determinen el "
-"model d'aprenentatge profund a utilitzar mentre s'analitza el contingut de "
-"la imatge per a determinar els subjectes de la fotografia. La xarxa neuronal "
-"utilitzada en segon pla generarà automàticament una sèrie d'etiquetes que "
-"descriuen el contingut i emmagatzemaran els resultats en la base de dades.</"
-"p>"
+"model d'IA d'aprenentatge profund a utilitzar mentre s'analitza el contingut "
+"de les imatges per a determinar els objectes de la fotografia. La xarxa "
+"neuronal d'IA utilitzada en segon pla generarà automàticament una sèrie "
+"d'etiquetes que descriuen el contingut i emmagatzemaran els resultats en la "
+"base de dades.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -39775,11 +39753,9 @@ msgstr "Mode d'etiquetatge automàtic: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Explora totes les imatges"
+msgstr "Explora-ho tot"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -39790,42 +39766,33 @@ msgstr "Explora només els no assignats"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #: core/utilities/maintenance/main/maintenancedlg.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Neteja-ho tot i torna a assignar</b>: neteja totes les etiquetes ja "
-"assignades i torna a explorar tots els elements des de zero.</"
-"p><p><b>Explora només els no assignats</b>: només explora els elements sense "
-"cap etiqueta assignada.</p>"
+"<p><b>Explora-ho tot</b>: torna a explorar tots els elements per a "
+"l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
+"els elements sense etiquetes automàtiques assignades.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #: core/utilities/maintenance/main/maintenancedlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging tag mode: "
-msgstr "Mode d'etiquetatge automàtic: "
+msgstr "Mode d'etiquetatge d'etiquetes automàtiques: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #: core/utilities/maintenance/main/maintenancedlg.cpp:262
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
+#, kde-format
 msgid "Replace existing autotags"
-msgstr "Actualitza només les marques de temps existents"
+msgstr "Substituïx les etiquetes automàtiques existents"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #: core/utilities/maintenance/main/maintenancedlg.cpp:263
-#, fuzzy, kde-format
-#| msgid "Updates"
+#, kde-format
 msgid "Update autotags"
-msgstr "Actualitzacions"
+msgstr "Actualitza les etiquetes automàtiques"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -39835,6 +39802,10 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Substituïx les etiquetes automàtiques existents</b>: neteja les "
+"etiquetes automàtiques existents i les substituïx pels resultats de "
+"l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig "
+"qualsevol nova etiqueta automàtica trobada a les etiquetes existents.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -39844,23 +39815,20 @@ msgstr "Model de selecció: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #: core/utilities/maintenance/main/maintenancedlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
+#, kde-format
 msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #: core/utilities/maintenance/main/maintenancedlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
+#, kde-format
 msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet-152"
-msgstr "ResNet50"
+msgstr "ResNet-152"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #: core/utilities/maintenance/main/maintenancedlg.cpp:278
@@ -39879,20 +39847,27 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: xarxa neuronal xicoteta i lleugera que oferix una "
+"velocitat excepcional, però pot faltar la identificació de més objectes a "
+"les imatges. YOLO pot detectar diversos objectes en una imatge. Està "
+"entrenat per a reconéixer 80 objectes diferents utilitzant el conjunt de "
+"dades COCO.</p><p><b>YOLOv11 XLarge</b>: xarxa neuronal gran i robusta que "
+"oferix una precisió bona. Detectarà més objectes en imatges que el YOLOv11 "
+"Nano, però és més lent. YOLO pot detectar diversos objectes en una imatge. "
+"Està entrenat per a reconéixer 80 objectes diferents utilitzant el conjunt "
+"de dades COCO.</p><p><b>ResNet-152</b>: xarxa neuronal gran i potent de "
+"convolució. Detectarà un objecte únic en una imatge amb gran precisió. "
+"ResNet-152 s'ha entrenat per a reconéixer 1.000 objectes diferents "
+"utilitzant el conjunt de dades ImageNet.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, kde-format
 msgid "Object detection accuracy: "
-msgstr ""
+msgstr "Precisió de la detecció d'objectes: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #: core/utilities/maintenance/main/maintenancedlg.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -39901,7 +39876,7 @@ msgid ""
 msgstr ""
 "Ajusteu la sensibilitat davant de l'especificitat: com més gran siga el "
 "valor, amb més precisió\n"
-"es detectaran les cares, però es reconeixeran menys cares."
+"es detectaran els objectes, però es reconeixeran menys objectes.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
@@ -39912,19 +39887,15 @@ msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La detecció i reconeixement de cares són tasques que consumixen temps.\n"
+"La detecció i l'etiquetatge automàtic d'objectes són tasques que consumixen "
+"temps.\n"
 "Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
@@ -52573,27 +52544,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:94
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmeu de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:109
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "Eliminació de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "Editeu l'etiqueta de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:144
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "Edició de regió de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "Addició de cara manualment"
@@ -52717,6 +52688,13 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Explora les imatges noves</b> buscarà les cares i intentarà el "
+"reconeixement de les imatges noves trobades als àlbums seleccionats a la "
+"pestanya «Busca a».</p><p><b>Explora totes les imatges</b> buscarà les cares "
+"i intentarà el reconeixement de totes les imatges trobades als àlbums "
+"seleccionats a la pestanya «Busca a».</p><p><b>Només reconeix les cares</b> "
+"intentarà fer coincidir les cares desconegudes amb les cares confirmades "
+"sense explorar cares noves de les imatges. <b>1"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
@@ -61626,10 +61604,9 @@ msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgid "Auto-tagging scan mode: "
-msgstr "Mode d'etiquetatge automàtic: "
+msgstr "Mode d'exploració de l'etiquetatge automàtic: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:265
 #, kde-format
@@ -61639,17 +61616,20 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
+"<p><b>Substituïx les etiquetes automàtiques existents</b>: neteja les "
+"etiquetes automàtiques existents i les substituïx pels resultats de "
+"l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig les "
+"noves etiquetes automàtiques trobades a les etiquetes existents.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "ResNet50"
+#, kde-format
 msgid "ResNet152"
-msgstr "ResNet50"
+msgstr "ResNet152"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
 msgid "Object Detection Accuracy: "
-msgstr ""
+msgstr "Precisió de la detecció d'objectes: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:302
 #, kde-format
@@ -61990,17 +61970,16 @@ msgid "Face found: %1"
 msgstr "Cara trobada: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "No faces found in %1"
-msgstr "S'ha trobat imatges a %1"
+msgstr "No s'ha trobat cares a %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "S'ha trobat 1 cara a "
+msgstr[1] "S'han trobat %1 cares a "
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68671,163 +68650,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "kind of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>: este model és una xarxa neuronal que oferix una "
-#~ "velocitat i eficiència excepcionals. Permet avaluar ràpidament la "
-#~ "integració d'escenaris de detecció d'objectes d'escala xicoteta. Està "
-#~ "dissenyat per a detecció d'objectes, capaç de reconéixer i extraure la "
-#~ "ubicació dels objectes en una imatge. La limitació del nombre d'objectes "
-#~ "reconeixibles s'establix a 80.</p><p><b>YOLOv5 XLarge</b>: com "
-#~ "l'anterior, este model és una xarxa neuronal dedicada a requisits de "
-#~ "detecció d'objectes més complexos i mostra capacitats notables. Malgrat "
-#~ "la complexitat addicional que introduïx més latència de temps i recursos "
-#~ "informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a "
-#~ "gran escala, ja que proporciona prediccions més precises a costa de la "
-#~ "velocitat.</p><p><b>ResNet50</b>: este model és un tipus específic de "
-#~ "xarxa neuronal de convolució formada per l'apilament de blocs residuals "
-#~ "normalment utilitzats per a alimentar aplicacions de visió per ordinador "
-#~ "com la detecció d'objectes. Esta classe de disseny permet l'entrenament "
-#~ "de xarxes molt profundes sense trobar-se amb el problema del degradat que "
-#~ "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
-#~ "classificació d'imatges i no proporciona la ubicació d'objectes. Pot "
-#~ "reconéixer objectes d'un vast conjunt de més de 1.000 classes, cobrint "
-#~ "una àmplia varietat d'objectes, animals i escenes.</p>"
-
-#~ msgctxt "@label"
-#~ msgid ""
-#~ "<p><b>This tool allows to assign automatically tags to images by contents "
-#~ "analysis using deep-learning neural network.</b></p><p>The settings below "
-#~ "determines the deep-learning model to use while parsing image contents to "
-#~ "determine the subjects of the photography. The neural network used in "
-#~ "background will generate automatically a serie of tags describing the "
-#~ "contents and store the results in the database.</p>"
-#~ msgstr ""
-#~ "<p><b>Esta eina permet assignar etiquetes automàticament a les imatges "
-#~ "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
-#~ "d'aprenentatge profund.</b></p><p>Els paràmetres de davall determinen el "
-#~ "model d'aprenentatge profund a utilitzar mentre s'analitza el contingut "
-#~ "de la imatge per a determinar els subjectes de la fotografia. La xarxa "
-#~ "neuronal utilitzada en segon pla generarà automàticament una sèrie "
-#~ "d'etiquetes que descriuen el contingut i emmagatzemaran els resultats en "
-#~ "la base de dades.</p>"
-
-#~ msgid "Clean all and re-assign"
-#~ msgstr "Neteja-ho tot i torna a assignar"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "king of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>: este model és una xarxa neuronal que oferix una "
-#~ "velocitat i eficiència excepcionals. Permet avaluar ràpidament la "
-#~ "integració d'escenaris de detecció d'objectes d'escala xicoteta. Està "
-#~ "dissenyat per a detecció d'objectes, capaç de reconéixer i extraure la "
-#~ "ubicació dels objectes en una imatge. La limitació del nombre d'objectes "
-#~ "reconeixibles s'establix a 80.</p><p><b>YOLOv5 XLarge</b>: com "
-#~ "l'anterior, este model és una xarxa neuronal dedicada a requisits de "
-#~ "detecció d'objectes més complexos i presenta capacitats notables. Malgrat "
-#~ "la complexitat addicional que introduïx més latència de temps i recursos "
-#~ "informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a "
-#~ "gran escala, ja que proporciona prediccions més precises a costa de la "
-#~ "velocitat.</p><p><b>ResNet50</b>: este model és un tipus específic de "
-#~ "xarxa neuronal de convolució formada per l'apilament de blocs residuals "
-#~ "normalment utilitzats per a alimentar aplicacions de visió per ordinador "
-#~ "com la detecció d'objectes. Este tipus de disseny permet l'entrenament de "
-#~ "xarxes molt profundes sense trobar-se amb el problema del degradat que "
-#~ "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
-#~ "classificació d'imatges i no proporciona la ubicació d'objectes. Pot "
-#~ "reconéixer objectes d'un vast conjunt de més de 1.000 classes, cobrint "
-#~ "una àmplia varietat d'objectes, animals i escenes.</p>"
-
-#~ msgctxt "@label AI model used for face detection"
-#~ msgid "Model:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YuNet"
-#~ msgstr "YuNet"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YOLOv3"
-#~ msgstr "YOLOv3"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SSD"
-#~ msgstr "SSD"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Detection model used to find faces. YuNet is the default model.\n"
-#~ "It is faster and more configurable than SSD and YOLOv3.\n"
-#~ "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "Model de detecció emprat per a trobar cares. YuNet és el model "
-#~ "predeterminat.\n"
-#~ "És més ràpid i més configurable que el SSD i el YOLOv3.\n"
-#~ "Nota: El YuNet només estarà disponible si digiKam s'ha compilat amb "
-#~ "l'OpenCV 4.6.0 o posterior."
-
-#~ msgctxt "@label AI model used for face recognition"
-#~ msgid "Model:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SFace"
-#~ msgstr "SFace"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "OpenFace"
-#~ msgstr "OpenFace"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "SFace is the default detection model. It is faster and more accurate.\n"
-#~ "OpenFace can be used for older libraries.\n"
-#~ "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "SFace és el model de detecció predeterminat. És més ràpid i més precís.\n"
-#~ "L'OpenFace es pot utilitzar per a les biblioteques més antigues.\n"
-#~ "Nota: El SFace només estarà disponible si digiKam s'ha compilat amb "
-#~ "l'OpenCV 4.6.0 o posterior."
