@@ -539,10 +539,10 @@ DImg DImg::smoothScaleSection(int sx, int sy,
 // Code ported from Imlib2...
 // FIXME: replace with mRed, etc... These work on pointers to pixels, not pixel values
 
-#define A_VAL(p) ((unsigned char*)(p))[3]
-#define R_VAL(p) ((unsigned char*)(p))[2]
-#define G_VAL(p) ((unsigned char*)(p))[1]
-#define B_VAL(p) ((unsigned char*)(p))[0]
+#define A_VAL(p) (reinterpret_cast<unsigned char*>(p))[3]
+#define R_VAL(p) (reinterpret_cast<unsigned char*>(p))[2]
+#define G_VAL(p) (reinterpret_cast<unsigned char*>(p))[1]
+#define B_VAL(p) (reinterpret_cast<unsigned char*>(p))[0]
 
 #define INV_XAP  (256 - xapoints[x])
 #define XAP      (xapoints[x])
