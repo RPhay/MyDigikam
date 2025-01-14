@@ -184,8 +184,8 @@ void CharcoalFilter::filterImage()
 
 void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* normal_kernel, double kernelWidth)
 {
-    int     mx, my, sx, sy, mcx, mcy, oldProgress=0, progress=0;
-    double  red, green, blue, alpha;
+    long    mx = 0, my = 0, sx = 0, sy = 0, mcx = 0, mcy = 0, oldProgress = 0, progress = 0;
+    double  red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
     double* k = nullptr;
 
     uint height     = m_destImage.height();
@@ -202,7 +202,7 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
         for (uint x = 0 ; runningFlag() && (x < width) ; ++x)
         {
             k   = normal_kernel;
-            red = green = blue = alpha = 0;
+            red = green = blue = alpha = 0.0;
             sy  = y - (kernelWidth / 2);
 
             for (mcy = 0 ; runningFlag() && (mcy < kernelWidth) ; ++mcy, ++sy)
@@ -259,7 +259,6 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
         }
     }
 }
-
 
 bool CharcoalFilter::convolveImage(const unsigned int order, const double* kernel)
 {
