@@ -64,8 +64,8 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     bindingValues << (parentSplitAxis + 1) % 128;
     bindingValues << nodeID;
-    bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
-    bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
+    bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(faceEmbedding.ptr<float>()), (sizeof(float) * 128));
+    bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(faceEmbedding.ptr<float>()), (sizeof(float) * 128));
     bindingValues << parentID;
 
     // Insert node to database.
@@ -163,8 +163,8 @@ void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange,
 
     QVariantList bindingValues;
 
-    bindingValues << QByteArray::fromRawData((char*)max, (sizeof(float) * 128));
-    bindingValues << QByteArray::fromRawData((char*)min, (sizeof(float) * 128));
+    bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(max), (sizeof(float) * 128));
+    bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(min), (sizeof(float) * 128));
     bindingValues << nodeId;
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"),
