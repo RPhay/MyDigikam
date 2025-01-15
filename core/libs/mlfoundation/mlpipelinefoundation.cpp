@@ -426,12 +426,12 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
         {
             // slow things down
 
-            thisQueue->setMaxDepth(1);
+            thisQueue->setMaxDepth(throttledQueueDepth);
         }
 
         // check for 50% free buffer space
 
-        if ((1 == thisQueue->maxDepth()) && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
+        if ((throttledQueueDepth == thisQueue->maxDepth()) && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
         {
             // speed things up
 
