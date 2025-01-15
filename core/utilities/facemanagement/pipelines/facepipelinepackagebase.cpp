@@ -29,9 +29,11 @@ FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const QStri
 {
 }
 
-FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face)
+FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face, const QString& _albumTitle)
     : info(_imageId),
+      albumTitle(_albumTitle),
       face(_face)
+      
 {
 }
 

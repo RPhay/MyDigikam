@@ -341,7 +341,7 @@ bool FacePipelineEdit::writer()
 
             notify(MLPipelineNotification::notifyProcessed,
                    package->info.name(),
-                   package->info.filePath(),
+                   CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(package->info.id())),
                    package->faceRects.size(),
                    package->thumbnail);
 

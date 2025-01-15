@@ -134,7 +134,7 @@ bool FacePipelineRecognize::finder()
                     {
                         ++totalItemCount;
                         filter << imageId;
-                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
+                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
                     }
                 }
             }
@@ -155,7 +155,7 @@ bool FacePipelineRecognize::finder()
             {
                 ++totalItemCount;
                 filter << imageId;
-                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
+                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(imageId))));
             }
         }
     }
@@ -246,9 +246,9 @@ bool FacePipelineRecognize::classifier()
                 // no suggested match found, so notify the user
 
                 notify(MLPipelineNotification::notifyProcessed,
-                       package->info.name(),
-                       package->info.filePath(),
-                       1,
+                       package->info.name() + QStringLiteral("\n"),
+                       package->albumTitle,
+                       0,
                        package->thumbnail);
 
                 // delete the package
@@ -326,19 +326,24 @@ bool FacePipelineRecognize::writer()
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
+            QString displayName = package->info.name() + QStringLiteral("\n");
+            int matches = 0;
+
             if (-1 != package->label)
             {
                 Identity identity = idProvider->identity(package->label);
                 int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
                 utils.changeSuggestedName(package->face, tagId);
+                displayName += identity.attribute(QStringLiteral("name"));
+                ++matches;
             }
 
             // send a notification that the image was processed
 
             notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   package->info.filePath(),
-                   1,
+                   displayName,
+                   package->albumTitle,
+                   matches,
                    package->thumbnail);
 
             // delete the package

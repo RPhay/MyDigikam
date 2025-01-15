@@ -53,7 +53,8 @@ public:
                                      const QString& _albumTitle);
 
     explicit FacePipelinePackageBase(qlonglong _imageId,
-                                     const FaceTagsIface& _face);
+                                     const FaceTagsIface& _face,
+                                     const QString& _albumTitle);
 
     explicit FacePipelinePackageBase(const ItemInfo& _info,
                                      const FaceTagsIface& _face,

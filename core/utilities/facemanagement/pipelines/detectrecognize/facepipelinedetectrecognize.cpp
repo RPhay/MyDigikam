@@ -174,7 +174,7 @@ bool FacePipelineDetectRecognize::finder()
                 {
                     ++totalItemCount;
                     filter << imageId;
-                    enqueue(nextQueue, new FacePipelinePackageBase(imageId, album->title()));
+                    enqueue(nextQueue, new FacePipelinePackageBase(imageId, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
                 }
             }
         }

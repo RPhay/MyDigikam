@@ -127,7 +127,7 @@ bool FacePipelineRetrain::finder()
                     {
                         ++totalItemCount;
 
-                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
+                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
                     }
                 }
             }
@@ -205,11 +205,14 @@ bool FacePipelineRetrain::writer()
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
+            QString displayName = package->info.name() + QStringLiteral("\n");
             if (0 != package->features.rows)
             {
+                Identity identity = utils.identityForTag(package->face.tagId());
+                displayName += identity.attribute(QStringLiteral("name"));
+
                 if (package->useForTraining)
                 {
-                    Identity identity = utils.identityForTag(package->face.tagId());
                     idProvider->addTraining(identity, package->face.hash(), package->features);
                 }
                 else
@@ -225,9 +228,9 @@ bool FacePipelineRetrain::writer()
             // send a notification that the image was processed
 
             notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   package->info.filePath(),
-                   package->faceRects.size(),
+                   displayName,
+                   package->albumTitle,
+                   1,
                    package->thumbnail);
 
             // delete the package
