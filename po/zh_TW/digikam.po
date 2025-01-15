@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"POT-Creation-Date: 2025-01-15 01:52+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1119,7 +1119,7 @@ msgid "Aperture/Focal:"
 msgstr "光圈/焦距："
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -2784,7 +2784,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2792,7 +2792,7 @@ msgstr "向後"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -20687,110 +20687,110 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "開啟預覽"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:93
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr "如果設定，會儲存目前相簿的音樂並於下次啟動時自動恢復。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "從清單中移除目前選擇的數值"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "從清單中移除目前選擇的數值"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "加入新數值到清單中"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "從播放清單刪除所選音軌。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "從檔案載入播放清單。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgid "Save metadata to a binary file"
 msgid "Save playlist to a file."
 msgstr "將中繼資料儲存到二進位檔"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Clear the playlist."
 msgstr "清空播放清單。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:253
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
 msgstr[0] "%1 個軌跡 [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:281
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr "投影片時間大於音樂時間。建議：加入更多音樂檔。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:351
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "全部不選"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "您一次只能向上移動一個檔案。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:457
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "您一次只能向下移動一個檔案。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:478
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "載入播放清單"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:479
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
 #, fuzzy, kde-format
 #| msgid "*.m3u|Playlist (*.m3u)"
 msgid "Playlist (*.m3u)"
 msgstr "*.m3u|播放清單 (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:537
 #, fuzzy, kde-format
 #| msgid "Save theme"
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "儲存佈景主題"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot access file %1. Please check the path is correct."
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "無法存取檔案 %1。請檢查路徑是否正確。"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:608
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "無法建立空白檔案清單的預覽。"
@@ -21277,78 +21277,78 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "進階"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "無"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "彎曲"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "混色"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "立方體"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "淡化"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "飄動"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "進/出"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "旋轉"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "投影片放映"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:539
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:993
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "隨機"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "投影片放映完成"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr "點擊來離開..."
@@ -21429,31 +21429,31 @@ msgstr "刪除影像"
 msgid "Do you want to move this image to the trash?"
 msgstr "您要從收藏清單中移除此收藏「%1」嗎？"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "棋盤"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "下移"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "清掃"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "馬賽克"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -21461,45 +21461,45 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "立方"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "成長"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "水平"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:988
 #, fuzzy, kde-format
 #| msgid "Vertically first"
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "先調整垂直"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:989
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "圓形擴大"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:990
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "多個圓形擴大"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:991
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "內螺旋"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:992
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
@@ -38824,20 +38824,15 @@ msgstr "在相簿 %1 裡掃描臉孔"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Scanned for objects: %1\n"
-msgstr "在相簿 %1 裡掃描臉孔"
+#| msgid "Album \"%1\""
+msgid "Album: %1\n"
+msgstr "相簿 \"%1\""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:251
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "衛星數：%1"
+#| msgid "Scan for faces in album: %1"
+msgid "Scanning: %1\n"
+msgstr "在相簿 %1 裡掃描臉孔"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
@@ -41288,38 +41283,38 @@ msgid "An error has occurred while playing: %1"
 msgstr "媒體播放程式發生一個錯誤...."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暫停/播放"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "擷取"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒體播放器發生了錯誤..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "切換循環播放"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -41327,55 +41322,55 @@ msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "向前"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -51647,32 +51642,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "關聯性："
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "移除臉孔標籤？"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
 #, fuzzy, kde-format
 #| msgid "Updating faces database"
 msgid "Editing face tag"
 msgstr "正在更新臉孔資料庫"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Remove this face region"
 msgid "Editing face region"
 msgstr "移除這個臉孔區域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"
@@ -60645,6 +60640,16 @@ msgstr ""
 msgid "Auto-tags for: %1\n"
 msgstr "自動標籤模式："
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "衛星數：%1"
+
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
 #| msgid "Keywords"
@@ -67331,6 +67336,11 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#, fuzzy
+#~| msgid "Scan for faces in album: %1"
+#~ msgid "Scanned for objects: %1\n"
+#~ msgstr "在相簿 %1 裡掃描臉孔"
 
 #~ msgid "Clean all and re-assign"
 #~ msgstr "全部清除並重新指派"

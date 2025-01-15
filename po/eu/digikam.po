@@ -38,15 +38,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 01:54+0000\n"
-"PO-Revision-Date: 2025-01-13 19:10+0100\n"
+"POT-Creation-Date: 2025-01-15 01:52+0000\n"
+"PO-Revision-Date: 2025-01-14 21:18+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -1142,7 +1142,7 @@ msgid "Aperture/Focal:"
 msgstr "Irekidura/Fokala:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -2831,7 +2831,7 @@ msgstr "Git adarra: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2839,7 +2839,7 @@ msgstr "Atzera"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -8286,7 +8286,7 @@ msgstr "Ezarri erabiliko den letra-tipoaren kolorea."
 #, fuzzy, kde-format
 msgctxt "text opacity"
 msgid "Opacity:"
-msgstr "Edukiera:"
+msgstr "Opakutasuna:"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:192
 #, fuzzy, kde-format
@@ -8356,7 +8356,7 @@ msgstr ""
 #| msgid "Insert Text..."
 msgctxt "@action"
 msgid "Insert Text..."
-msgstr "Txertatu testua..."
+msgstr "Txertatu testua"
 
 #: core/dplugins/editor/decorate/texture/texturetool.cpp:132
 #, kde-format
@@ -8455,7 +8455,7 @@ msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 #| msgid "Blur..."
 msgctxt "@action"
 msgid "Blur..."
-msgstr "Lausotu..."
+msgstr "Lausotu"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:113
 #, fuzzy, kde-format
@@ -8829,7 +8829,7 @@ msgstr "Iragazki mota:"
 #, fuzzy, kde-format
 msgctxt "custom restoration settings"
 msgid "Custom"
-msgstr "Pertsonalizatua"
+msgstr "Neurrira"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, fuzzy, kde-format
@@ -8933,7 +8933,7 @@ msgstr "Birfokatzea"
 #| msgid "Sharpen"
 msgctxt "@title"
 msgid "Sharpen"
-msgstr "Enfokatu"
+msgstr "Zorroztu"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:55
 #, fuzzy, kde-format
@@ -8954,7 +8954,7 @@ msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 #| msgid "Sharpen..."
 msgctxt "@action"
 msgid "Sharpen..."
-msgstr "Enfokatu..."
+msgstr "Zorroztu"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:176
 #, fuzzy, kde-format
@@ -9020,7 +9020,7 @@ msgstr "Irudiaren posizioa"
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgid "Auto rotate"
-msgstr "Automatikoki biratu"
+msgstr "Biratze automatikoa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/editor/file/print/printoptionspage.ui:75
@@ -10556,7 +10556,7 @@ msgstr "Mozketaren ezarpenak"
 #, fuzzy, kde-format
 msgctxt "@label: guide lines"
 msgid "Form:"
-msgstr "Irudiaren data"
+msgstr "Inprimakia:"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:360
 #, kde-format
@@ -12962,7 +12962,7 @@ msgstr "Erdigune haztatuko batezbestekoa"
 #, fuzzy, kde-format
 msgctxt "metering mode"
 msgid "Spot"
-msgstr "Spot"
+msgstr "orbana"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, fuzzy, kde-format
@@ -12980,13 +12980,13 @@ msgstr "Multi-segment"
 #, fuzzy, kde-format
 msgctxt "metering mode"
 msgid "Partial"
-msgstr "Partielle"
+msgstr "Partziala"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:205
 #, fuzzy, kde-format
 msgctxt "metering mode"
 msgid "Other"
-msgstr "Autre"
+msgstr "Bestelakoak"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:206
 #, kde-format
@@ -13333,7 +13333,7 @@ msgstr "Flashik ez"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:79
 #, fuzzy, kde-format
 msgid "Fired"
-msgstr "Éclair"
+msgstr "Kliskatua"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:80
 #, fuzzy, kde-format
@@ -15275,7 +15275,7 @@ msgstr ""
 #| msgid "Single"
 msgctxt "@item: scene code"
 msgid "Single"
-msgstr "Une personne"
+msgstr "Bakuna"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:58
 #, kde-format
@@ -15454,14 +15454,14 @@ msgstr "Paketea"
 #| msgid "Schema"
 msgctxt "@item: type code"
 msgid "Schema"
-msgstr "Schéma"
+msgstr "Eskema"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
 #, fuzzy, kde-format
 #| msgid "Topic"
 msgctxt "@item: type code"
 msgid "Topic"
-msgstr "Rubrique"
+msgstr "Mintzagaia"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:89
 #, fuzzy, kde-format
@@ -15714,7 +15714,7 @@ msgstr "Publication de presse"
 #| msgid "Reference:"
 msgctxt "@option"
 msgid "Reference:"
-msgstr "Référence :"
+msgstr "Erreferentzia"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
 #, fuzzy, kde-format
@@ -15959,7 +15959,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Removing image tags. Please wait..."
 msgid "Please wait ..."
-msgstr "Irudien etiketak kentzen. Itxaron..."
+msgstr "Itxoin mesedez..."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, fuzzy, kde-format
@@ -16013,7 +16013,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Former Author"
-msgstr "Egilea"
+msgstr "Egile ohia"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
@@ -16036,7 +16036,7 @@ msgstr "Sortu eskema..."
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Calendar events"
-msgstr "Egutegia"
+msgstr "Egutegiko ekitaldiak"
 
 #. i18n: ectx: property (text), widget (QLabel, ohHeaderLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:26
@@ -16101,21 +16101,21 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:14
 #, fuzzy, kde-format
 msgid "Printing"
-msgstr "Inprimatzen"
+msgstr "Inprimatzea"
 
 #. i18n: ectx: property (text), widget (QLabel, currentLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:23
 #, fuzzy, kde-format
 #| msgid "Current Name"
 msgid "Current Page"
-msgstr "Uneko orria"
+msgstr "Uneko orrialdea"
 
 #. i18n: ectx: property (text), widget (QLabel, totalLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:33
 #, fuzzy, kde-format
 #| msgid "Total Items"
 msgid "Total Pages"
-msgstr "Guztirako elementuak"
+msgstr "Orrialde guztira: %1"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
@@ -16139,7 +16139,7 @@ msgstr "Aurreikuspegia"
 #, fuzzy, kde-format
 #| msgid "Percentile:"
 msgid "Paper Size:"
-msgstr "Pertzentila:"
+msgstr "Paperaren neurria"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, paperSizeCombo)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:65
@@ -16174,7 +16174,7 @@ msgstr "Altua"
 #, fuzzy, kde-format
 msgctxt "Low resolution level"
 msgid "Low"
-msgstr "Faible"
+msgstr "Baxua"
 
 #. i18n: ectx: property (text), widget (QRadioButton, topRadio)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:115
@@ -16193,7 +16193,7 @@ msgstr "E&zkerrean"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:135
 #, fuzzy, kde-format
 msgid "&Right"
-msgstr "E&skuinean"
+msgstr "E&skuina"
 
 #. i18n: ectx: property (text), widget (QCheckBox, drawLinesCheckBox)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:150
@@ -16400,7 +16400,7 @@ msgstr "Datu-basearen bihurketa bertan behera utzi da."
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "Con&vert"
-msgstr "&Bihurtu"
+msgstr "Bihurtu"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, fuzzy, kde-format
@@ -16423,7 +16423,7 @@ msgstr "Huts egin du kameratik %1 fitxategia eskuratzean."
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to save image."
-msgstr "Huts egin du irudia gordetzean"
+msgstr "Irudia gordetzea huts egin du."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, fuzzy, kde-format
@@ -16446,7 +16446,7 @@ msgstr "LibLCMS"
 #, fuzzy, kde-format
 #| msgid "Internal Server"
 msgid "Internal error"
-msgstr "Barneko errorea"
+msgstr "Barne-errorea"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, fuzzy, kde-format
@@ -16464,7 +16464,7 @@ msgstr "RAW fitxategiak"
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target File"
-msgstr "Karpetaren arabera"
+msgstr "Helburu-&fitxategia:"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
@@ -18960,7 +18960,7 @@ msgstr "<b>Latitudea</b>:"
 #| msgid "Image Settings"
 msgctxt "@title:group"
 msgid "Save Settings"
-msgstr "Irudiaren ezarpenak"
+msgstr "Gorde ezarpenak"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, fuzzy, kde-format
@@ -19078,7 +19078,7 @@ msgstr "Errorea"
 #, fuzzy, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
-msgstr "Dimentsioak:"
+msgstr "Optimizatzea"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
 #, fuzzy, kde-format
@@ -19300,7 +19300,7 @@ msgstr "Inprimatu irudia"
 #| msgid "Photo caption"
 msgctxt "Output: PDF"
 msgid "Print to PDF"
-msgstr "Argazkiaren epigrafea"
+msgstr "Inprimatu PDFra"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
 #, fuzzy, kde-format
@@ -19313,19 +19313,19 @@ msgstr "Argazkiaren epigrafea"
 #, fuzzy, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
-msgstr "LibJPEG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
 #, fuzzy, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
-msgstr "LibPNG"
+msgstr "PNG"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
 #, fuzzy, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
-msgstr "LibTIFF"
+msgstr "TIFF"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, fuzzy, kde-format
@@ -19357,7 +19357,7 @@ msgstr "Kopiatu irudien iruzkinak..."
 #| msgid "Custom ratio:"
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
-msgstr "Erlazio pertsonalizatua:"
+msgstr "Neurrira ipinitako formatua"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
@@ -19371,13 +19371,13 @@ msgstr "Prozesua bertan behera utzita..."
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
 #, fuzzy, kde-format
 msgid "Processing page %1"
-msgstr "Filma-fitxategiak"
+msgstr "Orrialdea prozesatzen..."
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Could not save file %1"
-msgstr "Huts egin du fitxategia gordetzean: %1"
+msgstr "Ezin da fitxategia gorde."
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
 #, fuzzy, kde-format
@@ -19498,21 +19498,21 @@ msgstr ""
 #| msgctxt "font color"
 #| msgid "Color:"
 msgid "Text Color:"
-msgstr "Kolorea:"
+msgstr "Testuaren kolorea:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:197
 #, fuzzy, kde-format
 #| msgid "Tile size:"
 msgid "Text Size:"
-msgstr "Lauzaren tamaina:"
+msgstr "Testuaren tamaina"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:244
 #, fuzzy, kde-format
 #| msgid "Family"
 msgid "Font Family:"
-msgstr "Familia"
+msgstr "Letra-tipo familia:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
@@ -19558,7 +19558,7 @@ msgstr "Biratu argazkia ezkerrera"
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgid "Rotate &left"
-msgstr "Biratu e&zkerrera"
+msgstr "Biratu ezkerrera"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -19574,7 +19574,7 @@ msgstr "Biratu argazkia eskuinera"
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgid "Rotate &right"
-msgstr "Biratu e&skuinera"
+msgstr "Biratu eskuinera"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -19592,7 +19592,7 @@ msgstr "Aurreko argazkia"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:114
 #, fuzzy, kde-format
 msgid "<< Pr&evious"
-msgstr "<< Aurr&ekoa"
+msgstr "Aurrekoa"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropNext)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropNext)
@@ -19607,7 +19607,7 @@ msgstr "Hurrengo argazkia"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:127
 #, fuzzy, kde-format
 msgid "Ne&xt >>"
-msgstr "&Hurrengoa >>"
+msgstr "Hurrengoa"
 
 #. i18n: ectx: property (text), widget (QLabel, LblCropPhoto)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:156
@@ -19621,7 +19621,7 @@ msgstr "Argazkia 0 / 0"
 #, fuzzy, kde-format
 #| msgid "Custom list"
 msgid "Custom layout"
-msgstr "Norberak finkatutako antolamendua"
+msgstr "Norberak finkatutako antolamendua: \"%1\""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_fitAsManyCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:49
@@ -19661,7 +19661,7 @@ msgstr "mm"
 #, fuzzy, kde-format
 #| msgid "Inches"
 msgid "inches"
-msgstr "hazbete"
+msgstr "hazbeteak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:239
@@ -19681,7 +19681,7 @@ msgstr "Erakutsi sareta"
 #, fuzzy, kde-format
 #| msgid "Custom list"
 msgid "Automatic layout:"
-msgstr "Pertsonalizatu zerrenda"
+msgstr "Antolaera automatikoa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:316
@@ -19694,7 +19694,7 @@ msgstr "Argazkiak orriko"
 #, fuzzy, kde-format
 #| msgid "Photo Flash"
 msgid "Photos:"
-msgstr "Argazkiak:"
+msgstr "Argazkiak"
 
 #. i18n: ectx: property (text), widget (QLabel, LblPhotoCount)
 #. i18n: ectx: property (text), widget (QLabel, LblSheetsPrinted)
@@ -19710,7 +19710,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:77
 #, fuzzy, kde-format
 msgid "Sheets:"
-msgstr "Orriak:"
+msgstr "Orriak"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel6)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:107
@@ -19742,7 +19742,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:296
 #, fuzzy, kde-format
 msgid "Page"
-msgstr "%1 orria"
+msgstr "Orria"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageUp)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageUp)
@@ -19751,7 +19751,7 @@ msgstr "%1 orria"
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgid "Next page"
-msgstr "Hurrengo orria"
+msgstr "Hurrengo orrialdea"
 
 #. i18n: ectx: property (text), widget (QToolButton, BtnPreviewPageUp)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:318
@@ -19764,7 +19764,7 @@ msgstr ""
 #| msgid "Caption"
 msgctxt "@title: column"
 msgid "Caption"
-msgstr "Irudi-testua"
+msgstr "E&pigrafea"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:34
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:35
@@ -19775,7 +19775,7 @@ msgstr "Aukeratu zure sareta-neurria"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:36
 #, fuzzy, kde-format
 msgid "Number of rows"
-msgstr "Errenkada kopurua"
+msgstr "Errenkada-kopurua"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:37
 #, fuzzy, kde-format
@@ -19785,7 +19785,7 @@ msgstr "Txertatu errenkada kopurua"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:38
 #, fuzzy, kde-format
 msgid "Number of columns"
-msgstr "Zutabe kopurua:"
+msgstr "Zutabe-kopurua"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:39
 #, fuzzy, kde-format
@@ -19914,7 +19914,7 @@ msgstr "Vue panoramique"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 msgid "Image Format:"
-msgstr "Erakutsi irudien puntuazioak"
+msgstr "Irudi-formatua:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, fuzzy, kde-format
@@ -19927,7 +19927,7 @@ msgstr "Ezarri kolore-espazioaren profila horra bihurtzeko."
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination folder:"
-msgstr "Destination :"
+msgstr "Helburuko karpeta:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
@@ -19953,7 +19953,7 @@ msgstr "Ireki terminalean"
 #| msgid "Custom"
 msgctxt "@info layout page"
 msgid "Custom"
-msgstr "Pertsonalizatua"
+msgstr "Neurrira"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
 #, fuzzy, kde-format
@@ -19980,7 +19980,7 @@ msgstr "Kendu"
 #| msgid "Custom list"
 msgctxt "@title:window"
 msgid "Custom Layout"
-msgstr "Norberak finkatutako antolamendua"
+msgstr "Norberak finkatutako antolamendua: \"%1\""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, kde-format
@@ -20051,7 +20051,7 @@ msgstr "Argazkia: %1 / %2"
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Page %1 of %2"
-msgstr "Orrialdea: %1 / %2"
+msgstr "Orrialdea %1 / %2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
 #, fuzzy, kde-format
@@ -20082,7 +20082,8 @@ msgstr "Ezin da tamaina aldatutako irudia (PNG) gorde. Abortatzen."
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
 #, fuzzy, kde-format
 msgid "Cannot create a temporary directory"
-msgstr "Huts egin du direktorioa sortzean."
+msgstr ""
+"Ezin da aldi baterako direktorioa sortu<nl/><filename>%1</filename><nl/>"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, fuzzy, kde-format
@@ -20214,29 +20215,29 @@ msgid "Press 'Finish' button to clean up temporary files"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Mail client: BALSA"
 msgid "Balsa"
-msgstr ""
+msgstr "Balsa"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:98
 #, fuzzy, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
-msgstr "KMailCVT-en inportatzeko tresna"
+msgstr "ClawsMail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, fuzzy, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
-msgstr "Zaharberritzea"
+msgstr "Evolution"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
 #, fuzzy, kde-format
 #| msgid "Email:"
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
-msgstr "Helbide elek."
+msgstr "KMail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
@@ -20251,16 +20252,16 @@ msgid "Outlook"
 msgstr "Outlook"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:103
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Mail client: SYLPHEED"
 msgid "Sylpheed"
-msgstr ""
+msgstr "Sylpheed"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:104
 #, fuzzy, kde-format
 msgctxt "Mail client: THUNDERBIRD"
 msgid "Thunderbird"
-msgstr "Trumoi-txoria"
+msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:158
@@ -20268,7 +20269,7 @@ msgstr "Trumoi-txoria"
 #, fuzzy, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
-msgstr "LibJPEG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:159
@@ -20277,7 +20278,7 @@ msgstr "LibJPEG"
 #| msgid "Posing"
 msgctxt "Image format: PNG"
 msgid "Png"
-msgstr "Modèle"
+msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
 #, fuzzy, kde-format
@@ -20519,7 +20520,7 @@ msgstr "Irudi-editorea"
 #, fuzzy, kde-format
 #| msgid "Mask Settings"
 msgid "Email Settings"
-msgstr "Maskararen ezarpenak"
+msgstr "E-postaren ezarpenak"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, fuzzy, kde-format
@@ -20636,7 +20637,7 @@ msgstr "Ireki fitxategi-kudeatzailean"
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output"
-msgstr "Irteerako gailua"
+msgstr "Irteera"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:166
 #, kde-format
@@ -20681,7 +20682,7 @@ msgstr "Soinu-banda:"
 #| msgid "Audio track"
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Audio-pista"
+msgstr "Hautatu %1 audio pista"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, fuzzy, kde-format
@@ -20716,7 +20717,7 @@ msgstr "Audio-pista"
 #| msgctxt "@info"
 #| msgid "O: On Screen Display\n"
 msgid "On Screen Display"
-msgstr "O: pantailan azaltzea\n"
+msgstr "Pantaila gainean bistaratzea"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
 #, kde-format
@@ -20835,7 +20836,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
-msgstr "Esportatu"
+msgstr "Ezarri horma-paper gisa"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
@@ -21041,7 +21042,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Ireki aurrebista"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:93
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -21050,48 +21051,48 @@ msgstr ""
 "Ezartzen bada, uneko albumeko soinu-banda gorde egingo da, eta hurrengo "
 "batean abiaraztean automatikoki leheneratuko da."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "Ajouter une nouvelle valeur à la liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Replace the current selected value from the list"
 msgid "Delete the selected track from the playlist."
 msgstr "Remplacer la valeur actuellement sélectionnée de la liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Kargatu erreprodukzio-zerrenda fitxategitik."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgid "Save metadata to a binary file"
 msgid "Save playlist to a file."
 msgstr "Gorde metadatuak fitxategi bitarrean"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Clear the playlist."
 msgstr "Garbitu zerrenda"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:253
 #, fuzzy, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -21099,7 +21100,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "Pista"
 msgstr[1] "%1 pista"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:281
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -21107,51 +21108,51 @@ msgstr ""
 "Aurkezpenaren denbora soinu-bandaren baino luzeagoa da. Iradokizuna: gehitu "
 "soinu-fitxategi gehiago."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:351
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr "Bat ere ez hautatu"
+msgstr "Hautatu soinu-fitxategiak..."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr ""
 "Irudien fitxategi bakar bat soilik alda dezakezu lekuz aldi bakoitzean."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:457
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Fitxategi bakar bat soilik alda dezakezu lekuz aldi bakoitzean."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:478
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Kargatu erreprodukzio-zerrenda"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:479
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
 #, fuzzy, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Jotze-zerrenda (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:537
 #, fuzzy, kde-format
 #| msgid "Save theme"
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr "Gorde gaia"
+msgstr "Gorde jotze-zerrenda"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot access file %1. Please check the path is correct."
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "Ezin da %1 fitxategia atzitu. Egiaztatu bide-izena zuzena dela."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:608
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Ezin da fitxategien zerrenda huts baten aurrebistarik sortu."
@@ -21202,7 +21203,7 @@ msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgid "Preview..."
-msgstr "Aurrez ikusi..."
+msgstr "Aurreikuspegia"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
@@ -21248,7 +21249,7 @@ msgstr "Kateen konparazio mota:"
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgid "Slide:"
-msgstr "Oporrak"
+msgstr "%1 diapositiba"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:387
@@ -21303,7 +21304,7 @@ msgstr "Gelditu"
 #, fuzzy, kde-format
 msgctxt "Previous item to show"
 msgid "Previous"
-msgstr "Précédent"
+msgstr "Aurrekoa"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_nextButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:50
@@ -21311,7 +21312,7 @@ msgstr "Précédent"
 #, fuzzy, kde-format
 msgctxt "Next item to show"
 msgid "Next"
-msgstr "Suivant"
+msgstr "Hurrengoa"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:70
@@ -21325,7 +21326,7 @@ msgstr "Ordua:"
 #, fuzzy, kde-format
 #| msgid "elapsed:"
 msgid "Elapsed:"
-msgstr "igarotako denbora:"
+msgstr "Igarotako denbora"
 
 #. i18n: ectx: property (text), widget (QLabel, m_elapsedTimeLabel)
 #. i18n: ectx: property (text), widget (QLabel, m_totalTimeLabel)
@@ -21340,7 +21341,7 @@ msgstr "0:00:00"
 #, fuzzy, kde-format
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
-msgstr "%1 (%2)"
+msgstr "Guztira:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_soundLabel)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:115
@@ -21355,7 +21356,7 @@ msgstr "Bolumena"
 #, fuzzy, kde-format
 #| msgid "Interface Options"
 msgid "&Interface"
-msgstr "Interfazearen aukerak"
+msgstr "Interfazea"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_useMillisecondsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:35
@@ -21368,7 +21369,7 @@ msgstr "Erabili &milisegundoak segundoen ordez"
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgid "&Controls"
-msgstr "Kontrastea:"
+msgstr "Aginteak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_enableMouseWheelCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:63
@@ -21429,7 +21430,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select Font..."
-msgstr "Hautatu letra-tipoa..."
+msgstr "Hautatu letra-tipoa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:35
@@ -21474,7 +21475,7 @@ msgstr "Atzeko planoaren kolorea:"
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
 msgstr[0] "Irudia"
-msgstr[1] "Irudiak"
+msgstr[1] "%1 irudi"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
 #, fuzzy, kde-format
@@ -21596,7 +21597,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:203
 #, fuzzy, kde-format
 msgid "Effect :"
-msgstr "Lausotze-efektuak"
+msgstr "Efektua"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_openglCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:239
@@ -21625,7 +21626,7 @@ msgstr "Hasi"
 #| msgid "Orientation"
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
-msgstr "Orientazioa"
+msgstr "Hasi aurkezpena"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
 #, fuzzy, kde-format
@@ -21639,7 +21640,7 @@ msgstr "Maskararen ezarpenak"
 #| msgid "Caption"
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
-msgstr "Irudi-testua"
+msgstr "E&pigrafea"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
 #, fuzzy, kde-format
@@ -21655,80 +21656,80 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Aurreratua"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Bat ere ez"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Okertu"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
-msgstr "Egutegia"
+msgstr "Fusionatu"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Kuboa"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Iraungitu"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Astindu"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Sartu irtena"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Biratu"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
-msgstr "Oporrak"
+msgstr "Irristada"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:539
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:993
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Ausaz"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "Diapositiba-aurkezpena"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, fuzzy, kde-format
 #| msgid "Click To Exit..."
 msgid "Click to Exit..."
@@ -21781,7 +21782,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Presentation..."
-msgstr "Begi gorrien murrizketa..."
+msgstr "Aurkezpena"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
@@ -21811,32 +21812,32 @@ msgstr "Ezabatu irudia"
 msgid "Do you want to move this image to the trash?"
 msgstr "'%1' etiketa '%2' etiketan bateratu nahi duzu?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Xake-taula"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Eraman behera"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Ekorketa"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, fuzzy, kde-format
 #| msgid "Mosaic"
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Mosaikoa"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -21844,45 +21845,45 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Kubikoa"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Handitzea"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Horizontala"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:988
 #, fuzzy, kde-format
 #| msgid "Vertically first"
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Bertikalki lehenbizi"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:989
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Zirkulua kanporantz"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:990
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Hainbat zirkulu kanporantz"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:991
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Espirala barrurantz"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:992
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
@@ -21908,7 +21909,7 @@ msgstr "Diapositiba emanaldi bat ematea"
 #| msgid "Slide Show Settings"
 msgctxt "@title:window"
 msgid "Slideshow Settings"
-msgstr "Diapositiba-erakusketaren ezarpenak"
+msgstr "Diapositiba emanaldiaren ezarpenak:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, fuzzy, kde-format
@@ -21960,7 +21961,7 @@ msgstr "<p>Hau gaitzen bada, aurrebistako area ez da bereiztuko."
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, fuzzy, kde-format
 msgid "Show progress indicator"
-msgstr "Esposizioaren adierazleak"
+msgstr "Erakutsi aurrerapenaren adierazlea"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
@@ -22155,7 +22156,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow"
-msgstr "Diapositiba-erakusketa"
+msgstr "Diapositiba emanaldia"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:65
 #, fuzzy, kde-format
@@ -22246,7 +22247,7 @@ msgstr "Diapositiba emanaldia"
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
 #, fuzzy, kde-format
 msgid "Play All"
-msgstr "Erreproduzitu osorik"
+msgstr "Jo guztia"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
 #, fuzzy, kde-format
@@ -22488,7 +22489,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
-msgstr "Saio-hastea huts egin du"
+msgstr "Saio-irekitzea huts egin du"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:380
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:380
@@ -22819,7 +22820,7 @@ msgstr "Helburuko fitxategia existitzen bada:"
 #, fuzzy, kde-format
 #| msgid "Copy Files"
 msgid "Copy files"
-msgstr "Kopiatu fitxategiak"
+msgstr "Kopiatu &fitxategiak..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
 #, fuzzy, kde-format
@@ -22979,7 +22980,7 @@ msgstr "Fitxategi guztiak (*)"
 #, fuzzy, kde-format
 #| msgid "No tags selected"
 msgid "<i>not selected</i>"
-msgstr "Ez aukeratua"
+msgstr "hautatu gabe,"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:64
 #, kde-format
@@ -23233,7 +23234,7 @@ msgstr "Sinadura baliogabea"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, fuzzy, kde-format
 msgid "Missing signature"
-msgstr "Sinadura falta da"
+msgstr "Sinadura falta du."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #, fuzzy, kde-format
@@ -23405,14 +23406,14 @@ msgstr "Argazkia"
 #, fuzzy, kde-format
 msgctxt "photo content type"
 msgid "Screenshot"
-msgstr "Pantailako argazkia"
+msgstr "Pantaila-argazkia"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:90
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:190
 #, fuzzy, kde-format
 msgctxt "photo content type"
 msgid "Other"
-msgstr "Bestelakoa"
+msgstr "Bestelakoak"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:105
 #, fuzzy, kde-format
@@ -23435,7 +23436,7 @@ msgstr "Etiketen aukera gehiago"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:127
 #, fuzzy, kde-format
 msgid "Added Tags: "
-msgstr "Gehitutako etiketak: "
+msgstr "Gehitutako etiketak"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:130
 #, fuzzy, kde-format
@@ -23601,7 +23602,7 @@ msgstr "Utzi"
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, fuzzy, kde-format
 msgid "Failed to create folder"
-msgstr "Huts egin du karpeta sortzea"
+msgstr "Karpeta sortzea huts egin du"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:502
 #, fuzzy, kde-format
@@ -23655,7 +23656,7 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 #, fuzzy, kde-format
 msgctxt "google photos album privacy"
 msgid "Public"
-msgstr "Bilaketa azkarra"
+msgstr "Publikoa"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:66
 #, kde-format
@@ -23754,7 +23755,7 @@ msgstr "Elementua estekatutako bertsioaren alboan gehituko da."
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:98
 #, fuzzy, kde-format
 msgid "Add All"
-msgstr "Gehitu guztiak"
+msgstr "Gehitu denak"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:99
 #, fuzzy, kde-format
@@ -23800,14 +23801,14 @@ msgstr "Estekatutako elementu bat badago lehendik ere."
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination"
-msgstr "Helburua"
+msgstr "Jomuga"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:161
 #, fuzzy, kde-format
 #| msgid "Source:"
 msgctxt "@label: source file"
 msgid "Source"
-msgstr "Iturburua"
+msgstr "Sorburua"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:54
 #, fuzzy, kde-format
@@ -24182,7 +24183,7 @@ msgstr "Gehitu erro karpetan"
 #| msgid "Create new album"
 msgctxt "@item:inlistbox"
 msgid "Create new gallery"
-msgstr "Sortu galeria berria"
+msgstr "Sortu galeri berria"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
 #, kde-format
@@ -24266,7 +24267,7 @@ msgstr "Imgur ezabatu URL"
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgid "Copy"
-msgstr "Copyright-a"
+msgstr "Kopiatu"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:44
 #, fuzzy, kde-format
@@ -24313,12 +24314,12 @@ msgstr "Ezin izan da baimendu"
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, fuzzy, kde-format
 msgid "Could not open file"
-msgstr "Ezin izan da fitxategia ireki"
+msgstr "Ezin izan du fitxategia ireki"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
 #, fuzzy, kde-format
 msgid "Logged in as:"
-msgstr "Honela saio-hasita:"
+msgstr "%1 gisa saio-hasita"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
 #, fuzzy, kde-format
@@ -24440,7 +24441,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "File name"
 msgid "invalid name"
-msgstr "Izen baliogabea."
+msgstr "Izen baliogabea"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
 #, fuzzy, kde-format
@@ -24453,7 +24454,7 @@ msgstr "Naturala"
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgid "Login"
-msgstr "Saio-hasiera"
+msgstr "Saio-hasi"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
@@ -24638,23 +24639,23 @@ msgid "subsection"
 msgstr "Azpiatala"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:211
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "taxonomic rank"
 msgid "complex"
-msgstr ""
+msgstr "Konplexua"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:215
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgctxt "taxonomic rank"
 msgid "species"
-msgstr "Zehaztu gabea"
+msgstr "Espeziea"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:219
 #, fuzzy, kde-format
 msgctxt "taxonomic rank"
 msgid "hybrid"
-msgstr "Hibridoa"
+msgstr "hibridoa"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:223
 #, fuzzy, kde-format
@@ -24674,7 +24675,7 @@ msgstr "Barietateak"
 #| msgid "Transform"
 msgctxt "taxonomic rank"
 msgid "form"
-msgstr "inprimakia"
+msgstr "Inprimakia"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:235
 #, fuzzy, kde-format
@@ -24724,7 +24725,7 @@ msgstr "minutu"
 #| msgid "Seconds"
 msgctxt "time"
 msgid "second"
-msgstr "bigarren"
+msgstr "segundo"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:328
 #, fuzzy, kde-format
@@ -24832,7 +24833,7 @@ msgstr "Puntuazioak inportatuta"
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgid "Fewer options"
-msgstr "Aukera gutxiago"
+msgstr "Aukera gutxiago <<"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, fuzzy, kde-format
@@ -26657,7 +26658,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:130
 #, fuzzy, kde-format
 msgid "&Choose account:"
-msgstr "Pixelak: "
+msgstr "Aukeratu kontua"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:73
 #, kde-format
@@ -26675,7 +26676,7 @@ msgstr "Ongi etorri digiKam %1 bertsiora"
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgid "Authentication dialog"
-msgstr "Ezarpenak..."
+msgstr "Autentifikatze elkarrizketa-koadroa"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:88
 #, fuzzy, kde-format
@@ -27558,7 +27559,7 @@ msgstr "Hustu zakarrontzia"
 #| msgid "Rating: "
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
-msgstr "Balorazioa: "
+msgstr "Balorazioa"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
 #, fuzzy, kde-format
@@ -27572,7 +27573,7 @@ msgstr "Baloraziorik ez"
 #| msgid "Colors: "
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
-msgstr "Koloreak: "
+msgstr "Koloreak"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:315
 #, fuzzy, kde-format
@@ -27688,7 +27689,7 @@ msgstr "Zain"
 #| msgid "Accepted"
 msgctxt "@info: pick label name"
 msgid "Accepted"
-msgstr "Onartua"
+msgstr "Onartuta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:484
 #, fuzzy, kde-format
@@ -27789,7 +27790,7 @@ msgstr "Baloraziorik ez"
 #| msgid "Pick"
 msgctxt "@title: pick tree"
 msgid "Pick"
-msgstr "Aukeratu"
+msgstr "Aukeratu..."
 
 #: core/libs/album/treeview/labelstreeview.cpp:449
 #, fuzzy, kde-format
@@ -27923,7 +27924,7 @@ msgstr "Albumaren propietateak"
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
-msgstr "&Titulua:"
+msgstr "&Izenburua:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:139
 #, fuzzy, kde-format
@@ -27937,7 +27938,7 @@ msgstr "Définissez ici le fournisseur du contact."
 #| msgid "Ca&tegory:"
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
-msgstr "&Kategoria:"
+msgstr "Kategoria"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:151
 #, fuzzy, kde-format
@@ -27951,7 +27952,7 @@ msgstr "Honen &umea:"
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
-msgstr "&Epigrafea:"
+msgstr "E&pigrafea"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
@@ -27992,7 +27993,7 @@ msgstr "&Zaharrena"
 #| msgid "&Average"
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
-msgstr "&Batez bestekoa"
+msgstr "Batezbestekoa"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
@@ -28201,7 +28202,7 @@ msgstr "Hautatu prozesatu beharko liratekeen etiketa guztiak."
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
-msgstr "Ez da etiketarik hautatu"
+msgstr "Ez da etiketarik hautatu."
 
 #: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
@@ -28848,7 +28849,7 @@ msgstr "RAW irudi fitxategia (%1)"
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
-msgstr[0] "Bat ere ez hautatu"
+msgstr[0] "aurpegia"
 msgstr[1] "Bat ere ez hautatu"
 
 #: core/libs/database/models/itemfiltermodel.cpp:388
@@ -29041,7 +29042,7 @@ msgstr "Berretsi gabea"
 #| msgid "Monitor profile:"
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
-msgstr "Ez ikusi eginda"
+msgstr "Ezikusia"
 
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
@@ -29962,7 +29963,7 @@ msgstr "Datu-basearen karpeta"
 #| msgid "total"
 msgctxt "@info: total number of items"
 msgid "total"
-msgstr "guztira"
+msgstr "Guztira"
 
 #: core/libs/database/utils/widgets/mysqladminbinary.cpp:34
 #, fuzzy, kde-format
@@ -30178,10 +30179,10 @@ msgstr "Ez berriz galdetu"
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:96
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%%p"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, fuzzy, kde-format
@@ -30301,7 +30302,7 @@ msgstr "Kopiatu arbelera"
 #| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
-msgstr "Bertsioa"
+msgstr "Bertsioa:"
 
 #: core/libs/dialogs/infodlg.cpp:111
 #, fuzzy, kde-format
@@ -30326,14 +30327,14 @@ msgstr "Ez"
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
-msgstr "Personnage"
+msgstr "Ezaugarriak"
 
 #: core/libs/dialogs/libsinfodlg.cpp:232
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
-msgstr "Liburutegia"
+msgstr "Liburutegiak"
 
 #: core/libs/dialogs/libsinfodlg.cpp:335
 #, fuzzy, kde-format
@@ -30447,14 +30448,14 @@ msgstr "Gailuen zerrenda"
 #| msgid "Refresh"
 msgctxt "@action"
 msgid "Refresh"
-msgstr "Freskatu"
+msgstr "Berritu"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
 #: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, fuzzy, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
-msgstr "UDIa: "
+msgstr "UDI: %1"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
 #: core/libs/dialogs/solidhardwaredlg.cpp:274
@@ -30471,7 +30472,7 @@ msgstr "hutsik"
 #| msgid "Parents"
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
-msgstr "UDI gurasoa"
+msgstr "Gurasoa UDI"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
@@ -30503,7 +30504,7 @@ msgstr "Produktua"
 #| msgid "Description"
 msgctxt "@item: device description"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
 #: core/libs/dialogs/solidhardwaredlg.cpp:407
@@ -30561,7 +30562,7 @@ msgstr "Modèle du matériel (*) :"
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Udi"
-msgstr "UDIa: "
+msgstr "UDI: %1"
 
 #: core/libs/dialogs/webbrowserdlg.cpp:93
 #, kde-format
@@ -31223,7 +31224,7 @@ msgstr "Urdina"
 #| msgid "Red (%):"
 msgctxt "@label: color"
 msgid "Red (%):"
-msgstr "Gorria (%):"
+msgstr "Gorria"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:111
 #, fuzzy, kde-format
@@ -31237,7 +31238,7 @@ msgstr "Hautatu kolore gorriaren irabazia, ehuneko gisa,  uneko kanalerako."
 #| msgid "Green (%):"
 msgctxt "@label: color"
 msgid "Green (%):"
-msgstr "Berdea (%):"
+msgstr "Berdea"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:119
 #, fuzzy, kde-format
@@ -31252,7 +31253,7 @@ msgstr "Hautatu kolore berdearen irabazia, ehuneko gisa,  uneko kanalerako."
 #| msgid "Blue (%):"
 msgctxt "@label: color"
 msgid "Blue (%):"
-msgstr "Urdina (%):"
+msgstr "Urdina"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:127
 #, fuzzy, kde-format
@@ -31267,7 +31268,7 @@ msgstr "Hautatu kolore urdinaren irabazia, ehuneko gisa,  uneko kanalerako."
 #| msgid "&Reset"
 msgctxt "@option"
 msgid "&Reset"
-msgstr "&Berrezarri"
+msgstr "Be&rrezarri"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, fuzzy, kde-format
@@ -31335,7 +31336,7 @@ msgstr ""
 #| msgid "Total: %1 (%)"
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
-msgstr "Guztira: %1 (%)"
+msgstr "Guztira"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:516
 #, fuzzy, kde-format
@@ -31380,7 +31381,7 @@ msgstr "Kolore oreka tresna"
 #| msgid "Cyan"
 msgctxt "@label: color"
 msgid "Cyan"
-msgstr "Cyan"
+msgstr "Zian"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:73
 #, fuzzy, kde-format
@@ -31781,7 +31782,7 @@ msgstr "Papera"
 #| msgid "Paper 2"
 msgctxt "@item: texture type"
 msgid "Paper 2"
-msgstr "Papera 2"
+msgstr "Papera"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:77
 #, fuzzy, kde-format
@@ -31809,28 +31810,28 @@ msgstr "Adreiluak"
 #| msgid "Bricks 2"
 msgctxt "@item: texture type"
 msgid "Bricks 2"
-msgstr "Adreiluak 2"
+msgstr "Adreiluak"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:81
 #, fuzzy, kde-format
 #| msgid "Canvas"
 msgctxt "@item: texture type"
 msgid "Canvas"
-msgstr "Oihala"
+msgstr "Mihisea"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:82
 #, fuzzy, kde-format
 #| msgid "Marble"
 msgctxt "@item: texture type"
 msgid "Marble"
-msgstr "Marmola"
+msgstr "Marble"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:83
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgctxt "@item: texture type"
 msgid "Marble 2"
-msgstr "Marmola 2"
+msgstr "Marble"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:84
 #, fuzzy, kde-format
@@ -31865,7 +31866,7 @@ msgstr "Modernoa"
 #| msgid "Wall"
 msgctxt "@item: texture type"
 msgid "Wall"
-msgstr "Horma"
+msgstr "Murrua"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:89
 #, fuzzy, kde-format
@@ -31879,7 +31880,7 @@ msgstr "Goroldioa"
 #| msgid "Stone"
 msgctxt "@item: texture type"
 msgid "Stone"
-msgstr "Harria"
+msgstr "harria"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:92
 #, fuzzy, kde-format
@@ -31893,7 +31894,7 @@ msgstr "Ezarri testura mota irudiari aplikatzeko."
 #| msgid "Relief:"
 msgctxt "@label"
 msgid "Relief:"
-msgstr "Erliebea:"
+msgstr "Erliebea"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:100
 #, fuzzy, kde-format
@@ -31911,7 +31912,7 @@ msgstr "Biratu eskuinera"
 #, fuzzy, kde-format
 #| msgid "Rotate 90 Degrees"
 msgid "Rotate 180 degrees"
-msgstr "Biratu 90 gradu"
+msgstr "Biratu 180 gradu"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
@@ -31965,7 +31966,7 @@ msgstr "Moztu"
 #, fuzzy, kde-format
 msgctxt "Resize image"
 msgid "Resize"
-msgstr "Aldatu tamaina"
+msgstr "Neurria aldatu"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:512
 #, fuzzy, kde-format
@@ -32145,7 +32146,7 @@ msgstr "Kontrastea:"
 #, fuzzy, kde-format
 msgctxt "@info: effect type"
 msgid "Instant"
-msgstr "Berehalakoa"
+msgstr "Bat-bateko"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:381
 #, fuzzy, kde-format
@@ -32576,7 +32577,7 @@ msgstr "Marko beltza..."
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgid "File Name:"
-msgstr "Fitxategi-izena"
+msgstr "Fitxategi-izena:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:183
 #, fuzzy, kde-format
@@ -32584,7 +32585,7 @@ msgstr "Fitxategi-izena"
 #| msgid "Created:"
 msgctxt "@info: creation date"
 msgid "Created:"
-msgstr "Sortua:"
+msgstr "Sortze-data:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:186
 #, fuzzy, kde-format
@@ -32753,7 +32754,7 @@ msgstr "Funtzioa:"
 #| msgid "Power"
 msgctxt "@item: function type"
 msgid "Power"
-msgstr "Indarra"
+msgstr "Energia"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:122
 #, fuzzy, kde-format
@@ -33084,7 +33085,7 @@ msgstr ""
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, fuzzy, kde-format
 msgid "Focal Length (mm):"
-msgstr "Fokuaren luzera:"
+msgstr "Foku luzera 35 mm"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
@@ -33126,7 +33127,7 @@ msgstr "Objektiboaren zuzenketa automatikoa"
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
-msgstr "\"%1\" kamera"
+msgstr "Kamera"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
 #, kde-format
@@ -33166,7 +33167,7 @@ msgstr "Kontrastea:"
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
-msgstr "gaituta"
+msgstr "Gaituta"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, fuzzy, kde-format
@@ -33181,7 +33182,7 @@ msgstr "DKG zuzenketa"
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
-msgstr "desgaituta"
+msgstr "ezgaituta"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, fuzzy, kde-format
@@ -33396,7 +33397,7 @@ msgstr ""
 #| msgid "x:%1"
 msgctxt "@info: guide position on histogram"
 msgid "x:%1"
-msgstr "X"
+msgstr "x"
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:475
 #, fuzzy, kde-format
@@ -33433,14 +33434,14 @@ msgstr ""
 #| msgid "Mean:"
 msgctxt "@info: histogram properties"
 msgid "Mean:"
-msgstr "Batez bestekoa:"
+msgstr "batez bestekoa"
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:562
 #, fuzzy, kde-format
 #| msgid "Pixels:"
 msgctxt "@info: histogram properties"
 msgid "Pixels:"
-msgstr "Pixelak:"
+msgstr " pixel"
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:566
 #, fuzzy, kde-format
@@ -33461,14 +33462,14 @@ msgstr "Kopurua:"
 #| msgid "Median:"
 msgctxt "@info: histogram properties"
 msgid "Median:"
-msgstr "Mediana:"
+msgstr "Mediana"
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:578
 #, fuzzy, kde-format
 #| msgid "Percent:"
 msgctxt "@info: histogram properties"
 msgid "Percent:"
-msgstr "Ehunekoa:"
+msgstr "Ehunekoa"
 
 #: core/libs/dimg/filters/levels/levelsfilter.cpp:62
 #, fuzzy, kde-format
@@ -33923,14 +33924,14 @@ msgstr "Zuri-orekaren kolore tenperatura Kelvin-etan hemen ezarri."
 #| msgid "Preset:"
 msgctxt "@label: WB settings"
 msgid "Preset:"
-msgstr "Aurre-ezarpena:"
+msgstr "Aurrezarpena:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Candle"
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
-msgstr "Kandela"
+msgstr "kandela"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:161
 #, fuzzy, kde-format
@@ -33958,7 +33959,7 @@ msgstr "200W lanpara"
 #| msgid "Sunrise"
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
-msgstr "Eguna argitu"
+msgstr "Egunsentia"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:165
 #, fuzzy, kde-format
@@ -34164,7 +34165,7 @@ msgstr "Ezarri beltzaren mailaren balioa."
 #| msgid "Shadows:"
 msgctxt "@label: WB settings"
 msgid "Shadows:"
-msgstr "Itzalak:"
+msgstr "Itzalak"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, fuzzy, kde-format
@@ -34178,7 +34179,7 @@ msgstr "Ezarri itzalaren zarata kentzeko maila."
 #| msgid "Saturation:"
 msgctxt "@label: WB settings"
 msgid "Saturation:"
-msgstr "Saturazioa:"
+msgstr "Asetasuna:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, fuzzy, kde-format
@@ -34265,7 +34266,7 @@ msgstr "Ezarri esposizioaren konpentsazio nagusiaren balioa E.V. unitatean."
 #| msgid "Fine:"
 msgctxt "@label: WB settings"
 msgid "Fine:"
-msgstr "Fina:"
+msgstr "Ona"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:267
 #, fuzzy, kde-format
@@ -34395,7 +34396,7 @@ msgstr "Metadatuak"
 #| msgid "View"
 msgctxt "@action: dplugin"
 msgid "View"
-msgstr "Ikusi"
+msgstr "Ikuspegia"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:121
 #, fuzzy, kde-format
@@ -34463,7 +34464,7 @@ msgstr "Luzapena"
 #| msgid "Description"
 msgctxt "@title: DPlugin properties"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
@@ -34596,7 +34597,7 @@ msgstr "Izena"
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
-msgstr "Catégories"
+msgstr "Kategoriak"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, fuzzy, kde-format
@@ -34610,7 +34611,7 @@ msgstr "Tresnak"
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, fuzzy, kde-format
@@ -34663,8 +34664,8 @@ msgstr "Kipi-ren plugin 1 aurkituta"
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
 msgid_plural "(%1 activated)"
-msgstr[0] "Ez dago iragazki aktiborik"
-msgstr[1] "Ez dago iragazki aktiborik"
+msgstr[0] "Aktibatuta"
+msgstr[1] "Aktibatuta"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:182
 #, fuzzy, kde-format
@@ -34674,7 +34675,7 @@ msgctxt "@info"
 msgid "1 plugin found"
 msgid_plural "%1 plugins found"
 msgstr[0] "Kipi-ren plugin 1 aurkituta"
-msgstr[1] "Kipi-ren %1 plugin aurkituta"
+msgstr[1] "Aurkitutako pluginak: %1"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:186
 #, fuzzy, kde-format
@@ -34692,17 +34693,17 @@ msgstr "Hainbat"
 #: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, fuzzy, kde-format
 msgid "Login:"
-msgstr "Saio-hasiera:"
+msgstr "Erabiltzaile-izena:"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, fuzzy, kde-format
 msgid "&Login"
-msgstr "&Saio-hastea"
+msgstr "Saio-hasi"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, fuzzy, kde-format
 msgid "&Skip"
-msgstr "&Saltatu"
+msgstr "&Saihestu"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, fuzzy, kde-format
@@ -34734,14 +34735,14 @@ msgstr "Denbora zigilua: "
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Description: "
-msgstr "Azalpena:"
+msgstr "Deskribapena: "
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:58
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "@label: album properties"
 msgid "Location: "
-msgstr "Kokalekua: "
+msgstr "Kokalekua"
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:109
 #, kde-format
@@ -34824,7 +34825,7 @@ msgstr "Inportatu"
 #, fuzzy, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
-msgstr "Google Maps API V2"
+msgstr "Google Drive"
 
 #: core/libs/dplugins/webservices/wssettings.cpp:108
 #, fuzzy, kde-format
@@ -34877,7 +34878,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Create new %1 folder"
-msgstr "Sortu %1 karpeta berria"
+msgstr "Sortu karpeta berria"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:207
 #, fuzzy, kde-format
@@ -34903,27 +34904,27 @@ msgstr "Jatorrizko neurria"
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:221
 #, fuzzy, kde-format
 msgid "1600 px"
-msgstr "1600 px"
+msgstr " px"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:222
 #, fuzzy, kde-format
 msgid "1440 px"
-msgstr "1440 px"
+msgstr " px"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, fuzzy, kde-format
 msgid "1280 px"
-msgstr "1280 px"
+msgstr " px"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:224
 #, fuzzy, kde-format
 msgid "1152 px"
-msgstr "1152 px"
+msgstr " px"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, fuzzy, kde-format
 msgid "1024 px"
-msgstr "1024 px"
+msgstr " px"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:231
 #, fuzzy, kde-format
@@ -34961,7 +34962,7 @@ msgstr "Dimentsiorik handiena:"
 #, fuzzy, kde-format
 #| msgid "JPEG quality:"
 msgid "JPEG Quality:"
-msgstr "JPEG kalitatea:"
+msgstr "JPEG kalitatea"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
 #, fuzzy, kde-format
@@ -34969,7 +34970,7 @@ msgstr "JPEG kalitatea:"
 #| msgid "Start:"
 msgctxt "@action: button to start processing"
 msgid "&Start"
-msgstr "Hasiera:"
+msgstr "&Hasi"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #: core/libs/onlineversion/onlineversiondlg.cpp:308
@@ -35079,42 +35080,42 @@ msgstr "Fitxategi-izena"
 #| msgid "User"
 msgctxt "@title"
 msgid "User1"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:42
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User2"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:43
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User3"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:44
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User4"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:45
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User5"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:46
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User6"
-msgstr "Erabiltzailea:"
+msgstr "Erabiltzailea"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #, fuzzy, kde-format
@@ -35136,56 +35137,56 @@ msgstr "Lerroko eskuliburua..."
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About..."
-msgstr "Honi buruz..."
+msgstr "Honi buruz"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Handiagotu"
+msgstr "Zooma gerturatu"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:504
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
-msgstr "Handiagotu"
+msgstr "Zooma gerturatu"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:510
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Txikiagotu"
+msgstr "Zooma urrundu"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:511
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
-msgstr "Txikiagotu"
+msgstr "Zooma urrundu"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:517
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@action"
 msgid "Zoom to Fit"
-msgstr "Doitzeko zooma"
+msgstr "Zooma doitzeko"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:518
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@info"
 msgid "Zoom to Fit"
-msgstr "Doitzeko zooma"
+msgstr "Zooma doitzeko"
 
 #: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
 #: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
-msgstr "Huts egin du irudia kargatzean"
+msgstr "Irudia zamatzea huts egin du!"
 
 #: core/libs/dplugins/widgets/dsavesettingswidget.cpp:62
 #, fuzzy, kde-format
@@ -35229,7 +35230,7 @@ msgstr "Laguntza"
 #: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, fuzzy, kde-format
 msgid "Relative Path"
-msgstr "Parket apaingarria"
+msgstr "Bide-izen erlatiboa"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, fuzzy, kde-format
@@ -35489,8 +35490,8 @@ msgstr "Ez dago iragazki aktiborik"
 #, fuzzy, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
-msgstr[0] "Ez dago iragazki aktiborik"
-msgstr[1] "Ez dago iragazki aktiborik"
+msgstr[0] "Iragazki aktiboa: %1"
+msgstr[1] "Iragazki aktiboak:"
 
 #: core/libs/filters/geolocationfilter.cpp:28
 #, kde-format
@@ -35903,7 +35904,7 @@ msgstr ""
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
-msgstr "Altuera:"
+msgstr "Pisua:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:188
 #, kde-format
@@ -37311,7 +37312,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
-msgstr "Jasota"
+msgstr "Jasota:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, fuzzy, kde-format
@@ -37369,7 +37370,7 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 msgid "Download"
-msgstr "Deskargatu"
+msgstr "Zama-jaitsi"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:274
 #, kde-format
@@ -37594,17 +37595,17 @@ msgstr "Bisitatu digiKam proiektuaren webgunea"
 #: core/libs/progressmanager/progressmanager.cpp:160
 #, fuzzy, kde-format
 msgid "Aborting..."
-msgstr "Abortzen..."
+msgstr "Abortatzen..."
 
 #: core/libs/progressmanager/progressview.cpp:205
 #, fuzzy, kde-format
 msgid "Cancel this operation."
-msgstr "Bertan behera utzi eragiketa hau."
+msgstr "Eragiketa hau bertan behera utzi."
 
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:142
 #, fuzzy, kde-format
 msgid "Open detailed progress dialog"
-msgstr "Ireki aurrerapen elkarrizketa-koadroa xehea"
+msgstr "Ireki egoera-elkarrizketa xehatua"
 
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:148
 #, fuzzy, kde-format
@@ -37614,12 +37615,12 @@ msgstr "Ez dago iragazki aktiborik"
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:408
 #, fuzzy, kde-format
 msgid "Hide detailed progress window"
-msgstr "Ezkutatu aurrerapen elkarrizketa-koadroa xehea"
+msgstr "Ezkutatu egoera-leiho xehatua"
 
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:414
 #, fuzzy, kde-format
 msgid "Show detailed progress window"
-msgstr "Erakutsi aurrerapen elkarrizketa-koadroa xehea"
+msgstr "Erakutsi egoera-leiho xehatua"
 
 #: core/libs/properties/captions/captionedit.cpp:50
 #, kde-format
@@ -37716,21 +37717,21 @@ msgstr[1] "<p>%1 irudien metadatuak editatu dituzu:</p><p><ul>"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
-msgstr "<li>data</li>"
+msgstr "Titulua"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:333
 #, fuzzy, kde-format
 #| msgid "<li>caption</li>"
 msgctxt "@info"
 msgid "<li>caption</li>"
-msgstr "<li>epigrafea</li>"
+msgstr "E&pigrafea"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, fuzzy, kde-format
 #| msgid "<li>date</li>"
 msgctxt "@info"
 msgid "<li>date</li>"
-msgstr "<li>data</li>"
+msgstr "Data:"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
 #, fuzzy, kde-format
@@ -37749,14 +37750,14 @@ msgstr "<li>data</li>"
 #| msgid "<li>rating</li>"
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr "<li>puntuazioa</li>"
+msgstr "Balorazioa"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:358
 #, fuzzy, kde-format
 #| msgid "<li>tags</li>"
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr "<li>etiketak</li>"
+msgstr "Etiketak"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:363
 #, fuzzy, kde-format
@@ -37777,14 +37778,14 @@ msgstr "Beti aplikatu aldaketak berrespenik galdetu gabe"
 #| msgid "Apply changes?"
 msgctxt "@title:window"
 msgid "Apply Changes?"
-msgstr "Aplikatu aldaketak?"
+msgstr "Ezarri aldaketak"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:379
 #, fuzzy, kde-format
 #| msgid "Apply changes?"
 msgctxt "@info"
 msgid "Apply changes?"
-msgstr "Aplikatu aldaketak?"
+msgstr "Ezarri aldaketak"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:440
 #, fuzzy, kde-format
@@ -37858,14 +37859,14 @@ msgstr "Kolore-modua: "
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Balorazioa:"
+msgstr "Puntuazioa:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Apply"
 msgctxt "@action"
 msgid "Apply"
-msgstr "Aplikatu"
+msgstr "Ezarri"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:69
 #, fuzzy, kde-format
@@ -37905,7 +37906,7 @@ msgstr "Gehiago"
 #| msgid "Description"
 msgctxt "@title"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
 #: core/utilities/import/main/importui.cpp:1975
@@ -38030,7 +38031,7 @@ msgstr "Sortu karpeta?"
 #: core/libs/widgets/history/filtershistorywidget.cpp:116
 #, fuzzy, kde-format
 msgid "Remove filter"
-msgstr "Kendu elementua"
+msgstr "Kendu iragazkia"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, fuzzy, kde-format
@@ -38118,7 +38119,7 @@ msgstr "Karpeta"
 #| msgid "Date: "
 msgctxt "@label: item properties"
 msgid "Date: "
-msgstr "Data:"
+msgstr "Data: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:130
 #: core/libs/properties/itempropertiestab.cpp:39
@@ -38126,7 +38127,7 @@ msgstr "Data:"
 #| msgid "Size: "
 msgctxt "@label: item properties"
 msgid "Size: "
-msgstr "Neurria"
+msgstr "Neurria:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:131
 #, fuzzy, kde-format
@@ -38156,7 +38157,7 @@ msgstr "Mota"
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
 msgid "Dimensions: "
-msgstr "Dimentsioak: "
+msgstr "Dimentsioak:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/import/importitempropertiestab.cpp:243
@@ -38165,21 +38166,21 @@ msgstr "Dimentsioak: "
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
-msgstr "Aspektu-erlazioa:"
+msgstr "Aspektu-erlazioa"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:136
 #, fuzzy, kde-format
 #| msgid "New Name: "
 msgctxt "@label: item properties"
 msgid "New Name: "
-msgstr "Izen berria: "
+msgstr "Izen berria:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:137
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgctxt "@label: item properties"
 msgid "Downloaded: "
-msgstr "Deskargatuta: "
+msgstr "Zama-jaitsita"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:178
 #, fuzzy, kde-format
@@ -38202,14 +38203,14 @@ msgstr "<i>Fabrikatzailea:</i>"
 #| msgid "Model: "
 msgctxt "@label: item properties"
 msgid "Model: "
-msgstr "Modeloa: "
+msgstr "Eredua"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
 #, fuzzy, kde-format
 #| msgid "Created: "
 msgctxt "@label: item properties"
 msgid "Created: "
-msgstr "Sortuta: "
+msgstr "Sortze-data:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:133
@@ -38224,7 +38225,7 @@ msgstr "Objektiboa: "
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
 msgid "Aperture: "
-msgstr "Irekidura: "
+msgstr "Irekidura"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
 #: core/libs/properties/itempropertiestab.cpp:135
@@ -38240,7 +38241,7 @@ msgstr "Fokua:  "
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
 msgid "Exposure: "
-msgstr "Esposizioa: "
+msgstr "Esposizioa"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
 #: core/libs/properties/itempropertiestab.cpp:137
@@ -38248,7 +38249,7 @@ msgstr "Esposizioa: "
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
-msgstr "Sentikortasuna: "
+msgstr "Sentikortasuna"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:138
@@ -38264,7 +38265,7 @@ msgstr "Modua/Programa: "
 #| msgid "Flash: "
 msgctxt "@label: item properties"
 msgid "Flash: "
-msgstr "Flash-a: "
+msgstr "Flasha"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
@@ -38300,7 +38301,7 @@ msgstr "Alfa kanala: "
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
-msgstr "Audio-fitxategiak"
+msgstr "Audio-kodeka"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:188
@@ -38315,7 +38316,7 @@ msgstr "Iraunpena: "
 #| msgid "Frame Rate:"
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
-msgstr "Fotograma-emaria:"
+msgstr "Fotograma-abiadura"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:190
@@ -38323,7 +38324,7 @@ msgstr "Fotograma-emaria:"
 #| msgid "Video Codec:"
 msgctxt "@label: item properties"
 msgid "Video Codec: "
-msgstr "Bideo kodeka"
+msgstr "Bideo kodeka:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:278
 #, fuzzy, kde-format
@@ -38344,7 +38345,7 @@ msgstr "ezezaguna"
 #| msgid "<i>unchanged</i>"
 msgctxt "@info: item properties"
 msgid "unchanged"
-msgstr "<i>aldatu gabea</i>"
+msgstr "Aldatu gabe"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
@@ -38353,7 +38354,7 @@ msgstr "<i>aldatu gabea</i>"
 #| msgid "unavailable"
 msgctxt "@info: item properties"
 msgid "unavailable"
-msgstr "ez dago eskuragarri"
+msgstr "Eskuraezina"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
@@ -38419,14 +38420,14 @@ msgstr "%1 (%2)"
 #| msgid "%1 ISO"
 msgctxt "@label"
 msgid "%1 ISO"
-msgstr "%1 ISO"
+msgstr "iso8601"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Range:"
 msgctxt "@label: color properties"
 msgid "Range:"
-msgstr "Eskualdea:"
+msgstr "Barrutia:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:139
 #, fuzzy, kde-format
@@ -38467,21 +38468,21 @@ msgstr ""
 #| msgid "Pixels: "
 msgctxt "@label: color properties"
 msgid "Pixels: "
-msgstr "Pixelak: "
+msgstr " pixel"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:162
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgctxt "@label: color properties"
 msgid "Count: "
-msgstr "Kopurua: "
+msgstr "Zenbat:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:165
 #, fuzzy, kde-format
 #| msgid "Mean: "
 msgctxt "@label: color properties"
 msgid "Mean: "
-msgstr "Batez bestekoa: "
+msgstr "batez bestekoa"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:168
 #, fuzzy, kde-format
@@ -38495,21 +38496,21 @@ msgstr "Desbiderapen estandarra: "
 #| msgid "Median: "
 msgctxt "@label: color properties"
 msgid "Median: "
-msgstr "Mediana: "
+msgstr "Mediana"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:174
 #, fuzzy, kde-format
 #| msgid "Percentile: "
 msgctxt "@label: color properties"
 msgid "Percentile: "
-msgstr "Pertzentila: "
+msgstr "Pertzentila:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:177
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgctxt "@label: color properties"
 msgid "Color depth: "
-msgstr "Kolore-sakonera: "
+msgstr "Kolore-&sakonera:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:180
 #, fuzzy, kde-format
@@ -38522,7 +38523,7 @@ msgstr "Alfa kanala: "
 #, fuzzy, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
-msgstr "Iturburua:"
+msgstr "Sorburua"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:238
 #, fuzzy, kde-format
@@ -38543,14 +38544,14 @@ msgstr "ICC profila"
 #| msgid "16 bits"
 msgctxt "@label: color properties"
 msgid "16 bits"
-msgstr "16 bit"
+msgstr "%1 bit"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:668
 #, fuzzy, kde-format
 #| msgid "8 bits"
 msgctxt "@label: color properties"
 msgid "8 bits"
-msgstr "8 bit"
+msgstr "%1 bit"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:669
 #, fuzzy, kde-format
@@ -38668,7 +38669,7 @@ msgstr "%1x%2 (%3Mpx)"
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
 msgid "%1 bpp"
-msgstr "%1 bpp"
+msgstr "%1bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
 #: core/libs/properties/itempropertiessidebardb.cpp:729
@@ -38684,7 +38685,7 @@ msgstr "%1 (%2)"
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
-msgstr "%1 ISO"
+msgstr "iso8601"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:87
 #, fuzzy, kde-format
@@ -38717,14 +38718,14 @@ msgstr ""
 #| msgid "Owner: "
 msgctxt "@label: item properties"
 msgid "Owner: "
-msgstr "Jabea: "
+msgstr "Jabea"
 
 #: core/libs/properties/itempropertiestab.cpp:41
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgctxt "@label: item properties"
 msgid "Permissions: "
-msgstr "Baimenak: "
+msgstr "Baimenak"
 
 #: core/libs/properties/itempropertiestab.cpp:80
 #, fuzzy, kde-format
@@ -38745,7 +38746,7 @@ msgstr "Bit-sakonera:"
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
-msgstr "Kolore-modua: "
+msgstr "Kolore-modua"
 
 #: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
@@ -38789,7 +38790,7 @@ msgstr "Titulua: "
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
-msgstr "Epigrafeak:"
+msgstr "E&pigrafea"
 
 #: core/libs/properties/itempropertiestab.cpp:240
 #, fuzzy, kde-format
@@ -38808,7 +38809,7 @@ msgstr "Kolore-modua: "
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
-msgstr "Balorazioa: "
+msgstr "Balorazioa"
 
 #: core/libs/properties/itempropertiestab.cpp:243
 #, fuzzy, kde-format
@@ -38836,7 +38837,7 @@ msgstr "digiKamen propietateak"
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Mots clés"
+msgstr "Gako-hitzak"
 
 #: core/libs/properties/itempropertiestab.cpp:290
 #, fuzzy, kde-format
@@ -39058,7 +39059,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Pass:"
-msgstr "Pasahitza"
+msgstr "2 pasaera"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:298
 #, kde-kuit-format
@@ -39174,7 +39175,7 @@ msgstr "Ezarri osagai berdea (magenta kentzeko maila zehazteko)."
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
-msgstr "Tonu argiak:"
+msgstr "Tonu argiak"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:368
 #, fuzzy, kde-format
@@ -39192,7 +39193,7 @@ msgstr "Irauli"
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Blend"
-msgstr "Nahasi"
+msgstr "Fusionatu"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:371
 #, kde-format
@@ -39258,7 +39259,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Highlight:"
-msgstr "Tonu argiak:"
+msgstr "Nabarmentzea:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:409
 #, kde-kuit-format
@@ -39886,19 +39887,15 @@ msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Scanned for objects: %1\n"
-msgstr "Miatu albumetan aurpegi bila: %1"
+#| msgid "Album \"%1\""
+msgid "Album: %1\n"
+msgstr "Albuma: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:251
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
-msgid "Path: %1\n"
-msgstr "Lr"
+#| msgid "Scan for faces in album: %1"
+msgid "Scanning: %1\n"
+msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
@@ -40106,19 +40103,19 @@ msgstr "Nabigatu %1(e)ra"
 #| msgid "Translate to:"
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "Itzuli honetara:"
+msgstr "Itzuli"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, fuzzy, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
-msgstr "%1 - %2"
+msgstr "%1 %2(e)an"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
-msgstr "%1 - %2"
+msgstr "So&rtu hemen:"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, fuzzy, kde-format
@@ -40426,7 +40423,7 @@ msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "Ezabatu etiketa"
-msgstr[1] "Ezabatu etiketa"
+msgstr[1] "Ezabatu etiketak"
 
 #: core/libs/tags/manager/tagsmanager.cpp:370
 #, fuzzy, kde-format
@@ -40434,7 +40431,7 @@ msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "Ezabatu etiketa"
-msgstr[1] "Ezabatu etiketa"
+msgstr[1] "Ezabatu etiketak"
 
 #: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
@@ -40470,10 +40467,10 @@ msgstr[0] "\"%1\" bilduma bildumen zerrendatik kentzea nahi duzu?"
 msgstr[1] "\"%1\" bilduma bildumen zerrendatik kentzea nahi duzu?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:699
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Organize"
-msgstr ""
+msgstr "Antolatu"
 
 #: core/libs/tags/manager/tagsmanager.cpp:702
 #, fuzzy, kde-format
@@ -40617,7 +40614,7 @@ msgstr "Etiketa berria"
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
-msgstr "Editatu etiketa"
+msgstr "Editatu Etiketa"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
@@ -40650,7 +40647,7 @@ msgstr "&Ikonoa:"
 #: core/libs/tags/widgets/tageditdlg.cpp:196
 #, fuzzy, kde-format
 msgid "&Shortcut:"
-msgstr "&Lasterbidea:"
+msgstr "Lasterbidea"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
@@ -40725,7 +40722,7 @@ msgstr "Gehitu etiketa berria..."
 #: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, fuzzy, kde-format
 msgid "More Tags..."
-msgstr "Kopiatu etiketak..."
+msgstr "Etiketa gehiago"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
@@ -41254,7 +41251,7 @@ msgstr ""
 #| msgid "Email:"
 msgctxt "@label: template properties"
 msgid "Email:"
-msgstr "Helbide elek."
+msgstr "E-posta:"
 
 #: core/libs/template/templatepanel.cpp:334
 #, kde-format
@@ -41419,7 +41416,7 @@ msgstr "Showfoto"
 #: core/libs/timeadjust/timeadjustsettings.cpp:141
 #, fuzzy, kde-format
 msgid "%1 timestamp"
-msgstr "Ordu-zigilua"
+msgstr "Denbora-marka"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:146
 #, fuzzy, kde-format
@@ -41506,7 +41503,7 @@ msgstr "Gehitu"
 #| msgid "Abstract"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
-msgstr "Abstraktua"
+msgstr "Kendu"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, kde-format
@@ -41705,7 +41702,7 @@ msgstr "Tantak"
 #| msgid "Fade"
 msgctxt "Transition: Fade"
 msgid "Fade"
-msgstr "Iraungitu"
+msgstr "Koloregabetu"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:113
 #, fuzzy, kde-format
@@ -41806,11 +41803,13 @@ msgid "Random"
 msgstr "Ausaz"
 
 #: core/libs/video/manager/ffmpegbinary.cpp:31
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Plataforma-anitzerako, grabatzeko, bihurtzeko eta transmitizeko audio eta "
+"bideo tresna osoa."
 
 #: core/libs/video/manager/vidslidesettings.cpp:469
 #, kde-format
@@ -42422,7 +42421,7 @@ msgstr "Errorea sorburu datu-basea irekitzean."
 #| msgid "Show image file name"
 msgctxt "@option:check"
 msgid "Show image file name"
-msgstr "Erakutsi irudiaren fitxategi-izena"
+msgstr "Erakutsi irudiaren fitxategi-i&zena"
 
 #: core/libs/video/osd/frameosdwidget.cpp:59
 #, fuzzy, kde-format
@@ -42600,38 +42599,38 @@ msgstr ""
 "%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Etenaldia/Jo"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Atzeman"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Errore bat gertatu da euskarri jotzailearekin..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Txandakatu begiztan jotzea"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -42639,59 +42638,59 @@ msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Aurrera"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
-#, kde-format
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
+#, fuzzy, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "x"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -42978,8 +42977,8 @@ msgid ""
 "This sample text illustrates the current settings. You may edit it to test "
 "special characters."
 msgstr ""
-"Lagin-testu honek une honetako ezarpenak adierazten ditu. Editatu dezakezu "
-"karaktere bereziak probatzeko."
+"Testu lagin honek uneko ezarpenak irudiz azaltzen ditu. Karaktere bereziak "
+"probatzeko editatu dezakezu."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:720
 #: core/libs/widgets/fonts/dfontproperties.cpp:771
@@ -43044,7 +43043,7 @@ msgstr "Tamaina txikiagoko aurrebista"
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:229
 #, fuzzy, kde-format
 msgid "Failed to load image"
-msgstr "Huts egin du irudia kargatzean"
+msgstr "Irudia zamatzea huts egin du!"
 
 #: core/libs/widgets/graphicsview/paniconwidget.cpp:307
 #, kde-format
@@ -43222,7 +43221,7 @@ msgstr "ICC profilaren modeloari buruzko informazio gordina"
 #| msgid "Copyright"
 msgctxt "@item: icc profile properties"
 msgid "Copyright"
-msgstr "Copyright-a"
+msgstr "Copyright"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:134
 #, fuzzy, kde-format
@@ -43543,7 +43542,7 @@ msgstr[1] "Ireki hautatutako elementua."
 #, fuzzy, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
-msgstr "Eredua"
+msgstr "mod"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
@@ -43709,9 +43708,9 @@ msgid "Anjani Kumar"
 msgstr "Pankaj Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:153
-#, kde-format
+#, fuzzy, kde-format
 msgid "Port to Qt6,"
-msgstr ""
+msgstr "Qt6ra eratortzea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:158
 #, kde-format
@@ -44175,7 +44174,7 @@ msgstr "Garatzailea (2004)"
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Notifications"
-msgstr "konfigurazioa zutabe hau"
+msgstr "Konfiguratu jakinarazpenak"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:133
 #, kde-format
@@ -45028,7 +45027,7 @@ msgstr "Ez dago erabilgarri"
 #| msgid "Printing and Proofing"
 msgctxt "info"
 msgid "Loading in progress"
-msgstr "Inprimatzea eta frogatzea"
+msgstr "Zamatzen ari da..."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
@@ -45415,7 +45414,7 @@ msgstr "Aukera etiketa"
 #| msgid "Pick"
 msgctxt "@title: pick label menu"
 msgid "Pick"
-msgstr "Aukeratu"
+msgstr "Aukeratu..."
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
@@ -47437,40 +47436,29 @@ msgid "Uighur (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
-#, fuzzy
-#| msgid "Ukrainian (Ukraine)"
 msgctxt "@info: country code"
 msgid "Ukrainian (Ukraine)"
-msgstr "Ukrainien (Ukraine)"
+msgstr "Ukrainera (Ukraina)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:384
-#, fuzzy
-#| msgid "Urdu (India)"
 msgctxt "@info: country code"
 msgid "Urdu (India)"
-msgstr "Ourdou (Inde)"
+msgstr "Urduera (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:385
-#, fuzzy
-#| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Urdu (Pakistan)"
-msgstr "Ourdou (Pakistan)"
+msgstr "Urduera (Pakistan)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:386
-#, fuzzy
-#| msgctxt "@info: country code"
-#| msgid "Uzbekistan"
 msgctxt "@info: country code"
 msgid "Uzbek (Uzbekistan)"
-msgstr "Uzbekistan"
+msgstr "Uzbekera (Uzbekistan)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:387
-#, fuzzy
-#| msgid "Vietnamese (Vietnam)"
 msgctxt "@info: country code"
 msgid "Vietnamese (Vietnam)"
-msgstr "Vietnamien (Vietnam)"
+msgstr "Vietnamera (Vietnam)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:388
 #, fuzzy
@@ -47487,12 +47475,9 @@ msgid "IsiXhosa Xhosa (South Africa)"
 msgstr "isiXhosa xhosa (Afrique du Sud)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
-#, fuzzy
-#| msgctxt "@info: country code"
-#| msgid "German (Germany)"
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr "Alemana (Alemania)"
+msgstr "Yiddish (Alemania)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
 #, fuzzy
@@ -47509,35 +47494,27 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
 msgctxt "@info: country code"
 msgid "Chinese (People's Republic of China)"
-msgstr ""
+msgstr "Txinera (Txinako Herri Errepublika)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
-#, fuzzy
-#| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr "Chinois (Hong Kong, Chine)"
+msgstr "Txinera (Hong Kong SAR, Txinako Herri Errepublika)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
-#, fuzzy
-#| msgid "Chinese (Macao SAR)"
 msgctxt "@info: country code"
 msgid "Chinese (Macao SAR)"
-msgstr "Chinois (Macao)"
+msgstr "Txinera (Macao SAR)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:396
-#, fuzzy
-#| msgid "Chinese (Singapore)"
 msgctxt "@info: country code"
 msgid "Chinese (Singapore)"
-msgstr "Chinois (Singapour)"
+msgstr "Txinera (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:397
-#, fuzzy
-#| msgid "Chinese (Taiwan)"
 msgctxt "@info: country code"
 msgid "Chinese (Taiwan)"
-msgstr "Chinois (Taïwan)"
+msgstr "Txinera (Taïwan)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:398
 #, fuzzy
@@ -47807,7 +47784,7 @@ msgstr "Kaiman Uharteak"
 #| msgid "Central African Republic"
 msgctxt "@info: country code"
 msgid "Central African Republic"
-msgstr "Errepublika Centrafricaine"
+msgstr "Afrika Erdiko Errepublika"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:89
 #, kde-format
@@ -48000,7 +47977,7 @@ msgstr "Frantzia"
 #| msgid "French Guiana"
 msgctxt "@info: country code"
 msgid "French Guiana"
-msgstr "Guyanne Française"
+msgstr "Guyana frantsesa"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:121
 #, kde-format
@@ -48262,7 +48239,7 @@ msgstr "République Kirghize"
 #| msgid "Lao"
 msgctxt "@info: country code"
 msgid "Lao"
-msgstr "Laos"
+msgstr "Laosera"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:164
 #, kde-format
@@ -48293,7 +48270,7 @@ msgstr "Liberia"
 #| msgid "Libyan Arab Jamahiriya"
 msgctxt "@info: country code"
 msgid "Libyan Arab Jamahiriya"
-msgstr "Libye"
+msgstr "Libia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:169
 #, kde-format
@@ -48462,7 +48439,7 @@ msgstr "Nepal"
 #| msgid "Netherlands Antilles"
 msgctxt "@info: country code"
 msgid "Netherlands Antilles"
-msgstr "Antilles Néerlandaises"
+msgstr "Holandarren Antillak"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:198
 #, kde-format
@@ -48507,11 +48484,10 @@ msgid "Niue"
 msgstr "Niue"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:205
-#, fuzzy, kde-format
-#| msgid "Norfolk Island"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Norfolk Island"
-msgstr "Île de Norfolk"
+msgstr "Norfolk uhartea"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:206
 #, kde-format
@@ -48638,21 +48614,19 @@ msgstr "Ruanda"
 #| msgid "St. Helena"
 msgctxt "@info: country code"
 msgid "St. Helena"
-msgstr "St. Hélène"
+msgstr "St. Helena"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:227
-#, fuzzy, kde-format
-#| msgid "St. Kitts and Nevis"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Kitts and Nevis"
-msgstr "Saint-Christophe-et-Niévès"
+msgstr "Saint Kitts eta Nevis"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:228
-#, fuzzy, kde-format
-#| msgid "St. Lucia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Lucia"
-msgstr "Sainte-Lucie"
+msgstr "Santa Luzia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:229
 #, kde-format
@@ -48661,11 +48635,10 @@ msgid "St. Pierre and Miquelon"
 msgstr "Saint-Pierre eta Mikelune"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:230
-#, fuzzy, kde-format
-#| msgid "St. Vincent and the Grenadines"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Vincent and the Grenadines"
-msgstr "Saint-Vincent-et-Les Grenadines"
+msgstr "Saint Vincent eta Grenadinak"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:231
 #, kde-format
@@ -48680,11 +48653,10 @@ msgid "San Marino"
 msgstr "San Marino"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:233
-#, fuzzy, kde-format
-#| msgid "Sao Tome and Principe"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
-msgstr "Sao Tomé et Principe"
+msgstr "Sao Tome eta Principe"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:234
 #, kde-format
@@ -48843,7 +48815,7 @@ msgstr "Thailandia"
 #| msgid "Timor-Leste"
 msgctxt "@info: country code"
 msgid "Timor-Leste"
-msgstr "Timor oriental"
+msgstr "Ekialdeko Timor"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:260
 #, kde-format
@@ -48863,7 +48835,7 @@ msgstr "Îles Tokelau"
 #| msgid "Trinidad and Tobago"
 msgctxt "@info: country code"
 msgid "Trinidad and Tobago"
-msgstr "Trinité-et-Tobago"
+msgstr "Trinidad eta Tobago"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:264
 #, kde-format
@@ -48932,7 +48904,7 @@ msgstr "Erresuma Batua"
 #| msgid "United States Minor Outlying Islands"
 msgctxt "@info: country code"
 msgid "United States Minor Outlying Islands"
-msgstr "Îles mineures éloignées des États-Unis"
+msgstr "Estatu Batuetako Itsasoz Haraindiko Uharte txikiak"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:275
 #, kde-format
@@ -49174,7 +49146,7 @@ msgstr "Magenta"
 #, fuzzy, kde-format
 msgctxt "@label: subject properties"
 msgid "Detail:"
-msgstr "Familia"
+msgstr "Xehetasuna:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:220
 #, kde-format
@@ -49220,25 +49192,26 @@ msgid "%1 URL can't be empty."
 msgstr "Titulua ezin da hutsik utzi."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "Errorea: Ez da «Bing»eren egiaztagiriak web bertsioan aurkitzeko gai."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "Errorea: Ez da «Bing»eren gakoa web bertsiotik ateratzeko gai."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Errorea: Ez da «Bing»eren tokena web bertsiotik ateratzeko gai."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"Errorea: Ez da «Bing»eren informazio osagarria web bertsiotik ateratzeko gai."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -49251,11 +49224,13 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:50
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Errorea: Motor sistemek zure ordenagailu saretik trafiko susmagarria "
+"antzeman dute. Mesedez saiatu zure eskaerak beranduago berriz egiten."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
 #, fuzzy, kde-format
@@ -49320,7 +49295,7 @@ msgstr "Euskara"
 #, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Bashkir"
-msgstr "Bashkir"
+msgstr "Baxkirera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
 #, fuzzy, kde-format
@@ -49328,13 +49303,13 @@ msgstr "Bashkir"
 #| msgid "Belarus"
 msgctxt "@info: language name"
 msgid "Belarusian"
-msgstr "Bielorrusia"
+msgstr "Bielorrusiera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:133
 #, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Bengali"
-msgstr "Bengalî (Inde)"
+msgstr "Bengalera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:136
 #, fuzzy, kde-format
@@ -49342,7 +49317,7 @@ msgstr "Bengalî (Inde)"
 #| msgid "Estonian"
 msgctxt "@info: language name"
 msgid "Bosnian"
-msgstr "Estoniera"
+msgstr "Bosniera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:139
 #, fuzzy, kde-format
@@ -49366,27 +49341,27 @@ msgstr "Katalana"
 #| msgid "Chinese"
 msgctxt "@info: language name"
 msgid "Cantonese"
-msgstr "Txinera"
+msgstr "Kantonera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:148
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "Cebuanoera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
 #, fuzzy, kde-format
 #| msgid "Chinese (Singapore)"
 msgctxt "@info: language name"
 msgid "Chinese (Simplified)"
-msgstr "Chinois (Singapour)"
+msgstr "Txinera (erraztua)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:154
 #, fuzzy, kde-format
 #| msgid "Chinese (Taiwan)"
 msgctxt "@info: language name"
 msgid "Chinese (Traditional)"
-msgstr "Chinois (Taïwan)"
+msgstr "Txinera (tradizionala)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
 #, fuzzy, kde-format
@@ -49464,7 +49439,7 @@ msgstr "Fiji"
 #| msgid "Philippines"
 msgctxt "@info: language name"
 msgid "Filipino"
-msgstr "Filipinak"
+msgstr "Filipinarra"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:187
 #, fuzzy, kde-format
@@ -49536,7 +49511,7 @@ msgstr "Gujaratera"
 #| msgid "Catalan (France)"
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr "Katalana (Frantzia)"
+msgstr "Haitiko Kreolera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
 #, fuzzy, kde-format
@@ -49547,10 +49522,10 @@ msgid "Hausa"
 msgstr "Hausa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:217
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Hawaiian"
-msgstr ""
+msgstr "Hawaiiera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:220
 #, fuzzy, kde-format
@@ -49575,10 +49550,10 @@ msgid "Hindi"
 msgstr "Hindi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:229
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "Hmong"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, fuzzy, kde-format
@@ -49597,10 +49572,10 @@ msgid "Icelandic"
 msgstr "Islandiera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:238
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Igbo"
-msgstr ""
+msgstr "Igbo"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:241
 #, fuzzy, kde-format
@@ -49657,10 +49632,10 @@ msgid "Kazakh"
 msgstr "Kazakhera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:262
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Khmer"
-msgstr ""
+msgstr "Khemerera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:265
 #, fuzzy, kde-format
@@ -49697,17 +49672,17 @@ msgid "Kurdish"
 msgstr "Kurduera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:280
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "kirgizera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
 #, fuzzy, kde-format
 #| msgid "Lao"
 msgctxt "@info: language name"
 msgid "Lao"
-msgstr "Laos"
+msgstr "Laosera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:286
 #, fuzzy, kde-format
@@ -49723,7 +49698,7 @@ msgstr "Latina"
 #| msgid "Latvia"
 msgctxt "@info: language name"
 msgid "Latvian"
-msgstr "Letonia"
+msgstr "Letoniera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:292
 #, kde-format
@@ -49745,7 +49720,7 @@ msgstr "Lituaniera"
 #| msgid "Luxembourg"
 msgctxt "@info: language name"
 msgid "Luxembourgish"
-msgstr "Luxenburgo"
+msgstr "Luxenburgera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
 #, fuzzy, kde-format
@@ -49856,17 +49831,17 @@ msgid "Papiamento"
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
-msgstr ""
+msgstr "Paxtunera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr "Baimenak: "
+msgstr "Persiera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
 #, fuzzy, kde-format
@@ -49890,7 +49865,7 @@ msgstr "Portugesa"
 #| msgid "Punjabi"
 msgctxt "@info: language name"
 msgid "Punjabi"
-msgstr "Punjabera"
+msgstr "Punjabiera"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:361
 #, kde-format
@@ -49941,7 +49916,7 @@ msgstr "Persan (Iran)"
 #| msgid "Persian (Iran)"
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr "Persan (Iran)"
+msgstr "Serbiera latinoa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
 #, fuzzy, kde-format
@@ -49962,10 +49937,10 @@ msgid "Sindhi"
 msgstr "Sindhi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:391
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "Sinhala"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
 #, fuzzy, kde-format
@@ -50061,7 +50036,7 @@ msgstr "Tatarera"
 #| msgid "Telugu"
 msgctxt "@info: language name"
 msgid "Telugu"
-msgstr "Teluguera"
+msgstr "Telugu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
 #, fuzzy, kde-format
@@ -50156,7 +50131,7 @@ msgstr "Xhosera"
 #, fuzzy, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
-msgstr "Jidisha"
+msgstr "Yiddish"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
 #, fuzzy, kde-format
@@ -50213,14 +50188,14 @@ msgid "Selected emotion %1 is not supported for %2"
 msgstr "Zehaztutako kamera (\"%1\") ez dago onartuta."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Errorea: Ez da «Yandex SID» web bertsioan aurkitzeko gai."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Errorea: Ez da «Yandex SID» web bertsiotik ateratzeko gai."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, fuzzy, kde-format
@@ -50315,7 +50290,7 @@ msgstr "Sélectionnez ici la langue du contenu."
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr "Kendu etiketa hau"
+msgstr "Ezabatu sarrera hau"
 
 #: core/libs/widgets/text/localizeselector.cpp:260
 #, fuzzy, kde-format
@@ -50360,7 +50335,7 @@ msgstr ""
 #| msgid "Default Language"
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Langue par défaut"
+msgstr "Hizkuntza lehenetsia:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:117
 #, fuzzy, kde-format
@@ -50395,7 +50370,7 @@ msgstr "Wiktionary"
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
-msgstr "Codec"
+msgstr "Kodea"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
@@ -50415,7 +50390,7 @@ msgstr "Erabilgarri"
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr "Ez ikusi eginda"
+msgstr "Ezikusitako hitzak"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
@@ -50435,7 +50410,7 @@ msgstr ""
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
-msgstr "&Gehitu..."
+msgstr "Gehitu"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:189
 #, fuzzy, kde-format
@@ -50449,13 +50424,13 @@ msgstr "&Kendu"
 #| msgid "&Replace"
 msgctxt "@action"
 msgid "&Replace"
-msgstr "&Ordeztu"
+msgstr "O&rdeztu"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:96
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Go to Previous"
-msgstr "Aurrekoa"
+msgstr "&Joan aurrekora"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:97
 #, kde-format
@@ -50468,7 +50443,7 @@ msgstr ""
 #| msgid "Go to the next item"
 msgctxt "@action"
 msgid "Go to Next"
-msgstr "Joan hurrengo elementura"
+msgstr "&Joan hurrengora"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:114
 #, kde-format
@@ -50482,7 +50457,7 @@ msgstr ""
 #| msgid "Go Up"
 msgctxt "@action"
 msgid "Go Up"
-msgstr "Igo"
+msgstr "Joan gorantz"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:131
 #, kde-format
@@ -50495,7 +50470,7 @@ msgstr ""
 #| msgid "Home"
 msgctxt "@action"
 msgid "Go Home"
-msgstr "Etxea"
+msgstr "Joan etxera"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:148
 #, fuzzy, kde-format
@@ -50509,7 +50484,7 @@ msgstr "Gehitu direktorioaren izena"
 #| msgid "Hide Options <<"
 msgctxt "@info: folder-view"
 msgid "View Options"
-msgstr "Ezkutatu aukerak <<"
+msgstr "Ikuspegi aukerak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:179
 #, kde-format
@@ -50518,10 +50493,10 @@ msgid "Selection options to render folder-view."
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:184
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Short View"
-msgstr ""
+msgstr "Ikuspegi laburtua"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:187
 #, kde-format
@@ -50530,10 +50505,10 @@ msgid "Switch Folder-View to Short Mode"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:193
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Detailed View"
-msgstr ""
+msgstr "Ikuspegi xehatua"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:196
 #, kde-format
@@ -50546,7 +50521,7 @@ msgstr ""
 #| msgid "Bookmarks"
 msgctxt "@action:inmenu"
 msgid "Show Bookmarks"
-msgstr "Laster-markak"
+msgstr "Erakutsi laster-markak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:207
 #, kde-format
@@ -50572,7 +50547,7 @@ msgstr ""
 #| msgid "Icon-View Options"
 msgctxt "@info: folder-view"
 msgid "Stack Options"
-msgstr "Ikonoen ikuspegiaren aukerak"
+msgstr "Pilaren aukerak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:230
 #, kde-format
@@ -50642,7 +50617,7 @@ msgstr "Sartu albumaren epigrafea hemen..."
 #| msgid "JPEG 2000 image"
 msgctxt "@item: filter type mime"
 msgid "JPEG images"
-msgstr "JPEG 2000 irudia"
+msgstr "JPEG irudiak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:277
 #, fuzzy, kde-format
@@ -50656,7 +50631,7 @@ msgstr "TIFF fitxategiak"
 #| msgid "PNG Files"
 msgctxt "@item: filter type mime"
 msgid "PNG images"
-msgstr "PNG fitxategiak"
+msgstr "PNG irudiak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:279
 #, fuzzy, kde-format
@@ -50719,35 +50694,35 @@ msgstr "Raw irudia"
 #| msgid "All supported files (%1)"
 msgctxt "@item: filter type mime"
 msgid "All supported files"
-msgstr "Onartutako fitxategi guztiak (%1)"
+msgstr "Onartutako fitxategi guztiak"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:442
 #, fuzzy, kde-format
 #| msgid "Grain Size:"
 msgctxt "@info"
 msgid "Icon Size: %1"
-msgstr "Ikonoen handiera:"
+msgstr "Ikonoen neurria"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "New Bookmark"
-msgstr "Laster-markak"
+msgstr "Lastermarka Berria"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr "Editatu laster-markak"
+msgstr "Editatu Laster-marka"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
-msgstr "&Titulua:"
+msgstr "&Izenburua:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
 #, fuzzy, kde-format
@@ -50819,7 +50794,7 @@ msgstr "Contenu"
 #| msgid "Replace:"
 msgctxt "@title"
 msgid "Places"
-msgstr "tokia"
+msgstr "Lekuak"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, fuzzy, kde-format
@@ -50855,7 +50830,7 @@ msgstr "Kendu hautatutako irudiak zerrendatik"
 #| msgid "Edit Bookmarks"
 msgctxt "@action"
 msgid "Edit Bookmark"
-msgstr "Editatu laster-markak"
+msgstr "Editatu Laster-marka"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, fuzzy, kde-format
@@ -50869,7 +50844,7 @@ msgstr "Supprimer la valeur actuellement sélectionnée de la liste"
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr "Laster-markak"
+msgstr "Gehitu Lastermarka berria"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
@@ -50898,7 +50873,7 @@ msgstr "Ziur zaude hautatutako \"%1\" dataren bilaketa ezabatzea nahi duzula?"
 #| msgid "Bookmarks"
 msgctxt "@title"
 msgid "My Bookmarks"
-msgstr "Laster-markak"
+msgstr "Nire laster-markak"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
 #, fuzzy, kde-format
@@ -50913,13 +50888,13 @@ msgstr "tokia"
 #| msgid "Folder View Options"
 msgctxt "@title"
 msgid "Folder-View"
-msgstr "Karpeta-ikuspegiaren aukerak"
+msgstr "Karpeta ikuspegia"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:141
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title"
 msgid "Stack"
-msgstr ""
+msgstr "Pila"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, fuzzy, kde-format
@@ -50933,7 +50908,7 @@ msgstr "Gehitu laster-marka"
 #| msgid "Folder: "
 msgctxt "@title: file system tree"
 msgid "Folders"
-msgstr "Karpeta"
+msgstr "Karpetak"
 
 #: core/showfoto/main/main.cpp:202
 #, fuzzy, kde-format
@@ -51021,7 +50996,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete \"%1\""
-msgstr "Ezin da erro-etiketa ezabatu"
+msgstr "Ezin da %1 ezabatu: %2"
 
 #: core/showfoto/main/showfoto_open.cpp:60
 #, fuzzy, kde-format
@@ -51040,7 +51015,7 @@ msgstr "Ez dago elementurik ilaran prozesatzeko."
 #| msgid "Error Loading File"
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "Errorea fitxategia zamatzean"
+msgstr "Errorea %1 fitxategia zamatzean"
 
 #: core/showfoto/main/showfoto_open.cpp:326
 #, fuzzy, kde-format
@@ -51100,7 +51075,7 @@ msgstr "&Apaindu"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:87
 #, fuzzy, kde-format
 msgid "Effec&ts"
-msgstr "Lausotze-efektuak"
+msgstr "Efektuak"
 
 #: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
@@ -51190,7 +51165,7 @@ msgstr ""
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
-msgstr "Geolokalizazioa"
+msgstr "Geokokapena"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
@@ -51310,7 +51285,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
-msgstr "Portaera"
+msgstr "Jokabidea"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
@@ -51471,7 +51446,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, fuzzy, kde-format
 msgid "Last check: %1"
-msgstr "<html>Azken ikuskatzea: %1<br>%2</html>"
+msgstr "<html>Azken egiaztatzea: %1<br>%2</html>"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc.cpp:135
@@ -51485,7 +51460,7 @@ msgstr "Egiaztatu Orain"
 #| msgid "Behavior"
 msgctxt "@title:tab"
 msgid "Behaviour"
-msgstr "Portaera"
+msgstr "Jokabidea"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:198
@@ -51610,7 +51585,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Application font:"
-msgstr "Azpikokalekua:"
+msgstr "Aplikazioaren letra-tipoa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:300
 #: core/utilities/setup/misc/setupmisc.cpp:280
@@ -51629,10 +51604,10 @@ msgstr "Itxura"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:322
 #: core/utilities/setup/misc/setupmisc.cpp:362
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
-msgstr ""
+msgstr "Ortografia aztertu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:328
 #: core/utilities/setup/misc/setupmisc.cpp:368
@@ -52297,7 +52272,7 @@ msgstr "Ikonoen ikuspegiaren aukerak"
 #| msgid "Grain Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
-msgstr "Ikonoen handiera:"
+msgstr "Ikonoen neurria"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:350
 #, kde-format
@@ -52849,27 +52824,27 @@ msgstr "Irudiaren fitxategi-tamaina"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
 #, kde-format
 msgid "Format of the media file"
-msgstr "Multimediaren fitxategiaren formatua"
+msgstr "Hedabide fitxategiaren formatua"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:61
 #, kde-format
 msgid "Type of the media file"
-msgstr "Multimediaren fitxategi mota"
+msgstr "Hedabide fitxategi mota"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
 #, kde-format
 msgid "Rating of the media file"
-msgstr "Multimediaren fitxategiaren puntuazioa"
+msgstr "Hedabide fitxategiaren puntuazioa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:63
 #, kde-format
 msgid "Height of the media file"
-msgstr "Multimediaren fitxategiaren altuera"
+msgstr "Hedabide fitxategiaren altuera"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:64
 #, kde-format
 msgid "Width of the media file"
-msgstr "Multimediaren fitxategiaren zabalera"
+msgstr "Hedabide fitxategiaren zabalera"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:65
 #, kde-format
@@ -53003,7 +52978,7 @@ msgstr "Gaiaren distantzia (kategoria)"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
 #, fuzzy, kde-format
 msgid "Display Aspect Ratio"
-msgstr "Mantendu aspektu-erlazioa"
+msgstr "Bistaratu aspektu-erlazioa:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
@@ -53455,10 +53430,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "Hasiera"
 
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
 #, fuzzy, kde-format
@@ -53467,30 +53442,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirming face"
 msgstr "Berretsi ezabatzea"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Removing face"
 msgstr "Kendu etiketa"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Kendu etiketa hau"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"
@@ -53554,7 +53529,7 @@ msgstr "Nor da hau?"
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
-msgstr "Ez ikusi eginda"
+msgstr "Ezikusi"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
 #, fuzzy, kde-format
@@ -53641,7 +53616,7 @@ msgstr "Lan-fluxua"
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Zehaztasuna"
+msgstr "&Zehaztasuna:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, fuzzy, kde-format
@@ -53681,7 +53656,7 @@ msgstr "Etiketa gehigarriak"
 #, fuzzy, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
-msgstr "Etiketa gehigarriak"
+msgstr "Txikia"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, fuzzy, kde-format
@@ -53696,7 +53671,7 @@ msgstr "Ertaina"
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "Helburua"
+msgstr "Handia"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #, fuzzy, kde-format
@@ -53734,7 +53709,7 @@ msgstr "Aurpegia atzematea"
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Zehaztasuna"
+msgstr "&Zehaztasuna:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
 #, fuzzy, kde-format
@@ -54213,7 +54188,7 @@ msgstr "Erabili botoi hau irudien hatz-marka guztiak eguneratzeko."
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
-msgstr "Bilatu bikoiztutakoak"
+msgstr "Bilatu bikoiztutakoak..."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
@@ -54351,7 +54326,7 @@ msgstr "Irudiaren tamainari buruzko informazioa"
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
-msgstr "Référence :"
+msgstr "Erreferentzia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, fuzzy, kde-format
@@ -54693,10 +54668,10 @@ msgid "cm"
 msgstr "cm"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:172
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr ""
+msgstr "ft"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:175
 #, kde-format
@@ -54705,22 +54680,22 @@ msgid "in"
 msgstr "″"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:178
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "yd"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:181
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:184
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
@@ -54728,16 +54703,14 @@ msgid "Copy Coordinates"
 msgstr "Kopiatu koordenatuak"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "&Address Details"
-msgstr "Helbidea:"
+msgstr "&Helbidearen xehetasunak"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
-#, fuzzy, kde-format
-#| msgid "No description available"
+#, kde-format
 msgid "No description available."
-msgstr "Ez dago deskripziorik erabilgarri"
+msgstr "Ez dago deskribapenik erabilgarri."
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
@@ -54779,7 +54752,7 @@ msgstr "Konderriko hiriburua"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "Hiriburua"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
@@ -54791,13 +54764,12 @@ msgstr "{Herritxoa}"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "&Informazio-koadroak"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address Details"
-msgstr "Helbidea:"
+msgstr "Helbidearen xehetasunak"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
@@ -54925,7 +54897,7 @@ msgstr "Behatokia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "Arrisku militarreko eremua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
@@ -54957,13 +54929,13 @@ msgstr "Hiri inguruko auzoa"
 #, fuzzy, kde-format
 #| msgid "{Hamlet}"
 msgid "Hamlet"
-msgstr "{Herrixka}"
+msgstr "Herrixka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:520
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgid "Locality"
-msgstr "Normalizatu"
+msgstr "Herria"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
@@ -54971,9 +54943,9 @@ msgid "Town"
 msgstr "Herria"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:526
-#, kde-format
+#, fuzzy, kde-format
 msgid "Town Capital"
-msgstr ""
+msgstr "Herriburua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:535
 #, fuzzy, kde-format
@@ -55019,9 +54991,9 @@ msgid "Ice Shelf"
 msgstr "Izotz geruza"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:562
-#, kde-format
+#, fuzzy, kde-format
 msgid "Scrub"
-msgstr ""
+msgstr "Sasia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
@@ -55075,7 +55047,7 @@ msgstr "Bizikleta-bidea"
 #, fuzzy, kde-format
 #| msgid "Service ID:"
 msgid "Service Road"
-msgstr "ID du service :"
+msgstr "Zerbitzu-galtzada"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
@@ -55340,10 +55312,9 @@ msgid "Fire Station"
 msgstr "Suhiltzaile-etxea"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:757
-#, fuzzy, kde-format
-#| msgid "Process Cancelled..."
+#, kde-format
 msgid "Hunting Stand"
-msgstr "Prozesua bertan behera utzita..."
+msgstr "Ehiza-postua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:760
 #, kde-format
@@ -55393,7 +55364,7 @@ msgstr "Herriko etxea"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:787
 #, kde-format
 msgid "Waste Basket"
-msgstr ""
+msgstr "Hondakin ontzia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:790
 #, kde-format
@@ -55418,7 +55389,7 @@ msgstr "Auto garbiketa"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:802
 #, kde-format
 msgid "Social Facility"
-msgstr ""
+msgstr "Gizarte zerbitzua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:805
 #, kde-format
@@ -55507,10 +55478,9 @@ msgid "Seafood Shop"
 msgstr "Itsaski denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
-#, fuzzy, kde-format
-#| msgid "Decorative Stone"
+#, kde-format
 msgid "Department Store"
-msgstr "Harri apaingarria"
+msgstr "Saltoki handia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
@@ -55520,7 +55490,7 @@ msgstr "Kioskoa"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:865
 #, kde-format
 msgid "Bag Shop"
-msgstr ""
+msgstr "Poltsa-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:868
 #, kde-format
@@ -55528,10 +55498,9 @@ msgid "Clothes Shop"
 msgstr "Arropa denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:871
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Fashion Shop"
-msgstr "Informations sur la source de lumière"
+msgstr "Moda-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:874
 #, kde-format
@@ -55546,13 +55515,12 @@ msgstr "Zapata denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:880
 #, kde-format
 msgid "Variety Store"
-msgstr ""
+msgstr "Askotariko-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:883
-#, fuzzy, kde-format
-#| msgid "Fuzzy Searches"
+#, kde-format
 msgid "Beauty Services"
-msgstr "Zalantzazko bilaketak"
+msgstr "Edertasun-zerbitzuak"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:886
 #, kde-format
@@ -55613,17 +55581,17 @@ msgstr "Bizikleta denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:922
 #, kde-format
 msgid "Car Dealer"
-msgstr ""
+msgstr "Autoen kontzesionarioa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:925
 #, kde-format
 msgid "Car Repair Shop"
-msgstr ""
+msgstr "Autoak konpontzeko tailerra"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:928
 #, kde-format
 msgid "Car Parts"
-msgstr ""
+msgstr "Autoen piezak"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:931
 #, kde-format
@@ -55633,7 +55601,7 @@ msgstr "Motozikleta denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:934
 #, kde-format
 msgid "Outdoor Shop"
-msgstr ""
+msgstr "Aire zabaleko denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:937
 #, kde-format
@@ -55648,7 +55616,7 @@ msgstr "Inprimatze zerbitzuak"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:943
 #, kde-format
 msgid "Art Shop"
-msgstr "Arte denda"
+msgstr "Arte-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:946
 #, kde-format
@@ -55658,23 +55626,23 @@ msgstr "Musika tresna denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:949
 #, kde-format
 msgid "Photo Shop"
-msgstr "Argazki denda"
+msgstr "Argazki-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:952
 #, kde-format
 msgid "Bookshop"
-msgstr "Liburu denda"
+msgstr "Liburu-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:955
 #, kde-format
 msgid "Gift Shop"
-msgstr "Opari denda"
+msgstr "Opari-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:958
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Stationery"
-msgstr "Saturazioa"
+msgstr "Bulegoko materiala"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:961
 #, kde-format
@@ -55682,10 +55650,9 @@ msgid "Laundry"
 msgstr "Arropa garbitegia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:964
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Pet Shop"
-msgstr "Informations sur la source de lumière"
+msgstr "Maskota-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:967
 #, kde-format
@@ -55700,7 +55667,7 @@ msgstr "Bidai agentzia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:973
 #, kde-format
 msgid "Deli"
-msgstr ""
+msgstr "Delicatessen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:976
 #, kde-format
@@ -55710,7 +55677,7 @@ msgstr "Tabako denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:979
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "Te-denda"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:982
 #, kde-format
@@ -55720,7 +55687,7 @@ msgstr "Ordenagailu denda"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:985
 #, kde-format
 msgid "Garden Centre"
-msgstr ""
+msgstr "Lorategi zentroa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:988
 #, kde-format
@@ -55918,9 +55885,9 @@ msgid "Ski Rental"
 msgstr "Eski alokairua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1105
-#, kde-format
+#, fuzzy, kde-format
 msgid "Taxi Rank"
-msgstr ""
+msgstr "Taxi geralekua"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1108
 #, kde-format
@@ -55985,7 +55952,7 @@ msgstr "Hindua"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "Jainista"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1147
 #, kde-format
@@ -56013,11 +55980,9 @@ msgid "Golf Course"
 msgstr "Golf zelaia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1162
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "San Marino"
+#, kde-format
 msgid "Marina"
-msgstr "San Marino"
+msgstr "Kirol-portu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1165
 #, kde-format
@@ -56032,7 +55997,7 @@ msgstr "Jolastokia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1171
 #, kde-format
 msgid "Pitch"
-msgstr ""
+msgstr "Kirol-zelaia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1174
 #, kde-format
@@ -56072,7 +56037,7 @@ msgstr "Hilerria"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1198
 #, kde-format
 msgid "Commercial"
-msgstr ""
+msgstr "Merkataritza"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1201
 #, kde-format
@@ -56080,22 +56045,19 @@ msgid "Construction"
 msgstr "Eraikuntza"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1204
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Finland"
+#, kde-format
 msgid "Farmland"
-msgstr "Finlandia"
+msgstr "Labore-lurra"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1207
 #, kde-format
 msgid "Farmyard"
-msgstr ""
+msgstr "Eskorta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1210
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgid "Garages"
-msgstr "Irudiak"
+msgstr "Garajeak"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1213
 #, kde-format
@@ -56113,9 +56075,9 @@ msgid "Landfill"
 msgstr "Hondakindegia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1222
-#, kde-format
+#, fuzzy, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "Herri-belardia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1225
 #, kde-format
@@ -56155,7 +56117,7 @@ msgstr "Arboladia"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1246
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "Mahastia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1249
 #, kde-format
@@ -56334,17 +56296,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1348
 #, kde-format
 msgid "Snow Park"
-msgstr ""
+msgstr "Elur parketa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1351
 #, kde-format
 msgid "Ski Playground"
-msgstr ""
+msgstr "Eski jolastokia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1354
 #, kde-format
 msgid "Ski Jump"
-msgstr ""
+msgstr "Eski jauzia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1357
 #, kde-format
@@ -56407,10 +56369,9 @@ msgid "Boundary (Maritime)"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1393
-#, fuzzy, kde-format
-#| msgid "Unsharp Mask"
+#, kde-format
 msgid "Land Mass"
-msgstr "Desenfokatze-maskara"
+msgstr "Lur masa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1396
 #, kde-format
@@ -56436,7 +56397,7 @@ msgstr "Ubidea"
 #, fuzzy, kde-format
 #| msgid "Terrain"
 msgid "Drain"
-msgstr "Lurzorua"
+msgstr "hustubidea"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1411
 #, kde-format
@@ -56454,9 +56415,9 @@ msgid "River"
 msgstr "Ibaia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1420
-#, kde-format
+#, fuzzy, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "Urtegia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1423
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1426
@@ -56557,12 +56518,12 @@ msgstr "Zirkulua kanporantz"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:328
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "Mendiko bizikleta ibilbidea"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:332
 #, kde-format
 msgid "Walking Route"
-msgstr ""
+msgstr "Oinezko ibilbidea"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:336
 #, kde-format
@@ -56572,7 +56533,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:340
 #, kde-format
 msgid "Bridleway"
-msgstr ""
+msgstr "Zaldun-bidea"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:344
 #, kde-format
@@ -56634,7 +56595,7 @@ msgstr "Ospea"
 #| msgid "Indexed"
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr "Indexatuta"
+msgstr "Ospe indizea"
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
 #, kde-format
@@ -56947,16 +56908,14 @@ msgid "Show numerical Labels."
 msgstr "Erakutsi irudien etiketak"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate Grid"
-msgstr "Koordenatuak"
+msgstr "Koordenatu sareta"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:90
-#, fuzzy, kde-format
-#| msgid "Coordinates"
+#, kde-format
 msgid "Coordinate &Grid"
-msgstr "Koordenatuak"
+msgstr "Koordenatu &sareta"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:105
 #, kde-format
@@ -56982,10 +56941,9 @@ msgid "Please choose the color for the equator."
 msgstr "Ezarri bigarren marraren kolorea."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgid "Equator"
-msgstr "Sortzailea"
+msgstr "Ekuatorea"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
 #, fuzzy, kde-format
@@ -57008,18 +56966,14 @@ msgid "Tropic of Capricorn"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Arctic Circle"
-msgstr "Zirkulua kanporantz"
+msgstr "Zirkulu Artikoa"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Antarctica"
+#, kde-format
 msgid "Antarctic Circle"
-msgstr "Antartika"
+msgstr "Zirkulu Antartikoa"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MapScaleConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:14
@@ -57039,7 +56993,7 @@ msgstr "Erakutsi irudi mota"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "Ikonotu"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
 #, fuzzy, kde-format
@@ -57061,31 +57015,30 @@ msgid "A plugin to show a float item that provides a map scale."
 msgstr "Elementu honek geokokatze informazioa du."
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
-#, fuzzy, kde-format
-#| msgid "Original Colors:"
+#, kde-format
 msgid "Original Developer"
-msgstr "Jatorrizko koloreak:"
+msgstr "Jatorrizko garatzailea"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
-#, fuzzy, kde-format
+#, kde-format
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
 #, fuzzy, kde-format
@@ -57114,17 +57067,15 @@ msgstr "Albumaren izena"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "Poligonoa"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "Zirkulua kanporantz"
+msgstr "Zirkulua"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:51
@@ -57135,10 +57086,9 @@ msgstr "Irudi etiketak"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "Distantzia:"
+msgstr "Distantzia "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:70
@@ -57156,9 +57106,9 @@ msgstr "Gorde irudiak"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:90
-#, fuzzy, kde-format
+#, kde-format
 msgid "Perimeter"
-msgstr "Gurasoak"
+msgstr "Perimetroa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPolygonAreaLabelChangeCheckBox)
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircleAreaLabelChangeCheckBox)
@@ -57166,21 +57116,19 @@ msgstr "Gurasoak"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "Azalera"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:142
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius"
-msgstr "Erradioa:"
+msgstr "Erradioa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showCircumference)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:152
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Circumference"
-msgstr "Référence :"
+msgstr "Zirkunferentzia"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:98
 #, fuzzy, kde-format
@@ -57206,6 +57154,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"Azalera:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:446
 #, kde-format
@@ -57213,13 +57163,17 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"Zirkunferentzia:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:581
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
-msgstr "Gurasoak"
+msgstr ""
+"Perimetroa:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:647
 #, kde-format
@@ -57240,25 +57194,24 @@ msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, fuzzy, kde-format
+#, kde-format
 msgid "Area: %1<br/>\n"
-msgstr "Pertsonalizatua"
+msgstr "Azalera: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
-msgstr ""
+msgstr "Perimetroa: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
-#, fuzzy, kde-format
-#| msgid "Radius:"
+#, kde-format
 msgid "Radius: %1<br/>\n"
-msgstr "Erradioa:"
+msgstr "Erradioa: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
 #, kde-format
 msgid "Circumference: %1<br/>\n"
-msgstr ""
+msgstr "Zirkunferentzia: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, fuzzy, kde-format
@@ -57281,16 +57234,14 @@ msgstr "Kendu kontua"
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:70
-#, fuzzy, kde-format
-#| msgid "Show navigation"
+#, kde-format
 msgid "Navigation"
-msgstr "Erakutsi nabigazioa"
+msgstr "Nabigatzea"
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show navigation"
+#, kde-format
 msgid "&Navigation"
-msgstr "Erakutsi nabigazioa"
+msgstr "&Nabigatzea"
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:90
 #, kde-format
@@ -57298,24 +57249,24 @@ msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:270
-#, fuzzy, kde-format
+#, kde-format
 msgid "Current Location Button"
-msgstr "Mantendu aspektu-erlazioa"
+msgstr "Uneko kokalekua botoia"
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:273
-#, kde-format
+#, fuzzy, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Etxea botoia (~)"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
 #, fuzzy, kde-format
 msgid "Overview Map"
-msgstr "Erakutsi ikuspegi orokorraren mapa"
+msgstr "Ikuspegi orokorreko mapa"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:94
 #, fuzzy, kde-format
 msgid "&Overview Map"
-msgstr "Erakutsi ikuspegi orokorraren mapa"
+msgstr "Ikuspegi &orokorreko mapa"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:109
 #, fuzzy, kde-format
@@ -57327,41 +57278,41 @@ msgstr "Elementu honek geokokatze informazioa du."
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:583
 #, fuzzy, kde-format
 msgid "Choose Overview Map"
-msgstr "Erakutsi ikuspegi orokorraren mapa"
+msgstr "Aukeratu ikuspegi orokorreko mapa"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the position indicator"
-msgstr "Ezarri bigarren marraren kolorea."
+msgstr "Mesedez, aukeratu kokalekua adierazlearen kolorea"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
 #, fuzzy, kde-format
 #| msgid "<b>Configure Preview Behavior</b>"
 msgid "Configure Overview Map"
-msgstr "<b>Konfiguratu aurrebistaren portaera</b>"
+msgstr "Konfiguratu ikuspegi orokorreko mapa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
 #, fuzzy, kde-format
 #| msgid "&Image"
 msgid "Map &Image"
-msgstr "Ir&udia"
+msgstr "Maparen &irudia"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:28
 #, fuzzy, kde-format
 #| msgid "File name"
 msgid "&Planet:"
-msgstr "Fitxategi izena"
+msgstr "&Planeta"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:71
 #, fuzzy, kde-format
 #| msgid "Size:"
 msgid "&Size:"
-msgstr "Neurria:"
+msgstr "Neurria"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
@@ -57369,24 +57320,24 @@ msgstr "Neurria:"
 #| msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
 #| msgid "x"
 msgid "x"
-msgstr "X"
+msgstr "x"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
 #, fuzzy, kde-format
 msgid "Position I&ndicator:"
-msgstr "Iragazki berdea"
+msgstr "Kokaleku a&dierazlea:"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
 #, fuzzy, kde-format
 msgid "Download Progress Indicator"
-msgstr "Esposizioaren adierazleak"
+msgstr "Zama-jaitsieraren aurrerapenaren adierazlea"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:106
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgid "&Download Progress"
-msgstr "Zama-jaiste errorea"
+msgstr "&Zama-jaitsieraren aurrerapena"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:121
 #, fuzzy, kde-format
@@ -57397,7 +57348,7 @@ msgstr "Esposizioaren adierazleak"
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Cache File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "Cache fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:56
 #, kde-format
@@ -57408,13 +57359,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Marble widget"
 msgid "Marble Cache Files"
-msgstr "Marmolaren trepeta"
+msgstr "Marble-ren cache fitxategiak"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "GPSBabel NMEA File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "GPSBabel NMEA fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -57428,13 +57379,13 @@ msgstr ""
 #| msgctxt "@label"
 #| msgid "Save files as"
 msgid "GPSBabel files"
-msgstr "Gorde fitxategia honela"
+msgstr "GPSBabel fitxategiak"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Gpx File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "GPX fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -57445,13 +57396,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Data"
 msgid "GPS Data"
-msgstr "Données"
+msgstr "GPS datuak"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "GeoJSON File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "GeoJSON fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:52
 #, kde-format
@@ -57459,15 +57410,15 @@ msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
-#, kde-format
+#, fuzzy, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "KML File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "KML fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:52
 #, kde-format
@@ -57476,20 +57427,20 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
-#, kde-format
+#, fuzzy, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "Google Earth KML"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
-#, kde-format
+#, fuzzy, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim alderantziz geokokatzea"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Nominatim"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap Nominatim"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:59
 #, kde-format
@@ -57502,7 +57453,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Osm File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "Osm-fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:52
 #, kde-format
@@ -57514,13 +57465,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap-eko datuak"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Pn2 File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "Pn2-fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -57533,13 +57484,13 @@ msgstr ""
 #| msgctxt "Name of the component"
 #| msgid "Component"
 msgid "Compressed Pnt"
-msgstr "Osagaia"
+msgstr "Konprimatutako Pnt"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:37
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Pnt File Parser"
-msgstr "Fitxategi-transferentzia"
+msgstr "Pnt-fitxategi analizatzailea"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -57549,9 +57500,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
-#, kde-format
+#, fuzzy, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:73
 #, kde-format
@@ -57567,9 +57518,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
-#, kde-format
+#, fuzzy, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "Mapa laua"
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:54
 #, kde-format
@@ -57579,9 +57530,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:78
-#, kde-format
+#, fuzzy, kde-format
 msgid "Gnomonic"
-msgstr ""
+msgstr "Gnomonikoa"
 
 #: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:83
 #, kde-format
@@ -57617,9 +57568,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
-#, kde-format
+#, fuzzy, kde-format
 msgid "Globe"
-msgstr ""
+msgstr "Globoa"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:82
 #, kde-format
@@ -57633,7 +57584,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Raster Graphics"
 msgid "Stereographic"
-msgstr "Raster grafikoak"
+msgstr "Estereografikoa"
 
 #: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:84
 #, kde-format
@@ -57659,7 +57610,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Unit"
 msgid "Units"
-msgstr "Unitatea"
+msgstr "Unitateak"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:113
 #, kde-format
@@ -57691,19 +57642,19 @@ msgid "Angle:"
 msgstr "Angelua:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:120
-#, kde-format
+#, fuzzy, kde-format
 msgid "Degree (DMS)"
-msgstr ""
+msgstr "Gradu (GMS)"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:121
-#, kde-format
+#, fuzzy, kde-format
 msgid "Degree (Decimal)"
-msgstr ""
+msgstr "Degree (hamartarra)"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:122
-#, kde-format
+#, fuzzy, kde-format
 msgid "Universal Transverse Mercator (UTM)"
-msgstr ""
+msgstr "UTM (Universal Transverse Mercator / Zeharkako Mercator Unibertsala)"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:123
 #, kde-format
@@ -57750,7 +57701,7 @@ msgstr "Arrunta"
 #, fuzzy, kde-format
 #| msgid "Quality:"
 msgid "High Quality"
-msgstr "Kalitatea:"
+msgstr "Kalitate altua"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:142
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:152
@@ -57785,7 +57736,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgid "Mouse Behavior"
-msgstr "Portaera"
+msgstr "Saguaren joka&bidea"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:166
 #, fuzzy, kde-format
@@ -57807,12 +57758,12 @@ msgstr "Kameraren informazioa"
 #, fuzzy, kde-format
 #| msgid "Use CTRL+left mouse button to select a search area."
 msgid "Use right mouse button to rotate the camera around"
-msgstr "Erabili Ktrl+saguaren ezkerreko botoia bilaketako area bat hautatzeko."
+msgstr "Erabili saguaren eskuineko botoia kamara inguruan biratzeko"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:176
-#, kde-format
+#, fuzzy, kde-format
 msgid "Cache"
-msgstr ""
+msgstr "Cachea"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:177
 #, fuzzy, kde-format
@@ -57861,9 +57812,9 @@ msgstr ""
 "body></html>"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:184
-#, kde-format
+#, fuzzy, kde-format
 msgid "Physical Memory:"
-msgstr ""
+msgstr "Memoria &fisikoa:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:196
@@ -57876,7 +57827,7 @@ msgstr "Garbitu"
 #, fuzzy, kde-format
 #| msgid "Unsharp Mask"
 msgid "Hard Disc:"
-msgstr "Desenfokatze-maskara"
+msgstr "Disko &zurruna:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:207
 #, fuzzy, kde-format
@@ -57888,7 +57839,7 @@ msgstr "Contenu"
 #, fuzzy, kde-format
 #| msgid "Default Language"
 msgid "Default Font:"
-msgstr "Langue par défaut"
+msgstr "Letra-tipo &lehenetsia:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -57983,7 +57934,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Marble widget"
 msgid "Map View"
-msgstr "Marmolaren trepeta"
+msgstr "Mapa-ikuspegia"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:300
 #, fuzzy, kde-format
@@ -58003,72 +57954,74 @@ msgid "Runner Tools"
 msgstr "Ezezaguna"
 
 #: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:52
-#, kde-format
+#, fuzzy, kde-format
 msgid "Unable to insert data into cache"
-msgstr ""
+msgstr "Ezin dira datuak cachean sartu"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:138
 #, fuzzy, kde-format
 msgid "Visible region"
-msgstr "Ikusgai lagunentzako"
+msgstr "Eskualde ikusgaia"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:140
 #, fuzzy, kde-format
 #| msgid "Specific Location"
 msgid "Specify region"
-msgstr "Kokapen zehatza"
+msgstr "Zehaztu eskualdea"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:142
 #, fuzzy, kde-format
 msgid "Download Route"
-msgstr "Deskargatu"
+msgstr "Zama-jaitsi ibilbidea"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:144
-#, kde-format
+#, fuzzy, kde-format
 msgid "Enabled when a route exists"
-msgstr ""
+msgstr "Gaituta ibilbide bat dagoenean"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:157
-#, kde-format
+#, fuzzy, kde-format
 msgid "Offset from route:"
-msgstr ""
+msgstr "Ibilbidearekiko desplazamendua:"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:191
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection Method"
-msgstr "Destination :"
+msgstr "Hautapen metodoa"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:200
-#, kde-format
+#, fuzzy, kde-format
 msgid "Number of tiles to download:"
-msgstr ""
+msgstr "Zama-jaitsi beharreko lauza kopurua:"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
 #, fuzzy, kde-format
 msgid "Download Region"
-msgstr "Deskargatu"
+msgstr "Zama-jaitsi eskualdea"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, fuzzy, kde-format
 msgid "Tile type to be downloaded:"
-msgstr "Irudi honek ez dauka kolore-kudeaketarik."
+msgstr "Zama-jaitsi beharreko lauza mota:"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
 #, fuzzy, kde-format
 msgid "Texture tiles"
-msgstr "Iragazki urdina"
+msgstr "Ehundura-lauzak"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
 #, fuzzy, kde-format
 #| msgid "Video Files"
 msgid "Vector tiles"
-msgstr "Bideo fitxategiak"
+msgstr "Bektore-lauzak"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
-#, kde-format
+#, fuzzy, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
+"Ikusteko eran errendatzen ari diren lauza-moten artean hautatzeko aukera "
+"ematen du."
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
 #, kde-format
@@ -58076,26 +58029,26 @@ msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
-#, kde-format
+#, fuzzy, kde-format
 msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
+msgstr "Zama-jatsi beharreko lauzen gutxi gorabeherako neurria"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
-#, kde-format
+#, fuzzy, kde-format
 msgid "Estimated download size: %1 MB"
-msgstr ""
+msgstr "Zama-jaistearen kalkulatutako neurri: %1 MB"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
-#, kde-format
+#, fuzzy, kde-format
 msgid "Estimated download size: %1 kB"
-msgstr ""
+msgstr "Zama-jaistearen kalkulatutako neurri: %1 kB"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:17
 #, fuzzy, kde-format
 #| msgid "Select a year"
 msgid "Select a geographic region"
-msgstr "Hautatu urte bat"
+msgstr "Aukeratu eskualde geografiko bat"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:41
@@ -58103,7 +58056,7 @@ msgstr "Hautatu urte bat"
 #| msgctxt "@info: country code"
 #| msgid "Northern Ireland"
 msgid "Northern Latitude"
-msgstr "Ipar Irlanda"
+msgstr "Iparraldeko latitudea"
 
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, northSpinBox)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, westSpinBox)
@@ -58121,33 +58074,33 @@ msgstr ""
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:66
 #, fuzzy, kde-format
 msgid "&N"
-msgstr "Ikusi/Editatu..."
+msgstr "I"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:93
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgid "Western Longitude"
-msgstr "Longitudea"
+msgstr "Mendebaldeko longitudea"
 
 #. i18n: ectx: property (text), widget (QLabel, westLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:118
-#, kde-format
+#, fuzzy, kde-format
 msgid "&W"
-msgstr ""
+msgstr "&M"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:145
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgid "Eastern Longitude"
-msgstr "Longitudea"
+msgstr "Ekialdeko longitudea"
 
 #. i18n: ectx: property (text), widget (QLabel, eastLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:170
-#, kde-format
+#, fuzzy, kde-format
 msgid "&E"
-msgstr ""
+msgstr "&E"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:197
@@ -58155,20 +58108,20 @@ msgstr ""
 #| msgctxt "@info: xslt param"
 #| msgid "GPS Latitude"
 msgid "Southern Latitude"
-msgstr "GPS latitudea"
+msgstr "Hegoaldeko latitudea"
 
 #. i18n: ectx: property (text), widget (QLabel, southLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:222
-#, kde-format
+#, fuzzy, kde-format
 msgid "&S"
-msgstr ""
+msgstr "S"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:20
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgid "Creating Map"
-msgstr "Sorrera data"
+msgstr "Mapa sortzen"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:534
@@ -58228,16 +58181,16 @@ msgstr ""
 
 #. i18n: ectx: property (format), widget (QProgressBar, progressBar)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
-#, no-c-format, kde-format
+#, fuzzy, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%%p"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
 #, fuzzy, kde-format
 #| msgid "Zoom: "
 msgid "Zoom"
-msgstr "Zooma:"
+msgstr "Zoom"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:37
@@ -58257,7 +58210,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Auto"
 msgid "to"
-msgstr "Automatikoa"
+msgstr "Nori:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:70
@@ -58374,7 +58327,7 @@ msgstr "Proiekzioa"
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
 msgid "Export as..."
-msgstr "Editatu laster-markak"
+msgstr "Esportatu honela"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
@@ -58564,7 +58517,7 @@ msgstr "Gehitu laster-markak..."
 #, fuzzy, kde-format
 #| msgid "<p>Arguments: %1</p>"
 msgid "<p>Copyright %1</p>"
-msgstr "<p>Argumentuak: %1</p>"
+msgstr "Copyright"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
@@ -58793,7 +58746,7 @@ msgstr "Fitxategi-izena"
 #, fuzzy, kde-format
 msgctxt "@title: track list header"
 msgid "#points"
-msgstr "Puntuak"
+msgstr "%1 puntu"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
 #, kde-format
@@ -58813,7 +58766,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
 #, fuzzy, kde-format
 msgid "#Sat: %1"
-msgstr "Lr"
+msgstr "Lar"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
 #, fuzzy, kde-format
@@ -58833,7 +58786,7 @@ msgstr "Data eta ordua"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
 #, fuzzy, kde-format
 msgid "Failed to open file."
-msgstr "Huts egin du fitxategia irekitzea"
+msgstr "Fitxategia irekitzea huts egin du"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
 #, kde-format
@@ -58987,9 +58940,9 @@ msgid "{City district}"
 msgstr "{Hiriko barrutia}"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
-#, kde-format
+#, fuzzy, kde-format
 msgid "{Suburb}"
-msgstr ""
+msgstr "Hiri inguruko auzoa"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
 #, kde-format
@@ -60206,7 +60159,7 @@ msgstr "Irudiaren tamainari buruzko informazioa"
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
-msgstr "Irudia kargatzen..."
+msgstr "Irudia gordetzen"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1109
 #, fuzzy, kde-format
@@ -60266,7 +60219,7 @@ msgstr "Hautapenik ez"
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
-msgstr "Kargatzen: "
+msgstr "Zamatzen..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1522
 #, fuzzy, kde-format
@@ -60300,7 +60253,7 @@ msgstr ""
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
-msgstr "Gordetzea:"
+msgstr "Gordetzen..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, fuzzy, kde-format
@@ -60368,8 +60321,7 @@ msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
-"\"%1\" izeneko fitxategia badago lehendik ere. Ziur zaude gainidatzi nahi "
-"duzula?"
+"«%1» izeneko fitxategi bat existitzen da. Ziur zaude gainidatzi nahi duzula?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2347
 #, fuzzy, kde-format
@@ -60451,7 +60403,7 @@ msgstr "Apaindu"
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
-msgstr "Lausotze-efektuak"
+msgstr "Efektuak"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2619
 #, fuzzy, kde-format
@@ -60531,7 +60483,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
-msgstr "Ez dago profilik erabilgarri"
+msgstr "Fitxategia ez dago erabilgarri"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, fuzzy, kde-format
@@ -60543,7 +60495,7 @@ msgstr "Bilduma hau unean ez dago erabilgarri."
 #, fuzzy, kde-format
 msgctxt "@action Finish editing, close editor, back to main window"
 msgid "Close Editor"
-msgstr "Irudi-editorea"
+msgstr "Itxi editorea"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:36
 #, kde-format
@@ -60603,13 +60555,13 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
-msgstr "Hau baina lehen"
+msgstr "Aurretik"
 
 #: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
-msgstr "Honen ondoren"
+msgstr "Atzetik"
 
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
@@ -60864,7 +60816,7 @@ msgstr "<b>%1</b> fitxategia zama-igotzea huts egin du. Jarraitu nahi duzu?"
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to delete <filename>%1</filename>"
-msgstr "Huts egin du \"%1\" fitxategia deskargatzean."
+msgstr "<filename>%1</filename> ezabatzea huts egin du."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1078
 #, fuzzy, kde-format
@@ -61705,15 +61657,15 @@ msgstr[1] "Ez da elementurik hautatu (%1 elementu)"
 #| msgid "%1 (%2 of %3)"
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
-msgstr "%1 / %2"
+msgstr "%2 / %1"
 
 #: core/utilities/import/main/importui.cpp:2342
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
-msgstr[0] "%2/%1 elementu hautatuta"
-msgstr[1] "%2/%1 elementu hautatuta"
+msgstr[0] "Elementu %1 hautatu da"
+msgstr[1] "%1 elementu hautatu dira"
 
 #: core/utilities/import/main/importui.cpp:2427
 #, fuzzy, kde-kuit-format
@@ -62009,7 +61961,7 @@ msgstr "Dataren formatua:"
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "ISO"
-msgstr "ISOa"
+msgstr "ISO"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:104
 #, fuzzy, kde-format
@@ -62028,7 +61980,7 @@ msgstr "Ezarpen lokalak"
 #| msgid "Custom"
 msgctxt "@item:inlistbox folder date format"
 msgid "Custom"
-msgstr "Pertsonalizatua"
+msgstr "Neurrira"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:112
 #, fuzzy, kde-format
@@ -62189,7 +62141,7 @@ msgstr "Erabilgarri"
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
-msgstr "Beharrezkoa:"
+msgstr "Derrigortu"
 
 #: core/utilities/import/widgets/importcontextmenu.cpp:492
 #, fuzzy, kde-format
@@ -62225,7 +62177,7 @@ msgstr "TIFF fitxategiak"
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Video Files"
-msgstr "Audio-fitxategiak"
+msgstr "Bideo-fitxategiak"
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:98
 #, kde-format
@@ -62343,7 +62295,7 @@ msgstr[1] "%1 elementu argi-mahaian"
 #| msgid "&First"
 msgctxt "@action: go to first item on list"
 msgid "&First"
-msgstr "Aurrenekoa:"
+msgstr "Lehena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:41
 #, fuzzy, kde-format
@@ -62789,11 +62741,20 @@ msgstr ""
 msgid "Auto-tags for: %1\n"
 msgstr "Mode de mesure :"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+msgid "Path: %1\n"
+msgstr "Lr"
+
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "Keywords: %1"
-msgstr "Mots clés"
+msgstr "Gako-hitzak"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
 #, fuzzy, kde-format
@@ -62896,7 +62857,7 @@ msgstr "Miatu albumetan aurpegi bila: %1"
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
-msgstr "\"%1\" albuma"
+msgstr "Albuma: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, fuzzy, kde-format
@@ -62940,7 +62901,7 @@ msgstr "Bilatu bikoiztutakoak"
 #| msgid "Find duplicates"
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "Bilatu bikoiztutakoak"
+msgstr[0] "Bikoiztu elementua"
 msgstr[1] "Bilatu bikoiztutakoak"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
@@ -63040,7 +63001,7 @@ msgstr "Pas de flash"
 #| msgid "No flash"
 msgid "1 face"
 msgid_plural "%1 faces"
-msgstr[0] "Pas de flash"
+msgstr[0] "aurpegia"
 msgstr[1] "Pas de flash"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
@@ -63091,7 +63052,7 @@ msgstr "Eraiki berriro hatz-markak..."
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
 #, fuzzy, kde-format
 msgid "Path: %1"
-msgstr "Lr"
+msgstr "Bide-izena"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
 #, fuzzy, kde-format
@@ -63237,7 +63198,7 @@ msgstr "Miatu albumetan aurpegi bila: %1"
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
 #, fuzzy, kde-format
 msgid "Generate Thumbnails"
-msgstr "Koadro txikiak"
+msgstr "Sortu koadro txikiak"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
 #, fuzzy, kde-format
@@ -63517,7 +63478,7 @@ msgstr "Elementua ongi prozesatu da..."
 #: core/utilities/queuemanager/manager/actiontask.cpp:309
 #, fuzzy, kde-format
 msgid "Failed to create file..."
-msgstr "Huts egin du elementua gordetzean..."
+msgstr "Fitxategia sortzeak huts egin du."
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, fuzzy, kde-format
@@ -63530,7 +63491,7 @@ msgstr "Oinarria"
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
-msgstr "Pertsonalizatua"
+msgstr "Neurrira"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, fuzzy, kde-format
@@ -63625,7 +63586,7 @@ msgstr "Jatorrizkoa"
 #| msgid "Target"
 msgctxt "@title: target item name"
 msgid "Target"
-msgstr "Helburua"
+msgstr "Jomuga"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:432
 #, fuzzy, kde-format
@@ -63995,7 +63956,7 @@ msgstr "Edozer etiketa"
 #| msgid "Any"
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
-msgstr "Edozer"
+msgstr "Edozein"
 
 #: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, fuzzy, kde-format
@@ -64116,7 +64077,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Size of the file"
 msgid "Size of the file in bytes"
-msgstr "Fitxategiaren tamaina"
+msgstr "Fitxategiaren neurria byteetan"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, fuzzy, kde-format
@@ -64146,7 +64107,7 @@ msgstr "Itzuli irudiak gutxienez puntuazio honekin"
 #| msgid "at most"
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
-msgstr "gehienez"
+msgstr "Gehienez"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, fuzzy, kde-format
@@ -64185,7 +64146,7 @@ msgstr "eta"
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgid "Time"
-msgstr "Denbora"
+msgstr "Ordua"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, fuzzy, kde-format
@@ -64321,10 +64282,10 @@ msgstr "Irudia"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:341
 #: core/utilities/searchwindow/searchfields_createfield.cpp:342
 #: core/utilities/searchwindow/searchfields_createfield.cpp:343
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
-msgstr "Bideoa"
+msgstr "%1 [Bideoa]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #, kde-format
@@ -64342,10 +64303,9 @@ msgid "Lens"
 msgstr "Objektiboa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
-#, fuzzy, kde-format
-#| msgid "Type of the media file"
+#, kde-format
 msgid "The type of the lens"
-msgstr "Multimediaren fitxategi mota"
+msgstr "Objektibo mota"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
@@ -64356,7 +64316,7 @@ msgstr "Objektiboaren irekidura f-zenbaki gisa"
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:450
 #, kde-format
@@ -64367,7 +64327,7 @@ msgstr "Objektibo fokuaren luzera"
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:469
 #, kde-format
@@ -64378,13 +64338,13 @@ msgstr "35mm-ri dagokion fokuaren luzera"
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:489
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:509
 #, kde-format
@@ -64405,18 +64365,16 @@ msgstr "ISO filmaren abiadura (eskala lineala, ASA)"
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:556
-#, fuzzy, kde-format
-#| msgid "Flash"
+#, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flasha"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:556
-#, fuzzy, kde-format
-#| msgid "Flash mode"
+#, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Flash-aren modua"
@@ -64451,7 +64409,7 @@ msgstr "Esposizioa zehazteko metodoa"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Subject Distance"
-msgstr "Gaiaren distantzia"
+msgstr "Subjektuaren distantzia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
@@ -64462,7 +64420,7 @@ msgstr "Subjektuaren objektiboarekiko distantzia"
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
@@ -64471,20 +64429,20 @@ msgstr "Makroa, gertuko edo urruneko ikuspegia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:634
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
-#, fuzzy, kde-format
+#, kde-format
 msgid "GPS"
-msgstr "OU:"
+msgstr "GPS"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#, fuzzy, kde-format
+#, kde-format
 msgid "Altitude range"
-msgstr "<b>Altitudea</b>:"
+msgstr "Garaiera barrutia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:635
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, fuzzy, kde-format
@@ -64497,10 +64455,9 @@ msgid "Not Geo-located"
 msgstr "Bilatu bikoiztutakoak"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "Herrialdea:"
+msgstr "Herrialdea"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, fuzzy, kde-format
@@ -64509,10 +64466,9 @@ msgid "Country shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Probintzia:"
+msgstr "Probintzia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
@@ -64539,8 +64495,7 @@ msgid "Sublocation shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Sortzailea"
@@ -64552,11 +64507,10 @@ msgid "Return items created by"
 msgstr "Itzuli irudiak haien iruzkinak honek idatzi baditu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
-msgstr "Irudi-testua"
+msgstr "Epigrafea"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, fuzzy, kde-format
@@ -64582,8 +64536,7 @@ msgid "Return items with the IPTC headline"
 msgstr "Itzuli irudiak honako IPTC goiburuarekin"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titulua"
@@ -64601,10 +64554,9 @@ msgid "Find items that have associated all these words:"
 msgstr "Bilatu irudiak honako hitzak esleituta dituztenak:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgid "Empty Text"
-msgstr "Zakarrontzia"
+msgstr "Testua hutsik"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
@@ -64613,22 +64565,19 @@ msgid "Return items without text in:"
 msgstr "Itzuli irudiak etiketekin"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Sortzailea"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:781
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
-msgstr "Irudi-testua"
+msgstr "Epigrafea"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:782
-#, fuzzy, kde-format
-#| msgid "Author"
+#, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Egilea"
@@ -64641,8 +64590,7 @@ msgid "Headline"
 msgstr "Goiburua"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:784
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titulua"
@@ -64669,7 +64617,7 @@ msgid "Value of (Width * Height) between"
 msgstr "Bilatu irudiak hauen arteko altuerarekin"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:803
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "eta"
@@ -64680,9 +64628,9 @@ msgid "Return video with the frame aspect ratio"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:830
-#, fuzzy, kde-format
+#, kde-format
 msgid "Length of the video"
-msgstr "Multimediaren fitxategiaren altuera"
+msgstr "Bideoaren iraupena"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:831
 #, fuzzy, kde-format
@@ -64716,12 +64664,12 @@ msgstr "eta"
 #, fuzzy, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
-msgstr "f/s"
+msgstr "fps"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, fuzzy, kde-format
 msgid "Codec"
-msgstr "Codec"
+msgstr "Kodeka:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, fuzzy, kde-format
@@ -64745,7 +64693,7 @@ msgstr "eta"
 #, fuzzy, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
-msgstr "%1 b/s"
+msgstr "bps"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:954
 #, fuzzy, kde-format
@@ -64830,13 +64778,13 @@ msgstr "Aurpegi ezagutza"
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, fuzzy, kde-format
 msgid "Day:"
-msgstr "Eguna:"
+msgstr "Eguna"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, fuzzy, kde-format
 #| msgid "Month"
 msgid "Every Month"
-msgstr "Hilabetero"
+msgstr "hilabetero"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, fuzzy, kde-format
@@ -64870,7 +64818,7 @@ msgstr "Berria..."
 #| msgid "&Copy to..."
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Kopiatu hona..."
+msgstr "Kopiatu..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -64896,7 +64844,7 @@ msgstr "Epigrafea, iruzkina, titulua"
 #: core/utilities/searchwindow/searchgroup.cpp:182
 #, fuzzy, kde-format
 msgid "Geographic position"
-msgstr "Argazkiaren banaketa"
+msgstr "Kokapen geografikoa"
 
 #: core/utilities/searchwindow/searchgroup.cpp:205
 #, fuzzy, kde-format
@@ -65289,7 +65237,7 @@ msgstr "Koadro txikietan klik egitearen ekintza:"
 #: core/utilities/setup/album/setupalbumview.cpp:182
 #, fuzzy, kde-format
 msgid "Show Preview"
-msgstr "Erakutsi aurreikuspegia"
+msgstr "Erakutsi aurrebista"
 
 #: core/utilities/setup/album/setupalbumview.cpp:183
 #, fuzzy, kde-format
@@ -65515,26 +65463,26 @@ msgstr ""
 #| msgid "Preview"
 msgctxt "@title:tab"
 msgid "Preview"
-msgstr "Aurrebista"
+msgstr "Aurreikuspegia"
 
 #: core/utilities/setup/album/setupalbumview.cpp:337
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
-msgstr "Irten pantaila osotik"
+msgstr "Pantaila-betea"
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
-msgstr "Hautatu irudiak"
+msgstr "MIME motak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:345
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title:tab"
 msgid "Categories"
-msgstr "Catégories"
+msgstr "Kategoriak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:513
 #, kde-format
@@ -66041,7 +65989,7 @@ msgstr "Titulua"
 #| msgid "Model"
 msgctxt "@title: camera model"
 msgid "Model"
-msgstr "Modeloa"
+msgstr "Eredua"
 
 #: core/utilities/setup/camera/setupcamera.cpp:253
 #, fuzzy, kde-format
@@ -66119,9 +66067,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:387
-#, kde-format
+#, fuzzy, kde-format
 msgid "Always ignore"
-msgstr ""
+msgstr "Ezikusi beti"
 
 #: core/utilities/setup/camera/setupcamera.cpp:388
 #, fuzzy, kde-format
@@ -66199,7 +66147,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:484
 #, fuzzy, kde-format
 msgid "Preview Options"
-msgstr "Karpeta-ikuspegiaren aukerak"
+msgstr "Aurreikusteko aukerak"
 
 #: core/utilities/setup/camera/setupcamera.cpp:487
 #, fuzzy, kde-format
@@ -67940,10 +67888,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Rotation"
-msgstr "Biraketa:"
+msgstr "Biraketa"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:33
 #, fuzzy, kde-format
@@ -68355,7 +68303,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:302
 #, kde-format
 msgid "Perform the following operations on all group members:"
-msgstr ""
+msgstr "Ondoko eragiketak taldeko partaide guztietan gauzatu:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:303
 #, kde-format
@@ -68401,16 +68349,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Erabili DPI bereizmen altuko pixel-mapak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Force use of software OpenGL rendering"
+#, kde-format
 msgid "Use the software OpenGL for rendering"
-msgstr "Behartu software OpenGL errendatzea erabiltzea"
+msgstr "Software OpenGL errendatzeko erabili"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Ezgaitu hardware azelerazio OpenCL"
+msgstr "OpenCL hardware azelerazio erabili"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
@@ -68418,23 +68364,23 @@ msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Aukera hau esperimentala da eta ingurune aldagai jakin batzuk eskuz ezartzea "
+"beharrezkoa da."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Ezgaitu hardware azelerazio OpenCL"
+msgstr "Bideo hardware azelerazio erabili"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid "Use the video textures conversion"
-msgstr ""
+msgstr "Bideo ehundura bihurketa erabili"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Bideoarekin erabilitako deskodetzeko bizkarraldekoa:"
+msgstr "Bideoak errendatzeko deskodetzeko bizkarraldekoa:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
@@ -68442,34 +68388,29 @@ msgid "FFmpeg (Default)"
 msgstr "FFmpeg (Lehenetsia)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Same as system"
+#, kde-format
 msgid "GStreamer (System)"
-msgstr "Sistemakoaren berdina"
+msgstr "GStreamer (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Windows (Sistemarena)"
+msgstr "WMF (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Windows (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Windows (Sistemarena)"
+msgstr "AVFoundation (Sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Download required binary data..."
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Beharrezko datu bitarrak zama-jaitsi..."
+msgstr "Beharrezko datu bitarrak zama-jaitsi:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Zama-jaisteko elkarrizketa-koadroa irekitzen..."
+msgstr "Zama-jaisteko elkarrizketa-koadroa ireki..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
@@ -69670,6 +69611,11 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "Scan for faces in album: %1"
+#~ msgid "Scanned for objects: %1\n"
+#~ msgstr "Miatu albumetan aurpegi bila: %1"
 
 #, fuzzy
 #~| msgctxt "camera model"

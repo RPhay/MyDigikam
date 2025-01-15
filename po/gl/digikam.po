@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 01:54+0000\n"
-"PO-Revision-Date: 2025-01-12 16:54+0100\n"
+"POT-Creation-Date: 2025-01-15 01:52+0000\n"
+"PO-Revision-Date: 2025-01-15 00:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1166,7 +1166,7 @@ msgid "Aperture/Focal:"
 msgstr "Abertura/Focal:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -2857,7 +2857,7 @@ msgstr "Rama de Git: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2865,7 +2865,7 @@ msgstr "Atrás"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -21236,7 +21236,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Vista previa da pista de son"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:93
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -21245,42 +21245,42 @@ msgstr ""
 "De seleccionarse, a banda sonora do álbum actual gárdase e restáurase "
 "automaticamente no seguinte inicio."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Suba a pista seleccionada na lista de reprodución."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Baixe a pista seleccionada na lista de reprodución."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Engadir pistas novas á lista reprodución."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Eliminar a pista seleccionada da lista de reprodución."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Cargar unha lista de reprodución dun ficheiro."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Gardar a lista de reprodución nun ficheiro."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Limpar a lista de reprodución."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:253
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -21288,7 +21288,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "1 pista [%2]"
 msgstr[1] "%1 pistas [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:281
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -21296,47 +21296,47 @@ msgstr ""
 "A duración da presentación é maior que a da banda sonora. Suxestión: engadir "
 "máis ficheiros de son."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:351
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Seleccionar ficheiros de son"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Só se pode subir un ficheiro de imaxe de cada vez."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:457
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Só se pode baixar un ficheiro de cada vez."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:478
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Cargar unha lista de reprodución"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:479
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Lista de reprodución (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Gardar a lista de reprodución"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:598
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 "Non é posíbel acceder ao ficheiro «%1». Comprobe que a ruta é correcta."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:608
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr ""
@@ -21807,77 +21807,77 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Avanzada"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Ningún"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Dobrar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Fusionar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Cubo"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Esvaer"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Axitación"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Dentro-fóra"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Rotar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Deslizar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:539
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:993
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Aleatorio"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Completouse a presentación"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Prema para saír…"
@@ -21960,73 +21960,73 @@ msgstr "Eliminar a imaxe"
 msgid "Do you want to move this image to the trash?"
 msgstr "Quere botar a imaxe no lixo?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Taboleiro de xadrez"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Derreter"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Varrer"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Mosaico"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, kde-format
 msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Cubismo"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Crecente"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Liñas horizontais"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:988
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Liñas verticais"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:989
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Círculo crecente"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:990
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Círculo múltiplo crecente"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:991
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Espiral cara dentro"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:992
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
@@ -39510,19 +39510,16 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Elemento escaneado en busca de obxectos: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#, kde-format
-msgid "Scanned for objects: %1\n"
-msgstr "Buscáronse obxectos: %1\n"
+#, fuzzy, kde-format
+#| msgid "Album: %1"
+msgid "Album: %1\n"
+msgstr "Álbum: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:251
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Ruta: %1\n"
+#, fuzzy, kde-format
+#| msgid "Scanning from: %1\n"
+msgid "Scanning: %1\n"
+msgstr "Escaneamento desde: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
@@ -42024,92 +42021,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "Produciuse un erro ao reproducir: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Deter ou reproducir"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Capturar"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Produciuse un erro co reprodutor multimedia…"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Conmutar a reprodución en bucle"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Atrasar un fotograma"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Adiantar un fotograma"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Cambiar a velocidade de reprodución do vídeo."
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "½"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1½"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2½"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -52275,27 +52272,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmando a cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
 #, kde-format
 msgid "Removing face"
 msgstr "Retirando a cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
 #, kde-format
 msgid "Editing face tag"
 msgstr "Editando a etiqueta facial"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
 #, kde-format
 msgid "Editing face region"
 msgstr "Editando a rexión facial"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
 #, kde-format
 msgid "Manually adding face"
 msgstr "Engadindo a cara manualmente"
@@ -61406,6 +61403,15 @@ msgstr ""
 msgid "Auto-tags for: %1\n"
 msgstr "Etiquetas automáticas para: %1\n"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, kde-format
+msgid "Path: %1\n"
+msgstr "Ruta: %1\n"
+
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, kde-format
 msgid "Keywords: %1"
@@ -61659,17 +61665,16 @@ msgid "Face found: %1"
 msgstr "Cara atopada: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "No faces found in %1"
-msgstr "Imaxes atopadas en %1"
+msgstr "Non se atoparon caras en %1."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Atopouse 1 cara en "
+msgstr[1] "Atopáronse %1 caras en "
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -68277,6 +68282,9 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgid "Scanned for objects: %1\n"
+#~ msgstr "Buscáronse obxectos: %1\n"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""
