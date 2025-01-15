@@ -53,7 +53,7 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
     int cx = cvImage.cols/2;
     int cy = cvImage.rows/2;
 
-    // Convert the iage to a flat float
+    // Convert the image to a flat float
 
     cv::Mat fImage;
     cvImage.convertTo(fImage, CV_32F);
@@ -131,7 +131,7 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
     cv::log(invFFT,logFFT);
     logFFT *= 20;
 
-    cv::Scalar result= cv::mean(logFFT);
+    cv::Scalar result = cv::mean(logFFT);
 
     return result.val[0];
     
