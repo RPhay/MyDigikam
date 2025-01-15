@@ -149,6 +149,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                         profileDataAvailable   = true;
     bool                         loadingImageMode       = false;
     bool                         loadingImageSucess     = false;
@@ -236,7 +238,8 @@ bool CIETongueWidget::setProfileData(const QByteArray& profileData)
     if (!profileData.isEmpty())
     {
         LcmsLock lock;
-        cmsHPROFILE hProfile = dkCmsOpenProfileFromMem((void*)profileData.data(), (DWORD)profileData.size());
+        cmsHPROFILE hProfile = dkCmsOpenProfileFromMem(reinterpret_cast<void*>(const_cast<char*>(profileData.data())),
+                                                       (DWORD)profileData.size());
 
         if (!hProfile)
         {
