@@ -179,10 +179,10 @@ public:
 private:
 
     /**
-     * @brief Disabled. Use treeView() method instead.
+     * @brief Disabled TreeViewComboBox::view(). Use treeView() method instead.
      * @see treeView().
      */
-    QAbstractItemView* view() const;
+    QTreeView* view() const = delete;
 };
 
 // ------------------------------------------------------------------------------------
@@ -204,10 +204,10 @@ public:
 private:
 
     /**
-     * @brief Disabled. Use treeView() method instead.
+     * @brief Disabled TreeViewComboBox::view(). Use treeView() method instead.
      * @see treeView().
      */
-    QAbstractItemView* view() const;
+    QTreeView* view() const = delete;
 };
 
 } // namespace Digikam
