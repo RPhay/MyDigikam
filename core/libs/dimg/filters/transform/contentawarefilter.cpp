@@ -223,7 +223,7 @@ void ContentAwareFilter::getEnergyImage()
 
     int w        = lqr_carver_get_width(d->carver);
     int h        = lqr_carver_get_height(d->carver);
-    guchar* buff = (guchar*) malloc(w * h * 3 * sizeof(guchar));
+    guchar* buff = reinterpret_cast<guchar*>(malloc(w * h * 3 * sizeof(guchar)));
 
     lqr_carver_get_energy_image(d->carver, buff, 1, LQR_COLDEPTH_8I, LQR_RGBA_IMAGE);
 }
@@ -268,17 +268,17 @@ void ContentAwareFilter::filterImage()
 
     if (m_orgImage.sixteenBit())
     {
-        while (runningFlag() && lqr_carver_scan_ext(d->carver, (gint*)&x, (gint*)&y, &rgb))
+        while (runningFlag() && lqr_carver_scan_ext(d->carver, reinterpret_cast<gint*>(&x), reinterpret_cast<gint*>(&y), &rgb))
         {
-            rgbOut16 = (unsigned short*)rgb;
+            rgbOut16 = reinterpret_cast<unsigned short*>(rgb);
             m_destImage.setPixelColor(x, y, DColor(rgbOut16[2], rgbOut16[1], rgbOut16[0], 65535, true));
         }
     }
     else
     {
-        while (runningFlag() && lqr_carver_scan_ext(d->carver, (gint*)&x, (gint*)&y, &rgb))
+        while (runningFlag() && lqr_carver_scan_ext(d->carver, reinterpret_cast<gint*>(&x), reinterpret_cast<gint*>(&y), &rgb))
         {
-            rgbOut8 = (uchar*)rgb;
+            rgbOut8 = reinterpret_cast<uchar*>(rgb);
             m_destImage.setPixelColor(x, y, DColor(rgbOut8[2], rgbOut8[1], rgbOut8[0], 255, false));
         }
     }
