@@ -59,6 +59,8 @@ public:
         widget = nullptr;
     }
 
+public:
+
     QString           name;
     QString           header;
     QIcon             icon;
@@ -289,7 +291,7 @@ void PageItem::dump(int indent)
 
     const QString name = (mPageWidgetItem ? mPageWidgetItem->name() : QLatin1String("root"));
     qCDebug(DIGIKAM_GENERAL_LOG) << QString::asprintf("%s (%p)", qPrintable(QString(QString::fromLatin1("%1%2")).arg(prefix, name)),
-                                                                 (void*)this);
+                                                                 reinterpret_cast<void*>(this));
 
     for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
@@ -680,7 +682,7 @@ QModelIndex DConfigDlgWdgModel::index(const DConfigDlgWdgItem* item) const
         return QModelIndex();
     }
 
-    return createIndex(pageItem->row(), 0, (void*)pageItem);
+    return createIndex(pageItem->row(), 0, reinterpret_cast<const void*>(pageItem));
 }
 
 } // namespace Digikam

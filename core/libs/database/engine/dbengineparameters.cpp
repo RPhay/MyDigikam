@@ -336,10 +336,10 @@ QByteArray DbEngineParameters::hash() const
     md5.addData(databaseNameSimilarity.toUtf8());
     md5.addData(connectOptions.toUtf8());
     md5.addData(hostName.toUtf8());
-    md5.addData((const char*)&port, sizeof(int));
+    md5.addData(reinterpret_cast<const char*>(&port), sizeof(int));
     md5.addData(userName.toUtf8());
     md5.addData(password.toUtf8());
-    md5.addData((const char*)&internalServer, sizeof(bool));
+    md5.addData(reinterpret_cast<const char*>(&internalServer), sizeof(bool));
     md5.addData(internalServerDBPath.toUtf8());
 
     return md5.result().toHex();

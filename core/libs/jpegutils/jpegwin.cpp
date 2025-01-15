@@ -71,13 +71,12 @@ void jpeg_memory_src (j_decompress_ptr cinfo, const JOCTET* buffer, size_t bufsi
 
     if (cinfo->src == NULL)
     {
-        // cppcheck-suppress cstyleCast
         cinfo->src = (struct jpeg_source_mgr*) (*cinfo->mem->alloc_small) ((j_common_ptr) cinfo,
                         JPOOL_PERMANENT,
                         sizeof(digikam_source_mgr));
     }
 
-    src                        = (digikam_source_mgr*) cinfo->src;
+    src                        = reinterpret_cast<digikam_source_mgr*>(cinfo->src);
     src->pub.init_source       = init_source;
     src->pub.fill_input_buffer = fill_input_buffer;
     src->pub.skip_input_data   = skip_input_data;
