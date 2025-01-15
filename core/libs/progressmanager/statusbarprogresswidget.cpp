@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     uint            mode            = None;
     bool            bShowButton     = true;
 
@@ -381,7 +383,7 @@ bool StatusbarProgressWidget::eventFilter(QObject*, QEvent* ev)
 {
     if (ev->type() == QEvent::MouseButtonPress)
     {
-        QMouseEvent* const e = (QMouseEvent*)ev;
+        QMouseEvent* const e = dynamic_cast<QMouseEvent*>(ev);
 
         if ((e->button() == Qt::LeftButton) && (d->mode != Private::None))
         {

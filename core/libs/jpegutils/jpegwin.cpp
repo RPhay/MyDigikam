@@ -32,7 +32,7 @@ void init_source (j_decompress_ptr /*cinfo*/)
 
 boolean fill_input_buffer (j_decompress_ptr cinfo)
 {
-    digikam_source_mgr* const src  = (digikam_source_mgr*) cinfo->src;
+    digikam_source_mgr* const src  = reinterpret_cast<digikam_source_mgr*>(cinfo->src);
 
     // Create a fake EOI marker
 
@@ -46,7 +46,7 @@ boolean fill_input_buffer (j_decompress_ptr cinfo)
 
 void skip_input_data (j_decompress_ptr cinfo, long nbytes)
 {
-    digikam_source_mgr* const src = (digikam_source_mgr*) cinfo->src;
+    digikam_source_mgr* const src = reinterpret_cast<digikam_source_mgr*>(cinfo->src);
 
     if (nbytes > 0)
     {
@@ -71,6 +71,7 @@ void jpeg_memory_src (j_decompress_ptr cinfo, const JOCTET* buffer, size_t bufsi
 
     if (cinfo->src == NULL)
     {
+        // cppcheck-suppress cstyleCast
         cinfo->src = (struct jpeg_source_mgr*) (*cinfo->mem->alloc_small) ((j_common_ptr) cinfo,
                         JPOOL_PERMANENT,
                         sizeof(digikam_source_mgr));
