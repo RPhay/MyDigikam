@@ -114,7 +114,7 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
         image.write(pixelBlob, "BGRA", 8);
         qCDebug(DIGIKAM_TESTS_LOG) << "IM blob size    :" << pixelBlob->length();
 
-        qimg = QImage((uchar*)pixelBlob->data(), image.columns(), image.rows(), QImage::Format_ARGB32);
+        qimg = QImage(reinterpret_cast<const unsigned char*>(pixelBlob->data()), image.columns(), image.rows(), QImage::Format_ARGB32);
         qCDebug(DIGIKAM_TESTS_LOG) << "QImage data size:" << qimg.sizeInBytes();
 
         if (qimg.isNull())
@@ -165,9 +165,13 @@ int main(int argc, char** argv)
             else              mode.append(QLatin1Char('-'));
 
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
+
             QString mod  = QLatin1String(inf->magick_module);
+
 #else
+
             QString mod  = QLatin1String(inf->module);
+
 #endif
 
             QString mime = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
