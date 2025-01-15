@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-14 01:54+0000\n"
+"POT-Creation-Date: 2025-01-15 01:52+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1256,7 +1256,7 @@ msgid "Aperture/Focal:"
 msgstr "Blenda/Fokus:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -3153,7 +3153,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -3161,7 +3161,7 @@ msgstr "Nazad"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -22415,7 +22415,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Otvori predpregled"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:93
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -22424,49 +22424,49 @@ msgstr ""
 "Ukoliko je postavljeno, soundtrack za tekući album će biti spremljen i "
 "obnovljena automatski na sljedećem pokretanju."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track up in the playlist."
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Move the selected track down in the playlist."
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "Dodaj novu vrijednost na listu"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Replace the current selected value from the list"
 msgid "Delete the selected track from the playlist."
 msgstr "Zamijeni trenutno odabranu vrijednost sa liste"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Učitaj listu izvođenja iz datoteke."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Save in file"
 msgid "Save playlist to a file."
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Clear the playlist."
 msgstr "Očisti listu"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:253
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -22475,7 +22475,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:281
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -22483,38 +22483,38 @@ msgstr ""
 "Vrijeme slajda je veće nego vrijeme zvučnog zapisa. Prijedlog: dodati više "
 "zvučnih datoteka."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:351
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Bez izbora"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Možete samo premjestiti datoteke slika gore jednu po jednu."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:457
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Možete samo premjestiti datoteke slika dolje jednu po jednu."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:478
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Učitaj listu pjesama"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:479
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
 #, fuzzy, kde-format
 #| msgid "*.m3u|Playlist (*.m3u)"
 msgid "Playlist (*.m3u)"
 msgstr "*.m3u|Playlist (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:537
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -22522,13 +22522,13 @@ msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Snimi izmjene"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:598
 #, fuzzy, kde-format
 #| msgid "Cannot access file %1. Please check the path is correct."
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "Ne mogu pristupiti datoteci %1. Provjerite da li je staza ispravna."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:608
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Ne mogu kreirati pregled na praznom popisu datoteka."
@@ -23042,81 +23042,81 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Bez"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Savijanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Stapanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Kocka"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Nestajanje"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Viti"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Unutra - Vani"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Rotiraj"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Slajd-šou"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:539
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:993
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Slučajni"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgid "Slideshow Completed"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
@@ -23204,32 +23204,32 @@ msgstr "Izbriši oznaku"
 msgid "Do you want to move this image to the trash?"
 msgstr "Da li stvarno želite ukloniti izabranu oznaku sa svih slika?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Šahovska tabla"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Pomjeri dolje"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Počisti"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, fuzzy, kde-format
 #| msgid "Mosaic"
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Mozaik"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -23237,45 +23237,45 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Kubni"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Rastući"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Horizontalno"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:988
 #, fuzzy, kde-format
 #| msgid "Vertically first"
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Prvo vertikalno"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:989
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Izlazeći krugovi"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:990
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Višestruki izlazeći krugovi"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:991
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Ulazna spirala"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:992
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
@@ -41730,21 +41730,16 @@ msgstr "Traži u:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Scanned for objects: %1\n"
-msgstr "Traži u:"
+#| msgid "Album \"%1\""
+msgid "Album: %1\n"
+msgstr "Album \"%1\""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:251
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Sat: %1"
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Scanning: %1\n"
+msgstr "Traži u:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
@@ -44439,14 +44434,14 @@ msgstr ""
 "%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -44455,80 +44450,80 @@ msgid "Capture"
 msgstr "Dohvati"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Desila se greška sa media player-om...."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:389
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Naprijed"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -56056,30 +56051,30 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Odustani"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "Korelacija:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "Ukloni odabranu oznaku"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Ažuriranje lica baze podataka."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Ukloni ovu oznaku"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"
@@ -65833,6 +65828,16 @@ msgstr ""
 msgid "Auto-tags for: %1\n"
 msgstr "Način mjerenja:"
 
+#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Sat: %1"
+
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
 #, fuzzy, kde-format
 #| msgid "Keywords"
@@ -73203,6 +73208,12 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Scanned for objects: %1\n"
+#~ msgstr "Traži u:"
 
 #, fuzzy
 #~| msgid "Clean all and re-scan"
