@@ -157,7 +157,8 @@ bool FacePipelineRetrain::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"),
                                         MLPipelineStage::Extractor,
-                                        MLPipelineStage::Writer);
+                                        MLPipelineStage::Writer,
+                                        true);
 }
 
 bool FacePipelineRetrain::classifier()
@@ -206,8 +207,15 @@ bool FacePipelineRetrain::writer()
 
             if (0 != package->features.rows)
             {
-                Identity identity = utils.identityForTag(package->face.tagId());
-                idProvider->addTraining(identity, package->face.hash(), package->features);
+                if (package->useForTraining)
+                {
+                    Identity identity = utils.identityForTag(package->face.tagId());
+                    idProvider->addTraining(identity, package->face.hash(), package->features);
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
+                }
             }
             else
             {

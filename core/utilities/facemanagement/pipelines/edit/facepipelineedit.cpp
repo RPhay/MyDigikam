@@ -209,7 +209,8 @@ bool FacePipelineEdit::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"),
                                         MLPipelineStage::Extractor,
-                                        MLPipelineStage::Writer);
+                                        MLPipelineStage::Writer,
+                                        true);
 }
 
 bool FacePipelineEdit::writer()
@@ -257,7 +258,14 @@ bool FacePipelineEdit::writer()
 
                     if (0 != package->features.rows)
                     {
-                        idProvider->addTraining(identity, confirmedFace.hash(), package->features);
+                        if (package->useForTraining)
+                        {
+                            idProvider->addTraining(identity, confirmedFace.hash(), package->features);
+                        }
+                        else
+                        {
+                            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
+                        }
                     }
                     else
                     {

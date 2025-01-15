@@ -74,11 +74,12 @@ public:
     DImg                    image;
     QList<QRectF>           faceRects;
     cv::Mat                 features;
-    int                     label       = -1;
-    int                     tagId       = -1;
+    int                     label           = -1;
+    int                     tagId           = -1;
     TagRegion               region;
-    EditPipelineAction      action      = EditPipelineAction::Confirm;
-    bool                    retrain     = false;
+    EditPipelineAction      action          = EditPipelineAction::Confirm;
+    bool                    useForTraining  = false;
+    bool                    retrain         = false;
     QList<cv::Mat>          featuresList;
     QList<int>              labelList;
     QList<FaceTagsIface>    faceList;

@@ -33,7 +33,8 @@
 namespace Digikam
 {
 
-MLPipelineFoundation::MLPipelineFoundation()
+MLPipelineFoundation::MLPipelineFoundation() :
+                      QObject()
 {
     threadPool      = new QThreadPool(this);
     threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount()*2));
@@ -504,7 +505,7 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority,
     {
         thisQueue = queues.value(thisStage);
 
-        // no throttle on loader queue since it's only IDs
+        // no throttle on loader queue since it's only IDs and doesn't take up much memory
         // otherwise throttle to the ideal thread count
 
         if (MLPipelineStage::Loader != thisStage)
@@ -644,11 +645,12 @@ void MLPipelineFoundation::showPipelinePerformance() const
 
         if (profile.itemCount > 0)
         {
-            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Stage:" << stage << " Items:" << profile.itemCount
-                                                      << " Max Queue:" << profile.maxQueueCount
-                                                      << " Elapsed:" << profile.elapsedTime
+            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Stage:" << stage << " Items Processed:" << profile.itemCount
+                                                      << " Max Thread Count:" << profile.maxThreadCount
+                                                      << " Max Queue Depth:" << profile.maxQueueCount
+                                                      << " Total Elapsed:" << profile.elapsedTime
                                                       << " Max Elapsed:" << profile.maxElapsedTime
-                                                      << " Average:" << profile.elapsedTime / profile.itemCount;
+                                                      << " Avg Elapsed:" << profile.elapsedTime / profile.itemCount;
         }
     }
 }

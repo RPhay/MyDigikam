@@ -30,6 +30,7 @@
 
 #include "mlpipelinefoundation.h"
 #include "facescansettings.h"
+#include "dnnmodelbase.h"
 
 namespace Digikam
 {
@@ -79,10 +80,15 @@ public:
     virtual ~FacePipelineBase();
 
 protected:
+    DNNModelBase*       faceDetector        = nullptr;
+    float               blurThreshold       = 4.87f;
+    float               minThumbnailSize    = 0.33f;
 
-    FaceScanSettings settings;
+    FaceScanSettings    settings;
 
 protected:
+    double isBlurryFFT(const cv::Mat& cvImage);
+    bool useForTraining(const cv::Rect origSize, const cv::Mat& image);
 
     bool commonFaceThumbnailLoader(const QString& pipelineName,
                                    MLPipelineFoundation::MLPipelineStage thisStage,
@@ -90,14 +96,17 @@ protected:
 
     bool commonFaceThumbnailExtractor(const QString& pipelineName,
                                       MLPipelineFoundation::MLPipelineStage thisStage,
-                                      MLPipelineFoundation::MLPipelineStage nextStage);
+                                      MLPipelineFoundation::MLPipelineStage nextStage,
+                                      bool trainingQualityCheck = false);
 
     // queue helper functions
+
     bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
 
 private:
 
     // Disable
+
     FacePipelineBase()                                   = delete;
     FacePipelineBase(QObject* const)                     = delete;
     FacePipelineBase(const FacePipelineBase&)            = delete;

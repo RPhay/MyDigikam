@@ -29,6 +29,7 @@
 #include "facepipelinepackagebase.h"
 #include "thumbnailloadthread.h"
 #include "dnnsfaceextractor.h"
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -41,6 +42,141 @@ FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings)
 
 FacePipelineBase::~FacePipelineBase()
 {
+}
+
+#define BLOCK 20
+
+double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
+{
+    // Use a Fast Fourier Transform to detect blurriness
+
+    int cx = cvImage.cols/2;
+    int cy = cvImage.rows/2;
+
+    // Convert the iage to a flat float
+
+    cv::Mat fImage;
+    cvImage.convertTo(fImage, CV_32F);
+
+    // FFT
+
+    cv::Mat fourierTransform;
+    cv::dft(fImage, fourierTransform, cv::DFT_SCALE | cv::DFT_COMPLEX_OUTPUT);
+
+    // center low frequencies in the middle
+    // by shuffling the quadrants.
+
+    cv::Mat q0(fourierTransform, cv::Rect(0, 0, cx, cy));       // Top-Left - Create a ROI per quadrant
+    cv::Mat q1(fourierTransform, cv::Rect(cx, 0, cx, cy));      // Top-Right
+    cv::Mat q2(fourierTransform, cv::Rect(0, cy, cx, cy));      // Bottom-Left
+    cv::Mat q3(fourierTransform, cv::Rect(cx, cy, cx, cy));     // Bottom-Right
+
+    // swap quadrants (Top-Left with Bottom-Right)
+
+    cv::Mat tmp;
+    q0.copyTo(tmp);
+    q3.copyTo(q0);
+    tmp.copyTo(q3);
+
+    // swap quadrant (Top-Right with Bottom-Left)
+
+    q1.copyTo(tmp);
+    q2.copyTo(q1);
+    tmp.copyTo(q2);
+
+    // Block the low frequencies
+    // #define BLOCK could also be a argument on the command line of course
+
+    fourierTransform(cv::Rect(cx-BLOCK,cy-BLOCK,2*BLOCK,2*BLOCK)).setTo(0);
+
+    //shuffle the quadrants to their original position
+
+    cv::Mat orgFFT;
+    fourierTransform.copyTo(orgFFT);
+    cv::Mat p0(orgFFT, cv::Rect(0, 0, cx, cy));       // Top-Left - Create a ROI per quadrant
+    cv::Mat p1(orgFFT, cv::Rect(cx, 0, cx, cy));      // Top-Right
+    cv::Mat p2(orgFFT, cv::Rect(0, cy, cx, cy));      // Bottom-Left
+    cv::Mat p3(orgFFT, cv::Rect(cx, cy, cx, cy));     // Bottom-Right
+
+    // swap quadrant (Top-Left with Bottom-Right)
+
+    p0.copyTo(tmp);
+    p3.copyTo(p0);
+    tmp.copyTo(p3);
+
+    // swap quadrant (Top-Right with Bottom-Left)
+
+    p1.copyTo(tmp);
+    p2.copyTo(p1);
+    tmp.copyTo(p2);
+
+    // IFFT
+
+    cv::Mat invFFT;
+    cv::Mat logFFT;
+    double minVal,maxVal;
+
+    cv::dft(orgFFT, invFFT, cv::DFT_INVERSE | cv::DFT_REAL_OUTPUT);
+
+    invFFT = cv::abs(invFFT);
+    cv::minMaxLoc(invFFT,&minVal,&maxVal,NULL,NULL);
+    
+    //check for impossible values
+
+    if(maxVal <= 0.0)
+    {
+        return 1;
+    }
+
+    cv::log(invFFT,logFFT);
+    logFFT *= 20;
+
+    cv::Scalar result= cv::mean(logFFT);
+
+    return result.val[0];
+    
+}
+
+bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& image)
+{
+    if (!faceDetector)
+    {
+        faceDetector = DNNModelManager::instance()->getModel(QStringLiteral("yunet"), DNNModelUsage::DNNUsageFaceDetection);        
+    }
+
+    // thumbnail must be at least minThumbnailSize of the size the detector expects
+
+    if (faceDetector->info.imageSize * minThumbnailSize > origSize.width ||
+        faceDetector->info.imageSize * minThumbnailSize > origSize.height)
+    {
+        return false;
+    }
+
+    // use a laplacian filter to check for blurred images
+
+    cv::Mat gray;
+    cv::cvtColor(image, gray, cv::COLOR_RGB2GRAY);
+    // cv::Mat laplacian;
+    // cv::Laplacian(gray, laplacian, CV_64F);
+
+    // // Compute the mean and standard deviation of the laplacian filter
+
+    // cv::Scalar mean, stddev;
+    // cv::meanStdDev(laplacian, mean, stddev, cv::Mat());
+
+    // Compute the variance
+
+    // double variance = stddev.val[0] * stddev.val[0];
+    double variance2 = isBlurryFFT(gray);
+
+    // If the variance is less than the threshold, the image is considered blurred
+
+    if (variance2 < blurThreshold)
+    {
+        return false;
+    }
+
+    return true;
 }
 
 bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
@@ -153,7 +289,8 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
 bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                                                     MLPipelineStage thisStage,
-                                                    MLPipelineStage nextStage)
+                                                    MLPipelineStage nextStage,
+                                                    bool trainingQualityCheck)
 {
     // All threads start with the same basic functions
 
@@ -185,7 +322,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
-
+            
             cv::UMat cvUImage;
 
             QImage inputImage(package->thumbnail.copy());
@@ -204,6 +341,12 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             // extract the face features
 
             package->features = extractor.getFaceEmbedding(cvUImage);
+            cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
+
+            if (trainingQualityCheck)
+            {
+                package->useForTraining = useForTraining(origSize, cvUImage.getMat(cv::ACCESS_FAST));
+            }
 
             enqueue(nextQueue, package);
 
