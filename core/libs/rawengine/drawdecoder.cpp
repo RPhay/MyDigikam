@@ -113,7 +113,7 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QBuffer& buffer
 {
     LibRaw* const raw   = new LibRaw;
     QByteArray inData   = buffer.data();
-    int ret             = raw->open_buffer((void*) inData.data(), (size_t) inData.size());
+    int ret             = raw->open_buffer(reinterpret_cast<void*>(inData.data()), (size_t)(inData.size()));
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -230,7 +230,7 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer)
 {
     LibRaw* const raw   = new LibRaw;
     QByteArray inData   = inBuffer.data();
-    int ret             = raw->open_buffer((void*) inData.data(), (size_t) inData.size());
+    int ret             = raw->open_buffer(reinterpret_cast<void*>(inData.data()), (size_t)(inData.size()));
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -286,7 +286,7 @@ bool DRawDecoder::loadFullImage(QImage& image,
         return false;
     }
 
-    uchar* sptr             = (uchar*)imgData.data();
+    uchar* sptr             = reinterpret_cast<unsigned char*>(imgData.data());
     uchar tmp8[2];
 
     // Set RGB color components.
@@ -304,7 +304,7 @@ bool DRawDecoder::loadFullImage(QImage& image,
 
     image      = QImage(width, height, QImage::Format_ARGB32);
     uint* dptr = reinterpret_cast<uint*>(image.bits());
-    sptr       = (uchar*)imgData.data();
+    sptr       = reinterpret_cast<unsigned char*>(imgData.data());
 
     for (int i = 0 ; i < (width * height) ; ++i)
     {
