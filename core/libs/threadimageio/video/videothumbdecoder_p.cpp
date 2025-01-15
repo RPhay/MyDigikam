@@ -292,7 +292,7 @@ bool VideoThumbDecoder::Private::processFilterGraph(AVFrame* const dst,
         return false;
     }
 
-    av_image_copy(dst->data, dst->linesize, (const uint8_t**)filterFrame->data, filterFrame->linesize, pixfmt, width, height);
+    av_image_copy(dst->data, dst->linesize, reinterpret_cast<uint8_t**>(filterFrame->data), filterFrame->linesize, pixfmt, width, height);
     av_frame_unref(filterFrame);
 
     return true;

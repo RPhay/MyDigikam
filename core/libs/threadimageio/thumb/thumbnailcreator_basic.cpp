@@ -210,9 +210,14 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
 
     png_init_io(png_ptr, f);
     png_read_info(png_ptr, info_ptr);
-    png_get_IHDR(png_ptr, info_ptr, (png_uint_32*) (&w32),
-                 (png_uint_32*) (&h32), &bit_depth, &color_type,
-                 &interlace_type, nullptr, nullptr);
+    png_get_IHDR(png_ptr, info_ptr,
+                 reinterpret_cast<png_uint_32*>(&w32),
+                 reinterpret_cast<png_uint_32*>(&h32),
+                 &bit_depth,
+                 &color_type,
+                 &interlace_type,
+                 nullptr,
+                 nullptr);
 
     bool  has_grey = 0;
     w              = w32;
@@ -285,7 +290,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
         png_set_expand(png_ptr);
     }
 
-    lines = (unsigned char**)malloc(h * sizeof(unsigned char*));
+    lines = reinterpret_cast<unsigned char**>(malloc(h * sizeof(unsigned char*)));
 
     if (!lines)
     {
@@ -317,7 +322,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
 
     for (i = 0 ; i < h ; ++i)
     {
-        lines[i] = ((unsigned char*)(qimage.bits())) + (i * w * sizeOfUint);
+        lines[i] = (reinterpret_cast<unsigned char*>(qimage.bits())) + (i * w * sizeOfUint);
     }
 
     png_read_image(png_ptr, lines);
