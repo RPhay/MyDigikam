@@ -367,11 +367,11 @@ DFontProperties::DFontProperties(QWidget* const parent,
 
     if (flags & ShowDifferences)
     {
-        ((QWidget *)d->styleCheckbox)->setWhatsThis(fontFamilyWhatsThisText);
+        (static_cast<QWidget*>(d->styleCheckbox))->setWhatsThis(fontFamilyWhatsThisText);
     }
     else
     {
-        ((QWidget *)d->styleLabel)->setWhatsThis(fontFamilyWhatsThisText);
+        (static_cast<QWidget*>(d->styleLabel))->setWhatsThis(fontFamilyWhatsThisText);
     }
 
     // Populate usual styles, to determine minimum list width;
@@ -433,11 +433,11 @@ DFontProperties::DFontProperties(QWidget* const parent,
 
     if (flags & ShowDifferences)
     {
-        ((QWidget*)d->sizeCheckbox)->setWhatsThis(fontSizeWhatsThisText);
+        (static_cast<QWidget*>(d->sizeCheckbox))->setWhatsThis(fontSizeWhatsThisText);
     }
     else
     {
-        ((QWidget*)d->sizeLabel)->setWhatsThis(fontSizeWhatsThisText);
+        (static_cast<QWidget*>(d->sizeLabel))->setWhatsThis(fontSizeWhatsThisText);
     }
 
     // Populate with usual sizes, to determine minimum list width;
