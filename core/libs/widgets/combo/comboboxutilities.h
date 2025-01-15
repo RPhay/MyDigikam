@@ -215,7 +215,7 @@ public:
     /**
      * Returns the QTreeView of this class. Valid after installView() has been called
      */
-    QTreeView* view() const;
+    virtual QTreeView* view() const;
 
 protected:
 

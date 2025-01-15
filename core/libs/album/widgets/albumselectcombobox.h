@@ -182,7 +182,7 @@ private:
      * @brief Disabled TreeViewComboBox::view(). Use treeView() method instead.
      * @see treeView().
      */
-    QTreeView* view() const = delete;
+    QTreeView* view() const;
 };
 
 // ------------------------------------------------------------------------------------
@@ -207,7 +207,7 @@ private:
      * @brief Disabled TreeViewComboBox::view(). Use treeView() method instead.
      * @see treeView().
      */
-    QTreeView* view() const = delete;
+    QTreeView* view() const;
 };
 
 } // namespace Digikam
