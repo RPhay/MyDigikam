@@ -347,7 +347,7 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                 {
                     if      (writeWithExifTool() && !defaultComment.isEmpty())
                     {
-                        QByteArray xpData  = QByteArray((char*)defaultComment.utf16(), defaultComment.size() * 2);
+                        QByteArray xpData  = QByteArray(reinterpret_cast<const char*>(defaultComment.utf16()), defaultComment.size() * 2);
                         xpData.append("\x00\x00");
 
                         if (!setExifTagData(nameSpace, xpData))
@@ -611,7 +611,7 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
                 {
                     if      (writeWithExifTool() && !defaultTitle.isEmpty())
                     {
-                        QByteArray xpData  = QByteArray((char*)defaultTitle.utf16(), defaultTitle.size() * 2);
+                        QByteArray xpData  = QByteArray(reinterpret_cast<const char*>(defaultTitle.utf16()), defaultTitle.size() * 2);
                         xpData.append("\x00\x00");
 
                         if (!setExifTagData(nameSpace, xpData))

@@ -1433,11 +1433,11 @@ QByteArray MetaEngine::getItemIccProfile() const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        QByteArray iccData((const char*)d->iccProfileBuf().data(), d->iccProfileBuf().size());
+        QByteArray iccData(reinterpret_cast<const char*>(d->iccProfileBuf().data()), d->iccProfileBuf().size());
 
 #else
 
-        QByteArray iccData((const char*)d->iccProfileBuf().pData_, d->iccProfileBuf().size_);
+        QByteArray iccData(reinterpret_cast<const char*>(d->iccProfileBuf().pData_), d->iccProfileBuf().size_);
 
 #endif
 

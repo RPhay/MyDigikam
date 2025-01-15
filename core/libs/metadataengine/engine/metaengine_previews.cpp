@@ -253,7 +253,7 @@ QByteArray MetaEnginePreviews::data(int index)
     {
         Exiv2::PreviewImage image = d->manager->getPreviewImage(d->properties[index]);
 
-        return QByteArray((const char*)image.pData(), image.size());
+        return QByteArray(reinterpret_cast<const char*>(image.pData()), image.size());
     }
     catch (Exiv2::AnyError& e)
     {

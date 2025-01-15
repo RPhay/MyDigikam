@@ -100,11 +100,11 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-            QByteArray data((const char*)c2.data(), c2.size());
+            QByteArray data(reinterpret_cast<const char*>(c2.data()), c2.size());
 
 #else
 
-            QByteArray data((const char*)c2.pData_, c2.size_);
+            QByteArray data(reinterpret_cast<const char*>(c2.pData_), c2.size_);
 
 #endif
 

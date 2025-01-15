@@ -304,7 +304,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                     if      (writeWithExifTool() && !newList.isEmpty())
                     {
                         QString xpKeywords = newList.join(entry.separator);
-                        QByteArray xpData  = QByteArray((char*)xpKeywords.utf16(), xpKeywords.size() * 2);
+                        QByteArray xpData  = QByteArray(reinterpret_cast<const char*>(xpKeywords.utf16()), xpKeywords.size() * 2);
                         xpData.append("\x00\x00");
 
                         if (!setExifTagData(nameSpace, xpData))
