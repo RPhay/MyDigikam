@@ -116,7 +116,7 @@ BUGFIXES:
 074 ==> 498519 - Build failled with mlpipelinemacros.h:53:68: error.
 075 ==> 498603 - Face detection feature stopped working.
 076 ==> 497832 - digiKam 8.5.0-Qt6 Win64 crashes on startup.
-077 ==> 498650 - avif file fails to load, but loads after renaming the same file to `.heif`.
+077 ==> 498650 - Avif file fails to load, but loads after renaming the same file to `.heif`.
 078 ==>
 079 ==>
 080 ==>

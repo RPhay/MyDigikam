@@ -95,7 +95,7 @@ void DImg::rotate(ANGLE angle)
                 switchDims = true;
 
                 delete [] m_priv->data;
-                m_priv->data = (uchar*)newData;
+                m_priv->data = reinterpret_cast<unsigned char*>(newData);
             }
             else
             {
@@ -117,7 +117,7 @@ void DImg::rotate(ANGLE angle)
                 switchDims = true;
 
                 delete [] m_priv->data;
-                m_priv->data = (uchar*)newData;
+                m_priv->data = reinterpret_cast<unsigned char*>(newData);
             }
 
             break;
@@ -227,7 +227,7 @@ void DImg::rotate(ANGLE angle)
                 switchDims = true;
 
                 delete [] m_priv->data;
-                m_priv->data = (uchar*)newData;
+                m_priv->data = reinterpret_cast<unsigned char*>(newData);
             }
             else
             {
@@ -249,7 +249,7 @@ void DImg::rotate(ANGLE angle)
                 switchDims = true;
 
                 delete [] m_priv->data;
-                m_priv->data = (uchar*)newData;
+                m_priv->data = reinterpret_cast<unsigned char*>(newData);
             }
 
             break;
@@ -290,10 +290,10 @@ void DImg::flip(FLIP direction)
 
             if (sixteenBit())
             {
-                unsigned short  tmp[4];
-                unsigned short* beg  = nullptr;
-                unsigned short* end  = nullptr;
-                unsigned short* data = reinterpret_cast<unsigned short*>(bits());
+                unsigned short  tmp[4] = { 0 };
+                unsigned short* beg   = nullptr;
+                unsigned short* end   = nullptr;
+                unsigned short* data  = reinterpret_cast<unsigned short*>(bits());
 
                 // can be done inplace
 
@@ -317,10 +317,10 @@ void DImg::flip(FLIP direction)
             }
             else
             {
-                uchar  tmp[4];
-                uchar* beg  = nullptr;
-                uchar* end  = nullptr;
-                uchar* data = bits();
+                uchar  tmp[4] = { 0 };
+                uchar* beg    = nullptr;
+                uchar* end    = nullptr;
+                uchar* data   = bits();
 
                 // can be done inplace
 
@@ -353,10 +353,10 @@ void DImg::flip(FLIP direction)
 
             if (sixteenBit())
             {
-                unsigned short  tmp[4];
-                unsigned short* line1 = nullptr;
-                unsigned short* line2 = nullptr;
-                unsigned short* data  = reinterpret_cast<unsigned short*>(bits());
+                unsigned short  tmp[4] = { 0 };
+                unsigned short* line1  = nullptr;
+                unsigned short* line2  = nullptr;
+                unsigned short* data   = reinterpret_cast<unsigned short*>(bits());
 
                 // can be done inplace
 
@@ -380,10 +380,10 @@ void DImg::flip(FLIP direction)
             }
             else
             {
-                uchar  tmp[4];
-                uchar* line1 = nullptr;
-                uchar* line2 = nullptr;
-                uchar* data  = bits();
+                uchar  tmp[4] = { 0 };
+                uchar* line1  = nullptr;
+                uchar* line2  = nullptr;
+                uchar* data   = bits();
 
                 // can be done inplace
 

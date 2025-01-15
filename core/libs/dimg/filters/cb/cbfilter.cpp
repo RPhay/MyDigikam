@@ -244,7 +244,7 @@ void CBFilter::applyCBFilter(const DImg& image, double r, double g, double b, do
 
     if (!image.sixteenBit())                    // 8 bits image.
     {
-        uchar* data = (uchar*) image.bits();
+        uchar* data = reinterpret_cast<unsigned char*>(image.bits());
 
         for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {

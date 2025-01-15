@@ -58,6 +58,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configCurveEntry      = QLatin1String("AdjustCurves");
 
     int                  histoSegments  = 0;
@@ -82,7 +84,7 @@ CurvesSettings::CurvesSettings(QWidget* const parent, DImg* const img)
     }
     else
     {
-        d->curvesBox = new CurvesBox(256, 192, DImg(1, 1, true, false, (uchar*)"\x00\x00\x00\x00\x00\x00\x00\x00"));
+        d->curvesBox = new CurvesBox(256, 192, DImg(1, 1, true, false, reinterpret_cast<unsigned char*>(const_cast<char*>("\x00\x00\x00\x00\x00\x00\x00\x00"))));
         d->curvesBox->enablePickers(false);
         d->curvesBox->enableResetButton(true);
         d->curvesBox->enableCurveTypes(true);
