@@ -5,7 +5,7 @@
  *
  * Date        : 2005-06-14
  * Description : digiKam 8/16 bits image management API.
- * Description : Smoothscale method based on Imlib2's implementations.
+ *               Smoothscale method based on Imlib2's implementations.
  *               https://git.enlightenment.org/legacy/imlib2.git/tree/src/lib/scale.c
  *               Ported to C++ and QImage
  *               Add smoothScaleSection to scale only an image section.
@@ -64,6 +64,8 @@ public:
         delete [] yapoints;
     }
 
+public:
+
     int*     xpoints     = nullptr;
     uint**   ypoints     = nullptr;
     ullong** ypoints16   = nullptr;
@@ -90,173 +92,172 @@ DImgScaleInfo* dimgCalcScaleInfo(const DImg& img,
                                  int dw, int dh,
                                  bool aa, bool smooth);
 /**
- * For internal scale by pixel sampling only not smoothed in 8 bits RGBA.
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
+ * @brief For internal scale by pixel sampling only not smoothed in 8 bits RGBA.
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
  */
 void dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow);
 
 /**
- * For internal scale by pixel sampling only not smoothed by area sampling in 8 bits RGBA.
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by pixel sampling only not smoothed by area sampling in 8 bits RGBA.
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow,
                     int clip_dx, int clip_dy, int clip_dw, int clip_dh);
 
 /**
- * For internal scale by pixel sampling only not smoothed in 16 bits RGBA.
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
+ * @brief For internal scale by pixel sampling only not smoothed in 16 bits RGBA.
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
  */
 void dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh, int dow);
 
 /**
- * For internal scale by pixel sampling only not smoothed by area sampling in 16 bits RGBA
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by pixel sampling only not smoothed by area sampling in 16 bits RGBA
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh, int dow,
                       int clip_dx, int clip_dy, int clip_dw, int clip_dh);
 
 /**
- * For internal scale in 8 bits RGBA
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
- *    sow:  source scanline width
+ * @brief For internal scale in 8 bits RGBA
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
+ * @param sow  source scanline width
  */
 void dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                      int dxx, int dyy, int dw, int dh, int dow, int sow);
 
 /**
- * For internal scale by area sampling in 8 bits RGBA
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    sow:     source scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by area sampling in 8 bits RGBA
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param sow     source scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                      int dxx, int dyy, int dw, int dh, int dow, int sow,
                      int clip_dx, int clip_dy, int clip_dw, int clip_dh);
 
 /**
- * For internal scale in 8 bits RGB, ignore the Alpha byte
-
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
- *    sow:  source scanline width
+ * @brief For internal scale in 8 bits RGB, ignore the Alpha byte
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
+ * @param sow  source scanline width
  */
 void dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow, int sow);
 
 /**
- * For internal scale by area sampling in 8 bits RGB, ignore the Alpha byte
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    sow:     source scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by area sampling in 8 bits RGB, ignore the Alpha byte
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param sow     source scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow, int sow,
                     int clip_dx, int clip_dy, int clip_dw, int clip_dh);
 
 /**
- * For internal scale in 16 bits RGBA
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
- *    sow:  source scanline width
+ * @brief For internal scale in 16 bits RGBA
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
+ * @param sow  source scanline width
  */
 void dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                        int dxx, int dyy, int dw, int dh,
                        int dow, int sow);
 
 /**
- * For internal scale by area sampling in 16 bits RGBA
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    sow:     source scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by area sampling in 16 bits RGBA
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param sow     source scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                        int dxx, int dyy, int dw, int dh,
@@ -264,36 +265,36 @@ void dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                        int clip_dx, int clip_dy, int clip_dw, int clip_dh);
 
 /**
- * For internal scale in 16 bits RGB, ignore the Alpha byte
- * Arguments:
- *    isi:  scale info
- *    dest: destination image data
- *    dxx:  destination x location corresponding to start x of source section
- *    dyy:  destination y location corresponding to start y of source section
- *    dw:   destination width
- *    dh:   destination height
- *    dow:  destination scanline width
- *    sow:  source scanline width
+ * @brief For internal scale in 16 bits RGB, ignore the Alpha byte
+ *
+ * @param isi  scale info
+ * @param dest destination image data
+ * @param dxx  destination x location corresponding to start x of source section
+ * @param dyy  destination y location corresponding to start y of source section
+ * @param dw   destination width
+ * @param dh   destination height
+ * @param dow  destination scanline width
+ * @param sow  source scanline width
  */
 void dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh,
                       int dow, int sow);
 
 /**
- * For internal scale by area sampling in 16 bits RGB, ignore the Alpha byte
- * Arguments:
- *    isi:     scale info
- *    dest:    destination image data
- *    dxx:     destination x location corresponding to start x of source section
- *    dyy:     destination y location corresponding to start y of source section
- *    dw:      destination width
- *    dh:      destination height
- *    dow:     destination scanline width
- *    sow:     source scanline width
- *    clip_dx: clipped destination x location corresponding to start x
- *    clip_dy: clipped destination y location corresponding to start y
- *    clip_dw: clipped destination width
- *    clip_dh: clipped destination height
+ * @brief For internal scale by area sampling in 16 bits RGB, ignore the Alpha byte
+ *
+ * @param isi     scale info
+ * @param dest    destination image data
+ * @param dxx     destination x location corresponding to start x of source section
+ * @param dyy     destination y location corresponding to start y of source section
+ * @param dw      destination width
+ * @param dh      destination height
+ * @param dow     destination scanline width
+ * @param sow     source scanline width
+ * @param clip_dx clipped destination x location corresponding to start x
+ * @param clip_dy clipped destination y location corresponding to start y
+ * @param clip_dw clipped destination width
+ * @param clip_dh clipped destination height
  */
 void dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh,
@@ -810,8 +811,8 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr = nullptr;
-    uint* dptr = nullptr;
+    uint* sptr        = nullptr;
+    uint* dptr        = nullptr;
     int x, y;
     uint** ypoints    = isi->ypoints;
     int* xpoints      = isi->xpoints;
@@ -1300,8 +1301,8 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr = nullptr;
-    uint* dptr = nullptr;
+    uint* sptr        = nullptr;
+    uint* dptr        = nullptr;
     int x, y;
     uint** ypoints    = isi->ypoints;
     int* xpoints      = isi->xpoints;
@@ -1730,10 +1731,10 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
     }
 }
 
-#define A_VAL16(p) ((ushort*)(p))[3]
-#define R_VAL16(p) ((ushort*)(p))[2]
-#define G_VAL16(p) ((ushort*)(p))[1]
-#define B_VAL16(p) ((ushort*)(p))[0]
+#define A_VAL16(p) (reinterpret_cast<ushort*>(p))[3]
+#define R_VAL16(p) (reinterpret_cast<ushort*>(p))[2]
+#define G_VAL16(p) (reinterpret_cast<ushort*>(p))[1]
+#define B_VAL16(p) (reinterpret_cast<ushort*>(p))[0]
 
 void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                                  int dxx, int dyy,
@@ -1752,8 +1753,8 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr = nullptr;
-    ullong* dptr = nullptr;
+    ullong* sptr      = nullptr;
+    ullong* dptr      = nullptr;
     int x, y;
     ullong** ypoints  = isi->ypoints16;
     int*     xpoints  = isi->xpoints;
@@ -2197,8 +2198,8 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr = nullptr;
-    ullong* dptr = nullptr;
+    ullong* sptr      = nullptr;
+    ullong* dptr      = nullptr;
     int x, y;
     ullong** ypoints  = isi->ypoints16;
     int* xpoints      = isi->xpoints;
