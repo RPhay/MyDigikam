@@ -139,15 +139,15 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
 
 bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& image)
 {
-    if (!faceDetector)
+    if (!detectorModel)
     {
-        faceDetector = DNNModelManager::instance()->getModel(QStringLiteral("yunet"), DNNModelUsage::DNNUsageFaceDetection);        
+        detectorModel = DNNModelManager::instance()->getModel(QStringLiteral("yunet"), DNNModelUsage::DNNUsageFaceDetection);        
     }
 
     // thumbnail must be at least minThumbnailSize of the size the detector expects
 
-    if (faceDetector->info.imageSize * minThumbnailSize > origSize.width ||
-        faceDetector->info.imageSize * minThumbnailSize > origSize.height)
+    if (detectorModel->info.imageSize * minThumbnailSize > origSize.width ||
+        detectorModel->info.imageSize * minThumbnailSize > origSize.height)
     {
         return false;
     }

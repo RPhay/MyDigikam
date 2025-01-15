@@ -80,7 +80,7 @@ public:
     virtual ~FacePipelineBase();
 
 protected:
-    DNNModelBase*       faceDetector        = nullptr;
+    DNNModelBase*       detectorModel       = nullptr;
     float               blurThreshold       = 4.87f;
     float               minThumbnailSize    = 0.33f;
 
