@@ -383,7 +383,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
         {
             // Up and down arrow keys step the date
 
-            QKeyEvent* const keyEvent = (QKeyEvent*)event;
+            QKeyEvent* const keyEvent = dynamic_cast<QKeyEvent*>(event);
 
             if (keyEvent->key() == Qt::Key_Return)
             {
@@ -431,7 +431,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
             case QEvent::MouseButtonDblClick:
             case QEvent::MouseButtonPress:
             {
-                QMouseEvent* const mouseEvent = (QMouseEvent*)event;
+                QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
 
                 if (!d->popup->rect().contains(mouseEvent->pos()))
                 {

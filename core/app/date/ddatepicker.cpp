@@ -198,7 +198,7 @@ bool DDatePicker::eventFilter(QObject* o, QEvent* e)
 {
     if (e->type() == QEvent::KeyPress)
     {
-        QKeyEvent* const k = (QKeyEvent*)e;
+        QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if (
             (k->key() == Qt::Key_PageUp)   ||
