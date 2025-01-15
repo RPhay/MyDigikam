@@ -614,7 +614,7 @@ bool GPCamera::getPreview(QImage& preview)
         return false;
     }
 
-    preview.loadFromData((const uchar*)data, (uint)size);
+    preview.loadFromData(reinterpret_cast<const unsigned char*>(data), (uint)size);
 
     gp_file_unref(cfile);
 
@@ -1110,7 +1110,7 @@ bool GPCamera::getThumbnail(const QString& folder, const QString& itemName, QIma
         return false;
     }
 
-    thumbnail.loadFromData((const uchar*) data, (uint) size);
+    thumbnail.loadFromData(reinterpret_cast<const unsigned char*>(data), (uint) size);
 
     gp_file_unref(cfile);
 
