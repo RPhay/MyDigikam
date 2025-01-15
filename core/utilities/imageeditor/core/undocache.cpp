@@ -151,7 +151,7 @@ bool UndoCache::putData(int level, const DImg& img) const
     ds << img.hasAlpha();
     ds << img.sixteenBit();
 
-    file.write((const char*)img.bits(), img.numBytes());
+    file.write(reinterpret_cast<const char*>(img.bits()), img.numBytes());
 
     if (file.error() != QFileDevice::NoError)
     {
@@ -208,7 +208,7 @@ DImg UndoCache::getData(int level) const
         return DImg();
     }
 
-    qint64 readBytes = file.read((char*)img.bits(), numBytes);
+    qint64 readBytes = file.read(reinterpret_cast<char*>(img.bits()), numBytes);
 
     if ((file.error() != QFileDevice::NoError) || ((quint64)readBytes != numBytes))
     {
