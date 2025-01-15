@@ -74,8 +74,8 @@ void LensDistortionFilter::filterImage()
 
     // initialize coefficients
 
-    double normallise_radius_sq   = 4.0 / (Width * Width + Height * Height);
-    double center_x               = Width * (100.0 + m_centre_x) / 200.0;
+    double normallise_radius_sq   = 4.0    / (Width * Width + Height * Height);
+    double center_x               = Width  * (100.0 + m_centre_x) / 200.0;
     double center_y               = Height * (100.0 + m_centre_y) / 200.0;
     double mult_sq                = m_main / 200.0;
     double mult_qd                = m_edge / 200.0;
@@ -93,7 +93,7 @@ void LensDistortionFilter::filterImage()
 
     int    dstWidth  = Width;
     int    dstHeight = Height;
-    uchar* dst       = (uchar*)data;
+    uchar* dst       = reinterpret_cast<unsigned char*>(data);
     int    step      = 1, progress;
 
     int    iLimit, jLimit;
