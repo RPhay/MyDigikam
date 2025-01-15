@@ -346,6 +346,11 @@ bool FacePipelineDetectRecognize::extractor()
                 // get list of previously confirmed faces
 
                 QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(package->info.id());
+
+                // get list of previously ignored faces
+
+                faces += utils.ignoredFaceTagsIfaces(package->info.id());
+
                 QList<QRectF> faceFRects;
 
                 // Loop through the faces found.

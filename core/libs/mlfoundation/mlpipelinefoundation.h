@@ -133,6 +133,7 @@ private Q_SLOTS:
 protected:
 
     QMap<MLPipelineStage, MLPipelineQueue*>             queues;
+    const int                                           throttledQueueDepth = 1;
     QMutex                                              mutex;
     QMutex                                              threadStageMutex;
     QAtomicInteger<int>                                 itemsProcessed      = 0;
