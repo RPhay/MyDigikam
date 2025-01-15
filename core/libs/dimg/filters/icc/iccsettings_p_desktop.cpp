@@ -126,15 +126,16 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     {
         static Atom icc_atom  = XInternAtom(disp, atomName.toLatin1().constData(), True);
 
-        if ((icc_atom != None)                                                &&
+        if (
+            (icc_atom != None)                                                      &&
             (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
                                0, INT_MAX, False, XA_CARDINAL,
                                &type, &format, &nitems, &bytes_after,
-                               (unsigned char**)& str) == Success)            &&
+                               reinterpret_cast<unsigned char**>(&str)) == Success) &&
              nitems
            )
         {
-            QByteArray bytes = QByteArray::fromRawData((char*)str, (quint32)nitems);
+            QByteArray bytes = QByteArray::fromRawData(reinterpret_cast<char*>(str), (quint32)nitems);
 
             if (!bytes.isEmpty())
             {

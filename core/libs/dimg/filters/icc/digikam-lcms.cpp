@@ -444,7 +444,7 @@ LCMSBOOL dkCmsTakeMediaWhitePoint(LPcmsCIEXYZ Dest, cmsHPROFILE hProfile)
 QString dkCmsTakeModel(cmsHPROFILE hProfile)
 {
     char buffer[1024]       = { 0 };
-    const cmsMLU* const mlu = (cmsMLU*)cmsReadTag(hProfile, cmsSigDeviceModelDescTag);
+    const cmsMLU* const mlu = reinterpret_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigDeviceModelDescTag));
     buffer[0]               = '\0';
 
     if (mlu == nullptr)
@@ -460,7 +460,7 @@ QString dkCmsTakeModel(cmsHPROFILE hProfile)
 QString dkCmsTakeCopyright(cmsHPROFILE hProfile)
 {
     char buffer[1024]       = { 0 };
-    const cmsMLU* const mlu = (cmsMLU*)cmsReadTag(hProfile, cmsSigCopyrightTag);
+    const cmsMLU* const mlu = reinterpret_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigCopyrightTag));
     buffer[0]               = '\0';
 
     if (mlu == nullptr)
