@@ -49,7 +49,7 @@ static int heifQIODeviceMetaRead(void* data, size_t size, void* userdata)
         return 0;
     }
 
-    qint64 bytes = file->read((char*)data, size);
+    qint64 bytes = file->read(reinterpret_cast<char*>(data), size);
 
     return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
 }
@@ -145,7 +145,7 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                         // Copy the real exif data into the byte array
 
                         qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF exif container found with size:" << length - skip;
-                        exif.append((char*)(exifChunk.data() + skip), exifChunk.size() - skip);
+                        exif.append(reinterpret_cast<char*>(exifChunk.data() + skip), exifChunk.size() - skip);
                     }
                 }
             }
@@ -230,7 +230,7 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
 
     QByteArray header(headerLen, '\0');
 
-    if (readFile.read((char*)header.data(), headerLen) != headerLen)
+    if (readFile.read(reinterpret_cast<char*>(header.data()), headerLen) != headerLen)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: Could not parse magic identifier.";
 
@@ -267,7 +267,7 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
 
     struct heif_error error   = heif_context_read_from_reader(heif_context,
                                                               &reader,
-                                                              (void*)&readFile,
+                                                              reinterpret_cast<void*>(&readFile),
                                                               nullptr);
 
     if (!s_isHeifSuccess(&error))

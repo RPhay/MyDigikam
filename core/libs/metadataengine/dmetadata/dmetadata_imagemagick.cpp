@@ -197,14 +197,14 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         // Insert percent escape format for IM identification call.
 
-        int identargc       = 4;                            // Number or arguments passed to IM identification call.
-        char** identargv    = new char*[identargc];         // Container to store arguments.
-        identargv[0]        = (char*)"identify";            // String content is not important but must be present.
-        identargv[1]        = (char*)"-format";             // We will pass percent escape options.
+        int identargc       = 4;                             // Number or arguments passed to IM identification call.
+        char** identargv    = new char*[identargc];          // Container to store arguments.
+        identargv[0]        = const_cast<char*>("identify"); // String content is not important but must be present.
+        identargv[1]        = const_cast<char*>("-format");  // We will pass percent escape options.
         QByteArray ba       = filters.toLatin1();
-        identargv[2]        = ba.data();                    // Percent escape format description.
+        identargv[2]        = ba.data();                     // Percent escape format description.
         ba                  = filePath.toLatin1();
-        identargv[3]        = ba.data();                    // The file path to parse (even if this also passed through IM::ImageInfo container).
+        identargv[3]        = ba.data();                     // The file path to parse (even if this also passed through IM::ImageInfo container).
 
         // Call ImageMagick core identification.
         // This is a fast IM C API call, not the IM CLI tool process.
