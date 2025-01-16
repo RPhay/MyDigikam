@@ -6,7 +6,7 @@
  * Date        : 2019-04-19
  * Description : Magick loader for DImg framework.
  *
- * SPDX-FileCopyrightText: 2019-2023 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2025 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

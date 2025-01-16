@@ -6,7 +6,7 @@
  * Date        : 2019-04-19
  * Description : Magick loader for DImg framework - load method.
  *
- * SPDX-FileCopyrightText: 2019-2023 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2025 by Caulier Gilles <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2019-2023 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -104,7 +104,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
                 return false;
             }
 
-            image.write(0, 0, image.columns(), image.rows(), "BGRA", type, (void*)data);
+            image.write(0, 0, image.columns(), image.rows(), "BGRA", type, reinterpret_cast<void*>(data));
 
             if (observer)
             {
@@ -114,7 +114,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
             if (m_loadFlags & LoadICCData)
             {
                 Blob iccBlob(image.iccColorProfile());
-                QByteArray iccRawProfile((char*)iccBlob.data(), iccBlob.length());
+                QByteArray iccRawProfile(reinterpret_cast<const char*>(iccBlob.data()), iccBlob.length());
 
                 if (!iccRawProfile.isEmpty())
                 {
