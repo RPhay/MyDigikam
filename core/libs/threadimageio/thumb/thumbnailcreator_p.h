@@ -70,7 +70,7 @@
 namespace Digikam
 {
 
-class ThumbnailImage
+class Q_DECL_HIDDEN ThumbnailImage
 {
 public:
 
