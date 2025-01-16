@@ -53,7 +53,7 @@ static int heifQIODeviceDImgRead(void* data, size_t size, void* userdata)
         return 0;
     }
 
-    qint64 bytes = file->read((char*)data, size);
+    qint64 bytes = file->read(reinterpret_cast<char*>(data), size);
 
     return (int)((file->error() != QFileDevice::NoError) || (bytes != (qint64)size));
 }
@@ -97,7 +97,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     QByteArray header(headerLen, '\0');
 
-    if (readFile.read((char*)header.data(), headerLen) != headerLen)
+    if (readFile.read(const_cast<char*>(header.data()), headerLen) != headerLen)
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: Could not parse magic identifier.";
         loadingFailed();
@@ -105,10 +105,12 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    if ((memcmp(&header.data()[4], "ftyp", 4) != 0) &&
+    if (
+        (memcmp(&header.data()[4], "ftyp", 4) != 0) &&
         (memcmp(&header.data()[8], "heic", 4) != 0) &&
         (memcmp(&header.data()[8], "heix", 4) != 0) &&
-        (memcmp(&header.data()[8], "mif1", 4) != 0))
+        (memcmp(&header.data()[8], "mif1", 4) != 0)
+       )
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: source file is not HEIF image.";
         loadingFailed();
@@ -145,7 +147,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     struct heif_error error   = heif_context_read_from_reader(heif_context,
                                                               &reader,
-                                                              (void*)&readFile,
+                                                              reinterpret_cast<void*>(&readFile),
                                                               nullptr);
 
     if (!isHeifSuccess(&error))
@@ -432,7 +434,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF data container:" << ptr;
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIC bytes per line:" << stride;
-    qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color bytes depth:" << (m_sixteenBit ? 16 : 8);
+    qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color bytes depth:"   << (m_sixteenBit ? 16 : 8);
 
     if (!ptr || (stride <= 0))
     {

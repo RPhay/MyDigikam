@@ -75,7 +75,7 @@ static struct heif_error heifQIODeviceWriter(struct heif_context* /* ctx */,
     error.subcode       = heif_suberror_Unspecified;
     error.message       = QByteArray("Success").constData();
 
-    qint64 bytesWritten = saveFile.write((const char*)data, size);
+    qint64 bytesWritten = saveFile.write(reinterpret_cast<const char*>(data), size);
 
     if (bytesWritten < (qint64)size)
     {
@@ -504,7 +504,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     writer.writer_api_version = 1;
     writer.write              = heifQIODeviceWriter;
 
-    error                     = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
+    error                     = heif_context_write(ctx, &writer,
+                                                   reinterpret_cast<void*>(const_cast<char*>(filePath.toUtf8().constData())));
 
     if (!isHeifSuccess(&error))
     {
