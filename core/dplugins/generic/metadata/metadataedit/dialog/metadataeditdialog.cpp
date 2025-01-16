@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                   isReadOnly   = false;
 
     QString                preview;
@@ -335,7 +337,7 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
 {
     if (e->type() == QEvent::KeyPress)
     {
-        QKeyEvent* const k = (QKeyEvent*)e;
+        QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if      (
                  (k->modifiers() == Qt::ControlModifier) &&
