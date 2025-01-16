@@ -115,7 +115,7 @@ void DImgHistoryGraphTest::rescan()
 }
 
 template <typename from, typename to>
-QList<to> mapList(const QList<from>& l, const QMap<from,to> map)
+QList<to> mapList(const QList<from>& l, const QMap<from,to>& map)
 {
     QList<to> r;
 
