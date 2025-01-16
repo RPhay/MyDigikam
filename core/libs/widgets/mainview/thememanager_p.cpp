@@ -632,7 +632,7 @@ QBrush StateEffects::brush(const QBrush& foreground, const QBrush& background) c
 
 // ------------------------------------------------------------------------------------
 
-struct SetDefaultColors
+struct Q_DECL_HIDDEN SetDefaultColors
 {
     int NormalBackground[3]     = { 0 };
     int AlternateBackground[3]  = { 0 };
@@ -646,7 +646,7 @@ struct SetDefaultColors
     int PositiveText[3]         = { 0 };
 };
 
-struct DecoDefaultColors
+struct Q_DECL_HIDDEN DecoDefaultColors
 {
     int Hover[3]                = { 0 };
     int Focus[3]                = { 0 };

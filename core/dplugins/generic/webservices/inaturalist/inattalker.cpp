@@ -274,6 +274,8 @@ public:
         apiToken        = QString();
     }
 
+public:
+
     QWidget*                          parent            = nullptr;
     QNetworkAccessManager*            netMngr           = nullptr;
     QTimer*                           timer             = nullptr;
@@ -816,7 +818,7 @@ public:
 
 private:
 
-    struct Place
+    struct Q_DECL_HIDDEN Place
     {
         Place() = default;
 

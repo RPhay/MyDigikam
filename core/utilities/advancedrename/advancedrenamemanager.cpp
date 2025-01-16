@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-struct SortByNameCaseInsensitive
+struct Q_DECL_HIDDEN SortByNameCaseInsensitive
 {
     bool operator() (const QString& s1, const QString& s2) const
     {
@@ -48,7 +48,7 @@ struct SortByNameCaseInsensitive
     }
 };
 
-struct SortByDate
+struct Q_DECL_HIDDEN SortByDate
 {
     bool operator() (const QString& s1, const QString& s2) const
     {
@@ -59,7 +59,7 @@ struct SortByDate
     }
 };
 
-struct SortBySize
+struct Q_DECL_HIDDEN SortBySize
 {
     bool operator() (const QString& s1, const QString& s2) const
     {
@@ -75,6 +75,8 @@ class Q_DECL_HIDDEN AdvancedRenameManager::Private
 public:
 
     Private() = default;
+
+public:
 
     QStringList                          files;
 

@@ -57,7 +57,7 @@ class Q_DECL_HIDDEN GLViewerWidget::Private
 {
 public:
 
-    struct Cache
+    struct Q_DECL_HIDDEN Cache
     {
         int              file_index = 0;
         GLViewerTexture* texture    = nullptr;

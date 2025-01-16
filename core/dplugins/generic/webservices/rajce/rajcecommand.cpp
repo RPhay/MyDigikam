@@ -42,7 +42,7 @@ namespace DigikamGenericRajcePlugin
 
 const unsigned THUMB_SIZE = 100;
 
-struct PreparedImage
+struct Q_DECL_HIDDEN PreparedImage
 {
     QString scaledImagePath;
     QString thumbPath;
