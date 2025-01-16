@@ -152,7 +152,7 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& im
         return false;
     }
 
-    // use a laplacian filter to check for blurred images
+    // use a FFT filter to check for blurred images
 
     cv::Mat gray;
     cv::cvtColor(image, gray, cv::COLOR_RGB2GRAY);
