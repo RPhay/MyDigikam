@@ -350,7 +350,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
             pgf.Read(level, DImgPGFLoader::CallbackForLibPGF, this);
             pgf.GetBitmap(m_sixteenBit ? width * 8 : width * 4,
-                          (UINT8*)data,
+                          reinterpret_cast<UINT8*>(data),
                           m_sixteenBit ? 64 : 32,
                           nullptr,
                           CallbackForLibPGF, this);

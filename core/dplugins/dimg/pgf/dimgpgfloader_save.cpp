@@ -191,7 +191,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         pgf.ConfigureEncoder(false);
 
         pgf.ImportBitmap(4 * imageWidth() * (imageSixteenBit() ? 2 : 1),
-                         (UINT8*)imageData(),
+                         reinterpret_cast<UINT8*>(imageData()),
                          imageBitsDepth() * 4,
                          nullptr,
                          DImgPGFLoader::CallbackForLibPGF, this);
