@@ -682,7 +682,7 @@ QModelIndex DConfigDlgWdgModel::index(const DConfigDlgWdgItem* item) const
         return QModelIndex();
     }
 
-    return createIndex(pageItem->row(), 0, reinterpret_cast<const void*>(pageItem));
+    return createIndex(pageItem->row(), 0, pageItem);
 }
 
 } // namespace Digikam
