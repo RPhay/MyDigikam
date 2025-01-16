@@ -59,7 +59,7 @@ bool s_checkErrorCode(HRESULT status, const QString& path, const QString& contex
                        nullptr);
 
         // cppcheck-suppress knownConditionTrueFalse
-        QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
+        QString errStr = (bufPtr) ? QString::fromUtf16(reinterpret_cast<unsigned short*>(bufPtr)).trimmed()
                                   : i18n("Unknown Error %1", werr);
         LocalFree(bufPtr);
 
@@ -90,7 +90,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
                                                  nullptr,
                                                  CLSCTX_INPROC_SERVER,
                                                  IID_IActiveDesktop,
-                                                 (void**)&iADesktop);
+                                                 reinterpret_cast<void**>(&iADesktop));
 
     if (!s_checkErrorCode(status, path, i18n("Cannot create desktop context.")))
     {
