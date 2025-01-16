@@ -167,7 +167,9 @@ public:
     class ParallelTrainer;
 };
 
-class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::ParallelLoopBody
+// -----------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::ParallelLoopBody
 {
 public:
 
@@ -239,7 +241,9 @@ private:
     Q_DISABLE_COPY(ParallelRecognizer)
 };
 
-class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoopBody
+// -----------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoopBody
 {
 public:
 
@@ -278,6 +282,8 @@ private:
 
     Q_DISABLE_COPY(ParallelTrainer)
 };
+
+// -----------------------------------------------------------------------------------------------
 
 bool OpenCVDNNFaceRecognizer::Private::trainSVM()
 {
