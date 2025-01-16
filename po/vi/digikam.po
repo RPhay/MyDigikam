@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-15 01:52+0000\n"
+"POT-Creation-Date: 2025-01-16 01:53+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -7867,7 +7867,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
 #, kde-format
 msgid "Film"
 msgstr "Phim"
@@ -12117,7 +12117,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:333
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
 #, kde-format
 msgid "Contrast:"
 msgstr "Độ tương phản:"
@@ -25896,7 +25896,7 @@ msgstr "<p>Ở đây hãy đặt cách điều chỉnh độ sáng của ảnh."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:339
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, fuzzy, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh độ tương phản của ảnh."
@@ -25932,7 +25932,7 @@ msgstr ""
 "đặt độ điều chỉnh phơi nắng kiểu ít."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:328
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:330
 #, fuzzy, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "<p>Đây là cách điều chỉnh độ trưng của ảnh"
@@ -28878,7 +28878,7 @@ msgstr "Đừng &hỏi lại"
 #: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
@@ -29339,23 +29339,23 @@ msgstr "<p>Ở đây hãy đặt cách điều chỉnh gamma của ảnh."
 msgid "Black & White / Sepia Filter"
 msgstr "Tệp thiết lập đen trắng cần lưu"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:133
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:135
 #, fuzzy, kde-format
 msgctxt "generic black and white film"
 msgid "Generic"
 msgstr "Giống loài"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:134
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:136
 #, fuzzy, kde-format
 msgid "<b>Generic</b>:<p>Simulate a generic black and white film.</p>"
 msgstr "<b>Giống loài</b>:<p>Mô phỏng mảnh thuốc đen trắng giống loài</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:137
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:139
 #, kde-format
 msgid "Agfa 200X"
 msgstr "Agfa 200X"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:138
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:140
 #, fuzzy, kde-format
 msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
@@ -29363,12 +29363,12 @@ msgid ""
 msgstr ""
 "<b>Agfa 200X</b>:<p>Mô phỏng mảnh thuốc Agfa 200X đen trắng ở 200 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:143
 #, kde-format
 msgid "Agfa Pan 25"
 msgstr "Agfa Pan 25"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:142
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
@@ -29376,12 +29376,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 25</b>:<p>Mô phỏng mảnh thuốc Agfa Pan đen trắng ở 25 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:147
 #, kde-format
 msgid "Agfa Pan 100"
 msgstr "Agfa Pan 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:146
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:148
 #, fuzzy, kde-format
 msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
@@ -29389,12 +29389,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 100</b>:<p>Mô phỏng mảnh thuốc Agfa Pan đen trắng ở 100 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:151
 #, kde-format
 msgid "Agfa Pan 400"
 msgstr "Agfa Pan 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:152
 #, fuzzy, kde-format
 msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
@@ -29402,12 +29402,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 400</b>:<p>Mô phỏng mảnh thuốc Agfa Pan đen trắng ở 400 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:155
 #, kde-format
 msgid "Ilford Delta 100"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:156
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -29416,12 +29416,12 @@ msgstr ""
 "<b>Ilford Delta 100</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 100 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:159
 #, kde-format
 msgid "Ilford Delta 400"
 msgstr "Ilford Delta 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:160
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -29430,12 +29430,12 @@ msgstr ""
 "<b>Ilford Delta 400</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 400 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:163
 #, kde-format
 msgid "Ilford Delta 400 Pro 3200"
 msgstr "Ilford Delta 400 Pro 3200"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:164
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
@@ -29444,12 +29444,12 @@ msgstr ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Mô phỏng mảnh thuốc Ilford Delta 400 Pro "
 "đen trắng ở 3200 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:167
 #, kde-format
 msgid "Ilford FP4 Plus"
 msgstr "Ilford FP4 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:168
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
@@ -29458,12 +29458,12 @@ msgstr ""
 "<b>Ilford FP4 Plus</b>:<p>Mô phỏng mảnh thuốc Ilford FP4 Plus đen trắng ở "
 "125 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:171
 #, kde-format
 msgid "Ilford HP5 Plus"
 msgstr "Ilford HP5 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
@@ -29472,12 +29472,12 @@ msgstr ""
 "<b>Ilford HP5 Plus</b>:<p>Mô phỏng mảnh thuốc Ilford HP5 Plus đen trắng ở "
 "400 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:175
 #, kde-format
 msgid "Ilford PanF Plus"
 msgstr "Ilford PanF Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:176
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
@@ -29486,12 +29486,12 @@ msgstr ""
 "<b>Ilford PanF Plus</b>:<p>Mô phỏng mảnh thuốc Ilford PanF Plus đen trắng ở "
 "50 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:179
 #, kde-format
 msgid "Ilford XP2 Super"
 msgstr "Ilford XP2 Super"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:180
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
@@ -29500,12 +29500,12 @@ msgstr ""
 "<b>Ilford XP2 Super</b>:<p>Mô phỏng mảnh thuốc Ilford XP2 Super đen trắng ở "
 "400 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:183
 #, kde-format
 msgid "Kodak Tmax 100"
 msgstr "Kodak Tmax 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:184
 #, fuzzy, kde-format
 msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
@@ -29514,12 +29514,12 @@ msgstr ""
 "<b>Kodak Tmax 100</b>:<p>Mô phỏng mảnh thuốc Kodak Timex đen trắng ở 100 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:187
 #, kde-format
 msgid "Kodak Tmax 400"
 msgstr "Kodak Tmax 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:188
 #, fuzzy, kde-format
 msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
@@ -29528,12 +29528,12 @@ msgstr ""
 "<b>Kodak Tmax 400</b>:<p>Mô phỏng mảnh thuốc Kodak Timex đen trắng ở 400 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:191
 #, kde-format
 msgid "Kodak TriX"
 msgstr "Kodak TriX"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:192
 #, fuzzy, kde-format
 msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
@@ -29541,12 +29541,12 @@ msgid ""
 msgstr ""
 "<b>Kodak TriX</b>:<p>Mô phỏng mảnh thuốc Kodak TriX đen trắng ở 400 ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:197
 #, fuzzy, kde-format
 msgid "Ilford SPX 200 (Infrared)"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:196
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
@@ -29555,12 +29555,12 @@ msgstr ""
 "<b>Ilford Delta 100</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 100 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:201
 #, fuzzy, kde-format
 msgid "Ilford SPX 400 (Infrared)"
 msgstr "Ilford Delta 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:200
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
@@ -29569,12 +29569,12 @@ msgstr ""
 "<b>Ilford Delta 400</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 400 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:205
 #, fuzzy, kde-format
 msgid "Ilford SPX 800 (Infrared)"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:204
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
 #, fuzzy, kde-format
 msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
@@ -29583,37 +29583,37 @@ msgstr ""
 "<b>Ilford Delta 100</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 100 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:209
 #, fuzzy, kde-format
 msgid "Kodak HIE (Infrared)"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:208
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:210
 #, fuzzy, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
 msgstr ""
 "<b>Ilford Delta 100</b>:<p>Mô phỏng mảnh thuốc Ilford Delta đen trắng ở 100 "
 "ISO</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:219
 #, kde-format
 msgid "No Lens Filter"
 msgstr "Không lọc kính"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:218
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
 #, fuzzy, kde-format
 msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr "<b>Không lọc kính</b>:<p>đừng áp dụng bộ lọc kính để vẽ ảnh.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:307
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:223
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
 #, kde-format
 msgid "Green Filter"
 msgstr "Lọc lục"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:222
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Green Filter</b>:<p>Simulate black and white film "
@@ -29624,12 +29624,12 @@ msgstr ""
 "bộ lọc màu lục. Tính năng này cung cấp lợi ích chung với mọi cảnh, thích hợp "
 "nhất với ảnh chân dung được chụp trước bầu trời.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:227
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
 #, kde-format
 msgid "Orange Filter"
 msgstr "Lọc cam"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:228
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:230
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Orange Filter</b>:<p>Simulate black and white film "
@@ -29640,12 +29640,12 @@ msgstr ""
 "bộ lọc màu cam. Tính năng này sẽ tăng cường ảnh phong cảnh, cảnh biển và ảnh "
 "chụp trên không.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:233
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Red Filter"
 msgstr "Lọc đỏ"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Red Filter</b>:<p>Simulate black and white film "
@@ -29656,12 +29656,12 @@ msgstr ""
 "bộ lọc màu đỏ. Dùng tính năng này thì tạo hiệu ứng bầu trời kịch và mô phỏng "
 "cảnh dưới ánh trăng trong ngày.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
 #, kde-format
 msgid "Yellow Filter"
 msgstr "Lọc vàng"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:240
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:242
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Yellow Filter</b>:<p>Simulate black and white film "
@@ -29672,12 +29672,12 @@ msgstr ""
 "bộ lọc màu vàng. Tính năng này sửa chữa sắc màu một cách tự nhiên nhất và "
 "tăng độ tương phản. Rất thích hợp với ảnh phong cảnh.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, fuzzy, kde-format
 msgid "Yellow-Green Filter"
 msgstr "Lọc vàng"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:246
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow-Green Filter</b>:<p>Simulate black and white "
@@ -29688,12 +29688,12 @@ msgid ""
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:253
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, fuzzy, kde-format
 msgid "Blue Filter"
 msgstr "Lọc đỏ"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:254
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Blue Filter</b>:<p>Simulate black and white film "
@@ -29704,32 +29704,32 @@ msgstr ""
 "bộ lọc màu đỏ. Dùng tính năng này thì tạo hiệu ứng bầu trời kịch và mô phỏng "
 "cảnh dưới ánh trăng trong ngày.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:259
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
 #, kde-format
 msgid "Strength:"
 msgstr "Độ mạnh:"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:265
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, fuzzy, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
 msgstr "<p>Ở đây hãy đặt sự điều chỉnh độ mạnh của bộ lọc kính."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:278
 #, kde-format
 msgid "No Tone Filter"
 msgstr "Không lọc sắc"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:277
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:279
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
 msgstr "<b>Không lọc sắc</b>:<p>đừng áp dụng bộ lọc sắc màu cho ảnh đó.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:280
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, fuzzy, kde-format
 msgid "Sepia Filter"
 msgstr "Lọc đỏ"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:281
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:283
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Sepia Tone</b>:<p>Gives a warm highlight and mid-tone "
@@ -29740,12 +29740,12 @@ msgstr ""
 "còn thêm một ít sự mát mẻ vào bóng — rất tương tự với tiến trình tẩy trắng "
 "bản in và rửa lại nó trong bộ tạo sắc màu nâu đỏ.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:286
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, fuzzy, kde-format
 msgid "Brown Filter"
 msgstr "Lọc lục"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:287
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:289
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
@@ -29754,12 +29754,12 @@ msgstr ""
 "<b>Đen trắng có sắc nâu</b>:<p>bộ lọc này là trung lập hơn bộ lọc Sắc Nâu Đỏ."
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:291
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, fuzzy, kde-format
 msgid "Cold Filter"
 msgstr "Lọc đỏ"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:292
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
@@ -29768,12 +29768,12 @@ msgstr ""
 "<b>Đen trắng với sắc mát</b>:<p>bắt đầu tế nhị và sao lại bản in trên giấy "
 "đen trắng sắc mát như giấy phóng bromua.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, fuzzy, kde-format
 msgid "Selenium Filter"
 msgstr "Lọc lục"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:300
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
@@ -29782,12 +29782,12 @@ msgstr ""
 "<b>Đen trắng với sắc Selen</b>:<p>hiệu ứng này sao lại việc tạo sắc màu hoá "
 "chất Selen truyền thống được làm trong buồng tối.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:302
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
 #, fuzzy, kde-format
 msgid "Platinum Filter"
 msgstr "Lọc cam"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:305
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
@@ -29796,7 +29796,7 @@ msgstr ""
 "<b>Đen trắng với sắc bạch kim</b>:<p>hiệu ứng này sao lại việc tạo sắc màu "
 "hoá chất bạch kim truyền thống được làm trong buồng tối.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, fuzzy, kde-format
 msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
@@ -29805,46 +29805,46 @@ msgstr ""
 "<b>Đen trắng có sắc nâu</b>:<p>bộ lọc này là trung lập hơn bộ lọc Sắc Nâu Đỏ."
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
 #, kde-format
 msgid "Lens Filters"
 msgstr "Bộ lọc kính"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
 #, kde-format
 msgid "Tone"
 msgstr "Sắc"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, fuzzy, kde-format
 msgid "Luminosity"
 msgstr "Độ trưng"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:512
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:514
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Load"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Tệp thiết lập đen trắng cần nạp"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:530
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:532
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "« %1 » không phải là một tệp văn bản thiết lập đen trắng."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:576
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:578
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "Không thể nạp thiết lập từ tệp văn bản thiết lập đen trắng."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:584
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:586
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Save"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Tệp thiết lập đen trắng cần lưu"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:623
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:625
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "Không thể lưu thiết lập vào tệp văn bản thiết lập đen trắng."
@@ -30162,32 +30162,32 @@ msgstr "Chọn &hết"
 msgid "Adjust Curves"
 msgstr "Điều chỉnh cong"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:236
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Chọn tệp cong GIMP cần tải"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:248
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Không thể tải từ tệp văn bản đường cong GIMP."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:257
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Tệp cong GIMP cần lưu"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:269
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Không thể lưu vào tệp văn bản đường cong GIMP."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:173
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:780
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:783
 #, kde-format
 msgid "Loading image..."
 msgstr "Đang tải ảnh..."
@@ -36004,22 +36004,22 @@ msgstr "&Tải..."
 msgid "Cancel this operation."
 msgstr "Thông tin máy ảnh"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:144
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr ""
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:150
 #, fuzzy, kde-format
 msgid "No active process"
 msgstr "Lọc nhiễu :"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr ""
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Show detailed progress window"
 msgstr ""
@@ -38204,6 +38204,7 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Tìm kiếm:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
@@ -41032,12 +41033,12 @@ msgstr ""
 msgid "Show available versions and the applied filters in a combined list"
 msgstr ""
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:800
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:803
 #, fuzzy, kde-format
 msgid "Uncalibrated color space"
 msgstr "Chưa định chuẩn"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:809
 #, kde-format
 msgid "No profile available..."
 msgstr "Không có sẵn hồ sơ..."
@@ -59874,7 +59875,6 @@ msgstr "Chế độ cong bằng tay"
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 msgid "Path: %1\n"

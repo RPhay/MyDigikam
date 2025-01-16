@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-15 01:52+0000\n"
+"POT-Creation-Date: 2025-01-16 01:53+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -7783,7 +7783,7 @@ msgid ""
 msgstr "線性原始掃描影像的負片檔需要使用 Gamma 曲線。標準值為 1.8 或 2.2。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
 #, kde-format
 msgid "Film"
 msgstr "底片"
@@ -11975,7 +11975,7 @@ msgstr "在這裡設定相機拍攝圖片時使用的整體影像增益調整度
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:333
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
 #, kde-format
 msgid "Contrast:"
 msgstr "對比："
@@ -26338,7 +26338,7 @@ msgstr "在這裡設定影像的亮度調整。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:339
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "在這裡設定影像的對比調整。"
@@ -26372,7 +26372,7 @@ msgid ""
 msgstr "這項數值 (單位為 E.V) 會被用於執行影像的曝光補償。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:328
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:330
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "這是影像明度的曲線調整。"
@@ -29462,7 +29462,7 @@ msgstr "不要再詢問"
 #: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
@@ -29927,23 +29927,23 @@ msgstr "在這裡設定影像的伽瑪調整。"
 msgid "Black & White / Sepia Filter"
 msgstr "黑白/墨色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:133
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:135
 #, kde-format
 msgctxt "generic black and white film"
 msgid "Generic"
 msgstr "一般"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:134
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:136
 #, kde-format
 msgid "<b>Generic</b>:<p>Simulate a generic black and white film.</p>"
 msgstr "<b>普通</b>：<p>模擬普通的黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:137
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:139
 #, kde-format
 msgid "Agfa 200X"
 msgstr "愛克發 200X"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:138
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:140
 #, kde-format
 msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
@@ -29951,12 +29951,12 @@ msgid ""
 msgstr ""
 "<b>愛克發 200X</b>：<p>以 200 ISO 模擬愛克發 (Agfa) 200X 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:143
 #, kde-format
 msgid "Agfa Pan 25"
 msgstr "愛克發 Pan 25"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:142
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:144
 #, kde-format
 msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
@@ -29964,12 +29964,12 @@ msgid ""
 msgstr ""
 "<b>愛克發 Pan 25</b>：<p>以 25 ISO 模擬愛克發 (Agfa) Pan 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:147
 #, kde-format
 msgid "Agfa Pan 100"
 msgstr "愛克發 Pan 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:146
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:148
 #, kde-format
 msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
@@ -29977,12 +29977,12 @@ msgid ""
 msgstr ""
 "<b>愛克發 Pan 100</b>：<p>以 100 ISO 模擬愛克發 (Agfa) Pan 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:151
 #, kde-format
 msgid "Agfa Pan 400"
 msgstr "愛克發 Pan 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:152
 #, kde-format
 msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
@@ -29990,12 +29990,12 @@ msgid ""
 msgstr ""
 "<b>愛克發 Pan 400</b>：<p>以 400 ISO 模擬愛克發 (Agfa) Pan 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:155
 #, kde-format
 msgid "Ilford Delta 100"
 msgstr "依爾福 Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:156
 #, kde-format
 msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -30004,12 +30004,12 @@ msgstr ""
 "<b>依爾福 Delta 100</b>：<p>以 100 ISO 模擬依爾福 (Ilford) Delta 黑白底片。</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:159
 #, kde-format
 msgid "Ilford Delta 400"
 msgstr "依爾福 Delta 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:160
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -30018,12 +30018,12 @@ msgstr ""
 "<b>依爾福 Delta 400</b>：<p>以 400 ISO 模擬依爾福 (Ilford) Delta 黑白底片。</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:163
 #, kde-format
 msgid "Ilford Delta 400 Pro 3200"
 msgstr "依爾福 Delta 400 Pro 3200"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:164
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
@@ -30032,12 +30032,12 @@ msgstr ""
 "<b>依爾福 Delta 400 Pro 3200</b>：<p>以 3200 ISO 模擬依爾福 (Ilford) Delta "
 "400 Pro 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:167
 #, kde-format
 msgid "Ilford FP4 Plus"
 msgstr "依爾福 FP4 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:168
 #, kde-format
 msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
@@ -30046,12 +30046,12 @@ msgstr ""
 "<b>依爾福 FP4 Plus</b>：<p>以 125 ISO 模擬依爾福 (Ilford) FP4 Plus 黑白底片。"
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:171
 #, kde-format
 msgid "Ilford HP5 Plus"
 msgstr "依爾福 HP5 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:172
 #, kde-format
 msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
@@ -30060,12 +30060,12 @@ msgstr ""
 "<b>依爾福 HP5 Plus</b>：<p>以 400 ISO 模擬依爾福 (Ilford) HP5 Plus 黑白底片。"
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:175
 #, kde-format
 msgid "Ilford PanF Plus"
 msgstr "依爾福 PanF Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:176
 #, kde-format
 msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
@@ -30074,12 +30074,12 @@ msgstr ""
 "<b>依爾福 PanF Plus</b>：<p>以 50 ISO 依爾福 (Ilford) PanF Plus 黑白底片。</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:179
 #, kde-format
 msgid "Ilford XP2 Super"
 msgstr "依爾福 XP2 Super"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:180
 #, kde-format
 msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
@@ -30088,12 +30088,12 @@ msgstr ""
 "<b>依爾福 XP2 Super</b>：<p>以 400 ISO 模擬依爾福 (Ilford) XP2 Super 黑白底"
 "片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:183
 #, kde-format
 msgid "Kodak Tmax 100"
 msgstr "柯達 Tmax 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:184
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
@@ -30101,12 +30101,12 @@ msgid ""
 msgstr ""
 "<b>柯達 Tmax 100</b>：<p>以 100 ISO 模擬柯達 (Kodak) Tmax 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:187
 #, kde-format
 msgid "Kodak Tmax 400"
 msgstr "柯達 Tmax 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:188
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
@@ -30114,24 +30114,24 @@ msgid ""
 msgstr ""
 "<b>柯達 Tmax 400</b>：<p>以 400 ISO 模擬柯達 (Kodak) Tmax 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:191
 #, kde-format
 msgid "Kodak TriX"
 msgstr "柯達 TriX"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:192
 #, kde-format
 msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
 "</p>"
 msgstr "<b>柯達 TriX</b>：<p>以 400 ISO 模擬柯達 (Kodak) TriX 黑白底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:197
 #, kde-format
 msgid "Ilford SPX 200 (Infrared)"
 msgstr "Ilford SPX 200 （紅外線）"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:196
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, kde-format
 msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
@@ -30139,12 +30139,12 @@ msgid ""
 msgstr ""
 "<b>Ilford SPX 200</b>：<p>以 200 ISO 模擬依爾福 (Ilford) SPX 紅外線底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:201
 #, kde-format
 msgid "Ilford SPX 400 (Infrared)"
 msgstr "Ilford SPX 400 （紅外線）"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:200
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
 #, kde-format
 msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
@@ -30152,12 +30152,12 @@ msgid ""
 msgstr ""
 "<b>Ilford SPX 400</b>：<p>以 400 ISO 模擬依爾福 (Ilford) SPX 紅外線底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:205
 #, kde-format
 msgid "Ilford SPX 800 (Infrared)"
 msgstr "Ilford SPX 800 （紅外線）"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:204
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
 #, kde-format
 msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
@@ -30165,35 +30165,35 @@ msgid ""
 msgstr ""
 "<b>Ilford SPX 800</b>：<p>以 800 ISO 模擬依爾福 (Ilford) SPX 紅外線底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:209
 #, kde-format
 msgid "Kodak HIE (Infrared)"
 msgstr "Kodak HIE（紅外線）"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:208
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:210
 #, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
 msgstr "<b>Kodak HIE</b>：<p>模擬 Kodak HIE 紅外線底片。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:219
 #, kde-format
 msgid "No Lens Filter"
 msgstr "無鏡頭濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:218
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
 #, kde-format
 msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr "<b>無鏡頭濾鏡</b>：<p>演算影像時不要套用鏡頭濾鏡。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:307
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:223
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
 #, kde-format
 msgid "Green Filter"
 msgstr "綠色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:222
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
 #, kde-format
 msgid ""
 "<b>Black & White with Green Filter</b>:<p>Simulate black and white film "
@@ -30203,12 +30203,12 @@ msgstr ""
 "<b>使用綠色濾鏡的黑白效果</b>：<p>使用綠色濾鏡模擬黑白底片曝光。這對所有的場"
 "景拍攝很有用，尤其是對著天空拍攝。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:227
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
 #, kde-format
 msgid "Orange Filter"
 msgstr "橙色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:228
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:230
 #, kde-format
 msgid ""
 "<b>Black & White with Orange Filter</b>:<p>Simulate black and white film "
@@ -30218,12 +30218,12 @@ msgstr ""
 "<b>使用橙色濾鏡的黑白效果</b>：<p>使用橙色濾鏡模擬黑白底片曝光。這會增強景"
 "觀、海洋場景和空中攝影。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:233
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Red Filter"
 msgstr "紅色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, kde-format
 msgid ""
 "<b>Black & White with Red Filter</b>:<p>Simulate black and white film "
@@ -30233,12 +30233,12 @@ msgstr ""
 "<b>使用紅色濾鏡的黑白效果</b>：<p>使用橙色濾鏡模擬黑白底片曝光。這會製作出生"
 "動的天空效果，並且在白天下模擬出月光場景。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
 #, kde-format
 msgid "Yellow Filter"
 msgstr "黃色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:240
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:242
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow Filter</b>:<p>Simulate black and white film "
@@ -30248,12 +30248,12 @@ msgstr ""
 "<b>使用黃色濾鏡的黑白效果</b>：<p>使用黃色濾鏡模擬黑白底片曝光。這有最自然的"
 "色調校正，並且提高對比。景觀的理想效果。 </p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, kde-format
 msgid "Yellow-Green Filter"
 msgstr "黃綠濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:246
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow-Green Filter</b>:<p>Simulate black and white "
@@ -30268,12 +30268,12 @@ msgstr ""
 "臉部表情並且突顯出活潑的氣息。這款濾鏡對於在鎢絲燈光下的室內人像攝影也很有"
 "效。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:253
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, kde-format
 msgid "Blue Filter"
 msgstr "藍色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:254
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
 #, kde-format
 msgid ""
 "<b>Black & White with Blue Filter</b>:<p>Simulate black and white film "
@@ -30283,32 +30283,32 @@ msgstr ""
 "<b>使用藍色濾鏡的黑白效果</b>：<p>使用藍色濾鏡模擬黑白底片曝光。這個濾鏡可強"
 "調薄霧和濃霧。用來做染印和對比效果。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:259
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
 #, kde-format
 msgid "Strength:"
 msgstr "強度："
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:265
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
 msgstr "在這裡設定鏡頭濾鏡的強度調整值。"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:278
 #, kde-format
 msgid "No Tone Filter"
 msgstr "無色調濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:277
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:279
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
 msgstr "<b>無色調濾鏡</b>：<p>不套用色調濾鏡到影像。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:280
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, kde-format
 msgid "Sepia Filter"
 msgstr "深褐色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:281
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:283
 #, kde-format
 msgid ""
 "<b>Black & White with Sepia Tone</b>:<p>Gives a warm highlight and mid-tone "
@@ -30318,24 +30318,24 @@ msgstr ""
 "<b>帶有深褐色調的黑白效果</b>：<p>產生溫暖的亮部和中間色調同時加入些微冷淡的"
 "陰影  - 非常類似於經過漂白過程並用深褐色調再沖洗。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:286
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, kde-format
 msgid "Brown Filter"
 msgstr "褐色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:287
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:289
 #, kde-format
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
 "Sepia Tone filter.</p>"
 msgstr "<b>帶有褐色調的黑白效果</b>：<p>這款濾鏡比深褐色調濾鏡更偏灰色。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:291
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, kde-format
 msgid "Cold Filter"
 msgstr "冷色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:292
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, kde-format
 msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
@@ -30344,12 +30344,12 @@ msgstr ""
 "<b>帶有冷色調的黑白效果</b>：<p>在冷色調紙張 (如溴化放大紙) 上進行微妙地仿製"
 "曬印。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, kde-format
 msgid "Selenium Filter"
 msgstr "硒色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:300
 #, kde-format
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
@@ -30358,12 +30358,12 @@ msgstr ""
 "<b>帶有硒色調的黑白效果</b>：<p>這個效果可仿製在暗房裡完成的傳統硒化學上色。"
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:302
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
 #, kde-format
 msgid "Platinum Filter"
 msgstr "鉑色濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:305
 #, kde-format
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
@@ -30372,7 +30372,7 @@ msgstr ""
 "<b>帶有鉑色調的黑白效果</b>：<p>這個效果可仿製在暗房裡完成的傳統鉑化學上色。"
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, kde-format
 msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
@@ -30380,46 +30380,46 @@ msgid ""
 msgstr ""
 "<b>帶有綠色調的黑白效果</b>：<p>這種效果也被稱為翠綠化 (Verdante)。</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
 #, kde-format
 msgid "Lens Filters"
 msgstr "鏡頭濾鏡"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
 #, kde-format
 msgid "Tone"
 msgstr "色調"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Luminosity"
 msgstr "明度"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:512
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:514
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Load"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "要載入的黑白設定檔"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:530
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:532
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "「%1」不是黑白設定值純文字檔。"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:576
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:578
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "無法從黑白純文字檔載入設定值。"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:584
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:586
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Save"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "要儲存的黑白設定檔"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:623
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:625
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "無法將設定值儲存到黑白純文字檔。"
@@ -30735,32 +30735,32 @@ msgstr "全部重設(&A)"
 msgid "Adjust Curves"
 msgstr "調整曲線"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:236
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "選擇要載入的 Gimp 曲線檔案"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:248
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "無法從此 Gimp 曲線純文字檔載入。"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:257
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "要儲存的 Gimp 曲線檔案"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:269
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "無法儲存到此 Gimp 曲線純文字檔。"
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:173
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:780
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:783
 #, kde-format
 msgid "Loading image..."
 msgstr "正在載入影像..."
@@ -36620,22 +36620,22 @@ msgstr "取消中..."
 msgid "Cancel this operation."
 msgstr "取消這個動作。"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:144
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "開啟詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:150
 #, kde-format
 msgid "No active process"
 msgstr "沒有進行中的行程"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "隱藏詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "顯示詳情進度對視窗"
@@ -38823,6 +38823,7 @@ msgid "Item scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
@@ -41737,12 +41738,12 @@ msgstr "在樹狀圖中顯示可用的版本"
 msgid "Show available versions and the applied filters in a combined list"
 msgstr "在組合式清單中顯示可用的版本與套用的濾鏡"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:800
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:803
 #, kde-format
 msgid "Uncalibrated color space"
 msgstr "未經校準的色彩空間"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:809
 #, kde-format
 msgid "No profile available..."
 msgstr "沒有可用的描述檔..."
@@ -60643,7 +60644,6 @@ msgstr "自動標籤模式："
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, fuzzy, kde-format
 #| msgid "#Sat: %1"
