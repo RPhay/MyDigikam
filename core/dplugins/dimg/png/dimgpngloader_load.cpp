@@ -327,16 +327,16 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     png_get_IHDR(png_ptr,
                  info_ptr,
-                 (png_uint_32*)(&w32),
-                 (png_uint_32*)(&h32),
+                 reinterpret_cast<png_uint_32*>(&w32),
+                 reinterpret_cast<png_uint_32*>(&h32),
                  &bit_depth,
                  &color_type,
                  &interlace_type,
                  nullptr,
                  nullptr);
 
-    width  = (int)w32;
-    height = (int)h32;
+    width          = (int)w32;
+    height         = (int)h32;
 
     int colorModel = DImg::COLORMODELUNKNOWN;
     m_sixteenBit   = (bit_depth == 16);
@@ -570,7 +570,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         uchar** lines = nullptr;
         (void)lines;    // to prevent cppcheck warnings.
-        lines         = (uchar**)malloc(height * sizeof(uchar*));
+        lines         = reinterpret_cast<unsigned char**>(malloc(height * sizeof(uchar*)));
         cleanupData->setLines(lines);
 
         if (!data || !lines)
