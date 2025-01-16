@@ -183,7 +183,8 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 #if defined(TIFFTAG_ICCPROFILE)
 
         purgeExifWorkingColorSpace();
-        TIFFSetField(tif, TIFFTAG_ICCPROFILE, (uint32)profile_rawdata.size(), (uchar*)profile_rawdata.data());
+        TIFFSetField(tif, TIFFTAG_ICCPROFILE, (uint32)profile_rawdata.size(),
+                     reinterpret_cast<unsigned char*>(profile_rawdata.data()));
 
 #endif
 
@@ -212,7 +213,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     uint16  a16          = 0;
     int     i            = 0;
 
-    uint8* buf           = (uint8*)_TIFFmalloc(TIFFScanlineSize(tif));
+    uint8* buf           = reinterpret_cast<uint8*>(_TIFFmalloc(TIFFScanlineSize(tif)));
     uint16* buf16        = nullptr;
 
     if (!buf)
@@ -342,7 +343,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     uchar* pixelThumb = nullptr;
     uchar* dataThumb  = thumb.bits();
-    uint8* bufThumb   = (uint8*) _TIFFmalloc(TIFFScanlineSize(tif));
+    uint8* bufThumb   = reinterpret_cast<uint8*>(_TIFFmalloc(TIFFScanlineSize(tif)));
 
     if (!bufThumb)
     {
@@ -412,7 +413,7 @@ void DImgTIFFLoader::tiffSetExifAsciiTag(TIFF* const tif,
     if (!tag.isEmpty())
     {
         QByteArray str(tag.data(), tag.size());
-        TIFFSetField(tif, tiffTag, (const char*)str.constData());
+        TIFFSetField(tif, tiffTag, reinterpret_cast<const char*>(str.constData()));
     }
 }
 
@@ -425,7 +426,7 @@ void DImgTIFFLoader::tiffSetExifDataTag(TIFF* const tif,
 
     if (!tag.isEmpty())
     {
-        TIFFSetField(tif, tiffTag, (uint32)tag.size(), (char*)tag.data());
+        TIFFSetField(tif, tiffTag, (uint32)tag.size(), reinterpret_cast<char*>(tag.data()));
     }
 }
 

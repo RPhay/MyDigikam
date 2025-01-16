@@ -920,8 +920,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 pixelsRead      = (qint64)rows_to_read * (qint64)img.width;
 
-                uchar* stripPtr = (uchar*)(strip.data());
-                uchar* dataPtr  = (uchar*)(data.data() + offset);
+                uchar* stripPtr = reinterpret_cast<unsigned char*>(strip.data());
+                uchar* dataPtr  = reinterpret_cast<unsigned char*>(data.data() + offset);
                 uchar* p        = nullptr;
 
                 // Reverse red and blue

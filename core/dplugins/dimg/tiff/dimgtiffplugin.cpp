@@ -94,7 +94,7 @@ QList<DPluginAuthor> DImgTIFFPlugin::authors() const
                              QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2024"))
+                             QString::fromUtf8("(C) 2006-2025"))
             ;
 }
 
@@ -155,7 +155,7 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     QByteArray header(headerLen, '\0');
 
-    if (file.read((char*)header.data(), headerLen) != headerLen)
+    if (file.read(const_cast<char*>(header.data()), headerLen) != headerLen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
 
