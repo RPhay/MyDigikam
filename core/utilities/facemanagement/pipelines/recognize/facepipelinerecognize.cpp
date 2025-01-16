@@ -22,6 +22,10 @@
 #include <QElapsedTimer>
 #include <QRectF>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -80,24 +84,19 @@ bool FacePipelineRecognize::start()
 
 bool FacePipelineRecognize::finder()
 {
-    // All threads start with the same basic functions
+    MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
 
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
-    QElapsedTimer timer;
-
-    //--------------------------------------------------------------------------------
-
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    // start pipeline stage specific code
-
-    bool moreCpu = false;
-    FaceUtils utils;
-
-    timer.start();
+    /* =========================================================================================
+     * Pipeline finder specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_FINDER_END to find the IDs images to process.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is alaways 1.
+     */
 
     // get the IDs to process
 
+    FaceUtils utils;
     QSet<qlonglong> filter;
 
     for (const Album* const album : std::as_const(settings.albums))
@@ -160,21 +159,14 @@ bool FacePipelineRecognize::finder()
         }
     }
 
-    // update the progress bar with the new number of items to process
+    /* =========================================================================================
+     * Pipeline finder specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
+     */ 
 
-    Q_EMIT signalUpdateItemCount(totalItemCount);
 
-    // end pipeline stage specific code
-    //////////////////////////////////////////////////////////////////////////////////////////////
-
-    pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer);
-
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
-
-    return true;
+    MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
 
 bool FacePipelineRecognize::loader()
@@ -193,37 +185,29 @@ bool FacePipelineRecognize::extractor()
 
 bool FacePipelineRecognize::classifier()
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     FaceClassifier* const classifier = FaceClassifier::instance();
     classifier->setParameters(settings);
 
-    while (!cancelled)
-    {
-        package = nullptr;
+    MLPIPELINE_LOOP_START(MLPipelineStage::Classifier, thisQueue);
+    package = static_cast<FacePipelinePackageBase*>(mlpackage);
 
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
-
-            if (queueEndSignal() == package)
-            {
-                // end of queue signal
-
-                break;
-            }
-
-            pipelinePerformanceStart(MLPipelineStage::Classifier, timer);
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
             // verify the feature mat is not empty
 
@@ -256,75 +240,47 @@ bool FacePipelineRecognize::classifier()
                 delete package;
             }
 
-            // end pipeline stage specific code
-            //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
-            pipelinePerformanceEnd(MLPipelineStage::Classifier, timer);
-        }
+    MLPIPELINE_LOOP_END(MLPipelineStage::Classifier, "FacePipelineDetectRecognize::classifier");
 
-        catch (const std::exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. "
-                                                << e.what() << " Restarting...";
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
 
-            if (package)
-            {
-                delete package;
-            }
-        }
 
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier(): unknown error. Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
-    }
-
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(MLPipelineStage::Classifier, MLPipelineStage::Writer);
-
-    return true;
+    MLPIPELINE_STAGE_END(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 }
 
 bool FacePipelineRecognize::writer()
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     FaceUtils utils;
     IdentityProvider* const idProvider = IdentityProvider::instance();
 
-    while (!cancelled)
-    {
-        package = nullptr;
+    MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
+    package = static_cast<FacePipelinePackageBase*>(mlpackage);
 
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
-
-            if (queueEndSignal() == package)
-            {
-                // end of queue signal
-
-                break;
-            }
-
-            pipelinePerformanceStart(MLPipelineStage::Writer, timer);
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
             QString displayName = package->info.name() + QStringLiteral("\n");
             int matches = 0;
@@ -350,40 +306,20 @@ bool FacePipelineRecognize::writer()
 
             delete package;
 
-            // end pipeline stage specific code
-            //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
-            pipelinePerformanceEnd(MLPipelineStage::Writer, timer);
-        }
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineDetectRecognize::writer");
 
-        catch (const std::exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. "
-                                                << e.what() << " Restarting...";
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
 
-            if (package)
-            {
-                delete package;
-            }
-        }
 
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::writer(): unknown error. Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
-    }
-
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
-
-    return true;
+    MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
 
 void FacePipelineRecognize::addMoreWorkers()
