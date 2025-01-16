@@ -33,11 +33,13 @@
 namespace DigikamGenericDNGConverterPlugin
 {
 
-class DNGConverterTask::Private
+class Q_DECL_HIDDEN DNGConverterTask::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     bool               backupOriginalRawFile    = false;
     bool               compressLossLess         = true;

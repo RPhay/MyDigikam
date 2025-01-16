@@ -29,12 +29,13 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-
-class TextConverterListViewItem::Private
+class Q_DECL_HIDDEN TextConverterListViewItem::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     QString destFileName;
     QString recognizedWords;

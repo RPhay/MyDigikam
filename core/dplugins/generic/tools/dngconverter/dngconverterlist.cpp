@@ -111,11 +111,13 @@ void DNGConverterList::slotRemoveItems()
 
 // ------------------------------------------------------------------------------------------------
 
-class DNGConverterListViewItem::Private
+class Q_DECL_HIDDEN DNGConverterListViewItem::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     QString destFileName;
     QString identity;

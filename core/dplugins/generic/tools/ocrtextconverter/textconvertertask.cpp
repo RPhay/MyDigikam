@@ -29,12 +29,13 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class TextConverterTask::Private
-
+class Q_DECL_HIDDEN TextConverterTask::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     OcrOptions                   opt;
 

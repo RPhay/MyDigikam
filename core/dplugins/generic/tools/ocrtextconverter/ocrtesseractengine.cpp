@@ -31,12 +31,13 @@
 namespace DigikamGenericTextConverterPlugin
 {
 
-class OcrTesseractEngine::Private
+class Q_DECL_HIDDEN OcrTesseractEngine::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     OcrOptions          opt;
 

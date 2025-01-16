@@ -59,7 +59,7 @@ using namespace Digikam;
 namespace DigikamGenericDNGConverterPlugin
 {
 
-class DNGConverterDialog::Private
+class Q_DECL_HIDDEN DNGConverterDialog::Private
 {
 public:
 

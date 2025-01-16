@@ -87,7 +87,7 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class SaveChangedImagesHelper
+class Q_DECL_HIDDEN SaveChangedImagesHelper
 {
 public:
 
@@ -116,7 +116,7 @@ public:
 
 // ---------------------------------------------------------------------------------
 
-class LoadFileMetadataHelper
+class Q_DECL_HIDDEN LoadFileMetadataHelper
 {
 public:
 
@@ -152,6 +152,8 @@ class Q_DECL_HIDDEN GeolocationEdit::Private
 public:
 
     Private() = default;
+
+public:
 
     // General things
     GPSItemModel*                            imageModel             = nullptr;

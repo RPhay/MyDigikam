@@ -55,7 +55,7 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class TextConverterDialog::Private
+class Q_DECL_HIDDEN TextConverterDialog::Private
 {
 public:
 
@@ -74,6 +74,8 @@ public:
 public:
 
     Private() = default;
+
+public:
 
     bool                              busy                  = false;
 
@@ -111,9 +113,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     setModal(true);
 
     d->iface          = iface;
-
     const int spacing = layoutSpacing();
-
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
