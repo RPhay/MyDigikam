@@ -48,13 +48,13 @@ class Q_DECL_HIDDEN KBiAssociativeContainer
     // and this struct must inherit from the QHash or QMap iterator.
 
     template<typename Container, typename T, typename U>
-    struct _iterator_impl_ctor : public Container::iterator
+    struct Q_DECL_HIDDEN _iterator_impl_ctor : public Container::iterator
     {
         _iterator_impl_ctor(typename Container::iterator it);
     };
 
     template<typename T, typename U>
-    struct _iterator_impl_ctor<QHash<T, U>, T, U>  : public QHash<T, U>::iterator
+    struct Q_DECL_HIDDEN _iterator_impl_ctor<QHash<T, U>, T, U>  : public QHash<T, U>::iterator
     {
         /* implicit */ _iterator_impl_ctor(const typename QHash<T, U>::iterator it)
         // Using internals here because I was too lazy to write my own iterator.
@@ -65,7 +65,7 @@ class Q_DECL_HIDDEN KBiAssociativeContainer
     };
 
     template<typename T, typename U>
-    struct _iterator_impl_ctor<QMap<T, U>, T, U> : public QMap<T, U>::iterator
+    struct Q_DECL_HIDDEN _iterator_impl_ctor<QMap<T, U>, T, U> : public QMap<T, U>::iterator
     {
         /* implicit */ _iterator_impl_ctor(const typename QMap<T, U>::iterator it)
         // Using internals here because I was too lazy to write my own iterator.
@@ -81,7 +81,7 @@ public:
     using right_type = typename QHash<QPersistentModelIndex, int>::mapped_type;
 
     template <typename Container>
-    class _iterator : public _iterator_impl_ctor<Container,
+    class Q_DECL_HIDDEN _iterator : public _iterator_impl_ctor<Container,
         typename Container::key_type,
         typename Container::mapped_type>
     {
@@ -369,7 +369,7 @@ public:
 
     KBiAssociativeContainer<LeftContainer, RightContainer>& unite(const KBiAssociativeContainer<LeftContainer, RightContainer>& other)
     {
-        typename LeftContainer::const_iterator it = other._leftToRight.constBegin();
+        typename LeftContainer::const_iterator it        = other._leftToRight.constBegin();
         const typename LeftContainer::const_iterator end = other._leftToRight.constEnd();
 
         while (it != end)
@@ -393,8 +393,8 @@ public:
 
         const left_type key = it.key();
         _rightToLeft.remove(_leftToRight.value(key));
-        _leftToRight[key] = u;
-        _rightToLeft[u] = key;
+        _leftToRight[key]   = u;
+        _rightToLeft[u]     = key;
     }
 
     void updateLeft(right_iterator it, left_type t)
@@ -403,8 +403,8 @@ public:
 
         const right_type key = it.key();
         _leftToRight.remove(_rightToLeft.value(key));
-        _rightToLeft[key] = t;
-        _leftToRight[t] = key;
+        _rightToLeft[key]    = t;
+        _leftToRight[t]      = key;
     }
 
     inline bool isEmpty() const
@@ -507,7 +507,7 @@ public:
         typename QHash<left_type, right_type>::const_iterator it = hash.constBegin();
         const typename QHash<left_type, right_type>::const_iterator end = hash.constEnd();
 
-        for (; it != end; ++it)
+        for ( ; it != end ; ++it)
         {
             container.insert(it.key(), it.value());
         }
@@ -521,7 +521,7 @@ public:
         typename QMap<left_type, right_type>::const_iterator it = hash.constBegin();
         const typename QMap<left_type, right_type>::const_iterator end = hash.constEnd();
 
-        for (; it != end; ++it)
+        for ( ; it != end ; ++it)
         {
             container.insert(it.key(), it.value());
         }
@@ -553,7 +553,7 @@ QDataStream& operator>>(QDataStream& in, KBiAssociativeContainer<LeftContainer, 
     typename LeftContainer::const_iterator it = leftToRight.constBegin();
     const typename LeftContainer::const_iterator end = leftToRight.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         container.insert(it.key(), it.value());
     }
@@ -562,13 +562,13 @@ QDataStream& operator>>(QDataStream& in, KBiAssociativeContainer<LeftContainer, 
 }
 
 template<typename Container, typename T, typename U>
-struct _containerType
+struct Q_DECL_HIDDEN _containerType
 {
     operator const char* ();
 };
 
 template<typename T, typename U>
-struct _containerType<QHash<T, U>, T, U>
+struct Q_DECL_HIDDEN _containerType<QHash<T, U>, T, U>
 {
     operator const char* ()
     {
@@ -577,7 +577,7 @@ struct _containerType<QHash<T, U>, T, U>
 };
 
 template<typename T, typename U>
-struct _containerType<QMap<T, U>, T, U>
+struct Q_DECL_HIDDEN _containerType<QMap<T, U>, T, U>
 {
     operator const char* ()
     {
@@ -599,7 +599,7 @@ QDebug operator<<(QDebug out, const KBiAssociativeContainer<LeftContainer, Right
     const typename KBiAssociativeContainer<LeftContainer, RightContainer>::left_const_iterator end = container.leftConstEnd();
     out.nospace() << "KBiAssociativeContainer<" << containerType<LeftContainer>() << ", " << containerType<RightContainer>() << ">" << "(";
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         out << "(" << it.key() << " <=> " << it.value() << ") ";
     }
@@ -616,7 +616,7 @@ QDebug operator<<(QDebug out, const KBiAssociativeContainer<LeftContainer, Right
  * @todo Figure out whether to discard this and use boost::bimap instead, submit it Qt or keep it here and make more direct use of QHashNode.
  */
 template <typename T, typename U>
-struct KBiHash : public KBiAssociativeContainer<QHash<T, U>, QHash<U, T> >
+struct Q_DECL_HIDDEN KBiHash : public KBiAssociativeContainer<QHash<T, U>, QHash<U, T> >
 {
     KBiHash()
         : KBiAssociativeContainer<QHash<T, U>, QHash<U, T> > ()
@@ -637,7 +637,7 @@ QDebug operator<<(QDebug out, const KBiHash<T, U>& biHash)
     const typename KBiHash<T, U>::left_const_iterator end = biHash.leftConstEnd();
     out.nospace() << "KBiHash(";
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         out << "(" << it.key() << " <=> " << it.value() << ") ";
     }
@@ -648,7 +648,7 @@ QDebug operator<<(QDebug out, const KBiHash<T, U>& biHash)
 }
 
 template <typename T, typename U>
-struct KHash2Map : public KBiAssociativeContainer<QHash<T, U>, QMap<U, T> >
+struct Q_DECL_HIDDEN KHash2Map : public KBiAssociativeContainer<QHash<T, U>, QMap<U, T> >
 {
     KHash2Map()
         : KBiAssociativeContainer<QHash<T, U>, QMap<U, T> > ()
@@ -690,7 +690,7 @@ QDebug operator<<(QDebug out, const KHash2Map<T, U>& container)
     const typename KHash2Map<T, U>::left_const_iterator end = container.leftConstEnd();
     out.nospace() << "KHash2Map(";
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         out << "(" << it.key() << " <=> " << it.value() << ") ";
     }
