@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-15 01:52+0000\n"
+"POT-Creation-Date: 2025-01-16 01:53+0000\n"
 "PO-Revision-Date: 2025-01-12 18:44+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -8101,7 +8101,7 @@ msgstr ""
 "Normaj valoroj estas 1.8 aŭ 2.2."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
 #, kde-format
 msgid "Film"
 msgstr "Filmo"
@@ -12371,7 +12371,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:333
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
 #, kde-format
 msgid "Contrast:"
 msgstr "Kontrasto:"
@@ -26509,7 +26509,7 @@ msgstr "Fiksu ĉi tie la ĝustigon de brilo de la bildo."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:339
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Fiksu ĉi tie la kontrastan ĝustigon de la bildo."
@@ -26543,7 +26543,7 @@ msgid ""
 msgstr "Ĉi tiu valoro en E.V estos uzata por fari eksponkompenson de la bildo."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:328
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:330
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Ĉi tio estas la kurba alĝustigo de la bilda lumeco"
@@ -29692,7 +29692,7 @@ msgstr "Ne demandi denove"
 #: core/libs/dialogs/dprogressdlg.cpp:80
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:96
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
@@ -30138,23 +30138,23 @@ msgstr "Fiksu ĉi tie la gama-ĝustigon de la bildo."
 msgid "Black & White / Sepia Filter"
 msgstr "Nigra kaj Blanka / Sepia Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:133
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:135
 #, kde-format
 msgctxt "generic black and white film"
 msgid "Generic"
 msgstr "Ĝenerala"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:134
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:136
 #, kde-format
 msgid "<b>Generic</b>:<p>Simulate a generic black and white film.</p>"
 msgstr "<b>Ĝenerala</b>:<p>Simuli ĝeneralan nigrablankan filmon.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:137
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:139
 #, kde-format
 msgid "Agfa 200X"
 msgstr "Agfa 200X"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:138
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:140
 #, kde-format
 msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
@@ -30162,12 +30162,12 @@ msgid ""
 msgstr ""
 "<b>Agfa 200X</b>:<p>Simuli la nigrablankan filmon Agfa 200X je 200 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:143
 #, kde-format
 msgid "Agfa Pan 25"
 msgstr "Agfa Pan 25"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:142
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:144
 #, kde-format
 msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
@@ -30175,12 +30175,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 25</b>:<p>Simuli la nigrablankan filmon Agfa Pan ĉe 25 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:147
 #, kde-format
 msgid "Agfa Pan 100"
 msgstr "Agfa Pan 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:146
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:148
 #, kde-format
 msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
@@ -30188,12 +30188,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 100</b>:<p>Simuli la nigrablankan filmon Agfa Pan ĉe 100 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:151
 #, kde-format
 msgid "Agfa Pan 400"
 msgstr "Agfa Pan 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:152
 #, kde-format
 msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
@@ -30201,12 +30201,12 @@ msgid ""
 msgstr ""
 "<b>Agfa Pan 400</b>:<p>Simuli la nigrablankan filmon Agfa Pan ĉe 400 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:155
 #, kde-format
 msgid "Ilford Delta 100"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:156
 #, kde-format
 msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -30215,12 +30215,12 @@ msgstr ""
 "<b>Ilford Delta 100</b>:<p>Simuli la nigrablankan filmon Ilford Delta ĉe 100 "
 "ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:159
 #, kde-format
 msgid "Ilford Delta 400"
 msgstr "Ilford Delta 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:160
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -30229,12 +30229,12 @@ msgstr ""
 "<b>Ilford Delta 400</b>:<p>Simuli la nigrablankan filmon Ilford Delta ĉe 400 "
 "ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:163
 #, kde-format
 msgid "Ilford Delta 400 Pro 3200"
 msgstr "Ilford Delta 400 Pro 3200"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:164
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
@@ -30243,12 +30243,12 @@ msgstr ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simuli la nigrablankan filmon Ilford "
 "Delta 400 Pro ĉe 3200 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:167
 #, kde-format
 msgid "Ilford FP4 Plus"
 msgstr "Ilford FP4 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:168
 #, kde-format
 msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
@@ -30257,12 +30257,12 @@ msgstr ""
 "<b>Ilford FP4 Plus</b>:<p>Simuli la nigrablankan filmon Ilford FP4 Plus ĉe "
 "125 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:171
 #, kde-format
 msgid "Ilford HP5 Plus"
 msgstr "Ilford HP5 Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:172
 #, kde-format
 msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
@@ -30271,12 +30271,12 @@ msgstr ""
 "<b>Ilford HP5 Plus</b>:<p>Simuli la nigrablankan filmon Ilford HP5 Plus ĉe "
 "400 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:175
 #, kde-format
 msgid "Ilford PanF Plus"
 msgstr "Ilford PanF Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:176
 #, kde-format
 msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
@@ -30285,12 +30285,12 @@ msgstr ""
 "<b>Ilford PanF Plus</b>:<p>Simuli la nigrablankan filmon Ilford PanF Plus ĉe "
 "50 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:179
 #, kde-format
 msgid "Ilford XP2 Super"
 msgstr "Ilford XP2 Super"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:180
 #, kde-format
 msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
@@ -30299,12 +30299,12 @@ msgstr ""
 "<b>Ilford XP2 Super</b>:<p>Simuli la nigrablankan filmon Ilford XP2 Super je "
 "400 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:183
 #, kde-format
 msgid "Kodak Tmax 100"
 msgstr "Kodak Tmax 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:184
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
@@ -30313,12 +30313,12 @@ msgstr ""
 "<b>Kodak Tmax 100</b>:<p>Simuli la nigrablankan filmon Kodak Tmax je 100 ISO."
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:187
 #, kde-format
 msgid "Kodak Tmax 400"
 msgstr "Kodak Tmax 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:188
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
@@ -30327,12 +30327,12 @@ msgstr ""
 "<b>Kodak Tmax 400</b>:<p>Simuli la nigrablankan filmon Kodak Tmax ĉe 400 ISO."
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:191
 #, kde-format
 msgid "Kodak TriX"
 msgstr "Kodak TriX"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:192
 #, kde-format
 msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
@@ -30340,12 +30340,12 @@ msgid ""
 msgstr ""
 "<b>Kodak TriX</b>:<p>Simuli la nigrablankan filmon Kodak TriX je 400 ISO.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:197
 #, kde-format
 msgid "Ilford SPX 200 (Infrared)"
 msgstr "Ilford SPX 200 (infraruĝa)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:196
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, kde-format
 msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
@@ -30354,12 +30354,12 @@ msgstr ""
 "<b>Ilford SPX 200</b>:<p>Simuli la infraruĝan filmon Ilford SPX ĉe 200 ISO.</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:201
 #, kde-format
 msgid "Ilford SPX 400 (Infrared)"
 msgstr "Ilford SPX 400 (infraruĝa)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:200
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
 #, kde-format
 msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
@@ -30368,12 +30368,12 @@ msgstr ""
 "<b>Ilford SPX 400</b>:<p>Simuli la infraruĝan filmon Ilford SPX ĉe 400 ISO.</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:205
 #, kde-format
 msgid "Ilford SPX 800 (Infrared)"
 msgstr "Ilford SPX 800 (infraruĝa)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:204
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
 #, kde-format
 msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
@@ -30382,22 +30382,22 @@ msgstr ""
 "<b>Ilford SPX 800</b>:<p>Simuli la infraruĝan filmon Ilford SPX ĉe 800 ISO.</"
 "p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:209
 #, kde-format
 msgid "Kodak HIE (Infrared)"
 msgstr "Kodak HIE (infraruĝa)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:208
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:210
 #, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
 msgstr "<b>Kodak HIE</b>:<p>Simuli la infraruĝan filmon Kodak HIE.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:219
 #, kde-format
 msgid "No Lens Filter"
 msgstr "Neniu Filtrilo de lenso"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:218
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
 #, kde-format
 msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
@@ -30406,13 +30406,13 @@ msgstr ""
 "<b>Neniu lensfiltrilo</b>:<p>Ne apliku lensfiltrilon dum bildigo de la bildo."
 "</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:307
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:223
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
 #, kde-format
 msgid "Green Filter"
 msgstr "Verda Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:222
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
 #, kde-format
 msgid ""
 "<b>Black & White with Green Filter</b>:<p>Simulate black and white film "
@@ -30423,12 +30423,12 @@ msgstr ""
 "verda filtrilo. Ĉi tio utilas por ĉiuj pitoreskaj pafoj, precipe portretoj "
 "fotitaj kontraŭ la ĉielo.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:227
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
 #, kde-format
 msgid "Orange Filter"
 msgstr "Oranĝa Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:228
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:230
 #, kde-format
 msgid ""
 "<b>Black & White with Orange Filter</b>:<p>Simulate black and white film "
@@ -30439,12 +30439,12 @@ msgstr ""
 "per oranĝa filtrilo. Ĉi tio plibonigos pejzaĝojn, marajn scenojn kaj "
 "aerfoton.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:233
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Red Filter"
 msgstr "Ruĝa Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, kde-format
 msgid ""
 "<b>Black & White with Red Filter</b>:<p>Simulate black and white film "
@@ -30455,12 +30455,12 @@ msgstr ""
 "ruĝa filtrilo. Ĉi tio kreas dramajn ĉielefikojn, kaj simulas lunlumajn "
 "scenojn tage.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
 #, kde-format
 msgid "Yellow Filter"
 msgstr "Flava Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:240
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:242
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow Filter</b>:<p>Simulate black and white film "
@@ -30471,12 +30471,12 @@ msgstr ""
 "elmeton per flava filtrilo. Ĉi tio havas la plej naturan tonan korekton, kaj "
 "plibonigas kontraston. Ideala por pejzaĝoj.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, kde-format
 msgid "Yellow-Green Filter"
 msgstr "Flava-Verda Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:246
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow-Green Filter</b>:<p>Simulate black and white "
@@ -30493,12 +30493,12 @@ msgstr ""
 "emfazi la senton de viveco. Ĉi tiu filtrilo estas tre efika por endomaj "
 "portretoj sub volframa lumigado.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:253
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, kde-format
 msgid "Blue Filter"
 msgstr "Blua Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:254
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
 #, kde-format
 msgid ""
 "<b>Black & White with Blue Filter</b>:<p>Simulate black and white film "
@@ -30509,32 +30509,32 @@ msgstr ""
 "blua filtrilo. Ĉi tio akcentas nebuleton kaj nebulon. Uzita por tinkturfarba "
 "translokigo kaj kontrastaj efikoj.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:259
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
 #, kde-format
 msgid "Strength:"
 msgstr "Forteco:"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:265
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
 msgstr "Ĉi tie, agordu la fortoĝustigon de la lensa filtrilo."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:278
 #, kde-format
 msgid "No Tone Filter"
 msgstr "Neniu Tona Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:277
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:279
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
 msgstr "<b>Neniu Tonfiltrilo</b>:<p>Ne apliki tonfiltrilon al la bildo.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:280
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, kde-format
 msgid "Sepia Filter"
 msgstr "Sepia Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:281
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:283
 #, kde-format
 msgid ""
 "<b>Black & White with Sepia Tone</b>:<p>Gives a warm highlight and mid-tone "
@@ -30545,12 +30545,12 @@ msgstr ""
 "tonon aldonante iom da malvarmeto al la ombroj - tre simila al la procezo de "
 "blankigado de presaĵo kaj re-disvolviĝo en sepia toner.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:286
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, kde-format
 msgid "Brown Filter"
 msgstr "Bruna Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:287
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:289
 #, kde-format
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
@@ -30559,12 +30559,12 @@ msgstr ""
 "<b>Nigra kaj Blanka kun Bruna Tono</b>:<p>Ĉi tiu filtrilo estas pli neŭtrala "
 "ol la Sepia Tona filtrilo.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:291
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, kde-format
 msgid "Cold Filter"
 msgstr "Malvarma Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:292
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, kde-format
 msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
@@ -30574,12 +30574,12 @@ msgstr ""
 "presadon sur malvarma tona nigra kaj blanka papero kiel bromida pligrandiga "
 "papero.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, kde-format
 msgid "Selenium Filter"
 msgstr "Selena Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:300
 #, kde-format
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
@@ -30588,12 +30588,12 @@ msgstr ""
 "<b>Nigra kaj Blanka kun Selena Tono</b>:<p>Tiu efiko reproduktas tradician "
 "selenan kemian nuancon faritan en la malluma ĉambro.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:302
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
 #, kde-format
 msgid "Platinum Filter"
 msgstr "Platena Filtrilo"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:305
 #, kde-format
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
@@ -30602,7 +30602,7 @@ msgstr ""
 "<b>Nigra kaj Blanka kun Platena Tono</b>:<p>Tiu efiko reproduktas tradician "
 "platenan kemian nuancon faritan en la malluma ĉambro.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, kde-format
 msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
@@ -30611,44 +30611,44 @@ msgstr ""
 "<b>Nigra kaj Blanka kun verdeta nuanco</b>:<p>Tiu efiko ankaŭ estas konata "
 "kiel Verdante.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
 #, kde-format
 msgid "Lens Filters"
 msgstr "Filtriloj de lenso"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
 #, kde-format
 msgid "Tone"
 msgstr "Tono"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Luminosity"
 msgstr "Lumeco"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:512
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:514
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Nigra & Blanka agorddosiero ŝargenda"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:530
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:532
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "\"%1\" ne estas tekstdosiero de Nigra & Blanka agordoj."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:576
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:578
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "Ne povas ŝargi agordojn de la Nigra kaj Blanka tekstdosiero."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:584
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:586
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Nigra kaj Blanka Agorda Dosiero por Konservi"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:623
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:625
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "Ne povas konservi agordojn al la Nigra kaj Blanka tekstdosiero."
@@ -30949,30 +30949,30 @@ msgstr "Restarigi &Ĉion"
 msgid "Adjust Curves"
 msgstr "Alĝustigi Kurbojn"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:236
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Elekti Gimp-Kurbajn dosieron ŝargendan"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:248
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Ne povas ŝargi el la tekstdosiero de Gimp-kurboj."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:257
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Gimp-Kurba Dosiero por Konservi"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:269
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Ne povas konservi en la tekstdosiero de Gimp-kurboj."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:173
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:780
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:783
 #, kde-format
 msgid "Loading image..."
 msgstr "Ŝargante bildon..."
@@ -36844,22 +36844,22 @@ msgstr "Ĉesigante..."
 msgid "Cancel this operation."
 msgstr "Nuligi ĉi tiun operacion."
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:142
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:144
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "Malfermi detalan progresan dialogon"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:148
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:150
 #, kde-format
 msgid "No active process"
 msgstr "Neniu aktiva procezo"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:408
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Kaŝi detalan progresfenestron"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:414
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Montri detalan progresfenestron"
@@ -39131,6 +39131,7 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Ero skanita por objektoj: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgid "Album: %1"
 msgid "Album: %1\n"
@@ -42064,12 +42065,12 @@ msgid "Show available versions and the applied filters in a combined list"
 msgstr ""
 "Montri disponeblajn versiojn kaj la aplikatajn filtrilojn en kombinita listo"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:800
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:803
 #, kde-format
 msgid "Uncalibrated color space"
 msgstr "Nekalibrita kolorspaco"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:809
 #, kde-format
 msgid "No profile available..."
 msgstr "Neniu profilo disponebla..."
@@ -60870,7 +60871,6 @@ msgstr "Aŭtomataj etikedoj por: %1\n"
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
 #, kde-format
 msgid "Path: %1\n"
