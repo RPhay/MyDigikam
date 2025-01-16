@@ -534,7 +534,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     return true;
 }
 
-bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
+bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image) // cppcheck-suppress constParameterPointer
 {
 
 #if LIBHEIF_NUMERIC_VERSION >= 0x01040000
