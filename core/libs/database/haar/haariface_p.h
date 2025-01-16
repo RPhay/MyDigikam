@@ -62,7 +62,7 @@ typedef QMap<qlonglong, Haar::SignatureData> SignatureCache;
 typedef QMap<qlonglong, int>                 AlbumCache;
 
 /**
- * This class encapsulates the Haar signature in a QByteArray
+ * @brief This class encapsulates the Haar signature in a QByteArray
  * that can be stored as a BLOB in the database.
  *
  * Reading and writing is done in a platform-independent manner, which
@@ -82,7 +82,7 @@ public:
     DatabaseBlob() = default;
 
     /**
-     * Read the QByteArray into the Haar::SignatureData.
+     * @brief Read the QByteArray into the Haar::SignatureData.
      */
     void read(const QByteArray& array, Haar::SignatureData& data);
 

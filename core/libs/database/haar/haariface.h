@@ -63,7 +63,6 @@ private:
 
 class DIGIKAM_DATABASE_EXPORT HaarIface
 {
-
 public:
 
     enum SketchType
@@ -116,7 +115,7 @@ public:
     static int preferredSize();
 
     /**
-     * Adds an image to the index in the database.
+     * @brief Adds an image to the index in the database.
      */
     bool indexImage(const QString& filename);
     bool indexImage(const QString& filename, const QImage& image);
@@ -130,7 +129,7 @@ public:
                                                     SketchType type = ScannedSketch);
 
     /**
-     * Searches the database for the best matches for the specified query image.
+     * @brief Searches the database for the best matches for the specified query image.
      * All matches with a similarity in a given threshold interval are returned.
      * The threshold is in the range requiredPercentage..maximumPercentage.
      */
@@ -144,7 +143,7 @@ public:
     );
 
     /**
-     * Searches the database for the best matches for the specified query image.
+     * @brief Searches the database for the best matches for the specified query image.
      * All matches with a similarity in a given threshold interval are returned.
      * The threshold is in the range requiredPercentage..maximumPercentage.
      */
@@ -158,13 +157,13 @@ public:
     );
 
     /**
-     * Calculates the Haar signature, bring it in a form as stored in the DB,
+     * @brief Calculates the Haar signature, bring it in a form as stored in the DB,
      * and encode it to Ascii data. Can be used for bestMatchesForSignature.
      */
     QString signatureAsText(const QImage& image);
 
     /**
-     * Checks whether the image with the given imageId fulfills all restrictions given in
+     * @brief Checks whether the image with the given imageId fulfills all restrictions given in
      * targetAlbums and in respect to searchResultRestriction.
      */
     bool fulfillsRestrictions(qlonglong imageId,
@@ -175,7 +174,7 @@ public:
                               DuplicatesSearchRestrictions searchResultRestriction);
 
     /**
-     * For a given signature, find out the highest and lowest possible score
+     * @brief For a given signature, find out the highest and lowest possible score
      * that any other signature could reach, compared to the given signature.
      */
     void getBestAndWorstPossibleScore(Haar::SignatureData* const querySig,
@@ -184,7 +183,7 @@ public:
                                       double* const highestAndWorstScore);
 
     /**
-     * Fill a map of duplicates images found over a list of images to scan.
+     * @brief Fill a map of duplicates images found over a list of images to scan.
      * For each map item, the result values is list of candidate images which are duplicates of the key image.
      * All images are referenced by id from database.
      * The threshold is in the range 0..1, with 1 meaning identical signature.
@@ -202,14 +201,14 @@ public:
     );
 
     /**
-     * Collects all images from the given album and tag ids according to their relation.
+     * @brief Collects all images from the given album and tag ids according to their relation.
      */
     static QSet<qlonglong> imagesFromAlbumsAndTags(const QList<int>& albums2Scan,
                                                    const QList<int>& tags2Scan,
                                                    AlbumTagRelation relation);
 
     /**
-     * This method rebuilds the given SAlbums using the given results.
+     * @brief This method rebuilds the given SAlbums using the given results.
      *
      * @param results Map of duplicates images found over a list of images.
      * @param isAlbumUpdate if true update the SAlbums in the database.
@@ -217,20 +216,20 @@ public:
     static void rebuildDuplicatesAlbums(const DuplicatesResultsMap& results, bool isAlbumUpdate);
 
     /**
-     * Retrieve the Haar signature from database using image id.
-     * Return true if item signature exist else false.
+     * @brief Retrieve the Haar signature from database using image id.
+     * @return true if item signature exist else false.
      */
     bool retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData& sig);
 
     /**
-     * Give a list of albumRoots to which the search shall be limited.
+     * @brief Give a list of albumRoots to which the search shall be limited.
      * Calling with an empty list will disable filtering.
      */
     void setAlbumRootsToSearch(const QList<int>& albumRootIds);
     void setAlbumRootsToSearch(const QSet<int>& albumRootIds);
 
     /**
-     * This method loads a QImage from the given filename.
+     * @brief This method loads a QImage from the given filename.
      *
      * @param filename the name of the file (path)
      *
@@ -243,7 +242,7 @@ private:
     bool   indexImage(qlonglong imageid);
 
     /**
-     * This method writes the search results to the SearchXml structure.
+     * @brief This method writes the search results to the SearchXml structure.
      *
      * @param searchResults The results to write as XML.
      */
@@ -276,7 +275,7 @@ private:
                                                                      SketchType type);
 
     /**
-     * This method is the core functionality: It assigns a score to every image in the database.
+     * @brief This method is the core functionality: It assigns a score to every image in the database.
      *
      * @param data The signature of the original image for score calculation.
      * @param type The type of the sketch, e.g. scanned.
@@ -296,7 +295,7 @@ private:
     double calculateScore(const Haar::SignatureData& querySig,
                           const Haar::SignatureData& targetSig,
                           const Haar::Weights& weights,
-                          std::reference_wrapper<Haar::SignatureMap>* const queryMaps);
+                          const std::reference_wrapper<Haar::SignatureMap>* const queryMaps);
 
 private:
 

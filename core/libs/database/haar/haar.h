@@ -39,7 +39,7 @@ namespace Haar
 {
 
 /**
- * Weights for the Haar coefficients. Straight from the referenced paper
+ * @brief Weights for the Haar coefficients. Straight from the referenced paper
  * "Fast Multiresolution Image Querying"
  * by Charles E. Jacobs, Adam Finkelstein and David H. Salesin.
  * https://www.cs.washington.edu/homes/salesin/abstracts.html
@@ -72,24 +72,24 @@ static const float s_haar_weights[2][6][3] =
 };
 
 /**
- * Number of pixels on one side of image; required to be a power of 2.
+ * @brief Number of pixels on one side of image; required to be a power of 2.
  */
 enum { NumberOfPixels = 128 };
 
 /**
- * Total pixels in a square image.
+ * @brief Total pixels in a square image.
  */
 enum { NumberOfPixelsSquared = NumberOfPixels * NumberOfPixels };
 
 /**
- * Number of Haar coefficients we retain as signature for an image.
+ * @brief Number of Haar coefficients we retain as signature for an image.
  */
 enum { NumberOfCoefficients = 40 };
 
 typedef double Unit;
 
 /**
- * Keep this definition constant at qint32 (guaranteed binary size!)
+ * @brief Keep this definition constant at qint32 (guaranteed binary size!)
  */
 typedef qint32 Idx;
 
@@ -114,12 +114,12 @@ class SignatureData
 public:
 
     /**
-     * Y/I/Q positions with largest magnitude
+     * @brief Y/I/Q positions with largest magnitude
      */
     Haar::Idx sig[3][Haar::NumberOfCoefficients] = { { 0 } };
 
     /**
-     * YIQ for position [0,0]
+     * @brief YIQ for position [0,0]
      */
     double    avg[3] = { 0.0 };
 };
@@ -127,7 +127,7 @@ public:
 // ---------------------------------------------------------------------------------
 
 /**
- * This class provides very fast lookup if a certain pixel
+ * @brief This class provides very fast lookup if a certain pixel
  * is set (positive or negative) in the loaded coefficient set.
  */
 class SignatureMap
@@ -225,7 +225,7 @@ public:
 public:
 
     /**
-     * Fixed weight mask for pixel positions (i,j).
+     * @brief Fixed weight mask for pixel positions (i,j).
      * Each entry x = i*NUM_PIXELS + j, gets value max(i,j) saturated at 5.
      * To be treated as a constant.
      */

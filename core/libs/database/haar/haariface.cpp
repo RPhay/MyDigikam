@@ -1031,7 +1031,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 double HaarIface::calculateScore(const Haar::SignatureData& querySig,
                                  const Haar::SignatureData& targetSig,
                                  const Haar::Weights& weights,
-                                 std::reference_wrapper<Haar::SignatureMap>* const queryMaps)
+                                 const std::reference_wrapper<Haar::SignatureMap>* const queryMaps)
 {
     double score = 0.0;
 
