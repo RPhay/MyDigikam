@@ -242,8 +242,7 @@ Qt::ItemFlags TrackListModel::flags(const QModelIndex& index) const
     {
         return Qt::NoItemFlags;
     }
-
-    if (index.isValid())
+    else
     {
         Q_ASSERT(index.model() == this);
     }
