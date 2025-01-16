@@ -36,7 +36,7 @@ public:
 
 public:   // Public methods.
 
-    void pixelAntiAliasing(uchar* const data,
+    void pixelAntiAliasing(const uchar* const data,
                            int Width,
                            int Height,
                            double X,
@@ -46,7 +46,7 @@ public:   // Public methods.
                            uchar* const G,
                            uchar* const B);
 
-    void pixelAntiAliasing16(unsigned short* const data,
+    void pixelAntiAliasing16(const unsigned short* const data,
                              int Width,
                              int Height,
                              double X,

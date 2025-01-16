@@ -40,10 +40,10 @@ DPixelsAliasFilter::~DPixelsAliasFilter()
 }
 
 /**
- * Function to perform pixel antialiasing with 8 bits/color/pixel images. This method is used to smooth target
+ * @brief Function to perform pixel antialiasing with 8 bits/color/pixel images. This method is used to smooth target
  * image in transformation  method like free rotation or shear tool.
  */
-void DPixelsAliasFilter::pixelAntiAliasing(uchar* const data,
+void DPixelsAliasFilter::pixelAntiAliasing(const uchar* const data,
                                            int Width,
                                            int Height,
                                            double X,
@@ -103,10 +103,10 @@ void DPixelsAliasFilter::pixelAntiAliasing(uchar* const data,
 }
 
 /**
- * Function to perform pixel antialiasing with 16 bits/color/pixel images. This method is used to smooth target
+ * @brief Function to perform pixel antialiasing with 16 bits/color/pixel images. This method is used to smooth target
  * image in transformation  method like free rotation or shear tool.
  */
-void DPixelsAliasFilter::pixelAntiAliasing16(unsigned short* const data,
+void DPixelsAliasFilter::pixelAntiAliasing16(const unsigned short* const data,
                                              int Width,
                                              int Height,
                                              double X,
