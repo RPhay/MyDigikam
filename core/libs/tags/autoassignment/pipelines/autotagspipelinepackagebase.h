@@ -49,7 +49,7 @@ public:
     AutotagsPipelinePackageBase()                                               = default;
     explicit AutotagsPipelinePackageBase(qlonglong _imageId, const QString& _albumTitle = QString());
 
-    virtual ~AutotagsPipelinePackageBase()                                      = default;
+    virtual ~AutotagsPipelinePackageBase() override                             = default;
 
 public:
 

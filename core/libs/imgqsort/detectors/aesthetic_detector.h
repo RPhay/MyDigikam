@@ -33,7 +33,7 @@ class AestheticDetector : public AbstractDetector
 public:
 
     explicit AestheticDetector();
-    ~AestheticDetector();
+    ~AestheticDetector()                                              override;
 
     float detect(const cv::Mat& image)                          const override;
 

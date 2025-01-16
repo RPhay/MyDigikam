@@ -44,7 +44,7 @@ public:
 public:
 
     explicit AutotagsClassifierYolo(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierYolo();
+    virtual ~AutotagsClassifierYolo()                                           override = default;
 
     virtual int predict(const cv::Mat& target)      const                       override
     {

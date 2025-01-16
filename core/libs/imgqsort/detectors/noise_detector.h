@@ -33,7 +33,7 @@ public:
 public:
 
     explicit NoiseDetector();
-    ~NoiseDetector();
+    ~NoiseDetector()                                                                  override;
 
     float detect(const cv::Mat& image)                                          const override;
 

@@ -67,7 +67,7 @@ public:
     DMetadata();
     explicit DMetadata(const QString& filePath);
     explicit DMetadata(const MetaEngineData& data);
-    ~DMetadata() = default;
+    ~DMetadata()                                                                                                              override = default;
 
 public: // Settings helpers
 
@@ -116,7 +116,7 @@ public: // Faces helpers
      *              search if at least a face tag exist and write if true.
      * @param size The size of the area grouping all faces in image.
      */
-    bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())       const;
+    bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())        const;
 
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.

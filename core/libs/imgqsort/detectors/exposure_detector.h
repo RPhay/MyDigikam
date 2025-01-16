@@ -29,7 +29,7 @@ class ExposureDetector : public AbstractDetector
 public:
 
     explicit ExposureDetector();
-    ~ExposureDetector();
+    ~ExposureDetector()                                       override;
 
     float detect(const cv::Mat& image)                  const override;
 

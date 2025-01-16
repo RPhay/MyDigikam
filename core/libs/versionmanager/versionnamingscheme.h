@@ -109,8 +109,8 @@ class Q_DECL_HIDDEN DefaultVersionNamingScheme : public VersionNamingScheme
 {
 public:
 
-    DefaultVersionNamingScheme()                                                                = default;
-    virtual ~DefaultVersionNamingScheme()                                                       = default;
+    DefaultVersionNamingScheme()                                                                         = default;
+    virtual ~DefaultVersionNamingScheme()                                                       override = default;
 
     virtual QString baseName(const QString& currentPath, const QString& filename,
                              QVariant* counter, QVariant* intermediateCounter)                  override;

@@ -77,9 +77,10 @@ public:
 public:
 
     explicit FacePipelineBase(const FaceScanSettings& _settings);
-    virtual ~FacePipelineBase();
+    virtual ~FacePipelineBase()                                                     override;
 
 protected:
+
     DNNModelBase*       detectorModel       = nullptr;
     float               blurThreshold       = 4.87f;
     float               minThumbnailSize    = 0.33f;
@@ -87,6 +88,7 @@ protected:
     FaceScanSettings    settings;
 
 protected:
+
     double isBlurryFFT(const cv::Mat& cvImage);
     bool useForTraining(const cv::Rect origSize, const cv::Mat& image);
 
@@ -101,7 +103,7 @@ protected:
 
     // queue helper functions
 
-    bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
+    bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)  override;
 
 private:
 

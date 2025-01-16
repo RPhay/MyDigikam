@@ -60,7 +60,7 @@ public:
                                      EditPipelineAction _action,
                                      bool _retrain);
 
-    virtual ~FacePipelinePackageBase()                                      = default;
+    virtual ~FacePipelinePackageBase() override                             = default;
 
 public:
 

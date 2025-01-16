@@ -72,7 +72,7 @@ private:
 
     // Disable
     FaceClassifier();
-    ~FaceClassifier();
+    ~FaceClassifier()                                         override;
     FaceClassifier(const FaceClassifier&)                     = delete;
 
 private:

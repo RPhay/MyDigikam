@@ -74,7 +74,6 @@ const NoiseDetector::Mat3D NoiseDetector::filtersHaar = initFiltersHaar();
 
 class Q_DECL_HIDDEN NoiseDetector::Private
 {
-
 public:
 
     Private() = default;

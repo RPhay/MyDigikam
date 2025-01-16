@@ -46,9 +46,9 @@ class AutotagsPipelineBase : public MLPipelineFoundation
 public:
 
     explicit AutotagsPipelineBase(const AutotagsScanSettings& _settings);
-    virtual ~AutotagsPipelineBase() = default;
+    virtual ~AutotagsPipelineBase()                                                 override = default;
 
-    virtual bool start()    override;
+    virtual bool start()                                                            override;
 
     virtual void bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
                             const ItemInfo& info,
@@ -59,19 +59,19 @@ public:
                         const QString& _name,
                         const QString& _path,
                         int _processed,
-                        const QImage& _thumbnail) override;
+                        const QImage& _thumbnail)                                   override;
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
                         int _processed,
-                        const DImg& _thumbnail) override;
+                        const DImg& _thumbnail)                                     override;
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
                         int _processed,
-                        const QIcon& _thumbnail) override;
+                        const QIcon& _thumbnail)                                    override;
 protected:
 
     AutotagsScanSettings        settings;
@@ -86,7 +86,7 @@ protected:
 protected:
 
     // queue helper functions
-    bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package) override;
+    bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)  override;
 
 private:
 

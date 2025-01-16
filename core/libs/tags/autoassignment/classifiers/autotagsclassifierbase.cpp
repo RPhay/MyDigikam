@@ -56,10 +56,6 @@ AutotagsClassifierBase::AutotagsClassifierBase(float _threshold, const QString& 
     }
 }
 
-AutotagsClassifierBase::~AutotagsClassifierBase()
-{
-}
-
 bool AutotagsClassifierBase::loadTrainingData()
 {
     QFile classFile(predefinedClassFile);

@@ -31,7 +31,7 @@ class DIGIKAM_GUI_EXPORT AutotagsClassifierBase : public MLClassifierFoundation
 public:
 
     explicit AutotagsClassifierBase(float _threshold, const QString& _predefinedClassFile);
-    ~AutotagsClassifierBase();
+    ~AutotagsClassifierBase()                                           override = default;
 
     QList<int> predictMulti(const QList<cv::Mat>& targets)        const override
     {

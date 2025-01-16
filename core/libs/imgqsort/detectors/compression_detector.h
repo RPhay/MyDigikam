@@ -29,7 +29,7 @@ class CompressionDetector : public AbstractDetector
 public:
 
     explicit CompressionDetector();
-    ~CompressionDetector();
+    ~CompressionDetector()                                        override;
 
     float detect(const cv::Mat& image)                      const override;
 

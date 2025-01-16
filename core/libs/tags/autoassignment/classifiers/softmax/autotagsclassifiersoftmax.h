@@ -28,7 +28,7 @@ class DIGIKAM_GUI_EXPORT AutotagsClassifierSoftmax : public AutotagsClassifierBa
 public:
 
     explicit AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierSoftmax()                            = default;
+    virtual ~AutotagsClassifierSoftmax()                                  override = default;
 
     virtual int predict(const cv::Mat& target)                      const override;
     virtual int predict(const cv::UMat& target)                     const override;

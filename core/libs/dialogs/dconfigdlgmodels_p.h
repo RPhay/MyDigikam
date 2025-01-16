@@ -89,7 +89,7 @@ protected:
     {
     }
 
-    ~DConfigDlgWdgModelPrivate()
+    ~DConfigDlgWdgModelPrivate() override
     {
         delete rootItem;
         rootItem = nullptr;

@@ -29,7 +29,7 @@ class BlurDetector : public AbstractDetector
 public:
 
     explicit BlurDetector(const DImg& image);
-    ~BlurDetector();
+    ~BlurDetector()                                                   override;
 
     float detect(const cv::Mat& image)                          const override;
 

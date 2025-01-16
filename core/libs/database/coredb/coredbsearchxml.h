@@ -376,7 +376,7 @@ public:
      *  with all calls possible multiple times.
      */
     explicit SearchXmlCachingReader(const QString& xml);
-    ~SearchXmlCachingReader() = default;
+    ~SearchXmlCachingReader()                           override = default;
 
     SearchXml::Element  readNext()                      override;
 

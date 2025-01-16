@@ -42,10 +42,6 @@ AutotagsClassifierYolo::AutotagsClassifierYolo(float _threshold, const QString& 
 {
 }
 
-AutotagsClassifierYolo::~AutotagsClassifierYolo()
-{
-}
-
 void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
 {
     /// @warning: This classifier does not handle YOLO v10

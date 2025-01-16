@@ -34,7 +34,7 @@ class VidSlideTask : public ActionJob
 public:
 
     explicit VidSlideTask(VidSlideSettings* const settings);
-    ~VidSlideTask();
+    ~VidSlideTask()     override;
 
 Q_SIGNALS:
 
@@ -43,7 +43,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()          override;
 
 private:
 
