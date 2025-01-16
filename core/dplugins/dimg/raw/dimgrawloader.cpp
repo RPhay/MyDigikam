@@ -160,13 +160,13 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         }
 
         unsigned short* dst = reinterpret_cast<unsigned short*>(image);
-        uchar*          src = (uchar*)data.data();
+        uchar*          src = reinterpret_cast<unsigned char*>(const_cast<char*>(data.data()));
         float fac           = 65535.0 / rgbmax;
         checkpoint          = 0;
 
         for (int h = 0 ; h < height ; ++h)
         {
-            if (observer && h == checkpoint)
+            if (observer && (h == checkpoint))
             {
                 checkpoint += granularity(observer, height, 1.0F);
 
@@ -204,7 +204,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
 
         // ----------------------------------------------------------
 
-        imageData() = (uchar*)image;
+        imageData() = reinterpret_cast<unsigned char*>(image);
     }
     else        // 8 bits image
     {
@@ -218,13 +218,13 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         }
 
         uchar* dst = image;
-        uchar* src = (uchar*)data.data();
+        uchar* src = reinterpret_cast<unsigned char*>(const_cast<char*>(data.data()));
         checkpoint = 0;
 
         for (int h = 0 ; h < height ; ++h)
         {
 
-            if (observer && h == checkpoint)
+            if (observer && (h == checkpoint))
             {
                 checkpoint += granularity(observer, height, 1.0F);
 
