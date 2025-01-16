@@ -127,7 +127,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (!profile_rawdata.isEmpty())
     {
-        jas_iccprof_t* const icc_profile = jas_iccprof_createfrombuf((uchar*)profile_rawdata.data(), profile_rawdata.size());
+        jas_iccprof_t* const icc_profile = jas_iccprof_createfrombuf(reinterpret_cast<unsigned char*>(profile_rawdata.data()), profile_rawdata.size());
 
         if (icc_profile)
         {

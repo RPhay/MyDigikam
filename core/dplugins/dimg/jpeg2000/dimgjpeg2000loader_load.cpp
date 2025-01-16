@@ -572,7 +572,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 {
                     if (jas_stream_flush(icc_stream) == 0)
                     {
-                        jas_stream_memobj_t* const blob = (jas_stream_memobj_t*) icc_stream->obj_;
+                        jas_stream_memobj_t* const blob = reinterpret_cast<jas_stream_memobj_t*>(icc_stream->obj_);
                         QByteArray profile_rawdata;
                         profile_rawdata.resize(blob->len_);
                         memcpy(profile_rawdata.data(), blob->buf_, blob->len_);
