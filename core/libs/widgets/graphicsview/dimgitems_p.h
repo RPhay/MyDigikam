@@ -31,11 +31,13 @@
 namespace Digikam
 {
 
-class CachedPixmapKey
+class Q_DECL_HIDDEN CachedPixmapKey
 {
 public:
 
     CachedPixmapKey() = default;
+
+public:
 
     QRect             region;
     QPixmapCache::Key key;
@@ -43,12 +45,14 @@ public:
 
 // -------------------------------------------------------------------------------
 
-class CachedPixmaps
+class Q_DECL_HIDDEN CachedPixmaps
 {
 public:
 
     explicit CachedPixmaps(int maxCount = 2);
     ~CachedPixmaps();
+
+public:
 
     void setMaxCount(int);
     void clear();

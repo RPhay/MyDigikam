@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     QGraphicsScene*           scene             = nullptr;
     GraphicsDImgItem*         item              = nullptr;
     SinglePhotoPreviewLayout* layout            = nullptr;
