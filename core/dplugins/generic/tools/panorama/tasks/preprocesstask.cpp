@@ -190,7 +190,7 @@ bool PreProcessTask::convertRaw()
     {
         QFileInfo fi(inUrl.toLocalFile());
         QDir outDir(outUrl.toLocalFile());
-        outDir.cdUp();
+        Q_UNUSED(outDir.cdUp());
         QString path = outDir.path() + QLatin1Char('/');
         outUrl.setPath(path + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
                             + QLatin1String(".tif"));

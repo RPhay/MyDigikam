@@ -47,10 +47,11 @@ namespace ShowFoto
 
 class Q_DECL_HIDDEN ShowfotoFolderViewSideBar::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     const QString configIconSizeEntry                       = QLatin1String("Icon Size");
     const QString configLastFolderEntry                     = QLatin1String("Last Folder");
@@ -236,7 +237,7 @@ void ShowfotoFolderViewSideBar::slotGoHome()
 void ShowfotoFolderViewSideBar::slotGoUp()
 {
     QDir dir(currentFolder());
-    dir.cdUp();
+    Q_UNUSED(dir.cdUp());
 
     // Is this the same as going back?  If so just go back, so we can keep the view scroll position.
 
