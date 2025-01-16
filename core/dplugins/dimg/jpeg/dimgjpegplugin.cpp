@@ -161,7 +161,7 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     QByteArray header(headerLen, '\0');
 
-    if (file.read((char*)header.data(), headerLen) != headerLen)
+    if (file.read(const_cast<char*>(header.data()), headerLen) != headerLen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
 

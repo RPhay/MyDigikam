@@ -231,7 +231,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         if (!profile_rawdata.isEmpty())
         {
             purgeExifWorkingColorSpace();
-            write_icc_profile(&cinfo, (JOCTET*)profile_rawdata.data(), profile_rawdata.size());
+            write_icc_profile(&cinfo, reinterpret_cast<JOCTET*>(profile_rawdata.data()), profile_rawdata.size());
         }
 
         if (observer)
