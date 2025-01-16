@@ -183,21 +183,15 @@ ${INSTALL_PREFIX}/bin/brew install \
              wget \
              dbus \
              dbus-glib \
-             opencv \
              imagemagick \
              jpeg-xl \
              libavif \
              fftw \
              exiv2 \
-             lensfun
-#             sane-backends
-
-echo -e "\n"
-
-# these packages have to be built by us so we can update the library paths and code signature
-${INSTALL_PREFIX}/bin/brew install --build-from-source \
+             lensfun \
              qt \
              qt-mariadb
+#             sane-backends
 
 echo -e "\n"
 

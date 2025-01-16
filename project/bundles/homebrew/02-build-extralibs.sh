@@ -65,7 +65,7 @@ done
 
 #################################################################################################
 # activate the python3 venv
-source ${INSTALL_PREFIX}/bin/activate
+# source ${INSTALL_PREFIX}/bin/activate
 
 #################################################################################################
 
@@ -140,6 +140,8 @@ cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$C
 
 # Breeze style support
 cmake --build . --config RelWithDebInfo --target ext_breeze              -- -j$CPU_CORES
+
+cmake --build . --config RelWithDebInfo --target ext_opencv              -- -j$CPU_CORES
 
 #################################################################################################
 
