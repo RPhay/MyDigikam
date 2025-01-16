@@ -195,10 +195,10 @@ void AdvancedRenameTest::testDirectoryNameToken_data()
     QDir dir = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename")).root();
     qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << dir;
 
-    dir.cdUp();
+    Q_UNUSED(dir.cdUp());
     const QString dir2up = dir.path();
     QDir dir2            = dir;
-    dir2.cdUp();
+    Q_UNUSED(dir2.cdUp());
     QString digikamDir   = dir2up.right(dir2up.size() - dir2.path().size() -1) +
                            QLatin1Char('/');
     qCDebug(DIGIKAM_TESTS_LOG) << "digikamDir: " << digikamDir;
