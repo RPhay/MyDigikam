@@ -127,7 +127,7 @@ bool FacePipelineRetrain::finder()
                     {
                         ++totalItemCount;
 
-                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
+                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
                     }
                 }
             }
@@ -229,7 +229,7 @@ bool FacePipelineRetrain::writer()
 
             notify(MLPipelineNotification::notifyProcessed,
                    displayName,
-                   package->albumTitle,
+                   package->info.relativePath(),
                    1,
                    package->thumbnail);
 

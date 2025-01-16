@@ -134,7 +134,7 @@ bool FacePipelineRecognize::finder()
                     {
                         ++totalItemCount;
                         filter << imageId;
-                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
+                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
                     }
                 }
             }
@@ -155,7 +155,7 @@ bool FacePipelineRecognize::finder()
             {
                 ++totalItemCount;
                 filter << imageId;
-                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(imageId))));
+                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
             }
         }
     }
@@ -247,7 +247,7 @@ bool FacePipelineRecognize::classifier()
 
                 notify(MLPipelineNotification::notifyProcessed,
                        package->info.name() + QStringLiteral("\n"),
-                       package->albumTitle,
+                       package->info.relativePath(),
                        0,
                        package->thumbnail);
 
@@ -342,7 +342,7 @@ bool FacePipelineRecognize::writer()
 
             notify(MLPipelineNotification::notifyProcessed,
                    displayName,
-                   package->albumTitle,
+                   package->info.relativePath(),
                    matches,
                    package->thumbnail);
 

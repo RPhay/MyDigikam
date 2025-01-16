@@ -174,7 +174,7 @@ bool FacePipelineDetectRecognize::finder()
                 {
                     ++totalItemCount;
                     filter << imageId;
-                    enqueue(nextQueue, new FacePipelinePackageBase(imageId, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
+                    enqueue(nextQueue, new FacePipelinePackageBase(imageId));
                 }
             }
         }
@@ -259,7 +259,7 @@ bool FacePipelineDetectRecognize::loader()
 
                 notify(MLPipelineNotification::notifySkipped,
                        package->info.name(),
-                       package->albumTitle,
+                       package->info.relativePath(),
                        package->faceRects.size(),
                        package->thumbnailIcon);
 
@@ -629,7 +629,7 @@ bool FacePipelineDetectRecognize::writer()
 
             notify(MLPipelineNotification::notifyProcessed,
                    package->info.name() + names,
-                   package->albumTitle,
+                   package->info.relativePath(),
                    package->faceRects.size(),
                    package->thumbnailIcon);
 
