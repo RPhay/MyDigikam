@@ -63,7 +63,7 @@ public:
     void setMaxRight(qreal maxRight);
     void setMaxBottom(qreal maxBottom);
 
-    Intersects intersects(QPointF& point);
+    Intersects intersects(const QPointF& point);
 
     void saveZoom(qreal zoom);
 

@@ -132,7 +132,7 @@ void DSelectionItem::setMaxBottom(qreal maxY)
     }
 }
 
-DSelectionItem::Intersects DSelectionItem::intersects(QPointF& point)
+DSelectionItem::Intersects DSelectionItem::intersects(const QPointF& point)
 {
     if (
         (point.x() < (d->rect.left()   - d->selMargin)) ||
