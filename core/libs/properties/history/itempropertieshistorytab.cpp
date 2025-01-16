@@ -47,12 +47,12 @@ RemoveFilterAction::~RemoveFilterAction()
 {
 }
 
-void RemoveFilterAction::::setIndex(const QModelIndex& index)
+void RemoveFilterAction::setIndex(const QModelIndex& index)
 {
     m_index = index;
 }
 
-void RemoveFilterAction::::triggerSlot()
+void RemoveFilterAction::triggerSlot()
 {
     Q_EMIT actionTriggered(m_index);
 }
