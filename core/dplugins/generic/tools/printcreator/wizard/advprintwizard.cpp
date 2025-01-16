@@ -66,6 +66,8 @@ public:
 
     Private() = default;
 
+public:
+
     AdvPrintIntroPage*   introPage      = nullptr;
     AdvPrintAlbumsPage*  albumsPage     = nullptr;
     AdvPrintPhotoPage*   photoPage      = nullptr;
@@ -364,7 +366,7 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
 {
     if (e && (e->type() == QEvent::KeyRelease))
     {
-        QKeyEvent* const k = (QKeyEvent*)e;
+        QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if (
             (k->key() == Qt::Key_PageUp)   ||
