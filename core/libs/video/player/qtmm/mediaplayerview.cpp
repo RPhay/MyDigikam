@@ -146,7 +146,7 @@ public:
 
 // --------------------------------------------------------
 
-class MediaPlayerView::Private
+class Q_DECL_HIDDEN MediaPlayerView::Private
 {
 
 public:

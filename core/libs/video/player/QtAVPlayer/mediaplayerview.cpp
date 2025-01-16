@@ -147,6 +147,8 @@ public:
 
     Private() = default;
 
+public:
+
     QFrame*              errorView          = nullptr;
     QFrame*              playerView         = nullptr;
 
