@@ -124,7 +124,8 @@ MetaEnginePreviews::MetaEnginePreviews(const QByteArray& imgData)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((Exiv2::byte*)imgData.data(), imgData.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
+            reinterpret_cast<Exiv2::byte*>(const_cast<char*>(imgData.data())), imgData.size());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 

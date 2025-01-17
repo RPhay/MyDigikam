@@ -1378,7 +1378,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
                                         << preview.height() << ") pixels -" << data.size() << "bytes";
 
         Exiv2::DataValue val;
-        val.read((Exiv2::byte *)data.data(), data.size());
+        val.read(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
         d->iptcMetadata()["Iptc.Application2.Preview"] = val;
 
         // See https://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf Appendix A for details.
@@ -1468,7 +1468,7 @@ bool MetaEngine::setItemIccProfile(const QByteArray& iccData) const
             return true;
         }
 
-        Exiv2::DataBuf buf((Exiv2::byte*)iccData.data(), iccData.size());
+        Exiv2::DataBuf buf(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(iccData.data())), iccData.size());
         d->iccProfileBuf() = buf;
 
         return true;

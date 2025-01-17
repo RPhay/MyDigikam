@@ -136,7 +136,8 @@ bool MetaEngine::setIptc(const QByteArray& data) const
     {
         if (!data.isEmpty())
         {
-            Exiv2::IptcParser::decode(d->iptcMetadata(), (const Exiv2::byte*)data.data(), data.size());
+            Exiv2::IptcParser::decode(d->iptcMetadata(),
+                                      reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
             return (!d->iptcMetadata().empty());
         }
     }
@@ -362,7 +363,7 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
 
     try
     {
-        Exiv2::DataValue val((Exiv2::byte*)data.data(), data.size());
+        Exiv2::DataValue val(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
         d->iptcMetadata()[iptcTagName] = val;
 
         return true;
@@ -392,7 +393,7 @@ QByteArray MetaEngine::getIptcTagData(const char* iptcTagName) const
         if (it != iptcData.end())
         {
             QByteArray data((*it).size(), '\0');
-            (*it).copy((Exiv2::byte*)data.data(), Exiv2::bigEndian);
+            (*it).copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), Exiv2::bigEndian);
 
             return data;
         }

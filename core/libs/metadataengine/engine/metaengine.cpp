@@ -263,7 +263,8 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((Exiv2::byte*)imgData.data(), imgData.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
+            reinterpret_cast<Exiv2::byte*>(const_cast<char*>(imgData.data())), imgData.size());
 
         d->filePath.clear();
         image->readMetadata();
@@ -339,7 +340,8 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData, const QStringLi
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((Exiv2::byte*)imgData.data(), imgData.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
+            reinterpret_cast<Exiv2::byte*>(const_cast<char*>(imgData.data())), imgData.size());
 
         d->filePath.clear();
         image->readMetadata();
