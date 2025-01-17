@@ -37,7 +37,6 @@
 
 // Local includes
 
-#include "facialrecognition_wrapper.h"
 #include "digikam_debug.h"
 #include "dnotificationwidget.h"
 #include "coredb.h"
