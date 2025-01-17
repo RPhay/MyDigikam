@@ -83,14 +83,16 @@ protected:
 
     DNNModelBase*       detectorModel       = nullptr;
     double              blurThreshold       = 4.87f;
-    double              noiseThreshold      = 3.92;
+    double              noiseThreshold1     = 3.7;
+    double              noiseThreshold2     = 1.89;
     float               minThumbnailSize    = 0.33f;
 
     FaceScanSettings    settings;
 
 protected:
 
-    double detectNoise(const cv::Mat& cvGrayImage) const;
+    double detectNoise1(const cv::Mat& cvGrayImage) const;
+    double detectNoise2(const cv::Mat& cvGrayImage) const;
     double detectBlur(const cv::Mat& cvGrayImage) const;
     bool useForTraining(const cv::Rect origSize, const cv::Mat& image);
 

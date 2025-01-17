@@ -195,7 +195,7 @@ bool FacePipelineReset::writer()
      * End pipeline stage specific loop
      */
 
-    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineDetectRecognize::writer");
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineReset::writer");
 
     /* =========================================================================================
      * Pipeline stage specific cleanup

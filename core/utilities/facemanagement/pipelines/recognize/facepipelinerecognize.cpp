@@ -244,7 +244,7 @@ bool FacePipelineRecognize::classifier()
      * End pipeline stage specific loop
      */
 
-    MLPIPELINE_LOOP_END(MLPipelineStage::Classifier, "FacePipelineDetectRecognize::classifier");
+    MLPIPELINE_LOOP_END(MLPipelineStage::Classifier, "FacePipelineRecognize::classifier");
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
@@ -310,7 +310,7 @@ bool FacePipelineRecognize::writer()
      * End pipeline stage specific loop
      */
 
-    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineDetectRecognize::writer");
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineRecognize::writer");
 
     /* =========================================================================================
      * Pipeline stage specific cleanup

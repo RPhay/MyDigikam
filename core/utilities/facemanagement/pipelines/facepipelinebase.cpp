@@ -21,6 +21,10 @@
 #include <QThread>
 #include <QList>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -44,7 +48,7 @@ FacePipelineBase::~FacePipelineBase()
 {
 }
 
-double FacePipelineBase::detectNoise(const cv::Mat& cvGrayImage) const
+double FacePipelineBase::detectNoise1(const cv::Mat& cvGrayImage) const
 {
     // Use a Gaussian filter to detect noise
 
@@ -65,6 +69,25 @@ double FacePipelineBase::detectNoise(const cv::Mat& cvGrayImage) const
     double noiseLevel = stddev.at<double>(0, 0);
 
     return noiseLevel;
+}
+
+double FacePipelineBase::detectNoise2(const cv::Mat& cvGrayImage) const
+{
+
+    int H = cvGrayImage.rows;
+    int W = cvGrayImage.cols;
+
+    cv::Mat M = (cv::Mat_<double>(3, 3) << 1, -2, 1,
+                                           -2, 4, -2,
+                                           1, -2, 1);
+
+    cv::Mat convolved;
+    cv::filter2D(cvGrayImage, convolved, CV_64F, M);
+
+    double sigma = cv::sum(cv::abs(convolved))[0];
+    sigma = sigma * std::sqrt(0.5 * M_PI) / (6 * (W - 2) * (H - 2));
+
+    return sigma;
 }
 
 #define BLOCK 20
@@ -182,9 +205,13 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cv
 
     // use a Gaussian filter to check for noisy images
 
-    double noise = detectNoise(cvGrayImage);
+    double noise1 = detectNoise1(cvGrayImage);
 
-    if (noise > noiseThreshold)
+    double noise2 = detectNoise2(cvGrayImage);
+
+    // check if image is too noisy
+
+    if (noise1 > noiseThreshold1 || noise2 > noiseThreshold2)
     {
         return false;
     }
@@ -193,7 +220,7 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cv
 
     double blur = detectBlur(cvGrayImage);
 
-    // If the variance is less than the threshold, the image is considered blurred
+    // check if image is too blurry
 
     if (blur < blurThreshold)
     {
@@ -203,16 +230,20 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cv
     return true;
 }
 
-bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, MLPipelineStage thisStage, MLPipelineStage nextStage)
+bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
+                                                 MLPipelineStage thisStage,
+                                                 MLPipelineStage nextStage)
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, thisStage, nextStage, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, thisStage, nextStage);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     // ThumbnailLoadThread* thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
@@ -225,25 +256,15 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
 
     catcher->setActive(true);
 
-    while (!cancelled)
-    {
-        package = nullptr;
+    MLPIPELINE_LOOP_START(thisStage, thisQueue);
+    package = static_cast<FacePipelinePackageBase*>(mlpackage);
 
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
-
-            if (queueEndSignal() == package)
-            {
-                // end of queue signal
-
-                break;
-            }
-
-            pipelinePerformanceStart(thisStage, timer);
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
             catcher->thread()->find(ItemInfo::thumbnailIdentifier(package->face.imageId()), package->face.region().toRect());
             catcher->enqueue();
@@ -267,33 +288,17 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
                 delete package;
             }
 
-            // end pipeline stage specific code
-            //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
-            pipelinePerformanceEnd(thisStage, timer);
-        }
+    MLPIPELINE_LOOP_END(thisStage, QString(pipelineName + QLatin1String("::commonFaceThumbnailLoader")).toLocal8Bit().data());
 
-        catch (const std::exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error. "
-                                                << e.what() << "    Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
-
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::loader(): unknown error.  Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
-    }
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
 
     catcher->setActive(false);
 
@@ -303,12 +308,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName, ML
     delete catcher->thread();
     delete catcher;
 
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(thisStage, nextStage);
-
-    return true;
+    MLPIPELINE_STAGE_END(thisStage, nextStage);
 }
 
 bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
@@ -316,38 +316,28 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                                                     MLPipelineStage nextStage,
                                                     bool trainingQualityCheck)
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, thisStage, nextStage, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, thisStage, nextStage);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     DNNSFaceExtractor extractor;
 
-    while (!cancelled)
-    {
-        package = nullptr;
+    MLPIPELINE_LOOP_START(thisStage, thisQueue);
+    package = static_cast<FacePipelinePackageBase*>(mlpackage);
 
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
-
-            if (queueEndSignal() == package)
-            {
-                // end of queue signal
-
-                break;
-            }
-
-            pipelinePerformanceStart(MLPipelineStage::Extractor, timer);
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
-            
-            cv::UMat cvUImage;
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
 
             QImage inputImage(package->thumbnail.copy());
 
@@ -360,7 +350,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-            cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
+            cv::UMat cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
 
             // extract the face features
 
@@ -374,40 +364,19 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             enqueue(nextQueue, package);
 
-            // end pipeline stage specific code
-            //////////////////////////////////////////////////////////////////////////////////////////////
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
-            pipelinePerformanceEnd(MLPipelineStage::Extractor, timer);
-        }
+    MLPIPELINE_LOOP_END(thisStage, QString(pipelineName + QLatin1String("::commonFaceThumbnailExtractor")).toLocal8Bit().data());
 
-        catch (const std::exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error. "
-                                                << e.what() << "    Restarting...";
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     * 
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */ 
 
-            if (package)
-            {
-                delete package;
-            }
-        }
-
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << pipelineName << "::extractor(): unknown error.  Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
-    }
-
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(thisStage, nextStage);
-
-    return true;
+    MLPIPELINE_STAGE_END(thisStage, nextStage);
 }
 
 bool FacePipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)
