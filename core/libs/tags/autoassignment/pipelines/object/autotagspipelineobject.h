@@ -51,6 +51,7 @@ private:
 
     // Disable
     AutotagsPipelineObject()                                    = delete;
+    AutotagsPipelineObject(QObject*)                            = delete;
     AutotagsPipelineObject(const AutotagsPipelineObject&)       = delete;
 };
 

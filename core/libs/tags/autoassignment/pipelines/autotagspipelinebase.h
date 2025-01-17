@@ -94,6 +94,7 @@ private:
 
     // Disable
     AutotagsPipelineBase()                            = delete;
+    AutotagsPipelineBase(QObject*)                    = delete;
     AutotagsPipelineBase(const AutotagsPipelineBase&) = delete;
 };
 
