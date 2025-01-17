@@ -44,7 +44,7 @@ public:
      * Standard constructor using MJPEG stream settings.
      */
     explicit MjpegFrameTask(const MjpegStreamSettings& settings);
-    ~MjpegFrameTask();
+    ~MjpegFrameTask() override;
 
 Q_SIGNALS:
 

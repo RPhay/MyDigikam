@@ -42,7 +42,7 @@ public:
                       int progressEnd = 100,
                       const DRawDecoding& settings = DRawDecoding());
 
-    ~RawPostProcessing();
+    ~RawPostProcessing()                                override;
 
 private:
 

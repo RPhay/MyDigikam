@@ -39,7 +39,7 @@ public:
     explicit TextConverterTask(QObject* const parent,
                               const QUrl& url,
                               const TextConverterAction& action);
-    ~TextConverterTask();
+    ~TextConverterTask() override;
 
     OcrOptions ocrOptions() const;
     void setOcrOptions(const OcrOptions& opt);

@@ -1111,7 +1111,7 @@ public:
     {
     }
 
-    ~ComputerVisionRequest()
+    ~ComputerVisionRequest() override
     {
         if (!m_tmpFilePath.isEmpty() && QFile::exists(m_tmpFilePath))
         {
@@ -1675,7 +1675,7 @@ public:
     {
     }
 
-    ~UploadPhotoRequest()
+    ~UploadPhotoRequest() override
     {
         if (!m_tmpImage.isEmpty() && QFile::exists(m_tmpImage))
         {

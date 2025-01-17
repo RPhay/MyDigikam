@@ -30,7 +30,7 @@ class TextConverterListViewItem : public DItemsListViewItem
 public:
 
     explicit TextConverterListViewItem(DItemsListView* const view, const QUrl& url);
-    ~TextConverterListViewItem();
+    ~TextConverterListViewItem()         override;
 
     void setDestFileName(const QString& str);
     QString destFileName()         const;
@@ -67,7 +67,7 @@ public:
 public:
 
     explicit TextConverterList(QWidget* const parent = nullptr);
-    ~TextConverterList() = default;
+    ~TextConverterList()                           override = default;
 
 public Q_SLOTS:
 

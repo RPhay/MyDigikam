@@ -32,7 +32,7 @@ public:
                            const QString& enblendPath,
                            const QString& makePath,
                            bool preview);
-    ~CompileMKTask() = default;
+    ~CompileMKTask() override = default;
 
 protected:
 

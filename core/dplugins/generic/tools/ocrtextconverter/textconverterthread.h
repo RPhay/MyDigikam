@@ -37,7 +37,7 @@ class TextConverterActionThread : public ActionThreadBase
 public:
 
     explicit TextConverterActionThread(QObject* const parent);
-    ~TextConverterActionThread();
+    ~TextConverterActionThread() override;
 
     OcrOptions ocrOptions() const;
     void setOcrOptions(const OcrOptions& opt);

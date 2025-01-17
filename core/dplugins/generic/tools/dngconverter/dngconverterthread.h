@@ -38,7 +38,7 @@ class DNGConverterActionThread : public ActionThreadBase
 public:
 
     explicit DNGConverterActionThread(QObject* const parent);
-    ~DNGConverterActionThread();
+    ~DNGConverterActionThread() override;
 
     void setBackupOriginalRawFile(bool b);
     void setCompressLossLess(bool b);

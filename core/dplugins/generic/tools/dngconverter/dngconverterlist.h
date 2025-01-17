@@ -46,7 +46,7 @@ public:
 public:
 
     explicit DNGConverterList(QWidget* const parent = nullptr);
-    ~DNGConverterList() = default;
+    ~DNGConverterList()                         override = default;
 
 public Q_SLOTS:
 
@@ -65,17 +65,17 @@ class DNGConverterListViewItem : public DItemsListViewItem
 public:
 
     DNGConverterListViewItem(DItemsListView* const view, const QUrl& url);
-    ~DNGConverterListViewItem();
+    ~DNGConverterListViewItem() override;
 
     void setDestFileName(const QString& str);
-    QString destFileName()  const;
+    QString destFileName()               const;
 
     void setIdentity(const QString& str);
-    QString identity()      const;
+    QString identity()                   const;
 
     void setStatus(const QString& str);
 
-    QString destPath()      const;
+    QString destPath()                   const;
 
 private:
 

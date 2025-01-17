@@ -32,11 +32,11 @@ public:
                                const QString& enblendPath,
                                const QString& makePath,
                                bool preview);
-    ~CompileMKStepTask() = default;
+    ~CompileMKStepTask() override = default;
 
 public:
 
-    const int     id;
+    const int id;
 
 protected:
 

@@ -28,7 +28,7 @@ public:
                          const QUrl& input,
                          QUrl& cpCleanPtoUrl,
                          const QString& cpCleanPath);
-    ~CpCleanTask() = default;
+    ~CpCleanTask() override = default;
 
 protected:
 

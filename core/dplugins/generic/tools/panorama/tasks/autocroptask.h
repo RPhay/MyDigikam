@@ -31,7 +31,7 @@ public:
                           QUrl& viewCropPtoUrl,
                           bool  buildGPano,
                           const QString& panoModifyPath);
-    ~AutoCropTask() = default;
+    ~AutoCropTask() override = default;
 
 protected:
 

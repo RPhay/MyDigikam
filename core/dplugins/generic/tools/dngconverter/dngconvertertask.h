@@ -38,7 +38,7 @@ public:
     explicit DNGConverterTask(QObject* const parent,
                               const QUrl& url,
                               const DNGConverterAction& action);
-    ~DNGConverterTask();
+    ~DNGConverterTask() override;
 
     void setBackupOriginalRawFile(bool b);
     void setCompressLossLess(bool b);
