@@ -44,19 +44,42 @@ FacePipelineBase::~FacePipelineBase()
 {
 }
 
+double FacePipelineBase::detectNoise(const cv::Mat& cvGrayImage) const
+{
+    // Use a Gaussian filter to detect noise
+
+    // apply Gaussian blur to the image
+
+    cv::Mat blurred;
+    cv::GaussianBlur(cvGrayImage, blurred, cv::Size(5, 5), 0);
+
+    // calculate the difference between the original and blurred image
+
+    cv::Mat noise = cvGrayImage - blurred;
+
+    // calculate the standard deviation of the noise
+
+    cv::Mat mean, stddev;
+    cv::meanStdDev(noise, mean, stddev);
+
+    double noiseLevel = stddev.at<double>(0, 0);
+
+    return noiseLevel;
+}
+
 #define BLOCK 20
 
-double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
+double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
 {
     // Use a Fast Fourier Transform to detect blurriness
 
-    int cx = cvImage.cols/2;
-    int cy = cvImage.rows/2;
+    int cx = cvGrayImage.cols/2;
+    int cy = cvGrayImage.rows/2;
 
     // Convert the image to a flat float
 
     cv::Mat fImage;
-    cvImage.convertTo(fImage, CV_32F);
+    cvGrayImage.convertTo(fImage, CV_32F);
 
     // FFT
 
@@ -87,7 +110,7 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
     // Block the low frequencies
     // #define BLOCK could also be a argument on the command line of course
 
-    fourierTransform(cv::Rect(cx-BLOCK,cy-BLOCK,2*BLOCK,2*BLOCK)).setTo(0);
+    fourierTransform(cv::Rect(cx - BLOCK, cy - BLOCK, 2 * BLOCK, 2 * BLOCK)).setTo(0);
 
     //shuffle the quadrants to their original position
 
@@ -119,7 +142,7 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
     cv::dft(orgFFT, invFFT, cv::DFT_INVERSE | cv::DFT_REAL_OUTPUT);
 
     invFFT = cv::abs(invFFT);
-    cv::minMaxLoc(invFFT,&minVal,&maxVal,NULL,NULL);
+    cv::minMaxLoc(invFFT, &minVal, &maxVal, NULL, NULL);
     
     //check for impossible values
 
@@ -137,7 +160,7 @@ double FacePipelineBase::isBlurryFFT(const cv::Mat& cvImage)
     
 }
 
-bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& image)
+bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cvImage)
 {
     if (!detectorModel)
     {
@@ -152,26 +175,27 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& im
         return false;
     }
 
+    // convert to grayscale for use in noise and blur detection
+    
+    cv::Mat cvGrayImage;
+    cv::cvtColor(cvImage, cvGrayImage, cv::COLOR_RGB2GRAY);
+
+    // use a Gaussian filter to check for noisy images
+
+    double noise = detectNoise(cvGrayImage);
+
+    if (noise > noiseThreshold)
+    {
+        return false;
+    }
+
     // use a FFT filter to check for blurred images
 
-    cv::Mat gray;
-    cv::cvtColor(image, gray, cv::COLOR_RGB2GRAY);
-    // cv::Mat laplacian;
-    // cv::Laplacian(gray, laplacian, CV_64F);
-
-    // // Compute the mean and standard deviation of the laplacian filter
-
-    // cv::Scalar mean, stddev;
-    // cv::meanStdDev(laplacian, mean, stddev, cv::Mat());
-
-    // Compute the variance
-
-    // double variance = stddev.val[0] * stddev.val[0];
-    double variance2 = isBlurryFFT(gray);
+    double blur = detectBlur(cvGrayImage);
 
     // If the variance is less than the threshold, the image is considered blurred
 
-    if (variance2 < blurThreshold)
+    if (blur < blurThreshold)
     {
         return false;
     }
