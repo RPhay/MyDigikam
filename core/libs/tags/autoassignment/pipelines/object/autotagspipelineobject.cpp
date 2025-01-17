@@ -224,8 +224,9 @@ bool AutotagsPipelineObject::finder()
                 if (!filter.contains(imageId))
                 {
                     ++totalItemCount;
-                    filter << imageId;                    
-                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId, CoreDbAccess().db()->getAlbumRelativePath(album->id())));
+                    filter << imageId;
+                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId,
+                                               CoreDbAccess().db()->getAlbumRelativePath(album->id())));
                 }
             }
         }
@@ -357,7 +358,7 @@ bool AutotagsPipelineObject::extractor()
          // Image should be resized. 
 
          float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
-                                             static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+                                            static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
 
          int newWidth            = (int)(resizeFactor * cvImage.cols);
          int newHeight           = (int)(resizeFactor * cvImage.rows);
@@ -375,17 +376,20 @@ bool AutotagsPipelineObject::extractor()
          int yPad = model->info.imageSize - cvImage.rows;
 
          cv::copyMakeBorder(cvImage, borderImage,
-                         0, yPad,
-                         0, xPad,
-                         cv::BORDER_CONSTANT,
-                         cv::Scalar(0, 0, 0));
+                            0, yPad,
+                            0, xPad,
+                            cv::BORDER_CONSTANT,
+                            cv::Scalar(0, 0, 0));
 
          cvImage = borderImage;
      }
 
      // convert the image to a blob 
 
-     cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0/255, cv::Size(cvImage.cols, cvImage.rows), cv::Scalar(0, 0, 0), true, false).getUMat(cv::ACCESS_READ);
+     cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0/255,
+                                               cv::Size(cvImage.cols, cvImage.rows),
+                                               cv::Scalar(0, 0, 0),
+                                               true, false).getUMat(cv::ACCESS_READ);
 
      std::vector<cv::Mat> detectionResults;
 
@@ -447,7 +451,7 @@ bool AutotagsPipelineObject::classifier()
      */
 
     package->labelList = autotagsClassifier->predictMulti(package->featuresList);
-    package->tagList = autotagsClassifier->getClassStrings(package->labelList);
+    package->tagList   = autotagsClassifier->getClassStrings(package->labelList);
 
     // send the package to the next stage
 
@@ -485,7 +489,7 @@ bool AutotagsPipelineObject::writer()
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                    = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -518,7 +522,7 @@ bool AutotagsPipelineObject::writer()
         tagsPath.clear();
         displayTags.clear();
 
-        for (const auto& tag : package->tagList)
+        for (const auto& tag : std::as_const(package->tagList))
         {
             int tagId = -1;
 
@@ -533,7 +537,7 @@ bool AutotagsPipelineObject::writer()
                     if (trRet)
                     {
                         QString newTag = rootTag + trLang + QLatin1Char('/') + trOut;
-                        tagsPath << newTag;
+                        tagsPath    << newTag;
                         displayTags << trOut;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
@@ -542,18 +546,18 @@ bool AutotagsPipelineObject::writer()
                         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Auto-Tags online translation error:"
                                                             << error;
                         QString newTag = rootTag + trLang + QLatin1Char('/') + tag;
-                        tagsPath << newTag;
+                        tagsPath    << newTag;
                         displayTags << tag;
-                        tagId = tagsCache->getOrCreateTag(newTag);
+                        tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                 }
             }
             else
             {
                 QString newTag = rootTag + tag;
-                tagsPath << newTag;
+                tagsPath    << newTag;
                 displayTags << tag;
-                tagId = tagsCache->getOrCreateTag(newTag);
+                tagId          = tagsCache->getOrCreateTag(newTag);
             }
 
             if (!settings.bqmMode && (tagId != -1) && !package->info.tagIds().contains(tagId))
@@ -592,6 +596,7 @@ bool AutotagsPipelineObject::writer()
         // combine the image name with the tags for the notification
 
         QString displayName(package->info.name() + QStringLiteral("\n"));
+
         if (!displayTags.isEmpty())
         {
             displayName += displayTags.join(QLatin1String(", "));
@@ -642,4 +647,4 @@ void AutotagsPipelineObject::addMoreWorkers()
     addWorker(Extractor);
 }
 
-} // namespaxe Digikam
+} // namespace Digikam

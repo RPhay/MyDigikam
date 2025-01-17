@@ -68,4 +68,4 @@ private:
     AutotagsPipelinePackageBase(const AutotagsPipelinePackageBase&)            = delete;
 };
 
-} // namspace Digikam
+} // namespace Digikam

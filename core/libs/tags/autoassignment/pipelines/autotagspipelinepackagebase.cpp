@@ -24,4 +24,4 @@ AutotagsPipelinePackageBase::AutotagsPipelinePackageBase(qlonglong _imageId, con
 {
 }
 
-} // namsepace Digikam
+} // namespace Digikam
