@@ -43,6 +43,8 @@ namespace Digikam
 
 class AutotagsPipelineBase : public MLPipelineFoundation
 {
+    Q_OBJECT
+
 public:
 
     explicit AutotagsPipelineBase(const AutotagsScanSettings& _settings);

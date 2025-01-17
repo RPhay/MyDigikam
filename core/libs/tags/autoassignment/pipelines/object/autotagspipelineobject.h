@@ -27,6 +27,8 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AutotagsPipelineObject : public AutotagsPipelineBase
 {
+    Q_OBJECT
+
 public:
 
     explicit AutotagsPipelineObject(const AutotagsScanSettings& _settings);
