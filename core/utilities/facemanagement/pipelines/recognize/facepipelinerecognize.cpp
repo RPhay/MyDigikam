@@ -161,10 +161,9 @@ bool FacePipelineRecognize::finder()
 
     /* =========================================================================================
      * Pipeline finder specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
@@ -209,36 +208,36 @@ bool FacePipelineRecognize::classifier()
      * This loop is run once per image.
      */
 
-            // verify the feature mat is not empty
+    // verify the feature mat is not empty
 
-            if (0 != package->features.rows)
-            {
-                // classify the features
+    if (0 != package->features.rows)
+    {
+        // classify the features
 
-                package->label = classifier->predict(package->features);
-            }
+        package->label = classifier->predict(package->features);
+    }
 
-            // -1 means no match suggested
-            // pass the package to the next stage if we have a suggestion
+    // -1 means no match suggested
+    // pass the package to the next stage if we have a suggestion
 
-            if (-1 != package->label)
-            {
-                enqueue(nextQueue, package);
-            }
-            else
-            {
-                // no suggested match found, so notify the user
+    if (-1 != package->label)
+    {
+        enqueue(nextQueue, package);
+    }
+    else
+    {
+        // no suggested match found, so notify the user
 
-                notify(MLPipelineNotification::notifyProcessed,
-                       package->info.name() + QStringLiteral("\n"),
-                       package->info.relativePath(),
-                       0,
-                       package->thumbnail);
+        notify(MLPipelineNotification::notifyProcessed,
+               package->info.name() + QStringLiteral("\n"),
+               package->info.relativePath(),
+               0,
+               package->thumbnail);
 
-                // delete the package
+        // delete the package
 
-                delete package;
-            }
+        delete package;
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -248,10 +247,9 @@ bool FacePipelineRecognize::classifier()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Classifier, MLPipelineStage::Writer);
 }
@@ -282,29 +280,29 @@ bool FacePipelineRecognize::writer()
      * This loop is run once per image.
      */
 
-            QString displayName = package->info.name() + QStringLiteral("\n");
-            int matches = 0;
+    QString displayName = package->info.name() + QStringLiteral("\n");
+    int matches = 0;
 
-            if (-1 != package->label)
-            {
-                Identity identity = idProvider->identity(package->label);
-                int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
-                utils.changeSuggestedName(package->face, tagId);
-                displayName += identity.attribute(QStringLiteral("name"));
-                ++matches;
-            }
+    if (-1 != package->label)
+    {
+        Identity identity = idProvider->identity(package->label);
+        int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
+        utils.changeSuggestedName(package->face, tagId);
+        displayName      += identity.attribute(QStringLiteral("name"));
+        ++matches;
+    }
 
-            // send a notification that the image was processed
+    // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed,
-                   displayName,
-                   package->info.relativePath(),
-                   matches,
-                   package->thumbnail);
+    notify(MLPipelineNotification::notifyProcessed,
+           displayName,
+           package->info.relativePath(),
+           matches,
+           package->thumbnail);
 
-            // delete the package
+    // delete the package
 
-            delete package;
+    delete package;
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -314,10 +312,9 @@ bool FacePipelineRecognize::writer()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }

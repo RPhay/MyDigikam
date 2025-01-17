@@ -135,7 +135,7 @@ bool FacePipelineDetectRecognize::finder()
      *
      * Use the block from here to MLPIPELINE_FINDER_END to find the IDs images to process.
      * The code in this block is run once per stage initialization. The number of instances
-     * is alaways 1.
+     * is always 1.
      */
 
     // get the IDs to process
@@ -196,10 +196,9 @@ bool FacePipelineDetectRecognize::finder()
 
     /* =========================================================================================
      * Pipeline finder specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
@@ -227,46 +226,46 @@ bool FacePipelineDetectRecognize::loader()
      * This loop is run once per image.
      */
 
-            // check if the ID is for an image (not video or other file type)
+     // check if the ID is for an image (not video or other file type)
 
-            bool sendNotification = true;
+     bool sendNotification = true;
 
-            if (DatabaseItem::Category::Image == package->info.category())
-            {
-                // load high quality image for detection
+     if (DatabaseItem::Category::Image == package->info.category())
+     {
+         // load high quality image for detection
 
-                package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
+         package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
 
-                // check for corrupted images that can't be loaded
+         // check for corrupted images that can't be loaded
 
-                if (!package->image.isNull())
-                {
-                    // create a thumbnail for the notification
+         if (!package->image.isNull())
+         {
+             // create a thumbnail for the notification
 
-                    package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+             package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
 
-                    // send to the next stage
+             // send to the next stage
 
-                    enqueue(nextQueue, package);
+             enqueue(nextQueue, package);
 
-                    sendNotification = false;
-                }
-            }
+             sendNotification = false;
+         }
+     }
 
-            if (sendNotification)
-            {
-                // send a notification that the file was skipped
+     if (sendNotification)
+     {
+         // send a notification that the file was skipped
 
-                notify(MLPipelineNotification::notifySkipped,
-                       package->info.name(),
-                       package->info.relativePath(),
-                       package->faceRects.size(),
-                       package->thumbnailIcon);
+         notify(MLPipelineNotification::notifySkipped,
+                package->info.name(),
+                package->info.relativePath(),
+                package->faceRects.size(),
+                package->thumbnailIcon);
 
-                // delete the package since it is not needed
+         // delete the package since it is not needed
 
-                delete package;
-            }
+         delete package;
+     }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -276,10 +275,9 @@ bool FacePipelineDetectRecognize::loader()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Loader, MLPipelineStage::Extractor);
 }
@@ -297,7 +295,6 @@ bool FacePipelineDetectRecognize::extractor()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-
     FaceUtils utils;
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Extractor, thisQueue);
@@ -310,131 +307,131 @@ bool FacePipelineDetectRecognize::extractor()
      * This loop is run once per image.
      */
 
-            // preprocess the image
+    // preprocess the image
 
-            // copy the image to a cv::UMat
+    // copy the image to a cv::UMat
 
-            cv::UMat cvUImage = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB).getUMat(cv::ACCESS_RW);
+    cv::UMat cvUImage = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB).getUMat(cv::ACCESS_RW);
 
-            // resize the image if needed. Only resize if the image is larger than the input size of the detector
+    // resize the image if needed. Only resize if the image is larger than the input size of the detector
 
-            cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
+    cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
 
-            if (std::max(cvUImage.cols, cvUImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+    if (std::max(cvUImage.cols, cvUImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+    {
+        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
+        // so we just need to make sure no one bound exceeds the max. No padding needed.
+
+        float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImage.cols),
+                                           static_cast<float>(inputImageSize.height) / static_cast<float>(cvUImage.rows));
+
+        int newWidth            = (int)(resizeFactor * cvUImage.cols);
+        int newHeight           = (int)(resizeFactor * cvUImage.rows);
+        cv::resize(cvUImage, cvUImage, cv::Size(newWidth, newHeight));
+    }
+
+    // detect any faces in the image
+
+    cv::UMat udetectionResults  = faceDetector->callModel(cvUImage);
+
+    // process detected faces
+
+    if (udetectionResults.rows > 0)
+    {
+        cv::Mat detectionResults = udetectionResults.getMat(cv::ACCESS_READ);
+
+        // get list of previously confirmed faces
+
+        QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(package->info.id());
+
+        // get list of previously ignored faces
+
+        faces += utils.ignoredFaceTagsIfaces(package->info.id());
+
+        QList<QRectF> faceFRects;
+
+        // Loop through the faces found.
+
+        for (int i = 0 ; i < detectionResults.rows ; ++i)
+        {
+            // Create the rect of the face.
+
+            int X       = static_cast<int>(detectionResults.at<float>(i, 0));
+            int Y       = static_cast<int>(detectionResults.at<float>(i, 1));
+            int width   = static_cast<int>(detectionResults.at<float>(i, 2));
+            int height  = static_cast<int>(detectionResults.at<float>(i, 3));
+
+            // Add the rect to result list.
+
+            faceFRects << QRectF(qreal(X)      / qreal(cvUImage.cols),
+                                 qreal(Y)      / qreal(cvUImage.rows),
+                                 qreal(width)  / qreal(cvUImage.cols),
+                                 qreal(height) / qreal(cvUImage.rows));
+
+            // check if rect is already assigned to a face to filter out confirmed and ignored faces
+
+            bool found = false;
+
+            if (faces.size() > 0)
             {
-                // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
-                // so we just need to make sure no one bound exceeds the max. No padding needed.
-
-                float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImage.cols),
-                                                   static_cast<float>(inputImageSize.height) / static_cast<float>(cvUImage.rows));
-
-                int newWidth            = (int)(resizeFactor * cvUImage.cols);
-                int newHeight           = (int)(resizeFactor * cvUImage.rows);
-                cv::resize(cvUImage, cvUImage, cv::Size(newWidth, newHeight));
-            }
-
-            // detect any faces in the image
-
-            cv::UMat udetectionResults  = faceDetector->callModel(cvUImage);
-
-            // process detected faces
-
-            if (udetectionResults.rows > 0)
-            {
-                cv::Mat detectionResults = udetectionResults.getMat(cv::ACCESS_READ);
-
-                // get list of previously confirmed faces
-
-                QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(package->info.id());
-
-                // get list of previously ignored faces
-
-                faces += utils.ignoredFaceTagsIfaces(package->info.id());
-
-                QList<QRectF> faceFRects;
-
-                // Loop through the faces found.
-
-                for (int i = 0 ; i < detectionResults.rows ; ++i)
+                for (int j = 0; j < faces.size(); ++j)
                 {
-                    // Create the rect of the face.
+                    // compute current image relative rect
 
-                    int X       = static_cast<int>(detectionResults.at<float>(i, 0));
-                    int Y       = static_cast<int>(detectionResults.at<float>(i, 1));
-                    int width   = static_cast<int>(detectionResults.at<float>(i, 2));
-                    int height  = static_cast<int>(detectionResults.at<float>(i, 3));
+                    QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
+                                       package->image.height() * faceFRects[i].y(),
+                                       package->image.width()  * faceFRects[i].width(),
+                                       package->image.height() * faceFRects[i].height());
 
-                    // Add the rect to result list.
-
-                    faceFRects << QRectF(qreal(X)      / qreal(cvUImage.cols),
-                                         qreal(Y)      / qreal(cvUImage.rows),
-                                         qreal(width)  / qreal(cvUImage.cols),
-                                         qreal(height) / qreal(cvUImage.rows));
-
-                    // check if rect is already assigned to a face to filter out confirmed and ignored faces
-
-                    bool found = false;
-
-                    if (faces.size() > 0)
+                    if (faces[j].region().intersects(TagRegion(rect), 0.85))
                     {
-                        for (int j = 0; j < faces.size(); ++j)
-                        {
-                            // compute current image relative rect
+                        found = true;
 
-                            QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
-                                               package->image.height() * faceFRects[i].y(),
-                                               package->image.width()  * faceFRects[i].width(),
-                                               package->image.height() * faceFRects[i].height());
-
-                            if (faces[j].region().intersects(TagRegion(rect), 0.85))
-                            {
-                                found = true;
-
-                                break;
-                            }
-                        }
-                    }
-
-                    // if face is not found (confirmed), then extract for classification
-
-                    if (!found)
-                    {
-                        cv::UMat ualignedFace, uface_features;
-                        cv::Mat face_features;
-
-                        // extract the face vectors (features) for classification
-
-                        {
-                            QMutexLocker lock(&(faceExtractor->mutex));
-
-                            faceExtractor->getNet()->alignCrop(cvUImage, udetectionResults.row(i), ualignedFace);
-
-                            faceExtractor->getNet()->feature(ualignedFace, uface_features);
-
-                            face_features = uface_features.getMat(cv::ACCESS_READ);
-                        }
-
-                        // normalize the face features if we have any
-
-                        if (0 < face_features.rows)
-                        {
-                            // normalize the face features
-
-                            cv::Mat normalized_features;
-                            normalize(face_features, normalized_features);
-
-                            // add the face features and face rect to the package
-
-                            package->featuresList << normalized_features;
-                            package->faceRects << faceFRects[i];
-                        }
+                        break;
                     }
                 }
             }
 
-            // send the package to the next stage
+            // if face is not found (confirmed), then extract for classification
 
-            enqueue(nextQueue, package);
+            if (!found)
+            {
+                cv::UMat ualignedFace, uface_features;
+                cv::Mat face_features;
+
+                // extract the face vectors (features) for classification
+
+                {
+                    QMutexLocker lock(&(faceExtractor->mutex));
+
+                    faceExtractor->getNet()->alignCrop(cvUImage, udetectionResults.row(i), ualignedFace);
+
+                    faceExtractor->getNet()->feature(ualignedFace, uface_features);
+
+                    face_features = uface_features.getMat(cv::ACCESS_READ);
+                }
+
+                // normalize the face features if we have any
+
+                if (0 < face_features.rows)
+                {
+                    // normalize the face features
+
+                    cv::Mat normalized_features;
+                    normalize(face_features, normalized_features);
+
+                    // add the face features and face rect to the package
+
+                    package->featuresList << normalized_features;
+                    package->faceRects << faceFRects[i];
+                }
+            }
+        }
+    }
+
+    // send the package to the next stage
+
+    enqueue(nextQueue, package);
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -478,23 +475,23 @@ bool FacePipelineDetectRecognize::classifier()
      * This loop is run once per image.
      */
 
-            for (int i = 0 ; i < package->featuresList.size() ; ++i)
-            {
-                // verify the feature mat is not empty
+    for (int i = 0 ; i < package->featuresList.size() ; ++i)
+    {
+        // verify the feature mat is not empty
 
-                if (0 < package->featuresList[i].rows)
-                {
-                    // classify the features
+        if (0 < package->featuresList[i].rows)
+        {
+            // classify the features
 
-                    package->labelList << classifier->predict(package->featuresList[i]);
-                }
-                else
-                {
-                    package->labelList << -1;
-                }
-            }
+            package->labelList << classifier->predict(package->featuresList[i]);
+        }
+        else
+        {
+            package->labelList << -1;
+        }
+    }
 
-            enqueue(nextQueue, package);
+    enqueue(nextQueue, package);
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -540,102 +537,102 @@ bool FacePipelineDetectRecognize::writer()
      * This loop is run once per image.
      */
 
-            switch (settings.alreadyScannedHandling)
+    switch (settings.alreadyScannedHandling)
+    {
+        case FaceScanSettings::Rescan:
+        {
+            // remove old unconfirmed face rects
+
+            QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
+            utils.removeFaces(oldEntries);
+            break;
+        }
+
+        case FaceScanSettings::ClearAll:
+        {
+            // remove all face rects
+
+            utils.removeAllFaces(package->info.id());
+            break;
+        }
+
+        case FaceScanSettings::RecognizeOnly:
+        case FaceScanSettings::Skip:
+        {
+            // do nothing
+            // Skipped images were skipped in the finder stage
+            // RecognizeOnly defines the pipeline
+            break;
+        }
+    }
+
+    // mark the image as scanned
+
+    utils.markAsScanned(package->info);
+
+    // create thumbnails and write the new face rects to the database
+
+    QString names = QLatin1String("\n");
+
+    if (package->faceRects.size())
+    {
+        QList<FaceTagsIface>    databaseFaces;
+        QList<Identity>         identities;
+
+        for (int i = 0 ; i < package->faceRects.size() ; ++i)
+        {
+            QRect faceRect(std::round(package->image.width() * package->faceRects[i].x()),
+                           std::round(package->image.height() * package->faceRects[i].y()),
+                           std::round(package->image.width() * package->faceRects[i].width()),
+                           std::round(package->image.height() * package->faceRects[i].height()));
+
+            if (package->labelList[i] != -1)
             {
-                case FaceScanSettings::Rescan:
-                {
-                    // remove old unconfirmed face rects
-
-                    QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
-                    utils.removeFaces(oldEntries);
-                    break;
-                }
-
-                case FaceScanSettings::ClearAll:
-                {
-                    // remove all face rects
-
-                    utils.removeAllFaces(package->info.id());
-                    break;
-                }
-
-                case FaceScanSettings::RecognizeOnly:
-                case FaceScanSettings::Skip:
-                {
-                    // do nothing
-                    // Skipped images were skipped in the finder stage
-                    // RecognizeOnly defines the pipeline
-                    break;
-                }
+                Identity identity = idProvider->identity(package->labelList[i]);
+                names += identity.attribute(QStringLiteral("name")) + QLatin1String(", ");
+                identities << identity;
+                databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
+                                                package->info.id(),
+                                                FaceTags::unconfirmedPersonTagId(),
+                                                TagRegion(faceRect));
             }
-
-            // mark the image as scanned
-
-            utils.markAsScanned(package->info);
-
-            // create thumbnails and write the new face rects to the database
-
-            QString names = QLatin1String("\n");
-
-            if (package->faceRects.size())
+            else
             {
-                QList<FaceTagsIface>    databaseFaces;
-                QList<Identity>         identities;
-
-                for (int i = 0 ; i < package->faceRects.size() ; ++i)
-                {
-                    QRect faceRect(std::round(package->image.width() * package->faceRects[i].x()),
-                                   std::round(package->image.height() * package->faceRects[i].y()),
-                                   std::round(package->image.width() * package->faceRects[i].width()),
-                                   std::round(package->image.height() * package->faceRects[i].height()));
-
-                    if (package->labelList[i] != -1)
-                    {
-                        Identity identity = idProvider->identity(package->labelList[i]);
-                        names += identity.attribute(QStringLiteral("name")) + QLatin1String(", ");
-                        identities << identity;
-                        databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
-                                                        package->info.id(),
-                                                        FaceTags::unconfirmedPersonTagId(),
-                                                        TagRegion(faceRect));
-                    }
-                    else
-                    {
-                        identities << Identity();
-                        databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnknownName,
-                                                        package->info.id(),
-                                                        FaceTags::unknownPersonTagId(),
-                                                        TagRegion(faceRect));
-                    }
-                }
-
-                // store the thumbnails
-
-                if (!package->image.isNull())
-                {
-                    utils.storeThumbnails(thumbnailLoadThread, package->info.filePath(),
-                                        databaseFaces, package->image);
-                }
-
-                // write the new face rects to the database
-
-                utils.writeUnconfirmedResults(package->info.id(),
-                                              package->faceRects,
-                                              identities,
-                                              package->image.originalSize());
+                identities << Identity();
+                databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnknownName,
+                                                package->info.id(),
+                                                FaceTags::unknownPersonTagId(),
+                                                TagRegion(faceRect));
             }
+        }
 
-            // send a notification that the image was processed
+        // store the thumbnails
 
-            notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name() + names,
-                   package->info.relativePath(),
-                   package->faceRects.size(),
-                   package->thumbnailIcon);
+        if (!package->image.isNull())
+        {
+            utils.storeThumbnails(thumbnailLoadThread, package->info.filePath(),
+                                databaseFaces, package->image);
+        }
 
-            // delete the package
+        // write the new face rects to the database
 
-            delete package;
+        utils.writeUnconfirmedResults(package->info.id(),
+                                      package->faceRects,
+                                      identities,
+                                      package->image.originalSize());
+    }
+
+    // send a notification that the image was processed
+
+    notify(MLPipelineNotification::notifyProcessed,
+           package->info.name() + names,
+           package->info.relativePath(),
+           package->faceRects.size(),
+           package->thumbnailIcon);
+
+    // delete the package
+
+    delete package;
 
     /* =========================================================================================
      * End pipeline stage specific loop

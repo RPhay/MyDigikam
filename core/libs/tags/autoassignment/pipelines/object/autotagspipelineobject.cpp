@@ -648,3 +648,5 @@ void AutotagsPipelineObject::addMoreWorkers()
 }
 
 } // namespace Digikam
+
+#include "moc_autotagspipelineobject.cpp"

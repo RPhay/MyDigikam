@@ -123,10 +123,9 @@ bool FacePipelineReset::finder()
 
     /* =========================================================================================
      * Pipeline finder specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_FINDER_END(MLPipelineStage::Writer);
 }
@@ -163,33 +162,34 @@ bool FacePipelineReset::writer()
      * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
      * This loop is run once per image.
      */
-            // remove the face tags from the image
 
-            QList<FaceTagsIface> databaseFaces = editor.unconfirmedFaceTagsIfaces(package->info.id());
+    // remove the face tags from the image
 
-            editor.removeFaces(databaseFaces);
+    QList<FaceTagsIface> databaseFaces = editor.unconfirmedFaceTagsIfaces(package->info.id());
 
-            databaseFaces                      = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
+    editor.removeFaces(databaseFaces);
 
-            editor.removeFaces(databaseFaces);
+    databaseFaces                      = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
 
-            editor.removeAllFaces(package->info.id());
+    editor.removeFaces(databaseFaces);
 
-            // mark the image as unscanned
+    editor.removeAllFaces(package->info.id());
 
-            utils.markAsScanned(package->info, false);
+    // mark the image as unscanned
 
-            // send a notification that the image was processed
+    utils.markAsScanned(package->info, false);
 
-            notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   package->info.relativePath(),
-                   package->faceRects.size(),
-                   icon);
+    // send a notification that the image was processed
 
-            // delete the package
+    notify(MLPipelineNotification::notifyProcessed,
+           package->info.name(),
+           package->info.relativePath(),
+           package->faceRects.size(),
+           icon);
 
-            delete package;
+    // delete the package
+
+    delete package;
 
     /* =========================================================================================
      * End pipeline stage specific loop

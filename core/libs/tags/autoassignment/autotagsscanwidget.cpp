@@ -89,7 +89,7 @@ void AutotagsScanWidget::setupUi()
     d->settingsTab                      = new QWidget(this);
     QVBoxLayout* const settingsLayout   = new QVBoxLayout(d->settingsTab);
 
-    QLabel* const title    = new QLabel(d->settingsTab);
+    QLabel* const title         = new QLabel(d->settingsTab);
     title->setText(i18nc("@label",
                          "<p><b>This tool automatically assigns tags to images by analyzing the image using "
                          "a deep-learning neural network AI model.</b></p>"
@@ -99,36 +99,36 @@ void AutotagsScanWidget::setupUi()
                          "the database.</p>"));
     title->setWordWrap(true);
 
-    DHBox* const hbox12    = new DHBox(d->settingsTab);
+    DHBox* const hbox12         = new DHBox(d->settingsTab);
     new QLabel (i18n("Auto-tagging mode: "), hbox12);
-    QWidget* const space8  = new QWidget(hbox12);
+    QWidget* const space8       = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
-    d->scanMode = new QComboBox(hbox12);
+    d->scanMode                 = new QComboBox(hbox12);
     d->scanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
     d->scanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>Scan all</b>: re-scan all items for tags.</p>"
         "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
 
-    DHBox* const hbox15    = new DHBox(d->settingsTab);
+    DHBox* const hbox15         = new DHBox(d->settingsTab);
     new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
-    QWidget* const space15 = new QWidget(hbox15);
+    QWidget* const space15      = new QWidget(hbox15);
     hbox15->setStretchFactor(space15, 10);
 
-    d->tagMode = new QComboBox(hbox15);
+    d->tagMode                  = new QComboBox(hbox15);
     d->tagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
     d->tagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
         "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
         "<p><b>Update autotags</b>: add any new autotags found to the existing tags.</p>"));
 
-    DHBox* const hbox13    = new DHBox(d->settingsTab);
+    DHBox* const hbox13         = new DHBox(d->settingsTab);
     new QLabel(i18n("Selection model: "), hbox13);
-    QWidget* const space9  = new QWidget(hbox13);
+    QWidget* const space9       = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
-    d->objectDetectModel  = new QComboBox(hbox13);
+    d->objectDetectModel        = new QComboBox(hbox13);
     d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
     d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
     d->objectDetectModel->addItem(i18n("ResNet-152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
@@ -140,7 +140,7 @@ void AutotagsScanWidget::setupUi()
         "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
         "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
 
-    DHBox* const hbox14    = new DHBox(d->settingsTab);
+    DHBox* const hbox14         = new DHBox(d->settingsTab);
     new QLabel(i18n("Object detection accuracy: "), hbox14);
     d->accuracyInput            = new DIntNumInput(hbox14);
     d->accuracyInput->setDefaultValue(7);
@@ -149,8 +149,8 @@ void AutotagsScanWidget::setupUi()
                                                 "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
                                                 "be recognized, but fewer objects will be recognized.\n"));
 
-    DHBox* const hbox16    = new DHBox(d->settingsTab);
-    d->useFullCpuButton                 = new QCheckBox(hbox16);
+    DHBox* const hbox16         = new DHBox(d->settingsTab);
+    d->useFullCpuButton         = new QCheckBox(hbox16);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Object detection and auto-tagging are time-consuming tasks.\n"
@@ -168,7 +168,7 @@ void AutotagsScanWidget::setupUi()
 
     // --- Translate tab -----------------------------------------------------------------------------------
 
-    d->trSelectorList      = new LocalizeSelectorList(d->settingsTab);
+    d->trSelectorList           = new LocalizeSelectorList(d->settingsTab);
     d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
 
     addTab(d->trSelectorList, i18nc("@title:tab", "Translate"));
@@ -256,6 +256,7 @@ void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
     }
 
     d->trSelectorList->clearLanguages();
+
     for (const QString& lg : newSettings.languages)
     {
         d->trSelectorList->addLanguage(lg);
