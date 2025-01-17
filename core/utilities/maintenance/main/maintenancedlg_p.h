@@ -53,7 +53,6 @@
 #include "applicationsettings.h"
 #include "drangebox.h"
 #include "autotagsassignment.h"
-#include "autotagsassign.h"
 #include "localizeselector.h"
 
 namespace Digikam
