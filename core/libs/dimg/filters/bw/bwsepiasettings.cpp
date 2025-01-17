@@ -322,7 +322,7 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     }
     else
     {
-        d->curvesBox = new CurvesBox(256, 192, DImg(1, 1, true, false, reinterpret_cast<unsigned char*>(const_cast<char*>("\x00\x00\x00\x00\x00\x00\x00\x00")), lumBox));
+        d->curvesBox = new CurvesBox(256, 192, DImg(1, 1, true, false, reinterpret_cast<unsigned char*>(const_cast<char*>("\x00\x00\x00\x00\x00\x00\x00\x00"))), lumBox);
     }
 
     d->curvesBox->enableCurveTypes(true);
