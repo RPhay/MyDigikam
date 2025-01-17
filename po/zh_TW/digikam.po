@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 01:53+0000\n"
+"POT-Creation-Date: 2025-01-17 01:52+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2783,7 +2783,7 @@ msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
@@ -2791,7 +2791,7 @@ msgid "Back"
 msgstr "向後"
 
 #: core/app/views/preview/itempreviewview.cpp:165
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
@@ -10880,7 +10880,7 @@ msgstr "檔案未儲存"
 msgid "Cannot save \"%1\" file"
 msgstr "無法儲存「%1」檔案"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -10889,38 +10889,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "地理位置編輯器"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "在地圖上顯示已存入書籤的位置。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "佈局："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "一張地圖"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "兩張地圖 - 左右"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "兩張地圖 - 上下"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
@@ -10932,92 +10932,92 @@ msgstr "兩張地圖 - 上下"
 msgid "OK"
 msgstr "確定"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "排序"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "先顯示最舊的"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "先顯示最新的"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "詳細資料"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS 相關器"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "復原/重做"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "反向地理定位"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "搜尋"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML 匯出"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "載入中繼資料中 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 個已變更的影像。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "未儲存的變更"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您要儲存您所做的變更嗎？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:910
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "儲存變更中 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11054,13 +11054,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "儲存某些資訊時失敗："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1008
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -11666,43 +11666,43 @@ msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
 msgstr[0] "%1 張影像移動到 '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "中繼資料編輯器"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "下一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:122
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "上一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "編輯 EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:136
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "編輯 IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:137
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "編輯 XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:324
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
@@ -15580,7 +15580,7 @@ msgstr "時間"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
@@ -16055,7 +16055,7 @@ msgid "Raw File"
 msgstr "Raw 檔案"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
@@ -16098,7 +16098,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG 轉換工具..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "無法識別 RAW 影像"
@@ -18029,7 +18029,7 @@ msgid ""
 "systems."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:112
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
@@ -18181,7 +18181,7 @@ msgctxt "@action"
 msgid "Process Selected Items"
 msgstr "處理選取的項目"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "Words"
@@ -19609,7 +19609,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
@@ -19713,12 +19713,12 @@ msgstr ""
 "自訂\n"
 "佈局"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "歡迎使用列印建立工具"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
@@ -19726,41 +19726,41 @@ msgstr "歡迎使用列印建立工具"
 msgid "Albums Selection"
 msgstr "相簿選取"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select Page Layout"
 msgstr "全部不選"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Caption Settings"
 msgstr "簡短說明設定"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "裁剪與旋轉相片"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Images Output Settings"
 msgstr "影像輸出設定"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, fuzzy, kde-format
 #| msgid "Rendering intent:"
 msgid "Render Printing"
 msgstr "色彩對應方式："
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Photo %1 of %2"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Page %1 of %2"
@@ -23970,42 +23970,42 @@ msgstr ""
 msgid "invalid name"
 msgstr "無效名稱"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, fuzzy, kde-format
 #| msgctxt "method to compare strings"
 #| msgid "Natural"
 msgid "iNaturalist"
 msgstr "自然"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:560
 #, kde-format
 msgid "Login"
 msgstr "登入"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1338
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1504
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "載入影像失敗"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1582
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1700
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "載入影像失敗"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "載入影像失敗"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1929
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -38836,7 +38836,7 @@ msgid "Scanning: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -38979,7 +38979,7 @@ msgid ""
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39003,7 +39003,7 @@ msgstr ""
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -41283,27 +41283,27 @@ msgstr "媒體播放程式發生一個錯誤...."
 msgid "An error has occurred while playing: %1"
 msgstr "媒體播放程式發生一個錯誤...."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暫停/播放"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:196
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "擷取"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒體播放器發生了錯誤..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:230
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
@@ -49202,7 +49202,7 @@ msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "新增書籤"
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:367
 #, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -51750,7 +51750,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "拒絕這個建議"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51761,7 +51761,7 @@ msgstr ""
 "digiKam 可以搜尋您的相片中的臉孔。<nl/> 當您已經在相當數量中的相片標記出您的"
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51769,7 +51769,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "掃描影像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51777,7 +51777,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "掃描影像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -51786,7 +51786,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "辨識臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51798,27 +51798,27 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "說明"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "工作流"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51831,14 +51831,14 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "檔案大小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51846,7 +51846,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51854,7 +51854,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -51862,14 +51862,14 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "中"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "目標"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51877,7 +51877,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51896,20 +51896,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "臉孔偵測"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51923,7 +51923,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -51939,7 +51939,7 @@ msgstr ""
 "臉孔偵測是個很花時間的工作。您可以選擇是否要使用您電腦中所有的處理器核心來進"
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
