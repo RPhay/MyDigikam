@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-16 01:53+0000\n"
+"POT-Creation-Date: 2025-01-17 01:52+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2814,7 +2814,7 @@ msgid "Git Branch: "
 msgstr "Git Branch: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
@@ -2822,7 +2822,7 @@ msgid "Back"
 msgstr "Back"
 
 #: core/app/views/preview/itempreviewview.cpp:165
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
@@ -11212,7 +11212,7 @@ msgstr "File Not Saved"
 msgid "Cannot save \"%1\" file"
 msgstr "Cannot save \"%1\" file"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11221,38 +11221,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Geolocation Editor"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Display bookmarked positions on the map."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Layout:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "One map"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Two maps - left and right"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Two maps - top and bottom"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
@@ -11264,67 +11264,67 @@ msgstr "Two maps - top and bottom"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sorting"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Show oldest first"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Show youngest first"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Details"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS Correlator"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Undo/Redo"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Reverse Geocoding"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Search"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML Export"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Loading metadata -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11332,25 +11332,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "You have 1 modified image."
 msgstr[1] "You have %1 modified images."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Unsaved Changes"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Would you like to save the changes you made to them?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:910
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Saving changes -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11387,13 +11387,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Error"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Failed to save some information:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1008
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -12024,43 +12024,43 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] "1 image moved to '%2'"
 msgstr[1] "%1 images moved to '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Metadata Editor"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "Next"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:122
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "Previous"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "Edit EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:136
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "Edit IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:137
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "Edit XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:324
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
@@ -15751,7 +15751,7 @@ msgstr "Timestamp Updated"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "Status"
@@ -16266,7 +16266,7 @@ msgid "Raw File"
 msgstr "Raw File"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
@@ -16314,7 +16314,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG Converter..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:103
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "Cannot identify Raw image"
@@ -18269,7 +18269,7 @@ msgstr ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:112
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
@@ -18422,7 +18422,7 @@ msgctxt "@action"
 msgid "Process Selected Items"
 msgstr "Process Selected Items"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
 #, kde-format
 msgid "Words"
 msgstr "Words"
@@ -19800,7 +19800,7 @@ msgstr ""
 "permissions to this folder and try again."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
@@ -19906,12 +19906,12 @@ msgstr ""
 "Custom\n"
 "layout"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Welcome to Print Creator"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
@@ -19919,38 +19919,38 @@ msgstr "Welcome to Print Creator"
 msgid "Albums Selection"
 msgstr "Albums Selection"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Select Page Layout"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Caption Settings"
 msgstr "Caption Settings"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Crop and Rotate Photos"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Images Output Settings"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, kde-format
 msgid "Render Printing"
 msgstr "Render Printing"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Photo %1 of %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Page %1 of %2"
@@ -24192,37 +24192,37 @@ msgstr "Seen Nearby"
 msgid "invalid name"
 msgstr "invalid name"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:556
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
 #, kde-format
 msgid "iNaturalist"
 msgstr "iNaturalist"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:558
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:560
 #, kde-format
 msgid "Login"
 msgstr "Login"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1336
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1502
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1338
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1504
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "ERROR While Creating Observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1580
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1698
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1582
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1700
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERROR While Uploading Photo"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1822
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERROR While Deleting Observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1929
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Timeout after exceeding %1 seconds"
@@ -39145,7 +39145,7 @@ msgid "Scanning: %1\n"
 msgstr "Scanning from: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:220
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -39314,7 +39314,7 @@ msgstr ""
 "be detected, but less faces will be detected."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:380
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39339,7 +39339,7 @@ msgstr ""
 "on your system, or work in the background only on one core."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:394
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -41632,27 +41632,27 @@ msgstr "An error has occurred while playing: the media is not valid"
 msgid "An error has occurred while playing: %1"
 msgstr "An error has occurred while playing: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pause/Play"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:196
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Capture"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "An error has occurred with the media player..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:230
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
@@ -49327,7 +49327,7 @@ msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "Add Bookmark"
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:367
 #, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -51929,7 +51929,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Reject this suggestion"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:145
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51941,7 +51941,7 @@ msgstr ""
 "When you have identified your friends on a number of photos,\n"
 "it can also recognise the people shown on your photos."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51949,7 +51949,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Scan Images"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:154
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51957,7 +51957,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Scan Images"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:155
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -51966,7 +51966,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Recognise faces"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51978,25 +51978,25 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Help"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Workflow"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Accuracy:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52008,13 +52008,13 @@ msgstr ""
 "accurately faces will\n"
 "be detected, but less faces will be detected."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:282
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Face size:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Extra Small"
@@ -52022,7 +52022,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Extra Small"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Small"
@@ -52030,7 +52030,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Small"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -52038,7 +52038,7 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Medium"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Large"
@@ -52046,7 +52046,7 @@ msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Large"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Extra Large"
@@ -52054,7 +52054,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52086,18 +52086,18 @@ msgstr ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:312
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Face Detection Settings"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:321
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Accuracy:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:328
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52111,7 +52111,7 @@ msgstr ""
 "be recognised, but less faces will be recognised.\n"
 "Note: only faces that are very similar to pre-tagged faces are recognised."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:382
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52123,7 +52123,7 @@ msgstr ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:386
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Face Recognition Settings"
