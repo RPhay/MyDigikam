@@ -467,8 +467,6 @@ void RGWidget::slotRGReady(const QList<RGInfo>& returnedRGList)
         return;
     }
 
-    QString address;
-
     for (int i = 0 ; i < returnedRGList.count() ; ++i)
     {
         QPersistentModelIndex currentImageIndex = returnedRGList[i].id;
@@ -823,7 +821,6 @@ void RGWidget::slotRemoveTag()
  */
 void RGWidget::slotRemoveAllSpacers()
 {
-    QString whatShouldRemove = QLatin1String("Spacers");
     QModelIndex baseIndex;
 
     if (!d->currentTagTreeIndex.isValid())
