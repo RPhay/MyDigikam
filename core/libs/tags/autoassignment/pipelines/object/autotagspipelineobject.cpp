@@ -264,46 +264,48 @@ bool AutotagsPipelineObject::loader()
      * This loop is run once per image.
      */
 
-     // check if the ID is for an image (not video or other file type)
+    {
+        // check if the ID is for an image (not video or other file type)
 
-     bool sendNotification = true;
+        bool sendNotification = true;
 
-     if (DatabaseItem::Category::Image == package->info.category())
-     {
-         // load image for detection
+        if (DatabaseItem::Category::Image == package->info.category())
+        {
+            // load image for detection
 
-         package->image = PreviewLoadThread::loadFastSynchronously(package->info.filePath(), model->info.imageSize);
+            package->image = PreviewLoadThread::loadFastSynchronously(package->info.filePath(), model->info.imageSize);
 
-         // check for corrupted images that can't be loaded
+            // check for corrupted images that can't be loaded
 
-         if (!package->image.isNull())
-         {
-             // create a thumbnail for the notification
+            if (!package->image.isNull())
+            {
+                // create a thumbnail for the notification
 
-             package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+                package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
 
-             // send to the next stage
+                // send to the next stage
 
-             enqueue(nextQueue, package);
+                enqueue(nextQueue, package);
 
-             sendNotification = false;
-         }
-     }
+                sendNotification = false;
+            }
+        }
 
-     if (sendNotification)
-     {
-         // send a notification that the file was skipped
+        if (sendNotification)
+        {
+            // send a notification that the file was skipped
 
-         notify(MLPipelineNotification::notifySkipped,
-                package->info.name(),
-                package->albumTitle,
-                0,
-                package->thumbnailIcon);
+            notify(MLPipelineNotification::notifySkipped,
+                    package->info.name(),
+                    package->albumTitle,
+                    0,
+                    package->thumbnailIcon);
 
-         // delete the package since it is not needed
+            // delete the package since it is not needed
 
-         delete package;
-     }
+            delete package;
+        }
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -343,74 +345,76 @@ bool AutotagsPipelineObject::extractor()
      * This loop is run once per image.
      */
 
-     // preprocess the image
+    {
+        // preprocess the image
 
-     // copy the image to a cv::Mat
+        // copy the image to a cv::Mat
 
-     cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
+        cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
 
-     // resize the image if needed.  Only resize if the image is larger than the input size of the detector
+        // resize the image if needed.  Only resize if the image is larger than the input size of the detector
 
-     cv::Size inputImageSize = cv::Size(model->info.imageSize, model->info.imageSize);
+        cv::Size inputImageSize = cv::Size(model->info.imageSize, model->info.imageSize);
 
-     if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
-     {
-         // Image should be resized. 
+        if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+        {
+            // Image should be resized.
 
-         float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
-                                            static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+            float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
+                                                static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
 
-         int newWidth            = (int)(resizeFactor * cvImage.cols);
-         int newHeight           = (int)(resizeFactor * cvImage.rows);
-         cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
-     }
+            int newWidth            = (int)(resizeFactor * cvImage.cols);
+            int newHeight           = (int)(resizeFactor * cvImage.rows);
+            cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
+        }
 
-     // pad the image if needed
+        // pad the image if needed
 
-     if ((model->info.imageSize != cvImage.cols) || (model->info.imageSize != cvImage.rows))
-     {
-         // Image needs to be padded so we add a border
+        if ((model->info.imageSize != cvImage.cols) || (model->info.imageSize != cvImage.rows))
+        {
+            // Image needs to be padded so we add a border
 
-         cv::Mat borderImage;
-         int xPad = model->info.imageSize - cvImage.cols;
-         int yPad = model->info.imageSize - cvImage.rows;
+            cv::Mat borderImage;
+            int xPad = model->info.imageSize - cvImage.cols;
+            int yPad = model->info.imageSize - cvImage.rows;
 
-         cv::copyMakeBorder(cvImage, borderImage,
-                            0, yPad,
-                            0, xPad,
-                            cv::BORDER_CONSTANT,
-                            cv::Scalar(0, 0, 0));
+            cv::copyMakeBorder(cvImage, borderImage,
+                                0, yPad,
+                                0, xPad,
+                                cv::BORDER_CONSTANT,
+                                cv::Scalar(0, 0, 0));
 
-         cvImage = borderImage;
-     }
+            cvImage = borderImage;
+        }
 
-     // convert the image to a blob 
+        // convert the image to a blob
 
-     cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0/255,
-                                               cv::Size(cvImage.cols, cvImage.rows),
-                                               cv::Scalar(0, 0, 0),
-                                               true, false).getUMat(cv::ACCESS_READ);
+        cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0 / 255,
+                                                cv::Size(cvImage.cols, cvImage.rows),
+                                                cv::Scalar(0, 0, 0),
+                                                true, false).getUMat(cv::ACCESS_READ);
 
-     std::vector<cv::Mat> detectionResults;
+        std::vector<cv::Mat> detectionResults;
 
-     {
-         // detect any objects in the image
+        {
+            // detect any objects in the image
 
-         QMutexLocker lock(&(model->mutex));
+            QMutexLocker lock(&(model->mutex));
 
-         model->getNet().setInput(cvUBlob);
+            model->getNet().setInput(cvUBlob);
 
-         model->getNet().forward(detectionResults, model->getNet().getUnconnectedOutLayersNames());
-     }
+            model->getNet().forward(detectionResults, model->getNet().getUnconnectedOutLayersNames());
+        }
 
-     for (auto result : detectionResults)
-     {
-         package->featuresList << result;
-     }
+        for (const auto& result : detectionResults)
+        {
+            package->featuresList << result;
+        }
 
-     // send the package to the next stage
+        // send the package to the next stage
 
-     enqueue(nextQueue, package);
+        enqueue(nextQueue, package);
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -450,12 +454,14 @@ bool AutotagsPipelineObject::classifier()
      * This loop is run once per image.
      */
 
-    package->labelList = autotagsClassifier->predictMulti(package->featuresList);
-    package->tagList   = autotagsClassifier->getClassStrings(package->labelList);
+    {
+        package->labelList = autotagsClassifier->predictMulti(package->featuresList);
+        package->tagList   = autotagsClassifier->getClassStrings(package->labelList);
 
-    // send the package to the next stage
+        // send the package to the next stage
 
-    enqueue(nextQueue, package);
+        enqueue(nextQueue, package);
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -486,7 +492,7 @@ bool AutotagsPipelineObject::writer()
      */
 
     const QString rootTag      = QLatin1String("auto/");
-    TagsCache* const tagsCache = Digikam::TagsCache::instance();
+    TagsCache* const tagsCache = TagsCache::instance();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                    = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
@@ -498,6 +504,7 @@ bool AutotagsPipelineObject::writer()
      * This loop is run once per image.
      */
 
+    {
         bool tagsChanged           = false;
         QStringList tagsPath;
         QStringList displayTags;
@@ -613,6 +620,7 @@ bool AutotagsPipelineObject::writer()
         // delete the package
 
         delete package;
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -622,10 +630,9 @@ bool AutotagsPipelineObject::writer()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
