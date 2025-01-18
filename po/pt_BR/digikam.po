@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 01:52+0000\n"
+"POT-Creation-Date: 2025-01-18 01:58+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -11797,7 +11797,7 @@ msgstr "Dois mapas - horizontal"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -41950,56 +41950,56 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diversas"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:109
+#: core/libs/tags/autoassignment/autotagsengine.cpp:108
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
 msgstr "Ajuste automático"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:118
+#: core/libs/tags/autoassignment/autotagsengine.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for objects in album: %1"
 msgstr "Pesquisar nos álbuns:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:122
+#: core/libs/tags/autoassignment/autotagsengine.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for objects in %1 albums"
 msgstr "Pesquisar nos álbuns:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:203
+#: core/libs/tags/autoassignment/autotagsengine.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Benchmark face detection"
 msgid "Error starting object detection."
 msgstr "Analisar o desempenho da detecção de rostos"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:218
+#: core/libs/tags/autoassignment/autotagsengine.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for objects: %1\n"
 msgstr "Pesquisar nos álbuns:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:222
+#: core/libs/tags/autoassignment/autotagsengine.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for objects: %1\n"
 msgstr "Pesquisar nos álbuns:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
 msgstr "Álbum \"%1\""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:251
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -66531,7 +66531,7 @@ msgid "Duplicate found: %1"
 msgstr "Duplicados"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -66539,7 +66539,7 @@ msgid "Scan for faces in album: %1"
 msgstr "Pesquisar nos álbuns:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -66547,7 +66547,7 @@ msgid "Scan for faces in %1 albums"
 msgstr "Pesquisar nos álbuns:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
@@ -66555,7 +66555,7 @@ msgid "Scan for faces in image: %1"
 msgstr "Analisando rostos"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
@@ -66563,14 +66563,14 @@ msgid "Scan for faces in %1 images"
 msgstr "Analisando rostos"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Atualizando o banco de dados de rostos."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -66578,7 +66578,7 @@ msgid "Items scanned for faces: %1\n"
 msgstr "Pesquisar nos álbuns:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -66618,34 +66618,34 @@ msgid_plural "%1 faces"
 msgstr[0] "Sem flash"
 msgstr[1] "Sem flash"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Benchmark face detection"
 msgid "Error starting face detection."
 msgstr "Analisar o desempenho da detecção de rostos"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Imagens encontradas em %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Imagens encontradas em %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "No faces found in %1"
 msgstr "Imagens encontradas em %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "

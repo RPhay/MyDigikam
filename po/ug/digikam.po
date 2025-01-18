@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 01:52+0000\n"
+"POT-Creation-Date: 2025-01-18 01:58+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -11091,7 +11091,7 @@ msgstr "گورىزونتال ئۆرۈش"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -38577,53 +38577,53 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "باشقىلار"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:109
+#: core/libs/tags/autoassignment/autotagsengine.cpp:108
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:118
+#: core/libs/tags/autoassignment/autotagsengine.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for objects in album: %1"
 msgstr "ئىزدەش:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:122
+#: core/libs/tags/autoassignment/autotagsengine.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for objects in %1 albums"
 msgstr "ئىزدەش:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:203
+#: core/libs/tags/autoassignment/autotagsengine.cpp:202
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:218
+#: core/libs/tags/autoassignment/autotagsengine.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for objects: %1\n"
 msgstr "ئىزدەش:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:222
+#: core/libs/tags/autoassignment/autotagsengine.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for objects: %1\n"
 msgstr "ئىزدەش:"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
 msgstr "ئالبوم «%1»"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:251
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -61335,7 +61335,7 @@ msgid "Duplicate found: %1"
 msgstr "تۈرلەرنى چىقىرىۋەت"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -61343,7 +61343,7 @@ msgid "Scan for faces in album: %1"
 msgstr "ئىزدەش:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -61351,25 +61351,25 @@ msgid "Scan for faces in %1 albums"
 msgstr "ئىزدەش:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "سۈرەت تاللاڭ"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "سۈرەت تاللاڭ"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -61377,7 +61377,7 @@ msgid "Items scanned for faces: %1\n"
 msgstr "ئىزدەش:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -61412,32 +61412,32 @@ msgid "1 face"
 msgid_plural "%1 faces"
 msgstr[0] "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Faces found: %1"
 msgstr "تۈرلەرنى چىقىرىۋەت"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Face found: %1"
 msgstr "تۈرلەرنى چىقىرىۋەت"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "No faces found in %1"
 msgstr "تۈرلەرنى چىقىرىۋەت"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "

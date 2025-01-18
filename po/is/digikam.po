@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-17 01:52+0000\n"
-"PO-Revision-Date: 2025-01-16 14:54+0000\n"
+"POT-Creation-Date: 2025-01-18 01:58+0000\n"
+"PO-Revision-Date: 2025-01-17 14:57+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2961,18 +2961,16 @@ msgid "Existing Tags"
 msgstr "Merki sem þegar eru til"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Sjálfvirk úthlutun merkja"
+msgstr "Skönnun sjálfvirkra merkja"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
+msgstr ""
+"Veldu þetta til að leita að hlutum í völdum albúmum til að merkja sjálfvirkt"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
 #, kde-format
@@ -6243,26 +6241,20 @@ msgid "Assign Tags"
 msgstr "Úthluta merkjum"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
-msgstr "Verkfæri til að úthluta merkjum sjálfvirkt á myndir"
+msgstr "Verkfæri til að úthluta sjálfvirkt merkjum á myndir"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Þetta verkfæri magnvinnslustjórans getur úthlutað sjálfvirkt "
-"stigskipuðum gildum lýsigagna á myndir með aðstoð vélnámskerfis (deep-"
+"<para>Þetta verkfæri magnvinnslustjórans mun úthluta sjálfvirkt stigskipuðum "
+"gildum lýsigagna á myndir með aðstoð vitlíks vélnámskerfis (AI deep-"
 "learning).</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
@@ -11317,7 +11309,7 @@ msgstr "Tvö landakort - efst og neðst"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
@@ -39163,54 +39155,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:109
+#: core/libs/tags/autoassignment/autotagsengine.cpp:108
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:118
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:117
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Leita að andlitum í albúmi: %1"
+msgstr "Leita að hlutum í albúmi: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:122
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:121
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Leita að andlitum í %1 albúmum"
+msgstr "Leita að hlutum í %1 albúmum"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:203
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#: core/libs/tags/autoassignment/autotagsengine.cpp:202
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Villa við að ræsa andlitaskönnun."
+msgstr "Villa við að ræsa greiningu hluta."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:218
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:217
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Leitað í atriðum að andlitum: %1\n"
+msgstr "Leitað í atriðum að hlutum: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:222
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#: core/libs/tags/autoassignment/autotagsengine.cpp:221
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Leitað í atriði að andlitum: %1\n"
+msgstr "Leitað í atriði að hlutum: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, kde-format
+msgid "Album: %1\n"
+msgstr "Albúm: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-#| msgid "Album: %1"
-msgid "Album: %1\n"
-msgstr "Albúm: %1"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scanning from: %1\n"
+#, kde-format
 msgid "Scanning: %1\n"
-msgstr "Skannað frá: %1\n"
+msgstr "Skönnun: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
@@ -39221,15 +39206,7 @@ msgstr "Leita í"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
 #: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39243,8 +39220,8 @@ msgstr ""
 "frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
 "network).</b></p><p>Stillingarnar hér fyrir neðan skilgreina hvaða vélnáms-"
 "tauganet eigi að nota við skoðun myndefnisins og þannig ákvarða efni "
-"ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
-"röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
+"ljósmyndanna. Vitlíkiskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt röð "
+"merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
@@ -39253,11 +39230,9 @@ msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
+#, kde-format
 msgid "Scan all"
-msgstr "Skanna allar myndir"
+msgstr "Skanna allt"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:251
@@ -39304,6 +39279,10 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Skipta út fyrirliggjandi sjálfvirkum merkjum</b>: hreinsa út "
+"fyrirliggjandi sjálfvirk merki og skipta þeim út fyrir niðurstöður skönnunar."
+"</p><p><b>Uppfæra sjálfvirk merki</b>: bæta öllum nýjum sjálfvirkum merkjum "
+"sem finnast við fyrirliggjandi merki.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #: core/utilities/maintenance/main/maintenancedlg.cpp:269
@@ -39345,6 +39324,17 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: lítið, léttkeyrandi tauganet sem býður upp á "
+"frábæran hraða, en sem gæti mistekist að finna mjög marga hluti í myndum. "
+"YOLO getur samt fundið marga hluti í myndum. Það er þjálfað til að þekkja 80 "
+"mismunandi hluti út frá COCO-gagnasafninu.</p><p><b>YOLOv11 XLarge</b>: "
+"stórt, staðfast tauganet sem býður upp á góða nákvæmni. Það mun finna fleiri "
+"hluti í myndum en YOLOv11 Nano, en er hinsvegar hægvirkara. YOLO getur "
+"fundið marga hluti í myndum. Það er þjálfað til að þekkja 80 mismunandi "
+"hluti út frá COCO-gagnasafninu.</p><p><b>ResNet-152</b>: stórt, öflugt og "
+"flókið tauganet. Það mun greina stakan hlut í mynd með mikilli nákvæmni. "
+"ResNet-152 er þjálfað til að þekkja 1.000 mismunandi hluti út frá ImageNet-"
+"gagnasafninu.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, kde-format
@@ -52058,6 +52048,13 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Skanna nýjar myndir</b> mun leita að andlitum og gera tilraun til að "
+"þekkja andlit í nýjum myndum sem finnast í þeim albúmum sem valin eru í "
+"flipanum \"Leita í\".</p><p><b>Skanna allar myndir</b> mun leita að andlitum "
+"og gera tilraun til að þekkja andlit í öllum myndum sem finnast í þeim "
+"albúmum sem valin eru í flipanum \"Leita í\".</p><p><b>Einungis þekkja "
+"andlit</b> mun reyna að samsvara óþekkt andlit við þegar staðfest andlit án "
+"þess að skanna myndirnar fyrir nýjum andlitum.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format
@@ -60904,6 +60901,10 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
 "found to the existing tags.</p>"
 msgstr ""
+"<p><b>Skipta út fyrirliggjandi sjálfvirkum merkjum</b>: hreinsa út "
+"fyrirliggjandi sjálfvirk merki og skipta þeim út fyrir niðurstöður skönnunar."
+"</p><p><b>Uppfæra sjálfvirk merki</b>: bæta nýjum sjálfvirkum merkjum sem "
+"finnast við fyrirliggjandi merki.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:276
 #, kde-format
@@ -61176,43 +61177,43 @@ msgid "Duplicate found: %1"
 msgstr "Tvítekning fannst: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Leita að andlitum í albúmi: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Leita að andlitum í %1 albúmum"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Leita að andlitum í mynd: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Leita að andlitum í %1 myndum"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppfæri andlitagagnagrunn"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Leitað í atriðum að andlitum: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Leitað í atriði að andlitum: %1\n"
@@ -61244,34 +61245,34 @@ msgid_plural "%1 faces"
 msgstr[0] "1 andlit"
 msgstr[1] "%1 andlit"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Villa við að ræsa andlitaskönnun."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Andlit fundust: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
 #, kde-format
 msgid "Face found: %1"
 msgstr "Andlit fannst: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, kde-format
 msgid "No faces found in %1"
 msgstr "Engin andlit fundust í %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "Found 1 face in "
 msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Fann 1 andlit í "
+msgstr[1] "Fann %1 andlit í "
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
