@@ -64,7 +64,6 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
 
     // const int spacing   = layoutSpacing();
 
-    QString changeTypeString;
     QString newModelString;
 
     // Use a switch instead of if/else to allow for other models in the future.
@@ -84,18 +83,16 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
         }
     }
 
-    QString messageString = i18ncp(
-                                "@info",
-                                "You are about to change the face recognition model. This process can take several"
-                                " minutes or more depending on the size of your library and the speed of your computer."
-                                " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                " during the process.\n\nAre you sure you want to continue?",
-                                "You are about to change the face recognition model to %1. This process can take several"
-                                " minutes or more depending on the size of your library and the speed of your computer."
-                                " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                " during the process.\n\nAre you sure you want to continue?",
-                                newModelString
-                            );
+    QString messageString = i18ncp("@info",
+                                   "You are about to change the face recognition model. This process can take several"
+                                   " minutes or more depending on the size of your library and the speed of your computer."
+                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
+                                   " during the process.\n\nAre you sure you want to continue?",
+                                   "You are about to change the face recognition model to %1. This process can take several"
+                                   " minutes or more depending on the size of your library and the speed of your computer."
+                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
+                                   " during the process.\n\nAre you sure you want to continue?",
+                                   newModelString);
 
     d->page             = new QWidget(this);
     d->verticalLayout   = new QVBoxLayout(d->page);
