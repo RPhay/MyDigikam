@@ -33,8 +33,8 @@
 namespace Digikam
 {
 
-MLPipelineFoundation::MLPipelineFoundation() :
-                      QObject()
+MLPipelineFoundation::MLPipelineFoundation()
+    : QObject()
 {
     threadPool      = new QThreadPool(this);
     threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount()*2));
@@ -371,6 +371,7 @@ bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemC
         for (int i = 0 ; i < newInstances ; ++i)
         {
             qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "MLPipelineFoundation::checkMoreWorkers: Sending signal to more workers";
+
             Q_EMIT signalAddMoreWorkers();
         }
 
@@ -495,7 +496,8 @@ void MLPipelineFoundation::stageStart(QThread::Priority threadPriority,
     else
     {
         performanceProfileList[thisStage].currentThreadCount++;
-        performanceProfileList[thisStage].maxThreadCount = qMax(performanceProfileList[thisStage].maxThreadCount, performanceProfileList[thisStage].currentThreadCount);
+        performanceProfileList[thisStage].maxThreadCount = qMax(performanceProfileList[thisStage].maxThreadCount,
+                                                                performanceProfileList[thisStage].currentThreadCount);
     }
 
     waitForStart();
@@ -605,8 +607,9 @@ void MLPipelineFoundation::pipelinePerformanceStart(const MLPipelineStage& stage
     if (queues.contains(stage))
     {
         performanceProfileList[stage].maxQueueCount = qMax(performanceProfileList[stage].maxQueueCount,
-                                                                                    queues[stage]->size());
+                                                           queues[stage]->size());
     }
+
     ++performanceProfileList[stage].itemCount;
 
     timer.start();
@@ -621,8 +624,8 @@ void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, 
 
 void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, int totalItemCount, QElapsedTimer& timer)
 {
-    performanceProfileList[stage].itemCount   = totalItemCount;
-    performanceProfileList[stage].elapsedTime = timer.elapsed();
+    performanceProfileList[stage].itemCount      = totalItemCount;
+    performanceProfileList[stage].elapsedTime    = timer.elapsed();
     performanceProfileList[stage].maxElapsedTime = performanceProfileList[stage].elapsedTime;
 }
 
@@ -653,6 +656,11 @@ void MLPipelineFoundation::showPipelinePerformance() const
                                                       << " Avg Elapsed:" << profile.elapsedTime / profile.itemCount;
         }
     }
+}
+
+void MLPipelineFoundation::emitSignalUpdateItemCount(const qlonglong itemCount)
+{
+    Q_EMIT signalUpdateItemCount(itemCount);
 }
 
 } // namespace Digikam

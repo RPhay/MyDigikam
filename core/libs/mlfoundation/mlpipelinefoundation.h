@@ -204,6 +204,10 @@ protected:
                         int _processed,
                         const QIcon& _thumbnail);
 
+    /**
+     * Helper methods to perform signal emitting through the MLPIPELINE_FINDER_END mocro with the moc processor.
+     */
+    void emitSignalUpdateItemCount(const qlonglong itemCount);
 
     // Pipeline performance profiling
 

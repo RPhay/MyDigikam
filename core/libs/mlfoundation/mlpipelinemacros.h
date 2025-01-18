@@ -28,7 +28,7 @@
             pipelinePerformanceStart(MLPipelineStage::Finder, timer);
 
 #define MLPIPELINE_FINDER_END(nextStage)                                            \
-            Q_EMIT signalUpdateItemCount(totalItemCount);                           \
+            emitSignalUpdateItemCount(totalItemCount);                              \
             pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer); \
             stageEnd(MLPipelineStage::Finder, nextStage);                           \
             return true;
