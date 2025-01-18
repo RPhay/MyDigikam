@@ -50,8 +50,6 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
         return false;
     }
 
-    QStringList drivers = camera->supportedDrivers();
-
     qCDebug(DIGIKAM_GENERAL_LOG) << "checkSolidCamera: Found Camera "
                                  << QString::fromUtf8("%1 %2").arg(cameraDevice.vendor()).arg(cameraDevice.product())
                                  << " protocols " << camera->supportedProtocols()
