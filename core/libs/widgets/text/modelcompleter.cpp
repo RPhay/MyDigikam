@@ -201,7 +201,9 @@ void ModelCompleter::slotRowsAboutToBeRemoved(const QModelIndex& parent, int sta
             // Only delete an item in the completion object if there is no other
             // item with the same display name.
 
-            if (d->idToTextHash.keys(itemName).isEmpty())
+            const auto keys = d->idToTextHash.keys(itemName);
+
+            if (keys.isEmpty())
             {
                 d->delayedModelTimer->start();
             }
@@ -281,8 +283,9 @@ void ModelCompleter::slotHighlighted(const QModelIndex& index)
     if (index.isValid())
     {
         QString itemName = index.data().toString();
+        const auto vals  = d->idToTextHash.values();
 
-        if (d->idToTextHash.values().count(itemName) == 1)
+        if (vals.count(itemName) == 1)
         {
             Q_EMIT signalHighlighted(d->idToTextHash.key(itemName));
         }
