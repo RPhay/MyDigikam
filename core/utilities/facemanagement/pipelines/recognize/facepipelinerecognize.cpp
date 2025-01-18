@@ -207,38 +207,38 @@ bool FacePipelineRecognize::classifier()
      * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
      * This loop is run once per image.
      */
-
-    // verify the feature mat is not empty
-
-    if (0 != package->features.rows)
     {
-        // classify the features
+        // verify the feature mat is not empty
 
-        package->label = classifier->predict(package->features);
+        if (0 != package->features.rows)
+        {
+            // classify the features
+
+            package->label = classifier->predict(package->features);
+        }
+
+        // -1 means no match suggested
+        // pass the package to the next stage if we have a suggestion
+
+        if (-1 != package->label)
+        {
+            enqueue(nextQueue, package);
+        }
+        else
+        {
+            // no suggested match found, so notify the user
+
+            notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name() + QStringLiteral("\n"),
+                   package->info.relativePath(),
+                   0,
+                   package->thumbnail);
+
+            // delete the package
+
+            delete package;
+        }
     }
-
-    // -1 means no match suggested
-    // pass the package to the next stage if we have a suggestion
-
-    if (-1 != package->label)
-    {
-        enqueue(nextQueue, package);
-    }
-    else
-    {
-        // no suggested match found, so notify the user
-
-        notify(MLPipelineNotification::notifyProcessed,
-               package->info.name() + QStringLiteral("\n"),
-               package->info.relativePath(),
-               0,
-               package->thumbnail);
-
-        // delete the package
-
-        delete package;
-    }
-
     /* =========================================================================================
      * End pipeline stage specific loop
      */

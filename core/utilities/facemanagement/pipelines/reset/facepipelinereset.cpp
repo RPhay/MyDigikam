@@ -163,33 +163,35 @@ bool FacePipelineReset::writer()
      * This loop is run once per image.
      */
 
-    // remove the face tags from the image
+    {
+        // remove the face tags from the image
 
-    QList<FaceTagsIface> databaseFaces = editor.unconfirmedFaceTagsIfaces(package->info.id());
+        QList<FaceTagsIface> databaseFaces = editor.unconfirmedFaceTagsIfaces(package->info.id());
 
-    editor.removeFaces(databaseFaces);
+        editor.removeFaces(databaseFaces);
 
-    databaseFaces                      = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
+        databaseFaces                      = editor.unconfirmedNameFaceTagsIfaces(package->info.id());
 
-    editor.removeFaces(databaseFaces);
+        editor.removeFaces(databaseFaces);
 
-    editor.removeAllFaces(package->info.id());
+        editor.removeAllFaces(package->info.id());
 
-    // mark the image as unscanned
+        // mark the image as unscanned
 
-    utils.markAsScanned(package->info, false);
+        utils.markAsScanned(package->info, false);
 
-    // send a notification that the image was processed
+        // send a notification that the image was processed
 
-    notify(MLPipelineNotification::notifyProcessed,
-           package->info.name(),
-           package->info.relativePath(),
-           package->faceRects.size(),
-           icon);
+        notify(MLPipelineNotification::notifyProcessed,
+               package->info.name(),
+               package->info.relativePath(),
+               package->faceRects.size(),
+               icon);
 
-    // delete the package
+        // delete the package
 
-    delete package;
+        delete package;
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop

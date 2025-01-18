@@ -266,27 +266,29 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
      * This loop is run once per image.
      */
 
-            catcher->thread()->find(ItemInfo::thumbnailIdentifier(package->face.imageId()), package->face.region().toRect());
-            catcher->enqueue();
-            QList<QImage> images = catcher->waitForThumbnails();
+    {
+        catcher->thread()->find(ItemInfo::thumbnailIdentifier(package->face.imageId()), package->face.region().toRect());
+        catcher->enqueue();
+        QList<QImage> images = catcher->waitForThumbnails();
 
-            if (images.size() && !images[0].isNull())
-            {
-                package->thumbnail     = images[0];
-                package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+        if (images.size() && !images[0].isNull())
+        {
+            package->thumbnail     = images[0];
+            package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
 
-                enqueue(nextQueue, package);
-            }
-            else
-            {
-                // send a notification that the file was skipped
+            enqueue(nextQueue, package);
+        }
+        else
+        {
+            // send a notification that the file was skipped
 
-                notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), 1, DImg());
+            notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), 1, DImg());
 
-                // delete the package since it is not needed
+            // delete the package since it is not needed
 
-                delete package;
-            }
+            delete package;
+        }
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -339,30 +341,32 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
      * This loop is run once per image.
      */
 
-            QImage inputImage(package->thumbnail.copy());
+    {
+        QImage inputImage(package->thumbnail.copy());
 
-            // preprocess image to be in the correct format
+        // preprocess image to be in the correct format
 
-            if (inputImage.format() != QImage::Format_RGB888)
-            {
-                inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
-            }
+        if (inputImage.format() != QImage::Format_RGB888)
+        {
+            inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
+        }
 
-            // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
+        // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-            cv::UMat cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
+        cv::UMat cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
 
-            // extract the face features
+        // extract the face features
 
-            package->features = extractor.getFaceEmbedding(cvUImage);
-            cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
+        package->features = extractor.getFaceEmbedding(cvUImage);
+        cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
 
-            if (trainingQualityCheck)
-            {
-                package->useForTraining = useForTraining(origSize, cvUImage.getMat(cv::ACCESS_FAST));
-            }
+        if (trainingQualityCheck)
+        {
+            package->useForTraining = useForTraining(origSize, cvUImage.getMat(cv::ACCESS_FAST));
+        }
 
-            enqueue(nextQueue, package);
+        enqueue(nextQueue, package);
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop
