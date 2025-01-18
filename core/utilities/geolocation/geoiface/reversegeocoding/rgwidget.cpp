@@ -351,7 +351,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel,
 }
 
 /**
- * Destructor
+ * @brief Destructor
  */
 RGWidget::~RGWidget()
 {
@@ -359,7 +359,7 @@ RGWidget::~RGWidget()
 }
 
 /**
- * Enables or disables the containing widgets.
+ * @brief Enables or disables the containing widgets.
  */
 void RGWidget::updateUIState()
 {
@@ -376,7 +376,7 @@ void RGWidget::updateUIState()
 }
 
 /**
- * This slot triggers when the button that start the reverse geocoding process is pressed.
+ * @brief This slot triggers when the button that start the reverse geocoding process is pressed.
  */
 void RGWidget::slotButtonRGSelected()
 {
@@ -390,7 +390,6 @@ void RGWidget::slotButtonRGSelected()
 
     QList<RGInfo> photoList;
     QString wantedLanguage                 = d->languageEdit->itemData(d->languageEdit->currentIndex()).toString();
-    QList<QList<TagData> > returnedSpacers = d->tagModel->getSpacers();
 
     for (int i = 0 ; i < selectedItems.count() ; ++i)
     {
@@ -429,7 +428,7 @@ void RGWidget::slotButtonRGSelected()
 }
 
 /**
- * Hide or shows the extra options.
+ * @brief Hide or shows the extra options.
  */
 void RGWidget::slotHideOptions()
 {
@@ -448,7 +447,7 @@ void RGWidget::slotHideOptions()
 }
 
 /**
- * The data has returned from backend and now it's processed here.
+ * @brief The data has returned from backend and now it's processed here.
  * @param returnedRGList Contains the data returned by backend.
  */
 void RGWidget::slotRGReady(const QList<RGInfo>& returnedRGList)
@@ -573,7 +572,7 @@ void RGWidget::slotRGReady(const QList<RGInfo>& returnedRGList)
 }
 
 /**
- * Sets whether the containing widgets are enabled or disabled.
+ * @brief Sets whether the containing widgets are enabled or disabled.
  * @param state If true, the controls are enabled.
  */
 void RGWidget::setUIEnabled(const bool state)
@@ -583,7 +582,7 @@ void RGWidget::setUIEnabled(const bool state)
 }
 
 /**
- * Here are filtered the events.
+ * @brief Here are filtered the events.
  */
 bool RGWidget::eventFilter(QObject* watched, QEvent* event)
 {
@@ -649,7 +648,7 @@ bool RGWidget::eventFilter(QObject* watched, QEvent* event)
 }
 
 /**
- * Saves the settings of widgets contained in reverse geocoding widget.
+ * @brief Saves the settings of widgets contained in reverse geocoding widget.
  * @param group Here are stored the settings.
  */
 void RGWidget::saveSettingsToGroup(KConfigGroup* const group)
@@ -698,7 +697,7 @@ void RGWidget::saveSettingsToGroup(KConfigGroup* const group)
 }
 
 /**
- * Restores the settings of widgets contained in reverse geocoding widget.
+ * @brief Restores the settings of widgets contained in reverse geocoding widget.
  * @param group Here are stored the settings.
  */
 void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
@@ -758,7 +757,7 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
 }
 
 /**
- * Adds a tag to tag tree.
+ * @brief Adds a tag to tag tree.
  */
 void RGWidget::slotAddSingleSpacer()
 {
@@ -783,7 +782,7 @@ void RGWidget::slotAddSingleSpacer()
 }
 
 /**
- * Adds a new tag to the tag tree.
+ * @brief Adds a new tag to the tag tree.
  */
 void RGWidget::slotAddCustomizedSpacer()
 {
@@ -810,8 +809,8 @@ void RGWidget::slotAddCustomizedSpacer()
 }
 
 /**
- * Removes a tag from tag tree.
- * Note: If the tag is an external, it is no more deleted.
+ * @brief Removes a tag from tag tree.
+ * @note If the tag is an external, it is no more deleted.
  */
 void RGWidget::slotRemoveTag()
 {
@@ -820,7 +819,7 @@ void RGWidget::slotRemoveTag()
 }
 
 /**
- * Removes all spacers.
+ * @brief Removes all spacers.
  */
 void RGWidget::slotRemoveAllSpacers()
 {
@@ -840,7 +839,7 @@ void RGWidget::slotRemoveAllSpacers()
 }
 
 /**
- * Re-adds all deleted tags based on Undo/Redo widget.
+ * @brief Re-adds all deleted tags based on Undo/Redo widget.
  */
 void RGWidget::slotReaddNewTags()
 {
@@ -857,7 +856,7 @@ void RGWidget::slotReaddNewTags()
 }
 
 /**
- * Deletes and re-adds all new added tags.
+ * @brief Deletes and re-adds all new added tags.
  */
 void RGWidget::slotRegenerateNewTags()
 {
@@ -868,7 +867,7 @@ void RGWidget::slotRegenerateNewTags()
 }
 
 /**
- * Adds all address elements below the selected tag. The address ellements are order by area size.
+ * @brief Adds all address elements below the selected tag. The address ellements are order by area size.
  * For example: country > state > state district > city ...
  */
 void RGWidget::slotAddAllAddressElementsToTag()
