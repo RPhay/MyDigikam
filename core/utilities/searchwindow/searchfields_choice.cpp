@@ -116,7 +116,6 @@ void SearchFieldChoice::updateComboText()
 void SearchFieldChoice::read(SearchXmlCachingReader& reader)
 {
     SearchXml::Relation relation = reader.fieldRelation();
-    QList<int> values;
 
     if (relation == SearchXml::OneOf)
     {
