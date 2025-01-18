@@ -203,7 +203,6 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
     double h    = (height() / (double) d->numWeekRows) - 1;
     QRectF cell = QRectF(0, 0, w, h);
     QString cellText;
-    QPen pen;
     QColor cellBackgroundColor, cellTextColor;
     QFont cellFont  = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     bool workingDay = false;
@@ -229,16 +228,20 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
 
     if (locale().weekdays().first() <= locale().weekdays().last())
     {
-        if ((cellWeekDay >= locale().weekdays().first()) &&
-            (cellWeekDay <= locale().weekdays().last()))
+        if (
+            (cellWeekDay >= locale().weekdays().first()) &&
+            (cellWeekDay <= locale().weekdays().last())
+           )
         {
             workingDay = true;
         }
     }
     else
     {
-        if ((cellWeekDay >= locale().weekdays().first()) ||
-            (cellWeekDay <= locale().weekdays().last()))
+        if (
+            (cellWeekDay >= locale().weekdays().first()) ||
+            (cellWeekDay <= locale().weekdays().last())
+           )
         {
             workingDay = true;
         }
