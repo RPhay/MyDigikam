@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 01:58+0000\n"
+"POT-Creation-Date: 2025-01-18 12:44+0000\n"
 "PO-Revision-Date: 2025-01-15 10:41+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2434,82 +2434,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "S'estan carregant les eines…"
 
-#: core/app/main/digikamapp_solid.cpp:289
+#: core/app/main/digikamapp_solid.cpp:287
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "Lector de targetes CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:295
+#: core/app/main/digikamapp_solid.cpp:293
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "Lector de Memory Stick"
 
-#: core/app/main/digikamapp_solid.cpp:301
+#: core/app/main/digikamapp_solid.cpp:299
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "Lector de targetes SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:307
+#: core/app/main/digikamapp_solid.cpp:305
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "Lector de targetes SD / MMC"
 
-#: core/app/main/digikamapp_solid.cpp:313
+#: core/app/main/digikamapp_solid.cpp:311
 #, kde-format
 msgid "xD Card Reader"
 msgstr "Lector de targetes xD"
 
-#: core/app/main/digikamapp_solid.cpp:328
+#: core/app/main/digikamapp_solid.cpp:326
 #, kde-format
 msgid "USB Disk"
 msgstr "Disc USB"
 
-#: core/app/main/digikamapp_solid.cpp:332
+#: core/app/main/digikamapp_solid.cpp:330
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "Disc"
 
-#: core/app/main/digikamapp_solid.cpp:405
+#: core/app/main/digikamapp_solid.cpp:403
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 «%2» a %3"
 
-#: core/app/main/digikamapp_solid.cpp:411
+#: core/app/main/digikamapp_solid.cpp:409
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 «%2»"
 
-#: core/app/main/digikamapp_solid.cpp:419
+#: core/app/main/digikamapp_solid.cpp:417
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 a %2"
 
-#: core/app/main/digikamapp_solid.cpp:431
+#: core/app/main/digikamapp_solid.cpp:429
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:666
+#: core/app/main/digikamapp_solid.cpp:665
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "No es pot accedir al dispositiu d'emmagatzematge.\n"
 
-#: core/app/main/digikamapp_solid.cpp:697
+#: core/app/main/digikamapp_solid.cpp:696
 #, kde-format
 msgid "Images on %1"
 msgstr "Imatges a %1"
 
-#: core/app/main/digikamapp_solid.cpp:730
+#: core/app/main/digikamapp_solid.cpp:729
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "El dispositiu especificat («%1») no és vàlid."
 
-#: core/app/main/digikamapp_solid.cpp:743
+#: core/app/main/digikamapp_solid.cpp:742
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "La càmera especificada («%1») no està admesa."
@@ -2863,7 +2863,7 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
@@ -11464,7 +11464,7 @@ msgstr "Dos mapes - superior i inferior"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
@@ -16220,7 +16220,7 @@ msgstr "Total de pàgines"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:100
 #, kde-format
 msgid "Create Template for Calendar"
 msgstr "Crea una plantilla per al calendari"
@@ -16355,54 +16355,54 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/VCalendar'>vCalendar</a>, i <a "
 "href='https://en.wikipedia.org/wiki/Icalendar'>iCalendar</a>.</p>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Creeu un calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:95
 #, kde-format
 msgid "Welcome to Calendar Tool"
 msgstr "Us donem la benvinguda a l'eina de calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:110
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "Seleccioneu els esdeveniments que s'han de mostrar en el calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:121
 #, kde-format
 msgid "Print Calendar"
 msgstr "Imprimix el calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
 #, kde-format
 msgid "Printing in Progress"
 msgstr "La impressió està en curs"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:137
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:141
 #, kde-format
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "Fitxer de dades de calendari (*.ics)"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:138
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "Seleccioneu un fitxer de dades de calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
 "No s'ha seleccionat cap imatge vàlida per als mesos.<br/>Cliqueu arrere per "
 "a seleccionar les imatges"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
@@ -16411,7 +16411,7 @@ msgstr ""
 "Cal tindre en compte que esteu creant un calendari per a<br/>l'any actual o "
 "per a un any anterior."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
@@ -16420,28 +16420,28 @@ msgstr ""
 "Cliqueu següent per a iniciar la impressió.<br/><br/>S'imprimiran els mesos "
 "següents de l'any %1:<br/>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Imprimiu el calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:283
 #, kde-format
 msgid "Printing Cancelled"
 msgstr "S'ha cancel·lat la impressió"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:295
 #, kde-format
 msgid "Create calendar"
 msgstr "Crea un calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:346
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "S'està imprimint la pàgina %1 de %2 del calendari"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:356
 #, kde-format
 msgid "Printing Complete"
 msgstr "Ha finalitzat la impressió"
@@ -17692,7 +17692,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17701,7 +17701,7 @@ msgstr "Es&colliu el mètode de selecció de la imatge:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -20563,7 +20563,7 @@ msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
 "<p>Esta vista llista tots els elements que s'exportaran per correu.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:91
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20577,7 +20577,7 @@ msgstr ""
 "propietats dels annexos d'acord amb les capacitats del vostre servei de "
 "correu.</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:113
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
@@ -24866,7 +24866,7 @@ msgstr "Lloc:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:439
 #, kde-format
 msgid "More options"
 msgstr "Més opcions"
@@ -29179,7 +29179,7 @@ msgstr "Migra ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -52484,17 +52484,17 @@ msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "Model de reconeixement facial"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
 #, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
 #, kde-format
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52526,13 +52526,13 @@ msgstr[1] ""
 "\n"
 "Segur que voleu continuar?"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "Comença"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -58131,7 +58131,7 @@ msgid "Geonames.org full address (US only)"
 msgstr "Adreça completa del Geonames.org (no-US)"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:445
 #, kde-format
 msgid "Less options"
 msgstr "Menys opcions"
@@ -58156,29 +58156,29 @@ msgstr "Processa la geocodificació inversa"
 msgid "Image tags are changed."
 msgstr "Les etiquetes de la imatge han canviat."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:424
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "S'està recuperant la informació RG -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:461
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr "S'ha produït un error de geocodificació inversa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:799
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Afig una etiqueta nova"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:800
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Selecciona un nom per a l'etiqueta nova:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:942
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -58187,7 +58187,7 @@ msgstr ""
 "S'han geocodificat inversament %1 de %2 imatges. Voleu mantindre les "
 "etiquetes que ja s'han obtingut?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:949
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -58196,7 +58196,7 @@ msgstr ""
 "S'han geocodificat inversament 1 imatge. Voleu mantindre les etiquetes que "
 "ja s'han obtingut?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
@@ -65167,175 +65167,175 @@ msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Elimina la col·lecció de digiKam."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:634
+#: core/utilities/setup/collections/setupcollectionview.cpp:631
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "No ha sigut possible afegir una col·lecció en els camins següents:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:662
-#: core/utilities/setup/collections/setupcollectionview.cpp:1510
+#: core/utilities/setup/collections/setupcollectionview.cpp:659
+#: core/utilities/setup/collections/setupcollectionview.cpp:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Seleccioneu la carpeta que conté la vostra col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:701
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problema en annexar una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:702
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Ja existix una col·lecció amb el camí «%1»."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:865
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Voleu eliminar el camí de la col·lecció?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:866
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Voleu eliminar el camí annexat «%1» de la col·lecció «%2»?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:873
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Voleu eliminar la col·lecció?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:874
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Voleu eliminar la col·lecció «%1» de la llista de col·leccions?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1729
+#: core/utilities/setup/collections/setupcollectionview.cpp:936
+#: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Local Collections"
 msgstr "Col·leccions locals"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:944
-#: core/utilities/setup/collections/setupcollectionview.cpp:1730
+#: core/utilities/setup/collections/setupcollectionview.cpp:941
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Col·leccions en suports extraïbles"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:949
-#: core/utilities/setup/collections/setupcollectionview.cpp:1731
+#: core/utilities/setup/collections/setupcollectionview.cpp:946
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Col·leccions en recursos compartits"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:986
+#: core/utilities/setup/collections/setupcollectionview.cpp:983
 #, kde-format
 msgid "Add Collection"
 msgstr "Afig una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1036
+#: core/utilities/setup/collections/setupcollectionview.cpp:1033
 #, kde-format
 msgid "Col. %1"
 msgstr "Col. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1129
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Esta col·lecció actualment no està disponible."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1137
+#: core/utilities/setup/collections/setupcollectionview.cpp:1134
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "No s'ha trobat cap problema, gaudiu d'esta col·lecció."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1142
+#: core/utilities/setup/collections/setupcollectionview.cpp:1139
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Esta col·lecció és oculta."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1161
+#: core/utilities/setup/collections/setupcollectionview.cpp:1158
 #, kde-format
 msgid "Append network path"
 msgstr "Annexa un camí de xarxa"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1189
+#: core/utilities/setup/collections/setupcollectionview.cpp:1186
 #, kde-format
 msgid "Update collection"
 msgstr "Actualitza la col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1217
+#: core/utilities/setup/collections/setupcollectionview.cpp:1214
 #, kde-format
 msgid "Remove collection"
 msgstr "Elimina col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1249
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1257
+#: core/utilities/setup/collections/setupcollectionview.cpp:1254
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Camí"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1262
+#: core/utilities/setup/collections/setupcollectionview.cpp:1259
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Estat"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1560
+#: core/utilities/setup/collections/setupcollectionview.cpp:1557
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Heu afegit prèviament una col·lecció que conté el camí «%1»."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1595
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problema en annexar una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1603
+#: core/utilities/setup/collections/setupcollectionview.cpp:1600
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Problema en actualitzar la col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1620
+#: core/utilities/setup/collections/setupcollectionview.cpp:1617
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "S'està afegint una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1624
+#: core/utilities/setup/collections/setupcollectionview.cpp:1621
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Actualització de la col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1632
+#: core/utilities/setup/collections/setupcollectionview.cpp:1629
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "La nova col·lecció es crearà amb este nom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1636
+#: core/utilities/setup/collections/setupcollectionview.cpp:1633
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "La col·lecció s'actualitzarà amb este nom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1719
+#: core/utilities/setup/collections/setupcollectionview.cpp:1716
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Seleccioneu la categoria"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:1720
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"

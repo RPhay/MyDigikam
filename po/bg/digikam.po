@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 01:58+0000\n"
+"POT-Creation-Date: 2025-01-18 12:44+0000\n"
 "PO-Revision-Date: 2024-11-28 20:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2452,82 +2452,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "Зареждане на инструменти..."
 
-#: core/app/main/digikamapp_solid.cpp:289
+#: core/app/main/digikamapp_solid.cpp:287
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "Четец на карти CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:295
+#: core/app/main/digikamapp_solid.cpp:293
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "Четец на Memory Stick"
 
-#: core/app/main/digikamapp_solid.cpp:301
+#: core/app/main/digikamapp_solid.cpp:299
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "Четец на карти SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:307
+#: core/app/main/digikamapp_solid.cpp:305
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "Четец на SD/MMC"
 
-#: core/app/main/digikamapp_solid.cpp:313
+#: core/app/main/digikamapp_solid.cpp:311
 #, kde-format
 msgid "xD Card Reader"
 msgstr "Четец на xD карти"
 
-#: core/app/main/digikamapp_solid.cpp:328
+#: core/app/main/digikamapp_solid.cpp:326
 #, kde-format
 msgid "USB Disk"
 msgstr "USB диск"
 
-#: core/app/main/digikamapp_solid.cpp:332
+#: core/app/main/digikamapp_solid.cpp:330
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "Диск"
 
-#: core/app/main/digikamapp_solid.cpp:405
+#: core/app/main/digikamapp_solid.cpp:403
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 \"%2\" на %3"
 
-#: core/app/main/digikamapp_solid.cpp:411
+#: core/app/main/digikamapp_solid.cpp:409
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 \"%2\""
 
-#: core/app/main/digikamapp_solid.cpp:419
+#: core/app/main/digikamapp_solid.cpp:417
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 в %2"
 
-#: core/app/main/digikamapp_solid.cpp:431
+#: core/app/main/digikamapp_solid.cpp:429
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:666
+#: core/app/main/digikamapp_solid.cpp:665
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "Не може да се осъществи достъп до устройството за съхранение.\n"
 
-#: core/app/main/digikamapp_solid.cpp:697
+#: core/app/main/digikamapp_solid.cpp:696
 #, kde-format
 msgid "Images on %1"
 msgstr "Изображения на %1"
 
-#: core/app/main/digikamapp_solid.cpp:730
+#: core/app/main/digikamapp_solid.cpp:729
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "Посоченото устройство (\"%1\") не е валидно."
 
-#: core/app/main/digikamapp_solid.cpp:743
+#: core/app/main/digikamapp_solid.cpp:742
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Посочената камера (\"%1\") не се поддържа."
@@ -2879,7 +2879,7 @@ msgstr "Показване на цял екран"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
@@ -11518,7 +11518,7 @@ msgstr "Две карти - отгоре и отдолу"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
@@ -16274,7 +16274,7 @@ msgstr "Общо страници"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:100
 #, kde-format
 msgid "Create Template for Calendar"
 msgstr "Създаване на шаблон за календар"
@@ -16409,54 +16409,54 @@ msgstr ""
 "wikipedia.org/wiki/VCalendar'>vCalendar</a> и <a href='https://en.wikipedia."
 "org/wiki/Icalendar'>iCalendar</a> формати.</p>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Създаване на календар"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:95
 #, kde-format
 msgid "Welcome to Calendar Tool"
 msgstr "Добре дошли в инструмента за календари"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:110
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "Избор на събития за показване в календара"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:121
 #, kde-format
 msgid "Print Calendar"
 msgstr "Отпечатване на календар"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
 #, kde-format
 msgid "Printing in Progress"
 msgstr "Печат в процес на изпълнение"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:137
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:141
 #, kde-format
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "Файл с календарни данни (*.ics)"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:138
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "Избор на файл с данни за календара"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
 "Не са избрани изображения за месеците<br/>Върнете се за избиране на "
 "изображения"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
@@ -16464,7 +16464,7 @@ msgid ""
 msgstr ""
 "Имайте предвид, че правите календар за<br/>текущата или предишна година."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
@@ -16473,28 +16473,28 @@ msgstr ""
 "Натиснете \"Напред\" за отпечатване<br/><br/>Следните месеци ще бъдат "
 "отпечатани за година %1:<br/>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Отпечатване на календар"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:283
 #, kde-format
 msgid "Printing Cancelled"
 msgstr "Отпечатването е отменено"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:295
 #, kde-format
 msgid "Create calendar"
 msgstr "Създаване на календар"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:346
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "Отпечатване на страница на календара за %1 от %2"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:356
 #, kde-format
 msgid "Printing Complete"
 msgstr "Отпечатването е завършено"
@@ -17753,7 +17753,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17762,7 +17762,7 @@ msgstr "&Избиране на метод за избор на изображе�
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -20624,7 +20624,7 @@ msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
 "<p>В този изглед се представят всички елементи за експортиране по пощата.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:91
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20638,7 +20638,7 @@ msgstr ""
 "коригирате свойствата на прикачените файлове всъответствие с възможностите "
 "на вашата пощенска услуга.</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:113
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
@@ -24960,7 +24960,7 @@ msgstr "Място:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:439
 #, kde-format
 msgid "More options"
 msgstr "Повече опции"
@@ -29285,7 +29285,7 @@ msgstr "Мигриране ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -52556,17 +52556,17 @@ msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "Модел за разпознаване на лица"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
 #, kde-format
 msgid "OpenFace"
 msgstr "OpenFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
 #, kde-format
 msgid "SFace"
 msgstr "SFace"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52600,13 +52600,13 @@ msgstr[1] ""
 "\n"
 "Сигурни ли сте, че искате да продължите?"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "Начало"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -58212,7 +58212,7 @@ msgid "Geonames.org full address (US only)"
 msgstr "Пълен адрес на Geonames.org (само за САЩ)"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:445
 #, kde-format
 msgid "Less options"
 msgstr "По-малко опции"
@@ -58237,29 +58237,29 @@ msgstr "Обработване на обратното геокодиране"
 msgid "Image tags are changed."
 msgstr "Таговете на изображението са променени."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:424
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Извличане на информация за RG -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:461
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr "Грешка при обратно геокодиране"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:799
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Добавяне на нов таг"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:800
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Изберете име за новия таг:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:942
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -58268,7 +58268,7 @@ msgstr ""
 "%1 от %2 изображения са били обратно геокодирани. Искате ли да запазите вече "
 "получените тагове?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:949
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -58277,7 +58277,7 @@ msgstr ""
 "1 изображение е било обратно геокодирано. Искате ли да запазите вече "
 "получените тагове?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
@@ -65283,175 +65283,175 @@ msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Премахва колекцията от digiKam."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:634
+#: core/utilities/setup/collections/setupcollectionview.cpp:631
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Не беше възможно да се добави колекция за следните пътища:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:662
-#: core/utilities/setup/collections/setupcollectionview.cpp:1510
+#: core/utilities/setup/collections/setupcollectionview.cpp:659
+#: core/utilities/setup/collections/setupcollectionview.cpp:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Изберете папката, съдържаща вашата колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:701
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Проблем с прибавянето на колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:702
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Колекция с път \"%1\" вече съществува."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:865
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Да се премахне ли пътя от колекцията?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:866
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Искате ли да премахнете добавения път \"%1\" от колекцията \"%2\"?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:873
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Да се премахване ли колекцията?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:874
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Искате ли да премахнете колекцията \"%1\" от списъка си с колекции?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1729
+#: core/utilities/setup/collections/setupcollectionview.cpp:936
+#: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Local Collections"
 msgstr "Локални колекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:944
-#: core/utilities/setup/collections/setupcollectionview.cpp:1730
+#: core/utilities/setup/collections/setupcollectionview.cpp:941
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Колекции на преносим носител"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:949
-#: core/utilities/setup/collections/setupcollectionview.cpp:1731
+#: core/utilities/setup/collections/setupcollectionview.cpp:946
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Колекции на мрежови споделени устройства"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:986
+#: core/utilities/setup/collections/setupcollectionview.cpp:983
 #, kde-format
 msgid "Add Collection"
 msgstr "Добавяне на колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1036
+#: core/utilities/setup/collections/setupcollectionview.cpp:1033
 #, kde-format
 msgid "Col. %1"
 msgstr "Кол. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1129
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Тази колекция в момента не е налична."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1137
+#: core/utilities/setup/collections/setupcollectionview.cpp:1134
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Не са открити проблеми, наслаждавайте се на тази колекция."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1142
+#: core/utilities/setup/collections/setupcollectionview.cpp:1139
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Тази колекция е скрита."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1161
+#: core/utilities/setup/collections/setupcollectionview.cpp:1158
 #, kde-format
 msgid "Append network path"
 msgstr "Прикачване на мрежовия път"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1189
+#: core/utilities/setup/collections/setupcollectionview.cpp:1186
 #, kde-format
 msgid "Update collection"
 msgstr "Обновяване на колекцията"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1217
+#: core/utilities/setup/collections/setupcollectionview.cpp:1214
 #, kde-format
 msgid "Remove collection"
 msgstr "Премахване на колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1249
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Име"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1257
+#: core/utilities/setup/collections/setupcollectionview.cpp:1254
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Път"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1262
+#: core/utilities/setup/collections/setupcollectionview.cpp:1259
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Състояние"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1560
+#: core/utilities/setup/collections/setupcollectionview.cpp:1557
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Преди това сте добавили колекция, която съдържа пътя \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1595
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Проблем с добавянето на колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1603
+#: core/utilities/setup/collections/setupcollectionview.cpp:1600
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Проблем при актуализиране на колекцията"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1620
+#: core/utilities/setup/collections/setupcollectionview.cpp:1617
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Добавяне на колекция"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1624
+#: core/utilities/setup/collections/setupcollectionview.cpp:1621
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Обновяване на колекцията"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1632
+#: core/utilities/setup/collections/setupcollectionview.cpp:1629
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Вашата нова колекция ще бъде създадена с това име:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1636
+#: core/utilities/setup/collections/setupcollectionview.cpp:1633
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "Вашата колекция ще бъде актуализирана с това име:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1719
+#: core/utilities/setup/collections/setupcollectionview.cpp:1716
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Избиране на категория"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:1720
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Вашата колекция ще използва тази категория:"

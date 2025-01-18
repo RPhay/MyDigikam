@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 01:58+0000\n"
+"POT-Creation-Date: 2025-01-18 12:44+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -2667,82 +2667,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 
-#: core/app/main/digikamapp_solid.cpp:289
+#: core/app/main/digikamapp_solid.cpp:287
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "កម្មវិធី​អាន​កាត CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:295
+#: core/app/main/digikamapp_solid.cpp:293
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:301
+#: core/app/main/digikamapp_solid.cpp:299
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "កម្មវិធី​អាន​កាត SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:307
+#: core/app/main/digikamapp_solid.cpp:305
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "កម្មវិធី​អាន​កាត SD / MMC"
 
-#: core/app/main/digikamapp_solid.cpp:313
+#: core/app/main/digikamapp_solid.cpp:311
 #, kde-format
 msgid "xD Card Reader"
 msgstr "កម្មវិធី​អាន​កាត xD"
 
-#: core/app/main/digikamapp_solid.cpp:328
+#: core/app/main/digikamapp_solid.cpp:326
 #, kde-format
 msgid "USB Disk"
 msgstr "ថាស USB"
 
-#: core/app/main/digikamapp_solid.cpp:332
+#: core/app/main/digikamapp_solid.cpp:330
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "ថាស"
 
-#: core/app/main/digikamapp_solid.cpp:405
+#: core/app/main/digikamapp_solid.cpp:403
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 \"%2\" នៅ %3"
 
-#: core/app/main/digikamapp_solid.cpp:411
+#: core/app/main/digikamapp_solid.cpp:409
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 \"%2\""
 
-#: core/app/main/digikamapp_solid.cpp:419
+#: core/app/main/digikamapp_solid.cpp:417
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 នៅ %2"
 
-#: core/app/main/digikamapp_solid.cpp:431
+#: core/app/main/digikamapp_solid.cpp:429
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:666
+#: core/app/main/digikamapp_solid.cpp:665
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "មិន​អាច​ចូល​ដំណើរការ​ឧបករណ៍​ផ្ទុក​បាន​ទេ ។\n"
 
-#: core/app/main/digikamapp_solid.cpp:697
+#: core/app/main/digikamapp_solid.cpp:696
 #, kde-format
 msgid "Images on %1"
 msgstr "រូបភាព​នៅ​លើ %1"
 
-#: core/app/main/digikamapp_solid.cpp:730
+#: core/app/main/digikamapp_solid.cpp:729
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "ឧបករណ៍​ដែល​បាន​បញ្ជាក់ (\"%1\") មិន​ត្រឹមត្រូវ ។"
 
-#: core/app/main/digikamapp_solid.cpp:743
+#: core/app/main/digikamapp_solid.cpp:742
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "ម៉ាស៊ីន​ថត​រូប​ដែល​បាន​បញ្ជាក់ (\"%1\") មិន​ត្រូវ​បាន​គាំទ្រ​ឡើយ ។"
@@ -3114,7 +3114,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
@@ -11353,7 +11353,7 @@ msgstr "ផែន​ទី​ពីរ​ - ផ្ដេក​​"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:110
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
@@ -16375,7 +16375,7 @@ msgstr "ធាតុ​សរុប"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:100
 #, kde-format
 msgid "Create Template for Calendar"
 msgstr "បង្កើត​ពុម្ព​សម្រាប់​ប្រតិទិន"
@@ -16513,64 +16513,64 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:92
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "ប្រតិទិន"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:95
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
 msgid "Welcome to Calendar Tool"
 msgstr "ស្វាគមន៍​ចំពោះ​ការ​បង្ហាញ​ឧបករណ៍​លាយ"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:110
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "ជ្រើស​ព្រឹត្តិការណ៍​ដើម្បី​បង្ហាញ​នៅ​លើ​ប្រតិទិន"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:121
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Print Calendar"
 msgstr "ប្រតិទិន"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
 #, fuzzy, kde-format
 #| msgid "Step Progress"
 msgid "Printing in Progress"
 msgstr "វឌ្ឍនភាព​​ការ​ផ្លាស់ទី"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:137
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:141
 #, fuzzy, kde-format
 #| msgid "%1|Camera RAW files"
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "%1|ឯកសារ​ដើម​អំពី​ម៉ាស៊ីន​ថតរូប"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:138
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:142
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "ជ្រើស​ធាតុ"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr "គ្មាន​រូបភាព​ត្រឹមត្រូវ​បាន​ជ្រើស​សម្រាប់​ខែ<br/>ចុច​ថយក្រោយ ដើម្បី​ជ្រើស​រូបភាព"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
 "year in the past."
 msgstr "សូម​ចំណាំ​ថា អ្នក​កំពុង​សម្គាល់​ប្រតិទិន​សម្រាប់<br/>ឆ្នាំ​បច្ចុប្បន្ន​ ឬ​ឆ្នាំ​​មុន ។"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
@@ -16579,30 +16579,30 @@ msgstr ""
 "ចុច​ បន្ទាប់​ដើម្បី​ចាប់ផ្ដើម​បោះពុម្ព<br/><br/>ខែ​ដូច​ខាង​ក្រោម​នឹង​ត្រូវ​បាន​បោះពុម្ព​សម្រាប់​ឆ្នាំ %1 ៖<br/"
 ">"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "ប្រតិទិន"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:283
 #, kde-format
 msgid "Printing Cancelled"
 msgstr "បានបោះបង់​ការ​បោះពុម្ព"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:295
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Create calendar"
 msgstr "ប្រតិទិន"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:346
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "បោះពុម្ព​ទំព័រ​ប្រតិទិន​សម្រាប់ %1 នៃ %2"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:356
 #, fuzzy, kde-format
 #| msgid "Rotating images"
 msgid "Printing Complete"
@@ -17922,7 +17922,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17931,7 +17931,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -20780,7 +20780,7 @@ msgstr "ដំណើរការ​ផ្ទាល់ខ្លួន​"
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:91
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20789,7 +20789,7 @@ msgid ""
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:113
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
@@ -25025,7 +25025,7 @@ msgstr "ជំនួស​"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:440
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:439
 #, kde-format
 msgid "More options"
 msgstr "ជម្រើស​បន្ថែម​"
@@ -29397,7 +29397,7 @@ msgstr "ផ្លាស់ទី ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:114
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -53282,17 +53282,17 @@ msgctxt "@title:window"
 msgid "Facial Recognition Model"
 msgstr "ទិសដៅ​ ៖"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:76
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
 #, fuzzy, kde-format
 msgid "OpenFace"
 msgstr "បើក​ជាមួយ"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:82
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
 #, fuzzy, kde-format
 msgid "SFace"
 msgstr "ជ្រើស​គ្មាន"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:89
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53311,13 +53311,13 @@ msgid_plural ""
 "Are you sure you want to continue?"
 msgstr[0] ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:115
+#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -58969,7 +58969,7 @@ msgid "Geonames.org full address (US only)"
 msgstr "អាសយដ្ឋាន​ពេញ Geonames.org f (US ប៉ុណ្ណោះ)​"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:446
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:445
 #, kde-format
 msgid "Less options"
 msgstr "ជម្រើស​តិចជាង​"
@@ -58996,32 +58996,32 @@ msgstr "បោះបង់​ geocoding បញ្ច្រាស​ឬ​ ?"
 msgid "Image tags are changed."
 msgstr "ស្លាក​រូបភាព​ត្រូវ​បាន​ផ្លាស់ប្ដូរ ។"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:425
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:424
 #, fuzzy, kde-format
 #| msgid "Retrieving RG info - %p%"
 msgid "Retrieving RG info -"
 msgstr "យក​ព័ត៌មាន​ RG - %p%"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:461
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr "ដាក់ Geocoding បញ្ច្រាស​"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:802
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:799
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "បន្ថែម​ស្លាក​ថ្មី..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:803
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:800
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:946
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:942
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -59033,7 +59033,7 @@ msgstr ""
 "រូបភាព %1 ក្នុង​ចំណោម​ %2 ត្រូវ​បាន​ដាក់​ geocoded បញ្ច្រាស ។ តើ​អ្នក​ចង់​រក្សា​ទុក​ស្លាក​ដែល​មាន​រួច​ហើយ "
 "ឬ​ក៏​ចង់​បោះ​បង់​ពួក​វា ?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:953
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:949
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -59045,7 +59045,7 @@ msgstr ""
 "រូបភាព %1 ក្នុង​ចំណោម​ %2 ត្រូវ​បាន​ដាក់​ geocoded បញ្ច្រាស ។ តើ​អ្នក​ចង់​រក្សា​ទុក​ស្លាក​ដែល​មាន​រួច​ហើយ "
 "ឬ​ក៏​ចង់​បោះ​បង់​ពួក​វា ?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:959
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
 #, fuzzy, kde-format
 #| msgid "Abort reverse geocoding?"
 msgctxt "@title:window"
@@ -65753,152 +65753,152 @@ msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:634
+#: core/utilities/setup/collections/setupcollectionview.cpp:631
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:662
-#: core/utilities/setup/collections/setupcollectionview.cpp:1510
+#: core/utilities/setup/collections/setupcollectionview.cpp:659
+#: core/utilities/setup/collections/setupcollectionview.cpp:1507
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:701
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:702
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, fuzzy, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "មាន​ឈ្មោះ​ស្លាក​រួច​​ហើយ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:865
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "បង្កើត​អាល់ប៊ុម​ទទេ​ថ្មី​នៅ​ក្នុង​សម្រាំង ។"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:866
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, fuzzy, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ស្វែងរក \"%1\" ដែល​បាន​ជ្រើស​ឬ ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:873
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "បង្កើត​អាល់ប៊ុម​ទទេ​ថ្មី​នៅ​ក្នុង​សម្រាំង ។"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:874
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1729
+#: core/utilities/setup/collections/setupcollectionview.cpp:936
+#: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Local Collections"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:944
-#: core/utilities/setup/collections/setupcollectionview.cpp:1730
+#: core/utilities/setup/collections/setupcollectionview.cpp:941
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:949
-#: core/utilities/setup/collections/setupcollectionview.cpp:1731
+#: core/utilities/setup/collections/setupcollectionview.cpp:946
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:986
+#: core/utilities/setup/collections/setupcollectionview.cpp:983
 #, kde-format
 msgid "Add Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1036
+#: core/utilities/setup/collections/setupcollectionview.cpp:1033
 #, kde-format
 msgid "Col. %1"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1129
 #, kde-format
 msgid "This collection is currently not available."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1137
+#: core/utilities/setup/collections/setupcollectionview.cpp:1134
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1142
+#: core/utilities/setup/collections/setupcollectionview.cpp:1139
 #, kde-format
 msgid "This collection is hidden."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1161
+#: core/utilities/setup/collections/setupcollectionview.cpp:1158
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1189
+#: core/utilities/setup/collections/setupcollectionview.cpp:1186
 #, fuzzy, kde-format
 msgid "Update collection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1217
+#: core/utilities/setup/collections/setupcollectionview.cpp:1214
 #, kde-format
 msgid "Remove collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1249
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "ឈ្មោះ ៖"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1257
+#: core/utilities/setup/collections/setupcollectionview.cpp:1254
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "ផ្លូវ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1262
+#: core/utilities/setup/collections/setupcollectionview.cpp:1259
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "ស្ថានភាព"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1560
+#: core/utilities/setup/collections/setupcollectionview.cpp:1557
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1595
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1603
+#: core/utilities/setup/collections/setupcollectionview.cpp:1600
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1620
+#: core/utilities/setup/collections/setupcollectionview.cpp:1617
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Scanning collection"
@@ -65906,29 +65906,29 @@ msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "វិភាគ​រក​សម្រាំង"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1624
+#: core/utilities/setup/collections/setupcollectionview.cpp:1621
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1632
+#: core/utilities/setup/collections/setupcollectionview.cpp:1629
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1636
+#: core/utilities/setup/collections/setupcollectionview.cpp:1633
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1719
+#: core/utilities/setup/collections/setupcollectionview.cpp:1716
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "ជ្រើស​ធាតុ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:1720
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""
