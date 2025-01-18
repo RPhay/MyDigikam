@@ -201,10 +201,10 @@ void ImportIconView::rename()
 
 void ImportIconView::deleteSelected(bool /*permanently*/)
 {
-    CamItemInfoList camItemInfoList = selectedCamItemInfos();
-
     // FIXME: This way of deletion may not working with camera items.
 /*
+    CamItemInfoList camItemInfoList = selectedCamItemInfos();
+
     if (d->utilities->deleteImages(camItemInfoList, permanently))
     {
        awayFromSelection();
@@ -214,10 +214,10 @@ void ImportIconView::deleteSelected(bool /*permanently*/)
 
 void ImportIconView::deleteSelectedDirectly(bool /*permanently*/)
 {
-    CamItemInfoList camItemInfoList = selectedCamItemInfos();
-
     // FIXME: This way of deletion may not working with camera items.
 /*
+    CamItemInfoList camItemInfoList = selectedCamItemInfos();
+
     d->utilities->deleteImagesDirectly(camItemInfoList, permanently);
 */
     awayFromSelection();
