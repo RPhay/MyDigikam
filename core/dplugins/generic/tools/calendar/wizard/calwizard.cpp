@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     DInfoInterface*  iface          = nullptr;
     CalIntroPage*    introPage      = nullptr;
     CalSettings*     cSettings      = nullptr;
@@ -338,7 +340,8 @@ void CalWizard::updatePage(int page)
         return;
     }
 
-    int month = d->months.keys().at(page);
+    const auto keys = d->months.keys();
+    int month       = keys.at(page);
 
     d->calProgressUI.finishLabel->setText(i18n("Printing calendar page for %1 of %2",
                                           QLocale().standaloneMonthName(month, QLocale::LongFormat),

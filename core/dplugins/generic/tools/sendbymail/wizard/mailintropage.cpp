@@ -62,6 +62,8 @@ public:
         }
     }
 
+public:
+
     QComboBox*        imageGetOption    = nullptr;
     DHBox*            hbox              = nullptr;
     MailWizard*       wizard            = nullptr;
@@ -213,7 +215,8 @@ void MailIntroPage::slotBinariesFound()
 
 bool MailIntroPage::isComplete() const
 {
-    QString val = d->wizard->settings()->binPaths.values().join(QString());
+    const auto vals = d->wizard->settings()->binPaths.values();
+    QString val     = vals.join(QString());
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << val;
 
     return (!val.isEmpty());
