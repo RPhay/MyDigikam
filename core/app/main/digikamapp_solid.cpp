@@ -561,6 +561,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
         if (cameraLabel.isNull())
         {
             QString label = s_labelForSolidCamera(device);
+            Q_UNUSED(label);
         }
 
         Solid::Camera* const camera = device.as<Solid::Camera>();

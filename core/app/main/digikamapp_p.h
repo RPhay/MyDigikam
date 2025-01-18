@@ -145,7 +145,6 @@
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
 #include "exiftoolthread.h"
-// #include "facesdetector.h"
 #include "localizesettings.h"
 #include "networkmanager.h"
 #include "dnotificationwidget.h"
@@ -182,6 +181,8 @@ public:
 
     ProgressEntry() = default;
 
+public:
+
     QString message;
     float   progress  = 0.0;
     bool    canCancel = false;
@@ -194,6 +195,8 @@ class Q_DECL_HIDDEN DigikamApp::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                                autoShowZoomToolTip                     = false;
     bool                                validIccPath                            = true;
