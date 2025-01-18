@@ -402,8 +402,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     QMenu* const audioMenu         = new QMenu(this);
     QActionGroup* const audioGroup = new QActionGroup(this);
+    const auto outputs             = QMediaDevices::audioOutputs();
 
-    for (const auto& device : QMediaDevices::audioOutputs())
+    for (const auto& device : outputs)
     {
         QAction* const action = audioGroup->addAction(device.description());
         action->setCheckable(true);
@@ -946,7 +947,9 @@ void MediaPlayerView::slotAudioChanged(QAction* action)
 {
     if (action)
     {
-        for (const auto& device : QMediaDevices::audioOutputs())
+        const auto outputs = QMediaDevices::audioOutputs();
+
+        for (const auto& device : outputs)
         {
             if (action->data().toByteArray() == device.id())
             {
