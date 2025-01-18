@@ -180,7 +180,6 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
     {
         // set real pixmap on sample button to compute correct size hint
 
-        QIcon pix      = index.data(SetupCollectionModel::AppendDecorationRole).value<QIcon>();
         m_sampleAppendButton->setIcon(index.data(SetupCollectionModel::AppendDecorationRole).value<QIcon>());
         QSize widgetHint = m_sampleAppendButton->sizeHint();
 
@@ -193,7 +192,6 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
     {
         // set real pixmap on sample button to compute correct size hint
 
-        QIcon pix      = index.data(SetupCollectionModel::UpdateDecorationRole).value<QIcon>();
         m_sampleUpdateButton->setIcon(index.data(SetupCollectionModel::UpdateDecorationRole).value<QIcon>());
         QSize widgetHint = m_sampleUpdateButton->sizeHint();
 
@@ -206,7 +204,6 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
     {
         // set real pixmap on sample button to compute correct size hint
 
-        QIcon pix      = index.data(SetupCollectionModel::DeleteDecorationRole).value<QIcon>();
         m_sampleDeleteButton->setIcon(index.data(SetupCollectionModel::DeleteDecorationRole).value<QIcon>());
         QSize widgetHint = m_sampleDeleteButton->sizeHint();
 
