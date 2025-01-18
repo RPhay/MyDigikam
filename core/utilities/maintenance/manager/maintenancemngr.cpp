@@ -37,7 +37,6 @@
 #include "thumbsgenerator.h"
 #include "fingerprintsgenerator.h"
 #include "duplicatesfinder.h"
-// #include "autotagsassignment.h"
 #include "imagequalitysorter.h"
 #include "metadatasynchronizer.h"
 #include "dnotificationwrapper.h"

@@ -26,7 +26,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "kd_treebase.h"
 
 namespace Digikam
 {

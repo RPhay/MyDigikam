@@ -28,8 +28,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-// #include "dnnfacedetectorssd.h"
-// #include "dnnfacedetectoryolo.h"
 #include "dnnfacedetectoryunet.h"
 
 namespace Digikam

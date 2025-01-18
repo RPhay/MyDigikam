@@ -26,7 +26,6 @@
 #include "thumbstask.h"
 #include "metadatasynctask.h"
 #include "fingerprintstask.h"
-// #include "autotagsassignmenttask.h"
 #include "imagequalitytask.h"
 #include "imagequalitycontainer.h"
 #include "databasetask.h"

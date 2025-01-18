@@ -52,7 +52,6 @@
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"
 #include "drangebox.h"
-#include "autotagsassignment.h"
 #include "localizeselector.h"
 
 namespace Digikam

@@ -27,10 +27,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn
 
-                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
-                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
-                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition
-
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
 )
@@ -39,18 +35,8 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
 
 set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
 
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition/recognitionpreprocessor.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition/openfacepreprocessor.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/matrixoperations.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/pointtransformaffine.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/qdatastreamoverloads.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/fullobjectdetection.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
-
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/facedetector.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/opencvdnnfacedetector.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorssd.cpp
-                        #  ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryolo.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryunet.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorbase.cpp
 
@@ -73,30 +59,10 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS
-                                # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
-                                # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
+set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/identityprovider.cpp
 
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_training.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
-
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treebase.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treeopenface.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_treesface.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodebase.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodeopenface.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_nodesface.cpp
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractorbase.cpp
-                                  # ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnopenfaceextractor.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnsfaceextractor.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbaccess.cpp
@@ -106,8 +72,6 @@ set(facesengine_database_LIB_SRCS
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
-
-                                #   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facescansettings.cpp
 )

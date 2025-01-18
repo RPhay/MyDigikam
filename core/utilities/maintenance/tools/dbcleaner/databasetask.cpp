@@ -27,7 +27,6 @@
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "identityprovider.h"
-// #include "facialrecognition_wrapper.h"
 #include "facetagseditor.h"
 #include "maintenancedata.h"
 #include "similaritydb.h"

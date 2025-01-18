@@ -30,7 +30,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-// #include "recognitionpreprocessor.h"
 #include "dnnmodelmanager.h"
 #include "dnnmodelsface.h"
 #include "dnnmodelyunet.h"

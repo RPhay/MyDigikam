@@ -9,27 +9,14 @@ APPLY_COMMON_POLICIES()
 
 set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceutils.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/database/faceitemretriever.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/recognitionmodelchange.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepreviewloader.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipeline.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipeline_p.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipelinepackage.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/parallelpipes.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/threads/scanstatefilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facescanwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidgetstates.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/bench/detectionbenchmarker.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/bench/recognitionbenchmarker.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/workers/detectionworker.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/workers/recognitionworker.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/workers/databasewriter.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/workers/trainerworker.cpp
 
     # new face engine
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/facepipelinebase.cpp

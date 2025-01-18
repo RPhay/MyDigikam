@@ -30,9 +30,10 @@
 
 // Local includes
 
-#include "autotagsengine.h"
+#include "iteminfo.h"
 #include "mlpipelinefoundation.h"
 #include "autotagsclassifierbase.h"
+#include "autotagsscansettings.h"
 #include "dnnmodelbase.h"
 #include "dnnmodelmanager.h"
 #include "dnnmodelnet.h"

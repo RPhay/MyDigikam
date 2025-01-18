@@ -76,8 +76,8 @@ RELOCATE_PREFIX="/Applications/digiKam.org"
 
 # URL to git repository to checkout digiKam source code
 # git protocol version which require a developer account with ssh keys.
-DK_GITURL="git@invent.kde.org:graphics/digikam.git"
-#DK_GITURL="git@invent.kde.org:michmill/digiKam.git"
+#DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+DK_GITURL="git@invent.kde.org:michmill/digiKam.git"
 # https protocol version which give annonyous access.
 #DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
@@ -96,8 +96,8 @@ DK_QTVERSION="6"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v8.5.0
-DK_VERSION=master
-#DK_VERSION="work/michmill/redeye-refactor"
+#DK_VERSION=master
+DK_VERSION="work/michmill/delete-unused-files"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
