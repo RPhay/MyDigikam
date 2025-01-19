@@ -1079,7 +1079,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
             Q_EMIT imageInfosAboutToBeRemoved(removedInfos);
         }
 
-        imageInfosAboutToBeRemoved(begin, end);
+        prepareImageInfosAboutToBeRemoved(begin, end);
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos, and these change now!

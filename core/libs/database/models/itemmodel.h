@@ -376,7 +376,7 @@ protected:
     /**
      * Called before rowsAboutToBeRemoved
      */
-    virtual void imageInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
+    virtual void prepareImageInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 protected Q_SLOTS:
 

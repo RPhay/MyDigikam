@@ -130,7 +130,7 @@ public:
         return ItemListModel::setData(index, value, role);
     }
 
-    void imageInfosAboutToBeRemoved(int begin, int end) override
+    void prepareImageInfosAboutToBeRemoved(int begin, int end) override
     {
         removeAnyInInterval(m_leftIndexes, begin, end);
         removeAnyInInterval(m_rightIndexes, begin, end);
