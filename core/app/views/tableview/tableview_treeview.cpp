@@ -256,7 +256,6 @@ QPixmap TableViewTreeView::pixmapForDrag(const QList< QModelIndex >& indexes) co
 {
     const QModelIndex& firstIndex = indexes.at(0);
     const ItemInfo info           = s->tableViewModel->imageInfo(firstIndex);
-    const QString path            = info.filePath();
 
     QPixmap thumbnailPixmap;
 

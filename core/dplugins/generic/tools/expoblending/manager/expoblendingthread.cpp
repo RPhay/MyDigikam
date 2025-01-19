@@ -700,7 +700,6 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         }
 
         uint    i = 0;
-        QString temp;
         d->preProcessedUrlsMap.clear();
 
         for (const QUrl& url : std::as_const(inUrls))
@@ -994,7 +993,6 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     float    expo = -1.0;
     float    iso  = -1.0;
     float    fnum = -1.0;
-    QVariant rationals;
 
     if      (d->meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
     {

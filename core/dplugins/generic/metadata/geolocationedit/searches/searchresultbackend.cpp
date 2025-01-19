@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     SearchResultBackend::SearchResult::List results;
     QString                                 runningBackend;
     QByteArray                              searchData;
@@ -190,6 +192,7 @@ void SearchResultBackend::slotFinished(QNetworkReply* reply)
             }
 
             // TODO: parse bounding box
+            Q_UNUSED(boundingBoxString);
 
             d->results << result;
         }
