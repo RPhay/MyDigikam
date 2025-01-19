@@ -202,7 +202,7 @@ Q_SIGNALS:
     void signalSavingProgress(const QString& filePath, float progress);
     void signalImageSaved(const QString& filePath, bool success);
 
-    void signalThumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img);
+    void signalQImageThumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img);
 
 public:
 

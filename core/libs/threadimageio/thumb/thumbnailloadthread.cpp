@@ -739,7 +739,7 @@ void ThumbnailImageCatcher::setThumbnailLoadThread(ThumbnailLoadThread* const th
 
     if (d->thread)
     {
-        disconnect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+        disconnect(d->thread, SIGNAL(signalQImageThumbnailLoaded(LoadingDescription,QImage)),
                    this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)));
     }
 
@@ -752,7 +752,7 @@ void ThumbnailImageCatcher::setThumbnailLoadThread(ThumbnailLoadThread* const th
 
     if (d->thread)
     {
-        connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+        connect(d->thread, SIGNAL(signalQImageThumbnailLoaded(LoadingDescription,QImage)),
                 this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)),
                 Qt::DirectConnection);
     }

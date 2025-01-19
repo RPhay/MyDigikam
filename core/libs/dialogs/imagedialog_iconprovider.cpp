@@ -50,7 +50,7 @@ ImageDialogIconProvider::ImageDialogIconProvider()
     connect(d->timer, SIGNAL(timeout()),
             this, SIGNAL(signalThumbnailRefresh()));
 
-    connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+    connect(d->thread, SIGNAL(signalQImageThumbnailLoaded(LoadingDescription,QImage)),
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)));
 }
 

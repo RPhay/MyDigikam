@@ -192,7 +192,7 @@ void LoadSaveThread::thumbnailLoaded(const LoadingDescription& loadingDescriptio
 {
     notificationReceived();
 
-    Q_EMIT signalThumbnailLoaded(loadingDescription, img);
+    Q_EMIT signalQImageThumbnailLoaded(loadingDescription, img);
 }
 
 void LoadSaveThread::notificationReceived()

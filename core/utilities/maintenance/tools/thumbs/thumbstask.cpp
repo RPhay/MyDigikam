@@ -57,7 +57,7 @@ ThumbsTask::ThumbsTask()
     d->thread->setPixmapRequested(false);
     d->thread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
 
-    connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+    connect(d->thread, SIGNAL(signalQImageThumbnailLoaded(LoadingDescription,QImage)),
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)),
             Qt::DirectConnection);
 }
