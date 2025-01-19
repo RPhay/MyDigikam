@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -3009,7 +3009,7 @@ msgstr "Mostrar no Ecrã Completo"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3045,12 +3045,12 @@ msgstr "Mapa"
 msgid "Labels"
 msgstr "Legendas"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Pesquisar caras na sua colecção"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to scan the selected albums for duplicate items."
@@ -3060,7 +3060,7 @@ msgstr ""
 "Use este botão para analisar os álbuns seleccionados, de modo a descobrir os "
 "itens duplicados."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3070,7 +3070,7 @@ msgstr ""
 "funcionalidade, pense em usar a área de Ajuda no painel do canto inferior "
 "esquerdo."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3079,7 +3079,7 @@ msgstr ""
 "O reconhecimento de caras foi interrompido, porque não existem identidades "
 "para reconhecer. Por favor adicione identidades novas."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3238,7 +3238,7 @@ msgstr ""
 "guardada num novo álbum virtual de pesquisa no lado esquerdo."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Linha Temporal"
@@ -3277,22 +3277,22 @@ msgstr ""
 "A pesquisa actual da base de dados não devolveu resultados. Mude a "
 "configuração da pesquisa ou seleccione um álbum com conteúdo."
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Procura Difusa por Desenho"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Procura Difusa por Imagens"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Procura no Mapa"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11639,7 +11639,6 @@ msgstr "Dois mapas - horizontal"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -27940,7 +27939,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Álbum das Legendas"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27948,51 +27947,51 @@ msgstr "Álbum das Legendas"
 msgid "Expand Selected Nodes"
 msgstr "Expandir os Nós Seleccionados"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Expandir Todos os Álbuns"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Fechar os Seleccionados Recursivamente"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Fechar Todos os Álbuns"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Procurar os Duplicados..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Analisar as Caras"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Reparar os itens escondidos"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Analisar as Caras"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Os sub-álbuns também deverão ser digitalizados?"
@@ -39843,7 +39842,6 @@ msgid "Miscellaneous"
 msgstr "Diversos"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -52677,11 +52675,6 @@ msgstr "Remover resta região da cara"
 msgid "Manually adding face"
 msgstr "Pelo Manual e Nome"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "A aplicar as modificações das caras"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -62167,7 +62160,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -62176,7 +62169,7 @@ msgstr ""
 "Todas as operações terminaram.\n"
 "Duração: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manutenção do digiKam"
@@ -62189,40 +62182,6 @@ msgid ""
 msgstr ""
 "O processo terminou.\n"
 "Duração: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tags for: %1\n"
-msgstr "Modo de medida:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Sat: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Keywords: "
-msgid "Keywords: %1"
-msgstr "Palavras-Chave: "
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Items scanned for auto-tags: %1"
-msgstr "Procurar por caras no álbum: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Item scanned for auto-tags: %1"
-msgstr "Procurar por caras no álbum: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -62349,6 +62308,13 @@ msgstr "Procurar os itens duplicados"
 msgid "Duplicates for: %1\n"
 msgstr "Duplicados"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Sat: %1"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -62391,83 +62357,30 @@ msgstr "Duplicados"
 msgid "Duplicate found: %1"
 msgstr "Duplicados"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Procurar por caras nos %1 álbuns"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Procurar por caras na imagem: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Procurar por caras nas %1 imagens"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, kde-format
 msgid "Updating faces database"
 msgstr "A actualizar a base de dados das caras"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Items scanned for faces: %1\n"
-msgstr "Procurar por caras no álbum: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Item scanned for faces: %1\n"
-msgstr "Procurar por caras no álbum: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Faces processed: %1"
-msgstr "Imagens encontradas em %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Face processed: %1"
-msgstr "Imagens encontradas em %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
-msgid "Scanned for faces: %1\n"
-msgstr "Procurar por caras no álbum: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
-msgid "No face"
-msgstr "Sem cara"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "Sem cara"
-msgstr[1] "Sem cara"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -62475,6 +62388,18 @@ msgstr[1] "Sem cara"
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Items scanned for faces: %1\n"
+msgstr "Procurar por caras no álbum: %1"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, fuzzy, kde-format
+#| msgid "Scan for faces in album: %1"
+msgid "Item scanned for faces: %1\n"
+msgstr "Procurar por caras no álbum: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
@@ -69263,6 +69188,59 @@ msgstr "Itens do Álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os Itens"
+
+#~ msgid "Applying face changes"
+#~ msgstr "A aplicar as modificações das caras"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Modo de medida:"
+
+#, fuzzy
+#~| msgctxt "@label: item properties"
+#~| msgid "Keywords: "
+#~ msgid "Keywords: %1"
+#~ msgstr "Palavras-Chave: "
+
+#, fuzzy
+#~| msgid "Scan for faces in album: %1"
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Procurar por caras no álbum: %1"
+
+#, fuzzy
+#~| msgid "Scan for faces in album: %1"
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Procurar por caras no álbum: %1"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Faces processed: %1"
+#~ msgstr "Imagens encontradas em %1"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Face processed: %1"
+#~ msgstr "Imagens encontradas em %1"
+
+#, fuzzy
+#~| msgid "Scan for faces in album: %1"
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Procurar por caras no álbum: %1"
+
+#, fuzzy
+#~| msgctxt "@item: filter model"
+#~| msgid "No face"
+#~ msgid "No face"
+#~ msgstr "Sem cara"
+
+#, fuzzy
+#~| msgctxt "@item: filter model"
+#~| msgid "No face"
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "Sem cara"
+#~ msgstr[1] "Sem cara"
 
 #, fuzzy
 #~| msgid "Scan for faces in album: %1"

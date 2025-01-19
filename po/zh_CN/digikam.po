@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2809,7 +2809,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2845,18 +2845,18 @@ msgstr "地图"
 msgid "Labels"
 msgstr "标记"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "扫描相册集合中的人脸"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "点击此按钮以扫描所选相册中的人脸。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2865,14 +2865,14 @@ msgstr ""
 "欢迎使用 digiKam 的人脸管理功能。如果您是第一次使用此功能，可以在左侧栏最下方"
 "的面板查看帮助框。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr "人脸识别已中止，因为没有可供识别的人物。请添加新人物。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3017,7 +3017,7 @@ msgstr ""
 "按下此按钮后，当前时间轴的所选日期将以左侧输入的名称保存到一个新的虚拟相册。"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "时间轴"
@@ -3055,22 +3055,22 @@ msgstr ""
 "当前查询没有从数据库返回任何结果。请更改搜索设置，或者选择一个包含内容的相"
 "册。"
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "模糊画图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "模糊图像搜索"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "地图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -10893,7 +10893,6 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -26580,7 +26579,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "标记相册"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -26588,51 +26587,51 @@ msgstr "标记相册"
 msgid "Expand Selected Nodes"
 msgstr "展开所选节点"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "展开所有相册"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "递归折叠所选项"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "折叠所有相册"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "查找重复项..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "扫描人脸"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "修复隐藏项目"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "刷新"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "扫描人脸"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "要同时扫描子相册吗？"
@@ -37995,7 +37994,6 @@ msgid "Miscellaneous"
 msgstr "其他"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "自动标签分配"
@@ -50484,11 +50482,6 @@ msgstr "正在编辑人脸区域"
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "应用人脸更改"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -59303,7 +59296,7 @@ msgstr ""
 "知人脸分配标签，否则将无法识别任何人脸。"
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -59312,7 +59305,7 @@ msgstr ""
 "所有操作已完成。\n"
 "耗时：%1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"
@@ -59325,34 +59318,6 @@ msgid ""
 msgstr ""
 "进程已完成。\n"
 "耗时：%1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, kde-format
-msgid "Auto-tags for: %1\n"
-msgstr "%1 的自动标签\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "路径：%1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, kde-format
-msgid "Keywords: %1"
-msgstr "关键词：%1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, kde-format
-msgid "Items scanned for auto-tags: %1"
-msgstr "已扫描自动标签的项目：%1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, kde-format
-msgid "Item scanned for auto-tags: %1"
-msgstr "已扫描自动标签的项目：%1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -59471,6 +59436,12 @@ msgstr "查找重复项目"
 msgid "Duplicates for: %1\n"
 msgstr "%1 的重复项\n"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, kde-format
+msgid "Path: %1\n"
+msgstr "路径：%1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, kde-format
 msgid "No duplicate item"
@@ -59502,73 +59473,30 @@ msgstr "已找到重复项：%1"
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "扫描相册中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "扫描 %1 个相册中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "扫描图像中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "扫描 %1 张图像中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, kde-format
-msgid "Items scanned for faces: %1\n"
-msgstr "已扫描人脸的项目：%1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, kde-format
-msgid "Item scanned for faces: %1\n"
-msgstr "已扫描人脸的项目：%1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, kde-format
-msgid "Faces processed: %1"
-msgstr "已处理人脸：%1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, kde-format
-msgid "Face processed: %1"
-msgstr "已处理人脸：%1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, kde-format
-msgid "Scanned for faces: %1\n"
-msgstr "已扫描人脸：%1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, kde-format
-msgid "No face"
-msgstr "没有人脸"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, kde-format
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "%1 张人脸"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -59576,6 +59504,16 @@ msgstr[0] "%1 张人脸"
 #, kde-format
 msgid "Error starting face detection."
 msgstr "启动人脸检测时出错。"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr "已扫描人脸的项目：%1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr "已扫描人脸的项目：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, kde-format
@@ -65843,3 +65781,34 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgid "Applying face changes"
+#~ msgstr "应用人脸更改"
+
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "%1 的自动标签\n"
+
+#~ msgid "Keywords: %1"
+#~ msgstr "关键词：%1"
+
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "已扫描自动标签的项目：%1"
+
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "已扫描自动标签的项目：%1"
+
+#~ msgid "Faces processed: %1"
+#~ msgstr "已处理人脸：%1"
+
+#~ msgid "Face processed: %1"
+#~ msgstr "已处理人脸：%1"
+
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "已扫描人脸：%1\n"
+
+#~ msgid "No face"
+#~ msgstr "没有人脸"
+
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "%1 张人脸"

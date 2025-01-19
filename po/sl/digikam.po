@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2025-01-15 07:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2919,7 +2919,7 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2955,18 +2955,18 @@ msgstr "Zemljevid"
 msgid "Labels"
 msgstr "Oznake"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Preišči zbirko za obrazi"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Uporabite ta gumb, da preiščete obraze v izbranih albumih"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2975,7 +2975,7 @@ msgstr ""
 "Dobrodošli v programu za upravljanje obrazov v digiKam. Če to uporabljate "
 "prvič, razmislite o uporabi polja za pomoč na spodnji levi stranski plošči."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2984,7 +2984,7 @@ msgstr ""
 "Prepoznavanje obrazov je prekinjeno, ker identitet ni mogoče prepoznati. "
 "Dodajte nove identitete."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3136,7 +3136,7 @@ msgstr ""
 "navidezni album z imenom nastavljenim na levi."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Časovnica"
@@ -3177,22 +3177,22 @@ msgstr ""
 "Trenutna poizvedba ni iz izbirke pridobila nobenega zadetka. Spremenite "
 "nastavitve poizvedbe ali izberite album z vsebino."
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Megleno iskanje s skico"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Megleno iskanje slik"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Iskanje po zemljevidu"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11388,7 +11388,6 @@ msgstr "Dva zemljevida - na vrhu in spodaj"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -27483,7 +27482,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Album z oznakami"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27491,51 +27490,51 @@ msgstr "Album z oznakami"
 msgid "Expand Selected Nodes"
 msgstr "Razširi izbrana vozlišča"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Razširi vse albume"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Zloži izbrane rekurzivno"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Strni vse albume"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Najdi dvojnike..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Preišči za obrazi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Popravi skrite predmete"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Osveži"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Preišči za obraze"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Ali naj se pregleda tudi pod-albume?"
@@ -39323,7 +39322,6 @@ msgid "Miscellaneous"
 msgstr "Razno"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Samodejno dodeljevanje značk"
@@ -52137,11 +52135,6 @@ msgstr "Urejanje območja obraza"
 msgid "Manually adding face"
 msgstr "Ročno dodajanje obraza"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "Uveljavljanje sprememb obrazov"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -61203,7 +61196,7 @@ msgstr ""
 "pregledati slike in znova začeti označevati neznane obraze."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61212,7 +61205,7 @@ msgstr ""
 "Vsa opravila so končana.\n"
 "Trajanje: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "vzdrževanje digiKama"
@@ -61225,34 +61218,6 @@ msgid ""
 msgstr ""
 "Opravilo je končano.\n"
 "Trajanje: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, kde-format
-msgid "Auto-tags for: %1\n"
-msgstr "Samodejne oznake za: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Pot: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, kde-format
-msgid "Keywords: %1"
-msgstr "Ključne besede: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, kde-format
-msgid "Items scanned for auto-tags: %1"
-msgstr "Postavk preiskanih za samodejne oznake: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, kde-format
-msgid "Item scanned for auto-tags: %1"
-msgstr "Postavka preiskana za samodejne oznake: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61373,6 +61338,12 @@ msgstr "Najdi podvojene predmete"
 msgid "Duplicates for: %1\n"
 msgstr "Dvojniki za: %1\n"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, kde-format
+msgid "Path: %1\n"
+msgstr "Pot: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, kde-format
 msgid "No duplicate item"
@@ -61407,76 +61378,30 @@ msgstr "Najdenih dvojnikov: %1"
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Preišči obraze v albumu: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Preišči obraze v %1 albumih"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Preišči obraze v sliki: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Preišči obraze v %1 slikah"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, kde-format
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, kde-format
-msgid "Items scanned for faces: %1\n"
-msgstr "Postavk preiskanih za obraze: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, kde-format
-msgid "Item scanned for faces: %1\n"
-msgstr "Postavka preiskana za obraze: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, kde-format
-msgid "Faces processed: %1"
-msgstr "Obdelanih obrazov: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, kde-format
-msgid "Face processed: %1"
-msgstr "Obdelan obraz: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, kde-format
-msgid "Scanned for faces: %1\n"
-msgstr "Preiskano za obraze: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, kde-format
-msgid "No face"
-msgstr "Ni obraza"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, kde-format
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "%1 obrazov"
-msgstr[1] "%1 obraz"
-msgstr[2] "%1 obraza"
-msgstr[3] "%1 obrazi"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -61484,6 +61409,16 @@ msgstr[3] "%1 obrazi"
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Napaka pri zagonu zaznavanja obrazov."
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr "Postavk preiskanih za obraze: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr "Postavka preiskana za obraze: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, kde-format
@@ -68065,6 +68000,40 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgid "Applying face changes"
+#~ msgstr "Uveljavljanje sprememb obrazov"
+
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Samodejne oznake za: %1\n"
+
+#~ msgid "Keywords: %1"
+#~ msgstr "Ključne besede: %1"
+
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Postavk preiskanih za samodejne oznake: %1"
+
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Postavka preiskana za samodejne oznake: %1"
+
+#~ msgid "Faces processed: %1"
+#~ msgstr "Obdelanih obrazov: %1"
+
+#~ msgid "Face processed: %1"
+#~ msgstr "Obdelan obraz: %1"
+
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Preiskano za obraze: %1\n"
+
+#~ msgid "No face"
+#~ msgstr "Ni obraza"
+
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "%1 obrazov"
+#~ msgstr[1] "%1 obraz"
+#~ msgstr[2] "%1 obraza"
+#~ msgstr[3] "%1 obrazi"
 
 #~ msgid "Scanned for objects: %1\n"
 #~ msgstr "Preiskano za predmete: %1\n"

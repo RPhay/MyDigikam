@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2946,7 +2946,7 @@ msgstr "Rādīt pilnekrāna režīmā"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2982,12 +2982,12 @@ msgstr "Karte"
 msgid "Labels"
 msgstr "Iezīmes"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Atrast kolekcijā sejas"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -2996,21 +2996,21 @@ msgstr ""
 "Lietojiet šo pogu, lai izvēlētajos albumos meklētu attēlus, kas atkārtojas "
 "vairākas reizes."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3166,7 +3166,7 @@ msgstr ""
 "albumā, izmantojot kreisajā pusē norādīto nosaukumu."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Laika josla"
@@ -3204,22 +3204,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Aptuvena meklēšana no skices"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Aptuvena meklēšana no attēla"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Kartes meklēšana"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11215,7 +11215,6 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -27108,7 +27107,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Iezīmjalbums"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27116,52 +27115,52 @@ msgstr "Iezīmjalbums"
 msgid "Expand Selected Nodes"
 msgstr "Izvērst atlasīto"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Izvērst visus albumus"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Rekursīvi savērst atlasīto"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Savērst visus albumus"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Atrast dublikātus..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Atrast sejas"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Atjaunot slēptus attēlus"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Atsvaidzināt"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Atrast sejas"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Vai meklēt arī apakšalbumos?"
@@ -38797,7 +38796,6 @@ msgid "Miscellaneous"
 msgstr "Dažādi"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -52625,11 +52623,6 @@ msgstr "Noņemt šo tagu"
 msgid "Manually adding face"
 msgstr "Rokasgrāmata"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, fuzzy, kde-format
-msgid "Applying face changes"
-msgstr "Pielietot izmaiņas?"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -61678,14 +61671,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam apkope"
@@ -61698,41 +61691,6 @@ msgid ""
 msgstr ""
 "Apstrāde ir pabeigta.\n"
 "Ilgums: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-msgid "Auto-tags for: %1\n"
-msgstr "Mērīšanas režīms"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
-msgid "Path: %1\n"
-msgstr "Vērtējums: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
-msgid "Keywords: %1"
-msgstr "Atslēgvārdi"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Items scanned for auto-tags: %1"
-msgstr "Meklēt šajos albumos:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Item scanned for auto-tags: %1"
-msgstr "Meklēt šajos albumos:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61858,6 +61816,13 @@ msgstr "Atrast dublikātus"
 msgid "Duplicates for: %1\n"
 msgstr "Dublikāti"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "Rating: %1\n"
+msgid "Path: %1\n"
+msgstr "Vērtējums: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -61901,7 +61866,6 @@ msgstr "Dublikāti"
 msgid "Duplicate found: %1"
 msgstr "Dublikāti"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -61909,7 +61873,6 @@ msgstr "Dublikāti"
 msgid "Scan for faces in album: %1"
 msgstr "Meklēt šajos albumos:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -61917,78 +61880,23 @@ msgstr "Meklēt šajos albumos:"
 msgid "Scan for faces in %1 albums"
 msgstr "Meklēt šajos albumos:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Atrast sejas"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Atrast sejas"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Seju datubāzes atjaunināšana."
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Items scanned for faces: %1\n"
-msgstr "Meklēt šajos albumos:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Item scanned for faces: %1\n"
-msgstr "Meklēt šajos albumos:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Faces processed: %1"
-msgstr "Atrasti attēli iekš %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Face processed: %1"
-msgstr "Atrasti attēli iekš %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Scanned for faces: %1\n"
-msgstr "Meklēt šajos albumos:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
-msgid "No face"
-msgstr "Seju nav"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "Seju nav"
-msgstr[1] "Seju nav"
-msgstr[2] "Seju nav"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -61996,6 +61904,20 @@ msgstr[2] "Seju nav"
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned for faces: %1\n"
+msgstr "Meklēt šajos albumos:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned for faces: %1\n"
+msgstr "Meklēt šajos albumos:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
@@ -68329,6 +68251,63 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~ msgid "Applying face changes"
+#~ msgstr "Pielietot izmaiņas?"
+
+#, fuzzy
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Mērīšanas režīms"
+
+#, fuzzy
+#~| msgctxt "@item: iptc"
+#~| msgid "Keywords"
+#~ msgid "Keywords: %1"
+#~ msgstr "Atslēgvārdi"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Meklēt šajos albumos:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Meklēt šajos albumos:"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Faces processed: %1"
+#~ msgstr "Atrasti attēli iekš %1"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Face processed: %1"
+#~ msgstr "Atrasti attēli iekš %1"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Meklēt šajos albumos:"
+
+#, fuzzy
+#~| msgctxt "@item: filter model"
+#~| msgid "No face"
+#~ msgid "No face"
+#~ msgstr "Seju nav"
+
+#, fuzzy
+#~| msgctxt "@item: filter model"
+#~| msgid "No face"
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "Seju nav"
+#~ msgstr[1] "Seju nav"
+#~ msgstr[2] "Seju nav"
 
 #, fuzzy
 #~| msgctxt "@label"

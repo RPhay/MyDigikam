@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2025-01-15 11:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2913,7 +2913,7 @@ msgstr "Volledig scherm tonen"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2949,18 +2949,18 @@ msgstr "Landkaart"
 msgid "Labels"
 msgstr "Labels"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Doorzoekt de collectie op gezichten"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Gebruik deze knop om de geselecteerde albums te scannen op gezichten"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2970,7 +2970,7 @@ msgstr ""
 "van deze functie, kijk dan eens of het hulpvak onderaan het linker zijpaneel "
 "iets is."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2980,7 +2980,7 @@ msgstr ""
 "herkennen (behalve ongecontroleerde en onbekende). Voeg nieuwe identiteiten "
 "toe."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3136,7 +3136,7 @@ msgstr ""
 "opgeslagen in een nieuw virtueel zoekalbum met de links ingestelde naam."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Tijdlijn"
@@ -3175,22 +3175,22 @@ msgstr ""
 "De huidige zoekopdracht in de database gaf geen resultaten terug. Wijzig de "
 "zoekinstellingen of selecteer een album met inhoud."
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Vage-schets zoekopdracht"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Vage-afbeelding zoekopdracht"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Zoekopdracht naar mappen"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11509,7 +11509,6 @@ msgstr "Twee kaarten - boven en onder"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -27764,7 +27763,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Album met labels"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27772,51 +27771,51 @@ msgstr "Album met labels"
 msgid "Expand Selected Nodes"
 msgstr "Geselecteerde nodes uitvouwen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Alles albums uitvouwen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Geselecteerde recursief invouwen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Alles albums invouwen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Dubbels zoeken..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Op gezichten scannen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Verborgen items repareren"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Vernieuwen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Op gezichten scannen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Moeten sub-albums ook gescand worden?"
@@ -39640,7 +39639,6 @@ msgid "Miscellaneous"
 msgstr "Diversen"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Automatisch toekennen van tags"
@@ -52459,11 +52457,6 @@ msgstr "Gezichtsgebied wordt bewerkt"
 msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "Wijzigingen aan gezicht toepassen"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -61578,7 +61571,7 @@ msgstr ""
 "worden."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61587,7 +61580,7 @@ msgstr ""
 "Alle bewerkingen zijn gereed.\n"
 "Duur: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Onderhoud van digiKam"
@@ -61600,34 +61593,6 @@ msgid ""
 msgstr ""
 "Bewerken is gereed.\n"
 "Duur: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, kde-format
-msgid "Auto-tags for: %1\n"
-msgstr "Automatische tags voor: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Pad: %1\n"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, kde-format
-msgid "Keywords: %1"
-msgstr "Trefwoorden: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, kde-format
-msgid "Items scanned for auto-tags: %1"
-msgstr "Items gescand op auto-tags: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, kde-format
-msgid "Item scanned for auto-tags: %1"
-msgstr "Item gescand op auto-tags: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -61748,6 +61713,12 @@ msgstr "Dubbele items zoeken"
 msgid "Duplicates for: %1\n"
 msgstr "Duplicaten voor: %1\n"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, kde-format
+msgid "Path: %1\n"
+msgstr "Pad: %1\n"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, kde-format
 msgid "No duplicate item"
@@ -61780,74 +61751,30 @@ msgstr "Gevonden duplicaten: %1"
 msgid "Duplicate found: %1"
 msgstr "Gevonden duplicaat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Zoeken naar gezichten in album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Zoek naar gezichten in %1 albums"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Zoek naar gezichten in afbeelding: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Zoek naar gezichten in %1 afbeeldingen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, kde-format
 msgid "Updating faces database"
 msgstr "Gezichten in de database worden bijgewerkt"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, kde-format
-msgid "Items scanned for faces: %1\n"
-msgstr "Items gescand op gezichten: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, kde-format
-msgid "Item scanned for faces: %1\n"
-msgstr "Item gescand op gezichten: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, kde-format
-msgid "Faces processed: %1"
-msgstr "Gezichten verwerkt: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, kde-format
-msgid "Face processed: %1"
-msgstr "Gezicht verwerkt: %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, kde-format
-msgid "Scanned for faces: %1\n"
-msgstr "Gescand op gezichten: %1\n"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, kde-format
-msgid "No face"
-msgstr "Geen gezicht"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, kde-format
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "1 gezicht"
-msgstr[1] "%1 gezichten"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -61855,6 +61782,16 @@ msgstr[1] "%1 gezichten"
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Fout bij starten van gezichtsherkenning."
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, kde-format
+msgid "Items scanned for faces: %1\n"
+msgstr "Items gescand op gezichten: %1\n"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, kde-format
+msgid "Item scanned for faces: %1\n"
+msgstr "Item gescand op gezichten: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, kde-format
@@ -68519,6 +68456,38 @@ msgstr "Album-items"
 #, kde-format
 msgid "Import Items"
 msgstr "Items importeren"
+
+#~ msgid "Applying face changes"
+#~ msgstr "Wijzigingen aan gezicht toepassen"
+
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Automatische tags voor: %1\n"
+
+#~ msgid "Keywords: %1"
+#~ msgstr "Trefwoorden: %1"
+
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Items gescand op auto-tags: %1"
+
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Item gescand op auto-tags: %1"
+
+#~ msgid "Faces processed: %1"
+#~ msgstr "Gezichten verwerkt: %1"
+
+#~ msgid "Face processed: %1"
+#~ msgstr "Gezicht verwerkt: %1"
+
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Gescand op gezichten: %1\n"
+
+#~ msgid "No face"
+#~ msgstr "Geen gezicht"
+
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "1 gezicht"
+#~ msgstr[1] "%1 gezichten"
 
 #~ msgid "Scanned for objects: %1\n"
 #~ msgstr "Gescand op objecten: %1\n"

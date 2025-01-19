@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -3293,7 +3293,7 @@ msgstr "ویرایش حالت تمام پرده‌"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3329,32 +3329,32 @@ msgstr "نگاشت"
 msgid "Labels"
 msgstr "برچسبها"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, fuzzy, kde-format
 msgid "Scan collection for faces"
 msgstr "مجموعه آلبومها"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "<p>برای نمایش نوع تصویر، این گزینه را تنظیم کنید."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, fuzzy, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3504,7 +3504,7 @@ msgstr ""
 "گزینش شده به مقادیر پیش‌فرض بازنشانی می‌شوند."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, fuzzy, kde-format
 msgid "Timeline"
 msgstr "کاشی"
@@ -3542,22 +3542,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "حذف جستجو"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "حذف جستجو"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, fuzzy, kde-format
 msgid "Map Search"
 msgstr "جستجوهای من"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11550,7 +11550,6 @@ msgstr "قرینه‌سازی افقی"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -27278,7 +27277,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "آلبوم جدید"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27286,55 +27285,55 @@ msgstr "آلبوم جدید"
 msgid "Expand Selected Nodes"
 msgstr "برگزیدن هیچ‌کدام"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Expand all Albums"
 msgstr "آلبومهای من"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 فقره برگزیده شد"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Albums"
 msgstr "آلبومهای من"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "جستجو برای تکراری‌ها..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "&مرتب‌سازی تصاویر‌"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "بازآوری"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -38726,7 +38725,6 @@ msgid "Miscellaneous"
 msgstr "متفرقه"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 msgid "Autotags Assignment"
 msgstr "تنظیم:"
@@ -51620,11 +51618,6 @@ msgstr "حذف این برچسب"
 msgid "Manually adding face"
 msgstr "راهنما"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, fuzzy, kde-format
-msgid "Applying face changes"
-msgstr "تغییرات اعمال شود؟"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -60570,14 +60563,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "زاویه اصلی:"
@@ -60588,38 +60581,6 @@ msgid ""
 "Process is done.\n"
 "Duration: %1"
 msgstr ""
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-msgid "Auto-tags for: %1\n"
-msgstr "حالت اندازه‌گیری:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-msgid "Path: %1\n"
-msgstr "برچسب: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-msgid "Keywords: %1"
-msgstr "فراداده"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Items scanned for auto-tags: %1"
-msgstr "جستجو در:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Item scanned for auto-tags: %1"
-msgstr "جستجو در:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -60746,6 +60707,12 @@ msgstr "عکس اصلی:"
 msgid "Duplicates for: %1\n"
 msgstr "تاریخها"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+msgid "Path: %1\n"
+msgstr "برچسب: %1"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 msgid "No duplicate item"
@@ -60782,7 +60749,6 @@ msgstr "تاریخها"
 msgid "Duplicate found: %1"
 msgstr "تاریخها"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -60790,7 +60756,6 @@ msgstr "تاریخها"
 msgid "Scan for faces in album: %1"
 msgstr "جستجو در:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -60798,72 +60763,22 @@ msgstr "جستجو در:"
 msgid "Scan for faces in %1 albums"
 msgstr "جستجو در:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Items scanned for faces: %1\n"
-msgstr "جستجو در:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Item scanned for faces: %1\n"
-msgstr "جستجو در:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Faces processed: %1"
-msgstr "تصاویر در %1 یافت شدند"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Face processed: %1"
-msgstr "تصاویر در %1 یافت شدند"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Scanned for faces: %1\n"
-msgstr "جستجو در:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, fuzzy, kde-format
-msgid "No face"
-msgstr "تابش عکس"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, fuzzy, kde-format
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "تابش عکس"
-msgstr[1] "تابش عکس"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -60871,6 +60786,20 @@ msgstr[1] "تابش عکس"
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for faces: %1\n"
+msgstr "جستجو در:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for faces: %1\n"
+msgstr "جستجو در:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
@@ -67109,6 +67038,56 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgid "Applying face changes"
+#~ msgstr "تغییرات اعمال شود؟"
+
+#, fuzzy
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "حالت اندازه‌گیری:"
+
+#, fuzzy
+#~ msgid "Keywords: %1"
+#~ msgstr "فراداده"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "جستجو در:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "جستجو در:"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Faces processed: %1"
+#~ msgstr "تصاویر در %1 یافت شدند"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Face processed: %1"
+#~ msgstr "تصاویر در %1 یافت شدند"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "جستجو در:"
+
+#, fuzzy
+#~ msgid "No face"
+#~ msgstr "تابش عکس"
+
+#, fuzzy
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "تابش عکس"
+#~ msgstr[1] "تابش عکس"
 
 #, fuzzy
 #~| msgctxt "@label"

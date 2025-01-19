@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3131,7 +3131,7 @@ msgstr "Täisekraanirežiim"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3167,12 +3167,12 @@ msgstr "Kaart"
 msgid "Labels"
 msgstr "Pealdised"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Uuri kogu nägusid"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -3180,14 +3180,14 @@ msgid "Use this button to scan the selected albums for faces"
 msgstr ""
 "Selle nupuga saab topeltelementide leidmiseks läbi uurida valitud albumid."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3196,7 +3196,7 @@ msgstr ""
 "Näotuvastusest loobuti, sest polnud ühtegi identiteeti, mida tuvastada. "
 "Palun lisa uusi identiteete."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3353,7 +3353,7 @@ msgstr ""
 "virtuaalsesse otsingualbumisse, kasutades vasakul määratud nime."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Ajatelg"
@@ -3391,22 +3391,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Visandiga sarnasusotsing"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Pildi sarnasusotsing"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Kaardiotsing"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -12204,7 +12204,6 @@ msgstr "Kaks kaarti kõrvuti"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -29389,7 +29388,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Kustuta album"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -29397,54 +29396,54 @@ msgstr "Kustuta album"
 msgid "Expand Selected Nodes"
 msgstr "Ava valitud sõlmed"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Expand all Albums"
 msgstr "Albumi kopeerimine"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Keri valitud rekursiivselt kokku"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Collapse all Albums"
 msgstr "Albumi kopeerimine"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Topeltpiltide otsimine..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Uuri nägusid"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Peidetud elementide parandamine"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Uuenda"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Uuri nägusid"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Kas uurida läbi ka alamalbumid?"
@@ -41724,7 +41723,6 @@ msgid "Miscellaneous"
 msgstr "Muu"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -56160,11 +56158,6 @@ msgstr "Eemalda see silt"
 msgid "Manually adding face"
 msgstr "Käsitsi ja nime järgi"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "Näomuudatuste rakendamine"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -65805,7 +65798,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65814,7 +65807,7 @@ msgstr ""
 "Kõik toimingud on tehtud.\n"
 "Kestus: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKami hooldus"
@@ -65827,41 +65820,6 @@ msgid ""
 msgstr ""
 "Protsess on sooritatud.\n"
 "Kestus: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tags for: %1\n"
-msgstr "Mõõterežiim:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "Sat. arv: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgid "Keywords"
-msgid "Keywords: %1"
-msgstr "Võtmesõnad"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Items scanned for auto-tags: %1"
-msgstr "Otsing albumites:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Item scanned for auto-tags: %1"
-msgstr "Otsing albumites:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -65990,6 +65948,13 @@ msgstr "Topeltelementide otsimine"
 msgid "Duplicates for: %1\n"
 msgstr "Topeltpildid"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "Sat. arv: %1"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
@@ -66030,7 +65995,6 @@ msgstr "Topeltpildid"
 msgid "Duplicate found: %1"
 msgstr "Topeltpildid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -66038,7 +66002,6 @@ msgstr "Topeltpildid"
 msgid "Scan for faces in album: %1"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -66046,75 +66009,23 @@ msgstr "Otsing albumites:"
 msgid "Scan for faces in %1 albums"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Nägude andmebaasi uuendamine."
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Items scanned for faces: %1\n"
-msgstr "Otsing albumites:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Item scanned for faces: %1\n"
-msgstr "Otsing albumites:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Faces processed: %1"
-msgstr "Leiti pildid asukohas %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Face processed: %1"
-msgstr "Leiti pildid asukohas %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
-msgid "Scanned for faces: %1\n"
-msgstr "Otsing albumites:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, fuzzy, kde-format
-#| msgid "No flash"
-msgid "No face"
-msgstr "Välku ei kasutatud"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, fuzzy, kde-format
-#| msgid "No flash"
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "Välku ei kasutatud"
-msgstr[1] "Välku ei kasutatud"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -66123,6 +66034,20 @@ msgstr[1] "Välku ei kasutatud"
 #| msgid "Enable face detection"
 msgid "Error starting face detection."
 msgstr "Näotuvastuse lubamine"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Items scanned for faces: %1\n"
+msgstr "Otsing albumites:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in albums:"
+msgid "Item scanned for faces: %1\n"
+msgstr "Otsing albumites:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
@@ -72943,6 +72868,59 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#~ msgid "Applying face changes"
+#~ msgstr "Näomuudatuste rakendamine"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Mõõterežiim:"
+
+#, fuzzy
+#~| msgid "Keywords"
+#~ msgid "Keywords: %1"
+#~ msgstr "Võtmesõnad"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Otsing albumites:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Otsing albumites:"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Faces processed: %1"
+#~ msgstr "Leiti pildid asukohas %1"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Face processed: %1"
+#~ msgstr "Leiti pildid asukohas %1"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in albums:"
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Otsing albumites:"
+
+#, fuzzy
+#~| msgid "No flash"
+#~ msgid "No face"
+#~ msgstr "Välku ei kasutatud"
+
+#, fuzzy
+#~| msgid "No flash"
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "Välku ei kasutatud"
+#~ msgstr[1] "Välku ei kasutatud"
 
 #, fuzzy
 #~| msgctxt "@label"

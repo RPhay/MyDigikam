@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-18 12:44+0000\n"
+"POT-Creation-Date: 2025-01-19 01:52+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2930,7 +2930,7 @@ msgstr "Έμφάνιση πλήρους οθόνης"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2966,12 +2966,12 @@ msgstr "Χάρτης"
 msgid "Labels"
 msgstr "Τίτλοι"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:123
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Αναζήτηση για πρόσωπα"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -2980,7 +2980,7 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2990,7 +2990,7 @@ msgstr ""
 "πρώτη φορά αυτή τη λειτουργία, παρακαλούμε χρησιμοποιήστε το πλαίσιο "
 "βοήθειας στον κάτω αριστερό πλευρικό πίνακα."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:214
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2999,7 +2999,7 @@ msgstr ""
 "Η αναγνώριση προσώπου διακόπτεται, επειδή δεν υπάρχουν ταυτότητες προς "
 "αναγνώριση. Παρακαλώ προσθέστε νέες ταυτότητες."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:234
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3159,7 +3159,7 @@ msgstr ""
 "στην αριστερή πλευρά."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Χρονοδιάγραμμα"
@@ -3198,22 +3198,22 @@ msgstr ""
 "Το τρέχον ερώτημα από τη βάση δεδομένων δεν επέστρεψε αποτελέσματα. Αλλάξτε "
 "τις ρυθμίσεις αναζήτησης ή επιλέξτε ένα άλμπουμ με περιεχόμενο."
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Ασαφής αναζήτηση σκίτσου"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Ασαφής αναζήτηση εικόνας"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Αναζήτηση χάρτη"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1178
 #, kde-format
 msgid "Last Search"
@@ -11812,7 +11812,6 @@ msgstr "Δύο χάρτες - οριζόντια"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:67
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -29017,7 +29016,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Τίτλοι λευκώματος"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:201
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
 #: core/libs/tags/manager/tagsmanager.cpp:736
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -29025,56 +29024,56 @@ msgstr "Τίτλοι λευκώματος"
 msgid "Expand Selected Nodes"
 msgstr "Επέκταση επιλεγμένων κόμβων"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:204
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Expand all Albums"
 msgstr "Αντιγραφή λευκωμάτων..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:207
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Αναδρομική σύμπτυξη επιλεγμένων"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:210
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse all Albums"
 msgstr "Αντιγραφή λευκωμάτων..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:213
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Αναζήτηση διπλών εμφανίσεων..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Separate Items"
 msgid "Repair hidden Items"
 msgstr "Διαχωρισμός αντικειμένων"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Ανανέωση"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:292
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -41592,7 +41591,6 @@ msgid "Miscellaneous"
 msgstr "Διάφορα"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:104
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -55909,11 +55907,6 @@ msgstr "Αφαίρεση αυτής της ετικέτας"
 msgid "Manually adding face"
 msgstr "Κατά Χειροκίνητα και Όνομα"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
-#, kde-format
-msgid "Applying face changes"
-msgstr "Εφαρμογή αλλαγών προσώπου"
-
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #: core/utilities/imageeditor/editor/editorwindow.cpp:563
@@ -65580,7 +65573,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65589,7 +65582,7 @@ msgstr ""
 "Όλες οι λειτουργίες ολοκληρώθηκαν.\n"
 "Διάρκεια: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Συντήρηση digiKam"
@@ -65602,41 +65595,6 @@ msgid ""
 msgstr ""
 "Η επεξεργασία ολοκληρώθηκε.\n"
 "Διάρκεια: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:190
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tags for: %1\n"
-msgstr "Λειτουργία μέτρησης:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:191
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:542
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "#Δορ: %1"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:192
-#, fuzzy, kde-format
-#| msgid "Keywords"
-msgid "Keywords: %1"
-msgstr "Λέξεις κλειδιά"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Items scanned for auto-tags: %1"
-msgstr "Αναζήτηση σε:"
-
-#: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Item scanned for auto-tags: %1"
-msgstr "Αναζήτηση σε:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
@@ -65768,6 +65726,13 @@ msgstr "Αναζήτηση διπλών αντικειμένων"
 msgid "Duplicates for: %1\n"
 msgstr "Διπλές εμφανίσεις"
 
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgid "Path: %1\n"
+msgstr "#Δορ: %1"
+
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
@@ -65808,7 +65773,6 @@ msgstr "Διπλές εμφανίσεις"
 msgid "Duplicate found: %1"
 msgstr "Διπλές εμφανίσεις"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:300
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -65816,7 +65780,6 @@ msgstr "Διπλές εμφανίσεις"
 msgid "Scan for faces in album: %1"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:304
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -65824,75 +65787,23 @@ msgstr "Αναζήτηση σε:"
 msgid "Scan for faces in %1 albums"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:311
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:316
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "Αναζήτηση νέων εικόνων"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:321
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Ενημέρωση βάσης δεδομένων προσώπων σε εξέλιξη."
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:496
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Items scanned for faces: %1\n"
-msgstr "Αναζήτηση σε:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:500
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Item scanned for faces: %1\n"
-msgstr "Αναζήτηση σε:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:505
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Faces processed: %1"
-msgstr "Βρέθηκαν εικόνες στο %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:509
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "Face processed: %1"
-msgstr "Βρέθηκαν εικόνες στο %1"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:541
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in:"
-msgid "Scanned for faces: %1\n"
-msgstr "Αναζήτηση σε:"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:546
-#, fuzzy, kde-format
-#| msgid "No flash"
-msgid "No face"
-msgstr "Χωρίς φλας"
-
-#: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:550
-#, fuzzy, kde-format
-#| msgid "No flash"
-msgid "1 face"
-msgid_plural "%1 faces"
-msgstr[0] "Χωρίς φλας"
-msgstr[1] "Χωρίς φλας"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
@@ -65901,6 +65812,20 @@ msgstr[1] "Χωρίς φλας"
 #| msgid "Enable face detection"
 msgid "Error starting face detection."
 msgstr "Ενεργοποίηση ανίχνευσης προσώπων"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Items scanned for faces: %1\n"
+msgstr "Αναζήτηση σε:"
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Search in:"
+msgid "Item scanned for faces: %1\n"
+msgstr "Αναζήτηση σε:"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
 #, fuzzy, kde-format
@@ -72930,6 +72855,59 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#~ msgid "Applying face changes"
+#~ msgstr "Εφαρμογή αλλαγών προσώπου"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tags for: %1\n"
+#~ msgstr "Λειτουργία μέτρησης:"
+
+#, fuzzy
+#~| msgid "Keywords"
+#~ msgid "Keywords: %1"
+#~ msgstr "Λέξεις κλειδιά"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Items scanned for auto-tags: %1"
+#~ msgstr "Αναζήτηση σε:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Item scanned for auto-tags: %1"
+#~ msgstr "Αναζήτηση σε:"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Faces processed: %1"
+#~ msgstr "Βρέθηκαν εικόνες στο %1"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "Face processed: %1"
+#~ msgstr "Βρέθηκαν εικόνες στο %1"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Search in:"
+#~ msgid "Scanned for faces: %1\n"
+#~ msgstr "Αναζήτηση σε:"
+
+#, fuzzy
+#~| msgid "No flash"
+#~ msgid "No face"
+#~ msgstr "Χωρίς φλας"
+
+#, fuzzy
+#~| msgid "No flash"
+#~ msgid "1 face"
+#~ msgid_plural "%1 faces"
+#~ msgstr[0] "Χωρίς φλας"
+#~ msgstr[1] "Χωρίς φλας"
 
 #, fuzzy
 #~| msgctxt "@label"
