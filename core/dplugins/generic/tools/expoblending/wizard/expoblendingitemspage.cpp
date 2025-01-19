@@ -80,10 +80,10 @@ ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-stack.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
-    connect(d->mngr->thread(), SIGNAL(starting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signalStarting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
-    connect(d->mngr->thread(), SIGNAL(finished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signalFinished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
     connect(d->list, SIGNAL(signalAddItems(QList<QUrl>)),

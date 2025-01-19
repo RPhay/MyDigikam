@@ -64,8 +64,8 @@ public:
 
 Q_SIGNALS:
 
-    void starting(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad);
-    void finished(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad);
+    void signalStarting(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad);
+    void signalFinished(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad);
 
 private:
 

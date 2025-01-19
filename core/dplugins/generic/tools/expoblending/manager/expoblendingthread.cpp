@@ -334,7 +334,7 @@ void ExpoBlendingThread::run()
                     ad.message = avLum.isEmpty() ? i18nc("average scene luminance value unknown", "unknown") : avLum;
                     ad.success = avLum.isEmpty();
 
-                    Q_EMIT finished(ad);
+                    Q_EMIT signalFinished(ad);
 
                     break;
                 }
@@ -346,7 +346,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
 
-                    Q_EMIT starting(ad1);
+                    Q_EMIT signalStarting(ad1);
 
                     QString errors;
 
@@ -359,7 +359,7 @@ void ExpoBlendingThread::run()
                     ad2.success             = result;
                     ad2.message             = errors;
 
-                    Q_EMIT finished(ad2);
+                    Q_EMIT signalFinished(ad2);
 
                     break;
                 }
@@ -371,7 +371,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
 
-                    Q_EMIT starting(ad1);
+                    Q_EMIT signalStarting(ad1);
 
                     QImage image;
                     bool result  = image.load(t->urls[0].toLocalFile());
@@ -392,7 +392,7 @@ void ExpoBlendingThread::run()
                     ad2.success        = result;
                     ad2.image          = image;
 
-                    Q_EMIT finished(ad2);
+                    Q_EMIT signalFinished(ad2);
 
                     break;
                 }
@@ -405,7 +405,7 @@ void ExpoBlendingThread::run()
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
 
-                    Q_EMIT starting(ad1);
+                    Q_EMIT signalStarting(ad1);
 
                     QString errors;
                     QUrl    destUrl         = t->outputUrl;
@@ -444,7 +444,7 @@ void ExpoBlendingThread::run()
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
 
-                    Q_EMIT finished(ad2);
+                    Q_EMIT signalFinished(ad2);
 
                     break;
                 }
@@ -457,7 +457,7 @@ void ExpoBlendingThread::run()
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
 
-                    Q_EMIT starting(ad1);
+                    Q_EMIT signalStarting(ad1);
 
                     QString errors;
                     QUrl destUrl = t->outputUrl;
@@ -503,7 +503,7 @@ void ExpoBlendingThread::run()
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
 
-                    Q_EMIT finished(ad2);
+                    Q_EMIT signalFinished(ad2);
 
                     break;
                 }

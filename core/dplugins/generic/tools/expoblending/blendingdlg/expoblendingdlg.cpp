@@ -233,10 +233,10 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     connect(d->buttonBox, &QDialogButtonBox::rejected,
             this, &ExpoBlendingDlg::slotCloseClicked);
 
-    connect(d->mngr->thread(), SIGNAL(starting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signakStarting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
-    connect(d->mngr->thread(), SIGNAL(finished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signalFinished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
     connect(d->bracketStack, SIGNAL(signalAddItems(QList<QUrl>)),

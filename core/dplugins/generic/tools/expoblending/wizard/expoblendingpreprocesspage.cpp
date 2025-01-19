@@ -105,7 +105,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
     QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-preprocessing.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
-    connect(d->mngr->thread(), SIGNAL(starting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signalStarting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
     connect(d->progressTimer, SIGNAL(timeout()),
@@ -151,7 +151,7 @@ void ExpoBlendingPreProcessPage::process()
     d->alignCheckBox->hide();
     d->progressTimer->start(300);
 
-    connect(d->mngr->thread(), SIGNAL(finished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    connect(d->mngr->thread(), SIGNAL(signalFinished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
             this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
     d->mngr->thread()->setPreProcessingSettings(d->alignCheckBox->isChecked());
@@ -165,7 +165,7 @@ void ExpoBlendingPreProcessPage::process()
 
 void ExpoBlendingPreProcessPage::cancel()
 {
-    disconnect(d->mngr->thread(), SIGNAL(finished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
+    disconnect(d->mngr->thread(), SIGNAL(signalFinished(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),
                this, SLOT(slotExpoBlendingAction(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)));
 
     d->mngr->thread()->cancel();
