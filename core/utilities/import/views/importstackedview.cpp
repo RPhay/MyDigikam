@@ -161,10 +161,10 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     connect(d->importPreviewView, SIGNAL(signalAddToExistingQueue(int)),
             this, SIGNAL(signalAddToExistingQueue(int)));
 */
-    connect(d->thumbBar, SIGNAL(selectionChanged()),
+    connect(d->thumbBar, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotThumbBarSelectionChanged()));
 
-    connect(d->importIconView, SIGNAL(selectionChanged()),
+    connect(d->importIconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotIconViewSelectionChanged()));
 
     connect(d->thumbBarDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),

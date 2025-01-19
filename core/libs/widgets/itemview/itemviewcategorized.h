@@ -104,9 +104,9 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * Emitted when any selection change occurs. Any of the signals below will be emitted before.
+     * Emitted when any item selection change occurs. Any of the signals below will be emitted before.
      */
-    void selectionChanged();
+    void itemSelectionChanged();
 
     /**
      * Emitted when the selection is completely cleared.

@@ -223,7 +223,7 @@ void TrashView::slotSelectionChanged()
         d->deleteAction->setEnabled(false);
     }
 
-    Q_EMIT selectionChanged();
+    Q_EMIT itemSelectionChanged();
 }
 
 void TrashView::slotUndoLastDeletedItems()
@@ -438,7 +438,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
     d->lastSelectedIndex = curr;
     d->lastSelectedItem  = d->model->itemForIndex(curr);
 
-    Q_EMIT selectionChanged();
+    Q_EMIT itemSelectionChanged();
 }
 
 void TrashView::slotContextMenuEmptyTrash(const QPoint& pos)
@@ -493,7 +493,7 @@ void TrashView::selectLastSelected()
         d->tableView->scrollTo(d->lastSelectedIndex, QAbstractItemView::EnsureVisible);
     }
 
-    Q_EMIT selectionChanged();
+    Q_EMIT itemSelectionChanged();
 }
 
 QString TrashView::statusBarText() const

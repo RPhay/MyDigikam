@@ -319,7 +319,7 @@ void ItemIconView::setupConnections()
     connect(d->iconView->itemModel(), SIGNAL(allRefreshingFinished()),
             d->msgNotifyTimer, SLOT(start()));
 
-    connect(d->iconView, SIGNAL(selectionChanged()),
+    connect(d->iconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotImageSelected()));
 
     connect(d->iconView, SIGNAL(previewRequested(ItemInfo)),
@@ -365,7 +365,7 @@ void ItemIconView::setupConnections()
 
     // -- Trash View Connections ----------------------------------
 
-    connect(d->trashView, SIGNAL(selectionChanged()),
+    connect(d->trashView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotImageSelected()));
 
     // -- Sidebar Connections -------------------------------------

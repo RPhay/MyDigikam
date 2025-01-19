@@ -185,10 +185,10 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->imagePreviewView, SIGNAL(signalAddToExistingQueue(int)),
             this, SIGNAL(signalAddToExistingQueue(int)));
 
-    connect(d->thumbBar, SIGNAL(selectionChanged()),
+    connect(d->thumbBar, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotThumbBarSelectionChanged()));
 
-    connect(d->imageIconView, SIGNAL(selectionChanged()),
+    connect(d->imageIconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotIconViewSelectionChanged()));
 
     connect(d->thumbBarDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),

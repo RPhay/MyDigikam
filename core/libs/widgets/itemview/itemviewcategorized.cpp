@@ -453,7 +453,7 @@ void ItemViewCategorized::reset()
     // FIXME : Emitting this causes a crash importstackedview, because the model is not yet set.
     //         atm there's a check against null models though.
 
-    Q_EMIT selectionChanged();
+    Q_EMIT itemSelectionChanged();
     Q_EMIT selectionCleared();
 
     d->ensureInitialSelectedItem = d->initialSelectedItem;
@@ -468,7 +468,7 @@ void ItemViewCategorized::selectionChanged(const QItemSelection& selectedItems, 
 {
     DCategorizedView::selectionChanged(selectedItems, deselectedItems);
 
-    Q_EMIT selectionChanged();
+    Q_EMIT itemSelectionChanged();
 
     if (!selectionModel()->hasSelection())
     {

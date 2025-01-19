@@ -190,7 +190,7 @@ void ImportView::setupConnections()
     connect(d->iconView->model(), SIGNAL(layoutChanged()),
             this, SLOT(slotImageSelected()));
 
-    connect(d->iconView, SIGNAL(selectionChanged()),
+    connect(d->iconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotImageSelected()));
 
     connect(d->iconView, SIGNAL(previewRequested(CamItemInfo,bool)),
