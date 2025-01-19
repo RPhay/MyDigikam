@@ -195,7 +195,7 @@ void AutotagsScanWidget::setupUi()
 
     // --- Signals -----------------------------------------------------------------------------------
 
-    connect(d->albumSelectors, SIGNAL(signalSelectionChanged(int)),
+    connect(d->albumSelectors, SIGNAL(signalSelectionChanged()),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->objectDetectModel, SIGNAL(currentIndexChanged(int)),
