@@ -444,7 +444,7 @@ void DNotificationPopup::setAutoDelete(bool autoDelete)
 void DNotificationPopup::mouseReleaseEvent(QMouseEvent* e)
 {
     Q_EMIT clicked();
-    Q_EMIT clicked(e->pos());
+    Q_EMIT clickedAt(e->pos());
 }
 
 void DNotificationPopup::setVisible(bool visible)

@@ -311,9 +311,9 @@ Q_SIGNALS:
     void clicked();
 
     /**
-     * Emitted when the popup is clicked.
+     * Emitted when the popup is clicked at a specific position.
      */
-    void clicked(const QPoint& pos);
+    void clickedAt(const QPoint& pos);
 
 protected:
 
