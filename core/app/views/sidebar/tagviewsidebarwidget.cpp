@@ -214,6 +214,8 @@ void TagViewSideBarWidget::doLoadState()
 
     d->tagFolderView->loadState();
     d->tagFolderView->setDisabled(noTagsBtnWasChecked);
+
+    d->settingsWdg->loadState();
 }
 
 void TagViewSideBarWidget::doSaveState()
@@ -224,6 +226,8 @@ void TagViewSideBarWidget::doSaveState()
     group.writeEntry(d->autotagsExpander->objectName(), d->autotagsExpander->isExpanded());
 
     d->tagFolderView->saveState();
+
+    d->settingsWdg->saveState();
 
     group.sync();
 }
@@ -302,7 +306,6 @@ void TagViewSideBarWidget::slotScanForAutotags()
     AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
 
     doAutotagsScan(autotagsScanSettings);
-        
 
     // AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
 
