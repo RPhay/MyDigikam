@@ -192,7 +192,7 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     : AlbumTreeView(parent),
       d            (new Private)
 {
-    setAlbumModel(model);
+    setPAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
 

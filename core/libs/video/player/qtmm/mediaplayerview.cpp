@@ -747,7 +747,7 @@ void MediaPlayerView::slotCapture()
 
             QTransform transform;
             transform.rotate(d->videoOrientation);
-            image = std::move(image.transformed(transform));
+            image = image.transformed(transform);
 
             QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
                               .arg(info.path())

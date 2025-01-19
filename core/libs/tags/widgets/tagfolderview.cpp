@@ -58,7 +58,7 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     : TagTreeView(parent),
       d          (new Private)
 {
-    setAlbumModel(model);
+    setTAlbumModel(model);
 
     d->resetIconAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Reset Tag Icon"),     this);
     d->findDuplAction  = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")), i18n("Find Duplicates..."), this);
