@@ -39,10 +39,10 @@ public:
 
 Q_SIGNALS:
 
-    void starting(const QUrl& url);
-    void finished(const QUrl& url);
-    void failed(const QUrl& url, const QString& err);
-    void progress(const QUrl& url, int percent);
+    void signalStarting(const QUrl& url);
+    void signalFinished(const QUrl& url);
+    void signalFailed(const QUrl& url, const QString& err);
+    void signalProgress(const QUrl& url, int percent);
 
 private Q_SLOTS:
 

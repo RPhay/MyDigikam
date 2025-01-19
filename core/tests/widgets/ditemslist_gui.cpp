@@ -43,6 +43,8 @@ public:
     {
     }
 
+public:
+
     QString errString;
     QUrl    fileUrl;
 
@@ -141,11 +143,11 @@ void ActionThread::slotJobDone()
 
     if (task->errString.isEmpty())
     {
-        Q_EMIT finished(task->fileUrl);
+        Q_EMIT signalFinished(task->fileUrl);
     }
     else
     {
-        Q_EMIT failed(task->fileUrl, task->errString);
+        Q_EMIT signalFailed(task->fileUrl, task->errString);
     }
 }
 
@@ -154,7 +156,7 @@ void ActionThread::slotJobProgress(int p)
     Task* const task = dynamic_cast<Task*>(sender());
     if (!task) return;
 
-    Q_EMIT progress(task->fileUrl, p);
+    Q_EMIT signalProgress(task->fileUrl, p);
 }
 
 void ActionThread::slotJobStarted()
@@ -162,7 +164,7 @@ void ActionThread::slotJobStarted()
     Task* const task = dynamic_cast<Task*>(sender());
     if (!task) return;
 
-    Q_EMIT starting(task->fileUrl);
+    Q_EMIT signalStarting(task->fileUrl);
 }
 
 // ----------------------------------------------------------
@@ -180,6 +182,8 @@ public:
         listView    = nullptr;
         thread      = nullptr;
     }
+
+public:
 
     QWidget*          page;
 
@@ -233,13 +237,13 @@ DItemsListTest::DItemsListTest(QWidget* const parent)
     connect(d->buttons->button(QDialogButtonBox::Close), &QPushButton::clicked,
             this, &DItemsListTest::close);
 
-    connect(d->thread, &ActionThread::starting,
+    connect(d->thread, &ActionThread::signalStarting,
             this, &DItemsListTest::slotStarting);
 
-    connect(d->thread, &ActionThread::finished,
+    connect(d->thread, &ActionThread::signalFinished,
             this, &DItemsListTest::slotFinished);
 
-    connect(d->thread, &ActionThread::failed,
+    connect(d->thread, &ActionThread::signalFailed,
             this, &DItemsListTest::slotFailed);
 }
 
@@ -253,7 +257,9 @@ void DItemsListTest::slotStart()
     QList<QUrl> selectedImages = d->listView->imageUrls();
 
     if (selectedImages.isEmpty())
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_TESTS_LOG) << selectedImages;
     d->progressBar->setMaximum(selectedImages.count());
@@ -291,6 +297,7 @@ int main(int argc, char* argv[])
     view->show();
     app.exec();
     delete view;
+
     return 0;
 }
 
