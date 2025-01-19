@@ -118,7 +118,7 @@ BUGFIXES:
 076 ==> 497832 - digiKam 8.5.0-Qt6 Win64 crashes on startup.
 077 ==> 498650 - Avif file fails to load, but loads after renaming the same file to `.heif`.
 078 ==> 498707 - Build failed with : dconfigdlgmodels.cpp:685:23: error: no matching function for call to ‘createIndex(int, int, const void*).
-079 ==>
+079 ==> 498830 - Drag/Drop from thumbnail view to Album tree seems to be inoperative.
 080 ==>
 081 ==>
 082 ==>

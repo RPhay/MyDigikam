@@ -51,7 +51,7 @@ EditableSearchTreeView::EditableSearchTreeView(QWidget* const parent,
     : SearchTreeView(parent),
       d             (new Private)
 {
-    setAlbumModel(searchModel);
+    setSAlbumModel(searchModel);
     d->searchModificationHelper = searchModificationHelper;
 
     d->renameSearchAction       = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18n("Rename..."), this);
