@@ -470,7 +470,7 @@ void AlbumLabelsSearchHandler::imagesUrlsForCurrentAlbum()
 
     d->dbJobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
 
-    connect(d->dbJobThread, SIGNAL(finished()),
+    connect(d->dbJobThread, SIGNAL(signalFinished()),
             this, SLOT(slotResult()));
 
     connect(d->dbJobThread, SIGNAL(data(QList<ItemListerRecord>)),

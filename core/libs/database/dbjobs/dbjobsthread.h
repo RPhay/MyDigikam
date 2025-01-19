@@ -72,7 +72,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void finished();
+    void signalFinished();
     void data(const QList<ItemListerRecord>& records);
 
 private:

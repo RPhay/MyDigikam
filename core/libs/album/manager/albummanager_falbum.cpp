@@ -45,7 +45,7 @@ void AlbumManager::personItemsCount()
 
     d->personListJob = DBJobsManager::instance()->startTagsJobThread(jInfo);
 
-    connect(d->personListJob, SIGNAL(finished()),
+    connect(d->personListJob, SIGNAL(signalFinished()),
             this, SLOT(slotPeopleJobResult()));
 
     connect(d->personListJob, SIGNAL(faceFoldersData(QMap<QString,QHash<int,int> >)),    // krazy:exclude=normalize

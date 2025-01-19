@@ -106,7 +106,7 @@ void ItemInfoJob::allItemsFromAlbum(Album* const album)
         d->jobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
     }
 
-    connect(d->jobThread, SIGNAL(finished()),
+    connect(d->jobThread, SIGNAL(signalFinished()),
             this, SLOT(slotResult()));
 
     connect(d->jobThread, SIGNAL(data(QList<ItemListerRecord>)),

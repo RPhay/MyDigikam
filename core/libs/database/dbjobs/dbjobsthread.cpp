@@ -42,7 +42,7 @@ QList<QString>& DBJobsThread::errorsList()
 void DBJobsThread::connectFinishAndErrorSignals(DBJob* const j)
 {
     connect(j, SIGNAL(signalDone()),
-            this, SIGNAL(finished()));
+            this, SIGNAL(signalFinished()));
 
     connect(j, SIGNAL(error(QString)),
             this, SLOT(error(QString)));
@@ -284,7 +284,7 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
 
     HaarIface::rebuildDuplicatesAlbums(m_results, m_isAlbumUpdate);
 
-    Q_EMIT finished();
+    Q_EMIT signalFinished();
 }
 
 } // namespace Digikam

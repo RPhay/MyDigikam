@@ -148,7 +148,7 @@ void DuplicatesFinder::slotStart()
 
     d->job = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
 
-    connect(d->job, SIGNAL(finished()),
+    connect(d->job, SIGNAL(signalFinished()),
             this, SLOT(slotDone()));
 
     connect(d->job, SIGNAL(signalProgress(int,ItemInfo,QImage,int)),

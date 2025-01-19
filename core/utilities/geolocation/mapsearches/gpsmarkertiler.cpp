@@ -250,7 +250,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
 
     d->jobs.append(currentJobInfo);
 
-    connect(currentJob, SIGNAL(finished()),
+    connect(currentJob, SIGNAL(signalFinished()),
             this, SLOT(slotMapImagesJobResult()));
 
     connect(currentJob, SIGNAL(data(QList<ItemListerRecord>)),

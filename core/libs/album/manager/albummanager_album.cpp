@@ -227,7 +227,7 @@ void AlbumManager::getAlbumItemsCount()
     jInfo.setFoldersJob();
     d->albumListJob = DBJobsManager::instance()->startAlbumsJobThread(jInfo);
 
-    connect(d->albumListJob, SIGNAL(finished()),
+    connect(d->albumListJob, SIGNAL(signalFinished()),
             this, SLOT(slotAlbumsJobResult()));
 
     connect(d->albumListJob, SIGNAL(foldersData(QHash<int,int>)),

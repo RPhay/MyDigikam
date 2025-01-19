@@ -200,7 +200,7 @@ void AlbumManager::tagItemsCount()
 
     d->tagListJob = DBJobsManager::instance()->startTagsJobThread(jInfo);
 
-    connect(d->tagListJob, SIGNAL(finished()),
+    connect(d->tagListJob, SIGNAL(signalFinished()),
             this, SLOT(slotTagsJobResult()));
 
     connect(d->tagListJob, SIGNAL(foldersData(QHash<int,int>)),

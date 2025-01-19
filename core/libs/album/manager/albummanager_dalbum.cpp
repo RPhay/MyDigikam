@@ -35,7 +35,7 @@ void AlbumManager::scanDAlbums()
     jInfo.setFoldersJob();
     d->dateListJob = DBJobsManager::instance()->startDatesJobThread(jInfo);
 
-    connect(d->dateListJob, SIGNAL(finished()),
+    connect(d->dateListJob, SIGNAL(signalFinished()),
             this, SLOT(slotDatesJobResult()));
 
     connect(d->dateListJob, SIGNAL(foldersData(QHash<QDateTime,int>)),
