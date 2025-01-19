@@ -73,7 +73,7 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage,int)),
+    connect(d->thread, SIGNAL(signalAdvanceProgress(ItemInfo,QImage,int)),
             this, SLOT(slotAdvance(ItemInfo,QImage,int)));
 }
 

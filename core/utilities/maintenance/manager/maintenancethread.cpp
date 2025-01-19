@@ -80,7 +80,7 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
         t->setDirection(dir);
         t->setMaintenanceData(data);
 
-        connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
+        connect(t, SIGNAL(signalFinishedInfo(ItemInfo,QImage)),
                 this, SIGNAL(signalAdvance(ItemInfo,QImage)));
 
         connect(t, SIGNAL(signalRemovePending(ItemInfo)),
@@ -107,7 +107,7 @@ void MaintenanceThread::removeMetadata(const ItemInfoList& items, MetadataRemove
         t->setMaintenanceData(data);
 
         connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
+                this, SIGNAL(signalAdvanceInfo(ItemInfo,QImage)));
 
         collection.insert(t, 0);
 
@@ -130,7 +130,7 @@ void MaintenanceThread::generateThumbs(const QStringList& paths)
         t->setMaintenanceData(data);
 
         connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
+                this, SIGNAL(signalAdvanceInfo(ItemInfo,QImage)));
 
         collection.insert(t, 0);
 
@@ -154,7 +154,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
         t->setRebuildAll(rebuildAll);
 
         connect(t, SIGNAL(signalFinished(ItemInfo,QImage)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage)));
+                this, SIGNAL(signalAdvanceInfo(ItemInfo,QImage)));
 
         collection.insert(t, 0);
 
@@ -181,7 +181,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
 //         t->setLanguages(langs);
 
 //         connect(t, SIGNAL(signalFinished(ItemInfo,QImage,QStringList)),
-//                 this, SIGNAL(signalAdvance(ItemInfo,QImage,QStringList)));
+//                 this, SIGNAL(signalAdvanceList(ItemInfo,QImage,QStringList)));
 
 //         collection.insert(t, 0);
 
@@ -204,7 +204,7 @@ void MaintenanceThread::sortByImageQuality(const QStringList& paths, const Image
         t->setMaintenanceData(data);
 
         connect(t, SIGNAL(signalFinished(ItemInfo,QImage,int)),
-                this, SIGNAL(signalAdvance(ItemInfo,QImage,int)));
+                this, SIGNAL(signalAdvanceProgress(ItemInfo,QImage,int)));
 
         connect(this, SIGNAL(signalCanceled()),
                 t, SLOT(slotCancel()), Qt::QueuedConnection);

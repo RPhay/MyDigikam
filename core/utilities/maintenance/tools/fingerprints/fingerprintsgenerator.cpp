@@ -66,7 +66,7 @@ FingerPrintsGenerator::FingerPrintsGenerator(const bool rebuildAll, const AlbumL
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
-    connect(d->thread, SIGNAL(signalAdvance(ItemInfo,QImage)),
+    connect(d->thread, SIGNAL(signalAdvanceInfo(ItemInfo,QImage)),
             this, SLOT(slotAdvance(ItemInfo,QImage)));
 }
 
