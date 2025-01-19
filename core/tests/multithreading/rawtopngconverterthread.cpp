@@ -37,6 +37,8 @@ public:
     {
     }
 
+public:
+
     DRawDecoderSettings settings;
     QString             errString;
     QUrl                fileUrl;
@@ -161,11 +163,11 @@ void RAWToPNGConverterThread::slotJobDone()
 
     if (task->errString.isEmpty())
     {
-        Q_EMIT finished(task->fileUrl);
+        Q_EMIT signalFinished(task->fileUrl);
     }
     else
     {
-        Q_EMIT failed(task->fileUrl, task->errString);
+        Q_EMIT signalFailed(task->fileUrl, task->errString);
     }
 }
 
@@ -178,7 +180,7 @@ void RAWToPNGConverterThread::slotJobProgress(int p)
         return;
     }
 
-    Q_EMIT progress(task->fileUrl, p);
+    Q_EMIT signalProgress(task->fileUrl, p);
 }
 
 void RAWToPNGConverterThread::slotJobStarted()
@@ -190,7 +192,7 @@ void RAWToPNGConverterThread::slotJobStarted()
         return;
     }
 
-    Q_EMIT starting(task->fileUrl);
+    Q_EMIT signalStarting(task->fileUrl);
 }
 
 #include "rawtopngconverterthread.moc"

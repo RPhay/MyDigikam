@@ -49,6 +49,8 @@ public:
     {
     }
 
+public:
+
     int                      count;
 
     QWidget*                 page;
@@ -134,16 +136,16 @@ ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
     connect(cancelBtn, SIGNAL(clicked()),
             this, SLOT(slotStop()));
 
-    connect(d->thread, SIGNAL(starting(QUrl)),
+    connect(d->thread, SIGNAL(signalStarting(QUrl)),
             this, SLOT(slotStarting(QUrl)));
 
-    connect(d->thread, SIGNAL(finished(QUrl)),
+    connect(d->thread, SIGNAL(signalFinished(QUrl)),
             this, SLOT(slotFinished(QUrl)));
 
-    connect(d->thread, SIGNAL(failed(QUrl,QString)),
+    connect(d->thread, SIGNAL(signalFailed(QUrl,QString)),
             this, SLOT(slotFailed(QUrl,QString)));
 
-    connect(d->thread, SIGNAL(progress(QUrl,int)),
+    connect(d->thread, SIGNAL(signalProgress(QUrl,int)),
             this, SLOT(slotProgress(QUrl,int)));
 
     updateCount();
