@@ -149,7 +149,7 @@ Q_SIGNALS:
      * This signal is emitted whenever the current page changes.
      * The previous page index is replaced by the current index.
      */
-    void currentPageChanged(const QModelIndex& current, const QModelIndex& previous);
+    void signalCurrentPageChanged(const QModelIndex& current, const QModelIndex& previous);
 
 protected:
 

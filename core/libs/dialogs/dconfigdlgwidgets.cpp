@@ -61,7 +61,7 @@ DConfigDlgWdg::DConfigDlgWdg(DConfigDlgWdgPrivate& dd, QWidget* const parent)
 {
     Q_D(DConfigDlgWdg);
 
-    connect(this, SIGNAL(currentPageChanged(QModelIndex,QModelIndex)),
+    connect(this, SIGNAL(signalCurrentPageChanged(QModelIndex,QModelIndex)),
             this, SLOT(_k_slotCurrentPageChanged(QModelIndex,QModelIndex)));
 
     if (!d->DConfigDlgViewPrivate::model)
@@ -82,7 +82,7 @@ DConfigDlgWdg::DConfigDlgWdg(QWidget* const parent)
 {
     Q_D(DConfigDlgWdg);
 
-    connect(this, SIGNAL(currentPageChanged(QModelIndex,QModelIndex)),
+    connect(this, SIGNAL(signalCurrentPageChanged(QModelIndex,QModelIndex)),
             this, SLOT(_k_slotCurrentPageChanged(QModelIndex,QModelIndex)));
 
     setModel(new DConfigDlgWdgModel(this));
