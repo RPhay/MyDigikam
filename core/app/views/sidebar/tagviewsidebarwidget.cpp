@@ -45,6 +45,7 @@
 #include "coredbsearchxml.h"
 #include "autotagsscanwidget.h"
 #include "autotagsengine.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -76,6 +77,7 @@ public:
     AutotagsScanWidget*     settingsWdg            = nullptr;
     QPushButton*            rescanButton           = nullptr;
 
+    DLabelExpander*         autotagsExpander       = nullptr;
 
     bool                    noTagsWasChecked       = false;
     bool                    ExistingTagsWasChecked = false;
@@ -124,21 +126,36 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 */
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
-    d->settingsWdg    = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, this);
+    d->autotagsExpander            = new DLabelExpander(this);
+    d->autotagsExpander->setText(i18n("Auto-tag scan"));
+    d->autotagsExpander->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->autotagsExpander->setObjectName(QLatin1String("AutotagScanWidgetExpanded"));
 
-    d->rescanButton   = new QPushButton;
+    QWidget* const autotagsWdg     = new QWidget(d->autotagsExpander);
+    QVBoxLayout* const autotagsLay = new QVBoxLayout(autotagsWdg);
+
+    d->settingsWdg  = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, autotagsWdg);
+    d->rescanButton = new QPushButton;
     d->rescanButton->setText(i18n("Auto-tag scan"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for objects to auto-tag"));
+
+    autotagsLay->addWidget(d->settingsWdg);
+    autotagsLay->addWidget(d->rescanButton);
+    autotagsLay->setContentsMargins(0, spacing, 0, 0);
+
+    d->autotagsExpander->setLineVisible(true);
+    d->autotagsExpander->setWidget(autotagsWdg);
+    d->autotagsExpander->setExpandByDefault(true);
+    d->autotagsExpander->layout()->setContentsMargins(0, 0, 0, spacing);
 
     layout->addWidget(d->openTagMngr);
     layout->addWidget(d->noTagsBtn);
     layout->addWidget(d->tagsBtn);
     layout->addWidget(d->tagFolderView, 10);
     layout->addWidget(d->tagSearchBar);
-    layout->addWidget(d->settingsWdg, 5);
-    layout->addWidget(d->rescanButton);
-    layout->setContentsMargins(0, 0, spacing, 0);
+    layout->addWidget(d->autotagsExpander);
+    layout->setContentsMargins(0, spacing, spacing, 0);
 
     connect(d->openTagMngr, SIGNAL(clicked()),
             this,SLOT(slotOpenTagManager()));
@@ -187,6 +204,9 @@ void TagViewSideBarWidget::doLoadState()
 {
     KConfigGroup group        = getConfigGroup();
     bool noTagsBtnWasChecked  = group.readEntry(d->configTagsSourceEntry, false);
+
+    d->autotagsExpander->setExpanded(group.readEntry(d->autotagsExpander->objectName(),
+                                                     d->autotagsExpander->isExpandByDefault()));
     d->noTagsBtn->setChecked(noTagsBtnWasChecked);
     d->tagsBtn->setChecked(!noTagsBtnWasChecked);
     d->noTagsWasChecked       = noTagsBtnWasChecked;
@@ -201,6 +221,7 @@ void TagViewSideBarWidget::doSaveState()
     KConfigGroup group = getConfigGroup();
 
     group.writeEntry(d->configTagsSourceEntry, d->noTagsBtn->isChecked());
+    group.writeEntry(d->autotagsExpander->objectName(), d->autotagsExpander->isExpanded());
 
     d->tagFolderView->saveState();
 
