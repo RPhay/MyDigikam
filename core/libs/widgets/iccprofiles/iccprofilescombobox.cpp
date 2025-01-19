@@ -235,7 +235,7 @@ void IccProfilesMenuAction::slotTriggered(QObject* obj)
 
     if (!profile.isNull())
     {
-        Q_EMIT triggered(profile);
+        Q_EMIT signalTriggeredProfile(profile);
     }
 }
 

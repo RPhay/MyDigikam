@@ -129,7 +129,7 @@ public:
 
 Q_SIGNALS:
 
-    void triggered(const IccProfile& profile);
+    void signalTriggeredProfile(const IccProfile& profile);
 
 protected Q_SLOTS:
 

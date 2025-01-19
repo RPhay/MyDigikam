@@ -98,7 +98,7 @@ void ProfileConversionToolPlugin::setup(QObject* const parent)
     DPluginAction* const ac = new DPluginAction(parent);
     m_profileMenuAction     = new IccProfilesMenuAction(icon(), QString(), parent);
 
-    connect(m_profileMenuAction, SIGNAL(triggered(IccProfile)),
+    connect(m_profileMenuAction, SIGNAL(signalTriggeredProfile(IccProfile)),
             this, SLOT(slotConvertToColorSpace(IccProfile)));
 
     connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
