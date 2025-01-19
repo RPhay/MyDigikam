@@ -60,7 +60,7 @@ AlbumSelectTreeView::AlbumSelectTreeView(AlbumModel* const model,
     : AlbumTreeView(parent),
       d            (new Private)
 {
-    setAlbumModel(model);
+    setPAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->newAlbumAction          = new QAction(QIcon::fromTheme(QLatin1String("folder-new")),
                                              i18n("Create New Album"), this);
