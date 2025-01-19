@@ -938,7 +938,7 @@ void ItemVisibilityController::animationFinished()
             {
                 if (d->control)
                 {
-                    Q_EMIT propertiesAssigned(item, (d->control->m_state == Visible));
+                    Q_EMIT propertiesAssignedToItem(item, (d->control->m_state == Visible));
                 }
             }
         }

@@ -135,7 +135,7 @@ Q_SIGNALS:
      * Emitted when a transition for a single item finished
      * (see setItemVisible())
      */
-    void propertiesAssigned(QObject* item, bool visible);
+    void propertiesAssignedToItem(QObject* item, bool visible);
 
     /**
      * Emitted when hideAndRemoveItem has finished
