@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                  progressCount  = 0;
     QLabel*              progressLabel  = nullptr;
     QTimer*              progressTimer  = nullptr;
@@ -188,8 +190,6 @@ void ExpoBlendingPreProcessPage::slotProgressTimerDone()
 
 void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad)
 {
-    QString text;
-
     if (!ad.starting)           // Something is complete...
     {
         if (!ad.success)        // Something is failed...

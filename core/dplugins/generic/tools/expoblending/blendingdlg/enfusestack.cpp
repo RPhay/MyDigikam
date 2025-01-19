@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool           asValidThumb = false;
     QPixmap        thumb;
     EnfuseSettings settings;
@@ -134,6 +136,8 @@ class Q_DECL_HIDDEN EnfuseStackList::Private
 public:
 
     Private() = default;
+
+public:
 
     DSaveSettingsWidget::OutputFormat outputFormat      = DSaveSettingsWidget::OUTPUT_PNG;
 
@@ -289,7 +293,6 @@ void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
     if (!findItemByUrl(url))
     {
         EnfuseSettings enfusePrms = settings;
-        QString ext               = DSaveSettingsWidget::extensionForFormat(enfusePrms.outputFormat);
         enfusePrms.previewUrl     = url;
 
         EnfuseStackItem* const item = new EnfuseStackItem(this);

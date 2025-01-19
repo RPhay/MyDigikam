@@ -91,6 +91,8 @@ public:
         fileFormatMap.insert( QLatin1String("29-01"), i18n("Corel Draw [*.CDR]") );
     }
 
+public:
+
     typedef QMap<QString, QString> FileFormatMap;
 
     FileFormatMap                  fileFormatMap;
@@ -434,7 +436,6 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     blockSignals(true);
 
     QString     data, format, version;
-    QStringList list;
     QDate       date;
     QTime       time;
     QString     dateStr, timeStr;

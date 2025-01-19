@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     DItemsList*          list = nullptr;
     ExpoBlendingManager* mngr = nullptr;
 };
@@ -140,8 +142,6 @@ void ItemsPage::slotImageListChanged()
 
 void ItemsPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad)
 {
-    QString text;
-
     if (!ad.starting)           // Something is complete...
     {
         switch (ad.action)

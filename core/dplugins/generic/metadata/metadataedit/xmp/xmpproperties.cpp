@@ -96,6 +96,8 @@ public:
         }
     }
 
+public:
+
     typedef QMap<QString, QString>  SceneCodeMap;
     typedef QMap<QString, QString>  TypeCodeMap;
     typedef QMap<QString, QString>  LanguageCodeMap;
@@ -314,8 +316,6 @@ void XMPProperties::readMetadata(const DMetadata& meta)
     int         val;
     QString     data;
     QStringList code, list, list2;
-    QString     dateStr, timeStr;
-    DMetadata::AltLangMap map;
 
     // ---------------------------------------------------------------
 

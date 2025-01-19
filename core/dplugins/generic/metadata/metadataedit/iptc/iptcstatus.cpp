@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*       statusCheck                = nullptr;
     QCheckBox*       jobIDCheck                 = nullptr;
     QCheckBox*       specialInstructionCheck    = nullptr;
@@ -179,7 +181,6 @@ void IPTCStatus::readMetadata(const DMetadata& meta)
     blockSignals(true);
 
     QString     data;
-    QStringList list;
 
     d->objectNameEdit->clear();
     d->objectNameCheck->setChecked(false);

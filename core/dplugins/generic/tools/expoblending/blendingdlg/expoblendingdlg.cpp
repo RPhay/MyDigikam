@@ -78,6 +78,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString               inputFileName;
     QString               output;
 
@@ -513,8 +515,6 @@ void ExpoBlendingDlg::saveItem(const QUrl& temp, const EnfuseSettings& settings)
 
 void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad)
 {
-    QString text;
-
     if (ad.starting)            // Something have been started...
     {
         switch (ad.action)

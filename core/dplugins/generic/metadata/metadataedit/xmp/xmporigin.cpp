@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*                     dateCreatedCheck         = nullptr;
     QCheckBox*                     dateDigitalizedCheck     = nullptr;
     QCheckBox*                     dateVideoCheck           = nullptr;
@@ -369,7 +371,6 @@ void XMPOrigin::readMetadata(const DMetadata& meta)
     blockSignals(true);
 
     QString     data;
-    QStringList code, list;
     QDateTime   dateTime;
     QString     dateTimeStr;
 
