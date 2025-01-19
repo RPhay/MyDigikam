@@ -461,13 +461,13 @@ void EditorToolThreaded::setFilter(DImgThreadedFilter* const filter)
     delete d->threadedFilter;
     d->threadedFilter = filter;
 
-    connect(d->threadedFilter, SIGNAL(started()),
+    connect(d->threadedFilter, SIGNAL(signalStarted()),
             this, SLOT(slotFilterStarted()));
 
-    connect(d->threadedFilter, SIGNAL(finished(bool)),
+    connect(d->threadedFilter, SIGNAL(signalFinished(bool)),
             this, SLOT(slotFilterFinished(bool)));
 
-    connect(d->threadedFilter, SIGNAL(progress(int)),
+    connect(d->threadedFilter, SIGNAL(signalProgress(int)),
             this, SLOT(slotProgress(int)));
 
     d->threadedFilter->startFilter();
@@ -495,13 +495,13 @@ void EditorToolThreaded::setAnalyser(DImgThreadedAnalyser* const analyser)
     delete d->threadedAnalyser;
     d->threadedAnalyser = analyser;
 
-    connect(d->threadedAnalyser, SIGNAL(started()),
+    connect(d->threadedAnalyser, SIGNAL(signalStarted()),
             this, SLOT(slotAnalyserStarted()));
 
-    connect(d->threadedAnalyser, SIGNAL(finished(bool)),
+    connect(d->threadedAnalyser, SIGNAL(signalFinished(bool)),
             this, SLOT(slotAnalyserFinished(bool)));
 
-    connect(d->threadedAnalyser, SIGNAL(progress(int)),
+    connect(d->threadedAnalyser, SIGNAL(signalProgress(int)),
             this, SLOT(slotProgress(int)));
 
     d->threadedAnalyser->startFilter();

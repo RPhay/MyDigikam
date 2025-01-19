@@ -151,19 +151,19 @@ Q_SIGNALS:
     /**
      * This signal is emitted when image data is available and the computation has started.
      */
-    void started();
+    void signalStarted();
 
     /**
      * Emitted when progress info from the calculation is available.
      */
-    void progress(int progress);
+    void signalProgress(int progress);
 
     /**
      * Emitted when the computation has completed.
      * @param success True if computation finished without interruption on valid data
      *                False if the thread was canceled, or no data is available.
      */
-    void finished(bool success);
+    void signalFinished(bool success);
 
 protected:
 

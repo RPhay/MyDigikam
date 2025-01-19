@@ -70,13 +70,13 @@ void PreviewThreadWrapper::registerFilter(int id, DImgThreadedFilter* const filt
     filter->setParent(this);
     d->map.insert(id, filter);
 
-    connect(filter, SIGNAL(started()),
+    connect(filter, SIGNAL(signalStarted()),
             this, SLOT(slotFilterStarted()));
 
-    connect(filter, SIGNAL(finished(bool)),
+    connect(filter, SIGNAL(signalFinished(bool)),
             this, SLOT(slotFilterFinished(bool)));
 
-    connect(filter, SIGNAL(progress(int)),
+    connect(filter, SIGNAL(signalProgress(int)),
             this, SLOT(slotFilterProgress(int)));
 }
 
