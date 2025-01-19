@@ -59,6 +59,8 @@ public:
 
     GMInternalWidgetInfo() = default;
 
+public:
+
     HTMLWidget* htmlWidget = nullptr;
 };
 
@@ -1178,8 +1180,6 @@ void BackendGoogleMaps::setClusterPixmap(const int clusterId, const QPoint& cent
 {
     // decorate the pixmap:
 
-    const QPixmap styledPixmap = clusterPixmap;
-
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
@@ -1477,6 +1477,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         // no track manager, clear all tracks
 
         const QVariant successClear = d->htmlWidget->runScript(QString::fromLatin1("kgeomapClearTracks();"), false);
+        Q_UNUSED(successClear);
 
         return;
     }
@@ -1578,6 +1579,7 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
     else if (d->htmlWidget)
     {
         const QVariant successClear = d->htmlWidget->runScript(QString::fromLatin1("kgeomapClearTracks();"), false);
+        Q_UNUSED(successClear);
     }
 }
 

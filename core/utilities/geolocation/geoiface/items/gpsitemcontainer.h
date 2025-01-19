@@ -57,6 +57,8 @@ public:
 
     SaveProperties() = default;
 
+public:
+
     bool  shouldRemoveCoordinates   = false;
     bool  shouldRemoveAltitude      = false;
     bool  shouldWriteCoordinates    = false;

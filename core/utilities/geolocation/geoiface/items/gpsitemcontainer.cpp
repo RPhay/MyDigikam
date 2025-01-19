@@ -1064,7 +1064,6 @@ QString GPSItemContainer::saveChanges()
                 for (int i = 0 ; i < m_tagList.count() ; ++i)
                 {
                     QList<TagData> currentTagList = m_tagList[i];
-                    QString tag;
 
                     for (int j = 0 ; j < currentTagList.count() ; ++j)
                     {
