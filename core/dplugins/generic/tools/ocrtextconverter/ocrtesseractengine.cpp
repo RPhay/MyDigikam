@@ -121,8 +121,6 @@ int OcrTesseractEngine::runOcrProcess()
 
     // output base name
 
-    QString mess;
-
     args << QLatin1String("stdout");
 
     // ----------------------------- OPTIONS -----------------------------

@@ -50,10 +50,11 @@ namespace DigikamGenericPresentationPlugin
 
 class Q_DECL_HIDDEN PresentationDlg::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QDialogButtonBox*      buttonBox    = nullptr;
     QPushButton*           startButton  = nullptr;

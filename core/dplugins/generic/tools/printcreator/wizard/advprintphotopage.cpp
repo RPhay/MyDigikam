@@ -101,6 +101,8 @@ public:
         }
     }
 
+public:
+
     PhotoUI*            photoUi         = nullptr;
     QPageSetupDialog*   pageSetupDlg    = nullptr;
     QPrinter*           printer         = nullptr;
@@ -560,7 +562,6 @@ void AdvPrintPhotoPage::slotAddItems(const QList<QUrl>& list)
         return;
     }
 
-    QList<QUrl> urls;
     d->photoUi->mPrintList->blockSignals(true);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ;
@@ -668,7 +669,7 @@ void AdvPrintPhotoPage::slotRemovingItems(const QList<int>& list)
                     AdvPrintPhoto* const pCurrentPhoto = d->settings->photos.at(i);
 
                     if (pCurrentPhoto &&
-                        pCurrentPhoto->m_url == pPhotoToRemove->m_url &&
+                        (pCurrentPhoto->m_url == pPhotoToRemove->m_url) &&
                         pCurrentPhoto->m_first)
                     {
                         pCurrentPhoto->m_copies--;

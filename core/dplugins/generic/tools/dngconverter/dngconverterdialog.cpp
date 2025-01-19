@@ -65,6 +65,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                      busy              = false;
 
     QStringList               fileList;
@@ -522,8 +524,6 @@ void DNGConverterDialog::processingFailed(const QUrl& url, int result)
 
 void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverterPlugin::DNGConverterActionData& ad)
 {
-    QString text;
-
     if (ad.starting)            // Something have been started...
     {
         switch (ad.action)

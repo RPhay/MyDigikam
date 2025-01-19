@@ -1133,8 +1133,8 @@ void FlickrTalker::parseResponseListPhotos(const QByteArray& data)
     QDomElement docElem = doc.documentElement();
     QDomNode node       = docElem.firstChild();
 
-    //QDomElement e;
-    //TODO
+    // TODO
+    Q_UNUSED(node);
 }
 
 void FlickrTalker::parseResponseCreateAlbum(const QByteArray& data)
@@ -1149,13 +1149,13 @@ void FlickrTalker::parseResponseCreateAlbum(const QByteArray& data)
     QDomElement docElem = doc.documentElement();
     QDomNode node       = docElem.firstChild();
 
-    //TODO
+    // TODO
+    Q_UNUSED(node);
 }
 
 void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
 {
     bool    success = false;
-    QString line;
     QDomDocument doc(QLatin1String("AddPhoto Response"));
 
     if (!doc.setContent(data))
@@ -1174,6 +1174,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
         {
             e                = node.toElement();           // try to convert the node to an element.
             QDomNode details = e.firstChild();
+            Q_UNUSED(details);
             photoId          = e.text();
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photoid= " << photoId;
             success          = true;
@@ -1216,7 +1217,6 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
 void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
 {
     bool         success = false;
-    QString      line;
     QDomDocument doc(QLatin1String("Photos Properties"));
 
     if (!doc.setContent(data))
@@ -1234,6 +1234,7 @@ void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
         {
             e                = node.toElement();                 // try to convert the node to an element.
             QDomNode details = e.firstChild();
+            Q_UNUSED(details);
             success          = true;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photoid=" << e.text();
         }

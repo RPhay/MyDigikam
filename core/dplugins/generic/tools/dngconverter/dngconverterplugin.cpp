@@ -83,7 +83,7 @@ QList<DPluginAuthor> DNGConverterPlugin::authors() const
                              QString::fromUtf8("(C) 2010-2011"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2024"))
+                             QString::fromUtf8("(C) 2008-2025"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
                              QString::fromUtf8("(C) 2020-2024"))

@@ -202,8 +202,6 @@ void ImgurImagesList::slotCopyImurgURL()
     QClipboard* const clipboard               = QApplication::clipboard();
 
     QList<QTreeWidgetItem*> selectedItemsList = listView()->selectedItems();
-    QList<int> itemsIndex;
-
     QString copyURLtext;
 
     for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;

@@ -1354,7 +1354,6 @@ int PresentationWidget::effectCubism(bool aInit)
         return -1;
     }
 
-    QPainterPath painterPath;
     QPainter bufferPainter(&m_buffer);
 
     d->x   = d->randomGenerator->bounded(d->w);

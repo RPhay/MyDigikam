@@ -87,7 +87,7 @@ QList<DPluginAuthor> PresentationPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2024"))
+                             QString::fromUtf8("(C) 2005-2025"))
             << DPluginAuthor(QString::fromUtf8("Phuoc Khanh Le"),
                              QString::fromUtf8("phuockhanhnk94 at gmail dot com"),
                              QString::fromUtf8("(C) 2021"))

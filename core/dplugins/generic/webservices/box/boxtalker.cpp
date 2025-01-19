@@ -496,6 +496,7 @@ void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+        Q_UNUSED(doc2);
 
         Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
