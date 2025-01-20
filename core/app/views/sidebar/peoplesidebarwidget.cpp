@@ -22,12 +22,10 @@
 // Qt includes
 
 #include <QLabel>
-#include <QScrollArea>
 #include <QApplication>
 #include <QStyle>
 #include <QPushButton>
 #include <QIcon>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
 
 // KDE includes
@@ -41,11 +39,10 @@
 #include "digikam_debug.h"
 #include "searchtextbardb.h"
 #include "tagfolderview.h"
-#include "timelinewidget.h"
 #include "facescanwidget.h"
 #include "dnotificationwidget.h"
 #include "applicationsettings.h"
-
+#include "dexpanderbox.h"
 #include "facesengine.h"
 
 namespace Digikam
@@ -63,6 +60,7 @@ public:
     TagFolderView*            tagFolderView             = nullptr;
     SearchTextBarDb*          tagSearchBar              = nullptr;
     PeopleSideBarWidget*      parentInstance            = nullptr;
+    DLabelExpander*           faceScanExpander          = nullptr;
 
     int                       ref                       = 1;
 };
@@ -90,19 +88,10 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
     const int spacing             = layoutSpacing();
 
-    QWidget* const     mainView   = new QWidget(this);
-    QScrollArea* const scrollArea = new QScrollArea(this);
-    QVBoxLayout* const mainLayout = new QVBoxLayout(this);
-
-    mainLayout->addWidget(scrollArea);
-    mainLayout->setContentsMargins(0, 0, spacing, 0);
-    scrollArea->setWidget(mainView);
-    scrollArea->setWidgetResizable(true);
-
     model->setColumnHeader(this->getCaption());
 
-    QVBoxLayout* const vlay     = new QVBoxLayout;
-    d->tagFolderView            = new TagFolderView(this, model);
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    d->tagFolderView        = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
     d->tagFolderView->setShowDeleteFaceTagsAction(true);
@@ -110,26 +99,39 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     d->tagFolderView->filteredModel()->listOnlyTagsWithProperty(TagPropertyName::person());
     d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->tagSearchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewPeopleSearchBar"));
+    d->tagSearchBar = new SearchTextBarDb(this, QLatin1String("ItemIconViewPeopleSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
     d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
-    d->settingsWdg    = new FaceScanWidget(this);
+    d->faceScanExpander            = new DLabelExpander(this);
+    d->faceScanExpander->setText(i18n("Scan collection for faces"));
+    d->faceScanExpander->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->faceScanExpander->setObjectName(QLatin1String("FaceScanWidgetExpanded"));
 
-    d->rescanButton   = new QPushButton;
+    QWidget* const faceScanWdg     = new QWidget(d->faceScanExpander);
+    QVBoxLayout* const faceScanLay = new QVBoxLayout(faceScanWdg);
+
+    d->settingsWdg  = new FaceScanWidget(faceScanWdg);
+    d->rescanButton = new QPushButton;
     d->rescanButton->setText(i18n("Scan collection for faces"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for faces"));
 
+    faceScanLay->addWidget(d->settingsWdg);
+    faceScanLay->addWidget(d->rescanButton);
+    faceScanLay->setContentsMargins(0, spacing, 0, 0);
+
+    d->faceScanExpander->setLineVisible(true);
+    d->faceScanExpander->setWidget(faceScanWdg);
+    d->faceScanExpander->setExpandByDefault(true);
+    d->faceScanExpander->layout()->setContentsMargins(0, 0, 0, spacing);
+
     vlay->addWidget(d->tagFolderView, 10);
     vlay->addWidget(d->tagSearchBar);
-    vlay->addWidget(d->settingsWdg,   5);
-    vlay->addWidget(d->rescanButton);
-    vlay->setContentsMargins(spacing, spacing, spacing, spacing);
-
-    mainView->setLayout(vlay);
+    vlay->addWidget(d->faceScanExpander);
+    vlay->setContentsMargins(0, spacing, spacing, 0);
 
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
@@ -177,12 +179,20 @@ void PeopleSideBarWidget::setActive(bool active)
 
 void PeopleSideBarWidget::doLoadState()
 {
+    KConfigGroup group = getConfigGroup();
+
+    d->faceScanExpander->setExpanded(group.readEntry(d->faceScanExpander->objectName(),
+                                                     d->faceScanExpander->isExpandByDefault()));
     d->tagFolderView->loadState();
     d->settingsWdg->loadState();
 }
 
 void PeopleSideBarWidget::doSaveState()
 {
+    KConfigGroup group = getConfigGroup();
+
+    group.writeEntry(d->faceScanExpander->objectName(), d->faceScanExpander->isExpanded());
+
     d->tagFolderView->saveState();
     d->settingsWdg->saveState();
 }
