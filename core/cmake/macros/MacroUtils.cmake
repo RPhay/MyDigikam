@@ -206,6 +206,12 @@ macro(APPLY_COMMON_POLICIES)
         cmake_policy(SET CMP0092 NEW)
     endif()
 
+    if(POLICY CMP0177)
+        # Destination paths are normalized introduced in CMake version 3.31
+        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0177.html
+        cmake_policy(SET CMP0177 OLD)
+    endif()
+
 endmacro()
 
 # -------------------------------------------------------------------------
