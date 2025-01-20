@@ -65,7 +65,7 @@ public:
 Q_SIGNALS:
 
     void activated(const QModelIndex& index);
-    void hovered(const QString& text);
+    void hoveredText(const QString& text);
 
 protected:
 

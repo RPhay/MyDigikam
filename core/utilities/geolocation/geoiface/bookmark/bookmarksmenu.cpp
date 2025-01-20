@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                   maxRows           = 7;
     int                   firstSeparator    = -1;
     int                   maxWidth          = -1;
@@ -272,7 +274,7 @@ void ModelMenu::slotHovered(QAction* action)
 
         if (!hoveredString.isEmpty())
         {
-            Q_EMIT hovered(hoveredString);
+            Q_EMIT hoveredText(hoveredString);
         }
     }
 }
@@ -284,6 +286,8 @@ class Q_DECL_HIDDEN BookmarksMenu::Private
 public:
 
     Private() = default;
+
+public:
 
     BookmarksManager* manager = nullptr;
     QList<QAction*>   initActions;
