@@ -829,7 +829,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
             Q_EMIT itemInfosAboutToBeRemoved(removedInfos);
         }
 
-        itemInfosAboutToBeRemoved(begin, end);
+        prepareItemInfosAboutToBeRemoved(begin, end);
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos

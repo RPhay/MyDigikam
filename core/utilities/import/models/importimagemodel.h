@@ -281,7 +281,7 @@ protected:
     /**
      * Called before rowsAboutToBeRemoved
      */
-    virtual void itemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
+    virtual void prepareItemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 private:
 
