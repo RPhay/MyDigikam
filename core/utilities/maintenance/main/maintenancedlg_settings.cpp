@@ -137,22 +137,7 @@ void MaintenanceDlg::readSettings()
 
         d->faceScannedHandling->setCurrentIndex(faceHandling);
 
-        // d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
-        // int tagScanMode  = d->autotagsScanMode->findData(group.readEntry(d->configAutotagsScanMode,       prm.autotagsScanMode));
-        // d->autotagsScanMode->setCurrentIndex(tagScanMode);
-        // int tagTagMode   = d->autotagsTagMode->findData(group.readEntry(d->configAutotagsTagMode,         prm.autotagsTagMode));
-        // d->autotagsTagMode->setCurrentIndex(tagTagMode);
-        // int tagSelection = d->objectDetectModel->findData(group.readEntry(d->configAutotagsObjectDetectModel,         prm.autotagsObjectDetectModel));
-        // d->objectDetectModel->setCurrentIndex(tagSelection);
-        // d->trSelectorList->clearLanguages();
-
-        // const auto lgs = group.readEntry(d->configAutotagsLanguages,                                            prm.autotagsLanguages);
-
-        // for (const QString& lg : lgs)
-        // {
-        //     d->trSelectorList->addLanguage(lg);
-        // }
-        // d->autotagsAccuracyInput->setValue(group.readEntry(d->configAutotagsObjectDetectAccuracy,                         prm.autotagsObjectDetectAccuracy));
+        d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         int qualityMod   = d->qualityScanMode->findData(group.readEntry(d->configQualityScanMode,               prm.qualityScanMode));
@@ -205,12 +190,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configDuplicatesRestriction,        (int)prm.duplicatesRestriction);
         group.writeEntry(d->configFaceManagement,               prm.faceManagement);
         group.writeEntry(d->configFaceScannedHandling,          (int)prm.faceSettings.alreadyScannedHandling);
-        // group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
-        // group.writeEntry(d->configAutotagsScanMode,             prm.autotagsScanMode);
-        // group.writeEntry(d->configAutotagsTagMode,              prm.autotagsTagMode);
-        // group.writeEntry(d->configAutotagsObjectDetectModel,    prm.autotagsObjectDetectModel);
-        // group.writeEntry(d->configAutotagsLanguages,            prm.autotagsLanguages);
-        // group.writeEntry(d->configAutotagsObjectDetectAccuracy, prm.autotagsObjectDetectAccuracy);
+        group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,              prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,      prm.qualitySettingsSelected);

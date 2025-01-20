@@ -93,10 +93,9 @@ void AutotagsScanWidget::setupUi()
     title->setText(i18nc("@label",
                          "<p><b>This tool automatically assigns tags to images by analyzing the image using "
                          "a deep-learning neural network AI model.</b></p>"
-                         "<p>The settings below determine the deep-learning AI model to use while parsing image "
-                         "contents to determine objects in the image. The AI neural network used in background "
-                         "will automatically generate tags describing the contents and store the results in "
-                         "the database.</p>"));
+                         "<p>The settings below configure the deep-learning AI model used for analyzing image "
+                         "contents to identify objects. The AI neural network will automatically generate "
+                         "descriptive tags for the image contents and store the results in the database.</p>"));
     title->setWordWrap(true);
 
     DHBox* const hbox12         = new DHBox(d->settingsTab);

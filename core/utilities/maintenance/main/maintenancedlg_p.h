@@ -97,13 +97,7 @@ public:
     const QString configDuplicatesRestriction           = QLatin1String("duplicatesRestriction");
     const QString configFaceManagement                  = QLatin1String("FaceManagement");
     const QString configFaceScannedHandling             = QLatin1String("FaceScannedHandling");
-    // const QString configAutotagsAssignment              = QLatin1String("AutotagsAssignment");
-    // const QString configAutotagsScanMode                = QLatin1String("AutotagsScanMode");
-    // const QString configAutotagsTagMode                 = QLatin1String("AutotagsTagMode");
-    // const QString configAutotagsObjectDetectModel       = QLatin1String("AutotagsObjectDetectModel");
-    // const QString configAutotagsObjectDetectAccuracy    = QLatin1String("AutotagsObjectDetectAccuracy");
-    // const QString configAutotagsLanguages               = QLatin1String("AutotagsLanguages");
-    // const QString configAutotagsDetectThreshold         = QLatin1String("AutotagsDetectThreshold");
+    const QString configAutotagsAssignment              = QLatin1String("AutotagsAssignment");
     const QString configImageQualitySorter              = QLatin1String("ImageQualitySorter");
     const QString configQualityScanMode                 = QLatin1String("QualityScanMode");
     const QString configQualitySettingsSelected         = QLatin1String("QualitySettingsSelected");
