@@ -7,7 +7,7 @@
  * Description : a tool to export items to ImageShack web service
  *
  * SPDX-FileCopyrightText: 2012      by Dodon Victor <dodonvictor at gmail dot com>
- * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2025 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -54,7 +54,6 @@ void ImageShackMPForm::finish()
 void ImageShackMPForm::addPair(const QString& name, const QString& value)
 {
     QByteArray str;
-    QString content_length = QString::number(value.length());
 
     str += "--";
     str += m_boundary;

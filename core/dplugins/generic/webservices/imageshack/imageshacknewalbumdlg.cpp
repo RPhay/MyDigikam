@@ -7,7 +7,7 @@
  * Description : a tool to export items to ImageShack web service
  *
  * SPDX-FileCopyrightText: 2010      by Jens Mueller <tschenser at gmx dot de>
- * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2025 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

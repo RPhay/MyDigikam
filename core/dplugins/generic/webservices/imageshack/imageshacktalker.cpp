@@ -7,7 +7,7 @@
  * Description : a tool to export items to ImageShack web service
  *
  * SPDX-FileCopyrightText: 2012      by Dodon Victor <dodonvictor at gmail dot com>
- * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2025 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -467,8 +467,6 @@ void ImageShackTalker::uploadItemToGallery(const QString& path,
 
     // Check where to upload
 
-    QString mime        = mimeType(path);
-
     QUrl uploadUrl;
 
     uploadUrl           = QUrl(d->photoApiUrl);
@@ -555,9 +553,6 @@ void ImageShackTalker::parseUploadPhotoDone(const QByteArray& data)
 
 void ImageShackTalker::parseAddPhotoToGalleryDone(const QByteArray& data)
 {
-    //int errCode = -1;
-
-    QString errMsg = QLatin1String("");
     QDomDocument domDoc(QLatin1String("galleryXML"));
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << data;
