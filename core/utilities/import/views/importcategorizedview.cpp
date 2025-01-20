@@ -573,7 +573,7 @@ void ImportCategorizedView::currentChanged(const QModelIndex& index, const QMode
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    Q_EMIT currentChanged(d->filterModel->camItemInfo(index));
+    Q_EMIT currentCamItemInfoChanged(d->filterModel->camItemInfo(index));
 }
 
 void ImportCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)

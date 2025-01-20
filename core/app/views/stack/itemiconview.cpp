@@ -482,7 +482,7 @@ void ItemIconView::setupConnections()
     connect(this, SIGNAL(signalImageSelected(ItemInfoList,ItemInfoList)),
             d->albumHistory, SLOT(slotImageSelected(ItemInfoList)));
 
-    connect(d->iconView, SIGNAL(currentChanged(ItemInfo)),
+    connect(d->iconView, SIGNAL(currentInfoChanged(ItemInfo)),
             d->albumHistory, SLOT(slotCurrentChange(ItemInfo)));
 
     connect(d->iconView->itemModel(), SIGNAL(imageInfosAdded(QList<ItemInfo>)),

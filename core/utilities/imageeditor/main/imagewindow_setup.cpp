@@ -117,7 +117,7 @@ void ImageWindow::setupConnections()
             this, SLOT(slotRowsAboutToBeRemoved(QModelIndex,int,int)));
 */
 
-    connect(d->thumbBar, SIGNAL(currentChanged(ItemInfo)),
+    connect(d->thumbBar, SIGNAL(currentInfoChanged(ItemInfo)),
             this, SLOT(slotThumbBarImageSelected(ItemInfo)));
 
     connect(d->dragDropHandler, SIGNAL(itemInfosDropped(QList<ItemInfo>)),

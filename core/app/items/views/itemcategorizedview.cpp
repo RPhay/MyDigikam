@@ -665,7 +665,7 @@ void ItemCategorizedView::currentChanged(const QModelIndex& index, const QModelI
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    Q_EMIT currentChanged(imageInfo(index));
+    Q_EMIT currentInfoChanged(imageInfo(index));
 }
 
 void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)

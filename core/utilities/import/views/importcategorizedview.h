@@ -141,7 +141,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void currentChanged(const CamItemInfo& info);
+    void currentCamItemInfoChanged(const CamItemInfo& info);
 
     /**
      * Emitted when new items are selected. The parameter includes only the newly selected infos,
