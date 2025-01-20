@@ -340,19 +340,20 @@ void MaintenanceMngr::stage7()
         list << d->settings.tags;
 
         // new autotags engine
-        AutotagsScanSettings settings;
+        AutotagsScanSettings autotagSettings;
 
-        settings.albums << d->settings.albums;
-        settings.albums << d->settings.tags;
+        autotagSettings.albums << d->settings.albums;
+        autotagSettings.albums << d->settings.tags;
 
-        settings.useFullCpu             = d->settings.useMutiCoreCPU;
-        settings.languages              = d->settings.autotagsLanguages;
-        settings.scanMode               = (AutotagsScanSettings::ScanMode)d->settings.autotagsScanMode;
-        settings.tagMode                = (AutotagsScanSettings::TagMode)d->settings.autotagsTagMode;
-        settings.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)d->settings.autotagsObjectDetectModel;
-        settings.uiConfidenceThreshold  = d->settings.autotagsObjectDetectAccuracy;
+        autotagSettings.useFullCpu              = d->settings.useMutiCoreCPU;
+        autotagSettings.languages               = d->settings.autotagsLanguages;
+        autotagSettings.scanMode                = (AutotagsScanSettings::ScanMode)d->settings.autotagsScanMode;
+        autotagSettings.tagMode                 = (AutotagsScanSettings::TagMode)d->settings.autotagsTagMode;
+        autotagSettings.objectDetectModel       = (AutotagsScanSettings::ObjectDetectionModel)d->settings.autotagsObjectDetectModel;
+        autotagSettings.uiConfidenceThreshold   = d->settings.autotagsObjectDetectAccuracy;
 
-        d->newAutotagsAssignment        = new AutotagsEngine(settings);
+        d->newAutotagsAssignment                = new AutotagsEngine(autotagSettings);
+        d->newAutotagsAssignment->setNotificationEnabled(false);
         d->newAutotagsAssignment->start();
 
     }

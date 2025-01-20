@@ -605,11 +605,12 @@ bool AutotagsPipelineObject::writer()
 
         if (!displayTags.isEmpty())
         {
+            displayName += displayTags.join(QLatin1String(", "));
             if (displayTags.size() > 4)
             {
                 qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
+                qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: " << package->info.relativePath() << "/" << displayName;
             }
-            displayName += displayTags.join(QLatin1String(", "));
         }
 
         // send a notification that the image was processed

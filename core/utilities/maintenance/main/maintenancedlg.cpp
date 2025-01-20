@@ -231,69 +231,71 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->vbox5               = new DVBox;
-    QLabel* const title    = new QLabel(d->vbox5);
-    title->setText(i18nc("@label",
-                         "<p><b>This tool automatically assigns tags to images by analyzing the image using "
-                         "a deep-learning neural network AI model.</b></p>"
-                         "<p>The settings below determine the deep-learning AI model to use while parsing image "
-                         "contents to determine objects in the image. The AI neural network used in background "
-                         "will automatically generate tags describing the contents and store the results in "
-                         "the database.</p>"));
-    title->setWordWrap(true);
+    // QLabel* const title    = new QLabel(d->vbox5);
+    // title->setText(i18nc("@label",
+    //                      "<p><b>This tool automatically assigns tags to images by analyzing the image using "
+    //                      "a deep-learning neural network AI model.</b></p>"
+    //                      "<p>The settings below determine the deep-learning AI model to use while parsing image "
+    //                      "contents to determine objects in the image. The AI neural network used in background "
+    //                      "will automatically generate tags describing the contents and store the results in "
+    //                      "the database.</p>"));
+    // title->setWordWrap(true);
 
-    DHBox* const hbox12    = new DHBox(d->vbox5);
-    new QLabel (i18n("Auto-tagging scan mode: "), hbox12);
-    QWidget* const space8  = new QWidget(hbox12);
-    hbox12->setStretchFactor(space8, 10);
+    // DHBox* const hbox12    = new DHBox(d->vbox5);
+    // new QLabel (i18n("Auto-tagging scan mode: "), hbox12);
+    // QWidget* const space8  = new QWidget(hbox12);
+    // hbox12->setStretchFactor(space8, 10);
 
-    d->autotagsScanMode = new QComboBox(hbox12);
-    d->autotagsScanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
-    d->autotagsScanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
-    d->autotagsScanMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Scan all</b>: re-scan all items for tags.</p>"
-        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
+    // d->autotagsScanMode = new QComboBox(hbox12);
+    // d->autotagsScanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
+    // d->autotagsScanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
+    // d->autotagsScanMode->setToolTip(i18nc("@info:tooltip",
+    //     "<p><b>Scan all</b>: re-scan all items for tags.</p>"
+    //     "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
 
-    DHBox* const hbox15    = new DHBox(d->vbox5);
-    new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
-    QWidget* const space15 = new QWidget(hbox15);
-    hbox15->setStretchFactor(space15, 10);
+    // DHBox* const hbox15    = new DHBox(d->vbox5);
+    // new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
+    // QWidget* const space15 = new QWidget(hbox15);
+    // hbox15->setStretchFactor(space15, 10);
 
-    d->autotagsTagMode = new QComboBox(hbox15);
-    d->autotagsTagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
-    d->autotagsTagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
-    d->autotagsTagMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
-        "<p><b>Update autotags</b>: add new autotags found to the existing tags.</p>"));
+    // d->autotagsTagMode = new QComboBox(hbox15);
+    // d->autotagsTagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
+    // d->autotagsTagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
+    // d->autotagsTagMode->setToolTip(i18nc("@info:tooltip",
+    //     "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+    //     "<p><b>Update autotags</b>: add new autotags found to the existing tags.</p>"));
 
-    DHBox* const hbox13    = new DHBox(d->vbox5);
-    new QLabel(i18n("Selection model: "), hbox13);
-    QWidget* const space9  = new QWidget(hbox13);
-    hbox13->setStretchFactor(space9, 10);
+    // DHBox* const hbox13    = new DHBox(d->vbox5);
+    // new QLabel(i18n("Selection model: "), hbox13);
+    // QWidget* const space9  = new QWidget(hbox13);
+    // hbox13->setStretchFactor(space9, 10);
 
-    d->objectDetectModel  = new QComboBox(hbox13);
-    d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
-    d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
-    d->objectDetectModel->addItem(i18n("ResNet152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
-    d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
-        "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
-        "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
-        "<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
-        "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
-        "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
-        "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
+    // d->objectDetectModel  = new QComboBox(hbox13);
+    // d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
+    // d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
+    // d->objectDetectModel->addItem(i18n("ResNet152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
+    // d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
+    //     "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
+    //     "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+    //     "<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
+    //     "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
+    //     "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
+    //     "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
 
-    DHBox* const hbox14    = new DHBox(d->vbox5);
+    // DHBox* const hbox14    = new DHBox(d->vbox5);
 
-    new QLabel(i18n("Object Detection Accuracy: "), hbox14);
-    d->autotagsAccuracyInput            = new DIntNumInput(hbox14);
-    d->autotagsAccuracyInput->setDefaultValue(7);
-    d->autotagsAccuracyInput->setRange(1, 10, 1);
-    d->autotagsAccuracyInput->setToolTip(i18nc("@info:tooltip",
-                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
-                                                "be recognized, but fewer objects will be recognized.\n"));
+    // new QLabel(i18n("Object Detection Accuracy: "), hbox14);
+    // d->autotagsAccuracyInput            = new DIntNumInput(hbox14);
+    // d->autotagsAccuracyInput->setDefaultValue(7);
+    // d->autotagsAccuracyInput->setRange(1, 10, 1);
+    // d->autotagsAccuracyInput->setToolTip(i18nc("@info:tooltip",
+    //                                             "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
+    //                                             "be recognized, but fewer objects will be recognized.\n"));
 
-    d->trSelectorList      = new LocalizeSelectorList(d->vbox5);
-    d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
+    // d->trSelectorList      = new LocalizeSelectorList(d->vbox5);
+    // d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
+
+    d->autotagsWidget      = new AutotagsScanWidget(AutotagsScanWidget::Maintenance, d->vbox5);
 
     d->expanderBox->insertItem(
                                Private::AutotagsAssignment,
