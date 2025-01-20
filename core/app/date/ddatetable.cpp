@@ -740,7 +740,7 @@ bool DDateTable::setDate(const QDate& toDate)
     QDate oldDate = date();
     d->setDate(toDate);
 
-    Q_EMIT dateChanged(date(), oldDate);
+    Q_EMIT selectedDateChanged(date(), oldDate);
     Q_EMIT dateChanged(date());
 
     update();
