@@ -53,10 +53,11 @@ namespace ShowFoto
 
 class Q_DECL_HIDDEN ShowfotoStackViewList::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     ShowfotoStackViewSideBar* view          = nullptr;
     ShowfotoThumbnailBar*     thumbbar      = nullptr;

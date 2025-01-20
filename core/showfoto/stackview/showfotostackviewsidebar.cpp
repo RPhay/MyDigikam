@@ -45,10 +45,11 @@ namespace ShowFoto
 
 class Q_DECL_HIDDEN ShowfotoStackViewSideBar::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     /**
      * Identify plugins category to host in stack-view

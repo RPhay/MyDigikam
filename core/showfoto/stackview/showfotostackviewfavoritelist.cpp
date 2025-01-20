@@ -296,7 +296,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
         {
             QTreeWidget::dropEvent(e);
 
-            Q_EMIT signalAddFavorite(urls, urls.first());
+            Q_EMIT signalAddFavoriteList(urls, urls.first());
 
             e->acceptProposedAction();
             return;

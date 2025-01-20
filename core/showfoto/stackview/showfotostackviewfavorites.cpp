@@ -194,7 +194,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     connect(d->favoritesList, SIGNAL(signalAddFavorite()),
             this, SLOT(slotAddFavorite()));
 
-    connect(d->favoritesList, SIGNAL(signalAddFavorite(QList<QUrl>,QUrl)),
+    connect(d->favoritesList, SIGNAL(signalAddFavoriteList(QList<QUrl>,QUrl)),
             this, SLOT(slotAddFavorite(QList<QUrl>,QUrl)));
 
     connect(d->favoritesList, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
