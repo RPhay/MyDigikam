@@ -152,7 +152,7 @@ void TagsLineEditOverlay::slotTagChanged(int tagId)
 
     if (m_widget && m_widget->isVisible() && m_index.isValid())
     {
-        Q_EMIT tagEdited(m_index, tagId);
+        Q_EMIT signalTagEditedById(m_index, tagId);
     }
 }
 
@@ -162,7 +162,7 @@ void TagsLineEditOverlay::slotTagChanged(const QString& name)
 
     if (m_widget && m_widget->isVisible() && m_index.isValid())
     {
-        Q_EMIT tagEdited(m_index, name);
+        Q_EMIT signalTagEditedByKeyword(m_index, name);
     }
 }
 

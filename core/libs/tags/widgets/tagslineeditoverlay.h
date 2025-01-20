@@ -41,8 +41,8 @@ public:
 
 Q_SIGNALS:
 
-    void tagEdited(const QModelIndex& index, int rating);
-    void tagEdited(const QModelIndex& index, const QString&);
+    void signalTagEditedById(const QModelIndex& index, int id);
+    void signalTagEditedByKeyword(const QModelIndex& index, const QString& keyword);
 
 protected Q_SLOTS:
 

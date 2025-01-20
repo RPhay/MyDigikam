@@ -378,7 +378,7 @@ void DigikamItemView::addTagEditOverlay(ItemDelegate* delegate)
 {
     TagsLineEditOverlay* tagOverlay = new TagsLineEditOverlay(this);
 
-    connect(tagOverlay, SIGNAL(tagEdited(QModelIndex,QString)),
+    connect(tagOverlay, SIGNAL(signalTagEditedByKeyword(QModelIndex,QString)),
             this, SLOT(assignTag(QModelIndex,QString)));
 
     addOverlay(tagOverlay, delegate);
