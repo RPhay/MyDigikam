@@ -120,8 +120,8 @@ BUGFIXES:
 078 ==> 498707 - Build failed with : dconfigdlgmodels.cpp:685:23: error: no matching function for call to ‘createIndex(int, int, const void*).
 079 ==> 498830 - Drag/Drop from thumbnail view to Album tree seems to be inoperative.
 080 ==> 498879 - Unable to load DNG image - "image cannot be loaded".
-081 ==>
-082 ==>
+081 ==> 469805 - No Subfolders in Albums from External Drives During Face Recognition, and Inefficient Rescan Process.
+082 ==> 498910 - In "Search in" menu for face detection/recognition only one collection/album/root directory shows subfolders.
 083 ==>
 084 ==>
 085 ==>

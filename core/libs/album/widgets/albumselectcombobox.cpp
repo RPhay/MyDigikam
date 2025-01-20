@@ -445,6 +445,7 @@ void AlbumTreeViewSelectComboBox::setAlbumModels(AlbumModel* model, CheckableAlb
 
     AlbumSelectComboBox::setAlbumModels(treeView()->checkableAlbumModel(), treeView()->albumFilterModel());
 
+    treeView()->setRootIsDecorated(true);
     treeView()->expandToDepth(0);
 }
 
