@@ -75,7 +75,7 @@ private Q_SLOTS:
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
 
-        connect(general, SIGNAL(result(Generalinfo)),
+        connect(general, SIGNAL(signalResult(Generalinfo)),
                 this, SLOT(resultHandle(Generalinfo)));
 
         general->exec();
@@ -98,7 +98,7 @@ private Q_SLOTS:
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
 
-        connect(general, SIGNAL(result(Generalinfo)),
+        connect(general, SIGNAL(signalResult(Generalinfo)),
                 this, SLOT(resultHandle(Generalinfo)));
 
         general->exec();
@@ -146,7 +146,7 @@ private Q_SLOTS:
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
 
-        connect(general, SIGNAL(result(Generalinfo)),
+        connect(general, SIGNAL(signalResult(Generalinfo)),
                 this, SLOT(resultHandle(Generalinfo)));
 
         general->exec();
@@ -169,7 +169,7 @@ private Q_SLOTS:
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
 
-        connect(general, SIGNAL(result(Generalinfo)),
+        connect(general, SIGNAL(signalResult(Generalinfo)),
                 this, SLOT(resultHandle(Generalinfo)));
 
         general->exec();

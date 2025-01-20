@@ -110,7 +110,7 @@ private Q_SLOTS:
         job->setWidthScale(78u);
         job->setHeightScale(102u);
 
-        connect(job, SIGNAL(result(QList<Imageinfo>)),
+        connect(job, SIGNAL(signalResult(QList<Imageinfo>)),
                 this, SLOT(resultHandle(QList<Imageinfo>)));
 
         job->exec();
@@ -206,7 +206,7 @@ private Q_SLOTS:
         job->setWidthScale(78u);
         job->setHeightScale(102u);
 
-        connect(job, SIGNAL(result(QList<Imageinfo>)),
+        connect(job, SIGNAL(signalResult(QList<Imageinfo>)),
                 this, SLOT(missingTitleHandle(QList<Imageinfo>)));
 
         job->exec();

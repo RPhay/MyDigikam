@@ -103,7 +103,7 @@ private Q_SLOTS:
         fakeserver.setScenario(scenario);
         fakeserver.startAndWait();
 
-        connect(job, SIGNAL(result(QString)),
+        connect(job, SIGNAL(signalResult(QString)),
                 this, SLOT(resultHandle(QString)));
 
         connect(job, SIGNAL(result(KJob*)),
