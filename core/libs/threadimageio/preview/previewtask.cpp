@@ -276,6 +276,8 @@ void PreviewLoadingTask::execute()
 
         if (continueQuery() && m_img.isNull())
         {
+            m_fromRawEmbeddedPreview = false;
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Try to get preview from" << m_loadingDescription.filePath;
             qCDebug(DIGIKAM_GENERAL_LOG) << "Preview quality: " << m_loadingDescription.previewParameters.previewSettings.quality;
 
