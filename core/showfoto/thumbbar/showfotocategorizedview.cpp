@@ -529,7 +529,7 @@ void ShowfotoCategorizedView::currentChanged(const QModelIndex& index, const QMo
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    Q_EMIT currentChanged(d->filterModel->showfotoItemInfo(index));
+    Q_EMIT currentInfoChanged(d->filterModel->showfotoItemInfo(index));
 }
 
 void ShowfotoCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)
