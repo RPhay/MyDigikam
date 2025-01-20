@@ -77,9 +77,9 @@ Q_SIGNALS:
      * @param enabledState If true, the containing widgets will be enabled. Else, they will be disabled.
      */
     void signalSetUIEnabled(const bool enabledState);
-    void signalSetUIEnabled(const bool enabledState,
-                            QObject* const cancelObject,
-                            const QString& cancelSlot);
+    void signalSetUIEnabledWithCancel(const bool enabledState,
+                                      QObject* const cancelObject,
+                                      const QString& cancelSlot);
 
     /**
      * Update the progress bar.

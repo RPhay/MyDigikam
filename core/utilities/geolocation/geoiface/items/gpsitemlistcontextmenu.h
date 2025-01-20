@@ -75,7 +75,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalSetUIEnabled(const bool enabledState);
-    void signalSetUIEnabled(const bool enabledState, QObject* const cancelObject, const QString& cancelSlot);
+    void signalSetUIEnabledWithCancel(const bool enabledState, QObject* const cancelObject, const QString& cancelSlot);
     void signalProgressSetup(const int maxProgress, const QString& progressText);
     void signalProgressChanged(const int currentProgress);
     void signalUndoCommand(GPSUndoCommand* undoCommand);

@@ -404,7 +404,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->correlatorWidget, SIGNAL(signalSetUIEnabled(bool)),
             this, SLOT(slotSetUIEnabled(bool)));
 
-    connect(d->correlatorWidget, SIGNAL(signalSetUIEnabled(bool,QObject*const,QString)),
+    connect(d->correlatorWidget, SIGNAL(signalSetUIEnabledWithCancel(bool,QObject*const,QString)),
             this, SLOT(slotSetUIEnabled(bool,QObject*const,QString)));
 
     connect(d->correlatorWidget, SIGNAL(signalProgressSetup(int,QString)),
@@ -425,7 +425,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->rgWidget, SIGNAL(signalSetUIEnabled(bool)),
             this, SLOT(slotSetUIEnabled(bool)));
 
-    connect(d->rgWidget, SIGNAL(signalSetUIEnabled(bool,QObject*const,QString)),
+    connect(d->rgWidget, SIGNAL(signalSetUIEnabledWithCancel(bool,QObject*const,QString)),
             this, SLOT(slotSetUIEnabled(bool,QObject*const,QString)));
 
     connect(d->rgWidget, SIGNAL(signalProgressSetup(int,QString)),
@@ -443,7 +443,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->listViewContextMenu, SIGNAL(signalSetUIEnabled(bool)),
             this, SLOT(slotSetUIEnabled(bool)));
 
-    connect(d->listViewContextMenu, SIGNAL(signalSetUIEnabled(bool,QObject*const,QString)),
+    connect(d->listViewContextMenu, SIGNAL(signalSetUIEnabledWithCancel(bool,QObject*const,QString)),
             this, SLOT(slotSetUIEnabled(bool,QObject*const,QString)));
 
     connect(d->listViewContextMenu, SIGNAL(signalProgressSetup(int,QString)),

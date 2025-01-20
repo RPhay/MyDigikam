@@ -744,7 +744,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
     connect(d->altitudeLookup, SIGNAL(signalDone()),
             this, SLOT(slotAltitudeLookupDone()));
 
-    Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
+    Q_EMIT signalSetUIEnabledWithCancel(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
 
     Q_EMIT signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
 

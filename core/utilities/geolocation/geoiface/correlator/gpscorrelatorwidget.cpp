@@ -345,7 +345,7 @@ void GPSCorrelatorWidget::slotCorrelate()
 {
     // disable the UI of the entire dialog:
 
-    Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
+    Q_EMIT signalSetUIEnabledWithCancel(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
 
     // store the options:
 
